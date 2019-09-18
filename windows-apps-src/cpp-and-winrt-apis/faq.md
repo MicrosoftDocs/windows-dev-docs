@@ -17,7 +17,7 @@ Answers to questions that you're likely to have about authoring and consuming Wi
 See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## Why won't my new project compile, now that I've moved to C++/WinRT 2.0?
-For the full set of changes (including breaking changes), see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). For example, for coroutine support (including coroutine helpers such as **winrt::resume_background**, **winrt::resume_foreground**, and **winrt::resume_on_signal**), you'll need to `#include <winrt/coroutine.h>`. If you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`.
+For the full set of changes (including breaking changes), see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). For example, if you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`.
 
 ## Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134
 If you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Command Line** under **Additional Options**, then delete it).
@@ -42,13 +42,25 @@ Only if the runtime class is designed to be consumed from outside its implementi
 ## Why is the linker giving me a "LNK2019: Unresolved external symbol" error?
 If the unresolved symbol is an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), then the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
 
-If the unresolved symbol is a Windows Runtime free function, such as [RoInitialize](https://msdn.microsoft.com/library/br224650), then you'll need to explicitly link the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library in your project. The C++/WinRT projection depends on some of these free (non-member) functions and entry points. If you use one of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) project templates for your application, then `WindowsApp.lib` is linked for you automatically. Otherwise, you can use project link settings to include it, or do it in source code.
+If the unresolved symbol is a Windows Runtime free function, such as [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), then you'll need to explicitly link the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library in your project. The C++/WinRT projection depends on some of these free (non-member) functions and entry points. If you use one of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) project templates for your application, then `WindowsApp.lib` is linked for you automatically. Otherwise, you can use project link settings to include it, or do it in source code.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
 ```
 
 It's important that you resolve any linker errors that you can by linking **WindowsApp.lib** instead of an alternative static-link library, otherwise your application won't pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store).
+
+## Why am I getting a "class not registered" exception?
+
+In this case, the symptom is that&mdash;when constructing a runtime class or accessing a static member&mdash;you see an exception thrown at runtime with a HRESULT value of REGDB_E_CLASSNOTREGISTERED.
+
+One cause can be that your Windows Runtime component can't be loaded. Make sure that the component's Windows Runtime metadata file (`.winmd`) has the same name as the component binary (the `.dll`), which is also the name of the project and the name of the root namespace. Also make sure that the Windows Runtime metadata and the binary have been corectly copied by the build process to the consuming app's `Appx` folder. And confirm that the consuming app's `AppxManifest.xml` (also in the `Appx` folder) contains an **&lt;InProcessServer&gt;** element correctly declaring the activatable class and the binary name.
+
+### Uniform construction
+
+This error can also happen if you try to instantiate a locally-implemented runtime class via any of the projected type's constructors (other than its **std::nullptr_t** constructor). To do that, you'll need the C++/WinRT 2.0 feature that's often called uniform construction. If you want to opt in to that feature, then for more info, and code examples, see [Opt in to uniform construction, and direct implementation access](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
+
+For a way of instantiating your locally-implemented runtime classes that *doesn't* require uniform construction, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
 ## Should I implement [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) and, if so, how?
 If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
@@ -149,6 +161,25 @@ The recommended pattern shown above applies not just to C++/WinRT but to all Win
 
 ## How do I turn a string into a type&mdash;for navigation, for example?
 At the end of the [Navigation view code example](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
+
+## How do I resolve ambiguities with GetCurrentTime and/or TRY?
+
+The header file `winrt/Windows.UI.Xaml.Media.Animation.h` declares a method named **GetCurrentTime**, while `windows.h` (via `winbase.h`) defines a macro named **GetCurrentTime**. When the two collide, the C++ compiler produces "*error C4002: Too many arguments for function-like macro invocation GetCurrentTime*".
+
+Similarly, `winrt/Windows.Globalization.h` declares a method named **TRY**, while `afx.h` defines a macro named **GetCurrentTime**. When these collide, the C++ compiler produces "*error C2334: unexpected token(s) preceding '{'; skipping apparent function body*".
+
+To remedy one or both issues, you can do this.
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
 
 > [!NOTE]
 > If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

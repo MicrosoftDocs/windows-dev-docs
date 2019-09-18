@@ -118,7 +118,7 @@ ListView and its children are not loaded into memory.
 
 ### Use layout panel properties
 
-Layout panels have a [Background](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) in front of a Panel just to color it.
+Layout panels have a [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) property so there's no need to put a [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) in front of a Panel just to color it.
 
 **Inefficient**
 
@@ -153,7 +153,7 @@ Use the [x:Key attribute](../xaml-platform/x-key-attribute.md) to reference your
 
 ### ResourceDictionary in a UserControl
 
-A ResourceDictionary defined inside of a [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it the page level.
+A ResourceDictionary defined inside of a [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it at the page level.
 
 ### Resource and ResourceDictionary scope
 
@@ -232,7 +232,7 @@ To make this example more efficient, move `SecondPageTextBrush` into _SecondPage
 
 ### Consolidate multiple brushes that look the same into one resource
 
-The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962) to demonstrate, but the case is more likely and more important with [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068). Also check for brushes that use predefined colors; for example, `"Orange"` and `"#FFFFA500"` are the same color.
+The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) to demonstrate, but the case is more likely and more important with [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush). Also check for brushes that use predefined colors; for example, `"Orange"` and `"#FFFFA500"` are the same color.
 
 **Inefficient.**
 
@@ -275,15 +275,15 @@ To fix the duplication, define the brush as a resource. If controls in other pag
 
 Overdrawing occurs where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
 
-Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
+Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
 
 ### Transparent or hidden elements
 
-If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states, then use x:Load to control its state or set [Visibility](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the majority of visual states is best set locally on the element.
+If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states, then use x:Load to control its state or set [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the majority of visual states is best set locally on the element.
 
 ### Composite elements
 
-Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
+Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) and the bottom half is gray (from the semi-transparent white [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
 
 **Inefficient.**
 
@@ -340,11 +340,11 @@ A layout panel can have two purposes: to color an area, and to lay out child ele
 </GridView>
 ```
 
-If the [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) has to be hit-testable then set a background value of transparent on it.
+If the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) has to be hit-testable then set a background value of transparent on it.
 
 ### Borders
 
-Use a [Border](https://msdn.microsoft.com/library/windows/apps/BR209253) element to draw a border around an object. In this example, a [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) is used as a makeshift border around a [TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683). But all the pixels in the center cell are overdrawn.
+Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
 
 **Inefficient.**
 
@@ -379,7 +379,7 @@ Be aware of margins. Two neighboring elements will overlap (possibly accidentall
 
 ### Cache static content
 
-Another source of overdrawing is a shape made from many overlapping elements. If you set [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) to **BitmapCache** on the [UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
+Another source of overdrawing is a shape made from many overlapping elements. If you set [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) to **BitmapCache** on the [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
 
 **Inefficient.**
 
@@ -407,7 +407,7 @@ The image above is the result, but here's a map of the overdrawn regions. Darker
 </Canvas>
 ```
 
-Note the use of [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
+Note the use of [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
 
 ## Use XBF2
 

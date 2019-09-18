@@ -66,7 +66,7 @@ To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSu
 Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
 
 > [!NOTE]
-> To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.
+> To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) method.
 
 ## Add secure stop to your web app
 

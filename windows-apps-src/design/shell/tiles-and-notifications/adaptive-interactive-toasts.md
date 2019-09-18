@@ -16,7 +16,7 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 > **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## Getting started
@@ -874,5 +874,5 @@ To learn how to handle toast activations (the user clicking your toast or button
 ## Related topics
 
 * [Send a local toast and handle activation](send-local-toast.md)
-* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)

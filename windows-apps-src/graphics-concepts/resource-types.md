@@ -106,12 +106,12 @@ Each shader stage allows up to 15 shader-constant buffers; each buffer can hold 
 
 Use a constant buffer to store the results of the stream-output stage.
 
-See [Shader Constants (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581) for an example of declaring a constant buffer in a shader.
+See [Shader Constants (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) for an example of declaring a constant buffer in a shader.
 
 ## <span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Texture resources
 
 
-A texture resource is a structured collection of data designed to store texels. Unlike buffers, textures can be filtered by texture samplers as they are read by shader units. The type of texture impacts how the texture is filtered. A texel represents the smallest unit of a texture that can be read or written to by the pipeline. Each texel contains 1 to 4 components, arranged in one of the DXGI formats (see [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
+A texture resource is a structured collection of data designed to store texels. Unlike buffers, textures can be filtered by texture samplers as they are read by shader units. The type of texture impacts how the texture is filtered. A texel represents the smallest unit of a texture that can be read or written to by the pipeline. Each texel contains 1 to 4 components, arranged in one of the DXGI formats (see [**DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
 Textures are created as a structured resource so that their size is known. However, each texture may be typed or typeless at resource-creation time, as long as the type is fully specified using a view when the texture is bound to the pipeline.
 

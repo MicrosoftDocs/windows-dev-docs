@@ -2,7 +2,7 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for Xbox
 description: Learn how to enable the Device Portal for Xbox One.
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -48,7 +48,7 @@ Under **Xbox Live test accounts**, you can manage the accounts associated with y
 
 ### Xbox Live (Game saves)
 
-Both the Windows Device Portal and the Xbox Device Portal have an **Xbox Live** page. However, the Xbox Device Portal has a unique section, **Xbox Live game saves**, where you can save data for games installed on your Xbox. Enter the **Service Configuration ID (SCID)** (see [Xbox Live service configuration](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids) for more information), **Membername (MSA)**, and **Package Family Name (PFN)** associated with the title and game save, browse for the **Input File (.json or .xml)**, and then select one of the buttons (**Reset**, **Import**, **Export**, and **Delete**) to manipulate the save data.
+Both the Windows Device Portal and the Xbox Device Portal have an **Xbox Live** page. However, the Xbox Device Portal has a unique section, **Xbox Live game saves**, where you can save data for games installed on your Xbox. Enter the **Service Configuration ID (SCID)** (see [Xbox Live service configuration](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) for more information), **Membername (MSA)**, and **Package Family Name (PFN)** associated with the title and game save, browse for the **Input File (.json or .xml)**, and then select one of the buttons (**Reset**, **Import**, **Export**, and **Delete**) to manipulate the save data.
 
 In the **Generate** section, you can generate dummy data and save to the specified input file. Simply enter the **Containers (default 2)**, **Blobs (default 3)**, and **Blob Size (default 1024)**, and select **Generate**.
 

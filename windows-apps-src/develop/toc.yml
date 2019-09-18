@@ -351,7 +351,7 @@
               href: ../debug-test-perf/optimize-suspend-resume.md
             - name: Optimize file access
               href: ../debug-test-perf/optimize-file-access.md
-            - name: Windows Runtime Components and optimizing interop
+            - name: Windows Runtime components and optimizing interop
               href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
             - name: Tools for profiling and performance
               href: ../debug-test-perf/tools-for-profiling-and-performance.md
@@ -738,45 +738,15 @@
         - name: Simplify payments with the Payment Request API
           href: ../monetize/payment-request.md
     - name: Packaging apps
-      href: ../packaging/index.md
       items:
-        - name: Package a UWP app with Visual Studio
-          href: ../packaging/packaging-uwp-apps.md
-        - name: Manual app packaging
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: Create an app package with the MakeAppx.exe tool
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: Create a certificate for package signing
-              href: ../packaging/create-certificate-package-signing.md
-            - name: Sign an app package using SignTool
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: Developing with asset packages and package folding
-              href: ../packaging/package-folding.md
-            - name: Flat bundle app packages
-              href: ../packaging/flat-bundles.md
-            - name: Introduction to asset packages
-              href: ../packaging/asset-packages.md
-            - name: Package creation with the packaging layout
-              href: ../packaging/packaging-layout.md
-        - name: App package architectures
-          href: ../packaging/device-architecture.md
-        - name: UWP App Streaming Install
-          href: ../packaging/streaming-install.md
-          items:
-            - name: Create and convert a source content group map
-              href: ../packaging/create-cgm.md
-        - name: Optional packages and related set authoring
-          href: ../packaging/optional-packages.md
-          items:
-            - name: Optional packages with executable code
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: Install apps with the WinAppDeployCmd.exe tool
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Overview
+          href: ../packaging/index.md
         - name: App capability declarations
           href: ../packaging/app-capability-declarations.md
         - name: Set up automated builds for your UWP app
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Install apps with the WinAppDeployCmd.exe tool
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Download and install package updates from the Store
           href: ../packaging/self-install-package-updates.md
 - name: Platform
@@ -816,12 +786,16 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrency and asynchronous operations
           href: ../cpp-and-winrt-apis/concurrency.md
+        - name: More advanced concurrency and asynchrony
+          href: ../cpp-and-winrt-apis/concurrency-2.md
         - name: XAML controls; bind to a property
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML items controls; bind to a collection
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML custom (templated) controls
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Passing parameters into the ABI boundary
+          href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components
           href: ../cpp-and-winrt-apis/consume-com.md
         - name: Author COM components
@@ -832,12 +806,20 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: Move to C++/WinRT from C#
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interop with the ABI
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
         - name: Strong and weak references
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: Agile objects
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: Diagnosing direct allocations
+          href: ../cpp-and-winrt-apis/diag-direct-alloc.md
+        - name: Details about destructors
+          href: ../cpp-and-winrt-apis/details-about-destructors.md
+        - name: A simple C++/WinRT WinUI example
+          href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: C++ language
           items:
             - name: Value categories, and references
@@ -946,25 +928,16 @@
           items:
             - name: XAML lighting
               href: ../composition/xaml-lighting.md
-        - name: Modernize desktop apps
-          href: ../composition/visual-layer-in-desktop-apps.md
-          items:
-            - name: Using WPF
-              href: ../composition/using-the-visual-layer-with-wpf.md
-            - name: Using Windows Forms
-              href: ../composition/using-the-visual-layer-with-windows-forms.md
-            - name: Using Win32
-              href: ../composition/using-the-visual-layer-with-win32.md
     - name: Windows as a service
       href: ../updates-and-versions/application-development-for-windows-as-a-service.md
     - name: Windows Runtime components
       href: ../winrt-components/index.md
       items:
-        - name: Creating Windows Runtime components in C++/CX
+        - name: Windows Runtime components with C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: "Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#"
+        - name: Walkthrough of a C++/CX Windows Runtime component
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: Creating Windows Runtime components in C# and Visual Basic
+        - name: Windows Runtime components with C# and Visual Basic
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Custom events and event accessors in Windows Runtime components
@@ -975,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: Distributing a managed Windows Runtime component
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: .NET Framework mappings of Windows Runtime types
+            - name: .NET mappings of Windows Runtime types
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: "Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript"
+        - name: Walkthrough of a C# or Visual Basic Windows Runtime component
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: Raising events in Windows Runtime components
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1050,11 +1023,6 @@
           href: ../xaml-platform/custom-attached-properties.md
         - name: Events and routed events overview
           href: ../xaml-platform/events-and-routed-events-overview.md
-        - name: UWP controls in desktop applications
-          href: ../xaml-platform/xaml-host-controls.md
-          items:
-            - name: Using the UWP XAML hosting API
-              href: ../xaml-platform/using-the-xaml-hosting-api.md
 - name: People and places
   items:
     - name: Contacts, My People, and calendar
@@ -1242,27 +1210,8 @@
   items:
     - name: Overview
       href: ../porting/index.md
-    - name: Move from Windows Phone Silverlight to UWP
-      href: ../porting/wpsl-to-uwp-root.md
-      items:
-        - name: Namespace and class mappings
-          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
-        - name: Porting the project
-          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-        - name: Troubleshooting
-          href: ../porting/wpsl-to-uwp-troubleshooting.md
-        - name: Porting XAML and UI
-          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
-        - name: Porting for I/O, device, and app model
-          href: ../porting/wpsl-to-uwp-input-and-sensors.md
-        - name: Porting business and data layers
-          href: ../porting/wpsl-to-uwp-business-and-data.md
-        - name: Porting for form factor and UX
-          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
-        - name: "Case study: Bookstore1"
-          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
-        - name: "Case study: Bookstore2"
-          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
+    - name: Move from desktop to UWP
+      href: ../porting/desktop-to-uwp-migrate.md
     - name: Move from Windows Runtime 8.x to UWP
       href: ../porting/w8x-to-uwp-root.md
       items:
@@ -1280,43 +1229,6 @@
           href: ../porting/w8x-to-uwp-case-study-bookstore2.md
         - name: "Case study: QuizGame"
           href: ../porting/w8x-to-uwp-case-study-quizgame.md
-    - name: Package desktop applications
-      href: ../porting/desktop-to-uwp-root.md
-      items:
-        - name: Prepare to package
-          href: ../porting/desktop-to-uwp-prepare.md
-        - name: Package using the Desktop App Converter
-          href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-        - name: Package using Visual Studio
-          href: ../porting/desktop-to-uwp-packaging-dot-net.md
-        - name: Package manually
-          href: ../porting/desktop-to-uwp-manual-conversion.md
-        - name: Integrate with Windows 10
-          href: ../porting/desktop-to-uwp-extensions.md
-        - name: Enhance for Windows 10
-          href: ../porting/desktop-to-uwp-enhance.md
-          items:
-            - name: Available UWP APIs
-              href: ../porting/desktop-to-uwp-supported-api.md
-            - name: Optimize app binaries with native images
-              href: ../porting/desktop-to-uwp-r2r.md
-        - name: Extend with UWP
-          href: ../porting/desktop-to-uwp-extend.md
-        - name: Run, debug, and test
-          href: ../porting/desktop-to-uwp-debug.md
-          items:
-            - name: Test for Windows 10 in S mode
-              href: ../porting/desktop-to-uwp-test-windows-s.md
-        - name: Apply runtime fixes
-          href: ../porting/package-support-framework.md
-        - name: Distribute
-          href: ../porting/desktop-to-uwp-distribute.md
-        - name: Behind the scenes
-          href: ../porting/desktop-to-uwp-behind-the-scenes.md
-        - name: Known issues
-          href: ../porting/desktop-to-uwp-known-issues.md
-    - name: Share code between desktop and UWP
-      href: ../porting/desktop-to-uwp-migrate.md
     - name: Windows apps concept mapping for Android and iOS developers
       href: ../porting/android-ios-uwp-map.md
     - name: Move from iOS to UWP
@@ -1343,6 +1255,27 @@
               href: ../porting/getting-started-what-next.md
         - name: Setting up your Mac with Windows 10
           href: ../porting/setting-up-your-mac-with-windows-10.md
+    - name: Move from Windows Phone Silverlight to UWP
+      href: ../porting/wpsl-to-uwp-root.md
+      items:
+        - name: Namespace and class mappings
+          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
+        - name: Porting the project
+          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
+        - name: Troubleshooting
+          href: ../porting/wpsl-to-uwp-troubleshooting.md
+        - name: Porting XAML and UI
+          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
+        - name: Porting for I/O, device, and app model
+          href: ../porting/wpsl-to-uwp-input-and-sensors.md
+        - name: Porting business and data layers
+          href: ../porting/wpsl-to-uwp-business-and-data.md
+        - name: Porting for form factor and UX
+          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
+        - name: "Case study: Bookstore1"
+          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
+        - name: "Case study: Bookstore2"
+          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows 10
       href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
       items:

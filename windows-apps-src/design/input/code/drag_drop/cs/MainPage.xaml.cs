@@ -42,7 +42,10 @@ namespace drag_drop
         {
             e.AcceptedOperation = DataPackageOperation.Copy;
             e.DragUIOverride.Caption = "Custom text here"; // Sets custom UI text
-            e.DragUIOverride.SetContentFromBitmapImage(null); // Sets a custom glyph
+            // Sets a custom glyph
+            e.DragUIOverride.SetContentFromBitmapImage(
+                new BitmapImage(
+                    new Uri("ms-appx:///Assets/CustomImage.png", UriKind.RelativeOrAbsolute)));
             e.DragUIOverride.IsCaptionVisible = true; // Sets if the caption is visible
             e.DragUIOverride.IsContentVisible = true; // Sets if the dragged content is visible
             e.DragUIOverride.IsGlyphVisible = true; // Sets if the glyph is visibile

@@ -48,7 +48,7 @@ With the COM activator option, you can use the following notification templates 
 > [!NOTE]
 > If you add the COM activator to your existing Desktop Bridge app, Foreground/Background and Legacy notification activations will now activate your COM activator instead of your command line.
 
-To learn how to use this option, see [Send a local toast notification from destkop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from destkop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
+To learn how to use this option, see [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## Alternative option - No COM / Stub CLSID
@@ -68,7 +68,7 @@ With this option, if you support classic Win32, you are much more limited in the
 | ToastGeneric Protocol | ✔️ | ✔️ |
 | Legacy templates | ✔️ | ❌ |
 
-We'll be publishing docs in the future showing how to use this option. Essentially, for Desktop Bridge apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
+For Desktop Bridge apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
 
 For classic Win32 apps, set up the AUMID so that you can send toasts, and then also specify a CLSID on your shortcut. This can be any random GUID. Don't add the COM server/activator. You're adding a "stub" COM CLSID, which will cause Action Center to persist the notification. Note that you can only use protocol activation toasts, as the stub CLSID will break activation of any other toast activations. Therefore, you have to update your app to support protocol activation, and have the toasts protocol activate your own app.
 

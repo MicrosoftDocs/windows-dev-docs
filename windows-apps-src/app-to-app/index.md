@@ -30,4 +30,4 @@ In addition to the Share contract, apps can also integrate classic techniques fo
 | [Drag and drop](../design/input/drag-and-drop.md) | This article explains how to add dragging and dropping in your UWP app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app. |
 
 ## See also
-- [Develop UWP apps](https://developer.microsoft.com/windows/develop)
+- [Develop UWP apps](https://docs.microsoft.com/windows/uwp/develop/)

@@ -1,25 +1,41 @@
 ---
 Description: Share code between a desktop application and a UWP app
-Search.Product: eADQiWindows 10XVcnh
 title: Share code between a desktop application and a UWP app
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Share code between a desktop application and a UWP app
 
-You can move your code into .NET Standard libraries, and then create a Universal Windows Platform (UWP) app to reach all Windows 10 devices. While there's no tool that can convert a desktop application to a UWP app, you can reuse a lot of your existing code and that lowers the cost of building one. This guide shows you how to do that.
+# Move from a desktop application to UWP
 
-## Share code in a .NET Standard 2.0 library
+If you have an existing desktop application that was built using the .NET Framework (including WPF and Windows Forms) or C++ Win32 APIs, you have several options for moving to the Universal Windows Platform (UWP) and Windows 10.
 
-Place as much code as you can into .NET Standard 2.0 class libraries.  As long as your code uses APIs that are defined in the standard, you can reuse it in a UWP app. It's easier than it's ever been to share code in a .NET Standard library because so many more APIs are included in the .NET Standard 2.0.
+## Package your desktop application in an MSIX package
 
-Here's a great video that tells you more about it.
-&nbsp;
+You can package your desktop application in an MSIX package to get access to many more Windows 10 features. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. You can package your application whether you have the source code or if you only have an existing installer file (such as an MSI or App-V installer). After you package your application, you can integrate UWP features such as package extensions and other UWP components.
+
+For more information, see [Package desktop applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+
+## Use UWP APIs
+
+You can call many UWP APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call UWP APIs to add toast notifications to your desktop app.
+
+For more information, see [Use UWP APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+
+## Migrate a .NET Framework app to a UWP app
+
+If your application runs on the .NET Framework, you can migrate it to a UWP app by leveraging .NET Standard 2.0. Move as much code as you can into .NET Standard 2.0 class libraries, and then create a UWP app that references your .NET Standard 2.0 libraries. 
+
+### Share code in a .NET Standard 2.0 library
+
+If your application runs on the .NET Framework, place as much code as you can into .NET Standard 2.0 class libraries. As long as your code uses APIs that are defined in the standard, you can reuse it in a UWP app. It's easier than it's ever been to share code in a .NET Standard library because so many more APIs are included in the .NET Standard 2.0.
+
+Here's a video that tells you more about it.
+
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
-### Add .NET Standard libraries
+#### Add .NET Standard libraries
 
 First, add one or more .NET Standard class libraries to your solution.  
 
@@ -39,7 +55,7 @@ From your desktop application project, add a reference to the class library proj
 
 Next, use tools to determine how much of your code conforms to the standard. That way, before you move code into the library, you can decide which parts you can reuse, which parts require minimal modification, and which parts will remain application-specific.
 
-### Check library and code compatibility
+#### Check library and code compatibility
 
 We'll start with Nuget Packages and other dll files that you obtained from a third party.
 
@@ -55,7 +71,7 @@ If your code isn't compatible with the standard, consider other ways that you co
 
 Some of your code will be platform-specific and will need to remain in your desktop application project.
 
-### Example: Migrating data access code to a .NET Standard 2.0 library
+#### Example: Migrating data access code to a .NET Standard 2.0 library
 
 Let's assume that we have a very basic Windows Forms application that shows customers from our Northwind sample database.
 
@@ -145,7 +161,7 @@ public partial class Customers : Form
 }
 ```
 
-## Reach all Windows devices
+### Create a UWP app
 
 Now you're ready to add a UWP app to your solution.
 
@@ -157,7 +173,7 @@ Your app will respond to input mechanisms other than just a keyboard and mouse, 
 
 These are just a few of the goodies that come with UWP. To learn more, see [Build great experiences with Windows](https://developer.microsoft.com/windows/why-build-for-uwp).
 
-### Add a UWP project
+#### Add a UWP project
 
 First, add a UWP project to your solution.
 
@@ -167,7 +183,7 @@ Then, from your UWP project, add a reference the .NET Standard 2.0 library proje
 
 ![Class library reference](images/desktop-to-uwp/class-library-reference2.png)
 
-### Build your pages
+#### Build your pages
 
 Add XAML pages and call the code in your .NET Standard 2.0 library.
 
@@ -195,10 +211,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-
 To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-## Reach iOS and Android devices
+### Reach iOS and Android devices
 
 You can reach Android and iOS devices by adding Xamarin projects.  
 
@@ -210,7 +225,7 @@ They have access to the full spectrum of functionality exposed by the underlying
 
 Just like UWPs, the cost to add an Android or iOS app is lower because you can reuse business logic in a .NET Standard 2.0 class library. You'll have to design your UI pages in XAML and write any device or platform-specific code.
 
-### Add a Xamarin project
+#### Add a Xamarin project
 
 First, add an **Android**, **iOS**, or **Cross-Platform** project to your solution.
 
@@ -219,13 +234,13 @@ You can find these templates in the **Add New Project** dialog box under the **V
 ![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://www.xamarin.com/forms).
+>Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://docs.microsoft.com/xamarin/xamarin-forms/).
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
 ![Class library reference](images/desktop-to-uwp/class-library-reference3.png)
 
-### Build your pages
+#### Build your pages
 
 Our example shows a list of customers in an Android app.
 
@@ -258,7 +273,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://developer.xamarin.com/).
+To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://docs.microsoft.com/xamarin).
 
 ## Next steps
 

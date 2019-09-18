@@ -47,7 +47,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 
 | Parameter         | Type         | Description         | Required |
 |-------------------|--------------|---------------------|----------|
-| beneficiaries     | UserIdentity | A UserIdentity object that represents the user being queried for products. For more information, see the table below.    | Yes      |
+| beneficiaries     | list&lt;UserIdentity&gt | A list of UserIdentity objects that represent the users being queried for products. For more information, see the table below.    | Yes      |
 | continuationToken | string       | If there are multiple sets of products, the response body returns a continuation token when the page limit is reached. Provide that continuation token here in subsequent calls to retrieve remaining products.       | No       |
 | maxPageSize       | number       | The maximum number of products to return in one response. The default and maximum value is 100.                 | No       |
 | modifiedAfter     | datetime     | If specified, the service only returns products that have been modified after this date.        | No       |

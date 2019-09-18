@@ -16,12 +16,12 @@ dev_langs:
 
 **Important APIs**
 
--   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
--   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 Your app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.
 
-We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
+We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](https://docs.microsoft.com/windows/uwp/files/index).
 
 These steps show how to register for a custom file type, .alsdk, and how to activate your app when the user launches an .alsdk file.
 
@@ -31,15 +31,15 @@ These steps show how to register for a custom file type, .alsdk, and how to acti
 
 The app receives activation events only for the file extensions listed in the package manifest. Here's how you indicate that your app handles the files with the `.alsdk` extension.
 
-1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **File Type Associations** and then click **Add**. See [Programmatic Identifiers](https://msdn.microsoft.com/library/windows/desktop/cc144152) for more details of identifiers used by file associations.
+1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **File Type Associations** and then click **Add**. See [Programmatic Identifiers](https://docs.microsoft.com/windows/desktop/shell/fa-progids) for more details of identifiers used by file associations.
 
     Here is a brief description of each of the fields that you may fill in the manifest designer:
 
 | Field | Description |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Display Name** | Specify the display name for a group of file types. The display name is used to identify the file type in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. |
-| **Logo** | Specify the logo that is used to identify the file type on the desktop and in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. If no Logo is specified, the application’s small logo is used. |
-| **Info Tip** | Specify the [info tip](https://msdn.microsoft.com/library/windows/desktop/cc144152) for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type. |
+| **Display Name** | Specify the display name for a group of file types. The display name is used to identify the file type in the [Set Default Programs](https://docs.microsoft.com/windows/desktop/shell/default-programs) on the **Control Panel**. |
+| **Logo** | Specify the logo that is used to identify the file type on the desktop and in the [Set Default Programs](https://docs.microsoft.com/windows/desktop/shell/default-programs) on the **Control Panel**. If no Logo is specified, the application’s small logo is used. |
+| **Info Tip** | Specify the [info tip](https://docs.microsoft.com/windows/desktop/shell/fa-progids) for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type. |
 | **Name** | Choose a name for a group of file types that share the same display name, logo, info tip, and edit flags. Choose a group name that can stay the same across app updates. **Note**  The Name must be in all lower case letters. |
 | **Content Type** | Specify the MIME content type, such as **image/jpeg**, for a particular file type. **Important Note about allowed content types:** Here is an alphabetic list of MIME content types that you cannot enter into the package manifest because they are either reserved or forbidden: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
 | **File type** | Specify the file type to register for, preceded by a period, for example, “.jpeg”. **Reserved and forbidden file types:** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of file types for built-in apps that you can't register for your UWP apps because they are either reserved or forbidden. |
@@ -49,7 +49,7 @@ The app receives activation events only for the file extensions listed in the pa
 4.  Enter “images\\Icon.png” as the Logo.
 5.  Press Ctrl+S to save the change to package.appxmanifest.
 
-The steps above add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.fileTypeAssociation** category indicates that the app handles files with the `.alsdk` extension.
+The steps above add an [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) element like this one to the package manifest. The **windows.fileTypeAssociation** category indicates that the app handles files with the `.alsdk` extension.
 
 ```xml
       <Extensions>
@@ -77,7 +77,7 @@ Include a 44x44 icon with your project so that your logo can appear in those loc
 
 ## Step 3: Handle the activated event
 
-The [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) event handler receives all file activation events.
+The [**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated) event handler receives all file activation events.
 
 ```csharp
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -133,8 +133,8 @@ The files that you receive could come from an untrusted source. We recommend tha
 
 ### Concepts
 
-* [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [File Type and Protocol Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Default Programs](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+* [File Type and Protocol Associations Model](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### Tasks
 
@@ -143,8 +143,8 @@ The files that you receive could come from an untrusted source. We recommend tha
 
 ### Guidelines
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Guidelines for file types and URIs](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### Reference
-* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [Windows.UI.Xaml.Application.OnFileActivated](https://msdn.microsoft.com/library/windows/apps/br242331)
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

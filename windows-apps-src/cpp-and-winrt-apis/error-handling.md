@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception
 ms.localizationpriority: medium
 ---
+
 # Error handling with C++/WinRT
 
 This topic discusses strategies for handling errors when programming with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
@@ -32,7 +33,6 @@ For example, if the user happens to delete an image from the Pictures Library wh
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
-#include <winrt/coroutine.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -63,7 +63,7 @@ IAsyncAction MakeThumbnailsAsync()
 Use this same pattern in a coroutine when calling a `co_await`-ed function. Another example of this HRESULT-to-exception conversion is that when a component API returns E_OUTOFMEMORY, that causes a **std::bad_alloc** to be thrown.
 
 ## Throwing exceptions
-There will be cases where you decide that, should your call to a given function fail, your application won't be able to recover (you'll no longer be able to rely on it to function predictably). The code example below uses a [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) value as a wrapper around the HANDLE returned from [**CreateEvent**](https://msdn.microsoft.com/library/windows/desktop/ms682396). It then passes the handle (creating a `bool` value from it) to the [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) function template. **winrt::check_bool** works with a `bool`, or with any value that's convertible to `false` (an error condition), or `true` (a success condition).
+There will be cases where you decide that, should your call to a given function fail, your application won't be able to recover (you'll no longer be able to rely on it to function predictably). The code example below uses a [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) value as a wrapper around the HANDLE returned from [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa). It then passes the handle (creating a `bool` value from it) to the [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) function template. **winrt::check_bool** works with a `bool`, or with any value that's convertible to `false` (an error condition), or `true` (a success condition).
 
 ```cppwinrt
 winrt::handle h{ ::CreateEvent(nullptr, false, false, nullptr) };
@@ -74,7 +74,7 @@ winrt::check_bool(::SetEvent(h.get()));
 If the value that you pass to [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) is false, then the following sequence of actions take place.
 
 - **winrt::check_bool** calls the [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) function.
-- **winrt::throw_last_error** calls [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) to retrieve the calling thread's last-error code value, and then calls the [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) function.
+- **winrt::throw_last_error** calls [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) to retrieve the calling thread's last-error code value, and then calls the [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) function.
 - **winrt::throw_hresult** throws an exception using a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) object (or a standard object) that represents that error code.
 
 Because Windows APIs report run-time errors using various return-value types, there are in addition to **winrt::check_bool** a handful of other useful helper functions for checking values and throwing exceptions.
@@ -87,7 +87,9 @@ Because Windows APIs report run-time errors using various return-value types, th
 You can use these helper functions for common return code types, or you can respond to any error condition and call either [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) or [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult). 
 
 ## Throwing exceptions when authoring an API
-Since it's invalid for an exception to cross the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) boundary, an error condition that arises in an implementation is returned across the ABI layer in the form of an HRESULT error code. When you're authoring an API using C++/WinRT, code is generated for you to convert any exception that you *do* throw in your implementation into an HRESULT. The [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) function is used in that generated code in a pattern like this.
+All [Windows Runtime Application Binary Interface](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) boundaries (or ABI boundaries) must be *noexcept*&mdash;meaning that exceptions must never escape there. When you author an API, you should always mark the ABI boundary with the C++ `noexcept` keyword. `noexcept` has specific behavior in C++. If a C++ exception hits a `noexcept` boundary, then the process will fail fast with **std::terminate**. That behavior is generally desirable, because an unhandled exception almost always implies unknown state in the process.
+
+Since exceptions mustn't cross the ABI boundary, an error condition that arises in an implementation is returned across the ABI layer in the form of an HRESULT error code. When you're authoring an API using C++/WinRT, code is generated for you to convert any exception that you *do* throw in your implementation into an HRESULT. The [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) function is used in that generated code in a pattern like this.
 
 ```cppwinrt
 HRESULT DoWork() noexcept
@@ -106,8 +108,50 @@ HRESULT DoWork() noexcept
 
 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) handles exceptions derived from **std::exception**, and [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) and its derived types. In your implementation, you should prefer **winrt::hresult_error**, or a derived type, so that consumers of your API receive rich error information. **std::exception** (which maps to E_FAIL) is supported in case exceptions arise from your use of the Standard Template Library.
 
+### Debuggability with noexcept
+As we mentioned above, a C++ exception hitting a `noexcept` boundary fails fast with **std::terminate**. That's not ideal for debugging, because **std::terminate** often loses much or all of the error or the exception context thrown, especially when coroutines are involved.
+
+So, this section deals with the case where your ABI method (which you've properly annotated with `noexcept`) uses `co_await` to call asynchronous C++/WinRT projection code. We recommend that you wrap the calls to the C++/WinRT projection code within a **winrt::fire_and_forget**. Doing so provides a proper place for an unhandled exception to be properly recorded as a stowed exception, which greatly increases debuggability.
+
+```cppwinrt
+HRESULT MyWinRTObject::MyABI_Method() noexcept
+{
+    winrt::com_ptr<Foo> foo{ get_a_foo() };
+
+    [/*no captures*/](winrt::com_ptr<Foo> foo) -> winrt::fire_and_forget
+    {
+        co_await winrt::resume_background();
+
+        foo->ABICall();
+
+        AnotherMethodWithLotsOfProjectionCalls();
+    }(foo);
+
+    return S_OK;
+}
+```
+
+**winrt::fire_and_forget** has a built-in `unhandled_exception` method helper, which calls **winrt::terminate**, which in turn calls **RoFailFastWithErrorContext**. This guarantees that any context (stowed exception, error code, error message, stack backtrace, and so on) is preserved either for live debugging or for a post-mortem dump. For convenience, you can factor the fire-and-forget portion into a separate function that returns a **winrt::fire_and_forget**, and then call that.
+
+### Synchronous code
+In some cases, your ABI method (which, again, you've properly annotated with `noexcept`) calls only synchronous code. In other words, it never uses `co_await`, either to call an asynchronous Windows Runtime method, or to switch between foreground and background threads. In that case, the fire_and_forget technique will still work, but it's not efficient. Instead, you can do something like this.
+
+```cppwinrt
+HRESULT abi() noexcept try
+{
+    // ABI code goes here.
+} catch (...) { winrt::terminate(); }
+```
+
+### Fail fast
+The code in the previous section still fails fast. As written, that code doesn't handle any exceptions. Any unhandled exception results in program termination.
+
+But that form is superior, because it ensures debuggability. In rare cases, you might want to `try/catch`, and handle certain exceptions. But that should be rare because, as this topic explains, we discourage using exceptions as a flow-control mechanism for conditions that you expect.
+
+Remember that it's a bad idea to let an unhandled exception escape a naked `noexcept` context. Under that condition, the C++ runtime will **std::terminate** the process, thereby losing any stowed exception information that C++/WinRT carefully recorded.
+
 ## Assertions
-For internal assumptions in your application, there are assertions. Prefer **static_assert** for compile-time validation, wherever possible. For run-time conditions, use WINRT_ASSERT with a Boolean expression.
+For internal assumptions in your application, there are assertions. Prefer **static_assert** for compile-time validation, wherever possible. For run-time conditions, use `WINRT_ASSERT` with a Boolean expression. `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 WINRT_ASSERT(pos < size());

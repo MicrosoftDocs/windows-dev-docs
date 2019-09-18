@@ -43,7 +43,7 @@ RDX-aware apps that do not meet these critical requirements will be removed from
 
 * **Error-free experience**. Your app must run with no errors. Additionally, no error pop ups or notifications should be shown to customers using the retail demo devices. Errors reflect negatively on the app itself, your brand, the device's brand, the device's manufacturer's brand, and Microsoft's brand.
 
-* **Paid apps must have a trial mode**. Your app either needs to be a free or include a [trial mode](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Customers aren't looking to pay for an experience in a retail store.
+* **Paid apps must have a trial mode**. Your app either needs to be a free or include a [trial mode](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Customers aren't looking to pay for an experience in a retail store.
 
 ### High-priority requirements
 
@@ -353,7 +353,7 @@ namespace MyCompany.MyApp
 
 ## Related links
 
-* [Store and retrieve app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [How to create and consume an app service](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [Localizing app contents](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [Store and retrieve app data](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [How to create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Localizing app contents](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [Retail demo experience (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

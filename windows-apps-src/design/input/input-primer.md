@@ -129,7 +129,7 @@ Dictation is typically used when an app doesn’t need to understand meaning or 
 
 ### More info
 
-[Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[Speech design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
 
 ## Pen
@@ -162,7 +162,7 @@ You should provide pen-specific UI commands, or affordances, to support these in
 
 ### More info
 
-[Pen design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[Pen design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
 ## Touch
@@ -197,7 +197,7 @@ In general, touch is:
 
 ### More info
 
-[Touch design guidelines](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[Touch design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
 
 ## Touchpad
@@ -221,7 +221,7 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Touchpad design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[Touchpad design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## Keyboard
@@ -261,7 +261,7 @@ In general, a keyboard is:
 
 ### More info
 
-[Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345)
+[Keyboard design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## Mouse
@@ -288,7 +288,7 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Mouse design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456351)
+[Mouse design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## Gesture

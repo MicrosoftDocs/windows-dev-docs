@@ -48,7 +48,7 @@ The game sample sets up the following components in the game object:
 
 * A new audio playback object is created.
 * Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.
-* A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+* A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current).
 * A game timer and the initial in-game overlay bitmap are created.
 * A new camera is created with a specific set of view and projection parameters.
 * The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.
@@ -239,8 +239,8 @@ The internal methods defined on **Simple3DGame** include:
 
 -   **Initialize**: Sets the starting values of the global variables and initializes the game objects. This is covered in the [Initialize and start the game](#initialize-and-start-the-game) section.
 -   **LoadGame**: Initializes a new level and starts loading it.
--   **LoadLevelAsync**: Starts an async task (if you're unfamiliar with async tasks, see [Parallel Patterns Library](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
--   **FinalizeLoadLevel**: Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.
+-   **LoadLevelAsync**: Starts an async task (if you're unfamiliar with async tasks, see [Parallel Patterns Library](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) methods (as opposed to [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
+-   **FinalizeLoadLevel**: Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) methods.
 -   **StartLevel**: Starts the game play for a new level.
 -   **PauseGame**: Pauses the game.
 -   **RunGame**: Runs an iteration of the game loop. It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.

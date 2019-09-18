@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This article explains how to use the **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** class, which is used by many different UWP APIs to represent images, with the Open Source Computer Vision Library (OpenCV), an open source, native code library that provides a wide variety of image processing algorithms. 
 
-The examples in this article walk you through creating a native code Windows Runtime Component that can be used from a UWP app, including apps that are created using C#. This helper component will expose a single method, **Blur**, which will use OpenCV's blur image processing function. The component implements private methods that get a pointer to the underlying image data buffer which can be used directly by the OpenCV library, making it simple to extend the helper component to implement other OpenCV processing features. 
+The examples in this article walk you through creating a native code Windows Runtime component that can be used from a UWP app, including apps that are created using C#. This helper component will expose a single method, **Blur**, which will use OpenCV's blur image processing function. The component implements private methods that get a pointer to the underlying image data buffer which can be used directly by the OpenCV library, making it simple to extend the helper component to implement other OpenCV processing features. 
 
 * For an introduction to using **SoftwareBitmap**, see [Create, edit, and save bitmap images](imaging.md). 
 * To learn how to use the OpenCV library, go to [https://opencv.org](https://opencv.org).
@@ -21,9 +21,9 @@ The examples in this article walk you through creating a native code Windows Run
 > [!NOTE] 
 > The technique used by the OpenCVHelper component, described in detail in this article, requires that the image data to be processed resides in CPU memory, not GPU memory. So, for APIs that allow you to request the memory location of images, such as the **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** class, you should specify CPU memory.
 
-## Create a helper Windows Runtime Component for OpenCV interop
+## Create a helper Windows Runtime component for OpenCV interop
 
-### 1. Add a new native code Windows Runtime Component project to your solution
+### 1. Add a new native code Windows Runtime component project to your solution
 
 1. Add a new project to your solution in Visual Studio by right-clicking your solution in Solution Explorer and selecting **Add->New Project**. 
 2. Under the **Visual C++** category, select **Windows Runtime Component (Universal Windows)**. For this example, name the project "OpenCVBridge" and click **OK**. 
@@ -57,7 +57,7 @@ After the include directives, add the following **using** directives.
 
 Next, add the method **GetPointerToPixelData** to OpenCVHelper.cpp. This method takes a **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** and, through a series of conversions, gets a COM interface representation of the pixel data through which we can get a pointer to the underlying data buffer as a **char** array. 
 
-First a **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** containing the pixel data is obtained by calling **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, requesting a read/write buffer so that the OpenCV library can modify that pixel data.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** is called to get an **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** object. Next, the **IMemoryBufferByteAccess** interface is cast as an **IInspectable**, the base interface of all Windows Runtime classes, and **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** is called to get an **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** COM interface that will allow us to obtain the pixel data buffer as a **char** array. Finally, populate the **char** array by calling **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. If any of the conversion steps in this method fail, the method returns **false**, indicating that further processing can't continue.
+First a **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** containing the pixel data is obtained by calling **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, requesting a read/write buffer so that the OpenCV library can modify that pixel data.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** is called to get an **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** object. Next, the **IMemoryBufferByteAccess** interface is cast as an **IInspectable**, the base interface of all Windows Runtime classes, and **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** is called to get an **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** COM interface that will allow us to obtain the pixel data buffer as a **char** array. Finally, populate the **char** array by calling **[IMemoryBufferByteAccess::GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)**. If any of the conversion steps in this method fail, the method returns **false**, indicating that further processing can't continue.
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -76,7 +76,7 @@ Finally, this example helper class implements a single image processing method, 
 
 
 ## A simple SoftwareBitmap OpenCV example using the helper component
-Now that the OpenCVBridge component has been created, we can create a simple C# app that uses the OpenCV **blur** method to modify a **SoftwareBitmap**. To access the Windows Runtime Component from your UWP app, you must first add a reference to the component. In Solution Explorer, right-click the **References** node under your UWP app project and select **Add reference...**. In the Reference Manager dialog, select **Projects->Solution**. Check the box next to the OpenCVBridge project and the click **OK**.
+Now that the OpenCVBridge component has been created, we can create a simple C# app that uses the OpenCV **blur** method to modify a **SoftwareBitmap**. To access the Windows Runtime component from your UWP app, you must first add a reference to the component. In Solution Explorer, right-click the **References** node under your UWP app project and select **Add reference...**. In the Reference Manager dialog, select **Projects->Solution**. Check the box next to the OpenCVBridge project and the click **OK**.
 
 The example code below allows the user to select an image file and then uses **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** to create a **SoftwareBitmap** representation of the image. For more information on working with **SoftwareBitmap**, see [Create, edit, and save bitmap images](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 

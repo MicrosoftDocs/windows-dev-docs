@@ -1,13 +1,14 @@
 ---
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
 ms.localizationpriority: medium
 ---
+
 # XAML controls; bind to a C++/WinRT property
-A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them.
+A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them (for background info, see [Data binding](/windows/uwp/data-binding)).
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
@@ -121,7 +122,7 @@ In the **Title** mutator function, we check whether a value is being set that's 
 ## Declare and implement **BookstoreViewModel**
 Our main XAML page is going to bind to a main view model. And that view model is going to have several properties, including one of type **BookSku**. In this step, we'll declare and implement our main view model runtime class.
 
-Add a new **Midl File (.idl)** item named `BookstoreViewModel.idl`.
+Add a new **Midl File (.idl)** item named `BookstoreViewModel.idl`. But also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl
@@ -204,7 +205,7 @@ If you omit the include of `BookstoreViewModel.idl` (see the listing of `MainPag
 
 To resolve the error that we expect to see, you'll now need to copy the accessor stubs for the **MainViewModel** property out of the generated files (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`) and into `\Bookstore\Bookstore\MainPage.h` and `MainPage.cpp`. The steps to do that are described next.
 
-In `\Bookstore\Bookstore\MainPage.h`, include `BookstoreViewModel.h`, which declares the implementation type for **BookstoreViewModel** (which is **winrt::Bookstore::implementation::BookstoreViewModel**). Add a private member to store the view model. Note that the property accessor function (and the member m_mainViewModel) is implemented in terms of the projected type for **BookstoreViewModel** (which is **Bookstore::BookstoreViewModel**). The implementation type is in the same project (compilation unit) as the application, so we construct m_mainViewModel via the constructor overload that takes `nullptr_t`. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.h`, include `BookstoreViewModel.h`, which declares the implementation type for **BookstoreViewModel** (which is **winrt::Bookstore::implementation::BookstoreViewModel**). Add a private member to store the view model. Note that the property accessor function (and the member m_mainViewModel) is implemented in terms of the projected type for **BookstoreViewModel** (which is **Bookstore::BookstoreViewModel**). The implementation type is in the same project (compilation unit) as the application, so we construct m_mainViewModel via the constructor overload that takes **std::nullptr_t**. Also remove the **MyProperty** property.
 
 ```cppwinrt
 // MainPage.h
@@ -270,6 +271,77 @@ Now build and run the project. Click the button to execute the **Click** event h
 
 ## Using the {Binding} markup extension with C++/WinRT
 For the currently released version of C++/WinRT, in order to be able to use the {Binding} markup extension you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces.
+
+## Element-to-element binding
+
+You can bind the property of one XAML element to the property of another XAML element. Here's an example of how that looks in markup.
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+You'll need to declare the named XAML entity `myTextBox` as a read-only property in your Midl file (.idl).
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+Here's the reason for this necessity. All types that the XAML compiler needs to validate (including those used in [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) are read from Windows Metadata (WinMD). All you need to do is to add the read-only property to your Midl file. Don't implement it, because the autogenerated XAML code-behind provides the implementation for you.
+
+## Consuming objects from XAML markup
+
+All entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL. Furthermore, if XAML markup contains a reference to another element that's also in markup, then the getter for that markup must be present in IDL.
+
+```xaml
+<Page x:Name="MyPage">
+    <StackPanel>
+        <CheckBox x:Name="UseCustomColorCheckBox" Content="Use custom color"
+             Click="UseCustomColorCheckBox_Click" />
+        <Button x:Name="ChangeColorButton" Content="Change color"
+            Click="{x:Bind ChangeColorButton_OnClick}"
+            IsEnabled="{x:Bind UseCustomColorCheckBox.IsChecked.Value, Mode=OneWay}"/>
+    </StackPanel>
+</Page>
+```
+
+The *ChangeColorButton* element refers to the *UseCustomColorCheckBox* element via binding. So the IDL for this page must declare a read-only property named *UseCustomColorCheckBox* in order for it to be accessible to binding.
+
+The click event handler delegate for *UseCustomColorCheckBox* uses classic XAML delegate syntax, so that doesn't need an entry in the IDL; it just needs to be public in your implementation class. On the other hand, *ChangeColorButton* also has an `{x:Bind}` click event handler, which must also go into the IDL.
+
+```idl
+runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+{
+    MyPage();
+
+    // These members are consumed by binding.
+    void ChangeColorButton_OnClick();
+    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+}
+```
+
+You don't need to provide an implementation for the **UseCustomColorCheckBox** property. The XAML code generator does that for you.
+
+### Binding to Boolean
+
+You might do this in a diagnostic mode.
+
+<syntaxhighlight lang="xml">
+<TextBlock Text="{Binding CanPair}"/>
+</syntaxhighlight>
+
+This shows `true` or `false` in C++/CX, but shows **Windows.Foundation.IReference`1<Boolean>** in C++/WinRT.
+
+Use `x:Bind` when binding to a Boolean.
+
+```xaml
+<TextBlock Text="{x:Bind CanPair}"/>
+```
 
 ## Important APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

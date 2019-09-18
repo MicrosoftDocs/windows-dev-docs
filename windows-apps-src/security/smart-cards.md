@@ -22,7 +22,7 @@ Before your app can authenticate users using smart cards or virtual smart cards,
 ## Access connected card readers and smart cards
 
 
-You can query for readers and attached smart cards by passing the device ID (specified in [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) to the [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) method. To access the smart cards currently attached to the returned reader device, call [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
+You can query for readers and attached smart cards by passing the device ID (specified in [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)) to the [**SmartCardReader.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.fromidasync) method. To access the smart cards currently attached to the returned reader device, call [**SmartCardReader.FindAllCardsAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.findallcardsasync).
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -42,7 +42,7 @@ foreach (DeviceInformation device in devices)
 }
 ```
 
-You should also enable your app to observe for [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) events by implementing a method to handle app behavior on card insertion.
+You should also enable your app to observe for [**CardAdded**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.cardadded) events by implementing a method to handle app behavior on card insertion.
 
 ```cs
 private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
@@ -51,16 +51,16 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 }
 ```
 
-You can then pass each returned [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) object to [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) to access the methods that allow your app to access and customize its configuration.
+You can then pass each returned [**SmartCard**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCard) object to [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) to access the methods that allow your app to access and customize its configuration.
 
 ## Create a virtual smart card
 
 
-To create a virtual smart card using [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), your app will first need to provide a friendly name, an admin key, and a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current **SmartCardPinPolicy** before passing all three values to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+To create a virtual smart card using [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning), your app will first need to provide a friendly name, an admin key, and a [**SmartCardPinPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy). The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current **SmartCardPinPolicy** before passing all three values to [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync).
 
-1.  Create a new instance of a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)
-2.  Generate the admin key value by calling [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) on the admin key value provided by the service or management tool.
-3.  Pass these values along with the *FriendlyNameText* string to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+1.  Create a new instance of a [**SmartCardPinPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy)
+2.  Generate the admin key value by calling [**CryptographicBuffer.GenerateRandom**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) on the admin key value provided by the service or management tool.
+3.  Pass these values along with the *FriendlyNameText* string to [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync).
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -75,7 +75,10 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-Once [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) has returned the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object, the virtual smart card is provisioned and ready for use.
+Once [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) has returned the associated [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) object, the virtual smart card is provisioned and ready for use.
+
+>[!NOTE]
+>In order to create a virtual smart card using a UWP app, the user running the app must be a member of the administrators group. If the user is not a member of the administrators group, virtual smart card creation will fail.
 
 ## Handle authentication challenges
 
@@ -109,11 +112,11 @@ You will see this code referenced throughout the remainder of this topic was we 
 
 Now that we have the logic for authentication challenges defined, we can communicate with the reader to access the smart card, or alternatively, access a virtual smart card for authentication.
 
-1.  To begin the challenge, call [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object associated with the smart card. This will generate an instance of [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570), which contains the card's [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) value.
+1.  To begin the challenge, call [**GetChallengeContextAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.getchallengecontextasync) from the [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) object associated with the smart card. This will generate an instance of [**SmartCardChallengeContext**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardChallengeContext), which contains the card's [**Challenge**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardchallengecontext.challenge) value.
 
 2.  Next, pass the card's challenge value and the admin key provided by the service or management tool to the **ChallengeResponseAlgorithm** that we defined in the previous example.
 
-3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) will return **true** if authentication is successful.
+3.  [**VerifyResponseAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardchallengecontext.verifyresponseasync) will return **true** if authentication is successful.
 
 ```cs
 bool verifyResult = false;
@@ -137,8 +140,8 @@ using (SmartCardChallengeContext context =
 
 To change the PIN associated with a smart card:
 
-1.  Access the card and generate the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object.
-2.  Call [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) to display a UI to the user to complete this operation.
+1.  Access the card and generate the associated [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) object.
+2.  Call [**RequestPinChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinchangeasync) to display a UI to the user to complete this operation.
 3.  If the PIN was successfully changed the call will return **true**.
 
 ```cs
@@ -150,10 +153,10 @@ bool result = await provisioning.RequestPinChangeAsync();
 
 To request a PIN reset:
 
-1.  Call [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) to initiate the operation. This call includes a [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) method that represents the smart card and the pin reset request.
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) provides information that our **ChallengeResponseAlgorithm**, wrapped in a [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.
+1.  Call [**RequestPinResetAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync) to initiate the operation. This call includes a [**SmartCardPinResetHandler**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardpinresethandler) method that represents the smart card and the pin reset request.
+2.  [**SmartCardPinResetHandler**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardpinresethandler) provides information that our **ChallengeResponseAlgorithm**, wrapped in a [**SmartCardPinResetDeferral**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinResetDeferral) call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.
 
-3.  If the challenge is successful, the [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) call is completed; returning **true** if the PIN was successfully reset.
+3.  If the challenge is successful, the [**RequestPinResetAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync) call is completed; returning **true** if the PIN was successfully reset.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -184,7 +187,7 @@ bool result = await provisioning.RequestPinResetAsync(
 ## Remove a smart card or virtual smart card
 
 
-When a physical smart card is removed a [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) event will fire when the card is deleted.
+When a physical smart card is removed a [**CardRemoved**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.cardremoved) event will fire when the card is deleted.
 
 Associate the firing of this event with the card reader with the method that defines your app's behavior on card or reader removal as an event handler. This behavior can be something as simply as providing notification to the user that the card was removed.
 
@@ -193,7 +196,7 @@ reader = card.Reader;
 reader.CardRemoved += HandleCardRemoved;
 ```
 
-The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) returned object.
+The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling [**RequestVirtualSmartCardDeletionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcarddeletionasync) from the [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) returned object.
 
 ```cs
 bool result = await SmartCardProvisioning

@@ -26,7 +26,7 @@ The assigned reviewer(s) may approve or reject the PR, or work with you to make 
 
 ## Internal contributions
 
-If you are a Microsoft employee, you can contribute through the [private content repository](https://cpubwin.visualstudio.com/_git/windows-uwp). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation on upcoming features must be contributed via the private repository only.
+If you are a Microsoft employee, you can contribute through the [private content repository](https://github.com/microsoftdocs/windows-uwp-pr). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation on upcoming features must be contributed via the private repository only.
 
 ### Editing a file
 
@@ -40,7 +40,7 @@ To make more extensive changes to an existing article, add or change images, or 
 
 When creating a pull request in the internal repo, make sure you're merging your personal branch into the branch it was created from.
 
-After you submit your pull request, it is evaluated against a [content quality checklist](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) to ensure it meets our basic standards. If it passes, it is assigned to a member of the UWP documentation team for further review. If it fails, you'll be told what changes to make.
+After you submit your pull request, it is evaluated with [PR Merger](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master) to ensure it meets our basic standards. If it passes, you can comment `#sign-off` to pass it to member of the UWP documentation team for further review. If it fails, you'll be told what changes to make before you can sign off.
 
 The assigned reviewer(s) may approve or reject the PR, or work with you to make further changes. Reviewers will not merge the PR until you have approved it yourself.
 

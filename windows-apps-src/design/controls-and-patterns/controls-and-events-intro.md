@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
 
-> **Important APIs**: [Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **Important APIs**: [Windows.UI.Xaml.Controls namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [master/details](master-details.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [NavigationView](navigationview.md) control to implement the tab pattern.
 
@@ -138,7 +138,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 ## Related topics
 
 - 	[Index of controls by function](controls-by-function.md)
-- 	[Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+- 	[Windows.UI.Xaml.Controls namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 - 	[Layout](../layout/index.md)
 - 	[Style](../style/index.md)
 - 	[Usability](../usability/index.md)

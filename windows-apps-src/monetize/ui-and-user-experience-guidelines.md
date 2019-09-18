@@ -19,10 +19,10 @@ This article provides guidelines for providing great experiences with banner ads
 Before reviewing our guidelines for different types of ads in this article, first review these general best practices to improve your ad revenue.
 
 * [Plan your ad placements carefully](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). See our related guidance about [optimizing the viewability of your ad units](optimize-ad-unit-viewability.md).
-* [Use interstitial banner ads as a fallback for interstitial video ads](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Use interstitial banner ads as a fallback for interstitial video ads](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/).
 * [Know your users to serve better targeted ads](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
 * [Use the latest advertising libraries](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
-* [Set the correct COPPA settings for your app](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+* [Set the correct COPPA settings for your app](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/).
 
 
 ## Guidelines for banner ads
@@ -33,7 +33,7 @@ The following sections provide recommendations for how to implement [banner ads]
 
 We recommend that you follow these best practices when you implement banner ads in your app:
 
-* [Use Interactive Advertising Bureau sizes](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes) that fit well with the layout for the device.
+* [Use Interactive Advertising Bureau sizes](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/) that fit well with the layout for the device.
 
 * Devote most of your app's UI to functional controls and content.
 
@@ -70,6 +70,8 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
+
+* Placing ads in a viewbox to reduce the size of the ads in order to allow more ads on a page than normal.
 
 <span id="interstitialbestpractices10" />
 

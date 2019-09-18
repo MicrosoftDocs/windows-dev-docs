@@ -53,9 +53,9 @@ For reference, the following table shows the build numbers for each SDK.
 | October 2018 Update | 1809 | 17763 |
 | May 2019 Update | 1903 | 18362 |
 
-You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/Home/BuildWithWindows) site.
+You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/for-developers/) site.
 
- For more info about Windows 10 updates, see [Windows 10 release information](https://technet.microsoft.com/windows/release-info). For important information about the Windows 10 support lifecycle, see the [Windows lifecycle fact sheet](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ For more info about Windows 10 updates, see [Windows 10 release information](https://www.microsoft.com/itpro/windows-10/release-information). For important information about the Windows 10 support lifecycle, see the [Windows lifecycle fact sheet](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## Perform API checks
 

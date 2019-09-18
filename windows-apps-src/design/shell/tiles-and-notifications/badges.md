@@ -190,7 +190,7 @@ private void clearBadge()
 
 ## Get the sample code
 
-* [Notifications sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Shows how to create live tiles, send badge updates, and display toast notifications. 
+* [Notifications sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Shows how to create live tiles, send badge updates, and display toast notifications. 
 
 ## Related articles
 

@@ -28,7 +28,7 @@ Before we get started with this tutorial, you need to be familiar with these sub
 -   Basic linear algebra and Newtonian physics concepts.
 -   Basic graphics programming terminology.
 -   Basic Windows programming concepts.
--   Basic familiarity with the [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) and [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) APIs.
+-   Basic familiarity with the [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) and [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/how-to-use-direct3d-11) APIs.
 
 ##  Direct3D UWP shooting game sample
 
@@ -57,5 +57,5 @@ The sample demonstrates the game concepts:
 | [Rendering framework II: Game rendering](tutorial-game-rendering.md) | In the second part of the rendering topic, learn how to prepare the data required before rendering occurs. |
 | [Add a user interface](tutorial--adding-a-user-interface.md) | Add simple menu options and heads-up display components, providing feedback to the player. |
 | [Add controls](tutorial--adding-controls.md) | Add move-look controls into the game &mdash; basic touch, mouse, and game controller controls. |
-| [Add sound](tutorial--adding-sound.md) | Learn how to create sounds for the game using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. |
+| [Add sound](tutorial--adding-sound.md) | Learn how to create sounds for the game using [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) APIs. |
 | [Extend the game sample](tutorial-resources.md) | Resources to further your knowledge of DirectX game development, includes using XAML to create overlays. |

@@ -24,11 +24,11 @@ In XAML markup, specifies a **null** value for a property.
 
 The initial default value can vary between dependency properties, and it is not necessarily **null**. Further, many dependency properties will not accept **null** as a value (whether through markup or code) due to their internal implementation. In such cases, setting a XAML attribute value with **{x:Null}** can result in a parser exception.
 
-Some Windows Runtime types are nullable. In cases where a nullable type does not already have **null** as the default, you could use **{x:Null}** in XAML to set to the **null** value. If using Visual C++ component extensions (C++/CX), nullable types are represented as [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). If using Microsoft .NET languages, nullable types are represented as [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
+Some Windows Runtime types are nullable. In cases where a nullable type does not already have **null** as the default, you could use **{x:Null}** in XAML to set to the **null** value. If using Visual C++ component extensions (C++/CX), nullable types are represented as [**Platform::IBox<T>**](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface). If using Microsoft .NET languages, nullable types are represented as [**Nullable<T>**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN).
 
 ## Related topics
 
-* [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
-* [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
+* [**Nullable<T>**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN)
+* [**IReference<T>**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

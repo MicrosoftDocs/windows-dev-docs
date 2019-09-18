@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Starting in Windows 10, version 1607, you can use methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app from the Microsoft Store, and download and install the updated packages. You can also query for packages that you have marked as mandatory in Partner Center and disable functionality in your app until the mandatory update is installed.
 
-Additional [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) methods introduced in Windows 10, version 1803 enable you to download and install package updates silently (without displaying a notification UI to the user), uninstall an [optional package](optional-packages.md), and get info about packages in the download and install queue for your app.
+Additional [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) methods introduced in Windows 10, version 1803 enable you to download and install package updates silently (without displaying a notification UI to the user), uninstall an [optional package](/windows/msix/package/optional-packages), and get info about packages in the download and install queue for your app.
 
 These features help you automatically keep your user base up to date with the latest version of your app, optional packages, and related services in the Store.
 
@@ -20,14 +20,14 @@ These features help you automatically keep your user base up to date with the la
 This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) method to discover all available package updates from the Store and then call the [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) method to download and install the updates. When using this method to download and install updates, the OS displays a dialog that asks the user's permission before downloading the updates.
 
 > [!NOTE]
-> These methods support required and [optional packages](optional-packages.md) for your app. Optional packages are useful for downloadable content (DLC) add-ons, dividing your large app for size constraints, or for shipping additional content separate from your core app. To get permission to submit an app that uses optional packages (including DLC add-ons) to the Store, see [Windows developer support](https://developer.microsoft.com/windows/support).
+> These methods support required and [optional packages](/windows/msix/package/optional-packages) for your app. Optional packages are useful for downloadable content (DLC) add-ons, dividing your large app for size constraints, or for shipping additional content separate from your core app. To get permission to submit an app that uses optional packages (including DLC add-ons) to the Store, see [Windows developer support](https://developer.microsoft.com/windows/support).
 
 This code example assumes:
 
-* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
-* The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.
+* The code runs in the context of a [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page).
+* The **Page** contains a [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar) named ```downloadProgressBar``` to provide status for the download operation.
 * The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 ```csharp
 private StoreContext context = null;
@@ -93,7 +93,7 @@ This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpda
 
 This code example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 > [!NOTE]
 > The **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater**, and **RetryInstallLater** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.
@@ -320,11 +320,11 @@ private void HandleMandatoryPackageError()
 
 ## Uninstall optional packages
 
-Starting in Windows 10, version 1803, you can use the [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) or [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) methods to uninstall an [optional package](optional-packages.md) (including a DLC package) for the current app. For example, if you have an app with content that is installed via optional packages, you might want to provide a UI that enables users to uninstall the optional packages to free up disk space.
+Starting in Windows 10, version 1803, you can use the [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) or [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) methods to uninstall an [optional package](/windows/msix/package/optional-packages) (including a DLC package) for the current app. For example, if you have an app with content that is installed via optional packages, you might want to provide a UI that enables users to uninstall the optional packages to free up disk space.
 
 The following code example demonstrates how to call [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). This example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -367,7 +367,7 @@ Starting in Windows 10, version 1803, you can use the [GetAssociatedStoreQueueIt
 
 The following code example demonstrates how to call [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) to get the list of in-progress package updates for the current app and retrieve status info for each package. This example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 > [!NOTE]
 > The **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI**, and **MarkInstallPausedInUI** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.
@@ -457,4 +457,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## Related topics
 
-* [Optional packages and related set authoring](optional-packages.md)
+* [Optional packages and related set authoring](/windows/msix/package/optional-packages)

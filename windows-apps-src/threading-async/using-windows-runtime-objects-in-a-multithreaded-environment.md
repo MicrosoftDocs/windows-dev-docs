@@ -1,6 +1,6 @@
 ---
 title: Using Windows Runtime objects in a multithreaded environment | Microsoft Docs
-description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.
+description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
@@ -8,13 +8,13 @@ keywords: windows 10, uwp, timer, threads
 ms.localizationpriority: medium
 ---
 # Using Windows Runtime objects in a multithreaded environment
-This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.
+This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
 
 In the .NET Framework, you can access any object from multiple threads by default, without special handling. All you need is a reference to the object. In the Windows Runtime, such objects are called *agile*. Most Windows Runtime classes are agile, but a few classes are not, and even agile classes may require special handling.
 
 Wherever possible, the common language runtime (CLR) treats objects from other sources, such as the Windows Runtime, as if they were .NET Framework objects:
 
-- If the object implements the [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) interface, or has the [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) attribute with [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), the CLR treats it as agile.
+- If the object implements the [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) interface, or has the [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) attribute with [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), the CLR treats it as agile.
 
 - If CLR can marshal a call from the thread where it was made to the threading context of the target object, it does so transparently.
 
@@ -28,7 +28,7 @@ All the types in the component that can be activated are agile by default.
 > [!NOTE]
 >  Agility doesn't imply thread safety. In both the Windows Runtime and the .NET Framework, most classes are not thread safe because thread safety has a performance cost, and most objects are never accessed by multiple threads. It's more efficient to synchronize access to individual objects (or to use thread-safe classes) only as necessary.
 
-When you author a Windows Runtime component, you can override the default. See the [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) interface and the [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) interface.
+When you author a Windows Runtime component, you can override the default. See the [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) interface and the [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) interface.
 
 ## Objects from the Windows Runtime
 Most classes in the Windows Runtime are agile, and the CLR treats them as agile. The documentation for these classes lists "MarshalingBehaviorAttribute(Agile)" among the class attributes. However, the members of some of these agile classes, such as XAML controls, throw exceptions if they aren't called on the UI thread. For example, the following code tries to use a background thread to set a property of the button that was clicked. The button's [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025) property throws an exception.

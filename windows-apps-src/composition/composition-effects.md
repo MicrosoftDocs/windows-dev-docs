@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 ---
 # Composition effects
 
-The [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
+The [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
 
-To support [Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
+To support [Universal Windows Platform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
 
 Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
 
@@ -136,7 +136,7 @@ This quick start tutorial shows you how to make use of some of the basic capabil
 
 ### Installing Visual Studio
 
-- If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+- If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs).
 
 ### Creating a new project
 
@@ -231,8 +231,8 @@ LoadImage(surfaceBrush);
 
 ## More Information
 
-- [Microsoft – Composition GitHub](https://github.com/Microsoft/composition)
-- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [Windows Composition team on Twitter](https://twitter.com/wincomposition)
 - [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Visual Tree Basics](composition-visual-tree.md)

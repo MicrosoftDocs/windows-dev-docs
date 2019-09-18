@@ -1,4 +1,4 @@
-﻿---
+---
 title: Update a live tile from a background task
 description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Use a background task to update your app's live tile with fresh content.
 
@@ -23,7 +23,7 @@ Here's a video that shows how to add live tiles to your apps.
 
 ## Create the background task project  
 
-To enable a live tile for your app, add a new Windows Runtime Component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
+To enable a live tile for your app, add a new Windows Runtime component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
 
 1.  In Solution Explorer, right-click the solution, click **Add**, and then click **New Project**.
 2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Installed &gt; Other Languages &gt; Visual C# &gt; Windows Universal** section.
@@ -33,7 +33,7 @@ To enable a live tile for your app, add a new Windows Runtime Component project 
 ## Implement the background task
 
 
-Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
+Implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
 
 1.  In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.
 2.  In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.
@@ -153,7 +153,7 @@ To set up the package manifest, open it and add a new background task declaratio
 ## Register the background task
 
 
-Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.
+Create a [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to register your task.
 
 > **Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.
  
@@ -250,11 +250,11 @@ To debug the background task, set a breakpoint in the task’s Run method. In th
 ## Related topics
 
 
-* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
-* [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Guidelines and checklist for tiles and badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

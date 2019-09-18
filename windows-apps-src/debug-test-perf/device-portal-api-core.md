@@ -1,4 +1,4 @@
-﻿---
+---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
@@ -1368,7 +1368,7 @@ You can specify the following additional parameters on the request URI:
 | URI parameter | Description |
 | :---          | :--- |
 | autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks. |
-| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
+| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**optional**) The maximum number of dumps to save. |
 | overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached. |
 

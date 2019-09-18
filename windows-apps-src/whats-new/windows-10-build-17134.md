@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # What's New in Windows 10 for developers, build 17134
 
-Windows 10 build 17134 (also known as the April Update or version 1803), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+Windows 10 build 17134 (also known as the April Update or version 1803), in combination with Visual Studio 2019 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 This is a collection of new and improved features and guidance of interest to Windows developers in this release. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 build 17134 API changes](windows-10-build-17134-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
 
@@ -38,7 +38,7 @@ Writing style | We've upgraded and expanded our article on voice and tone, trans
 Feature | Description
  :------ | :------
 Getting started for game development | Interested in developing games for Windows 10? The new [Getting started for game development](../gaming/getting-started.md) page gives you a full overview of what you need to do to get yourself set up, registered, and ready to submit your apps and games.
-Graphics adapters | The following DXGI APIs have been added, which are related to graphics adapter preference and removal: </br> * The [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) interface enables a single method that enumerates graphics adapters based on a given GPU preference. </br> * The [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) function allows a process to indicate that it's resilient to any of its graphics devices being removed. </br> * The [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) enumeration describes the preference of GPU for the app to run on.
+Graphics adapters | The following DXGI APIs have been added, which are related to graphics adapter preference and removal: </br> * The [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) interface enables a single method that enumerates graphics adapters based on a given GPU preference. </br> * The [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) function allows a process to indicate that it's resilient to any of its graphics devices being removed. </br> * The [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) enumeration describes the preference of GPU for the app to run on.
 
 ## Develop Windows apps
 
@@ -98,7 +98,7 @@ Windows Machine Learning allows you to build apps that evaluate pre-trained mach
 
 ### Motion controller tracking
 
-Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
 ### Package a .NET app in Visual Studio
 
@@ -110,7 +110,7 @@ The Xbox Live Creators Program allows developers to quickly publish their UWP ga
 
 ### One Dev Question - Why was Docments and Settings renamed Users?
 
-Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://blogs.msdn.microsoft.com/oldnewthing/)
+Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## Samples

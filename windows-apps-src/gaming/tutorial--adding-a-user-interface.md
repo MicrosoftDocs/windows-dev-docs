@@ -25,7 +25,7 @@ Using Direct2D, add a number of user interface graphics and behaviors to our UWP
 ## The user interface overlay
 
 
-While there are many ways to display text and user interface elements in a DirectX game, we're going to focus on using [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx). We'll also be using [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) for the text elements.
+While there are many ways to display text and user interface elements in a DirectX game, we're going to focus on using [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal). We'll also be using [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) for the text elements.
 
 
 Direct2D is a set of 2D drawing APIs used to draw pixel-based primitives and effects. When starting out with Direct2D, it's best to keep things simple. Complex layouts and interface behaviors need time and planning. If your game requires a complex user interface, like those found in simulation and strategy games, consider using XAML instead.
@@ -47,7 +47,7 @@ The following image shows the in-game heads-up display for the sample. It's simp
 ![a screen shot of the game overlay](images/simple-dx-game-ui-overlay.png)
 
 The overlay consists of the following basic primitives.
-- [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038) text in the upper-right corner that informs the player of 
+- [**DirectWrite**](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) text in the upper-right corner that informs the player of 
     - Successful hits
     - Number of shots the player has made
     - Time remaining in the level
@@ -58,12 +58,12 @@ The overlay consists of the following basic primitives.
 
 The in-game heads-up display state of the overlay is drawn in the [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) method of the [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) class. Within this method, the Direct2D overlay that represents our UI is updated to reflect the changes in the number of hits, time remaining, and level number.
 
-If the game has been initialized, we add `TotalHits()`, `TotalShots()`, and `TimeRemaining()` to a [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) buffer and specify the print format. We can then draw it using the [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848) method. We do the same for the current level indicator, drawing empty numbers to show uncompleted levels like ➀, and filled numbers like ➊ to show that the specific level was completed.
+If the game has been initialized, we add `TotalHits()`, `TotalShots()`, and `TimeRemaining()` to a [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) buffer and specify the print format. We can then draw it using the [**DrawText**](https://docs.microsoft.com/windows/desktop/Direct2D/id2d1rendertarget-drawtext) method. We do the same for the current level indicator, drawing empty numbers to show uncompleted levels like ➀, and filled numbers like ➊ to show that the specific level was completed.
 
 
 The following code snippet walks through the **GameHud::Render** method's process for 
-- Creating a Bitmap using [**ID2D1RenderTarget::DrawBitmap **](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
-- Sectioning off UI areas into rectangles using [**D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
+- Creating a Bitmap using [**ID2D1RenderTarget::DrawBitmap **](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawbitmap(id2d1bitmap_constd2d1_rect_f__float_d2d1_bitmap_interpolation_mode_constd2d1_rect_f_))
+- Sectioning off UI areas into rectangles using [**D2D1::RectF**](https://docs.microsoft.com/windows/desktop/api/dcommon/ns-dcommon-d2d_rect_f)
 - Using **DrawText** to make text elements
 
 ```cpp
@@ -165,7 +165,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 }
 ```
 
-Breaking the method down further, this piece of the [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358) method draws our move and fire rectangles with [**ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902), and crosshairs using two calls to [**ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
+Breaking the method down further, this piece of the [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358) method draws our move and fire rectangles with [**ID2D1RenderTarget::DrawRectangle**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawrectangle(constd2d1_rect_f__id2d1brush_float_id2d1strokestyle)), and crosshairs using two calls to [**ID2D1RenderTarget::DrawLine**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawline).
 
 ```cpp
         // Check if game is playing
@@ -213,7 +213,7 @@ In the **GameHud::Render** method we store the logical size of the game window i
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
- Obtaining the size of the game window is essential for UI programming. The size of the window is given in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, doing so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038), you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
+ Obtaining the size of the game window is essential for UI programming. The size of the window is given in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, doing so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using [**DirectWrite**](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal), you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
 
  
 
@@ -265,11 +265,11 @@ The game sample has four methods that come into play when creating the overlay.
  
 
 #### GameInfoOverlay::GameInfoOverlay
-The [**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78) constructor initializes the overlay, maintaining the bitmap surface that we will use to display info to the player on. The constructor obtains a factory from the [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) that the overlay object itself can draw to. [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+The [**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78) constructor initializes the overlay, maintaining the bitmap surface that we will use to display info to the player on. The constructor obtains a factory from the [**ID2D1Device**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1device) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1devicecontext) that the overlay object itself can draw to. [IDWriteFactory::CreateTextFormat](https://docs.microsoft.com/windows/desktop/api/dwrite/nf-dwrite-idwritefactory-createtextformat) 
 
 
 #### GameInfoOverlay::CreateDeviceDependentResources
-[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain a [**ID2D1DeviceContext2**](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207) to draw the folling UI elements.
+[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain a [**ID2D1DeviceContext2**](https://docs.microsoft.com/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](https://docs.microsoft.com/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush) to draw the folling UI elements.
 - Black brush for rectangle backgrounds
 - White brush for status text
 - Orange brush for action text
@@ -303,9 +303,9 @@ The [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.co
     ```
 
 - A Bitmap is created named `m_levelBitmap`, taking the current DPI into account using **CreateBitmap**.
-- `m_levelBitmap` is set as our 2D render target using [**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533).
-- The Bitmap is cleared with every pixel made black using [**ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772).
-- [**ID2D1RenderTarget::BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768) is called to initiate drawing. 
+- `m_levelBitmap` is set as our 2D render target using [**ID2D1DeviceContext::SetTarget**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget).
+- The Bitmap is cleared with every pixel made black using [**ID2D1RenderTarget::Clear**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear).
+- [**ID2D1RenderTarget::BeginDraw**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) is called to initiate drawing. 
 - **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the approperiate rectangle using the corresponding **ID2D1SolidColorBrush**.
 - [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw) is called to stop all drawing operations on `m_levelBitmap`.
 - Another Bitmap is created using **CreateBitmap** named `m_tooSmallBitmap` to use as a fallback, showing only if the display configuration is too small for the game.

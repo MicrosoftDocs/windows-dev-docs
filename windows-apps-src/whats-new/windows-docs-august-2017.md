@@ -18,7 +18,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows Template Studio
 
-Use the new [Windows Template Studio](https://aka.ms/wtsinstall) extension for Visual Studio 2017 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
+Use the new [Windows Template Studio](https://aka.ms/wtsinstall) extension for Visual Studio 2019 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
 
 ![Windows Template Studio](images/template-studio.png)
 
@@ -28,7 +28,7 @@ You can now preview [conditional XAML](../debug-test-perf/conditional-xaml.md) t
 
 ### Game Mode
 
-The [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
+The [Game Mode](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
 
 ![Game Mode](images/game-mode.png)
 
@@ -41,7 +41,7 @@ The [Microsoft Store submission API](../monetize/create-and-manage-submissions-u
 
 ### Data schemas for Store products
 
-We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace, including [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace, including [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### Desktop Bridge
 
@@ -59,11 +59,11 @@ We've added a new guide to help you [get started with point of service devices](
 
 We've added docs for Xbox Live developers, for both UWP and Xbox Developer Kit (XDK) games.
 
-See the [Xbox Live developer guide](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/) to learn how to use the Xbox Live APIs to connect your game to the Xbox Live social gaming network.
+See the [Xbox Live developer guide](https://docs.microsoft.com//gaming/xbox-live/index) to learn how to use the Xbox Live APIs to connect your game to the Xbox Live social gaming network.
 
-With the [Xbox Live Creators Program](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One.
+With the [Xbox Live Creators Program](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One.
 
-See the [Xbox Live developer program overview](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview) for information about the programs and features available to Xbox Live developers.
+See the [Xbox Live developer program overview](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview) for information about the programs and features available to Xbox Live developers.
 
 ## Videos
 
@@ -73,7 +73,7 @@ A series of new tutorial videos have been released for [Microsoft HoloLens Cours
 
 ### Narrator and Dev Mode
 
-You might already know that you can use [Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started) to test the screen reading experience of your app. But Narrator also features a developer mode, which gives you a good visual representation of the information exposed to it. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode), then learn more about [Narrator developer mode](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode).
+You might already know that you can use [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator) to test the screen reading experience of your app. But Narrator also features a developer mode, which gives you a good visual representation of the information exposed to it. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode), then learn more about [Narrator developer mode](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode).
 
 ### Windows Template Studio
 

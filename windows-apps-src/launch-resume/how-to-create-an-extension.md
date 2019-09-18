@@ -14,7 +14,7 @@ This article shows you how to create a UWP app extension and host it in a UWP ap
 
 This article is accompanied by a code sample:
 - Download and unzip [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
-- In Visual Studio 2017, open MathExtensionSample.sln. Set the build type to x86 (**Build** > **Configuration Manager**, then change **Platform** to **x86** for both projects).
+- In Visual Studio 2019, open MathExtensionSample.sln. Set the build type to x86 (**Build** > **Configuration Manager**, then change **Platform** to **x86** for both projects).
 - Deploy the solution: **Build** > **Deploy Solution**.
 
 ## Introduction to app extensions
@@ -37,7 +37,7 @@ At a high level, to set up an app extension relationship, we need to:
 4. Define how the hosts and its extensions will communicate.
 5. Use the [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) API in the host app to access the extensions.
 
-Let's see how this is done by examining the [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) which implements a hypothetical calculator that you can add new functions to by using extensions. In Microsoft Visual Studio 2017, load **MathExtensionSample.sln** from the code sample.
+Let's see how this is done by examining the [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) which implements a hypothetical calculator that you can add new functions to by using extensions. In Microsoft Visual Studio 2019, load **MathExtensionSample.sln** from the code sample.
 
 ![Math Extension code sample](images/mathextensionhost-calctab.png)
 
@@ -399,7 +399,7 @@ When you build an extension host and are ready to test how well it supports exte
 
 ## How app extensions differ from optional packages
 
-The key differentiator between [optional packages](https://docs.microsoft.com/windows/uwp/packaging/optional-packages) and app extensions are open ecosystem versus closed ecosystem, and dependent package versus independent package.
+The key differentiator between [optional packages](/windows/msix/package/optional-packages) and app extensions are open ecosystem versus closed ecosystem, and dependent package versus independent package.
 
 App extensions participate in an open ecosystem. If your app can host app extensions, anyone can write an extension for your host as long as they comply with your method of passing/receiving information from the extension. This differs from optional packages which participate in a closed ecosystem where the publisher decides who is allowed to make an optional package that can be used with the app.
 

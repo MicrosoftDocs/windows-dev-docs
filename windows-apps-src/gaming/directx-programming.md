@@ -55,7 +55,7 @@ This section provides information about developing UWP games with DirectX.
 </table>
 
 
-For DirectX reference and programming guides, see [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) and [Direct3D 12 Graphics](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).
+For DirectX reference and programming guides, see [Direct3D 11 Graphics](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct3D 12 Graphics](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics).
  
 
 

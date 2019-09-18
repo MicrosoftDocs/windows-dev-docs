@@ -15,14 +15,15 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "xref_query_tags": [ "/uwp/api" ]
     },
     {
       "docset_name": "windows-uwp-hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "hub",
       "locale": "en-us",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -31,7 +32,8 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0
+      "version": 0,
+      "xref_query_tags": [ "/uwp/api" ]
     },
     {
       "docset_name": "windows-uwp",
@@ -47,7 +49,8 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0
+      "version": 0,
+      "xref_query_tags": [ "/uwp/api" ]
     }
   ],
   "notification_subscribers": [],
@@ -56,12 +59,25 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
   "git_repository_branch_open_to_public_contributors": "docs",
   "skip_source_output_uploading": false,
+  "need_preview_pull_request": true,
   "resolve_user_profile_using_github": true,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "samples-xaml-gallery",
+      "url": "https://github.com/microsoft/Xaml-Controls-Gallery",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "snippets-windows",
+      "url": "https://github.com/MicrosoftDocs/windows-code-snippets-pr",
       "branch": "master",
       "branch_mapping": {}
     }

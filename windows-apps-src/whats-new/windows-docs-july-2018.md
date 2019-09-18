@@ -18,7 +18,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Progressive Web Apps on Windows
 
-[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://www.wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![An image of PWAs in action](images/progressive-web-apps.jpg)
 
@@ -44,11 +44,9 @@ The Adobe XD and Adobe Illustrator toolkits have been updated with new features.
 
 ### WebVR
 
-We've added several new topics to the [WebVR documentation](https://docs.microsoft.com/microsoft-edge/webvr/
-):
+We've added several new topics to the [WebVR documentation](https://docs.microsoft.com/microsoft-edge/webvr/):
 
-* [What is WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) Explains what WebVR is, why you should use it, and how to get started developing for it.
+* [What is WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) Explains what WebVR is, why you should use it, and how to get started developing for it.
 
 * [WebVR in Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): Learn how to add WebVR to a Progressive Web App (PWA).
 

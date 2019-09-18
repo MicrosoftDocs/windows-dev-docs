@@ -21,9 +21,9 @@ When you use a Visual Studio template to create your app, a default image is add
 
     The following screen shot shows the "Package.appxmanifest" window in Visual Studio. Depending on the type of project, you will see a slightly different set of visual assets.
 
-    ![a screen shot of the "package.appxmanifest" window in visual studio 2017](images/appmanifest.png)
+    ![a screen shot of the "package.appxmanifest" window in Visual Studio 2019](images/appmanifest.png)
 
-    If you open "Package.appxmanifest" in a text editor, the [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467) appears as a child of the [**VisualElements element**](https://msdn.microsoft.com/library/windows/apps/br211471). The default splash screen markup in the manifest file looks like this in a text editor:
+    If you open "Package.appxmanifest" in a text editor, the [**SplashScreen element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) appears as a child of the [**VisualElements element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements). The default splash screen markup in the manifest file looks like this in a text editor:
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -37,7 +37,7 @@ When you use a Visual Studio template to create your app, a default image is add
 
     **Important**  The splash screen image you choose must be 1152 x 1920 pixels which is the correct size for a 2.4x scaling factor. If this is the only asset you provide then it will be scaled down for 1.4x and 1x scaling factors.
 
-6. In the **Background Color** field of the **Splash Screen** section, set the background color displayed with your splash screen image. You can enter either the name of a color or '\#' and the hex value of a color. For a list of the names of available colors, see [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467). Setting a background color for your splash screen is optional. If you don't specify a color for a UWP app, the splash screen background color defaults to a light gray (hex value \#464646). This is the same color as the default **Tile** background color (see the **Background Color** field of the **Tile Images and Logos** section in the **Visual Assets** tab). If you don't specify a color for a Windows Phone, or set it to "transparent", then the splash screen background color will be transparent.
+6. In the **Background Color** field of the **Splash Screen** section, set the background color displayed with your splash screen image. You can enter either the name of a color or '\#' and the hex value of a color. For a list of the names of available colors, see [**SplashScreen element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen). Setting a background color for your splash screen is optional. If you don't specify a color for a UWP app, the splash screen background color defaults to a light gray (hex value \#464646). This is the same color as the default **Tile** background color (see the **Background Color** field of the **Tile Images and Logos** section in the **Visual Assets** tab). If you don't specify a color for a Windows Phone, or set it to "transparent", then the splash screen background color will be transparent.
 
 ## Summary and next steps
 
@@ -46,5 +46,5 @@ If your app takes a while to load, consider adding an extended splash screen. Fo
 ## Related topics
 
 * [Create a customized splash screen](create-a-customized-splash-screen.md)
-* [Package manifest schema reference: SplashScreen element](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [Windows.ApplicationModel.Activation.SplashScreen class](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Package manifest schema reference: SplashScreen element](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)
+* [Windows.ApplicationModel.Activation.SplashScreen class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)

@@ -6,12 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
 ---
+
 # Handle events by using delegates in C++/WinRT
 
 This topic shows how to register and revoke event-handling delegates using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+## Using Visual Studio 2019 to add an event handler
+
+A convenient way of adding an event handler to your project is by using the XAML Designer user interface (UI) in Visual Studio 2019. With your XAML page open in the XAML Designer, select the control whose event you want to handle. Over in the property page for that control, click on the lightning-bolt icon to list all of the events that are sourced by that control. Then, double-click on the event that you want to handle; for example, *OnClicked*.
+
+The XAML Designer adds the appropriate event handler function prototype (and a stub implementation) to your source files, ready for you to replace with your own implementation.
+
+> [!NOTE]
+> Typically, your event handlers don't need to be described in your Midl file (`.idl`). So, the XAML Designer doesn't add event handler function prototypes to your Midl file. It only adds them your `.h` and `.cpp` files.
 
 ## Register a delegate to handle an event
 
@@ -43,7 +53,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see [If you use a member function as a delegate](weak-references.md#if-you-use-a-member-function-as-a-delegate).
 
 There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
 
@@ -111,7 +121,9 @@ MainPage::MainPage()
 
 ## Revoke a registered delegate
 
-When you register a delegate, typically a token is returned to you. You can subsequently use that token to revoke your delegate; meaning that the delegate is unregistered from the event, and won't be called should the event be raised again. For the sake of simplicity, none of the code examples above showed how to do that. But this next code example stores the token in the struct's private data member, and revokes its handler in the destructor.
+When you register a delegate, typically a token is returned to you. You can subsequently use that token to revoke your delegate; meaning that the delegate is unregistered from the event, and won't be called should the event be raised again.
+
+For the sake of simplicity, none of the code examples above showed how to do that. But this next code example stores the token in the struct's private data member, and revokes its handler in the destructor.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -135,6 +147,9 @@ private:
 ```
 
 Instead of a strong reference, as in the example above, you can store a weak reference to the button (see [Strong and weak references in C++/WinRT](weak-references.md)).
+
+> [!NOTE]
+> When an event source raises its events synchronously, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, or for a robust solution see [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** (which is a value of type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) to request an event revoker (of type [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). The event revoker holds a weak reference to the event source (the object that raises the event) for you. You can manually revoke by calling the **event_revoker::revoke** member function; but the event revoker calls that function itself automatically when it goes out of scope. The **revoke** function checks whether the event source still exists and, if so, revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
 
@@ -171,8 +186,11 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 > [!NOTE]
 > In the code example above, `Button::Click_revoker` is a type alias for `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. A similar pattern applies to all C++/WinRT events. Each Windows Runtime event has a revoke function overload that returns an event revoker, and that revoker's type is a member of the event source. So, to take another example, the [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event has a registration function overload that returns a value of type **CoreWindow::SizeChanged_revoker**.
 
-
 You might consider revoking handlers in a page-navigation scenario. If you're repeatedly navigating into a page and then back out, then you could revoke any handlers when you navigate away from the page. Alternatively, if you're re-using the same page instance, then check the value of your token and only register if it's not yet been set (`if (!m_token){ ... }`). A third option is to store an event revoker in the page as a data member. And a fourth option, as described later in this topic, is to capture a strong or a weak reference to the *this* object in your lambda function.
+
+### If your auto-revoke delegate fails to register
+
+If you try to specify [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) when registering a delegate, and the result is a [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) exception, then that usually means that the event source doesn't support weak references. That's a common situation in the [**Windows.UI.Composition**](/uwp/api/windows.ui.composition) namespace, for example. In this situation, you can't use the auto-revoke feature. You'll have to fall back to manually revoking your event handlers.
 
 ## Delegate types for asynchronous actions and operations
 

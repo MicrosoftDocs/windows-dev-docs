@@ -1,7 +1,7 @@
 ---
 description: Use this method in the Microsoft Store analytics API to get acquisition data for an add-on subscription during a given date range and other optional filters.
 title: Get subscription add-on acquisitions
-ms.date: 01/25/18
+ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, subscriptions
 ---

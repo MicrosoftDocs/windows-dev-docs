@@ -25,7 +25,7 @@ Steps to get into developing games right away.
 
 Make sure you have Windows 10 installed on your device and have the latest updates installed.
 
-Install a suitable IDE like Visual Studio. Visual Studio Community 2017 is available for free download. For more information, see [Visual Studio downloads](https://www.visualstudio.com/downloads/).
+Install a suitable IDE like Visual Studio. Visual Studio Community 2017 is available for free download. For more information, see [Visual Studio downloads](https://visualstudio.microsoft.com/downloads/).
 
 If you plan to use a game engine and other middleware, see [Bridges, game engines, and middleware](e2e.md#bridges-game-engines-and-middleware) section in the [Windows 10 game development guide](e2e.md). For information about developing Windows and Xbox games using a specific game engine, you'll need to go to the game engine's documentation.
 
@@ -48,7 +48,7 @@ For more samples, see [Game samples](e2e.md#game-samples).
 
 If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or [ID@Xbox](https://www.xbox.com/Developers/id) program. 
 
-To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table). For more information, see [Developer programs](e2e.md#developer-programs).
+To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table). For more information, see [Developer programs](e2e.md#developer-programs).
 
 > [!Note]
 > Xbox Live Creators Program is available to all developers. **Anyone** can publish an Xbox game. To make your title part of the Xbox Live Creators Program, you simply have to enable this option from Partner Center. For more information about signing up for a Partner Center account, see [Step 5](#step-5-sign-up-for-a-partner-center-account) below.

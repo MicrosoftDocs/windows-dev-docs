@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Offer consumable in-app products—items that can be purchased, used, and purchased again—through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.
 
 > [!IMPORTANT]
-> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to enable consumable in-app product purchases. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about enabling consumable in-app product purchases using the **Windows.Services.Store** namespace, see [this article](enable-consumable-add-on-purchases.md).
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to enable consumable in-app product purchases. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about enabling consumable in-app product purchases using the **Windows.Services.Store** namespace, see [this article](enable-consumable-add-on-purchases.md).
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ When granting your customer access to the consumable in-app product, it's import
 > [!IMPORTANT]
 > Your app is responsible for the accurately reporting fulfillment to the Store. This step is essential to maintaining a fair and reliable purchase experience for your customers.
 
-The following example demonstrates use of the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) properties from the [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) call in the previous step to identify the purchased product for fulfillment. A collection is used to store the product information in a location that can later be referenced to confirm that local fulfillment was successful.
+The following example demonstrates use of the [PurchaseResults](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) properties from the [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) call in the previous step to identify the purchased product for fulfillment. A collection is used to store the product information in a location that can later be referenced to confirm that local fulfillment was successful.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
@@ -74,7 +74,7 @@ The following example demonstrates how [GetUnfulfilledConsumablesAsync](https://
 
 * [Enable in-app product purchases](enable-in-app-product-purchases.md)
 * [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/br225197)
+* [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)
  
 
  

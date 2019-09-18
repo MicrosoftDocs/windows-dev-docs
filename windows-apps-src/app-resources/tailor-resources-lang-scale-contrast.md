@@ -55,7 +55,7 @@ The file whose name contains the qualifier most appropriate for the setting is t
 
 ## Reference a string or image resource by name
 
-See [Refer to a string resource identifier from XAML markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+See [Refer to a string resource identifier from XAML markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml), [Refer to a string resource identifier from code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
@@ -108,7 +108,7 @@ Depending on the tools and workflow you use for asset-creation, or on what you f
 
 ## AlternateForm
 
-The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)).
+The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Either your target system or your app must provide a value against which `alternateform` qualifiers are matched. Do not use the `msft-` prefix for your own custom `alternateform` qualifier values.
 
@@ -244,7 +244,7 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 
 ## TargetSize
 
-The `targetsize` qualifier is primarily used to specify [file type association icons](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427) or [protocol icons](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
+The `targetsize` qualifier is primarily used to specify [file type association icons](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) or [protocol icons](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
@@ -278,7 +278,7 @@ For backwards compatibility, Windows includes logic to detect a monochromatic ic
 
 * [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Resource Management System](resource-management-system.md)
-* [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localize your UI strings](localize-strings-ui-manifest.md)

@@ -16,7 +16,7 @@ Starting with the Creators Update, you can use Device Portal to host your app's 
 ## Create a new UWP app project
 In this guide, we'll create everything in one solution for simplicity.
 
-In Microsoft Visual Studio 2017, create a new UWP app project. Go to File > New Project and select Templates > Visual C# > Windows Universal > Blank app (Windows Universal). Name it "DevicePortalProvider". This will be the app that contains the app service. Ensure that you choose the Creators Update SDK to support.  You may need to update Visual Studio or install the new SDK - see [here](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/) for details. 
+In Microsoft Visual Studio 2019, create a new UWP app project. Go to File > New > Project and select Blank App (Windows Universal) for C#, and then click Next. In the Configure your new project dialog box. Name the project "DevicePortalProvider" and then click Create. This will be the app that contains the app service. Ensure that you choose "Windows 10 Creators Update (10.0; Build 15063)" to support.  You may need to update Visual Studio or install the new SDK - see [here](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/) for details. 
 
 ## Add the devicePortalProvider extension to your package.appxmanifest file
 You will need to add some code to your *package.appxmanifest* file in order to make your app functional as a Device Portal plugin. First, add the following namespace definitions at the top of the file. Also add them to the `IgnorableNamespaces` attribute.
@@ -69,7 +69,7 @@ Two new capabilities are required for this functionality. they must also be adde
 ```
 
 > [!NOTE]
-> The capability "devicePortalProvider" is restricted ("rescap"), which means you must get prior approval from the Store before your app can be published there. However, this does not prevent you from testing your app locally through sideloading. For more information about restricted capabilities, see [App capability declarations](https://msdn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities).
+> The capability "devicePortalProvider" is restricted ("rescap"), which means you must get prior approval from the Store before your app can be published there. However, this does not prevent you from testing your app locally through sideloading. For more information about restricted capabilities, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ## Set up your background task and WinRT Component
 In order to set up the Device Portal connection, your app must hook up an app service connection from the Device Portal service with the instance of Device Portal running within your app. To do this, add a new WinRT Component to your application with a class that implements [**IBackgroundTask**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.ibackgroundtask).

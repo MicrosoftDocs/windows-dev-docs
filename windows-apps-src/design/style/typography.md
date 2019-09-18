@@ -19,16 +19,16 @@ You should use one font throughout your app's UI, and we recommend sticking with
 
 ![Sample text of Segoe UI font](images/type/segoe-sample.svg)
 
-To display non-English languages or to select a different font for your app, please see [Languages](#Languages) and [Fonts](#Fonts) for our recommended fonts for UWP apps.
+To display non-English languages or to select a different font for your app, please see [Languages](#languages) and [Fonts](#fonts) for our recommended fonts for UWP apps.
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![do](images/do.svg)
+Pick one font for your UI.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![don't](images/dont.svg)
+Don't mix multiple fonts.
     :::column-end:::
 :::row-end:::
 
@@ -42,12 +42,12 @@ Because of how the scaling system works, you're designing in effective pixels, n
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![do](images/do.svg)
+Follow the UWP [type ramp](#type-ramp) sizing.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![don't](images/dont.svg)
+Use a font size smaller than 12 px.
     :::column-end:::
 :::row-end:::
 
@@ -55,10 +55,10 @@ Because of how the scaling system works, you're designing in effective pixels, n
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![text block styles](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -72,10 +72,10 @@ The UWP type ramp establishes crucial relationships between the type styles on a
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![text block styles](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -91,16 +91,16 @@ The UWP type ramp establishes crucial relationships between the type styles on a
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![do](images/do.svg)
+Use "Body" for most text.
 
-        Use "Base" for titles when space is constrained.
+Use "Base" for titles when space is constrained.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![don't](images/dont.svg)
+Use "Caption" for primary action or any long strings.
 
-        Use "Header" or "Subheader" if text needs to wrap.
+Use "Header" or "Subheader" if text needs to wrap.
     :::column-end:::
 :::row-end:::
 
@@ -118,12 +118,12 @@ The default [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.t
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![do](images/do.svg)
+Keep to 50–60 letters per line for ease of reading.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![don't](images/dont.svg)
+Less than 20 characters or more than 60 characters per line is difficult to read.
     :::column-end:::
 :::row-end:::
 
@@ -139,12 +139,12 @@ When the amount of text extends beyond the space available, we recommend clippin
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![do](images/do.svg)
+Clip text, and wrap if multiple lines are enabled.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![don't](images/dont.svg)
+Use ellipses to avoid visual clutter.
     :::column-end:::
 :::row-end:::
 

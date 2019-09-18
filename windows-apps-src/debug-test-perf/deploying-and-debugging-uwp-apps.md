@@ -2,7 +2,7 @@
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: This article guides you through the steps to target various deployment and debugging targets.
 title: Deploying and debugging Universal Windows Platform (UWP) apps
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, debug, test, performance
 ms.localizationpriority: medium
@@ -36,7 +36,7 @@ In addition, any installed app package can be attached and debugged by selecting
 
 Selecting **Do not launch, but debug my code when it starts** will cause the Visual Studio debugger to attach to your UWP app when you launch it at a custom time. This is an effective way to debug control paths from [different launch methods](../xbox-apps/automate-launching-uwp-apps.md), such as protocol activation with custom parameters.  
 
-UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://www.visualstudio.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
+UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
 
 ## Package layout
 
@@ -87,16 +87,16 @@ To deploy to a pre-Creators Update remote PC, the target PC must have the Visual
 
 To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
-To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
+To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
-For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
+For more information, see the [Visual studio Download Center](https://visualstudio.microsoft.com/downloads/) page.
 
 ## Passing command line debug arguments
 
-In Visual Studio 2017, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
+In Visual Studio 2019, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
 
 > [!NOTE]
-> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions of Visual Studio 2017. Command line debug arguments are available for all deployment types except for the Simulator.
+> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions. Command line debug arguments are available for all deployment types except for the Simulator.
 
 For C# and VB UWP projects, you will see a **Command line arguments:** field under **Start options**.
 
@@ -174,7 +174,7 @@ For help with this, see the following examples:
   - **Layout folder path** = `\\NETWORK-SHARE\Layouts\App1`
   - **Package registration path** = `\\NETWORK-SHARE\Layouts\App1`
 
-When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command.
+When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command.
 
 You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device.
 
@@ -187,7 +187,7 @@ On the remote device, the layout gets registered to the following default locati
 
 ## Debugging options
 
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
+On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
 
 Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package** by selecting the **Activate app with Prelaunch** check box). For more information, see [Debug UWP Prelaunch](https://go.microsoft.com/fwlink/p/?LinkId=717245).
 
@@ -224,7 +224,7 @@ To load symbols in a debugging session with [WinDbg](#windbg), set the **sympath
 .reload
 ```
 
-You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://msdn.microsoft.com/library/windows/hardware/ff553493).
+You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## WinDbg
 
@@ -244,7 +244,7 @@ One of the most popular commands in WinDbg is `!analyze -v`, which is used to re
 - EXCEPTION_RECORD: address, code, and flags of the current exception
 - STACK_TEXT: stack trace prior to exception
 
-For a complete list of all WinDbg commands, see [Debugger Commands](https://msdn.microsoft.com/library/ff540507).
+For a complete list of all WinDbg commands, see [Debugger Commands](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
 
 ## Related topics
 

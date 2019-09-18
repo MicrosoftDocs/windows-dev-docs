@@ -42,7 +42,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
     <br/>
     <a href="best-practices-for-ads-in-apps.md">Best practices</a>
     <br/>
-    <a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt691884.aspx">API reference</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API reference</a>
     </td>
 </tr>
 </tbody>

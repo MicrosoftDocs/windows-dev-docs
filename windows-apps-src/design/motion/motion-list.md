@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
 
-> **Important APIs**: [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **Important APIs**: [**AddDeleteThemeTransition class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## Do's and don'ts
@@ -32,10 +32,10 @@ List animations let you insert or remove single or multiple items from a collect
 
 ## Related articles
 
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating list additions and deletions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
+* [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animating list additions and deletions](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [Quickstart: Animating your UI using library animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**AddDeleteThemeTransition class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
 

@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, C++/CX
 ms.localizationpriority: medium
 ---
+
 # Interop between C++/WinRT and C++/CX
 
 Strategies for gradually porting the code in your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) are discussed in [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md).
@@ -13,7 +14,7 @@ Strategies for gradually porting the code in your [C++/CX](/cpp/cppcx/visual-c-l
 This topic shows two helper functions that you can use to convert between C++/CX and C++/WinRT objects within the same project. You can use them to interop between code that uses the two language projections, or you can use the functions as you port your code from C++/CX to C++/WinRT.
 
 ## from_cx and to_cx functions
-The helper function below converts a C++/CX object to an equivalent C++/WinRT object. The function casts a C++/CX object to its underlying [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) interface pointer. It then calls [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) on that pointer to query for the default interface of the C++/WinRT object. **QueryInterface** is the Windows Runtime application binary interface (ABI) equivalent of the C++/CX safe_cast extension. And, the [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) function retrieves the address of a C++/WinRT object's underlying **IUnknown** interface pointer so that it can be set to another value.
+The helper function below converts a C++/CX object to an equivalent C++/WinRT object. The function casts a C++/CX object to its underlying [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface pointer. It then calls [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) on that pointer to query for the default interface of the C++/WinRT object. **QueryInterface** is the Windows Runtime application binary interface (ABI) equivalent of the C++/CX safe_cast extension. And, the [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) function retrieves the address of a C++/WinRT object's underlying **IUnknown** interface pointer so that it can be set to another value.
 
 ```cppwinrt
 template <typename T>
@@ -48,6 +49,8 @@ This example project also illustrates how you can use namespace aliases for the 
 - Create a **Visual C++** \> **Windows Universal** > **Core App (C++/WinRT)** project.
 - In project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**. This turns on project support for C++/CX.
 - Replace the contents of `App.cpp` with the code listing below.
+
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 // App.cpp
@@ -247,8 +250,8 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## Important APIs
-* [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface function](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [IUnknown interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [QueryInterface function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 

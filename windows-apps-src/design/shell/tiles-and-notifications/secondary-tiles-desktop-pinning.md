@@ -28,7 +28,7 @@ If you have not packaged your app with the Desktop Bridge, [you must do so first
 
 ## Enable access to IInitializeWithWindow interface
 
-If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
+If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
 
 ```csharp
 [ComImport]
@@ -60,7 +60,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## Assign the window handle
 
-This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object. Then, call the [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
+This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
 
 ```csharp
 // Assign the window handle

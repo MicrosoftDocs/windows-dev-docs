@@ -56,7 +56,7 @@ using namespace Microsoft::WRL;
 
 ## Step 4: Implement the activator
 
-You must impelment a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
+You must implement a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
 
 Implement the **INotificationActivationCallback** interface as seen below, including a UUID, and also call **CoCreatableClass** to flag your class as COM creatable. For your UUID, create a unique GUID using one of the many online GUID generators. This GUID CLSID (class identifier) is how Action Center knows what class to COM activate.
 

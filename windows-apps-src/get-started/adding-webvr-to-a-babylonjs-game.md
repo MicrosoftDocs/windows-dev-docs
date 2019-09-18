@@ -17,7 +17,7 @@ We'll add WebVR support to the game shown here. Go ahead and plug in an Xbox con
 </iframe>
 
 This is a 3D game that works well on a flat screen, but what about in VR?
-In this tutorial, we'll walk through the few steps it takes to get this up and running with WebVR. We’ll use a [Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality) headset that can tap into the added support for WebVR in Microsoft Edge. After we apply these changes to the game, you can expect it also to work in other browser/headset combinations that support WebVR.
+In this tutorial, we'll walk through the few steps it takes to get this up and running with WebVR. We’ll use a [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) headset that can tap into the added support for WebVR in Microsoft Edge. After we apply these changes to the game, you can expect it also to work in other browser/headset combinations that support WebVR.
 
 
 
@@ -127,12 +127,12 @@ With the info stored in the `headset` variable, we'll now be able to choose the 
 
 ## Creating and selecting the initial camera
 
-With Babylon.js, WebVR can be added quickly by using the [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera). This camera can take keyboard input and enables you to use a VR headset to control your "head" rotation.
+With Babylon.js, WebVR can be added quickly by using the [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera). This camera can take keyboard input and enables you to use a VR headset to control your "head" rotation.
 
 
 ### Step 1: Checking for headsets
 
-For our fallback camera, we'll be using the [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera) that’s currently used in the original game.
+For our fallback camera, we'll be using the [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera) that’s currently used in the original game.
 
 We'll check our `headset` variable to determine whether we can use the `WebVRFreeCamera` camera.
 

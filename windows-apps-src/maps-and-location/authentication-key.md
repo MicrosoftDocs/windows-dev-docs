@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 
 
-Your [Universal Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) must be authenticated before it can use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
+Your [Universal Windows app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) must be authenticated before it can use the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services in the [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
 
 **Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
 
@@ -42,7 +42,7 @@ To create a new key
     -   **Application name:** The name of your application.
     -   **Application URL (optional):** The URL of your application.
     -   **Key type:** Select **Basic** or **Enterprise**.
-    -   **Application type:** Select **Universal Windows App** for use in your Universal Windows app.
+    -   **Application type:** Select **Windows Application** for use in your Universal Windows app.
 
     This is an example of what the form looks like.
 
@@ -53,11 +53,11 @@ To create a new key
 ## Add the key to your app
 
 
-The map authentication key is required to use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)) in your Universal Windows app. Add it to the map control and map service objects, as applicable.
+The map authentication key is required to use the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services ([**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)) in your Universal Windows app. Add it to the map control and map service objects, as applicable.
 
 ### To add the key to a map control
 
-To authenticate the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), set the [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) property to the authentication key value. You can set this property in code or in XAML markup, depending on your preferences. For more info about using the **MapControl**, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
+To authenticate the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), set the [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) property to the authentication key value. You can set this property in code or in XAML markup, depending on your preferences. For more info about using the **MapControl**, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 -   This example sets the **MapServiceToken** to the value of the authentication key in code.
 
@@ -73,7 +73,7 @@ To authenticate the [**MapControl**](https://msdn.microsoft.com/library/windows/
 
 ### To add the key to map services
 
-To use services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace, set the [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) property to the authentication key value. For more info about using map services, see [Display routes and directions](routes-and-directions.md) and [Perform geocoding and reverse geocoding](geocoding.md).
+To use services in the [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) namespace, set the [**ServiceToken**](https://docs.microsoft.com/uwp/api/windows.services.maps.mapservice.servicetoken) property to the authentication key value. For more info about using map services, see [Display routes and directions](routes-and-directions.md) and [Perform geocoding and reverse geocoding](geocoding.md).
 
 -   This example sets the **ServiceToken** to the value of the authentication key in code.
 
@@ -85,6 +85,6 @@ To use services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/li
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)

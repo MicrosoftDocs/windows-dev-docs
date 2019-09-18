@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # App management and services
 
-You can manage and view details related to each of your apps in [Partner Center](https://partner.microsoft.com/dashboard/), and configure services such as notifications, A/B testing, and maps.
+You can manage and view details related to each of your apps in [Partner Center](https://partner.microsoft.com/dashboard), and configure services such as notifications, A/B testing, and maps.
 
 When working with an app in Partner Center, you'll see sections in the left navigation menu for **Services** and **App management**. You can expand these sections to access the functionality described below.
 
@@ -19,7 +19,7 @@ The **Services** section lets you manage several different services for your app
 
 ## Xbox Live
 
-If you are publishing a game, you can enable the [Xbox Live Creators Program](https://xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
+If you are publishing a game, you can enable the [Xbox Live Creators Program](https://www.xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
 
 For more info, see [Get started with the Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) and [Create a new Xbox Live Creators Program title and publish to the test environment](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
@@ -45,7 +45,7 @@ For more info, see [Manage product entitlements from a service](../monetize/view
 
 If your product integrates with Azure AD and calls APIs that request either [application permissions or delegated permissions](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) that require administrator consent, enter your Azure AD Client ID here. This lets administrators who acquire the app for their organization grant consent for your product to act on behalf of all users in the tenant.
 
-For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
+For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant).
 
 ## App management
 

@@ -1,7 +1,7 @@
 ---
 title: Use a MongoDB database in a UWP app
 description: Use a MongoDB database in a UWP app.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MongoDB, database
 ms.localizationpriority: medium

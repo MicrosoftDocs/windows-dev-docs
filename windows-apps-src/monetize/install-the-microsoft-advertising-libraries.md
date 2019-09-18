@@ -60,7 +60,7 @@ To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
 5. In the search box, type **Microsoft.Advertising.XAML** (for a XAML project) or **Microsoft.Advertising.JS** (for a JavaScript/HTML project) and install the corresponding package. When the package is done installing, save your solution.
     > [!NOTE]
-    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the `repositoryPath` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the `repositoryPath` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
 
 6. Close your solution and then reopen it.
 

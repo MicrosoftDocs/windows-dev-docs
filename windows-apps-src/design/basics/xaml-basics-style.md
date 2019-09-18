@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 This tutorial shows you how to customize the UI of our XAML app. Warning: this tutorial might or might not involve a unicorn. (It does!)  
 
 ## Prerequisites
-* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2019.
 
 The PhotoLab app has two primary pages:
 
@@ -50,7 +50,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 2. In the Solution Explorer panel, double-click **DetailPage.xaml** to open it. 
 
-    ![The DetailPage.xaml file in the Visual Studio 2017 solution explorer.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![The DetailPage.xaml file in the Visual Studio 2019 solution explorer.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Use a Polygon element to create a background shape for the exposure slider.
 
@@ -59,7 +59,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
     <!-- TODO reduce size -->
     ![A unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article tells you everything you need to know about XAML shapes. 
+    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) article tells you everything you need to know about XAML shapes. 
     
     We want to create a triangle-looking widget--something like the shape you'd see on a stereo's volume control.
     
@@ -176,7 +176,7 @@ Congratulations, you've completed part 1! If you got stuck or want to see the fi
 
 One of the advantages of XAML styles is that it can dramatically cut down the amount of code you have to write, and it can make it much, much easier to update the look of your app.
 
-To define a style, you add a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
+To define a style, you add a [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
 
 You can create named styles and general styles. A named style must be explicitly applied to specific controls; a general style is applied to any control that matches the specified **TargetType**. 
 

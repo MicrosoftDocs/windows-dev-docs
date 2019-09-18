@@ -48,7 +48,7 @@ To fully understand this topic, the following will be helpful...
 > Unlike Windows 8/8.1, you no longer need to declare in your app's manifest that your app is capable of showing toast notifications. All apps are capable of sending and displaying toast notifications.
 
 > [!NOTE]
-> **Windows 8/8.1 apps**: Please use the [archived documentation](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
+> **Windows 8/8.1 apps**: Please use the [archived documentation](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
 ## Install NuGet packages
@@ -232,7 +232,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 If you want to programmatically remove or replace the notification you send, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to remove or replace the notification.
 
-To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
@@ -264,10 +264,10 @@ Here's an example of what a messaging app should do…
 3. The app opens the conversation and then clears all toasts for that conversation (by using [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) on the app-supplied group for that conversation)
 4. User's Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.
 
-To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
-## Handling activation
+## Activation handling
 
 In Windows 10, when the user clicks on your toast, you can have the toast activate your app in two different ways...
 
@@ -495,7 +495,7 @@ var toast = new ToastNotification(toastXml);
 
 ## Resources
 
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
+* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Toast content documentation](adaptive-interactive-toasts.md)
 * [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

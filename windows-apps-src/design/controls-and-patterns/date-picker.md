@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
 
-> **Important APIs**: [DatePicker class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [Date property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+> **Important APIs**: [DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Date property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 
 ## Is this the right control?
@@ -53,7 +53,7 @@ The entry point displays the chosen date, and when the user selects the entry po
 This example shows how to create a simple date picker with a header.
 
 ```xaml
-<DatePicker x:Name=birthDatePicker Header="Date of birth"/>
+<DatePicker x:Name="birthDatePicker" Header="Date of birth"/>
 ```
 
 ```csharp

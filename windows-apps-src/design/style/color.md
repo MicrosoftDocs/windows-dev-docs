@@ -1,7 +1,7 @@
 ---
 description: Learn how to use accent colors and themes in your UWP apps.
 title: Color in UWP apps
-ms.date: 04/7/2018
+ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
@@ -12,31 +12,31 @@ ms.custom: RS5
 
 ![hero image](images/header-color.svg)
 
-Color provides an intuitive way of communicating information to users in your app: it can be used to indicate interactivity, give feedback to user actions, and give your interface a sense of visual continuity. 
+Color provides an intuitive way of communicating information to users in your app: it can be used to indicate interactivity, give feedback to user actions, and give your interface a sense of visual continuity.
 
-In UWP apps, colors are primarily determined by accent color and theme. In this article, we'll discuss how you can use color in your app, and how to use accent color and theme resources to make your UWP app usable in any theme context. 
+In UWP apps, colors are primarily determined by accent color and theme. In this article, we'll discuss how you can use color in your app, and how to use accent color and theme resources to make your UWP app usable in any theme context.
 
 ## Color principles
 
 :::row:::
     :::column:::
-        **Use color meaningfully.**
-        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
+**Use color meaningfully.**
+When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
     :::column-end:::
     :::column:::
-        **Use color to indicate interactivity.**
-        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
+**Use color to indicate interactivity.**
+It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Color is personal.**
-        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
+**Color is personal.**
+In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
     :::column-end:::
     :::column:::
-        **Color is cultural.**
-        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
+**Color is cultural.**
+Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
     :::column-end:::
 :::row-end:::
 
@@ -52,7 +52,7 @@ UWP apps can use a light or dark application theme. The theme affects the colors
 
 ![dark theme](images/color/dark-theme.svg)
 
-By default, your UWP app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on XBox). However, you can set the theme for your UWP app. 
+By default, your UWP app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on XBox). However, you can set the theme for your UWP app.
 
 ### Changing the theme
 
@@ -99,12 +99,12 @@ The theme brushes are used for the following purposes:
 
 :::row:::
     :::column:::
-        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
+When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
-        For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
     :::column:::
-         ![double line list item with icon example](images/color/list-view.svg)
+ ![double line list item with icon example](images/color/list-view.svg)
     :::column-end:::
 :::row-end:::
 
@@ -138,12 +138,12 @@ Common controls use an accent color to convey state information. By default, the
 
 :::row:::
     :::column:::
-        ![user-selected accent header](images/color/user-accent.svg)
-        ![user-selected accent color](images/color/user-selected-accent.svg)
+![user-selected accent header](images/color/user-accent.svg)
+![user-selected accent color](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![custom accent header](images/color/custom-accent.svg)
-        ![custom brand accent color](images/color/brand-color.svg)
+![custom accent header](images/color/custom-accent.svg)
+![custom brand accent color](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -249,22 +249,22 @@ For more information on how to use brushes, see [XAML brushes](brushes.md).
 
 ## Scoping system colors
 
-In addition to defining your own colors in your app, you can also scope our systematized colors to desired regions throughout your app by using the **ColorSchemeResources** tag. This API allows you to not only colorize and theme large groups of controls at once by setting a few properties, but also gives you many other system benefits that you wouldn't normally get with defining your own custom colors manually:
+In addition to defining your own colors in your app, you can also scope our systematized colors to desired regions throughout your app by using the **ColorPaletteResources** tag. This API allows you to not only colorize and theme large groups of controls at once by setting a few properties, but also gives you many other system benefits that you wouldn't normally get with defining your own custom colors manually:
 
-- Any color set using **ColorSchemeResources** will not effect High Contrast
+- Any color set using **ColorPaletteResources** will not effect High Contrast
   * Meaning your app will be accessible to more people without any additional design or dev cost
 - Can easily set colors to Light, Dark or pervasive across both themes by setting one property on the API
-- Colors set on **ColorSchemeResources** will cascade down to all similar controls that also use that system color
+- Colors set on **ColorPaletteResources** will cascade down to all similar controls that also use that system color
   * This ensures that you will have a consistent color story across your app while maintaining the look of your brand
 - Effects all visual states, animations and opacity variations without needing to re-template
 
-### How to use ColorSchemeResources
+### How to use ColorPaletteResources
 
-ColorSchemeResources is an API that tells the system what resources are being scoped where. ColorSchemeResources must take an [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), that can be one of three choices:
+ColorPaletteResources is an API that tells the system what resources are being scoped where. ColorPaletteResources must take an [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), that can be one of three choices:
 - Default
   * Will show your color changes in both [Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) and [Dark](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme) theme
 - Light
-  * Will show your color changes only in [Light theme](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
+  * Will show your color changes only in [Light theme](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)
 - Dark
   * Will show your color changes only in [Dark theme](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
 
@@ -272,16 +272,16 @@ Setting that x:Key will ensure that your colors change appropriately to the syst
 
 ### How to apply scoped colors
 
-Scoping resources through the **ColorSchemeResources** API in XAML allows you to take any system color or brush that's in our [theme resources](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) library and redefine them within the scope of a page or container.
+Scoping resources through the **ColorPaletteResources** API in XAML allows you to take any system color or brush that's in our [theme resources](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) library and redefine them within the scope of a page or container.
 
-For example, if you defined two system colors - **SystemBaseLowColor** and **SystemBaseMediumLowColor** inside a grid, and then placed two buttons on your page: one inside that grid, and one outside:
+For example, if you defined two system colors - **BaseLow** and **BaseMediumLow** inside a grid, and then placed two buttons on your page: one inside that grid, and one outside:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Grid.Resources>
-        <ColorSchemeResources x:Key="Default" 
-        SystemBaseLowColor="LightGreen" 
-        SystemBaseMediumLowColor="DarkCyan"/>
+        <ColorPaletteResources x:Key="Default"
+        BaseLow="LightGreen"
+        BaseMediumLow="DarkCyan"/>
     </Grid.Resources>
 
     <Buton Content="Button_A"/>
@@ -293,16 +293,16 @@ You would get **Button_A** with the applied new colors, and **Button_B** would r
 
 ![scoped system colors on button](images/color/scopedcolors_cyan_button.png)
 
-However, since all our system colors cascade down to other controls too, setting **SystemBaseLowColor** and **SystemBaseMediumLowColor** will affect more than just buttons. In this case, controls like **ToggleButton**, **RadioButton** and **Slider** will also be effected by these system color changes, should those controls be put in above exampl grid's scope.
-If you wish to scope a system color change *to a single controls only* you can do so by defining **ColorSchemeResources** within that control's resources:
+However, since all our system colors cascade down to other controls too, setting **BaseLow** and **BaseMediumLow** will affect more than just buttons. In this case, controls like **ToggleButton**, **RadioButton** and **Slider** will also be effected by these system color changes, should those controls be put in above example grid's scope.
+If you wish to scope a system color change *to a single controls only* you can do so by defining **ColorPaletteResources** within that control's resources:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Button Content="Button_A">
         <Button.Resources>
-            <ColorSchemeResources x:Key="Default" 
-                SystemBaseLowColor="LightGreen" 
-                SystemBaseMediumLowColor="DarkCyan"/>
+            <ColorPaletteResources x:Key="Default"
+                BaseLow="LightGreen"
+                BaseMediumLow="DarkCyan"/>
         </Button.Resources>
     </Button>
 </Grid>
@@ -312,22 +312,22 @@ You essentially have the exact same thing as before, but now any other controls 
 
 ### Nesting scoped resources
 
-Nesting system colors is also possible, and is done so by placing **ColorSchemeResources** in the nested elements' resources within the markup of your app layout:
+Nesting system colors is also possible, and is done so by placing **ColorPaletteResources** in the nested elements' resources within the markup of your app layout:
 
 ```xaml
 <Grid x:Name="Grid_A">
     <Grid.Resources>
-        <ColorSchemeResources x:Key="Default"
-            SystemBaseLowColor="LightGreen"
-            SystemBaseMediumLowColor="DarkCyan"/>
+        <ColorPaletteResources x:Key="Default"
+            BaseLow="LightGreen"
+            BaseMediumLow="DarkCyan"/>
     </Grid.Resources>
 
     <Button Content="Button_A"/>
     <Grid x:Name="Grid_B">
         <Grid.Resources>
-            <ColorSchemeResources x:Key="Default"
-                SystemBaseLowColor="Goldenrod"
-                SystemBaseMediumLowColor="DarkGoldenrod"/>
+            <ColorPaletteResources x:Key="Default"
+                BaseLow="Goldenrod"
+                BaseMediumLow="DarkGoldenrod"/>
         </Grid.Resources>
 
         <Button Content="Nested Button"/>
@@ -349,19 +349,19 @@ First, you would create a ResourceDictionary. Then place the **ColorPaletteResou
 
 ```xaml
 <ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TestApp">
 
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
             <ResourceDictionary.MergedDictionaries>
-            
+
                 <ColorPaletteResources x:Key="Default"
-                    Accent="#FF0073CF" 
-                    AltHigh="#FF000000" 
+                    Accent="#FF0073CF"
+                    AltHigh="#FF000000"
                     AltLow="#FF000000"/>
-                    
+
             </ResourceDictionary>
         </ResourceDictionary.MergedDictionaries>        
     </ResourceDictionary.ThemeDictionaries>
@@ -381,7 +381,7 @@ On the page containing your layout, simply merge that dictionary in at the scope
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
     </Grid.Resources>
-             
+
     <Button Content="Button_A"/>
 </Grid>
 ```
@@ -390,48 +390,48 @@ Now, all resources, theming, and custom colors can be placed in a single **MyCus
 
 ### Other ways to define color resources
 
-ColorSchemeResources also allows for system colors to be placed and defining directly within it as a wrapper, rather than in line:
+ColorPaletteResources also allows for system colors to be placed and defining directly within it as a wrapper, rather than in line:
 
 ``` xaml
-<ColorSchemeResources x:Key="Dark">
+<ColorPaletteResources x:Key="Dark">
     <Color x:Key="SystemBaseLowColor">Goldenrod</Color>
-</ColorSchemeResources>
+</ColorPaletteResources>
 ```
 
 ## Usability
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-contrast.svg)
+![contrast illustration](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
-        **Contrast**
+**Contrast**
 
-        Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
+Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
-        When considering what colors to use in your application, accessiblity should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
+When considering what colors to use in your application, accessibility should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-lighting.svg)
+![contrast illustration](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
-        **Lighting**
+**Lighting**
 
-        Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
+Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-colorblindness.svg)
+![contrast illustration](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
-        **Colorblindness**
+**Colorblindness**
 
-        Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
+Be aware of how colorblindness could affect the usability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::
 :::row-end:::
 

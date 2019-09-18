@@ -21,7 +21,7 @@ This splash screen is created by combining a green background color with a trans
 
 A simple image with a background color looks good regardless of the device your app is running on. Only the size of the background changes to compensate for a variety of screen sizes. Your image always remains intact.
 
-Additionally, you can use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to customize your app's launch experience. You can position an extended splash screen, which you create, to give your app more time to complete additional tasks like preparing app UI or completing networking operations. You can also use the **SplashScreen** class to notify you when the splash screen is dismissed, so that you can begin entrance animations.
+Additionally, you can use the [**SplashScreen**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class to customize your app's launch experience. You can position an extended splash screen, which you create, to give your app more time to complete additional tasks like preparing app UI or completing networking operations. You can also use the **SplashScreen** class to notify you when the splash screen is dismissed, so that you can begin entrance animations.
 
 | Topic | Description |
 |-------|-------------|

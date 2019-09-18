@@ -19,7 +19,7 @@ This topic describes the fundamental characteristics of the Marble Maze project&
 
 Here are some of the key points that this document discusses for when you plan and develop your Universal Windows Platform (UWP) game.
 
--   Use the **DirectX 11 App (Universal Windows)** Visual C++ template in Visual Studio to create your DirectX UWP game.
+-   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
 -   The Windows Runtime provides classes and interfaces so that you can develop UWP apps in a more modern, object-oriented manner.
 -   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
 -   In most cases, use exception handling, instead of result codes, to deal with unexpected errors.
@@ -30,25 +30,25 @@ Here are some of the key points that this document discusses for when you plan a
 
 If you've downloaded and extracted the sample, you can open the **MarbleMaze_VS2017.sln** file (in the **C++** folder) in Visual Studio, and you'll have the code in front of you.
 
-When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3D application. To do this, follow these steps:
+When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. To do this, follow these steps:
 
-1. In Visual Studio 2017, select **File > New > Project...**
+1. In Visual Studio 2019, select **File > New > Project...**
 
-2. In the **New Project** window, in the left sidebar, select **Installed > Templates > Visual C++**.
+2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)**. If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
 
-3. In the middle list, select **DirectX 11 App (Universal Windows)**. If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2017 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
+![New Project](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-4. Give your project a **Name**, a **Location** for the files to be stored, and a **Solution name**, and click **OK**.
+3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
 
-![New Project](images/marble-maze-sample-fundamentals-1.png)
 
-One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
+
+One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
 
 > **Caution**   The **/ZW** option is not compatible with options such as **/clr**. In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
 
  
 
-Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. You can edit the manifest by opening **Package.appxmanifest** in your project. For more info about app packages, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
+Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. You can edit the manifest by opening **Package.appxmanifest** in your project. For more info about app packages, see [Packaging apps](https://docs.microsoft.com/windows/uwp/packaging/index).
 
 ##  Building, deploying, and running the game
 
@@ -73,7 +73,7 @@ You can use touch, the accelerometer, the Xbox One controller, or the mouse to c
 
 The Windows Runtime is a programming interface that you can use to create UWP apps that run only in a special application environment. Such apps use authorized functions, data types, and devices, and are distributed from the Microsoft Store. At the lowest level, the Windows Runtime consists of an Application Binary Interface (ABI). The ABI is a low-level binary contract that makes Windows Runtime APIs accessible to multiple programming languages such as JavaScript, the .NET languages, and Visual C++.
 
-In order to call Windows Runtime APIs from JavaScript and .NET, those languages require projections that are specific to each language environment. When you call a Windows Runtime API from JavaScript or .NET, you are invoking the projection, which in turn calls the underlying ABI function. Although you can call the ABI functions directly in C++, Microsoft provides projections for C++ as well, because they make it much simpler to consume the Windows Runtime APIs, while still maintaining high performance. Microsoft also provides language extensions to Visual C++ that specifically support the Windows Runtime projections. Many of these language extensions resemble the syntax for the C++/CLI language. However, instead of targeting the common language runtime (CLR), native apps use this syntax to target the Windows Runtime. The object reference, or hat (^), modifier is an important part of this new syntax because it enables the automatic deletion of runtime objects by means of reference counting. Instead of calling methods such as [AddRef](https://msdn.microsoft.com/library/windows/desktop/ms691379) and [Release](https://msdn.microsoft.com/library/windows/desktop/ms682317) to manage the lifetime of a Windows Runtime object, the runtime deletes the object when no other component references it, for example, when it leaves scope or you set all references to **nullptr**. Another important part of using Visual C++ to create UWP apps is the **ref new** keyword. Use **ref new** instead of **new** to create reference-counted Windows Runtime objects. For more info, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
+In order to call Windows Runtime APIs from JavaScript and .NET, those languages require projections that are specific to each language environment. When you call a Windows Runtime API from JavaScript or .NET, you are invoking the projection, which in turn calls the underlying ABI function. Although you can call the ABI functions directly in C++, Microsoft provides projections for C++ as well, because they make it much simpler to consume the Windows Runtime APIs, while still maintaining high performance. Microsoft also provides language extensions to Visual C++ that specifically support the Windows Runtime projections. Many of these language extensions resemble the syntax for the C++/CLI language. However, instead of targeting the common language runtime (CLR), native apps use this syntax to target the Windows Runtime. The object reference, or hat (^), modifier is an important part of this new syntax because it enables the automatic deletion of runtime objects by means of reference counting. Instead of calling methods such as [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) and [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) to manage the lifetime of a Windows Runtime object, the runtime deletes the object when no other component references it, for example, when it leaves scope or you set all references to **nullptr**. Another important part of using Visual C++ to create UWP apps is the **ref new** keyword. Use **ref new** instead of **new** to create reference-counted Windows Runtime objects. For more info, see [Type System (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
 > [!IMPORTANT]
 > You only have to use **^** and **ref new** when you create Windows Runtime objects or create Windows Runtime components. You can use the standard C++ syntax when you write core application code that does not use the Windows Runtime.
@@ -82,7 +82,7 @@ Marble Maze uses **^** together with **Microsoft::WRL::ComPtr** to manage heap-a
 
  
 
-For more info about the language extensions that are available to a C++ UWP app, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871).
+For more info about the language extensions that are available to a C++ UWP app, see [Visual C++ Language Reference (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ###  Error handling
 
@@ -93,7 +93,7 @@ We recommend that you use the following conventions in your error handling model
 -   Use exceptions to communicate unexpected errors.
 -   Do not use exceptions to control the flow of code.
 -   Catch only the exceptions that you can safely handle and recover from. Otherwise, do not catch the exception and allow the app to terminate.
--   When you call a DirectX routine that returns **HRESULT**, use the **DX::ThrowIfFailed** function. This function is defined in [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h). **ThrowIfFailed** throws an exception if the provided **HRESULT** is an error code. For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://msdn.microsoft.com/library/windows/apps/hh755823.aspx).
+-   When you call a DirectX routine that returns **HRESULT**, use the **DX::ThrowIfFailed** function. This function is defined in [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h). **ThrowIfFailed** throws an exception if the provided **HRESULT** is an error code. For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class).
 
     When you use **ThrowIfFailed**, put the DirectX call on a separate line to help improve code readability, as shown in the following example.
 

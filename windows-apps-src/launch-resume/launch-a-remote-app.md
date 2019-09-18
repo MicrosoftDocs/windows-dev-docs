@@ -56,7 +56,7 @@ Add a call to `BuildDeviceList()` in your app startup code before you attempt to
 
 ## Launch an app on a remote device
 
-Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
+Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
 
 Other **RemoteLauncher.LaunchUriAsync** overloads allow you to specify options such as the URI of the web site to view if no appropriate app can be launched on the remote device, and an optional list of package family names that could be used to launch the URI on the remote device. You can also provide data in the form of key/value pairs. You might pass data to the app you are activating to provide context to the remote app, such as the name of the song to play and the current playback location when you hand off playback from one device to another.
 
@@ -64,11 +64,11 @@ In practical scenarios, you might provide UI to select the device you want to ta
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-The [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
+The [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
 
 ## Related topics
 
-[Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Remote Systems API reference](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [Connected apps and devices (Project Rome) overview](connected-apps-and-devices.md)  
 [Discover remote devices](discover-remote-devices.md)  
 [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.

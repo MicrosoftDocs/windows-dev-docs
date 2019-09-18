@@ -38,7 +38,7 @@ Writes to non-mapped tiles are stopped from going to memory but might end up in 
 
 Texture filtering with a footprint that straddles **NULL** and non-**NULL** tiles contributes 0 (with defaults for missing format components) for texels on **NULL** tiles into the overall filter operation. Some early hardware don't meet this requirement and returns 0 (with defaults for missing format components) for the full filter result if any texels (with nonzero weight) fall on a **NULL** tile. No other hardware will be allowed to miss the requirement to include all (nonzero weighted) texels in the filter operation.
 
-**NULL** texel accesses cause the [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) operation on the status feedback for a texture read to return false. This is regardless of how the texture access result might get write masked in the shader and how many components are in the texture format (the combination of which might make it appear that the texture does not need to be accessed).
+**NULL** texel accesses cause the [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) operation on the status feedback for a texture read to return false. This is regardless of how the texture access result might get write masked in the shader and how many components are in the texture format (the combination of which might make it appear that the texture does not need to be accessed).
 
 ## <span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Alignment constraints
 

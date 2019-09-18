@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Universal Windows apps should perform consistently well across all device families. On battery-powered devices, power consumption is a critical factor in the user's overall experience with your app. All-day battery life is a desirable feature to every user, but it requires efficiency from all of the software installed on the device, including your own. 
 
-Background task behavior is arguably the most important factor in the total energy cost of an app. A background task is any program activity that has been registered with the system to run without the app being open. See [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) for more information.
+Background task behavior is arguably the most important factor in the total energy cost of an app. A background task is any program activity that has been registered with the system to run without the app being open. See [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) for more information.
 
 ## Background activity permissions
 
@@ -33,7 +33,7 @@ On desktop devices, the "Managed by Windows" setting is presented as a toggle sw
 
 ![background task permissions switch off](images/background-task-permissions-off.png)
 
-In your app, you can use the [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enum value returned by a call to the [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) method to determine its current background activity permission setting.
+In your app, you can use the [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enum value returned by a call to the [**BackgroundExecutionManager.RequestAccessAsync()**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) method to determine its current background activity permission setting.
 
 All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party. If your app has been denied permission to run in the background but requires background activity to complete an action for the user, you can notify the user and point them to the Settings app. This can be accomplished by [Launching the Settings App](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app) to the Background Apps or Battery Usage Details page.
 
@@ -46,10 +46,10 @@ Check the status of Battery Saver mode from within your app by referencing the [
 The following are additional steps you can take when registering your background tasks to make them more battery-aware.
 
 ### Use a maintenance trigger 
-A [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) object can be used instead of a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) object to determine when a background task starts. Tasks that use maintenance triggers will only run when the device is connected to AC power, and they are allowed to run for longer. See [Use a maintenance trigger](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger) for instructions.
+A [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) object can be used instead of a [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) object to determine when a background task starts. Tasks that use maintenance triggers will only run when the device is connected to AC power, and they are allowed to run for longer. See [Use a maintenance trigger](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger) for instructions.
 
 ### Use the **BackgroundWorkCostNotHigh** system condition type
-System conditions must be met in order for background tasks to run (see [Set conditions for running a background task](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task) for more). The background work cost is a measurement that denotes the *relative* energy impact of running the background task. A task running when the device is plugged into AC power would be marked as **low** (little/no impact on battery). A task running when the device is on battery power with the screen off is marked as **high** because there is presumably little program activity running on the device at the time, so the background task would have a greater relative cost. A task running when the device is on battery power with the screen *on* is marked as **medium**, because there is presumably already some program activity running, and the background task would add a bit more to the energy cost. The **BackgroundWorkCostNotHigh** system condition simply delays your task's ability to run until either the screen is on or the device is connected to AC power.
+System conditions must be met in order for background tasks to run (see [Set conditions for running a background task](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task) for more). The background work cost is a measurement that denotes the *relative* energy impact of running the background task. A task running when the device is plugged into AC power would be marked as **low** (little/no impact on battery). A task running when the device is on battery power with the screen off is marked as **high** because there is presumably little program activity running on the device at the time, so the background task would have a greater relative cost. A task running when the device is on battery power with the screen *on* is marked as **medium**, because there is presumably already some program activity running, and the background task would add a bit more to the energy cost. The **BackgroundWorkCostNotHigh** system condition simply delays your task's ability to run until either the screen is on or the device is connected to AC power.
 
 ## Test battery efficiency
 
@@ -57,6 +57,6 @@ Be sure to test your app on real devices for any high-power-consumption scenario
 
 ## Related topics
 
-* [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
-* [Planning for performance](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
+* [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [Planning for performance](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

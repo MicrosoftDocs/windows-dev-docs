@@ -11,26 +11,26 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 This topic demonstrates how to create and register a background task that runs in the same process as your app.
 
-In-process background tasks are simpler to implement than out-of-process background tasks. However, they are less resilient. If the code running in an in-process background task crashes, it will take down your app. Also note that [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) and **IoTStartupTask** cannot be used with the in-process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the out-of-process background task model.
+In-process background tasks are simpler to implement than out-of-process background tasks. However, they are less resilient. If the code running in an in-process background task crashes, it will take down your app. Also note that [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) and **IoTStartupTask** cannot be used with the in-process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the out-of-process background task model.
 
 Be aware that background activity can be terminated even when running inside the app's foreground process if it runs past execution time limits. For some purposes the resiliency of separating work into a background task that runs in a separate process is still useful. Keeping background work as a task separate from the foreground application may be the best option for work that does not require communication with the foreground application.
 
 ## Fundamentals
 
-The in-process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events fit into the application lifecycle based on the visibility state of your application
+The in-process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) and [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground). These events fit into the application lifecycle based on the visibility state of your application
 Read more about these events and how they affect the application lifecycle at [App lifecycle](app-lifecycle.md).
 
 At a high level, you will handle the **EnteredBackground** event to run your code that will execute while your app is running in the background, and handle **LeavingBackground** to know when your app has moved to the foreground.
 
 ## Register your background task trigger
 
-In-process background activity is registered much the same as out-of-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
+In-process background activity is registered much the same as out-of-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -43,16 +43,16 @@ In-process background activity is registered much the same as out-of-process bac
 > ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
-> To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+> Universal Windows apps must call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any of the background trigger types.
+> To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess) and then call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-For in-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
+For in-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).
 
-Once a trigger is registered, it will fire based on the type of trigger set in the [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx) method. In the example above a [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) is used, which will fire fifteen minutes from the time it was registered.
+Once a trigger is registered, it will fire based on the type of trigger set in the [SetTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.settrigger) method. In the example above a [TimeTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.timetrigger) is used, which will fire fifteen minutes from the time it was registered.
 
 ## Add a condition to control when your task will run (optional)
 
-You can add a condition to control when your task will run after the trigger event occurs. For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+You can add a condition to control when your task will run after the trigger event occurs. For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 The following sample code assigns a condition requiring the user to be present:
 
@@ -63,7 +63,7 @@ The following sample code assigns a condition requiring the user to be present:
 
 ## Place your background activity code in OnBackgroundActivated()
 
-Put your background activity code in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) to respond to your background trigger when it fires. **OnBackgroundActivated** can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) parameter, which contains everything that the **Run** method delivers. For example, in App.xaml.cs:
+Put your background activity code in [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) to respond to your background trigger when it fires. **OnBackgroundActivated** can be treated just like [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396). The method has a [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs) parameter, which contains everything that the **Run** method delivers. For example, in App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -109,7 +109,7 @@ See the following related topics for API reference, background task conceptual g
 
 * [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
-* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Play media in the background](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
 * [Register a background task](register-a-background-task.md)
 * [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
@@ -126,4 +126,4 @@ See the following related topics for API reference, background task conceptual g
 
 **Background Task API Reference**
 
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

@@ -16,13 +16,13 @@ dev_langs:
 
 **Important APIs**
 
-- [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.
+Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) event and saves a string to a file.
 
 ## Register the suspending event handler
 
-Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.
+Register to handle the [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) event, which indicates that your app should save its application data before the system suspends it.
 
 ```csharp
 using System;
@@ -76,7 +76,7 @@ MainPage::MainPage()
 
 ## Save application data before suspension
 
-When your app handles the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.
+When your app handles the [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) storage API to save simple application data synchronously.
 
 ```csharp
 partial class MainPage
@@ -127,11 +127,11 @@ You should release exclusive resources and file handles so that other apps can a
 
 The system suspends your app whenever the user switches to another app or to the desktop or Start screen. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) event and should restore its application data in its [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method.
 
 The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 
-If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](https://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) method on the returned [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object.
+If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](https://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) method on the returned [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) object.
 
 A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*. To extend time in the Suspending state use [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
@@ -145,7 +145,7 @@ A deferral doesn't increase the amount you have to run your code before your app
 * [App lifecycle](app-lifecycle.md)
 * [Handle app activation](activate-an-app.md)
 * [Handle app resume](resume-an-app.md)
-* [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [UX guidelines for launch, suspend, and resume](https://docs.microsoft.com/windows/uwp/launch-resume/index)
 * [Extended Execution](run-minimized-with-extended-execution.md)
 
  

@@ -11,8 +11,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+-   [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+-   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 This article demonstrates usage of the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps, along with sample code for common GATT client tasks:
 - Query for nearby devices
@@ -22,7 +22,7 @@ This article demonstrates usage of the Bluetooth Generic Attribute (GATT) Client
 - Subscribe for notifications when characteristic value changes
 
 ## Overview
-Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
+Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
 
 -   Services
 -   Characteristics
@@ -45,9 +45,9 @@ There are two main methods to query for nearby devices:
 - DeviceWatcher in Windows.Devices.Enumeration
 - AdvertisementWatcher in Windows.Devices.Bluetooth.Advertisement
 
-The 2nd method is discussed at length in the [Advertisement](ble-beacon.md) documentation so it won't be discussed much here but the basic idea is to find the Bluetooth address of nearby devices that satisfy the particular [Advertisement Filter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx). Once you have the address, you can call [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) to get a reference to the device. 
+The 2nd method is discussed at length in the [Advertisement](ble-beacon.md) documentation so it won't be discussed much here but the basic idea is to find the Bluetooth address of nearby devices that satisfy the particular [Advertisement Filter](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter). Once you have the address, you can call [BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) to get a reference to the device. 
 
-Now, back to the DeviceWatcher method. A Bluetooth LE device is just like any other device in Windows and can be queried using the [Enumeration APIs](https://msdn.microsoft.com/library/windows/apps/BR225459). Use the [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher) class and pass a query string specifying the devices to look for: 
+Now, back to the DeviceWatcher method. A Bluetooth LE device is just like any other device in Windows and can be queried using the [Enumeration APIs](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration). Use the [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) class and pass a query string specifying the devices to look for: 
 
 ```csharp
 // Query for extra properties you want returned
@@ -72,10 +72,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-Once you've started the DeviceWatcher, you will receive [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) for each device that satisfies the query in the handler for the [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
+Once you've started the DeviceWatcher, you will receive [DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
 
 ## Connecting to the device
-Once a desired device is discovered, use the [DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question: 
+Once a desired device is discovered, use the [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question: 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -153,16 +153,16 @@ if (result.Status == GattCommunicationStatus.Success)
 Writing to a characteristic follows a similar pattern: 
 ```csharp
 var writer = new DataWriter();
-// WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
+// WriteByte used for simplicity. Other common functions - WriteInt16 and WriteSingle
 writer.WriteByte(0x01);
 
-GattReadResult result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
-if (result.Status == GattCommunicationStatus.Success)
+GattCommunicationStatus result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
+if (result == GattCommunicationStatus.Success)
 {
     // Successfully wrote to device
 }
 ```
-> **Tip**: Get comfortable with using [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx) and [DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx). Their functionality will be indispensible when working with the raw buffers you get from many of the Bluetooth APIs. 
+> **Tip**: Get comfortable with using [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) and [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter). Their functionality will be indispensible when working with the raw buffers you get from many of the Bluetooth APIs. 
 ## Subscribing for notifications
 
 Make sure the characteristic supports either Indicate or Notify (check the characteristic properties to make sure). 

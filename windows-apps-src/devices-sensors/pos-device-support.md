@@ -1,4 +1,4 @@
-﻿---
+---
 title: Point of Service Hardware Support
 description: This article contains information about hardware support for each of the Point of Service device classes
 ms.date: 06/13/2018
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ## Barcode Scanner
 | Connectivity | Support |
 | -------------|-------------|
-| USB          | <p>Windows contains an in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](https://www.usb.org/developers/hidpage/). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **USB.HID.POS Scanner** mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p><p>Barcode scanner manufacturers please consult the [Barcode Scanner Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom barcode scanner driver</p> |
+| USB          | <p>Windows contains an in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](https://www.usb.org/hid). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **USB.HID.POS Scanner** mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p><p>Barcode scanner manufacturers please consult the [Barcode Scanner Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom barcode scanner driver</p> |
 | Bluetooth    | <p>Windows supports Serial Port Protocol - Simple Serial Interface (SPP-SSI) based Bluetooth barcode scanners. See the table below for a list of known compatible devices. Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **SPP-SSI** mode.</p> |
 | Webcam       | <p>Starting with Windows 10, version 1803, you can read barcodes through a standard camera lens from a Universal Windows Application. It is recommended that you use a camera that supports Auto Focus and a minimum resolution of 1920 x 1440.  Some lower resolution cameras can read standard barcodes if the barcode is printed large enough.  Barcodes with thinner elements may require higher resolution cameras.</p>| 
 |
@@ -33,7 +33,7 @@ ms.localizationpriority: medium
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS Scanner           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D<sup>1</sup>   | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS Scanner           |
@@ -55,16 +55,16 @@ ms.localizationpriority: medium
 | Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
 | Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS2208<sup>2</sup>                        | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Zebra         | DS2278                         | 2D         | USB          | Handheld     | HID POS Scanner           |
-| Zebra         | DS8108³                        | 2D         | USB          | Handheld     | HID POS Scanner           |
-|
+| Zebra         | DS8108<sup>3</sup>                        | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS8178<sup>4</sup>                         | 2D         | USB          | Handheld     | HID POS Scanner           | 
 
 
-¹ Upgradable to support 2D barcodes through Honeywell <br/>
-² Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123Scan).<br/>
-³ Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123Scan). 
-
+<sup>1</sup> Upgradable to support 2D barcodes through Honeywell <br/>
+<sup>2</sup> Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
+<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/> 
+<sup>4</sup> Minimum firmware 023 (2019.03.11) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
 

@@ -52,7 +52,7 @@ There are many APIs related to game development, but not all games need to use a
 
 ![game platform technologies](images/gameplatformtechnologies.png)
 
--   3D Graphics - Windows 10 supports two 3D graphics API sets, Direct3D 11, and [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Both of these APIs provide the capability to create 3D and 2D graphics. Direct3D 11 and Direct3D 12 are not used together, but either can be used with any of the APIs in the 2D Graphics and UI group. For more information about using the graphics APIs in your game, see [Basic 3D graphics for DirectX games](an-introduction-to-3d-graphics-with-directx.md).
+-   3D Graphics - Windows 10 supports two 3D graphics API sets, Direct3D 11, and [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide). Both of these APIs provide the capability to create 3D and 2D graphics. Direct3D 11 and Direct3D 12 are not used together, but either can be used with any of the APIs in the 2D Graphics and UI group. For more information about using the graphics APIs in your game, see [Basic 3D graphics for DirectX games](an-introduction-to-3d-graphics-with-directx.md).
 
     <table>
     <colgroup>
@@ -72,7 +72,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Direct3D 12 when you need to maximize your game's performance and your game is CPU bound.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide">Direct3d 12</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
@@ -80,7 +80,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Direct3D 11 if you have existing Direct3D 11 code, your game is not CPU bound, or you want the benefit of having resources managed for you.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -107,7 +107,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Direct2D can be used instead of Direct3D to provide graphics for pure 2D games such as a side-scroller or board game, or can be used with Direct3D to simplify creation of 2D graphics in a 3D game, such as a user interface or heads-up-display.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal">Direct2D</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
@@ -115,7 +115,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p></p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite</a> documentation.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
@@ -123,7 +123,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>DirectComposition is designed to simplify the process of composing visuals and creating animated transitions. If your game requires complex user interfaces, you can use DirectComposition to simplify the creation and management of the UI.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/directcomp/directcomposition-portal">DirectComposition</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -150,7 +150,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use XAudio2 when your game needs to play sounds with minimal overhead and delay.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">XAudio2</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Media Foundation</td>
@@ -158,7 +158,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Media foundation is particularly useful for cinematic scenes or non-interactive components of your game. Media foundation is also useful for decoding audio files for playback using XAudio2.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft Media Foundation</a> overview.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk">Microsoft Media Foundation</a> overview.</p></td>
     </tr>
     </tbody>
     </table>
@@ -185,7 +185,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>If your game needs to support gampad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-game-controller-apis-portal">XInput</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
@@ -201,7 +201,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>If your game needs to support gamepad input and is not using existing XInput code or you need one of the benefits listed above, you should make use of Windows.Gaming.Input.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/uwp/api/Windows.Gaming.Input">Windows.Gaming.Input</a> documentation.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -236,7 +236,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use of DirectXMath is optional and simplifies common mathematical operations.</p>
     <p><strong>For more information</strong></p>
-    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a> documentation.</p></td>
+    <p>See the <a href="https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal">DirectXMath</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -317,7 +317,7 @@ There are many APIs related to game development, but not all games need to use a
 
 The [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) allows any developer to integrate Xbox Live into their UWP game and publish to Xbox One and Windows 10. Integrate Xbox Live social experiences such as sign-in, presence, leaderboards, and more into your title, with minimal development time. Xbox Live social features are designed to organically grow your audience, spreading awareness to over 55 million active gamers.
 
-If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](https://www.xbox.com/developers/id) program. To see which features are available to the Xbox Live Creators Program and ID@Xbox program, see the [Feature table](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table).
+If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](https://www.xbox.com/developers/id) program. To see which features are available to the Xbox Live Creators Program and ID@Xbox program, see the [Feature table](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table).
 
 For more info, go to [Adding Xbox Live to your game](e2e.md#adding-xbox-live-to-your-game).
 

@@ -17,7 +17,7 @@ To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/in
 ## A C++/WinRT quick-start
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
@@ -26,7 +26,6 @@ Edit `pch.h` and `main.cpp` to look like this.
 ```cppwinrt
 // pch.h
 #pragma once
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
@@ -58,7 +57,6 @@ int main()
 Let's take the short code example above piece by piece, and explain what's going on in each part.
 
 ```cppwinrt
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```
@@ -155,6 +153,26 @@ You can also use project link settings to explicitly link `WindowsApp.lib`. Or, 
 ```
 
 You can now compile and link, and add C++/WinRT code to your project (for example, code similar to that shown in the [A C++/WinRT quick-start](#a-cwinrt-quick-start) section, above).
+
+## The three main scenarios for C++/WinRT
+
+As you use and become familiar with C++/WinRT, and work through the rest of the documentation here, you'll likely notice that there are three main scenarios, as described in the following sections.
+
+### Consuming Windows Runtime APIs and types
+
+In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+### Authoring Windows Runtime APIs and types
+
+In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+
+Authoring APIs with C++/WinRT is a little more involved than consuming them, because you must use IDL to define the shape of the API before you can implement it. There's a walkthrough of doing that in [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
+### XAML applications
+
+This scenario is about building applications and controls on the XAML UI framework. Working in a XAML application amounts to a combination of consuming and authoring. But since XAML is the dominant UI framework on Windows today, and its influence over the Windows Runtime is proportionate to that, it deserves its own category of scenario.
+
+Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property) and [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

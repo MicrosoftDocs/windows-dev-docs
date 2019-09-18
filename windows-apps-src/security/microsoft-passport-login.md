@@ -218,10 +218,14 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     }
     ```
 
--   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it. Additional namespaces will be need to be referenced.
+-   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it.
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;
@@ -409,7 +413,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     }
     ```
 
--   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Windows Hello API in the [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043). Calling [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
+-   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Windows Hello API in the [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager). Calling [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
 
     ```cs
     /// <summary>
@@ -618,7 +622,7 @@ In this exercise, you will continue from the previous exercise. When a person su
 
     ![Windows Hello welcome screen](images/passport-login-9.png)
 
--   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
+-   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

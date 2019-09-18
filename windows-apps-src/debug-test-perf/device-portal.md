@@ -2,7 +2,7 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -164,7 +164,7 @@ For more details on using ETW logging, see the [Use Device Portal to view debug 
 
 ### Performance tracing
 
-The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx) traces from the host device.
+The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
 
 ![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -173,7 +173,7 @@ The Performance tracing page allows you for view the [Windows Performance Record
 
 To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has finished downloading.
 
-Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx).
+Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### Device manager
 
@@ -207,7 +207,7 @@ Connecting on the HTTPS port is suggested, as not all devices are listening on t
 
 ### CSRF Protection and Scripting
 
-In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
+In order to protect against [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
 
 > [!IMPORTANT]
 > This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways:

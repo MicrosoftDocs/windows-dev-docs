@@ -15,9 +15,9 @@ dev_langs:
 
 **Important APIs**
 
--   [**BackgroundTaskCanceledEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224775)
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
--   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
+-   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 Learn how to make a background task that recognizes a cancellation request, stops work, and reports the cancellation to the app using persistent storage.
 
@@ -171,7 +171,7 @@ else
 ```
 
 > [!NOTE]
-> The code sample shown above uses the [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property being used to record background task progress. Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) class.
+> The code sample shown above uses the [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance).[**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) property being used to record background task progress. Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) class.
 
 Modify the **Run** method so that after work has stopped, it records whether the task completed or was cancelled. This step applies to out-of-process background tasks because you need a way to communicate between processes when the background task was cancelled. For in-process background tasks, you can simply share state with the application to indicate the task was cancelled.
 
