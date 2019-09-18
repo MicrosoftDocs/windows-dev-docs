@@ -18,9 +18,8 @@
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
       "ms.prod": "uwp",
-      "titleSuffix": "Windows apps",
       "Search.Product": "eADQiWindows 10XVcnh",
-      "uhfHeaderId": "MSDocsHeader-WinDevCenter",
+      "uhfHeaderId": "MSDocsHeader-DocsL1",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/windows-uwp",
