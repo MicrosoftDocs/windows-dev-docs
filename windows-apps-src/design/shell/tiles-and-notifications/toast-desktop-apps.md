@@ -48,7 +48,7 @@ With the COM activator option, you can use the following notification templates 
 > [!NOTE]
 > If you add the COM activator to your existing Desktop Bridge app, Foreground/Background and Legacy notification activations will now activate your COM activator instead of your command line.
 
-To learn how to use this option, see [Send a local toast notification from destkop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from destkop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
+To learn how to use this option, see [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## Alternative option - No COM / Stub CLSID
