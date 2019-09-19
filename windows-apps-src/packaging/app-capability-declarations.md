@@ -28,7 +28,7 @@ There are several types of capabilities.
 General-use capabilities are specified by using **Capability** elements in your app package manifest. These capabilities apply to the most common app scenarios.
 
 > [!NOTE]
-> All **Capability** elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements in the package manifest.
+> All **Capability** elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|
@@ -106,7 +106,7 @@ To declare a restricted capability, modify your [app package manifest](https://d
 ```
 
 > [!NOTE]
-> All **Capability** elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements in the package manifest.
+> All restricted capability elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 ### Restricted capability approval process
 
@@ -245,7 +245,7 @@ To declare a custom capability, modify your [app package manifest](https://docs.
 ```
 
 > [!NOTE]
-> All **CustomCapability** elements must come after any **Capability** elements and before any [DeviceCapability](#device-capabilities) elements in the package manifest.
+> All **CustomCapability** elements must come after any **Capability** elements and before any [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 ## Related topics
 
