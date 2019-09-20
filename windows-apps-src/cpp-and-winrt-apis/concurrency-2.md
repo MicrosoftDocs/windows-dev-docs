@@ -726,7 +726,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -740,6 +740,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** uses **std::chrono::duration** at the interface, but it is limited to some range smaller than what **std::chrono::duration** provides (roughly 49.7 days).
 
 The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the **get** function to retrieve the result.
 
