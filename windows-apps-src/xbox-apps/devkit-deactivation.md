@@ -68,7 +68,7 @@ To reset your console perform the following steps:
 
 If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Partner Center.
 
-1. Navigate to the [Manage Xbox One consoles](https://partner.microsoft.com/xboxdevices) page in Partner Center. You may be prompted to sign in.
+1. Navigate to the [Manage Xbox One consoles](https://partner.microsoft.com/xboxconfig/devices) page in Partner Center. You may be prompted to sign in.
 
 2. Find the console that you want to deactivate in the list of consoles by matching the serial number, console ID, or the device ID.  
 
