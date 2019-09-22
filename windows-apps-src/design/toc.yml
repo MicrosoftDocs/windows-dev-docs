@@ -169,6 +169,8 @@
           href: controls-and-patterns/navigationview.md
         - name: Pivot
           href: controls-and-patterns/pivot.md
+        - name: Tab view
+          href: controls-and-patterns/tab-view.md
     - name: People
       items:
         - name: Contact card

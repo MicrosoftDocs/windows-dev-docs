@@ -25,7 +25,10 @@ There are several types of capabilities.
 
 ## General-use capabilities
 
-General-use capabilities apply to the most common app scenarios.
+General-use capabilities are specified by using **Capability** elements in your app package manifest. These capabilities apply to the most common app scenarios.
+
+> [!NOTE]
+> All **Capability** elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|
@@ -53,10 +56,10 @@ General-use capabilities apply to the most common app scenarios.
 
 ## Device capabilities
 
-Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using the **DeviceCapability** element in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) and [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
+Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using **DeviceCapability** elements in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) and [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> You can have multiple **DeviceCapability** and **Capability** elements under the **Capabilities** element, but all **DeviceCapability** elements must come after the **Capability** elements.
+> You can have multiple **DeviceCapability** elements under the **Capabilities** element in the package manifest. All **DeviceCapability** elements must come after any **Capability** and [CustomCapability](#custom-capabilities) elements.
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|
@@ -101,6 +104,9 @@ To declare a restricted capability, modify your [app package manifest](https://d
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> All restricted capability elements must come before any [CustomCapability](#custom-capabilities) and [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 ### Restricted capability approval process
 
@@ -237,6 +243,9 @@ To declare a custom capability, modify your [app package manifest](https://docs.
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> All **CustomCapability** elements must come after any **Capability** elements and before any [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
 ## Related topics
 

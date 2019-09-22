@@ -1,0 +1,66 @@
+### YamlMime:Hub
+title: Windows documentation
+summary: Information for software developers, hardware engineers, and IT Pros.
+brand: windows
+metadata:
+   title: Windows Documentation | Microsoft Docs
+   titleSuffix: ""
+   author: tedhudek
+   ms.author: tedhudek
+   ms.topic: hub-page
+   uhfHeaderId: "MSDocsHeader-DocsL1"
+   
+highlightedContent:
+  # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+   items:
+   - title: Get Visual Studio and the Windows SDK
+     itemType: download
+     url: https://developer.microsoft.com/windows/downloads
+   - title: Download the WDK
+     itemType: download
+     url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+   - title: Join the Insider Program
+     itemType: overview
+     url: https://docs.microsoft.com/windows-insider
+   - title: Improve your skills
+     itemType: learn
+     url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
+
+additionalContent:
+  sections:
+    - items:
+      - title: App dev
+        links:
+          - text: Start writing Windows 10 apps
+            url: https://docs.microsoft.com/windows/apps
+          - text: Add Windows 10 features to your apps
+            url: https://docs.microsoft.com/windows/apps/desktop/modernize/ 
+          - text: Develop with Python on Windows
+            url: https://docs.microsoft.com/windows/python/index
+          - text: Set up the Windows Subsystem for Linux
+            url: https://docs.microsoft.com/windows/wsl/about
+          - text: Find code samples
+            url: https://developer.microsoft.com/windows/samples
+      - title: Hardware dev
+        links:
+          - text: Learn about building devices
+            url: https://docs.microsoft.com/windows-hardware/get-started/index
+          - text: Develop device drivers
+            url: https://docs.microsoft.com/windows-hardware/drivers
+          - text: Create Windows images
+            url: https://docs.microsoft.com/windows-hardware/manufacture/
+          - text: Test for performance and compatibility
+            url: https://docs.microsoft.com/windows-hardware/test
+          - text: Find driver samples
+            url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+      - title: IT admin
+        links:
+          - text: Configure and deploy Windows 10
+            url: https://docs.microsoft.com/windows/windows-10/
+          - text: Find Windows 10 release information
+            url: https://docs.microsoft.com/windows/release-information/
+          - text: Manage Windows Server
+            url: https://docs.microsoft.com/windows-server/
+          - text: Get started with Microsoft Store for Business
+            url: https://docs.microsoft.com/microsoft-store/
+  footer: "[Blogs](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [Developer Community](https://social.msdn.microsoft.com/Forums/windowsdesktop)"

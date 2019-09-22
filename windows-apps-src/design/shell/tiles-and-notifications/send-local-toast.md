@@ -267,7 +267,7 @@ Here's an example of what a messaging app should do…
 To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
-## Handling activation
+## Activation handling
 
 In Windows 10, when the user clicks on your toast, you can have the toast activate your app in two different ways...
 

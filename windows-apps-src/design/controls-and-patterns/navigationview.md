@@ -526,9 +526,9 @@ private void NavView_ItemInvoked(muxc.NavigationView sender,
     }
 }
 
-<!-- NavView_SelectionChanged is not used in this example, but is shown for completeness.
-     You will typically handle either ItemInvoked or SelectionChanged to perform navigation,
-     but not both. -->
+// NavView_SelectionChanged is not used in this example, but is shown for completeness.
+// You will typically handle either ItemInvoked or SelectionChanged to perform navigation,
+// but not both.
 private void NavView_SelectionChanged(muxc.NavigationView sender,
                                       muxc.NavigationViewSelectionChangedEventArgs args)
 {

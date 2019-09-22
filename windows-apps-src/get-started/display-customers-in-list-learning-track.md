@@ -96,7 +96,7 @@ Feel free to look back at the [List View](../design/controls-and-patterns/listvi
 
 ## Edit your Customers through the UI
 
-You’ve displayed customers in a list, but data B=binding lets you do more. What if you could edit your data directly from the UI? To do this, let’s first talk about the three modes of data binding:
+You’ve displayed customers in a list, but data binding lets you do more. What if you could edit your data directly from the UI? To do this, let’s first talk about the three modes of data binding:
 
 * *One-Time*: This data binding is only activated once, and doesn’t react to changes.
 * *One-Way*: This data binding will update the UI with any changes made to the data source.
