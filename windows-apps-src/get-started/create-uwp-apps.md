@@ -38,12 +38,12 @@ If you want a more detailed walkthrough on the basics of coding, the C# language
 **Docs:**
 
 * [Get started with C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# Quickstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [C# Quickstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
 * [Get started with Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
-**Videos:**
+**Tutorials:**
 
-* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [Windows on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
 
 ## Using the docs
 
