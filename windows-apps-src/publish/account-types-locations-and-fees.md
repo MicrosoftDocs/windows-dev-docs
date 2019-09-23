@@ -42,16 +42,6 @@ You can register for your developer account and submit apps if you live or opera
 
 In the following table, the **Registration fee** is the current cost to register for your developer account. This is a one-time fee and there is no renewal charge. Note that the prices below are subject to change.
 
-> [!NOTE]
-> We'll add any applicable taxes and fees to the registration fee when you sign up. Also, when we pay you, your bank might charge a fee to receive the payment.
-
-The **Payout** column describes how we'll [pay you](getting-paid-apps.md) the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
-
-> [!NOTE]
-> Some markets do not support paid apps (**payout**). In those markets, only free apps can be submitted.
-
-The **PayPal** column indicates whether PayPal is a supported payment method that can be used for your [payout account](setting-up-your-payout-account-and-tax-forms.md) (and, except where noted, for your developer account registration fee).
-
 | Country/region                    | Individual reg. fee | Company reg. fee |
 |-----------------------------------|---------------------|------------------|
 | Afghanistan                       | 19 USD              | 99 USD           |
