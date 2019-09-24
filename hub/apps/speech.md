@@ -10,11 +10,13 @@ author: Karl-Bridge-Microsoft
 
 # Speech, voice, and conversation in Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Speech hero image](images/hero-speech-composite-small.png)
 
-Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Speech can be an effective, natural, and enjoyable way for people to interact with your Windows applications, complementing, or even replacing, traditional interaction experiences based on mouse, keyboard, touch, controller, or gestures.
 
-This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
+Use speech recognition, dictation, speech synthesis (also known as text-to-speech, or TTS), and conversational capabilities with various voice assistants to provide more robust and inclusive user experiences in your Windows applications, and help people be productive when other devices and experiences might not.
+
+This page provides information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
 
 ## Platform-specific documentation
 
@@ -24,15 +26,21 @@ This page provides information on how the various Windows development frameworks
 
       **Universal Windows Platform (UWP)**
 
-      Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Build speech-enabled apps on the modern platform for Windows 10 applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
-      [Designing inclusive software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [Speech interactions](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
 
-      [Developing inclusive Windows apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [Speech recognition](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
 
-      [Accessibility testing](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [Continuous dictation](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
 
-      [Accessibility in the Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Speech synthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+
+      [Conversational agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+      > Expose your application's functionality through any digital assistant supported by the Windows platform Agent Activation Runtime (AAR).
+
+      [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd)
+      > Extend the basic functionality of Cortana with voice commands that launch and execute a single action in your Windows application.
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -122,7 +130,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+      [Code sample browser](https://docs.microsoft.com/samples/browse/)
 
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::

@@ -10,7 +10,7 @@ author: Karl-Bridge-Microsoft
 
 # Accessibility in Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Accessibility hero image](images/hero-accessibility-bar-smaller.png)
 
 ## Build accessibility into your applications to empower people of all abilities
 
@@ -130,7 +130,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+      [Code sample browser](https://docs.microsoft.com/samples/browse/)
 
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::
