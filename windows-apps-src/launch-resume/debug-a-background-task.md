@@ -36,6 +36,10 @@ Background tasks can be triggered manually through Microsoft Visual Studio. Then
 
 2.  Run your application in the debugger and then trigger the background task using the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
 
+> [!NOTE]
+> The Lifecycle Events toolbar options are not shown by default in Visual Studio. 
+> To show these options, right-click on the current toolbar in Visual Studio and ensure the option **Debug Location** is enabled.
+
     For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
