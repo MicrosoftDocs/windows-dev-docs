@@ -5,6 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
+ms.prod: dev-environment
+ms.technology: windows-python
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
