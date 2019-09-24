@@ -80,4 +80,19 @@ landingContent:
             url: resources.md#online-courses
           - text: Recommended web dev links
             url: resources.md#web-development
-  
+
+  # Card
+  - title: Mac to Windows support guide
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Changing your dev environment
+            url: ../mac-to-windows.md
+          - text: Keyboard shortcuts
+            url: ../mac-to-windows.md#keyboard-shortcuts
+          - text: Trackpad shortcuts
+            url: ../mac-to-windows.md#trackpad-shortcuts
+          - text: Terminal and Shell
+            url: ../mac-to-windows.md#terminal-and-shell
+          - text: Apps and utilities
+            url: ../mac-to-windows.md#apps-and-utilities
