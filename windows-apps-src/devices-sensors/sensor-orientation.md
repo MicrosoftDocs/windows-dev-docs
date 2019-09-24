@@ -7,27 +7,31 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Sensor orientation
-
-
-**Important APIs**
-
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
 Sensor data from the [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer), and [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) classes is defined by their reference axes. These axes are defined by the device's reference frame and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
 
+### Important APIs
+
+- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+- [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+
 ## Display orientation vs device orientation
 
-In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device. In the following picture, both the device and display orientation are in **Landscape** (note that the sensor axes shown are only applicable to landscape-first devices).
+In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device.
+
+In the following diagrams, both the device and display orientation are in [Landscape](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (the sensor axes shown are specific to landscape orientation), with the positive z-axis extending out from the device.
+
+The following diagram shows both the display and device orientation in [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 ![Display and device orientation in Landscape](images/sensor-orientation-a.PNG)
 
-The following picture shows both the display and device orientation in **LandscapeFlipped**.
+The following diagram shows both the display and device orientation in [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 ![Display and device orientation in LandscapeFlipped](images/sensor-orientation-b.PNG)
 
-The next picture shows the display orientation in Landscape while the device orientation is LandscapeFlipped.
+The next diagram shows the display orientation in Landscape while the device orientation is [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 ![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/sensor-orientation-c.PNG)
 
@@ -52,7 +56,6 @@ Furthermore, some devices do not have a display. With these devices, the default
 
 ## Display orientation and compass heading
 
-
 Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
 
 | Display orientation | Reference axis for compass heading | API compass heading when facing north (landscape-first) | API compass heading when facing north (portrait-first) |Compass heading compensation (landscape-first) | Compass heading compensation (portrait-first) |
@@ -67,32 +70,31 @@ Modify the compass heading as shown in the table in order to correctly display t
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 {
-    double heading = e.Reading.HeadingMagneticNorth;        
+    double heading = e.Reading.HeadingMagneticNorth;
     double displayOffset;
-    
+
     // Calculate the compass heading offset based on
     // the current display orientation.
     DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
-    
-    switch (displayInfo.CurrentOrientation) 
-    { 
-        case DisplayOrientations.Landscape: 
-            displayOffset = 0; 
+
+    switch (displayInfo.CurrentOrientation)
+    {
+        case DisplayOrientations.Landscape:
+            displayOffset = 0;
             break;
-        case DisplayOrientations.Portrait: 
-            displayOffset = 270; 
-            break; 
-        case DisplayOrientations.LandscapeFlipped: 
-            displayOffset = 180; 
-            break; 
-        case DisplayOrientations.PortraitFlipped: 
-            displayOffset = 90; 
-            break; 
-     } 
-    
+        case DisplayOrientations.Portrait:
+            displayOffset = 270;
+            break;
+        case DisplayOrientations.LandscapeFlipped:
+            displayOffset = 180;
+            break;
+        case DisplayOrientations.PortraitFlipped:
+            displayOffset = 90;
+            break;
+     }
 
     double displayCompensatedHeading = (heading + displayOffset) % 360;
-    
+
     // Update the UI...
 }
 ```
@@ -118,42 +120,41 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
     double z_Axis;
 
     GyrometerReading reading = e.Reading;  
-    
+
     // Calculate the gyrometer axes based on
     // the current display orientation.
     DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
-    switch (displayInfo.CurrentOrientation) 
-    { 
-        case DisplayOrientations.Landscape: 
+    switch (displayInfo.CurrentOrientation)
+    {
+        case DisplayOrientations.Landscape:
             x_Axis = reading.AngularVelocityX;
             y_Axis = reading.AngularVelocityY;
             z_Axis = reading.AngularVelocityZ;
             break;
-        case DisplayOrientations.Portrait: 
+        case DisplayOrientations.Portrait:
             x_Axis = reading.AngularVelocityY;
             y_Axis = -1 * reading.AngularVelocityX;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-        case DisplayOrientations.LandscapeFlipped: 
+            break;
+        case DisplayOrientations.LandscapeFlipped:
             x_Axis = -1 * reading.AngularVelocityX;
             y_Axis = -1 * reading.AngularVelocityY;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-        case DisplayOrientations.PortraitFlipped: 
+            break;
+        case DisplayOrientations.PortraitFlipped:
             x_Axis = -1 * reading.AngularVelocityY;
             y_Axis = reading.AngularVelocityX;
             z_Axis = reading.AngularVelocityZ;
-            break; 
-     } 
-    
-    
+            break;
+     }
+
     // Update the UI...
 }
 ```
 
 ## Display orientation and device orientation
 
-The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
+The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
 ![Euler's formula](images/eulers-formula.png)
 
@@ -163,11 +164,9 @@ To get the relative orientation you want, multiply the reference object against 
 
 In the preceding expression, the absolute object is returned by the sensor data.
 
-
-| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
+| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
 | **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
-
