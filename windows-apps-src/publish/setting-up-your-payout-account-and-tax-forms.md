@@ -90,6 +90,9 @@ A payout account is the bank account to which we send the proceeds from your sal
 
 4. Select an existing payment profile, or click **Create a new payment profile** to create a new profile for the chosen payment method.
 
+> [!NOTE]
+> If, for some reason, your account is not ready to receive funds from Microsoft, you may check the **Hold my payment** checkbox. You will continue to earn proceeds from your sales, but payments will not be distributed until you disable **Hold my payment.**
+
 ### Create a bank-based payment profile
 
 If you elected to use a bank account to receive payouts, you'll complete the following process to configure your bank account.
