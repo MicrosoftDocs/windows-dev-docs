@@ -663,7 +663,7 @@ To activate the grouping facility of a [**CollectionViewSource**](https://docs.m
 
 The example below illustrates the "has-a-group" pattern. The page class has a property named [**ViewModel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), which returns an instance of our view model. The [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) binds to the **Authors** property of the view model (**Authors** is the collection of group objects) and also specifies that it's the **Author.BookSkus** property that contains the grouped items. Finally, the [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) is bound to the **CollectionViewSource**, and has its group style defined so that it can render the items in groups.
 
-```csharp
+```xaml
 <Page.Resources>
     <CollectionViewSource
     x:Name="AuthorHasACollectionOfBookSku"
