@@ -73,7 +73,7 @@
   - name: Develop with Python
     items:       
         - name: Overview
-          href: python/index.md
+          href: python/index.yml
         - name: Get started for beginners
           href: python/get-started/python-for-education.md
         - name: Get started with web dev

@@ -40,8 +40,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Python and Visual Studio Code](https://code.visualstudio.com/docs/languages/python): An overview of using Python with VS Code.
 
-
-### Online courses
+## Online courses
 
 - [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
