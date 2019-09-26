@@ -116,11 +116,35 @@ This page provides information on how the various Windows development frameworks
 :::row:::
    :::column:::
       [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+
       [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
       [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+
       [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+   :::column-end:::
+:::row-end:::
+
+:::row:::
+   :::column span="2":::
+      **Legacy features**
+
+      Legacy, deprecated, and/or unsupported versions of Microsoft Speech technology.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Microsoft Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
+
+      [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
+   :::column-end:::
+   :::column:::
+      [Speech SDK 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
+
+      [Microsoft Speech API (SAPI) 5.3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
+
+      [Microsoft Speech API (SAPI) 5.4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
    :::column-end:::
 :::row-end:::
 
