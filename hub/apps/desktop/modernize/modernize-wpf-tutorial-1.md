@@ -14,10 +14,7 @@ ms.custom: RS5, 19H1
 
 This is the first part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md).
   
-In this part of the tutorial, you will migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to [.NET Core 3](modernize-wpf-tutorial.md#net-core-3). Before you start this part of the tutorial, make sure you do following:
-
-* [Open and build the ContosoExpenses sample](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
-* If you're using a release version of Visual Studio 2019, enable preview versions of the .NET Core SDK. In Visual Studio, go to **Tools > Options**, type "Preview" in the search box, and select **Use previews of the .NET Core SDK**. If you're using a [preview version of Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/), you don't need to select this option because .NET Core previews are enabled by default.
+In this part of the tutorial, you will migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to [.NET Core 3](modernize-wpf-tutorial.md#net-core-3). Before you start this part of the tutorial, make sure you [open and build the ContosoExpenses sample](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
 
 > [!NOTE]
 > For more information about migrating a WPF application from the .NET Framework to .NET Core 3, see [this blog series](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
