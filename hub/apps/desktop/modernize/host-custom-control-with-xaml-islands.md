@@ -35,7 +35,7 @@ Before getting started, follow these instructions to create a WPF project and co
 > [!NOTE]
 > If you have an existing project that targets the .NET Framework, you'll need to migrate your project to .NET Core 3. For more information, see [this blog series](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
 
-1. If you haven't done so already, install the latest available preview version of the [.NET Core 3 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+1. If you haven't done so already, install the latest version of the [.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 2. In Visual Studio 2019, create a new **WPF App (.NET Core)** project.
 
