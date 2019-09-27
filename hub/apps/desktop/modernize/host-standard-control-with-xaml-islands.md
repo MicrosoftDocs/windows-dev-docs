@@ -259,7 +259,7 @@ The following instructions show you how to package the all the components in the
         ``` xml
         <ItemGroup>
             <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Release</TargetedSDKConfiguration>
             <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
             <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
             <Implicit>true</Implicit>
