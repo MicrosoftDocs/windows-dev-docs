@@ -1,9 +1,9 @@
 - name: Build apps for Windows
-  items: 
+  items:
   - name: Overview
     href: apps/index.md
   - name: Build desktop apps
-    items: 
+    items:
         - name: Overview
           href: apps/desktop/index.md
         - name: Choose your app platform
@@ -19,7 +19,7 @@
               - name: Available UWP APIs
                 href: apps/desktop/modernize/desktop-to-uwp-supported-api.md
         - name: Host UWP XAML controls (XAML Islands)
-          items: 
+          items:
               - name: Overview
                 href: apps/desktop/modernize/xaml-islands.md
               - name: Host a standard UWP control in a WPF app
@@ -29,7 +29,7 @@
               - name: Using the UWP XAML hosting API in a C++ Win32 app
                 href: apps/desktop/modernize/using-the-xaml-hosting-api.md
         - name: Using the Visual layer (Windows.UI.Composition)
-          items: 
+          items:
               - name: Overview
                 href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
               - name: WPF
@@ -49,7 +49,7 @@
               - name: Distribute your packaged app
                 href: apps/desktop/modernize/desktop-to-uwp-distribute.md
         - name: "Tutorial: Modernize a WPF app"
-          items: 
+          items:
             - name: Overview
               href: apps/desktop/modernize/modernize-wpf-tutorial.md
             - name: "Migrate the Contoso Expenses app to .NET Core 3"
@@ -68,10 +68,12 @@
     href: apps/accessibility.md
   - name: Features and technologies
     href: apps/features-and-technologies.md
+  - name: Latest doc updates
+    href: apps/whats-new/latest-doc-updates.md
 - name: Build with Windows
-  items: 
+  items:
   - name: Develop with Python
-    items:       
+    items:
         - name: Overview
           href: python/index.yml
         - name: Get started for beginners
@@ -83,9 +85,9 @@
         - name: FAQs
           href: python/faqs.md
         - name: Resources
-          href: python/resources.md   
+          href: python/resources.md
   # - name: Develop with NodeJS
-  #   items: 
+  #   items:
   #       - name: Overview
   #         href: https://review.docs.microsoft.com/windows/nodejs/?branch=windows-dev-environment
   #       - name: Web development
