@@ -180,4 +180,4 @@ Here's an AutoSuggestBox with a 'find' icon.
 - [Search](search.md)
 - [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length)

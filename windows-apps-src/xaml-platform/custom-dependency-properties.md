@@ -440,7 +440,7 @@ Collection-type dependency properties are relatively rare in the Windows Runtime
 - You do not typically animate a collection.
 - You do not typically prepopulate the items in a collection with styles or a template.
 - Although binding to collections is a major scenario, a collection does not need to be a dependency property to be a binding source. For binding targets, it is more typical to use subclasses of [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) or [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) to support collection items, or to use view-model patterns. For more info about binding to and from collections, see [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
-- Notifications for collection changes are better addressed through interfaces such as **INotifyPropertyChanged** or **INotifyCollectionChanged**, or by deriving the collection type from [**ObservableCollection&lt;T&gt;**](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN).
+- Notifications for collection changes are better addressed through interfaces such as **INotifyPropertyChanged** or **INotifyCollectionChanged**, or by deriving the collection type from [**ObservableCollection&lt;T&gt;**](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1).
 
 Nevertheless, scenarios for collection-type dependency properties do exist. The next three sections provide some guidance on how to implement a collection-type dependency property.
 

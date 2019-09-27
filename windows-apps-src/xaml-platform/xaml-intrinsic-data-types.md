@@ -18,10 +18,10 @@ XAML for the Windows Runtime provides language-level support for these types.
 
 | XAML primitive | Description |
 |-------|-------------|
-| **x:Boolean**  | For CLR support, corresponds to [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean?redirectedfrom=MSDN). XAML parses values for **x:Boolean** as case insensitive. Note that "x:Bool" is not an accepted alternative. |
-| **x:String**   | For CLR support, corresponds to [**String**](https://docs.microsoft.com/dotnet/api/system.string?redirectedfrom=MSDN). Encoding for the string defaults to the surrounding XML encoding. |
-| **x:Double**   | For CLR support, corresponds to [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value. The tokens are treated as case sensitive. You can use scientific notation, for example "1+E06" for `1,000,000`. |
-| **x:Int32**    | For CLR support, corresponds to [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32?redirectedfrom=MSDN). **x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer. In XAML, the absence of a sign in text syntax implies a positive signed value. |
+| **x:Boolean**  | For CLR support, corresponds to [**Boolean**](https://docs.microsoft.com/dotnet/api/system.boolean). XAML parses values for **x:Boolean** as case insensitive. Note that "x:Bool" is not an accepted alternative. |
+| **x:String**   | For CLR support, corresponds to [**String**](https://docs.microsoft.com/dotnet/api/system.string). Encoding for the string defaults to the surrounding XML encoding. |
+| **x:Double**   | For CLR support, corresponds to [**Double**](https://docs.microsoft.com/dotnet/api/system.double). In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value. The tokens are treated as case sensitive. You can use scientific notation, for example "1+E06" for `1,000,000`. |
+| **x:Int32**    | For CLR support, corresponds to [**Int32**](https://docs.microsoft.com/dotnet/api/system.int32). **x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer. In XAML, the absence of a sign in text syntax implies a positive signed value. |
 
 These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML. All other XAML language features are typically used in attribute form, or as a markup extension.
 
@@ -31,7 +31,7 @@ These XAML language primitives are generally the only cases in which you define 
 
 The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**. Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.
 
-**Note**  Dates and times (properties that use [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime) or [**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) or [**System.TimeSpan**](https://docs.microsoft.com/dotnet/api/system.timespan?redirectedfrom=MSDN)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
+**Note**  Dates and times (properties that use [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime) or [**DateTimeOffset**](https://docs.microsoft.com/dotnet/api/system.datetimeoffset), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) or [**System.TimeSpan**](https://docs.microsoft.com/dotnet/api/system.timespan)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
 
 ## Related topics
 

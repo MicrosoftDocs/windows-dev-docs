@@ -71,7 +71,7 @@ If you want to detect faces in video, it is more efficient to use the [**FaceTra
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Declare a class variable for the **FaceTracker** object. This example uses a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) to initiate face tracking on a defined interval. A [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) is used to make sure that only one face tracking operation is running at a time.
+Declare a class variable for the **FaceTracker** object. This example uses a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) to initiate face tracking on a defined interval. A [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) is used to make sure that only one face tracking operation is running at a time.
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 

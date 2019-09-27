@@ -28,7 +28,7 @@ If you have not packaged your app with the Desktop Bridge, [you must do so first
 
 ## Enable access to IInitializeWithWindow interface
 
-If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
+If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
 
 ```csharp
 [ComImport]

@@ -34,11 +34,11 @@ A reference to an object in your app prevents that object, and all of the object
 
 Induce a garbage collection only after you have measured your app's performance and have determined that inducing a collection will improve its performance.
 
-You can induce a garbage collection of a generation by calling [**GC.Collect(n)**](https://docs.microsoft.com/dotnet/api/system.gc.collect?redirectedfrom=MSDN#System_GC_Collect_System_Int32_), where n is the generation you want to collect (0, 1, or 2).
+You can induce a garbage collection of a generation by calling [**GC.Collect(n)**](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_), where n is the generation you want to collect (0, 1, or 2).
 
 **Note**  We recommend that you don't force a garbage collection in your app because the garbage collector uses many heuristics to determine the best time to perform a collection, and forcing a collection is in many cases an unnecessary use of the CPU. But if you know that you have a large number of objects in your app that are no longer used and you want to return this memory to the system, then it may be appropriate to force a garbage collection. For example, you can induce a collection at the end of a loading sequence in a game to free up memory before gameplay starts.
  
-To avoid inadvertently inducing too many garbage collections, you can set the [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode?redirectedfrom=MSDN) to **Optimized**. This instructs the garbage collector to start a collection only if it determines that the collection would be productive enough to be justified.
+To avoid inadvertently inducing too many garbage collections, you can set the [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) to **Optimized**. This instructs the garbage collector to start a collection only if it determines that the collection would be productive enough to be justified.
 
 ## Reduce garbage collection time
 

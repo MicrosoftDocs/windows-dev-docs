@@ -72,7 +72,7 @@ See [Share code between a desktop app and a UWP app](https://docs.microsoft.com/
 
 ### SQL Server connectivity
 
-Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) namespace.
+Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace.
 
 See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
 
@@ -119,7 +119,7 @@ Line-of-business apps often need to communicate with or store data on a variety 
 |-------|-------------|
 | [Networking basics](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | This walkthrough explains basic networking concepts relevant to all UWP apps, regardless of the communication protocols in use.  |
 | [Which networking technology?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | A quick overview of the networking technologies available for UWP apps, with suggestions on how to choose the technologies that are the best fit for your app. |
-| [XML and SOAP serialization](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML serialization converts objects into an XML stream that conforms to a   specific XML Schema definition language (XSD). To convert between XML and a strongly-typed class, you can use the native [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) class, or an external library. |
+| [XML and SOAP serialization](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML serialization converts objects into an XML stream that conforms to a   specific XML Schema definition language (XSD). To convert between XML and a strongly-typed class, you can use the native [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) class, or an external library. |
 | [JSON serialization](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON (JavaScript object notation) serialization is a popular format for   communicating with REST APIs. The [Newtonsoft Json.NET](https://www.newtonsoft.com/json), which is fully supported for UWP apps. |
 
 ## Devices

@@ -346,7 +346,7 @@ This example displays a collection of XAML elements bound to a [**MapItemsContro
 </maps:MapControl>
 ```
 
-The ``ItemsSource`` property in the example above is bound to a property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) in the code-behind file.
+The ``ItemsSource`` property in the example above is bound to a property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) in the code-behind file.
 
 ```csharp
 public sealed partial class Scenario1 : Page

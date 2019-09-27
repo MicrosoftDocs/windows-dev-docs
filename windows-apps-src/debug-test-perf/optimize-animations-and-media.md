@@ -24,7 +24,7 @@ All of these types of animations are guaranteed to be independent:
 
 -   Object animations using key frames
 -   Zero-duration animations
--   Animations to the [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) and [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) properties
+-   Animations to the [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) and [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) properties
 -   Animations to the [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) property
 -   Animations to properties of type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) when targeting the [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) subproperty
 -   Animations to the following [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) properties when targeting subproperties of these return value types:

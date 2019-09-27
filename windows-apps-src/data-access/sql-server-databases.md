@@ -7,7 +7,7 @@ keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
 # Use a SQL Server database in a UWP app
-Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) namespace.
+Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace.
 
 In this guide, we'll show you one way to do that. If you install the [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
 
@@ -44,7 +44,7 @@ In this section,  we'll do these things:
 :five: Populate the UI with Products.
 
 >[!NOTE]
-> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
+> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
 
 ### Add a connection string
 
@@ -71,7 +71,7 @@ sealed partial class App : Application
 
 ### Create a class to hold product data
 
-We'll create a class that implements the [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) event so that we can bind attributes in our XAML UI to the properties in this class.
+We'll create a class that implements the [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) event so that we can bind attributes in our XAML UI to the properties in this class.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -100,7 +100,7 @@ public class Product : INotifyPropertyChanged
 
 ### Retrieve products from the SQL Server database
 
-Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) collection of ``Product`` instances.
+Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -202,7 +202,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### Show products in the ListView
 
-Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) of ``Product`` instances.
+Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) of ``Product`` instances.
 
 ```csharp
 public MainPage()
@@ -216,7 +216,7 @@ Start the project and see products from the Northwind sample database appear in 
 
 ![Northwind products](images/products-northwind.png)
 
-Explore the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) namespace to see what other things you can do with data in your SQL Server database.
+Explore the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
 
 ## Trouble connecting to your database?
 
