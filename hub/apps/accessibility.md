@@ -251,7 +251,6 @@ Various videos covering how to build accessible Windows applications to general 
       [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **Community and support**

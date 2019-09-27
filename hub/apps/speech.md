@@ -74,7 +74,7 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
-      [Accessibility Best Practices](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [System.Speech Programming Guide for .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
 
       [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
@@ -258,26 +258,23 @@ Various videos covering how to build accessible Windows applications to general 
 ## Other resources
 
 :::row:::
-   :::column span="3":::
+   :::column span="2":::
       **Blogs and news**
 
-      The latest from the world of Microsoft accessibility.
+      The latest from the world of Microsoft speech.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [In the news](https://news.microsoft.com/presskits/accessibility/)
+      [In the news](https://news.microsoft.com/?s=speech)
    :::column-end:::
    :::column:::
-      [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
-   :::column-end:::
-   :::column:::
-      [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Speech blogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
    :::column-end:::
 :::row-end:::
 
 :::row:::
-   :::column span="3":::
+   :::column span="2":::
       **Community and support**
 
       A place where Windows developers and users meet and learn together.
@@ -285,12 +282,9 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
-      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
+      [Windows community - Speech](https://community.windows.com/search?q=speech)
    :::column-end:::
    :::column:::
-      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
-   :::column-end:::
-   :::column:::
-      [Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)
+      [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
    :::column-end:::
 :::row-end:::
