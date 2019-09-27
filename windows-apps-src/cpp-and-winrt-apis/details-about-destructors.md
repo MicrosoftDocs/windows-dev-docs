@@ -1,17 +1,21 @@
 ---
-description: C++/WinRT 2.0 allows you to defer destruction of your implementation types, and to safely query during destruction. This topic describes those features and explains when you would use them.
-title: Details about destructors
-ms.date: 07/19/2019
+description: These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods.
+title: Extension points for your implementation types
+ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, deferred destruction, safe queries
 ms.localizationpriority: medium
 ---
 
-# Details about destructors
+# Extension points for your implementation types
 
-C++/WinRT 2.0 allows you to defer destruction of your implementation types, and to safely query during destruction. This topic describes those features and explains when you would use them.
+The [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements) is the base from which your own [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementations (of runtime classes and activation factories) directly or indirectly derive.
 
-## Deferred Destruction
+This topic discusses the extension points of **winrt::implements** in C++/WinRT 2.0. You can choose to implement these extension points on your implementation types, in order to customize the default behavior of inspectable objects (*inspectable* in the sense of the [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) interface).
+
+These extension points allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. This topic describes those features and explains more about when and how you would use them.
+
+## Deferred destruction
 
 In the [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc) topic, we mentioned that your implementation type can't have a private destructor.
 
@@ -84,7 +88,11 @@ struct Sample : implements<Sample, IStringable>
 };
 ```
 
-Think of this as a more deterministic garbage collector. Perhaps more practically and more powerfully, you can turn the **final_release** function into a coroutine, and handle its eventual destruction in one place while being able to suspend and switch threads as needed.
+Think of this as a more deterministic garbage collector.
+
+Normally, the object destructs when the **std::unique_ptr** destructs, but you can hasten its destruction by calling **std::unique_ptr::reset**; or you can postpone it by saving the **std::unique_ptr** somewhere.
+
+Perhaps more practically and more powerfully, you can turn the **final_release** function into a coroutine, and handle its eventual destruction in one place while being able to suspend and switch threads as needed.
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -106,7 +114,7 @@ A suspension will point causes the calling thread&mdash;which originally initiat
 
 Building on the notion of deferred destruction is the ability to safely query for interfaces during destruction.
 
-Classic COM is based on two central concepts. The first is reference counting, and the second is querying for interfaces. In addition to **AddRef** and **Release**, the **IUnknown** interface provides [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void). That method is heavily used by certain UI frameworks&mdash;such as XAML, to traverse the XAML hierarchy as it simulates its composable type system. Consider a simple example.
+Classic COM is based on two central concepts. The first is reference counting, and the second is querying for interfaces. In addition to **AddRef** and **Release**, the **IUnknown** interface provides [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)). That method is heavily used by certain UI frameworks&mdash;such as XAML, to traverse the XAML hierarchy as it simulates its composable type system. Consider a simple example.
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -167,3 +175,59 @@ First, the **final_release** function is called, notifying the implementation th
 Inside the destructor, we clear the data context; which, as we know, requires a query for the **FrameworkElement** base class.
 
 All of this possible because of the reference count debouncing (or reference count stabilization) provided by C++/WinRT 2.0.
+
+## Method entry and exit hooks
+
+A less commonly-used extension point is the **abi_guard** struct, and the **abi_enter** and **abi_exit** functions.
+
+If your implementation type defines a function **abi_enter**, then that function is called at the entry to every one of your projected interface methods (not counting the methods of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)).
+
+Similarly, if you define **abi_exit**, then that will be called at the exit from every such method; but it will not be called if your **abi_enter** throws an exception. It *will* still be called if an exception is thrown by your projected interface method itself.
+
+As an example, you might use **abi_enter** to throw a hypothetical **invalid_state_error** exception if a client tries to use an object after the object has been put into an unusable state&mdash;say after a **Shut­Down** or **Disconnect** method call. The C++/WinRT iterator classes use this feature to throw an invalid state exception in the **abi_enter** function if the underlying collection has changed.
+
+Over and above the simple **abi_enter** and **abi_exit**functions, you can define a nested type named **abi_guard**. In that case, an instance of **abi_guard** is created on entry to each (non-**IInspectable**) of your projected interface methods, with a reference to the object as its constructor parameter. The **abi_guard** is then destructed on exit from the method. You can put whatever extra state you like into your **abi_guard** type.
+
+If you don't define your own **abi_guard**, then there's a default one that calls **abi_enter** at construction, and **abi_exit** at destruction.
+
+These guards are used only when a method is invoked *via the projected interface*. If you invoke methods directly on the implementation object, then those calls go straight to the implementation, without any guards.
+
+Here's a code example.
+
+```cppwinrt
+struct Sample : SampleT<Sample, IClosable>
+{
+    void abi_enter();
+    void abi_exit();
+
+    void Close();
+};
+
+void example1()
+{
+    auto sampleObj1{ winrt::make<Sample>() };
+    sampleObj1.Close(); // Calls abi_enter and abi_exit.
+}
+
+void example2()
+{
+    auto sampleObj2{ winrt::make_self<Sample>() };
+    sampleObj2->Close(); // Doesn't call abi_enter nor abi_exit.
+}
+
+// A guard is used only for the duration of the method call.
+// If the method is a coroutine, then the guard applies only until
+// the IAsyncXxx is returned; not until the coroutine completes.
+
+IAsyncAction CloseAsync()
+{
+    // Guard is active here.
+    DoWork();
+
+    // Guard becomes inactive once DoOtherWorkAsync
+    // returns an IAsyncAction.
+    co_await DoOtherWorkAsync();
+
+    // Guard is not active here.
+}
+```

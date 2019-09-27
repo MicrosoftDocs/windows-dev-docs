@@ -250,7 +250,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-For more info, see [Details about destructors](/windows/uwp/cpp-and-winrt-apis/details-about-destructors).
+For more info, see [Deferred destruction](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction).
 
 #### Improved support for COM-style single interface inheritance
 
