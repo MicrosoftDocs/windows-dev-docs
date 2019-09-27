@@ -276,9 +276,9 @@ To work around this issue, completely uninstall all versions of the app and re-d
 ## Exceptions in Windows.Networking.BackgroundTransfer
 An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) object.
 
-**.NET:** The [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) type appears as [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) in C# and VB.
+**.NET:** The [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) type appears as [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) in C# and VB.
 
-In C# and Visual Basic, this error can be avoided by using the [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) class in the .NET 4.5 and one of the [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) methods to test the string received from the app user before the URI is constructed.
+In C# and Visual Basic, this error can be avoided by using the [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) class in the .NET 4.5 and one of the [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads) methods to test the string received from the app user before the URI is constructed.
 
 In C++, there is no method to try and parse a string to a URI. If an app gets input from the user for the [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri), the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
 

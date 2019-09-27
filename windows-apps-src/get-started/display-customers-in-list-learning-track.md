@@ -104,7 +104,7 @@ You’ve displayed customers in a list, but data binding lets you do more. What 
 
 If you've followed the code snippets from earlier, the binding you made uses x:Bind and doesn't specify a mode, making it a One-Time binding. If you want to edit your Customers directly from the UI, you'll need to change it to a Two-Way binding, so that changes from the data will be passed back to the Customer objects. [Data binding in depth](../data-binding/data-binding-in-depth.md) has more information.
 
-Two-way binding will also update the UI if the data source is changed. For this to work, you must implement [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) on the source and ensure its property setters raise the **PropertyChanged** event. Common practice is to have them call a helper method like the **OnPropertyChanged** method, as shown below:
+Two-way binding will also update the UI if the data source is changed. For this to work, you must implement [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) on the source and ensure its property setters raise the **PropertyChanged** event. Common practice is to have them call a helper method like the **OnPropertyChanged** method, as shown below:
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -164,7 +164,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 | [Binding](../xaml-platform/binding-markup-extension.md) | Documentation on the older Binding markup extension. |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | A UI control that displays data items in a vertical stack. |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | A basic text control for displaying editable text data in the UI. |
-| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) | The interface for making data observable, providing it to a data binding. |
+| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) | The interface for making data observable, providing it to a data binding. |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | The **ItemsSource** property of this class allows a ListView to bind to a data source. |
 
 ### Useful docs

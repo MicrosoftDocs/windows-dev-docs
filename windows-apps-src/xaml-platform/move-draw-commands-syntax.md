@@ -105,7 +105,7 @@ Creates a horizontal line between the current point and the specified x-coordina
 
 | Term | Description |
 |------|-------------|
-| x | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> The x-coordinate of the end point of the line. |
+| x | [**Double**](https://docs.microsoft.com/dotnet/api/system.double) <br/> The x-coordinate of the end point of the line. |
 
 **Vertical line command**
 
@@ -117,7 +117,7 @@ Creates a vertical line between the current point and the specified y-coordinate
 
 | Term | Description |
 |------|-------------|
-| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> The y-coordinate of the end point of the line. |
+| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double) <br/> The y-coordinate of the end point of the line. |
 
 **Cubic Bézier curve command**
 
@@ -183,7 +183,7 @@ Creates an elliptical arc between the current point and the specified end point.
 | Term | Description |
 |------|-------------|
 | *size* | [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)<br/>The x-radius and y-radius of the arc. |
-| *rotationAngle* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> The rotation of the ellipse, in degrees. |
+| *rotationAngle* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double) <br/> The rotation of the ellipse, in degrees. |
 | *isLargeArcFlag* | Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0. |
 | *sweepDirectionFlag* | Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0. |
 | *endPoint* | [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> The point to which the arc is drawn.|
@@ -206,8 +206,8 @@ Describes the x-coordinate and y-coordinate of a point. See also [**Point**](htt
 
 | Term | Description |
 |------|-------------|
-| *x* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> The x-coordinate of the point. |
-| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> The y-coordinate of the point. |
+| *x* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double) <br/> The x-coordinate of the point. |
+| *y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double) <br/> The y-coordinate of the point. |
 
 **Additional notes**
 
