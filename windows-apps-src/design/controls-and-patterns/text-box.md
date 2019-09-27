@@ -313,4 +313,4 @@ For more info and examples, see [Use input scope to change the touch keyboard](h
 - [Guidelines for text input](text-controls.md)
 - [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length#System_String_Length)
+- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length)
