@@ -238,7 +238,7 @@ Another rule of XAML is that attributes of an element must be able to be set in 
 
 XAML extends XML by adding a syntax element known as an *attached property*. Similar to the property element syntax, the attached property syntax contains a dot, and the dot holds special meaning to XAML parsing. Specifically, the dot separates the owner provider of the attached property, and the property name.
 
-In XAML, you set attached properties by using the syntax *AttachedPropertyProvider*.*PropertyName* Here is an example of how you can set the attached property [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) in XAML:
+In XAML, you set attached properties by using the syntax *AttachedPropertyProvider*.*PropertyName* Here is an example of how you can set the attached property [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) in XAML:
 
 ```xml
 <Canvas>
