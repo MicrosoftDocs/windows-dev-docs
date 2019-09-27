@@ -58,7 +58,7 @@ You could do that explicitly, or indirectly by including some other header file 
 
 ## A simple example of a COM component
 
-Here's a simple example of a COM component written using C++/WinRT. This is a full listing of a mini-application, so you can test the code out if you paste it into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
+Here's a simple example of a COM component written using C++/WinRT. This is a full listing of a mini-application, so you can try the code out if you paste it into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
