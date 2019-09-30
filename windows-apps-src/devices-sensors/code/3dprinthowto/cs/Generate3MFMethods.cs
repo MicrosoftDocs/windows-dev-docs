@@ -407,6 +407,7 @@ namespace _3DPrintHowTo {
         }
         // </SnippetVertices>
 
+        // <SnippetFixTexture>
         /// <summary>
         /// Fixes issue in API where textures are not saved correctly
         /// </summary>
@@ -432,6 +433,7 @@ namespace _3DPrintHowTo {
             writer.DetachStream();
             return outputStream;
         }
+        // </SnippetFixTexture>
 
         // <SnippetSaveTo3mf>
         private async void SaveTo3mf(Printing3D3MFPackage localPackage) {
