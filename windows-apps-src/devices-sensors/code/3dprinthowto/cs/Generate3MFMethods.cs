@@ -409,7 +409,7 @@ namespace _3DPrintHowTo {
 
         // <SnippetFixTexture>
         /// <summary>
-        /// Fixes issue in API where textures are not saved correctly
+        /// Ensure textures are saved correctly.
         /// </summary>
         /// <param name="modelStream">3dmodel.model data</param>
         /// <returns></returns>
