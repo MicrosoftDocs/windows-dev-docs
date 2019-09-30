@@ -35,7 +35,7 @@ namespace DeveloperApiCSharpSample
             var serviceEndpoint = this.ClientConfig.ServiceUrl;
             var tokenEndpoint = this.ClientConfig.TokenEndpoint;
 
-            // Get authorization token
+            // Get authorization token.
             Console.WriteLine("Getting authorization token ");
             var accessToken = IngestionClient.GetClientCredentialAccessToken(
                 tokenEndpoint,
@@ -55,10 +55,10 @@ namespace DeveloperApiCSharpSample
                 requestContent: null).Result;
             Console.WriteLine(app.ToString());
 
-            // Let's get the last published submission, and print its contents, just for information
+            // Let's get the last published submission, and print its contents, just for information.
             if (app.lastPublishedApplicationSubmission == null)
             {
-                // It is not possible to create the very first submission through the API
+                // It is not possible to create the very first submission through the API.
                 throw new InvalidOperationException(
                     "You need at least one published submission to create new submissions through API.");
             }
@@ -98,14 +98,14 @@ namespace DeveloperApiCSharpSample
                     appId),
                 requestContent: null).Result;
 
-            // Update some property on the root submission object
+            // Update some property on the root submission object.
             clonedSubmission.notesForCertification = "This is a test update, updating listing info, images, and packages";
 
-            // Now, assume we have an en-us listing. Let's try to change its description
+            // Now, assume we have an en-us listing. Let's try to change its description.
             clonedSubmission.listings["en-us"].baseListing.description = "This is my new en-Us description!";
 
-            // Update images
-            // Assuming we have at least 1 image, let's delete one image
+            // Update images.
+            // Assuming we have at least 1 image, let's delete one image.
             clonedSubmission.listings["en-us"].baseListing.images[0].fileStatus = "PendingDelete";
 
             var images = new List<dynamic>();
@@ -121,11 +121,11 @@ namespace DeveloperApiCSharpSample
 
             clonedSubmission.listings["en-us"].baseListing.images = JToken.FromObject(images.ToArray());
 
-            // Update packages
-            // Let's say we want to delete the existing package:
+            // Update packages.
+            // Let's say we want to delete the existing package.
             clonedSubmission.applicationPackages[0].fileStatus = "PendingDelete";
 
-            // Now, let's add a new package
+            // Now, let's add a new package.
             var packages = new List<dynamic>();
             packages.Add(clonedSubmission.applicationPackages[0]);
             packages.Add(
@@ -140,13 +140,13 @@ namespace DeveloperApiCSharpSample
             clonedSubmission.applicationPackages = JToken.FromObject(packages.ToArray());
             var clonedSubmissionId = clonedSubmission.id.Value as string;
 
-            // Uploaded the zip archive with all new files to the SAS url returned with the submission
+            // Uploaded the zip archive with all new files to the SAS url returned with the submission.
             var fileUploadUrl = clonedSubmission.fileUploadUrl.Value as string;
             Console.WriteLine("FileUploadUrl: " + fileUploadUrl);
             Console.WriteLine("Uploading file");
             IngestionClient.UploadFileToBlob(@"..\..\files.zip", fileUploadUrl).Wait();
 
-            // Update the submission
+            // Update the submission.
             Console.WriteLine("Updating the submission");
             client.Invoke<dynamic>(
                 HttpMethod.Put,
@@ -160,7 +160,7 @@ namespace DeveloperApiCSharpSample
                 requestContent: clonedSubmission).Wait();
 
             // Tell the system that we are done updating the submission.
-            // Update the submission
+            // Update the submission.
             Console.WriteLine("Committing the submission");
             client.Invoke<dynamic>(
                 HttpMethod.Post,
