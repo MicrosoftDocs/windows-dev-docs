@@ -138,10 +138,10 @@ XAML is a declarative language for objects and their properties, but it also inc
 Here's a simple example. The <xref:Windows.UI.Xaml.Controls.Button> class supports an event named <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-When you compile, the compiler now expects that there will be a method named `showUpdatesButton-Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> event. For example:
+When you compile, the compiler now expects that there will be a method named `showUpdatesButton_Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> event. For example:
 
 ```csharp
 namespace App1
