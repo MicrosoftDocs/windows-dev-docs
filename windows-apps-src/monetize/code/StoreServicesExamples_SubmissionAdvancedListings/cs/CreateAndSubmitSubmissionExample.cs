@@ -13,10 +13,10 @@ namespace DevCenterApiSample
             string tenantId = "";
             string clientId = "";
             string clientSecret = "";
-            DevCenterAccessTokenClient accessTokenClient = new DevCenterAccessTokenClient(tenantId, clientId, clientSecret);
+            var accessTokenClient = new DevCenterAccessTokenClient(tenantId, clientId, clientSecret);
 
             string accessToken = accessTokenClient.GetAccessToken("https://manage.devcenter.microsoft.com");
-            DevCenterClient devCenter = new DevCenterClient(accessToken);
+            var devCenter = new DevCenterClient(accessToken);
 
             // The application ID is taken from your app dashboard page's URI in Dev Center,
             // e.g. https://developer.microsoft.com/en-us/dashboard/apps/{application_id}/
@@ -35,7 +35,7 @@ namespace DevCenterApiSample
             JObject submission = devCenter.CreateSubmission(applicationId);
             string submissionId = submission.GetValue("id").Value<string>();
 
-            // The following fields are required:
+            // The following fields are required.
             submission["applicationCategory"] = "Games_Fighting";
             submission["listings"] = GetListingsObject();
             submission["pricing"] = GetPricingObject();
@@ -45,7 +45,7 @@ namespace DevCenterApiSample
             // The app must have the hasAdvancedListingPermission set to True in order for gaming options
             // and trailers to be applied. If that's not the case, you can still update the app and
             // its submissions through the API, but gaming options and trailers won't be saved.
-            if( app["hasAdvancedListingPermission"] == null || app["hasAdvancedListingPermission"].Value<bool>() == false)
+            if (app["hasAdvancedListingPermission"] == null || app["hasAdvancedListingPermission"].Value<bool>() == false)
             {
                 Console.WriteLine("This application does not support gaming options or trailers.");
             }
@@ -59,7 +59,7 @@ namespace DevCenterApiSample
             }                
 
             // Continue updating the submission_json object with additional options as needed.
-            // After you've finished, call the Update API with the code below to save it:
+            // After you've finished, call the Update API with the code below to save it.
             JObject updatedSubmission = devCenter.UpdateSubmission(applicationId, submissionId, submission);
 
             // All images and packages should be located in a single ZIP file. In the submission JSON, 
@@ -90,7 +90,7 @@ namespace DevCenterApiSample
         private static JObject GetListingsObject()
         {
             // This structure holds basic information to display in the store.
-            JObject baseListing = new JObject();
+            var baseListing = new JObject();
             baseListing.Add("copyrightAndTrademarkInfo", "(C) 2017 Microsoft");
             baseListing.Add("licenseTerms", "http://example.com/licenseTerms.aspx");
             baseListing.Add("privacyPolicy", "http://example.com/privacyPolicy.aspx");
@@ -103,31 +103,31 @@ namespace DevCenterApiSample
             // If it doesn't, attempting to update the submission will fail.
             baseListing.Add("title", "Super Game Options API Simulator 2017");
 
-            JArray keywords = new JArray();
+            var keywords = new JArray();
             keywords.Add("SampleApp");
             keywords.Add("SampleFightingGame");
             keywords.Add("GameOptions");
             baseListing.Add("keywords", keywords);
 
-            JArray features = new JArray();
+            var features = new JArray();
             features.Add("Doesn't crash");
             features.Add("Likes to eat chips");
             baseListing.Add("features", features);
 
             // If your app works better with specific hardware (or needs it), you can
             // add or update values here.
-            JArray hardwarePreferences = new JArray()
+            var hardwarePreferences = new JArray()
             {
                 "Keyboard",
                 "Mouse"
             };
             baseListing.Add("hardwarePreferences", hardwarePreferences);
 
-            JArray images = new JArray();
+            var images = new JArray();
 
             // There are several types of images available; at least one screenshot
             // is required.
-            JObject image = new JObject();
+            var image = new JObject();
 
             // The file name is relative to the root of the uploaded ZIP file.
             image.Add("fileName", "img/screenshot.png");
@@ -136,7 +136,7 @@ namespace DevCenterApiSample
             images.Add(image);
             baseListing.Add("images", images);
 
-            JObject listing = new JObject();
+            var listing = new JObject();
             listing.Add("baseListing", baseListing);
 
             // If there are any specific overrides to above information for Windows 8,
@@ -144,14 +144,14 @@ namespace DevCenterApiSample
             listing.Add("platformOverrides", new JObject());
 
             // Each listing is targeted at a specific language-locale code, e.g. EN-US.
-            JObject listings = new JObject();
+            var listings = new JObject();
             listings.Add("en-us", listing);
             return listings;
         }
 
         private static JObject GetPackageObject()
         {
-            JObject package = new JObject()
+            var package = new JObject()
             {
                 // The file name is relative to the root of the uploaded ZIP file.
                 ["fileName"] = "bin/super_dev_ctr_api_sim.appxupload",
@@ -164,7 +164,7 @@ namespace DevCenterApiSample
 
         private static JObject GetPricingObject()
         {
-            JObject pricing = new JObject();
+            var pricing = new JObject();
 
             // How long the trial period is, if one is allowed. Valid values are NoFreeTrial,
             // OneDay, SevenDays, FifteenDays, ThirtyDays, or TrialNeverExpires.
@@ -181,7 +181,7 @@ namespace DevCenterApiSample
 
         private static JObject GetDeviceFamiliesObject()
         {
-            JObject futureDeviceFamilies = new JObject();
+            var futureDeviceFamilies = new JObject();
 
             // Supported values are Desktop, Mobile, Xbox, and Holographic. To make
             // the app available on that specific platform, set the value to True.
@@ -195,7 +195,7 @@ namespace DevCenterApiSample
         private static JObject GetTrailerObject()
         {
             // Add an example trailer.
-            JObject trailer = new JObject();
+            var trailer = new JObject();
 
             // This is the filename of the trailer. The file name is a relative path to the
             // root of the ZIP file to be uploaded to the API.
@@ -203,11 +203,11 @@ namespace DevCenterApiSample
 
             // Aside from the video itself, a trailer can have image assets such as screenshots
             // or alternate images.
-            JObject trailerAssets = new JObject();
+            var trailerAssets = new JObject();
             trailer["TrailerAssets"] = trailerAssets;
 
             // Add trailer assets for the EN-US market.
-            JObject trailerAsset = new JObject();
+            var trailerAsset = new JObject();
             trailerAssets["en-us"] = trailerAsset;
 
             // The title of the trailer to display in the store.
@@ -215,11 +215,11 @@ namespace DevCenterApiSample
 
             // The list of images provided with the trailer that are shown
             // when the trailer isn't playing.
-            JArray imageList = new JArray();
+            var imageList = new JArray();
             trailerAsset["ImageList"] = imageList;
 
             // Add a few images to the image list.
-            JObject thumbnailImage = new JObject()
+            var thumbnailImage = new JObject()
             {
                 // The file name of the image. The file name is a relative
                 // path to the root of the ZIP
@@ -231,7 +231,7 @@ namespace DevCenterApiSample
             };
             imageList.Add(thumbnailImage);
 
-            JObject altImage = new JObject()
+            var altImage = new JObject()
             {
                 ["FileName"] = "trailers/main/alt-img.png",
                 ["Description"] = "The image to show after the trailer plays"
@@ -243,10 +243,10 @@ namespace DevCenterApiSample
 
         private static JObject GetGamingOptionsObject()
         {
-            JObject gamingOptions = new JObject();
+            var gamingOptions = new JObject();
 
             // The genres of your game.
-            JArray genres = new JArray();
+            var genres = new JArray();
             genres.Add("Games_Fighting");
             gamingOptions["genres"] = genres;
 
