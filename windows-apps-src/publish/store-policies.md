@@ -12,9 +12,9 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 # Microsoft Store Policies
 
 
-**Document version: 7.11**
+**Document version: 7.12**
 
-**Document date: March 5, 2019**
+**Document date: October 1, 2019**
 
 > [!NOTE]
 > For a summary of recent changes to this agreement, see [Change history](store-policies-change-history.md).
@@ -67,9 +67,9 @@ If you have feedback on the policies, please let us know by commenting in [our f
 - [11.9 Excessive Profanity and Inappropriate Content](#119-excessive-profanity-and-inappropriate-content)
 - [11.10 Country/Region Specific Requirements](#1110-countryregion-specific-requirements)
 - [11.11 Age Ratings](#1111-age-ratings)
+- [11.12 User Generated Content](#1112-user-generated-content)
 
 ## Product Policies
-
 
 ### 10.1 Distinct Function & Value; Accurate Representation
 
@@ -123,6 +123,9 @@ Your product may depend on non-integrated software (such as another product, mod
 
 All of your product and in-product offerings that are available to acquire from the Store must be installed and updated only through the Store.
 
+**10.2.6**
+
+Apps that enable the mining of crypto-currency on device are not allowed. Apps that enable remote management of the mining of cryptocurrency are allowed.
 
 ### 10.3 Product is Testable
 
@@ -233,7 +236,9 @@ If your product requires financial account information, you must submit that pro
 
 **10.8.4**
 
-Your product and its associated metadata must provide information about the types of in-product purchases offered and the range of prices. You may not mislead customers and must be clear about the nature of your in-product promotions and offerings including the scope and terms of any trial experiences. If your product restricts access to user-created content during or after a trial, you must notify users in advance. In addition, your product must make it clear to users that they are initiating a purchase option in the product. 
+Your product and its associated metadata must provide information about the types of in-product purchases offered and the range of prices. You may not mislead customers and must be clear about the nature of your in-product promotions and offerings including the scope and terms of any trial experiences. If your product restricts access to user-created content during or after a trial, you must notify users in advance. In addition, your product must make it clear to users that they are initiating a purchase option in the product.
+
+If your game offers “loot boxes” or other mechanisms that provide randomized virtual items, then you must disclose the odds of receiving each item to customers prior to purchase. These disclosures may appear: in-product, such as in an in-app store, on the Microsoft Store Product Description Page (PDP), and/or on a developer or publisher website, with a link from the Store Product Description Page (PDP) and/or in-app.
 
 **10.8.6**
 
@@ -241,6 +246,9 @@ You must use the Microsoft recurring billing API to bill for subscriptions of di
 - You may add value to a subscription but may not remove value for users who have previously purchased it.
 - If you discontinue an active subscription, you must continue to provide purchased digital goods or services until the subscription expires.
 
+**10.8.7**
+
+All pricing, including sales or discounting, for your digital products or services shall comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl). 
 
 ### 10.9 Notifications
 
@@ -274,6 +282,7 @@ For all advertising related activities, the following requirements apply:
 - The primary purpose of your product should not be to get users to click ads.
 - Your product may not do anything that interferes with or diminishes the visibility, value, or quality of any ads it displays.
 - Your product must respect advertising ID settings that the user has selected.
+- All advertising must be truthful, non-misleading and comply with all applicable laws, regulations, and regulatory guidelines.
 
 **10.10.2**
 
@@ -297,11 +306,9 @@ Your privacy statement or terms of use must let users know you will send Persona
 
 If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](http://go.microsoft.com/fwlink/p/?LinkID=623015)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
 
-
 ### 10.11 Mobile Voice Plans
 
 Your product may not sell, link to, or otherwise promote mobile voice plans.
-
 
 ### 10.12 Edge Extensions
 
@@ -312,14 +319,13 @@ Edge Extensions are subject to these additional requirements:
 - If your Extension collects web browsing activity, it must do so only if required by and only for use in a prominently disclosed, user-facing feature.
 - The Extension must not programmatically alter, or appear to alter, browser functionality or settings including, but not limited to: the address bar search provider and suggestions, the start or home page, the new tab page, and adding or removing favorites and reading list items.
 
-
 ### 10.13 Gaming and Xbox
 
 For products that are primarily gaming experiences or target Xbox One, the following requirements apply:
 
 **10.13.1**
 
-Game products that target Xbox One must use Xbox Live services through either the [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
+Game products, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, that target Xbox One must use Xbox Live services through either the  [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
 
 **10.13.2**
 
@@ -374,11 +380,9 @@ The following privacy requirements apply to Xbox Live user data:
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
 - Don’t store any Xbox Live social graph data (e.g., friends lists), except for account identifiers for users who’ve linked their Xbox Live account with your game.
 - Delete all account identifiers, when you remove your game from our service, or when a user unlinks their Xbox Live account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
-- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://aka.ms/xbox-deleted). 
+- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://aka.ms/xbox-deleted).
 
 ### 10.14 Account Type
-
-Beginning April 17, 2018, newly published products that require authentication to access primary functionality must use a secure dedicated third party authentication provider or be published from a company account type. Note that all apps must use a company account if they require financial account information as described in policy 10.8.3.
 
 If a reasonable consumer would interpret your publisher account name to be that of a business entity, you must publish from a company account type, not an individual account type.
 
@@ -395,7 +399,6 @@ Metadata and other content you submit to accompany your product may contain only
 ### 11.2 Content Including Names, Logos, Original and Third Party
 
 All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law.
-
 
 ### 11.3 Risk of Harm
 
@@ -438,7 +441,6 @@ Your product must not contain content or functionality that encourages, facilita
 - Your product must not contain excessive or gratuitous profanity.
 - Your product must not contain or display content that a reasonable person would consider to be obscene.
 
-
 ### 11.10 Country/Region Specific Requirements
 
 Content that is offensive in any country/region to which your product is targeted is not allowed. Content may be considered offensive in certain countries/regions because of local laws or cultural norms. Examples of potentially offensive content in certain countries/regions include the following:
@@ -449,7 +451,6 @@ China
 - Disputed territory or region references
 - Providing or enabling access to content or services that are illegal under applicable local law
 
-
 ### 11.11 Age Ratings
 
 You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the rating questionnaire to obtain the appropriate rating.
@@ -458,6 +459,12 @@ You must obtain an age rating for your product when you submit it in Partner Cen
 
 If your product provides content (such as user-generated, retail or other web-based content) that might be appropriate for a higher age rating than its assigned rating, you must enable users to opt in to receiving such content by using a content filter or by signing in with a pre-existing account.
 
+### 11.12 User Generated Content
+
+User generated content is content that users contribute to an app or product and which can be viewed or accessed by some or all users. If your product contains UGC, you must
+
+- Publish and make available to users product terms of service and/or content guidelines
+- Provide a means for users to report inappropriate content within the product
 
 ---
 <sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, the Xbox Store, Microsoft Store for Business, and Microsoft Store for Education.
