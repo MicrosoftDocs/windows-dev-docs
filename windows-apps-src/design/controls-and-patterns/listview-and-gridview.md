@@ -32,12 +32,12 @@ These two controls are flexible to many use cases, but overall work best with co
 ### ListView
 The ListView displays data stacked vertically in a single column. ListView works better for items that have text as a focal point, and for collections that are meant to be read top to bottom (i.e. alphabetically ordered). A few common use cases for ListView include lists of messages and search results.
 
-![A list view with grouped data](images/listview-grouped-example-resized.png)
+![A list view with grouped data](images/listview-grouped-example-resized-final.png)
 
 ### GridView
 The GridView presents a collection of items in rows and columns that can scroll vertically. Data is stacked horizontally until it fills the columns, then continues with the next row. GridView works better for items that have images as their focal point, and for collections that can be read from side-to-side or are not sorted in a specific order. A common use case for GridView is a photo or product gallery.
 
-![Example of a content library](images/gridview-simple-example.png)
+![Example of a content library](images/gridview-simple-example-final.png)
 
 ## Which collection control should you use? A Comparison with ItemsRepeater
 
@@ -187,7 +187,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Both of the above options will result in the same ListView, shown below. The ListView only shows the string representation of each item because we did not provide a data template.
 
-![A simple list view with ItemsSource set](images/listview-basic-code-example.png)
+![A simple list view with ItemsSource set](images/listview-basic-code-example-final.png)
 
 > [!IMPORTANT]
 > With no data template defined, custom class objects will only appear in the ListView with their string value  if they have a defined [ToString()](https://docs.microsoft.com/uwp/api/windows.foundation.istringable.tostring) method.
@@ -240,7 +240,7 @@ In this example, the data item is a simple string. A DataTemplate is defined inl
 
 Here's what the data items look like when displayed with this data template in a ListView:
 
-![ListView items with a data template](images/listview-w-datatemplate1.png)
+![ListView items with a data template](images/listview-w-datatemplate1-final.png)
 
 #### ListView Data Template for Custom Class Objects
 In this example, the data item is a Contact object. A DataTemplate is defined inline within the ListView definition to add the contact image to the left of the Contact name and company. This ListView was created by using Method 2 and Option 2 mentioned above.
@@ -271,7 +271,7 @@ In this example, the data item is a Contact object. A DataTemplate is defined in
 
 Here's what the data items look like when displayed using this data template in a ListView:
 
-![ListView custom class items with a data template](images/listview-customclass-datatemplate.png)
+![ListView custom class items with a data template](images/listview-customclass-datatemplate-final.png)
 
 Data templates are the primary way you define the look of your ListView. They can also have a significant impact on performance if your list holds a large number of items.  
 
@@ -327,7 +327,7 @@ Because the list view scrolls vertically by default, you also need to adjust som
 
 The resulting list looks like this.
 
-![A horizontal list view](images/listview-horizontal2.png)
+![A horizontal list view](images/listview-horizontal2-final.png)
 
  In the next example, the **ListView** lays out items in a vertical wrapping list by using an **ItemsWrapGrid** instead of an **ItemsStackPanel**. 
  
@@ -356,7 +356,7 @@ The resulting list looks like this.
 
 The resulting list looks like this.
 
-![A list view with grid layout](images/listview-itemswrapgrid2.png)
+![A list view with grid layout](images/listview-itemswrapgrid2-final.png)
 
 If you show grouped data in your list view, the ItemsPanel determines how the item groups are layed out, not how the individual items are layed out. For example, if the horizontal ItemsStackPanel shown previously is used to show grouped data, the groups are arranged horizontally, but the items in each group are still stacked vertically, as shown here.
 
