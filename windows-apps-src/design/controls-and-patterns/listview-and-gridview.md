@@ -41,13 +41,13 @@ The GridView presents a collection of items in rows and columns that can scroll 
 
 ## Which collection control should you use? A Comparison with ItemsRepeater
 
-ListView and GridView are controls that work out-of-the-box to display any collection, with their own built-in UI and UX. The [ItemsRepeater](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/items-repeater) control also is used to display collections, but was created as a building block for creating a custom control that fits your exact UI needs. The most important differences that should impact which control you end up using are below:
+ListView and GridView are controls that work out-of-the-box to display any collection, with their own built-in UI and UX. The [ItemsRepeater](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater) control also is used to display collections, but was created as a building block for creating a custom control that fits your exact UI needs. The most important differences that should impact which control you end up using are below:
 
 -	ListView and GridView are feature-rich controls that require little customization but offer plenty. ItemsRepeater is a building block to create your own layout control and does not have the same built in features and functionality - it requires you to implement any necessary features or interactions.
 -	ItemsRepeater should be used if you have a highly custom UI that you can’t create using ListView or GridView, or if you have a data source that requires highly different behavior for each item.
 
 
-Learn more about ItemsRepeater by reading its [Guidelines](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/items-repeater) and [API Documentation](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) pages.
+Learn more about ItemsRepeater by reading its [Guidelines](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater) and [API Documentation](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) pages.
 
 ## Examples
 
@@ -69,9 +69,10 @@ Learn more about ItemsRepeater by reading its [Guidelines](https://docs.microsof
 
 ListView and GridView are both [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol) types, so they can contain a collection of items of any type. A ListView or GridView must have items in its [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) collection before it can show anything on the screen. To populate the view, you can add items directly to the [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) collection, or set the [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property to a data source. 
 
-**Important**&nbsp;&nbsp;You can use either Items or ItemsSource to populate the list, but you can't use both at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+> [!IMPORTANT]
+> You can use either Items or ItemsSource to populate the list, but you can't use both at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
 
-> **Note**&nbsp;&nbsp;Many of the examples in this article populate the `Items` collection directly for the sake of simplicity. However, it's more common for the items in a list to come from a dynamic source, like a list of books from an online database. You use the `ItemsSource` property for this purpose. 
+Many of the examples in this article populate the `Items` collection directly for the sake of simplicity. However, it's more common for the items in a list to come from a dynamic source, like a list of books from an online database. You use the `ItemsSource` property for this purpose. 
 
 ### Add Items to a ListView or GridView
 
@@ -188,13 +189,15 @@ Both of the above options will result in the same ListView, shown below. The Lis
 
 ![A simple list view with ItemsSource set](images/listview-basic-code-example.png)
 
-**Important**&nbsp; With no data template defined, custom class objects will only appear in the ListView with their string value  if they have a defined [ToString()](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.istringable.tostring) method.
+> [!IMPORTANT]
+> With no data template defined, custom class objects will only appear in the ListView with their string value  if they have a defined [ToString()](https://docs.microsoft.com/uwp/api/windows.foundation.istringable.tostring) method.
 
  The next section will go into detail on how to visually represent simple and custom class items properly in a ListView or GridView.
 
 For more info about data binding, see [Data binding overview](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
-> **Note**&nbsp;&nbsp;If you need to show grouped data in your ListView, you must bind to a [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). The CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more info, see [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
+> [!NOTE]
+> If you need to show grouped data in your ListView, you must bind to a [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). The CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more info, see [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
 
 ## Customizing the look of items with a DataTemplate
 
@@ -202,7 +205,8 @@ A data template in a ListView or GridView defines how the items/data are visuali
 
 However, you typically want to show a more rich presentation of your data. To specify exactly how items in the ListView/GridView are displayed, you create a [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. 
 
-> **Note**&nbsp;&nbsp;When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> [!NOTE]
+> When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 #### Simple ListView Data Template
 In this example, the data item is a simple string. A DataTemplate is defined inline within the ListView definition to add an image to the left of the string, and show the string in teal. This is the same ListView created from using Method 1 and Option 1 shown above.
@@ -271,7 +275,7 @@ Here's what the data items look like when displayed using this data template in 
 
 Data templates are the primary way you define the look of your ListView. They can also have a significant impact on performance if your list holds a large number of items.  
 
-Your data template can be defined inline within the ListView/GridView definition (shown above), or separately in a Resources section. If defined outside of the ListView/GridView itself, the DataTemplate must be given an [x:Key](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute) attribute and be assigned to the [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView using that key.
+Your data template can be defined inline within the ListView/GridView definition (shown above), or separately in a Resources section. If defined outside of the ListView/GridView itself, the DataTemplate must be given an [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) attribute and be assigned to the [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView using that key.
 
 For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md). 
 
@@ -288,7 +292,8 @@ When you add items to a ListView or GridView, the control automatically wraps ea
 
 You can modify the layout of items by adjusting properties on the items panel, or you can replace the default panel with another panel.
 
-> Note&nbsp;&nbsp;Be careful to not disable virtualization if you change the ItemsPanel. Both **ItemsStackPanel** and **ItemsWrapGrid** support virtualization, so these are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
+> [!NOTE]
+> Be careful to not disable virtualization if you change the ItemsPanel. Both **ItemsStackPanel** and **ItemsWrapGrid** support virtualization, so these are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
 
 This example shows how to make a **ListView** lay out its item containers in a horizontal list by changing the [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) property of the **ItemsStackPanel**.
 Because the list view scrolls vertically by default, you also need to adjust some properties on the list view’s internal [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) to make it scroll horizontally.
@@ -297,7 +302,8 @@ Because the list view scrolls vertically by default, you also need to adjust som
 - [ScrollViewer.VerticalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) to **Disabled** 
 - [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) to **Hidden** 
 
-> **Note**&nbsp;&nbsp;These examples are shown with the list view width unconstrained, so the horizontal scrollbars are not shown. If you run this code, you can set `Width="180"` on the ListView to make the scrollbars show.
+> [!IMPORTANT]
+> These examples are shown with the list view width unconstrained, so the horizontal scrollbars are not shown. If you run this code, you can set `Width="180"` on the ListView to make the scrollbars show.
 
 **XAML**
 ```xml
@@ -325,7 +331,8 @@ The resulting list looks like this.
 
  In the next example, the **ListView** lays out items in a vertical wrapping list by using an **ItemsWrapGrid** instead of an **ItemsStackPanel**. 
  
-> **Note**&nbsp;&nbsp;The height of the list view must be constrained to force the control to wrap the containers.
+> [!IMPORTANT]
+> The height of the list view must be constrained to force the control to wrap the containers.
 
 **XAML**
 ```xml
@@ -543,7 +550,8 @@ Sometimes, you need to manipulate a list view’s item selection programmaticall
 
 The [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectall), [SelectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectrange), and [DeselectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.deselectrange) methods provide a more efficient way to modify the selection than using the SelectedItems property. These methods select or deselect using ranges of item indexes. Items that are virtualized remain virtualized, because only the index is used. All items in the specified range are selected (or deselected), regardless of their original selection state. The SelectionChanged event occurs only once for each call to these methods.
 
-> **Important**&nbsp;&nbsp;You should call these methods only when the SelectionMode property is set to Multiple or Extended. If you call SelectRange when the SelectionMode is Single or None, an exception is thrown.
+> [!IMPORTANT]
+> You should call these methods only when the SelectionMode property is set to Multiple or Extended. If you call SelectRange when the SelectionMode is Single or None, an exception is thrown.
 
 When you select items using index ranges, use the [SelectedRanges](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectedranges) property to get all selected ranges in the list.
 
