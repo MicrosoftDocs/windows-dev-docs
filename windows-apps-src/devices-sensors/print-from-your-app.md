@@ -71,7 +71,26 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-When the user leaves the page, disconnect the printing event handlers. If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then comes back to it.
+In the [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984), disconnecting the event handlers is performed by the `UnregisterForPrinting` method.
+
+```csharp
+public virtual void UnregisterForPrinting()
+{
+    if (printDocument == null)
+    {
+        return;
+    }
+
+    printDocument.Paginate -= CreatePrintPreviewPages;
+    printDocument.GetPreviewPage -= GetPrintPreviewPage;
+    printDocument.AddPages -= AddPrintPages;
+
+    PrintManager printMan = PrintManager.GetForCurrentView();
+    printMan.PrintTaskRequested -= PrintTaskRequested;
+}
+```
+
+When the user leaves the page that supports printing, the event handlers can be disconnected within the `OnNavigatedFrom` method. If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then comes back to it.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -82,6 +101,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
+
 ## Create a print button
 
 Add a print button to your app's screen where you'd like it to appear. Make sure that it doesn't interfere with the content that you want to print.
