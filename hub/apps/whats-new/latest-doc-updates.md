@@ -10,16 +10,17 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. The following docs have seen significant updates within the last week ending Sep 27, 2019:
+
+The Windows developer docs are regularly updated with new and improved information and content. The following docs have seen significant updates within the last week ending Oct 4, 2019:
+
 
 ## UWP conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">Layout panels for Universal Windows Platform (UWP) apps</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">Sound</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Create apps with the Universal Windows Platform</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li></ul>
 </ul>
+
 
 
 ## Win32 conceptual
@@ -42,6 +43,6 @@ The Windows developer docs are regularly updated with new and improved informati
 <li><a href="https://docs.microsoft.com/windows/desktop/com/aggregation">Aggregation</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/com/com-error-codes-9">COM Error Codes (WPN, MBN, P2P, Bluetooth)</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3dtools/pixelhistoryoperation">PixelHistoryOperation structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats Overview</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats Overview</a></li></ul>
 </ul>
 
