@@ -20,14 +20,14 @@ ms.localizationpriority: medium
 Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. For more advanced changes to the print preview UI, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
 > [!TIP]
-> Most of the examples in this topic are based on the print sample. To see the full code, download the [Universal Windows Platform (UWP) print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984) from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+> Most of the examples in this topic are based on the [Universal Windows Platform (UWP) print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), which is part of the [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) repo on GitHub.
 
 ## Register for printing
 
 The first step to add printing to your app is to register for the Print contract. Your app must do this on every screen from which you want your user to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for a new Print contract when it opens.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984).
+> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
 
 First, declare the [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) and [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument). The **PrintManager** type is in the [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing) namespace along with types to support other Windows printing functionality. The **PrintDocument** type is in the [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing) namespace along with other types that support preparing XAML content for printing. You can make it easier to write your printing code by adding the following **using** or **Imports** statements to your page.
 
@@ -38,7 +38,7 @@ using Windows.UI.Xaml.Controls;
 
 The [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) class is used to handle much of the interaction between the app and the [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager), but it exposes several callbacks of its own. During registration, create instances of **PrintManager** and **PrintDocument** and register handlers for their printing events.
 
-In the [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984), registration is performed by the `RegisterForPrinting` method.
+In the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), registration is performed by the `RegisterForPrinting` method.
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -71,7 +71,29 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-When the user leaves the page, disconnect the printing event handlers. If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then comes back to it.
+In the sample, the event handlers are unregistered in the `UnregisterForPrinting` method.
+
+```csharp
+public virtual void UnregisterForPrinting()
+{
+    if (printDocument == null)
+    {
+        return;
+    }
+
+    printDocument.Paginate -= CreatePrintPreviewPages;
+    printDocument.GetPreviewPage -= GetPrintPreviewPage;
+    printDocument.AddPages -= AddPrintPages;
+
+    PrintManager printMan = PrintManager.GetForCurrentView();
+    printMan.PrintTaskRequested -= PrintTaskRequested;
+}
+```
+
+When the user leaves a page that supports printing, the event handlers are unregistered within the `OnNavigatedFrom` method. 
+
+> [!NOTE]
+> If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then returns to it.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -82,6 +104,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
+
 ## Create a print button
 
 Add a print button to your app's screen where you'd like it to appear. Make sure that it doesn't interfere with the content that you want to print.
@@ -91,6 +114,8 @@ Add a print button to your app's screen where you'd like it to appear. Make sure
 ```
 
 Next, add an event handler to your app's code to handle the click event. Use the [**ShowPrintUIAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.showprintuiasync) method to start printing from your app. **ShowPrintUIAsync** is an asynchronous method that displays the appropriate printing window. We recommend calling the [**IsSupported**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.issupported) method first in order to check that the app is being run on a device that supports printing (and handle the case in which it is not). If printing can't be performed at that time for any other reason, **ShowPrintUIAsync** will throw an exception. We recommend catching these exceptions and letting the user know when printing can't proceed.
+
+In this example, a print window is displayed in the event handler for a button click. If the method throws an exception (because printing can't be performed at that time), a [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) control informs the user of the situation.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
@@ -126,8 +151,6 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
     }
 }
 ```
-
-In this example, a print window is displayed in the event handler for a button click. If the method throws an exception (because printing can't be performed at that time), a [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) control informs the user of the situation.
 
 ## Format your app's content
 
@@ -301,7 +324,7 @@ The [**CreateTextOption**](https://docs.microsoft.com/uwp/api/windows.graphics.p
 
 The **OptionChanged** event handler does two things. First, it shows and hides the text edit field for the page range depending on the page range option that the user selected. Second, it tests the text entered into the page range text box to make sure that it represents a valid page range for the document.
 
-This example shows how the [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984) handles change events.
+This example shows how print option change events are handled in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -378,13 +401,13 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> See the `GetPagesInRange` method in the [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984) for details on how to parse the page range the user enters in the Range text box.
+> See the `GetPagesInRange` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) for details on how to parse the page range the user enters in the Range text box.
 
 ## Preview selected pages
 
-How you format your app's content for printing depends on the nature of your app and its content. The [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984) uses a print helper class to format its content for printing.
+How you format your app's content for printing depends on the nature of your app and its content. A print helper class in used in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) to format the content for printing.
 
-When printing a subset of the pages, there are several ways to show the content in the print preview. Regardless of the method you chose to show the page range in the print preview, the printed output must contain only the selected pages.
+When printing a subset of pages, there are several ways to show the content in the print preview. Regardless of the method you chose to show the page range in the print preview, the printed output must contain only the selected pages.
 
 -   Show all the pages in the print preview whether a page range is specified or not, leaving the user to know which pages will actually be printed.
 -   Show only the pages selected by the user's page range in the print preview, updating the display whenever the user changes the page range.
@@ -394,4 +417,4 @@ When printing a subset of the pages, there are several ways to show the content 
 
 * [Design guidelines for printing](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
