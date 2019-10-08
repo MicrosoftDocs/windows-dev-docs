@@ -98,7 +98,7 @@ Currently our default design does not require any special work to round the corn
 Here is an example of how a larger corner radius can make the shadow look undesirable:
 ![ContentDialogShadow](images/rounded-corner/larger-corner-radius.png)
 
-# Rounded Corner and Performance
+## Rounded Corner and Performance
 People may not always be aware that drawing rounded corners naturally use more drawing power as compared to square corners. When selecting the value of corner radius, we not only considered the design principles but we also were very careful to ensure developers who use our default controls are able to successfully deliver performant applications.
 
 To simplify this section, think of performance issues mentioned here to be mainly about page load time as well as app launch time.
