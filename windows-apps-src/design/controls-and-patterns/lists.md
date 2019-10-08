@@ -232,27 +232,6 @@ A list box allows the user to choose either a single item or multiple items from
 - Use the default font unless your brand guidelines indicate to use another.
 - Don't use a list box to perform commands or to dynamically show or hide other controls.
 
-## Selection mode
-
-Selection mode lets users select and take action on a single item or on multiple items. It can be invoked through a context menu, by using CTRL+click or SHIFT+click on an item, or by rolling-over a target on an item in a gallery view. When selection mode is active, check boxes appear next to each list item, and actions can appear at the top or the bottom of the screen.
-
-There are three selection modes:
-
-- Single: The user can select only one item at a time.
-- Multiple: The user can select multiple items without using a modifier.
-- Extended: The user can select multiple items with a modifier, such as holding down the SHIFT key.
-
-Tapping anywhere on an item selects it. Tapping on the command bar action affects all selected items. If no item is selected, command bar actions should be inactive, except for "Select All".
-
-Selection mode doesn't have a light dismiss model; tapping outside of the frame in which selection mode is active won't cancel the mode. This is to prevent accidental deactivation of the mode. Clicking the back button dismisses the multi-select mode.
-
-Show a visual confirmation when an action is selected. Consider displaying a confirmation dialog for certain actions, especially destructive actions such as delete.
-
-Selection mode is confined to the page in which it is active, and can't affect any items outside of that page.
-
-The entry point to selection mode should be juxtaposed against the content it affects.
-
-For command bar recommendations, see [guidelines for command bars](app-bars.md).
 
 ## Globalization and localization checklist
 
