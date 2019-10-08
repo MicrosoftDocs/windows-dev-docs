@@ -118,7 +118,7 @@
               href: controls-and-patterns/item-templates-listview.md
             - name: Item templates for grid view
               href: controls-and-patterns/item-templates-gridview.md
-        -name: Selection and interaction
+        - name: Selection and interaction
           items:
             - name: Collection commanding
               href: controls-and-patterns/collection-commanding.md
@@ -128,7 +128,7 @@
               href: controls-and-patterns/swipe.md
             - name: Pull-to-refresh
               href: controls-and-patterns/pull-to-refresh.md
-        -name: Additional collection options and customizations
+        - name: Additional collection options and customizations
           items:
             - name: Inverted lists
               href: controls-and-patterns/inverted-lists.md
