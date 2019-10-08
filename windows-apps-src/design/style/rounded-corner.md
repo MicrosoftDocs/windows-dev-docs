@@ -38,6 +38,7 @@ There are mainly 3 types of UI parts where the radii of the corners are being ro
 *Corners of flyout UI elements*
 - These are transient UI elements that appear on screen temporarily, for example MenuFlyout or Flyout.
 - The default radius value we use here are 4px.
+
 ![flyout](images/rounded-corner/flyout.png)
 
 **Controls being rounded**
