@@ -246,7 +246,7 @@ struct DeviceLostHelper
         m_onDeviceLostHandler = ::CreateThreadpoolWait(DeviceLostHelper::OnDeviceLost, (PVOID)this, nullptr);
 
         // Create a handle and a cookie.
-        m_eventHandle = ::CreateEvent(nullptr, false, false, nullptr);
+        m_eventHandle.attach(::CreateEvent(nullptr, false, false, nullptr));
         winrt::check_bool(bool{ m_eventHandle });
         m_cookie = 0;
 
@@ -521,7 +521,7 @@ private:
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(SampleApp());
+    CoreApplication::Run(winrt::make<SampleApp>());
 }
 ```
 
