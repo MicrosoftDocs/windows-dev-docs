@@ -128,7 +128,7 @@ This means if you want to change the roundness of all controls where roundness c
 
 Alternatively, if you want to change all controls' roundness within a particular scope, like at a page or container level, you can follow a similar pattern:
 
-``` xml
+``` xaml
 <Grid x:Name="myGrid">
   <Grid.Resources>
     <Thickness x:Key="ControlCornerRadius">8</Thickness>
