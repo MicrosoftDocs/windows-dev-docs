@@ -1,6 +1,13 @@
+---
+title: Corner Radius
+description: Learn about rounded corners principles, design approaches, and customization options.
+ms.date: 10/08/19
+ms.topic: article
+keywords: windows 10, uwp, corner radius, rounded
+---
+
 # Corner Radius
 ![button](images/rounded-corner/my-button.png)
-<Add thinking behind why we are rounding corners related to Fluent design.>
 
 ## Principles
 Rounded corners lessen cognitive load for users to visually process UI and evoke warmth and trust.
