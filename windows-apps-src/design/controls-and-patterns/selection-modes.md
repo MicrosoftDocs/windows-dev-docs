@@ -26,10 +26,12 @@ There are three selection modes:
 ## Selection mode examples
 ### Here is a ListView with single selection mode enabled.
 ![List view with single selection mode](images/listview-selection-single.png)
+
 The item Art Venere is selected, and the item Mitsue Tollner is currently being hovered over.
 
 ### Here is a ListView with multiple selection mode enabled:
 ![List view with multiple selection mode](images/listview-selection-multiple.png)
+
 There are three items selected, and the item Donette Foller is being hovered over.
 
 ### Here is a GridView with single selection mode enabled:
