@@ -119,7 +119,7 @@ Changing these two resources' values at any scope will affect all controls withi
 
 This means if you want to change the roundness of all controls where roundness could be applied, you can define both resources at the app level with the new CornerRadius values like so:
 
-``` xml
+``` xaml
 <Application.Resources>
   <Thickness x:Key="OverlayCornerRadius">4</Thickness>
   <Thickness x:Key="ControlCornerRadius">8</Thickness>
