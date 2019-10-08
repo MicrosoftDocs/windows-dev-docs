@@ -4,7 +4,7 @@ title: Collections and Lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
