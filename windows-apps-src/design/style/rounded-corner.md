@@ -106,7 +106,7 @@ To simplify this section, think of performance issues mentioned here to be mainl
 Key information to note:
 - Rounded corners on a larger surface UI are less performant. Avoid drawing rounded corners on a full screen app UI. This is less of an issue if the UI is displayed briefly (e.g. ContentDialog).
 
-# Customization options
+## Customization options
 The default corner radii values that we provide are not set in stone and there are a few ways the app-developer can easily modify the rounded amount. This can be done through two global resources, or through the 'CornerRadius' property directly on the control, depending on the level of customization granularity desired.
 
 ## Page or app-wide CornerRadius changes
