@@ -12,7 +12,7 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Selection Mode Overview
+# Selection mode overview
 
 Selection mode lets users select and take action on a single item or on multiple items. It can be invoked through a context menu, by using CTRL+click or SHIFT+click on an item, or by rolling-over a target on an item in a gallery view. When selection mode is active, check boxes appear next to each list item, and actions can appear at the top or the bottom of the screen.
 
