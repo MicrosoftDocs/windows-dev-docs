@@ -1,7 +1,7 @@
 ---
 Description: A text entry box that provides suggestions as the user types.
-title: Combo box (drop down list)
-label: Combo box
+title: Combo box and list box
+label: Combo box and list box
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
@@ -11,9 +11,9 @@ design-contact:
 doc-status: Draft
 ms.localizationpriority: medium
 ---
-# Combo box
+# Combo box and list box
 
-Use a combo box (also known as a drop-down list) to present a list of items that a user can select from. A combo box starts in a compact state and expands to show a list of selectable items.
+Use a combo box (also known as a drop-down list) to present a list of items that a user can select from. A combo box starts in a compact state and expands to show a list of selectable items. A ListBox is similar to a combo box, but is not collapsible/does not have a compact state. You can learn more about List boxes at the end of this article.
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
@@ -288,6 +288,32 @@ bool IsValid(string Text)
 
 - Limit the text content of combo box items to a single line.
 - Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.
+
+## List boxes
+
+A list box allows the user to choose either a single item or multiple items from a collection. List boxes are similar to drop-down lists, except that list boxes are always open—there is no compact (non-expanded) state for a list box. Items in the list can be scrolled if there isn't space to show everything.
+
+### Is this the right control?
+
+- A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.
+- A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.
+- Avoid using a list box if:
+    - There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
+    - The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as "on" and "off." Use a single check box or a toggle switch.
+    - There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.
+    - The items are contiguous numerical values. If that's the case, consider using a [slider](slider.md).
+    - The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.
+
+### Recommendations
+
+- The ideal range of items in a list box is 3 to 9.
+- A list box works well when its items can dynamically vary.
+- If possible, set the size of a list box so that its list of items don't need to be panned or scrolled.
+- Verify that the purpose of the list box, and which items are currently selected, is clear.
+- Reserve visual effects and animations for touch feedback, and for the selected state of items.
+- Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.
+- Use the default font unless your brand guidelines indicate to use another.
+- Don't use a list box to perform commands or to dynamically show or hide other controls.
 
 ## Get the sample code
 
