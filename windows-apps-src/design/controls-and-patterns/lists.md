@@ -297,6 +297,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 </tbody>
 </table>
 
+
 ## Globalization and localization checklist
 
 <table>
