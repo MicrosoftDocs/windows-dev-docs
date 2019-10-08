@@ -45,7 +45,7 @@ You'll need to fill your form with an assortment of [XAML Controls](../design/co
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) lets a user choose between two options.
 * [DatePicker](../design/controls-and-patterns/date-picker.md) lets a user select a date value.
 * [TimePicker](../design/controls-and-patterns/time-picker.md) lets a user select a time value.
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) expand to display a list of selectable items. You can learn more about them [here](../design/controls-and-patterns/lists.md#drop-down-lists)
+* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) expand to display a list of selectable items. You can learn more about them [here](../design/controls-and-patterns/combo-box.md)
 
 You also might want to add [buttons](../design/controls-and-patterns/buttons.md), so the user can save or cancel.
 

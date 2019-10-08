@@ -1,30 +1,36 @@
 ---
 Description: Lists display and enable interaction with collection-based content.
-title: Lists
+title: Collections and Lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: Lists
+label: Collections and Lists
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp
-pm-contact: predavid
+pm-contact: anawish
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Lists
+# Collections and Lists
 
-Lists display and enable interactions with collection-based content. The four list patterns covered in this article include:
+Collections and Lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.  The controls covered in this article include:
 
 - List views, which are primarily used to display text-heavy content collections
 - Grid views, which are primarily used to display image-heavy content collections
-- Drop-down lists, which let users choose one item from an expanding list
-- List boxes, which let users choose one item or multiple items from a box that can be scrolled
+- Flip views, which are primarily used to display image-heavy content collections that require exactly one item to be in focus at a time
+- Tree views, which are primarily used to display text-heavy content collections in a specific hierarchy
+- ItemsRepeater, which is a customizable building block to create custom collection controls
 
-Design guidelines, features, and examples are given for each list pattern.
 
-> **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [ComboBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+Design guidelines, features, and examples are given below for each control.
+
+Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates) page.
+
+Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](selection-modes.md) to learn more.
+
+> **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - Behavior change</strong>
@@ -39,7 +45,7 @@ Design guidelines, features, and examples are given for each list pattern.
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, see the <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/ComboBox">ComboBox</a>, and <a href="xamlcontrolsgallery:/item/ListBox">ListBox</a> in action.</p>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, see the <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/FlipView">FlipView</a>, <a href="xamlcontrolsgallery:/item/TreeView">TreeView</a>, and <a href="xamlcontrolsgalley:/item/ItemsRepeater">ItemsRepeater</a> in action.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
@@ -50,28 +56,31 @@ Design guidelines, features, and examples are given for each list pattern.
 
 ## List views
 
-List views let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.
+List views represent text-heavy items, typically in a single-column, vertically-stacked layout. They let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.
 
 ### Is this the right control?
 
 Use a list view to:
 
-- Display a content collection that primarily consists of text.
-- Navigate a single or categorized collection of content.
-- Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
+- Display a collection that primarily consists of text-based items, where all of the items should have the same visual and interaction behavior.
+- Represent a single or categorized collection of content.
+- Accommodate a variety of use cases, including the following common ones:
+    - Create a list of messages or message log.
+    - Create a contacts list.
+    - Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
+    
 
 ### Examples
 
-Here's a simple list view showing grouped data on a phone.
+Here's a simple list view that shows a contacts list, and groups the data items alphabetically. The group headers (each letter of the alphabet in this example) can also be customized to stay "sticky", as in they will always appear at the top of the ListView while scrolling.
 
-![A list view with grouped data](images/simple-list-view-phone.png)
+![A list view with grouped data](images/listview-grouped-example-resized-final.png)
 
-### Recommendations
+This is a ListView that has been inverted to display a log of messages, with the newest messages appearing at the bottom. With an inverted ListView, items appear at the bottom of the screen with a built-in animation.
 
-- Items within a list should have the same behavior.
-- If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
+![Inverted List view](images/listview-inverted-2.png)
 
-### List view articles
+### Related Articles
 <table>
 <colgroup>
 <col width="50%" />
@@ -90,7 +99,7 @@ Here's a simple list view showing grouped data on a phone.
 </tr>
 <tr class="even">
 <td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
+<td align="left"><p>The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="item-templates-listview.md">Item templates for list view</a></p></td>
@@ -98,11 +107,11 @@ Here's a simple list view showing grouped data on a phone.
 </tr>
 <tr class="even">
 <td align="left"><p><a href="inverted-lists.md">Inverted lists</a></p></td>
-<td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this guidance to use an inverted list in your app.</p></td>
+<td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this article's guidance to use an inverted list in your app.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
-<td align="left"><p>The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Use this guidance to implement pull-to-refresh in your list view.</p></td>
+<td align="left"><p>The pull-to-refresh mechanism lets a user pull down on a list of data using touch in order to retrieve more data. Use this article to implement pull-to-refresh in your list view.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
@@ -113,15 +122,18 @@ Here's a simple list view showing grouped data on a phone.
 
 ## Grid views
 
-Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are laid out in a left-to-right, then top-to-bottom reading order.
+Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are in a wrapped layout, as they appear in a left-to-right, then top-to-bottom reading order.
 
 ### Is this the right control?
 
-Use a list view to:
+Use a grid view to:
 
-- Display a content collection that primarily consists of images.
+- Display a content collection in which the focal point of each item is an image, and each item should have the same visual and interaction behavior.
 - Display content libraries.
 - Format the two content views associated with [semantic zoom](semantic-zoom.md).
+- Accommodate a variety of use cases, including the following common ones:
+    - Storefront-type user interface (i.e. browsing apps, songs, products)
+    - Interactive photo libraries
 
 ### Examples
 
@@ -131,14 +143,9 @@ This example shows a typical grid view layout, in this case for browsing apps. M
 
 A grid view is an ideal solution for a content library, which is often used to present media such as pictures and videos. In a content library, users expect to be able to tap an item to invoke an action.
 
-![Example of a content library](images/controls_list_contentlibrary.png)
+![Example of a content library](images/gridview-simple-example-final.png)
 
-### Recommendations
-
-- Items within a list should have the same behavior.
-- If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
-
-### Grid view articles
+### Related articles
 <table>
 <colgroup>
 <col width="50%" />
@@ -157,7 +164,7 @@ A grid view is an ideal solution for a content library, which is often used to p
 </tr>
 <tr class="even">
 <td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
+<td align="left"><p>The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="item-templates-gridview.md">Item templates for grid view</a></p></td>
@@ -165,72 +172,130 @@ A grid view is an ideal solution for a content library, which is often used to p
 </tr>
 <tr class="even">
 <td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
-<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
+<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have grid view item that contains a button, and the user can select the grid item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
 </tr>
 </tbody>
 </table>
 
-## Drop-down lists
+## Flip views
 
-Drop-down lists, also known as combo boxes, start in a compact state and expand to show a list of selectable items. The selected item is always visible, and non-visible items can be brought into view when the user taps the combo box to expand it.
+Flip views are suited for browsing image-based content collections, specifically where the desired experience is for only one image to be visible at a time. A flip view allows the user to move or "flip" through the collection items (either vertically or horizontally), having each item appear one at a time  after the user interaction.
 
 ### Is this the right control?
 
-- Use a drop-down list to let users select a single value from a set of items that can be adequately represented with single lines of text.
-- Use a list or grid view instead of a combo box to display items that contain multiple lines of text or images.
-- When there are fewer than five items, consider using [radio buttons](radio-button.md) (if only one item can be selected) or [check boxes](checkbox.md) (if multiple items can be selected).
-- Use a combo box when the selection items are of secondary importance in the flow of your app. If the default option is recommended for most users in most situations, showing all the items by using a list view might draw more attention to the options than necessary. You can save space and minimize distraction by using a combo box.
+Use a flip view to:
+
+- Display a small to medium (less than 25 items) collection, where the collection is made up of images with little to no metadata.
+- Display items one at a time, and allow the end-user to flip through the items at their own pace.
+- Accommodate a variety of use cases, including the following common ones:
+    - Photo galleries
+    - Product galleries or showcases
 
 ### Examples
 
-A combo box in its compact state can show a header.
+The following two examples show a FlipView that flips horizontally and vertically, respectively.
 
-![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+![Horizontal flip view](images/controls_flipview_horizonal.jpg)
 
-Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
+![Vertical Flip view](images/controls_flipview_vertical.jpg)
 
-![Example of a drop-down list with long text string](images/combo_box_listitemstate.png)
+### Related articles
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Topic</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="flipview.md">Flip view</a></p></td>
+<td align="left"><p>Learn the essentials of using a flip view in your app, along with how to customize the look of your items within a flip view.</p></td>
+</tr>
+</tbody>
+</table>
 
-If the collection in a combo box is long enough, a scroll bar will appear to accommodate it. Group items logically in the list.
+## Tree views
 
-![Example of a scroll bar in a drop-down list](images/combo_box_scroll.png)
-
-### Recommendations
-
-- Limit the text content of combo box items to a single line.
-- Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.
-- To make a combo box that live updates while the user is using the arrow keys (like a Font selection drop-down), set SelectionChangedTrigger to “Always”.  
-
-### Text Search
-
-Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the “w” key to bring “Washington” into view for quick selection.
-
-
-## List boxes
-
-A list box allows the user to choose either a single item or multiple items from a collection. List boxes are similar to drop-down lists, except that list boxes are always open—there is no compact (non-expanded) state for a list box. Items in the list can be scrolled if there isn't space to show everything.
+Tree views are suited for displaying text-based collections that have an important hierarchy that needs to be showcased. Tree view items are collapsible/expandable, are shown in a visual hierarchy, can be supplmented with icons, and can be dragged and dropped between tree views. Tree views allow for N-level nesting.
 
 ### Is this the right control?
 
-- A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.
-- A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.
-- Avoid using a list box if:
-    - There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
-    - The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as "on" and "off." Use a single check box or a toggle switch.
-    - There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.
-    - The items are contiguous numerical values. If that's the case, consider using a [slider](slider.md).
-    - The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.
+Use a tree view to:
 
-### Recommendations
+- Display a collection of nested items whose context and meaning is dependent on a hierarchy or specific organizational chain.
+- Accommodate a variety of use cases, including the following common ones:
+    - File browser
+    - Company organizational chart
 
-- The ideal range of items in a list box is 3 to 9.
-- A list box works well when its items can dynamically vary.
-- If possible, set the size of a list box so that its list of items don't need to be panned or scrolled.
-- Verify that the purpose of the list box, and which items are currently selected, is clear.
-- Reserve visual effects and animations for touch feedback, and for the selected state of items.
-- Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.
-- Use the default font unless your brand guidelines indicate to use another.
-- Don't use a list box to perform commands or to dynamically show or hide other controls.
+### Examples
+
+Here is an example of a tree view that represents a file explorer, and displays many different nested items supplemented by icons.
+
+![Tree view with icons](images/treeview-icons.png)
+
+### Related articles
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Topic</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="tree-view.md">Tree view</a></p></td>
+<td align="left"><p>Learn the essentials of using a tree view in your app, along with how to customize the look and interaction behavior of your items within a tree view.</p></td>
+</tr>
+</tbody>
+</table>
+
+## ItemsRepeater
+
+ItemsRepeater is different from the rest of the collection controls shown on this page because it does not provide any styling or interaction out-of-box, i.e. when simply placed on a page without defining any properties. ItemsRepeater is rather a building block that you as a developer can use to create your own custom collections control, specifically one that cannot be achieved by using the other controls in this article. ItemsRepeater is a data-driven and high-performance panel that can be tailored to fit your exact needs.
+
+### Is this the right control?
+
+Use an ItemsRepeater if:
+
+- You have a specific user interface and user experience in mind that cannot be created using existing collection controls.
+- You have an existing data source for your items (such as data pulled from the internet, a database, or a pre-existing collection in your code-behind).
+
+### Examples
+
+The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom [Layout](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layout) and a different custom [ItemTemplate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2).
+
+![ItemsRepeater with horizontal bars](images/itemsrepeater-1.png)
+![ItemsRepeater with vertical bars](images/itemsrepeater-2.png)
+![ItemsRepeater with circular representation](images/itemsrepeater-3.png)
+
+### Related articles
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Topic</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="items-repeater.md">ItemsRepeater</a></p></td>
+<td align="left"><p>Learn the essentials of using an ItemsRepeater in your app, along with how to implement all of the necessary interaction and visual components for your collection view.</p></td>
+</tr>
+</tbody>
+</table>
 
 
 ## Globalization and localization checklist
@@ -240,10 +305,10 @@ A list box allows the user to choose either a single item or multiple items from
 <th>Wrapping</th><td>Allow two lines for the list label.</td>
 </tr>
 <tr>
-<th>Horizontal expansion</th><td>Make sure fields can accomdation text expension and are scrollable.</td>
+<th>Horizontal expansion</th><td>Make sure fields can accomdation text expansion and are scrollable.</td>
 </tr>
 <tr>
-<th>Vertical spacing</th><td>Use non-Latin chracters for vertical spacing to ensure non-Latin scripts will display properly.</td>
+<th>Vertical spacing</th><td>Use non-Latin characters for vertical spacing to ensure non-Latin scripts will display properly.</td>
 </tr>
 </table>
 
@@ -253,13 +318,14 @@ A list box allows the user to choose either a single item or multiple items from
 
 ## Related articles
 
+**Design and UX Guidelines**
 - [Master/details](master-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Thumbnail images](../../files/thumbnails.md)
 
-**For developers**
+**API Reference**
 - [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [ComboBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
