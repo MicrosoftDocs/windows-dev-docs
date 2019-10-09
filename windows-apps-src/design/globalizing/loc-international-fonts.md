@@ -17,7 +17,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanian | sq-AL | Segoe UI |
-| Amhari | am-ET | Ebrima |
+| Amharic | am-ET | Ebrima |
 | Arabic | ar-SA | Segoe UI |
 | Armenian | hy-AM | Segoe UI |
 | Assamese | as-IN | Nirmala UI |
