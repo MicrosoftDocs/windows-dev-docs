@@ -60,7 +60,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | isiXhosa | xh-ZA | Segoe UI |
 | isiZulu | zu-ZA | Segoe UI |
 | Italian | it-IT | Segoe UI |
-| Japanese | ja-JP | Meiryo UI (see Remarks, below) |
+| Japanese | ja-JP | Yu Gothic |
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
@@ -122,10 +122,6 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | Welsh | cy-GB | Segoe UI |
 | Wolof | wo-SN | Segoe UI |
 | Yoruba | yo-NG | Segoe UI |
-
-## Japanese fonts
-
-The Meiryo UI font is used in Windows. Windows includes Yu Gothic and Yu Mincho, two font families to support Japanese document viewing and editing. Yu Gothic is not recommended for app UI.
 
 ## Related topics
 
