@@ -60,7 +60,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | isiXhosa | xh-ZA | Segoe UI |
 | isiZulu | zu-ZA | Segoe UI |
 | Italian | it-IT | Segoe UI |
-| Japanese | ja-JP | Yu Gothic |
+| Japanese | ja-JP | Yu Gothic UI |
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
