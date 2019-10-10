@@ -105,7 +105,7 @@ To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.m
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[Name]">
+    <FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -990,17 +990,16 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  IgnorableNamespaces="uap3">
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap3, desktop">
   <Applications>
     <Application>
       <Extensions>
-         <uap3:Extension
-                Category="windows.appExecutionAlias"
-                Executable="exes\launcher.exe"
-                EntryPoint="Windows.FullTrustApplication">
-            <uap3:AppExecutionAlias>
-                <desktop:ExecutionAlias Alias="Contoso.exe" />
-            </uap3:AppExecutionAlias>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -1044,23 +1043,21 @@ Users and other processes can use an alias to start your application without hav
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-  IgnorableNamespaces="uap3, desktop">
+  IgnorableNamespaces="uap3">
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
-</Package>
- 
-...
 </Package>
 ```
 
