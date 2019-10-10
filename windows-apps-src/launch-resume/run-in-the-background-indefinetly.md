@@ -28,7 +28,7 @@ _Package.appxmanifest_
 <Package ...>
 ...
   <Capabilities>
-    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
   </Capabilities>
 </Package>
 ```
