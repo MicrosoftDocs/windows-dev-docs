@@ -64,7 +64,7 @@ In the UWP, overloaded methods can have the same number of parameters only if on
 
 In the Universal Windows Platform, all the public types in a Windows metadata (.winmd) file must be in a namespace that shares the .winmd file name, or in sub-namespaces of the file name. For example, if your Visual Studio project is named A.B (that is, your Windows Runtime Component is A.B.winmd), it can contain public classes A.B.Class1 and A.B.C.Class2, but not A.Class3 (WME0006) or D.Class4 (WME1044).
 
-> **Note**  These restrictions apply only to public types, not to private types used in your implementation.
+> **Note**  These restrictions apply only to public types, not to private types used in your implementation.
 
 In the case of A.Class3, you can either move Class3 to another namespace or change the name of the Windows Runtime Component to A.winmd. Although WME0006 is a warning, you should treat it as an error. In the previous example, code that calls A.B.winmd will be unable to locate A.Class3.
 
@@ -76,7 +76,7 @@ Your component must contain at least one **public sealed** type (**Public NotInh
 
 A type in a Windows Runtime Component cannot have a name that is the same as a namespace (WME1068).
 
-> **Caution**  If you call Winmdexp.exe directly and don't use the /out option to specify a name for your Windows Runtime Component, Winmdexp.exe tries to generate a name that includes all the namespaces in the component. Renaming namespaces can change the name of your component.
+> **Caution**  If you call Winmdexp.exe directly and don't use the /out option to specify a name for your Windows Runtime Component, Winmdexp.exe tries to generate a name that includes all the namespaces in the component. Renaming namespaces can change the name of your component.
 
  
 
@@ -97,9 +97,9 @@ Many of these mappings are interfaces. For example, [IList&lt;T&gt;](https://doc
 
 In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.
 
-> **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
+> **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
-> **Caution**  Avoid using the non-generic [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) and [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) and [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
+> **Caution**  Avoid using the non-generic [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) and [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) and [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
 
  
 
@@ -126,7 +126,7 @@ In general, the best choice is the interface that is closest to the type. For ex
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>Method '{0}' has a parameter of type '{1}' in its signature. Although this generic type is not a valid Windows Runtime type, the type or its generic parameters implement interfaces that are valid Windows Runtime types. {2}</p>
-> **Note**  For {2}, Winmdexp.exe appends a list of alternatives, such as "Consider changing the type 'System.Collections.Generic.List&lt;T&gt;' in the method signature to one of the following types instead: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
+> **Note**  For {2}, Winmdexp.exe appends a list of alternatives, such as "Consider changing the type 'System.Collections.Generic.List&lt;T&gt;' in the method signature to one of the following types instead: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
 </td>
 </tr>
 <tr class="even">
@@ -205,7 +205,7 @@ In the UWP, return values are considered to be output parameters, and the names 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
+> **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
 
 JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute) attribute.
 
@@ -214,7 +214,7 @@ JavaScript code can access the output parameters of a method by name, including 
 | WME1091 | The method '\{0}' has the return value named '\{1}' which is the same as a parameter name. Windows Runtime method parameters and return value must have unique names. |
 | WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value. |
 
-**Note**  The default name is "returnValue" for property accessors and "value" for all other methods.
+**Note**  The default name is "returnValue" for property accessors and "value" for all other methods.
 
 ## Related topics
 
