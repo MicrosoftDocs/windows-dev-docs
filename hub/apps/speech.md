@@ -108,21 +108,21 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column span="2":::
-      **Web accessibility**
+      **Azure speech services**
 
-      Design, build, and test accessible web sites in Microsoft Edge.
+      Design, build, and test accessible web sites with Azure speech services.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Speech to text](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
-      [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
    :::column-end:::
    :::column:::
-      [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [Speech translation](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
-      [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [Voice-first virtual assistants](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
 :::row-end:::
 
@@ -138,6 +138,8 @@ This page provides information on how the various Windows development frameworks
       [Microsoft Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
+
+      [The Bing Speech Recognition Control](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
    :::column-end:::
    :::column:::
       [Speech SDK 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
@@ -285,6 +287,6 @@ Various videos covering how to build accessible Windows applications to general 
       [Windows community - Speech](https://community.windows.com/search?q=speech)
    :::column-end:::
    :::column:::
-      [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
+      [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
    :::column-end:::
 :::row-end:::
