@@ -1648,6 +1648,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-xbox.md",
+      "redirect_url": "/windows/uwp/xbox-apps/device-portal-xbox",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
