@@ -99,7 +99,7 @@ Some properties on objects that cannot be set in XAML by any means, and can only
 
 A read-only property cannot be set in XAML. Even in code, the owning type would have to support some other way to set it, like a constructor overload, helper method, or calculated property support. A calculated property relies on the values of other settable properties plus sometimes an event with built-in handling; these features are available in the dependency property system. For more info on how dependency properties are useful for calculated property support, see [Dependency properties overview](dependency-properties-overview.md).
 
-Collection syntax in XAML gives an appearance that you are setting a read-only property, but in fact you are not. See "Setting a Property by Using a Collection Syntax" section later in this topic.
+Collection syntax in XAML gives an appearance that you are setting a read-only property, but in fact you are not. See "[Collection Syntax](#collection-syntax)" later in this topic.
 
 ### Setting a property by using attribute syntax
 
