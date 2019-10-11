@@ -148,7 +148,7 @@ Use ellipses to avoid visual clutter.
     :::column-end:::
 :::row-end:::
 
-**Note**: If containers are not well-defined (e.g. no differentiating background color), or when there is a link to see more text, then use ellipses.
+**Note**: If containers are not well-defined (for example, no differentiating background color), or when there is a link to see more text, then use ellipses.
 
 ## Languages 
 

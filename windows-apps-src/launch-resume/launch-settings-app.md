@@ -146,7 +146,7 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings page| URI |
 |-------------|-----|
-| Extras | ms-settings:extras (only available if "settings apps" are installed, e.g. by a 3rd party) |
+| Extras | ms-settings:extras (only available if "settings apps" are installed, for example, by a 3rd party) |
 
 ## Gaming
 

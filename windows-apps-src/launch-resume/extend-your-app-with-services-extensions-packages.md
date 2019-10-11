@@ -15,7 +15,7 @@ There are many technologies in Windows 10 for extending and componentizing your 
 | Third-party code plug-ins            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | In-proc code plug-ins              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
 | UX Assets (strings/images)         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
-| On demand content <br/> (e.g. additional Levels) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| On demand content <br/> (for example, additional Levels) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
 | Separate licensing and acquisition |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 | In-app acquisition                 |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    |
 | Optimize install time              | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |

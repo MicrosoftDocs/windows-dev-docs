@@ -57,7 +57,7 @@ The tax forms will be sent to you from the following addresses:
 <br>
 <b>OR</b><br>
 <br>
-I received at least $600 in payments not related to app sales from Microsoft in the applicable tax year (e.g. incentive payments or payments from a contest or promotion)</td>
+I received at least $600 in payments not related to app sales from Microsoft in the applicable tax year (for example, incentive payments or payments from a contest or promotion)</td>
     <td valign="top"><b>1099-MISC</b> :<br>Payer: Microsoft Corporation<br>EIN: *****4442<br><br><b>Important</b>: Certain business entities will not receive 1099-MISC forms regardless of the payment amounts received from Microsoft.  Please consult your tax professional for further information.</td>
   </tr>
   <tr>

@@ -235,7 +235,7 @@ Calling an app service also requires the family name of the package that contain
 
 App services use a [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) to exchange information. As the author of the host, you need to come up with a protocol for communicating with extensions that is flexible. In the code sample, that means accounting for extensions that may take 1, 2, or more arguments in the future.
 
-For this example, the protocol for the arguments is a **ValueSet** containing the key value pairs named 'Arg' + the argument number, e.g. `Arg1` and `Arg2`. The host passes all of the arguments in the **ValueSet**, and the extension makes use of the ones that it needs. If the extension is able to calculate a result, then the host expects the **ValueSet** returned from the extension to have a key named `Result` that contains the value of the calculation. If that key is not present, the host assumes that the extension couldn't complete the calculation.
+For this example, the protocol for the arguments is a **ValueSet** containing the key value pairs named 'Arg' + the argument number, for example, `Arg1` and `Arg2`. The host passes all of the arguments in the **ValueSet**, and the extension makes use of the ones that it needs. If the extension is able to calculate a result, then the host expects the **ValueSet** returned from the extension to have a key named `Result` that contains the value of the calculation. If that key is not present, the host assumes that the extension couldn't complete the calculation.
 
 ### Extension app service code
 

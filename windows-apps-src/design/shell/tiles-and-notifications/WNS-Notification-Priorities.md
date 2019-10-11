@@ -20,7 +20,7 @@ Every Windows device operates through a variety of power modes (battery, battery
 Windows does not know which notifications are important to any user or app, so the system relies totally on apps to set the right priority for their notifications. 
 
 ## Priorities
-There are four priorities available for an app to use when sending push notifications. The priority is set on individual notifications, allowing you to choose which notifications need to be delivered instantly (e.g., an IM message) and which ones can wait (e.g., contact photo updates).
+There are four priorities available for an app to use when sending push notifications. The priority is set on individual notifications, allowing you to choose which notifications need to be delivered instantly (for example, an IM message) and which ones can wait (for example, contact photo updates).
 
 The priorities are: 
 

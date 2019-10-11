@@ -217,7 +217,7 @@ If your product includes in-product purchase, subscriptions, virtual currency, b
 
 You must use the Microsoft Store in-product purchase API to sell digital items or services that are consumed or used within your product. Your product may enable users to consume previously purchased digital content or services, but must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API.
 
-In-product offerings sold in your product cannot be converted to any legally valid currency (e.g. USD, Euro, etc.) or any physical goods or services.
+In-product offerings sold in your product cannot be converted to any legally valid currency (for example, USD, Euro, etc.) or any physical goods or services.
 
 **10.8.2**
 
@@ -378,7 +378,7 @@ Products that emulate a game system are not allowed on any device family.
 The following privacy requirements apply to Xbox Live user data:
 - Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through Xbox Live, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
-- Don’t store any Xbox Live social graph data (e.g., friends lists), except for account identifiers for users who’ve linked their Xbox Live account with your game.
+- Don’t store any Xbox Live social graph data (for example, friends lists), except for account identifiers for users who’ve linked their Xbox Live account with your game.
 - Delete all account identifiers, when you remove your game from our service, or when a user unlinks their Xbox Live account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
 - When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://aka.ms/xbox-deleted).
 

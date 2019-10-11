@@ -68,7 +68,7 @@ Any object that is 85KB or larger is allocated on the large object heap (LOH) an
 
 ### Avoid reference-rich objects
 
-The garbage collector determines which objects are live by following references between objects, starting from roots in your app. For more info, see [What happens during a garbage collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). If an object contains many references, then there is more work for the garbage collector to do. A common technique (especially with large objects) is to convert reference rich objects into objects with no references (e.g., instead of storing a reference, store an index). Of course this technique works only when it is logically possible to do so.
+The garbage collector determines which objects are live by following references between objects, starting from roots in your app. For more info, see [What happens during a garbage collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). If an object contains many references, then there is more work for the garbage collector to do. A common technique (especially with large objects) is to convert reference rich objects into objects with no references (for example, instead of storing a reference, store an index). Of course this technique works only when it is logically possible to do so.
 
 Replacing object references with indexes can be a disruptive and complicated change to your app and is most effective for large objects with a large number of references. Do this only if you are noticing large garbage collection times in your app related to reference-heavy objects.
 

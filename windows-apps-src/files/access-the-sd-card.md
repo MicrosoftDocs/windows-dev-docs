@@ -80,7 +80,7 @@ else
 ```
 
 > [!NOTE]
-> If your SD card reader is an embedded reader (e.g., a slot in the laptop or PC itself), it may not be accessible through KnownFolders.RemovableDevices.
+> If your SD card reader is an embedded reader (for example, a slot in the laptop or PC itself), it may not be accessible through KnownFolders.RemovableDevices.
 
 ### Querying the contents of the SD card
 

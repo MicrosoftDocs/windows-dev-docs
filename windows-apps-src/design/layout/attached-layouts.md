@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Attached Layouts
 
-A container (e.g. Panel) that delegates its layout logic to another object relies on the attached layout object to provide the layout behavior for its child elements.  An attached layout model provides flexibility for an application to alter the layout of items at runtime, or more easily share aspects of layout between different parts of the UI (e.g. items in the rows of a table that appear to be aligned within a column).
+A container (for example, Panel) that delegates its layout logic to another object relies on the attached layout object to provide the layout behavior for its child elements.  An attached layout model provides flexibility for an application to alter the layout of items at runtime, or more easily share aspects of layout between different parts of the UI (for example, items in the rows of a table that appear to be aligned within a column).
 
 In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.
 
@@ -58,7 +58,7 @@ The [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) al
 
 Conceptually, [Panel](/uwp/api/windows.ui.xaml.controls.panel) is a container of elements that also has the ability to render pixels for a [Background](/uwp/api/windows.ui.xaml.controls.panel.background).  Panels provide a way to encapsulate common layout logic in an easy to use package.
 
-The concept of **attached layout** makes the distinction between the two roles of container and layout more clear.  If the container delegates its layout logic to another object we would call that object the attached layout as seen in the snippet below. Containers that inherit from [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), such as the LayoutPanel, automatically expose the common properties that provide input to XAML's layout process (e.g. Height and Width).
+The concept of **attached layout** makes the distinction between the two roles of container and layout more clear.  If the container delegates its layout logic to another object we would call that object the attached layout as seen in the snippet below. Containers that inherit from [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), such as the LayoutPanel, automatically expose the common properties that provide input to XAML's layout process (for example, Height and Width).
 
 ```xaml
 <LayoutPanel>
@@ -209,7 +209,7 @@ Similar to a non-virtualizing layout, the high-level steps for a virtualizing la
 2. (Optional) Define your dependency properties that when changed will invalidate the layout.
 3. Initialize any state object that will be required by the layout as part of the [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Stash it with the host container by using the [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) provided with the context.
 4. Override the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) and call the [Measure](/uwp/api/windows.ui.xaml.uielement.measure) method for each child that should be realized.
-   1. The [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method is used to retrieve a UIElement that has been prepared by the framework (e.g. data bindings applied).
+   1. The [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method is used to retrieve a UIElement that has been prepared by the framework (for example, data bindings applied).
 5. Override the [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) and call the [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) method for each realized child.
 6. (Optional) Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
@@ -232,7 +232,7 @@ An (over)simplified view of the steps performed by the framework from start-up t
 
 4. Performs a render pass.
 
-With UI virtualization, creating the elements that would normally be done in step 2 is delayed or ended early once its been determined that sufficient content has been created to fill the viewport. A virtualizing container (e.g. ItemsRepeater) defers to its attached layout to drive this process. It provides the attached layout with a [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) that surfaces the additional information that a virtualizing layout needs.
+With UI virtualization, creating the elements that would normally be done in step 2 is delayed or ended early once its been determined that sufficient content has been created to fill the viewport. A virtualizing container (for example, ItemsRepeater) defers to its attached layout to drive this process. It provides the attached layout with a [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) that surfaces the additional information that a virtualizing layout needs.
 
 **The RealizationRect (i.e. Viewport)**
 
@@ -240,7 +240,7 @@ Scrolling on Windows happens asynchronous to the UI thread. It is not controlled
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
-Since element creation is costly, virtualizing containers (e.g. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
+Since element creation is costly, virtualizing containers (for example, [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
 
 **Re-using Elements (Recycling)**
 
@@ -253,7 +253,7 @@ The [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizing
 3. Retrieve a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that represents the viewport and buffer that the layout should fill with realized elements.
 4. Request the UIElement for a specific item with the [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method.
 
-Requesting an element for a given index will cause that element to be marked as "in use" for that pass of the layout. If the element does not already exist, then it will be realized and automatically prepared for use (e.g. inflating the UI tree defined in a DataTemplate, processing any data binding, etc.).  Otherwise, it will be retrieved from a pool of existing instances.
+Requesting an element for a given index will cause that element to be marked as "in use" for that pass of the layout. If the element does not already exist, then it will be realized and automatically prepared for use (for example, inflating the UI tree defined in a DataTemplate, processing any data binding, etc.).  Otherwise, it will be retrieved from a pool of existing instances.
 
 At the end of each measure pass, any existing, realized element that was not marked "in use" is automatically considered available for re-use unless the option to [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) was used when the element was retrieved via the [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method. The framework automatically moves it to a recycle pool and makes it available. It may subsequently be pulled for use by a different container. The framework tries to avoid this when possible as there is some cost associated with re-parenting an element.
 

@@ -207,7 +207,7 @@ Now press F5 and open your browser to [https://localhost:8000](https://localhost
 
 ### 3. Set up your route handlers
 
-The Swagger file (config\swagger.json) instructs our server how to handle various client HTTP requests by mapping each URL path it defines to a handler file (in \handlers), and each method defined for that path (e.g., **GET**, **POST**) to an `operationId` (function) within that handler file.
+The Swagger file (config\swagger.json) instructs our server how to handle various client HTTP requests by mapping each URL path it defines to a handler file (in \handlers), and each method defined for that path (for example, **GET**, **POST**) to an `operationId` (function) within that handler file.
 
 In this layer of our program we'll add some input checking before passing the various client requests to our data model. Download (or copy and paste):
 

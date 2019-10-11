@@ -300,7 +300,7 @@ EnterpriseIPCApplication\\EnterpriseIPCApplication. The reference
 **winmd** is manually copied to this second level directory and then the
 Project References dialog is used (click the **Browse..** button) to
 locate and reference this **winmd**. After this, the top level namespace
-of the desktop component (e.g. Fabrikam) should appear as a top level
+of the desktop component (for example, Fabrikam) should appear as a top level
 node in the References part of the project.
 
 >**Note** It is very important to use the **reference winmd** in the side-loaded
@@ -692,11 +692,11 @@ called **MyWinRTComponent**.
 
 a) Dlldata.c
 
-b) A header file (e.g. MyWinRTComponent.h)
+b) A header file (for example, MyWinRTComponent.h)
 
-c) A \*\_i.c file (e.g. MyWinRTComponent\_i.c)
+c) A \*\_i.c file (for example, MyWinRTComponent\_i.c)
 
-d) A \*\_p.c file (e.g. MyWinRTComponent\_p.c)
+d) A \*\_p.c file (for example, MyWinRTComponent\_p.c)
 
 **Step 5:** Add these four generated files to the "MyWinRTProxy" project.
 
