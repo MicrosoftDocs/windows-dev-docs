@@ -51,7 +51,7 @@ In Direct3D, shader resources are not created before compiling and loading them;
 ## Compiling a shader
 
 
-Direct3D haders must be precompiled as Compiled Shader Object (.cso) files in Universal Windows Platform (UWP) apps and loaded using one of the Windows Runtime file APIs. (Desktop apps can compile the shaders from text files or string at run-time.) The CSO files are built from any .hlsl files that are part of your Microsoft Visual Studio project, and retain the same names, only with a .cso file extension. Ensure that they are included with your package when you ship!
+Direct3D shaders must be precompiled as Compiled Shader Object (.cso) files in Universal Windows Platform (UWP) apps and loaded using one of the Windows Runtime file APIs. (Desktop apps can compile the shaders from text files or string at run-time.) The CSO files are built from any .hlsl files that are part of your Microsoft Visual Studio project, and retain the same names, only with a .cso file extension. Ensure that they are included with your package when you ship!
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
