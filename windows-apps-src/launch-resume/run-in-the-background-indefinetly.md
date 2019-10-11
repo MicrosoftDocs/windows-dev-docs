@@ -25,7 +25,10 @@ The `extendedExecutionUnconstrained` capability is added as a restricted capabil
 
 _Package.appxmanifest_
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
 ...
   <Capabilities>
     <rescap:Capability Name="extendedExecutionUnconstrained"/>
@@ -64,7 +67,11 @@ In the Universal Windows Platform, background tasks are processes that run in th
 
 _Package.appxmanifest_
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
   <Capabilities>
     <rescap:Capability Name="extendedBackgroundTaskTime"/>
   </Capabilities>
