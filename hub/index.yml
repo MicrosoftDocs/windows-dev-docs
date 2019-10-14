@@ -35,10 +35,10 @@ additionalContent:
             url: https://docs.microsoft.com/windows/apps
           - text: Add Windows 10 features to your apps
             url: https://docs.microsoft.com/windows/apps/desktop/modernize/ 
-          - text: Build desktop apps (API Ref)
-            url: https://docs.microsoft.com/windows/apps/desktop/
-          - text: Build with Windows (Python, NodeJS, WSL/Linux, Terminal)
-            url: https://docs.microsoft.com/windows/dev-environment
+          - text: Develop with Python on Windows
+            url: https://docs.microsoft.com/windows/python/index
+          - text: Set up the Windows Subsystem for Linux
+            url: https://docs.microsoft.com/windows/wsl/about
           - text: Find code samples
             url: https://developer.microsoft.com/windows/samples
       - title: Hardware dev
