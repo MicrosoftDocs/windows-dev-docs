@@ -80,7 +80,7 @@ To create a submission for a package flight, follow this process.
 3. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
     ```json
-    POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions
     ```
 
     The response body contains a [flight submission](#flight-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any packages for the submission to Azure Blob storage, and the data for the new submission (including all the listings and pricing information).
