@@ -5,8 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.prod: dev-environment
-ms.technology: windows-python
+ms.technology: windows-nodejs
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
@@ -17,7 +16,6 @@ ms.date: 09/19/2019
 The following tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.
 
 For app development, the nearest equivalent to Xcode would be [Visual Studio](https://visualstudio.microsoft.com). There is also a version of [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), if you ever feel the need to go back. For cross-platform source code editing (and a huge number of plug-ins) [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) is the most popular choice.
-
 
 ## Keyboard shortcuts
 
@@ -35,7 +33,7 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 | Search | Command+Space | Windows key |
 | Close active window | Command+W | Control+W |
 | Switch current task | Command+Tab | Alt+Tab |
-| Save screen | Command+Shift+3 | Windows+Shift+S |
+| Save screen (Screenshot) | Command+Shift+3 | Windows+Shift+S |
 | Save window | Command+Shift+4 | Windows+Shift+S |
 | View item information or properties | Command+I | Alt+Enter |
  | Select all items | Command+A | Ctrl+A |

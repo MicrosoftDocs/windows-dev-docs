@@ -22,15 +22,15 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Set up your development environment
-            url: get-started/python-for-education.md#set-up-your-development-environment
+            url: ./beginners.md
       - linkListType: tutorial
         links:
           - text: Run some basic Python code
-            url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
+            url: ./beginners.md#hello-world-tutorial-for-some-python-basics
           - text: HelloWorld using VS Code
-            url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
+            url: ./beginners.md#hello-world-tutorial-for-using-python-with-vs-code
           - text: Create a simple game with Pygame
-            url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+            url: ./beginners.md#create-a-simple-game-with-pygame
   
   # Card
   - title: Get started with web development
@@ -38,13 +38,13 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Set up your development environment
-            url: get-started/python-for-web.md#set-up-your-development-environment
+            url: ./web-frameworks.md#set-up-your-development-environment
       - linkListType: tutorial
         links:
           - text: HelloWorld using Flask
-            url: get-started/python-for-web.md#hello-world-tutorial-for-flask
+            url: ./web-frameworks.md#hello-world-tutorial-for-flask
           - text: HelloWorld using Django
-            url: get-started/python-for-web.md#hello-world-tutorial-for-django
+            url: ./web-frameworks.md#hello-world-tutorial-for-django
   
   # Card
   - title: Get started with automation scripts
@@ -52,13 +52,22 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Set up your development environment
-            url: get-started/python-for-scripting.md#set-up-your-development-environment
+            url: ./scripting.md#set-up-your-development-environment
       - linkListType: tutorial
         links:
           - text: Example script - Display my file system
-            url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+            url: ./scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
           - text: Example script - Modify all files in a directory
-            url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+            url: ./scripting.md#example-script-to-modify-all-files-in-a-directory
+  # Card
+  - title: Get started with databases
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Install and run PostgreSQL
+            url: ./databases.md#install-postgresql
+          - text: Install and run MongoDB
+            url: ./databases.md#install-mongodb
 
   # Card
   # - title: Get started with machine learning (Coming soon)
@@ -80,19 +89,3 @@ landingContent:
             url: resources.md#online-courses
           - text: Recommended web dev links
             url: resources.md#web-development
-
-  # Card
-  - title: Mac to Windows support guide
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: Changing your dev environment
-            url: ../mac-to-windows.md
-          - text: Keyboard shortcuts
-            url: ../mac-to-windows.md#keyboard-shortcuts
-          - text: Trackpad shortcuts
-            url: ../mac-to-windows.md#trackpad-shortcuts
-          - text: Terminal and Shell
-            url: ../mac-to-windows.md#terminal-and-shell
-          - text: Apps and utilities
-            url: ../mac-to-windows.md#apps-and-utilities

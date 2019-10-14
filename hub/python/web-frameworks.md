@@ -18,7 +18,7 @@ The following is a step-by-step guide to get you started using Python for web de
 
 We recommend installing Python on WSL when building web applications. Many of the tutorials and instructions for Python web development are written for Linux users and use Linux-based packaging and installation tools. Most web apps are also deployed on Linux, so this will ensure you have consistency between your development and production environments.
 
-If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for beginners](./python-for-education.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./python-for-scripting.md). For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
+If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for beginners](./beginners.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
 ## Enable Windows Subsystem for Linux
 
@@ -61,10 +61,10 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 
 2. In your Ubuntu command line, navigate to where you want to put your project, and create a directory for it: `mkdir HelloWorld`.
 
-![Ubuntu terminal](../../images/ubuntu-terminal.png)
+![Ubuntu terminal](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the /mnt/<drive> folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). We are also excited to share that [WSL2 is coming soon to Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) and will offer some great improvements. You can [try it now on Windows Insiders build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install).
+> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the `/mnt/<drive>` folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). We are also excited to share that [WSL2 is coming soon to Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) and will offer some great improvements. You can [try it now on Windows Insiders build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install).
 
 ## Install Python, pip, and venv
 
@@ -84,7 +84,7 @@ Using virtual environments is a recommended best practice for Python development
 
 2. To activate the virtual environment, enter: `source .venv/bin/activate`. If it worked, you should see **(.venv)** before the command prompt. You now have a self-contained environment ready for writing code and installing packages. When you're finished with your virtual environment, enter the following command to deactivate it: `deactivate`.
 
-    ![Create a virtual environment](../../images/wsl-venv.png)
+    ![Create a virtual environment](../images/wsl-venv.png)
 
 > [!TIP]
 > We recommend creating the virtual environment inside the directory in which you plan to have your project. Since each project should have it's own separate directory, each will have it's own virtual environment, so there is not a need for unique naming. Our suggestion is to use the name **.venv** to follow the Python convention. Some tools (like pipenv) also default to this name if you install into your project directory. You don't want to use **.env** as that conflicts with environment variable definition files. We generally do not recommend non-dot-leading names, as you don't need `ls` constantly reminding you that the directory exists. We also recommend adding **.venv** to your .gitignore file. (Here is [GitHub's default gitignore template for Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106) for reference.) For more information about working with virtual environments in VS Code, see [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
@@ -97,13 +97,13 @@ VS Code uses the Remote - WSL Extension (installed previously) to treat your Lin
 
 2. A Security Alert will pop-up from Windows Defender, select "Allow access". Once VS Code opens, you should see the Remote Connection Host indicator, in the bottom-left corner, letting you know that you are editing on **WSL: Ubuntu-18.04**.
 
-    ![VS Code Remote Connection Host indicator](../../images/wsl-remote-extension.png)
+    ![VS Code Remote Connection Host indicator](../images/wsl-remote-extension.png)
 
 3. Close your Ubuntu terminal. Moving forward we will use the WSL terminal integrated into VS Code.
 
 4. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
 
-    ![VS Code with WSL terminal](../../images/vscode-bash-remote.png)
+    ![VS Code with WSL terminal](../images/vscode-bash-remote.png)
 
 ## Install the Microsoft Python extension
 
@@ -131,7 +131,7 @@ Let's create and run a simple Python program as a test and ensure that we have t
 
 4. Select the **test.py** file that you just created in your Explorer window to open it in VS Code. Because the .py in our file name tells VS Code that this is a Python file, the Python extension you loaded previously will automatically choose and load a Python interpreter that you will see displayed on the bottom of your VS Code window.
 
-    ![Select Python interpreter in VS Code](../../images/interpreterselection.gif)
+    ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 
 5. Paste this Python code into your test.py file and then save the file (Ctrl+S): 
 
@@ -165,7 +165,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 9. Open your **app.py** file in VS Code's File Explorer (`Ctrl+Shift+E`, then select your app.py file). This will activate the Python Extension to choose an interpreter. It should default to **Python 3.6.8 64-bit ('.venv': venv)**. Notice that it also detected your virtual environment.
 
-    ![Activated virtual environment](../../images/virtual-environment.png)
+    ![Activated virtual environment](../images/virtual-environment.png)
 
 10. In **app.py**, add code to import Flask and create an instance of the Flask object:
 
@@ -206,7 +206,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 14. Open your default web browser to the rendered page, **Ctrl+Click** the http://127.0.0.1:5000/ URL in the terminal. You should see the following message in your browser:
 
-    ![Hello, Flask!](../../images/hello-flask.png)
+    ![Hello, Flask!](../images/hello-flask.png)
 
 15. Observe that when you visit a URL like "/", a message appears in the debug terminal showing the HTTP request:
 

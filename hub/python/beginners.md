@@ -18,7 +18,7 @@ The following is a step-by-step guide for beginners interested in learning Pytho
 
 For beginners who are new to Python, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. This is especially helpful if you are in an educational environment or a part of an organization that restricts permissions or administrative access on your machine.
 
-If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](./python-for-web.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./python-for-scripting.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
+If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](./web-frameworks.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
 ## Install Python
 
@@ -42,7 +42,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 2. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend sticking with Python 3.7 unless you have a specific reason for choosing something different. Select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
-    ![Select Python interpreter in VS Code](../../images/interpreterselection.gif)
+    ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 
 3. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
 
@@ -50,7 +50,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 5. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
 
-    ![Python command line in VS Code](../../images/python-in-vscode.png)
+    ![Python command line in VS Code](../images/python-in-vscode.png)
 
 ## Install Git (optional)
 
@@ -86,7 +86,7 @@ Python is an interpreted language. In contrast to compiled languages, in which t
 
 9. To exit Python, you can enter `exit()`, `quit()`, or select Ctrl-Z.
 
-![PowerShell screenshot of this tutorial](../../images/hello-world-basics.png)
+![PowerShell screenshot of this tutorial](../images/hello-world-basics.png)
 
 Hope you had fun using some of Python's built-in string modification methods. Now try creating a Python program file and running it with VS Code.
 
@@ -108,7 +108,7 @@ The VS Code team has put together a great [Getting Started with Python](https://
 
 ## Create a simple game with Pygame
 
-![Pygame running a sample game](../../images/pygame-shmup.jpg)
+![Pygame running a sample game](../images/pygame-shmup.jpg)
 
 Pygame is a popular Python package for writing games - encouraging students to learn programming while creating something fun. Pygame displays graphics in a new window, and so it will not work under the command-line-only approach of WSL. However, if you installed Python via the Microsoft Store as detailed in this tutorial, it will work fine.
 
@@ -171,7 +171,7 @@ Here's how to start writing your own game.
 
 4. From the PowerShell terminal, run it by entering: `python bounce.py`.
 
-    ![Pygame running the next big thing](../../images/pygame.jpg)
+    ![Pygame running the next big thing](../images/pygame.jpg)
 
 Try adjusting some of the numbers to see what effect they have on your bouncing ball.
 

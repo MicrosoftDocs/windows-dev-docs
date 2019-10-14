@@ -21,7 +21,7 @@ The following is a step-by-step guide for setting up your developer environment 
 
 When using Python to write scripts that perform file system operations, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates.
 
-If you are using Python for **web development**  on Windows, we recommend a different setup using the Windows Subsystem for Linux. Find a walkthrough in our guide: [Get started using Python for web development on Windows](./python-for-web.md). If you're brand new to Python, try our guide: [Get started using Python on Windows for beginners](./python-for-education.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
+If you are using Python for **web development**  on Windows, we recommend a different setup using the Windows Subsystem for Linux. Find a walkthrough in our guide: [Get started using Python for web development on Windows](./web-frameworks.md). If you're brand new to Python, try our guide: [Get started using Python on Windows for beginners](./beginners.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
 ## Install Python
 
@@ -64,7 +64,7 @@ VS Code contains a [built-in terminal](https://code.visualstudio.com/docs/editor
 
 3. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
 
-    ![Python command line in VS Code](../../images/python-in-vscode.png)
+    ![Python command line in VS Code](../images/python-in-vscode.png)
 
 4. To exit Python, you can enter `exit()`, `quit()`, or select Ctrl-Z.
 
@@ -114,7 +114,7 @@ Let's begin with a simple script that walks a directory tree and displays the di
     > [!NOTE]
     > Python is an interpreted language, meaning that it acts as a virtual machine, emulating a physical computer. There are different types of Python interpreters that you can use: Python 2, Python 3, Anaconda, PyPy, etc. In order to run Python code and get Python IntelliSense, you must tell VS Code which interpreter to use. We recommend sticking with the interpreter that VS Code chooses by default (Python 3 in our case) unless you have a specific reason for choosing something different. To change the Python interpreter, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the **Command Palette** (Ctrl+Shift+P) and enter the command **Python: Select Interpreter**. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
-    ![Select Python interpreter in VS Code](../../images/interpreterselection.gif)
+    ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 
 8. Paste the following code into your list-directory-contents.py file and then select **save**:
 
