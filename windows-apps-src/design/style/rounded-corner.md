@@ -68,7 +68,7 @@ There are mainly 3 types of UI parts where the radii of the corners are being ro
 - MenuBar
 - ToggleSplitButton
 
-*Rounding of bars*
+###Rounding of bars
 - These UI elements are shaped like bars or lines, for example ProgressBar.
 - The default radius values we use here are 2px. One exception is the slider in ColorPicker which will be 6px because the bar is wider.
 ![bars](images/rounded-corner/bars.png)
