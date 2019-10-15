@@ -15,7 +15,7 @@ Rounded corners lessen cognitive load for users to visually process UI and evoke
 ## Default control designs
 There are mainly 3 types of UI parts where the radii of the corners are being rounded and here are the descriptions of how this is applied to default controls.
 
-*Corners of rectangle UI elements*
+###Corners of rectangle UI elements
 - These UI elements include basic controls like buttons that users see on screen at all times.
 - The default radius value we use are 2px for these UI elements.
 ![Button](images/rounded-corner/button.png)
