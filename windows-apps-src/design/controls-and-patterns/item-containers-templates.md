@@ -28,7 +28,7 @@ ms.localizationpriority: medium
 ## ListView items and GridView items
 As mentioned above, ListView items are automatically placed into the ListViewItem container, and GridView items are placed into the GridViewItem container. These item containers are controls that have their own built-in styling and interaction, but can also be highly customized. However, before customization, make sure to familizarize yourself with the recommended styling and guidelines for ListViewItem and GridViewItem:
 
-- **ListViewItems** -  Items are primarily text-focused, and elongated to the left. Icons or images may appear to the right of the text.
+- **ListViewItems** -  Items are primarily text-focused, and elongated in shape. Icons or images may appear to the left of the text.
 - **GridViewItems** - Items are usually square in shape, or at least less of an elongated rectangle shape. Items are image-focused, and may have text appearing around or overlaid on the image. 
 
 ## Introduction to customization
@@ -43,7 +43,7 @@ This image shows how the control template and the data template combine to creat
 
 Here's the XAML that creates this item. We explain the templates later.
 
-```xaml
+```xml
 <ListView Width="220" SelectionMode="Multiple">
     <ListView.ItemTemplate>
         <DataTemplate x:DataType="x:String">
@@ -212,9 +212,9 @@ Here's what the data items look like when they're displayed with this data templ
 
 ![List view items with a data template](images/listview-data-template-0.png)
 
-> [!IMPORTANT]:
+> [!IMPORTANT]
 > ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
-<br/><br/> In order to spread elements equally across a ListItem, you will need to set the HorizontalContentAlignmentProperty to ["Stretch"](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment) by using a [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) inside of your ListView:
+<br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment) by using a [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) inside of your ListView:
 
 ```xml
 <ListView.ItemContainerStyle>
