@@ -51,7 +51,7 @@ There are several Linux distributions available to run on WSL. You can find and 
 
 2. After the download completes, select **Launch** from the Microsoft Store or launch by typing "Ubuntu 18.04 LTS" into the **Start** menu.
 
-3. You will be asked to create an account name and password when you run the distribution for the first time. After this, you'll be automatically signed in as this user by default. You can choose any user name and password. They have no bearing on your Windows user name.
+3. You will be asked to create an account name and password when you run the distribution for the first time. After this, you'll be automatically signed in as this user by default. You can choose any username and password. They have no bearing on your Windows user name.
 
     ![Linux distributions in the Microsoft Store](../images/store-linux-distros.png)
 
@@ -97,6 +97,10 @@ There are multiple ways to install Node.js. We recommend using a version manager
 > [!TIP]
 > If you are using NVM to install Node.js and NPM, you should not need to use the SUDO command to install new packages.
 
+> [!NOTE]
+> At the time of publication, NVM v0.34.0 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
+
 ## Alternative version managers
 
 While nvm is currently the most popular version manager for node, there are a few alternatives to consider:
@@ -109,7 +113,7 @@ While nvm is currently the most popular version manager for node, there are a fe
 
 ## Install your favorite code editor
 
-We recommend using [**Visual Studio Code**] with the **Remote-WSL Extension** for Node.js dev projects. This splits VS Code into a “client-server” architecture, with the client (the user interface) running on your Windows machine and the server (your code, Git, plugins, etc) running remotely.
+We recommend using **Visual Studio Code** with the **Remote-WSL Extension** for Node.js projects. This splits VS Code into a “client-server” architecture, with the client (the user interface) running on your Windows machine and the server (your code, Git, plugins, etc) running remotely.
 
 - Linux-based Intellisense and linting is supported.
 - Your project will automatically build in Linux.
@@ -131,16 +135,7 @@ To install VS Code and the Remote-WSL Extension:
 
 ### Helpful VS Code Extensions
 
-While VS Code comes with many features for Node.js development out of the box, there are some helpful extensions to consider installing available in the [Node.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack). These include:
-
-- ES Lint - A tool for “linting” your code. Linting analyzes your code and warns you of potential errors.
-- npm - Run npm scripts from the command palette and validate the installed modules defined in package.json.
-- JavaScript (ES6) Snippets - Adds code snippets for JavaScript development in ES6 syntax.
-- Search node_modules - Quickly search for node modules in your project.
-- NPM IntelliSense - Adds IntelliSense for npm modules in your code.
-- Path IntelliSense - Auto-completes filenames in your code.
-
-Install them all or pick and choose which seem the most useful to you.
+While VS Code comes with many features for Node.js development out of the box, there are some helpful extensions to consider installing available in the [Node.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack). Install them all or pick and choose which seem the most useful to you.
 
 To install the Node.js extension pack:
 
@@ -153,7 +148,7 @@ To install the Node.js extension pack:
 
     ![VS Code Extensions Local vs Remote](../images/vscode-extensions-local-remote.png)
 
-2. In the search box at the top of the Extensions window, enter: **Node Extension Pack** (or the name of whatever extension you are looking for). The extension (or extensions if it's a pack) will be installed for either your Local or WSL instances of VS Code depending on where you have the current project opened. You can tell by selecting the remote link in the bottom-left corner of your VS Code window (in green). It will either give you the option to open or close a remote connection. Install your Node.js extensions in the "WSL:Ubuntu-18.04" environment.
+2. In the search box at the top of the Extensions window, enter: **Node Extension Pack** (or the name of whatever extension you are looking for). The extension will be installed for either your Local or WSL instances of VS Code depending on where you have the current project opened. You can tell by selecting the remote link in the bottom-left corner of your VS Code window (in green). It will either give you the option to open or close a remote connection. Install your Node.js extensions in the "WSL:Ubuntu-18.04" environment.
 
     ![VS Code remote link](../images/wsl-remote-extension.png)
 
@@ -185,7 +180,7 @@ If you plan to collaborate with others, or host your project on an open-source s
 
 You now have a Node.js development environment set up. To get started using your Node.js environment, consider trying one of these tutorials:
 
-- [Get started with Node.js for beginners](./beginners.md): A step-by-step guide to help you get started if you're brand new to Node.js development.
-- [Get started with Node.js web frameworks on Windows](./web-frameworks.md): A step-by-step guide to help you get started using Node.js web framworks on Windows, including Next.js, Nuxt.js, and Gatsby.
-- [Get started connecting Node.js apps to a database](./databases.md): A step-by-step guide to help you get started connecting your Node.js app to a database, like MongoDB or Postgres.
-- [Get started using Docker containers with Node.js](./containers.md): A step-by-step guide to help you get started using Docker containers with your Node.js apps.
+- [Get started with Node.js for beginners](./beginners.md)
+- [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
+- [Get started connecting Node.js apps to a database](./databases.md)
+- [Get started using Docker containers with Node.js](./containers.md)

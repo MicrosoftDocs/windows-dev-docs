@@ -56,7 +56,7 @@ To create a Next.js project, which includes installing next, react, and react-do
 
 8. Let's see how Next.js handles errors. Remove the `</h1>` closing tag so that your title code now looks like this: `<h1 className='title'>This is my new Next.js app!`. Save this change and notice that a "Failed to compile" error will display in your browser, and in your terminal, letting your know that a closing tag for `<h1>` is expected. Replace the `</h1>` closing tag, save, and the page will reload.
 
-You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![VS Code debug window and launch.json config icon](../images/vscode-debug-launch-configuration.png)
 
@@ -107,7 +107,7 @@ To create a Nuxt.js project, which will include answering a series of questions 
 
 8. Let's see how Nuxt.js handles errors. Remove the `</v-card-title>` closing tag so that your title code now looks like this: `<v-card-title class="headline">This is my new Nuxt.js app!`. Save this change and notice that a compiling error will display in your browser, and in your terminal, letting your know that a closing tag for `<v-card-title>` is missing, along with the line numbers where the error can be found in your code. Replace the `</v-card-title>` closing tag, save, and the page will reload.
 
-You can use VS Code's debugger with your Nuxt.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+You can use VS Code's debugger with your Nuxt.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![VS Code debug window and launch.json config icon](../images/vscode-debug-launch-configuration.png)
 
@@ -146,7 +146,7 @@ To create a Gatsby.js project:
 
 9. Let's see how Next.js handles errors. Remove the `</h1>` closing tag so that your title code now looks like this: `<h1>Hi (Your Name)!`. Save this change and notice that a "Failed to compile" error will display in your browser, and in your terminal, letting your know that a closing tag for `<h1>` is expected. Replace the `</h1>` closing tag, save, and the page will reload.
 
-You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![VS Code debug window and launch.json config icon](../images/vscode-debug-launch-configuration.png)
 

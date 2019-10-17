@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 ms.date: 07/19/2019
 ---
 
-# Get started using databases with Python on Windows
+# Get started using PostgreSQL or MongoDB with Python on Windows
 
-Python applications often need to persist data, which can happen through files, local storage, cloud services or databases. This step-by-step guide will help you get started connecting your Python app to a database. We chose to focus on two popular options: PostgreSQL and MongoDB.
+This step-by-step guide will help you get started connecting your Python app to a database. We chose to focus on two popular options: PostgreSQL and MongoDB.
 
 ## Differences between MongoDB and PostgreSQL
 

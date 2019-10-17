@@ -65,18 +65,7 @@ To learn more about using Volta to install multiple versions of Node.js on Windo
 
 ## Install your favorite code editor
 
-We recommend you [install VS Code](https://code.visualstudio.com), as well as the [Node.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), for developing with Node.js on Windows.
-
-The Node.js Extension Pack includes:
-
-- ES Lint - A tool for “linting” your code. Linting analyzes your code and warns you of potential errors.
-- npm - Run npm scripts from the command palette and validate the installed modules defined in package.json.
-- JavaScript (ES6) Snippets - Adds code snippets for JavaScript development in ES6 syntax.
-- Search node_modules - Quickly search for node modules in your project.
-- NPM IntelliSense - Adds IntelliSense for npm modules in your code.
-- Path IntelliSense - Auto-completes filenames in your code.
-
-Install them all or pick and choose which seem the most useful to you.
+We recommend you [install VS Code](https://code.visualstudio.com), as well as the [Node.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), for developing with Node.js on Windows. Install them all or pick and choose which seem the most useful to you.
 
 To install the Node.js extension pack:
 
