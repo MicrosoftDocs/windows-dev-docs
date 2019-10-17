@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.date: 09/19/2019
 ---
 
-# Get started connecting Node.js apps to a database
+# Get started using MongoDB or PostgreSQL with Node.js on Windows
 
 Node.js applications often need to persist data, which can happen through files, local storage, cloud services or databases. This step-by-step guide will help you get started connecting your Node.js app to a database. We chose to focus on two popular options: MongoDB and PostgreSQL.
 
