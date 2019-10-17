@@ -446,5 +446,5 @@ Page1::Page1()
 
 ## Related articles
 * [Navigation design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
-* [Guidelines for tabs and pivots](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
-* [Guidelines for navigation panes](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)
+* [Pivot](../controls-and-patterns/pivot.md)
+* [Navigation view](../controls-and-patterns/navigationview.md)
