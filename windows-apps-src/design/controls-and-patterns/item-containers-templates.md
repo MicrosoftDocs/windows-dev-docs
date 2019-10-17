@@ -43,7 +43,7 @@ This image shows how the control template and the data template combine to creat
 
 Here's the XAML that creates this item. We explain the templates later.
 
-```xml
+```xaml
 <ListView Width="220" SelectionMode="Multiple">
     <ListView.ItemTemplate>
         <DataTemplate x:DataType="x:String">
@@ -153,7 +153,7 @@ You specify a data template to tell the list view how your data item should be s
 By default, a data item is displayed in the list view as the string representation of the data object it's bound to. If you show the 'NamedColors' data in a list view without telling the list view how it should look, it just shows whatever the **ToString** method returns, like this.
 
 **XAML**
-```xml
+```xaml
 <ListView x:Name="colorsListView"/>
 ```
 
@@ -162,7 +162,7 @@ By default, a data item is displayed in the list view as the string representati
 You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property. Here, you set DisplayMemberPath to the `Name` property of the `NamedColor` item.
 
 **XAML**
-```xml
+```xaml
 <ListView x:Name="colorsListView" DisplayMemberPath="Name" />
 ```
 
@@ -181,7 +181,7 @@ Here, you define a DataTemplate that shows a [Rectangle](https://docs.microsoft.
 > When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 **XAML**
-```xml
+```xaml
 <ListView x:Name="colorsListView">
     <ListView.ItemTemplate>
         <DataTemplate x:DataType="local:NamedColor">
@@ -216,7 +216,7 @@ Here's what the data items look like when they're displayed with this data templ
 > ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
 <br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment) by using a [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) inside of your ListView:
 
-```xml
+```xaml
 <ListView.ItemContainerStyle>
     <Style TargetType="ListViewItem">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -229,7 +229,7 @@ You might want to show the data in a GridView. Here's another data template that
 
 
 **XAML**
-```xml
+```xaml
 <Page.Resources>
     <DataTemplate x:Key="namedColorItemGridTemplate" x:DataType="local:NamedColor">
         <Grid>
@@ -284,7 +284,7 @@ An instance of every XAML element in a data template is created for each item in
  Consider this section  of the grid data template. Let's look at a few things that reduce the element count.
 
 **XAML**
-```xml
+```xaml
 <!-- RGB -->
 <Border Background="Gainsboro" Grid.Row="1" Grid.ColumnSpan="3"/>
 <TextBlock Text="{x:Bind Color.R}" Foreground="Red"
@@ -328,7 +328,7 @@ To modify the look of the item container, use the [ItemContainerStyle](https://d
 
 In this example, you add padding to the ListViewItem to create some space between the items in the list.
 
-```xml
+```xaml
 <ListView x:Name="colorsListView">
     <ListView.ItemTemplate>
         <!-- DataTemplate XAML shown in previous ListView example -->
@@ -364,7 +364,7 @@ To modify other ListViewItemPresenter properties that aren't template bound to L
 
 A copy of the default style is added to your app as a resource, and the **GridView.ItemContainerStyle** property is set to that resource, as shown in this XAML. 
 
-```xml
+```xaml
 <Style x:Key="colorsGridViewItemStyle" TargetType="GridViewItem">
     <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
     <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
@@ -473,7 +473,7 @@ To customize an expanded XAML template, you need to make a copy of it in your ap
 
 **To copy the expanded template**
 1. Set the ItemContainerStyle property as shown here for your ListView or GridView.
-    ```xml
+    ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
     <GridView ItemContainerStyle="{StaticResource GridViewItemExpanded}"/>
     ```
