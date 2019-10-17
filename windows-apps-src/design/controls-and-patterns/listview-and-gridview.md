@@ -599,7 +599,7 @@ For info about how to change the look of selected items, see [Item containers an
 
 ### Drag and drop
 
-ListView and GridView controls support drag and drop of items within themselves, and between themselves and other ListView and GridView controls. For more info about implementing the drag and drop pattern, see [Drag and drop](https://docs.microsoft.com/windows/uwp/design/input/drag-and-drop). 
+ListView and GridView controls support drag and drop of items within themselves, and between themselves and other ListView and GridView controls. For more info about implementing the drag and drop pattern, see [Drag and drop](../input/drag-and-drop.md).
 
 ## Get the sample code
 
@@ -611,4 +611,4 @@ ListView and GridView controls support drag and drop of items within themselves,
 
 - [Lists](lists.md)
 - [Item containers and templates](item-containers-templates.md)
-- [Drag and drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Drag and drop](../input/drag-and-drop.md)
