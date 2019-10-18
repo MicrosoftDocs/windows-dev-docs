@@ -19,7 +19,7 @@ One of the most powerful features of the Universal Windows Platform (UWP) is the
 Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *BgLabelControlApp*. In a later section of this topic, you'll be directed to build your project (don't build until then).
 
 > [!NOTE]
-> If you are using Visual Studio 2019, you need to download and install the [winrt/cpp template extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the Visual Studio Marketplace. If you've created a blank UWP/CX project by accident, the compilation of the .idl file listed bellow will fail with MIDL2011 error
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 We're going to author a new class to represent a custom (templated) control. We're authoring and consuming the class within the same compilation unit. But we want to be able to instantiate this class from XAML markup, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
@@ -114,7 +114,7 @@ In this walkthrough, we won't be using **OnLabelChanged**. But it's there so tha
 
 In its constructor, **BgLabelControl** sets a default style key for itself. But what *is* a default style? A custom (templated) control needs to have a default style&mdash;containing a default control template&mdash;which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.
 
-Under your project node, create a new folder and name it "Themes". Under `Themes`, add a new item of type **Visual C++** > **XAML** > **XAML View**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a custom control. Delete the default contents of `Generic.xaml`, and paste in the markup below.
+Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++** > **XAML** > **XAML View**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a custom control. Delete the default contents of `Generic.xaml`, and paste in the markup below.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
@@ -138,10 +138,6 @@ Under your project node, create a new folder and name it "Themes". Under `Themes
 ```
 
 In this case, the only property that the default style sets is the control template. The template consists of a square (whose background is bound to the **Background** property that all instances of the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type have), and a text element (whose text is bound to the **BgLabelControl::Label** dependency property).
-
-> [!NOTE]
-> You need to make sure that the 'Themes' folder is really created. If you right-click the project in the solution explorer and use the 'Add -> New Filter' menu, the folder will not be created, but a filter instead, having a similar icon in the solution explorer. Your control will not be displayed in the UI of the application. 
->Instead you can navigate to the root folder of the project, create the 'Themes' folder by hand in Explorer, create the 'Generics.xaml' file manually and then add it by right-clicking the project in Visual Studio and using the 'Add -> Existing Item' menu element. 
 
 ## Add an instance of **BgLabelControl** to the main UI page
 
