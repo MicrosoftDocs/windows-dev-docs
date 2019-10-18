@@ -7,68 +7,33 @@ ms.topic: article
 keywords: windows 10, uwp, games, templates, tools, directx
 ms.localizationpriority: medium
 ---
+
 # Project templates and tools for games
 
+This topic discusses what you need to start programming DirectX games for the Universal Windows Platform (UWP).
 
+## Visual Studio
 
+[Download and install Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
-This topic shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
+For info about setting up Visual Studio for [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) development, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-First, you need Visual Studio.
+## Topics in this section
 
-## Get Visual Studio
-
-
-[Download and install Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/).
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><a href="user-interface.md">DirectX game project templates</a></p></td>
-<td align="left"><p>Learn about the templates for creating a UWP and DirectX game.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">Visual Studio tools for game programming</a></p></td>
-<td align="left"><p>An overview of DirectX specific tools available in Visual Studio.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><a href="use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md">Graphics diagnostics tools</a></p></td>
-<td align="left"><p>Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|Topic|Description|
+|-|-|
+|[DirectX game project templates](user-interface.md)|Learn about the templates for creating a UWP and DirectX game.|
+|[Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md)|An overview of DirectX specific tools available in Visual Studio.|
+|[Graphics diagnostics tools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)|Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.|
 
 ## Next steps
 
+If you're porting an existing game, see these topics.
 
-If you are porting an existing game, see the following topics.
+- [Port from OpenGL ES 2.0 to DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+- [Port from DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)
 
--   [Port from OpenGL ES 2.0 to DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Port from DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)
+If you're creating a new DirectX game, see these topics.
 
-If you are creating a new DirectX game, see the following topics.
-
--   [Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
--   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
-
- 
-
- 
-
- 
-
-
-
-
+- [Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
+- [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
