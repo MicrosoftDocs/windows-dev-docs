@@ -18,6 +18,9 @@ One of the most powerful features of the Universal Windows Platform (UWP) is the
 ## Create a Blank App (BgLabelControlApp)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *BgLabelControlApp*. In a later section of this topic, you'll be directed to build your project (don't build until then).
 
+> [!NOTE]
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
 We're going to author a new class to represent a custom (templated) control. We're authoring and consuming the class within the same compilation unit. But we want to be able to instantiate this class from XAML markup, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
 The first step in authoring a new runtime class is to add a new **Midl File (.idl)** item to the project. Name it `BgLabelControl.idl`. Delete the default contents of `BgLabelControl.idl`, and paste in this runtime class declaration.
@@ -111,7 +114,7 @@ In this walkthrough, we won't be using **OnLabelChanged**. But it's there so tha
 
 In its constructor, **BgLabelControl** sets a default style key for itself. But what *is* a default style? A custom (templated) control needs to have a default style&mdash;containing a default control template&mdash;which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.
 
-Under your project node, create a new folder and name it "Themes". Under `Themes`, add a new item of type **Visual C++** > **XAML** > **XAML View**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a custom control. Delete the default contents of `Generic.xaml`, and paste in the markup below.
+Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++** > **XAML** > **XAML View**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a custom control. Delete the default contents of `Generic.xaml`, and paste in the markup below.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
