@@ -42,12 +42,15 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
     **If you're not familiar with GitHub:**
     
     a. Click **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
+
     b. Extract the file. Use the File Explorer to navigate to the .zip file you just downloaded, right-click it, and select **Extract All...**. 
+
     c. Navigate to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` directory.    
 
     **If you are familiar with GitHub:**
 
     a. Clone the master branch of the repo locally.
+
     b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
 
 3. Open the project by clicking `Photolab.sln`.
