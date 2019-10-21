@@ -95,7 +95,7 @@ You can set properties on objects that you declared by using object element synt
 As with object declaration, this list doesn't imply that any property could be set with each of the techniques. Some properties support only one of the techniques.
 Some properties support more than one form; for example, there are properties that can use property element syntax, or attribute syntax. What's possible depends both on the property and on the object type that the property uses. In the Windows Runtime API reference, you'll see the XAML usages you can use in the **Syntax** section. Sometimes there is an alternative usage that would work but would be more verbose. Those verbose usages aren't always shown because we are trying to show you the best practices or the real world scenarios for using that property in XAML. Guidance for XAML syntax is provided in the **XAML Usage** sections of reference pages for properties that can be set in XAML.
 
-Some properties on objects that cannot be set in XAML by any means, and can only be set using code. Usually these are properties that are more appropriate to work with in the code-behind, not in XAML.
+Some properties on objects cannot be set in XAML by any means, and can only be set using code. Usually these are properties that are more appropriate to work with in the code-behind, not in XAML.
 
 A read-only property cannot be set in XAML. Even in code, the owning type would have to support some other way to set it, like a constructor overload, helper method, or calculated property support. A calculated property relies on the values of other settable properties plus sometimes an event with built-in handling; these features are available in the dependency property system. For more info on how dependency properties are useful for calculated property support, see [Dependency properties overview](dependency-properties-overview.md).
 
@@ -115,7 +115,7 @@ This example uses attribute syntax for four attributes to set the [**Name**](htt
 
 Many properties of an object can be set by using property element syntax. A property element looks like this: `<`*object*`.`*property*`>`.
 
-To use property element syntax, you create XAML property elements for the property that you want to set. In standard XML, this element would just be considered an element that has a dot in its name. However, in XAML, the dot in the element name identifies the element as a property element, with *property* expected to a member of *object* in a backing object model implementation. To use property element syntax, it must be possible to specify an object element in order to "fill" the property element tags. A property element will always have some content (single element, multiple elements, or inner text); there's no point in having a self-closing property element.
+To use property element syntax, you create XAML property elements for the property that you want to set. In standard XML, this element would just be considered an element that has a dot in its name. However, in XAML, the dot in the element name identifies the element as a property element, with *property* expected to be a member of *object* in a backing object model implementation. To use property element syntax, it must be possible to specify an object element in order to "fill" the property element tags. A property element will always have some content (single element, multiple elements, or inner text); there's no point in having a self-closing property element.
 
 In the following grammar, *property* is the name of the property that you want to set and *propertyValueAsObjectElement* is a single object element, that's expected to satisfy the value type requirements of the property.
 
@@ -185,7 +185,7 @@ One important XAML syntax rule we should mention is that you can't intermix the 
 
 All of the syntaxes shown thus far are setting properties to single objects. But many UI scenarios require that a given parent element can have multiple child elements. For example, a UI for an input form needs several text box elements, some labels, and perhaps a "Submit" button. Still, if you were to use a programming object model to access these multiple elements, they would typically be items in a single collection property, rather than each item being the value of different properties. XAML supports multiple child elements as well as supporting a typical backing collection model by treating properties that use a collection type as implicit, and performing special handling for any child elements of a collection type.
 
-Many collection properties are also identified as the XAML content property for the class. The combination of implicit collection processing and XAML content syntax is frequently seen in types used for control compositing, such as panels, views, or items controls. For example, the following examples show the simplest possible XAML for compositing two peer UI elements within a [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel).
+Many collection properties are also identified as the XAML content property for the class. The combination of implicit collection processing and XAML content syntax is frequently seen in types used for control compositing, such as panels, views, or items controls. For example, the following example shows the simplest possible XAML for compositing two peer UI elements within a [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel).
 
 ```xml
 <StackPanel>
@@ -228,7 +228,7 @@ Setting an attribute value is the typical means by which you set a property valu
 
 Either syntax enables you to declare an object and set a property on that object. Although the first example is a single element in markup, there are actually discrete steps here with regard to how a XAML processor parses this markup.
 
-First, the presence of the object element indicates that a new *objectName* object must be instantiated. Only after such an instance exists can the instance property *propertyName* can be set on it.
+First, the presence of the object element indicates that a new *objectName* object must be instantiated. Only after such an instance exists can the instance property *propertyName* be set on it.
 
 Another rule of XAML is that attributes of an element must be able to be set in any order. For example, there's no difference between `<Rectangle Height="50" Width="100" />` and `<Rectangle Width="100"  Height="50" />`. Which order you use is a matter of style.
 
@@ -236,7 +236,7 @@ Another rule of XAML is that attributes of an element must be able to be set in 
 
 ## Attached properties
 
-XAML extends XML by adding a syntax element known as an *attached property*. Similar to the property element syntax, the attached property syntax contains a dot, and the dot holds special meaning to XAML parsing. Specifically, the dot separates the owner provider of the attached property, and the property name.
+XAML extends XML by adding a syntax element known as an *attached property*. Similar to the property element syntax, the attached property syntax contains a dot, and the dot holds special meaning to XAML parsing. Specifically, the dot separates the provider of the attached property, and the property name.
 
 In XAML, you set attached properties by using the syntax *AttachedPropertyProvider*.*PropertyName* Here is an example of how you can set the attached property [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) in XAML:
 
