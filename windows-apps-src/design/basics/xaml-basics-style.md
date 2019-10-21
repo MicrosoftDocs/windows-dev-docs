@@ -32,10 +32,7 @@ Universal Windows Platform (UWP) provides a number of ways to customize the look
 
 For the first part of the tutorial, let's jazz up some of our photo editing controls. 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*A humble slider with default styling.*</figure>
-</figure>
+![A humble slider with default styling.](../basics/images/xaml-basics/slider-start.png)
 
 These sliders are nice--they do all the things a slider should do--but they aren't very fancy. Let's fix that. 
 
@@ -744,8 +741,7 @@ Well, we got the job done, but there's a better way to achieve the same effect: 
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **After**
