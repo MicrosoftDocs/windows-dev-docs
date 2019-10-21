@@ -80,7 +80,7 @@ To do this you would do the following:
 
 ## Additional functionality
 
-The rating control has many additional features which can be used. Details for using these features can be found in our MSDN reference documentation.
+The rating control has many additional features which can be used. Details for using these features can be found in our reference documentation.
 Here is a non-comprehensive list of additional functionality:
 -   Great long list performance
 -   Compact sizing for tight UI scenarios

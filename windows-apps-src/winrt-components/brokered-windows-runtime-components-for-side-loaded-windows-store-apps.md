@@ -551,7 +551,7 @@ the proper operation of this hybrid server. The protocol is to open the
 add these references as necessary.
 
 Once the references are properly configured, the next task is to
-implement the server's functionality. See the MSDN topic [Best practices
+implement the server's functionality. See the topic [Best practices
 for interoperability with Windows Runtime components (UWP apps
 using C\#/VB/C++ and
 XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
