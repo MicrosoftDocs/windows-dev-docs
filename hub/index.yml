@@ -37,7 +37,7 @@ additionalContent:
             url: https://docs.microsoft.com/windows/apps/desktop/modernize/ 
           - text: Build desktop apps
             url: https://docs.microsoft.com/windows/apps/desktop/
-          - text: Set up your development environment
+          - text: Develop with Python, Node.js, and the Windows Subsystem for Linux
             url: https://docs.microsoft.com/windows/dev-environment/
           - text: Find code samples
             url: https://developer.microsoft.com/windows/samples
