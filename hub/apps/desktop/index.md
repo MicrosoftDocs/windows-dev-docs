@@ -39,12 +39,12 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/teams-fast-track.svg?branch=master" alt="Modernize illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/media/illustrations/teams-fast-track.svg" alt="Modernize illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Modernize desktop apps</h3>
-                        <p></p>Enhance your existing WPF, Windows Forms, and Win32 apps with the latest Windows features.</p>
+                        <p>Enhance your existing WPF, Windows Forms, and Win32 apps with the latest Windows features.</p>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/sql-database-develop.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/media/illustrations/sql-database-develop.svg" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -79,7 +79,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_tools.svg?branch=master" src="/media/common/i_tools.svg?branch=master" alt="Tools icon" />
+                                    <img data-hoverimage="/media/common/i_tools.svg" src="/media/common/i_tools.svg" alt="Tools icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -97,7 +97,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-samples.svg?branch=master" src="/media/common/i_code-samples.svg?branch=master" alt="Samples icon" />
+                                    <img data-hoverimage="/media/common/i_code-samples.svg" src="/media/common/i_code-samples.svg" alt="Samples icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -115,7 +115,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_api-reference.svg?branch=master" src="/media/common/i_api-reference.svg?branch=master" alt="API index icon" />
+                                    <img data-hoverimage="/media/common/i_api-reference.svg" src="/media/common/i_api-reference.svg" alt="API index icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -137,7 +137,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-1.svg?branch=master" alt="UWP illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/dotnet/images/hub/net-docs-desktop-1.svg" alt="UWP illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -150,13 +150,13 @@ ms.localizationpriority: medium
       </a>
     </li>
     <li>
-      <a href="/windows/desktop/index">
+      <a href="/windows/desktop/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/media/hubs/windows/win_developer-desktop.svg?branch=master" alt="Win32 illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/media/hubs/windows/win_developer-desktop.svg" alt="Win32 illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -169,13 +169,13 @@ ms.localizationpriority: medium
       </a>
     </li>
     <li>
-      <a href="/dotnet/framework/wpf/index">
+      <a href="/dotnet/framework/wpf/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-2.svg?branch=master" alt="WPF illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/dotnet/images/hub/net-docs-desktop-2.svg" alt="WPF illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -188,13 +188,13 @@ ms.localizationpriority: medium
       </a>
     </li>
     <li>
-      <a href="/dotnet/framework/winforms/index">
+      <a href="/dotnet/framework/winforms/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-3.svg?branch=master" alt="Windows Forms illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/dotnet/images/hub/net-docs-desktop-3.svg" alt="Windows Forms illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -207,13 +207,13 @@ ms.localizationpriority: medium
       </a>
     </li>
     <li>
-      <a href="/dotnet">
+      <a href="/dotnet/">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/system-center-virtual-machine.svg?branch=master" alt=".NET illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/media/illustrations/system-center-virtual-machine.svg" alt=".NET illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -232,7 +232,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/dynamics-training.svg?branch=master" alt="Features illustration" data-linktype="external" class="x-hidden-focus">
+                            <img src="/media/illustrations/dynamics-training.svg" alt="Features illustration" data-linktype="external" class="x-hidden-focus">
                         </div>
                     </div>
                     <div class="cardText">
@@ -253,7 +253,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-performance.svg?branch=master" src="/media/common/i_code-performance.svg?branch=master" alt="Performance icon" />
+                                    <img data-hoverimage="/media/common/i_code-performance.svg" src="/media/common/i_code-performance.svg" alt="Performance icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -271,7 +271,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-quality.svg?branch=master" src="/media/common/i_code-quality.svg?branch=master" alt="App compatibility icon" />
+                                    <img data-hoverimage="/media/common/i_code-quality.svg" src="/media/common/i_code-quality.svg" alt="App compatibility icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -289,7 +289,7 @@ ms.localizationpriority: medium
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_form.svg?branch=master" src="/media/common/i_form.svg?branch=master" alt="Enterprise icon" />
+                                    <img data-hoverimage="/media/common/i_form.svg" src="/media/common/i_form.svg" alt="Enterprise icon" />
                                 </div>
                             </div>
                             <div class="cardText">
@@ -312,7 +312,7 @@ ms.localizationpriority: medium
                         <h3>Related docs</h3>
                         <p></p>
                         <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX packaging and deployment</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet">.NET</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/">.NET</a></p>
                         <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                         <p><a href="https://docs.microsoft.com/azure/">Azure</a></p>
                         <p><a href="https://docs.microsoft.com/xamarin">Xamarin</a></p>
@@ -386,11 +386,11 @@ ms.localizationpriority: medium
                         <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX packaging and deployment</a></p>
                         <p><a href="https://docs.microsoft.com/windows/uwp">Universal Windows Platform (UWP)</a></p>
                         <p><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-api-list">Windows API (Win32)</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet">.NET</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/framework/wpf">WPF</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/framework/winforms">Windows Forms</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/">.NET</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></p>
+                        <p><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></p>
                         <p><a href="https://docs.microsoft.com/windows/ai/">Windows ML</a></p>
-                        <p><a href="https://docs.microsoft.com/xamarin">Xamarin</a></p>
+                        <p><a href="https://docs.microsoft.com/xamarin/">Xamarin</a></p>
                         </div>
                     </div>
                 </div>
