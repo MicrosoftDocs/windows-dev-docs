@@ -354,7 +354,7 @@ The `co_await` expression returns `true`, indicating that resumption will occur 
 
 So, you have a great deal of power at your fingertips when you combine C++/WinRT with coroutines; and especially when doing some old-school Petzold-style desktop application development.
 
-## Canceling an asychronous operation, and cancellation callbacks
+## Canceling an asynchronous operation, and cancellation callbacks
 
 The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Here's an example that calls [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve a potentially large collection of files, and it stores the resulting asynchronous operation object in a data member. The user has the option to cancel the operation.
 
