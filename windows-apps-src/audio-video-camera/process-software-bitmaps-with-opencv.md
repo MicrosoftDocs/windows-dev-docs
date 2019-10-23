@@ -38,8 +38,8 @@ The examples in this article walk you through creating a native code Windows Run
 3. Select "OpenCV.Win.Core" and click **Install**. In the **Preview** dialog, click **OK**.
 4. Use the same procedure to install the "OpenCV.Win.ImgProc" package.
 
-> [!NOTE]
-> OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated, but are still recommended for creating an OpenCVHelper as described on this page.
+>[!NOTE]
+>OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated and do not pass the Store compliance checks, therefore these packages are intended for experimentation only.
 
 ### 3. Implement the OpenCVHelper class
 
