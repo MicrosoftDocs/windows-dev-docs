@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
-UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-4 byte variable-width encoding. It is used pervasively on the web, and is the default for *nix-based platforms.
+UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-6 byte variable-width encoding. It is used pervasively on the web, and is the default for *nix-based platforms.
 
 ## -A vs. -W APIs
   
