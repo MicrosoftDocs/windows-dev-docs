@@ -191,9 +191,12 @@
 			"design/shell/**.md": "hickeys",
 			"design/style/**.md": "hickeys",
 			"design/usability/**.md": "Karl-Bridge-Microsoft",
-			"design/windows-template-studio/**.md": "QuinnRadich"			 
-
-		 }		 
+			"design/windows-template-studio/**.md": "QuinnRadich"
+		 },	 
+		 "feedback_product_url": 
+		 {
+			"design/**.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose"	
+		 }
 	},
     "externalReference": [
     ],
