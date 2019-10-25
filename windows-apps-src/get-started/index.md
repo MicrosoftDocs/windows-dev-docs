@@ -8,8 +8,8 @@ keywords: get started, windows 10, uwp, xaml, c#
 
 ms.localizationpriority: medium
 ---
-# Get started with Windows 10 apps 
- 
+# Get started with Windows 10 apps
+
 <p>Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.</p>  
 <ul class="cardsK panelContent">
     <li>
@@ -217,8 +217,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>New to development?</h3>
-                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
-                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>
@@ -230,7 +229,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>Explore related docs</h3>
-                        <p><a href="//docs.microsoft.com/dotnet/csharp/index">C# Guide</a></p>
+                        <p><a href="//docs.microsoft.com/dotnet/csharp/">C# Guide</a></p>
                         <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>

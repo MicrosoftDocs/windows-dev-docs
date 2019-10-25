@@ -354,7 +354,7 @@ The `co_await` expression returns `true`, indicating that resumption will occur 
 
 So, you have a great deal of power at your fingertips when you combine C++/WinRT with coroutines; and especially when doing some old-school Petzold-style desktop application development.
 
-## Canceling an asychronous operation, and cancellation callbacks
+## Canceling an asynchronous operation, and cancellation callbacks
 
 The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Here's an example that calls [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve a potentially large collection of files, and it stores the resulting asynchronous operation object in a data member. The user has the option to cancel the operation.
 
@@ -782,6 +782,51 @@ case AsyncStatus::Started:
 - **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded.
 - **AsyncStatus::Error** means that the async object has failed in some way. You can **get** to rethrow the exception if you wish.
 - **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling **get** to retrieve any result. But it's best just to discard the object at this point.
+
+## Returning an array asynchronously
+
+Below is an example of [MIDL 3.0](/uwp/midl-3/) that produces *error MIDL2025: [msg]syntax error [context]: expecting > or, near "["*.
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+The reason is that it's invalid to use an array as a parameter type argument to a parameterized interface. So we need a less obvious way to achieve the aim of asynchronously passing an array back from a runtime class method. 
+
+You can return the array boxed into a [PropertyValue](/uwp/api/windows.foundation.propertyvalue) object. The calling code then unboxes it. Here's a code example, which you can try out by adding the **SampleComponent** runtime class to a **Windows Runtime Component (C++/WinRT)** project, and then consuming that from (for example) a **Core App (C++/WinRT)** project.
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
 
 ## Important APIs
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)

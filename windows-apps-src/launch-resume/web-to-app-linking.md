@@ -19,7 +19,7 @@ To enable web-to-app linking you will need to:
 - Handle the activation in the app.
 
 > [!Note]
-> Starting with the Windows 10 Creators update, supported links clicked in Microsoft Edge will launch the corresponding app. Supported links clicked in other browsers (e.g. Internet Explorer, etc.), will keep you in the browsing experience.
+> Starting with the Windows 10 Creators update, supported links clicked in Microsoft Edge will launch the corresponding app. Supported links clicked in other browsers (for example, Internet Explorer, etc.), will keep you in the browsing experience.
 
 ## Register to handle http and https links in the app manifest
 
@@ -72,7 +72,7 @@ The JSON file example above demonstrates the use of wildcards. Wildcards allow y
 | **\***       | Represents any substring      |
 | **?**        | Represents a single character |
 
-For example, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not **msn.com/news/topnews.html**.
+For example, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (for example, msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not **msn.com/news/topnews.html**.
 
 ### Multiple apps
 
@@ -85,7 +85,7 @@ If you have two apps that you would like to link to your website, list both of t
   "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
-  "packageFamilyName": "Your second app's package family name, e.g. MyApp2_8jmtgj2pbbz6e",
+  "packageFamilyName": "Your second app's package family name, for example, MyApp2_8jmtgj2pbbz6e",
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
@@ -156,9 +156,9 @@ Test the configuration of your app and website by running this tool with the fol
 
 **AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
 
--   Hostname: Your website (e.g. microsoft.com)
+-   Hostname: Your website (for example, microsoft.com)
 -   Package Family Name (PFN): Your app’s PFN
--   File path: The JSON file for local validation (e.g. C:\\SomeFolder\\windows-app-web-link)
+-   File path: The JSON file for local validation (for example, C:\\SomeFolder\\windows-app-web-link)
 
 If the tool does not return anything, validation will work on that file when uploaded. If there is an error code, it will not work.
 

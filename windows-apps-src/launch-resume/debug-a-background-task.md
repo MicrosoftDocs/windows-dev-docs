@@ -30,11 +30,15 @@ This topic assumes that you already have an existing app with a background task 
 
 Background tasks can be triggered manually through Microsoft Visual Studio. Then you can step through the code and debug it.
 
-1.  In C#, put a breakpoint in the Run method of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2).
+1.  In C#, put a breakpoint in the Run method of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics).
 
     In C++, put a breakpoint in the Run function of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw).
 
 2.  Run your application in the debugger and then trigger the background task using the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
+
+> [!NOTE]
+> The Lifecycle Events toolbar options are not shown by default in Visual Studio. 
+> To show these options, right-click on the current toolbar in Visual Studio and ensure the option **Debug Location** is enabled.
 
     For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 

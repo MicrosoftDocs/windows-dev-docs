@@ -425,7 +425,7 @@ As you've seen previously in this topic, a C++/WinRT runtime class exists in the
 
 This table shows the minimum namespace qualification you need to use in different contexts.
 
-|The namespace that's in context|To specify the projected type|To specify the projected type|
+|The namespace that's in context|To specify the projected type|To specify the implementation type|
 |-|-|-|
 |**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
 |**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|

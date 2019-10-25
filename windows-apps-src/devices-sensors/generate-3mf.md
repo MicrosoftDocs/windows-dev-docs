@@ -125,6 +125,10 @@ Now that we have a model, with defined materials and components, we can save it 
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
+This function ensures the texture is specified correctly.
+
+[!code-cs[FixTexture](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetFixTexture)]
+
 From here, we can either initiate a print job within the app (see [3D printing from your app](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)), or save this **Printing3D3MFPackage** as a .3mf file.
 
 The following method takes a finished **Printing3D3MFPackage** and saves its data to a .3mf file.

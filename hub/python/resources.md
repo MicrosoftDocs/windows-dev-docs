@@ -40,8 +40,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Python and Visual Studio Code](https://code.visualstudio.com/docs/languages/python): An overview of using Python with VS Code.
 
-
-### Online courses
+## Online courses
 
 - [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
@@ -72,20 +71,3 @@ A list of links that we recommend for Python Developers working on machines runn
 - [Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Build a Python Django web app that uses the Microsoft Graph API to retrieve calendar information for a user.
 
 - [Walkthrough: Bing Ads API Web Application in Python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.
-
-<!-- ## Data Science and Machine Learning
-
-- Anaconda - brief description
-- Canopy - brief description
-- TensorFlow - brief description
-- Scikit-Learn, Keras, PyTorch, etc - brief descriptions
-
-## Desktop GUI app and IoT development
-
-- PyQT - brief description
-- PyJs - brief description
-- PyGUI - brief descriptio
-- Kivy - brief descriptio
-- PyGTK - brief descriptio
-- WxPython - brief description
-- PyGame - brief description (with links to our internal games once they're done?) -->

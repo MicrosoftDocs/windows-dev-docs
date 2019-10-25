@@ -16,9 +16,22 @@
           - name: Modernize desktop apps
             tocHref: /windows/apps/desktop/modernize/
             topicHref: "/windows/apps/desktop/modernize/"
-      - name: Python
-        tocHref: /windows/python/
-        topicHref: "/windows/python/index"
-      - name: NodeJS
-        tocHref: /windows/nodejs/
-        topicHref: "/windows/nodejs/index"
+      - name: Development Environment
+        tocHref: /windows/dev-environment/
+        topicHref: "/windows/dev-environment/"
+        items:
+          - name: Python
+            tocHref: /windows/python/
+            topicHref: "/windows/python/"
+          - name: Node.js
+            tocHref: /windows/nodejs/
+            topicHref: "/windows/nodejs/"
+          - name: Mac to Windows
+            tocHref: /windows/dev-environment/mac-to-windows/
+            topicHref: "/windows/dev-environment/mac-to-windows/"
+          - name: Developer Environment
+            tocHref: /windows/dev-environment/wsl
+            topicHref: "/windows/wsl/about"
+          - name: Developer Environment
+            tocHref: /windows/dev-environment/wsl
+            topicHref: "/windows/wsl/wsl2-about"

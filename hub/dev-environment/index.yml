@@ -1,0 +1,140 @@
+### YamlMime:Landing
+
+title: Build with Windows
+summary: Set up your development environment to work with Python, Node.js, the Windows Subsystem for Linux, Windows Terminal, Docker, MongoDB, PostgreSQL, and more.
+
+metadata:
+  author: mattwojo
+  description: Set up your Windows development environment using the subsystem for Linux to work with Python, Node.js, and more.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.topic: landing-page
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
+
+landingContent:
+  # Card
+  - title: Get started with Python
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Overview
+            url: ../python/index.yml
+          - text: Set up for beginners
+            url: ../python/beginners.md
+          - text: Set up for developing web apps
+            url: ../python/web-frameworks.md
+          - text: Set up for automation scripts
+            url: ../python/scripting.md
+          - text: Set up databases with WSL
+            url: ../python/databases.md
+      - linkListType: tutorial
+        links:
+          - text: Try some Python basics
+            url: ../python/beginners.md#hello-world-tutorial-for-some-python-basics
+          - text: Create a game with Pygame
+            url: ../python/beginners.md#create-a-simple-game-with-pygame
+          - text: Build a web app with Flask
+            url: ../python/web-frameworks.md#hello-world-tutorial-for-flask
+          - text: Build a web app with Django
+            url: ../python/web-frameworks.md#hello-world-tutorial-for-django
+      - linkListType: reference
+        links:
+          - text: FAQs
+            url: ../python/faqs.md
+          - text: Additional Resources
+            url: ../python/resources.md
+
+  # Card
+  - title: Get started with Node.js
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Overview
+            url: ../nodejs/index.yml
+          - text: Set up your development environment
+            url: ../nodejs/setup-on-wsl2.md
+          - text: Get started for beginners
+            url: ../nodejs/beginners.md
+          - text: Develop web apps
+            url: ../nodejs/web-frameworks.md
+          - text: Connect databases
+            url: ../nodejs/databases.md
+          - text: Use Docker containers
+            url: ../nodejs/containers.md
+      - linkListType: tutorial
+        links:
+          - text: Set up a web app with Express
+            url: ../nodejs/beginners.md#set-up-a-basic-web-app-framework-by-using-express
+          - text: Set up a web app with Next.js
+            url: ../nodejs/web-frameworks.md#get-started-with-nextjs
+          - text: Set up a web app with Nuxt.js
+            url: ../nodejs/web-frameworks.md#get-started-with-nuxtjs       
+          - text: Set up a web app with Gatsby.js
+            url: ../nodejs/web-frameworks.md#get-started-with-gatsbyjs
+
+# Card
+  - title: Windows Subsystem for Linux (WSL)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: About WSL
+            url: https://docs.microsoft.com/windows/wsl/about
+          - text: About WSL 2
+            url: https://docs.microsoft.com/windows/wsl/wsl2-about
+          - text: Difference between 1 & 2
+            url: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes
+      - linkListType: get-started
+        links:
+          - text: Install WSL
+            url: https://docs.microsoft.com/windows/wsl/install-win10
+          - text: Install WSL 2
+            url: https://docs.microsoft.com/windows/wsl/wsl2-install
+          - text: User accounts & permissions
+            url: https://docs.microsoft.com/windows/wsl/user-support
+      - linkListType: reference
+        links:
+          - text: Manage multiple distributions
+            url: https://docs.microsoft.com/windows/wsl/wsl-config#managing-multiple-linux-distributions
+          - text: FAQs for WSL 1
+            url: https://docs.microsoft.com/windows/wsl/faq
+          - text: FAQs for WSL 2
+            url: https://docs.microsoft.com/windows/wsl/wsl2-faq
+          - text: Troubleshooting
+            url: https://docs.microsoft.com/windows/wsl/troubleshooting
+  
+  # Card
+  - title: Mac to Windows guide
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Changing your environment
+            url: mac-to-windows.md
+          - text: Keyboard shortcuts
+            url: mac-to-windows.md#keyboard-shortcuts
+          - text: Trackpad shortcuts
+            url: mac-to-windows.md#trackpad-shortcuts
+          - text: Terminal and Shell
+            url: mac-to-windows.md#terminal-and-shell
+          - text: Apps and utilities
+            url: mac-to-windows.md#apps-and-utilities
+
+  # Card
+  - title: Windows Terminal
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Terminal & Console overview
+            url: https://github.com/microsoft/terminal#terminal--console-overview
+      - linkListType: get-started
+        links:
+          - text: Install Windows Terminal
+            url: https://github.com/microsoft/terminal#installing--running-windows-terminal
+          - text: Using Windows Terminal
+            url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md#starting-windows-terminal
+      - linkListType: reference
+        links:
+          - text: Customizing Windows Terminal
+            url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md

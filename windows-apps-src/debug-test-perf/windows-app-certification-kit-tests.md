@@ -290,7 +290,7 @@ Tests for files within the app package that have an extension of .pfx or.snk tha
 
 ### Corrective actions
 
-Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
+Remove any private code signing keys (for example, .pfx and .snk files) from the package.
 
 ## Supported API test
 

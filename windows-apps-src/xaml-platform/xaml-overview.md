@@ -104,7 +104,7 @@ Windows Runtime XAML supports these markup extensions that are defined under the
 - [{RelativeSource}](relativesource-markup-extension.md): enables a particular form of template binding where values come from the templated parent.
 - [{CustomResource}](customresource-markup-extension.md): for advanced resource lookup scenarios.
 
-Windows Runtime also supports the [{x:Null} markup extension](x-null-markup-extension.md). You use this to set [**Nullable**](/dotnet/api/system.nullable-1?view=netframework-4.8) values to **null** in XAML. For example you might use this in a control template for a <xref:Windows.UI.Xaml.Controls.CheckBox>, which interprets **null** as an indeterminate check state (triggering the "Indeterminate" visual state).
+Windows Runtime also supports the [{x:Null} markup extension](x-null-markup-extension.md). You use this to set [**Nullable**](/dotnet/api/system.nullable-1) values to **null** in XAML. For example you might use this in a control template for a <xref:Windows.UI.Xaml.Controls.CheckBox>, which interprets **null** as an indeterminate check state (triggering the "Indeterminate" visual state).
 
 A markup extension generally returns an existing instance from some other part of the object graph for the app or defers a value to run time. Because you can use a markup extension as an attribute value, and that's the typical usage, you often see markup extensions providing values for reference-type properties that might have otherwise required a property element syntax.
 
@@ -138,10 +138,10 @@ XAML is a declarative language for objects and their properties, but it also inc
 Here's a simple example. The <xref:Windows.UI.Xaml.Controls.Button> class supports an event named <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-When you compile, the compiler now expects that there will be a method named `showUpdatesButton-Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> event. For example:
+When you compile, the compiler now expects that there will be a method named `showUpdatesButton_Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> event. For example:
 
 ```csharp
 namespace App1

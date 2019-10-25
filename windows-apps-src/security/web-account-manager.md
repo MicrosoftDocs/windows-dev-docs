@@ -74,7 +74,7 @@ The pane is empty because the system only provides a UI shell - it's up to the d
 
 ## Register for AccountCommandsRequested
 
-To add commands to the pane, we start by registering for the AccountCommandsRequested event handler. This tells the system to run our build logic when the user asks to see the pane (e.g., clicks our XAML button). 
+To add commands to the pane, we start by registering for the AccountCommandsRequested event handler. This tells the system to run our build logic when the user asks to see the pane (for example, clicks our XAML button). 
 
 In your code behind, override the OnNavigatedTo and OnNavigatedFrom events and add the following code to them: 
 

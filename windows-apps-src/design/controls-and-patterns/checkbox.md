@@ -79,7 +79,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### Bind to IsChecked
 
-Use the [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) boolean value, you must use a value converter to bind it to a boolean value.
+Use the [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) boolean value, you must use a value converter to bind it to a boolean value.
 
 In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
 

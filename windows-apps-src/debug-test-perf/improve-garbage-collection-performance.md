@@ -34,11 +34,11 @@ A reference to an object in your app prevents that object, and all of the object
 
 Induce a garbage collection only after you have measured your app's performance and have determined that inducing a collection will improve its performance.
 
-You can induce a garbage collection of a generation by calling [**GC.Collect(n)**](https://docs.microsoft.com/dotnet/api/system.gc.collect?redirectedfrom=MSDN#System_GC_Collect_System_Int32_), where n is the generation you want to collect (0, 1, or 2).
+You can induce a garbage collection of a generation by calling [**GC.Collect(n)**](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_), where n is the generation you want to collect (0, 1, or 2).
 
 **Note**  We recommend that you don't force a garbage collection in your app because the garbage collector uses many heuristics to determine the best time to perform a collection, and forcing a collection is in many cases an unnecessary use of the CPU. But if you know that you have a large number of objects in your app that are no longer used and you want to return this memory to the system, then it may be appropriate to force a garbage collection. For example, you can induce a collection at the end of a loading sequence in a game to free up memory before gameplay starts.
  
-To avoid inadvertently inducing too many garbage collections, you can set the [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode?redirectedfrom=MSDN) to **Optimized**. This instructs the garbage collector to start a collection only if it determines that the collection would be productive enough to be justified.
+To avoid inadvertently inducing too many garbage collections, you can set the [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) to **Optimized**. This instructs the garbage collector to start a collection only if it determines that the collection would be productive enough to be justified.
 
 ## Reduce garbage collection time
 
@@ -68,7 +68,7 @@ Any object that is 85KB or larger is allocated on the large object heap (LOH) an
 
 ### Avoid reference-rich objects
 
-The garbage collector determines which objects are live by following references between objects, starting from roots in your app. For more info, see [What happens during a garbage collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). If an object contains many references, then there is more work for the garbage collector to do. A common technique (especially with large objects) is to convert reference rich objects into objects with no references (e.g., instead of storing a reference, store an index). Of course this technique works only when it is logically possible to do so.
+The garbage collector determines which objects are live by following references between objects, starting from roots in your app. For more info, see [What happens during a garbage collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). If an object contains many references, then there is more work for the garbage collector to do. A common technique (especially with large objects) is to convert reference rich objects into objects with no references (for example, instead of storing a reference, store an index). Of course this technique works only when it is logically possible to do so.
 
 Replacing object references with indexes can be a disruptive and complicated change to your app and is most effective for large objects with a large number of references. Do this only if you are noticing large garbage collection times in your app related to reference-heavy objects.
 

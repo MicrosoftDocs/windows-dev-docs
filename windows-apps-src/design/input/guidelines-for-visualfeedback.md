@@ -69,7 +69,7 @@ To change the thickness of either border type (primary or secondary) use the **F
 ```
 ![High visibility focus visual margin thicknesses](images/FocusMargin.png)
 
-The margin is a property of type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN), and therefore the margin can be customized to appear only on certain sides of the control. See below:
+The margin is a property of type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
 ![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
 
 The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:

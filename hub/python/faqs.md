@@ -73,4 +73,4 @@ The VSCode extension [Keymaps](https://marketplace.visualstudio.com/search?targe
 
 ## How do Mac shortcut keys map to Windows shortcut keys?
 
-Some of the keyboard buttons and system shortcuts are slightly different between a Windows machine and a Macintosh. This [keyboard mapping guide](https://support.microsoft.com/help/970299/keyboard-mappings-using-a-pc-keyboard-on-a-macintosh) from Microsoft Support covers the basics.
+Some of the keyboard buttons and system shortcuts are slightly different between a Windows machine and a Macintosh. This [Mac to Windows transition guide](../dev-environment/mac-to-windows.md) covers the basics.

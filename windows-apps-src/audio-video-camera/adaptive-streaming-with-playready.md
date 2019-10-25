@@ -268,7 +268,7 @@ async void LicenseAcquisitionRequest(
 
 ## Initializing the AdaptiveMediaSource
 
-Finally, you will need a function to initialize the [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), created from a given [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) and [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). The **Uri** should be the link to the media file (HLS or DASH); the **MediaElement** should be defined in your XAML.
+Finally, you will need a function to initialize the [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), created from a given [Uri](https://docs.microsoft.com/dotnet/api/system.uri) and [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). The **Uri** should be the link to the media file (HLS or DASH); the **MediaElement** should be defined in your XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

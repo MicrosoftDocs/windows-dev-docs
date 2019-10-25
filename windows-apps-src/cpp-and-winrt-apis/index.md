@@ -62,7 +62,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Strong and weak references in C++/WinRT](weak-references.md) | The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references. |
 | [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
 | [Diagnosing direct allocations](diag-direct-alloc.md) | This topic goes in-depth on a C++/WinRT 2.0 feature that helps you diagnose the mistake of creating an object of implementation type on the stack, rather than using the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers, as you should. |
-| [Details about destructors](details-about-destructors.md) | C++/WinRT 2.0 allows you to defer destruction of your implementation types, and to safely query during destruction. This topic describes those features and explains when you would use them. |
+| [Extension points for your implementation types](details-about-destructors.md) | These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. |
 | [A simple C++/WinRT Windows UI Library example](simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 
 ### Topics about the C++ language

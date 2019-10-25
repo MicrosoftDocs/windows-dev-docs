@@ -165,4 +165,4 @@ DropShadow is not automatically responsive to its environment and does not use l
 - Keep in mind that the purpose of shadow is to provide meaningful hierarchy, not as a simple visual treatment.
 - Generally, we recommend using ThemeShadow, which adapts automatically to its environment.
 - For concerns about performance, limit the number of shadows, use other visual treatment, or use DropShadow.
-- If you have more advanced scenarios to achieve visual hierarchy, consider using other visual treatment (e.g. color). If shadow is needed, then use DropShadow.
+- If you have more advanced scenarios to achieve visual hierarchy, consider using other visual treatment (for example, color). If shadow is needed, then use DropShadow.

@@ -1,5 +1,5 @@
-﻿---
-title: What's New in Windows 10 for Developers
+---
+title: What's New in Windows 10, build 18362
 description: Windows 10 build 18362 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, newest, developers, 18362, may
 ms.date: 04/19/2019
@@ -20,12 +20,12 @@ Feature | Description
 :------ | :------
 AnimatedVisualPlayer | The [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer) API hosts and controls playback of animated visuals in your app. This API is used to control and display content like [Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) visuals, which allow you to render Adobe AfterEffects animations natively in your applications.
 CompactDensity | Enabling [Compact mode](../design/style/spacing.md) in your app enables dense, information-rich groups of controls. This can help with browsing large amounts of content, maximizing the visible content on a page, or aid navigation and interaction when the user is using pointer input.
-Items Repeater | An [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) control can creature a custom experience for displaying collections to your users. ItemsRepeater does not provide a comprehensive end-user experience or a default UI. Instead, it’s a building block that you can use to create your own unique collection-based experiences and custom controls.
+Items Repeater | An [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) control can create a custom experience for displaying collections to your users. ItemsRepeater does not provide a comprehensive end-user experience or a default UI. Instead, it’s a building block that you can use to create your own unique collection-based experiences and custom controls.
 Teaching tip | A [teaching tip](../design/controls-and-patterns/dialogs-and-flyouts/teaching-tip.md) is a semi-persistent and content-rich flyout that provides contextual information. You can use this control for informing, reminding, and teaching users about new or important features.
 UI commanding | With [commanding in UWP apps](../design/controls-and-patterns/commanding.md), use the [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 Windows UI Library | The latest official version of the Windows UI Library – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) – provides vibrant new XAML controls for your Windows app. WinUI library APIs run on earlier versions of Windows 10, so you don’t have to include version checks or conditional XAML to supports users who aren’t on the latest OS.
 Visual Layer in Desktop apps | You can now [use the UWP Visual layer APIs in desktop applications](../composition/visual-layer-in-desktop-apps.md). These APIs provide high performance retrained-mode API for graphics, effects, and animations, and are the foundation for UI across Windows devices.
-Z-depth and shadow | Use [Z-depth and shadow](../design/layout/depth-shadow.md) to create elevation in your UWP app. This new features lets you make your app's UI easier to scan, and better conveys what's important for your users to focus on.
+Z-depth and shadow | Use [Z-depth and shadow](../design/layout/depth-shadow.md) to create elevation in your UWP app. These new features lets you make your app's UI easier to scan, and better conveys what's important for your users to focus on.
 
 ## Develop Windows apps
 

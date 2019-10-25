@@ -1,0 +1,93 @@
+### YamlMime:Landing
+
+title: Developing with Node.js on Windows
+summary: Get started developing with Node.js using Windows.
+
+metadata:
+  author: mattwojo
+  description: Get started developing with Node.js on Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-node
+  ms.topic: landing-page
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
+
+landingContent:
+  # Card
+  - title: Set up your Node.js dev environment
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Set up on the Windows Subsystem for Linux (WSL 2)
+            url: ./setup-on-wsl2.md
+          - text: Set up directly on Windows
+            url: ./setup-on-windows.md
+  
+  # Card
+  - title: Get started for beginners
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Guidance for beginners
+            url: ./beginners.md
+          - text: Types of Node.js applications
+            url: ./beginners.md#types-of-nodejs-applications
+      - linkListType: quickstart
+        links:
+          - text: Try Node.js with VS Code
+            url: ./beginners.md#try-using-nodejs-in-vs-code
+          - text: Set up a basic web app with Express
+            url: ./beginners.md#set-up-a-basic-web-app-framework-by-using-express
+          - text: Try using a Node.js module
+            url: ./beginners.md#try-using-a-nodejs-module
+  
+  # Card
+  - title: Get started with web frameworks
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Get started with Next.js
+            url: ./web-frameworks.md
+          - text: Get started with Nuxt.js
+            url: ./web-frameworks.md#get-started-with-nuxtjs
+          - text: Get started with Gatsby.js
+            url: ./web-frameworks.md#get-started-with-gatsbyjs
+
+  # Card
+  - title: Get started with databases
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: MongoDB vs PostgreSQL
+            url: ./databases.md
+      - linkListType: quickstart
+        links:
+          - text: Get started with MongoDB
+            url: ./databases.md#install-mongodb
+          - text: Get started with PostgreSQL
+            url: ./databases.md#install-postgresql
+
+  # Card
+  - title: Get started with containers
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Using Node.js with Docker containers
+            url: ./containers.md
+      - linkListType: how-to-guide
+        links:
+          - text: Install Docker
+            url: ./containers.md#install-docker-desktop-wsl-2-tech-preview
+          - text: Install the VS Code Docker Extension
+            url: ./containers.md#install-the-docker-extension-on-vs-code
+      - linkListType: tutorial
+        links:
+          - text: Create a container image with DockerFile
+            url: ./containers.md#create-a-container-image-with-dockerfile
+          - text: Upload your container image to a repository
+            url: ./containers.md#upload-your-container-image-to-a-repository
+          - text: Deploy to Azure Container Registry
+            url: ./containers.md#deploy-to-azure-container-registry

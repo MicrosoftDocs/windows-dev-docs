@@ -34,7 +34,7 @@ Use a [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Co
 
 ## Use MediaCapture to start the preview stream
 
-The [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) and [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) namespaces, in addition to those included by the default project template.
+The [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) and [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks) namespaces, in addition to those included by the default project template.
 
 Add using directives to include the following namespaces in your page's .cs file.
 

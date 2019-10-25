@@ -90,7 +90,7 @@ From an administrative command prompt, you can enable and configure parts of Dev
 - `sc start webmanagement` or `sc stop webmanagement` 
 	- Turn the service on or off. This still requires developer mode to be enabled. 
 - `-Credentials <username> <password>` 
-	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters e.g. [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
+	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters for example, [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
 - `-DeleteSSL` 
 	- This resets the SSL certificate cache used for HTTPS connections. If you encounter TLS connection errors that cannot be bypassed (as opposed to the expected certificate warning), this option may fix the problem for you. 
 - `-SetCert <pfxPath> <pfxPassword>`

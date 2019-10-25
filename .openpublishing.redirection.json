@@ -1648,6 +1648,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-xbox.md",
+      "redirect_url": "/windows/uwp/xbox-apps/device-portal-xbox",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
@@ -4824,6 +4829,26 @@
     {
       "source_path": "windows-apps-src/packaging/optional-packages-with-executable-code.md",
       "redirect_url": "/windows/msix/package/optional-packages-with-executable-code",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/python/get-started/python-for-education.md",
+      "redirect_url": "/windows/python/beginners",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/python/get-started/python-for-web.md",
+      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/python/get-started/python-for-scripting.md",
+      "redirect_url": "/windows/python/scripting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/mac-to-windows.md",
+      "redirect_url": "/windows/dev-environment/mac-to-windows",
       "redirect_document_id": true
     }
   ]

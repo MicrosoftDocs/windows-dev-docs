@@ -90,7 +90,7 @@ This option provides a download of the payments you received in your bank for a 
 | serviceFeeTax            | Total amount of serviceFeeTax in Pay To currency for the program/participantID (applicable for store programs and Azure Marketplace only) |
 | totalPayment             | Total payment in local currency excluding the withholding tax and including the sales tax (if applicable) for the program/participantID   |
 | currencyCode             | Pay To currency code                                                                                                                      |
-| paymentMethod            | The method used to pay the partner e.g. electronic bank transfer, credit note                                                             |
+| paymentMethod            | The method used to pay the partner for example, electronic bank transfer, credit note                                                             |
 | paymentID                | Unique identifier for the payment. This number is usually visible in your bank statement. (applicable for SAP payments only)              |
 | paymentStatus            | Payment status                                                                                                                            |
 | paymentStatusDescription | Friendly description of payment status                                                                                                    |
@@ -117,7 +117,7 @@ This option provides a download of each earning line item you see in the Transac
 | lever                          | Indicates business rule for the earning                                                                                                  | All                                                            |
 | earningRate                    | Incentive rate applied on transaction amount to generate an earning                                                                      | All                                                            |
 | quantity                       | Varies based on program. Indicates billed quantity for transactional programs                                                            | All                                                            |
-| quantityType                   | Indicates type of quantity e.g. Billed quantity, MAU                                                                                     | All                                                            |
+| quantityType                   | Indicates type of quantity for example, Billed quantity, MAU                                                                                     | All                                                            |
 | earningType                    | Indicates if it is fee, rebate, coop, sell etc.                                                                                          | All                                                            |
 | earningAmount                  | Earning Amount in the original transaction currency                                                                                      | All                                                            |
 | earningAmountUSD               | Earning Amount in USD                                                                                                                    | All                                                            |

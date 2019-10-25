@@ -23,6 +23,7 @@
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/windows-uwp",
+      "feedback_product_url": "https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app",
       "extendBreadcrumb": false,
       "_op_documentIdPathDepotMapping": {
           "./": {
@@ -34,17 +35,15 @@
     "fileMetadata": {
       "ms.prod":
       {
-        "python/**.md": "dev-environment"
+        "python/**.md": "dev-environment",
+        "nodejs/**.md": "dev-environment",
+        "dev-environment/**.md": "dev-environment"
       },
       "ms.technology":
       {
       "apps/**.md": "apps",
-      "python/**.md": "windows-python"
-      },
-      "feedback_product_url": 
-      {
-        "apps/**.md": "https://wpdev.uservoice.com/",
-        "python/**.md": "https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=367096"
+      "python/**.md": "windows-python",
+      "nodejs/**.md": "windows-nodejs"
       }
     },
     "template": [],

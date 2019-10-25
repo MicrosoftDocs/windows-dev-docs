@@ -42,7 +42,7 @@ Here's the settings page on the desktop device family:
 ## Which setting should I choose: sideload apps or Developer Mode?
 
 > [!NOTE]
-> As of Windows Insider Build 18956, sideloading option has been removed and the Developer Mode is now a toggle. See more on sideloading in the next section. 
+> As of Windows Insider Build 18956, sideloading option has been removed and the Developer Mode is now a toggle. See more on sideloading in the next section.
 
  You can enable a device for development, or just for sideloading.
 
@@ -55,7 +55,7 @@ By default, you can only install Universal Windows Platform (UWP) apps from the 
 ### Sideload apps
 
 > [!NOTE]
-> As of Windows Insider Build 18956, sideloading is enabled by default. Now, you can deploy a signed MSIX package onto a device without a special configuration. 
+> As of Windows Insider Build 18956, sideloading is enabled by default. Now, you can deploy a signed MSIX package onto a device without a special configuration.
 
 The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) and [Get started with app deployment in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
@@ -95,7 +95,7 @@ To learn more about Device Portal, see [Windows Device Portal overview](../debug
 
 For device specific setup instructions, see:
 - [Device Portal for Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Device Portal for HoloLens](https://developer.microsoft.com/mixed-reality)
+- [Device Portal for HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [Device Portal for IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
@@ -202,26 +202,26 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 1.  Run **regedit**.
 2.  To enable sideloading, set the value of this DWORD to 1:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
     - OR -
 
     To enable developer mode, set the values of this DWORD to 1:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
 
 **Use PowerShell to enable your device**
 
 1.  Run PowerShell with administrator privileges.
 2.  To enable sideloading, run this command:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
 
     - OR -
 
     To enable developer mode, run this command:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
 
 ## Upgrade your device from Windows 8.1 to Windows 10
 
@@ -230,7 +230,7 @@ When you create or sideload apps on your Windows 8.1 device, you have to install
 **To unregister a developer license**
 
 1.  Run PowerShell with administrator privileges.
-2.  Run this command: **unregister-windowsdeveloperlicense**.
+2.  Run this command: `unregister-windowsdeveloperlicense`.
 
 After this you need to enable your device for development as described in this topic so that you can continue to develop on this device. If you don't do that, you might get an error when you debug your app, or you try to create a package for it. Here is an example of this error:
 
