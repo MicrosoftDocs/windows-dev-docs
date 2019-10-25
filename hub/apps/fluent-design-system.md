@@ -151,7 +151,7 @@ Buttons, command bars, keyboard shortcuts, and context menus enable users to int
 	:::column span="2":::
 **Use the right control for the job**
 
-Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls,ranging from simple buttons to powerful data controls.
+Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls, ranging from simple buttons to powerful data controls.
 
 [Learn about UWP controls](/windows/uwp/design/controls-and-patterns/)
 :::row-end:::
@@ -162,7 +162,7 @@ Controls are the building blocks of the user interface; using the right control 
     :::column-end:::
 	:::column span="2":::
 **Be inclusive**
-A well-design app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
+A well-designed app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
 
 [Learn about Usability](/windows/uwp/design/usability/)
 :::row-end:::
