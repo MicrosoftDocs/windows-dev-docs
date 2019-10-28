@@ -264,9 +264,9 @@ It can be tricky to work with `out` params; particularly Windows Runtime arrays.
 
 The [**winrt::event**](/uwp/cpp-ref-for-winrt/event) implementation now gracefully handles the case where its **remove** method is called with an invalid token value (a value that's not present in the array).
 
-#### Coroutine locals are now destroyed before the coroutine returns
+#### Coroutine local variables are now destroyed before the coroutine returns
 
-The traditional way of implementing a coroutine type may allow locals within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
+The traditional way of implementing a coroutine type may allow local variables within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
 
 ## News, and changes, in Windows SDK version 10.0.17763.0 (Windows 10, version 1809)
 
