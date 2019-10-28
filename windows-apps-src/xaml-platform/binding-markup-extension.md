@@ -11,9 +11,11 @@ ms.custom: RS5
 # {Binding} markup extension
 
 
-**Note**  A new binding mechanism is available for Windows 10, which is optimized for performance and developer productivity. See [{x:Bind} markup extension](x-bind-markup-extension.md).
+> [!NOTE]
+> A new binding mechanism is available for Windows 10, which is optimized for performance and developer productivity. See [{x:Bind} markup extension](x-bind-markup-extension.md).
 
-**Note**  For general info about using data binding in your app with **{Binding}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
+> [!NOTE]
+> For general info about using data binding in your app with **{Binding}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 The **{Binding}** markup extension is used to data bind properties on controls to values coming from a data source such as code. The **{Binding}** markup extension is converted at XAML load time into an instance of the [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) class. This binding object gets a value from a property on a data source, and pushes it to the property on the control. The binding object can optionally be configured to observe changes in the value of the data source property and update itself based on those changes. It can also optionally be configured to push changes to the control value back to the source property. The property that is the target of a data binding must be a dependency property. For more info, see [Dependency properties overview](dependency-properties-overview.md).
 
