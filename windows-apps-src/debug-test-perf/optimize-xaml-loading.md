@@ -244,7 +244,7 @@ The XAML platform tries to cache commonly-used objects so that they can be reuse
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
             </TextBlock.Foreground>
-        </TextBox>
+        </TextBlock>
         <Button Content="Submit">
             <Button.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
