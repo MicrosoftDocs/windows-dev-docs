@@ -30,9 +30,7 @@ Here you'll learn how to:
 
 ## Video summary
 
->![VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
-
-
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
 ## Step 1: Create a new project in Visual Studio.
 
