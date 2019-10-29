@@ -237,7 +237,7 @@ Element’s UIA name is null or empty. This rule checks what UIA sees, not the v
 
 Set the AutomationProperties.Name property in the control's XAML to an appropriate localized string.
 
-Sometimes the right application fix isn't to provide a name, it's to remove the UIA element from all but the raw trees. You can do that in XAML by setting AutomationProperties.AccessibilityView = “Raw”.
+Sometimes the right application fix isn't to provide a name, it's to remove the UIA element from all but the raw trees. You can do that in XAML by setting `AutomationProperties.AccessibilityView = "Raw"`.
 
 ## Accessibility: UIA elements with the same Controltype should not have the same name
 

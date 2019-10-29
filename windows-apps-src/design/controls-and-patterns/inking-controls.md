@@ -74,7 +74,7 @@ The InkCanvas and InkToolbar are also used for both **Sketchpad** and **Screen s
 Adding an InkCanvas to your app requires just one line of markup:
 
 ```xaml
-<InkCanvas x:Name=“myInkCanvas”/>
+<InkCanvas x:Name="myInkCanvas"/>
 ```
 
 > [!NOTE]
@@ -83,7 +83,7 @@ Adding an InkCanvas to your app requires just one line of markup:
 The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
  ```xaml
-<InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
+<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
  ```
 
 This displays the following InkToolbar:
