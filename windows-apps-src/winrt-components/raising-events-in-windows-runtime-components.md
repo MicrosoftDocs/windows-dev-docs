@@ -273,7 +273,7 @@ The first step in creating a proxy and stub for a component is to add a unique I
 
 ## To generate GUIDs for the component's interfaces (C# and other .NET languages)
 
-On the menu bar, choose Tools &gt; Create GUID. In the dialog box, select 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Choose the New GUID button and then choose the Copy button.
+On the menu bar, choose Tools &gt; Create GUID. In the dialog box, select 5. \[Guid("xxxxxxxx-xxxx...xxxx")\]. Choose the New GUID button and then choose the Copy button.
 
 ![guid generator tool](./images/guidgeneratortool.png)
 

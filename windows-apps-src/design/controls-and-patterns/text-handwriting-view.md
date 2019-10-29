@@ -249,7 +249,7 @@ To do this, we bind the MaxWidth property of the [HandwritingView](https://docs.
         VerticalAlignment="Center">​
         <TextBox.HandwritingView>​
             <HandwritingView 
-                PlacementTarget="{Binding ElementName=DictationBox}“​
+                PlacementTarget="{Binding ElementName=DictationBox}"​
                 MaxWidth="{Binding ElementName=DictationTextBox, Path=Width"/>​
         </TextBox.HandwritingView>​
     </TextBox>​

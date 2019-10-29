@@ -61,7 +61,7 @@ In this example, you bind the Color property of a SolidColorBrush that’s used 
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
-             ColorSpectrumShape=”Ring”
+             ColorSpectrumShape="Ring"
              IsColorPreviewVisible="False"
              IsColorChannelTextInputVisible="False"
              IsHexInputVisible="False"/>
@@ -211,7 +211,7 @@ Hex values | IsHexInputVisible
 - [Inking](inking-controls.md)
 
 <!--
-<div class=”microsoft-internal-note”>
+<div class="microsoft-internal-note">
 <p>
 <p>
 Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.

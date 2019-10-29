@@ -80,10 +80,10 @@ StorageFolder folder = ApplicationData.Current.LocalFolder;
 if (Windows.System.Profile.RetailInfo.IsDemoModeEnabled) 
 {
     // Use the demo specific directory
-    folder = await folder.GetFolderAsync(“demo”);
+    folder = await folder.GetFolderAsync("demo");
 }
 
-StorageFile file = await folder.GetFileAsync(“hello.txt”);
+StorageFile file = await folder.GetFileAsync("hello.txt");
 // Now read from file
 ```
 
@@ -95,9 +95,9 @@ StorageFolder^ localFolder = ApplicationData::Current->LocalFolder;
 if (Windows::System::Profile::RetailInfo::IsDemoModeEnabled) 
 {
     // Use the demo specific directory
-    create_task(localFolder->GetFolderAsync(“demo”).then([this](StorageFolder^ demoFolder)
+    create_task(localFolder->GetFolderAsync("demo").then([this](StorageFolder^ demoFolder)
     {
-        return demoFolder->GetFileAsync(“hello.txt”);
+        return demoFolder->GetFileAsync("hello.txt");
     }).then([this](task<StorageFile^> fileTask)
     {
         StorageFile^ file = fileTask.get();
@@ -106,7 +106,7 @@ if (Windows::System::Profile::RetailInfo::IsDemoModeEnabled)
 }
 else
 {
-    create_task(localFolder->GetFileAsync(“hello.txt”).then([this](StorageFile^ file)
+    create_task(localFolder->GetFileAsync("hello.txt").then([this](StorageFile^ file)
     {
         // Do something with file
     });
@@ -115,9 +115,9 @@ else
 
 ``` javascript
 if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
-    console.log(“Retail mode is enabled.”);
+    console.log("Retail mode is enabled.");
 } else {
-    Console.log(“Retail mode is not enabled.”);
+    Console.log("Retail mode is not enabled.");
 }
 ```
 

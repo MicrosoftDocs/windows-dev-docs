@@ -36,7 +36,7 @@ As an alternative to generic toast notifications, you can now send notifications
 My People notifications use the [toast notification](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 This indicates that the toast should be treated as a My People notification.

@@ -71,7 +71,7 @@ Here, we specify "en-US" as the recognition language.
 
 
 ```CSharp
-var language = new Windows.Globalization.Language(“en-US”); 
+var language = new Windows.Globalization.Language("en-US"); 
 var recognizer = new SpeechRecognizer(language); 
 ```
 
