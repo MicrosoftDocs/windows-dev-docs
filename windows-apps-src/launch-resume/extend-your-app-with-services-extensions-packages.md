@@ -31,7 +31,7 @@ Code that you can download from the store and run from your app. For example, ex
 
 **In-proc code plug-ins**  
 
-Code that runs in-process with your app. Only C++ is supported. May also include content. Because the code runs in-process, a higher level of trust is assumed. You may choose not to expose this kind of extensibility to a third-party.
+Code that runs in-process with your app. May also include content. Because the code runs in-process, a higher level of trust is assumed. You may choose not to expose this kind of extensibility to a third-party.
 
 **UX Assets (string/images)**  
 
