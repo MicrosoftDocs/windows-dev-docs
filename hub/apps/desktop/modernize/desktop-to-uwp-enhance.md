@@ -16,7 +16,7 @@ You can use Universal Windows Platform (UWP) APIs to add modern experiences to y
 
 First, set up your project with the required references. Then, call UWP APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
 
-Some UWP APIs are supported only in desktop apps that are packaged in an [MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
+Some UWP APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
 
 ## Set up your project
 

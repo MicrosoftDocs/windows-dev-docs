@@ -49,11 +49,14 @@ You can now use UWP APIs in non-UWP desktop apps to enhance the look, feel, and 
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 
-## Additional features available to packaged apps
+## Additional features available to apps with package identity
 
-Some modern Windows 10 experiences are available only in desktop apps that are packaged in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). If you package your desktop app in an MSIX package, you can then use UWP APIs that require package identity, package extensions, and UWP components in your packaged app.
+Some modern Windows 10 experiences are available only in desktop apps that have [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain UWP APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
 
-For more information, see [Features that require package identity](modernize-packaged-apps.md).
+There are several ways to grant identity to a desktop app:
+
+* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10 Insider Preview Build 10.0.19000.0 you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"/>
 
