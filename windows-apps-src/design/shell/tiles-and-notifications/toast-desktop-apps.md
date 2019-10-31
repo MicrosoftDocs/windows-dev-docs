@@ -75,6 +75,6 @@ For classic Win32 apps, set up the AUMID so that you can send toasts, and then a
 
 ## Resources
 
-* [Send a local toast notification from destkop C# apps](send-local-toast-desktop.md)
-* [Send a local toast notification from destkop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
+* [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md)
+* [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)
