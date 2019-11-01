@@ -38,13 +38,13 @@ There are two options for .NET projects:
 
 2. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Manage NuGet Packages**.
 
-3. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected. Then, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
+3. In the **NuGet Package Manager** window, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
 
 4. After the `Microsoft.Windows.SDK.Contracts` package is found, in the right pane of the **NuGet Package Manager** window select the **Version** of the package you want to install based on the version of Windows 10 you want to target:
 
-    * **10.0.18362.xxxx-preview**: Choose this for Windows 10, version 1903.
-    * **10.0.17763.xxxx-preview**: Choose this for Windows 10, version 1809.
-    * **10.0.17134.xxxx-preview**: Choose this for Windows 10, version 1803.
+    * **10.0.18362.xxxx**: Choose this for Windows 10, version 1903.
+    * **10.0.17763.xxxx**: Choose this for Windows 10, version 1809.
+    * **10.0.17134.xxxx**: Choose this for Windows 10, version 1803.
 
 5. Click **Install**.
 
