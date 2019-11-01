@@ -117,7 +117,7 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
     If you look at the XAML code window, you'll see that the Button has been added there too:
 
  ```XAML
-<Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
  ```
 
 4.  Change the button's text.
@@ -125,7 +125,7 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
     Click in the XAML code view, and change the Content from "Button" to "Hello, world!".
 
 ```XAML
-<Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
 Notice how the button displayed in the design canvas updates to display the new text.
