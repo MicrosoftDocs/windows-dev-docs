@@ -141,7 +141,7 @@ public class HostViewModel : INotifyPropertyChanged
     public void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         // Raise the PropertyChanged event, passing the name of the property whose value has changed.
-        this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
 ```
