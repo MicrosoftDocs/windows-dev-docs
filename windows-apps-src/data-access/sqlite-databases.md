@@ -192,9 +192,7 @@ public async static void InitializeDatabase()
 ```
 
 This code creates the SQLite database and stores it in the application's local data store.
-```csharp
 
-```
 In this example, we name the database ``sqlliteSample.db`` but you can use whatever name you want as long as you use that name in all [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) objects that you instantiate.
 
 In the constructor of the **App.xaml.cs** file of your UWP project, call the ``InitializeDatabase`` method of the **DataAccess** class.
