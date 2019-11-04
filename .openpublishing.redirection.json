@@ -4742,7 +4742,7 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/porting/package-support-extend.md",
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-extend.md",
       "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extend",
       "redirect_document_id": true
     },

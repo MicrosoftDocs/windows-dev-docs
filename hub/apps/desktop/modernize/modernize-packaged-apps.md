@@ -12,17 +12,16 @@ ms.custom: RS5
 
 # Features that require package identity
 
-If you want to update your desktop app with [modern Windows 10 experiences](index.md), many features are available only in desktop apps that are packaged in an MSIX package.
+If you want to update your desktop app with [modern Windows 10 experiences](index.md), many features are available only in desktop apps that have [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). There are several ways to grant package identity to a desktop app:
 
-MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. Packaging your desktop Windows apps enables you to integrate modern Windows 10 experiences such as live tiles and notifications into your apps. It also gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10 Insider Preview Build 10.0.19000.0 you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
 
-If you package your desktop app, you can then use UWP APIs that require package identity, package extensions, and UWP components in your packaged app. For more information, see these articles.
+If your desktop app has package identity, you can use the following features in your app.
 
 ## Use UWP APIs that require package identity
 
-Some UWP APIs require [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used in a desktop app. The MSIX package (including the package manifest) provides this identity.
-
-For more information, see [this list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
+The following list of UWP APIs require package identity to be used in a desktop app: [list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
 
 ## Integrate with package extensions
 
@@ -38,6 +37,6 @@ For more information, see [Extend your desktop app with UWP components](desktop-
 
 ## Distribute
 
-You can distribute your application by publishing it the Microsoft Store or by sideloading it onto other systems.
+If you package your app in an MSIX package, you can distribute it by publishing it the Microsoft Store or by sideloading it onto other systems.
 
 See [Distribute your packaged desktop app](desktop-to-uwp-distribute.md).

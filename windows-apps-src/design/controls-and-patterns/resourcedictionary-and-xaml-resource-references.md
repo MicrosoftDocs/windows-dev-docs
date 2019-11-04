@@ -71,7 +71,7 @@ Here, both a brush and a string are declared as resources and used by controls i
 </Page>
 ```
 
-All resources need to have a key. Usually that key is a string defined with `x:Key=”myString”`. However, there are a few other ways to specify a key:
+All resources need to have a key. Usually that key is a string defined with `x:Key="myString"`. However, there are a few other ways to specify a key:
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) and [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) require a **TargetType**, and will use the **TargetType** as the key if [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) is not specified. In this case, the key is the actual Type object, not a string. (See examples below)
 -   [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) resources that have a **TargetType** will use the **TargetType** as the key if [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) is not specified. In this case, the key is the actual Type object, not a string.

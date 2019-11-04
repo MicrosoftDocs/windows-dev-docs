@@ -10,16 +10,16 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
-# Integrate your packaged desktop app with Windows 10 and UWP
+# Integrate your desktop app with Windows 10 and UWP
 
-If you [package your desktop application in an MSIX container](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), you can use extensions to integrate your packaged desktop application with Windows 10 by using predefined extensions in the [app package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined extensions in the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
-For example, use an extension to create a firewall exception, make your application the default application for a file type, or point start tiles to the packaged version of your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
+For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
 This article describes these extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this article require that you create a Windows app package for your desktop application. If you haven't yet done this, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
 
 ## Transition users to your app
 
@@ -39,7 +39,7 @@ Your users might have pinned your desktop application to the taskbar or the Star
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+`http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### Elements and attributes of this extension
 
@@ -98,8 +98,8 @@ To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.m
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### Elements and attributes of this extension
 
@@ -155,10 +155,10 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 You can associated your packaged application with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your application appears in the list of suggestions.
 
-#### XML namespace
+#### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -217,9 +217,9 @@ You can add options to that menu. These options give users other ways to interac
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -282,8 +282,8 @@ You can make sure that users open your new packaged application by default for s
 
 #### XML namespaces
 
-* http:\//schemas.microsoft.com/appx/manifest/uap/windows10
-* http:\//schemas.microsoft.com/appx/manifest/uap/windows10/3"
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -344,7 +344,7 @@ If your application requires communication through a port, you can add your appl
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -410,7 +410,7 @@ Each package can contain only one of these extensions. That means that you can a
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/6
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/6`
 
 #### Elements and attributes of this extension
 
@@ -470,9 +470,9 @@ Specify how your application behaves when a user opens multiple files simultaneo
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -497,7 +497,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |MultiSelectModel |See below |
 |FileType |The relevant file extensions. |
 
-**MultSelectModel**
+**MultiSelectModel**
 
 packaged desktop apps have the same three options as regular desktop apps.
 
@@ -544,10 +544,10 @@ Enable users to view a thumbnail image of the file's contents when the icon of t
 
 #### XML namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -607,10 +607,10 @@ Enable users to preview a file's contents in the Preview pane of File Explorer.
 
 #### XML namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -672,8 +672,8 @@ For more information about the **Kind** field and the values that you can use fo
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### Elements and attributes of this extension
 
@@ -734,9 +734,9 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 #### XML namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -793,8 +793,8 @@ If your desktop application defines a [context menu handler](https://docs.micros
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/4`
 
 #### Elements and attributes of this extension
 
@@ -891,7 +891,7 @@ Register the handlers that you implement in your application. You can also add c
 
 #### XML namespace
 
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### Elements and attributes of this extension
 
@@ -964,7 +964,7 @@ Protocol associations can enable other programs and system components to interop
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -1015,8 +1015,8 @@ Users and other processes can use an alias to start your application without hav
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### Elements and attributes of this extension
 
@@ -1078,7 +1078,7 @@ Users can manually disable your app's startup task by using Task Manager. If a u
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### Elements and attributes of this extension
 
@@ -1134,7 +1134,7 @@ AutoPlay can present your application as an option when a user connects a device
 
 #### XML namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/3`
 
 #### Elements and attributes of this extension
 
@@ -1222,7 +1222,7 @@ You'll have to modify your application so that it receives print data in XML Pap
 
 #### XML namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -1272,7 +1272,7 @@ Share your custom fonts with other Windows applications.
 
 #### XML namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### Elements and attributes of this extension
 
@@ -1320,7 +1320,7 @@ Start a Win32 process that runs in full-trust.
 
 #### XML namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### Elements and attributes of this extension
 

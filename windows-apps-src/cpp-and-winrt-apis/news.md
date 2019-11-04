@@ -264,9 +264,9 @@ It can be tricky to work with `out` params; particularly Windows Runtime arrays.
 
 The [**winrt::event**](/uwp/cpp-ref-for-winrt/event) implementation now gracefully handles the case where its **remove** method is called with an invalid token value (a value that's not present in the array).
 
-#### Coroutine locals are now destroyed before the coroutine returns
+#### Coroutine local variables are now destroyed before the coroutine returns
 
-The traditional way of implementing a coroutine type may allow locals within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
+The traditional way of implementing a coroutine type may allow local variables within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
 
 ## News, and changes, in Windows SDK version 10.0.17763.0 (Windows 10, version 1809)
 
@@ -291,7 +291,7 @@ Other changes.
 - **Breaking change**. The [**winrt::handle_type constructor**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) instead.
 - **Breaking change**. The signatures of **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** have changed. You mustn't declare these functions at all. Instead, include `winrt/base.h` (which is automatically included if you include any C++/WinRT Windows namespace header files) to include the declarations of these functions.
 - For the [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
-- APIs that expect **IBuffer** parameters are simplified. Although most APIs prefer collections or arrays, enough APIs rely on **IBuffer** that it needed to be easier to use such APIs from C++. This update provides direct access to the data behind an **IBuffer** implementation, using the same data naming convention used by the C++ Standard Library containers. This also avoids colliding with metadata names that conventionally begin with an uppercase letter.
+- Simplified APIs that expect **IBuffer** parameters. Most APIs prefer collections, or arrays. But we felt that we should make it easier to call APIs that rely on **IBuffer**. This update provides direct access to the data behind an **IBuffer** implementation. It uses the same data naming convention as the one used by the C++ Standard Library containers. That convention also avoids collisions with metadata names that conventionally begin with an uppercase letter.
 - Improved code generation: various improvements to reduce code size, improve inlining, and optimize factory caching.
 - Removed unnecessary recursion. When the command-line refers to a folder, rather than to a specific `.winmd`, the `cppwinrt.exe` tool no longer searches recursively for `.winmd` files. The `cppwinrt.exe` tool also now handles duplicates more intelligently, making it more resilient to user error, and to poorly-formed `.winmd` files.
 - Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.

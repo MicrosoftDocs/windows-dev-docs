@@ -15,41 +15,38 @@ ms.custom: 19H1
 
 Desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your desktop app can use.
 
-> [!NOTE]
-> Many UWP APIs require [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used in a desktop app. Package identity is available when the desktop app is packaged in an [MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). In this article, these apps are called *packaged apps*.
-
-Most UWP APIs work well on packaged apps. However, some feature areas are not yet fully tested or currently functioning as intended.
+Many UWP APIs require [package identity](modernize-packaged-apps.md) to be used in a desktop app. Most UWP APIs work well apps that have package identity. However, some feature areas are not yet fully tested or currently functioning as intended.
 
 | Feature area | Details |
 |--------------|---------|
-| Appointments, contacts, and emails | Not all APIs are currently supported for packaged apps. |
-| Authentication and user identity | Not all APIs are currently supported for packaged apps. |
-| Background tasks | While packaged apps can register background tasks, only fully UWP apps can run <i>as</i> a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
-| Bluetooth | Not all APIs are currently supported for packaged apps. |
-| Chat and phone calls | Packaged apps cannot run on mobile until they are fully ported to UWP. |
+| Appointments, contacts, and emails | Not all APIs are currently supported. |
+| Authentication and user identity | Not all APIs are currently supported. |
+| Background tasks | While desktop apps can register background tasks, only fully UWP apps can run <i>as</i> a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Bluetooth | Not all APIs are currently supported. |
+| Chat and phone calls | Desktop apps cannot run on mobile until they are fully ported to UWP. |
 | Contract activation | Only full UWP apps can be activated by a contract. |
-| Cryptography | Not all APIs are currently supported for packaged apps. |
-| Geolocation | Not all APIs are currently supported for packaged apps. |
-| File and folder pickers | Packaged apps have full file system access and do not need UWP pickers. |
-| Media | Not all APIs are currently supported for packaged apps. |
-| Point of service | Not all APIs are currently supported for packaged apps. |
-| Smart cards | Not all APIs are currently supported for packaged apps. |
-| PlayReady | Not all APIs are currently supported for packaged apps. |
-| VPN | Not all APIs are currently supported for packaged apps. |
-| Wallet | Packaged apps cannot run on mobile until they are fully ported to UWP. |
+| Cryptography | Not all APIs are currently supported. |
+| Geolocation | Not all APIs are currently supported. |
+| File and folder pickers | Apps with identity have full file system access and do not need UWP pickers. |
+| Media | Not all APIs are currently supported. |
+| Point of service | Not all APIs are currently supported. |
+| Smart cards | Not all APIs are currently supported. |
+| PlayReady | Not all APIs are currently supported. |
+| VPN | Not all APIs are currently supported. |
+| Wallet | Desktop apps cannot run on mobile until they are fully ported to UWP. |
 | XAML UI | Windows 10, version 1809, and earlier releases do not support hosting UWP XAML content in desktop apps. Starting in Windows 10, version 1903, you can use [XAML Islands](xaml-islands.md) to host UWP XAML content.  |
 
 Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become available in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead.
 
 ## List of APIs
 
-The following is a full list of UWP APIs supported in desktop apps. You can view [APIs supported only in packaged apps](#new) or [APIs supported in both packaged apps and desktop applications](#both).
+The following is a full list of UWP APIs supported in desktop apps. You can view [APIs supported only in apps with package identity](#new) or [APIs supported in all desktop apps](#both).
 
 For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 
-### APIs supported only in packaged apps
+### APIs supported only in apps with package identity
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -375,9 +372,9 @@ For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://gi
 
 <a id="both" />
 
-### APIs supported in both packaged apps and desktop applications
+### APIs supported in all desktop applications
 
-APIs that have the [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) are supported in both packaged apps and unpackaged desktop applications. To determine whether an API you want to call from your desktop application is supported, find the reference article for the class or member you're interested in the [reference documentation for WinRT namespaces](https://docs.microsoft.com/uwp/api/). Then, check whether the **Attributes** section in the reference article includes the [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) attribute.
+APIs that have the [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) are supported in all desktop apps, including those with package identity and those without package identity. To determine whether an API you want to call from your desktop application is supported, find the reference article for the class or member you're interested in the [reference documentation for WinRT namespaces](https://docs.microsoft.com/uwp/api/). Then, check whether the **Attributes** section in the reference article includes the [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) attribute.
 
 ## Next steps
 

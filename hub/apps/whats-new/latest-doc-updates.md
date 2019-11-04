@@ -11,34 +11,31 @@ author: QuinnRadich
 # Latest updates to the Windows developer docs
 
 
-The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen significant updates within the last week ending Oct 11, 2019:
+The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen significant updates within the last month, ending October 31, 2019:
 
 
-## UWP conceptual
+## WinRT conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Frequently-asked questions about C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">URI schemes</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">Use inertia modifiers to create snap points</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">Spring animations</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">Concurrency and asynchronous operations with C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">What's new in C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/index">Data access</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">Use a SQLite database in a UWP app</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/access-keys">Access keys design guidelines</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">Keyboard events</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">Layout panels for Universal Windows Platform (UWP) apps</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/transforms">Transforms overview</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf">Generate a 3MF package</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">Enterprise</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">Display points of interest (POI) on a map</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map">Windows apps concept mapping for Android and iOS developers</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store Policies</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">XAML overview</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">App analysis</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">Running Profile Guided Optimization (PGO) on Universal Windows Platform (UWP) apps</a></li>
 </ul>
 
 
 
-## Win32 conceptual
+## WinRT API reference
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12.h) </a></li>
+</ul>
+
+## Win32 Conceptual
 
 <ul>
 <li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/enumerations">Direct2D enumerations</a></li>
@@ -84,19 +81,10 @@ The Windows developer docs are regularly updated with new and improved informati
 ## Win32 API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/index_bkp">Programming reference for Windows API </a></li>
-</ul>
-
-## WinRT API reference
-
-<ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows.Devices.Lights.LampArrayKind</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes">Windows.Devices.Lights.LampPurposes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdeviceclass">Windows.Devices.Usb.UsbDeviceClass</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2">Windows.Foundation.Numerics.Matrix3x2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.directxpixelformat">Windows.Graphics.DirectX.DirectXPixelFormat</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus">Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus</a></li>
-
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.textreadingorder">Windows.UI.Xaml.TextReadingOrder</a></li>
 </ul>
