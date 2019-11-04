@@ -497,7 +497,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |MultiSelectModel |See below |
 |FileType |The relevant file extensions. |
 
-**MultSelectModel**
+**MultiSelectModel**
 
 packaged desktop apps have the same three options as regular desktop apps.
 
