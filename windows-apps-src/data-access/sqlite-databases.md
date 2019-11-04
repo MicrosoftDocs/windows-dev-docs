@@ -171,10 +171,12 @@ using System.Collections.Generic;
 Add a method to the **DataAccess** class that initializes the SQLite database.
 
 ```csharp
-public static void InitializeDatabase()
-{
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+public async static void InitializeDatabase()
+{ 
+     await ApplicationData.Current.LocalFolder.CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
+     string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+     using (SqliteConnection db =
+        new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -190,7 +192,9 @@ public static void InitializeDatabase()
 ```
 
 This code creates the SQLite database and stores it in the application's local data store.
+```csharp
 
+```
 In this example, we name the database ``sqlliteSample.db`` but you can use whatever name you want as long as you use that name in all [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) objects that you instantiate.
 
 In the constructor of the **App.xaml.cs** file of your UWP project, call the ``InitializeDatabase`` method of the **DataAccess** class.
@@ -215,8 +219,9 @@ Add a method to the **DataAccess** class that inserts data into the SQLite datab
 ```csharp
 public static void AddData(string inputText)
 {
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
     using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -246,8 +251,9 @@ public static List<String> GetData()
 {
     List<String> entries = new List<string>();
 
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+   string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+   using (SqliteConnection db =
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
