@@ -114,6 +114,8 @@
           items:
             - name: Item containers and templates
               href: controls-and-patterns/item-containers-templates.md
+            - name: Data template selection
+              href: controls-and-patterns/data-template-selector.md
             - name: Item templates for list view
               href: controls-and-patterns/item-templates-listview.md
             - name: Item templates for grid view
