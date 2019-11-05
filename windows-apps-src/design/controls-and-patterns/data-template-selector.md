@@ -9,7 +9,7 @@ keywords: windows 10, uwp
 pm-contact: anawish
 ---
 
-# Data template selection: styling items based on their properties
+# Data template selection: Styling items based on their properties
 
 The customized design of collections controls are managed by a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). Data templates define how each item should be laid out and styled, and that markup is applied to every item in the collection. This article explains how to use a [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) to apply different data templates on a collection and select which data template to use, based on certain item properties or values of your choosing.
 
@@ -121,7 +121,7 @@ Once your code compiles, each collection item will run through the overridden `S
 > [!IMPORTANT]
 > When using `DataTemplateSelector` with an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2), you bind the `DataTemplateSelector` to the `ItemTemplate` property. `ItemsRepeater` doesn't have an `ItemTemplateSelector` property.
 
-## DataTemplateSelector Performance Considerations
+## DataTemplateSelector performance considerations
 
 When you use a ListView or GridView with a large data collection, scrolling and panning performance can be a concern. To keep large collections performing well, there are some steps you can take to improve the performance of your data templates. These are described in more detail in [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
