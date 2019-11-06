@@ -1,4 +1,4 @@
-﻿---
+---
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
 ms.date: 10/31/2018
@@ -74,6 +74,7 @@ To add a custom schedule for an additional market, or an additional market group
 
 Below is a table that shows what specific time zones are used in each market, so when your submission uses local time (e.g. release at 9am local), you can find out what time will it be released in each market, in particular helpful with markets that have more than one time zone, like Canada.
 
+```
 Market : Time Zone
 ==================
 Afghanistan: (UTC+04:30) Kabul
@@ -318,3 +319,4 @@ Western Sahara (Disputed): (UTC+00:00) Dublin, Edinburgh, Lisbon, London
 Yemen: (UTC+04:00) Abu Dhabi, Muscat
 Zambia: (UTC+02:00) Harare, Pretoria
 Zimbabwe: (UTC+02:00) Harare, Pretoria
+```
