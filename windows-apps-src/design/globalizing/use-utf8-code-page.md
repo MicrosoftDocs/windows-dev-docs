@@ -1,5 +1,5 @@
 ---
-Description: Use UTF-8 character encoding for optimal compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
+Description: Use UTF-8 character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 title: Use the Windows UTF-8 code page
 template: detail.hbs
 ms.date: 06/12/2019
@@ -12,7 +12,10 @@ ms.localizationpriority: medium
 
 Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
-UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-6 byte variable-width encoding. It is used pervasively on the web, and is the default for *nix-based platforms.
+UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used pervasively on the web, and is the default for *nix-based platforms.
+
+> [!NOTE]
+> An encoded character takes between 1 and 4 bytes. UTF-8 encoding supports longer byte sequences, up to 6 bytes, but the biggest code point of Unicode 6.0 (U+10FFFF) only takes 4 bytes.
 
 ## -A vs. -W APIs
   
