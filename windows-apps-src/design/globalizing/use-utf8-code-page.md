@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Use the UTF-8 code page
 
-Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
+Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
 UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used pervasively on the web, and is the default for *nix-based platforms.
 
@@ -78,7 +78,8 @@ As Windows operates natively in UTF-16 (`WCHAR`), you might need to convert UTF-
 [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (`WCHAR`) (and other code pages). This is particularly useful when a legacy Win32 API might only understand `WCHAR`. These functions allow you to convert UTF-8 input to `WCHAR` to pass into a -W API and then convert any results back if necessary.
 When using these functions with `CodePage` set to `CP_UTF8`, use `dwFlags` of either `0` or `MB_ERR_INVALID_CHARS`, otherwise an `ERROR_INVALID_FLAGS` occurs.
 
-Note: `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
+> [!NOTE]
+> `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
 
 ## Related topics
 
