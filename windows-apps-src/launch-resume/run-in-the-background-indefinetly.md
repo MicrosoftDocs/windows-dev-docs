@@ -23,17 +23,23 @@ If you are developing an app that is not intended to be submitted into the Micro
 
 The `extendedExecutionUnconstrained` capability is added as a restricted capability in your app's manifest. See [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) for more information about restricted capabilities.
 
+> **Note:**
+> Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
-...
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+  ...
   <Capabilities>
     <rescap:Capability Name="extendedExecutionUnconstrained"/>
   </Capabilities>
 </Package>
 ```
 
-When you use the `extendedExecutionUnconstrained` capability, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) and [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) are used rather than [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) and [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). The same pattern for creating the session, setting members, and requesting the extension asynchronously still applies: 
+When you use the `extendedExecutionUnconstrained` capability, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) and [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) are used rather than [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) and [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). The same pattern for creating the session, setting members, and requesting the extension asynchronously still applies: 
 
 ```cs
 var newSession = new ExtendedExecutionForegroundSession();
@@ -62,9 +68,16 @@ Registering for the **Revoked** event will enable your app to do any cleanup wor
 
 In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
 
+> **Note:**
+> Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
   <Capabilities>
     <rescap:Capability Name="extendedBackgroundTaskTime"/>
   </Capabilities>
