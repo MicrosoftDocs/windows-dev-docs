@@ -1,4 +1,7 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "editor.wrappingColumn": 0
+    "editor.wrappingColumn": 0,
+    "favorites.resources": [
+        "launch-resume\\run-in-the-background-indefinetly.md"
+    ]
 }
