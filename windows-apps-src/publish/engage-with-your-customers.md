@@ -14,7 +14,7 @@ Drive customer engagement and satisfaction by using features like push notificat
 
 :::row:::
     :::column:::
-        ![fpo image](images/engage-pie-chart.png)
+        ![Define customer segments](images/engage-pie-chart.png)
     :::column-end:::
     :::column span="2":::
 **Define customer segments**
@@ -27,7 +27,7 @@ Use the dashboard to define segments of your appâ€™s customers, based on demogra
 
 :::row:::
     :::column:::
-        ![fpo image](images/engage-phone-truck.png)
+        ![Targeted Offers](images/engage-phone-truck.png)
     :::column-end:::
     :::column span="2":::
 **Targeted Offers**
@@ -40,7 +40,7 @@ Show attractive, personalized content to specific segments of your customers to 
 
 :::row:::
     :::column:::
-        ![fpo image](images/engage-push-notifications.png)
+        ![Targeted push notifications](images/engage-push-notifications.png)
     :::column-end:::
     :::column span="2":::
 **Targeted push notifications**
@@ -55,7 +55,7 @@ Use the dashboard to create and send push notifications to segments of your appâ
 
 :::row:::
     :::column:::
-        ![fpo image](images/engage-start-menu.png)
+        ![A/B testing](images/engage-start-menu.png)
     :::column-end:::
     :::column span="2":::
 **A/B testing**
@@ -68,7 +68,7 @@ Run experiments in your apps to measure the effectiveness of feature changes bef
 
 :::row:::
     :::column:::
-        ![fpo image](images/engage-feedback.png)
+        ![App feedback](images/engage-feedback.png)
     :::column-end:::
     :::column span="2":::
 **App feedback**
@@ -81,7 +81,7 @@ Invite your Windows 10 customers to tell you what they think by directing them t
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-community-campaign.png)
+        ![Respond to reviews](images/ads-community-campaign.png)
     :::column-end:::
     :::column span="2":::
 **Respond to reviews**

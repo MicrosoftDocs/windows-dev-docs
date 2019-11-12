@@ -17,7 +17,7 @@ For details about the fees charged by the Microsoft Store and how you get paid f
 
 :::row:::
     :::column:::
-        ![fpo image](images/pricing-charge-price.png)
+        ![Charge a price for your app](images/pricing-charge-price.png)
     :::column-end:::
     :::column span="2":::
 **Charge a price for your app**
@@ -30,7 +30,7 @@ You can charge a price for your app up front. We support a comprehensive range o
 
 :::row:::
     :::column:::
-        ![fpo image](images/pricing-free-trial.png)
+        ![Free trials](images/pricing-free-trial.png)
     :::column-end:::
     :::column span="2":::
 **Free trials**
@@ -43,7 +43,7 @@ You can offer a free trial version of your app to get more customers to try it. 
 
 :::row:::
     :::column:::
-        ![fpo image](images/pricing-in-app-purchases.png)
+        ![In-app purchases](images/pricing-in-app-purchases.png)
     :::column-end:::
     :::column span="2":::
 **In-app purchases**
@@ -58,7 +58,7 @@ Whether you charge a price for your app or offer it for free, you can use in-app
 
 :::row:::
     :::column:::
-        ![fpo image](images/monetize-ads-every-context.png)
+        ![Ads for every context](images/monetize-ads-every-context.png)
     :::column-end:::
     :::column span="2":::
 **Ads for every context**
@@ -72,7 +72,7 @@ We support a wide variety of ad experiences to suit most needs, including banner
 
 :::row:::
     :::column:::
-        ![fpo image](images/monetize-ad-mediation-service.png)
+        ![Ad mediation service](images/monetize-ad-mediation-service.png)
     :::column-end:::
     :::column span="2":::
 **Ad mediation service**
@@ -85,7 +85,8 @@ Maximize ad revenue in your apps by using the microsoft ad mediation service to 
 
 :::row:::
     :::column:::
-        ![fpo image](images/monetize-analytics-pie-chart.png)
+        ![**Analytics**
+](images/monetize-analytics-pie-chart.png)
     :::column-end:::
     :::column span="2":::
 **Analytics**

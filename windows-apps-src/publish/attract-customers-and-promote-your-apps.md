@@ -14,7 +14,7 @@ Once your app is in the Microsoft Store, it's time to get it in front of as many
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-paid-campaign.png)
+        ![Paid campaigns](images/ads-paid-campaign.png)
     :::column-end:::
 	:::column span="2":::
 **Paid campaigns**
@@ -27,7 +27,7 @@ These campaigns will run ads in any other app that matches your app’s device a
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-house-campaign.png)
+        ![Free house campaigns](images/ads-house-campaign.png)
     :::column-end:::
 	:::column span="2":::
 **Free house campaigns**
@@ -40,7 +40,7 @@ These campaigns will run ads only in your other apps, free of charge.
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-community-campaign.png)
+        ![Free community campaigns](images/ads-community-campaign.png)
     :::column-end:::
 	:::column span="2":::
     
@@ -56,7 +56,7 @@ These campaigns will run ads in apps published by other developers who also part
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-ban-example.png)
+        ![Banner and banner interstitial ads](images/ads-ban-example.png)
     :::column-end:::
 	:::column span="2":::
 **Banner and banner interstitial ads**
@@ -69,7 +69,7 @@ Banner ads use a portion of the app's real estate. Banner interstitial ads are f
 
 :::row:::
     :::column:::
-        ![fpo image]images/ads-video-example.png)
+        ![Video ads](images/ads-video-example.png)
     :::column-end:::
 	:::column span="2":::
 **Video ads**
@@ -82,7 +82,7 @@ Video ads are full-screen ads that show users the features of your game in a vis
 
 :::row:::
     :::column:::
-        ![fpo image](images/ads-native-example.png)
+        ![Native ads](images/ads-native-example.png)
     :::column-end:::
 	:::column span="2":::
 **Native ads**
