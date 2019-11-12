@@ -43,6 +43,7 @@ These campaigns will run ads only in your other apps, free of charge.
         ![fpo image](images/ads-community-campaign.png)
     :::column-end:::
 	:::column span="2":::
+    
 **Free community campaigns**
 
 These campaigns will run ads in apps published by other developers who also participate in community ad campaigns, free of charge.
