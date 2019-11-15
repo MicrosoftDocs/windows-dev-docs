@@ -545,7 +545,7 @@ Inputs are specified within the Actions region of the toast region of the toast,
 
 ### Quick reply text box
 
-To enable a quick reply text box, like for a messaging scenario, add a text input and a button, and reference the text input's id so that the button is displayed adjacent to the input.
+To enable a quick reply text box, like for a messaging scenario, add a text input and a button, and reference the text input's id so that the button is displayed adjacent to the input. The icon for the button should be a white transparent 32x32 pixel image at 100% scaling, and should have no padding included in the image itself.
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 
