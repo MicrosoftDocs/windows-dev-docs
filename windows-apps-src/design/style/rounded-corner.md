@@ -16,6 +16,9 @@ Here are two Button controls, the first without rounded corners and the second u
 
 When you install the NuGet package for WinUI 2.2 or later, new default styles are installed for both WinUI controls and platform controls. These styles are used automatically when you use WinUI 2.2 in your app; there is no further action you need to take to use the new styles. However, later in this article we show how to customize the rounded corners if you need to do so.
 
+> [!IMPORTANT]
+> Some controls are available both in the platform ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) and in WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2)); for example, **TreeView** or **ColorPicker**. When you use WinUI in your app, you should use the WinUI version of the control. Corner rounding might be applied inconsistently in the platform version when used with WinUI.
+
 > **Important APIs**: [Control.CornerRadius property](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 
 ## Default control designs
@@ -25,7 +28,7 @@ There are 3 areas of the controls where the rounded corner styles are used: rect
 ### Corners of rectangle UI elements
 
 - These UI elements include basic controls like buttons that users see on screen at all times.
-- The default radius value we use for these UI elements is 2px.
+- The default radius value we use for these UI elements is **2px**.
 
 ![Button with rounded corners highlighted](images/rounded-corner/button.png)
 
@@ -33,26 +36,28 @@ There are 3 areas of the controls where the rounded corner styles are used: rect
 
 - AutoSuggestBox
 - Button
+  - ContentDialog buttons
 - CalendarDatePicker
 - CheckBox
+  - TreeView multi-select check boxes
 - ComboBox
 - DatePicker
+- DropDownButton
 - FlipView
 - PasswordBox
 - RichEditBox
-- TabView
+- SplitButton
 - TextBox
 - TimePicker
 - ToggleButton
+- ToggleSplitButton
 
-When these controls are used in the template of other controls, like the CheckBox in a GridView or TreeView with multi-select enabled, they retain their rounded style.
+### Corners of flyout and overlay UI elements
 
-### Corners of flyout UI elements
+- These can be transient UI elements that appear on screen temporarily, like MenuFlyout, or elements that overlay other UI, like TabView tabs.
+- The default radius value we use for these UI elements is **4px**.
 
-- These are transient UI elements that appear on screen temporarily; for example, MenuFlyout or Flyout.
-- The default radius value we use for these UI elements is 4px.
-
-![flyout](images/rounded-corner/flyout.png)
+![Flyout example](images/rounded-corner/flyout.png)
 
 **Controls**
 
@@ -60,6 +65,7 @@ When these controls are used in the template of other controls, like the CheckBo
 - ContentDialog
 - Flyout
 - MenuFlyout
+- TabView tabs
 - TeachingTip
 - ToolTip
 - Flyout part (when open)
@@ -68,6 +74,7 @@ When these controls are used in the template of other controls, like the CheckBo
   - ComboBox
   - DatePicker
   - DropDownButton
+  - MenuBar
   - SplitButton
   - TimePicker
   - ToggleSplitButton
@@ -75,15 +82,19 @@ When these controls are used in the template of other controls, like the CheckBo
 ### Bar elements
 
 - These UI elements are shaped like bars or lines; for example, ProgressBar.
-- The default radius values we use here are 2px.
+- The default radius values we use here are **2px**.
 
-![bars](images/rounded-corner/bars.png)
+![Progress bar example](images/rounded-corner/bars.png)
 
 **Controls**
 
+- NavigationView selection indicator
+- Pivot selection indicator
 - ProgressBar
+- ScrollBar (when `IndicatorMode=TouchIndicator`)
 - Slider
-- MediaTransportControls (Seek bar and ToolTip)
+  - ColorPicker color slider
+  - MediaTransportControls seek bar slider
 
 ## Customization options
 
