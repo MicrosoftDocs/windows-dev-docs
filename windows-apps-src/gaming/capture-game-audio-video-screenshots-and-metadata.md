@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Capture game audio, video, screenshots, and metadata
 This article describes how to capture game video, audio, and screenshots, and how to submit metadata that the system will embed in captured and broadcast media, allowing your app and others to create dynamic experiences that are synchronized to gameplay events. 
 
-There are two different ways that gameplay can be captured in a UWP app. The user can initiate capture using the built-in system UI. Media that is captured using this technique is ingested into the Microsoft gaming ecosystem, can be viewed and shared through first-party experiences such as the XBox app, and is not directly availble to your app or to users. The first sections of this article will show you how to enable and disable system-implemented app capture and how to receive notifications when app capture starts or stops.
+There are two different ways that gameplay can be captured in a UWP app. The user can initiate capture using the built-in system UI. Media that is captured using this technique is ingested into the Microsoft gaming ecosystem, can be viewed and shared through first-party experiences such as the Xbox app, and is not directly availble to your app or to users. The first sections of this article will show you how to enable and disable system-implemented app capture and how to receive notifications when app capture starts or stops.
 
 The other way to capture media is to use the APIs of the **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** namespace. If capturing is enabled on the device, your app can start capturing gameplay and then, after some time has passed, you can stop the capture, at which point the media is written to a file. If the user has enabled historical capture, then you can also record gameplay that has already occured by specifying a start time in the past and a duration to record. Both of these techniques produce an video file that can be accessed by your app, and depending on where you choose to save the files, by the user. The middle sections of this article walk you through the implemenation of these scenarios.
 
@@ -21,7 +21,7 @@ The **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.c
 
 
 ## Enable and disable system app capture
-System app capture is initiated by the user with the built-in system UI. The files are ingested by the Windows gaming ecosystem and is not available to your app or the user, except for through first party experiences like the XBox app. Your app can disable and enable system-initiated app capture, allowing you to prevent the user from capturing certain content or gameplay. 
+System app capture is initiated by the user with the built-in system UI. The files are ingested by the Windows gaming ecosystem and is not available to your app or the user, except for through first party experiences like the Xbox app. Your app can disable and enable system-initiated app capture, allowing you to prevent the user from capturing certain content or gameplay. 
 
 To enable or disable system app capture, simply call the static method **[AppCapture.SetAllowedAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapture.setallowedasync)** and passing **false** to disable capture or **true** to enable capture.
 

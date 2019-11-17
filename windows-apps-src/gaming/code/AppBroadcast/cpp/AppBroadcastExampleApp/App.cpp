@@ -216,7 +216,7 @@ void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 	}
 
 	// On PC, call GetDefault because there is a single user signed in.
-	// On XBox, call GetForUser instead because multiple users can be signed in.
+	// On Xbox, call GetForUser instead because multiple users can be signed in.
 	AppBroadcastingUI^ broadcastingUI = AppBroadcastingUI::GetDefault();
 	AppBroadcastingStatus^ broadcastingStatus = broadcastingUI->GetStatus();
 

@@ -38,7 +38,7 @@ namespace Frames_Win10
                    sourceGroup = group,
                    colorSourceInfo = group.SourceInfos.FirstOrDefault((sourceInfo) =>
                    {
-                       // On XBox/Kinect, omit the MediaStreamType and EnclosureLocation tests
+                       // On Xbox/Kinect, omit the MediaStreamType and EnclosureLocation tests
                        return sourceInfo.SourceKind == MediaFrameSourceKind.Color;
 
                    })

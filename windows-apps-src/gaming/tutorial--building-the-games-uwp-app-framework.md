@@ -188,7 +188,7 @@ void App::Load(
 * Create and initialize the game renderer. For more information, see [Rendering framework I: Intro to rendering](tutorial--assembling-the-rendering-pipeline.md).
 * Create the initialize the Simple3Dgame object. For more information, see [Define the main game object](tutorial--defining-the-main-game-loop.md).    
 * Create the game UI control object and display game info overlay to show a progress bar as the resource files load. For more information, see [Adding a user interface](tutorial--adding-a-user-interface.md).
-* Create the controller so it can read input from the controller (touch, mouse, or XBox wireless controller). For more information, see [Adding controls](tutorial--adding-controls.md).
+* Create the controller so it can read input from the controller (touch, mouse, or Xbox wireless controller). For more information, see [Adding controls](tutorial--adding-controls.md).
 * After the controller is initialized, we defined two rectangular areas in the lower-left and lower-right corners of the screen 
 for the move and camera touch controls, respectively. The player uses the lower-left rectangle, defined by the call to **SetMoveRect**, 
 as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle, defined by the **SetFireRect** 
