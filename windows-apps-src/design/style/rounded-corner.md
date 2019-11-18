@@ -146,8 +146,8 @@ This means if you want to change the roundness of all controls where roundness c
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
             <ResourceDictionary>
-                <Thickness x:Key="OverlayCornerRadius">4</Thickness>
-                <Thickness x:Key="ControlCornerRadius">8</Thickness>
+                <CornerRadius x:Key="OverlayCornerRadius">4</CornerRadius>
+                <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
             </ResourceDictionary>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </ResourceDictionary.MergedDictionaries>
@@ -160,7 +160,7 @@ Alternatively, if you want to change all controls' roundness within a particular
 ```xaml
 <Grid>
     <Grid.Resources>
-        <Thickness x:Key="ControlCornerRadius">8</Thickness>
+        <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
     </Grid.Resources>
     <Button Content="Button"/>
 </Grid>
