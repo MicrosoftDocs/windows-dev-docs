@@ -52,7 +52,7 @@ UWP apps can use a light or dark application theme. The theme affects the colors
 
 ![dark theme](images/color/dark-theme.svg)
 
-By default, your UWP app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on XBox). However, you can set the theme for your UWP app.
+By default, your UWP app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on Xbox). However, you can set the theme for your UWP app.
 
 ### Changing the theme
 
