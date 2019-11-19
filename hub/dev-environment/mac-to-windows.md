@@ -27,9 +27,9 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 | Undo | Command+Z | Ctrl+Z |
 | Save | Command+S | Ctrl+S |
 | Open | Command+O | Ctrl+O |
-| Lock computer | Command+Control+Q | Ctr+L |
-| Show desktop | Command+F3 | Ctrl+D |
-| Minimize windows | Windows key +M | COMMAND+M |
+| Lock computer | Command+Control+Q | WindowKey+L |
+| Show desktop | Command+F3 | WindowKey+D |
+| Minimize windows | COMMAND +M | Windows key+M |
 | Search | Command+Space | Windows key |
 | Close active window | Command+W | Control+W |
 | Switch current task | Command+Tab | Alt+Tab |
