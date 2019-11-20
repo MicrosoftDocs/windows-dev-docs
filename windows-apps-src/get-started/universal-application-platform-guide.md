@@ -109,7 +109,7 @@ Check out [Get set up](get-set-up.md) to download the tools you need to start cr
 
 The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
 
-Good [design](https://go.microsoft.com/fwlink/?LinkId=258848) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/en-us/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/en-us/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
 
 In addition to interaction on different devices, [plan your app](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) to embrace the benefits of working across multiple devices. For example:
 
@@ -119,7 +119,7 @@ In addition to interaction on different devices, [plan your app](https://docs.mi
 
 ### Add services
 
-- Use [cloud services](https://go.microsoft.com/fwlink/?LinkId=526377) to sync across devices.
+- Use [cloud services](https://azure.microsoft.com/documentation/services/cloud-services) to sync across devices.
 - Learn how to [connect to web services](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
 - Include [Push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) and [in-app purchases](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) in your planning. These features should work across devices.
 

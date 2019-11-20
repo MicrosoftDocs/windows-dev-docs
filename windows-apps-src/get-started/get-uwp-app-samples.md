@@ -27,7 +27,7 @@ a GitHub account to download the file. When an SDK update is released or if
 you want to pick up any recent changes and additions, just download the latest zip file.
 
 > [!NOTE]
-> To open, build, and run UWP samples, you must have Visual Studio 2015 or later and the Windows SDK. You can get a  [free copy of Visual Studio Community](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads"). Visual Studio Community has support for building UWP apps.  
+> To open, build, and run UWP samples, you must have Visual Studio 2015 or later and the Windows SDK. You can get a  [free copy of Visual Studio Community](https://www.microsoft.com/?ref=go). Visual Studio Community has support for building UWP apps.  
 >
 > For the samples to work correctly, be sure to unzip the entire archive and not individual samples. The samples all depend on the SharedContent folder in the archive. The UWP feature samples use Linked files in Visual Studio to reduce duplication of common files, including sample template files and image assets. Common files are stored in the SharedContent folder at the root of the repository. Links are used in the project files to refer to common files.
 > 

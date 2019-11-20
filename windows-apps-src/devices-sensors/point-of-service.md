@@ -12,7 +12,7 @@ This section contains articles on how to use [Windows.Devices.PointOfService](ht
 | Topic | Description |
 |------|------------|
 | [Basics](pos-basics.md) | This article will help you get started with the point of service UWP APIs. |
-| [Hardware support](pos-device-support.md) | List of known devices that are compatible with [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) UWP APIs. |
+| [Hardware support](pos-device-support.md) | List of known devices that are compatible with [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) UWP APIs. |
 | [Barcode Scanner](pos-barcodescanner.md) | Index of articles on barcode scanner. |
 | [Magnetic stripe reader](pos-magnetic-stripe-reader.md) | Index of articles on magnetic stripe reader.
 | [POSPrinter](pos-printer.md) | Index of articles on POSPrinter. |

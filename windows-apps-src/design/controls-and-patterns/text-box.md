@@ -209,7 +209,7 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see Scenario 2 of the [ContextMenu sample](https://go.microsoft.com/fwlink/p/?linkid=234891). For design info, see Guidelines for context menus.
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see Scenario 2 of the [ContextMenu sample](https://code.msdn.microsoft.com/windowsapps/Context-menu-sample-40840351). For design info, see Guidelines for context menus.
 
 ### Select, copy, and paste
 

@@ -20,9 +20,9 @@ The previous topics in this section describe the differences between the platfor
 
 ## Downloads
 
-[Download the Bookstore1\_81 Universal 8.1 app](https://go.microsoft.com/fwlink/?linkid=532946).
+[Download the Bookstore1\_81 Universal 8.1 app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1_81).
 
-[Download the Bookstore1Universal\_10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532950).
+[Download the Bookstore1Universal\_10 Windows 10 app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 
 ## The Universal 8.1 app
 

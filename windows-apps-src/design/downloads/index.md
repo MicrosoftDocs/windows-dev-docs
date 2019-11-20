@@ -59,7 +59,7 @@ v1705, May 2017<br>
 <b>Framer toolkit</b><br>
 (This toolkit is no longer supported.)<br/>
 v1806, June 2018<br>
-<a href="https://aka.ms/framertoolkit">Download</a>
+<a href="https://github.com/Microsoft/windows-framer-toolkit">Download</a>
     :::column-end:::
 :::row-end:::
 

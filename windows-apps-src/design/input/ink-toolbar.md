@@ -1126,9 +1126,9 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 
 ### Other samples
 
-- [Simple ink sample (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [Complex ink sample (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
 - [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
-- [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-- [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 
 ### Find answers to your questions
 
-Have questions? Ask us on either [Stack Overflow](https://aka.ms/pos-stackoverflow) or [MSDN UWP Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
+Have questions? Ask us on either [Stack Overflow](https://stackoverflow.com/questions/tagged/pointofservice) or [MSDN UWP Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
 
 Help us locate your questions:
-- Add the [pointofservice](https://aka.ms/pos-stackoverflow) tag to your question on Stack Overflow. 
+- Add the [pointofservice](https://stackoverflow.com/questions/tagged/pointofservice) tag to your question on Stack Overflow. 
 - Include the ["pointofservice"](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D) term in your post on MSDN UWP Forum
 
 ### Make feature suggestions or give feedback

@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application. Instead of working with handle types such as [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) and functions such as [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), the Windows Runtime provides interfaces such as [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow) so that you can develop UWP apps in a more modern, object-oriented manner. This section of the documentation shows how the Marble Maze app code is structured.
 
 > [!NOTE]
-> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://go.microsoft.com/fwlink/?LinkId=624011).
+> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 ## 

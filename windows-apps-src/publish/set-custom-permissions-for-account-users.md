@@ -1,4 +1,4 @@
-﻿---
+---
 Description: Set roles or custom permissions for account users.
 title: Set roles or custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
@@ -38,7 +38,7 @@ Unless you opt to define [custom permissions](#custom) by selecting **Customize 
 | Role                 | Description              |
 |----------------------|--------------------------|
 | Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Partner Center, but note that the ability to create and delete users in the Azure AD tenant is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have global administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Partner Center role). <p> Note that if the Partner Center account is associated with more than one Azure AD tenant, a Manager can’t see complete details for a user (including first name, last name, password recovery email, and whether they are an Azure AD global administrator) unless they are signed in to the same tenant as that user with an account that has global administrator permissions for that tenant. However, they can add and remove users in any tenant that is associated with the Partner Center account. |
-| Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can access [Cross-Device Experiences](https://go.microsoft.com/fwlink/?linkid=874042) functionality. Can’t view financial info or account settings.   |
+| Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can access [Cross-Device Experiences](https://developer.microsoft.com/windows/project-rome) functionality. Can’t view financial info or account settings.   |
 | Business Contributor | Can view [Health](health-report.md) and [Usage](usage-report.md) reports. Can't create or submit products, change account settings, or view financial info.   |
 | Finance Contributor  | Can view [payout reports](payout-summary.md), financial info, and acquisition reports. Can’t make any changes to apps, add-ons, or account settings.    |
 | Marketer             | Can [respond to customer reviews](respond-to-customer-reviews.md) and view non-financial [analytic reports](analytics.md). Can’t make any changes to apps, add-ons, or account settings.      |

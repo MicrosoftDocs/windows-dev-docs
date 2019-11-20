@@ -30,11 +30,11 @@ You use the APIs in the [Windows.Storage](https://docs.microsoft.com/uwp/api/Win
 | [Fast access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
 
 ## Related samples
-[Folder enumeration sample](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[File access sample](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[File picker sample](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

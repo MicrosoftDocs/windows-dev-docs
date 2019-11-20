@@ -68,7 +68,7 @@ Here's how to create an ad campaign to promote an app.
         * In the **Language** drop-down, select the language for your ad. The text for the Microsoft Store badge will appear in the language you select.
         * To add an extra line of text to your ad, enter text in the **Custom tagline** field.
             > [!NOTE]
-            > The text you enter here must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](https://go.microsoft.com/fwlink/?LinkId=398341). Consult this page for guidance on style and disallowed content.
+            > The text you enter here must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](https://advertise.bingads.microsoft.com/bing-ads-policies). Consult this page for guidance on style and disallowed content.
         * To further customize the ad, expand **Customize ad design / See all ad sizes** and choose any of the following:
             * **Background color**. Choose from the available options.
             * **Images**. Choose one of the available images (taken from your app's Store listing).
@@ -78,7 +78,7 @@ Here's how to create an ad campaign to promote an app.
 
     * **Custom**. Choose this option to use your own ad designs. Note that if you selected a customer segment earlier, you must use custom creatives. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
         * Each file must be a .png or .jpg that is 40 KB or smaller.
-        * Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](https://go.microsoft.com/fwlink/?LinkId=532595).
+        * Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
         * The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
         * All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
 

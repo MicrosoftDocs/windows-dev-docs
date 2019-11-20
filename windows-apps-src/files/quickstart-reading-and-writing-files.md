@@ -23,7 +23,7 @@ dev_langs:
 Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storagefile) object.
 
 > [!NOTE]
-> For a complete sample, see the [File access sample](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
 ## Prerequisites
 

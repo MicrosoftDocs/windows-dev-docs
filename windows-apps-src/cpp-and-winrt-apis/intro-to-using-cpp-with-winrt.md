@@ -32,7 +32,7 @@ For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 
 
 While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using a version of C++/WinRT that shipped with the Windows SDK prior to 10.0.17763.0 (Windows 10, version 1809), then, to use the the Windows namespaces headers mentioned above, you'll need a minimum Windows SDK target version in your project of 10.0.17134.0 (Windows 10, version 1803).
 
-You'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+You'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 - The VSIX extension gives you C++/WinRT project and item templates in Visual Studio, so that you can get started with C++/WinRT development.
 - In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. You can opt into it release builds by defining the symbol WINRT_NATVIS.
@@ -91,7 +91,7 @@ In an IDL file, define the runtime classes in your component, their default inte
 Bundle the built Windows Runtime component binary and its `.winmd` with the UWP app consuming them.
 
 ## Earlier versions of the VSIX extension
-We recommend that you install (or update to) the latest version of the [VSIX extension](https://aka.ms/cppwinrt/vsix). It is configured to update itself by default. If you do that, and you have projects that were created with a version of the VSIX extension earlier than 1.0.190128.4, then this section contains important info about upgrading those projects to work with the new version. If you don't update, then you'll still find the info in this section useful.
+We recommend that you install (or update to) the latest version of the [VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264). It is configured to update itself by default. If you do that, and you have projects that were created with a version of the VSIX extension earlier than 1.0.190128.4, then this section contains important info about upgrading those projects to work with the new version. If you don't update, then you'll still find the info in this section useful.
 
 In terms of supported Windows SDK and Visual Studio versions, and Visual Studio configuration, the info in the [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) section above applies to earlier versions of the VSIX extension. The info below describes important differences regarding the behavior and configuration of projects created with (or upgraded to work with) earlier versions.
 
@@ -142,7 +142,7 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [Get started with C++/WinRT](get-started.md)
 * [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)
 * [String handling in C++/WinRT](strings.md)

@@ -69,4 +69,4 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 ## Related topics
 
-* [Advertising samples on GitHub](https://aka.ms/githubads)
+* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

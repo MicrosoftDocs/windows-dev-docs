@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) classes to access files, and the [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) to access a folder.
 
 > [!NOTE]
-> For a complete sample, see the [File picker sample](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
 ## Prerequisites
 

@@ -57,7 +57,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 2.  Track the [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) of the new view. You use this to show the view later.
 
-    You might want to consider building some infrastructure into your app to help with tracking the views you create. See the `ViewLifetimeControl` class in the [MultipleViews sample](https://go.microsoft.com/fwlink/p/?LinkId=620574) for an example.
+    You might want to consider building some infrastructure into your app to help with tracking the views you create. See the `ViewLifetimeControl` class in the [MultipleViews sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MultipleViews) for an example.
 
     ```csharp
     int newViewId = 0;
@@ -65,7 +65,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  On the new thread, populate the window.
 
-    You use the [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) method to schedule work on the UI thread for the new view. You use a [lambda expression](https://go.microsoft.com/fwlink/p/?LinkId=389615) to pass a function as an argument to the **RunAsync** method. The work you do in the lambda function happens on the new view's thread.
+    You use the [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) method to schedule work on the UI thread for the new view. You use a [lambda expression](https://msdn.microsoft.com/library/bb397687.aspx) to pass a function as an argument to the **RunAsync** method. The work you do in the lambda function happens on the new view's thread.
 
     In XAML, you typically add a [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) to the [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window)'s [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) property, then navigate the **Frame** to a XAML [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) where you've defined your app content. For more info about frames and pages, see [Peer-to-peer navigation between two pages](../basics/navigate-between-two-pages.md).
 

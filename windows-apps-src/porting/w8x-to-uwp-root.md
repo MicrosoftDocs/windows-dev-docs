@@ -67,5 +67,5 @@ Before or during the porting, consider whether your app could be improved by ref
 
 **Documentation**
 * [Windows Runtime reference](https://docs.microsoft.com/uwp/api/)
-* [Building Universal Windows apps for all Windows devices](https://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Building Universal Windows apps for all Windows devices](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [Designing UX for apps](https://docs.microsoft.com/previous-versions/windows/hh767284(v=win.10))

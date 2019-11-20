@@ -197,7 +197,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 > [!NOTE]
 > In C#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++/CX, a similar result can be achieved by using a task chain.
 
-For more information about asynchronous patterns, see [Asynchronous programming](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666).
+For more information about asynchronous patterns, see [Asynchronous programming](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
 The following steps are completed in one of your app classes (for example, MainPage.xaml.cs).
 
@@ -388,7 +388,7 @@ void MainPage::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompl
 ```
 
 > [!NOTE]
-> UI updates should be performed asynchronously, to avoid holding up the UI thread. For an example, see the UpdateUI method in the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666).
+> UI updates should be performed asynchronously, to avoid holding up the UI thread. For an example, see the UpdateUI method in the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
 2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
 
@@ -434,7 +434,7 @@ The following Extensions element is added to your Package.appxmanifest file to r
 You should now understand the basics of how to write a background task class, how to register the background task from within your app, and how to make your app recognize when the background task is complete. You should also understand how to update the application manifest so that your app can successfully register the background task.
 
 > [!NOTE]
-> Download the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
+> Download the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
@@ -456,7 +456,7 @@ See the following related topics for API reference, background task conceptual g
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
 **Background Task API Reference**
 

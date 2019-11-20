@@ -21,9 +21,9 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 If you want to learn the basics, or just refresh your memory, try reading these:
 
-* [C# Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850801)
-* [VB Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850802)
-* [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
+* [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [VB Fundamentals for Absolute Beginners](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
+* [A Developer's Guide to Windows 10](https://docs.microsoft.com/learn/)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 

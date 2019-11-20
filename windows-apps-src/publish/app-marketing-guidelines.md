@@ -20,7 +20,7 @@ We’ve created special promotional badges to help you drive more customers to y
 
 ## Badge generator and images
 
-You can use our [badge generator](https://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.
+You can use our [badge generator](https://developer.microsoft.com/store/badges) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.
 
 You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
@@ -35,9 +35,9 @@ To promote your app, you may want to show how it looks when running on a Windows
 
 ## License to Microsoft Marks
 
-*Microsoft Marks* means the *Microsoft badge* described on the [badge generator](https://go.microsoft.com/fwlink/p/?LinkID=534236) page. To use these badges, you must:
+*Microsoft Marks* means the *Microsoft badge* described on the [badge generator](https://developer.microsoft.com/store/badges) page. To use these badges, you must:
 
--   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](https://go.microsoft.com/fwlink/p/?LinkId=624463).
+-   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/).
 
 -   If you are registered as an app developer in Partner Center, comply with the [“License to Microsoft Marks”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) section of the App Developer Agreement.
 

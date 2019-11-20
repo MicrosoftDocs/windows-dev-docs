@@ -18,7 +18,7 @@ For more info about game programming on Windows, check out the following resourc
 
 
 -   [Graphics and Gaming](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [OpenGL reference](https://go.microsoft.com/fwlink/p/?LinkID=288875)
+-   [OpenGL reference](https://www.opengl.org/sdk/docs/man4/)
 
 ## Game design guidance
 
@@ -39,7 +39,7 @@ For more info about game programming on Windows, check out the following resourc
 -   [DirectXTex texture processing library](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio[Graphics Diagnostics](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
--   [ANGLE for Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+-   [ANGLE for Microsoft Store](https://github.com/microsoft/angle/wiki) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
 ## GDC 2015 game dev session videos
 
@@ -69,8 +69,8 @@ For more info about game programming on Windows, check out the following resourc
 ## Other resources
 
 
--   [CodePlex](https://go.microsoft.com/fwlink/p/?LinkID=76627)
--   [GameDev.net](https://go.microsoft.com/fwlink/p/?LinkID=288870)
+-   [CodePlex](https://www.codeplex.com/)
+-   [GameDev.net](https://www.gamedev.net/page/index.html)
 
  
 

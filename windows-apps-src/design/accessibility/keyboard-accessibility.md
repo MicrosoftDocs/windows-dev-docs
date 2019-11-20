@@ -142,7 +142,7 @@ XAML
 
 For simplicity, the preceding example omits the use of resources for strings such as "Ctrl+A". However, you must also consider shortcut keys during localization. Localizing shortcut keys is relevant because the choice of key to use as the shortcut key typically depends on the visible text label for the element.
 
-For more guidance about implementing shortcut keys, see [Shortcut keys](https://go.microsoft.com/fwlink/p/?linkid=221825) in the Windows User Experience Interaction Guidelines.
+For more guidance about implementing shortcut keys, see [Shortcut keys](https://docs.microsoft.com/windows/win32/uxguide/inter-keyboard?redirectedfrom=MSDN) in the Windows User Experience Interaction Guidelines.
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -244,4 +244,4 @@ Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a S
 * [Accessibility](accessibility.md)
 * [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

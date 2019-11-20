@@ -19,7 +19,7 @@ With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on 
 
 ## Before you start
 
--   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows 10. To download, see [Get the tools](https://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows 10. To download, see [Get the tools](https://visualstudio.microsoft.com/downloads/).
 -   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
@@ -225,7 +225,7 @@ It doesn't do much—yet—but congratulations, you've built your first Universa
 
 To stop debugging and close the app, return to Visual Studio and press Shift+F5.
 
-For more information, see [Run a Store app from Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=619619).
+For more information, see [Run a Store app from Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx).
 
 In the app, you can type in the [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), but clicking the [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event, which displays a personalized greeting.
 
@@ -391,6 +391,6 @@ Congratulations, you've completed the first tutorial! It taught how to add conte
 
 ## Next steps
 
-If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) and [Porting to the Universal Windows Platform (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525).
+If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) and [Porting to the Universal Windows Platform (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
 
-If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](https://go.microsoft.com/fwlink/p/?LinkId=619623).
+If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](https://msdn.microsoft.com/library/mt186162.aspx).

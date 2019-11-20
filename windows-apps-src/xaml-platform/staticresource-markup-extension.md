@@ -45,7 +45,7 @@ In the Windows Runtime XAML processor implementation, there is no backing class 
 
 ### An example {StaticResource} usage
 
-This example XAML is taken from the [XAML data binding sample](https://go.microsoft.com/fwlink/p/?linkid=226854).
+This example XAML is taken from the [XAML data binding sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
 
 ```xml
 <StackPanel Margin="5">

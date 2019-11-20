@@ -159,7 +159,7 @@ A user's geographic location is personally identifiable information (PII). The f
 * [Get current location](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
 * [Display maps with 2D, 3D, and Streetside views](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

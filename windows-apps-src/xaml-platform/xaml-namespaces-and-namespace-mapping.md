@@ -86,7 +86,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 -   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) that object otherwise has.
 -   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), overriding [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source).
--   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](https://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer).
+-   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx). For some usage examples, see [Sample data on the design surface, and for prototyping](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer).
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

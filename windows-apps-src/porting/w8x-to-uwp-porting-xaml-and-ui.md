@@ -100,7 +100,7 @@ Here are some more specific examples of changes to controls.
 | [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) | In a Windows Phone Store app, a [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) control wraps around from the last section to the first. In a Windows Runtime 8.x app, and in a Windows 10 app, hub sections do not wrap around. |
 | [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) | In a Windows Phone Store app, a [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) control's background image moves in parallax relative to the hub sections. In a Windows Runtime 8.x app, and in a Windows 10 app, parallax is not used. |
 | [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub)  | In a Universal 8.1 app, the [**HubSection.IsHeaderInteractive**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) property causes the section header—and a chevron glyph rendered next to it—to become interactive. In a Windows 10 app, there is an interactive "See more" affordance beside the header, but the header itself is not interactive. **IsHeaderInteractive** still determines whether interaction raises the [**Hub.SectionHeaderClick**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick) event. |
-| **MessageDialog** | If you're using **MessageDialog**, then consider instead using the more flexible [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Also, see the [XAML UI Basics](https://go.microsoft.com/fwlink/p/?linkid=619992) sample. |
+| **MessageDialog** | If you're using **MessageDialog**, then consider instead using the more flexible [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Also, see the [XAML UI Basics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) sample. |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** and **PickerFlyout** are deprecated for a Windows 10 app. For a single selection fly-out, use [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout); for more complex experiences, use [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | The [**PasswordBox.IsPasswordRevealButtonEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) property is deprecated in a Windows 10 app, and setting it has no effect. Use [**PasswordBox.PasswordRevealMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) instead, which defaults to **Peek** (in which an eye glyph is displayed, like in a Windows Runtime 8.x app). Also, see [Guidelines for password boxes](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box). |
 | [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | The [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) control is now universal, it is no longer limited to use on mobile devices. |
@@ -418,7 +418,7 @@ Once the user starts typing, the **TextChanged** event is raised, with a reason 
     </AutoSuggestBox>
 ```
 
-Also, see [AutoSuggestBox porting sample](https://go.microsoft.com/fwlink/p/?linkid=619996).
+Also, see [AutoSuggestBox porting sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox).
 
 ## SemanticZoom changes
 
@@ -454,7 +454,7 @@ In Windows Runtime 8.x apps and Windows Phone Store apps, the default font famil
 
 In Windows Runtime 8.x apps and Windows Phone Store apps, the default language for text is set to the language of the build, or to en-us. In a Windows 10 app, the default language is set to the top app language (font fallback). You can set [**FrameworkElement.Language**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.language) explicitly, but you will enjoy better font fallback behavior if you do not set a value for that property.
 
-For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://go.microsoft.com/fwlink/p/?LinkID=533896). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
+For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
 
 ## Theme changes
 

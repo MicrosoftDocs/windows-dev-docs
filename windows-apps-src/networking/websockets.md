@@ -833,4 +833,4 @@ protected:
 * [Sockets](sockets.md)
 
 ## Samples
-* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebSocket)

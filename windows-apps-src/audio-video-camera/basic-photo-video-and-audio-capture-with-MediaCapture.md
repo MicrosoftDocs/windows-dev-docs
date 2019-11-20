@@ -14,7 +14,7 @@ This article shows the simplest way to capture photos and video using the [**Med
 
 If you simply want to capture a photo or video and don't intend to add any additional media capture features, or if you don't want to create your own camera UI, you may want to use the [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) class, which allows you to simply launch the Windows built-in camera app and receive the photo or video file that was captured. For more information, see [**Capture photos and video with Windows built-in camera UI**](capture-photos-and-video-with-cameracaptureui.md)
 
-The code in this article was adapted from the [**Camera starter kit**](https://go.microsoft.com/fwlink/?linkid=619479) sample. You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [**Camera starter kit**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit) sample. You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
 ## Add capability declarations to the app manifest
 

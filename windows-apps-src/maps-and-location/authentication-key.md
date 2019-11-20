@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 Your [Universal Windows app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) must be authenticated before it can use the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services in the [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
 
-**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub:
 
--   [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## Get a key
 
@@ -84,7 +84,7 @@ To use services in the [**Windows.Services.Maps**](https://docs.microsoft.com/uw
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

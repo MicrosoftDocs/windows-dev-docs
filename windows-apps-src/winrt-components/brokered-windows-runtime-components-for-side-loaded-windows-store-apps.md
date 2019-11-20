@@ -15,7 +15,7 @@ code responsible for key business-critical operations.
 
 ## Introduction
 
->**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). The Microsoft Visual Studio template to build Brokered Windows Runtime
+>**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://github.com/Microsoft/Brokered-WinRT-Components). The Microsoft Visual Studio template to build Brokered Windows Runtime
 Components can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
@@ -842,10 +842,10 @@ list of loaded modules.
 -   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [NorthwindRT Brokered WinRT Component
-    Sample](https://go.microsoft.com/fwlink/p/?LinkID=397349)
+    Sample](https://code.msdn.microsoft.com/Northwind-Brokered-WinRTC-5143a67c)
 
 -   [Delivering reliable and trustworthy Microsoft Store
-    apps](https://go.microsoft.com/fwlink/p/?LinkID=393644)
+    apps](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
 
 -   [App contracts and extensions (Windows
     Store apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
@@ -853,5 +853,5 @@ list of loaded modules.
 -   [How to sideload apps on Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 -   [Deploying UWP apps to
-    businesses](https://go.microsoft.com/fwlink/p/?LinkID=264770)
+    businesses](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)
 

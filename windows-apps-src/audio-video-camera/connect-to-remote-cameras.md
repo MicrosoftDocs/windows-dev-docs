@@ -1,4 +1,4 @@
-﻿---
+---
 ms.assetid: 
 description: This article shows you how to connect to remote cameras and get a MediaFrameSourceGroup to retrieve frames from each camera.
 title: Connect to remote cameras
@@ -44,7 +44,7 @@ Also, this example handles the [**DeviceWatcher.Updated**](https://docs.microsof
 
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
  
 

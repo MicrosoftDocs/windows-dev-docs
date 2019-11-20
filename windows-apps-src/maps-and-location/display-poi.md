@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.
 
-To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub: [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub: [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
 Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon), and [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) objects to a **MapElements** collection of a [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
 
@@ -180,7 +180,7 @@ The [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xa
 
 ## Add a shape
 
-Display a multi-point shape on the map by using the [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) class. The following example, from the [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977), displays a red box with blue border on the map.
+Display a multi-point shape on the map by using the [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a red box with blue border on the map.
 
 ```csharp
 public void HighlightArea()
@@ -223,7 +223,7 @@ public void HighlightArea()
 ## Add a line
 
 
-Display a line on the map by using the [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) class. The following example, from the [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977), displays a dashed line on the map.
+Display a line on the map by using the [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a dashed line on the map.
 
 ```csharp
 public void DrawLineOnMap()
@@ -468,10 +468,10 @@ In your XAML page, bind to the property in your view model class that returns th
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

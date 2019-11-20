@@ -46,11 +46,11 @@ Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of
 | (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** class | [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) class |
 | Blend for Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** class | No direct equivalent |
-| **Microsoft.Expression.Interactivity** namespace | [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) namespace |
-| **Microsoft.Expression.Interactivity.Core** namespace | [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) namespace |
+| **Microsoft.Expression.Interactivity** namespace | [Microsoft.Xaml.Interactivity](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactivity.aspx) namespace |
+| **Microsoft.Expression.Interactivity.Core** namespace | [Microsoft.Xaml.Interactions.Core](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.core.aspx) namespace |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** class | No direct equivalent |
 | **Microsoft.Expression.Interactivity.Input** namespace | No direct equivalent |
-| **Microsoft.Expression.Interactivity.Media** namespace | [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) namespace |
+| **Microsoft.Expression.Interactivity.Media** namespace | [Microsoft.Xaml.Interactions.Media](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.media.aspx) namespace |
 | **Microsoft.Expression.Shapes** namespace | No direct equivalent |
 | (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** interface | No direct equivalent |
 | Contact and calendar data | |
@@ -115,7 +115,7 @@ Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** property | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** property |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** property | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** property |
 | Graphics and animation | |
-| **Microsoft.Xna.Framework.\*** namespaces, [XNA Framework Class Library](https://go.microsoft.com/fwlink/p/?LinkId=263769), [Content Pipeline Class Library](https://go.microsoft.com/fwlink/p/?LinkId=263770) | No direct equivalent. In general, use [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) with C++. See [Developing games](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) and [DirectX and XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
+| **Microsoft.Xna.Framework.\*** namespaces, [XNA Framework Class Library](https://msdn.microsoft.com/library/bb203940.aspx), [Content Pipeline Class Library](https://msdn.microsoft.com/library/bb195587(v=XNAGameStudio.40).aspx) | No direct equivalent. In general, use [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) with C++. See [Developing games](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) and [DirectX and XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
 | **Microsoft.Xna.Framework.Audio.Microphone** class | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) class |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** class | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) class |
 | **Microsoft.Xna.Framework.GamerServices** namespace | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://docs.microsoft.com/uwp/api/Windows.Phone.System.UserProfile.GameServices.Core) namespace |

@@ -71,7 +71,7 @@ The following new interfaces, classes, and enumerations were added to PlayReady 
 -   [**PlayReadySecureStopIterator**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) class
 -   [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
 
-A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples&clcid=0x409](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples).
 
 ## Things to consider
 
@@ -395,7 +395,7 @@ Before you begin creating your PlayReady-protected UWP app, the following softwa
 -   If you are compiling any of the samples for PlayReady DRM for UWP apps, you must use Microsoft Visual Studio 2015 or later to compile the samples. You can still use Microsoft Visual Studio 2013 to compile any of the samples from PlayReady DRM for Windows 8.1 Store Apps.
 
 <!--This is no longer available-->
-<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](https://go.microsoft.com/fwlink/p/?LinkId=626876).-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](https://windows.microsoft.com/windows-8/feature-packs).-->
 
 ## PlayReady UWP app migration guide
 
@@ -501,7 +501,7 @@ There are two primary scenarios for sending a secure stop challenge:
 -   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
 -   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples&clcid=0x409](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples).
 
 ## Use PlayReady DRM on Xbox One
 
