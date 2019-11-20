@@ -1,6 +1,6 @@
 ﻿---
-Description: The Payout report shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
-title: Payout information
+Description: The Payout reports show you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+title: Payout Reports
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
