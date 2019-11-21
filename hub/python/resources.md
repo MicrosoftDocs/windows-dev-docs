@@ -52,6 +52,8 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Learning Python on Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html): A basic introduction to Python.
 
+- [Real Python](https://realpython.com/): A Python developers resource center — Python tutorials, video courses, quizzes, books, code examples, and more.
+
 ## Web development
 
 - [Flask web framework docs](https://flask.palletsprojects.com/en/1.1.x/): Quickstarts, tutorials, and descriptions of each component of Flask, with a full API reference.
