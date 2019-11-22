@@ -1,7 +1,7 @@
 - name: Build apps for Windows
   items:
   - name: Overview
-    href: apps/index.md
+    href: apps/index.yml
   - name: Build desktop apps
     items:
         - name: Overview
