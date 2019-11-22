@@ -64,7 +64,8 @@ Windows Forms is the original platform for managed Windows applications with a l
 For more information about Windows Forms, see the following articles:
 
 * [Getting started with Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
-* [Create your first app](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
+* [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API reference (.NET)](https://docs.microsoft.com/dotnet/api/index)
 * [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
