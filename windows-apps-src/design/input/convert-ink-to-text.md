@@ -371,9 +371,9 @@ In this example, recognition is initiated when the user clicks a button to indic
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
+[**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
 
-    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -383,9 +383,9 @@ In this example, recognition is initiated when the user clicks a button to indic
                 InkRecognitionTarget.All);
     ```
 
-    Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
+Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
-    We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
+We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
     ```csharp
     string str = "Recognition result\n";
@@ -406,7 +406,7 @@ In this example, recognition is initiated when the user clicks a button to indic
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-    Here's the click handler example, in full.
+Here's the click handler example, in full.
 
     ```csharp
     // Handle button click to initiate recognition.
