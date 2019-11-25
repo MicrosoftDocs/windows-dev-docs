@@ -25,7 +25,15 @@ If you sell products in the Azure Marketplace, you’ll also see info on success
 To open one of the payout summary pages:
 
 1. Select the Payout icon in the upper-right corner.
-2. Select Payments, Transaction history, or Export data.
+2. Select Transaction history, Payments, or Export data.
+
+## Transaction history page
+
+This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
+
+To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/en-us/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
+
+To export any of the transaction data on this page, please use the **Export data** page.
 
 ## Payments page
 
@@ -41,6 +49,7 @@ The totals on this page represent all of the programs you participate in. You ca
 
 To export any of the data on this page, select Export and then follow directions on the Export data page.
 
+<<<<<<< HEAD
 ## Transaction history page
 
 This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
@@ -49,6 +58,8 @@ To see more details about an earning, select the down arrow at the right-hand si
 
 To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
 
+=======
+>>>>>>> a689de494... Add screenshots and tweaks according to feedback
 ## Payment status
 
 | Earning status           | Reason                                                                                                                                      | Partner action required?                                   |
@@ -69,8 +80,6 @@ To export any of the transaction data on this page, select Export and then follo
 
 ## Export data page
 
-![Export data page](images/pc-export-data.png)
-
 Follow the instructions on this page to export the data you want.
 
 Notes:
@@ -79,6 +88,8 @@ Notes:
 - Your filter may result in a No data available error. This probably means you’ve left the default time period selected at three months, and then selected a Payment ID from an earning that’s outside of that period. Expand your time period and try again.
 
 ## Payments
+
+![Export payments](images/pc-export-payments.png)
 
 This option provides a download of the payments you received in your bank for a given program, the associated tax, and aggregated earning amount. This report is used for many Partner Center programs, so some columns may be inapplicable to your report. Those columns are marked below.
 
@@ -102,6 +113,8 @@ This option provides a download of the payments you received in your bank for a 
 | paymentDate              | Date payment was sent from Microsoft                                                                                                      |
 
 ## Transaction history
+
+![Export transaction History](images/pc-export-transaction.png)
 
 This option provides a download of each earning line item you see in the Transaction history page, earning type, date, associated transaction amount, customer, product, and other transactional details applicable to your programs.
 
@@ -178,13 +191,27 @@ This option provides a download of each earning line item you see in the Transac
 | externalReferenceId            | Unique identifier for the program                                                                                                        | Direct Pay programs (Incentive and Store)                      |
 | externalReferenceIdLabel       | Unique identifier label                                                                                                                  | Direct Pay programs (Incentive and Store)                      |
 
+<<<<<<< HEAD
 ## Transaction history (legacy)
 
 Transaction history from before July 1 2019 will use the following fields instead of the current ones.
+=======
+## Historical statements
+
+![Export historical statements](images/pc-export-statements.png)
+
+Transaction history from before July 1 2019 is handled separately. Statements will use the following fields instead of the current ones.
+>>>>>>> a689de494... Add screenshots and tweaks according to feedback
 
 > [!NOTE]
 > Legacy transaction history has a column called "Reserved" which corresponds to the "Earnings" column in the modern history, except that it excludes all earnings with status = "Payment Sent".
 
+<<<<<<< HEAD
+=======
+> [!NOTE]
+> Filters (3M, 6M, 12M, etc.) will not apply to the **Historical statements** section.
+
+>>>>>>> a689de494... Add screenshots and tweaks according to feedback
 | Field name              | Description                                                                                                                                                             |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Microsoft Store, Windows Phone Store, Windows Store 8, advertising, etc.)                  |
