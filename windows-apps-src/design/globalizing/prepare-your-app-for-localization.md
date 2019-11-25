@@ -185,4 +185,4 @@ Sorting follows the **Regional Control Panel** format:
 
 ## Samples
 
-- [Application resources and localization sample](https://go.microsoft.com/fwlink/p/?linkid=254478)
+- [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

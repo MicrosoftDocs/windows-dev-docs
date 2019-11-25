@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of September.
 
-[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 
@@ -28,7 +28,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows UI Library
 
-[The Windows UI Library](https://aka.ms/winui-docs) is a set of NuGet packages that provide controls and other user interface elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
+[The Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interface elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
 For more information on the Windows UI Library, see [this list of API namespaces included in the NuGet package.](https://docs.microsoft.com/uwp/api/overview/winui/)
 

@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Settings app. This topic also shows how to check if your app has permission to access the user's location.
 
-**Tip** To learn more about accessing the user's location in your app, download the following sample from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**Tip** To learn more about accessing the user's location in your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
 
--   [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## Enable the location capability
 
@@ -261,6 +261,6 @@ Before your app can access the user's location, **Location** must be enabled on 
 
 ## Related topics
 
-* [UWP geolocation sample](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP geolocation sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 * [Design guidelines for geofencing](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
 * [Design guidelines for location-aware apps](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

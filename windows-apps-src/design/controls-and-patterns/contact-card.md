@@ -175,5 +175,5 @@ The examples in this article create a simple contact. In a real app, you'd proba
 
 ## Related articles
 - [Contacts and calendar](/windows/uwp/contacts-and-calendar/)
-- [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [People picture control](/windows/uwp/controls-and-patterns/person-picture/)

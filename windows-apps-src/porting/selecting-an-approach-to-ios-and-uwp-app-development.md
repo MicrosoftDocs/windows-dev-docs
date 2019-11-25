@@ -20,19 +20,19 @@ Windows and iOS may seem to be very different beasts, but a growing number of to
 
 With a clean slate, you have many options at your disposal, including:
 
--   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](https://xamarin.com/)
 
     With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
 
--   [Apache Cordova](https://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](https://www.microsoft.com/?ref=go)
 
     If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
 
 -   Game-engines
 
-    With tools like [Unity3D](https://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](https://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
+    With tools like [Unity3D](https://www.unity3d.com/) and [Unreal Engine](https://www.unrealengine.com/en-US/) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
 
--   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](http://www.monogame.net/)
 
     The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
 
@@ -40,7 +40,7 @@ With a clean slate, you have many options at your disposal, including:
 
 With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
 
--   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Windows Bridge for iOS](https://github.com/Microsoft/WinObjC)
 
     Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
@@ -48,13 +48,13 @@ With an existing iOS app, your options are a little more limited. However, all i
 
     If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
 
--   [Use ANGLE to run OpenGL ES on Windows](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Use ANGLE to run OpenGL ES on Windows](https://github.com/microsoft/angle/wiki)
 
     An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
 ## Other cross-platform authoring tools
 
--   [GameSalad](https://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [GameSalad](https://gamesalad.com/)
 
     A game authoring environment.
 
@@ -62,31 +62,31 @@ With an existing iOS app, your options are a little more limited. However, all i
 
     A game authoring environment.
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     A cross-platform authoring environment.
 
--   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](https://www.cocos2d-x.org/)
 
     A cross-platform code library for sprite handling and physics modeling.
 
--   [Impact.js](https://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Impact.js](https://impactjs.com/)
 
     An HTML based game library.
 
--   [Marmalade](https://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Marmalade](http://madewithmarmalade.com/)
 
     A cross-platform SDK.
 
--   [OpenFL](https://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [OpenFL](https://www.openfl.org/)
 
     A cross-platform development tool.
 
--   [GameMaker](https://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [GameMaker](https://www.yoyogames.com/gamemaker/studio)
 
     An authoring environment specifically for games.
 
--   [PlayCanvas](https://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [PlayCanvas](https://playcanvas.com/)
 
     An HTML based game development tool.
 

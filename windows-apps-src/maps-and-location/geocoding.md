@@ -115,8 +115,8 @@ town = Redmond
 
 ## Related topics
 
-* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)

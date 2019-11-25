@@ -1,4 +1,4 @@
-﻿---
+---
 Description: The Payout reports show you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: Payout Reports
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The **Payout summary** shows you details about the money you’ve earned with Microsoft. It also lets you know when you’ll receive payments and how much you'll be paid.
 
-If you sell products in the Azure Marketplace, you’ll also see info on successful payouts in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](https://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](https://go.microsoft.com/fwlink/p/?LinkID=699560 ).
+If you sell products in the Azure Marketplace, you’ll also see info on successful payouts in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](https://docs.microsoft.com/legal/marketplace/participation-policy) and the [Microsoft Azure Marketplace Publisher Agreement](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
 > [!NOTE]
 > To be eligible for payout, your proceeds must reach the [payment threshold](payment-thresholds-methods-and-timeframes.md) of $50. For details about the payment threshold see this page and review the app developer agreement.
@@ -49,17 +49,6 @@ The totals on this page represent all of the programs you participate in. You ca
 
 To export any of the data on this page, select Export and then follow directions on the Export data page.
 
-<<<<<<< HEAD
-## Transaction history page
-
-This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
-
-To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/en-us/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
-
-To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
-
-=======
->>>>>>> a689de494... Add screenshots and tweaks according to feedback
 ## Payment status
 
 | Earning status           | Reason                                                                                                                                      | Partner action required?                                   |
@@ -191,27 +180,18 @@ This option provides a download of each earning line item you see in the Transac
 | externalReferenceId            | Unique identifier for the program                                                                                                        | Direct Pay programs (Incentive and Store)                      |
 | externalReferenceIdLabel       | Unique identifier label                                                                                                                  | Direct Pay programs (Incentive and Store)                      |
 
-<<<<<<< HEAD
-## Transaction history (legacy)
-
-Transaction history from before July 1 2019 will use the following fields instead of the current ones.
-=======
 ## Historical statements
 
 ![Export historical statements](images/pc-export-statements.png)
 
 Transaction history from before July 1 2019 is handled separately. Statements will use the following fields instead of the current ones.
->>>>>>> a689de494... Add screenshots and tweaks according to feedback
 
 > [!NOTE]
 > Legacy transaction history has a column called "Reserved" which corresponds to the "Earnings" column in the modern history, except that it excludes all earnings with status = "Payment Sent".
 
-<<<<<<< HEAD
-=======
 > [!NOTE]
 > Filters (3M, 6M, 12M, etc.) will not apply to the **Historical statements** section.
 
->>>>>>> a689de494... Add screenshots and tweaks according to feedback
 | Field name              | Description                                                                                                                                                             |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Microsoft Store, Windows Phone Store, Windows Store 8, advertising, etc.)                  |

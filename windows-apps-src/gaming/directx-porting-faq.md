@@ -36,12 +36,12 @@ Games that still use the RDTSC instruction need to upgrade. See [Game Timing and
 ## My game code is based on D3DX and DXUT. Is there anything available that can help me migrate my code?
 
 
-The [DirectX Tool Kit (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) community project offers helper classes for use with Direct3D 11.
+The [DirectX Tool Kit (DirectXTK)](https://github.com/Microsoft/DirectXTK) community project offers helper classes for use with Direct3D 11.
 
 ##  How do I maintain code paths for the desktop and the Microsoft Store?
 
 
-Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](https://go.microsoft.com/fwlink/p/?LinkID=286210) offers guidance on sharing code between the desktop and the Microsoft Store code paths.
+Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) offers guidance on sharing code between the desktop and the Microsoft Store code paths.
 
 ##  How do I load image resources in my DirectX UWP app?
 
@@ -51,7 +51,7 @@ There are two API paths for loading images:
 -   The content pipeline converts images into DDS files used as Direct3D texture resources. See [Using 3-D Assets in Your Game or App](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 -   The [Windows Imaging Component](https://docs.microsoft.com/windows/desktop/wic/-wic-lh) can be used to load images from a variety of formats, and can be used for Direct2D bitmaps as well as Direct3D texture resources.
 
-You can also use the DDSTextureLoader, and the WICTextureLoader, from the [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926).
+You can also use the DDSTextureLoader, and the WICTextureLoader, from the [DirectXTK](https://github.com/Microsoft/DirectXTK) or [DirectXTex](https://github.com/Microsoft/DirectXTex).
 
 ## Where is the DirectX SDK?
 
@@ -68,7 +68,7 @@ Win32 desktop applications still use DirectSetup, so if you are also upgrading t
 ## Is there any way I can update my desktop code to DirectX 11 before moving away from Effects?
 
 
-See the [Effects for Direct3D 11 Update](https://go.microsoft.com/fwlink/p/?LinkId=271568). Effects 11 helps remove dependencies on legacy DirectX SDK headers; it's intended for use as a porting aid and can only be used with desktop apps.
+See the [Effects for Direct3D 11 Update](https://github.com/Microsoft/FX11). Effects 11 helps remove dependencies on legacy DirectX SDK headers; it's intended for use as a porting aid and can only be used with desktop apps.
 
 ##  Is there a path for porting my DirectX 8 game to UWP?
 
@@ -110,7 +110,7 @@ Visit the following topics:
 ## What should I use instead of the .x file format for my models?
 
 
-While we don’t have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929).
+While we don’t have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://github.com/Microsoft/DirectXTK).
 
 ## How do I debug my shaders?
 

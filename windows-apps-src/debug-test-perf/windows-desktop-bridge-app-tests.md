@@ -225,7 +225,7 @@ Ensures that the app is not requesting user account control at runtime.
 An app cannot request admin elevation or UIAccess per Microsoft Store policy. Elevated security permissions are not supported. 
 
 **Corrective actions**  
-Apps must run as an interactive user. See [UI Automation Security Overview](https://go.microsoft.com/fwlink/?linkid=839440) for details.
+Apps must run as an interactive user. See [UI Automation Security Overview](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-security-overview?redirectedfrom=MSDN) for details.
 
  
 ### 7. Windows Runtime metadata validation
@@ -263,7 +263,7 @@ The Banned File Check in the Windows App Certification Kit currently checks for 
 This check commonly fails when an app is using a "Release Preview" version of the file instead of the latest official release. 
 
 **Corrective actions**  
-To correct this, use the latest version of the [Bing Maps SDK](https://go.microsoft.com/fwlink/p/?linkid=614880) for UWP apps.
+To correct this, use the latest version of the [Bing Maps SDK](https://www.bingmapsportal.com/) for UWP apps.
 
 #### 8.2 Private Code Signing
 Tests for the existence of private code signing binaries within the app package. 

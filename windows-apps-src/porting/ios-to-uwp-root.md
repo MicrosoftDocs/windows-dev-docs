@@ -27,5 +27,5 @@ Today, Windows is running on a huge number of devices. The UWP provides develope
 ## Related topics
 
 **For designers and developers**
-* [Building Universal Windows apps for all Windows devices](https://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Building Universal Windows apps for all Windows devices](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [Download design assets for UWP apps](https://docs.microsoft.com/windows/uwp/design/downloads/index)

@@ -307,6 +307,6 @@ Defining a custom event is usually done as part of the exercise of defining a cu
 * [XAML overview](xaml-overview.md)
 * [Quickstart: Touch input](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
 * [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [.NET events and delegates](https://go.microsoft.com/fwlink/p/?linkid=214364)
+* [.NET events and delegates](https://msdn.microsoft.com/library/17sde2xt.aspx)
 * [Creating Windows Runtime components](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
 * [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)

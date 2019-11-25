@@ -1,4 +1,4 @@
-﻿---
+---
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
@@ -15,7 +15,7 @@ Here’s some important info about receiving payment for your apps, add-ons, and
 
 ## Store fee
 
-When you [sign up for a developer account](https://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
+When you [sign up for a developer account](https://developer.microsoft.com/store/register), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
 
 Fees are officially defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Always review that document if you have any questions.
 

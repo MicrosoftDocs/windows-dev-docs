@@ -16,7 +16,7 @@ When you port your Windows Phone Silverlight app to a Windows 10 app, you'll b
 
 If you choose to, the Windows Phone Silverlight version of your app and the Windows 10 version of it can both be available to customers at the same time.
 
-**Note**  This guide is designed to help you port your Windows Phone Silverlight app to Windows 10 manually. In addition to using the information in this guide to port your app, you can try the developer preview of **Mobilize.NET's Silverlight Bridge** to help automate the porting process. This tool analyzes your app's source code and converts references to Windows Phone Silverlight controls and APIs to their UWP counterparts. Because this tool is still in developer preview, it does not yet handle all conversion scenarios. However, most developers should be able to save some time and effort by starting with this tool. To try the developer preview, visit [Mobilize.NET's website](https://go.microsoft.com/fwlink/p/?LinkId=624546).
+**Note**  This guide is designed to help you port your Windows Phone Silverlight app to Windows 10 manually. In addition to using the information in this guide to port your app, you can try the developer preview of **Mobilize.NET's Silverlight Bridge** to help automate the porting process. This tool analyzes your app's source code and converts references to Windows Phone Silverlight controls and APIs to their UWP counterparts. Because this tool is still in developer preview, it does not yet handle all conversion scenarios. However, most developers should be able to save some time and effort by starting with this tool. To try the developer preview, visit [Mobilize.NET's website](https://www.mobilize.net/uwp-bridge).
 
 ## XAML and .NET, or HTML?
 
@@ -79,9 +79,9 @@ At the feature level, the good news is that there's very little that's not suppo
 * [What's next for Windows Phone 8 developers](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))
 
 **Magazine articles**
-* [Visual Studio Magazine: Windows Phone 8.1: A Giant Leap Forward for Convergence](https://go.microsoft.com/fwlink/p/?LinkID=398541)
+* [Visual Studio Magazine: Windows Phone 8.1: A Giant Leap Forward for Convergence](https://visualstudiomagazine.com/articles/2014/05/01/whats-new-for-developers-with-windows-phone-8_1.aspx)
 
 **Presentations**
-* [The Story of Bringing Nokia Music from Windows Phone to Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=321521)
+* [The Story of Bringing Nokia Music from Windows Phone to Windows 8](https://channel9.msdn.com/Events/Build/2013/2-219)
  
 

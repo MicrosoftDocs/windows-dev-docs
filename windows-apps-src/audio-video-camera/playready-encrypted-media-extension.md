@@ -28,7 +28,7 @@ The following list describes the new features and changes made to PlayReady Encr
 -   Provides proactive acquisition of non-persistent licenses.
 -   Provides acquisition of multiple licenses in one message.
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
+    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) with multiple KeyIDs.
 
     > [!NOTE]
     > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.

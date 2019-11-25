@@ -22,9 +22,9 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 
 **Sample apps that demonstrate {x:Bind}**
 
--   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [{x:Bind} sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?linkid=619992)
+-   [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
 ## XAML attribute usage
 

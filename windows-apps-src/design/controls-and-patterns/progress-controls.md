@@ -186,4 +186,4 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 **For developers (XAML)**
 - [Adding progress controls](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [How to create a custom indeterminate progress bar for Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [How to create a custom indeterminate progress bar for Windows Phone](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

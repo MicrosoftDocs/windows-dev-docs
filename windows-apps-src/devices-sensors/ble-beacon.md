@@ -23,7 +23,7 @@ There are two main functions that a developer can perform using the LE Advertise
 -   [Advertisement Watcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): listen for nearby beacons and filter them out based on payload or proximity.  
 -   [Advertisement Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): define a payload for Windows to advertise on a developers behalf.  
 
-Full sample code is found in the [Bluetooth Advertisement Sample](https://go.microsoft.com/fwlink/p/?LinkId=619990) on Github
+Full sample code is found in the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement) on Github
 
 ## Basic Setup
 

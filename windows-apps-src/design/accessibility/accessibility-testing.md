@@ -157,5 +157,5 @@ One aspect that you can test is whether there are elements appearing in the UI A
 * [Accessibility](accessibility.md)
 * [Practices to avoid](practices-to-avoid.md)
 * [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
-* [Accessibility in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Accessibility in Windows](https://www.microsoft.com/accessibility/)
 * [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

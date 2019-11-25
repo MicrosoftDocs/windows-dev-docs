@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-> **Note**  Also see the [Master/detail sample](https://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Note**  Also see the [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
 You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) where possible, and the more flexible (but less performant) [{Binding} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) where necessary.
 

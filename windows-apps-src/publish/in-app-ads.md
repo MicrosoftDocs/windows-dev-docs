@@ -1,4 +1,4 @@
-﻿---
+---
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of Partner Center to manage your use of ads.
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
@@ -11,8 +11,8 @@ ms.localizationpriority: medium
 
 Use the **Monetize** &gt; **In-app ads** page in [Partner Center](https://partner.microsoft.com/dashboard) to create and manage ad units for:
 
-* Universal Windows Platform (UWP) apps that use the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp).
-* Previously published Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://aka.ms/store-8-sdk).
+* Universal Windows Platform (UWP) apps that use the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK).
+* Previously published Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x).
 
 > [!IMPORTANT]
 > As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -64,7 +64,7 @@ After you create ad units for one or more apps in your account, these ad units a
 To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA compliance](#coppa) for the app in which the ad unit is used, click the ad unit name.
 
 > [!NOTE]
-> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](https://aka.ms/storesupport).
+> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](https://developer.microsoft.com/windows/support).
 
 <span id="mediation" />
 
@@ -154,4 +154,4 @@ For purposes of the Children's Online Privacy Protection Act (“COPPA”), you 
 The **COPPA compliance** setting you choose is automatically applied to all ad units for the selected app.
 
 > [!IMPORTANT]
-> If your app is directed at children under the age of 13, you have certain obligations under COPPA. For more information on your obligations, please see [this page](https://go.microsoft.com/fwlink/p/?linkid=536558).
+> If your app is directed at children under the age of 13, you have certain obligations under COPPA. For more information on your obligations, please see [this page](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule).

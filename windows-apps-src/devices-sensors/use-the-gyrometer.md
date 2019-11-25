@@ -174,4 +174,4 @@ These new values are written to the TextBlocks found in the project's XAML.
 
  ## Related topics
 
-* [Gyrometer Sample](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [Gyrometer Sample](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)

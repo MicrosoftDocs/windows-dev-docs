@@ -273,7 +273,7 @@ Command bars can be placed in the following screen regions on single-view screen
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
-- [XAML Commanding sample](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML Commanding sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## Related articles
 

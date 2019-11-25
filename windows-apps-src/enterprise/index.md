@@ -140,7 +140,7 @@ Many users today are bringing their own phone or tablet to work, which have vary
 | Topic | Description |
 |-------|-------------|
 | [Guide to UWP apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
-| [Adaptive XAML UI code sample](https://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
+| [Adaptive XAML UI code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
 | [Xamarin topic](/xamarin/) | Xamarin for targeting phone |
 
 ## Deployment

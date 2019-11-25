@@ -174,12 +174,12 @@ private void GetPointerDevices()
 
 
 **Samples**
-* [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
 **Archive samples**
-* [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
  
 
  

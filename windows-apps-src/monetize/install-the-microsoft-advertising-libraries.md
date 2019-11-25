@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Install the Microsoft Advertising SDK
 
-To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
+To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately.
@@ -29,7 +29,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Download and install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). It may take a few minutes to install. Be sure and wait until the process has finished.
+3.  Download and install the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). It may take a few minutes to install. Be sure and wait until the process has finished.
 
 4.  Restart Visual Studio.
 
@@ -95,7 +95,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 
 ## Understanding framework packages in the Microsoft Advertising SDK
 
-The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) and [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) namespaces.
+The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) and [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) namespaces.
 
 Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 

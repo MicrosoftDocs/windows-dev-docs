@@ -31,7 +31,7 @@ Adhering to these policies should help you make choices that enhance your produc
 
 Your products are crucial to the experience of hundreds of millions of customers. We can’t wait to see what you create and are thrilled to help deliver your products to the world.
 
-If you have feedback on the policies, please let us know by commenting in [our forum](http://go.microsoft.com/fwlink/p/?LinkId=224196). We will consider every comment.
+If you have feedback on the policies, please let us know by commenting in [our forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). We will consider every comment.
 
 
 ## Table of Contents
@@ -109,7 +109,7 @@ Your product must not attempt to change or extend its described functionality th
 
 **10.2.3**
 
-Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](http://go.microsoft.com/fwlink/?LinkId=821298).
+Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria).
 
 **10.2.4**
 
@@ -286,11 +286,11 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](http://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](http://go.microsoft.com/fwlink/p/?LinkId=532595).
+If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs) and [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
 
 **10.10.3**
 
-Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](http://go.microsoft.com/fwlink/p/?LinkId=532595).
+Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
 
 If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including the following requirements:
 
@@ -304,7 +304,7 @@ Your privacy statement or terms of use must let users know you will send Persona
 
 **10.10.6**
 
-If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](http://go.microsoft.com/fwlink/p/?LinkID=623015)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
+If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
 
 ### 10.11 Mobile Voice Plans
 
@@ -325,11 +325,11 @@ For products that are primarily gaming experiences or target Xbox One, the follo
 
 **10.13.1**
 
-Game products, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, that target Xbox One must use Xbox Live services through either the  [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
+Game products, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, that target Xbox One must use Xbox Live services through either the  [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](https://www.xbox.com/Developers/id) program.
 
 **10.13.2**
 
-Game products that allow cross-player communication or synchronous network play on Xbox One devices must use Xbox Live and be approved through the [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
+Game products that allow cross-player communication or synchronous network play on Xbox One devices must use Xbox Live and be approved through the [ID@Xbox](https://www.xbox.com/Developers/id) program.
 
 **10.13.3**
 
@@ -351,7 +351,7 @@ Game products that use Xbox Live must:
 
 Game products that use Xbox Live and offer multiplayer gameplay, user generated content or user communication:
 - Must not allow gameplay until the user signs in to Xbox Live.
-- Must respect [parental and service controls](https://go.microsoft.com/fwlink/?linkid=860295).
+- Must respect [parental and service controls](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
 
 **10.13.7**
 
@@ -380,7 +380,7 @@ The following privacy requirements apply to Xbox Live user data:
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
 - Don’t store any Xbox Live social graph data (for example, friends lists), except for account identifiers for users who’ve linked their Xbox Live account with your game.
 - Delete all account identifiers, when you remove your game from our service, or when a user unlinks their Xbox Live account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
-- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://aka.ms/xbox-deleted).
+- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://forums.xboxlive.com/users/login.html).
 
 ### 10.14 Account Type
 

@@ -22,7 +22,7 @@ Devices can be connected proximally through Bluetooth and wireless, or remotely 
 
 See the [Remote Systems UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) for examples of how to discover remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
 
-For more information on Project Rome in general, including resources for cross-platform integration, go to [aka.ms/project-rome](https://aka.ms/project-rome).
+For more information on Project Rome in general, including resources for cross-platform integration, go to [aka.ms/project-rome](https://developer.microsoft.com/windows/project-rome).
 
 | Topic | Description |
 |-------|-------------|

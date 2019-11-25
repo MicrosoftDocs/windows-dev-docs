@@ -20,9 +20,9 @@ The previous topics in this section describe the differences between the platfor
 
 ## Downloads
 
-[Download the Bookstore1WPSL8 Windows Phone Silverlight app](https://go.microsoft.com/fwlink/?linkid=517053).
+[Download the Bookstore1WPSL8 Windows Phone Silverlight app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1WPSL8).
 
-[Download the Bookstore1Universal\_10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532950).
+[Download the Bookstore1Universal\_10 Windows 10 app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 
 ## The Windows Phone Silverlight app
 

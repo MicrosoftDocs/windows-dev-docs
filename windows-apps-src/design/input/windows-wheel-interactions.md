@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # Surface Dial interactions
 
 ![Image of Surface Dial with Surface Studio](images/windows-wheel/dial-pen-studio-600px.png)  
-*Surface Dial with Surface Studio and Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacedial)).
+*Surface Dial with Surface Studio and Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
 
 ## Overview
 
@@ -674,6 +674,6 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 [Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
-[Universal Windows Platform samples (C# and C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+[Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 
-[Windows classic desktop sample](https://aka.ms/radialcontrollerclassicsample)
+[Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)

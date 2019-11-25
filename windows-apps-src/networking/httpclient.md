@@ -34,7 +34,7 @@ The classes in the [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Win
 
 -   HTTP Request progress info available on asynchronous methods.
 
-The [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) class represents an HTTP request message sent by [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient). The [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class represents an HTTP response message received from an HTTP request. HTTP messages are defined in [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) by the IETF.
+The [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) class represents an HTTP request message sent by [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient). The [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class represents an HTTP response message received from an HTTP request. HTTP messages are defined in [RFC 2616](https://tools.ietf.org/html/rfc2616) by the IETF.
 
 The [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) namespace represents HTTP content as the HTTP entity body and headers including cookies. HTTP content can be associated with an HTTP request or an HTTP response. The **Windows.Web.Http** namespace provides a number of different classes to represent HTTP content.
 

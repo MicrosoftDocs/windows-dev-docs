@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 Use [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let users specify the name and location where they want your app to save a file.
 
 > [!NOTE]
-> For a complete sample, see the [File picker sample](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
  
 
