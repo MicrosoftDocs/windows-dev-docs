@@ -131,6 +131,16 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 When a NumberBox is cleared of input, `Value` will be set to `NaN` to indicate no numerical value is present. 
 
+### Expression evaluation 
+
+NumberBox uses infix notation to evaluate expressions. In order of precedence, the allowable operators are:
+
+1. ^
+2. */
+3. +-
+
+Note that parentheses can be used to override precedence rules. 
+
 ## Recommendations
 
 * `Text` and `Value` make it easy to capture the value of a NumberBox as a String or as a Double without needing to convert the value bewteen types. When programmatically altering the value of a NumberBox, it is recommended to do so through the `Value` property. `Value` will overwrite `Text` in initial set up. After the initial set up, changes to one will be progrogated to the other, but consistently making programmatic changes through `Value` helps avoid any conceptual misunderstanding that NumberBox will accept non-numeric characters through `Text`.  
