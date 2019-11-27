@@ -13,7 +13,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 
 ### Create a simple NumberBox
 
-Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app. 
+Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app. 
 
 
 ```XAML
@@ -96,7 +96,7 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 ### Formatting input 
 
-[Number formatting](https://docs.microsoft.com/en-us/uwp/api/windows.globalization.numberformatting) can be used to format the value of a Numberbox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. 
+[Number formatting](/uwp/api/windows.globalization.numberformatting) can be used to format the value of a Numberbox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. 
 
 Here is an example of using DecimalFormatter to format a NumberBox's value to have one integer digit and two fraction digits:  
 
