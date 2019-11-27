@@ -37,7 +37,7 @@ Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x
 Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `Header` is visible whether or not the NumberBox has a value. 
 
 ```xaml
-<NumberBox Header="Enter expression:"
+<NumberBox Header="Enter a number:"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -46,7 +46,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
 `PlaceholderText` is displayed inside the NumberBox and will only appear when `Value` is set to NaN or when the input is cleared by the user.
 
 ```xaml
-<NumberBox PlaceholderText="A + B"
+<NumberBox PlaceholderText="1+2^2"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
