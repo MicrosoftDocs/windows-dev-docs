@@ -30,7 +30,7 @@ Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x
 ```xaml
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
-![An in-focus input field showing 0.](images/numberbox-basic.PNG)
+![An in-focus input field showing 0.](images/numberbox-basic.png)
 
 ### Labeling NumberBox
 
@@ -41,7 +41,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
-![A header reading "Enter expression:" above a NumberBox.](images/numberbox-header.PNG)
+![A header reading "Enter expression:" above a NumberBox.](images/numberbox-header.png)
 
 `PlaceholderText` is displayed inside the NumberBox and disappears once a value has been entered.
 
@@ -50,7 +50,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
-![A NumberBox containing placeholder text reading "A + B".](images/numberbox-placeholder-text.PNG)
+![A NumberBox containing placeholder text reading "A + B".](images/numberbox-placeholder-text.png)
 
 ### Enable calculation support
 
