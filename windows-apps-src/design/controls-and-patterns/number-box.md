@@ -75,7 +75,7 @@ XAML
     SpinButtonPlacementMode="Inline" />
 ```
 
-![A NumberBox with a down-arrow button and up-arrow button beside it.](images/numberbox-spinbutton-inline.PNG)
+![A NumberBox with a down-arrow button and up-arrow button beside it.](images/numberbox-spinbutton-inline.png)
 
 Set `SpinButtonPlacementMode` to `Compact` to enable the buttons to appear as a Flyout only when the NumberBox is in focus.  
 
@@ -86,9 +86,9 @@ XAML
     SpinButtonPlacementMode="Compact" />
 ```
 
-![A NumberBox with a small icon inside of it showing an arrow pointing up and an arrow pointing down.](images/numberbox-spinbutton-compact-non-visible.PNG)
+![A NumberBox with a small icon inside of it showing an arrow pointing up and an arrow pointing down.](images/numberbox-spinbutton-compact-non-visible.png)
 
-![A NumberBox with a down-arrow button and up-arrow button floating off to the side at an elevated layer.](images/numberbox-spinbutton-compact-visible.PNG)
+![A NumberBox with a down-arrow button and up-arrow button floating off to the side at an elevated layer.](images/numberbox-spinbutton-compact-visible.png)
 
 ### Enabling input validation
 
@@ -128,7 +128,7 @@ private void SetNumberBoxNumberFormatter()
 }
 ```
 
-![A NumberBox showign a value of 0.00.](images/numberbox-formatted.PNG)
+![A NumberBox showign a value of 0.00.](images/numberbox-formatted.png)
 
 With regard to decimal points and commas, the formatting used by a user will be replaced by the formatting configured for the NumberBox. An input validation error will not be triggered. 
 
