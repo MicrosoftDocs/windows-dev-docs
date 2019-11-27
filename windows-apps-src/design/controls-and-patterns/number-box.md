@@ -1,3 +1,14 @@
+---
+Description: Numberbox is a control that can be used to display and edit numbers.
+title: Number box
+template: detail.hbs
+ms.date: 11/27/2019
+ms.topic: article
+keywords: windows 10, uwp
+doc-status: Published
+ms.localizationpriority: medium
+---
+
 # Number box
 
 Represents a control that can be used to display and edit numbers. This supports validation, increment stepping, and computing inline calculations of basic equations, such as multiplication, division, addition, and subtraction.
@@ -16,7 +27,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app. 
 
 
-```XAML
+```xaml
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 ![An in-focus input field showing 0.](images/numberbox-basic.PNG)
@@ -25,7 +36,7 @@ Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x
 
 Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `Header` is visible whether or not the NumberBox has a value. 
 
-```XAML
+```xaml
 <NumberBox Header="Enter expression:"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
@@ -34,7 +45,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
 
 `PlaceholderText` is displayed inside the NumberBox and disappears once a value has been entered.
 
-```XAML
+```xaml
 <NumberBox PlaceholderText="A + B"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
@@ -46,7 +57,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
 Setting the `AcceptsExpression` property to true enables NumberBox to evaluate basic inline expressions such as multiplication, division, addition, and subtraction using standard order of operations. Evaluation is triggered on loss of focus or when the user presses the "Enter" key. Once an expression is evaluated, the original form of the expression is not preserved.
 
 XAML
-```XAML
+```xaml
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     AcceptsExpression="True" />
 ```
