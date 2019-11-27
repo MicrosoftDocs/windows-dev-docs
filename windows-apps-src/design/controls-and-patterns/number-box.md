@@ -107,9 +107,9 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 ### Formatting input 
 
-[Number formatting](/uwp/api/windows.globalization.numberformatting) can be used to format the value of a Numberbox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. 
+[Number formatting](/uwp/api/windows.globalization.numberformatting) can be used to format the value of a Numberbox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. Note that rounding is also defined by number formatting properties.
 
-Here is an example of using DecimalFormatter to format a NumberBox's value to have one integer digit and two fraction digits:  
+Here is an example of using DecimalFormatter to format a NumberBox's value to have one integer digit, two fraction digits, and round up to the nearest 0.25:  
 
 XAML
 ```XAML
@@ -121,9 +121,14 @@ C#
 ```C#
 private void SetNumberBoxNumberFormatter()
 {
+    IncrementNumberRounder rounder = new IncrementNumberRounder();
+    rounder.Increment = 0.25;
+    rounder.RoundingAlgorithm = RoundingAlgorithm.RoundUp;
+
     DecimalFormatter formatter = new DecimalFormatter();
     formatter.IntegerDigits = 1;
     formatter.FractionDigits = 2;
+    formatter.NumberRounder = rounder;
     FormattedNumberBox.NumberFormatter = formatter;
 }
 ```
