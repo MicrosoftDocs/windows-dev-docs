@@ -43,7 +43,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
 
 ![A header reading "Enter expression:" above a NumberBox.](images/numberbox-header.png)
 
-`PlaceholderText` is displayed inside the NumberBox and disappears once a value has been entered.
+`PlaceholderText` is displayed inside the NumberBox and will only appear when `Value` is set to NaN or when the input is cleared by the user.
 
 ```xaml
 <NumberBox PlaceholderText="A + B"
