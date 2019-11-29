@@ -794,7 +794,7 @@ struct PersonStruct
 }
 ```
 
-Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
+Then return *PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
 This gets all the data across in one cross-process "hop"
 
 As with all performance considerations, measurement and testing is
@@ -824,7 +824,7 @@ instance is a normal step during development. This requires that the
 developer keep track of which dllhost instance is hosting the server.
 
 The server process can be found and killed using Task Manager or other
-third party apps. The command line tool **TaskList.exe **is also
+third party apps. The command line tool **TaskList.exe** is also
 included and has flexible syntax, for example:
 
   
