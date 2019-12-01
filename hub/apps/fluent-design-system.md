@@ -60,7 +60,7 @@ In addition to design guidance, our Fluent Design articles also show you how to 
 
 ## Find a natural fit
 
-How do you make an app feel natural on a variety of devices? By making it feel as though it were designed with each specific device in mind. A UI layout that adapts to different screen sizes&mdash;so there's no wasted space (but no crowding either)&mdash;makes an experience feel natural, as though it were designed for that device.
+How do you make an app feel natural on a variety of devices? By making it feel as though it were designed with each specific device in mind. A UI layout that adapts to different screen sizes so there's no wasted space (but no crowding either) makes an experience feel natural, as though it were designed for that device.
 
 :::row:::
     :::column:::
@@ -107,7 +107,7 @@ UWP apps can run on a wide variety of Windows-powered devices. It's helpful to u
 	:::column span="2":::
 **Optimize for the right input**
 
-UWP apps automatically support common mouse, keyboard, pen, and touch interactions&mdash;there's nothing extra you have to do. But you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
+UWP apps automatically support common mouse, keyboard, pen, and touch interactions. There's nothing extra you have to do. But, if you'd like to, you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
 
 [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
