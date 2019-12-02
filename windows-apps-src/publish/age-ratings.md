@@ -29,9 +29,6 @@ The next time you update your app, you’ll see all of the app’s assigned rati
 <span id="boards" />
 
 > [!NOTE]
-> South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](https://www.grb.or.kr/Default.aspx). If you are submitting a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
-
-> [!NOTE]
 > If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://www.gamerating.org.tw/company_login.php). 
 
 <span id="appeal" />
