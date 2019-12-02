@@ -79,7 +79,8 @@ Set `SpinButtonPlacementMode` to `Inline` to enable the buttons to appear beside
 XAML
 ```XAML
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
-    StepFrequency="2"
+    SmallChange="10"
+    LargeChange="100"
     SpinButtonPlacementMode="Inline" />
 ```
 
@@ -90,7 +91,8 @@ Set `SpinButtonPlacementMode` to `Compact` to enable the buttons to appear as a 
 XAML
 ```XAML
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
-    StepFrequency="2"
+    SmallChange="10"
+    LargeChange="100"
     SpinButtonPlacementMode="Compact" />
 ```
 
