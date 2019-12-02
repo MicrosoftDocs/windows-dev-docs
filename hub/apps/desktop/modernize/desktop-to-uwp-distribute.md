@@ -1,5 +1,5 @@
 ---
-Description: Distribute a packaged desktop application (Desktop Bridge)
+Description: Distribute an app packaged with Desktop Bridge
 title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 ms.date: 05/18/2018
 ms.topic: article
