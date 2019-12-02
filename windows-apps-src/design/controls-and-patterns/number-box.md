@@ -62,11 +62,19 @@ XAML
     AcceptsExpression="True" />
 ```
 
-### Add increment and decrement stepping
+### Increment and decrement stepping
 
-Use the `SpinButtonPlacementMode` property to enable buttons in the NumberBox control that can be clicked to increment or decrement the value in the NumberBox. These buttons will be disabled if a Maximum or Minimum value would be surpassed with another step. The amount of increment/decrement is specified with the `StepFrequency` property, which defaults to 1.
+Use the `SmallChange` property to configure how much the value inside a NumberBox is changed when the NumberBox is in focus and the user:
 
-This defaults to `Hidden`, but NumberBox offers two visible placement modes: `Inline` and `Compact`. Set `SpinButtonPlacementMode` to `Inline` to enable the buttons to appear beside the control. 
+- scrolls
+- presses the up arrow key
+- presses the down arrow key
+
+Use the `LargeChange` property to configure how much the value inside a NumberBox is changed when the NumberBox is in focus and the user press the PageUp or PageDown key. 
+
+Use the `SpinButtonPlacementMode` property to enable buttons that can be clicked to increment or decrement the value in the NumberBox by the amount specified by the `SmallChange` property. These buttons will be disabled if a Maximum or Minimum value would be surpassed with another step. 
+
+Set `SpinButtonPlacementMode` to `Inline` to enable the buttons to appear beside the control. 
 
 XAML
 ```XAML
