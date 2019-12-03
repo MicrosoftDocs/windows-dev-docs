@@ -40,15 +40,17 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 1. To install VS Code, download VS Code for Windows: [https://code.visualstudio.com](https://code.visualstudio.com).
 
-2. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend sticking with Python 3.7 unless you have a specific reason for choosing something different. Select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+2. Once VS Code has been installed, you must also install the Python extension. To install the Python extension, you can select the [VS Code Marketplace link](https://marketplace.visualstudio.com/items?itemName=ms-python.python) or open VS Code and search for **Python** in the extensions menu (Ctrl+Shift+X).
+
+3. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend sticking with Python 3.7 unless you have a specific reason for choosing something different. Once you've installed the Python extension, select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
     ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 
-3. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
+4. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
 
-4. Inside your VS Code terminal, open Python by simply entering the command: `python`
+5. Inside your VS Code terminal, open Python by simply entering the command: `python`
 
-5. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
+6. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
 
     ![Python command line in VS Code](../images/python-in-vscode.png)
 
