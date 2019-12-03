@@ -46,7 +46,7 @@ For filtering to work, the ListView must have a data source that can be manipula
                 </StackPanel>
             </DataTemplate>
         </ListView.ItemTemplate>
-        
+
     </ListView>
 
     <TextBox x:Name="FilterByLName" Grid.Column="1" Width="150" Header="Last Name" 
@@ -119,7 +119,13 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
 
 Now, as the user types in their filtering terms in the `FilterByLName` TextBox, the ListView will immediately update to only show the people whose last name contains the filtering term.
 
-## Get the sample code
+## Next steps
 
+### Get the sample code
 - If you have the XAML Controls Gallery</strong> app installed, click [here](xamlcontrolsgallery:/item/ListView) to open the app and see a more robust, in-depth example of list filtering on the ListView page.
 - Get the [XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
+
+### Related articles
+- [Lists](lists.md)
+- [List view and grid view](listview-and-gridview.md)
+- [Collection commanding](collection-commanding.md)
