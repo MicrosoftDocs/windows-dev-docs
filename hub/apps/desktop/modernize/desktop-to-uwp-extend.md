@@ -1,6 +1,6 @@
 ---
 Description: Extend your desktop application with Windows UIs and components
-title: Extend your desktop application with Windows UIs and components
+title: Extend your app with Windows UI and components
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
