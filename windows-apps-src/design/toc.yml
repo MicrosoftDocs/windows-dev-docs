@@ -260,6 +260,8 @@
       href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
+    - name: Corner radius
+      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
     - name: Spacing
