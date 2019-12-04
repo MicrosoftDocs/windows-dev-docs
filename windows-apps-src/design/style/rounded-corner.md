@@ -1,12 +1,12 @@
 ---
-title: Corner Radius
+title: Corner radius
 description: Learn about rounded corners principles, design approaches, and customization options.
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, corner radius, rounded
 ---
 
-# Corner Radius
+# Corner radius
 
 Starting with version 2.2 of the [Windows UI Library](/uwp/toolkits/winui/) (WinUI), the default style for many controls has been updated to use rounded corners. These new styles are intended to evoke warmth and trust, and make the UI easier for users to visually process.
 
@@ -23,7 +23,7 @@ When you install the NuGet package for WinUI 2.2 or later, new default styles ar
 
 ## Default control designs
 
-There are 3 areas of the controls where the rounded corner styles are used: rectangular elements, flyout elements, and bar elements.
+There are three areas of the controls where the rounded corner styles are used: rectangular elements, flyout elements, and bar elements.
 
 ### Corners of rectangle UI elements
 
