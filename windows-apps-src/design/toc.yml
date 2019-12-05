@@ -232,6 +232,8 @@
           href: controls-and-patterns/rich-edit-box.md
         - name: Password box
           href: controls-and-patterns/password-box.md
+        - name: Number box
+          href: controls-and-patterns/number-box.md
         - name: Labels
           href: controls-and-patterns/labels.md
         - name: Content links
