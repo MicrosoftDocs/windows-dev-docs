@@ -248,8 +248,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## Parameterized delegates, simple signals, and callbacks within a project
-
-If your event is used only internally within your C++/WinRT project (not across binaries), then you still use the [**winrt::event**](/uwp/cpp-ref-for-winrt/event) struct template, but you parameterize it with C++/WinRT's non-Windows-Runtime [**winrt::delegate&lt;... T&gt;**](/uwp/cpp-ref-for-winrt/delegate) struct template, which is an efficient, reference-counted delegate. It supports any number of parameters, and they are not limited to Windows Runtime types.
+If you need events that are internal to your Visual Studio project (not across binaries), where those events are not limited to Windows Runtime types, then you can still use the [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> class template. Simply use [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) instead of an actual Windows Runtime delegate type, since **winrt::delegate** also supports non Windows Runtime parameters.
 
 The example below first shows a delegate signature that doesn't take any parameters (essentially a simple signal), and then one that takes a string.
 
