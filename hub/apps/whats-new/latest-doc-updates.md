@@ -2,7 +2,7 @@
 Description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 10/13/2019
+ms.date: 12/05/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -11,19 +11,94 @@ author: QuinnRadich
 # Latest updates to the Windows developer docs
 
 
-The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen significant updates within the last month, ending October 31, 2019:
+The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen significant updates within the last month, ending November 30, 2019:
 
 
 ## WinRT conceptual
 
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">URI schemes</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/camera">Camera</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">Use inertia modifiers to create snap points</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">Spring animations</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">Concurrency and asynchronous operations with C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/visual-layer">Visual Layer</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/index">Contacts and calendar</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Frequently-asked questions about C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">Get started with C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">What's new in C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">Use a SQLite database in a UWP app</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">App analysis</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Windows Device Portal overview</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">Running Profile Guided Optimization (PGO) on Universal Windows Platform (UWP) apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/devices/index">UI considerations for UWP devices</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/downloads/index">Design toolkits and samples for UWP apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat">Use the Multilingual App Toolkit</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/custom-text-input">Custom text input overview</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/focus-navigation">Focus navigation without a mouse</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-toolbar">Add an InkToolbar to a Universal Windows Platform (UWP) app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-walkthrough">Support ink in your UWP app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/input-primer">Interaction primer</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">Keyboard events</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink">Store and retrieve Windows Ink stroke data</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/application-view">Use the ApplicationView class to show secondary windows for an app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/grid-tutorial">Use Grid and StackPanel to create a simple app.</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/motion/parallax">Use parallax to add depth and movement to your app.</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/color">Color in UWP apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/reveal-focus">Reveal Focus</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/rounded-corner">Corner radius</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">Sound</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/ble-beacon">Bluetooth Advertisements</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices">Pair devices</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">Enterprise</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-dev-guide">Windows Information Protection (WIP) developer guide</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-hub">Windows Information Protection (WIP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/files/index">Files, folders, and libraries</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/concept-approval">Concept approval</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/directx-porting-faq">DirectX 11 porting FAQ</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Windows 10 game development guide</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/feature-mapping">Map DirectX 9 features to DirectX 11 APIs</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">Monetization for games</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/plan-your-directx-port">Plan your DirectX port</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/get-set-up">Get set up</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/plan-your-app">Building a complex Universal Windows Platform (UWP) app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/sign-up">Create a developer account</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">Create your first app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP App lifecycle</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app">Launch the Windows Maps app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/suspend-an-app">Handle app suspend</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps">Display maps with 2D, 3D, and Streetside views</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">Display points of interest (POI) on a map</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">Perform geocoding and reverse geocoding</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/get-location">Get the user's location</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/index">Maps and location overview</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/ad-mediation-service">Microsoft ad mediation service</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/banner-ads">Banner ads</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/index">Monetization, engagement, and Store services</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads">Interstitial ads</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/native-ads">Native ads</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/networking-basics">Networking basics</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/sockets">Sockets</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/websockets">WebSockets</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP'</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/ad-campaign-report">Ad campaign report</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-submissions">Add-on submissions</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/age-ratings">Age ratings</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyze app performance</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/feedback-report">Feedback report</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps">Getting paid</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/in-app-ads">In-app ads</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/link-to-your-app">Link to your app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/payout-summary">Payout summary</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store Policies</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/vat-info">VAT info</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/microsoft-passport">Windows Hello</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/web-account-manager">Web Account Manager</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation">Xbox One Developer Mode activation</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">UWP on Xbox One</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/known-issues">Known issues with UWP on Xbox Developer Program</a></li>
 </ul>
 
 
@@ -31,54 +106,13 @@ The Windows developer docs are regularly updated with new and improved informati
 ## WinRT API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nc-winuser-dlgproc">DLGPROC (winuser.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setfocus">SetFocus function (winuser.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspsend">LPWSPSEND </a></li>
 </ul>
 
-## Win32 Conceptual
-
-<ul>
-<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/enumerations">Direct2D enumerations</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ETW/starttrace">StartTrace function</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file">Naming Files, Paths, and Namespaces</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Intl/international-support">Internationalization for Windows Applications</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/basewindow-sample">BaseWindow Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-circle-sample">Direct2D Circle Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-clock-sample">Direct2D Clock Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/draw-circle-sample">Draw Circle Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/drawing-with-direct2d">Drawing with Direct2D</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/open-dialog-box-sample">Open Dialog Box Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/simple-drawing-sample">Simple Drawing Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/what-is-a-com-interface-">What Is a COM Interface</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Midl/response-files">Response Files</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/power-setting-guids">Power Setting GUIDs</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/system-power-states">System Power States</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST message</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access">Interlocked Variable Access</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-app-technologies">Desktop app technologies</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-programming">Get started</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-glossary">Direct3D 12 glossary</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/multi-engine">Multi-adapter systems</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/new-releases">New Releases</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/shared-heaps">Shared Heaps</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-4-improvements">DXGI 1.4 Improvements</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-6-improvements">DXGI 1.6 Improvements</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis">Direct3D 11 Video APIs</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-apis">Direct3D 12 Video APIs</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-guids">Direct3D 12 Video GUIDs</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-overview">Direct3D 12 Video Overview</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float2-structure">float2 structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3-structure">float3 Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3x2-structure">float3x2 Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4-structure">float4 Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4x4-structure">float4x4 Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/plane-structure">plane Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/quaternion-structure">quaternion Structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wer/collecting-user-mode-dumps">Collecting User-Mode Dumps</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/windows-application-ui-development">Desktop App User Interface</a></li>
-</ul>
-
-## Win32 API reference
+## Win32
 
 <ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows.Devices.Lights.LampArrayKind</a></li>
