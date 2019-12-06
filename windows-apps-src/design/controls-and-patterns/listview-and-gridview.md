@@ -3,7 +3,7 @@ Description: Use ListView and GridView controls to display and manipulate sets o
 title: List view and grid view
 label: List view and grid view
 template: detail.hbs
-ms.date: 05/20/2017
+ms.date: 11/04/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b

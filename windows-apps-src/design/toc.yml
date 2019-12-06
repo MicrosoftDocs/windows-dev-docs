@@ -130,6 +130,8 @@
               href: controls-and-patterns/swipe.md
             - name: Pull-to-refresh
               href: controls-and-patterns/pull-to-refresh.md
+            - name: Filtering collections
+              href: controls-and-patterns/listview-filtering.md
         - name: Additional collection options and customizations
           items:
             - name: Inverted lists
@@ -230,6 +232,8 @@
           href: controls-and-patterns/rich-edit-box.md
         - name: Password box
           href: controls-and-patterns/password-box.md
+        - name: Number box
+          href: controls-and-patterns/number-box.md
         - name: Labels
           href: controls-and-patterns/labels.md
         - name: Content links
@@ -258,6 +262,8 @@
       href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
+    - name: Corner radius
+      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
     - name: Spacing

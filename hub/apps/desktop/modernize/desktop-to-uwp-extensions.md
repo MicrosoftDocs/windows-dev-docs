@@ -1,6 +1,6 @@
 ---
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
-title: Integrate your packaged desktop application with Windows 10 and UWP (Desktop Bridge)
+title: Modernize existing desktop apps using Desktop Bridge
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp

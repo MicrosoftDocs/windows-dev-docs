@@ -42,6 +42,9 @@ There are several Linux distributions available to run on WSL. You can find and 
 
 You can check the Linux distribution that you are currently using by entering: `lsb_release -d`. To update your Ubuntu distribution, use: `sudo apt update && sudo apt upgrade`. We recommend updating regularly to ensure you have the most recent packages. Windows doesn't automatically handle this update. For links to other Linux distributions available in the Microsoft Store, alternative installation methods, or troubleshooting, see [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
+> [!TIP]
+> Consider trying the new [Windows terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) if you plan to use multiple command lines (Ubuntu, PowerShell, Windows Command Prompt, etc) or if you want to [customize your terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md), including text, background colors, key bindings, etc.
+
 ## Set up Visual Studio Code
 
 Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), [Linting](https://code.visualstudio.com/docs/python/linting), [Debug support](https://code.visualstudio.com/docs/python/debugging), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) by using VS Code. VS Code integrates nicely with the Windows Subsystem for Linux, providing a [built-in terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) to establish a seamless workflow between your code editor and your command line, in addition to supporting [Git for version control](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) with common Git commands (add, commit, push, pull) built right into the UI.

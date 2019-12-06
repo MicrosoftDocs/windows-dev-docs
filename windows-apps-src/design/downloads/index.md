@@ -9,10 +9,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-![Design basics](../images/downloads-2x.png)
+
 
 # Design toolkits and samples for UWP apps
- 
+
+![Design basics](../images/downloads-2x.png)
+
 Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
 
 

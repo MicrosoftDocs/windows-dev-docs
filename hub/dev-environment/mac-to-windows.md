@@ -21,20 +21,20 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 | **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Copy | Command+C | Ctr+C |
-| Cut | Command+X | Ctr+X |
-| Paste | Command+V | Ctr+V |
+| Copy | Command+C | Ctrl+C |
+| Cut | Command+X | Ctrl+X |
+| Paste | Command+V | Ctrl+V |
 | Undo | Command+Z | Ctrl+Z |
 | Save | Command+S | Ctrl+S |
 | Open | Command+O | Ctrl+O |
-| Lock computer | Command+Control+Q | WindowKey+L |
-| Show desktop | Command+F3 | WindowKey+D |
-| Minimize windows | COMMAND +M | Windows key+M |
-| Search | Command+Space | Windows key |
+| Lock computer | Command+Control+Q | WindowsKey+L |
+| Show desktop | Command+F3 | WindowsKey+D |
+| Minimize windows | Command+M | WindowsKey+M |
+| Search | Command+Space | WindowsKey |
 | Close active window | Command+W | Control+W |
 | Switch current task | Command+Tab | Alt+Tab |
-| Save screen (Screenshot) | Command+Shift+3 | Windows+Shift+S |
-| Save window | Command+Shift+4 | Windows+Shift+S |
+| Save screen (Screenshot) | Command+Shift+3 | WindowsKey+Shift+S |
+| Save window | Command+Shift+4 | WindowsKey+Shift+S |
 | View item information or properties | Command+I | Alt+Enter |
  | Select all items | Command+A | Ctrl+A |
 | Select more than one item in a list (noncontiguous) | Command, then click each item | Control, then click each item |
@@ -65,7 +65,7 @@ Windows provides several alternatives to the Mac's terminal emulator.
 
 1. The Windows Command Line
 
-The Windows command line will accept DOS commands, and is the most commonly used command line tool on Windows. To open it: Press **Windows+R** to open the **Run** box, then type **cmd** and then click **OK**. To open an administrator command line, type **cmd** and then press **Ctrl+Shift+Enter**. 
+The Windows command line will accept DOS commands, and is the most commonly used command line tool on Windows. To open it: Press **WindowsKey+R** to open the **Run** box, then type **cmd** and then click **OK**. To open an administrator command line, type **cmd** and then press **Ctrl+Shift+Enter**.
 
 2. PowerShell
 
@@ -75,7 +75,7 @@ Incidentally, PowerShell is [also available for Mac](https://docs.microsoft.com/
 
 3. Windows Subsystem for Linux (WSL)
 
-WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about instaling and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about instaling and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## Apps and utilities
 

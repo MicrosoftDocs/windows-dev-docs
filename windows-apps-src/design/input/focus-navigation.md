@@ -1,5 +1,5 @@
 ---
-title: Focus navigation for keyboard, gamepad, remote control, and accessibility tools
+title: Focus navigation without a mouse
 Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: 
 template: detail.hbs

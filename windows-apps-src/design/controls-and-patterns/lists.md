@@ -1,6 +1,6 @@
 ---
 Description: Lists display and enable interaction with collection-based content.
-title: Collections and Lists
+title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
@@ -13,9 +13,9 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Collections and Lists
+# Collections and lists
 
-Collections and Lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
+Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
 
 > **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
@@ -79,7 +79,7 @@ This is a ListView that has been inverted to display a log of messages, with the
 
 ![Inverted List view](images/listview-inverted-2.png)
 
-### Related Articles
+### Related articles
 <table>
 <colgroup>
 <col width="50%" />
@@ -324,7 +324,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 - [Drag and drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Thumbnail images](../../files/thumbnails.md)
 
-**API Reference**
+**API reference**
 - [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [ComboBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
