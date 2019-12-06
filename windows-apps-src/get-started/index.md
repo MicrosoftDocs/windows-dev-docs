@@ -203,6 +203,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>Developer tools</h3>
+                        <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
