@@ -4850,6 +4850,36 @@
       "source_path": "hub/mac-to-windows.md",
       "redirect_url": "/windows/dev-environment/mac-to-windows",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-one-game-acquisitions.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-one-add-on-acquisitions.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-error-reporting-data-for-your-xbox-one-game.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-details-for-an-error-in-your-xbox-one-game.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
     }
   ]
 }
