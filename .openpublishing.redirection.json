@@ -4852,6 +4852,12 @@
       "redirect_document_id": true
     },
     {
+
+      "source_path": "windows-apps-src/design/layout/content-as-objects.md",
+      "redirect_url": "/windows/uwp/design",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/monetize/get-xbox-one-game-acquisitions.md",
       "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
