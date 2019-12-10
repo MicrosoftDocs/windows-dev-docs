@@ -463,24 +463,23 @@ C++/CX represents a Windows Runtime string as a reference type; while C++/WinRT 
 
 Furthermore, C++/CX allows you to dereference a null **String^**, in which case it behaves like the string `""`.
 
-| Operation | C++/CX | C++/WinRT|
+| Behavior | C++/CX | C++/WinRT|
 |-|-|-|
+| Declarations | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | String type category | Reference type | Value type |
 | null **HSTRING** projects as | `(String^)nullptr` | `hstring{}` |
 | Are null and `""` identical? | Yes | Yes |
-| Validity of null | `s = nullptr;`<br>`s->Length == 0` (valid) | `s = nullptr;`<br>`s.size() == 0` (valid) |
-| Box a string | `o = s;` | `o = box_value(s);` |
-| If `s` is `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| If `s` is `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Box a string preserving null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Force-box a string | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| Unbox a known string | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| If `o` is null | `s == nullptr; // equivalent to ""` | Crash |
-| If `o` is not a boxed string | `Platform::InvalidCastException` | Crash |
-| Unbox string, use fallback if null; crash if anything else | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Unbox string if possible; use fallback for anything else | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Validity of null | `s = nullptr;`<br>`s->Length == 0` (valid) | `s = hstring{};`<br>`s.size() == 0` (valid) |
+| If you assign null string to object | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| If you assign `""` to object | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-In the two *unbox with fallback* cases above, it's possible that a null string was force-boxed, in which case the fallback won't be used. The resulting value will be an empty string because that is what was in the box.
+Basic boxing and unboxing.
+
+| Operation | C++/CX | C++/WinRT|
+|-|-|-|
+| Box a string | `o = s;`<br>Empty string becomes nullptr. | `o = box_value(s);`<br>Empty string becomes non-null object. |
+| Unbox a known string | `s = (String^)o;`<br>Null object becomes empty string.<br>InvalidCastException if not a string. | `s = unbox_value<hstring>(o);`<br>Null object crashes.<br>Crash if not a string. |
+| Unbox a possible string | `s = dynamic_cast<String^>(o);`<br>Null object or non-string becomes empty string. | `s = unbox_value_or<hstring>(o, fallback);`<br>Null or non-string becomes fallback.<br>Empty string preserved. |
 
 ## Concurrency and asynchronous operations
 
