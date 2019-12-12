@@ -14,9 +14,6 @@ ms.date: 09/19/2019
 
 The following is a step-by-step guide to get you started using Node.js in a native Windows development environment.
 
-> [!NOTE]
-> While using Node.js on Windows is certainly a viable option, we generally recommend using Windows Subsystem for Linux (WSL) for developing Node.js web apps. Many Node.js packages and frameworks are created with a *nix environment in mind and most Node.js apps are deployed on Linux, so developing on WSL ensures consistency between your development and production environments. To set up a WSL dev environment, see [Set up your Node.js development environment with WSL 2](./setup-on-wsl2.md).
-
 ## Install nvm-windows, node.js, and npm
 
 There are multiple ways to install Node.js. We recommend using a version manager as versions change very quickly. You will likely need to switch between multiple versions based on the needs of different projects you're working on. Node Version Manager, more commonly called nvm, is the most popular way to install multiple versions of Node.js, but is only available for Mac/Linux and not supported on Windows. Instead, we will walk through the steps to install nvm-windows and then use it to install Node.js and Node Package Manager (npm). There are [alternative version managers](#alternative-version-managers) to consider as well covered in the next section.
@@ -90,3 +87,9 @@ If you plan to collaborate with others, or host your project on an open-source s
 3. If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started.
 
 4. We recommend adding a [.gitignore file](https://help.github.com/en/articles/ignoring-files) to your Node projects. Here is [GitHub's default gitignore template for Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
+
+## NodeJS on Windows Subsystem for Linux
+
+Using Node.js directly on Windows is great for learning and experimenting with what you can do. Once you are ready to build production-ready web apps, which are typically deployed to a Linux-based server, we recommend
+
+, we generally recommend using Windows Subsystem for Linux (WSL) for developing Node.js web apps. Many Node.js packages and frameworks are created with a *nix environment in mind and most Node.js apps are deployed on Linux, so developing on WSL ensures consistency between your development and production environments. To set up a WSL dev environment, see [Set up your Node.js development environment with WSL 2](./setup-on-wsl2.md).
