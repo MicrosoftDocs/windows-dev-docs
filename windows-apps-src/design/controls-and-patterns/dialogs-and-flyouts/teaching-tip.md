@@ -68,11 +68,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Save automatically"
             Subtitle="When you save your file to OneDrive, we save your changes as you go - so you never have to.">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -103,10 +103,10 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to.">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 Note that in this example the TeachingTip is in the element tree rather than in a ResourceDictionary or in code behind. This has no effect on behavior; the TeachingTip only displays when opened, and takes up no layout space.
@@ -125,12 +125,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             PreferredPlacement="BottomLeft">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -144,11 +144,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![A sample app with a teaching tip in the bottom left corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-non-targeted-preferred-placement.png)
@@ -169,12 +169,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft"
     PlacementMargin="80">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![A sample app with a teaching tip positioned toward, but not fully against, the bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-placement-margin.png)
@@ -188,7 +188,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
@@ -196,7 +196,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -215,7 +215,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
@@ -226,7 +226,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -241,14 +241,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
-            <controls:TeachingTip.HeroContent>
+            <muxc:TeachingTip.HeroContent>
                 <Image Source="Assets/cloud.png" />
-            </controls:TeachingTip.HeroContent>
-        </controls:TeachingTip>
+            </muxc:TeachingTip.HeroContent>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -263,14 +263,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
-            <controls:TeachingTip.IconSource>
-                <controls:SymbolIconSource Symbol="Save" />
-            </controls:TeachingTip.IconSource>
-        </controls:TeachingTip>
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Save" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -287,11 +287,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     IsLightDismissEnabled="True">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![A sample app with a light-dismiss teaching tip in the bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to."](../images/teaching-tip-light-dismiss.png)
@@ -306,13 +306,13 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomRight"
     PlacementMargin="-80,-50,0,0"
     ShouldConstrainToRootBounds="False">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![A sample app with a teaching tip outside of the app's bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-escape-xaml-root.png)
@@ -325,11 +325,11 @@ The Closing event can be used to cancel and/or defer the close of a teaching tip
 
 XAML
 ```XAML
-<controls:TeachingTip x:Name="EnableNewSettingsTip"
+<muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
     Closing="OnTipClosing">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 C#
