@@ -14,18 +14,14 @@ ms.date: 09/19/2019
 
 If you're brand new to using Node.js, this guide will help you to get started with some basics.
 
-## Prerequisites
+## Install NodeJS
 
-This guide assumes that you've already completed the steps to [set up your Node.js development environment with WSL 2](./setup-on-wsl2.md), including:
+The most straightforward way to get started using Node.js is to [set up your Node.js development environment directly on Windows](./setup-on-windows.md). This will allow you to start performing basic Node.js operations with a minimal amount of set up.
 
-- Install Windows 10 Insider Preview build 18932 or later.
-- Enable the WSL 2 feature on Windows.
-- Install a Linux distribution (Ubuntu 18.04 for our examples). You can check this with: `wsl lsb_release -a`
-- Ensure your Ubuntu 18.04 distribution is running in WSL 2 mode. (WSL can run distributions in both v1 or v2 mode.) You can check this by opening PowerShell and entering: `wsl -l -v`
-- Set Ubuntu 18.04 as your default distribution, using PowerShell, with: `wsl -s ubuntu 18.04`
+Once you are ready to use Node.js to develop applications for production, which typically involves deploying to a Linux server, we recommend that you [set up your Node.js development environment with WSL2](./setup-on-wsl2.md). Though it's possible to deploy web apps on Windows servers, it is much more common to [use Linux servers to host your Node.js apps](https://azure.microsoft.com/en-us/develop/nodejs/).
 
 > [!NOTE]
-> While there are some additional setup steps for using the Windows Subsystem for Linux, using WSL 2, along with VS Code and the Remote WSL Extension, will provide the smoothest Node.js development workflow, as well as aligning with the majority of tools, how-to articles, tutorials, and [deployment environments](https://docs.microsoft.com/en-us/azure/javascript/tutorial-vscode-azure-app-service-node-01) out there. However, if you're committed to using Node.js on Windows, check out our guide to [set up your Node.js development environment directly on Windows](./setup-on-windows.md). If you are in the (somewhat rare) situation of needing to host a Node.js app on a Windows server, the most common scenario seems to be [using a reverse proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). There are two ways to do this: 1) [using iisnode](https://harveywilliams.net/blog/installing-iisnode) or [directly](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). We do not maintain these resources and recommend [using Linux servers to host your Node.js apps](https://azure.microsoft.com/en-us/develop/nodejs/).
+> If you are in the (somewhat rare) situation of needing to host a Node.js app on a Windows server, the most common scenario seems to be [using a reverse proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). There are two ways to do this: 1) [using iisnode](https://harveywilliams.net/blog/installing-iisnode) or [directly](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). We do not maintain these resources and recommend [using Linux servers to host your Node.js apps](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
 
 ## Types of Node.js applications
 
@@ -41,28 +37,28 @@ Node.js is a JavaScript runtime primarily used for creating web applications. Pu
 
 ## Try using Node.js in VS Code
 
-1. Open your Ubuntu terminal and create a new directory: `mkdir HelloNode`, then enter the directory: `cd HelloNode`
+1. Open your command line (Command prompt, PowerShell, or whatever you prefer) and create a new directory: `mkdir HelloNode`, then enter the directory: `cd HelloNode`
 
-2. Create an empty JavaScript file named "app.js": `touch app.js`
+2. Create a JavaScript file named "app.js" with a variable named "msg" inside: `echo var msg > app.js`
 
-3. Open the directory and empty file in VS Code: : `code .`
+3. Open the directory and your app.js file in VS Code: : `code .`
 
-4. Create a simple string variable in app.js and send the contents of the string to the console by entering this in your 'app.js' file:
+4. Add a simple string variable ("Hello World"), then send the contents of the string to your console by entering this in your "app.js" file:
 
     ```js
     var msg = 'Hello World';
     console.log(msg);
     ```
 
-5. To run your "app.js" file with Node.js. Open your Ubuntu terminal right inside VS Code by selecting **View** > **Terminal** (or select Ctrl+`, using the backtick character). If you need to change the default terminal, select the dropdown menu and choose **Select Default Shell**. Then select **WSL** as the default terminal shell to use with VS Code.
+5. To run your "app.js" file with Node.js. Open your terminal right inside VS Code by selecting **View** > **Terminal** (or select Ctrl+`, using the backtick character). If you need to change the default terminal, select the dropdown menu and choose **Select Default Shell**.
 
 6. In the terminal, enter: `node app.js`. You should see the output: "Hello World".
 
 > [!NOTE]
-> Notice that because you've already installed the Remote WSL Extension, your directory will open in a remote environment running on the Ubuntu Linux system as indicated by the green tab on the bottom-left of your VS Code window. In addition, notice that when you type `console` in your 'app.js' file, VS Code displays supported options related to the [`console`](https://developer.mozilla.org/docs/Web/API/Console) object for you to choose from using IntelliSense. Try experimenting with Intellisense using other [JavaScript objects](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects).
+> Notice that when you type `console` in your 'app.js' file, VS Code displays supported options related to the [`console`](https://developer.mozilla.org/docs/Web/API/Console) object for you to choose from using IntelliSense. Try experimenting with Intellisense using other [JavaScript objects](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects).
 
 > [!TIP]
-> Consider trying the new [Windows terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) if you plan to use multiple command lines (Ubuntu, PowerShell, Windows Command Prompt, etc) or if you want to [customize your terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md), including text, background colors, key bindings, etc.
+> Try the new [Windows terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) if you plan to use multiple command lines (Ubuntu, PowerShell, Windows Command Prompt, etc) or if you want to [customize your terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md), including text, background colors, key bindings, multiple window panes, etc.
 
 ## Set up a basic web app framework by using Express
 
@@ -70,9 +66,9 @@ Express is a minimal, flexible, and streamlined Node.js framework that makes it 
 
 To create a project with Express.js:
 
-1. Open your WSL terminal (Ubuntu 18.04).
-2. Create a new project folder: `mkdir ExpressProjects` and enter that directory: `cd ExpressProjects`.
-3. Use Express to create a HelloWorld project template: `npx express-generator HelloWorld --view=pug`.
+1. Open your command line (Command Prompt, Powershell, or whatever you prefer).
+2. Create a new project folder: `mkdir ExpressProjects` and enter that directory: `cd ExpressProjects`
+3. Use Express to create a HelloWorld project template: `npx express-generator HelloWorld --view=pug`
 
 >[!NOTE]
 > We are using the `npx` command here to execute the Express.js Node package without actually installing it (or by temporarily installing it depending on how you want to think of it). If you try to use the `express` command or check the version of Express installed using: `express --version`, you will receive a response that Express cannot be found. If you want to globally install Express to use over and over again, use: `npm install -g express-generator`. You can view a list of the packages that have been installed by npm using `npm list`. They'll be listed by depth (the number of nested directories deep). Packages that you installed will be at depth 0. That package's dependencies will be at depth 1, further dependencies at depth 2, and so on. To learn more, see [Difference between npx and npm?](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) on Stackoverflow.
@@ -88,7 +84,7 @@ To create a project with Express.js:
    - `app.js`. The starting point of your app. It loads everything and begins serving user requests. It's basically the glue that holds all the parts together.
    - `package.json`. Contains the project description, scripts manager, and app manifest. Its main purpose is to track your app's dependencies and their respective versions.
 
-5. You now need to install the dependencies that Express uses in order to build and run your HelloWorld Express app (the packages used for tasks like running the server, as defined in the `package.json` file). Inside VS Code, open your WSL terminal by selecting **View** > **Terminal** (or select Ctrl+`, using the backtick character), be sure that you're still in the 'HelloWorld' project directory. Install the Express package dependencies with:
+5. You now need to install the dependencies that Express uses in order to build and run your HelloWorld Express app (the packages used for tasks like running the server, as defined in the `package.json` file). Inside VS Code, open your terminal by selecting **View** > **Terminal** (or select Ctrl+`, using the backtick character), be sure that you're still in the 'HelloWorld' project directory. Install the Express package dependencies with:
 
 ```bash
 npm install
@@ -101,7 +97,7 @@ DEBUG=HelloWorld:* npm start
 ```
 
 > [!TIP]
-> The `DEBUG=myapp:*` part of the command above means you are telling Node.js that you want to turn on logging for debugging purposes. Remember to replace 'myapp' with your app name. You can find your app name in package.json file under "name" property. The `npm start` command is telling npm to run the scripts in your package.json file.
+> The `DEBUG=myapp:*` part of the command above means you are telling Node.js that you want to turn on logging for debugging purposes. Remember to replace 'myapp' with your app name. You can find your app name in the `package.json` file under the "name" property. The `npm start` command is telling npm to run the scripts in your `package.json` file.
 
 7. You can now view the running app by opening a web browser and going to: **localhost:3000**
 
@@ -127,7 +123,7 @@ Node.js has tools to help you develop server-side web apps, some built in and ma
 
 Let's use the built-in OS module to get some information about your computer's operating system:
 
-1) In your WSL (Ubuntu 18.04) terminal, open the Node.js CLI. You'll see the `>` prompt letting you know you're using Node.js after entering: `node`
+1) In your command line, open the Node.js CLI. You'll see the `>` prompt letting you know you're using Node.js after entering: `node`
 
 2) To identify the operating system you are currently using (which should return a response letting you know that you're on Windows), enter: `os.platform()`
 
