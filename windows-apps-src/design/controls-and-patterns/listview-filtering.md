@@ -30,6 +30,10 @@ For filtering to work, the ListView must have a data source that can be manipula
         <ColumnDefinition Width="1*"></ColumnDefinition>
         <ColumnDefinition Width="1*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+    </Grid.RowDefinitions>
 
     <ListView x:Name="FilteredListView"
                 Grid.Column="0"
@@ -49,8 +53,9 @@ For filtering to work, the ListView must have a data source that can be manipula
 
     </ListView>
 
-    <TextBox x:Name="FilterByLName" Grid.Column="1" Width="150" Header="Last Name" 
-             Margin="8" HorizontalAlignment="Left" TextChanged="FilteredLV_LNameChanged"/>
+    <TextBox x:Name="FilterByLName" Grid.Column="1" Header="Last Name" Width="200"
+             HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"
+             TextChanged="FilteredLV_LNameChanged"/>
 </Grid>
 ```
 ## Filtering the data
@@ -91,7 +96,7 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
     ObservableCollection<Person> TempFiltered = new ObservableCollection<Person>();
     
     // Make sure all text is case-insensitive when comparing
-    TempFiltered = People.Where(contact => contact.LastName.ToLower().Contains(FilterByLastName.Text.ToLower()));
+    TempFiltered = People.Where(contact => contact.LastName.ToLower().Contains(FilterByLName.Text.ToLower()));
     
     // Go through TempFiltered and compare it with the current PeopleFiltered collection, adding and subtracting items as necessary:
 
