@@ -30,6 +30,10 @@ For filtering to work, the ListView must have a data source that can be manipula
         <ColumnDefinition Width="1*"></ColumnDefinition>
         <ColumnDefinition Width="1*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+    </Grid.RowDefinitions>
 
     <ListView x:Name="FilteredListView"
                 Grid.Column="0"
@@ -49,8 +53,9 @@ For filtering to work, the ListView must have a data source that can be manipula
 
     </ListView>
 
-    <TextBox x:Name="FilterByLName" Grid.Column="1" Width="150" Header="Last Name" 
-             Margin="8" HorizontalAlignment="Left" TextChanged="FilteredLV_LNameChanged"/>
+    <TextBox x:Name="FilterByLName" Grid.Column="1" Header="Last Name" Width="200"
+             HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"
+             TextChanged="FilteredLV_LNameChanged"/>
 </Grid>
 ```
 ## Filtering the data
@@ -73,7 +78,8 @@ using System.Linq;
 
 public MainPage()
 {
-    // Define People collection to hold all Person objects. Populate collection - i.e. add Person objects (not shown)
+    // Define People collection to hold all Person objects. 
+    // Populate collection - i.e. add Person objects (not shown)
     IList<Person> People = new List<Person>();
 
     // Create PeopleFiltered collection and copy data from original People collection
@@ -87,13 +93,16 @@ public MainPage()
 
 private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
 {
-    // Perform a Linq query to find all Person objects (from the original People collection) that fit the criteria of the filter, save them in a new collection object called TempFiltered.
-    ObservableCollection<Person> TempFiltered = new ObservableCollection<Person>();
+    /* Perform a Linq query to find all Person objects (from the original People collection)
+    that fit the criteria of the filter, save them in a new List called TempFiltered. */
+    List<Person> TempFiltered;
     
-    // Make sure all text is case-insensitive when comparing
-    TempFiltered = People.Where(contact => contact.LastName.ToLower().Contains(FilterByLastName.Text.ToLower()));
+    /* Make sure all text is case-insensitive when comparing, and make sure 
+    the filtered items are in a List object */
+    TempFiltered = people.Where(contact => contact.LastName.Contains(FilterByLName.Text, StringComparison.InvariantCultureIgnoreCase)).ToList();
     
-    // Go through TempFiltered and compare it with the current PeopleFiltered collection, adding and subtracting items as necessary:
+    /* Go through TempFiltered and compare it with the current PeopleFiltered collection,
+    adding and subtracting items as necessary: */
 
     // First, remove any Person objects in PeopleFiltered that are not in TempFiltered
     for (int i = PeopleFiltered.Count - 1; i >= 0; i--)
@@ -105,7 +114,8 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
         }
     }
 
-    // Next, add back any Person objects that are included in TempFiltered and may not currently be in PeopleFiltered (in case of a backspace)
+    /* Next, add back any Person objects that are included in TempFiltered and may 
+    not currently be in PeopleFiltered (in case of a backspace) */
 
     foreach (var item in TempFiltered)
     {
