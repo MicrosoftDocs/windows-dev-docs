@@ -92,11 +92,11 @@ public MainPage()
 
 private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
 {
-    // Perform a Linq query to find all Person objects (from the original People collection) that fit the criteria of the filter, save them in a new collection object called TempFiltered.
-    ObservableCollection<Person> TempFiltered = new ObservableCollection<Person>();
+    // Perform a Linq query to find all Person objects (from the original People collection) that fit the criteria of the filter, save them in a new List called TempFiltered.
+    List<Person> TempFiltered;
     
-    // Make sure all text is case-insensitive when comparing
-    TempFiltered = People.Where(contact => contact.LastName.ToLower().Contains(FilterByLName.Text.ToLower()));
+    // Make sure all text is case-insensitive when comparing, and make sure the filtered items are in a List object
+    TempFiltered = people.Where(contact => contact.LastName.Contains(FilterByLName.Text, StringComparison.InvariantCultureIgnoreCase)).ToList();
     
     // Go through TempFiltered and compare it with the current PeopleFiltered collection, adding and subtracting items as necessary:
 
