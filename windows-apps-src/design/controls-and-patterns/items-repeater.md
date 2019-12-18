@@ -641,6 +641,7 @@ This example shows how you can display a list of grouped items in a vertical sta
 
 <Page.Resources>
     <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
 </Page.Resources>
 
 <ScrollViewer>
@@ -664,10 +665,11 @@ This example shows how you can display a list of grouped items in a vertical sta
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-This example shows a layout for an app that has various categories that can change with user preference and are presented as horizontally scrolling lists, as shown here.
+The image below shows the basic layout that's created using the above sample as a guideline.
 
 ![Nested layout with items repeater](images/items-repeater-nested-layout.png)
+
+This next example shows a layout for an app that has various categories that can change with user preference and are presented as horizontally scrolling lists. The layout of this example is also represented by the image above.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
