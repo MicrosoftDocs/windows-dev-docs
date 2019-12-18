@@ -304,6 +304,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
+| Region | ms-settings:regionformatting |
 | Language | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Speech | ms-settings:speech |
