@@ -808,7 +808,7 @@
     {
       "source_path": "windows-apps-src/controls-and-patterns/item-templates-listview.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/item-templates-listview",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/labels.md",
@@ -828,7 +828,7 @@
     {
       "source_path": "windows-apps-src/controls-and-patterns/listview-item-templates.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/item-templates-listview",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/master-details.md",
