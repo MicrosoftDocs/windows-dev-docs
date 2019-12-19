@@ -7,7 +7,7 @@
     },
     {
       "source_path": "windows-apps-src/app-to-app/use-edp-to-protect-enterprise-data-transferred-between-apps.md",
-      "redirect_url": "/windows/uwp/enterprise/",
+      "redirect_url": "/windows/uwp/enterprise/wip-dev-guide",
       "redirect_document_id": false
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/xaml-basics-style.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-basics-style",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-styles",
       "redirect_document_id": false
     },
     {
@@ -152,7 +152,7 @@
     },
     {
       "source_path": "windows-apps-src/input-and-devices/cortana-design-guidelines.md",
-      "redirect_url": "https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines",
+      "redirect_url": "https://docs.microsoft.com/cortana/skills/#pivot=start&panel=designskill",
       "redirect_document_id": false
     },
     {
@@ -372,7 +372,7 @@
     },
     {
       "source_path": "windows-apps-src/porting/update-your-visual-studio-2015-rc-project-to-rtm.md",
-      "redirect_url": "/windows/uwp/porting/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects",
+      "redirect_url": "https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects",
       "redirect_document_id": false
     },
     {
@@ -808,7 +808,7 @@
     {
       "source_path": "windows-apps-src/controls-and-patterns/item-templates-listview.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/item-templates-listview",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/labels.md",
@@ -827,8 +827,8 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/listview-item-templates.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/listview-item-templates",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/item-templates-listview",
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/master-details.md",
@@ -937,7 +937,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/tabs-pivot.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/tabs-pivot",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/tab-view",
       "redirect_document_id": true
     },
     {
@@ -967,7 +967,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/tiles-and-notifications-app-assets.md",
-      "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/app-assets",
+      "redirect_url": "/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast",
       "redirect_document_id": true
     },
     {
@@ -1655,17 +1655,17 @@
     {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
-      "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/people-system/people-system_nav",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-to-xbox-live-in-unity.md",
-      "redirect_url": "/windows/uwp/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/signin/unity-signin_nav",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer-overview.md",
-      "redirect_url": "/windows/uwp/xbox-live/multiplayer/xbox-integrated-multiplayer",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xbox-integrated-multiplayer",
       "redirect_document_id": true
     },
     {
@@ -1923,7 +1923,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/developer-program-overview.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/developer-program-overview",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/join-dev-program/join-dev-program_nav",
       "redirect_document_id": true
     },
     {
@@ -1953,7 +1953,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/what-is-xbox-live.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/what-is-xbox-live",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/what-is-xbox-live",
       "redirect_document_id": true
     },
     {
@@ -1978,7 +1978,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/xbox-live.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/xbox-live",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/",
       "redirect_document_id": true
     },
     {
@@ -1988,7 +1988,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/xboxservices-config.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/xboxservices-config",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-win10/xboxservices-config",
       "redirect_document_id": true
     },
     {
@@ -2003,7 +2003,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/achievements-2017/achievements.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/achievements-2017/achievements",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/achievements-2017/achievements_nav",
       "redirect_document_id": true
     },
     {
@@ -2013,7 +2013,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/configure-xbl/windows-dev-center.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/configure-xbl/windows-dev-center",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/setup-partner-center_nav",
       "redirect_document_id": true
     },
     {
@@ -2088,7 +2088,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/data-platform/data-platform.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/data-platform/data-platform",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/data-platform/player-data_nav",
       "redirect_document_id": true
     },
     {
@@ -2098,12 +2098,12 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/add-controller-support-to-xbox-live-prefabs",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/add-controller-support-to-xbox-live-prefabs",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/add-multi-user-support.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/add-multi-user-support",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/add-multi-user-support",
       "redirect_document_id": true
     },
     {
@@ -2113,22 +2113,22 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/legacy/authorize-xbox-live-accounts",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/check-user-privileges-in-unity.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/check-user-privileges-in-unity",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/configure-xbox-live-in-unity.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/configure-xbox-live-in-unity",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/configure-xbox-live-in-unity",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/legacy/create-and-test-a-new-creators-title",
       "redirect_document_id": true
     },
     {
@@ -2138,22 +2138,22 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/cr-unity-win10_nav",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/develop-creators-title-with-visual-studio.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-visual-studio",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/vs-win10/develop-creators-title-with-visual-studio",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/setup-partner-center-creators",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/playerauthentication-prefab-sign-in.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/playerauthentication-prefab-sign-in",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/signin/playerauthentication-prefab-sign-in",
       "redirect_document_id": true
     },
     {
@@ -2163,12 +2163,12 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-manager.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/sign-in-manager",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/auth/authentication_nav",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/test-visual-studio-build.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/test-visual-studio-build",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/test-visual-studio-build",
       "redirect_document_id": true
     },
     {
@@ -2183,7 +2183,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/signin/unity-prefabs-and-sign-in",
       "redirect_document_id": true
     },
     {
@@ -2198,27 +2198,27 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-apis-binary-to-a-uwp-project.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/add-xbox-live-apis-binary-to-a-uwp-project",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-win10/add-xbox-live-apis-binary-to-a-uwp-project",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-win10/add-xbox-live-apis-source-to-a-uwp-project",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-to-an-xdk-project.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/add-xbox-live-to-an-xdk-project",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/add-xbox-live-to-an-xdk-project",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/advanced-xbox-live-sandboxes",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/compile-the-xdk-xbox-live-api-source.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/compile-the-xdk-xbox-live-api-source",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/compile-the-xdk-xbox-live-api-source",
       "redirect_document_id": true
     },
     {
@@ -2228,7 +2228,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/create-a-new-title.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/create-a-new-title",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/legacy/create-a-new-title",
       "redirect_document_id": true
     },
     {
@@ -2238,52 +2238,52 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/get-started-with-visual-studio-and-uwp.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-visual-studio-and-uwp",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-win10/get-started-with-visual-studio-and-uwp",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/legacy/get-started-with-xbox-live-partner",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/unity-win10/partner-add-xbox-live-to-unity-uwp",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/unity-win10/partner-unity-uwp-il2cpp",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-unity-xdk-il2cpp.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-xdk-il2cpp",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/unity-xbox/partner-unity-xdk-il2cpp",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partners-step-by-step-guide.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-partner-center/legacy/get-started-with-xbox-live-partner",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/use-xbox-live-nuget-with-xdk.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/use-xbox-live-nuget-with-xdk",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/use-xbox-live-nuget-with-xdk",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/using-xbox-live-apis-built-into-the-xdk.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/using-xbox-live-apis-built-into-the-xdk",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/using-xbox-live-apis-built-into-the-xdk",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/where-to-get-xdk.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/where-to-get-xdk",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/where-to-get-xdk",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/xdk-developers.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/xdk-developers",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/mp-vs-xbox_nav",
       "redirect_document_id": true
     },
     {
@@ -2303,7 +2303,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/player-stats.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/leaderboards-and-stats-2017/player-stats",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/data-platform/player-data_nav",
       "redirect_document_id": true
     },
     {
@@ -2323,7 +2323,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-manager",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-platform",
       "redirect_document_id": true
     },
     {
@@ -2343,7 +2343,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/xbox-integrated-multiplayer",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xbox-integrated-multiplayer",
       "redirect_document_id": true
     },
     {
@@ -2423,7 +2423,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/flows-for-multiplayer-game-invites.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/flows-for-multiplayer-game-invites",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/invite/multiplayer-invite-flows",
       "redirect_document_id": true
     },
     {
@@ -2443,7 +2443,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/mpsd-session-details.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/mpsd-session-details",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-session/mpsd-details",
       "redirect_document_id": true
     },
     {
@@ -2458,27 +2458,27 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-how-tos.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-how-tos",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-session/mpsd-how-tos",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-directory.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-directory",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/xbox-one-multiplayer-session-directory",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-status-codes.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-status-codes",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-session/mpsd-status-codes",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-play-with-smartmatch-matchmaking",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/using-smartmatch-matchmaking.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/multiplayer-appendix/using-smartmatch-matchmaking",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/matchmaking/matchmaking",
       "redirect_document_id": true
     },
     {
@@ -2563,7 +2563,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/configure-your-appxmanifest-for-multiplayer.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/service-configuration/configure-your-appxmanifest-for-multiplayer",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-manifest",
       "redirect_document_id": true
     },
     {
@@ -2618,7 +2618,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/real-time-activity-service/real-time-activity-service.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/real-time-activity-service/real-time-activity-service",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/real-time-activity-service/real-time-activity-service_nav",
       "redirect_document_id": true
     },
     {
@@ -2643,7 +2643,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-platform.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/social-platform",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/social-platform_nav",
       "redirect_document_id": true
     },
     {
@@ -2658,7 +2658,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/reputation.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/people-system/reputation",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/people-system/reputation_nav",
       "redirect_document_id": true
     },
     {
@@ -2708,7 +2708,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/storage-platform/storage-platform.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/storage-platform/storage-platform",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/storage-platform/cloud-storage_nav",
       "redirect_document_id": true
     },
     {
@@ -2823,7 +2823,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/authentication.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/auth/authentication",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/auth/authentication_nav",
       "redirect_document_id": true
     },
     {
@@ -2863,7 +2863,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/using-xbox-live/error-handling/error-handling.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/error-handling/error-handling",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/error-handling/error-handling_nav",
       "redirect_document_id": true
     },
     {
@@ -2888,7 +2888,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/troubleshooting.md",
-      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting_nav",
       "redirect_document_id": true
     },
     {
