@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Copy and paste
 
-This article explains how to support copy and paste in Universal Windows Platform (UWP) apps using the clipboard. Copy and paste is the classic way to exchange data either between apps, or within an app, and almost every app can support clipboard operations to some degree.
+This article explains how to support copy and paste in Universal Windows Platform (UWP) apps using the clipboard. Copy and paste is the classic way to exchange data either between apps, or within an app, and almost every app can support clipboard operations to some degree. For complete code examples that demonstrate several different copy and paste scenarios, see the [clipboard sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard).
 
 ## Check for built-in clipboard support
 
@@ -37,7 +37,7 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
 
-## Set the content to by copied
+## Set the copied content
 
 Next, you can add the data that a user has selected to the [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) object. If this data is supported by the **DataPackage** class, you can use one of the corresponding [methods](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage#methods) of the **DataPackage** object. Here's how to add text by using the [**SetText**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage.settext) method:
 
