@@ -44,7 +44,7 @@ The visual portion of tiles contains the visual specifications for all tile size
 | **TileMedium** | [TileBinding](#tilebinding) | false | Provide an optional medium binding to specify content for the medium tile size. |
 | **TileWide** | [TileBinding](#tilebinding) | false | Provide an optional wide binding to specify content for the wide tile size. |
 | **TileLarge** | [TileBinding](#tilebinding) | false | Provide an optional large binding to specify content for the large tile size. |
-| **Branding** | [TileBranding](#tilebranding) | false | The form that the tile should use to display the app's brand. By default, inherits branding from the default tile. |
+| **Branding** | TileBranding | false | The form that the tile should use to display the app's brand. By default, inherits branding from the default tile. |
 | **DisplayName** | string | false | An optional string to override the tile's display name while showing this notification. |
 | **Arguments** | string | false | New in Anniversary Update: App-defined data that is passed back to your app via the TileActivatedInfo property on LaunchActivatedEventArgs when the user launches your app from the Live Tile. This allows you to know which tile notifications your user saw when they tapped your Live Tile. On devices without the Anniversary Update, this will simply be ignored. |
 | **LockDetailedStatus1** | string | false | If you specify this, you must also provide a TileWide binding. This is the first line of text that will be displayed on the lock screen if the user has selected your tile as their detailed status app. |
