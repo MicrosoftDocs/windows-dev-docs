@@ -18,4 +18,4 @@ Microsoft does not define the specifics of a scanner profile or how to implement
 
 ## Related topics
 - [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp)
-- [Barcode scanner device support](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)
+- [Barcode scanner device support](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

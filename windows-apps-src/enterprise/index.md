@@ -35,7 +35,7 @@ For example, the new [MenuBar](/windows/uwp/design/controls-and-patterns/menus),
 
 ### Controls to support enterprise scenarios
 
-The [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
+The [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
 
 The [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
@@ -74,7 +74,7 @@ See [Share code between a desktop app and a UWP app](https://docs.microsoft.com/
 
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace.
 
-See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
+See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/windows/uwp/data-access/sql-server-databases).
 
 <a id="MSIX" />
 

@@ -26,7 +26,7 @@ The **details page**, which displays a single photo after it has been selected. 
 
 * Visual Studio 2019: [Download Visual Studio 2019 Community (free)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows mobile emulator: [Download the Windows 10 mobile emulator (free)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Windows mobile emulator: [Download the Windows 10 mobile emulator (free)](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## Part 0: Get the starter code from github
 

@@ -35,7 +35,7 @@ Apps in this program must satisfy the following criteria:
 
 ## Can apps get removed from the program?
 
-Apps in the program are monitored on a frequent basis to ensure they continue to meet the qualifying criteria. To sustain a minimum daily ad request volume, make sure your app usage does not drop significantly over time. A great way to do this is by [running regular promotion campaigns](https://developer.microsoft.com/en-us/store/promote-your-apps).
+Apps in the program are monitored on a frequent basis to ensure they continue to meet the qualifying criteria. To sustain a minimum daily ad request volume, make sure your app usage does not drop significantly over time. A great way to do this is by [running regular promotion campaigns](https://developer.microsoft.com/store/promote-your-apps).
 
 ## Can I provide additional marketing material to showcase my app in the program? 
 

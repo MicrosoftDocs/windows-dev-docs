@@ -278,7 +278,7 @@ The following steps and code examples demonstrate how to do implement the above 
     }
     ```
 
-4. Copy the following code after the previous section. This code defines the [window procedure](https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure) for the window.
+4. Copy the following code after the previous section. This code defines the [window procedure](https://docs.microsoft.com/windows/win32/learnwin32/writing-the-window-procedure) for the window.
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
@@ -392,7 +392,7 @@ To properly handle keyboard input for each XAML Island, your application must pa
 
   * **WPF:** The app can call **PreTranslateMessage** from the event handler for the [ComponentDispatcher.ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) event. For an example, see the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) file in the Windows Community Toolkit.
 
-  * **Windows Forms:** The app can call **PreTranslateMessage** from an override for the [Control.PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) method. For an example, see the [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) file in the Windows Community Toolkit.
+  * **Windows Forms:** The app can call **PreTranslateMessage** from an override for the [Control.PreprocessMessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage) method. For an example, see the [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) file in the Windows Community Toolkit.
 
 ### Keyboard focus navigation
 

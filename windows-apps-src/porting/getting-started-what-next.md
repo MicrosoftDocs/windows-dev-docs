@@ -21,7 +21,7 @@ With this basic information, you can now start writing more interesting Universa
 -   [Create your first Windows Runtime app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581.aspx): A topic focusing on Windows Phone development.
 -   [Videos for iOS and Android devs](https://docs.microsoft.com/previous-versions/windows/apps/dn393982(v=win.10)): Some more help, this time in visual format.
 
-Also, be sure to visit our [Community resources](https://developer.microsoft.com/en-us/windows/support) to learn how to get help and get connected through developer forums, blogs, developer camps and workshops, and local Microsoft events and contacts.
+Also, be sure to visit our [Community resources](https://developer.microsoft.com/windows/support) to learn how to get help and get connected through developer forums, blogs, developer camps and workshops, and local Microsoft events and contacts.
 
 We think that Windows 10 will open up new app-building opportunities for you. We look forward to seeing all of the great apps that you're going to build!
 

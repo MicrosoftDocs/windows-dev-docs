@@ -36,7 +36,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>Design language.</strong><br><br>A set of conventions that prescribe how apps on the platform should look and behave.</td>
 <td align="left"><strong>Android Material Design</strong> guidelines provide a visual language for Android designers and developers to follow.</td>
 <td align="left"><strong>Human Interface Guidelines</strong> provide advice for iOS designers and developers.</td>
-<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/apps/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>User interface markup language.</strong> <br><br>A markup language that renders and describes a UI and its components. Each platform provides an editor for both visual and markup editing.<br/></td>

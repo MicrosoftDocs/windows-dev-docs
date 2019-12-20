@@ -26,7 +26,7 @@ In this tutorial, we'll walk through the few steps it takes to get this up and r
 - A text editor (like [Visual Studio Code](https://code.visualstudio.com/download))
 - An Xbox controller that’s plugged in to your computer
 - Windows 10 Creators Update
-- A computer with the [minimum required specs to run Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)
+- A computer with the [minimum required specs to run Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/immersive_headset_setup)
 - A Windows Mixed Reality device (Optional) 
 
 
