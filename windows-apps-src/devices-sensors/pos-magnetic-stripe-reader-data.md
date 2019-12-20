@@ -109,20 +109,7 @@ private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args
 }
 ```
 
-## Support and feedback
-
-### Find answers to your questions
-
-Have questions? Ask us on either [Stack Overflow](https://stackoverflow.com/questions/tagged/pointofservice) or the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
-
-Help us locate your questions:
-
-* Add the [pointofservice](https://stackoverflow.com/questions/tagged/pointofservice) tag to your question on Stack Overflow.
-* Include the *pointofservice* term in your post the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
-
-### Make feature suggestions or give feedback
-
-See the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
+[!INCLUDE [feedback](./includes/pos-feedback.md)]
 
 ## See also
 

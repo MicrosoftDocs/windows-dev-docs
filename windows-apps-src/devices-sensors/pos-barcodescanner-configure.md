@@ -24,17 +24,4 @@ Before you can use your Bluetooth barcode scanner you must pair it using **Setti
 
 You can initiate and control the pairing process using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) namespace.  See [Pair Devices](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices) for more information.
 
-## Support and feedback
-
-### Find answers to your questions
-
-Have questions? Ask us on either [Stack Overflow](https://stackoverflow.com/questions/tagged/pointofservice) or the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
-
-Help us locate your questions:
-
-* Add the [pointofservice](https://stackoverflow.com/questions/tagged/pointofservice) tag to your question on Stack Overflow.
-* Include the *pointofservice* term in your post the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
-
-### Make feature suggestions or give feedback
-
-See the [Q&A UWP forum](https://docs.microsoft.com/answers/topics/uwp.html).
+[!INCLUDE [feedback](./includes/pos-feedback.md)]
