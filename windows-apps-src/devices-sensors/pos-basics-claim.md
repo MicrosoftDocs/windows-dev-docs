@@ -75,7 +75,7 @@ This sample shows how to claim a barcode scanner device after you have successfu
 
 > [!Warning]
 > A claim can be lost in the following circumstances:
-> 1. Another app has requested a claim of the same device and your app did not issue a **RetainDevice** in response to the **ReleaseDeviceRequested** event.  (See [Claim negotiation](#Claim-negotiation) below for more information.)
+> 1. Another app has requested a claim of the same device and your app did not issue a **RetainDevice** in response to the **ReleaseDeviceRequested** event.  (See [Claim negotiation](#claim-negotiation) below for more information.)
 > 2. Your app has been suspended, which resulted in the device object being closed and as a result the claim is no longer valid. (See [Device object lifecycle](pos-basics-deviceobject.md#device-object-lifecycle) for more information.)
 
 
