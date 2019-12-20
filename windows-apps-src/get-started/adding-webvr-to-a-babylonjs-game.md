@@ -10,14 +10,7 @@ ms.localizationpriority: medium
 
 If you've created a 3D game with Babylon.js and thought that it might look great in virtual reality (VR), follow the simple steps in this tutorial to make that a reality.
 
-We'll add WebVR support to the game shown here. Go ahead and plug in an Xbox controller to try it out!
-
-
-<iframe height='300' scrolling='no' title='Babylon.js dino game using Babylon.GUI' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>Babylon.js dino game using Babylon.GUI</a> by Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-This is a 3D game that works well on a flat screen, but what about in VR?
-In this tutorial, we'll walk through the few steps it takes to get this up and running with WebVR. We’ll use a [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) headset that can tap into the added support for WebVR in Microsoft Edge. After we apply these changes to the game, you can expect it also to work in other browser/headset combinations that support WebVR.
+In this tutorial, we'll walk through the few steps it takes to get a 3D game up and running with WebVR. We’ll use a [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) headset that can tap into the added support for WebVR in Microsoft Edge. After we apply these changes to the game, you can expect it also to work in other browser/headset combinations that support WebVR.
 
 
 
