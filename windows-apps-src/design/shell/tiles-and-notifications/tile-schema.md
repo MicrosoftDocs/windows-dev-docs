@@ -20,11 +20,11 @@ If you would rather use raw XML instead of the [Notifications library](https://w
 [TileContent](#tilecontent)
 * [TileVisual](#tilevisual)
   * [TileBinding](#tilebinding)
-    * [TileBindingContentAdaptive](#TileBindingContentAdaptive)
-    * [TileBindingContentIconic](#TileBindingContentIconic)
-    * [TileBindingContentContact](#TileBindingContentContact)
-    * [TileBindingContentPeople](#TileBindingContentPeople)
-    * [TileBindingContentPhotos](#TileBindingContentPhotos)
+    * [TileBindingContentAdaptive](#tilebindingcontentadaptive)
+    * [TileBindingContentIconic](#tilebindingcontenticonic)
+    * [TileBindingContentContact](#tilebindingcontentcontact)
+    * [TileBindingContentPeople](#tilebindingcontentpeople)
+    * [TileBindingContentPhotos](#tilebindingcontentphotos)
 
 
 ## TileContent
@@ -60,7 +60,7 @@ The binding object contains the visual content for a specific tile size.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Content** | [ITileBindingContent](#itilebindingcontent) | false | The visual content to display on the tile. One of [TileBindingContentAdaptive](#tilebindingcontentadaptive), [TileBindingContentIconic](#TileBindingContentIconic), [TileBindingContentContact](#TileBindingContentContact), [TileBindingContentPeople](#TileBindingContentPeople), or [TileBindingContentPhotos](#TileBindingContentPhotos). |
+| **Content** | [ITileBindingContent](#itilebindingcontent) | false | The visual content to display on the tile. One of [TileBindingContentAdaptive](#tilebindingcontentadaptive), [TileBindingContentIconic](#tilebindingcontenticonic), [TileBindingContentContact](#tilebindingcontentcontact), [TileBindingContentPeople](#tilebindingcontentpeople), or [TileBindingContentPhotos](#tilebindingcontentphotos). |
 | **Branding** | TileBranding | false | The form that the tile should use to display the app's brand. By default, inherits branding from the default tile. |
 | **DisplayName** | string | false | An optional string to override the tile's display name for this tile size. |
 | **Arguments** | string | false | New in Anniversary Update: App-defined data that is passed back to your app via the TileActivatedInfo property on LaunchActivatedEventArgs when the user launches your app from the Live Tile. This allows you to know which tile notifications your user saw when they tapped your Live Tile. On devices without the Anniversary Update, this will simply be ignored. |
@@ -74,11 +74,11 @@ Marker interface for tile binding content. These let you choose what you want to
 
 | Implementations |
 | --- |
-| [TileBindingContentAdaptive](#TileBindingContentAdaptive) |
-| [TileBindingContentIconic](#TileBindingContentIconic) |
-| [TileBindingContentContact](#TileBindingContentContact) |
-| [TileBindingContentPeople](#TileBindingContentPeople) |
-| [TileBindingContentPhotos](#TileBindingContentPhotos) |
+| [TileBindingContentAdaptive](#tilebindingcontentadaptive) |
+| [TileBindingContentIconic](#tilebindingcontenticonic) |
+| [TileBindingContentContact](#tilebindingcontentcontact) |
+| [TileBindingContentPeople](#tilebindingcontentpeople) |
+| [TileBindingContentPhotos](#tilebindingcontentphotos) |
 
 
 ## TileBindingContentAdaptive
