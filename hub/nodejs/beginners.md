@@ -14,14 +14,16 @@ ms.date: 09/19/2019
 
 If you're brand new to using Node.js, this guide will help you to get started with some basics.
 
-## Install NodeJS
+## Prerequisites
 
-The most straightforward way to get started using Node.js is to [set up your Node.js development environment directly on Windows](./setup-on-windows.md). This will allow you to start performing basic Node.js operations with a minimal amount of set up.
+This guide assumes that you've already completed the steps to [set up your Node.js development environment on native Windows](./setup-on-windows.md), including:
+
+- Install a Node.js version manager.
+- Install Visual Studio Code.
+
+Installing Node.js directly on Windows is the most straightforward way to get started performing basic Node.js operations with a minimal amount of set up.
 
 Once you are ready to use Node.js to develop applications for production, which typically involves deploying to a Linux server, we recommend that you [set up your Node.js development environment with WSL2](./setup-on-wsl2.md). Though it's possible to deploy web apps on Windows servers, it is much more common to [use Linux servers to host your Node.js apps](https://azure.microsoft.com/develop/nodejs/).
-
-> [!NOTE]
-> If you are in the (somewhat rare) situation of needing to host a Node.js app on a Windows server, the most common scenario seems to be [using a reverse proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). There are two ways to do this: 1) [using iisnode](https://harveywilliams.net/blog/installing-iisnode) or [directly](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). We do not maintain these resources and recommend [using Linux servers to host your Node.js apps](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
 
 ## Types of Node.js applications
 
@@ -31,7 +33,7 @@ Node.js is a JavaScript runtime primarily used for creating web applications. Pu
 - **Real-time apps (RTAs)**: These are web apps that enable users to receive information as soon as it's published by an author, rather than requiring that the user (or software) check a source periodically for updates. Some example RTAs include instant messaging apps or chat rooms, online multiplayer games that can be played in the browser, online collaboration docs, community storage, video conference apps, etc.
 - **Data streaming apps**: These are apps (or services) that send data/content as it arrives (or is created) while keeping the connection open to continue downloading further data, content, or components as needed. Some examples include video- and audio-streaming apps.
 - **REST APIs**: These are interfaces that provide data for someone else's web app to interact with. For example, a Calendar API service could provide dates and times for a concert venue that could be used by someone else's local events website.
-- **Server-side rendered apps (SSRs)**: These web apps can run on both the client (in your browser / the front-end) and the server (the back-end) allowing pages that are dynamic to display (generate HTML for) whatever content is known and quickly grab content that is not known as it's available. These are often referred to as “isomorphic” or “universal” applications. SSRs utilize SPA methods in that they don't need to reload every time you use it. SRAs, however, offer a few benefits that may or may not be important to you, like making content on your site appear in Google search results and providing a preview image when links to your app are shared on social media like Twitter or Facebook. The potential drawback being that they require a Node.js server constantly running. In terms of examples, a social networking app that supports events that users will want to appear in search results and social media may benefit from SSR, while an email app may be fine as an SPA. You can also run server-rendered no-SPA apps, which my be something like a WordPress blog. As you can see, things can get complicated, you just need to decide what's important.
+- **Server-side rendered apps (SSRs)**: These web apps can run on both the client (in your browser / the front-end) and the server (the back-end) allowing pages that are dynamic to display (generate HTML for) whatever content is known and quickly grab content that is not known as it's available. These are often referred to as “isomorphic” or “universal” applications. SSRs utilize SPA methods in that they don't need to reload every time you use it. SSRs, however, offer a few benefits that may or may not be important to you, like making content on your site appear in Google search results and providing a preview image when links to your app are shared on social media like Twitter or Facebook. The potential drawback being that they require a Node.js server constantly running. In terms of examples, a social networking app that supports events that users will want to appear in search results and social media may benefit from SSR, while an email app may be fine as an SPA. You can also run server-rendered no-SPA apps, which my be something like a WordPress blog. As you can see, things can get complicated, you just need to decide what's important.
 - **Command line tools**: These allow you to automate repetitive tasks and then distribute your tool across the vast Node.js ecosystem. An example of a command line tool is cURL, which stand for client URL and is used to download content from an internet URL. cURL is often used to install things like Node.js or, in our case, a Node.js version manager.
 - **Hardware programming**: While not quite as popular as web apps, Node.js is growing in popularity for IoT uses, such as collecting data from sensors, beacons, transmitters, motors, or anything that generates large amounts of data. Node.js can enable data collection, analyzing that data, communicating back and forth between a device and server, and taking action based on the analysis. NPM contains more than 80 packages for Arduino controllers, raspberry pi, Intel IoT Edison, various sensors, and Bluetooth devices.
 
@@ -93,11 +95,11 @@ npm install
 6. At this point you have the framework set up for a multiple-page web app that has access to a large variety of APIs and HTTP utility methods and middleware, making it easier to create a robust API. Start the Express app on a virtual server by entering:
 
 ```bash
-DEBUG=HelloWorld:* npm start
+npx cross-env DEBUG=HelloWorld:* npm start
 ```
 
 > [!TIP]
-> The `DEBUG=myapp:*` part of the command above means you are telling Node.js that you want to turn on logging for debugging purposes. Remember to replace 'myapp' with your app name. You can find your app name in the `package.json` file under the "name" property. The `npm start` command is telling npm to run the scripts in your `package.json` file.
+> The `DEBUG=myapp:*` part of the command above means you are telling Node.js that you want to turn on logging for debugging purposes. Remember to replace 'myapp' with your app name. You can find your app name in the `package.json` file under the "name" property. Using `npx cross-env` sets the `DEBUG` environment variable in any terminal, but you can also set it with your terminal specific way. The `npm start` command is telling npm to run the scripts in your `package.json` file.
 
 7. You can now view the running app by opening a web browser and going to: **localhost:3000**
 
