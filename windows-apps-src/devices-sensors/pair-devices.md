@@ -14,7 +14,7 @@ ms.custom: 19H1
 
 **Important APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Some devices need to be paired before they can be used. The [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) namespace supports three different ways to pair devices.
 
@@ -40,7 +40,7 @@ Basic pairing is when your application uses the [**Windows.Devices.Enumeration**
 
 In order to attempt basic pairing, you first need to obtain the [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object for the device you are interested in. Once you receive that object, you will interact with the [**DeviceInformation.Pairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing) property, which is a [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing) object. To attempt to pair, simply call [**DeviceInformationPairing.PairAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationpairing.pairasync). You will need to **await** the result in order to give your app time to attempt to complete the pairing action. The result of the pairing action will be returned, and as long as no errors are returned, the device will be paired.
 
-If you are using basic pairing, you also have access to additional information about the pairing status of the device. For example you know the pairing status ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) and whether the device can pair ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Both of these are properties of the [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing) object. If you are using automatic pairing, you might not have access to this information unless you obtain the relevant [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) objects.
+If you are using basic pairing, you also have access to additional information about the pairing status of the device. For example you know the pairing status ([**IsPaired**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) and whether the device can pair ([**CanPair**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Both of these are properties of the [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing) object. If you are using automatic pairing, you might not have access to this information unless you obtain the relevant [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) objects.
 
 ## Custom pairing
 

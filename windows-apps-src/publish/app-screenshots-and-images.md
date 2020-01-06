@@ -164,7 +164,7 @@ There are additional requirements depending on the type of file.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec: [H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
+| <ul><li>Codec: [H.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
 
 > [!WARNING]
 > Customers may not hear audio for MP4 files encoded with codecs other than AVC1.

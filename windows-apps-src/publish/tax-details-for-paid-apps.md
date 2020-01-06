@@ -16,7 +16,7 @@ To understand your tax considerations for price selection, and tax responsibilit
 > The Commerce Expansion Adjustment may have payout implications in a limited set of countries/regions. For further details about the Commerce Expansion Adjustment and the markets where it applies, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the list of [affected countries/regions](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
-> Tax responsibility for Reseller countries/regions and circumstances (as described [below](#reseller-countriesregions)) is covered by Exhibit C of the [App Developer Agreement](https://docs.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement), notwithstanding the information in the table below.
+> Tax responsibility for Reseller countries/regions and circumstances (as described [below](#reseller-countriesregions)) is covered by Exhibit C of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notwithstanding the information in the table below.
 > Note that the **Payout implication** column only applies to Windows app/game developers. Tax rates noted in this column are subject to change at any time, and Microsoft cannot guarantee that the rates in the tables below will always be accurate.
 
 

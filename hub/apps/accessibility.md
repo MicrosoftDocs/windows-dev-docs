@@ -130,7 +130,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+      [Code sample browser](https://docs.microsoft.com/samples/browse/)
 
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::

@@ -169,7 +169,7 @@ For help creating an Azure Container Registry and deploy your app container imag
 
 ## Additional resources
 
-- [Node.js on Azure](https://azure.microsoft.com/en-us/develop/nodejs/)
+- [Node.js on Azure](https://azure.microsoft.com/develop/nodejs/)
 - Quickstart: [Create a Node.js web app in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
 - Online course: [Administer containers in Azure](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
 - Using VS Code: [Working with Docker](https://code.visualstudio.com/docs/azure/docker)

@@ -260,7 +260,7 @@ Items shown by the [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepe
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) arranges elements into a single line that you can orient horizontally or vertically.
 
-You can set the [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation).
+You can set the [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation).
 
 ![Stack layout spacing](images/stack-layout.png)
 

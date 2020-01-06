@@ -24,7 +24,7 @@ Familiarize yourself with each input device type and its behaviors, capabilities
 For **Windows 10 April 2018 Update**, we introduced support for Gaze input using eye and head tracking input devices. 
 
 > [!NOTE]
-> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech.
+> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech.
 
 ### Device support
 

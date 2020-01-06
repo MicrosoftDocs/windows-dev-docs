@@ -202,10 +202,10 @@ Smaato enables banner ads to be incorporated into UWP apps and games. Download t
 You can use AdDuplex to implement banner or interstitial ads in your game.
 
 To learn more about integrating AdDuplex directly into a Windows 10 XAML project, go to the AdDuplex website:
-* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
-* Interstitial ads: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
+* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* Interstitial ads: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
-For info about integrating the AdDuplex SDK into Windows 10 UWP games created using Unity, see [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
+For info about integrating the AdDuplex SDK into Windows 10 UWP games created using Unity, see [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
 
 ## Maximize your game's potential through ad campaigns
 

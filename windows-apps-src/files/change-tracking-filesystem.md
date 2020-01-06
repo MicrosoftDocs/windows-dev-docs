@@ -51,7 +51,7 @@ videoTracker.Enable();
 
 A few important notes:
 
-- Make sure your app has permission to the correct library in the manifest before creating the [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) object. See [File Access Permissions](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions) for more details.
+- Make sure your app has permission to the correct library in the manifest before creating the [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) object. See [File Access Permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) for more details.
 - [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) is thread safe, will not reset your pointer, and can be called as many times as you like (more on this later).
 
 ![Enabling an empty change tracker](images/changetracker-enable.png)

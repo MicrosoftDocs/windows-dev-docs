@@ -34,7 +34,7 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
 - [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
-- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
+- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
 If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
@@ -97,7 +97,7 @@ After you've tested your app by using Pseudo language, there are three options t
 
 #### Option 1. Translate the strings yourself
 
-You can use the Multilingual Editor to translate strings individually. As already mentioned, this is included in [The .msi installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit).
+You can use the Multilingual Editor to translate strings individually. As already mentioned, this is included in [The .msi installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit).
 
 - Right-click the .xlf file that you want to translate.
 - Click **Open With...** and select Multilingual Editor. You can optionally click **Set as Default**.
@@ -164,7 +164,7 @@ Before you start the Microsoft Store Certification process, you must exclude the
 ## Downloads
 
 * [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
 
 ## Translation services
 

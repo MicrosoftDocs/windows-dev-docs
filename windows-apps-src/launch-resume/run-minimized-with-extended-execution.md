@@ -253,7 +253,7 @@ Use [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/u
 
 [Extended Execution Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Application Lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
+[App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/magazine/mt590969.aspx)
 [Background Memory Management](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [Background Transfers](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
 [Battery Awareness and Background Activity](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
