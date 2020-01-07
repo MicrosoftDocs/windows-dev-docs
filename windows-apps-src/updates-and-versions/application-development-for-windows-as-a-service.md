@@ -153,8 +153,6 @@ If after investigation, the former is the case, be sure to use the Windows Insid
 
 Let us know how your app is performing against flighted builds. As you discover issues with your app during testing, please log bugs via the partner portal if you have access, or through your Microsoft representative. We encourage this information so that we can build a quality experience for our users together.
 
-### Step 4: Register on Ready For Windows
-The [Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) website is a directory of software that supports Windows 10. It’s intended for IT administrators at companies and organizations worldwide that are considering Windows 10 for their deployments. IT administrators can check the site to see whether software deployed in their enterprise is supported in Windows 10.
 
 ## Related topics
 [Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
