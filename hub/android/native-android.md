@@ -16,6 +16,14 @@ The following is a guide to the various workflows available to you for doing And
 
 ## Install Android Studio
 
+Android Studio is the official integrated development environment for Google's Android operating system, built on JetBrain's ItelliJ IDEA software. Download the latest version of Android Studio at https://developer.android.com/studio.
+
+- If you downloaded an .exe file (recommended), double-click to launch it.
+- If you downloaded a .zip file, unpack the ZIP, copy the android-studio folder into your Program Files folder, and then open the android-studio > bin folder and launch studio64.exe (for 64-bit machines) or studio.exe (for 32-bit machines).
+
+Follow the setup wizard in Android Studio and install any SDK packages that it recommends. As new tools and other APIs become available, Android Studio tells you with a pop-up, or you can check for updates by selecting **Help** > **Check for Update**.
+
+
 ## Java or Kotlin
 
 ## Minimum API Level
