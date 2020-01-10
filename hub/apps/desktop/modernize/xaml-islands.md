@@ -114,8 +114,8 @@ The UWP XAML hosting API consists of several Windows Runtime classes and COM int
 Here is the current state of XAML Islands-related features as of Windows 10, version 1903 and the version 6.0 release of the Windows Community Toolkit:
 
 * **C++ Win32 apps:** The UWP XAML hosting API is considered version 1.0 as of Windows 10, version 1903.
-* **Managed apps that target .NET Framework 4.6.2 and later:** The controls that are available in the version 6.0.0 NuGet packages that were released alongside the version 6.0 release of the Windows Community Toolkit are considered version 1.0.
-* **Managed apps that target .NET Core 3.0 and later:** The controls that are available in the version 6.0.0 NuGet packages that were released alongside the version 6.0 release of the Windows Community Toolkit are still in developer preview. The version 1.0 release of these controls are planned for a later release of the toolkit.
+* **Managed apps that target .NET Framework 4.6.2 and later:** The XAML Island controls that are available in the [version 6.0.0 NuGet packages](#configure-your-project-to-use-the-xaml-island-net-controls) are considered version 1.0 for apps that target the .NET Framework 4.6.2 and later.
+* **Managed apps that target .NET Core 3.0 and later:** The controls that are available in the [version 6.0.0 NuGet packages](#configure-your-project-to-use-the-xaml-island-net-controls) are still in developer preview for apps that target the .NET Core 3.0 and later. The version 1.0 release of these controls for .NET Core 3.0 and later are planned for a later release.
 
 ## Additional resources
 
