@@ -164,7 +164,9 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 ## Full source code listing of a minimal Direct2D application
 
-If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below.
+If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below. Add `#include <Unknwn.h>` to the `pch.h` file, after the line `#pragma once` and before the line `#include <windows.h>`. This will resolve the winrt::get_unknown free function.
+
+
 
 The code below uses the [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) where possible. `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
