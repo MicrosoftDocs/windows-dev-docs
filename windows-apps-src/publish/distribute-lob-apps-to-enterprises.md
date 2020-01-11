@@ -7,8 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business, store for education, enterprise
 ms.localizationpriority: medium
 ---
+
 # Distribute LOB apps to enterprises
 
+## Sideload LOB apps using App Installer
+
+## Sideload LOB apps using Configuration Manager or Intune
+
+## Distribute LOB apps through sideloading
+
+Making apps available to an enterprise through Microsoft Store for Business or Microsoft Store for Education ensures that the app has been signed by the Store and complies with the standard Store Policies.
+
+In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
+
+For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
+
+## Distribute LOB apps through the Microsoft Store for Business or Microsoft Store for Education
 
 You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 
@@ -18,8 +32,7 @@ You can publish line-of-business (LOB) apps directly to enterprises for volume a
 > [!IMPORTANT]
 > You cannot use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to publish LOB apps directly to enterprises. All submissions for LOB apps must be published through Partner Center.
 
-
-## Set up the enterprise association
+### Set up the enterprise association
 
 The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
@@ -30,13 +43,11 @@ When an enterprise chooses to invite you to publish apps for their exclusive use
 
 To confirm the association, click **Accept**. Your account will then be able to publish apps for that enterprise’s exclusive use.
 
-
-## Submit LOB apps
+### Submit LOB apps
 
 Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](the-app-certification-process.md), and must comply with all [Microsoft Store Policies](store-policies.md). There are just a few parts of the process that are different.
 
-
-### Visibility
+#### Visibility
 
 After you've set up an enterprise association, every time you submit an app you’ll see a drop-down box in the **Visibility** section of the submission’s **Pricing and availability** page. By default, this is set to **Retail distribution**. To make the app exclusive to an enterprise, you’ll need to choose **Line-of-business (LOB) distribution**.
 
@@ -46,7 +57,7 @@ You must select at least one enterprise in order to publish an app as line-of-bu
 
 <span id="organizational" />
 
-### Organizational licensing
+#### Organizational licensing
 
 By default, the box for **Store-managed (online) volume licensing** is checked when you submit an app. When publishing LOB apps, this box must remain checked so that the enterprise can acquire your app in volume. This will not make the app available to anyone outside of the enterprise(s) that you selected in the **Distribution and visibility** section.
 
@@ -54,13 +65,11 @@ If you’d like to make the app available to the enterprise via disconnected (of
 
 For more info, see [Organizational licensing options](organizational-licensing.md).
 
-
-### Age ratings
+#### Age ratings
 
 For LOB apps, the [age ratings](age-ratings.md) step of the submission process works the same as for retail apps, but you also have an additional option that allows you to indicate the Store age rating of your app manually rather than completing the questionnaire or importing an existing IARC rating ID. This manual rating can only be used with LOB distribution, so if you ever change the **Visibility** setting of the app to **Retail distribution**, you'll need to take the age ratings questionnaire before you can publish the submission.
 
-
-## Enterprise deployment of LOB apps
+### Enterprise deployment of LOB apps
 
 After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store for Business or Microsoft Store for Education portal. The enterprise can then deploy the app to its users.
 
@@ -69,8 +78,7 @@ After you click **Submit to the Store**, the app will go through the certificati
 
 For more info, see [Working with line-of-business apps](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps) and [Distribute apps using your private store](https://docs.microsoft.com/microsoft-store/distribute-apps-from-your-private-store).
 
-
-## Update LOB apps
+### Update LOB apps
 
 To publish updates to an app that you’ve already published as LOB, simply create a new submission. You can upload new packages or make any other changes, then click **Submit to the Store** to make the updated version available. Be sure to keep the enterprise selections in **Visibility** the same, unless you intentionally want to make changes such as selecting an additional enterprise to acquire the app, or removing one of the enterprises to which you’d previously distributed it.
 
@@ -80,20 +88,3 @@ After the submission goes through the certification process, the app will no lon
 
 > [!NOTE]
 > When changing an app to **Retail distribution**, you'll need to complete the [age ratings questionnaire](age-ratings.md) if you haven't done so already, even if the app will not be available for new acquisitions.
-
-
-## Distribute LOB apps through sideloading
-
-Making apps available to an enterprise through Microsoft Store for Business or Microsoft Store for Education ensures that the app has been signed by the Store and complies with the standard Store Policies.
-
-In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
-
-For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
-
- 
-
- 
-
-
-
-
