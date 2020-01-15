@@ -2,7 +2,7 @@
 Description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 1/015/2020
+ms.date: 01/15/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,11 +10,9 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-
 The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen recent significant updates:
 
-
-## WinRT conceptual
+Here are some topics that have recently seen significant updates:
 
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/app-resources/build-resources-into-app-package">Build resources into your app package</a></li>
