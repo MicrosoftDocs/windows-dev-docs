@@ -10,21 +10,28 @@ ms.localizationpriority: medium
 
 # Distribute LOB apps to enterprises
 
-## Sideload LOB apps using App Installer
+You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](https://docs.microsoft.com/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store for Business or Microsoft Store for Education.
 
-## Sideload LOB apps using Configuration Manager or Intune
+## Microsoft Endpoint Configuration Manager and Microsoft Intune
 
-## Distribute LOB apps through sideloading
+If your organization uses Microsoft Endpoint Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:
 
-Making apps available to an enterprise through Microsoft Store for Business or Microsoft Store for Education ensures that the app has been signed by the Store and complies with the standard Store Policies.
+* [Introduction to application management in Configuration Manager](https://docs.microsoft.com/configmgr/apps/understand/introduction-to-application-management)
+* [Overview of the app lifecycle in Microsoft Intune](https://docs.microsoft.com/intune/apps/app-lifecycle)
 
-In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
+## App Installer
 
-For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
+App Installer enables Windows 10 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an .appinstaller file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.
 
-## Distribute LOB apps through the Microsoft Store for Business or Microsoft Store for Education
+App Installer can be downloaded for offline use in the enterprise from Microsoft Store for Business [web portal](https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 apps with App Installer](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root).
 
-You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
+## Sideloading
+
+Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install apps directly, but it requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
+
+## Microsoft Store for Business or Microsoft Store for Education
+
+You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store. When using this option, the apps are signed by the Store and must comply with the standard Store Policies.
 
 > [!NOTE]
 > At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business or Microsoft Store for Education. If you submit a paid app as LOB, it will not be available to the enterprise. 
