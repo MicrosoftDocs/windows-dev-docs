@@ -238,17 +238,18 @@ Use the following URIs to open various pages of the Settings app.
 | Eye tracker | ms-settings:privacy-eyetracker (requires eyetracker hardware) |
 | Feedback & diagnostics | ms-settings:privacy-feedback |
 | File system | ms-settings:privacy-broadfilesystemaccess |
-| General | ms-settings:privacy-general |
+| General | ms-settings:privacy or ms-settings:privacy-general |
+| Inking & typing |ms-settings:privacy-speechtyping |
 | Location | ms-settings:privacy-location |
 | Messaging | ms-settings:privacy-messaging |
 | Microphone | ms-settings:privacy-microphone |
 | Motion | ms-settings:privacy-motion |
 | Notifications | ms-settings:privacy-notifications |
 | Other devices | ms-settings:privacy-customdevices |
-| Pictures | ms-settings:privacy-pictures |
 | Phone calls | ms-settings:privacy-phonecalls |
+| Pictures | ms-settings:privacy-pictures |
 | Radios | ms-settings:privacy-radios |
-| Speech, inking & typing |ms-settings:privacy-speechtyping |
+| Speech | ms-settings:privacy-speech |
 | Tasks | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
 | Voice activation | ms-settings:privacy-voiceactivation |
@@ -328,7 +329,7 @@ Use the following URIs to open various pages of the Settings app.
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
 | Windows Update-View update history | ms-settings:windowsupdate-history |
 
-## User  Accounts
+## User Accounts
 
 |Settings page| URI |
 |-------------|-----|
