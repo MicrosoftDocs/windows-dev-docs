@@ -27,7 +27,7 @@ App Installer can be downloaded for offline use in the enterprise from Microsoft
 
 ## Sideloading
 
-Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install apps directly, but it requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
+Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
 
 ## Microsoft Store for Business or Microsoft Store for Education
 
