@@ -1,6 +1,6 @@
 ---
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
-title: Navigation history and backwards navigation (Windows apps)
+title: Navigation history and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019

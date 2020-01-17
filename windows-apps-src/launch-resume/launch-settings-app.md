@@ -238,17 +238,18 @@ Use the following URIs to open various pages of the Settings app.
 | Eye tracker | ms-settings:privacy-eyetracker (requires eyetracker hardware) |
 | Feedback & diagnostics | ms-settings:privacy-feedback |
 | File system | ms-settings:privacy-broadfilesystemaccess |
-| General | ms-settings:privacy-general |
+| General | ms-settings:privacy or ms-settings:privacy-general |
+| Inking & typing |ms-settings:privacy-speechtyping |
 | Location | ms-settings:privacy-location |
 | Messaging | ms-settings:privacy-messaging |
 | Microphone | ms-settings:privacy-microphone |
 | Motion | ms-settings:privacy-motion |
 | Notifications | ms-settings:privacy-notifications |
 | Other devices | ms-settings:privacy-customdevices |
-| Pictures | ms-settings:privacy-pictures |
 | Phone calls | ms-settings:privacy-phonecalls |
+| Pictures | ms-settings:privacy-pictures |
 | Radios | ms-settings:privacy-radios |
-| Speech, inking & typing |ms-settings:privacy-speechtyping |
+| Speech | ms-settings:privacy-speech |
 | Tasks | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
 | Voice activation | ms-settings:privacy-voiceactivation |
@@ -304,6 +305,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
+| Region | ms-settings:regionformatting |
 | Language | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Speech | ms-settings:speech |
@@ -327,7 +329,7 @@ Use the following URIs to open various pages of the Settings app.
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
 | Windows Update-View update history | ms-settings:windowsupdate-history |
 
-## User  Accounts
+## User Accounts
 
 |Settings page| URI |
 |-------------|-----|

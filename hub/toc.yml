@@ -96,8 +96,10 @@
     items: 
         - name: Overview
           href: nodejs/index.yml
-        - name: Setup your dev environment
+        - name: Setup with WSL2 (Linux)
           href: nodejs/setup-on-wsl2.md
+        - name: Setup with Windows (Beginners)
+          href: nodejs/setup-on-windows.md
         - name: Get started for beginners
           href: nodejs/beginners.md
         - name: Get started with web frameworks

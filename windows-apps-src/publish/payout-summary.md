@@ -49,6 +49,14 @@ The totals on this page represent all of the programs you participate in. You ca
 
 To export any of the data on this page, select Export and then follow directions on the Export data page.
 
+## Transaction history page
+
+This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
+
+To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
+
+To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
+
 ## Payment status
 
 | Earning status           | Reason                                                                                                                                      | Partner action required?                                   |
@@ -56,14 +64,14 @@ To export any of the data on this page, select Export and then follow directions
 | Unprocessed              | The earning is eligible for payment. It stays in this state for a cooling period as defined in the program guide for the Incentive program. | No                                                         |
 | Upcoming                 | Payment order generated pending internal reviews before payment is processed.                                                               | No                                                         |
 | Pending tax invoice      | Your tax invoice is incomplete or invalid.                                                                                                  | You need to update your tax invoice before you can be paid |
-| Rejected during review   | The payment was rejected during review.                                                                                                     | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support) for details                      |
-| Failed                   | The payment failed due to a Microsoft system error.                                                                                         | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support)  for details                      |
+| Rejected during review   | The payment was rejected during review.                                                                                                     | Contact [Microsoft support](https://developer.microsoft.com/windows/support) for details                      |
+| Failed                   | The payment failed due to a Microsoft system error.                                                                                         | Contact [Microsoft support](https://developer.microsoft.com/windows/support)  for details                      |
 | In progress              | The payment is in progress.                                                                                                                 | No                                                         |
 | Incorrect payment        | The payment recouping is in progress.                                                                                                       | No                                                         |
 | Sent                     | The payment has been sent to your bank.                                                                                                     | No                                                         |
 | Reprocessing             | The payment encountered a Microsoft system error and is being reprocessed.                                                                  | No                                                         |
 | Reversed                 | The payment was reversed by your bank and will be sent again in the next payment cycle.                                                     | No                                                         |
-| Tax invoice rejected     | Your tax invoice was rejected during review. All pending payments will be on hold until the tax invoice review is complete.                 | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support)  for details                      |
+| Tax invoice rejected     | Your tax invoice was rejected during review. All pending payments will be on hold until the tax invoice review is complete.                 | Contact [Microsoft support](https://developer.microsoft.com/windows/support)  for details                      |
 | Tax invoice under review | Your tax invoice is being reviewed. Your payment will be released once the tax invoice has been approved.                                   | No                                                         |
 | Rejected                 | The payment was rejected by your bank.                                                                                                      | Contact your bank for details.                             |
 

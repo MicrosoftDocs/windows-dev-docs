@@ -259,7 +259,7 @@ C++/CX and C# raise exceptions if you try to unbox a null pointer to a value typ
 | If o is null | `System.NullReferenceException` | Crash |
 | If o is not a boxed int | `System.InvalidCastException` | Crash |
 | Unbox int, use fallback if null; crash if anything else | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| Unbox int if possible; use fallback for anything else | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| Unbox int if possible; use fallback for anything else | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### Boxing and unboxing a string
 
@@ -269,24 +269,23 @@ The ABI type [**HSTRING**](/windows/win32/winrt/hstring) is a pointer to a refer
 
 C# represents a Windows Runtime string as a reference type; while C++/WinRT projects a string as a value type. This means that a boxed null string can have different representations depending how you got there.
 
+| Behavior | C# | C++/WinRT|
+|-|-|-|
+| Declarations | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| String type category | Reference type | Value type |
+| null **HSTRING** projects as | `""` | `hstring{}` |
+| Are null and `""` identical? | No | Yes |
+| Validity of null | `s = null;`<br>`s.Length` raises NullReferenceException | `s = hstring{};`<br>`s.size() == 0` (valid) |
+| If you assign null string to object | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| If you assign `""` to object | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+Basic boxing and unboxing.
+
 | Operation | C# | C++/WinRT|
 |-|-|-|
-| String type category | Reference type | Value type |
-| null **HSTRING** projects as | `""` | `hstring{ nullptr }` |
-| Are null and `""` identical? | No | Yes |
-| Validity of null | `s = null;`<br>`s.Length` raises **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0` (valid) |
-| Box a string | `o = s;` | `o = box_value(s);` |
-| If `s` is `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| If `s` is `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Box a string preserving null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Force-box a string | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| Unbox a known string | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| If `o` is null | `s == null; // not equivalent to ""` | Crash |
-| If `o` is not a boxed string | `System.InvalidCastException` | Crash |
-| Unbox string, use fallback if null; crash if anything else | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Unbox string if possible; use fallback for anything else | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-In the two *unbox with fallback* cases above, it's possible that a null string was force-boxed, in which case the fallback won't be used. The resulting value will be an empty string because that is what was in the box.
+| Box a string | `o = s;`<br>Empty string becomes non-null object. | `o = box_value(s);`<br>Empty string becomes non-null object. |
+| Unbox a known string | `s = (string)o;`<br>Null object becomes null string.<br>InvalidCastException if not a string. | `s = unbox_value<hstring>(o);`<br>Null object crashes.<br>Crash if not a string. |
+| Unbox a possible string | `s = o as string;`<br>Null object or non-string becomes null string.<br><br>OR<br><br>`s = o as string ?? fallback;`<br>Null or non-string becomes fallback.<br>Empty string preserved. | `s = unbox_value_or<hstring>(o, fallback);`<br>Null or non-string becomes fallback.<br>Empty string preserved. |
 
 ## Derived classes
 

@@ -240,15 +240,15 @@ Developer forums are a great place to ask and answer game development questions 
     </colgroup>
     <tr>
         <td>Publishing apps and games developer forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Publishing and ads-in-apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsapps">Publishing and ads-in-apps</a></td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
     </tr>
     <tr>
         <td>Desktop applications developer forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
     </tr>
     <tr>
         <td>DirectX Microsoft Store games (archived forum posts)</td>
@@ -264,7 +264,7 @@ Developer forums are a great place to ask and answer game development questions 
     </tr>
     <tr>
         <td>Azure platform forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform">Azure forum</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Azure forum</a></td>
     </tr>
     <tr>
         <td>Xbox Live forum</td>
@@ -888,7 +888,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting an Xbox game to a Universal Windows Platform app</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Porting from Xbox One to Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Porting from Xbox One to Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>Porting from DirectX 9 to DirectX 11</td>
@@ -1064,7 +1064,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </colgroup>
     <tr>
         <td>UWP design basics and guidelines</td>
-        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Designing UWP apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/design">Designing UWP apps</a></td>
     </tr>
     <tr>
         <td>Designing for app lifecycle states</td>
@@ -1528,7 +1528,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Partner Center advanced publishing (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Partner Center advanced publishing guide</a></td>
+        <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">Partner Center advanced publishing guide</a></td>
     </tr>
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>

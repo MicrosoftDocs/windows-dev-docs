@@ -26,7 +26,7 @@ TabView offers document tabs for UWP apps. Use a TabView when:
 - Users will be able to open documents or web pages directly into tabs.
 - Users will be able to drag and drop tabs between windows.
 
-If a TabView is not appropriate for your app, consider using controls such as [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) or [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview).
+If a TabView is not appropriate for your app, consider using controls such as [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) or [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview).
 
 ## Anatomy
 
@@ -86,7 +86,7 @@ Instead of having tabs occupy their own row below a Window's titlebar, you can m
 
 Because a user can drag a window by its titlebar to reposition the Window, it is important that the titlebar is not completely filled with Tabs. Therefore, when displaying tabs in a titlebar, you must specify a portion of the titlebar to be reserved as a draggable area. If you do not specify a draggable region, the entire titlebar will be draggable, which will prevent your tabs from receiving input events. If your TabView will display in a window's titlebar, you should always include a TabStripFooter in your TabView and mark it as a draggable region.
 
-For more information, see [Title bar customization](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+For more information, see [Title bar customization](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
 
 ![Tabs in titlebar](images/tabview/tab-extend-to-title.png)
 
@@ -288,6 +288,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## Related articles
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

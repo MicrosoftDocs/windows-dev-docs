@@ -36,13 +36,13 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Python API Browser](https://docs.microsoft.com/python/api/?view=azure-python): Your one-stop shop for all Python-based APIs from Microsoft.
 
-- [Azure Code Samples using Python](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
+- [Azure Code Samples using Python](https://azure.microsoft.com/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
 
 - [Python and Visual Studio Code](https://code.visualstudio.com/docs/languages/python): An overview of using Python with VS Code.
 
 ## Online courses
 
-- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 

@@ -18,7 +18,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows Mixed Reality: Enthusiast's Guide
 
-Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
+Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
 
 In the guide you will find: 
 - Before you buy FAQs, 

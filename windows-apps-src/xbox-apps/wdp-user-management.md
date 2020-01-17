@@ -6,7 +6,8 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
 ---
-#Xbox Live User Management#
+
+# Xbox Live User Management
 
 ## Request
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Connected apps and devices (Project Rome)
 
-This section explains how to connect apps across devices and platforms using [Project Rome](https://developer.microsoft.com/en-us/windows/project-rome). To learn how to implement Project Rome in a cross-platform scenario, visit the [main docs page for Project Rome](https://docs.microsoft.com/en-us/windows/project-rome/).
+This section explains how to connect apps across devices and platforms using [Project Rome](https://developer.microsoft.com/windows/project-rome). To learn how to implement Project Rome in a cross-platform scenario, visit the [main docs page for Project Rome](https://docs.microsoft.com/windows/project-rome/).
 
 Most users have multiple devices and often begin an activity on one device and finish it on another. To accommodate this, apps need to span devices and platforms. Project Rome allows you to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
 

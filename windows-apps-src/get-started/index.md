@@ -203,6 +203,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>Developer tools</h3>
+                        <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
@@ -217,7 +218,7 @@ ms.localizationpriority: medium
                 <div class="card">
                     <div class="cardText">
                         <h3>New to development?</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>

@@ -143,7 +143,7 @@ The BinScope Binary Analyzer tests check for the correct use of the following se
 
 ### BinScope Binary Analyzer tests
 
-The [BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+The [BinScope Binary Analyzer](https://www.microsoft.com/download/details.aspx?id=44995) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
 The BinScope Binary Analyzer tests check for the correct use of these security-related features:
 

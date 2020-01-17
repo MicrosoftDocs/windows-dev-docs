@@ -22,7 +22,7 @@ Design your app to look good in Mixed Reality, and take advantage of new input m
 
 ## Overview
 
-[Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) is the result of blending the physical world with the digital world. The spectrum of mixed reality experiences includes at one extreme devices such as the HoloLens (a device that mixes computer generated content with the real world), and at the other a completely immersive view of Virtual Reality (as viewed with a Windows Mixed Reality headset). See [Types of mixed reality apps](https://developer.microsoft.com/en-us/windows/mixed-reality/types_of_mixed_reality_apps) for examples of how experiences will vary.
+[Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) is the result of blending the physical world with the digital world. The spectrum of mixed reality experiences includes at one extreme devices such as the HoloLens (a device that mixes computer generated content with the real world), and at the other a completely immersive view of Virtual Reality (as viewed with a Windows Mixed Reality headset). See [Types of mixed reality apps](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps) for examples of how experiences will vary.
 
 Almost all existing UWP apps will run in the Mixed Reality environment as 2D apps with no changes, although the experience for the user can be improved by following some of the guidance in this topic.
 
@@ -162,6 +162,6 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Building 2D apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Building UWP 2D Apps for Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Conditional XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
 
 

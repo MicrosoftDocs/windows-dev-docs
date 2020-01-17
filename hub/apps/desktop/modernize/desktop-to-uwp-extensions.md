@@ -1,6 +1,6 @@
 ---
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
-title: Integrate your packaged desktop application with Windows 10 and UWP (Desktop Bridge)
+title: Modernize existing desktop apps using Desktop Bridge
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -1371,10 +1371,4 @@ Just create a Windows app package for your Win32 app. Then, add this extension t
 
 ## Next steps
 
-**Find answers to your questions**
-
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

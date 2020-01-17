@@ -94,7 +94,7 @@ Next, add a UWP app project to the same solution as your WPF project. You will r
     ```
 
 6. Delete the **MainPage.xaml** file from the UWP app project.
-7. Build the UWP app project.
+7. Clean the UWP app project and then build it.
 8. In your WPF project, right-click the **Dependencies** node and add a reference to your UWP app project.
 
 ## Create a custom UWP control

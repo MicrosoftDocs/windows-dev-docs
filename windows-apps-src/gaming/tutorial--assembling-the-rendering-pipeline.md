@@ -485,9 +485,9 @@ Scene and object info are used by the rendering framework to recreate the scene 
 The rendering pipeline is the process in which 3D scene info is translated to an image displayed on screen. In Direct3D 11, this pipeline is programmable. You can adapt the stages to support your rendering needs. Stages that feature common shader cores are programmable by using the HLSL programming language. It is also known as the graphics rendering pipeline or simply pipeline.
 
 To help you create this pipeline, you need to be familiar with:
-* [HLSL](#HLSL). We recommend the use of HLSL Shader Model 5.1 and above for UWP DirectX games.
-* [Shaders](#Shaders)
-* [Vertex shaders and pixel shaders](#vertext-shaders-pixel-shaders)
+* [HLSL](#hlsl). We recommend the use of HLSL Shader Model 5.1 and above for UWP DirectX games.
+* [Shaders](#shaders)
+* [Vertex shaders and pixel shaders](#vertex-shaders-and-pixel-shaders)
 * [Shader stages](#shader-stages)
 * [Various shader file formats](#various-shader-file-formats)
 

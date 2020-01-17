@@ -108,15 +108,6 @@ The following additional methods are available for use by developer accounts wit
 | Health analytics |  <ul><li>[Get Xbox Live health data](get-xbox-live-health-data.md)</li></ul> |
 | Community analytics |  <ul><li>[Get Xbox Live Game Hub data](get-xbox-live-game-hub-data.md)</li><li>[Get Xbox Live club data](get-xbox-live-club-data.md)</li><li>[Get Xbox Live multiplayer data](get-xbox-live-multiplayer-data.md)</li></ul>  |
 
-### Methods for Xbox One games
-
-The following additional methods are available for use by developer accounts with Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics dashboard.
-
-| Scenario       | Methods      |
-|---------------|--------------------|
-| Acquisitions |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li><li>[Get Xbox One add-on acquisitions](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Errors |  <ul><li>[Get error reporting data for your Xbox One game](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Get the stack trace for an error in your Xbox One game](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Download the CAB file for an error in your Xbox One game](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
-
 ### Methods for hardware and drivers
 
 Developer accounts that belong to the [Windows hardware dashboard program](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).

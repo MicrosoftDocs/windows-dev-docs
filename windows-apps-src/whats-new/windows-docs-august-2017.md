@@ -53,7 +53,7 @@ See [Extend your desktop application with modern UWP components](https://docs.mi
 
 ### Getting started with point of service
 
-We've added a new guide to help you [get started with point of service devices](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
+We've added a new guide to help you [get started with point of service devices](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
 
 ### Xbox Live
 
@@ -69,7 +69,7 @@ See the [Xbox Live developer program overview](https://docs.microsoft.com//gamin
 
 ### Mixed Reality
 
-A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
+A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
 
 ### Narrator and Dev Mode
 

@@ -1,5 +1,5 @@
 ---
-title: Stencil formats not supported with streaming resources
+title: Unsupported stencil formats with streaming resources
 description: Formats that contain stencil aren't supported with streaming resources.
 ms.assetid: 90A572A4-3C76-4795-BAE9-FCC72B5F07AD
 keywords:

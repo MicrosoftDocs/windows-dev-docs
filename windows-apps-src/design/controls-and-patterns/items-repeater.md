@@ -260,7 +260,7 @@ Items shown by the [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepe
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) arranges elements into a single line that you can orient horizontally or vertically.
 
-You can set the [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation).
+You can set the [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation).
 
 ![Stack layout spacing](images/stack-layout.png)
 
@@ -638,6 +638,12 @@ This example shows how you can display a list of grouped items in a vertical sta
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -646,7 +652,7 @@ This example shows how you can display a list of grouped items in a vertical sta
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -659,10 +665,11 @@ This example shows how you can display a list of grouped items in a vertical sta
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-This example shows a layout for an app that has various categories that can change with user preference and are presented as horizontally scrolling lists, as shown here.
+The image below shows the basic layout that's created using the above sample as a guideline.
 
 ![Nested layout with items repeater](images/items-repeater-nested-layout.png)
+
+This next example shows a layout for an app that has various categories that can change with user preference and are presented as horizontally scrolling lists. The layout of this example is also represented by the image above.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
