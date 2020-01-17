@@ -1,6 +1,6 @@
 ---
 Description: The Payout reports show you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
-title: Payout Reports
+title: Payout reports
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
@@ -8,7 +8,7 @@ keywords: windows 10, uwp, payout summary, statement, payments, earnings, payout
 ms.localizationpriority: medium
 ---
 
-# Payout Reports
+# Payout reports
 
 The **Payout summary** shows you details about the money you’ve earned with Microsoft. It also lets you know when you’ll receive payments and how much you'll be paid.
 
@@ -18,7 +18,7 @@ If you sell products in the Azure Marketplace, you’ll also see info on success
 > To be eligible for payout, your proceeds must reach the [payment threshold](payment-thresholds-methods-and-timeframes.md) of $50. For details about the payment threshold see this page and review the app developer agreement.
 
 > [!NOTE]
-> If you're looking for support regarding payouts, including configuring payout accounts, missing payouts, putting payouts on hold, or anything else, contact support [here](https://developer.microsoft.com/en-us/windows/support).
+> If you're looking for support regarding payouts, including configuring payout accounts, missing payouts, putting payouts on hold, or anything else, contact support [here](https://developer.microsoft.com/windows/support).
 
 ## Access the payout summary pages
 
@@ -31,7 +31,7 @@ To open one of the payout summary pages:
 
 This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
 
-To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/en-us/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
+To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
 
 To export any of the transaction data on this page, please use the **Export data** page.
 
