@@ -195,13 +195,11 @@ If you already have a custom control, you can use it instead of the control show
 
 Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of the first-party UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app. 
+This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app.
 
-1. In the UWP app project, install the latest prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
-    > [!NOTE]
-    > Make sure you install the latest *prerelease* version. Currently, only prerelease versions of this package will work if you choose to package your app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment.
+1. In the UWP app project, install the latest version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
-2. In the App.xaml file in this project, add the following child element to the `<xaml:Application>` element.
+2. In the App.xaml file in this project, add the following child element to the `<xaml:XamlApplication>` element.
 
     ```xml
     <Application.Resources>
@@ -224,7 +222,7 @@ This section demonstrates how to add a UWP control from the WinUI library to you
     </xaml:XamlApplication>
     ```
 
-3. In the UWP class library project, install the latest prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package (the same version that you installed in the UWP app project).
+3. In the UWP class library project, install the latest version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package (the same version that you installed in the UWP app project).
 
 4. In the same project, open the XAML file for the user control and add the following namespace declaration to the `<UserControl>` element.
 
@@ -284,20 +282,7 @@ The following instructions show you how to package the all the components in the
 
     3. Save the project file and close it.
 
-4. Edit the package manifest to reference the correct default splash screen image. This workaround is currently required for packaging WPF apps that host custom UWP controls.
-
-    1. In the packaging project, right-click the **Package.appxmanifest** file and click **View Code**.
-    2. Locate the following element in the file.
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.png" />```
-
-    3. Change this element to:
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.scale-200.png" />```
-
-    4. Save the **Package.appxmanifest** file and close it.
-
-5. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
+4. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
 
     1. In Solution Explorer, right-click the WPF project node and select **Unload Project**.
     2. Right-click the WPF project node and select **Edit**.
@@ -312,7 +297,7 @@ The following instructions show you how to package the all the components in the
     4. Save the project file and close it.
     5. Right-click the WPF project node and choose **Reload Project**.
 
-6. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+5. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
 ## Related topics
 
