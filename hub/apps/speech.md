@@ -14,7 +14,7 @@ author: Karl-Bridge-Microsoft
 
 Speech can be an effective, natural, and enjoyable way for people to interact with your Windows applications, complementing, or even replacing, traditional interaction experiences based on mouse, keyboard, touch, controller, or gestures.
 
-Use speech recognition, dictation, speech synthesis (also known as text-to-speech, or TTS), and conversational capabilities with various voice assistants to provide more robust and inclusive user experiences in your Windows applications, and help people be productive when other devices and experiences might not.
+Speech-based features such as speech recognition, dictation, speech synthesis (also known as text-to-speech or TTS), and conversational voice assistants (such as Cortana or Alexa) can provide accessible and inclusive user experiences that enable people to use your applications when other input devices might not suffice.
 
 This page provides information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
 
@@ -37,10 +37,12 @@ This page provides information on how the various Windows development frameworks
       [Speech synthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
 
       [Conversational agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
-      > Expose your application's functionality through any digital assistant supported by the Windows platform Agent Activation Runtime (AAR).
+
+      Expose your application's functionality through any digital assistant supported by the Windows platform Agent Activation Runtime (AAR).
 
       [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd)
-      > Extend the basic functionality of Cortana with voice commands that launch and execute a single action in your Windows application.
+      
+      Extend the basic functionality of Cortana with voice commands that launch and execute a single action in your Windows application.
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -59,7 +61,7 @@ This page provides information on how the various Windows development frameworks
 
       [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-      [Legacy accessibility and automation technology - MSAA to UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Microsoft Active Accessibility (MSAA)](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
       [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
@@ -68,64 +70,28 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![WPF platform](images/platform-wpf2-small.png)
-
-      **Windows Presentation Foundation (WPF)**
+      ![.NET](images/platform-dotnet.png)
 
       Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
       [System.Speech Programming Guide for .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
-
-      [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
-
-      [UI Automation Providers for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
-
-      [UI Automation Clients for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
-
-      [UI Automation Control Patterns](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
-
-      [UI Automation Text Pattern](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
-
-      [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
-
-      [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
-      ![Windows Forms platform apps](images/platform-winforms.png)
+      ![Azure speech services](images/platform-azure-speech.png)
 
-      **Windows Forms (WinForms)**
-
-      Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
-
-      [Windows Forms Accessibility](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
-
-      [Creating an Accessible Windows Application](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
-
-      [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
-
-      [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="2":::
       **Azure speech services**
 
       Design, build, and test accessible web sites with Azure speech services.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
+
       [Speech to text](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
-   :::column-end:::
-   :::column:::
+      
       [Speech translation](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
       [Voice-first virtual assistants](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="2":::
       **Legacy features**
