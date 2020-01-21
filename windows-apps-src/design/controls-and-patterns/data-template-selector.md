@@ -26,7 +26,7 @@ The customized design of collections controls are managed by a [DataTemplate](/u
 
 Generally, you should not give every item in a ListView or GridView a completely different layout/style - this would be poor use of a DataTemplateSelector, and negatively impact performance.
 
-Certain elements of the visual display of a list item can be controlled by using just one data template, through binding certain properties. For example, items can each have a different icons by binding to an icon source property in the data template, and giving each item a different value for that icon source property. This would achieve better performance than using a DataTemplateSelector.
+Certain elements of the visual display of a list item can be controlled by using just one data template, through binding certain properties. For example, items can each have a different icon by binding to an icon source property in the data template, and giving each item a different value for that icon source property. This would achieve better performance than using a DataTemplateSelector.
 
 ## When to use a DataTemplateSelector
 
@@ -45,7 +45,7 @@ Here are some examples of when you might use a data template selector:
 
 ## Create a DataTemplateSelector
 
-Whn you create a data template selector, you define the template selection logic in your code, and you define the data templates in your XAML.
+When you create a data template selector, you define the template selection logic in your code, and you define the data templates in your XAML.
 
 ### Code-behind component
 

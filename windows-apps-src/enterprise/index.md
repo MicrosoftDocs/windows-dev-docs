@@ -2,20 +2,23 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: This roadmap provides an overview of key enterprise features for Windows 10 and Universal Windows Platform (UWP) apps.
 title: Enterprise
-ms.date: 08/30/2018
+ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Enterprise
 
 This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows 10 apps. For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
+
+## Feature highlights
 
 <a id="template-studio" />
 
 ### Windows Template Studio
 
-Windows Template Studio is a Visual Studio 2017 and Visual Studio 2019 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
+Windows Template Studio is a Visual Studio 2019 extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -52,9 +55,9 @@ See [Windows UI Library (Preview version)](https://docs.microsoft.com/uwp/toolki
 
 <a id="xaml-islands" />
 
-### UWP controls in desktop applications
+### UWP controls in desktop applications (XAML Islands)
 
-Windows 10 now enables you to use UWP controls in WPF, Windows Forms, and C++ Win32 desktop applications. This means that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls, such as Windows Ink and controls that support the Fluent Design System. This feature is called XAML islands.
+Windows 10 now enables you to use UWP controls in WPF, Windows Forms, and C++ Win32 desktop applications using a feature called *XAML Islands*. This means that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls, such as Windows Ink and controls that support the Fluent Design System. This feature is called XAML islands.
 
 See [UWP controls in desktop applications](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
 
@@ -80,9 +83,7 @@ See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/windows/
 
 ### MSIX deployment
 
-MSIX is the Windows app package format that provides a modern packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and install files in addition to enabling new, modern packaging and deployment features to Win32, WPF, and Windows Forms apps.
-
-MSIX is a packaging format built to be safe, secure and reliable, based on a combination of .msi, .appx, App-V and ClickOnce installation technologies.
+MSIX is a Windows app package format that combines the best features of MSI, AppX, App-V, and ClickOnce to provide a modern and reliable packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and install files in addition to enabling modern packaging and deployment features to Win32, WPF, and Windows Forms apps. 
 
 ![MSIX Icon](images/MSIX-App-Package.ico)
 
@@ -145,11 +146,12 @@ Many users today are bringing their own phone or tablet to work, which have vary
 
 ## Deployment
 
-You have options for distributing apps to your organization’s users. You can use Microsoft Store for Business, existing mobile device management or you can sideload apps to devices. You can also make your apps available to the general public by publishing to the Microsoft Store.
+You have options for distributing apps to your organization’s users using MSIX packages. You can configure an App Installer-based deployment, use device management tools such as Microsoft Endpoint Configuration Manager and Microsoft Intune, publish to the Microsoft Store for Business, or you can sideload apps to devices. You can also make your apps available to the general public by publishing to the Microsoft Store.
 
 | Topic | Description |
 |-------|-------------|
-| [Distribute LOB apps to enterprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | You can publish line-of-business apps directly to enterprises for volume acquisition via the Microsoft Store for Business, without making the apps broadly available to the public. |
+| [MSIX documentation](https://docs.microsoft.com/windows/msix/) | MSIX is a Windows app package format that combines the best features of MSI, AppX, App-V, and ClickOnce to provide a modern and reliable packaging experience. |
+| [Distribute LOB apps to enterprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Learn about the options for distributing line-of-business apps without making the apps broadly available to the public, including App Installer-based deployment, Microsoft Endpoint Configuration Manager and Microsoft Intune, and publishing to the Microsoft Store for Business. |
 | [Sideload apps](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows 10.             |
 | [Publish apps to the Microsoft Store](https://developer.microsoft.com/store/publish-apps) | The unified Microsoft Store lets you publish and manage all of your apps for all Windows devices. Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options. |
 
