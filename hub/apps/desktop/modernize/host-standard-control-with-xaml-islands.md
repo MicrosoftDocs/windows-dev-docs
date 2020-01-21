@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a standard UWP control in a WPF app by using XAML Islands.
 title: Host a standard UWP control in a WPF app using XAML Islands
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, wrapped controls, standard controls, InkCanvas, InkToolbar
 ms.author: mcleans
@@ -44,9 +44,9 @@ Before getting started, follow these instructions to create a WPF project and co
 
 4. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
 
-5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) package (version v6.0.0-preview7 or later), and install the package. This package provides everything you need to use the wrapped UWP controls for WPF (including [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) and the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control.
+5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) package (version v6.0.0 or later), and install the package. This package provides everything you need to use the wrapped UWP controls for WPF (including [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) and the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control.
     > [!NOTE]
-    > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package (version v6.0.0-preview7 or later).
+    > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package (version v6.0.0 or later).
 
 6. Configure your solution to target a specific platform such as x86 or x64. Most XAML Islands scenarios are not supported in projects that target **Any CPU**.
 
@@ -61,7 +61,7 @@ Next, add a UWP app project to the same solution as your WPF project. You will r
 
 1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
 2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903** or later.
-3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (version v6.0.0-preview7 or later).
+3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (version v6.0.0 or later).
 4. Open the **App.xaml** file and replace the contents of this file with the following XAML. Replace `MyUWPApp` with the namespace of your UWP app project.
 
     ```xml

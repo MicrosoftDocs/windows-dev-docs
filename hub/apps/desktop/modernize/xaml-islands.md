@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop apps
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -30,7 +30,7 @@ The way you use XAML Islands depends on your application type and the types of U
 
 We recommend that WPF and Windows Forms applications use the XAML Island .NET controls that are available in the Windows Community Toolkit. These controls provide an object model that mimics (or provides access to) the properties, methods, and events of the corresponding UWP controls. They also handle behavior such as keyboard navigation and layout changes.
 
-There are two sets of XAML Island controls for WPF and Windows Forms applications: *wrapped controls* and *host controls*. As of Windows 10, version 1903, these controls are [available as a developer preview](#feature-roadmap).
+There are two sets of XAML Island controls for WPF and Windows Forms applications: *wrapped controls* and *host controls*. 
 
 ### Wrapped controls
 
@@ -67,8 +67,8 @@ The XAML Island .NET controls require Windows 10, version 1903, or a later versi
 
 | Type of control | NuGet package  | Related articles |
 |-----------------|----------------|---------------------|
-| [Wrapped controls](#wrapped-controls) | Version 6.0.0-preview7 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md)  |
-| [Host control](#host-controls) | Version 6.0.0-preview7 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom UWP control in a WPF app](host-custom-control-with-xaml-islands.md)  |
+| [Wrapped controls](#wrapped-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md)  |
+| [Host control](#host-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom UWP control in a WPF app](host-custom-control-with-xaml-islands.md)  |
 
 Be aware of the following details:
 
@@ -76,7 +76,7 @@ Be aware of the following details:
 
 * If you're hosting a custom UWP control, your WPF or Windows Forms project must target .NET Core 3. Hosting custom UWP controls is not supported in apps that target the .NET Framework. You'll also need to perform some additional steps to reference the custom control. For more info, see [Host a custom UWP control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
-* Earlier versions of these instructions had you add the `maxversiontested` element to an application manifest in your WPF or Windows Forms project. As long as you're using the latest preview versions of the NuGet packages listed above, you no longer need to add this element to your manifest.
+* Earlier versions of these instructions had you add the `maxversiontested` element to an application manifest in your WPF or Windows Forms project. As long as you're using the latest versions of the NuGet packages listed above, you no longer need to add this element to your manifest.
 
 ### Architecture of XAML Island .NET controls
 
@@ -111,13 +111,11 @@ The UWP XAML hosting API consists of several Windows Runtime classes and COM int
 
 ## Feature roadmap
 
-As of the release of Windows 10, version 1903, the XAML Island .NET controls in the Windows Community Toolkit are still in developer preview until the version 1.0 release of the controls is available.
+Here is the current state of XAML Islands-related features as of Windows 10, version 1903 and the version 6.0 release of the Windows Community Toolkit:
 
-* Version 1.0 of the controls for the .NET Framework 4.6.2 and later are planned to be released in the [6.0 release of the toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
-* Version 1.0 of the controls for .NET Core 3 are planned for a later release of the toolkit.
-* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the version 6.0.0-preview7 (or later) NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
-
-For more details, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
+* **C++ Win32 apps:** The UWP XAML hosting API is considered version 1.0 as of Windows 10, version 1903.
+* **Managed apps that target .NET Framework 4.6.2 and later:** The XAML Island controls that are available in the [version 6.0.0 NuGet packages](#configure-your-project-to-use-the-xaml-island-net-controls) are considered version 1.0 for apps that target the .NET Framework 4.6.2 and later.
+* **Managed apps that target .NET Core 3.0 and later:** The controls that are available in the [version 6.0.0 NuGet packages](#configure-your-project-to-use-the-xaml-island-net-controls) are still in developer preview for apps that target the .NET Core 3.0 and later. The version 1.0 release of these controls for .NET Core 3.0 and later are planned for a later release.
 
 ## Additional resources
 

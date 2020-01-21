@@ -1,7 +1,7 @@
 ---
 description: This article describes how to host UWP XAML UI in your desktop C++ Win32 app.
 title: Using the UWP XAML hosting API in a C++ Win32 app
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
 ms.author: mcleans
@@ -50,7 +50,7 @@ Choose one of the following options to prepare your project for deployment:
     1. Install the Windows 10, version 1903 SDK (version 10.0.18362) or a later release.
     2. Package your app in an MSIX package by adding a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your C++/Win32 project.
 
-* **Install the Microsoft.Toolkit.Win32.UI.SDK package**. If you don't want to package your app in an MSIX package, you can install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v6.0.0-preview7 or later). This package provides several build and run time assets that enable XAML Islands to work in your app. Make sure that the **Include prerelease** option is selected so you can see the latest preview versions of this package.
+* **Install the Microsoft.Toolkit.Win32.UI.SDK package**. If you don't want to package your app in an MSIX package, you can install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v6.0.0 or later). This package provides several build and run time assets that enable XAML Islands to work in your app.
 
 > [!NOTE]
 > Earlier versions of these instructions had you add the `maxversiontested` element to an application manifest in your project. As long as you're using one of the options listed above, you no longer need to add this element to your manifest.
@@ -120,7 +120,7 @@ This section walks you through the process of using the UWP XAML hosting API to 
 4. Install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package:
 
     1. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
-    2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) package, and install version v6.0.0-preview7 (or later) of this package.
+    2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) package, and install version v6.0.0 (or later) of this package.
 
 ### Use the XAML hosting API to host a UWP control
 
