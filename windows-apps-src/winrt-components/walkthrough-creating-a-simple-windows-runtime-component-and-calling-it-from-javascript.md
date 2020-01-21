@@ -1,6 +1,6 @@
 ---
 title: Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript
-description: This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
+description: This walkthrough shows how you can use .NET with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your UWP application built for Windows using JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,24 +10,30 @@ ms.localizationpriority: medium
 
 # Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript
 
-This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
+This walkthrough shows how you can use .NET with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how then to call that component from a JavaScript Universal Windows Platform (UWP) app.
 
-Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
+Visual Studio makes it easy to author and deploy your own custom Windows Runtime types inside a Windows Runtime component (WRC) project written with C# or Visual Basic, and then to reference that WRC from a JavaScript application project, and to consume those custom types from that application.
 
-> **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+Internally, your Windows Runtime types can use any .NET functionality that's allowed in a UWP application.
 
-This walkthrough illustrates the following tasks. After you've completed the first section, which sets up the Windows app with JavaScript, you can complete the remaining sections in any order.
+> [!NOTE]
+> For more info, see [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0).
+
+Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET WRC project, and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
+
+> [!NOTE]
+> .NET automatically maps some commonly used .NET types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Prerequisites:
 
--   Windows 10
--   Microsoft Visual Studio 2015 or Microsoft Visual Studio Community 2015
+- Windows 10
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 ## Creating a simple Windows Runtime class
 
-This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
+This section creates a JavaScript UWP application, and adds to the solution a Visual Basic or C# Windows Runtime component project. It shows how to define a Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately low-key in order to keep the focus on the component.
 
-1.  In Visual Studio, create a new JavaScript project: On the menu bar, choose **File, New, Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **JavaScript**, and then choose **Windows**, and then **Universal**. (If Windows is not available, make sure you're using Windows 8 or later.) Choose the **Blank Application** template and enter SampleApp for the project name.
+1. In Visual Studio, create a new JavaScript project: On the menu bar, choose **File, New, Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **JavaScript**, and then choose **Windows**, and then **Universal**. (If Windows is not available, make sure you're using Windows 8 or later.) Choose the **Blank Application** template and enter SampleApp for the project name.
 2.  Create the component project: In Solution Explorer, open the shortcut menu for the SampleApp solution and choose **Add**, and then choose **New Project** to add a new C# or Visual Basic project to the solution. In the **Installed Templates** section of the **Add New Project** dialog box, choose **Visual Basic** or **Visual C#**, and then choose **Windows**, and then **Universal**. Choose the **Windows Runtime Component** template and enter **SampleComponent** for the project name.
 3.  Change the name of the class to **Example**. Notice that by default, the class is marked **public sealed** (**Public NotInheritable** in Visual Basic). All the Windows Runtime classes you expose from your component must be sealed.
 4.  Add two simple members to the class, a **static** method (**Shared** method in Visual Basic) and an instance property:
@@ -85,9 +91,9 @@ function basics2() {
 }
 ```
 
-Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](https://docs.microsoft.com/scripting/jswinrt/using-the-windows-runtime-in-javascript). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
+Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](/scripting/jswinrt/using-the-windows-runtime-in-javascript). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
-In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for UWP apps and Windows Runtime](https://docs.microsoft.com/dotnet/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime).
+In similar fashion, .NET provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET support for UWP apps and the Windows Runtime](/dotnet/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime).
 
 ## Create a simple user interface
 
@@ -158,7 +164,7 @@ Before you build, change the target platform for all projects to ARM, x64, or x8
 
 To build and run the solution, choose the F5 key. (If you get a run-time error message stating that SampleComponent is undefined, the reference to the class library project is missing.)
 
-Visual Studio first compiles the class library, and then executes an MSBuild task that runs [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) to create your Windows Runtime component. The component is included in a .winmd file that contains both the managed code and the Windows metadata that describes the code. WinMdExp.exe generates build error messages when you write code that's invalid in a Windows Runtime component, and the error messages are displayed in the Visual Studio IDE. Visual Studio adds your component to the app package (.appx file) for your Universal Windows app, and generates the appropriate manifest.
+Visual Studio first compiles the class library, and then executes an MSBuild task that runs [Winmdexp.exe (Windows Runtime Metadata Export Tool)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) to create your Windows Runtime component. The component is included in a .winmd file that contains both the managed code and the Windows metadata that describes the code. WinMdExp.exe generates build error messages when you write code that's invalid in a Windows Runtime component, and the error messages are displayed in the Visual Studio IDE. Visual Studio adds your component to the app package (.appx file) for your UWP application, and generates the appropriate manifest.
 
 Choose the Basics 1 button to assign the return value from the static GetAnswer method to the output area, create an instance of the Example class, and display the value of its SampleProperty property in the output area. The output is shown here:
 
@@ -175,7 +181,7 @@ To stop debugging and close your app, switch from the app to Visual Studio, and 
 
 ## Using the Windows Runtime from JavaScript and managed code
 
-The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and the .NET Framework support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
+The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and .NET support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](/uwp/api/windows.foundation.collections.propertyset) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
 
 > **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime components](raising-events-in-windows-runtime-components.md).
 
@@ -251,7 +257,7 @@ In the SampleComponent project, add a new **public sealed** class (**Public NotI
 > End Class
 > ```
 
-The event handler follows the familiar .NET Framework event pattern, except that the sender of the event (in this case, the PropertySet object) is cast to the IObservableMap&lt;string, object&gt; interface (IObservableMap(Of String, Object) in Visual Basic), which is an instantiation of the Windows Runtime interface [IObservableMap&lt;K, V&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_). (You can cast the sender to its type if necessary.) Also, the event arguments are presented as an interface rather than as an object.
+The event handler follows the familiar .NET Framework event pattern, except that the sender of the event (in this case, the PropertySet object) is cast to the IObservableMap&lt;string, object&gt; interface (IObservableMap(Of String, Object) in Visual Basic), which is an instantiation of the Windows Runtime interface [IObservableMap&lt;K, V&gt;](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_). (You can cast the sender to its type if necessary.) Also, the event arguments are presented as an interface rather than as an object.
 
 In the default.js file, add the Runtime1 function as shown. This code creates a PropertySetStats object, gets its PropertySet collection, and adds its own event handler, the onMapChanged function, to handle the MapChanged event. After making changes to the collection, runtime1 calls the DisplayStats method to show a summary of change types.
 
@@ -326,7 +332,7 @@ To add two more items to the PropertySet collection from managed code, add the f
 > End Sub
 > ```
 
-This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in the .NET Framework. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and the .NET Framework. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
+This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in .NET. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and .NET. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
 
 Finally, to call the AddMore method with exception handling, add the runtime2 function to default.js.
 
@@ -354,15 +360,15 @@ var runtimeButton2 = document.getElementById("runtimeButton2");
 runtimeButton2.addEventListener("click", runtime2, false);
 ```
 
-To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. The JavaScript event handler reports the first change to the collection. The second change, however, has a duplicate key. Users of .NET Framework dictionaries expect the Add method to throw an exception, and that is what happens. JavaScript handles the .NET Framework exception.
+To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. The JavaScript event handler reports the first change to the collection. The second change, however, has a duplicate key. Users of .NET Framework dictionaries expect the Add method to throw an exception, and that is what happens. JavaScript handles the .NET exception.
 
 > **Note**  You can't display the exception's message from JavaScript code. The message text is replaced by a stack trace. For more information, see "Throwing exceptions" in Creating Windows Runtime components in C# and Visual Basic.
 
-By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and .NET support the Windows Runtime, as explained in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Returning managed types from your component
 
-As discussed previously, you can pass native Windows Runtime types back and forth freely between your JavaScript code and your C# or Visual Basic code. Most of the time, the type names and member names will be the same in both cases (except that the member names start with lowercase letters in JavaScript). However, in the preceding section, the PropertySet class appeared to have different members in managed code. (For example, in JavaScript you called the insert method, and in the .NET Framework code you called the Add method.) This section explores the way those differences affect .NET Framework types passed to JavaScript.
+As discussed previously, you can pass native Windows Runtime types back and forth freely between your JavaScript code and your C# or Visual Basic code. Most of the time, the type names and member names will be the same in both cases (except that the member names start with lowercase letters in JavaScript). However, in the preceding section, the PropertySet class appeared to have different members in managed code. (For example, in JavaScript you called the insert method, and in the .NET code you called the Add method.) This section explores the way those differences affect .NET Framework types passed to JavaScript.
 
 In addition to returning Windows Runtime types that you created in your component or passed to your component from JavaScript, you can return a managed type, created in managed code, to JavaScript as if it were the corresponding Windows Runtime type. Even in the first, simple example of a runtime class, the parameters and return types of the members were Visual Basic or C# primitive types, which are .NET Framework types. To demonstrate this for collections, add the following code to the Example class, to create a method that returns a generic dictionary of strings, indexed by integers:
 
@@ -391,7 +397,7 @@ In addition to returning Windows Runtime types that you created in your componen
 > End Function
 > ```
 
-Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2?redirectedfrom=MSDN), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
+Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](/dotnet/api/system.collections.generic.dictionary-2), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
 
 **Important**  When a managed type implements multiple interfaces, JavaScript uses the interface that appears first in the list. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
@@ -442,7 +448,7 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-There are a few interesting things to observe about this JavaScript code. First of all, it includes a showMap function to display the contents of the dictionary in HTML. In the code for showMap, notice the iteration pattern. In the .NET Framework, there's no First method on the generic IDictionary interface, and the size is returned by a Count property rather than by a Size method. To JavaScript, IDictionary&lt;int, string&gt; appears to be the Windows Runtime type IMap&lt;int, string&gt;. (See the [IMap&lt;K,V&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IMap_K_V_) interface.)
+There are a few interesting things to observe about this JavaScript code. First of all, it includes a showMap function to display the contents of the dictionary in HTML. In the code for showMap, notice the iteration pattern. In .NET, there's no First method on the generic IDictionary interface, and the size is returned by a Count property rather than by a Size method. To JavaScript, IDictionary&lt;int, string&gt; appears to be the Windows Runtime type IMap&lt;int, string&gt;. (See the [IMap&lt;K,V&gt;](/uwp/api/Windows.Foundation.Collections.IMap_K_V_) interface.)
 
 In the returns2 function, as in earlier examples, JavaScript calls the Insert method (insert in JavaScript) to add items to the dictionary.
 
@@ -523,7 +529,7 @@ You can declare events by using the standard .NET Framework event pattern or oth
 > End Class
 > ```
 
-When you expose an event in the Windows Runtime, the event argument class inherits from System.Object. It doesn't inherit from System.EventArgs, as it would in the .NET Framework, because EventArgs is not a Windows Runtime type.
+When you expose an event in the Windows Runtime, the event argument class inherits from System.Object. It doesn't inherit from System.EventArgs, as it would in .NET, because EventArgs is not a Windows Runtime type.
 
 If you declare custom event accessors for your event (**Custom** keyword in Visual Basic), you must use the Windows Runtime event pattern. See [Custom events and event accessors in Windows Runtime components](custom-events-and-event-accessors-in-windows-runtime-components.md).
 
@@ -552,9 +558,9 @@ events1Button.addEventListener("click", events1, false);
 ## Exposing asynchronous operations
 
 
-The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions/br205802(v=vs.85)), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions/br205807(v=vs.85)). (In the Windows Runtime, operations return results, but actions do not.)
+The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](/dotnet/api/system.threading.tasks.task-1) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](/previous-versions/br205802(v=vs.85)), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/previous-versions/br205807(v=vs.85)). (In the Windows Runtime, operations return results, but actions do not.)
 
-This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the GetPrimesInRangeAsync method to the example class:
+This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](/dotnet/api/system.runtime.interopservices.windowsruntime) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the GetPrimesInRangeAsync method to the example class:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -649,21 +655,21 @@ This section demonstrates a cancelable asynchronous operation that reports progr
 GetPrimesInRangeAsync is a very simple prime number finder, and that's by design. The focus here is on implementing an asynchronous operation, so simplicity is important, and a slow implementation is an advantage when we're demonstrating cancellation. GetPrimesInRangeAsync finds primes by brute force: It divides a candidate by all the integers that are less than or equal to its square root, rather than using only the prime numbers. Stepping through this code:
 
 -   Before starting an asynchronous operation, perform housekeeping activities such as validating parameters and throwing exceptions for invalid input.
--   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
+-   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](/dotnet/api/system.runtime.interopservices.windowsruntime)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
 
-    -   The [WinJS.Promise](https://docs.microsoft.com/previous-versions/windows/apps/br211867(v=win.10)) object supplies functions to process the returned results, react to cancellation, and handle progress reports.
-    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken?redirectedfrom=MSDN) token from the cancellation source, and the [IProgress&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN) interface.
+    -   The [WinJS.Promise](/previous-versions/windows/apps/br211867(v=win.10)) object supplies functions to process the returned results, react to cancellation, and handle progress reports.
+    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](/dotnet/api/system.threading.cancellationtoken) token from the cancellation source, and the [IProgress&lt;T&gt;](/dotnet/api/system.iprogress-1) interface.
 
         > **Note**  If the Promise object doesn't supply a function to react to cancellation, AsyncInfo.Run still passes a cancelable token, and cancellation can still occur. If the Promise object doesn't supply a function to handle progress updates, AsyncInfo.Run still supplies an object that implements IProgress&lt;T&gt;, but its reports are ignored.
 
-    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#System_Threading_Tasks_Task_Run__1_System_Func___0__System_Threading_CancellationToken_)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
-    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
+    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run__1_System_Func___0__System_Threading_CancellationToken_)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
+    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
     -   The IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface is returned to JavaScript.
 
 -   The lambda function that is represented by the started task doesn't take any arguments. Because it's a lambda function, it has access to the token and the IProgress interface. Each time a candidate number is evaluated, the lambda function:
 
     -   Checks to see whether the next percentage point of progress has been reached. If it has, the lambda function calls the IProgress&lt;T&gt;.Report method, and the percentage is passed through to the function that the Promise object specified for reporting progress.
-    -   Uses the cancellation token to throw an exception if the operation has been canceled. If the [IAsyncInfo.Cancel](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.cancel) method (which the IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface inherits) has been called, the connection that the AsyncInfo.Run method set up ensures that the cancellation token is notified.
+    -   Uses the cancellation token to throw an exception if the operation has been canceled. If the [IAsyncInfo.Cancel](/uwp/api/windows.foundation.iasyncinfo.cancel) method (which the IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface inherits) has been called, the connection that the AsyncInfo.Run method set up ensures that the cancellation token is notified.
 -   When the lambda function returns the list of prime numbers, the list is passed to the function that the WinJS.Promise object specified for processing the results.
 
 To create the JavaScript promise and set up the cancellation mechanism, add the asyncRun and asyncCancel functions to default.js.
@@ -717,6 +723,5 @@ To run the app, choose the F5 key. To start the asynchronous operation, choose t
 
 ## Related topics
 
-* [.NET for UWP apps Overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
-* [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [.NET for UWP apps overview](/previous-versions/windows/apps/br230302(v=vs.140))
+* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)

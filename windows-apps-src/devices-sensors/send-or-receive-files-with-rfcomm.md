@@ -70,7 +70,7 @@ async void Initialize()
                     .BluetoothEncryptionAllowNullAuthentication);
 
             // The socket is connected. At this point the App can wait for
-            // the user to take some action, e.g. click a button to send a
+            // the user to take some action, for example, click a button to send a
             // file to the device, which could invoke the Picker and then
             // send the picked file. The transfer itself would use the
             // Sockets API and not the Rfcomm API, and so is omitted here for
@@ -170,7 +170,7 @@ Windows::Foundation::IAsyncAction Initialize()
                 Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication);
 
             // The socket is connected. At this point the App can
-            // wait for the user to take some action, e.g. click
+            // wait for the user to take some action, for example, click
             // a button to send a file to the device, which could
             // invoke the Picker and then send the picked file.
             // The transfer itself would use the Sockets API and
@@ -270,7 +270,7 @@ void Initialize()
                     .then([](void)
                     {
                         // The socket is connected. At this point the App can
-                        // wait for the user to take some action, e.g. click
+                        // wait for the user to take some action, for example, click
                         // a button to send a file to the device, which could
                         // invoke the Picker and then send the picked file.
                         // The transfer itself would use the Sockets API and
@@ -396,7 +396,7 @@ void OnConnectionReceived(
     _socket = args.Socket;
 
     // The client socket is connected. At this point the App can wait for
-    // the user to take some action, e.g. click a button to receive a file
+    // the user to take some action, for example, click a button to receive a file
     // from the device, which could invoke the Picker and then save the
     // received file to the picked location. The transfer itself would use
     // the Sockets API and not the Rfcomm API, and so is omitted here for
@@ -460,7 +460,7 @@ void OnConnectionReceived(
     m_socket = args.Socket();
 
     // The client socket is connected. At this point the application can wait for
-    // the user to take some action, e.g. click a button to receive a
+    // the user to take some action, for example, click a button to receive a
     // file from the device, which could invoke the Picker and then save
     // the received file to the picked location. The transfer itself
     // would use the Sockets API and not the Rfcomm API, and so is
@@ -526,7 +526,7 @@ void OnConnectionReceived(
         _socket = args->Socket;
 
         // The client socket is connected. At this point the App can wait for
-        // the user to take some action, e.g. click a button to receive a
+        // the user to take some action, for example, click a button to receive a
         // file from the device, which could invoke the Picker and then save
         // the received file to the picked location. The transfer itself
         // would use the Sockets API and not the Rfcomm API, and so is

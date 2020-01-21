@@ -46,7 +46,7 @@ Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Window
 ## Installing, uninstalling, and running the emulator
 
 ### Installing
-Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://developer.microsoft.com/windows/downloads).
 
 You can also install the Microsoft Emulator for Windows 10 Mobile using the [Microsoft Emulator setup](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
@@ -231,7 +231,7 @@ You can also use the terminal simulator tool from MasterCard ([https://www.termi
 -   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
 -   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
 
-To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](https://go.microsoft.com/fwlink/?LinkId=534749).
+To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](https://blogs.msdn.com/b/nfc/).
 
 ### How to Create Scripts for HCE Testing
 
@@ -629,9 +629,9 @@ Microsoft Emulator includes XDECleanup.exe, a tool that deletes all VMs, diff di
 
 ### Uninstall Windows 10 for Mobile Image
 
-When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image - <version>** in the list of installed programs, right-click on it, and choose **Uninstall**.
+When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image -\<version\>** in the list of installed programs, right-click on it, and choose **Uninstall**.
 
-In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
+In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd.
 
 ### How to disable hardware accelerated graphics
 
@@ -651,7 +651,7 @@ To disable hardware acceleration:
 
 ## Support Resources
 
-To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](https://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](https://go.microsoft.com/fwlink/?LinkId=535000).
+To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues). To see all the forums for Windows 10 development, visit [this link](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop).
 
 ## Related topics
 

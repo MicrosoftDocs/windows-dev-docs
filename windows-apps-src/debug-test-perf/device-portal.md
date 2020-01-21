@@ -41,7 +41,7 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 For device-specific setup instructions, see:
 
 - [Device Portal for HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Device Portal for IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
 - [Device Portal for Mobile](device-portal-mobile.md)
 - [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
 - [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -199,7 +199,7 @@ Device Portal advertises its presence on the local network using DNS-SD. All Dev
 Key | Type | Description
 ----|------|-------------
 S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections.
-D | string | Type of device. This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
+D | string | Type of device. This will be in the format "Windows.*", for example, Windows.Xbox or Windows.Desktop
 A | string | Device architecture. This will be ARM, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 

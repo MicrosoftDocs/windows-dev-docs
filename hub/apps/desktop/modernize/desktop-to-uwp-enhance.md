@@ -16,7 +16,7 @@ You can use Universal Windows Platform (UWP) APIs to add modern experiences to y
 
 First, set up your project with the required references. Then, call UWP APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
 
-Some UWP APIs are supported only in desktop apps that are packaged in an [MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
+Some UWP APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
 
 ## Set up your project
 
@@ -38,13 +38,13 @@ There are two options for .NET projects:
 
 2. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Manage NuGet Packages**.
 
-3. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected. Then, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
+3. In the **NuGet Package Manager** window, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
 
 4. After the `Microsoft.Windows.SDK.Contracts` package is found, in the right pane of the **NuGet Package Manager** window select the **Version** of the package you want to install based on the version of Windows 10 you want to target:
 
-    * **10.0.18362.xxxx-preview**: Choose this for Windows 10, version 1903.
-    * **10.0.17763.xxxx-preview**: Choose this for Windows 10, version 1809.
-    * **10.0.17134.xxxx-preview**: Choose this for Windows 10, version 1803.
+    * **10.0.18362.xxxx**: Choose this for Windows 10, version 1903.
+    * **10.0.17763.xxxx**: Choose this for Windows 10, version 1809.
+    * **10.0.17134.xxxx**: Choose this for Windows 10, version 1803.
 
 5. Click **Install**.
 
@@ -248,12 +248,6 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 * [WinForms application that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
-## Support and feedback
-
-**Find answers to your questions**
+## Find answers to your questions
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

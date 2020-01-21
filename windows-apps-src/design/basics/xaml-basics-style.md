@@ -32,10 +32,7 @@ Universal Windows Platform (UWP) provides a number of ways to customize the look
 
 For the first part of the tutorial, let's jazz up some of our photo editing controls. 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*A humble slider with default styling.*</figure>
-</figure>
+![A humble slider with default styling.](../basics/images/xaml-basics/slider-start.png)
 
 These sliders are nice--they do all the things a slider should do--but they aren't very fancy. Let's fix that. 
 
@@ -54,7 +51,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 3. Use a Polygon element to create a background shape for the exposure slider.
 
-    The [Windows.XAML.Ui.Shapes namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) provides seven shapes to choose from. There's an ellipse, a rectangle, and a thing called a Path, which can make any sort of shape--yes, even a unicorn! 
+    The [Windows.XAML.Ui.Shapes namespace](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) provides seven shapes to choose from. There's an ellipse, a rectangle, and a thing called a Path, which can make any sort of shape--yes, even a unicorn! 
     
     <!-- TODO reduce size -->
     ![A unicorn](../basics/images/xaml-basics/unicorn.png)
@@ -176,7 +173,7 @@ Congratulations, you've completed part 1! If you got stuck or want to see the fi
 
 One of the advantages of XAML styles is that it can dramatically cut down the amount of code you have to write, and it can make it much, much easier to update the look of your app.
 
-To define a style, you add a [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
+To define a style, you add a [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) element to the [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
 
 You can create named styles and general styles. A named style must be explicitly applied to specific controls; a general style is applied to any control that matches the specified **TargetType**. 
 
@@ -744,8 +741,7 @@ Well, we got the job done, but there's a better way to achieve the same effect: 
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **After**

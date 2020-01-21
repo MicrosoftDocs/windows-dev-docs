@@ -229,7 +229,7 @@ You can programmatically check if the current theme is a high contrast theme by 
 
 ## Related topics  
 * [Accessibility](accessibility.md)
-* [UI contrast and settings sample](https://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
-* [XAML high contrast sample](https://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI contrast and settings sample](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML high contrast sample](https://code.msdn.microsoft.com/windowsapps/XAML-high-contrast-style-c0ce936f)
 * [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

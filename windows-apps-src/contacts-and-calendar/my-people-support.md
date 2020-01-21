@@ -8,21 +8,24 @@ ms.localizationpriority: medium
 ---
 # Adding My People support to an application
 
+> [!Note]
+> As of the Windows 10 May 2019 Update (version 1903), new Windows 10 installations will no longer show ‘People in the taskbar’ by default. Customers can enable the feature by right-clicking on the taskbar and pressing “Show People on the taskbar.” Developers are discouraged from adding My People support to their applications, and should visit the [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/) for more information about optimizing apps for Windows 10.
+
 The My People feature allows users to pin contacts from an application directly to their taskbar, which creates a new contact object that they can interact with in several ways. This article shows how you can add support for this feature, allowing users to pin contacts directly from your app. When contacts are pinned, new types of user interaction become available, such as [My People sharing](my-people-sharing.md) and [notifications](my-people-notifications.md).
 
 ![My people chat](images/my-people-chat.png)
 
 ## Requirements
 
-+ Windows 10 and Microsoft Visual Studio 2019. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 and Microsoft Visual Studio 2019. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Overview
 
 There are three things you need to do to enable your application to use the My People feature:
 
-1. [Declare support for the shareTarget activation contract in your application manifest.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Annotate the contacts that the users can share to using your app.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Declare support for the shareTarget activation contract in your application manifest.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Annotate the contacts that the users can share to using your app.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 When you’ve done this, your application will appear in the contact panel for annotated contacts.
@@ -163,7 +166,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-When your application is activated with this contract, it will receive a [ContactPanelActivatedEventArgs object](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  This contains the ID of the Contact that your application is trying to interact with on launch, and a [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel) object. You should keep a reference to this ContactPanel object, which will allow you to interact with the panel.
+When your application is activated with this contract, it will receive a [ContactPanelActivatedEventArgs object](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  This contains the ID of the Contact that your application is trying to interact with on launch, and a [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel) object. You should keep a reference to this ContactPanel object, which will allow you to interact with the panel.
 
 The ContactPanel object has two events your application should listen for:
 + The **LaunchFullAppRequested** event is sent when the user has invoked the UI element that requests that your full application be launched in its own window.  Your application is responsible for launching itself, passing along all necessary context.  You are free to do this however you’d like (for example, via protocol launch).
@@ -173,7 +176,7 @@ The ContactPanel object also allows you to set the background color of the conta
 
 ## Supporting notification badging
 
-If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and expressive [My People notifications](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
+If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and expressive [My People notifications](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications).
 
 ![People notification badging](images/my-people-badging.png)
 
@@ -197,12 +200,12 @@ Here is an example of how to identify a toast notification is related to a speci
 ```
 
 > [!NOTE]
-> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
 > If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the RemoteIdHelper class shown later in this topic in order to add a unique tag to all of your remote IDs before you add them to the system. Or you can choose to not use the RemoteId property at all and instead you create a custom extended property in which to store remote IDs for your contacts.
 
 ## The PinnedContactManager class
 
-The [PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) is used to manage which contacts are pinned to the taskbar. This class lets you pin and unpin contacts, determine whether a contact is pinned, and determine if pinning on a particular surface is supported by the system your application is currently running on.
+The [PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) is used to manage which contacts are pinned to the taskbar. This class lets you pin and unpin contacts, determine whether a contact is pinned, and determine if pinning on a particular surface is supported by the system your application is currently running on.
 
 You can retrieve the PinnedContactManager object using the **GetDefault** method:
 
@@ -246,7 +249,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [My People sharing](my-people-sharing.md)
 + [My People notificatons](my-people-notifications.md)
 + [Channel 9 video on adding My People support to an application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [My People integration sample](https://aka.ms/mypeoplebuild2017)
++ [My People integration sample](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [PinnedContactManager class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Connect your app to actions on a contact card](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [PinnedContactManager class documentation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Connect your app to actions on a contact card](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

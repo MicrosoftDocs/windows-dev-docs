@@ -3903,9 +3903,9 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
   <td>EDE3</td>
   <td>ButtonMenu</td>
  </tr>
-<tr><td><img src="images/segoe-mdl/EDE4.png" width="32" height="32" alt="CloudSeach" /></td>
+<tr><td><img src="images/segoe-mdl/EDE4.png" width="32" height="32" alt="CloudSearch" /></td>
   <td>EDE4</td>
-  <td>CloudSeach</td>
+  <td>CloudSearch</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE5.png" width="32" height="32" alt="PinyinIMELogo" /></td>
   <td>EDE5</td>
@@ -5515,7 +5515,7 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
 ## Related articles
 
 * [Guidelines for icons](../style/icons.md)
-* [Symbol enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Symbol enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

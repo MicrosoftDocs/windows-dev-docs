@@ -17,13 +17,13 @@ This tutorial teaches you how to use JavaScript and HTML to create a simple "Hel
 > [!WARNING]
 > Javascript UWP app development is not supported in Visual Studio 2019. You must use Visual Studio 2017 to develop a Javascript UWP app.
 
-Here you'll learn how to:
+In this article you'll learn how to:
 
 -   Create a new **Visual Studio 2017** project that targets **Windows 10** and the **UWP**.
--   Add HTML and JavaScript content
--   Run the project on the local desktop in Visual Studio
+-   Add HTML and JavaScript content.
+-   Run the project on the local desktop in Visual Studio.
 
-## Before you start...
+## Before you start
 
 -   [What's a UWP app?](universal-application-platform-guide.md).
 -   To complete this tutorial, you need Windows 10 and Visual Studio. [Get set up](get-set-up.md).
@@ -33,16 +33,16 @@ Here you'll learn how to:
 
 1.  Launch Visual Studio 2017.
 
-2.  From the **File** menu, select **New > Project...** to open the *Create a new project* dialog.
+2.  From the **File** menu, select **New > Project** to open the **Create a new project** dialog.
 
 3.  Choose **Blank App (Universal Windows) JavaScript**, and then select **Next**.
 
-    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *Create a new project* dialog. See [Get set up](get-set-up.md)
+    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by selecting **Open Visual Studio installer** in the **Create a new project** dialog. See [Get set up](get-set-up.md).
 
-4.  In the *Configure your new project* dialog, enter "HelloWorld" as the **Project name**, and then select **Create**.
+4.  In the **Configure your new project** dialog, enter **HelloWorld** as the **Project name**, and then select **Create**.
 
 > [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, select **Yes**, and then close the dialog.
 
  ![Activate Developer mode dialog](images/win10-cs-00.png)
 
@@ -74,13 +74,13 @@ To view and edit a file in your project, double-click the file in the **Solution
 - The app's web page, loaded and displayed when the app is launched.
 
 *A set of logo images*
--   Assets/Square150x150Logo.scale-200.png represents your app in the start menu.
+-   Assets/Square150x150Logo.scale-200.png represents your app in the **Start** menu.
 -   Assets/StoreLogo.png represents your app in the Microsoft Store.
 -   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 
 ## Step 2: Adding a button
 
-Click on *index.html* to select it in the editor, and change the HTML it contains to read:
+Select **index.html** to select it in the editor, and change the HTML it contains to read as follows.
 
 ```html
 <!DOCTYPE html>
@@ -101,7 +101,7 @@ Click on *index.html* to select it in the editor, and change the HTML it contain
 </html>
 ```
 
-It should look like this:
+It should look like this.
 
  ![The project's HTML](images/win10-js-03.png)
 
@@ -110,7 +110,7 @@ This HTML references the *main.js* that will contain our JavaScript, and then ad
 
 ## Step 3: Adding some JavaScript
 
-Now we'll add the JavaScript. Click on *main.js* to select it, and add the following:
+Now we'll add the JavaScript. Select **main.js** to select it, and then add the following.
 
 ```javascript
 // Your code here!
@@ -129,7 +129,7 @@ function sayHello() {
 
 ```
 
-It should look like this:
+It should look like this.
 
  ![The project's JavaScript](images/win10-js-04.png)
 
@@ -140,7 +140,7 @@ The second function, *sayHello()*, creates and displays a dialog. This is very s
 
 ## Step 4: Run the app!
 
-Now you can run the app by pressing F5. The app will load, the web page will be displayed. Click on the button, and the message dialog will pop-up.
+Now you can run the app by pressing F5. The app will load, the web page will be displayed. Select the button, and the message dialog will pop-up.
 
  ![Running the project](images/win10-js-05.png)
 

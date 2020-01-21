@@ -157,9 +157,9 @@ There will be times the [**Range**](https://docs.microsoft.com/uwp/api/windows.u
 ## Related articles
 
 **Samples**
-* [Custom Edit Control sample](https://go.microsoft.com/fwlink/?linkid=831024)
+* [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)
  
 **Archive samples**
-* [XAML text editing sample](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML text editing sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
 
 

@@ -43,7 +43,7 @@ You can disable the shortcuts without installing Python by opening "Manage app e
 Python strings use “escapes” for special characters. For example, to insert a new line character into a string, you would type `\n`. Because file paths on Windows use backslashes, some parts might be being converted into special characters.
 
 To paste a path as a string in Python, add the `r` prefix. This indicates that it is a `raw` string, and no escape characters will be used except for \” (you might need to remove the last backslash in your path). So your path might look like:
-r"C:\Users\MyName\Documents\Document.txt"
+`r"C:\Users\MyName\Documents\Document.txt"`
 
 When working with paths in Python, we recommend using the standard pathlib module. This will let you convert the string to a rich Path object that can do path manipulations consistently whether it uses forward slashes or backslashes, making your code work better across different operating systems.
 
@@ -73,4 +73,4 @@ The VSCode extension [Keymaps](https://marketplace.visualstudio.com/search?targe
 
 ## How do Mac shortcut keys map to Windows shortcut keys?
 
-Some of the keyboard buttons and system shortcuts are slightly different between a Windows machine and a Macintosh. This [keyboard mapping guide](https://support.microsoft.com/help/970299/keyboard-mappings-using-a-pc-keyboard-on-a-macintosh) from Microsoft Support covers the basics.
+Some of the keyboard buttons and system shortcuts are slightly different between a Windows machine and a Macintosh. This [Mac to Windows transition guide](../dev-environment/mac-to-windows.md) covers the basics.

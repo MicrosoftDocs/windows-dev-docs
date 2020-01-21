@@ -26,6 +26,18 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>October 1, 2019</td>
+<td>7.12</td>
+<td><p>Added new policy 10.2.6 banning apps that mine cryptocurrency on device.</p>
+<p>Updated 10.8.4 to add odds disclosure requirement for products offering “loot boxes’ or other randomized virtual items.</p>
+<p>Updated 10.8.7 to add requirements regarding pricing regulations.</p>
+<p>Updated 10.10.1 to add requirements related to truth in advertising.</p>
+<p>Updated 10.13.1 to clarify game products includes products that primarily offer remote game play/control functionality.</p>
+<p>Removed the company account requirement for certain types of apps from 10.14. </p>
+<p>Added 11.12 with requirements for user generated content.</p>
+</td>
+</tr>
 <tr class="even">
 <td>March 5, 2019</td>
 <td>7.11</td>

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This article describes how to use the **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive account). The steps are similar for getting user permission and access with any identity provider that supports the Web Account Manager.
 
 > [!NOTE]
-> For a complete code sample, see the [WebAccountManagement sample on GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
+> For a complete code sample, see the [WebAccountManagement sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
 
 ## Get set up
 
@@ -74,7 +74,7 @@ The pane is empty because the system only provides a UI shell - it's up to the d
 
 ## Register for AccountCommandsRequested
 
-To add commands to the pane, we start by registering for the AccountCommandsRequested event handler. This tells the system to run our build logic when the user asks to see the pane (e.g., clicks our XAML button). 
+To add commands to the pane, we start by registering for the AccountCommandsRequested event handler. This tells the system to run our build logic when the user asks to see the pane (for example, clicks our XAML button). 
 
 In your code behind, override the OnNavigatedTo and OnNavigatedFrom events and add the following code to them: 
 
@@ -424,6 +424,6 @@ Theoretically, you can use settings commands for anything. However, we suggest l
 
 [Web authentication broker](web-authentication-broker.md)
 
-[Web account management sample](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web account management sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
 [Lunch Scheduler app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

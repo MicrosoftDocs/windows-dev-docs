@@ -53,5 +53,5 @@ If you don’t want to wait to be billed, you can pay your bill immediately by s
 
 ### How do I delete a credit card or edit the details of a credit card?
 
-Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.
+Go to [https://commerce.microsoft.com](https://commerce.microsoft.com), log in with your Microsoft account credentials, and make the necessary changes.
 

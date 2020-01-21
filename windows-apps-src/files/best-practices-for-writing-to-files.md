@@ -38,7 +38,7 @@ A [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefi
 Understanding this concept is useful when performing I/O with a **StorageFile**. For example, the [Writing to a file](quickstart-reading-and-writing-files.md#writing-to-a-file) section presents three ways to write to a file:
 
 * Using the [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) method.
-* By creating a buffer and then calling the [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) method.
+* By creating a buffer and then calling the [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync) method.
 * The four-step model using a stream:
   1. [Open](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) the file to get a stream.
   2. [Get](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) an output stream.

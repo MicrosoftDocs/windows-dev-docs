@@ -14,7 +14,7 @@ This article shows the simplest way to capture photos and video using the [**Med
 
 If you simply want to capture a photo or video and don't intend to add any additional media capture features, or if you don't want to create your own camera UI, you may want to use the [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) class, which allows you to simply launch the Windows built-in camera app and receive the photo or video file that was captured. For more information, see [**Capture photos and video with Windows built-in camera UI**](capture-photos-and-video-with-cameracaptureui.md)
 
-The code in this article was adapted from the [**Camera starter kit**](https://go.microsoft.com/fwlink/?linkid=619479) sample. You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [**Camera starter kit**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit) sample. You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
 ## Add capability declarations to the app manifest
 
@@ -54,7 +54,7 @@ For information about using **BitmapEncoder** and about working with the **Softw
 For more information on setting capture device control values, see [Capture device controls for photo and video](capture-device-controls-for-photo-and-video-capture.md).
 
 Starting with Windows 10, version 1803, you can get the metadata, such as EXIF information, for photos captured in uncompressed format by accessing the [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) property of the **CapturedFrame** returned by **MediaCapture**. In previous releases this data was only accessible in the header of photos captured to a compressed file format. You can provide this data to a [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) when manually writing an image file. For more information on encoding bitmaps, see [Create, edit, and save bitmap images](imaging.md).  You can also access the 
-frame control values, such as exposure and flash settings, used when the image was captured by accessing the [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) property. For more information, see [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md).
+frame control values, such as exposure and flash settings, used when the image was captured by accessing the [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) property. For more information, see [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md).
 
 ## Capture a photo to a file
 A typical photography app will save a captured photo to disk or to cloud storage and will need to add metadata, such as photo orientation, to the file. The following example shows you how to capture an photo to a file. You still have the option of creating a **SoftwareBitmap** from the image file later. 

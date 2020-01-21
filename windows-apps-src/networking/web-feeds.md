@@ -193,7 +193,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-As suggested earlier, the type of content represented by a [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (e.g., Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) property and then displayed as demonstrated in the following example code.
+As suggested earlier, the type of content represented by a [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (for example, Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) property and then displayed as demonstrated in the following example code.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

@@ -348,7 +348,7 @@ The response includes a list of installed packages with associated details. The 
         "Name": string,
         "PackageFamilyName": string,
         "PackageFullName": string,
-        "PackageOrigin": int, (https://msdn.microsoft.com/en-us/library/windows/desktop/dn313167(v=vs.85).aspx)
+        "PackageOrigin": int, (https://msdn.microsoft.com/library/windows/desktop/dn313167(v=vs.85).aspx)
         "PackageRelativeId": string,
         "Publisher": string,
         "Version": {
@@ -1998,7 +1998,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :------          | :------ |
-| name | (**required**) The new name for the machine. |
+| name | (**required**) The new name for the machine. This should be base64 encoded. |
 
 **Request headers**
 
@@ -3166,7 +3166,7 @@ The list of wireless networks found on the provided *interface*. This includes d
         "AlreadyConnected": bool,
         "AuthenticationAlgorithm": string, (WPA2, etc)
         "Channel": int,
-        "CipherAlgorithm": string, (e.g. AES)
+        "CipherAlgorithm": string, (for example, AES)
         "Connectable": int, (0 | 1)
         "InfrastructureType": string,
         "ProfileAvailable": bool,

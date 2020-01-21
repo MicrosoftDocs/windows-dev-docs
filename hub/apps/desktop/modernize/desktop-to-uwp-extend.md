@@ -1,6 +1,6 @@
 ---
 Description: Extend your desktop application with Windows UIs and components
-title: Extend your desktop application with Windows UIs and components
+title: Extend your app with Windows UI and components
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -16,7 +16,7 @@ Some Windows 10 experiences (For example: a touch-enabled UI page) must run insi
 In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> The features described in this article require that you create a Windows app package for your desktop application. If you haven't yet done this, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
 
 If you're ready, let's start.
 
@@ -170,7 +170,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 
 ### Start the UWP app
 
-First, from your desktop application, create a [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
+First, from your desktop application, create a [Uri](https://docs.microsoft.com/dotnet/api/system.uri) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
 
 ```csharp
 
@@ -361,7 +361,7 @@ Modify your desktop application to find and process the shared file. In this exa
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
+For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
 
 ```csharp
 ...
@@ -496,12 +496,6 @@ public void RegisterBackgroundTask(String triggerName)
 }
 ```
 
-## Support and feedback
-
-**Find answers to your questions**
+## Find answers to your questions
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

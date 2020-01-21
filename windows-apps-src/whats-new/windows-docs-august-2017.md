@@ -12,13 +12,13 @@ ms.localizationpriority: medium
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have recently been made available, containing new and updated information for Windows developers.
 
-[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 
 ### Windows Template Studio
 
-Use the new [Windows Template Studio](https://aka.ms/wtsinstall) extension for Visual Studio 2019 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
+Use the new [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio) extension for Visual Studio 2019 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
 
 ![Windows Template Studio](images/template-studio.png)
 
@@ -53,7 +53,7 @@ See [Extend your desktop application with modern UWP components](https://docs.mi
 
 ### Getting started with point of service
 
-We've added a new guide to help you [get started with point of service devices](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
+We've added a new guide to help you [get started with point of service devices](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
 
 ### Xbox Live
 
@@ -69,7 +69,7 @@ See the [Xbox Live developer program overview](https://docs.microsoft.com//gamin
 
 ### Mixed Reality
 
-A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
+A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
 
 ### Narrator and Dev Mode
 
@@ -77,4 +77,4 @@ You might already know that you can use [Narrator](https://support.microsoft.com
 
 ### Windows Template Studio
 
-A more detailed overview of the Windows Template Studio is given in [this video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Getting-Started-with-Windows-Template-Studio). When you're ready, [install the extension](https://aka.ms/wtsinstall) or [check out the source code and documentation](https://aka.ms/wtsinstall).
+A more detailed overview of the Windows Template Studio is given in [this video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Getting-Started-with-Windows-Template-Studio). When you're ready, [install the extension](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio) or [check out the source code and documentation](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio).

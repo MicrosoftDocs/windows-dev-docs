@@ -28,7 +28,7 @@ The following list describes the new features and changes made to PlayReady Encr
 -   Provides proactive acquisition of non-persistent licenses.
 -   Provides acquisition of multiple licenses in one message.
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
+    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) with multiple KeyIDs.
 
     > [!NOTE]
     > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
@@ -84,7 +84,7 @@ The following procedures describe how to set up secure stop for various scenario
 To set up secure stop for a normal end of a presentation:
 
 1.  Register the **onEnded** event before playback starts.
-2.  The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
+2.  The **onEnded** event handler needs to call `removeAttribute("src")` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
 3.  You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.
 
 To set up secure stop if the user navigates away from the page or closes down the tab or browser:

@@ -13,9 +13,9 @@ There are several URI (Uniform Resource Identifier) schemes that you can use to 
 
 ## Common features of the URI schemes
 
-All of the schemes described in this topic follow typical URI scheme rules for normalization and resource retrieval. See [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) for the generic syntax of a URI.
+All of the schemes described in this topic follow typical URI scheme rules for normalization and resource retrieval. See [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) for the generic syntax of a URI.
 
-All of the URI schemes define the hierarchical part per [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) as the authority and path components of the URI.
+All of the URI schemes define the hierarchical part per [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) as the authority and path components of the URI.
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -106,7 +106,7 @@ You could of course also retrieve that same physical file by referring to it dir
 
 The path component of `ms-appx(-web)` is, like generic URIs, case sensitive. However, when the underlying file system by which the resource is accessed is case insensitive, such as for NTFS, the retrieval of the resource is done case-insensitively.
 
-The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a file named Hello#World.html, use this URI.
+The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a file named Hello#World.html, use this URI.
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -179,7 +179,7 @@ ms-appdata:///roaming/
 
 The path component of `ms-appdata` is, like generic URIs, case sensitive. However, when the underlying file system by which the resource is accessed is case insensitive, such as for NTFS, the retrieval of the resource is done case-insensitively.
 
-The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a local file named Hello#World.html, use this URI.
+The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a local file named Hello#World.html, use this URI.
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -249,7 +249,7 @@ For examples and more info, see [Localize strings in your UI and app package man
 
 The path component of `ms-resource` is, like generic URIs, case sensitive. However, the underlying retrieval does a [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) with *ignoreCase* set to `true`.
 
-The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a string resource from a Resources File named `Hello#World.resw`, use this URI.
+The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a string resource from a Resources File named `Hello#World.resw`, use this URI.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -263,7 +263,7 @@ Developers of particular components layered above this URI parsing may choose to
 
 ## Related topics
 
-* [Uniform Resource Identifier (URI): Generic Syntax](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI): Generic Syntax](https://www.ietf.org/rfc/rfc3986.txt)
 * [Packaging apps](../packaging/index.md)
 * [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md)

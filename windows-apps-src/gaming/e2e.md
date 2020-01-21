@@ -137,7 +137,7 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     </colgroup>
     <tr>
         <td>ID@Xbox developer program</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkID=526271">Independent Developer Program for Xbox One</a></td>
+        <td><a href="https://www.xbox.com/Developers/id">Independent Developer Program for Xbox One</a></td>
     </tr>
     <tr>
         <td>ID@Xbox consumer site</td>
@@ -188,15 +188,15 @@ There are many Windows 10 game and app samples available to help you understand 
     </tr>
     <tr>
         <td>Direct2D custom image effects sample</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DCustomEffects">D2DCustomEffects</a></td>
     </tr>
     <tr>
         <td>Direct2D gradient mesh sample</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DGradientMesh">D2DGradientMesh</a></td>
     </tr>
     <tr>
         <td>Direct2D photo adjustment sample</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DPhotoAdjustment">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
 		<td>Xbox Advanced Technology Group public samples</td>
@@ -240,15 +240,15 @@ Developer forums are a great place to ask and answer game development questions 
     </colgroup>
     <tr>
         <td>Publishing apps and games developer forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Publishing and ads-in-apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsapps">Publishing and ads-in-apps</a></td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
     </tr>
     <tr>
         <td>Desktop applications developer forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
     </tr>
     <tr>
         <td>DirectX Microsoft Store games (archived forum posts)</td>
@@ -256,7 +256,7 @@ Developer forums are a great place to ask and answer game development questions 
     </tr>
     <tr>
         <td>Windows 10 managed partner developer forums</td>
-        <td><a href="https://aka.ms/win10devforums">XBOX Developer Forums: Windows 10</a></td>
+        <td><a href="https://forums.xboxlive.com/users/login.html">XBOX Developer Forums: Windows 10</a></td>
     </tr>
     <tr>
         <td>DirectX forums</td>
@@ -264,7 +264,7 @@ Developer forums are a great place to ask and answer game development questions 
     </tr>
     <tr>
         <td>Azure platform forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform">Azure forum</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Azure forum</a></td>
     </tr>
     <tr>
         <td>Xbox Live forum</td>
@@ -475,7 +475,7 @@ HyperText Markup Language (HTML) is a common UI markup language used for web pag
     </tr>
     <tr>
         <td>The HTML5 W3C Recommendation</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
+        <td><a href="https://www.w3.org/TR/html5/">HTML5</a></td>
     </tr>
 </table>
  
@@ -726,7 +726,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </tr>
     <tr>
         <td>Unity game development using Visual Studio (video series)</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=722359">Using Unity with Visual Studio 2015</a></td>
+        <td><a href="https://www.youtube.com/playlist?list=PLReL099Y5nRfseAg0k1SJOlpqdcsDs8Em">Using Unity with Visual Studio 2015</a></td>
     </tr>
 </table>
  
@@ -888,7 +888,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting an Xbox game to a Universal Windows Platform app</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Porting from Xbox One to Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Porting from Xbox One to Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>Porting from DirectX 9 to DirectX 11</td>
@@ -904,7 +904,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>OpenGL ES to Direct3D 11 using ANGLE</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://github.com/microsoft/angle/wiki">ANGLE</a></td>
     </tr>
     <tr>
         <td>Classic Windows API equivalents in the UWP</td>
@@ -1064,7 +1064,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </colgroup>
     <tr>
         <td>UWP design basics and guidelines</td>
-        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Designing UWP apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/design">Designing UWP apps</a></td>
     </tr>
     <tr>
         <td>Designing for app lifecycle states</td>
@@ -1108,7 +1108,7 @@ The appropriate use of typography enhances many aspects of your game, including 
     </colgroup>
     <tr>
         <td>Typography guide</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Best Practices: Typography</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_Typography.pdf">Best Practices: Typography</a></td>
     </tr>
 </table>
  
@@ -1124,7 +1124,7 @@ A UI map is a layout of game navigation and menus expressed as a flowchart. The 
     </colgroup>
     <tr>
         <td>UI map guide</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Best Practices: UI Map</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_UI_Map.pdf">Best Practices: UI Map</a></td>
     </tr>
 </table>
 
@@ -1249,27 +1249,27 @@ The DirectX Tool Kit, DirectX texture processing library, DirectXMesh geometry p
     </colgroup>
     <tr>
         <td>Get DirectX Tool Kit for DirectX 11</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTK">DirectXTK</a></td>
     </tr>
     <tr>
         <td>Get DirectX Tool Kit for DirectX 12</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTK12">DirectXTK 12</a></td>
     </tr>
     <tr>
         <td>Get DirectX texture processing library</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTex">DirectXTex</a></td>
     </tr>
     <tr>
         <td>Get DirectXMesh geometry processing library</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXMesh">DirectXMesh</a></td>
     </tr>
     <tr>
         <td>Get UVAtlas for creating and packing isochart texture atlas</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
+        <td><a href="https://github.com/Microsoft/UVAtlas">UVAtlas</a></td>
     </tr>
     <tr>
         <td>Get the DirectXMath library</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXMath">DirectXMath</a></td>
     </tr>
     <tr>
         <td>Direct3D 12 support in the DirectXTK (blog post)</td>
@@ -1528,7 +1528,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Partner Center advanced publishing (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Partner Center advanced publishing guide</a></td>
+        <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">Partner Center advanced publishing guide</a></td>
     </tr>
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
@@ -1824,7 +1824,7 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </tr>
     <tr>
         <td>Requirements for games that use Xbox Live (GDN)</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=533217">Xbox Requirements for Xbox Live on Windows 10</a></td>
+        <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Xbox Requirements for Xbox Live on Windows 10</a></td>
     </tr>
     <tr>
         <td>Samples</td>

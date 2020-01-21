@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 
 This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
 
-In the following table, the "Language tag" column lists the [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
+In the following table, the "Language tag" column lists the [BCP-47 language tag](https://tools.ietf.org/html/bcp47) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
 
 | Language | Language tag | Font used in Windows |
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanian | sq-AL | Segoe UI |
-| Amhari | am-ET | Ebrima |
+| Amharic | am-ET | Ebrima |
 | Arabic | ar-SA | Segoe UI |
 | Armenian | hy-AM | Segoe UI |
 | Assamese | as-IN | Nirmala UI |
@@ -31,9 +31,9 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | Catalan | ca-ES | Segoe UI |
 | Central Kurdish (Arabic) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
-| Chinese Simplified | zh-CN | MS YaHei UI |
-| Chinese Traditional (Hong Kong) | zh-HK | MS JhengHei UI |
-| Chinese Traditional (Taiwan) | zh-TW | MS JhengHei UI |
+| Chinese Simplified | zh-CN | Microsoft YaHei UI |
+| Chinese Traditional (Hong Kong) | zh-HK | Microsoft JhengHei UI |
+| Chinese Traditional (Taiwan) | zh-TW | Microsoft JhengHei UI |
 | Croatian | hr-HR | Segoe UI |
 | Czech | cs-CZ | Segoe UI |
 | Danish | da-DK | Segoe UI |
@@ -60,7 +60,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | isiXhosa | xh-ZA | Segoe UI |
 | isiZulu | zu-ZA | Segoe UI |
 | Italian | it-IT | Segoe UI |
-| Japanese | ja-JP | Meiryo UI (see Remarks, below) |
+| Japanese | ja-JP | Yu Gothic UI |
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
@@ -123,11 +123,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | Wolof | wo-SN | Segoe UI |
 | Yoruba | yo-NG | Segoe UI |
 
-## Japanese fonts
-
-The Meiryo UI font is used in Windows. Windows includes Yu Gothic and Yu Mincho, two font families to support Japanese document viewing and editing. Yu Gothic is not recommended for app UI.
-
 ## Related topics
 
-* [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [Supported languages](../../publish/supported-languages.md)

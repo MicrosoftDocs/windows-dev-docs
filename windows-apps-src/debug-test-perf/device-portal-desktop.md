@@ -90,7 +90,7 @@ From an administrative command prompt, you can enable and configure parts of Dev
 - `sc start webmanagement` or `sc stop webmanagement` 
 	- Turn the service on or off. This still requires developer mode to be enabled. 
 - `-Credentials <username> <password>` 
-	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters e.g. [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
+	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters for example, [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
 - `-DeleteSSL` 
 	- This resets the SSL certificate cache used for HTTPS connections. If you encounter TLS connection errors that cannot be bypassed (as opposed to the expected certificate warning), this option may fix the problem for you. 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -98,7 +98,7 @@ From an administrative command prompt, you can enable and configure parts of Dev
 	- This allows you to install your own SSL certificate to fix the SSL warning page that is typically seen in Device Portal. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
 	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-	- See the [MSDN Magazine article](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
+	- See the [MSDN Magazine article](https://msdn.microsoft.com/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
 
 ## Common errors and issues
 

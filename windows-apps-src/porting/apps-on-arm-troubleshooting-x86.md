@@ -14,7 +14,7 @@ If an x86 desktop app doesn't work the way it does on an x86 machine, here's som
 
 |Issue|Solution|
 |-----|--------|
-| Your app relies on a driver that isn't designed for ARM. | Recompile your x86 driver to ARM64. See [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
+| Your app relies on a driver that isn't designed for ARM. | Recompile your x86 driver to ARM64. See [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers). |
 | Your app is available only for x64. | If you develop for Microsoft Store, submit an ARM version of your app. For more info, see [App package architectures](/windows/msix/package/device-architecture). If you're a Win32 developer, we recommend you recompile your app to ARM64. For more info see [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Your app uses an OpenGL version later than 1.1 or requires hardware-accelerated OpenGL. | Use the DirectX mode of the app, if it's available. x86 apps that use DirectX 9, DirectX 10, DirectX 11, and DirectX 12 will work on ARM. For more info, see [DirectX Graphics and Gaming](https://docs.microsoft.com/windows/desktop/directx). |
 | Your x86 app does not work as expected. | Try using the Compatibility Troubleshooter by following guidance from [Program Compatibility Troubleshooter on ARM](apps-on-arm-program-compat-troubleshooter.md). For some other troubleshooting steps, see the [Troubleshooting x86 apps on ARM](apps-on-arm-troubleshooting-x86.md) article. |
@@ -34,10 +34,10 @@ An app may place registry keys under the native registry view, or perform functi
 All kernel-mode drivers, [User-Mode Driver Framework (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) drivers, and print drivers must be compiled to match the architecture of the OS. If an x86 app has a driver, then that driver must be recompiled for ARM64. The x86 app may run fine under emulation however, its driver will need to be recompiled for ARM64 and any app experience that depends on the driver will not be available. For more info about compiling your driver for ARM64, see [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
 ## Shell extensions 
-Apps that try to hook Windows components or load their DLLs into Windows processes will need to recompile those DLLs to match the architecture of the system; i.e. ARM64. Typically, these are used by input method editors (IMEs), assistive technologies, and shell extension apps (e.g. to show cloud storage icons in Explorer or a right click Context menu). To learn how to recompile your apps or DLLs to ARM64, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post. 
+Apps that try to hook Windows components or load their DLLs into Windows processes will need to recompile those DLLs to match the architecture of the system; i.e. ARM64. Typically, these are used by input method editors (IMEs), assistive technologies, and shell extension apps (for example, to show cloud storage icons in Explorer or a right click Context menu). To learn how to recompile your apps or DLLs to ARM64, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post. 
 
 ## Debugging
-To investigate your app's behavior in more depth, see [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
+To investigate your app's behavior in more depth, see [Debugging on ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
 
 ## Virtual Machines
 The Windows Hypervisor platform is not supported on the Qualcomm Snapdragon 835 Mobile PC Platform. Hence, running virtual machines using Hyper-V will not work. We continue to make investments in these technologies on future Qualcomm chipsets. 
@@ -45,4 +45,4 @@ The Windows Hypervisor platform is not supported on the Qualcomm Snapdragon 835 
 ## Dynamic Code Generation
 X86 desktop apps are emulated on ARM64 by the system generating ARM64 instructions at runtime. This means if an x86 desktop app prevents dynamic code generation or modification in its process, that app cannot be supported to run as x86 on ARM64. 
 
-This is a security mitigation some apps enable on their process using [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API with the `ProcessDynamicCodePolicy` flag. To run successfully on ARM64 as an x86 process, this mitigation policy will have to be disabled. 
+This is a security mitigation some apps enable on their process using [SetProcessMitigationPolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API with the `ProcessDynamicCodePolicy` flag. To run successfully on ARM64 as an x86 process, this mitigation policy will have to be disabled. 

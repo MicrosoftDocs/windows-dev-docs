@@ -86,7 +86,7 @@
           href: controls-and-patterns/buttons.md
         - name: Check box
           href: controls-and-patterns/checkbox.md
-        - name: Combo box
+        - name: Combo boxes and list boxes
           href: controls-and-patterns/combo-box.md
         - name: Hyperlinks
           href: controls-and-patterns/hyperlinks.md
@@ -102,31 +102,42 @@
       items:
         - name: Overview
           href: controls-and-patterns/lists.md
-        - name: Collection commanding
-          href: controls-and-patterns/collection-commanding.md
-        - name: Custom collection views
-          href: controls-and-patterns/items-repeater.md
-        - name: Flip view
-          href: controls-and-patterns/flipview.md
-        - name: Inverted lists
-          href: controls-and-patterns/inverted-lists.md
         - name: List view and grid view
           href: controls-and-patterns/listview-and-gridview.md
+        - name: Flip view
+          href: controls-and-patterns/flipview.md
+        - name: Tree view
+          href: controls-and-patterns/tree-view.md
+        - name: ItemsRepeater
+          href: controls-and-patterns/items-repeater.md
+        - name: Item containers and templates
           items:
             - name: Item containers and templates
               href: controls-and-patterns/item-containers-templates.md
+            - name: Data template selection
+              href: controls-and-patterns/data-template-selector.md
             - name: Item templates for list view
               href: controls-and-patterns/item-templates-listview.md
             - name: Item templates for grid view
               href: controls-and-patterns/item-templates-gridview.md
-        - name: Nested UI
-          href: controls-and-patterns/nested-ui.md
-        - name: Pull-to-refresh
-          href: controls-and-patterns/pull-to-refresh.md
-        - name: Swipe
-          href: controls-and-patterns/swipe.md
-        - name: Tree view
-          href: controls-and-patterns/tree-view.md
+        - name: Selection and interaction
+          items:
+            - name: Collection commanding
+              href: controls-and-patterns/collection-commanding.md
+            - name: Selection mode overview
+              href: controls-and-patterns/selection-modes.md
+            - name: Swipe
+              href: controls-and-patterns/swipe.md
+            - name: Pull-to-refresh
+              href: controls-and-patterns/pull-to-refresh.md
+            - name: Filtering collections
+              href: controls-and-patterns/listview-filtering.md
+        - name: Additional collection options and customizations
+          items:
+            - name: Inverted lists
+              href: controls-and-patterns/inverted-lists.md
+            - name: Nested UI
+              href: controls-and-patterns/nested-ui.md
     - name: Dialogs and flyouts
       items:
         - name: Overview
@@ -221,6 +232,8 @@
           href: controls-and-patterns/rich-edit-box.md
         - name: Password box
           href: controls-and-patterns/password-box.md
+        - name: Number box
+          href: controls-and-patterns/number-box.md
         - name: Labels
           href: controls-and-patterns/labels.md
         - name: Content links
@@ -249,6 +262,8 @@
       href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
+    - name: Corner radius
+      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
     - name: Spacing

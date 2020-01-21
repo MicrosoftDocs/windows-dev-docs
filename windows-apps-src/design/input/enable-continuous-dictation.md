@@ -51,7 +51,7 @@ private CoreDispatcher dispatcher;
 
 To track what the user is saying, you need to handle recognition events raised by the speech recognizer. These events provide the recognition results for chunks of user utterances.
 
-Here, we use a [**StringBuilder**](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder?redirectedfrom=MSDN) object to hold all the recognition results obtained during the session. New results are appended to the **StringBuilder** as they are processed.
+Here, we use a [**StringBuilder**](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder) object to hold all the recognition results obtained during the session. New results are appended to the **StringBuilder** as they are processed.
 
 ```CSharp
 private StringBuilder dictatedTextBuilder;
@@ -265,7 +265,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Speech interactions](speech-interactions.md)
 
 **Samples**
-* [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

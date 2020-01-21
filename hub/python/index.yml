@@ -1,0 +1,95 @@
+### YamlMime:Landing
+
+title: Python on Windows documentation
+summary: Get started developing with Python using Windows, including set up for your development environment, scripting and automation, building web apps, and faqs.
+
+metadata: 
+  author: mattwojo
+  description: Get started developing with Python on Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-python
+  ms.topic: landing-page
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
+
+landingContent: 
+  # Card
+  - title: Get started for beginners
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Set up your development environment
+            url: ./beginners.md
+      - linkListType: tutorial
+        links:
+          - text: Run some basic Python code
+            url: ./beginners.md#hello-world-tutorial-for-some-python-basics
+          - text: HelloWorld using VS Code
+            url: ./beginners.md#hello-world-tutorial-for-using-python-with-vs-code
+          - text: Create a simple game with Pygame
+            url: ./beginners.md#create-a-simple-game-with-pygame
+  
+  # Card
+  - title: Get started with web development
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Set up your development environment
+            url: ./web-frameworks.md#set-up-your-development-environment
+      - linkListType: tutorial
+        links:
+          - text: HelloWorld using Flask
+            url: ./web-frameworks.md#hello-world-tutorial-for-flask
+          - text: HelloWorld using Django
+            url: ./web-frameworks.md#hello-world-tutorial-for-django
+  
+  # Card
+  - title: Get started with automation scripts
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Set up your development environment
+            url: ./scripting.md#set-up-your-development-environment
+      - linkListType: tutorial
+        links:
+          - text: Example script - Display my file system
+            url: ./scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+          - text: Example script - Modify all files in a directory
+            url: ./scripting.md#example-script-to-modify-all-files-in-a-directory
+  # Card
+  - title: Get started with databases
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: MongoDB vs PostgreSQL
+            url: ./databases.md
+      - linkListType: quickstart
+        links:
+          - text: Install and run PostgreSQL
+            url: ./databases.md#install-postgresql
+          - text: Install and run MongoDB
+            url: ./databases.md#install-mongodb
+
+  # Card
+  # - title: Get started with machine learning (Coming soon)
+
+  # Card
+  - title: Additional resources
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Frequently Asked Questions
+            url: faqs.md
+      - linkListType: learn
+        links:
+          - text: Try Python (without installing anything) in this intro course
+            url: https://docs.microsoft.com/learn/modules/intro-to-python/
+          - text: Recommended links
+            url: resources.md
+          - text: Recommended online courses
+            url: resources.md#online-courses
+          - text: Recommended web dev links
+            url: resources.md#web-development

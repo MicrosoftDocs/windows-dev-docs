@@ -21,9 +21,9 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 If you want to learn the basics, or just refresh your memory, try reading these:
 
-* [C# Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850801)
-* [VB Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850802)
-* [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
+* [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [VB Fundamentals for Absolute Beginners](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
+* [A Developer's Guide to Windows 10](https://docs.microsoft.com/learn/)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
@@ -55,7 +55,7 @@ Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScrip
 Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore Virtual reality on the web with WebVR
 
 * [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
-* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
 

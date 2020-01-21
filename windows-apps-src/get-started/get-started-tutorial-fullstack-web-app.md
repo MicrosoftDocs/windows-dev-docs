@@ -26,7 +26,7 @@ If you don't already have these resources on your machine, follow these download
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
-If you want to complete the final steps of hosting your API service and memory game app on Microsoft Azure, you'll need to [create a free Azure account](https://azure.microsoft.com/en-us/free/) if you haven't already done so.
+If you want to complete the final steps of hosting your API service and memory game app on Microsoft Azure, you'll need to [create a free Azure account](https://azure.microsoft.com/free/) if you haven't already done so.
 
 If you decide to bail on (or postpone) the Azure part, simply skip the final sections of parts I and II, which cover Azure hosting and packaging your app for the Microsoft Store. The API service and web app you build will still run locally (from `http://localhost:8000` and `http://localhost:3000`, respectively) on your machine.
 
@@ -207,7 +207,7 @@ Now press F5 and open your browser to [https://localhost:8000](https://localhost
 
 ### 3. Set up your route handlers
 
-The Swagger file (config\swagger.json) instructs our server how to handle various client HTTP requests by mapping each URL path it defines to a handler file (in \handlers), and each method defined for that path (e.g., **GET**, **POST**) to an `operationId` (function) within that handler file.
+The Swagger file (config\swagger.json) instructs our server how to handle various client HTTP requests by mapping each URL path it defines to a handler file (in \handlers), and each method defined for that path (for example, **GET**, **POST**) to an `operationId` (function) within that handler file.
 
 In this layer of our program we'll add some input checking before passing the various client requests to our data model. Download (or copy and paste):
 
@@ -284,7 +284,7 @@ Here are some useful resources for going further:
 
  - [Advanced Node.js debugging with Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + Mobile docs](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Web + Mobile docs](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB docs](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -628,8 +628,8 @@ You can now deploy your app to Azure (or any other cloud hosting service) for te
 
 The basic steps for publishing to the Microsoft Store are:
 
- 1. Create a [Windows Developer](https://developer.microsoft.com/en-us/store/register) account
- 2. Use the app submission [checklist](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
+ 1. Create a [Windows Developer](https://developer.microsoft.com/store/register) account
+ 2. Use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
  3. Submit your app for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Here are some useful resources for going further:

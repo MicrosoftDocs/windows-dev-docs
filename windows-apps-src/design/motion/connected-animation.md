@@ -205,8 +205,8 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 {
     if (e.NavigationMode == NavigationMode.Back)
     {
-        ConnectedAnimationService.GetForCurrentView()
-            .PrepareToAnimate("backAnimation", DestinationImage);
+        ConnectedAnimation animation = 
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("backAnimation", DestinationImage);
 
         // Use the recommended configuration for back animation.
         animation.Configuration = new DirectConnectedAnimationConfiguration();

@@ -15,7 +15,7 @@ This article shows you how to use a [**MediaFrameReader**](https://docs.microsof
 > The features discussed in this article are only available starting with Windows 10, version 1803.
 
 > [!NOTE] 
-> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230).
+> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 ## Setting up your project
 The process for acquiring audio frames is largely the same as acquiring other types of media frames. As with any app that uses **MediaCapture**, you must declare that your app uses the *webcam* capability before attempting to access any camera device. If your app will capture from an audio device, you should also declare the *microphone* device capability. 
@@ -66,14 +66,14 @@ You can retrieve the [**AudioDeviceController**](https://docs.microsoft.com/uwp/
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-You can use an [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) object to pass audio data captured by a media frame source into an [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Pass the frame into the [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) method of an [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). For more information on using audio graphs to capture, process, and mix audio signals, see [Audio graphs](audio-graphs.md).
+You can use an [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) object to pass audio data captured by a media frame source into an [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Pass the frame into the [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) method of an [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode). For more information on using audio graphs to capture, process, and mix audio signals, see [Audio graphs](audio-graphs.md).
 
 ## Related topics
 
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [Audio graphs](audio-graphs.md)
  
 

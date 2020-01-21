@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Add controls
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
 A good Universal Windows Platform (UWP) game supports a wide variety of interfaces. A potential player might have Windows 10 on a tablet with no physical buttons, a PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. In our game the controls are implemented in the [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) class. This class aggregates all three types of input (mouse and keyboard, touch, and gamepad) into a single controller. The end result is a first-person shooter that uses genre standard move-look controls that work with multiple devices.
 
@@ -481,7 +481,7 @@ The mouse is treated a little differently from the touch controls even though it
 
 This is handled in the [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) method of the **MoveLookController**.
 
-In this method we check to see what type of pointer device is being used with the [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType) enum. 
+In this method we check to see what type of pointer device is being used with the [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType) enum. 
 If the game is **Active** and the **PointerDeviceType** isn't **Touch**, we assume it's mouse input.
 
 ```cpp

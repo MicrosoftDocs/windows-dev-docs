@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.
 
-Download the [map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977) to try out some the features described in this guide.
+Download the [map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) to try out some the features described in this guide.
 
 <a id="placecard" />
 
@@ -449,10 +449,10 @@ Handle changes that happen when the user or the app changes the settings of the 
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Get current location](get-location.md)
 * [Design guidelines for location-aware apps](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
 * [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

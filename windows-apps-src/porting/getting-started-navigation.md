@@ -73,7 +73,7 @@ public BlankPage()
 
 You can also get or set the **Frame** class's [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) property to manage how many pages in the navigation history can be cached.
 
-For more info about navigation, see [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) and [XAML personality animations sample](https://go.microsoft.com/fwlink/p/?LinkID=242401).
+For more info about navigation, see [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) and [XAML personality animations sample](https://code.msdn.microsoft.com/windowsapps/Personality-Animations-3f857919).
 
 **Note**  For info about navigation for UWP apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10)).
  

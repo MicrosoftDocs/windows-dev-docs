@@ -290,7 +290,7 @@ ToastContent toastContent = new ToastContent()
 
 ## Progress bar
 
-**New in Creators Update**: You can provide a progress bar on your toast notification to keep the user informed of the progress of operations, like downloads and more.
+**New in Creators Update**: You can provide a progress bar on your toast notification to keep the user informed of the progress of operations such as downloads.
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
@@ -400,7 +400,7 @@ Buttons can perform the following different actions...
 -   Activating the app in the foreground, with an argument that can be used to navigate to a specific page/context.
 -   Activating the app's background task, for a quick-reply or similar scenario.
 -   Activating another app via protocol launch.
--   Performing a system action, like snoozing or dismissing the notification.
+-   Performing a system action, such as snoozing or dismissing the notification.
 
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
@@ -496,7 +496,7 @@ To learn how to implement this, see [Toast pending update](toast-pending-update.
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your toast.
 
-The additional context menu actions you add (like "Change location") appear above the two default system entries.
+The additional context menu actions you add (such as "Change location") appear above the two default system entries.
 
 <img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
 
@@ -545,7 +545,7 @@ Inputs are specified within the Actions region of the toast region of the toast,
 
 ### Quick reply text box
 
-To enable a quick reply text box, like for a messaging scenario, add a text input and a button, and reference the text input's id so that the button is displayed adjacent to the input.
+To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The icon for the button should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 

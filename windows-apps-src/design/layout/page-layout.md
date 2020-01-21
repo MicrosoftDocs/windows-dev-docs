@@ -85,7 +85,7 @@ The [master/details](../controls-and-patterns/master-details.md) model consists 
 A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
 ## Sample apps
-To see how these patterns can be implemented, check out our [UWP sample apps](https://developer.microsoft.com/en-us/windows/samples):
+To see how these patterns can be implemented, check out our [UWP sample apps](https://developer.microsoft.com/windows/samples):
 - [BuildCast Video Player](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook)

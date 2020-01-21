@@ -9,10 +9,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-![Design basics](../images/downloads-2x.png)
+
 
 # Design toolkits and samples for UWP apps
- 
+
+![Design basics](../images/downloads-2x.png)
+
 Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
 
 
@@ -59,7 +61,7 @@ v1705, May 2017<br>
 <b>Framer toolkit</b><br>
 (This toolkit is no longer supported.)<br/>
 v1806, June 2018<br>
-<a href="https://aka.ms/framertoolkit">Download</a>
+<a href="https://github.com/Microsoft/windows-framer-toolkit">Download</a>
     :::column-end:::
 :::row-end:::
 

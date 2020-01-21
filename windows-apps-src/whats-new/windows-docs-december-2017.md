@@ -12,13 +12,13 @@ ms.localizationpriority: medium
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and samples have been made available after the release of the Fall Creators Update, containing new and updated information for Windows developers.
 
-[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 
 ### Windows Mixed Reality: Enthusiast's Guide
 
-Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
+Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
 
 In the guide you will find: 
 - Before you buy FAQs, 

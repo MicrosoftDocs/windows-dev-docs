@@ -1,4 +1,4 @@
-﻿---
+---
 Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 The Microsoft Store offers Mobile Operator Billing as a payment method for devices running Windows 10, phones running Windows 10 Mobile, and Xbox One consoles. If a customer’s mobile operator supports this capability, the customer can add Mobile Operator Billing as a payment method and use it to make Store purchases using their mobile account.
 
 > [!TIP]
->  If a customer’s mobile operator offers Mobile Operator Billing, but the customer can't find this option on their device, review these [steps](https://go.microsoft.com/fwlink/p/?LinkId=523993).
+>  If a customer’s mobile operator offers Mobile Operator Billing, but the customer can't find this option on their device, review these [steps](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f).
 
 We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest a mobile operator that you don’t see listed below, please contact that mobile operator and request that they add this payment method.
 
@@ -38,6 +38,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Poland               | Orange, Play                                            |
 | Singapore            | M1 Limited, StarHub                                     |
 | Slovakia             | Slovak Telekom                                          |
+| South Africa         | Vodacom                                                 |
 | Spain                | Orange                                                  |
 | Sweden               | Telenor, 3                                              |
 | Switzerland          | Swisscom, Sunrise                                       |

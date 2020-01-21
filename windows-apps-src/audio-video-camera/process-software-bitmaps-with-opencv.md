@@ -16,7 +16,7 @@ The examples in this article walk you through creating a native code Windows Run
 * For an introduction to using **SoftwareBitmap**, see [Create, edit, and save bitmap images](imaging.md). 
 * To learn how to use the OpenCV library, go to [https://opencv.org](https://opencv.org).
 * To see how to use the OpenCV helper component shown in this article with **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** to implement real-time image processing of frames from a camera, see [Use OpenCV with MediaFrameReader](use-opencv-with-mediaframereader.md).
-* For a complete code example that implements some different effects, see the [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003) in the Windows Universal Samples GitHub repo.
+* For a complete code example that implements some different effects, see the [Camera Frames + OpenCV Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) in the Windows Universal Samples GitHub repo.
 
 > [!NOTE] 
 > The technique used by the OpenCVHelper component, described in detail in this article, requires that the image data to be processed resides in CPU memory, not GPU memory. So, for APIs that allow you to request the memory location of images, such as the **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** class, you should specify CPU memory.
@@ -38,8 +38,8 @@ The examples in this article walk you through creating a native code Windows Run
 3. Select "OpenCV.Win.Core" and click **Install**. In the **Preview** dialog, click **OK**.
 4. Use the same procedure to install the "OpenCV.Win.ImgProc" package.
 
-> [!NOTE]
-> OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated, but are still recommended for creating an OpenCVHelper as described on this page.
+>[!NOTE]
+>OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated and do not pass the Store compliance checks, therefore these packages are intended for experimentation only.
 
 ### 3. Implement the OpenCVHelper class
 

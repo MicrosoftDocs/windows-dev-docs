@@ -1266,7 +1266,7 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-### XBox
+### Xbox
 
 <table>
 <colgroup>
@@ -2463,7 +2463,7 @@ The following tables show the video codec and format support for each device fam
 
  
 
-### XBox
+### Xbox
 
 <table>
 <colgroup>

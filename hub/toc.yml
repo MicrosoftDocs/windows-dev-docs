@@ -1,9 +1,9 @@
 - name: Build apps for Windows
-  items: 
+  items:
   - name: Overview
-    href: apps/index.md
+    href: apps/index.yml
   - name: Build desktop apps
-    items: 
+    items:
         - name: Overview
           href: apps/desktop/index.md
         - name: Choose your app platform
@@ -19,7 +19,7 @@
               - name: Available UWP APIs
                 href: apps/desktop/modernize/desktop-to-uwp-supported-api.md
         - name: Host UWP XAML controls (XAML Islands)
-          items: 
+          items:
               - name: Overview
                 href: apps/desktop/modernize/xaml-islands.md
               - name: Host a standard UWP control in a WPF app
@@ -29,7 +29,7 @@
               - name: Using the UWP XAML hosting API in a C++ Win32 app
                 href: apps/desktop/modernize/using-the-xaml-hosting-api.md
         - name: Using the Visual layer (Windows.UI.Composition)
-          items: 
+          items:
               - name: Overview
                 href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
               - name: WPF
@@ -48,8 +48,10 @@
                 href: apps/desktop/modernize/desktop-to-uwp-extend.md
               - name: Distribute your packaged app
                 href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: Grant identity to non-packaged desktop apps
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: "Tutorial: Modernize a WPF app"
-          items: 
+          items:
             - name: Overview
               href: apps/desktop/modernize/modernize-wpf-tutorial.md
             - name: "Migrate the Contoso Expenses app to .NET Core 3"
@@ -68,29 +70,71 @@
     href: apps/accessibility.md
   - name: Features and technologies
     href: apps/features-and-technologies.md
+  - name: Latest doc updates
+    href: apps/whats-new/latest-doc-updates.md
 - name: Build with Windows
-  items: 
+  items:
+  - name: Overview
+    href: dev-environment/index.yml
   - name: Develop with Python
-    items:       
+    items:
         - name: Overview
-          href: python/index.md
+          href: python/index.yml
         - name: Get started for beginners
-          href: python/get-started/python-for-education.md
+          href: python/beginners.md
         - name: Get started with web dev
-          href: python/get-started/python-for-web.md
+          href: python/web-frameworks.md
         - name: Get started with automation
-          href: python/get-started/python-for-scripting.md
+          href: python/scripting.md
+        - name: Get started with databases
+          href: python/databases.md
         - name: FAQs
           href: python/faqs.md
         - name: Resources
-          href: python/resources.md   
-  # - name: Develop with NodeJS
-  #   items: 
-  #       - name: Overview
-  #         href: https://review.docs.microsoft.com/windows/nodejs/?branch=windows-dev-environment
-  #       - name: Web development
-  #         href: https://review.docs.microsoft.com/windows/nodejs/nodejs-for-web?branch=windows-dev-environment
-  #       - name: FAQs
-  #         href: https://review.docs.microsoft.com/windows/nodejs/faqs?branch=windows-dev-environment
-  #       - name: Resources
-  #         href: https://review.docs.microsoft.com/windows/nodejs/resources?branch=windows-dev-environment
+          href: python/resources.md
+  - name: Develop with Node.js
+    items: 
+        - name: Overview
+          href: nodejs/index.yml
+        - name: Setup with WSL2 (Linux)
+          href: nodejs/setup-on-wsl2.md
+        - name: Setup with Windows (Beginners)
+          href: nodejs/setup-on-windows.md
+        - name: Get started for beginners
+          href: nodejs/beginners.md
+        - name: Get started with web frameworks
+          href: nodejs/web-frameworks.md
+        - name: Get started with databases
+          href: nodejs/databases.md
+        - name: Get started with containers
+          href: nodejs/containers.md
+  - name: Mac to Windows guide
+    items:
+      - name: Changing your dev environment
+        href: dev-environment/mac-to-windows.md
+      - name: Keyboard shortcuts
+        href: dev-environment/mac-to-windows.md#keyboard-shortcuts
+      - name: Trackpad shortcuts
+        href: dev-environment/mac-to-windows.md#trackpad-shortcuts
+      - name: Terminal and Shell
+        href: dev-environment/mac-to-windows.md#terminal-and-shell
+      - name: Apps and utilities
+        href: dev-environment/mac-to-windows.md#apps-and-utilities
+  - name: Windows Subsystem for Linux
+    items:
+      - name: About WSL
+        href: https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context
+      - name: About WSL 2
+        href: https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context
+      - name: WSL 1 vs WSL 2
+        href: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context
+      - name: User accounts & permissions
+        href: https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context
+  - name: Windows Terminal
+    items:
+      - name: Overview
+        href: https://github.com/microsoft/terminal#terminal--console-overview
+      - name: User guide
+        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md
+      - name: Custom settings
+        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md

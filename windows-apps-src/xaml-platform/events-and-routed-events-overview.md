@@ -72,7 +72,7 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 }
 ```
 
-In this example, the `ShowUpdatesButton_Click` method is based on the [**RoutedEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventhandler) delegate. You'd know that this is the delegate to use because you'll see that delegate named in the syntax for the [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) method on the MSDN reference page.
+In this example, the `ShowUpdatesButton_Click` method is based on the [**RoutedEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventhandler) delegate. You'd know that this is the delegate to use because you'll see that delegate named in the syntax for the [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) method.
 
 **Tip**  Visual Studio provides a convenient way to name the event handler and define the handler method while you're editing XAML. When you provide the attribute name of the event in the XAML text editor, wait a moment until a Microsoft IntelliSense list displays. If you click **&lt;New Event Handler&gt;** from the list, Microsoft Visual Studio will suggest a method name based on the element's **x:Name** (or type name), the event name, and a numeric suffix. You can then right-click the selected event handler name and click **Navigate to Event Handler**. This will navigate directly to the newly inserted event handler definition, as seen in the code editor view of your code-behind file for the XAML page. The event handler already has the correct signature, including the *sender* parameter and the event data class that the event uses. Also, if a handler method with the correct signature already exists in your code-behind, that method's name appears in the auto-complete drop-down along with the **&lt;New Event Handler&gt;** option. You can also press the Tab key as a shortcut instead of clicking the IntelliSense list items.
 
@@ -291,8 +291,8 @@ A small number of UI elements support *commanding*. Commanding uses input-relate
 For purposes of defining custom events, how you add the event and what that means for your class design is highly dependent on which programming language you are using.
 
 - For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
-    - For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler).
-    - Don't base your event data class on [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs?redirectedfrom=MSDN) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
+    - For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler).
+    - Don't base your event data class on [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
     - If you are using custom accessors, see [Custom events and event accessors in Windows Runtime components](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
     - If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](https://docs.microsoft.com/previous-versions/windows/). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
 - For C++/CX, see [Events (C++/CX)](https://docs.microsoft.com/cpp/cppcx/events-c-cx).
@@ -307,6 +307,6 @@ Defining a custom event is usually done as part of the exercise of defining a cu
 * [XAML overview](xaml-overview.md)
 * [Quickstart: Touch input](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
 * [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [.NET events and delegates](https://go.microsoft.com/fwlink/p/?linkid=214364)
+* [.NET events and delegates](https://msdn.microsoft.com/library/17sde2xt.aspx)
 * [Creating Windows Runtime components](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
 * [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)

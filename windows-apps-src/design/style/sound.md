@@ -39,7 +39,7 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 
 UWP provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
 
-The [**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
+The [**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -63,7 +63,7 @@ To learn more about spatial audio and how XAML handles it see [AudioGraph - Spat
 ### Sound for TV and Xbox
 
 Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
-To understand more about designing for Xbox and TV, please see [Designing for Xbox and TV](https://go.microsoft.com/fwlink/?LinkId=760736).
+To understand more about designing for Xbox and TV, please see [Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
 
 ## Sound Volume Override
 

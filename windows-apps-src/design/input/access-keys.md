@@ -350,7 +350,7 @@ This example demonstrates how to change these application resources:
 
 The XAML framework exposes Automation Properties that enable UI Automation clients to discover information about elements in the user interface.
 
-If you specify the AccessKey property on a UIElement or TextElement control, you can use the [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.
+If you specify the AccessKey property on a UIElement or TextElement control, you can use the [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.
 
 ## Related articles
 

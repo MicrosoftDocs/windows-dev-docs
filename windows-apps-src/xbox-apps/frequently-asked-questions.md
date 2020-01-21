@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Things not working the way you expected? 
 Look through this page of frequently asked questions. 
-Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://go.microsoft.com/fwlink/?linkid=839446) forum. 
+Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) forum. 
 
 ### Why aren't my games and apps working?
 

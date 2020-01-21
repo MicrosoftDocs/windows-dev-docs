@@ -22,7 +22,7 @@ Microsoft Visual Studio 2019 helps you design, code, test, and debug your apps.
 
 If you don't already have Visual Studio 2019, you can install the free Microsoft Visual Studio Community 2019. This download includes device simulators for testing your apps:
 
--   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Download Windows 10 developer tools](https://developer.microsoft.com/windows/downloads)
 
 When you install Visual Studio, make sure to select the Universal Windows App Development Tools option, as shown here:
 
@@ -61,7 +61,7 @@ If you want to customize your device and install other features or packages, che
 
 ## Want more tools and downloads?
 
-For the complete list of tools and downloads, see [Downloads](https://go.microsoft.com/fwlink/p/?linkid=285935).
+For the complete list of tools and downloads, see [Downloads](https://developer.microsoft.com/windows/downloads).
 
 ## See Also
 

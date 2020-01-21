@@ -17,7 +17,7 @@ These APIs consist of REST methods that are designed to be used by developers wi
 -   Microsoft Store purchase API: [Grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), and [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
-> The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](https://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.
+> The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.
 
 ## Overview
 
@@ -120,7 +120,7 @@ For each token, specify the following parameter data:
 
 * For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](https://go.microsoft.com/fwlink/?LinkId=722501).
+After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](https://docs.microsoft.com/azure/active-directory/develop/id-tokens).
 
 <span id="step-4"/>
 
@@ -246,6 +246,6 @@ Here is an example of a decoded Microsoft Store ID key claim set.
 * [Get subscriptions for a user](get-subscriptions-for-a-user.md)
 * [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
-* [Integrating Applications with Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
+* [Integrating Applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app)
 * [Understanding the Azure Active Directory application manifest]( https://go.microsoft.com/fwlink/?LinkId=722500)
-* [Supported Token and Claim Types](https://go.microsoft.com/fwlink/?LinkId=722501)
+* [Supported Token and Claim Types](https://docs.microsoft.com/azure/active-directory/develop/id-tokens)

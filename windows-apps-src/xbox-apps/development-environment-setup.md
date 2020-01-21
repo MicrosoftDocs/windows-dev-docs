@@ -119,6 +119,6 @@ Congratulations, you've successfully created and deployed your first UWP app on 
 ## See also
 - [Xbox One Developer Mode activation](devkit-activation.md)  
 - [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads)  
-- [Windows Insider Program](https://go.microsoft.com/fwlink/?LinkId=780552)  
+- [Windows Insider Program](https://insider.windows.com/)  
 - [Introduction to Xbox One tools](introduction-to-xbox-tools.md) 
 - [UWP on Xbox One](index.md)

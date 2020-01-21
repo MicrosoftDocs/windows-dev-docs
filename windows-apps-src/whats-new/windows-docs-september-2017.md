@@ -1,5 +1,5 @@
 ---
-title: What's New in Windows Docs in September 2017 - Develop UWP apps
+title: What's new in Windows Docs in September 2017?
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for September 2017
 keywords: what's new, update, features, developer guidance, Windows 10, 1709
 ms.date: 09/06/2017
@@ -14,7 +14,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 Of course, the Fall Creators Update is right around the corner, so stay tuned for a great deal of more documentation that will be arriving in the coming month!
 
-[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 

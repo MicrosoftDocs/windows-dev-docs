@@ -17,7 +17,7 @@ This topic shows how to use the [**FaceDetector**](https://docs.microsoft.com/uw
 
 For an alternative method of tracking faces using the [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect), see [Scene analysis for media capture](scene-analysis-for-media-capture.md).
 
-The code in this article was adapted from the [Basic Face Detection](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) and [Basic Face Tracking](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [Basic Face Detection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection) and [Basic Face Tracking](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
 
 ## Detect faces in a single image
 
@@ -71,7 +71,7 @@ If you want to detect faces in video, it is more efficient to use the [**FaceTra
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Declare a class variable for the **FaceTracker** object. This example uses a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) to initiate face tracking on a defined interval. A [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) is used to make sure that only one face tracking operation is running at a time.
+Declare a class variable for the **FaceTracker** object. This example uses a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) to initiate face tracking on a defined interval. A [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) is used to make sure that only one face tracking operation is running at a time.
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
@@ -92,8 +92,8 @@ Call [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.medi
 ## Related topics
 
 * [Scene analysis for media capture](scene-analysis-for-media-capture.md)
-* [Basic Face Detection sample](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Basic Face Tracking sample](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Basic Face Detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
+* [Basic Face Tracking sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Media playback](media-playback.md)

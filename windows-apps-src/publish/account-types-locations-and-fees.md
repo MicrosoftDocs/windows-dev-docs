@@ -1,4 +1,4 @@
-﻿---
+---
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
@@ -14,7 +14,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 > [!NOTE]
 > When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
-When you [begin the signup process](https://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
+When you [begin the signup process](https://developer.microsoft.com/store/register) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
 
 Company accounts are intended for organizations and businesses. For company accounts, we require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
@@ -35,22 +35,11 @@ After you've completed the signup process, your account will go through the veri
 
 You can check your verification status on the **Account settings** page. 
 
-
 ## Developer account and app-submission markets
 
 You can register for your developer account and submit apps if you live or operate a business in a country or region listed below.
 
 In the following table, the **Registration fee** is the current cost to register for your developer account. This is a one-time fee and there is no renewal charge. Note that the prices below are subject to change.
-
-> [!NOTE]
-> We'll add any applicable taxes and fees to the registration fee when you sign up. Also, when we pay you, your bank might charge a fee to receive the payment.
-
-The **Payout** column describes how we'll [pay you](getting-paid-apps.md) the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
-
-> [!NOTE]
-> Some markets do not support paid apps (**payout**). In those markets, only free apps can be submitted.
-
-The **PayPal** column indicates whether PayPal is a supported payment method that can be used for your [payout account](setting-up-your-payout-account-and-tax-forms.md) (and, except where noted, for your developer account registration fee).
 
 | Country/region                    | Individual reg. fee | Company reg. fee |
 |-----------------------------------|---------------------|------------------|

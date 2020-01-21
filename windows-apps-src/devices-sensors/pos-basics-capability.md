@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 You request access to the PointOfService APIs by declaring the capability in your application package manifest]  You can declare most capabilities by using the Manifest Designer, in Microsoft Visual Studio, or you can add them manually.  
 
 > [!Important]
-> You will receive the error **System.UnauthorizedAccessException** when you attempt to use an API in the Winodws.Devices.PointOfService namespace if you do not declare the **pointOfService** capability in your application manifest. 
+> You will receive the error **System.UnauthorizedAccessException** when you attempt to use an API in the Windows.Devices.PointOfService namespace if you do not declare the **pointOfService** capability in your application manifest. 
 
 ## Declare capability using Manifest Designer
 

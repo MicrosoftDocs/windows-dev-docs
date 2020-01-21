@@ -182,11 +182,11 @@ When you create a custom control, we recommend that you also implement or extend
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## Assistive technology support in apps that support XAML / Microsoft DirectX interop  
-Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) or [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](https://go.microsoft.com/fwlink/p/?LinkID=309155) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
+Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) or [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 
 ## Related topics  
 * [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
 * [Design for accessibility](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
-* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [Accessibility](accessibility.md)
 * [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

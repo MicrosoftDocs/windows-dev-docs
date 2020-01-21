@@ -143,7 +143,7 @@ The BinScope Binary Analyzer tests check for the correct use of the following se
 
 ### BinScope Binary Analyzer tests
 
-The [BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+The [BinScope Binary Analyzer](https://www.microsoft.com/download/details.aspx?id=44995) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
 The BinScope Binary Analyzer tests check for the correct use of these security-related features:
 
@@ -290,7 +290,7 @@ Tests for files within the app package that have an extension of .pfx or.snk tha
 
 ### Corrective actions
 
-Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
+Remove any private code signing keys (for example, .pfx and .snk files) from the package.
 
 ## Supported API test
 
@@ -313,7 +313,7 @@ Make sure that the app was compiled as a release build and not a debug build.
 
 Review the error messages to identify the API the app uses that is not an [API for UWP apps](https://docs.microsoft.com/uwp/).
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](https://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) for more info.
 
 ## Performance tests
 
@@ -537,7 +537,7 @@ The test will validate if the apps render accurately on feature level 9\-1.
 
 ### Corrective Action
 
-Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](https://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
+Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx) for more info.
 
 ### Direct3D Trim after suspend
 

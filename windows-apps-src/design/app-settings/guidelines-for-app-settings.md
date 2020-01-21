@@ -77,7 +77,7 @@ Mobile:
 ## "Color mode" settings
 
 
-If your app allows users to choose the app's color mode, present these options using [radio buttons](../controls-and-patterns/radio-button.md) or a [combo box](../controls-and-patterns/lists.md#drop-down-lists) with the header "Choose an app mode". The options should read
+If your app allows users to choose the app's color mode, present these options using [radio buttons](../controls-and-patterns/radio-button.md) or a [combo box](../controls-and-patterns/combo-box.md) with the header "Choose an app mode". The options should read
 - Light
 - Dark
 - Windows default

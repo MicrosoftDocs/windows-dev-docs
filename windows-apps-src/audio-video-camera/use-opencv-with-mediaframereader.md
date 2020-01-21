@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This article shows you how to use the Open Source Computer Vision Library (OpenCV), a native code library that provides a wide variety of image processing algorithms, with the [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) class that can read media frames from multiple sources simulataneously. The example code in this article walks you through creating a simple app that obtains frames from a color sensor, blurs each frame using the OpenCV library, and then displays the processed image in a XAML **Image** control. 
 
 >[!NOTE]
->OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated, but are still recommended for creating an OpenCVHelper as described on this page.
+>OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated and do not pass the Store compliance checks, therefore these packages are intended for experimentation only.
 
 This article builds on the content of two other articles:
 
@@ -20,7 +20,7 @@ This article builds on the content of two other articles:
 
 * [Process software bitmaps with OpenCV](process-software-bitmaps-with-opencv.md) - This article walks you through creating a native code Windows Runtime component, **OpenCVBridge**, which helps to convert between the **SoftwareBitmap** object, used by the **MediaFrameReader**,  and the **Mat** type used by the OpenCV library. The sample code in this article assumes you have followed the steps to add the **OpenCVBridge** component to your UWP app solution.
 
-In addition to these articles, to view and download a full, end-to-end working sample of the scenario described in this article, see the [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003) in the Windows Universal Samples GitHub repo.
+In addition to these articles, to view and download a full, end-to-end working sample of the scenario described in this article, see the [Camera Frames + OpenCV Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) in the Windows Universal Samples GitHub repo.
 
 To get started developing quickly, you can include the OpenCV library in a UWP app project by using NuGet packages, but these packages may not pass the app certficication process when you submit your app to the Store, so it is recommended that you download the OpenCV library source code and build the binaries yourself before submitting your app. Information developing with OpenCV can be found at [https://opencv.org](https://opencv.org)
 
@@ -62,8 +62,8 @@ The **FrameArrived** event is raised whenever a new frame is available from the 
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Process software bitmaps with OpenCV](process-software-bitmaps-with-opencv.md)
-* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [Camera Frames + OpenCV Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV)
  
 
  

@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, schedule, release date, dates, launch
 ms.localizationpriority: medium
 ---
+
 # Configure precise release scheduling
 
 The **Schedule** section on the [Pricing and availability](set-app-pricing-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
@@ -24,7 +25,6 @@ Note that you won't be able to configure dates in the **Schedule** section if yo
 >
 >If your previously-published app supports earlier OS versions, any **Stop acquisition** date you select will not apply to those customers; they will still be able to acquire the app (unless you submit an update with a new selection in the [Visibility](choose-visibility-options.md#discoverability) section, or if you select **Make app unavailable** from the **App overview** page).
 
-
 ## Base schedule
 
 Selections you make for the Base schedule will apply to all markets in which your app is available, unless you later add dates for specific markets (or market groups) by selecting [Customize for specific markets](#customize-the-schedule-for-specific-markets).
@@ -42,9 +42,8 @@ Here are the options you can configure for a product’s **Release** schedule:
 - **as soon as possible**: The product will release as soon as it is certified and published. This is the default option.
 - **at**: The product will release on the date and time that you select. You additionally have two options:
    - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the app releases at the same time everywhere.
-   - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.)
+   - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used. A comprehensive list of time zones is shown further down this page.)
 - **not scheduled**: The app will not be available in the Store. If you choose this option, you can make the app available in the Store later by creating a new submission and choosing one of the other options.
-
 
 ## Stop acquisition
 
@@ -70,12 +69,251 @@ To add a custom schedule for an additional market, or an additional market group
 > [!NOTE]
 > A market can’t belong to more than one of the market groups you use in the **Schedule** section. 
 
+## Global Time Zones
 
+Below is a table that shows what specific time zones are used in each market, so when your submission uses local time (e.g. release at 9am local), you can find out what time will it be released in each market, in particular helpful with markets that have more than one time zone, like Canada.
 
-
-
-
-
-
-
-
+| Market | Time Zone |
+|--------|-----------|
+| Afghanistan  |  (UTC+04:30) Kabul |
+| Albania  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Algeria  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| American Samoa  |  (UTC+13:00) Samoa |
+| Andorra  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Angola  |  (UTC+01:00) West Central Africa |
+| Anguilla  |  (UTC-04:00) Atlantic Time (Canada) |
+| Antarctica  |  (UTC+12:00) Auckland, Wellington |
+| Antigua and Barbuda  |  (UTC-04:00) Atlantic Time (Canada) |
+| Argentina  |  (UTC-03:00) City of Buenos Aires |
+| Armenia  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Aruba  |  (UTC-04:00) Atlantic Time (Canada) |
+| Australia  |  (UTC+10:00) Canberra, Melbourne, Sydney |
+| Austria  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Azerbaijan  |  (UTC+04:00) Baku |
+| Bahamas, The  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Bahrain  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Bangladesh  |  (UTC+06:00) Dhaka |
+| Barbados  |  (UTC-04:00) Atlantic Time (Canada) |
+| Belarus  |  (UTC+03:00) Minsk |
+| Belgium  |  (UTC+01:00) Brussels, Copenhagen, Madrid, Paris |
+| Belize  |  (UTC-06:00) Central Time (US & Canada) |
+| Benin  |  (UTC+01:00) West Central Africa |
+| Bermuda  |  (UTC-04:00) Atlantic Time (Canada) |
+| Bhutan  |  (UTC+06:00) Dhaka |
+| Bolivarian Republic of Venezuela  |  (UTC-04:00) Caracas |
+| Bolivia  |  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan |
+| Bonaire, Saint Eustatius and Saba  |  (UTC-04:00) Atlantic Time (Canada) |
+| Bosnia and Herzegovina  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Botswana  |  (UTC+01:00) West Central Africa |
+| Bouvet Island  |  (UTC+00:00) Monrovia, Reykjavik |
+| Brazil  |  (UTC-03:00) Brasilia |
+| British Indian Ocean Territory  |  (UTC+06:00) Dhaka |
+| British Virgin Islands  |  (UTC-04:00) Atlantic Time (Canada) |
+| Brunei  |  (UTC+08:00) Irkutsk |
+| Bulgaria  |  (UTC+02:00) Chisinau |
+| Burkina Faso  |  (UTC+00:00) Monrovia, Reykjavik |
+| Burundi  |  (UTC+02:00) Harare, Pretoria |
+| CÃ´te d'Ivoire  |  (UTC+00:00) Monrovia, Reykjavik |
+| Cambodia  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Cameroon  |  (UTC+01:00) West Central Africa |
+| Canada  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Cape Verde  |  (UTC-01:00) Cabo Verde Is. |
+| Cayman Islands  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Central African Republic  |  (UTC+01:00) West Central Africa |
+| Chad  |  (UTC+01:00) West Central Africa |
+| Chile  |  (UTC-04:00) Santiago |
+| China  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
+| Christmas Island  |  (UTC+07:00) Krasnoyarsk |
+| Cocos (Keeling) Islands  |  (UTC+06:30) Yangon (Rangoon) |
+| Colombia  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Comoros  |  (UTC+03:00) Nairobi |
+| Congo  |  (UTC+01:00) West Central Africa |
+| Congo (DRC)  |  (UTC+01:00) West Central Africa |
+| Cook Islands  |  (UTC-10:00) Hawaii |
+| Costa Rica  |  (UTC-06:00) Central Time (US & Canada) |
+| Croatia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| CuraÃ§ao  |  (UTC-04:00) Cuiaba |
+| Cyprus  |  (UTC+02:00) Chisinau |
+| Czech Republic  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Denmark  |  (UTC+01:00) Brussels, Copenhagen, Madrid, Paris |
+| Djibouti  |  (UTC+03:00) Nairobi |
+| Dominica  |  (UTC-04:00) Atlantic Time (Canada) |
+| Dominican Republic  |  (UTC-04:00) Atlantic Time (Canada) |
+| Ecuador  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Egypt  |  (UTC+02:00) Chisinau |
+| El Salvador  |  (UTC-06:00) Central Time (US & Canada) |
+| Equatorial Guinea  |  (UTC+01:00) West Central Africa |
+| Eritrea  |  (UTC+03:00) Nairobi |
+| Estonia  |  (UTC+02:00) Chisinau |
+| Ethiopia  |  (UTC+03:00) Nairobi |
+| Falkland Islands (Islas Malvinas)  |  (UTC-04:00) Santiago |
+| Faroe Islands  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Fiji  |  (UTC+12:00) Fiji |
+| Finland  |  (UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius |
+| France  |  (UTC+01:00) Brussels, Copenhagen, Madrid, Paris |
+| French Guiana  |  (UTC-03:00) Cayenne, Fortaleza |
+| French Polynesia  |  (UTC-10:00) Hawaii |
+| French Southern and Antarctic Lands  |  (UTC+05:00) Ashgabat, Tashkent |
+| Gabon  |  (UTC+01:00) West Central Africa |
+| Gambia, The  |  (UTC+00:00) Monrovia, Reykjavik |
+| Georgia  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Germany  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Ghana  |  (UTC+00:00) Monrovia, Reykjavik |
+| Gibraltar  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Greece  |  (UTC+02:00) Athens, Bucharest |
+| Greenland  |  (UTC+00:00) Monrovia, Reykjavik |
+| Grenada  |  (UTC-04:00) Atlantic Time (Canada) |
+| Guadeloupe  |  (UTC-04:00) Atlantic Time (Canada) |
+| Guam  |  (UTC+10:00) Guam, Port Moresby |
+| Guatemala  |  (UTC-06:00) Central Time (US & Canada) |
+| Guernsey  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guinea  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guinea-Bissau  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guyana  |  (UTC-04:00) Atlantic Time (Canada) |
+| Haiti  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Heard Island and McDonald Islands  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Holy See (Vatican City)  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Honduras  |  (UTC-06:00) Central Time (US & Canada) |
+| Hong Kong SAR  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
+| Hungary  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Iceland  |  (UTC+00:00) Monrovia, Reykjavik |
+| India  |  (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi |
+| Indonesia  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Iraq  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Ireland  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Israel  |  (UTC+02:00) Jerusalem |
+| Italy  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Jamaica  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Japan  |  (UTC+09:00) Osaka, Sapporo, Tokyo |
+| Jersey  |  (UTC+00:00) Monrovia, Reykjavik |
+| Jordan  |  (UTC+02:00) Chisinau |
+| Kazakhstan  |  (UTC+05:00) Ashgabat, Tashkent |
+| Kenya  |  (UTC+03:00) Nairobi |
+| Kiribati  |  (UTC+14:00) Kiritimati Island |
+| Korea  |  (UTC+09:00) Seoul |
+| Kuwait  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Kyrgyzstan  |  (UTC+06:00) Astana |
+| Laos  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Latvia  |  (UTC+02:00) Chisinau |
+| Lebanon  |  (UTC+02:00) Chisinau |
+| Lesotho  |  (UTC+02:00) Harare, Pretoria |
+| Liberia  |  (UTC+00:00) Monrovia, Reykjavik |
+| Libya  |  (UTC+02:00) Chisinau |
+| Liechtenstein  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Lithuania  |  (UTC+02:00) Chisinau |
+| Luxembourg  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Macao SAR  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
+| Macedonia, FYROM  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Madagascar  |  (UTC+03:00) Nairobi |
+| Malawi  |  (UTC+02:00) Harare, Pretoria |
+| Malaysia  |  (UTC+08:00) Kuala Lumpur, Singapore |
+| Maldives  |  (UTC+05:00) Ashgabat, Tashkent |
+| Mali  |  (UTC+00:00) Monrovia, Reykjavik |
+| Malta  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Man, Isle of  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Marshall Islands  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Old |
+| Martinique  |  (UTC-04:00) Atlantic Time (Canada) |
+| Mauritania  |  (UTC+00:00) Monrovia, Reykjavik |
+| Mauritius  |  (UTC+04:00) Port Louis |
+| Mayotte  |  (UTC+03:00) Nairobi |
+| Mexico  |  (UTC-06:00) Guadalajara, Mexico City, Monterrey |
+| Micronesia  |  (UTC+10:00) Guam, Port Moresby |
+| Moldova  |  (UTC+02:00) Chisinau |
+| Monaco  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Mongolia  |  (UTC+07:00) Krasnoyarsk |
+| Montenegro  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Montserrat  |  (UTC-04:00) Atlantic Time (Canada) |
+| Morocco  |  (UTC+01:00) Casablanca |
+| Mozambique  |  (UTC+02:00) Harare, Pretoria |
+| Myanmar  |  (UTC+06:30) Yangon (Rangoon) |
+| Namibia  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Nauru  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Old |
+| Nepal  |  (UTC+05:45) Kathmandu |
+| Netherlands  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| New Caledonia  |  (UTC+11:00) Solomon Is., New Caledonia |
+| New Zealand  |  (UTC+12:00) Auckland, Wellington |
+| Nicaragua  |  (UTC-06:00) Central Time (US & Canada) |
+| Niger  |  (UTC+01:00) West Central Africa |
+| Nigeria  |  (UTC+01:00) West Central Africa |
+| Niue  |  (UTC+13:00) Samoa |
+| Norfolk Island  |  (UTC+11:00) Solomon Is., New Caledonia |
+| Northern Mariana Islands  |  (UTC+10:00) Guam, Port Moresby |
+| Norway  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Oman  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Pakistan  |  (UTC+05:00) Islamabad, Karachi |
+| Palau  |  (UTC+09:00) Osaka, Sapporo, Tokyo |
+| Palestinian Authority  |  (UTC+02:00) Chisinau |
+| Panama  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Papua New Guinea  |  (UTC+10:00) Vladivostok |
+| Paraguay  |  (UTC-04:00) Asuncion |
+| Peru  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Philippines  |  (UTC+08:00) Kuala Lumpur, Singapore |
+| Pitcairn Islands  |  (UTC-08:00) Pacific Time (US & Canada) |
+| Poland  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Portugal  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Qatar  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Reunion  |  (UTC+04:00) Port Louis |
+| Romania  |  (UTC+02:00) Chisinau |
+| ROW  |  (UTC-07:00) Mountain Time (US & Canada) |
+| Russia  |  (UTC+03:00) Moscow, St. Petersburg |
+| Rwanda  |  (UTC+02:00) Harare, Pretoria |
+| SÃ£o TomÃ© and PrÃ­ncipe  |  (UTC+00:00) Monrovia, Reykjavik |
+| Saint BarthÃ©lemy  |  (UTC+04:00) Yerevan |
+| Saint Helena, Ascension and Tristan da Cunha  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Saint Kitts and Nevis  |  (UTC-04:00) Atlantic Time (Canada) |
+| Saint Lucia  |  (UTC-04:00) Atlantic Time (Canada) |
+| Saint Martin (French Part)  |  (UTC-04:00) Atlantic Time (Canada) |
+| Saint Pierre and Miquelon  |  (UTC-02:00) Mid-Atlantic - Old |
+| Saint Vincent and the Grenadines  |  (UTC-04:00) Atlantic Time (Canada) |
+| Samoa  |  (UTC+13:00) Samoa |
+| San Marino  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Saudi Arabia  |  (UTC+03:00) Kuwait, Riyadh |
+| Senegal  |  (UTC+00:00) Monrovia, Reykjavik |
+| Serbia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Seychelles  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Sierra Leone  |  (UTC+00:00) Monrovia, Reykjavik |
+| Singapore  |  (UTC+08:00) Kuala Lumpur, Singapore |
+| Sint Maarten (Dutch Part)  |  (UTC-04:00) Atlantic Time (Canada) |
+| Slovakia  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Slovenia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Solomon Islands  |  (UTC+11:00) Solomon Is., New Caledonia |
+| Somalia  |  (UTC+03:00) Nairobi |
+| South Africa  |  (UTC+02:00) Harare, Pretoria |
+| South Georgia and the South Sandwich Islands  |  (UTC-02:00) Mid-Atlantic - Old |
+| Spain  |  (UTC+01:00) Brussels, Copenhagen, Madrid, Paris |
+| Sri Lanka  |  (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi |
+| Suriname  |  (UTC-03:00) Cayenne, Fortaleza |
+| Svalbard and Jan Mayen  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Swaziland  |  (UTC+02:00) Harare, Pretoria |
+| Sweden  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Switzerland  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
+| Taiwan  |  (UTC+08:00) Taipei |
+| Tajikistan  |  (UTC+05:00) Ashgabat, Tashkent |
+| Tanzania  |  (UTC+03:00) Nairobi |
+| Thailand  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Timor-Leste  |  (UTC+09:00) Seoul |
+| Togo  |  (UTC+00:00) Monrovia, Reykjavik |
+| Tokelau  |  (UTC+13:00) Nuku'alofa |
+| Tonga  |  (UTC+13:00) Nuku'alofa |
+| Trinidad and Tobago  |  (UTC-04:00) Atlantic Time (Canada) |
+| Tunisia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
+| Turkey  |  (UTC+03:00) Istanbul |
+| Turkmenistan  |  (UTC+05:00) Ashgabat, Tashkent |
+| Turks and Caicos Islands  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Tuvalu  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Old |
+| U.S. Minor Outlying Islands  |  (UTC+13:00) Samoa |
+| U.S. Virgin Islands  |  (UTC-04:00) Atlantic Time (Canada) |
+| Uganda  |  (UTC+03:00) Nairobi |
+| Ukraine  |  (UTC+02:00) Chisinau |
+| United Arab Emirates  |  (UTC+04:00) Abu Dhabi, Muscat |
+| United Kingdom  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| United States  |  (UTC-05:00) Eastern Time (US & Canada) |
+| Uruguay  |  (UTC-03:00) Brasilia |
+| Uzbekistan  |  (UTC+05:00) Ashgabat, Tashkent |
+| Vanuatu  |  (UTC+11:00) Solomon Is., New Caledonia |
+| Vietnam  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Wallis and Futuna  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Old |
+| Western Sahara (Disputed)  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
+| Yemen  |  (UTC+04:00) Abu Dhabi, Muscat |
+| Zambia  |  (UTC+02:00) Harare, Pretoria |
+| Zimbabwe  |  (UTC+02:00) Harare, Pretoria |

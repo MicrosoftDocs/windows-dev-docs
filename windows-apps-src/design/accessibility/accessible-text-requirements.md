@@ -22,7 +22,7 @@ This topic describes best practices for accessibility of text in an app, by assu
 ## Contrast ratios  
 Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
 
-The recommendations for text contrast documented here are based on a web accessibility standard, [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://go.microsoft.com/fwlink/p/?linkid=221823). This guidance exists in the *W3C Techniques for WCAG 2.0* specification.
+The recommendations for text contrast documented here are based on a web accessibility standard, [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/TR/WCAG20-TECHS/G18.html). This guidance exists in the *W3C Techniques for WCAG 2.0* specification.
 
 To be considered accessible, visible text must have a minimum luminosity contrast ratio of 4.5:1 against the background. Exceptions include logos and incidental text, such as text that is part of an inactive UI component.
 
@@ -110,7 +110,7 @@ If you are using the intrinsic controls in HTML, then the UIA implementation has
 
 ## Text in graphics
 
-Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [**Glyphs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
+Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [**Glyphs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
@@ -180,6 +180,6 @@ These types have an **IsTextScaleFactorEnabled** property:
 * [Text scaling](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Accessibility](accessibility.md)
 * [Basic accessibility information](basic-accessibility-information.md)
-* [XAML text display sample](https://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML text editing sample](https://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML text display sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+* [XAML text editing sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 

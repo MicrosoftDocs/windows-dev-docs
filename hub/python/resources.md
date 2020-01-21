@@ -36,14 +36,13 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Python API Browser](https://docs.microsoft.com/python/api/?view=azure-python): Your one-stop shop for all Python-based APIs from Microsoft.
 
-- [Azure Code Samples using Python](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
+- [Azure Code Samples using Python](https://azure.microsoft.com/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
 
 - [Python and Visual Studio Code](https://code.visualstudio.com/docs/languages/python): An overview of using Python with VS Code.
 
+## Online courses
 
-### Online courses
-
-- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 
@@ -52,6 +51,8 @@ A list of links that we recommend for Python Developers working on machines runn
 - [The Python.org Tutorials](https://docs.python.org/3/tutorial/index.html): Introduces the reader informally to the basic concepts and features of the Python language and system.
 
 - [Learning Python on Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html): A basic introduction to Python.
+
+- [Real Python](https://realpython.com/): A Python developers resource center — Python tutorials, video courses, quizzes, books, code examples, and more.
 
 ## Web development
 
@@ -72,20 +73,3 @@ A list of links that we recommend for Python Developers working on machines runn
 - [Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Build a Python Django web app that uses the Microsoft Graph API to retrieve calendar information for a user.
 
 - [Walkthrough: Bing Ads API Web Application in Python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.
-
-<!-- ## Data Science and Machine Learning
-
-- Anaconda - brief description
-- Canopy - brief description
-- TensorFlow - brief description
-- Scikit-Learn, Keras, PyTorch, etc - brief descriptions
-
-## Desktop GUI app and IoT development
-
-- PyQT - brief description
-- PyJs - brief description
-- PyGUI - brief descriptio
-- Kivy - brief descriptio
-- PyGTK - brief descriptio
-- WxPython - brief description
-- PyGame - brief description (with links to our internal games once they're done?) -->

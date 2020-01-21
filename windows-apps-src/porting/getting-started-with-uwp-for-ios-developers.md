@@ -18,7 +18,7 @@ Windows 10 introduces a new platform for creating engaging apps on desktop, lap
 
 The bottom line is this: don't just port your app, but **reimagine** your app, and take advantage of new features and new devices. Don't settle for the lowest common denominator, but create rich experiences that use unique Windows 10 features, such as live tiles, notifications, and interacting with Cortana.
 
-To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed. You can download these from the [Developer downloads for programming UWP apps](https://developer.microsoft.com/en-us/windows/downloads). Don't have a PC? Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).
+To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed. You can download these from the [Developer downloads for programming UWP apps](https://developer.microsoft.com/windows/downloads). Don't have a PC? Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).
 
 | Topic | Description |
 |-------|-------------|

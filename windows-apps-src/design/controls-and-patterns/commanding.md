@@ -1109,5 +1109,5 @@ For a complete example that demonstrates a [XamlUICommand](https://docs.microsof
 
 #### Other samples
 
-- [Universal Windows Platform samples (C# and C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+- [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 - [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)

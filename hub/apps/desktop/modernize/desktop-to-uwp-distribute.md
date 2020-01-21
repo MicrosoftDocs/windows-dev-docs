@@ -1,5 +1,5 @@
 ---
-Description: Distribute a packaged desktop application (Desktop Bridge)
+Description: Distribute an app packaged with Desktop Bridge
 title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 ms.date: 05/18/2018
 ms.topic: article
@@ -159,12 +159,6 @@ private void RemoveDesktopApp()
 
 ## Next steps
 
-**Find answers to your questions**
-
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 If you encounter issues publishing your application to the Store, this [blog post](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) contains some useful tips.
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

@@ -129,7 +129,7 @@ The files that you receive could come from an untrusted source. We recommend tha
 
 ### Complete example
 
-* [Association launching sample](https://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Association launching sample](https://code.msdn.microsoft.com/windowsapps/Association-Launching-535d2cec)
 
 ### Concepts
 

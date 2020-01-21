@@ -14,7 +14,7 @@ As subsequent versions of C++/WinRT are released, this topic describes what's ne
 
 ## News, and changes, in C++/WinRT 2.0
 
-For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix), the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), and the the `cppwinrt.exe` tool&mdash;including how to acquire and install them&mdash;see [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), and the the `cppwinrt.exe` tool&mdash;including how to acquire and install them&mdash;see [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### Changes to the C++/WinRT Visual Studio Extension (VSIX) for version 2.0
 
@@ -250,7 +250,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-For more info, see [Details about destructors](/windows/uwp/cpp-and-winrt-apis/details-about-destructors).
+For more info, see [Deferred destruction](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction).
 
 #### Improved support for COM-style single interface inheritance
 
@@ -264,9 +264,9 @@ It can be tricky to work with `out` params; particularly Windows Runtime arrays.
 
 The [**winrt::event**](/uwp/cpp-ref-for-winrt/event) implementation now gracefully handles the case where its **remove** method is called with an invalid token value (a value that's not present in the array).
 
-#### Coroutine locals are now destroyed before the coroutine returns
+#### Coroutine local variables are now destroyed before the coroutine returns
 
-The traditional way of implementing a coroutine type may allow locals within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
+The traditional way of implementing a coroutine type may allow local variables within the coroutine to be destroyed *after* the coroutine returns/completes (rather than prior to final suspension). The resumption of any waiter is now deferred until final suspension, in order to avoid this problem and to accrue other benefits.
 
 ## News, and changes, in Windows SDK version 10.0.17763.0 (Windows 10, version 1809)
 
@@ -278,7 +278,7 @@ The table below contains news and changes for C++/WinRT in the Windows SDK versi
 | The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
 | There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](collections.md). |
 | You can use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). |
-| Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asychronous operation, and cancellation callbacks](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
+| Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asynchronous operation, and cancellation callbacks](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | When creating a delegate pointing to a member function, you can establish a strong or a weak reference to the current object (instead of a raw *this* pointer) at the point where the handler is registered. | For more info, and code examples, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Bugs are fixed that were uncovered by Visual Studio's improved conformance to the C++ standard. The LLVM and Clang toolchain is also better leveraged to validate C++/WinRT's standards conformance. | You'll no longer encounter the issue described in [Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
 
@@ -291,13 +291,13 @@ Other changes.
 - **Breaking change**. The [**winrt::handle_type constructor**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) instead.
 - **Breaking change**. The signatures of **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** have changed. You mustn't declare these functions at all. Instead, include `winrt/base.h` (which is automatically included if you include any C++/WinRT Windows namespace header files) to include the declarations of these functions.
 - For the [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
-- APIs that expect **IBuffer** parameters are simplified. Although most APIs prefer collections or arrays, enough APIs rely on **IBuffer** that it needed to be easier to use such APIs from C++. This update provides direct access to the data behind an **IBuffer** implementation, using the same data naming convention used by the C++ Standard Library containers. This also avoids colliding with metadata names that conventionally begin with an uppercase letter.
+- Simplified APIs that expect **IBuffer** parameters. Most APIs prefer collections, or arrays. But we felt that we should make it easier to call APIs that rely on **IBuffer**. This update provides direct access to the data behind an **IBuffer** implementation. It uses the same data naming convention as the one used by the C++ Standard Library containers. That convention also avoids collisions with metadata names that conventionally begin with an uppercase letter.
 - Improved code generation: various improvements to reduce code size, improve inlining, and optimize factory caching.
 - Removed unnecessary recursion. When the command-line refers to a folder, rather than to a specific `.winmd`, the `cppwinrt.exe` tool no longer searches recursively for `.winmd` files. The `cppwinrt.exe` tool also now handles duplicates more intelligently, making it more resilient to user error, and to poorly-formed `.winmd` files.
 - Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.
 
 > [!IMPORTANT]
-> Important changes were made to the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix), both in version 1.0.181002.2, and then later in version 1.0.190128.4. For details of these changes, and how they affect your existing projects, [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) and  [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+> Important changes were made to the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), both in version 1.0.181002.2, and then later in version 1.0.190128.4. For details of these changes, and how they affect your existing projects, [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) and  [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ### Isolation from Windows SDK header files
 
