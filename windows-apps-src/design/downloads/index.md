@@ -15,8 +15,7 @@ ms.custom: RS5
 
 ![Design basics](../images/downloads-2x.png)
 
-Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
-
+Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>.
 
 ## Design toolkits
 
@@ -57,11 +56,6 @@ v1705, May 2017<br>
 <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-![hero image](images/framer.png)
-<b>Framer toolkit</b><br>
-(This toolkit is no longer supported.)<br/>
-v1806, June 2018<br>
-<a href="https://github.com/Microsoft/windows-framer-toolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
