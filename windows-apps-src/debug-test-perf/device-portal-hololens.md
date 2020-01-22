@@ -15,8 +15,8 @@ ms.localizationpriority: medium
 ### Enable Device Portal
 
 1. Power on your HoloLens and put on the device.
-2. Perform the [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture to launch the main menu.
-3. Gaze at the **Settings** tile and perform the [air tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture. Perform a second air tap to place the app in your environment. The Settings app will launch after you place it.
+2. Perform the [Start gesture](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) or [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture for HoloLens (1st Gen) to launch the main menu.
+3. Gaze at the **Settings** tile and perform the [air tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture on HoloLens (1st Gen) or select it on HoloLens 2 by [touching it or using a Hand ray](https://docs.microsoft.com/hololens/hololens2-basic-usage). The Settings app will launch after you select it.
 4. Select the **Update** menu item.
 5. Select the **For developers** menu item.
 6. Enable **Developer Mode**.
@@ -36,7 +36,7 @@ ms.localizationpriority: medium
 #### Connect over USB 
 
 1. Install the tools to make sure you have Visual Studio Update 1 with the Windows 10 developer tools installed on your PC. This enables USB connectivity.
-2. Connect your HoloLens to your PC with a micro-USB cable.
+2. Connect your HoloLens to your PC with a micro-USB cable for HoloLens (1st Gen) or USB-C for HoloLens 2.
 3. From a web browser on your PC, go to `http://127.0.0.1:10080`.
 
 > [!IMPORTANT]
