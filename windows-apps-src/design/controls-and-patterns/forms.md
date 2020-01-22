@@ -121,7 +121,7 @@ Control | Use | Example
 ### Lists
 Control | Use | Example
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries
+[ComboBox](combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Arrange and browse image-based collections | Pick a photo, color, display theme
 
