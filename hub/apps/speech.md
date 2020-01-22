@@ -38,18 +38,14 @@ This page provides information on how the various Windows development frameworks
 
       [Conversational agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
 
-      Expose your application's functionality through any digital assistant supported by the Windows platform Agent Activation Runtime (AAR).
-
       [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd)
-      
-      Extend the basic functionality of Cortana with voice commands that launch and execute a single action in your Windows application.
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
 
       **Win32 platform**
 
-      Develop accessible apps and tools on the original platform for C/C++ Windows applications.
+      Develop speech-enabled applications on the original platform for C/C++ Windows applications.
 
       [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
@@ -171,23 +167,12 @@ Various videos covering how to build Windows applications that incorporate speec
 ## Other resources
 
 :::row:::
-   :::column span="2":::
+   :::column:::
       **Blogs and news**
 
       The latest from the world of Microsoft speech.
    :::column-end:::
-:::row-end:::
-:::row:::
    :::column:::
-      [In the news](https://news.microsoft.com/?s=speech)
-   :::column-end:::
-   :::column:::
-      [Speech blogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
-   :::column-end:::
-:::row-end:::
-
-:::row:::
-   :::column span="2":::
       **Community and support**
 
       A place where Windows developers and users meet and learn together.
@@ -195,9 +180,13 @@ Various videos covering how to build Windows applications that incorporate speec
 :::row-end:::
 :::row:::
    :::column:::
-      [Windows community - Speech](https://community.windows.com/search?q=speech)
+      [In the news](https://news.microsoft.com/?s=speech)
+
+      [Speech blogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
    :::column-end:::
    :::column:::
+      [Windows community - Speech](https://community.windows.com/search?q=speech)
+
       [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
    :::column-end:::
 :::row-end:::
