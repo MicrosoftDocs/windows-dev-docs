@@ -72,6 +72,8 @@ This page provides information on how the various Windows development frameworks
    :::column:::
       ![.NET](images/platform-dotnet.png)
 
+      **.NET Framework**
+
       Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
       [System.Speech Programming Guide for .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
@@ -122,30 +124,23 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/samples/browse/)
+      [Code sample browser](https://docs.microsoft.com/samples/browse/?term=speech)
 
-      The new samples browser replacing the MSDN Code Gallery.
+      The new samples browser (replaces the MSDN Code Gallery).
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
-
-      Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      [Windows classic samples on GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Windows classic samples on GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=speech&unscoped_q=speech)
 
       These samples demonstrate the functionality and programming model for Windows and Windows Server. 
    :::column-end:::
+:::row-end:::
+:::row:::
    :::column:::
-      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=speech&unscoped_q=speech)
 
       These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
    :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="2":::
+   :::column:::
       [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
 
       This app demonstrates the various Xaml controls supported in the Fluent Design System.
@@ -154,72 +149,22 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 ## Videos
 
-Various videos covering how to build accessible Windows applications to general accessibility concerns and how Microsoft addresses them.
+Various videos covering how to build Windows applications that incorporate speech interactions.
 
 :::row:::
    :::column:::
-      **How to get started with accessibility in Windows apps**
+      **Cortana and Speech Platform In Depth**
    :::column-end:::
    :::column:::
-      **One Dev Minute: Developing apps for accessibility**
-   :::column-end:::
-   :::column:::
-      **Introduction to disability and accessibility**
+      **Cortana Extensibility in Universal Windows Apps**
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/3-716/player]
    :::column-end:::
    :::column:::
-      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      **From hack to product, eye control for Windows 10**
-   :::column-end:::
-   :::column:::
-      **Accessibility on Windows 10**
-   :::column-end:::
-   :::column:::
-      **Introduction to Building Accessible UWP Apps**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      **Designing Windows accessibility features**
-   :::column-end:::
-   :::column:::
-      **Windows 10 accessibility features empower everyone**
-   :::column-end:::
-   :::column:::
-      **Making the mouse pointers easier to see**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/Y_NJbE7wxlk]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/BseTf-4q9GA]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/4UzaF7_T3bw]
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/2-691/player]
    :::column-end:::
 :::row-end:::
 
