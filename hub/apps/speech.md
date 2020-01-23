@@ -45,23 +45,11 @@ This page provides information on how the various Windows development frameworks
 
       **Win32 platform**
 
-      Develop speech-enabled applications on the original platform for C/C++ Windows applications.
+      Develop speech-enabled applications for Windows desktop and Windows Server using the tools, information, and sample engines and applications provided here.
 
-      [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
-
-      [Developing accessible applications for Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
-
-      [Developing accessible UI frameworks for Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
-
-      [Developing assistive technology for Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
-
-      [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
-
-      [Microsoft Active Accessibility (MSAA)](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
-
-      [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
-
-      [Guidelines for designing accessible apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [Microsoft Speech Platform - Software Development Kit (SDK) (Version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
+      
+      [Microsoft Speech SDK, version 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -102,15 +90,13 @@ This page provides information on how the various Windows development frameworks
       [Microsoft Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
-
-      [The Bing Speech Recognition Control](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
    :::column-end:::
    :::column:::
-      [Speech SDK 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
-
       [Microsoft Speech API (SAPI) 5.3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5.4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
+
+      [The Bing Speech Recognition Control](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
    :::column-end:::
 :::row-end:::
 
