@@ -240,6 +240,8 @@
           href: controls-and-patterns/content-links.md
         - name: Handwriting view
           href: controls-and-patterns/text-handwriting-view.md
+    - name: Two-pane view
+      href: controls-and-patterns/two-pane-view.md
 - name: Style
   items:
     - name: Overview
