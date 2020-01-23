@@ -9,6 +9,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Interaction primer
 
 ![windows input types](images/input-interactions/icons-inputdevices03.png)
