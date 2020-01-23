@@ -2,7 +2,7 @@
 description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
 title: Package and deploy with MSIX
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
@@ -49,37 +49,7 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 8. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
 
-9. In Solution Explorer, right-click the **ContosoExpenses.Package** project node and select **Edit Project File**.
-
-10. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file.
-
-11. Replace this element with the following XML.
-
-    ``` xml
-    <ItemGroup>
-        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-        <Implicit>true</Implicit>
-        </SDKReference>
-    </ItemGroup>
-    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-        <ItemGroup>
-        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject></SourceProject>
-            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-        </_FilteredNonWapProjProjectOutput>
-        </ItemGroup>
-    </Target>
-    ```
-
-12. Save the project file and close it.
-
-13. Press **F5** to start the packaged app in the debugger.
+9. Press **F5** to start the packaged app in the debugger.
 
 At this point, you can notice some changes that indicate the app is now running as packaged:
 
@@ -94,7 +64,7 @@ At this point, you can notice some changes that indicate the app is now running 
 
 Now that you have packaged the Contoso Expenses app with MSIX, you can test the notification scenario which wasn't working at the end of [part 4](modernize-wpf-tutorial-4.md).
 
-1. In the Contoso Expenses app, choose an employee from the list and then click the **Add new expense** button. 
+1. In the Contoso Expenses app, choose an employee from the list and then click the **Add new expense** button.
 2. Complete all fields in the form and press **Save**.
 3. Confirm that you see an OS notification.
 
