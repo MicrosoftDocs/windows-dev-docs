@@ -161,7 +161,7 @@ Various videos covering how to build Windows applications that incorporate speec
    :::column:::
       **Community and support**
 
-      A place where Windows developers and users meet and learn together.
+      Where Windows developers and users meet and learn together.
    :::column-end:::
 :::row-end:::
 :::row:::
