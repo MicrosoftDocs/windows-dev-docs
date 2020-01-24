@@ -7,10 +7,9 @@ template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Handle pointer input
 
 Receive, process, and manage input data from pointing devices (such as touch, mouse, pen/stylus, and touchpad) in your Universal Windows Platform (UWP) applications.
