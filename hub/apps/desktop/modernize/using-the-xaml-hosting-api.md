@@ -1,7 +1,7 @@
 ---
 description: This article describes how to host UWP XAML UI in your desktop C++ Win32 app.
 title: Using the UWP XAML hosting API in a C++ Win32 app
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
 ms.author: mcleans
@@ -90,9 +90,9 @@ The way you use the UWP XAML hosting API in your code depends on your app type, 
 
 The following samples demonstrate how to use the UWP XAML hosting API in a C++ Win32 app:
 
-* [Simple XAML Island sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp). This sample demonstrates a basic implementation of hosting a UWP control in an unpackaged C++ Win32 app (that is, an app that is not built into an MSIX package).
+* [Simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App). This sample demonstrates a basic implementation of hosting a UWP control in an unpackaged C++ Win32 app (that is, an app that is not built into an MSIX package).
 
-* [XAML Island with custom control sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App). This sample demonstrates a complete implementation of hosting a custom UWP control in an unpackaged C++ Win32 app, as well as handling other behavior such as keyboard input and focus navigation. 
+* [XAML Island with custom control sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32). This sample demonstrates a complete implementation of hosting a custom UWP control in a packaged C++ Win32 app, as well as handling other behavior such as keyboard input and focus navigation.
 
 ### WPF and Windows Forms
 
@@ -104,7 +104,7 @@ The [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/contro
 
 ## Host a standard UWP control
 
-This section walks you through the process of using the UWP XAML hosting API to host a standard UWP control (that is, a control provided by the Windows SDK or WinUI library) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
+This section walks you through the process of using the UWP XAML hosting API to host a standard UWP control (that is, a control provided by the Windows SDK or WinUI library) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
 
 ### Configure the project
 
@@ -336,9 +336,8 @@ The following steps and code examples demonstrate how to do implement the above 
 For complete examples that demonstrate these tasks, see the following code files:
 
 * **C++ Win32:**
-  * See the [HelloWindowsDesktop.cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp) file in the [Simple XAML Island sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp).
-  * See the [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) file in the [XAML Island with custom control sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
-
+  * See the [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) file.
+  * See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) file.
 * **WPF:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.  
 
 * **Windows Forms:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.
@@ -353,27 +352,29 @@ To host a custom UWP control, you'll need the following projects and components:
 
 * **The custom UWP control**. You'll need the source code for the custom UWP control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your C++ Win32 project.
 
-* **A UWP app project that defines a XamlApplication object**. Your C++ Win32 project must have access to an instance of the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class provided by the Windows Community Toolkit. This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your C++ Win32 project and revise the default `App` class in this project.
+* **A UWP app project that defines a XamlApplication object**. Your C++ Win32 project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
+
+  The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your C++ Win32 project, revise the default `App` class in this project to derive from `XamlApplication`, and then create an instance of this object in the entry point code for your C++ Win32 app.
+
   > [!NOTE]
   > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host UWP controls in the XAML Island.
 
 To host a custom UWP control in a C++ Win32 app, follow these general steps.
 
-1. In the solution that contains your C++ Win32 desktop app project, add a **Blank App (Universal Windows)** project and configure it by following the detailed instructions in [this section](host-custom-control-with-xaml-islands.md#create-a-xamlapplication-object-in-a-uwp-app-project) in the related WPF walkthrough.
+1. In the solution that contains your C++ Win32 desktop app project, add a **Blank App (Universal Windows)** project and define a `XamlApplication` class in it by following the detailed instructions in [this section](host-custom-control-with-xaml-islands.md#define-a-xamlapplication-class-in-a-uwp-app-project) in the related WPF walkthrough. 
 
 2. In the same solution, add the project that contains the source code for the custom UWP XAML control (this is typically a UWP class library project) and build the project.
 
 3. In the UWP app project, add a reference to the UWP class library project.
 
-4. In your C++ Win32 project, add a reference to the UWP app project and the UWP class library project in your solution.
+4. In your C++ Win32 project:
+
+  * Add a reference to the UWP app project and the UWP class library project in your solution.
+  * In the `WinMain` function or some other entry point code, create an instance of the `XamlApplication` class that you defined in the UWP app project earlier. For example, see [this line of code](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) from the C++ Win32 sample in the [XAML Islands Samples](https://github.com/microsoft/Xaml-Islands-Samples).
 
 5. Follow the process described in the [Use the XAML hosting API to host a UWP control](#use-the-xaml-hosting-api-to-host-a-uwp-control) section to host the custom control in a XAML Island in your app. Assign an instance of the custom control to host to the [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property of the **DesktopWindowXamlSource** object in your code.
 
-For a complete example for a C++ Win32 application, see the following projects in the [XAML Island with custom control sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App):
-
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): This project implements a custom UWP XAML control named `MyUserControl` that contains a text box, several buttons, and a combo box.
-* [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): This is a UWP app project with the changes described above.
-* [SampleCppApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): This is the C++ Win32 app project that hosts the custom UWP XAML control in a XAML Island.
+For a complete example for a C++ Win32 application, see the [XAML Island C++ Win32 sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Desktop_Win32App).
 
 ## Handle keyboard, layout, and DPI
 
@@ -388,7 +389,7 @@ The following sections provide guidance and links to code examples about how to 
 
 To properly handle keyboard input for each XAML Island, your application must pass all Windows messages to the UWP XAML framework so that certain messages can be processed correctly. To do this, in some place in your application that can access the message loop, cast the **DesktopWindowXamlSource** object for each XAML Island to an **IDesktopWindowXamlSourceNative2** COM interface. Then, call the **PreTranslateMessage** method of this interface and pass in the current message.
 
-  * **C++ Win32:**: The app can call **PreTranslateMessage** directly in its main message loop. For an example, see the [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * **C++ Win32:**: The app can call **PreTranslateMessage** directly in its main message loop. For an example, see the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) file.
 
   * **WPF:** The app can call **PreTranslateMessage** from the event handler for the [ComponentDispatcher.ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) event. For an example, see the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) file in the Windows Community Toolkit.
 
@@ -406,7 +407,7 @@ The UWP XAML hosting API provides several types and members to help you accompli
 
 For examples that demonstrate how to do this in the context of a working sample application, see the following code files:
 
-  * **C++/Win32**: See the [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * **C++/Win32**: See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) file.
 
   * **WPF:** See the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) file in the Windows Community Toolkit.  
 
@@ -416,7 +417,7 @@ For examples that demonstrate how to do this in the context of a working sample 
 
 When the user changes the size of the parent UI element, you'll need to handle any necessary layout changes to make sure your UWP controls display as you expect. Here are some important scenarios to consider.
 
-* In a C++ Win32 application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function. For an example, see the [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) code file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* In a C++ Win32 application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function. For an example, see the [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) code file.
 
 * When the parent UI element needs to get the size of the rectangular area needed to fit the **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**, call the [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) method of the **Windows.UI.Xaml.UIElement**. For example:
 
@@ -475,5 +476,5 @@ To configure your application to be per-monitor DPI aware, add a [side-by-side a
 
 ## Related topics
 
-* [UWP controls in desktop applications](xaml-islands.md)
-* [C++ Win32 XAML Islands sample](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
+* [C++ Win32 XAML Islands sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

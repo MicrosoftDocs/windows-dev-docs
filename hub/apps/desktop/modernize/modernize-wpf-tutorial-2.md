@@ -2,7 +2,7 @@
 description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
 title: Add a UWP InkCanvas control using XAML Islands
 ms.topic: article
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
@@ -17,7 +17,7 @@ This is the second part of a tutorial that demonstrates how to modernize a sampl
 In the fictional scenario of this tutorial, the Contoso development team wants to add support for digital signatures to the Contoso Expenses app. The UWP **InkCanvas** control is a great option for this scenario, because it supports digital ink and AI-powered features like the capability to recognize text and shapes. To do this, you will use the [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control available in the Windows Community Toolkit. This control wraps the interface and functionality of the UWP **InkCanvas** control for use in a WPF app. For more details about wrapped UWP controls, see [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md).
 
 > [!NOTE]
-> In this tutorial, the WPF app will host only first-party UWP controls from the Windows SDK. To support other XAML Island scenarios including custom UWP controls, the app project must have access to an instance of the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class provided by the Windows Community Toolkit. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project. Because this step isn't required for the basic scenario of hosting first-party UWP controls from the Windows SDK, this tutorial omits this step. For more details, see [this article](host-standard-control-with-xaml-islands.md).
+> In this tutorial, the WPF app will host only first-party UWP controls from the Windows SDK. Therefore, this tutorial omits the steps to define an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class as described [here](host-standard-control-with-xaml-islands.md#required-components).
 
 ## Configure the project to use XAML Islands
 

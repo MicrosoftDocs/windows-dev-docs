@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop apps
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -122,4 +122,5 @@ Here is the current state of XAML Islands-related features as of Windows 10, ver
 For more background information and tutorials about using XAML Islands, see the following articles and resources:
 
 * [Modernize a WPF app tutorial](modernize-wpf-tutorial.md): This tutorial provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add UWP controls to an existing WPF line-of-business application. This tutorial includes the complete code for the WPF application as well as detailed instructions for each step in the process.
+* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples): This repo contains Windows Forms, WPF, and C++/Win32 samples that demonstrate how to use XAML Islands.
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): This blog post discusses many common questions about XAML Islands and provides a detailed development roadmap.
