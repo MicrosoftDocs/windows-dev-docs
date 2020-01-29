@@ -23,7 +23,7 @@ To use this tutorial, you'll need the following:
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
-You will also to have an android phone or configured emulator in which to run your app. See Configuring an Android emulator.
+You will also to have an Android phone or configured emulator in which to run your app. See Configuring an Android emulator.
 
 ## Create a new Xamarin Forms project
 
@@ -180,7 +180,7 @@ namespace TimeChanger
 
 ## Run the app
 
-To run the app, press **F5** or click Debug > Start Debugging. If you are using an android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
+To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
 
 ## Download the code
 
