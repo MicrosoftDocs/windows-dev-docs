@@ -8,7 +8,8 @@ ms.topic: article
 keywords: 
 ms.localizationpriority: medium
 ms.date: 01/24/2020
-ms.technology: "xamarin"
+ms.prod: "xamarin"
+ms.technology: "xamarin-android"
 ---
 
 # Create a sample app with Xamarin.Android
@@ -77,7 +78,7 @@ Replace the contents of activity_main.xml with the following code.
 </LinearLayout>
 ```
 
-At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the time will not display and the buttons can be clicked but do not do anything.
+At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the time will not display and the buttons can be clicked but do not do anything. In the next section, you will add functionality to your UI.
 
 ## Add functionality by adding C# code
 
@@ -85,13 +86,13 @@ Open **MainActivity.cs**. This file contains the code-behind that will add funct
 
 ### Set the current time
 
-First, get a reference by searching all UI elements for one with **android:id** (which was set to `"@+id/timeDisplay"` in the xml from the previous step). This is the TextView that will display the current time.
+First, get a reference to the TextView that will display the time. Use **FindViewById** to search all UI elements for the one with the correct **android:id** (which was set to `"@+id/timeDisplay"` in the xml from the previous step). This is the TextView that will display the current time.
 
 ```csharp
 var currentTime = FindViewById<TextView>(Resource.Id.timeDisplay);
 ```
 
-UI controls must be updated on the UI thread. Changes made from another thread may not properly update the control as it displays on the screen. Button click events are not guaranteed to be on the UI thread, so we'll use the RunOnUiThread method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
+UI controls must be updated on the UI thread. Changes made from another thread may not properly update the control as it displays on the screen. because there is no guarantee this code will always be running on the UI thread, use the **RunOnUiThread** method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
 
 ```csharp
 private void UpdateTimeLabel(object state = null)
@@ -109,7 +110,7 @@ private void UpdateTimeLabel(object state = null)
 At this point, the current time will be accurate for, at most, one second after TimeChangerAndroid is launched. We'll need to periodically update the TextView to keep the time accurate. A **Timer** object can be set to call a callback method periodically, which is exactly what we want.
 
 ```csharp
-clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
+var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
 ```
 
 ### Add HourOffset
@@ -126,7 +127,7 @@ Now update the UpdateTimeLabel method to be aware of the HourOffset property.
 currentTime.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
 ```
 
-### Add button Click events
+### Create the button Click event handlers
 
 All the up and down buttons need to do is increment or decrement the HourOffset property and call UpdateTimeLabel.
 
@@ -147,7 +148,7 @@ Button upButton = FindViewById<Button>(Resource.Id.upButton);
 upButton.Click += UpButton_Click;
 ```
 
-When you're finished, MainPage.xaml.cs should look like this:
+When you're finished, MainActivity.cs should look like this:
 
 ```csharp
 using Android.App;
