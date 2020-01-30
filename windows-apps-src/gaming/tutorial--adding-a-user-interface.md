@@ -18,7 +18,7 @@ Now that our game has its 3D visuals in place, it's time to focus on adding some
 ## Objective
 
 Using Direct2D, add a number of user interface graphics and behaviors to our UWP DirectX game including:
-- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundry rectangles
+- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundary rectangles
 - Game state menus
 
 
