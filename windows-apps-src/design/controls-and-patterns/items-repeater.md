@@ -14,7 +14,7 @@ Use an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) to cre
 
 Unlike [ListView](/uwp/api/windows.ui.xaml.controls.listview), [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a comprehensive end-user experience – it has no default UI and provides no policy around focus, selection, or user interaction. Instead, it’s a building block that you can use to create your own unique collection-based experiences and custom controls. While it has no built-in policy, it enables you to attach policy to build the experience you require. For example, you can define the layout to use, the keyboarding policy, the selection policy, etc.
 
-You can think of [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) conceptually as a data-driven panel, rather than as a complete control like ListView. You specify a collection of data items to be displayed, an item template that generates a UI element for each data item, and a layout that determines how the elements are sized and positioned. Then, ItemsRepeater produces child elements based on the data source, and displays them as specified by the item template and layout. The items displayed do not need to be homogenous because ItemsRepeater can load content to represent the data items based on criteria you specify in a data template selector.
+You can think of [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) conceptually as a data-driven panel, rather than as a complete control like ListView. You specify a collection of data items to be displaid, an item template that generates a UI element for each data item, and a layout that determines how the elements are sized and positioned. Then, ItemsRepeater produces child elements based on the data source, and displays them as specified by the item template and layout. The items displaid do not need to be homogenous because ItemsRepeater can load content to represent the data items based on criteria you specify in a data template selector.
 
 | **Get the Windows UI Library** |
 | - |
@@ -93,7 +93,7 @@ You can also bind the **ItemsSource** property to a collection in XAML. For more
 ```
 
 ### ItemTemplate
-To specify how a data item is visualized, set the [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property to a [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate) or [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) you have defined. The data template defines how the data is visualized. By default, the item is displayed in the view with a **TextBlock** the uses the string representation of the data object.
+To specify how a data item is visualized, set the [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property to a [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate) or [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) you have defined. The data template defines how the data is visualized. By default, the item is displaid in the view with a **TextBlock** the uses the string representation of the data object.
 
 However, you typically want to show a more rich presentation of your data by using a template that defines the layout and appearance of one or more controls that you'll use to display an individual item. The controls you use in the template can be bound to the properties of the data object, or have static content defined inline.
 
@@ -118,9 +118,9 @@ In this example, the data object is a simple string. The **DataTemplate** includ
 </DataTemplate>
 ```
 
-Here's how the items would appear when displayed with this **DataTemplate**.
+Here's how the items would appear when displaid with this **DataTemplate**.
 
-![Items displayed with a data template](images/listview-itemstemplate.png)
+![Items displaid with a data template](images/listview-itemstemplate.png)
 
 The number of elements used in the **DataTemplate** for an item can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use **DataTemplate**s to define the look of items in your list, see [Item containers and templates](item-containers-templates.md).
 
@@ -277,7 +277,7 @@ This example shows how to set the ItemsRepeater.Layout property to a StackLayout
 
 ### UniformGridLayout
 
-The [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout) positions elements sequentially in a wrapping layout. Items are layed out in order from left-to-right when the [Orientation](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation) is **Horizontal**, and layed out top-to-bottom when the Orientation is **Vertical**. Every item is sized equally.
+The [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout) positions elements sequentially in a wrapping layout. Items are laid out in order from left-to-right when the [Orientation](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation) is **Horizontal**, and laid out top-to-bottom when the Orientation is **Vertical**. Every item is sized equally.
 
 ![Uniform grid layout spacing](images/uniform-grid-layout.png)
 
