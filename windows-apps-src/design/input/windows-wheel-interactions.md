@@ -309,7 +309,7 @@ The Surface Dial cannot detect which hand is being used, but the user can set th
 
 **Locale should be considered for all rotation interactions**
 
-Maximize customer satisfaction by accomodating and adapting your interactions to locale and right-to-left layouts.
+Maximize customer satisfaction by accommodating and adapting your interactions to locale and right-to-left layouts.
 
 The built-in tools and commands on the Dial menu follow these guidelines for rotation-based interactions:
 
