@@ -244,7 +244,7 @@ You don't need to be a trained or experienced writer to provide your users with 
 
 * Imagine that you're talking to a friend about your app. How would you explain the app to them? How would you talk about its features or give them instructions? Better yet, explain the app to an actual person who hasn't used it yet. 
 
-* Imagine how you would describe a completely different app. For instance, if you're making a game, think of what you'd say or write to describe a financial or a news app. The contrast in the language and stucture you use can give you more insight into the right words for what you're actually writing about.
+* Imagine how you would describe a completely different app. For instance, if you're making a game, think of what you'd say or write to describe a financial or a news app. The contrast in the language and structure you use can give you more insight into the right words for what you're actually writing about.
 
 * Take a look at similar apps for inspiration. 
 
