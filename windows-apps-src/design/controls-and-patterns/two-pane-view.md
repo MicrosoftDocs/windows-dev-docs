@@ -232,8 +232,8 @@ The two-pane view enters tall mode when there's a single display that's narrower
 When the two-pane view is in wide mode, the TallLayout property determines what to show:
 
 - **SinglePane** - A single pane (as determined by PanePriority). The pane takes up the full size of the TwoPaneView (ie, it’s star sized in both directions).
-- **TopBottom** - Pane1 on the top/Pane2 on the right. Both panes are star sized horizontally, Pane1’s height is autosized, and Pane2’s height is star sized.
-- **BottomTop** - Pane1 on the right/Pane2 on the left. Both panes are star sized horizontally, Pane2’s height is autosized, and Pane1’s height is star sized.
+- **TopBottom** - Pane1 on the top/Pane2 on the bottom. Both panes are star sized horizontally, Pane1’s height is autosized, and Pane2’s height is star sized.
+- **BottomTop** - Pane1 on the bottom/Pane2 on the top. Both panes are star sized horizontally, Pane2’s height is autosized, and Pane1’s height is star sized.
 
 The default is **TopBottom**.
 
