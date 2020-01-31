@@ -55,7 +55,7 @@ The picker uses a single, unified interface to let the user pick files and folde
 
 For example, you might call the file picker in your app so that your user can open a file. This makes your app the calling app. The file picker interacts with the system and/or other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file to your app. Here's the process for the case of the user choosing a file from a providing app, such as OneDrive.
 
-![a diagram that shows the process of one app getting a file to open from another app using the file picker as an interface between the two apps.](images/app-to-app-diagram-600px.png)
+![a diagram that shows the process of one app getting a file to open from another app using the file picker as an interface bewteen the two apps.](images/app-to-app-diagram-600px.png)
 
 ## Pick a single file: complete code listing
 
