@@ -180,7 +180,7 @@ Look for the **gameLoop()** function, and down towards the end you'll see a func
     animateClouds();
 ```
 
-If you look at the defintion of this function, you'll see how it takes each cloud in turn, and changes its x co-ordinate. If the x-ordinate is off the side of screen, it is reset to the far right. Each cloud also moves at a slightly different speed.
+If you look at the definition of this function, you'll see how it takes each cloud in turn, and changes its x co-ordinate. If the x-ordinate is off the side of screen, it is reset to the far right. Each cloud also moves at a slightly different speed.
 
 ```
 function animate_clouds()

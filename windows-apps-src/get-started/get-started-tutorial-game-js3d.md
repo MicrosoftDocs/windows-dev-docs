@@ -306,7 +306,7 @@ function createMazeCubes() {
     color: 0x81cfe0,
   });
 
-  // Keep cubes within boundry walls
+  // Keep cubes within boundary walls
   var widthOffset = UNITWIDTH / 2;
   // Put the bottom of the cube at y = 0
   var heightOffset = UNITHEIGHT / 2;

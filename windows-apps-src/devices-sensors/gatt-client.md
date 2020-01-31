@@ -162,7 +162,7 @@ if (result == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **Tip**: Get comfortable with using [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) and [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter). Their functionality will be indispensible when working with the raw buffers you get from many of the Bluetooth APIs. 
+> **Tip**: Get comfortable with using [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) and [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter). Their functionality will be indispensable when working with the raw buffers you get from many of the Bluetooth APIs. 
 ## Subscribing for notifications
 
 Make sure the characteristic supports either Indicate or Notify (check the characteristic properties to make sure). 
