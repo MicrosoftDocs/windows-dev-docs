@@ -295,7 +295,7 @@ Recap:
 * In the __GameObject__ class, there's a __HitSound__ property that is used to associate the sound effect to the object.
 * Create a new instance of the [SoundEffect](#soundeffecth) class object and associate it with the game object. This class plays a sound using __XAudio2__ APIs.  It uses a mastering voice provided by the [Audio](#audioh) class. The sound data can be read from file location using the [MediaReader](#mediareaderh) class.
 
-[SoundEffect::Initialize](#soundeffectinitialize-method) is used to initialize the __SoundEffect__ instance with the following input parameters: pointer to sound engine object (IXAudio2 objects created in the [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) method), pointer to format of the .wav file using __MediaReader::GetOutputWaveFormatEx__, and the sound data loaded using [MediaReader::LoadMedia](#mediareaderloadmedia-method) method. During initialization, the source voice for the sound effect is also created.
+[SoundEffect::Initialize](#soundeffectinitialize-method) is used to initalize the __SoundEffect__ instance with the following input parameters: pointer to sound engine object (IXAudio2 objects created in the [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) method), pointer to format of the .wav file using __MediaReader::GetOutputWaveFormatEx__, and the sound data loaded using [MediaReader::LoadMedia](#mediareaderloadmedia-method) method. During initialization, the source voice for the sound effect is also created.
 
 ### SoundEffect::Initialize method
 

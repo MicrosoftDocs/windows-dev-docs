@@ -45,7 +45,7 @@ Create and publish subscription add-ons to sell digital products in your apps an
 
 Our [introduction to UWP app design](../design/basics/design-and-ui-intro.md) has been enhanced with a slew of new visual examples. The overview of the universal design features in every UWP now highlights how you can put the capabilities of the Fluent Design System into action.
 
-We've added a showcase of common page patterns to our [Content design basics](../design/basics/content-basics.md), providing a gallery of examples of how your app can display different types of content.
+We've added a showcase of common page patterns to our [Content design basics](../design/basics/content-basics.md), providing a gallery of examples of how your app can display diferent types of content.
 
 ![An illustration of the hub page pattern](../design/basics/images/hub.png)
 

@@ -20,7 +20,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 The following features have been added to the Windows Insider Preview builds, available through the [Windows Insider](https://insider.windows.com/) program.
 
-* The [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
+* The [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface.
 

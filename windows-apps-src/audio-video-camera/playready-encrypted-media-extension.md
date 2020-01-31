@@ -249,7 +249,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
     
     var int8ArrayCDMdata = null
 
-    // TODO: Convert CDMDataStr to Uint8 byte array and place the converted result to int8ArrayCDMdata
+    // TODO: Convert CDMDataStr to Uint8 byte array and palce the converted result to int8ArrayCDMdata
 
     return int8ArrayCDMdata;
 }

@@ -126,7 +126,7 @@ Here, the list view's ItemsSource is set in code directly to an instance of a co
 
 ##### C# Code:
 ```csharp 
-// Class definition should be provided within the namespace being used, outside of any other classes.
+// Class defintion should be provided within the namespace being used, outside of any other classes.
 
 this.InitializeComponent();
 
@@ -163,7 +163,7 @@ You can also bind the ItemsSource property to a collection in the XAML. Here, th
 
 **C#**
 ```csharp
-// Class definition should be provided within the namespace being used, outside of any other classes.
+// Class defintion should be provided within the namespace being used, outside of any other classes.
 // These two declarations belong outside of the main page class.
 private ObservableCollection<Contact> _contacts = new ObservableCollection<Contact>();
 
@@ -201,9 +201,9 @@ For more info about data binding, see [Data binding overview](https://docs.micro
 
 ## Customizing the look of items with a DataTemplate
 
-A data template in a ListView or GridView defines how the items/data are visualized. By default, a data item is displaid in the ListView as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property.
+A data template in a ListView or GridView defines how the items/data are visualized. By default, a data item is displayed in the ListView as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property.
 
-However, you typically want to show a more rich presentation of your data. To specify exactly how items in the ListView/GridView are displaid, you create a [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. 
+However, you typically want to show a more rich presentation of your data. To specify exactly how items in the ListView/GridView are displayed, you create a [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. 
 
 > [!NOTE]
 > When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
@@ -238,7 +238,7 @@ In this example, the data item is a simple string. A DataTemplate is defined inl
 
 ```
 
-Here's what the data items look like when displaid with this data template in a ListView:
+Here's what the data items look like when displayed with this data template in a ListView:
 
 ![ListView items with a data template](images/listview-w-datatemplate1-final.png)
 
@@ -269,7 +269,7 @@ In this example, the data item is a Contact object. A DataTemplate is defined in
 </ListView>
 ```
 
-Here's what the data items look like when displaid using this data template in a ListView:
+Here's what the data items look like when displayed using this data template in a ListView:
 
 ![ListView custom class items with a data template](images/listview-customclass-datatemplate-final.png)
 
@@ -358,7 +358,7 @@ The resulting list looks like this.
 
 ![A list view with grid layout](images/listview-itemswrapgrid2-final.png)
 
-If you show grouped data in your list view, the ItemsPanel determines how the item groups are laid out, not how the individual items are laid out. For example, if the horizontal ItemsStackPanel shown previously is used to show grouped data, the groups are arranged horizontally, but the items in each group are still stacked vertically, as shown here.
+If you show grouped data in your list view, the ItemsPanel determines how the item groups are layed out, not how the individual items are layed out. For example, if the horizontal ItemsStackPanel shown previously is used to show grouped data, the groups are arranged horizontally, but the items in each group are still stacked vertically, as shown here.
 
 ![A grouped horizontal list view](images/listview-horizontal-groups.png)
 

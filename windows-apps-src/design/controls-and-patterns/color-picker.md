@@ -77,7 +77,7 @@ This example uses a simplified color picker with just the circle and the slider,
 
 ### Save the chosen color
 
-In some cases, you don't want to apply the color change immediately. For example, when you host a color picker in a flyout, we recommend that you apply the selected color only after the user confirms the selection or closes the flyout. You can also save the selected color value to use later.
+In some cases, you don't want to apply the color change immediately. For example, when you host a color picker in a flyout, we recomend that you apply the selected color only after the user confirms the selection or closes the flyout. You can also save the selected color value to use later.
 
 In this example, you host a color picker in a Flyout with Confirm and Cancel buttons. When the user confirms their color choice, you save the selected color to use later in your app.
 
