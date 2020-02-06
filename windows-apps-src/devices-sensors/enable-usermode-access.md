@@ -1,22 +1,23 @@
 ---
-title: Enable usermode access to GPIO, I2C, and SPI
-description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10.
+title: Enable user mode access to GPIO, I2C, and SPI
+description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
 ---
-# Enable usermode access to GPIO, I2C, and SPI
 
-Windows 10 contains new APIs for accessing GPIO, I2C, SPI, and UART directly from usermode. Development boards like Raspberry Pi 2 expose a subset of these connections which enable users to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by usermode applications.
+# Enable user mode access to GPIO, I2C, and SPI
 
-This document describes how to specify this configuration in ACPI and provides tools to validate that the configuration was specified correctly.
+Windows 10 contains new APIs for direct access from user mode of general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), Serial Peripheral Interface (SPI), and universal asynchronous receiver-transmitter (UART). Development boards such as Raspberry Pi 2 expose a subset of these connections, which enable you to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by user mode applications.
+
+This document describes how to specify this configuration in Advanced Configuration and Power Interface (ACPI), and provides tools to validate that the configuration was specified correctly.
 
 > [!IMPORTANT]
-> The audience for this document is UEFI and ACPI developers. Some familiarity with ACPI, ASL authoring, and SpbCx/GpioClx is assumed.
+> The audience for this document is Unified Extensible Firmware Interface (UEFI) and ACPI developers. Some familiarity with ACPI, ACPI Source Language (ASL) authoring, and SpbCx/GpioClx is assumed.
 
-Usermode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, available on Windows IoT Core and Windows Enterprise, exposes `GpioClx` and `SpbCx` resources to usermode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to usermode. This document walks through authoring and verifying the ASL.
+User mode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, available on Windows IoT Core and Windows Enterprise, exposes `GpioClx` and `SpbCx` resources to user mode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to user mode. This document walks through authoring and verifying the ASL.
 
 ## ASL by example
 
@@ -35,7 +36,7 @@ Device(RHPX)
 * _CID – Compatible Id. Must be “MSFT8000”.
 * _UID – Unique Id. Set to 1.
 
-Next we declare each of the GPIO and SPB resources that should be exposed to usermode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) and [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
+Next we declare each of the GPIO and SPB resources that should be exposed to user mode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) and [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
 
 ### SPI
 
@@ -202,7 +203,7 @@ The following fields are placeholders for values specified by the user at runtim
 
 ### GPIO
 
-Next, we declare all the GPIO pins that are exposed to usermode. We offer the following guidance in deciding which pins to expose:
+Next, we declare all the GPIO pins that are exposed to user mode. We offer the following guidance in deciding which pins to expose:
 
 * Declare all pins on exposed headers.
 * Declare pins that are connected to useful onboard functions like buttons and LEDs.
@@ -288,9 +289,9 @@ Choose the numbering scheme that is most compatible with existing published docu
 
 ### UART
 
-If your UART driver uses `SerCx` or `SerCx2`, you can use rhproxy to expose the driver to usermode. UART drivers that create a device interface of type `GUID_DEVINTERFACE_COMPORT` do not need to use rhproxy. The inbox `Serial.sys` driver is one of these cases.
+If your UART driver uses `SerCx` or `SerCx2`, you can use rhproxy to expose the driver to user mode. UART drivers that create a device interface of type `GUID_DEVINTERFACE_COMPORT` do not need to use rhproxy. The inbox `Serial.sys` driver is one of these cases.
 
-To expose a `SerCx`-style UART to usermode, declare a `UARTSerialBus` resource as follows.
+To expose a `SerCx`-style UART to user mode, declare a `UARTSerialBus` resource as follows.
 
 ```cpp
 // Index 2
@@ -319,7 +320,7 @@ The accompanying friendly name declaration is:
 Package(2) { "bus-UART-UART2", Package() { 2 }},
 ```
 
-This assigns the friendly name “UART2” to the controller, which is the identifier users will use to access the bus from usermode.
+This assigns the friendly name “UART2” to the controller, which is the identifier users will use to access the bus from user mode.
 
 ## Runtime Pin Muxing
 
@@ -649,14 +650,14 @@ When you're ready to test rhproxy, it's helpful to use the following step-by-ste
 1. Compile and load your rhproxy node using `ACPITABL.dat`
 1. Verify that the `rhproxy` device node exists
 1. Verify that `rhproxy` is loading and starting
-1. Verify that the expected devices are exposed to usermode
+1. Verify that the expected devices are exposed to user mode
 1. Verify that you can interact with each device from the command line
 1. Verify that you can interact with each device from a UWP app
 1. Run HLK tests
 
 ### Verify controller drivers
 
-Since rhproxy exposes other devices on the system to usermode, it only works if those devices are already working. The first step is to verify that those devices - the I2C, SPI, GPIO controllers you wish to expose - are already working.
+Since rhproxy exposes other devices on the system to user mode, it only works if those devices are already working. The first step is to verify that those devices - the I2C, SPI, GPIO controllers you wish to expose - are already working.
 
 At the command prompt, run
 
@@ -734,9 +735,9 @@ If the output indicates that rhproxy is started, rhproxy has loaded and started 
 * Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of it's dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (for example, `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
 * Problem 10 - `CM_PROB_FAILED_START` - Rhproxy failed to start, most likely because of a resource parsing issue. Go over your ASL and double check resource indices in the DSD, and verify that GPIO resources are specified in increasing pin number order.
 
-### Verify that the expected devices are exposed to usermode
+### Verify that the expected devices are exposed to user mode
 
-Now that rhproxy is running, it should have created devices interfaces that can be accessed by usermode. We will use several command line tools to enumerate devices and see that they're present.
+Now that rhproxy is running, it should have created devices interfaces that can be accessed by user mode. We will use several command line tools to enumerate devices and see that they're present.
 
 Clone the [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) repository and build the `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, and `Mincomm` samples. Copy the tools to your device under test and use the following commands to enumerate devices.
 
@@ -848,7 +849,7 @@ Click Run Selected. Further documentation on each test is available by right cli
 | MinComm (Serial) | https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## Apendix
+## Appendix
 
 ### Appendix A - Raspberry Pi ASL Listing
 
