@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 
 # Packaging apps
 
-This section contains or links to articles about packaging Universal Windows Platform (UWP) apps in MSIX and AppX app packages for deployment and installation. Some of these links go to relevant articles in the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
+This section contains or links to articles about packaging Universal Windows Platform (UWP) apps in MSIX and .appx app packages for deployment and installation. Some of these links go to relevant articles in the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
 
 > [!NOTE]
-> The original app packaging format for UWP apps in Windows 10 was named AppX. Starting in Windows 10, version 1809, this packaging format was renamed to MSIX and extended to support all types of Windows apps, including .NET and C++/Win32 desktop apps. Support for MSIX is also being extended to earlier Windows versions. For more information, see the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
+> The original app packaging format for UWP apps in Windows 10 was .appx. Starting in Windows 10, version 1809, this packaging format was renamed to .msix and extended to support all types of Windows apps, including .NET and C++/Win32 desktop apps. Support for MSIX is also being extended to earlier Windows versions. For more information, see the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
 
 | Topic | Description |
 |-------|-------------|

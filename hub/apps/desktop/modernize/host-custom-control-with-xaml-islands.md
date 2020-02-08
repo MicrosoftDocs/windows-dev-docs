@@ -29,7 +29,7 @@ To host a custom UWP control in a WPF (or Windows Forms) app, you'll need the fo
     The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF or Windows Forms project, revise the default `App` class in this project to derive from `XamlApplication`, and then create an instance of this object in the entry point code for your app.
 
     > [!NOTE]
-    > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host UWP controls in the XAML Island.
+    > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host to UWP controls on the XAML Island.
 
 ## Create a WPF project
 
@@ -280,7 +280,7 @@ This section demonstrates how to add a UWP control from the WinUI library to you
 
 ## Package the app
 
-You can optionally package the WPF app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, APPX, App-V and ClickOnce installation technologies.
+You can optionally package the WPF app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
 
 The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the WPF app in an MSIX package. Note that these steps currently include some workarounds specific to the scenario of hosting custom UWP controls.
 

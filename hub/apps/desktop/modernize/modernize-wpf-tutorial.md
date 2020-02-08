@@ -93,7 +93,7 @@ Going forward, most new Windows 10 features are exposed via WinRT APIs, includin
 
 ### MSIX packaging
 
-[MSIX](/windows/msix/) (formerly known as AppX) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
+[MSIX](/windows/msix/) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
 
 For more information, see these articles:
 

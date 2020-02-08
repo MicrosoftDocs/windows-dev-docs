@@ -19,9 +19,9 @@ The UWP XAML hosting API provides the foundation for a broader set of controls t
 > [!NOTE]
 > If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
 
-## Should you use the UWP XAML hosting API?
+## Is the UWP XAML hosting API the right choice for your desktop app?
 
-The UWP XAML hosting API provides the low-level infrastructure for hosting UWP controls in desktop apps. Some types of desktop apps have the option of using alternative, more convenient APIs to accomplish this goal.  
+The UWP XAML hosting API provides the low-level infrastructure for hosting UWP controls in desktop apps. Some types of desktop apps have the option of using alternative, more convenient APIs to accomplish this goal.
 
 * If you have a C++ Win32 desktop app and you want to host UWP controls in your app, you must use the UWP XAML hosting API. There are no alternatives for these types of apps.
 
@@ -31,33 +31,7 @@ Because we recommend that only C++ Win32 apps use the UWP XAML hosting API, this
 
 ## Prerequisites
 
-XAML Islands require Windows 10, version 1903 (or later) and the corresponding build of the Windows SDK. To use XAML Islands in your C++ Win32 app, you must first set up your project.
-
-### Support for C++/WinRT
-
-Make sure that your project supports [C++/WinRT](/windows/uwp/cpp-and-winrt-apis):
-
-* For new projects, you can install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension.
-* For existing projects, you can install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package in the project.
-
-For more details about these options, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
-
-### Configure your project for app deployment
-
-Choose one of the following options to prepare your project for deployment:
-
-* **Package your app in an MSIX package**. Packaging your app in an [MSIX package](https://docs.microsoft.com/windows/msix/) provides many deployment and run time benefits.
-    1. Install the Windows 10, version 1903 SDK (version 10.0.18362) or a later release.
-    2. Package your app in an MSIX package by adding a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your C++/Win32 project.
-
-* **Install the Microsoft.Toolkit.Win32.UI.SDK package**. If you don't want to package your app in an MSIX package, you can install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v6.0.0 or later). This package provides several build and run time assets that enable XAML Islands to work in your app.
-
-> [!NOTE]
-> Earlier versions of these instructions had you add the `maxversiontested` element to an application manifest in your project. As long as you're using one of the options listed above, you no longer need to add this element to your manifest.
-
-### Additional requirements for custom UWP controls
-
-If you're hosting a custom UWP control (for example, a user control that consists of several UWP controls that work together), you'll need to follow the additional instructions in [this section](#host-a-custom-uwp-control). You must also have the source code for the custom control so you can compile it with your app.
+XAML Islands require Windows 10, version 1903 (or later) and the corresponding build of the Windows SDK. To use XAML Islands in your C++ Win32 app, you must set up your project as described in [this section](#configure-the-project).
 
 ## Architecture of the API
 
@@ -102,6 +76,9 @@ The [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/contro
 
 * For the Windows Forms version of the control, [go here](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). The Windows Forms version derives from [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
+> [!NOTE]
+> We strongly recommend that you use the [XAML Island .NET controls](xaml-islands.md#wpf-and-windows-forms-applications) in the Windows Community Toolkit instead of using the UWP XAML hosting API directly in WPF and Windows Forms apps. The WPF and Windows Forms sample links in this article are for illustrative purposes only.
+
 ## Host a standard UWP control
 
 This section walks you through the process of using the UWP XAML hosting API to host a standard UWP control (that is, a control provided by the Windows SDK or WinUI library) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
@@ -112,15 +89,36 @@ This section walks you through the process of using the UWP XAML hosting API to 
 
 2. In **Solution Explorer**, right-click the solution node, click **Retarget solution**, select the **10.0.18362.0** or a later SDK release, and then click **OK**.
 
-3. Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package:
+3. Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package to enable support for [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) in your project:
 
     1. Right-click your project in **Solution Explorer** and choose **Manage NuGet Packages**.
     2. Select the **Browse** tab, search for the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) package, and install the latest version of this package.
 
+    > [!NOTE]
+    > For new projects, you can alternatively install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension. For more details, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
 4. Install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package:
 
     1. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
-    2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) package, and install version v6.0.0 (or later) of this package.
+    2. Select the **Browse** tab, search for the **Microsoft.Toolkit.Win32.UI.SDK** package, and install version v6.0.0 (or later) of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
+
+5. Set the `maxVersionTested` value in your [assembly manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
+
+    1. If you don't already have an assembly manifest in your project, add a new XML file to your project and name it **app.manifest**.
+    2. In your assembly manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
+
+        ```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+                <application>
+                    <!-- Windows 10 -->
+                    <maxversiontested Id="10.0.18362.0"/>
+                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+                </application>
+            </compatibility>
+        </assembly>
+        ```
 
 ### Use the XAML hosting API to host a UWP control
 
@@ -348,7 +346,7 @@ The process for hosting a custom UWP control (either a control you define yourse
 
 To host a custom UWP control, you'll need the following projects and components:
 
-* **The project and source code for your app**. Make sure you have configured your project to meet the [prerequisites](#prerequisites) for hosting XAML Islands.
+* **The project and source code for your app**. Make sure you have [configured your project](#configure-the-project) for hosting XAML Islands.
 
 * **The custom UWP control**. You'll need the source code for the custom UWP control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your C++ Win32 project.
 
@@ -369,8 +367,8 @@ To host a custom UWP control in a C++ Win32 app, follow these general steps.
 
 4. In your C++ Win32 project:
 
-  * Add a reference to the UWP app project and the UWP class library project in your solution.
-  * In the `WinMain` function or some other entry point code, create an instance of the `XamlApplication` class that you defined in the UWP app project earlier. For example, see [this line of code](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) from the C++ Win32 sample in the [XAML Islands Samples](https://github.com/microsoft/Xaml-Islands-Samples).
+    * Add a reference to the UWP app project and the UWP class library project in your solution.
+    * In the `WinMain` function or some other entry point code, create an instance of the `XamlApplication` class that you defined in the UWP app project earlier. For example, see [this line of code](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) from the C++ Win32 sample in the [XAML Islands Samples](https://github.com/microsoft/Xaml-Islands-Samples).
 
 5. Follow the process described in the [Use the XAML hosting API to host a UWP control](#use-the-xaml-hosting-api-to-host-a-uwp-control) section to host the custom control in a XAML Island in your app. Assign an instance of the custom control to host to the [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property of the **DesktopWindowXamlSource** object in your code.
 
@@ -448,6 +446,18 @@ To configure your application to be per-monitor DPI aware, add a [side-by-side a
 </assembly>
 ```
 
+## Package the app
+
+You can optionally package the app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
+
+The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the app in an MSIX package.
+
+1. Add a new [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
+
+2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the C++/Win32 desktop application project in your solution and click **OK**.
+
+3. Build and run the packaging project. Confirm that the app runs and displays the UWP controls as expected.
+
 ## Troubleshooting
 
 ### Error using UWP XAML hosting API in a UWP app
@@ -460,7 +470,7 @@ To configure your application to be per-monitor DPI aware, add a [side-by-side a
 
 | Issue | Resolution |
 |-------|------------|
-| Your app receives an exception with the following  message: "WindowsXamlManager and DesktopWindowXamlSource are supported for apps targeting Windows version 10.0.18226.0 and later. Please check either the application manifest or package manifest and ensure the MaxTestedVersion property is updated." | This error indicates that your application tried to use the **WindowsXamlManager** or **DesktopWindowXamlSource** types in the UWP XAML hosting API, but the OS can't determine whether the app was built to target Windows 10, version 1903 or later. The UWP XAML hosting API was first introduced as a preview in an earlier version of Windows 10, but it is only supported starting in Windows 10, version 1903.</p></p>To resolve this issue, either create an MSIX package for the app and run it from the package, or install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package in your project. For more information, see [this section](#configure-your-project-for-app-deployment). |
+| Your app receives an exception with the following  message: "WindowsXamlManager and DesktopWindowXamlSource are supported for apps targeting Windows version 10.0.18226.0 and later. Please check either the application manifest or package manifest and ensure the MaxTestedVersion property is updated." | This error indicates that your application tried to use the **WindowsXamlManager** or **DesktopWindowXamlSource** types in the UWP XAML hosting API, but the OS can't determine whether the app was built to target Windows 10, version 1903 or later. The UWP XAML hosting API was first introduced as a preview in an earlier version of Windows 10, but it is only supported starting in Windows 10, version 1903.</p></p>To resolve this issue, either create an MSIX package for the app and run it from the package, or install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package in your project. For more information, see [this section](#configure-the-project). |
 
 ### Error attaching to a window on a different thread
 
