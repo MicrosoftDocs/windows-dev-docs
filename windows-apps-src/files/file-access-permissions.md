@@ -248,7 +248,7 @@ If you create a file or folder in the Downloads folder, we recommend that you ad
 
 ## Accessing additional locations
 
-In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by calling a file picker to [let the user pick files and folders for the app to access](quickstart-using-file-and-folder-pickers.md).
+In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by [calling a file picker](quickstart-using-file-and-folder-pickers.md) to let the user pick files and folders for the app to access.
 
 Apps that that declare the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension have file-system permissions from the directory that they are launched from in the console window, and downwards.
 
