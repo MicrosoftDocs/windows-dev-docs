@@ -37,7 +37,7 @@ The other time you might want to use REF is if the HAL device is producing stran
 ## <span id="Hardware_vs_Software"></span><span id="hardware_vs_software"></span><span id="HARDWARE_VS_SOFTWARE"></span>Hardware vs. Software Vertex Processing
 
 
-Hardware versus Software vertex processing only really applies to HAL devices. When you push vertices through the pipeline, they need to be transformed (by the world, view, and projection matrices in turn) and lit (by D3D's built-in lights) - this processing stage is known as T&L (for Transformation & Lighting). Hardware vertex processing means this is done in hardware, if the hardware supports it; ergo, Software vertex processing is done is software. The general practice is to try creating a Hardware T&L device first, and if that fails try Mixed, and if that fails try Software. (If software fails, give up and exit with an error.)
+Hardware versus Software vertex processing only really applies to HAL devices. When you push vertices through the pipeline, they need to be transformed (by the world, view, and projection matrices in turn) and lit (by D3D's built-in lights) - this processing stage is known as T&L (for Transformation & Lighting). Hardware vertex processing means this is done in hardware, if the hardware supports it; ergo, Software vertex processing is done in software. The general practice is to try creating a Hardware T&L device first, and if that fails try Mixed, and if that fails try Software. (If software fails, give up and exit with an error.)
 
 ## <span id="related-topics"></span>Related topics
 
