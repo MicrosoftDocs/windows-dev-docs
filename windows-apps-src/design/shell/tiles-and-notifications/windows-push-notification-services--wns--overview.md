@@ -25,7 +25,7 @@ The following diagram shows the complete data flow for sending a push notificati
 5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
 6.  WNS receives the request and routes the notification to the appropriate device.
 
-![wns data flow diagram for push notification](images/wns-diagram-01.png)
+![wns data flow diagram for push notification](images/wns-diagram-01.jpg)
 
 ## Registering your app and receiving the credentials for your cloud service
 
@@ -62,7 +62,7 @@ At a high level, the information chain is as follows:
 1.  The cloud service sends its credentials to WNS over HTTPS following the OAuth 2.0 protocol. This authenticates the service with WNS.
 2.  WNS returns an access token if the authentication was successful. This access token is used in all subsequent notification requests until it expires.
 
-![wns diagram for cloud service authentication](images/wns-diagram-02.png)
+![wns diagram for cloud service authentication](images/wns-diagram-02.jpg)
 
 In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) reference.
 
@@ -131,7 +131,7 @@ The access token described above can be reused for multiple notification request
 
 This diagram illustrates the data flow:
 
-![wns diagram for sending a notification](images/wns-diagram-03.png)
+![wns diagram for sending a notification](images/wns-diagram-03.jpg)
 
 ### Important notes
 
