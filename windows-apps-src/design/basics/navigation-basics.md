@@ -195,8 +195,9 @@ Displays a horizontal set of tabs and their respective content. The [TabView](..
 	
 Use tabs when:
 
-- You want users to be able to dynamically open, close, or rearrange pages.
-- You expect users to be able to drag and drop between windows.
+- You want users to be able to dynamically open, close, or rearrange tabs.
+- You expect that there may be a large number of tabs open at once.
+- You expect users to be able to easily move tabs between windows in your application that use tabs, similar to web browsers like Microsoft Edge.
 
 :::row-end:::
 
