@@ -18,12 +18,12 @@ The Windows Push Notification Services (WNS) enables third-party developers to s
 
 The following diagram shows the complete data flow for sending a push notification. It involves these steps:
 
-1.  Your app requests a push notification channel from the Universal Windows Platform.
+1.  Your app requests a push notification channel from the Windows Notification Platform through the WinRT APIs.
 2.  Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).
-3.  The notification channel URI is returned by Windows to your app.
+3.  The notification channel URI is returned by the Windows Notification Platform to your app.
 4.  Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.
 5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
-6.  WNS receives the request and routes the notification to the appropriate device.
+6.  WNS receives the request and routes the notification to the appropriate device, where the Windows Notification Platform will handle the notification appropriately.
 
 ![wns data flow diagram for push notification](images/wns-diagram-01.png)
 
