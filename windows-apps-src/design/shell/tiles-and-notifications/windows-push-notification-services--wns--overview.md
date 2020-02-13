@@ -11,16 +11,16 @@ ms.localizationpriority: medium
 # Windows Push Notification Services (WNS) overview
  
 
-The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
+The Windows Push Notification Services (WNS) enable third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 
 ## How it works
 
 
 The following diagram shows the complete data flow for sending a push notification. It involves these steps:
 
-1.  Your app requests a push notification channel from the Universal Windows Platform.
+1.  Your app requests a push notification channel from WNS.
 2.  Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).
-3.  The notification channel URI is returned by Windows to your app.
+3.  The notification channel URI is returned by WNS to your app.
 4.  Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.
 5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
 6.  WNS receives the request and routes the notification to the appropriate device.
