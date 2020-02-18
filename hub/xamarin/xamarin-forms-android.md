@@ -8,7 +8,8 @@ ms.topic: article
 keywords: 
 ms.localizationpriority: medium
 ms.date: 01/24/2020
-ms.technology: "xamarin"
+ms.prod: "xamarin"
+ms.technology: "xamarin-forms"
 ---
 
 # Create a sample app with Xamarin Forms
@@ -23,7 +24,7 @@ To use this tutorial, you'll need the following:
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
-You will also to have an android phone or configured emulator in which to run your app. See Configuring an Android emulator.
+You will also to have an Android phone or configured emulator in which to run your app. See Configuring an Android emulator.
 
 ## Create a new Xamarin Forms project
 
@@ -31,17 +32,17 @@ Start Visual Studio. Click File > New > Project to create a new project.
 
 In the new project dialog, select the **Mobile App (Xamarin.Forms)** template and click **Next**.
 
-Name the project **TimeChanger** and click **Create**.
+Name the project **TimeChangerForms** and click **Create**.
 
 In the New Cross Platform App dialog, select **Blank**. In the Platform section, check **Android** and uncheck all other boxes. Click **OK**.
 
-Xamarin will create a new solution with two projects: **TimeChanger** and **TimeChanger.Android.**
+Xamarin will create a new solution with two projects: **TimeChangerForms** and **TimeChangerForms.Android.**
 
 ## Use XAML to create a a UI
 
-Expand the **TimeChanger** project and open **MainPage.xaml**. The XAML in this file will be the first screen a user will see when they open TimeChanger.
+Expand the **TimeChangerForms** project and open **MainPage.xaml**. The XAML in this file will be the first screen a user will see when they open TimeChanger.
 
-TimeChanger's UI is simple. It displays the current time, and has buttons to adjust the time in increments of one hour. It uses a vertical StackLayout to align the time above the buttons, and a horizontal StackLayout to arrange the buttons side-by-side.
+TimeChanger's UI is simple. It displays the current time, and has buttons to adjust the time in increments of one hour. It uses a vertical StackLayout to align the time above the buttons, and a horizontal StackLayout to arrange the buttons side-by-side. The content is centered in the screen by setting the vertical StackLayout's **HorizontalOptions** and **VerticalOptions** to **"CenterAndExpand"**.
 
 Replace the contents of MainPage.xaml with the following code.
 
@@ -52,75 +53,84 @@ Replace the contents of MainPage.xaml with the following code.
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TimeChanger.MainPage">
+             x:Class="TimeChangerForms.MainPage">
 
     <StackLayout HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand">
+                 VerticalOptions="CenterAndExpand">
         <Label HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               x:Name="time">
-            Current Time
+               x:Name="time"
+               Text="At runtime, this Label will display the current time.">
         </Label>
         <StackLayout Orientation="Horizontal">
             <Button HorizontalOptions="End"
                     VerticalOptions="End"
-                    Text="Plus"
-                    Clicked="PlusButton_Clicked"/>
+                    Text="Up"
+                    Clicked="UpButton_Clicked"/>
             <Button HorizontalOptions="Start"
                     VerticalOptions="End"
-                    Text="Minus"
-                    Clicked="MinusButton_Clicked"/>
+                    Text="Down"
+                    Clicked="DownButton_Clicked"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
 ```
 
+At this point, the UI is complete. TimeChangerForms, however, will not build because the methods **UpButton_Clicked** and **DownButton_Clicked** are referenced in the XAML but not defined anywhere. Even if the app did run, the current time would not be displayed. In the next section, you will fix these errors and add functionality to your UI.
+
 ## Add functionality by adding C# code
 
-In the XAML you just added, both buttons have a reference to a **Clicked** event handler that we need to define in the code behind. Additionally, the label that displays the current time must be populated with the system time when the app runs. These tasks will need to be accomplished in MainPage.xaml.cs, the codebehind "half" of the MainPage.
+In the Solution Explorer, right click MainPage.xaml and click **View Code**. This file contains the code behind that will add functionality to the UI.
 
-First, populate the label with the current time when the app launches. To do this, hook into the **OnAppearing** event, which will be raised when your app is about to appear to the user. The following code puts the current system time into the **time** label in the XAML. It also kicks off a timer to periodically update the time so it stays current.
+### Set the current time
 
-> [!NOTE]
-> The timer must be run on the UI thread, otherwise the UI will not refresh and the updated time will not display. The code below uses `Device.BeginInvokeOnMainThread()` to ensure that `Timer_Elapsed()` is called from the main thread.
+Code in this file can reference controls declared in the XAML using the value of the control's **x:Name** attribute. In this case the label that displays the current time is called `time`.
+
+UI controls must be updated on the main thread. Changes made from another thread may not properly update the control as it displays on the screen. because there is no guarantee this code will always be running on the main thread, use the **BeginInvokeOnMainThread** method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
 
 ```csharp
-        public int HourOffset { get; private set; } = 0;
-
-        protected override void OnAppearing()
+private void UpdateTimeLabel(object state = null)
+{
+    Device.BeginInvokeOnMainThread(() =>
         {
-            base.OnAppearing();
-
-            // Ensure the timer runs on the main thread so the UI will get updated
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-
-            // Update the time once per second
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-                return true; // repeat
-            });
+            time.Text = DateTime.Now.ToLongTimeString();
         }
-
-        private void UpdateTimeLabel()
-        {
-            time.Text = DateTime.Now.AddHours(HourOffset).ToString(System.Globalization.CultureInfo.CurrentUICulture);
-        }
+    );
+}
 ```
 
-You'll also need to add code to handle the button press events. This code simply increments or decrements the HourOffset property and updates the UI.
+### Update the current time once every second
+
+At this point, the current time will be accurate for, at most, one second after TimeChangerForms is launched. We'll need to periodically update the Label to keep the time accurate. A **Timer** object can be set to call a callback method periodically, which is exactly what we want.
 
 ```csharp
-        private void PlusButton_Clicked(object sender, EventArgs e)
-        {
-            HourOffset++;
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-        }
+var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
+```
 
-        private void MinusButton_Clicked(object sender, EventArgs e)
-        {
-            HourOffset--;
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-        }
+### Add HourOffset
+
+The up and down buttons adjust the time in increments of one hour. Add an **HourOffset** property to track the current adjustment.
+
+```csharp
+public int HourOffset { get; private set; }
+```
+
+Now update the UpdateTimeLabel method to be aware of the HourOffset property.
+
+```csharp
+currentTime.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
+```
+
+### Add button Click event handlers
+
+All the up and down buttons need to do is increment or decrement the HourOffset property and call UpdateTimeLabel.
+
+```csharp
+private void UpButton_Clicked(object sender, EventArgs e)
+{
+    HourOffset++;
+    UpdateTimeLabel();
+}
 ```
 
 When you're finished, MainPage.xaml.cs should look like this:
@@ -128,16 +138,18 @@ When you're finished, MainPage.xaml.cs should look like this:
 ```csharp
 using System;
 using System.ComponentModel;
+using System.Threading;
 using Xamarin.Forms;
 
-namespace TimeChanger
+namespace TimeChangerForms
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public int HourOffset { get; private set; } = 0;
+        public int HourOffset { get; private set; }
+
         public MainPage()
         {
             InitializeComponent();
@@ -146,41 +158,36 @@ namespace TimeChanger
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            // Ensure the timer runs on the main thread so the UI will get updated
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-
-            // Update the time once per second
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
-                return true; // repeat
-            });
+            var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
         }
 
-        private void UpdateTimeLabel()
+        private void UpdateTimeLabel(object state = null)
         {
-            time.Text = DateTime.Now.AddHours(HourOffset).ToString(System.Globalization.CultureInfo.CurrentUICulture);
+            Device.BeginInvokeOnMainThread(() =>
+                {
+                    time.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
+                }
+            );
         }
 
-        private void PlusButton_Clicked(object sender, EventArgs e)
+        private void UpButton_Clicked(object sender, EventArgs e)
         {
             HourOffset++;
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
+            UpdateTimeLabel();
         }
 
-        private void MinusButton_Clicked(object sender, EventArgs e)
+        private void DownButton_Clicked(object sender, EventArgs e)
         {
             HourOffset--;
-            Device.BeginInvokeOnMainThread(() => UpdateTimeLabel());
+            UpdateTimeLabel();
         }
     }
 }
-
 ```
 
 ## Run the app
 
-To run the app, press **F5** or click Debug > Start Debugging. If you are using an android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
+To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
 
 ## Download the code
 
