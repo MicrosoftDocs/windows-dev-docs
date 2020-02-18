@@ -2,12 +2,15 @@
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Learn about solutions to common development issues with the Microsoft advertising libraries in XAML apps.
 title: XAML and C# troubleshooting guide
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, XAML, c#
 ms.localizationpriority: medium
 ---
 # XAML and C# troubleshooting guide
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
 
 This topic contains solutions to common development issues with the Microsoft advertising libraries in XAML apps.
 

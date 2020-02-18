@@ -2,12 +2,15 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, HTML, javascript
 ms.localizationpriority: medium
 ---
 # HTML and JavaScript troubleshooting guide
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
 
 This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 
