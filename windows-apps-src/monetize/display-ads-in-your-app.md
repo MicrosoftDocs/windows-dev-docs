@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Display ads in your app with the Microsoft Advertising SDK
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Increase your revenue opportunities by putting ads in your Universal Windows Platform (UWP) app for Windows 10 by using the Microsoft Advertising SDK. Our ad monetization platform offers a variety of ad formats that can be seamlessly integrated into your apps and supports mediation with many popular ad networks. Our platform is compliant with the OpenRTB, VAST 2.x, MRAID 2, and VPAID 3 standards and is compatible with MOAT and IAS. 
 
@@ -108,7 +108,7 @@ For additional help using the Microsoft Advertising SDK, use the following resou
 |  Task    | Resource |               
 |----------|-------|
 | Report a bug or get assisted support for advertising     | Visit the [support page](https://developer.microsoft.com/windows/support) and choose **Ads-In-Apps**.        |
-| Get community support     | Visit the [forum](https://go.microsoft.com/fwlink/?LinkID=401264).       |
+| Get community support     | Visit the [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).       |
 | Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | See the [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Learn about the latest monetization opportunities for Windows apps     | Visit [Monetize your apps](https://developer.microsoft.com/store/monetize).        |
 

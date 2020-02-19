@@ -191,7 +191,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## Sample
 
-For a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package, see [https://aka.ms/sparsepkgsample](https://aka.ms/sparsepkgsample). More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+For a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package, see [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 This sample includes the following:
 

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Known issues and troubleshooting for ads in apps
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This topic lists the known issues with the current release of the Microsoft Advertising SDK. For additional troubleshooting guidance, see the following topics.
 
@@ -45,7 +45,7 @@ There are many reasons you may see no ads, including network errors. Other reaso
 
 If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://developer.microsoft.com/windows/support). On that page, choose **Contact us**.
 
-You can also post a question in the [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
+You can also post a question in the [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
 ## Test ads are showing in your app instead of live ads
 
@@ -88,7 +88,7 @@ Setting border-related properties inherited by the **AdControl** from its parent
 
 ## More Information
 
-For more information about the latest known issues and to post questions related to the Microsoft Advertising SDK, visit the [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
+For more information about the latest known issues and to post questions related to the Microsoft Advertising SDK, visit the [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
  
 
