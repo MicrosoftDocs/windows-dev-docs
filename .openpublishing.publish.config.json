@@ -16,7 +16,9 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
-      "xref_query_tags": [ "/uwp/api" ]
+      "xref_query_tags": [
+        "/uwp/api"
+      ]
     },
     {
       "docset_name": "windows-uwp-hub",
@@ -33,7 +35,9 @@
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
       "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "xref_query_tags": [
+        "/uwp/api"
+      ]
     },
     {
       "docset_name": "windows-uwp",
@@ -50,7 +54,9 @@
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
       "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "xref_query_tags": [
+        "/uwp/api"
+      ]
     }
   ],
   "notification_subscribers": [],
@@ -85,5 +91,8 @@
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": true,
   "targets": {},
-  "need_generate_pdf": false
+  "need_generate_pdf": false,
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }

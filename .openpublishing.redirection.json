@@ -1541,8 +1541,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/style/typography.md",
-      "source_path": "windows-apps-src/design/controls-and-patterns/fonts.md",
       "source_path": "windows-apps-src/design/style/fonts.md",
       "redirect_url": "/windows/uwp/design/style/typography",
       "redirect_document_id": true
@@ -1653,7 +1651,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
       "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/social-platform/people-system/people-system_nav",
       "redirect_document_id": true
@@ -1684,9 +1681,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/favorite-people.md",
-      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/gamertags-and-real-names.md",
-      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/one-way-relationships.md",
       "source_path": "windows-apps-src/xbox-live/social-platform/people-system/privacy-and-people-i-know.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/people-system/xbox-live-people-system",
       "redirect_document_id": true
@@ -4852,7 +4846,6 @@
       "redirect_document_id": true
     },
     {
-
       "source_path": "windows-apps-src/design/layout/content-as-objects.md",
       "redirect_url": "/windows/uwp/design",
       "redirect_document_id": false
@@ -4886,6 +4879,11 @@
       "source_path": "windows-apps-src/monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md",
       "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/apps-on-arm-limitations.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/porting/apps-on-arm-troubleshooting-x86",
+      "redirect_document_id": false
     }
   ]
 }
