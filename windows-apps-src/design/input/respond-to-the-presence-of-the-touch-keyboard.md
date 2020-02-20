@@ -216,7 +216,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 **Archive samples**
 
-- [Input: Touch keyboard sample](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+- [Input: Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 - [Responding to the appearance of the on-screen keyboard sample](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
 - [XAML text editing sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-- [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
