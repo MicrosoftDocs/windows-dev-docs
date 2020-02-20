@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # Windows Premium Ads Publishers Program
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 As part of our continuous efforts to help Windows developers monetize their apps through ads, we offer the [Windows Premium Ads Publishers Program](https://www.windowspremiumapps.com). This is a curated collection of ad-enabled apps and games that are best in class in terms of usage, engagement and experience. These apps and games are viewability certified and have a globally distributed audience of identifiable users that are highly engaged​.
 

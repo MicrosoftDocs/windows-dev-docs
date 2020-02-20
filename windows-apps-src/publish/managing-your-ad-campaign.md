@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Manage your ad campaign
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 To manage ad campaigns for your app in [Partner Center](https://partner.microsoft.com/dashboard), expand **Attract** in the left navigation menu and then select **Ad campaigns**. You'll see all of the ad campaigns associated with your apps, along with the impressions, clicks, and installs for each ad campaign. For more information about impressions, clicks, and installs, see the definitions for these terms in [Ad campaign report](promote-your-app-report.md).
 

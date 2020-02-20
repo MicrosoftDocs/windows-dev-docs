@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Create an ad campaign for your app
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 You can create ad campaigns in [Partner Center](https://partner.microsoft.com/dashboard) to help promote your app and grow its user base. By default, we will choose the target audience for your ads based on the settings for your app in Partner Center, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 

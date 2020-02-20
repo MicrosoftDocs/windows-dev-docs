@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # About community ads
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 If your app [displays banner or banner interstitial ads](../monetize/display-ads-in-your-app.md), you can cross-promote your app with other developers with apps in the Microsoft Store for free. We call this feature *community ads*.  
 

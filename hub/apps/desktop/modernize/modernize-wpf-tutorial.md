@@ -64,7 +64,7 @@ Make sure you install the following workloads and optional features with Visual 
 
 Before you begin the tutorial, download the source code for the Contoso Expenses app and make sure you can build the code in Visual Studio.
 
-1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Open the zip file and extract all the content to the root of your **C:\\** drive. It will create a folder named **C:\WinAppsModernizationWorkshop**.
 3. Open Visual Studio 2019 and double click on the **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** file to open the solution.
 4. Verify that you can build, run, and debug the Contoso Expenses WPF project by pressing the **Start** button or CTRL + F5.

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Show ads in video content
 
 >[!WARNING]
-> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://aka.ms/ad-monetization-shutdown)
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This walkthrough shows how to use the **AdScheduler** class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 
