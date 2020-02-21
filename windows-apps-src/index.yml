@@ -34,7 +34,7 @@ landingContent:
           - text: Browse Windows courses on Microsoft Learn
             url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
           - text: What's a UWP app?
-            url: /get-started/universal-application-platform-guide.md
+            url: https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide
 
   - title: Latest features
     linkLists:
