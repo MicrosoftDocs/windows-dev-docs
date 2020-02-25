@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 
 # Screen readers and hardware system buttons
 
-Screen-readers, such as [Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-complete-guide-to-narrator), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
+Screen-readers, such as [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
 
 Beginning with Windows 10 version 2004, UWP applications can listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons. Previously, this system button acted only as a modifier for how other hardware buttons reported their events and state.
 
 > [!NOTE]
-> Fn button support is OEM-specific and can include the ability to toggle/lock on or off vs. a press-and-hold key combination, and corresponding lock indicator light (which might not helpful to blind or vision-impaired users).
+> Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not helpful to blind or vision-impaired users).
 
 Fn button events are exposed through a new [SystemButtonEventController Class](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace. The SystemButtonEventController object supports the following events:
 
@@ -63,7 +63,7 @@ It is common for more than one of the supported events to fire when the Fn butto
     bool _isLearningMode = false;
     ```
 
-2. This third snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
+3. This third snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
 
    Each event handler announces the event that has occurred. In addition, the FunctionLockIndicatorChanged handler also controls whether the app is in "Learning" mode (`_isLearningMode` = true), which prevents the event from bubbling to other handlers and lets the user explore keyboard features without actually performing the action.
 
