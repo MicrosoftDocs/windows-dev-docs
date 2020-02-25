@@ -1,8 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high

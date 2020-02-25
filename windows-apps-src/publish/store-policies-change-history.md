@@ -1,8 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: Change history for Microsoft Store Policies
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
