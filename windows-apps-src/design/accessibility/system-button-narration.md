@@ -36,9 +36,7 @@ It is common for more than one of the supported events to fire when the Fn butto
 
 1. In this first snippet, we simply include the required namespaces and specify some global objects, including the [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) and the [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller) objects for managing the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) thread.
 
-   We also specify the [event tokens](/uwp/cpp-ref-for-winrt/event-token) returned when registering the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) event-handling delegates.
-
-   Finally, we specify a bool for setting whether the application is in "Learning Mode", where the user is simply trying to explore the keyboard without performing any functions. 
+   We then specify the [event tokens](/uwp/cpp-ref-for-winrt/event-token) returned when registering the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) event-handling delegates.
 
     ```cppwinrt
     namespace winrt
@@ -50,17 +48,22 @@ It is common for more than one of the supported events to fire when the Fn butto
     ...
 
     // Declare related members
-        winrt::DispatcherQueueController _queueController;
-        winrt::DispatcherQueue _queue;
-        winrt::SystemButtonEventController _controller;
-        winrt::event_token _fnKeyDownToken;
-        winrt::event_token _fnKeyUpToken;
-        winrt::event_token _fnLockToken;
-        winrt::event_token _fnLockIndicatorToken;
-        bool _isLearningMode = false;
+    winrt::DispatcherQueueController _queueController;
+    winrt::DispatcherQueue _queue;
+    winrt::SystemButtonEventController _controller;
+    winrt::event_token _fnKeyDownToken;
+    winrt::event_token _fnKeyUpToken;
+    winrt::event_token _fnLockToken;
     ```
 
-2. This second snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
+2. We also specify an event token for the [SystemFunctionLockIndicatorChanged](/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionlockindicatorchanged) event along with a bool to indicate whether the application is in "Learning Mode" (where the user is simply trying to explore the keyboard without performing any functions).
+
+    ```cppwinrt
+    winrt::event_token _fnLockIndicatorToken;
+    bool _isLearningMode = false;
+    ```
+
+2. This third snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
 
    Each event handler announces the event that has occurred. In addition, the FunctionLockIndicatorChanged handler also controls whether the app is in "Learning" mode (`_isLearningMode` = true), which prevents the event from bubbling to other handlers and lets the user explore keyboard features without actually performing the action.
 
