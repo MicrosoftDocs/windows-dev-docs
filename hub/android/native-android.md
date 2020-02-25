@@ -12,20 +12,18 @@ ms.date: 02/19/2020
 
 # Native Android development on Windows
 
-The following is a guide to the various workflows available to you for doing Android development using the Windows operating system.
+This guide will get you started developing native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
 
-The most straight forward way to create a native Android app is using Android Studio with either Java or Kotlin. The Android Studio SDK tools compile your code, data, and resource files into an APK, an Android package, which is an archive file with an .apk suffix. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app.
-
-Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals).
+The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-or-c++-for-android-development). The Android Studio SDK tools compile your code, data, and resource files into archive .apk, Android package, file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app. Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals) in the Android docs.
 
 ## Install Android Studio
 
-Android Studio is the official integrated development environment for Google's Android operating system, built on JetBrain's ItelliJ IDEA software. Download the latest version of Android Studio at https://developer.android.com/studio.
+Android Studio is the official integrated development environment for Google's Android operating system. Download the latest version of Android Studio for Windows at https://developer.android.com/studio.
 
 - If you downloaded an .exe file (recommended), double-click to launch it.
 - If you downloaded a .zip file, unpack the ZIP, copy the android-studio folder into your Program Files folder, and then open the android-studio > bin folder and launch studio64.exe (for 64-bit machines) or studio.exe (for 32-bit machines).
 
-Follow the setup wizard in Android Studio and install any SDK packages that it recommends. As new tools and other APIs become available, Android Studio tells you with a pop-up, or you can check for updates by selecting **Help** > **Check for Update**.
+Follow the setup wizard in Android Studio and install any SDK packages that it recommends. As new tools and other APIs become available, Android Studio will notify you with a pop-up, or check for updates by selecting **Help** > **Check for Update**.
 
 ## Create a new project
 
@@ -41,12 +39,18 @@ In the **Choose your project** window, you will be able to choose between these 
 
     - Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
 
-Templates are commonly used to add new activities to new and existing app modules. For example, to create a login screen for your app’s users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
+Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app’s users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
 
 > [!NOTE]
-> The Android operating system is based on components and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused thing that a user can do. They provide a window for building the user interface using classes based on the View class. Learn more about [Activities in the Android docs](https://developer.android.com/reference/android/app/Activity). Activites also have a lifecycle in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. Learn more about the [Activity Lifecycle in the Android docs](https://developer.android.com/guide/components/activities/activity-lifecycle). The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Intents in the Android docs](https://developer.android.com/reference/android/content/Intent.html).
+> The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. They provide a window for building the user interface using classes based on the **View** class. There is a lifecycle for Activities in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Activities](https://developer.android.com/reference/android/app/Activity), the [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle), and [Intents](https://developer.android.com/reference/android/content/Intent.html) in the Android docs.
 
 ### Java or Kotlin
+
+Java became a language in 1991, developed by what was then Sun Microsystems, but which is now owned by Oracle. It has become one of the most popular and powerful programming languages with one of the largest support communities in the world. Java is class-based and object-oriented, designed to have as few implementation dependencies as possible. The syntax is similar to C and C++, but it has fewer low-level facilities than either of them.
+
+Kotlin was first announced as a new open-source language by JetBrains in 2011 and has been included as an alternative to Java in Android Studio since 2017. In May 2019, Google announced Kotlin as it's preferred language for Android app developers, so despite being a newer language, it also has a strong support community and has been identified as one of the fastest growing programming languages. Kotlin is cross-platform, statically typed, and designed to interoperate fully with Java.
+
+Java offers some features that Kotlin does not, such as checked exceptions, primitive types that are not classes, static members, non-private fields, wildcard-types, and ternary-operators. Kotlin also offers some features that Java does not, such as null references controlled by the type system, no raw types, invariant arrays, proper function types (as opposed to Java's SAM-conversions), use-site variance without wildcards, smart casts, and more. The Kotlin documentation offers [a more in-depth look at the comparison to Java](https://kotlinlang.org/docs/reference/comparison-to-java.html).
 
 ### Minimum API Level
 
@@ -58,44 +62,92 @@ Select the **Help me choose** link to open a comparison chart showing the device
 
 ![Android Studio Minimum API comparison screen](../images/android-minimum-api-selection-2.png)
 
-### Androidx artifacts
+### Instant app support and Androidx artifacts
 
-You may notice a checkbox to **Use androidx.* artifacts** in your project creation options. AndroidX is the new version of the Android support library and provides backwards-compatibility across Android releases.
+You may notice a checkbox to **Support instant apps** and another to **Use androidx.* artifacts** in your project creation options. The instant apps support is not checked and the androidx is checked as the recommended default.
+
+Google Play **Instant apps** provide a way for people to try an app or game without installing it first. These instant apps can be surfaced across the Play Store, Google Search, social networks, and anywhere you share a link. By checking the **Support instant apps** box, you are asking Android Studio to include the Google Play Instant Development SDK with your project. To learn more about [Google Play Instant apps](https://developer.android.com/topic/google-play-instant) and how to [create an instant-enabled app bundle](https://developer.android.com/topic/google-play-instant/getting-started/instant-enabled-app-bundle), see the Android documentation.
+
+**AndroidX artifacts** represents the new version of the Android support library and provides backwards-compatibility across Android releases. AndroidX provides a consistent namespace starting with the string androidx for all available packages.
 
 > [!NOTE]
-> AndroidX provides a consistent namespace starting with the string androidx for all available packages. The former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
+>  AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the lastest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
+
+## Project overview
+
+The Android Studio **Project** window, contains the following files (be sure that the Android view is selected from the drop-down menu):
+
+**app > java > com.example.myfirstapp > MainActivity**
+
+The main activity and entry point for your app. When you build and run your app, the system launches an instance of this Activity and loads its layout.
+
+**app > res > layout > activity_main.xml**
+
+The XML file defining the layout for the activity's user interface (UI). It contains a TextView element with the text "Hello, World!"
+
+**app > manifests > AndroidManifest.xml**
+
+The manifest file describing the fundamental characteristics of the app and each of its components.
+
+**Gradle Scripts > build.gradle**
+
+There are two files with this name: "Project: My First App", for the entire project, and "Module: app", for each app module. A new project will initially only have one module. Use the module's build.file to control how the Gradle plugin builds your app. Learn more in the Android docs, [Configure your build](https://developer.android.com/studio/build/index) article.
 
 
+## Update Defender settings
 
-most templates depend on the [Android Support Library](https://developer.android.com/tools/support-library/features.html) to include user interface principles based on [material design](https://developer.android.com/design/material/index.html).
+Windows security software, Windows Defender, 
+
+https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20
+
+## Run on an Android device or emulator
+
+To run your app on a real Android device:
+
+- Enable your Android device
+- Connect your device to your development machine with a USB cable. You may need to install a USB driver for your device.
+Perform the following steps to enable USB debugging in the Developer options window:
+Open the Settings app.
+If your device uses Android v8.0 or higher, select System. Otherwise, proceed to the next step.
+Scroll to the bottom and select About phone.
+Scroll to the bottom and tap Build number seven times.
+Return to the previous screen, scroll to the bottom, and tap Developer options.
+In the Developer options window, scroll down to find and enable USB debugging.
+Run the app on your device as follows:
+
+In Android Studio, select your app from the run/debug configurations drop-down menu in the toolbar.
+In the toolbar, select the device that you want to run your app on from the target device drop-down menu.
+Target device drop-down menu.
+
+Click Run .
+
+Android Studio installs your app on your connected device and starts it. You now see "Hello, World!" displayed in the app on your device.
+
+To begin to develop your app, continue to the next lesson.
 
 ## Accessibility
-
-## Emulating an Android device
 
 ## Storing and accessing data
 
 SQLite, MySQL, etc?
- 
-Where to find the configuration file...
 
-Both configuration files are stored in the configuration folder for Android Studio. The name of the folder depends on your Studio version. For example, Android Studio 3.3 has the folder name AndroidStudio3.3. The location of this folder depends on your operating system:
+## Use C or C++ for Android development
 
-Windows: %USERPROFILE%\.CONFIGURATION_FOLDER
+The Android operating system is designed to support applications written in Java or Kotlin, benefiting from tooling embedded in the system's architecture. Many system features, like Android UI and Intent handling, are only exposed through Java interfaces. There are a few instances where you may want to use C or C++ code via the Android Native Development Kit (NDK) despite some of the associated challenges. Game development is an example, since games typically use custom rendering logic written in OpenGL or Vulkan and benefit from a wealth of C libraries focused on game development. Using C or C++ *might* also help you squeeze extra performance out of a device to achieve low latency or run computationally intensive applications, such as physics simulations. The NDK **is not appropriate for most novice Android programmers** however. Unless you have a specific purpose for using the NDK, we recommend sticking with Java, Kotlin, or one of a [cross-platform framework](./overview.md).
 
-You can also use the following environment variables to point to specific override files elsewhere:
+To create a new project with C/C++ support:
 
-STUDIO_VM_OPTIONS: set the name and location of the .vmoptions file
-STUDIO_PROPERTIES: set the name and location of the .properties file
-STUDIO_JDK: set the JDK with which to run Studio
+- In the **Choose your project** section of the Android Studio wizard, select the *Native C++** project type. Select **Next**, complete the remaining fields, then select **Next** again.
 
-## Android NDK with C and C++
+- In the **Customize C++ Support** section of the wizard, you can customize your project with the **C++ Standard** field. Use the drop-down list to select which standardization of C++ you want to use. Selecting **Toolchain Default** uses the default CMake setting. Select **Finish**.
 
-The Android Native Development Kit (NDK) allows you to use C and C++ code with Android. It provides platform libraries you can use to manage native activities and access physical device components, such as sensors and touch input.
+Once Android Studio creates your new project, you can find a **cpp** folder in the **Project** pane that contains the native source files, headers, build scripts for CMake or ndk-build, and prebuilt libraries that are a part of your project. You can also find a sample C++ source file, `native-lib.cpp`, in the `src/main/cpp/` folder which provides a simple `stringFromJNI()` function returning the string "Hello from C++". Additionally, you will find a CMake build script, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html), in your module's root directory required for building your native library.
 
-The NDK **may not be appropriate for most novice Android programmers**. Unless you have a specific purpose for using the NDK, we recommend sticking with Java code, Android Studio, and the associated framework APIs to develop your app. However, the NDK can be useful for specific cases:
+To learn more, see the Android docs topic: [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). For samples, see the [Android NDK samples with Android Studio C++ integration repo](https://github.com/android/ndk-samples) on GitHub.
 
-- Squeeze extra performance out of a device to achieve low latency or run computationally intensive applications, such as games or physics simulations.
-- Reuse your own or other developers' C or C++ libraries.
+## Additional resources
 
-Using Android Studio 2.2 and higher, the NDK can be used to compile C and C++ code into a native library. It can then be packaged into an APK using Gradle, the IDE's integrated build system. Your Java code can then call functions in your native library through the Java Native Interface (JNI) framework. Learn more in the [Getting Started with the NDK](https://developer.android.com/ndk/guides) section of the Android Developer Guide.
+- User interface principles for Android based on [material design](https://developer.android.com/design/material/index.html)
+
+- [Create a sample app with Xamarin Forms](https://review.docs.microsoft.com/en-us/windows/xamarin/xamarin-forms-android?branch=android-draft): Try creating a sample Android application using Xamarin Forms.
+
