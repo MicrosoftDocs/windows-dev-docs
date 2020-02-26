@@ -42,10 +42,14 @@
       },
       "ms.technology":
       {
-      "apps/**.md": "apps",
-      "apps/trace-processing/**.md": "",
-      "python/**.md": "windows-python",
-      "nodejs/**.md": "windows-nodejs"
+        "apps/**.md": "apps",
+        "apps/trace-processing/**.md": "",
+        "python/**.md": "windows-python",
+        "nodejs/**.md": "windows-nodejs"
+      },	 
+      "feedback_product_url": 
+      {
+        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues"	
       }
     },
     "template": [],

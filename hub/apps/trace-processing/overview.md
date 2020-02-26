@@ -1,9 +1,8 @@
 ---
 title: What is .NET TraceProcessing - .NET TraceProcessing
 description: In this overview, learn what .NET TraceProcessing is.
-author: davidmatson
-manager: maiak
-ms.author: dmatson
+author: maiak
+ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
 ---
