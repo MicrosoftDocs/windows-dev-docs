@@ -81,7 +81,7 @@ The entry point displays the chosen date, and when the user selects the entry po
 
 ### Time picker
 
-The **TimePicker** is used to select a single time value for things like appointments or a departure time. It's a static display that is set by the user or in code, but it doesn't update to display the current time. 
+The **TimePicker** is used to select a single time value for things like appointments or a departure time. It's a static display that is set by the user or in code, but it doesn't update to display the current time.
 
 The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
@@ -104,10 +104,10 @@ The XAML date controls support each of the calendar systems supported by Windows
 
 The time picker control supports each of the clock systems specified in the [Windows.Globalization.ClockIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.ClockIdentifiers) class. You can set the [ClockIdentifier](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
 
-
 ### DateTime and Calendar values
 
-The date objects used in the XAML date and time controls have a different representation depending on your programming language. 
+The date objects used in the XAML date and time controls have a different representation depending on your programming language.
+
 - C# and Visual Basic use the [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) structure that is part of .NET. 
 - C++/CX uses the [Windows::Foundation::DateTime](https://docs.microsoft.com/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime) structure. 
 
@@ -115,15 +115,19 @@ A related concept is the Calendar class, which influences how dates are interpre
 
 .NET also supports a type named [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime), which is implicitly convertible to a [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset). So you might see a "DateTime" type being used in .NET code that's used to set values that are really DateTimeOffset. For more info on the difference between DateTime and DateTimeOffset, see Remarks in the [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) class.
 
-> **Note**&nbsp;&nbsp;Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
+> [!NOTE]
+> Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
 
 ## Get the sample code
-* [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
+- [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+- [Calendar sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
+- [Date and time formatting sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
 
 ## Related topics
 
-**For developers (XAML)**
+### For developers (XAML)
+
 - [CalendarView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
 - [CalendarDatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
 - [DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)
