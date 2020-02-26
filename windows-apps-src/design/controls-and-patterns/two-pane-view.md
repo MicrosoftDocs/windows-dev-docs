@@ -76,18 +76,16 @@ You configure the two-pane view by setting the [PanePriority](/uwp/api/microsoft
 
 The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](/windows/uwp/design/layout/layouts-with-xaml) and [Layout panels](/windows/uwp/design/layout/layout-panels) for more info about creating an adaptive UI.
 
-The two-pane view manages the display of the panes based on what kind of device the app is running on:
+The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) manages the display of the panes based on the spanning state of the app.
 
-- On a dual-screen device
+- Spanned across dual-screens
 
-    The two-pane view is designed to make it easy to optimize your UI for dual-screen devices. The window will size itself to use all the available space on the screens. When your app is on only one of the device's screens, one pane is displayed, as specified by the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) property.
-
-    When your app spans both screens of a dual-screen device, each screen displays the content of one of the panes and properly spans content across the gap. Spanning-awareness is built-in when you use two-pane view. You only need to set the tall/wide configuration to specify which pane is shown on which screen. The two-pane view takes care of the rest.
+    The `TwoPaneView` is designed to make it easy to optimize your UI for dual-screen devices. The window sizes itself to use all the available space on the screens. When your app spans both screens of a dual-screen device, each screen displays the content of one of the panes and properly spans content across the gap. Spanning-awareness is built-in when you use two-pane view. You only need to set the tall/wide configuration to specify which pane is shown on which screen. The two-pane view takes care of the rest.
 
 
-- On single-screen devices
+- On a single-screen
 
-    When running on a single-screen device, such as a laptop or desktop PC, the two-pane view provides behavior you would expect from any XAML control. When the window is re-sized, the two-pane view adjusts the size and position of its panes based on the window size. It has additional properties you set to define the control's behavior when it's shown on a single-screen in a re-sizable window. We explain these properties in more detail in the next section.
+    When your app is on only a single screen, the `TwoPaneView` adjusts the size and position of its panes based on property settings you specify. We explain these properties in more detail in the next section. The only difference between devices is that some devices, like desktop PCs, allow re-sizable windows, while other devices don't.
 
 ## How to use the two-pane view control
 
