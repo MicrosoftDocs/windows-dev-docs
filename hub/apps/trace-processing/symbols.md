@@ -1,9 +1,8 @@
 ---
 title: Load Symbols - .NET TraceProcessing
 description: In this tutorial, learn how load symbols when processing traces.
-author: davidmatson
-manager: maiak
-ms.author: dmatson
+author: maiak
+ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
 ---

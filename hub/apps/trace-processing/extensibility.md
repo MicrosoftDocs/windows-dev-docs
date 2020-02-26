@@ -1,9 +1,8 @@
 ---
 title: Extensibility - .NET TraceProcessing
 description: In this tutorial, learn how to extend .NET TraceProcessing.
-author: davidmatson
-manager: maiak
-ms.author: dmatson
+author: maiak
+ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
 ---
