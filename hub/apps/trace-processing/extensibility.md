@@ -11,7 +11,10 @@ ms.topic: overview
 
 Many kinds of trace data have built-in support in [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), but if you have your other providers that you would like to analyze (including your own custom providers), that data is also available from the trace live while processing occurs.
 
-For example, here is a simple way to get the list of providers IDs in a trace:
+> [!NOTE]
+> This part of the API is in preview and under active development. It may change in future releases.
+
+For example, here is a simple way to get the list of providers IDs in a trace.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -29,7 +32,7 @@ static void Run(ITraceProcessor trace)
 }
 ```
 
-The following example shows a simplified custom data source:
+The following example shows a simplified custom data source.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
