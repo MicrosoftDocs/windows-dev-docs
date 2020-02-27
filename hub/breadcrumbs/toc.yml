@@ -16,7 +16,7 @@
           - name: Modernize desktop apps
             tocHref: /windows/apps/desktop/modernize/
             topicHref: "/windows/apps/desktop/modernize/"
-          - name: Process ETW traces in .NET
+          - name: .NET TraceProcessing
             tocHref: /windows/apps/trace-processing/
             topicHref: "/windows/apps/trace-processing/overview"
       - name: Development Environment

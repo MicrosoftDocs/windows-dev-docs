@@ -71,27 +71,7 @@
   - name: Speech
     href: apps/speech.md
   - name: Features and technologies
-    items:
-      - name: Overview
-        href: apps/features-and-technologies.md
-      - name: Process ETW traces in .NET
-        items:
-          - name: Overview
-            href: apps/trace-processing/overview.md
-          - name: Process your first trace
-            href: apps/trace-processing/quickstart.md
-          - name: Access trace data
-            href: apps/trace-processing/tutorial.md
-          - name: Extend TraceProcessor
-            href: apps/trace-processing/extensibility.md
-          - name: Load symbols
-            href: apps/trace-processing/symbols.md
-          - name: Use streaming
-            href: apps/trace-processing/streaming.md
-          - name: Samples
-            href: https://github.com/microsoft/eventtracing-processing-samples  
-          - name: Reference
-            href: apps/trace-processing/reference.md
+    href: apps/features-and-technologies.md
   - name: Latest doc updates
     href: apps/whats-new/latest-doc-updates.md
 - name: Build with Windows

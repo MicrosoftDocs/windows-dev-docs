@@ -1,23 +1,24 @@
 ### YamlMime:Landing
 
-title: .NET TraceProcessing Documentation
+title: .NET TraceProcessing documentation
 summary: .NET TraceProcessing is a NuGet package that provides easy access to data in Event Tracing for Windows (ETW) files.
 
 metadata:
   title: Documentation - .NET TraceProcessing
   description: .NET TraceProcessing is a NuGet package that provides easy access to data in Event Tracing for Windows (ETW) files.
   ms.prod: traceprocessor
+  ms.technology: ""
   ms.topic: landing-page
   author: maiak
   ms.author: maiak
   ms.date: 02/20/2020
 
 landingContent:
-  - title: About .NET TraceProcessing
+  - title: Introduction to .NET TraceProcessing
     linkLists:
       - linkListType: overview
         links:
-          - text: What is .NET TraceProcessing?
+          - text: Process ETW traces in .NET
             url: overview.md
   - title: Get started
     linkLists:
@@ -29,13 +30,13 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: Accessing trace data
+          - text: Access trace data
             url: tutorial.md
-          - text: Extending TraceProcessor
+          - text: Extend TraceProcessor
             url: extensibility.md
-          - text: Loading symbols
+          - text: Load symbols
             url: symbols.md
-          - text: Using streaming
+          - text: Use streaming
             url: streaming.md
   - title: Samples
     linkLists:
