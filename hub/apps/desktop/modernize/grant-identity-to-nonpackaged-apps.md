@@ -1,7 +1,7 @@
 ---
 Description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows 10 features in those apps.
 title: Grant identity to non-packaged desktop apps
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.author: mcleans
@@ -132,7 +132,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### Add the package identity metadata to your desktop application manifest
 
-You must also include a [side-by-side application manifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) with your desktop app and include an **\<msix\>** element with attributes that declare the identity attributes of your app. The values of these attributes are used by the OS to determine your app's identity when the executable is launched.
+You must also include a [side-by-side application manifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) with your desktop app and include an [msix](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) element with attributes that declare the identity attributes of your app. The values of these attributes are used by the OS to determine your app's identity when the executable is launched.
 
 The following example shows a side-by-side application manifest with an **\<msix\>** element.
 
