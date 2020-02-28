@@ -43,7 +43,8 @@
       {
       "apps/**.md": "apps",
       "python/**.md": "windows-python",
-      "nodejs/**.md": "windows-nodejs"
+      "nodejs/**.md": "windows-nodejs",
+      "android/**.md": "windows-nodejs"
       }
     },
     "template": [],

@@ -1,6 +1,6 @@
 ---
-title: 
-description: 
+title: Running Android device or emulator from Windows
+description: Guide to testing your app on an Android device or emulator from Windows using Visual Studio or VS Code.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -13,7 +13,7 @@ ms.date: 02/19/2020
 
 This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
 
-The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-or-c++-for-android-development). The Android Studio SDK tools compile your code, data, and resource files into archive .apk, Android package, file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app. Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals) in the Android docs.
+The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-for-android-development). The Android Studio SDK tools compile your code, data, and resource files into archive .apk, Android package, file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app. Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals) in the Android docs.
 
 ## Install Android Studio
 
@@ -55,11 +55,11 @@ Java offers some features that Kotlin does not, such as checked exceptions, prim
 
 You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefor provide more features.
 
-![Android Studio Minimum API selection screen](../images/android-minimum-api-selection.png)
+![Android Studio Minimum API selection screen](./images/android-minimum-api-selection.png)
 
 Select the **Help me choose** link to open a comparison chart showing the device support distribution and key features associated with the platform version release.
 
-![Android Studio Minimum API comparison screen](../images/android-minimum-api-selection-2.png)
+![Android Studio Minimum API comparison screen](./images/android-minimum-api-selection-2.png)
 
 ### Instant app support and Androidx artifacts
 
@@ -82,7 +82,7 @@ The main activity and entry point for your app. When you build and run your app,
 
 **app > res > layout > activity_main.xml**
 
-The XML file defining the layout for the activity's user interface (UI). It contains a TextView element with the text "Hello, World!"
+The XML file defining the layout for the activity's user interface (UI). It contains a TextView element with the text "Hello World"
 
 **app > manifests > AndroidManifest.xml**
 
@@ -98,16 +98,16 @@ To do.
 
 Questions: 1. Are settings different for Android Studio (native) vs Xamarin or React (crossplat)? 2. Should this topic be in this page or it's own page or an FAQ?
 
-Windows security software, Windows Defender, 
+Windows security software, Windows Defender,
 https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20
 
 ## Accessibility
 
 Needed? Move to it's own page?
 
-## Use C or C++ for Android development
+## Use C for Android development
 
-The Android operating system is designed to support applications written in Java or Kotlin, benefiting from tooling embedded in the system's architecture. Many system features, like Android UI and Intent handling, are only exposed through Java interfaces. There are a few instances where you may want to use C or C++ code via the Android Native Development Kit (NDK) despite some of the associated challenges. Game development is an example, since games typically use custom rendering logic written in OpenGL or Vulkan and benefit from a wealth of C libraries focused on game development. Using C or C++ *might* also help you squeeze extra performance out of a device to achieve low latency or run computationally intensive applications, such as physics simulations. The NDK **is not appropriate for most novice Android programmers** however. Unless you have a specific purpose for using the NDK, we recommend sticking with Java, Kotlin, or one of a [cross-platform framework](./overview.md).
+The Android operating system is designed to support applications written in Java or Kotlin, benefiting from tooling embedded in the system's architecture. Many system features, like Android UI and Intent handling, are only exposed through Java interfaces. There are a few instances where you may want to **use C or C++ code via the Android Native Development Kit (NDK)** despite some of the associated challenges. Game development is an example, since games typically use custom rendering logic written in OpenGL or Vulkan and benefit from a wealth of C libraries focused on game development. Using C or C++ *might* also help you squeeze extra performance out of a device to achieve low latency or run computationally intensive applications, such as physics simulations. The NDK **is not appropriate for most novice Android programmers** however. Unless you have a specific purpose for using the NDK, we recommend sticking with Java, Kotlin, or one of a [cross-platform framework](./overview.md).
 
 To create a new project with C/C++ support:
 
