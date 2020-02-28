@@ -12,7 +12,9 @@ ms.prod: "xamarin"
 ms.technology: "xamarin-android"
 ---
 
-# Create a sample app with Xamarin.Android
+# Get started developing for Android using Xamarin Native
+
+This guide will help you to get started using Xamarin Native on Windows to create a cross-platform app that will work on Android devices.
 
 In this article, you will create a simple Android app using Xamarin.Android and Visual Studio 2019.
 
@@ -24,7 +26,9 @@ To use this tutorial, you'll need the following:
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
-You will also to have an Android phone or configured emulator in which to run your app. See Configuring an Android emulator.
+You will also need an Android phone or configured emulator in which to run your app. 
+
+**To do.** See [Configuring an Android emulator]().
 
 ## Create a new Xamarin.Android project
 
@@ -38,7 +42,7 @@ In the New Cross Platform App dialog, select **Blank App**. In the **Minimum And
 
 Xamarin will create a new solution with a single project named **TimeChangerAndroid**.
 
-## Use XAML to create a a UI
+## Create a UI with XAML
 
 Open **activity_main.xml** located in **Resources\layout**. This file defines the UI for the first screen a user will see when they open TimeChanger.
 
@@ -80,9 +84,9 @@ Replace the contents of activity_main.xml with the following code.
 
 At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the time will not display and the buttons can be clicked but do not do anything. In the next section, you will add functionality to your UI.
 
-## Add functionality by adding C# code
+## Add logic code with C#
 
-Open **MainActivity.cs**. This file contains the code-behind that will add functionality to the UI.
+Open **MainActivity.cs**. This file contains the code-behind logic that will add functionality to the UI.
 
 ### Set the current time
 
@@ -213,15 +217,17 @@ namespace TimeChangerAndroid
 }
 ```
 
-## Run the app
+## Run your app
 
-To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
+To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone. **To do.** >> Phone requires some set up here.
 
 ## Download the code
 
-Download the complete code sample here.
+**To do.** Download the complete code sample here.
 
 ## Related links
+
+**To do.**
 
 - Configure your dev machine to do Android development
 - Create an Android sample app using Xamarin.Android

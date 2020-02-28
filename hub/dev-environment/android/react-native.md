@@ -6,13 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android on windows
-ms.localizationpriority: medium
 ms.date: 02/19/2020
 ---
 
-# React Native for Android development on Windows
+# Get started developing for Android using React Native
 
-The following is a guide to using React Native for developing an Android app using the Windows operating system.
+This guide will help you to get started using React Native on Windows to create a cross-platform app that will work on Android devices.
 
 ## Overview
 

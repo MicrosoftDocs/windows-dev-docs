@@ -1,0 +1,79 @@
+### YamlMime:Landing
+
+title: Developing for Android on Windows
+summary: Get started developing for Android using Windows.
+
+metadata:
+  author: mattwojo
+  description: Get started developing for Android on Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 02/15/2020
+  ms.prod: dev-environment
+  ms.technology: windows-android
+  ms.topic: landing-page
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
+
+landingContent:
+  # Card
+  - title: Developing for Android on Windows
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview of Android development on Windows
+            url: ./overview.md
+          - text: Native Android
+            url: ./overview.md#native-android
+          - text: Cross-platform
+            url: ./overview.md#cross-platform
+  
+  # Card
+  - title: Get started with native Android development
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Install Android Studio
+            url: ./native-android.md
+          - text: Create a new project
+            url: ./native-android.md
+          - text: Project files
+            url: ./native-android.md
+          - text: 
+            url: ./native-android.md
+  
+  # Card
+  - title: Get started with Xamarin Native for Android
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Get started
+            url: ./xamarin-native.md
+          - text: Create a new project
+            url: ./xamarin-native.md#create-a-new-xamarin-android-project
+          - text: Create a UI with XAML
+            url: ./xamarin-native.md#create-a-ui-with-xaml
+          - text: Add logic code with C#
+            url: ./xamarin-native.md#add-logic-code-with-c
+          - text: Run your app
+            url: ./xamarin-native.md#run-your-app
+          - text: Download the code
+            url: ./xamarin-native.md#download-the-code
+  
+  # Card
+  - title: Get started with Xamarin Forms for Android
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Get started
+            url: ./xamarin-forms.md
+          - text: Create a new project
+            url: ./xamarin-forms.md#create-a-new-xamarin-forms-project
+          - text: Create a UI with XAML
+            url: ./xamarin-forms.md#create-a-ui-with-xaml
+          - text: Add logic code with C#
+            url: ./xamarin-forms.md#add-logic-code-with-c
+          - text: Run your app
+            url: ./xamarin-forms.md#run-your-app
+          - text: Download the code
+            url: ./xamarin-forms.md#download-the-code

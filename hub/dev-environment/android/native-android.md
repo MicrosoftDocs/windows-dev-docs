@@ -6,13 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android on windows
-ms.localizationpriority: medium
 ms.date: 02/19/2020
 ---
 
-# Native Android development on Windows
+# Get started with native Android development on Windows
 
-This guide will get you started developing native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
+This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
 
 The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-or-c++-for-android-development). The Android Studio SDK tools compile your code, data, and resource files into archive .apk, Android package, file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app. Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals) in the Android docs.
 
@@ -73,7 +72,7 @@ Google Play **Instant apps** provide a way for people to try an app or game with
 > [!NOTE]
 >  AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the lastest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
 
-## Project overview
+## Project files
 
 The Android Studio **Project** window, contains the following files (be sure that the Android view is selected from the drop-down menu):
 
@@ -93,43 +92,18 @@ The manifest file describing the fundamental characteristics of the app and each
 
 There are two files with this name: "Project: My First App", for the entire project, and "Module: app", for each app module. A new project will initially only have one module. Use the module's build.file to control how the Gradle plugin builds your app. Learn more in the Android docs, [Configure your build](https://developer.android.com/studio/build/index) article.
 
-
 ## Update Defender settings
 
+To do.
+
+Questions: 1. Are settings different for Android Studio (native) vs Xamarin or React (crossplat)? 2. Should this topic be in this page or it's own page or an FAQ?
+
 Windows security software, Windows Defender, 
-
 https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20
-
-## Run on an Android device or emulator
-
-To run your app on a real Android device:
-
-- Enable your Android device
-- Connect your device to your development machine with a USB cable. You may need to install a USB driver for your device.
-Perform the following steps to enable USB debugging in the Developer options window:
-Open the Settings app.
-If your device uses Android v8.0 or higher, select System. Otherwise, proceed to the next step.
-Scroll to the bottom and select About phone.
-Scroll to the bottom and tap Build number seven times.
-Return to the previous screen, scroll to the bottom, and tap Developer options.
-In the Developer options window, scroll down to find and enable USB debugging.
-Run the app on your device as follows:
-
-In Android Studio, select your app from the run/debug configurations drop-down menu in the toolbar.
-In the toolbar, select the device that you want to run your app on from the target device drop-down menu.
-Target device drop-down menu.
-
-Click Run .
-
-Android Studio installs your app on your connected device and starts it. You now see "Hello, World!" displayed in the app on your device.
-
-To begin to develop your app, continue to the next lesson.
 
 ## Accessibility
 
-## Storing and accessing data
-
-SQLite, MySQL, etc?
+Needed? Move to it's own page?
 
 ## Use C or C++ for Android development
 
@@ -144,6 +118,12 @@ To create a new project with C/C++ support:
 Once Android Studio creates your new project, you can find a **cpp** folder in the **Project** pane that contains the native source files, headers, build scripts for CMake or ndk-build, and prebuilt libraries that are a part of your project. You can also find a sample C++ source file, `native-lib.cpp`, in the `src/main/cpp/` folder which provides a simple `stringFromJNI()` function returning the string "Hello from C++". Additionally, you will find a CMake build script, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html), in your module's root directory required for building your native library.
 
 To learn more, see the Android docs topic: [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). For samples, see the [Android NDK samples with Android Studio C++ integration repo](https://github.com/android/ndk-samples) on GitHub.
+
+## Design guidelines
+
+To do.
+Should this be it's own page or separate? (prob separate as teh mistake of copying iOS UI/UX design by cross plat developers is common..?)
+[Android Design Guidelines](https://developer.android.com/design)
 
 ## Additional resources
 

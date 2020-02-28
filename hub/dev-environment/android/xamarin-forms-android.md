@@ -12,7 +12,9 @@ ms.prod: "xamarin"
 ms.technology: "xamarin-forms"
 ---
 
-# Create a sample app with Xamarin Forms
+# Get started developing for Android using Xamarin Forms
+
+This guide will help you to get started using Xamarin Forms on Windows to create a cross-platform app that will work on Android devices.
 
 In this article, you will create a simple Android app using Xamarin Forms and Visual Studio 2019.
 
@@ -38,7 +40,7 @@ In the New Cross Platform App dialog, select **Blank**. In the Platform section,
 
 Xamarin will create a new solution with two projects: **TimeChangerForms** and **TimeChangerForms.Android.**
 
-## Use XAML to create a a UI
+## Create a UI with XAML
 
 Expand the **TimeChangerForms** project and open **MainPage.xaml**. The XAML in this file will be the first screen a user will see when they open TimeChanger.
 
@@ -78,7 +80,7 @@ Replace the contents of MainPage.xaml with the following code.
 
 At this point, the UI is complete. TimeChangerForms, however, will not build because the methods **UpButton_Clicked** and **DownButton_Clicked** are referenced in the XAML but not defined anywhere. Even if the app did run, the current time would not be displayed. In the next section, you will fix these errors and add functionality to your UI.
 
-## Add functionality by adding C# code
+## ## Add logic code with C#
 
 In the Solution Explorer, right click MainPage.xaml and click **View Code**. This file contains the code behind that will add functionality to the UI.
 
@@ -187,13 +189,15 @@ namespace TimeChangerForms
 
 ## Run the app
 
-To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone.
+To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone. **To do.** >> Phone requires some set up here.
 
 ## Download the code
 
-Download the complete code sample here.
+**To do.** Download the complete code sample here.
 
 ## Related links
+
+**To do.**
 
 - Configure your dev machine to do Android development
 - Create an Android sample app using Xamarin.Android
