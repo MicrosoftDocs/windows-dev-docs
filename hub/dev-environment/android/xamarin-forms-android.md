@@ -36,13 +36,13 @@ In the new project dialog, select the **Mobile App (Xamarin.Forms)** template an
 
 Name the project **TimeChangerForms** and click **Create**.
 
-In the New Cross Platform App dialog, select **Blank**. In the Platform section, check **Android** and uncheck all other boxes. Click **OK**.
+In the New Cross Platform App dialog, select **Blank**. In the Platform section, check **Android** and un-check all other boxes. Click **OK**.
 
 Xamarin will create a new solution with two projects: **TimeChangerForms** and **TimeChangerForms.Android.**
 
 ## Create a UI with XAML
 
-Expand the **TimeChangerForms** project and open **MainPage.xaml**. The XAML in this file will be the first screen a user will see when they open TimeChanger.
+Expand the **TimeChangerForms** project and open **MainPage.xaml**. The XAML in this file defines the first screen a user will see when opening TimeChanger.
 
 TimeChanger's UI is simple. It displays the current time, and has buttons to adjust the time in increments of one hour. It uses a vertical StackLayout to align the time above the buttons, and a horizontal StackLayout to arrange the buttons side-by-side. The content is centered in the screen by setting the vertical StackLayout's **HorizontalOptions** and **VerticalOptions** to **"CenterAndExpand"**.
 
@@ -88,7 +88,7 @@ In the Solution Explorer, right click MainPage.xaml and click **View Code**. Thi
 
 Code in this file can reference controls declared in the XAML using the value of the control's **x:Name** attribute. In this case the label that displays the current time is called `time`.
 
-UI controls must be updated on the main thread. Changes made from another thread may not properly update the control as it displays on the screen. because there is no guarantee this code will always be running on the main thread, use the **BeginInvokeOnMainThread** method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
+UI controls must be updated on the main thread. Changes made from another thread may not properly update the control as it displays on the screen. Because there is no guarantee this code will always be running on the main thread, use the **BeginInvokeOnMainThread** method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
 
 ```csharp
 private void UpdateTimeLabel(object state = null)
@@ -103,7 +103,7 @@ private void UpdateTimeLabel(object state = null)
 
 ### Update the current time once every second
 
-At this point, the current time will be accurate for, at most, one second after TimeChangerForms is launched. We'll need to periodically update the Label to keep the time accurate. A **Timer** object can be set to call a callback method periodically, which is exactly what we want.
+At this point, the current time will be accurate for, at most, one second after TimeChangerForms is launched. The label must be periodically updated to keep the time accurate. A **Timer** object will periodically call a callback method that updates the label with the current time.
 
 ```csharp
 var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
@@ -200,5 +200,5 @@ To run the app, press **F5** or click Debug > Start Debugging. If you are using 
 **To do.**
 
 - Configure your dev machine to do Android development
-- Create an Android sample app using Xamarin.Android
+- [Create an Android sample app using Xamarin.Android](xamarin-android.md)
 - Create an iOS sample app using Xamarin.iOS

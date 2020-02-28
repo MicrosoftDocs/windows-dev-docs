@@ -44,7 +44,7 @@ Xamarin will create a new solution with a single project named **TimeChangerAndr
 
 ## Create a UI with XAML
 
-Open **activity_main.xml** located in **Resources\layout**. This file defines the UI for the first screen a user will see when they open TimeChanger.
+Open **activity_main.xml** located in **Resources\layout**. The XML in this file defines the first screen a user will see when opening TimeChanger.
 
 TimeChanger's UI is simple. It displays the current time, and has buttons to adjust the time in increments of one hour. It uses a vertical LinearLayout to align the time above the buttons, and a horizontal LinearLayout to arrange the buttons side-by-side. The content is centered in the screen by setting the vertical LinearLayout's **android:gravity** attribute to **center**.
 
@@ -82,7 +82,7 @@ Replace the contents of activity_main.xml with the following code.
 </LinearLayout>
 ```
 
-At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the time will not display and the buttons can be clicked but do not do anything. In the next section, you will add functionality to your UI.
+At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the current time will not be displayed and though the buttons can be clicked, they will do not do anything. In the next section, you will add functionality to your UI.
 
 ## Add logic code with C#
 
@@ -111,7 +111,7 @@ private void UpdateTimeLabel(object state = null)
 
 ### Update the current time once every second
 
-At this point, the current time will be accurate for, at most, one second after TimeChangerAndroid is launched. We'll need to periodically update the TextView to keep the time accurate. A **Timer** object can be set to call a callback method periodically, which is exactly what we want.
+At this point, the current time will be accurate for, at most, one second after TimeChangerAndroid is launched. The label must be periodically updated to keep the time accurate. A **Timer** object will periodically call a callback method that updates the label with the current time.
 
 ```csharp
 var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
@@ -173,7 +173,7 @@ namespace TimeChangerAndroid
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            // Set our view from the "main" layout resource
+            // Set the view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
@@ -230,5 +230,5 @@ To run the app, press **F5** or click Debug > Start Debugging. If you are using 
 **To do.**
 
 - Configure your dev machine to do Android development
-- Create an Android sample app using Xamarin.Android
+- [Create an Android sample app using Xamarin Forms](xamarin-forms-android.md)
 - Create an iOS sample app using Xamarin.iOS
