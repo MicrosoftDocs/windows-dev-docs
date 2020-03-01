@@ -68,6 +68,7 @@ When you reserved a name for your app, the Windows Store created your associated
 5.	Upload the SID and client secret to your cloud server.
 **Important**  The SID and client secret should be securely stored and accessed by your cloud service. Disclosure or theft of this information could enable an attacker to send notifications to your users without your permission or knowledge.
 
+## Requesting a notification channel
 
 When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). For a full discussion and example code, see [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
