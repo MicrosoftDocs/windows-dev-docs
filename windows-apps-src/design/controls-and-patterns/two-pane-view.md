@@ -66,7 +66,7 @@ These images show an app running on a single-screen and spanned across dual-scre
 
 The two-pane view has two panes where you place your content. It adjusts the size and arrangement of the panes depending on the space available to the window. The possible pane layouts are defined by the [TwoPaneViewMode](/uwp/api/microsoft.ui.xaml.controls.twopaneviewmode) enumeration:
 
-| Value | Description |
+| Enum value | Description |
 | - | - |
 | `SinglePane` | Only one pane is shown, as specified by the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) property. |
 | `Wide` | Panes are shown side-by-side, or a single pane is shown, as specified by the [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property. |
@@ -235,7 +235,7 @@ The two-pane view enters `Wide` mode when there's a single display that's wider 
 
 When the two-pane view is in wide mode, the [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property determines what to show:
 
-| [Value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration) | Description |
+| [Enum value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration) | Description |
 |---------|---------|
 | `SinglePane` | A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions). |
 | `LeftRight` | `Pane1` on the left/`Pane2` on the right. Both panes are star sized vertically, `Pane1`'s width is autosized, and `Pane2`'s width is star sized. |
@@ -255,8 +255,7 @@ The two-pane view enters `Tall` mode when there's a single display that's narrow
 
 When the two-pane view is in tall mode, the [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) property determines what to show:
 
-
-| [Value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration) | Description |
+| [Enum value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration) | Description |
 |---------|---------|
 | `SinglePane` | A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions). |
 | `TopBottom` | `Pane1` on the top/`Pane2` on the bottom. Both panes are star sized horizontally, `Pane1`'s height is autosized, and `Pane2`'s height is star sized. |
