@@ -235,6 +235,13 @@ The two-pane view enters `Wide` mode when there's a single display that's wider 
 
 When the two-pane view is in wide mode, the [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property determines what to show:
 
+| [TwoPaneViewWideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration)  |Description  |
+|---------|---------|
+| `SinglePane` | A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions). |
+| `LeftRight` | `Pane1` on the left/`Pane2` on the right. Both panes are star sized vertically, `Pane1`'s width is autosized, and `Pane2`'s width is star sized. |
+| `RightLeft` | `Pane1` on the right/`Pane2` on the left. Both panes are star sized vertically, `Pane2`'s width is autosized, and `Pane1`'s width is star sized. |
+
+
 - `SinglePane` - A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions).
 - `LeftRight` - `Pane1` on the left/`Pane2` on the right. Both panes are star sized vertically, `Pane1`'s width is autosized, and `Pane2`'s width is star sized.
 - `RightLeft` - `Pane1` on the right/`Pane2` on the left. Both panes are star sized vertically, `Pane2`'s width is autosized, and `Pane1`'s width is star sized.
@@ -276,7 +283,7 @@ If you set `MinTallModeHeight` to 0, it prevents the two-pane view from entering
 You can use the read-only [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) property to get the current display mode. Whenever the two-pane view changes which pane or panes it's displaying, the [ModeChanged](/uwp/api/microsoft.ui.xaml.controls.twopaneview.modechanged) event occurs before it renders the updated content. You can handle the event to respond to changes in the display mode.
 
 > [!TIP]
-> The `ModeChanged` property does not occur when the page is initially loaded, so your default XAML should represent the UI as it should appear when first loaded.
+> The `ModeChanged` event does not occur when the page is initially loaded, so your default XAML should represent the UI as it should appear when first loaded.
 
 One way you can use this event is to update your app's UI so users can view all the content in `SinglePane` mode. For example, the example app has a primary pane (the image) and an info pane.
 
