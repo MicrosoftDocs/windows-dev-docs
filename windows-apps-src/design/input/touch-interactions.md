@@ -68,10 +68,8 @@ The following table shows some of the differences between input devices that you
 <tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
 </tbody></table>
 
-
-
-**Note**  
-Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
+> [!NOTE]
+> Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
 
  
 
@@ -148,7 +146,8 @@ In addition, the following are strongly recommended:
 -   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
 -   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
 
-    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
+   > [!NOTE]
+   > An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
 
      
 
@@ -410,7 +409,9 @@ End Sub
 Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
 
 You can use manipulation events to detect interactions such as drag, zoom, and hold.
-**NOTE** The touchpad does not raise Manipulation events. Instead, pointer events will be raised for touchpad input.
+
+> [!NOTE]
+> The touchpad does not raise Manipulation events. Instead, pointer events will be raised for touchpad input.
 
 Here is a list of manipulation events and related event arguments.
 
@@ -434,7 +435,8 @@ A gesture consists of a series of manipulation events. Each gesture starts with 
 
 Next, one or more [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) event is raised when the interaction finishes.
 
-**Note**  If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
+> [!NOTE]
+> If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
 
  
 
