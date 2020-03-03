@@ -110,6 +110,8 @@ In the [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uie
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
+**NOTE** This section describes touch input. Touchpad sends pointer events and will not send Manipulation events.
+
 ### Handling policy-based playback degradation
 
 In some circumstances the system may degrade the playback of a media item, such as reducing the resolution (constriction), based on a policy rather than a performance issue. For example, video may be degraded by the system if it is being played using an unsigned video driver. You can call [**MediaPlaybackSession.GetOutputDegradationPolicyState**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.getoutputdegradationpolicystate#Windows_Media_Playback_MediaPlaybackSession_GetOutputDegradationPolicyState) to determine if and why this policy-based degredation is occurring and alert the user or record the reason for telemetry purposes.
