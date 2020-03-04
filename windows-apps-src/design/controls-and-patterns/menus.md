@@ -21,9 +21,10 @@ Menus and context menus display a list of commands or options when the user requ
 
 ![Example of a typical context menu](images/contextmenu_rs2_icons.png)
 
-| **Get the Windows UI Library** |
-| - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Get the Windows UI Library**
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The MenuBar control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
@@ -52,7 +53,7 @@ You can also use a MenuBar in conjunction with a CommandBar. Use the MenuBar to 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/MenuFlyout">open the app and see the MenuFlyout in action</a>.</p>
     <ul>

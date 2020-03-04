@@ -19,6 +19,11 @@ The NavigationView control provides top-level navigation for your app. It adapts
 ![top navigation](images/nav-view-header.png)<br/>
 _Navigation view supports both top and left navigation pane or menu_
 
+**Get the Windows UI Library**
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The NavigationView control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
 > **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > **Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview)
@@ -40,7 +45,7 @@ For other navigation patterns, see [Navigation design basics](../basics/navigati
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
     <ul>

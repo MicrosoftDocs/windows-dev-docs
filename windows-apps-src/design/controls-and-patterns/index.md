@@ -10,15 +10,15 @@ ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ---
 
-# Controls for UWP apps 
+# Controls for UWP apps
 
 ![Controls](../images/controls-2x.png)
 
 In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
 
-We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes. 
+We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.
 
-The articles in this section provide design guidance and coding instructions for adding controls & patterns to your UWP app. 
+The articles in this section provide design guidance and coding instructions for adding controls & patterns to your UWP app.
 
 ## Intro
 
@@ -36,85 +36,68 @@ General instructions and code examples for adding and styling controls in XAML a
 :::row-end:::
 
 ## Get the Windows UI Library
-Some controls are only available in the Windows UI Library. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).
 
-## Alphabetical index 
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). |
 
-Detailed information about specific controls and patterns. (For a list sorted by function, see <a href="controls-by-function.md">Index of controls by function</a>.)
+## Alphabetical index
 
-<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
-<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
-<li style="list-style-type: none;"><a href="auto-suggest-box.md">Auto-suggest box</a></li>
+Detailed information about specific controls and patterns. (For a list sorted by function, see [Index of controls by function](controls-by-function.md).)
 
-<li style="list-style-type: none;"><a href="app-bars.md">Bars</a></li>
+:::row:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="buttons.md">Buttons</a></li>
+    :::column-end:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="checkbox.md">Checkbox </a></li>
+    :::column-end:::
+:::row-end:::
 
-<li style="list-style-type: none;"><a href="color-picker.md">Color picker</a></li>
-
-<li style="list-style-type: none;"><a href="contact-card.md">Contact card</a></li>
-
-<li style="list-style-type: none;"><a href="date-and-time.md">Date and time controls</a></li>
-
-<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Dialogs and flyouts</a></li>
-
-<li style="list-style-type: none;"><a href="flipview.md">Flip view</a></li>
-
-<li style="list-style-type: none;"><a href="forms.md">Forms</a></li>
-
-<li style="list-style-type: none;"><a href="hyperlinks.md">Hyperlinks</a></li>
-
-<li style="list-style-type: none;"><a href="images-imagebrushes.md">Images and image brushes</a></li>
-
-<li style="list-style-type: none;"><a href="inking-controls.md">Inking controls</a></li>
-
-<li style="list-style-type: none;"><a href="lists.md">Lists</a></li>
-
-<li style="list-style-type: none;"><a href="../../maps-and-location/controls-map.md">Map control</a></li>
-
-<li style="list-style-type: none;"><a href="master-details.md">Master/details</a></li>
-
-<li style="list-style-type: none;"><a href="media-playback.md">Media playback</a></li>
-
-<li style="list-style-type: none;"><a href="menus.md">Menus and context menus</a></li>
-
-<li style="list-style-type: none;"><a href="navigationview.md">Navigation view</a></li>
-
-<li style="list-style-type: none;"><a href="person-picture.md">Person picture</a></li>
-
-<li style="list-style-type: none;"><a href="pivot.md">Pivot</a></li>
-
-<li style="list-style-type: none;"><a href="progress-controls.md">Progress controls</a></li>
-
-<li style="list-style-type: none;"><a href="radio-button.md">Radio button</a></li>
-
-<li style="list-style-type: none;"><a href="rating.md">Rating control</a></li>
-
-<li style="list-style-type: none;"><a href="scroll-controls.md">Scrolling and panning controls</a></li>
-
-<li style="list-style-type: none;"><a href="search.md">Search</a></li>
-
-<li style="list-style-type: none;"><a href="semantic-zoom.md">Semantic zoom</a></li>
-
-<li style="list-style-type: none;"><a href="shapes.md">Shapes</a></li>
-
-<li style="list-style-type: none;"><a href="slider.md">Slider</a></li>
-
-<li style="list-style-type: none;"><a href="split-view.md">Split view</a></li>
-
-<li style="list-style-type: none;"><a href="text-controls.md">Text controls</a></li>
-
-
-<li style="list-style-type: none;"><a href="toggles.md">Toggle</a></li>
-<li style="list-style-type: none;"><a href="tooltips.md">Tooltips</a></li>
-
-<li style="list-style-type: none;"><a href="tree-view.md">Tree view</a></li>
-
-<li style="list-style-type: none;"><a href="web-view.md">Web view</a></li>
-</ul>
-</div>
+- AnimatedVisualPlayer (see [Lottie](/windows/communitytoolkit/animations/lottie))
+- [Auto-suggest box](auto-suggest-box.md)
+- [Buttons](buttons.md) ![WinUI logo](images/winui-logo-16x16.png)
+- Button (see [Buttons](buttons.md))
+- Repeat button (see [Buttons](buttons.md))
+- Hyperlink button (see [Hyperlinks](hyperlinks.md))
+- Drop down Button (see [Buttons](buttons.md))
+- Split button (see [Buttons](buttons.md))
+- Toggle split button (see [Buttons](buttons.md))
+- Toggle button (see [Buttons](buttons.md))
+- [Checkbox](checkbox.md)
+- [Color picker](color-picker.md) ![WinUI logo](images/winui-logo-16x16.png)
+- Combo box (see [Combo box and list box](combo-box.md))
+- [Command bar](app-bars.md)
+- [Contact card](contact-card.md)
+- [Date and time controls](date-and-time.md)
+- [Dialogs and flyouts](dialogs-and-flyouts/index.md)
+- [Flip view](flipview.md)
+- [Forms](forms.md)
+- Hyperlink (see [Hyperlinks](hyperlinks.md))
+- [Images and image brushes](images-imagebrushes.md)
+- [Inking controls](inking-controls.md)
+- [Lists](lists.md)
+- [Map control](../../maps-and-location/controls-map.md)
+- [Master/details](master-details.md)
+- [Media playback](media-playback.md)
+- [Menus and context menus](menus.md)
+- [Navigation view](navigationview.md)
+- [Person picture](person-picture.md)
+- [Pivot](pivot.md)
+- [Progress controls](progress-controls.md)
+- [Radio button](radio-button.md)
+- [Rating control](rating.md)
+- [Scrolling and panning controls](scroll-controls.md)
+- [Search](search.md)
+- [Semantic zoom](semantic-zoom.md)
+- [Shapes](shapes.md)
+- [Slider](slider.md)
+- [Split view](split-view.md)
+- [Text controls](text-controls.md)
+- [Toggle](toggles.md)
+- [Tooltips](tooltips.md)
+- [Tree view](tree-view.md)
+- [Web view](web-view.md)
 
 ## XAML Controls Gallery
 
@@ -129,6 +112,4 @@ Get the _XAML Controls Gallery_ app from the Microsoft Store to see these contro
 ## Additional controls
 
 Additional controls for UWP development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
-<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.  
-
-If you're interested in learning more about these controls, check out the <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer orders database</a> sample on GitHub. This sample makes use of the data grid control and data entry validation from Telerik, which is part of their UI for UWP suite. The UI for UWP suite is a collection of over 20 controls that is available as an open source project through the .NET foundation.
+<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.
