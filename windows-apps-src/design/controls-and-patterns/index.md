@@ -48,56 +48,80 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
-    :::column-end:::
-    :::column:::
-
-    :::column-end:::
-:::row-end:::
-
-- AnimatedVisualPlayer (see [Lottie](/windows/communitytoolkit/animations/lottie))
+- AnimatedVisualPlayer (see [Lottie](/windows/communitytoolkit/animations/lottie)) ![WinUI logo](images/winui-logo-16x16.png)
 - [Auto-suggest box](auto-suggest-box.md)
-- [Buttons](buttons.md) ![WinUI logo](images/winui-logo-16x16.png)
 - Button (see [Buttons](buttons.md))
-- Repeat button (see [Buttons](buttons.md))
-- Hyperlink button (see [Hyperlinks](hyperlinks.md))
-- Drop down Button (see [Buttons](buttons.md))
-- Split button (see [Buttons](buttons.md))
-- Toggle split button (see [Buttons](buttons.md))
-- Toggle button (see [Buttons](buttons.md))
+- [Calendar date picker](calendar-date-picker.md) (see [Date and time controls](date-and-time.md))
+- [Calendar view](calendar-view.md) (see [Date and time controls](date-and-time.md))
 - [Checkbox](checkbox.md)
 - [Color picker](color-picker.md) ![WinUI logo](images/winui-logo-16x16.png)
 - Combo box (see [Combo box and list box](combo-box.md))
 - [Command bar](app-bars.md)
+- [Command bar flyout](command-bar-flyout.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Contact card](contact-card.md)
-- [Date and time controls](date-and-time.md)
+- [Content dialog](dialogs-and-flyouts/dialogs.md)
+- [Content link](content-links.md)
+- Content menu (see [Menus and context menus](menus.md))
+- [Date picker](date-picker.md) (see [Date and time controls](date-and-time.md))
 - [Dialogs and flyouts](dialogs-and-flyouts/index.md)
+- Drop down button (see [Buttons](buttons.md)) ![WinUI logo](images/winui-logo-16x16.png)
 - [Flip view](flipview.md)
+- [Flyout](dialogs-and-flyouts/flyouts.md)
 - [Forms](forms.md)
+- [Grid view](listview-and-gridview.md)
 - Hyperlink (see [Hyperlinks](hyperlinks.md))
+- Hyperlink button (see [Hyperlinks](hyperlinks.md))
 - [Images and image brushes](images-imagebrushes.md)
 - [Inking controls](inking-controls.md)
-- [Lists](lists.md)
+- [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/controls-map.md)
 - [Master/details](master-details.md)
 - [Media playback](media-playback.md)
-- [Menus and context menus](menus.md)
-- [Navigation view](navigationview.md)
-- [Person picture](person-picture.md)
+- Menu bar (see [Menus and context menus](menus.md)) ![WinUI logo](images/winui-logo-16x16.png)
+- Menu flyout (see [Menus and context menus](menus.md))
+
+    :::column-end:::
+    :::column:::
+
+- [Navigation view](navigationview.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Number box](number-box.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Parallax view](..\motion\parallax.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Password box](password-box.md)
+- [Person picture](person-picture.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Pivot](pivot.md)
-- [Progress controls](progress-controls.md)
+- Progress bar (see [Progress controls](progress-controls.md)) ![WinUI logo](images/winui-logo-16x16.png)
+- Progress ring (see [Progress controls](progress-controls.md))
 - [Radio button](radio-button.md)
-- [Rating control](rating.md)
-- [Scrolling and panning controls](scroll-controls.md)
+- [Rating control](rating.md) ![WinUI logo](images/winui-logo-16x16.png)
+- Repeat button (see [Buttons](buttons.md))
+- [Rich edit box](rich-edit-box.md)
+- [Rich text block](rich-text-block.md)
+- [Scroll viewer](scroll-controls.md)
 - [Search](search.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Shapes](shapes.md)
 - [Slider](slider.md)
+- Split button (see [Buttons](buttons.md)) ![WinUI logo](images/winui-logo-16x16.png)
 - [Split view](split-view.md)
-- [Text controls](text-controls.md)
-- [Toggle](toggles.md)
+- [Swipe control](swipe.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Tab view](tab-view.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Teaching tip](dialogs-and-flyouts/teaching-tip.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Text block](text-block.md)
+- [Text box](text-box.md)
+- [Time picker](time-picker.md) (see [Date and time controls](date-and-time.md))
+- [Toggle switch](toggles.md)
+- Toggle button (see [Buttons](buttons.md))
+- Toggle split button (see [Buttons](buttons.md))
 - [Tooltips](tooltips.md)
-- [Tree view](tree-view.md)
+- [Tree view](tree-view.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Two-pane view](two-pane-view.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Web view](web-view.md)
+
+    :::column-end:::
+:::row-end:::
+
+
+
 
 ## XAML Controls Gallery
 
