@@ -304,7 +304,65 @@ C++ collection types use the default constructor, which can result in unintended
 | Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-There's no shorthand for creating an array of empty references. You have to repeat `nullptr` for each element in the array. If you have too few, then the extras will be default-constructed.
+There's no shorthand for creating an array of empty references. If you use aggregate initialization but provide too few `nullptr`s, then the extras will be default-constructed:
+
+```cppwinrt
+// Still creates 2 TextBox objects!
+TextBox boxes[3]{ nullptr };
+```
+
+> [!NOTE]
+> Unlike for `std::vector`, the C++ language does not provide a convenient function that constructs an array with all elements initialized to the same value.  If you do need to create an array of empty references of which the size is an unknown constant or is large, you can use the STL `std::array` type with the `make_delayed_initialized_array<T, N>()` function defined as below:
+> 
+> ```cppwinrt
+> namespace
+> {
+>     template <std::nullptr_t... Nullptrs>
+>     struct nullptr_list
+>     {
+>         template <typename T>
+>         constexpr static std::array<T, sizeof...(Nullptrs)>
+>         impl_make_delayed_initialized_array() noexcept
+>         { return { Nullptrs... }; }
+>     };
+> 
+>     template <size_t N>
+>     struct make_nullptr_list;
+>     template <>
+>     struct make_nullptr_list<0> { using type = nullptr_list<>; };
+>     template <size_t N>
+>     struct make_nullptr_list
+>     {
+>         template <typename NullptrList>
+>         struct result;
+>         template <std::nullptr_t... Nullptrs>
+>         struct result<nullptr_list<Nullptrs...>>
+>         { using type = nullptr_list<nullptr, Nullptrs...>; }> ;
+> 
+>         using remainder = typename make_nullptr_list<N - 1>::type;
+>         using type = typename result<remainder>::type;
+>     };
+> 
+>     template <typename T, size_t N>
+>     constexpr auto make_delayed_initialized_array() noexcept
+>     {
+>         using n_nullptrs_list = typename make_nullptr_list<N>::type;
+>         return n_nullptrs_list::
+>             template impl_make_delayed_initialized_array<T>();
+>     }
+> }
+> ```
+> 
+> ```cppwinrt
+> // Creates a std::array of 100 empty references to TextBox.
+> std::array<TextBox, 100> boxes = make_delayed_initialized_array<TextBox, 100>();
+> 
+> // Creates a std::array of NUMBER_OF_TEXTBOXES empty references to TextBox,
+> // where NUMBER_OF_TEXTBOXES is a potentially compile-time-configurable constant.
+> auto boxes2 = make_delayed_initialized_array<TextBox, NUMBER_OF_TEXTBOXES>();
+> ```
+> 
+> However, a future edition of the C++ language might address that feature imparity between arrays and vectors.
 
 ### More about the **std::map** example
 
