@@ -79,11 +79,11 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) ![WinUI logo](images/winui-logo-16x16.png)
 - [Menu flyout](menus.md)
+- [Navigation view](navigationview.md) ![WinUI logo](images/winui-logo-16x16.png)
 
     :::column-end:::
     :::column:::
 
-- [Navigation view](navigationview.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Number box](number-box.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Parallax view](..\motion\parallax.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Password box](password-box.md)

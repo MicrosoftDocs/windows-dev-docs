@@ -33,6 +33,7 @@ Control | Description
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | A button that can be on or off.
 
 **Get the Windows UI Library**
+
 |  |  |
 | - | - |
 | ![WinUI logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
@@ -521,8 +522,8 @@ private void ApplyListStyle(string listStyle)
 
 - When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
   - OK/[Do it]/Yes
-	- [Don't do it]/No
-	- Cancel
+    - [Don't do it]/No
+    - Cancel
 
 - Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
 
