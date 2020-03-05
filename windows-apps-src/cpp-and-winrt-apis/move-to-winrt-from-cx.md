@@ -337,7 +337,7 @@ TextBox boxes[3]{ nullptr };
 >         struct result;
 >         template <std::nullptr_t... Nullptrs>
 >         struct result<nullptr_list<Nullptrs...>>
->         { using type = nullptr_list<nullptr, Nullptrs...>; }> ;
+>         { using type = nullptr_list<nullptr, Nullptrs...>; };
 > 
 >         using remainder = typename make_nullptr_list<N - 1>::type;
 >         using type = typename result<remainder>::type;
