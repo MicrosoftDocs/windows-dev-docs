@@ -56,6 +56,9 @@ The following diagram illustrates the hierarchy of objects in a XAML Island that
 
 ![DesktopWindowXamlSource architecture](images/xaml-islands/xaml-hosting-api-rev2.png)
 
+> [!NOTE]
+> When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) APIs won't provide the correct information for XAML Islands. For more information, see [this section](xaml-islands.md#window-host-context-for-xaml-islands).
+
 ## Related samples
 
 The way you use the UWP XAML hosting API in your code depends on your app type, the design of your app, and other factors. To help illustrate how to use this API in the context of a complete app, this article refers to code from the following samples.
