@@ -76,14 +76,6 @@ Be aware of the following details:
 
 * If you're hosting a custom UWP control, your WPF or Windows Forms project must target .NET Core 3. Hosting custom UWP controls is not supported in apps that target the .NET Framework. You'll also need to perform some additional steps to reference the custom control. For more info, see [Host a custom UWP control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
-### Architecture of XAML Island .NET controls
-
-Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the UWP XAML hosting API.
-
-![Host control Architecture](images/xaml-islands/host-controls.png)
-
-The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.
-
 ### Web view controls
 
 The Windows Community Toolkit also provides the following .NET controls for hosting web content in WPF and Windows Forms applications. These controls are often used in similar desktop app modernization scenarios as the XAML Island controls, and they are maintained in the same [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) repo as the XAML Island controls.
@@ -106,6 +98,33 @@ The UWP XAML hosting API consists of several Windows Runtime classes and COM int
 
 > [!NOTE]
 > The wrapped controls and host controls in the Windows Community Toolkit use the UWP XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the UWP XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the UWP XAML hosting API directly because they abstract away many of the implementation details of using the API.
+
+## Architecture of XAML Islands
+
+Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the UWP XAML hosting API.
+
+![Host control Architecture](images/xaml-islands/host-controls.png)
+
+The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.
+
+## Window host context for XAML Islands
+
+When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) classes won't provide the correct information for XAML Islands. [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) objects do exist on the thread and are accessible to your app, but they won’t return meaningful bounds or visibility (they are always invisible and have a size of 1x1). For more information, see [Windowing hosts](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
+
+For example, to get the bounding rectangle of the window that contains a UWP control that is hosted in a XAML Island, use the [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) property of the control. Because every UWP control that can be hosted in a XAML Island derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), you can use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) property of the control to access the **XamlRoot** object.
+
+```csharp
+Size windowSize = myUWPControl.XamlRoot.Size;
+```
+
+Do not use the [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) property to get the bounding rectangle.
+
+```csharp
+// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
+```
+
+For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) replacements, see the table in [this section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
 
 ## Feature roadmap
 
