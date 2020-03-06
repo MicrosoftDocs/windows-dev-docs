@@ -48,7 +48,7 @@ For a walkthrough that demonstrates how to use the wrapped UWP controls, see [Ho
 
 ### Host controls
 
-For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control that is available in the Windows Community Toolkit.
+For custom controls and other scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control that is available in the Windows Community Toolkit.
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
@@ -75,8 +75,6 @@ Be aware of the following details:
 * The host control packages are also included in the wrapped control packages. You can install the wrapped control packages if you want to use both sets of controls.
 
 * If you're hosting a custom UWP control, your WPF or Windows Forms project must target .NET Core 3. Hosting custom UWP controls is not supported in apps that target the .NET Framework. You'll also need to perform some additional steps to reference the custom control. For more info, see [Host a custom UWP control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
-
-* Earlier versions of these instructions had you add the `maxversiontested` element to an application manifest in your WPF or Windows Forms project. As long as you're using the latest versions of the NuGet packages listed above, you no longer need to add this element to your manifest.
 
 ### Architecture of XAML Island .NET controls
 
