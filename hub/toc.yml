@@ -108,6 +108,18 @@
           href: nodejs/databases.md
         - name: Get started with containers
           href: nodejs/containers.md
+  - name: Develop with Android
+    items:
+        - name: Overview
+          href: android/overview.md
+        - name: Get started with Native Android
+          href: android/native-android.md
+        - name: Get started with Cross-platform
+          items:
+            - name: Xamarin Native
+              href: android/xamarin-native.md
+            - name: Xamarin Forms
+              href: android/xamarin-forms.md
   - name: Mac to Windows guide
     items:
       - name: Changing your dev environment
