@@ -24,9 +24,7 @@ To host a custom UWP control in a WPF (or Windows Forms) app, you'll need the fo
 
 * **The custom UWP control**. You'll need the source code for the custom UWP control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.
 
-* **A UWP app project that defines a root Application class that derives from XamlApplication**. Your WPF or Windows Forms project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This object acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
-
-    The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF or Windows Forms project, revise the default `App` class in this project to derive from `XamlApplication`, and then create an instance of this object in the entry point code for your app.
+* **A UWP app project that defines a root Application class that derives from XamlApplication**. Your WPF or Windows Forms project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. The recommended way to do this is to define this object in a separate UWP app project that is part of the solution for your WPF or Windows Forms app. This object acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
 
     > [!NOTE]
     > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host to UWP controls on the XAML Island.
@@ -64,7 +62,7 @@ Before getting started, follow these instructions to create a WPF project and co
 
 ## Define a XamlApplication class in a UWP app project
 
-Next, add a UWP app project to the same solution as your WPF project. You will revise the default `App` class in this project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. For more information about the purpose of this class, see [this section](#required-components).
+Next, add a UWP app project to your solution and revise the default `App` class in this project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. Your app will use this class as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
 
 1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
 2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903** or later.
@@ -102,7 +100,7 @@ Next, add a UWP app project to the same solution as your WPF project. You will r
 
 ## Instantiate the XamlApplication object in the entry point of your WPF app
 
-Next, add code to the entry point for your WPF app to create an instance of the `App` class you just defined in the UWP project (this is the class that now derives from `XamlApplication`). For more information about the purpose of this object, see [this section](#required-components).
+Next, add code to the entry point for your WPF app to create an instance of the `App` class you just defined in the UWP project (this is the class that now derives from `XamlApplication`). This object acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
 
 1. In your WPF project, right-click the project node, select **Add** -> **New Item**, and then select **Class**. Name the class **Program** and click **Add**.
 
