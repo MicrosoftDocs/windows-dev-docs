@@ -304,9 +304,13 @@ C++ collection types use the default constructor, which can result in unintended
 | Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-While there is shorthand for creating a fixed-sized vector of empty references (see table above), there's no such shorthand for creating an *array* of empty references. You have to repeat `nullptr` for each element in an array. If you have too few, then the extras will be default-constructed.
+### More about collections of empty references
 
-But for a vector, you can fill it with empty references at initialization (as in the table above), or you can fill it with empty references post-initialization with code such as this.
+Whenever you have a **Platform::Array\^** (see [Port **Platform::Array\^**](#port-platformarray)) in C++/CX, you have the choice to port that to a **std::vector** in C++/WinRT (in fact, any contiguous container) rather than leave it as an array. There are advantages to choosing **std::vector**.
+
+For example, while there is shorthand for creating a fixed-sized vector of empty references (see table above), there's no such shorthand for creating an *array* of empty references. You have to repeat `nullptr` for each element in an array. If you have too few, then the extras will be default-constructed.
+
+For a vector, you can fill it with empty references at initialization (as in the table above), or you can fill it with empty references post-initialization with code such as this.
 
 ```cppwinrt
 std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
@@ -533,7 +537,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### Port **Platform::Array\^**
 
-Your options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+In cases where C++/CX requires you to use an array, C++/WinRT allows you to use any contiguous container. See [How the default constructor affects collections](#how-the-default-constructor-affects-collections) for a reason why **std::vector** is a good choice.
+
+So, whenever you have a **Platform::Array\^** in C++/CX, your porting options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
 
