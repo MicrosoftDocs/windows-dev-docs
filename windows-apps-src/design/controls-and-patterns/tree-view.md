@@ -64,7 +64,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
     <ul>
@@ -89,7 +89,7 @@ You can include an icon in the tree view item data template to represent nodes. 
 
 You can create a tree view by binding the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
 
-To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control’s [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
+To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control's [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
 
 You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) that renders the item.
 

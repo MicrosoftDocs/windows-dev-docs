@@ -39,7 +39,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TextBox">open the app and see the TextBox in action</a>.</p>
     <ul>
@@ -75,7 +75,7 @@ Here's the text box that results from this XAML.
 
 ### Use a text box for data input in a form
 
-It’s common to use a text box to accept data input on a form, and use the [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) or [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) event if you need to do something when the text changes.
+It's common to use a text box to accept data input on a form, and use the [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) or [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) event if you need to do something when the text changes.
 
 This example shows how to get and set the current content of a text box.
 
@@ -137,7 +137,7 @@ There are two properties that you can use to control whether the text box displa
 
 > **Note**&nbsp;&nbsp;TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
 
-A multi-line text box will continue to grow vertically as text is entered unless it’s constrained by its [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) or [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) property, or by a parent container. You should test that a multi-line text box doesn’t grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
+A multi-line text box will continue to grow vertically as text is entered unless it's constrained by its [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) or [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) property, or by a parent container. You should test that a multi-line text box doesn't grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
 
 Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) to **Auto** on the embedded ScrollViewer, as shown here.
 

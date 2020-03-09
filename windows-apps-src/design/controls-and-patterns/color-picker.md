@@ -32,7 +32,7 @@ If your app is for drawing or similar tasks using pen, consider using [Inking co
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ColorPicker">open the app and see the ColorPicker in action</a>.</p>
     <ul>
@@ -57,7 +57,7 @@ By default, the color picker shows a preview of the chosen color on the rectangu
 
 When the color selection should take effect immediately, you can either use databinding to bind to the Color property, or handle the ColorChanged event to access the selected color in your code.
 
-In this example, you bind the Color property of a SolidColorBrush that’s used as the Fill for a Rectangle directly to the color picker’s selected color. Any change to the color picker results in a live change to the bound property.
+In this example, you bind the Color property of a SolidColorBrush that's used as the Fill for a Rectangle directly to the color picker's selected color. Any change to the color picker results in a live change to the bound property.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -198,7 +198,7 @@ Hex values | IsHexInputVisible
 - Do think about what kind of color picking experience is appropriate for your app. Some scenarios may not require granular color picking and would benefit from a simplified picker
 - For the most accurate color picking experience, use the square spectrum and ensure it is at least 256x256px, or include the text input fields to let users refine their selected color.
 - When used in a flyout, tapping in the spectrum or adjusting the slider alone should not commit the color selection. To commit the selection:
-  - Provide commit and cancel buttons to apply or cancel the selection. Hitting the back button or tapping outside of the flyout will dismiss it, and not save the user’s selection.
+  - Provide commit and cancel buttons to apply or cancel the selection. Hitting the back button or tapping outside of the flyout will dismiss it, and not save the user's selection.
   - Or, commit the selection upon dismissing the flyout, by either tapping outside of the flyout or hitting the back button.
 
 ## Get the sample code

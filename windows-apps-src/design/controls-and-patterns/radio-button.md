@@ -49,14 +49,14 @@ If there are more than 8 options, use a [drop-down list](lists.md) or [list box]
 
 ![combo box](images/combo_box_scroll.png)
 
-If the available options are based on the app’s current context, or can otherwise vary dynamically, use a single-select [list box](lists.md).
+If the available options are based on the app's current context, or can otherwise vary dynamically, use a single-select [list box](lists.md).
 
 ## Examples
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RadioButton">open the app and see the RadioButton in action</a>.</p>
     <ul>
@@ -168,7 +168,7 @@ A radio button has two states: *selected* or *cleared*. When a radio button is s
 ## Recommendations
 
 -   Make sure the purpose and current state of a set of radio buttons is clear.
--   Limit the radio button’s text content to a single line.
+-   Limit the radio button's text content to a single line.
 -   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
 -   Use the default font unless your brand guidelines tell you to use another.
 -   Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.

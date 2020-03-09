@@ -33,7 +33,7 @@ For example, when viewing an address book, the user could zoom out to quickly ju
 
 ## Is this the right control?
 
-Use a **SemanticZoom** control when you need to show a grouped data set that's large enough that it can’t all be shown on one or two pages.
+Use a **SemanticZoom** control when you need to show a grouped data set that's large enough that it can't all be shown on one or two pages.
 
 Don't confuse semantic zooming with optical zooming. While they share both the same interaction and basic behavior (displaying more or less detail based on a zoom factor), optical zoom refers to the adjustment of magnification for a content area or object such as a photograph. For info about a control that performs optical zooming, see the [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) control.
 
@@ -42,7 +42,7 @@ Don't confuse semantic zooming with optical zooming. While they share both the s
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/SemanticZoom">open the app and see the SemanticZoom in action</a>.</p>
     <ul>
@@ -67,7 +67,7 @@ An address book is another example of a data set that can be much easier to navi
 
 ## Create a semantic zoom
 
-The **SemanticZoom** control doesn’t have any visual representation of its own. It’s a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
+The **SemanticZoom** control doesn't have any visual representation of its own. It's a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
 
 The 3 elements you need for a semantic zoom are:
 - A grouped data source. (Groups are defined by the GroupStyle definition in the zoomed-in view.)

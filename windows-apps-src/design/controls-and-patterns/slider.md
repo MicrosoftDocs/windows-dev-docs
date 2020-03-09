@@ -54,7 +54,7 @@ Use a slider if:
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Slider">open the app and see the Slider in action</a>.</p>
     <ul>
@@ -170,7 +170,7 @@ The range direction is the direction you move the slider when you slide it from 
 
     -   If you need a value label, display it below the slider.
     -   Center the text relative to the control and include the units (such as pixels).
-    -   Since the slider’s thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
+    -   Since the slider's thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
 
 ### Appearance and interaction
 
@@ -178,7 +178,7 @@ A slider is composed of a track and a thumb. The track is a bar (which can optio
 
 A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
 
-When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
+When you're designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
 
 ## Get the sample code
 

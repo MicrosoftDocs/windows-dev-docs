@@ -23,7 +23,7 @@ A calendar view lets a user view and interact with a calendar that they can navi
 ## Is this the right control?
 Use a calendar view to let a user pick a single date or a range of dates from an always visible calendar.
 
-If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don’t need a calendar to be always visible, consider using a [calendar date picker](calendar-date-picker.md) or [date picker](date-picker.md) control.
+If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a [calendar date picker](calendar-date-picker.md) or [date picker](date-picker.md) control.
 
 For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
@@ -32,7 +32,7 @@ For more info about choosing the right control, see the [Date and time controls]
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/CalendarView">open the app and see the CalendarView in action</a>.</p>
     <ul>
@@ -83,7 +83,7 @@ You can handle the [SelectedDatesChanged](https://docs.microsoft.com/uwp/api/win
 
 The calendar view is composed of both XAML elements defined in the ControlTemplate and visual elements rendered directly by the control. 
 - The XAML elements defined in the control template include the border that encloses the control, the header, previous and next buttons, and DayOfWeek elements. You can style and re-template these elements like any XAML control. 
-- The calendar grid is composed of [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) objects. You can’t style or re-template these elements, but various properties are provided to let you to customize their appearance.
+- The calendar grid is composed of [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) objects. You can't style or re-template these elements, but various properties are provided to let you to customize their appearance.
 
 This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) class.
 

@@ -53,7 +53,7 @@ When should you use a tooltip? To decide, consider these questions:
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ToolTip">open the app and see the ToolTip in action</a>.</p>
     <ul>
@@ -119,7 +119,7 @@ For broad adjustments, use the [Placement](/uwp/api/windows.ui.xaml.controls.too
 </Image>
 ```
 
-If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the new **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there’s sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip’s owner, and the height and width of the exclusion area. The [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect. 
+If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the new **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

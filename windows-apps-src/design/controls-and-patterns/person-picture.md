@@ -38,7 +38,7 @@ The illustration shows person picture control in a list of contacts:
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/PersonPicture">open the app and see the PersonPicture in action</a>.</p>
     <ul>
@@ -88,9 +88,9 @@ You can use the person picker control to display a [Contact](https://docs.micros
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-		<PersonPicture
-			Contact="{x:Bind CurrentContact, Mode=OneWay}" />
-			
+        <PersonPicture
+            Contact="{x:Bind CurrentContact, Mode=OneWay}" />
+            
         <Button Click="LoadContactButton_Click">Load contact</Button>
     </StackPanel>
 </Page>
@@ -145,7 +145,7 @@ namespace SampleApp
 
             // Get the app folder where the images are stored.
             var appInstalledFolder = 
-				Windows.ApplicationModel.Package.Current.InstalledLocation;
+                Windows.ApplicationModel.Package.Current.InstalledLocation;
             var assets = await appInstalledFolder.GetFolderAsync("Assets");
             var imageFile = await assets.GetFileAsync("betsy.png");
             contact.SourceDisplayPicture = imageFile;
