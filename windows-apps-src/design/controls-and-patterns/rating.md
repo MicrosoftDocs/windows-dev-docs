@@ -15,6 +15,14 @@ ms.localizationpriority: medium
 
 The rating control allows users to view and set ratings that reflect degrees of satisfaction with content and services. Users can interact with the rating control with touch, pen, mouse, gamepad or keyboard. The follow guidance shows how to use the rating control's features to provide flexibility and customization.
 
+![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
+
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **RatingControl** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
 > **Important APIs**: [RatingControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## Examples
@@ -32,8 +40,6 @@ The rating control allows users to view and set ratings that reflect degrees of 
 </td>
 </tr>
 </table>
-
-![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
 
 ### Editable rating with placeholder value
 

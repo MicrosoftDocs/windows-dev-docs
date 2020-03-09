@@ -18,6 +18,8 @@ ms.localizationpriority: medium
 
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 
+![Example of date picker](images/date-picker-closed.png)
+
 **Get the Windows UI Library**
 
 |  |  |

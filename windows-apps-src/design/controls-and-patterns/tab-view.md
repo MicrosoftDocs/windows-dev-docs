@@ -12,9 +12,15 @@ ms.localizationpriority: medium
 
 The TabView control is a way to display a set of tabs and their respective content. TabViews are useful for displaying several pages (or documents) of content while giving a user the capability to rearrange, open, or close new tabs.
 
-> **Important APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
-
 ![Example of a TabView](images/tabview/tab-introduction.png)
+
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Important APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ## Is this the right control?
 
