@@ -55,7 +55,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Calendar view](calendar-view.md)
 - [Checkbox](checkbox.md)
 - [Color picker](color-picker.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Combo box](combo-box.md))
+- [Combo box](combo-box.md)
 - [Command bar](app-bars.md)
 - [Command bar flyout](command-bar-flyout.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Contact card](contact-card.md)

@@ -16,12 +16,15 @@ ms.localizationpriority: medium
 ---
 # Date picker
 
- 
+The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 
-The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Important APIs**: [DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Date property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
-
 
 ## Is this the right control?
 Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.

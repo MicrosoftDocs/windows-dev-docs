@@ -22,9 +22,10 @@ Menus and context menus display a list of commands or options when the user requ
 ![Example of a typical context menu](images/contextmenu_rs2_icons.png)
 
 **Get the Windows UI Library**
+
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The MenuBar control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **MenuBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
@@ -102,7 +103,7 @@ Consider providing menu item icons for:
 - Menu items whose icon is standard or well known.
 - Menu items whose icon well illustrates what the command does.
 
-Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren’t helpful, create visual clutter, and prevent users from focusing on the important menu items.
+Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.
 
 ![Example context menu with icons](images/contextmenu_rs2_icons.png)
 

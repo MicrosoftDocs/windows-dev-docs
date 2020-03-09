@@ -20,9 +20,10 @@ The NavigationView control provides top-level navigation for your app. It adapts
 _Navigation view supports both top and left navigation pane or menu_
 
 **Get the Windows UI Library**
+
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The NavigationView control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **NavigationView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
 >

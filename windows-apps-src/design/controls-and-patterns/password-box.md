@@ -15,13 +15,17 @@ ms.localizationpriority: medium
 ---
 # Password box
 
- 
-
 A password box is a text input box that conceals the characters typed into it for the purpose of privacy. A password box looks like a text box, except that it renders placeholder characters in place of the text that has been entered. You can configure the placeholder character.
 
-> **Important APIs**: [PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [Password property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
-
 By default, the password box provides a way for the user to view their password by holding down a reveal button. You can disable the reveal button, or provide an alternate mechanism to reveal the password, such as a check box.
+
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Important APIs**: [PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [Password property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## Is this the right control?
 

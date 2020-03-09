@@ -14,12 +14,15 @@ ms.localizationpriority: medium
 ---
 # Flip view
 
- 
-
 Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.
 
-> **Important APIs**: [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**Get the Windows UI Library**
 
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Important APIs**: [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## Is this the right control?
 

@@ -17,13 +17,15 @@ ms.localizationpriority: medium
 
 A progress control provides feedback to the user that a long-running operation is underway. It can mean that the user cannot interact with the app when the progress indicator is visible, and can also indicate how long the wait time might be, depending on the indicator used.
 
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ProgressBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
 | [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive) | [ProgressBar class](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
-
-| **Get the Windows UI Library** |
-| - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > [!NOTE]
 > There are two versions of the ProgressBar control: one in the platform, represented by the Windows.UI.Xaml namespace; the other in the Windows UI Library, the Microsoft.UI.Xaml namespace. Although the API for ProgressBar is the same, the control's appearance differs between these two versions. This document will show images of the newer Windows UI Library version.
