@@ -107,9 +107,7 @@ _Note: The C#-style cast syntax is more flexible than the attached property synt
 
 #### Pathless casting
 
-The native bind parser doesn't provide a keyword to represent `this` as a function parameter, but it does support pathless casting (`{x:bind (x:String)}`), which can be used as a function parameter:
-
-`{x:Bind MethodName((namespace:TypeOfThis))}` is equivalent to `{x:Bind MethodName(this)}`
+The native bind parser doesn't provide a keyword to represent `this` as a function parameter, but it does support pathless casting (for example, `{x:Bind (x:String)}`), which can be used as a function parameter. Therefore, `{x:Bind MethodName((namespace:TypeOfThis))}` is a valid way to perform what is conceptually equivalent to `{x:Bind MethodName(this)}`.
 
 Example:
 
