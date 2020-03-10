@@ -22,9 +22,11 @@ A color picker is used to browse through and select colors. By default, it lets 
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | **ColorPicker** is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ColorPicker** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **Important APIs**: [ColorPicker class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **Windows UI Library APIs:** [ColorPicker class](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color property](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **Platform APIs:** [ColorPicker class](/uwp/api/windows.ui.xaml.controls.colorpicker), [Color property](/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## Is this the right control?
 

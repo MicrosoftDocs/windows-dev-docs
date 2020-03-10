@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
-> **Important APIs**: [CommandBar class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **Platform APIs:** [CommandBar class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![Example of a command bar with icons](images/controls_appbar_icons.png)
 
