@@ -3,18 +3,17 @@ Description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Windows Push Notification Services (WNS) overview
- 
+
+# Windows Push Notification Services (WNS) overview 
 
 The Windows Push Notification Services (WNS) enable third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 
 ## How it works
-
 
 The following diagram shows the complete data flow for sending a push notification. It involves these steps:
 
@@ -29,15 +28,52 @@ The following diagram shows the complete data flow for sending a push notificati
 
 ## Registering your app and receiving the credentials for your cloud service
 
-
-Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, sign in to [Partner Center](https://partner.microsoft.com/dashboard). After you create your app, you can retrieve the credentials by following the instructions on the **App Management - WNS/MPNS** page. If you want to use the Live Services solution, follow the **Live services site** link on this page.
+Before you can send notifications using WNS, your app must be registered with the Store Dashboard. 
 
 Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
 
-For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)).
+### Step 1: Register your app with the Dashboard
+
+Before you can send notifications through WNS, your app must be registered with the Partner Center Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, sign in to [Partner Center](https://partner.microsoft.com/dashboard). After you create your app, see [Product Management - WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions on how to retrieve the credentials (if you want to use the Live Services solution, follow the **Live services site** link on this page).
+
+To register:
+1.	Go to the Windows Store apps page of the Partner Center and sign in with your personal Microsoft account (ex: johndoe@outlook.com, janedoe@xboxlive.com).
+2.	Once you have signed in, click the Dashboard link.
+3.	On the Dashboard, select Create a new app.
+
+![wns app registration](../images/wns-create-new-app.png)
+
+4.	Create your app by reserving an app name. Provide a unique name for your app. Enter the name and click the Reserve product name button. If the name is available, it is reserved for your app. Once you have successfully reserved a name for your app, the other details become available to modify should you choose to do so at this time.
+
+![wns reserve product name](../images/wns-reserve-poduct-name.png)
+ 
+### Step 2: Obtain the identity values and credentials for your app
+
+When you reserved a name for your app, the Windows Store created your associated credentials. It also assigned associated identity values—name and publisher— that must be present in your app's manifest file (package.appxmanifest). If you have already uploaded your app to the Windows Store, these values will have automatically been added to your manifest. If you have not uploaded your app, you will need to add the identity values to your manifest manually.
+
+1.	Select the Product management dropdown arrow
+
+![wns product management](../images/wns-product-management.png)
+
+2.	On the Product management dropdown, select the WNS/MPNS link.
+
+![wns product management continuted](../images/wns-product-management2.png)
+ 
+3.	On the WNS/MPNS page, click the Live Services site link found under the Windows Push Notification Services (WNS) and Microsoft Azure Mobile Services section.
+
+![wns live services](../images/wns-live-services-page.png)
+ 
+4.	The Application Registration Portal (previously the Live Services page) page gives you an identity element to include in your app's manifest. This includes the app secret(s), Package Security Identifier, and the Application Identity. Open your manifest in a text editor and add that element as the page instructs.	
+
+> [!NOTE]
+> If you are logged in with an AAD account, you will need to contact the Microsoft account owner who registered the app to obtain the associated app secrets. If you need help finding this contact person, click the gear in the top right corner of your screen, then click developer settings and the email address of who created the app with their Microsoft account will be displayed there.
+ 
+5.	Upload the SID and client secret to your cloud server.
+
+> [!Important]
+> The SID and client secret should be securely stored and accessed by your cloud service. Disclosure or theft of this information could enable an attacker to send notifications to your users without your permission or knowledge.
 
 ## Requesting a notification channel
-
 
 When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). For a full discussion and example code, see [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
@@ -52,7 +88,6 @@ After the app has successfully created a channel URI, it sends it to its cloud s
 
 ## Authenticating your cloud service
 
-
 To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Microsoft Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
 
 The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
@@ -64,11 +99,10 @@ At a high level, the information chain is as follows:
 
 ![wns diagram for cloud service authentication](images/wns-diagram-02.jpg)
 
-In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) reference.
+In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field as shown in the following example. For syntax details, see the [access token request](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) reference.
 
-**Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
-
- 
+> [!NOTE]
+> This is just an example, not cut-and-paste code that you can successfully use in your own code. 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -163,7 +197,8 @@ There is no way to check the state of these two settings, but you can check the 
 
 If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
 
-**Tip**   When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
+> [!TIP]
+> When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
  
 
