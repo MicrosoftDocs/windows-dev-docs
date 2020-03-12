@@ -16,13 +16,14 @@ ms.localizationpriority: medium
 
 While it works on all Windows devices, the TwoPaneView control is designed to help you take full advantage of dual-screen devices automatically, with no special coding needed. On a dual-screen device, the two-pane view ensures that the user interface (UI) is split cleanly when it spans the gap between screens, so that your content is presented on either side of the gap.
 
-> **NOTE:** A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](/windows/uwp/design/layout/show-multiple-views) for more info about ways you can optimize your app for multiple monitors.)
+> [!NOTE]
+> A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](/windows/uwp/design/layout/show-multiple-views) for more info about ways you can optimize your app for multiple monitors.)
 
-| **Get the Windows UI Library** |
+| Get the Windows UI Library |
 | - |
 | This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/). |
 
-| **Platform APIs** | **Windows UI Library APIs** |
+| Platform APIs | Windows UI Library APIs |
 | - | - |
 | [TwoPaneView class](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
 
@@ -328,7 +329,7 @@ private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView send
 }
 ```
 
-## Do's and don'ts
+## Dos and don'ts
 
 - Do use the two-pane view whenever you can so that your app can take advantage of dual-screens and large screens.
 - Don't put a two-pane view inside another two-pane view.
