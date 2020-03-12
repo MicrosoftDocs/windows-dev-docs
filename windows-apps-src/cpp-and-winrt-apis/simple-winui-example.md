@@ -48,7 +48,7 @@ Next, open `MainPage.xaml`. In the existing opening **Page** tag there are some 
 
 In `MainPage.cpp`, delete the code inside your implementation of **MainPage::ClickHandler**, since *myButton* is no longer in the XAML markup.
 
-In `MainPage.h`, edit your includes so that they look like those in the listing below. If you were to use WinUI from more than one XAML page, then you could go into your precompiled header file (typically `pch.h`) and include them there instead.
+In `MainPage.h`, edit your includes so that they look like those in the listing below.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -58,7 +58,10 @@ In `MainPage.h`, edit your includes so that they look like those in the listing 
 
 Now build the project.
 
-When you add a NuGet package to a C++/WinRT project (such as the **Microsoft.UI.Xaml** package, which you added earlier), and build the project, the tooling generates a set of projection header files in your project's `\Generated Files\winrt` folder. If you've followed along with the walkthrough, you'll now have a `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` folder. The change you made to `MainPage.h` above causes those projection header files to be included in your project. And that's necessary so that references to types in the NuGet package will resolve.
+When you add a NuGet package to a C++/WinRT project (such as the **Microsoft.UI.Xaml** package, which you added earlier), and build the project, the tooling generates a set of projection header files in your project's `\Generated Files\winrt` folder. If you've followed along with the walkthrough, you'll now have a `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` folder. The edit you made to `MainPage.h` above causes those projection header files for WinUI to become visible to **MainPage**. And that's necessary so that the reference in **MainPage** to the **Microsoft::UI::Xaml::Controls::NavigationView** type will resolve.
+
+> [!IMPORTANT]
+> In a real-world application, you'll want the WinUI projection header files to be visible to *all* of the XAML pages in your project; not just to **MainPage**. In that case, you'd move the includes of the two WinUI projection header files into your precompiled header file (typically `pch.h`). Then, references anywhere in your project to types in the NuGet package will resolve. For a minimal, one-page application such as the one being built in this walkthrough, there's no need to use `pch.h`, and including the headers in `MainPage.h` is appropriate.
 
 You can now run the project.
 
