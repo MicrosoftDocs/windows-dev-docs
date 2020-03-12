@@ -6,8 +6,12 @@
       href: install.md
     - name: Customize settings
       items:
-        - name: Settings.json
-          href: customize-settings/settings-json.md
+        - name: Global settings
+          href: customize-settings/global-settings.md
+        - name: Profile settings
+          href: customize-settings/profile-settings.md
+        - name: Color schemes
+          href: customize-settings/color-schemes.md
         - name: Custom Keybindings
           href: customize-settings/custom-keybindings.md
     - name: Command line arguments

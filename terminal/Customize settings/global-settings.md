@@ -1,6 +1,6 @@
 ---
-title: Windows Terminal Custom Settings JSON File
-description: Learn how to customize Windows Terminal using the Settings.json file.
+title: Windows Terminal Global Settings
+description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
