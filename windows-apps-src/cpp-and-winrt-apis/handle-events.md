@@ -33,6 +33,9 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
@@ -54,6 +57,22 @@ MainPage::MainPage()
 
 > [!IMPORTANT]
 > When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see [If you use a member function as a delegate](weak-references.md#if-you-use-a-member-function-as-a-delegate).
+
+Here's an example that uses a static member function; note the simpler syntax.
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    Button().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+```
 
 There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
 
