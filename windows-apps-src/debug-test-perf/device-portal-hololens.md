@@ -95,7 +95,7 @@ The home page shows the following info:
 - **Device** Status: monitors the health of your device and reports critical errors.
 - **Windows information**: shows the name of the HoloLens and the currently installed version of Windows.
 - **Preferences** section contains the following settings:
-    - **IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead. The setting takes effect immediately. The default value was calculated automatically when you set up your device.
+    - **IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead. The setting takes effect immediately. The default value was calculated automatically when you set up your device. Not applicable for Hololens 2, since eye positions are computed by the system. 
     - **Device name**: Assign a name to the HoloLens. You must reboot the device after changing this value for it to take effect. After clicking Save, a dialog will ask if you want to reboot the device immediately or reboot later.
     - **Sleep settings**: Sets the length of time to wait before the device goes to sleep when it's plugged in and when it's on battery.
 
