@@ -22,7 +22,7 @@ Fortunately, Windows Defender has the capability to exclude files, project direc
 > [WARNING]
 > To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software.
 
-![Windows Defender Add Exclusion screenshot](./images/windows-defender-exclusions.png)
+![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
 
 To improve your Android build speed, add exclusions in the [Windows Defender Security Center](windowsdefender://) by:
 
