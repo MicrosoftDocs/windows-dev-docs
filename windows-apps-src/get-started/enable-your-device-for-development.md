@@ -187,7 +187,9 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 3.  To enable sideloading, edit the policies to enable:
 
     -   **Allow all trusted apps to install**
-
+---
+ mistake?
+---
     - OR -
 
     To enable developer mode, edit the policies to enable both:
