@@ -9,35 +9,39 @@ keywords: android on windows
 ms.date: 02/19/2020
 ---
 
-# Improve performance speed and build time by updating Windows Defender settings
+# Improve performance speed and build time by updating Windows Defender security settings
 
-To do.
+In Windows 10, version 1703 and later, the [Windows Defender Antivirus](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Windows Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
 
-On Windows 10, the [Windows Defender Antivirus]() is your default anti-malware engine to protect your device and data from viruses, toolkits, ransomware, and other security threats.
+**However**, Windows Defender's real-time protection will also dramatically slow file system access and build speed when developing Android apps.
 
-Windows Defender's real-time protection dramatically slows file system access.
+During the Android build process, many files are created on your computer. With antivirus real-time scanning enabled, the build process will halt each time a new file is created while the antivirus scans that file.
 
-The issue that is Windows Defender's Real-time protection is blocking an application from being able to read a file until it has read the file. It should, of course, be scanning in parallel - not synchronously delaying file access.
+Fortunately, Windows Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
 
-Fortunately, Windows Defender has the capability to skip synchronous checking of files based on a file extension - called Exclusions:
-What you can do is under Windows Defender, click Add an exclusion. Under File Types, click Exclude a file extension. Individually add the extensions:
+> [WARNING]
+> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software.
 
-pas - Delphi Source File
-dfm - Delphi Form
-dpr - Delphi Project
-dproj - Delphi Project File
-dcu - DCU file
-cs - C# source file
-txt - Text File
-pst - Outlook mailbox 
-https://answers.microsoft.com/en-us/windows/forum/windows_10-performance/windows-defender-real-time-protection-service/fda3f73e-cc0a-4946-9b9d-3c05057ef90c
+![Windows Defender Add Exclusion screenshot](./images/windows-defender-exclusions.png)
 
-This way you get all the security of real-time protection, with the blazing speed of unimpeded native file access performance.
+To improve your Android build speed, add exclusions in the [Windows Defender Security Center](windowsdefender://) by:
 
-Questions: 1. Are settings different for Android Studio (native) vs Xamarin or React (crossplat)? 2. Should this topic be in this page or it's own page or an FAQ?
+1. Select the Windows menu **Start** button
+2. Enter **Windows Security**
+3. Select **Virus and threat protection**
+4. Select **Manage settings** under **Virus & threat protection settings**
+5. Scroll to the **Exclusions** heading and select **Add or remove exclusions**
+6. Select **+ Add an exclusion**. You will then need to choose whether the exclusion you wish to add is a **File**, **Folder**, **File type**, or **Process**.
 
-Windows security software, Windows Defender,
-https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20
+The following list shows the default location of each Android Studio directory that you should exclude from real-time scanning:
 
-How to exclude files and folders from Windows Defender Antivirus scans
-https://www.windowscentral.com/how-exclude-files-and-folders-windows-defender-antivirus-scans
+- Gradle cache: `%USERPROFILE%\.gradle`
+- Android Studio projects: `%USERPROFILE%\AndroidStudioProjects`
+- Android SDK: `%USERPROFILE%\AppData\Local\Android\SDK`
+- Android Studio system files: `%USERPROFILE%\.AndroidStudio<version>\system`
+
+For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the [Antivirus Impact](https://developer.android.com/studio/intro/studio-config#antivirus-impact) section of the Android Studio documentation.
+
+<!-- Todo: Do these Windows Defender exclusions apply for the Xamarin or React cross-plat build speeds for Android development?  -->
+
+<!-- Should we include any other recommended exclusions?? For example, Aaron Stannard was very excited about the improvements ReSharper stuggested to exclude R#  and VS: https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20 -->

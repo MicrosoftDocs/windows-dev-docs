@@ -13,7 +13,7 @@ ms.date: 02/19/2020
 
 This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
 
-The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-for-android-development) if you have a specific purpose. The Android Studio SDK tools compile your code, data, and resource files into an archive Android package, .apk file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app. Learn more about Android [Application Fundamentals](https://developer.android.com/guide/components/fundamentals) in the Android docs.
+The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-for-android-development) if you have a specific purpose. The Android Studio SDK tools compile your code, data, and resource files into an archive Android package, .apk file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app.
 
 ## Install Android Studio
 
@@ -30,13 +30,13 @@ Select **File** > **New** > **New Project**.
 
 In the **Choose your project** window, you will be able to choose between these templates:
 
-    - **Basic Activity**: Creates a simple app with an app bar, a floating action button and two layout files: one for the activity and one to separate out text content.
+- **Basic Activity**: Creates a simple app with an app bar, a floating action button and two layout files: one for the activity and one to separate out text content.
 
-    - **Empty Activity**: Creates an empty activity and a single layout file with sample text content.
+- **Empty Activity**: Creates an empty activity and a single layout file with sample text content.
 
-    - **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. See see the [Bottom Navigation Component](https://material.io/guidelines/components/bottom-navigation.html) in Google's material design guidelines.
+- **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. See see the [Bottom Navigation Component](https://material.io/guidelines/components/bottom-navigation.html) in Google's material design guidelines.
 
-    - Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
+- Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
 
 Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app’s users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
 
@@ -132,6 +132,6 @@ The mistake of copying iOS UI/UX design by cross plat developers is common..? --
 ## Additional resources
 
 <!-- - User interface principles for Android based on [Google Material Design](https://developer.android.com/design/material/index.html) -->
-
+- [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals): Learn more about the fundamentals in the Android docs.
 - [Create a sample app with Xamarin Forms](https://review.docs.microsoft.com/en-us/windows/xamarin/xamarin-forms-android?branch=android-draft): Try creating a sample Android application using Xamarin Forms.
 
