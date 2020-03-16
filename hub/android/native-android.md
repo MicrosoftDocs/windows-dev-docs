@@ -38,7 +38,7 @@ In the **Choose your project** window, you will be able to choose between these 
 
 - Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
 
-Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app’s users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
+Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app's users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
 
 > [!NOTE]
 > The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. They provide a window for building the user interface using classes based on the **View** class. There is a lifecycle for Activities in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Activities](https://developer.android.com/reference/android/app/Activity), the [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle), and [Intents](https://developer.android.com/reference/android/content/Intent.html) in the Android docs.
@@ -55,11 +55,11 @@ Java is more widely used for a broader range of applications and offers some fea
 
 You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefor provide more features.
 
-![Android Studio Minimum API selection screen](./images/android-minimum-api-selection.png)
+![Android Studio Minimum API selection screen](../images/android-minimum-api-selection.png)
 
 Select the **Help me choose** link to open a comparison chart showing the device support distribution and key features associated with the platform version release.
 
-![Android Studio Minimum API comparison screen](./images/android-minimum-api-selection-2.png)
+![Android Studio Minimum API comparison screen](../images/android-minimum-api-selection-2.png)
 
 ### Instant app support and Androidx artifacts
 

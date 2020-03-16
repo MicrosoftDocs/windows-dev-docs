@@ -120,6 +120,10 @@
               href: android/xamarin-native.md
             - name: Xamarin Forms
               href: android/xamarin-forms.md
+            - name: React Native
+              href: android/react-native.md
+            - name: PWA (Ionic)
+              href: android/pwa.md
         - name: Defender settings to improve perf
           href: android/defender-settings.md
   - name: Mac to Windows guide
