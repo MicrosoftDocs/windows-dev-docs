@@ -154,17 +154,19 @@ You may notice that C++/WinRT input parameters that should logically accept **wi
 The upshot is that you can largely ignore the specifics of Windows Runtime string management, and just work with efficiency with what you know. And that's important, given how heavily strings are used in the Windows Runtime.
 
 ## Formatting strings
-One option for string-formatting is **std::wstringstream**. Here's an example that formats and displays a simple debug trace message.
+One option for string-formatting is **std::wostringstream**. Here's an example that formats and displays a simple debug trace message.
 
 ```cppwinrt
 #include <sstream>
+#include <winrt/Windows.UI.Input.h>
+#include <winrt/Windows.UI.Xaml.Input.h>
 ...
-void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
+void MainPage::OnPointerPressed(winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    winrt::Windows::Foundation::Point const point{ e.GetCurrentPoint(nullptr).Position() };
+    std::wostringstream wostringstream;
+    wostringstream << L"Pointer pressed at (" << point.X << L"," << point.Y << L")" << std::endl;
+    ::OutputDebugString(wostringstream.str().c_str());
 }
 ```
 
