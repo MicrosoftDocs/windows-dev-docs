@@ -44,3 +44,27 @@ You can open the search dialog with any key binding you feel comfortable with. T
 
 > [!NOTE]
 > To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
+
+## Configuration used on this page
+
+```json
+    {
+        "profiles": [
+            {
+                "name" : "Powershell",
+                "source" : "Windows.Terminal.PowershellCore",
+                "acrylicOpacity" : 0.7,
+                "colorScheme" : "Campbell",
+                "cursorColor" : "#FFFFFD",
+                "fontFace" : "Cascadia Code PL",
+                "padding" : "8, 8, 8, 8",
+                "useAcrylic" : true,
+                "suppressApplicationTitle": true
+            }
+        ]
+    }
+```
+
+> [!NOTE]
+> The `Campbell` color scheme is automatically included in the Terminal.
+> The prompt is styled using Powerline. To learn how to set it up in your shell, visit [this tutorial](./tutorials/powerline-setup.md).
