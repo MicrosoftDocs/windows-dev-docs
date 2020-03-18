@@ -36,6 +36,8 @@ The search dialog works with [panes](./panes.md) as well. When focused on a pane
 
 ![Windows Terminal panes search screenshot](./images/search-panes.gif)
 
+## Customize the search key binding
+
 You can open the search dialog with any key binding you feel comfortable with. This can be done by adding a key binding in your profiles.json file that uses the `find` command. By default, this command is bound to `Ctrl+Shift+F`. The below key binding will bind `find` to `Ctrl+F`, so when typing `Ctrl+F`, the search dialog will open.
 
 `{"command": "find", "keys": "Ctrl+F"}`
