@@ -42,8 +42,7 @@ You can open the search dialog with any key binding you feel comfortable with. T
 
 `{"command": "find", "keys": "Ctrl+F"}`
 
-> [!NOTE]
-> To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
+To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
 
 ## Configuration used on this page
 
@@ -67,8 +66,7 @@ You can open the search dialog with any key binding you feel comfortable with. T
     }
 ```
 
-> [!NOTE]
-> The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
+The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
 
 > [!div class="nextstepaction"]
-> [Learn how to set up Powerline](./tutorials/powerline-setup.md).
+> [Learn how to set up Powerline](./tutorials/powerline-setup.md)
