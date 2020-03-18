@@ -122,7 +122,7 @@ You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fu
 
 ## COM functions that take an **IUnknown** interface pointer
 
-You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
+You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
