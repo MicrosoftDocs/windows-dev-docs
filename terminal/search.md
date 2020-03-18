@@ -32,7 +32,7 @@ If you'd like to narrow down your search results, you can add case matching as a
 
 ## Searching within panes
 
-The search dialog works with panes as well. When focused on a pane, you can open the search dialog and it will appear on the right side of that pane. Then, whatever keyword you search for, the results will only be found within that pane.
+The search dialog works with [panes](./panes.md) as well. When focused on a pane, you can open the search dialog and it will appear on the right side of that pane. Then, whatever keyword you search for, the results will only be found within that pane.
 
 ![Windows Terminal panes search screenshot](./images/search-panes.gif)
 
