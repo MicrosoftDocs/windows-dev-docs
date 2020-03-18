@@ -18,13 +18,13 @@ By default, you can open the search dialog by typing `Ctrl+Shift+F`. Once opened
 
 ![Windows Terminal search screenshot](./images/search.png)
 
-### Directional search
+## Directional search
 
 The Terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
 
 ![Windows Terminal directional search screenshot](./images/search-direction.gif)
 
-### Case match search
+## Case match search
 
 If you'd like to narrow down your search results, you can add case matching as an option in your search. You can enable case matching by selecting the case match button, and the results that appear will only match the keyword entered with its specific letter casing.
 
@@ -39,3 +39,6 @@ The search dialog works with panes as well. When focused on a pane, you can open
 You can open the search dialog with any key binding you feel comfortable with. This can be done by adding a key binding in your profiles.json file that uses the `find` command. By default, this command is bound to `Ctrl+Shift+F`. The below key binding will bind `find` to `Ctrl+F`, so when typing `Ctrl+F`, the search dialog will open.
 
 `{"command": "find", "keys": "Ctrl+F"}`
+
+> [!NOTE]
+> To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).

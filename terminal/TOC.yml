@@ -13,7 +13,7 @@
         - name: Color schemes
           href: customize-settings/color-schemes.md
         - name: Key bindings
-          href: customize-settings/custom-keybindings.md
+          href: customize-settings/key-bindings.md
     - name: Command line arguments
       href: command-line-arguments.md
     - name: Search
