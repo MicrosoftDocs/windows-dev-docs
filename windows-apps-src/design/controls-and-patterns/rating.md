@@ -23,7 +23,9 @@ The rating control allows users to view and set ratings that reflect degrees of 
 | - | - |
 | ![WinUI logo](images/winui-logo-64x64.png) | The **RatingControl** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **Important APIs**: [RatingControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **Windows UI Library APIs:** [RatingControl class](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **Platform APIs:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## Examples
 

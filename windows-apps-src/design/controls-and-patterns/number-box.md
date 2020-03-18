@@ -21,7 +21,7 @@ Represents a control that can be used to display and edit numbers. This supports
 | - | - |
 | ![WinUI logo](images/winui-logo-64x64.png) | The **NumberBox** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-**Important APIs:** [NumberBox class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**Windows UI Library APIs:** [NumberBox class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 
 ## Is this the right control?
 

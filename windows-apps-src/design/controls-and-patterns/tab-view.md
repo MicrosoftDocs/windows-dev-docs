@@ -20,7 +20,7 @@ The TabView control is a way to display a set of tabs and their respective conte
 | - | - |
 | ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **Important APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **Windows UI Library APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ## Is this the right control?
 

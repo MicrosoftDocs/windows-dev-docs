@@ -42,11 +42,6 @@ Control | Description
 >
 > **Platform APIs:** [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
-
-| **Platform APIs** | ![WinUI logo](images/winui-logo-16x16.png) **Windows UI Library APIs** |
-| - | - |
-| [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
-
 ## Is this the right control?
 
 Use a **Button** control to let the user initiate an immediate action, such as submitting a form.

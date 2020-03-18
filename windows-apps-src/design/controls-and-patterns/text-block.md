@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
  Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
  
- > **Important APIs**: [TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **Platform APIs**: [TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## Is this the right control?
 

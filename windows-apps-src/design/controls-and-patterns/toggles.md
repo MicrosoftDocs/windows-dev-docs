@@ -19,7 +19,7 @@ The toggle switch represents a physical switch that allows users to turn things 
 
 To create a toggle switch control, you use the  [ToggleSwitch class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **Important APIs**: [ToggleSwitch class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **Platform APIs**: [ToggleSwitch class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## Is this the right control?
 

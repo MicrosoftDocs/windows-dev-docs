@@ -16,11 +16,15 @@ Unlike [ListView](/uwp/api/windows.ui.xaml.controls.listview), [ItemsRepeater](/
 
 You can think of [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) conceptually as a data-driven panel, rather than as a complete control like ListView. You specify a collection of data items to be displayed, an item template that generates a UI element for each data item, and a layout that determines how the elements are sized and positioned. Then, ItemsRepeater produces child elements based on the data source, and displays them as specified by the item template and layout. The items displayed do not need to be homogenous because ItemsRepeater can load content to represent the data items based on criteria you specify in a data template selector.
 
-| **Get the Windows UI Library** |
-| - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Get the Windows UI Library**
 
-> **Important APIs**: [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Windows UI Library APIs:** [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+>
+> **Platform APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## Is this the right control?
 
