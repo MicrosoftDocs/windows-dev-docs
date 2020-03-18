@@ -16,10 +16,10 @@ Here's what you need to do:
 
 1. Set up an [account with GitHub](https://github.com/join), if you don't already have one, and then read our [docs contributor guide](https://docs.microsoft.com/contribute/).
 2. Read the following docs on docs.microsoft.com, looking for content that could be better:
-    - Desktop apps - https://docs.microsoft.com/en-us/windows/apps/desktop/
-    - Build with Windows - https://docs.microsoft.com/en-us/windows/dev-environment/
-    - Win32  -https://docs.microsoft.com/en-us/windows/win32/
-    - Windows Drivers - https://docs.microsoft.com/en-us/windows-hardware/drivers/
+    - Desktop apps - https://docs.microsoft.com/windows/apps/desktop/
+    - Build with Windows - https://docs.microsoft.com/windows/dev-environment/
+    - Win32  -https://docs.microsoft.com/windows/win32/
+    - Windows Drivers - https://docs.microsoft.com/windows-hardware/drivers/
 3. Make corrections to a docs page by selecting the **Edit** button at the top of the page. This will take you to the markdown source file in GitHub.
 4. Make a Pull Request, and select the label "win-dev-docs-twitter."
 5. Visit the @WindowsDocs twitter account and reply to the contest post with a link to your PR.
