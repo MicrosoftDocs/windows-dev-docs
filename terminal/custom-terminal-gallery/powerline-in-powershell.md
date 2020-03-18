@@ -32,4 +32,4 @@ ms.service: terminal
 The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
 
 > [!div class="nextstepaction"]
-> [Learn how to set up Powerline](./tutorials/powerline-setup.md)
+> [Learn how to set up Powerline](./../tutorials/powerline-setup.md)
