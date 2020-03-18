@@ -21,9 +21,13 @@ When you want to create a new desktop application for Windows PCs, the first dec
 
 All of these application platforms let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. However, some of these platforms share some traits and are better suited for certain types of applications:
 
-* **UWP, WPF, and Windows Forms**. These platforms provide managed runtime environments (the Windows Runtime for UWP, and .NET for Windows Forms and WPF) with many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
+* **UWP**. This platform provides a common type system, APIs, and application model for all devices that run Windows 10. UWP applications can be native or managed. 
 
-* **Win32 API**. The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
+* **WPF and Windows Forms**. These platforms provide a common type system, APIs, and application model for managed applications running on .NET.
+
+* **Win32 API**. The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
+
+Both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
 
 This article describes these platforms in more detail and helps you determine the best one for your application. 
 

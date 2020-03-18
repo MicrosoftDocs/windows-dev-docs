@@ -1,7 +1,7 @@
 ---
 description: News and changes to C++/WinRT.
 title: What's new in C++/WinRT
-ms.date: 04/23/2019
+ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
@@ -11,6 +11,65 @@ ms.custom: RS5
 # What's new in C++/WinRT
 
 As subsequent versions of C++/WinRT are released, this topic describes what's new, and what's changed.
+
+## Rollup of recent improvements/additions as of March 2020
+
+### Up to 23% shorter build times
+
+The C++/WinRT and C++ compiler teams have collaborated to do everything possible to shorten build times. We've pored over compiler analytics to figure out how the internals of C++/WinRT can be restructured to help the C++ compiler eliminate compile-time overhead, as well as how the C++ compiler itself can be improved to handle the C++/WinRT library. C++/WinRT has been optimized for the compiler; and the compiler has been optimized for C++/WinRT.
+
+Let's take for example the worst case scenario of building a pre-compiled header (PCH) that contains every single C++/WinRT projection namespace header.
+
+| Version | PCH size (bytes) | Time (s) |
+| - | - | - |
+| C++/WinRT from July, with Visual C++ 16.3 | 3,004,104,632 | 31 |
+| version 2.0.200316.3 of C++/WinRT, with Visual C++ 16.5 | 2,393,515,336 | 24 |
+
+A 20% reduction in size, and a 23% reduction in build time.
+
+### Improved MSBuild support
+
+We've invested a lot of work into improving [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) support for a large selection of different scenarios.
+
+### Even faster factory caching
+
+We've improved inlining of the factory cache in order to better inline hot paths, which leads to faster execution.
+
+That improvement doesn't affect code size&mdash;as described below in [Optimized EH code-gen](#optimized-exception-handling-eh-code-generation), if your application uses C++ exception handling heavily, then you can shrink your binary by using the `/d2FH4` option, which is on by default in new projects created with Visual Studio 2019 16.3, and later.
+
+### More efficient boxing
+
+When used in a XAML application, [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) is now more efficient (see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing)). Applications that do a lot of boxing will also notice a reduction in code size.
+
+### Support for implementing COM interfaces that implement IInspectable
+
+If you need to implement a (non-Windows-Runtime) COM interface that just happens to implement [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable), then you can now do so with C++/WinRT. See [COM interfaces that implement IInspectable](https://github.com/microsoft/xlang/pull/603).
+
+### Module-locking improvements
+
+Control over module-locking now allows both custom hosting scenarios and the elimination of module-level locking altogether. See [Module-locking improvements](https://github.com/microsoft/xlang/pull/583).
+
+### Support for non-Windows-Runtime error information
+
+Some APIs (even some Windows Runtime APIs) report errors without using Windows Runtime error origination APIs. In cases like that, C++/WinRT now falls back to using COM error info. See [C++/WinRT support for non-WinRT error information](https://github.com/microsoft/xlang/pull/582).
+
+### Enable C++ module support 
+
+C++ module support is back, but only in an experimental form. The feature isn't complete in the C++ compiler, as yet.
+
+### More efficient coroutine resumption
+
+C++/WinRT coroutines already perform well, but we continue to look for ways to improve that. See [Improve scalability of coroutine resumption](https://github.com/microsoft/xlang/pull/546).
+
+### New **when_all** and **when_any** async helpers
+
+The **when_all** helper function creates an [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) object that completes when all of the supplied awaitables have completed. The **when_any** helper creates an **IAsyncAction** that completes when any of the supplied awaitables have completed. 
+
+See [Add when_any async helper](https://github.com/microsoft/xlang/pull/520) and [Add when_all async helper](https://github.com/microsoft/xlang/pull/516).
+
+### Other optimizations and additions
+
+In addition, many bug fixes and minor optimizations and additions have been introduced, including various improvements to simplify debugging and to optimize internals and default implementations. Follow this link for an exhaustive list: [https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed](https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed).
 
 ## News, and changes, in C++/WinRT 2.0
 

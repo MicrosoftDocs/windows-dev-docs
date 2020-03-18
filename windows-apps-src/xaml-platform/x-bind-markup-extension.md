@@ -24,7 +24,7 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 
 -   [{x:Bind} sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+-   [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## XAML attribute usage
 
@@ -79,8 +79,7 @@ For example: in a page, **Text="{x:Bind Employee.FirstName}"** will look for an 
 
 For C++/CX, **{x:Bind}** cannot bind to private fields and properties in the page or data model – you will need to have a public property for it to be bindable. The surface area for binding needs to be exposed as CX classes/interfaces so that we can get the relevant metadata. The **\[Bindable\]** attribute should not be needed.
 
-With **x:Bind**, you do not need to use **ElementName=xxx** as part of the binding expression. Instead, you can use the name of the element as the first part of the path for the binding because named elements become fields within the page or user control that represents the root binding source. 
-
+With **x:Bind**, you do not need to use **ElementName=xxx** as part of the binding expression. Instead, you can use the name of the element as the first part of the path for the binding because named elements become fields within the page or user control that represents the root binding source.
 
 ### Collections
 
@@ -98,10 +97,80 @@ To bind to [attached properties](./attached-properties-overview.md), you need to
 
 ### Casting
 
-Compiled bindings are strongly typed, and will resolve the type of each step in a path. If the type returned doesn’t have the member, it will fail at compile time. You can specify a cast to tell binding the real type of the object. In the following case, **obj** is a property of type object, but contains a text box, so we can use either **Text="{x:Bind ((TextBox)obj).Text}"** or **Text="{x:Bind obj.(TextBox.Text)}"**.
+Compiled bindings are strongly typed, and will resolve the type of each step in a path. If the type returned doesn’t have the member, it will fail at compile time. You can specify a cast to tell binding the real type of the object.
+
+In the following case, **obj** is a property of type object, but contains a text box, so we can use either **Text="{x:Bind ((TextBox)obj).Text}"** or **Text="{x:Bind obj.(TextBox.Text)}"**.
+
 The **groups3** field in **Text="{x:Bind ((data:SampleDataGroup)groups3\[0\]).Title}"** is a dictionary of objects, so you must cast it to **data:SampleDataGroup**. Note the use of the xml **data:** namespace prefix for mapping the object type to a code namespace that isn't part of the default XAML namespace.
 
 _Note: The C#-style cast syntax is more flexible than the attached property syntax, and is the recommended syntax going forward._
+
+#### Pathless casting
+
+The native bind parser doesn't provide a keyword to represent `this` as a function parameter, but it does support pathless casting (for example, `{x:Bind (x:String)}`), which can be used as a function parameter. Therefore, `{x:Bind MethodName((namespace:TypeOfThis))}` is a valid way to perform what is conceptually equivalent to `{x:Bind MethodName(this)}`.
+
+Example:
+
+`Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}"`
+
+```xaml
+<Page
+    x:Class="AppSample.MainPage"
+    ...
+    xmlns:local="using:AppSample">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind Songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:SongItem">
+                    <TextBlock
+                        Margin="12"
+                        FontSize="40"
+                        Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+```
+
+```csharp
+namespace AppSample
+{
+    public class SongItem
+    {
+        public string TrackName { get; private set; }
+        public string ArtistName { get; private set; }
+
+        public SongItem(string trackName, string artistName)
+        {
+            ArtistName = artistName;
+            TrackName = trackName;
+        }
+    }
+
+    public sealed partial class MainPage : Page
+    {
+        public List<SongItem> Songs { get; }
+        public MainPage()
+        {
+            Songs = new List<SongItem>()
+            {
+                new SongItem("Track 1", "Artist 1"),
+                new SongItem("Track 2", "Artist 2"),
+                new SongItem("Track 3", "Artist 3")
+            };
+
+            this.InitializeComponent();
+        }
+
+        public static string GenerateSongTitle(SongItem song)
+        {
+            return $"{song.TrackName} - {song.ArtistName}";
+        }
+    }
+}
+```
 
 ## Functions in binding paths
 
