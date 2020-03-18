@@ -16,17 +16,54 @@ Panes give you the ability to run multiple command line applications next to eac
 
 You can either create a new vertical or horizontal pane in the Terminal. To create a new vertical pane of your default profile, you can type `Alt+Shift+Plus`. For a horizontal pane of your default profile, you can type `Alt+Shift+-`.
 
+**GIF**
+
+If you'd like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file.
+
+```json
+{ "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" },
+{ "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" }
+```
+
 ## Switching between panes
 
 The Terminal allows you to navigate between panes by using the keyboard. If you hold the `Alt` key, you can use your arrow keys to move your focus between panes.
+
+**GIF**
+
+You can customize this by adding key bindings for the `moveFocus` command and setting the `direction` to either `down`, `left`, `right` or `up`.
+
+```json
+{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
+{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
+{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
+{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" }
+```
 
 ## Resizing a pane
 
 You can adjust the size of your panes by holding `Alt+Shift` and using your arrow keys to resize the focused pane.
 
+**GIF**
+
+To customize this key binding, you can add new ones using the `resizePane` action and setting the `direction` to either `down`, `left`, `right`, or `up`.
+
+```json
+{ "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+down" },
+{ "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+left" },
+{ "command": { "action": "resizePane", "direction": "right" }, "keys": "alt+shift+right" },
+{ "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+up" }
+```
+
 ## Closing a pane
 
 You can close the focused pane by typing `Ctrl+Shift+W`. If you only have one pane, `Ctrl+Shift+W` will close the whole Terminal.
+
+**GIF**
+
+You can change what keys close the pane by adding a key binding that uses the `closePane` command.
+
+`{ "command": "closePane", "keys": "ctrl+shift+w" }`
 
 ## Customizing pane key bindings
 
