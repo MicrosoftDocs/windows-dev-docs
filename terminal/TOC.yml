@@ -2,8 +2,8 @@
   items: 
     - name: Overview
       href: index.md
-    - name: Install
-      href: install.md
+    - name: Get started
+      href: get-started.md
     - name: Customize settings
       items:
         - name: Global settings
@@ -12,10 +12,28 @@
           href: customize-settings/profile-settings.md
         - name: Color schemes
           href: customize-settings/color-schemes.md
-        - name: Custom Keybindings
+        - name: Key bindings
           href: customize-settings/custom-keybindings.md
     - name: Command line arguments
       href: command-line-arguments.md
+    - name: Search
+      href: search.md
+    - name: Panes
+      href: panes.md
+    - name: Background images
+      href: background-images.md
+    - name: Tutorials
+      items:
+        - name: Powerline setup
+          href: tutorials/powerline-setup.md
+        - name: SSH
+          href: tutorials/ssh.md
+        - name: Set the tab title
+          href: tutorials/tab-title.md
+        - name: References
+          href: tutorials/references.md
+    - name: Troubleshooting
+      href: troubleshooting.md
 
 
     
