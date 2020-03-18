@@ -108,7 +108,7 @@ namespace BackgroundTasks
             // Create a tile notification for each feed item.
             foreach( var item in feed.Items )
             {
-                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWideText03 );
+                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWide310x150Text03 );
 
                 var title = item.Title;
                 string titleText = title.Text == null ? String.Empty : title.Text;
@@ -207,8 +207,8 @@ namespace ContosoApp
         private async void RegisterBackgroundTask()
         {
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
-            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity )
+            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedSubjectToSystemPolicy ||
+                backgroundAccessStatus == BackgroundAccessStatus.AlwaysAllowed )
             {
                 foreach( var task in BackgroundTaskRegistration.AllTasks )
                 {
