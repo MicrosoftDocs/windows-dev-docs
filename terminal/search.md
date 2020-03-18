@@ -47,8 +47,10 @@ You can open the search dialog with any key binding you feel comfortable with. T
 
 ## Configuration used on this page
 
+
 ```json
     {
+        "requestedTheme": "dark",
         "profiles": [
             {
                 "name" : "Powershell",
@@ -66,5 +68,7 @@ You can open the search dialog with any key binding you feel comfortable with. T
 ```
 
 > [!NOTE]
-> The `Campbell` color scheme is automatically included in the Terminal.
-> The prompt is styled using Powerline. To learn how to set it up in your shell, visit [this tutorial](./tutorials/powerline-setup.md).
+> The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
+
+> [!div class="nextstepaction"]
+> [Learn how to set up Powerline](./tutorials/powerline-setup.md).
