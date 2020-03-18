@@ -17,6 +17,7 @@ The Windows Terminal comes with a search feature that allows you to look through
 By default, you can open the search dialog by typing `Ctrl+Shift+F`. Once opened, you can type the keyword you're looking for into the text box and hit `Enter`.
 
 ![Windows Terminal search screenshot](./images/search.png)
+_Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
 
 ## Directional search
 
@@ -43,30 +44,3 @@ You can open the search dialog with any key binding you feel comfortable with. T
 `{"command": "find", "keys": "Ctrl+F"}`
 
 To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
-
-## Configuration used on this page
-
-
-```json
-    {
-        "requestedTheme": "dark",
-        "profiles": [
-            {
-                "name" : "Powershell",
-                "source" : "Windows.Terminal.PowershellCore",
-                "acrylicOpacity" : 0.7,
-                "colorScheme" : "Campbell",
-                "cursorColor" : "#FFFFFD",
-                "fontFace" : "Cascadia Code PL",
-                "padding" : "8, 8, 8, 8",
-                "useAcrylic" : true,
-                "suppressApplicationTitle": true
-            }
-        ]
-    }
-```
-
-The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
-
-> [!div class="nextstepaction"]
-> [Learn how to set up Powerline](./tutorials/powerline-setup.md)

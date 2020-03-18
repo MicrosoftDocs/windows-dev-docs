@@ -32,6 +32,10 @@
           href: tutorials/tab-title.md
         - name: References
           href: tutorials/references.md
+    - name: Custom Terminal gallery
+      items:
+        - name: Powerline in PowerShell
+        - href: custom-terminal-gallery/powerline-in-powershell.md
     - name: Troubleshooting
       href: troubleshooting.md
 
