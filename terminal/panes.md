@@ -14,7 +14,7 @@ Panes give you the ability to run multiple command line applications next to eac
 
 ## Creating a new pane
 
-You can either create a new vertical or horizontal pane in the Terminal. Vertical panes open to the right of the focused pane and horizontal panes open below the focused pane. To create a new vertical pane of your default profile, you can type `Alt+Shift+Plus`. For a horizontal pane of your default profile, you can type `Alt+Shift+-`.
+You can either create a new vertical or horizontal pane in the Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type `Alt+Shift+Plus`. For a horizontal pane of your default profile, you can type `Alt+Shift+-`.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
