@@ -48,8 +48,6 @@
                 href: apps/desktop/modernize/desktop-to-uwp-extend.md
               - name: Distribute your packaged app
                 href: apps/desktop/modernize/desktop-to-uwp-distribute.md
-        - name: Grant identity to non-packaged desktop apps
-          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: "Tutorial: Modernize a WPF app"
           items:
             - name: Overview
@@ -64,6 +62,8 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: "Package and deploy with MSIX"
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: Grant identity to non-packaged desktop apps
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
   - name: Fluent Design System
     href: apps/fluent-design-system.md
   - name: Accessibility
