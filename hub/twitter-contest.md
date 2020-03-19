@@ -25,5 +25,11 @@ Here's what you need to do:
 5. Visit the @WindowsDocs twitter account and reply to the contest post with a link to your PR.
 
 Thank you to our community of contributors!
+<br>
+<br>
 
 ![Windows Ninja Cat](images/ninjacat-emoji.png)
+
+<br>
+<br>
+<br>
