@@ -121,7 +121,7 @@ More important to responsive layouts are **visual states.** A visual state defin
 ```
 
 > [!IMPORTANT]
-> When you use StateTriggers, always ensure that VisualStateGroups is attacked to the first child of the root. Here, **Grid** is the first child of the root **Page** element.
+> When you use StateTriggers, always ensure that VisualStateGroups is attached to the first child of the root. Here, **Grid** is the first child of the root **Page** element.
 
 It's not practical to create visual states for a wide array of screen sizes, nor are more than a couple likely to have significant impact on the user experience of your app. We recommend designing instead for a few key breakpoints - you can [read more here](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
