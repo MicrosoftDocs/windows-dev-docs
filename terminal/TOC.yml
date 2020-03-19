@@ -36,8 +36,8 @@
       items:
         - name: Powerline in PowerShell
           href: custom-terminal-gallery/powerline-in-powershell.md
-        - name: Another example
-          href: custom-terminal-gallery/powerline-in-powershell.md
+        - name: Raspberry Ubuntu
+          href: custom-terminal-gallery/raspberry-ubuntu.md
     - name: Troubleshooting
       href: troubleshooting.md
 
