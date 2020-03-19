@@ -19,7 +19,7 @@ You can either create a new vertical or horizontal pane in the Terminal. Splitti
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
 
-If you'd like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file. If you just want a pane with the maximum amount of surface area, you can set `split` to `auto`.
+If you'd like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file. If you just want a pane with the maximum amount of surface area, you can set `split` to `auto`. To learn how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
 
 ```json
 { "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" },
@@ -69,7 +69,22 @@ You can change what keys close the pane by adding a key binding that uses the `c
 { "command": "closePane", "keys": "ctrl+shift+w" }
 ```
 
-## Customizing pane key bindings
+## Customizing panes using key bindings
+
+You can customize the what opens inside a new pane depending on your custom key bindings.
+
+### Duplicating a pane
+
+The Terminal allows you to duplicate the focused pane's profile into another pane.
+
+![Windows Terminal duplicate panes](./images/duplicate-panes.gif)
+
+This can be done by adding the `splitMode` property with `duplicate` as the value to a `splitPane` key binding.
+
+```json
+{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
+```
+
+### New Terminal arguments
 
 - new pane with specific profile, startingDirectory, etc.
-- duplicate and auto split
