@@ -16,20 +16,21 @@ Panes give you the ability to run multiple command line applications next to eac
 
 You can either create a new vertical or horizontal pane in the Terminal. To create a new vertical pane of your default profile, you can type `Alt+Shift+Plus`. For a horizontal pane of your default profile, you can type `Alt+Shift+-`.
 
-**GIF**
+![Windows Terminal create pane](./images/open-panes.gif)
 
-If you'd like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file.
+If you'd like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file. If you just want a pane with the maximum amount of surface area, you can set `split` to `auto`.
 
 ```json
 { "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" },
-{ "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" }
+{ "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" },
+{ "command": { "action": "splitPane", "split": "auto"}, "keys": "alt+shift+|" }
 ```
 
 ## Switching between panes
 
 The Terminal allows you to navigate between panes by using the keyboard. If you hold the `Alt` key, you can use your arrow keys to move your focus between panes.
 
-**GIF**
+![Windows Terminal switch panes](./images/navigate-panes.gif)
 
 You can customize this by adding key bindings for the `moveFocus` command and setting the `direction` to either `down`, `left`, `right` or `up`.
 
@@ -44,7 +45,7 @@ You can customize this by adding key bindings for the `moveFocus` command and se
 
 You can adjust the size of your panes by holding `Alt+Shift` and using your arrow keys to resize the focused pane.
 
-**GIF**
+![Windows Terminal create pane](./images/resize-panes.gif)
 
 To customize this key binding, you can add new ones using the `resizePane` action and setting the `direction` to either `down`, `left`, `right`, or `up`.
 
@@ -59,7 +60,7 @@ To customize this key binding, you can add new ones using the `resizePane` actio
 
 You can close the focused pane by typing `Ctrl+Shift+W`. If you only have one pane, `Ctrl+Shift+W` will close the whole Terminal.
 
-**GIF**
+![Windows Terminal close panes](./images/close-panes.gif)
 
 You can change what keys close the pane by adding a key binding that uses the `closePane` command.
 
@@ -68,3 +69,4 @@ You can change what keys close the pane by adding a key binding that uses the `c
 ## Customizing pane key bindings
 
 - new pane with specific profile, startingDirectory, etc.
+- duplicate and auto split
