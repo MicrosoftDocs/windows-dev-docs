@@ -4,7 +4,7 @@ description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: how-to
 ms.service: terminal
 ---
 
@@ -87,4 +87,4 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 
 ### New Terminal arguments
 
-- new pane with specific profile, startingDirectory, etc.
+[!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]
