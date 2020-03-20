@@ -19,7 +19,7 @@ Here's what you need to do:
     - Desktop apps - https://docs.microsoft.com/windows/apps/desktop/
     - Windows UI Library - [Controls for UWP apps](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/), [Xaml.Controls API reference](https://docs.microsoft.com/uwp/api/overview/winui/)
     - Build with Windows - https://docs.microsoft.com/windows/dev-environment/
-    - Win32  -https://docs.microsoft.com/windows/win32/
+    - Win32  - https://docs.microsoft.com/windows/win32/
     - Windows Drivers - https://docs.microsoft.com/windows-hardware/drivers/
 3. Make corrections to a docs page by selecting the **Edit** button at the top of the page. This will take you to the markdown source file in GitHub.
 4. Once your changes are complete. File your Pull Request (PR).
