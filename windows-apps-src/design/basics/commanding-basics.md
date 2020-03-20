@@ -5,7 +5,6 @@ ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
 ms.date: 11/01/2018
 ms.topic: article
 keywords: windows 10, uwp
