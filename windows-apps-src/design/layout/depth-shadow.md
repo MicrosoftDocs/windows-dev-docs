@@ -155,7 +155,7 @@ DropShadow is not automatically responsive to its environment and does not use l
 ## Which shadow should I use?
 
 | Property | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **Min SDK** | Windows 10 version 1903 | 14393 |
 | **Adaptability** | Yes | No |
 | **Customization** | No | Yes |
