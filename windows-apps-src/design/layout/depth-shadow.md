@@ -34,7 +34,7 @@ If you use standard controls, ThemeShadow shadows will be incorporated automatic
 
 ## ThemeShadow
 
-The [ThemeShadow](../../api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. ThemeShadow also automatically adjusts for other environmental specifications:
+The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. ThemeShadow also automatically adjusts for other environmental specifications:
 
 - Adapts to changes in lighting, user theme, app environment, and shell.
 - Applies shadows to elements automatically based on their z-depth. 
