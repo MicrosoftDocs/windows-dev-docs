@@ -11,13 +11,13 @@ ms.date: 02/19/2020
 
 # Overview of Android development on Windows
 
-There are multiple paths for developing an application to use on Android devices using the Windows operating system. These paths fall into two main categories: [Native Android development](#native-android-development) and [Cross-platform development](#cross-platform-development).
+There are multiple paths for developing an application to use on Android devices using the Windows operating system. These paths fall into two main categories: **Native Android development** and **Cross-platform development**.
 
 ## Native Android
 
-For native Android development on Windows, use [Android Studio for Windows](./native-android.md#install-android-studio).
+We recommend using **Android Studio** for [native Android development on Windows](./native-android.md#install-android-studio).
 
-Native development means that your app is targeting only Android (not iOS or Windows devices). Using Android Studio means that you can develop with the tools and within the ecosystem designed specifically for the Android Operating System. Performance will be optimized for Android devices, the user-interface look and feel will be consistent with other native apps on the device, and any features or capabilities of the user's device will be straight-forward to access and utilize. Developing your app in a native format will help it to just 'feel right' because it follows all of the interaction patterns and user experience standards established specifically for Android devices.
+Native development means that your app is targeting only Android (not iOS or Windows devices). By using Android Studio, you can develop with the tools and within the ecosystem designed specifically for the Android operating system. Performance will be optimized for Android devices, the user-interface look and feel will be consistent with other native apps on the device, and any features or capabilities of the user's device will be straight-forward to access and utilize. Developing your app in a native format will help it to just 'feel right' because it follows all of the interaction patterns and user experience standards established specifically for Android devices.
 
 ## Cross-platform
 
@@ -49,7 +49,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 - UI code: JavaScript
 - Logic code: JavaScript
-- The goal of React Native isn’t to write the code once and run it on any platform, rather to learn-once (the React way) and write-anywhere.
+- The goal of React Native isn't to write the code once and run it on any platform, rather to learn-once (the React way) and write-anywhere.
 - The community has added tools such as Expo and Create React Native App to help those wanting to build apps without using Xcode or Android Studio.
 - Similar to Xamarin (C#), React Native (JavaScript) calls native UI elements (without the need for writing Java/Kotlin or Swift).
 

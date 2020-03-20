@@ -11,13 +11,13 @@ ms.date: 02/19/2020
 
 # Get started with native Android development on Windows
 
-This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md).
+This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md) for a brief summary of some options.
 
 The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-for-android-development) if you have a specific purpose. The Android Studio SDK tools compile your code, data, and resource files into an archive Android package, .apk file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app.
 
 ## Install Android Studio
 
-Android Studio is the official integrated development environment for Google's Android operating system. Download the latest version of Android Studio for Windows at https://developer.android.com/studio.
+Android Studio is the official integrated development environment for Google's Android operating system. [Download the latest version of Android Studio for Windows](https://developer.android.com/studio).
 
 - If you downloaded an .exe file (recommended), double-click to launch it.
 - If you downloaded a .zip file, unpack the ZIP, copy the android-studio folder into your Program Files folder, and then open the android-studio > bin folder and launch studio64.exe (for 64-bit machines) or studio.exe (for 32-bit machines).
@@ -34,14 +34,14 @@ In the **Choose your project** window, you will be able to choose between these 
 
 - **Empty Activity**: Creates an empty activity and a single layout file with sample text content.
 
-- **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. See see the [Bottom Navigation Component](https://material.io/guidelines/components/bottom-navigation.html) in Google's material design guidelines.
+- **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. See the [Bottom Navigation Component](https://material.io/guidelines/components/bottom-navigation.html) in Google's material design guidelines.
 
 - Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
 
 Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app's users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
 
 > [!NOTE]
-> The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. They provide a window for building the user interface using classes based on the **View** class. There is a lifecycle for Activities in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Activities](https://developer.android.com/reference/android/app/Activity), the [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle), and [Intents](https://developer.android.com/reference/android/content/Intent.html) in the Android docs.
+> The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. An **activity** provides a window for building the user interface using classes based on the **View** class. There is a lifecycle for **activities** in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Activities](https://developer.android.com/reference/android/app/Activity), the [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle), and [Intents](https://developer.android.com/reference/android/content/Intent.html) in the Android docs.
 
 ### Java or Kotlin
 
@@ -63,7 +63,7 @@ Select the **Help me choose** link to open a comparison chart showing the device
 
 ### Instant app support and Androidx artifacts
 
-You may notice a checkbox to **Support instant apps** and another to **Use androidx.* artifacts** in your project creation options. The instant apps support is not checked and the androidx is checked as the recommended default.
+You may notice a checkbox to **Support instant apps** and another to **Use androidx artifacts** in your project creation options. The *instant apps support* is not checked and the *androidx* is checked as the recommended default.
 
 Google Play **Instant apps** provide a way for people to try an app or game without installing it first. These instant apps can be surfaced across the Play Store, Google Search, social networks, and anywhere you share a link. By checking the **Support instant apps** box, you are asking Android Studio to include the Google Play Instant Development SDK with your project. To learn more about [Google Play Instant apps](https://developer.android.com/topic/google-play-instant) and how to [create an instant-enabled app bundle](https://developer.android.com/topic/google-play-instant/getting-started/instant-enabled-app-bundle), see the Android documentation.
 
@@ -112,7 +112,7 @@ Device users expect applications to look and behave a certain way... whether swi
 
 Learn more in the [Android design documentation](https://developer.android.com/design).
 
-### FLuent Design System for Android
+### Fluent Design System for Android
 
 Microsoft also offers design guidance with the goal of providing a seamless experience across the entire portfolio of Microsoft's mobile apps.
 
@@ -134,4 +134,3 @@ The mistake of copying iOS UI/UX design by cross plat developers is common..? --
 <!-- - User interface principles for Android based on [Google Material Design](https://developer.android.com/design/material/index.html) -->
 - [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals): Learn more about the fundamentals in the Android docs.
 - [Create a sample app with Xamarin Forms](https://review.docs.microsoft.com/en-us/windows/xamarin/xamarin-forms-android?branch=android-draft): Try creating a sample Android application using Xamarin Forms.
-
