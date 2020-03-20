@@ -48,7 +48,7 @@ Pair the InkCanvas with an InkToolbar to provide a UI for activating ink feature
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/InkCanvas">open the app and see the InkCanvas in action</a>.</p>
     <ul>
@@ -133,7 +133,7 @@ Depending on your application and the inking functionality required, you can add
 > [!NOTE]
 > You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
 
-Although the InkToolbar can be a top level item, it is typically exposed through an “Inking” button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
+Although the InkToolbar can be a top level item, it is typically exposed through an "Inking" button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
 
 ## InkToolbar Interaction
 
@@ -151,8 +151,8 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 - The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.
 - Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.
 - The InkToolbar, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.
-- If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a “Touch writing” tooltip.
-- If providing stroke selection, we recommend using the EF20 icon from the Segoe MLD2 Assets font for the tool button, with a “Selection tool” tooltip.
+- If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a "Touch writing" tooltip.
+- If providing stroke selection, we recommend using the EF20 icon from the Segoe MLD2 Assets font for the tool button, with a "Selection tool" tooltip.
 - If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.
 - For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.
 

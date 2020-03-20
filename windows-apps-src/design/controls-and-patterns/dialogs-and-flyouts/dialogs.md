@@ -19,21 +19,26 @@ Dialog controls are modal UI overlays that provide contextual app information. T
 
 ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
 
+**Get the Windows UI Library**
 
-> **Important APIs**: [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+|  |  |
+| - | - |
+| ![WinUI logo](../images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Platform APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## Is this the right control?
 
 Use dialogs to notify users of important information or to request confirmation or additional info before an action can be completed.
 
-For recommendations on when to use a dialog vs. when to use a flyout (a similar control), see [Dialogs and flyouts](index.md). 
+For recommendations on when to use a dialog vs. when to use a flyout (a similar control), see [Dialogs and flyouts](index.md).
 
 ## Examples
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</p>
     <ul>
@@ -60,7 +65,7 @@ For recommendations on when to use a dialog vs. when to use a flyout (a similar 
     - Ensure that the text of the action buttons is concise. Short strings enable the user to make a choice quickly and confidently.
     - In addition to the safe, nondestructive action, you may optionally present the user with one or two action buttons related to the main instruction. These "do it" action buttons confirm the main point of the dialog. Use the PrimaryButton and SecondaryButton APIs to add these "do it" actions.
     - The "do it" action button(s) should appear as the leftmost buttons. The safe, nondestructive action should appear as the rightmost button.
-    - You may optionally choose to differentiate one of the three buttons as the dialog's default button. Use the DefaultButton API to differentiate one of the buttons.  
+    - You may optionally choose to differentiate one of the three buttons as the dialog's default button. Use the DefaultButton API to differentiate one of the buttons.
 -   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
 - Use the [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) to build your dialog experience. Don't use the deprecated MessageDialog API.
 
@@ -129,7 +134,7 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-When dialogs are used to display a blocking question, your dialog should present the user with action buttons related to the question. The "safe" and nondestructive button may be accompanied by one or two "do it" action buttons. When presenting the user with multiple options, ensure that the buttons clearly explain the "do it" and safe/"don’t do it" actions related to the question proposed.
+When dialogs are used to display a blocking question, your dialog should present the user with action buttons related to the question. The "safe" and nondestructive button may be accompanied by one or two "do it" action buttons. When presenting the user with multiple options, ensure that the buttons clearly explain the "do it" and safe/"don't do it" actions related to the question proposed.
 
 ![A two button dialog](../images/dialogs/dialog_RS2_two_button.png)
 
@@ -148,7 +153,7 @@ private async void DisplayLocationPromptDialog()
 }
 ```
 
-Three button dialogs are used when you present the user with two "do it" actions and a "don’t do it" action. Three button dialogs should be used sparingly with clear distinctions between the secondary action and the safe/close action.
+Three button dialogs are used when you present the user with two "do it" actions and a "don't do it" action. Three button dialogs should be used sparingly with clear distinctions between the secondary action and the safe/close action.
 
 ![A three button dialog](../images/dialogs/dialog_RS2_three_button.png)
 
@@ -206,7 +211,7 @@ You may optionally choose to differentiate one of the three buttons as the defau
 - The button will respond to the ENTER key automatically
     - When the user presses the ENTER key on the keyboard, the click handler associated with the Default Button will fire and the ContentDialogResult will return the value associated with the Default Button
     - If the user has placed Keyboard Focus on a control that handles ENTER, the Default Button will not respond to ENTER presses
-- The button will receive focus automatically when the Dialog is opened unless the dialog’s content contains focusable UI
+- The button will receive focus automatically when the Dialog is opened unless the dialog's content contains focusable UI
 
 Use the ContentDialog.DefaultButton property to indicate the default button. By default, no default button is set.
 
@@ -230,8 +235,8 @@ private async void DisplaySubscribeDialog()
 ```
 
 ## Confirmation dialogs (OK/Cancel)
-A confirmation dialog gives users the chance to confirm that they want to perform an action. They can affirm the action, or choose to cancel.  
-A typical confirmation dialog has two buttons: an affirmation ("OK") button and a cancel button.  
+A confirmation dialog gives users the chance to confirm that they want to perform an action. They can affirm the action, or choose to cancel.
+A typical confirmation dialog has two buttons: an affirmation ("OK") button and a cancel button.
 
 <ul>
     <li>

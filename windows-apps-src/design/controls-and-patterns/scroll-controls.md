@@ -29,7 +29,7 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 
 ![A sample of what standard scrollbar and panning indicator controls look like](images/SCROLLBAR.png)
 
-The scroll viewer is conscious of the user’s input method and uses it to determine which visualization to display.
+The scroll viewer is conscious of the user's input method and uses it to determine which visualization to display.
 
 * When the region is scrolled without manipulating the scrollbar directly, for example, by touch, the panning indicator appears, displaying the current scroll position.
 * When the mouse or pen cursor moves over the panning indicator, it morphs into the traditional scrollbar.  Dragging the scrollbar thumb manipulates the scrolling region.
@@ -50,7 +50,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ScrollViewer">open the app and see the ScrollViewer in action</a>.</p>
     <ul>
