@@ -40,6 +40,8 @@
           href: custom-terminal-gallery/powerline-in-powershell.md
         - name: Raspberry Ubuntu
           href: custom-terminal-gallery/raspberry-ubuntu.md
+        - name: Light Theme
+          href: custom-terminal-gallery/light-theme.md
     - name: Troubleshooting
       href: troubleshooting.md
 
