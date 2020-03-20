@@ -4,7 +4,6 @@ Description: Many enterprises use firewalls to block unwanted traffic. This doc 
 title: Adding WNS Traffic to the Firewall Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
