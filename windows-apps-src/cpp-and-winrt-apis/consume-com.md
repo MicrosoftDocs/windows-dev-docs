@@ -19,6 +19,8 @@ When you program with COM, you work directly with interfaces rather than with ob
 
 To be more specific, we're talking about interacting with interface *pointers*. And for that, we benefit from the existence of the COM smart pointer type in C++/WinRT&mdash;the [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) type.
 
+To support classic COM interfaces is to include `unknwn.h` **before** you include any C++/WinRT headers, explicitly or indirectly. We will describe this in **Full source code listing of a minimal Direct2D application**.
+
 ```cppwinrt
 #include <d2d1_1.h>
 ...
@@ -166,7 +168,7 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like.
 
-Open `pch.h` and add `#include <unknwn.h>` immediately after including `windows.h`.
+Open `pch.h` and add `#include <unknwn.h>` **immediately after** including `windows.h`.
 
 Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
