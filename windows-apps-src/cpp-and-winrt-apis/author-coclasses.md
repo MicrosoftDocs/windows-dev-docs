@@ -16,9 +16,9 @@ ms.custom: RS5
 
 C++/WinRT's [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template is the base from which your runtime classes and activation factories directly or indirectly derive.
 
-By default, **winrt::implements** supports only [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces, and it silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**.
+By default, **winrt::implements** supports only [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces, and it silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**. To support classic COM interfaces is to include unknwn.h before you include any C++/WinRT headers, explicitly or indirectly.
 
-In a moment you'll see how to overcome that situation, but first here's a code example to illustrate what happens by default.
+Here's a code example to illustrate what happens by default, then you'll see an example for classic COM interfaces support.
 
 ```idl
 // Sample.idl
@@ -63,7 +63,7 @@ Here's a simple example of a COM component written using C++/WinRT. This is a fu
 ```cppwinrt
 // pch.h
 #pragma once
-#include <unknwn.h>
+#include <unknwn.h>     // To support classic COM interfaces, put <unknwn.h> before any C++/WinRT headers. 
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
