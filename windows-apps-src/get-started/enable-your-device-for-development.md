@@ -202,13 +202,13 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 1.  Run **regedit**.
 2.  To enable sideloading, set the value of this DWORD to 1:
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
 
     OR
 
     To enable developer mode, set the values of this DWORD to 1:
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
 
 **Use PowerShell to enable your device**
 
