@@ -204,7 +204,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## Recognize speech input
 
-A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app greater over the accuracy of speech recognition.
+A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app greater control over the accuracy of speech recognition.
 
 You can use the following types of constraints for recognizing speech input.
 
@@ -216,7 +216,8 @@ The default free-text dictation grammar can recognize most words and phrases tha
 
 The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
 
-**Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.     
+> [!NOTE]
+> Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.     
 
 These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
 
