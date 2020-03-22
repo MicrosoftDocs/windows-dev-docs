@@ -188,7 +188,7 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 
     -   **Allow all trusted apps to install**
 
-    - OR -
+    OR
 
     To enable developer mode, edit the policies to enable both:
 
@@ -204,7 +204,7 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 
     -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
-    - OR -
+    OR
 
     To enable developer mode, set the values of this DWORD to 1:
 
@@ -215,13 +215,17 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 1.  Run PowerShell with administrator privileges.
 2.  To enable sideloading, run this command:
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
 
-    - OR -
+    OR
 
     To enable developer mode, run this command:
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 ## Upgrade your device from Windows 8.1 to Windows 10
 
