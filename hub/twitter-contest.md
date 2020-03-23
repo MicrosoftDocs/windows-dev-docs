@@ -22,7 +22,7 @@ Here's what you need to do:
     - **Windows Hardware Developer** - [Tools and Drivers](https://docs.microsoft.com/windows-hardware/drivers/)
 3. Make corrections to a docs page by selecting the **Edit** button at the top of the page. This will take you to the markdown source file in GitHub.
 4. Once your changes are complete. File your Pull Request (PR).
-5. Visit the [@WindowsDocs](https://twitter.com/WindowsDocs) twitter account and reply to the contest post with a link to your PR.
+5. Reply to the [@WindowsDocs contest post](https://twitter.com/WindowsDocs/status/1242088720209268736) with a link to your PR.
 
 Thank you to our community of contributors!
 
