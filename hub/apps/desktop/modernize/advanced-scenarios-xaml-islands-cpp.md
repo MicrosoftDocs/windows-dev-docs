@@ -1,7 +1,7 @@
 ---
 description: This article discusses advanced XAML Island hosting scenarios for C++ Win32 apps.
 title: Advanced scenarios for XAML Islands in C++ Win32 apps
-ms.date: 03/06/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
 ms.author: mcleans

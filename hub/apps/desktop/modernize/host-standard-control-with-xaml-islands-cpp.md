@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a standard UWP control in a C++ Win32 app by using the XAML Hosting API.
 title: Host a standard UWP control in a C++ Win32 app using XAML Islands
-ms.date: 03/06/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
 ms.author: mcleans

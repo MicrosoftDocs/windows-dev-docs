@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a custom UWP control in a C++ Win32 app by using the XAML Hosting API.
 title: Host a custom UWP control in a C++ Win32 app using the XAML Hosting API
-ms.date: 03/06/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
 ms.author: mcleans
@@ -44,25 +44,6 @@ To host a custom UWP XAML control, you'll create the following projects and comp
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Build the solution and confirm that it builds successfully.
-
-<!-- 5. Set the `maxVersionTested` value in your [assembly manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
-
-    1. If you don't already have an assembly manifest in your project, add a new XML file to your project and name it **app.manifest**.
-    2. In your assembly manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
-
-        ```xml
-        <?xml version="1.0" encoding="UTF-8"?>
-        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-                <application>
-                    <!-- Windows 10 - - >
-                    <maxversiontested Id="10.0.18362.0"/>
-                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-                </application>
-            </compatibility>
-        </assembly>
-        ``` 
--->
 
 ## Create a UWP app project
 
@@ -113,7 +94,7 @@ Next, add a **UWP (C++/WinRT)** app project to your solution and make some confi
     6. Save and close the **Package.appxmanifest** file.
 
 7. In **Solution Explorer**, right-click the **MyUWPApp** node and select **Unload Project**.
-8. Right-click the **MyUWPApp** node and select **Edit MyUWPApp.vcxroj**.
+8. Right-click the **MyUWPApp** node and select **Edit MyUWPApp.vcxproj**.
 9. Find the `<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />` element and replace it with the following XML. This XML adds several new properties immediately before the element.
 
     ```xml
