@@ -16,7 +16,7 @@ Starting in Windows 10, version 1903, you can host UWP controls in non-UWP deskt
 
 You can host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including:
 
-* Any first-party UWP control provided by the Windows SDK or WinUI library.
+* Any first-party UWP control provided by the Windows SDK.
 * Any custom UWP control (for example, a user control that consists of several UWP controls that work together). You must have the source code for the custom control so you can compile it with your application.
 
 Fundamentally, XAML Islands are created by using the *UWP XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) that use the UWP XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
@@ -25,6 +25,13 @@ The way you use XAML Islands depends on your application type and the types of U
 
 > [!NOTE]
 > If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
+
+## Requirements
+
+XAML Islands have these run time requirements:
+
+* Windows 10, version 1903, or a later release.
+* If your application is not packaged in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 ## WPF and Windows Forms applications
 
@@ -94,7 +101,11 @@ To use these controls, install one of these NuGet packages:
 
 The XAML Island .NET controls are not supported in C++ Win32 applications. These applications must instead use the *UWP XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
 
-The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ Win32 application can use to host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement). You can host UWP controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, including prerequisites, see [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md).
+The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ Win32 application can use to host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement). You can host UWP controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
+
+* [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
+* [Host a standard UWP control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
+* [Host a custom UWP control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > The wrapped controls and host controls in the Windows Community Toolkit use the UWP XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the UWP XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the UWP XAML hosting API directly because they abstract away many of the implementation details of using the API.
@@ -107,7 +118,11 @@ Here's a quick look at how the different types of XAML Island controls are organ
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.
 
-## Window host context for XAML Islands
+## Best practices
+
+The following sections discuss best practices for handing certain common UWP development scenarios in desktop apps that use XAML Islands.
+
+### Window host context for XAML Islands
 
 When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) classes won't provide the correct information for XAML Islands. [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) objects do exist on the thread and are accessible to your app, but they won’t return meaningful bounds or visibility (they are always invisible and have a size of 1x1). For more information, see [Windowing hosts](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
 
@@ -126,9 +141,15 @@ Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 
 For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) replacements, see the table in [this section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
 
+### Supporting the Share contract
+
+If you want to support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. 
+
+For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) sample.
+
 ## Feature roadmap
 
-Here is the current state of XAML Islands-related features as of Windows 10, version 1903 and the version 6.0 release of the Windows Community Toolkit:
+Here is the current state of XAML Islands-related features:
 
 * **C++ Win32 apps:** The UWP XAML hosting API is considered version 1.0 as of Windows 10, version 1903.
 * **Managed apps that target .NET Framework 4.6.2 and later:** The XAML Island controls that are available in the [version 6.0.0 NuGet packages](#configure-your-project-to-use-the-xaml-island-net-controls) are considered version 1.0 for apps that target the .NET Framework 4.6.2 and later.
