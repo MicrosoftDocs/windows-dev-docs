@@ -1,6 +1,6 @@
 - name: Overview
   href: index.md
-- name: What's a UWP app?
+- name: What's a Windows app?
   href: ../get-started/universal-application-platform-guide.md
 - name: Get set up
   href: ../get-started/get-set-up.md
@@ -31,5 +31,5 @@
           href: ../get-started/create-a-hello-world-app-js-uwp.md
     - name: Building a complex app
       href: ../get-started/plan-your-app.md
-- name: Get UWP app samples
+- name: Get Windows app samples
   href: ../get-started/get-uwp-app-samples.md

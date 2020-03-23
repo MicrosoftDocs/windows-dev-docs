@@ -1,14 +1,14 @@
 ---
-description: Learn how to use color, typography, and icons to define your UWP app’s personality with the UWP style guide.
-keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
-title: Style for UWP apps
-ms.date: 08/10/2017
+description: Learn how to use color, typography, and icons to define your Windows app’s personality with the style guide.
+keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development, windows style guide
+title: Style for Windows apps
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Style for UWP apps
+# Style for Windows apps
 
 ![Style icon](../images/style-2x.png)
 
