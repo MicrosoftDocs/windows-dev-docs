@@ -1,4 +1,4 @@
-﻿---
+---
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
