@@ -1,7 +1,7 @@
 ---
 description: This article describes how to host UWP XAML UI in your desktop C++ Win32 app.
 title: Using the UWP XAML hosting API in a C++ Win32 app
-ms.date: 01/24/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
 ms.author: mcleans
