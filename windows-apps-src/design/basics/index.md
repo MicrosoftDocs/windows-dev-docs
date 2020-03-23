@@ -1,22 +1,22 @@
 ---
-description: Learn how to design and code a UWP app that's easy to navigate and looks great on a variety of devices and screen sizes.
+description: Learn how to design and code a Windows app that's easy to navigate and looks great on a variety of devices and screen sizes.
 title: Design basics
-keywords: uwp app layout, universal windows platform, app design, interface
-ms.date: 03/07/2018
+keywords: uwp app layout, universal windows platform, app design, interface, windows app layout
+ms.date: 03/23/2020
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Design basics for UWP apps
+# Design basics for Windows apps
 
 ![Design basics icon](../images/basics-2x.png)
 
-The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving Fluent Design System as well as the needs of our app-building community. 
+Windows design guidance is a resource to help you design and build beautiful, polished apps. It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving Fluent Design System as well as the needs of our app-building community. 
 
 ## Overview
 
-[**Introduction to UWP app design**](design-and-ui-intro.md)
+[**Introduction to Windows app design**](design-and-ui-intro.md)
 
-An introduction to UWP features combined with best practices for creating apps that scale beautifully on all types of Windows-powered devices.
+An introduction to Windows app features combined with best practices for creating apps that scale beautifully on all types of Windows-powered devices.
 
 [**Fluent Design System**](/windows/apps/fluent-design-system)
 
@@ -26,7 +26,7 @@ The Fluent Design System presents our goals and principles for creating adaptive
 
 [**Navigation basics**](navigation-basics.md)
 
-Navigation in UWP apps is based on a flexible model of navigation structures, navigation elements, and system-level features. This article introduces you to these components and shows you how to use them together to create a good navigation experience.
+Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features. This article introduces you to these components and shows you how to use them together to create a good navigation experience.
 
 [**Command basics**](commanding-basics.md)
 
@@ -51,4 +51,4 @@ Give the photo-editing application an adaptive layout.
 
 [**3. Create custom styles**](xaml-basics-style.md)
 
-Give our UWP controls your own look and feel by creating custom styles.
+Give our Windows controls your own look and feel by creating custom styles.
