@@ -1,4 +1,4 @@
-﻿---
+---
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -257,6 +257,7 @@ This section describes the properties that you can use for each entry.
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether or not to draw elevation shading on the map. |
 | shadowColor                  | Color   |      |      |      |  ✔   |  ✔   | The color of the shadow behind icons that use shadows. |
 | spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | The ARGB color value for area around the map. |
+| terrainFlat                  | Bool    |      |      |      |      |      | A flag that indicates whether the terrain should be flat (disabled) on the map. |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether the original colors in the SVG should be used rather than looking up the palette entry for colors in an image. |
 
 <a id="mapelement" />
