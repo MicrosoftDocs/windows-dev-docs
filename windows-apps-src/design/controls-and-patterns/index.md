@@ -1,24 +1,24 @@
 ---
-description: Get design guidance and coding instructions for adding controls &amp; patterns to your UWP app. Find  over 45 powerful controls for you to use with your app.
-title: UWP Controls and patterns - Windows app development
-keywords: uwp controls, user interface, app controls
+description: Get design guidance and coding instructions for adding controls &amp; patterns to your Windows app. Find  over 45 powerful controls for you to use with your app.
+title: Windows Controls and patterns - Windows app development
+keywords: uwp controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ---
 
-# Controls for UWP apps
+# Controls for Windows apps
 
 ![Controls](../images/controls-2x.png)
 
-In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
+In Windows app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
 
 We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.
 
-The articles in this section provide design guidance and coding instructions for adding controls & patterns to your UWP app.
+The articles in this section provide design guidance and coding instructions for adding controls & patterns to your Windows app.
 
 ## Intro
 
@@ -135,5 +135,5 @@ Get the _XAML Controls Gallery_ app from the Microsoft Store to see these contro
 
 ## Additional controls
 
-Additional controls for UWP development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
+Additional controls for Windows development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
 <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.

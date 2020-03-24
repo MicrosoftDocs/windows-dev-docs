@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Host a custom UWP control in a WPF app using XAML Islands
 
-This article demonstrates how to use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom UWP control in a WPF app that targets .NET Core 3. The custom control contains several first-party UWP controls from the Windows SDK and binds a property in one of the UWP controls to a string in the WPF app. This article also demonstrates how to also host a first-party UWP control from the [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/).
+This article demonstrates how to use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom UWP control in a WPF app that targets .NET Core 3. The custom control contains several first-party UWP controls from the Windows SDK and binds a property in one of the UWP controls to a string in the WPF app. This article also demonstrates how to also host a UWP control from the [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting UWP controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -226,7 +226,7 @@ If you already have a custom control, you can use it instead of the control show
 
 ## Add a control from the WinUI library to the custom control
 
-Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of the first-party UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
 This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app.
 
@@ -281,6 +281,9 @@ This section demonstrates how to add a UWP control from the WinUI library to you
 You can optionally package the WPF app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
 
 The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the WPF app in an MSIX package. Note that these steps currently include some workarounds specific to the scenario of hosting custom UWP controls.
+
+> [!NOTE]
+> If you choose to not package your application in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 1. Add a new [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
