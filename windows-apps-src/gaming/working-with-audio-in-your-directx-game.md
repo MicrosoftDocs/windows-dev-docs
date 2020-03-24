@@ -7,18 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, games, audio, directx
 ms.localizationpriority: medium
 ---
+
 # Audio for games
-
-
 
 Learn how to develop and incorporate music and sounds into your DirectX game, and how to process the audio signals to create dynamic and positional sounds.
 
-For audio programming, we recommend using the XAudio2 library in DirectX, and we use it here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
+For audio programming, we recommend using either the [XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal) library in DirectX, or the Windows Runtime [Audio graphs](/windows/uwp/audio-video-camera/audio-graphs) APIs. We use XAudio2 here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
 
 You can also implement simple sounds and music playback with [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
 
 ## Concepts at a glance
-
 
 Here are a few audio programming concepts we use in this section.
 
@@ -32,13 +30,11 @@ Here are a few audio programming concepts we use in this section.
 
 ## Design considerations
 
-
 Audio is a tremendously important part of game design and development. Many gamers can recall a mediocre game elevated to legendary status just because of a memorable soundtrack, or great voice work and sound mixing, or overall stellar audio production. Music and sound define a game's personality, and establish the main motive that defines the game and makes it stand apart from other similar games. The effort you spend designing and developing your game's audio profile will be well worth it.
 
 Positional 3D audio can add a level of immersion beyond that provided by 3D graphics. If you are developing a complex game that simulates a world, or which demands a cinematic style, consider using 3D positional audio techniques to really draw the player in.
 
 ## DirectX audio development roadmap
-
 
 ### XAudio2 conceptual resources
 
@@ -98,8 +94,6 @@ XAudio2 is the audio mixing library for DirectX, and is primarily intended for d
 </tr>
 </tbody>
 </table>
-
- 
 
 ### XAudio2 "how to" resources
 
@@ -186,8 +180,6 @@ XAudio2 is the audio mixing library for DirectX, and is primarily intended for d
 </tbody>
 </table>
 
- 
-
 ### Media Foundation resources
 
 Media Foundation (MF) is a media platform for streaming audio and video playback. You can use the Media Foundation APIs to stream audio and video encoded and compressed with a variety of algorithms. It is not designed for real-time gameplay scenarios; instead, it provides powerful tools and broad codec support for more linear capture and presentation of audio and video components.
@@ -247,8 +239,6 @@ Media Foundation (MF) is a media platform for streaming audio and video playback
 </tbody>
 </table>
 
- 
-
 ### Windows Runtime XAML media types
 
 If you are using [DirectX-XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
@@ -288,26 +278,12 @@ If you are using [DirectX-XAML interop](https://docs.microsoft.com/previous-vers
 </tbody>
 </table>
 
- 
-
 ## Reference
-
 
 -   [XAudio2 Introduction](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction)
 -   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
 -   [Microsoft Media Foundation overview](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)
 
- 
-
 ## Related topics
 
-
 -   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
-
- 
-
- 
-
-
-
-
