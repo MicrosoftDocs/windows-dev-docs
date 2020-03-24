@@ -320,7 +320,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
 16. Save all modified files.
 
-17. In the VS Code Terminal, run the development server with `python manage.py runserver` and open a browser to  `http://127.0.0.1:8000/` to see a page that renders "Hello, Django".
+17. In the VS Code Terminal, run the development server with `python3 manage.py runserver` and open a browser to  `http://127.0.0.1:8000/` to see a page that renders "Hello, Django".
 
 Congratulations, you've created a Django web application using VS Code and Windows Subsystem for Linux! For a more in-depth tutorial using VS Code and Django, see [Django Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django).
 

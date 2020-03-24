@@ -1,7 +1,6 @@
 ---
 title: Commanding in Universal Windows Platform (UWP) apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
-author: Karl-Bridge-Microsoft
 ms.service: #Required; service per approved list.
 ms.topic: overview
 ms.date: 09/13/2019

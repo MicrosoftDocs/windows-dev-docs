@@ -19,13 +19,15 @@ While it works on all Windows devices, the TwoPaneView control is designed to he
 > [!NOTE]
 > A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](/windows/uwp/design/layout/show-multiple-views) for more info about ways you can optimize your app for multiple monitors.)
 
-| Get the Windows UI Library |
-| - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/). |
+**Get the Windows UI Library**
 
-| Platform APIs | Windows UI Library APIs |
+|  |  |
 | - | - |
-| [TwoPaneView class](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+>
+> **Platform APIs:** [TwoPaneView class](/uwp/api/windows.ui.xaml.controls.twopaneview)
 
 Throughout this document, we will use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element:
 
