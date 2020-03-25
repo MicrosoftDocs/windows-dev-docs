@@ -186,7 +186,7 @@ Not all controls' corners will respond to their `CornerRadius` property being mo
 
 You can base your custom styles on the WinUI rounded corner styles by specifying the correct `BasedOn` attribute in your style. For example to create a custom button style based on WinUI button style, do the following:
 
-```
+```xaml
 <Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
    ...
 </Style>
