@@ -1,5 +1,5 @@
 ---
-description: This topic shows how to port C# code to its equivalent in C++/WinRT.
+description: This topic describes the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Move to C++/WinRT from C#
 ms.date: 07/15/2019
 ms.topic: article
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Move to C++/WinRT from C#
 
-This topic shows how to port the code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+This topic describes the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## Register an event handler
 
