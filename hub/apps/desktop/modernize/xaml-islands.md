@@ -118,9 +118,31 @@ Here's a quick look at how the different types of XAML Island controls are organ
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.
 
-## Best practices
+## Limitations and workarounds
 
-The following sections discuss best practices for handing certain common UWP development scenarios in desktop apps that use XAML Islands.
+The following sections discuss limitations and workarounds for certain UWP development scenarios in desktop apps that use XAML Islands. 
+
+### Supported only with workarounds
+
+:heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
+
+:heavy_check_mark: To support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+
+:heavy_check_mark: Using `x:Bind` with hosted controls in XAML Islands is not supported. You'll have to declare the data model in a .NET Standard library.
+
+### Not supported
+
+:no_entry_sign: Using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host C#-based third-party UWP controls in WPF and Windows Forms apps that target the .NET Framework. This scenario is only supported in apps that target .NET Core 3.
+
+:no_entry_sign: UWP XAML content in XAML Islands doesn't respond to Windows theme changes from dark to light or vice versa at run time. Content does respond to high contrast changes at run time.
+
+:no_entry_sign: Adding a **WebView** control to a custom user control (either on-thread, off-thread, or out of process).
+
+:no_entry_sign: The [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) control and [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) host control are not supported in full screen mode.
+
+:no_entry_sign: Text input with the handwriting view. For more information about this feature, see [this article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
+
+:no_entry_sign: Text controls that use `@Places` and `@People` content links. For more information about this feature, see [this article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
 
 ### Window host context for XAML Islands
 
@@ -140,10 +162,6 @@ Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 ```
 
 For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) replacements, see the table in [this section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
-
-### Supporting the Share contract
-
-If you want to support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. 
 
 For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) sample.
 
