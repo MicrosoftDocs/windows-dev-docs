@@ -16,7 +16,6 @@ The System Media Transport Controls enable media application developers integrat
 <img alt="System Media Transtport Controls" src="images/smtc.png" />
 
 
-
 For a complete sample that demonstrates integration with the SMTC, see [System Media Tranport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
 ## Automatic integration with SMTC
