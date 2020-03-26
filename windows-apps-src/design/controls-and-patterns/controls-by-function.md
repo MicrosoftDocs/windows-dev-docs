@@ -718,10 +718,10 @@ Sample code: [XAML text sample](https://code.msdn.microsoft.com/windowsapps/XAML
 ### Text box
 A single-line or multi-line plain text field.
 
-![Text box control](images/controls/text-box.png) 
+![Text box control](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
