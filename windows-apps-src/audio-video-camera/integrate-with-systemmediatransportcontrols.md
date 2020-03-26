@@ -11,8 +11,14 @@ ms.localizationpriority: medium
 
 This article shows you how to interact with the System Media Transport Controls (SMTC). The SMTC is a set of controls that are common to all Windows 10 devices and that provide a consistent way for users to control media playback for all running apps that use [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) for playback.
 
+The System Media Transport Controls enable media application developers integrate with the built-in system UI to display media metadata such as artist, album title, or chapter title. The system transport control also allows a user to control the playback of a media app using the built-in system UI, such as pausing playback and skipping forward and backward in a playlist.
+
+<img alt="System Media Transtport Controls" src="images/smtc.png" />
+
+
+
 For a complete sample that demonstrates integration with the SMTC, see [System Media Tranport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
-            		
+                    
 ## Automatic integration with SMTC
 Starting with Windows 10, version 1607, UWP apps that use the [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the SMTC by default. Simply instantiate a new instance of **MediaPlayer** and assign a [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem), or [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList) to the player's [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) property and the user will see your app name in the SMTC and can play, pause, and move through your playback lists by using the SMTC controls. 
 
@@ -69,7 +75,7 @@ Next, the [**Handled**](https://docs.microsoft.com/uwp/api/windows.media.playbac
 Finally, [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) is called on the deferral object to let the system know that you are done processing the command.
 
 [!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
-             	
+                 
 ## Manual control of the SMTC
 As mentioned previously in this article, the SMTC will automatically detect and display information for every instance of **MediaPlayer** that your app creates. If you want to use multiple instances of **MediaPlayer** but want the SMTC to provide a single entry for your app, then you must manually control the behavior of the SMTC instead of relying on automatic integration. Also, if you are using [**MediaTimelineController**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaTimelineController) to control one or more media players, you must use manual SMTC integration. Also, if your app uses an API other than **MediaPlayer**, such as the [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) class, to play media, you must implement manual SMTC integration for the user to use the SMTC to control your app. For information on how to manually control the SMTC, see [Manual control of the System Media Transport Controls](system-media-transport-controls.md).
 
