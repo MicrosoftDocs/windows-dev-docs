@@ -161,7 +161,7 @@
         - name: Copy and paste
           href: ../app-to-app/copy-and-paste.md
     - name: Interprocess communication (IPC)
-      href: ../communication/ipc.md
+      href: ../communication/interprocess-communication.md
     - name: Networking and web services
       href: ../networking/index.md
       items:
