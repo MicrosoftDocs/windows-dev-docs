@@ -46,13 +46,13 @@ If you publish multiple apps and you're looking for a simple mechanism to share 
 
 ### SharedAccessStorageManager
 
-[SharedAccessStorageManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) is used in conjunction with App Services, protocol activations (for example, LaunchUriForResultsAsync), etc., to share StorageFiles via tokens.
+[SharedAccessStorageManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) is used in conjunction with App services, protocol activations (for example, LaunchUriForResultsAsync), etc., to share StorageFiles via tokens.
 
 ## FullTrustProcessLauncher
 
 With the [runFullTrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) capability, packaged applications can [launch full trust processes](/uwp/api/Windows.ApplicationModel.FullTrustProcessLauncher) within the same package.
 
-For scenarios where AppContainer restrictions are a burden, or IPC options are lacking, an app could use a full trust process as a proxy to interface with the system, and then IPC with the full trust process itself via AppServices or some other well supported IPC mechanism.
+For scenarios where package restrictions are a burden, or IPC options are lacking, an app could use a full trust process as a proxy to interface with the system, and then IPC with the full trust process itself via App services or some other well supported IPC mechanism.
 
 ## LaunchUriForResultsAsync
 
