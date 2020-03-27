@@ -27,7 +27,7 @@ When building and testing a native Android app, we recommend [using Android Stud
 
 3. Select Run ▷. This will launch the [Android Emulator](https://developer.android.com/studio/run/emulator).
 
-> [TIP]
+> [!TIP]
 > Once your app is installed on the emulator device, you can use [Apply Changes](https://developer.android.com/studio/run#apply-changes) to deploy certain code and resource changes without building a new APK.
 
 <!-- From Jon D's email: "Android Studio does not have any emulation checks in their product" ...not quite sure what this means (practically). Is this just a speed/perf issue? It seems very responsive on my Surface Book 2... but maybe I already had Hyper-V enabled... tho I didn't have WHPX enabled. Will perf improve now that I have?  -->
@@ -80,7 +80,7 @@ Before creating a virtual device with the Android emulator, it is recommended th
 
 4. Restart your computer when prompted.
 
-> [NOTE]
+> [!NOTE]
 > To run Hyper-V and Windows Hypervisor, your computer must have 4GB of memory, with a 64-bit Intel processor or an AMD Ryzen CPU with Second Level Address Translation (SLAT). You also must be updated to Windows 10 April 2018 update (build 1803) or later. To verify: Enter "About" in the Windows search box. Select **About your PC** in the search results. Verify that the version is at least 1803 in the Windows specifications section. For more information, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration?tabs=vswin&pivots=windows#related-links).
 
 ### Install Android emulator with Visual Studio
