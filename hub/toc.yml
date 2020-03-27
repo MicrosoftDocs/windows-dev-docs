@@ -126,6 +126,8 @@
               href: android/pwa.md
         - name: Defender settings to improve perf
           href: android/defender-settings.md
+        - name: Device and emulator testing
+          href: android/emulator.md
   - name: Mac to Windows guide
     items:
       - name: Changing your dev environment

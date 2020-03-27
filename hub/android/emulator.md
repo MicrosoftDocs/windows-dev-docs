@@ -19,11 +19,11 @@ When building and testing a native Android app, we recommend [using Android Stud
 
 1. In the Android Studio toolbar, select your app from the **run configurations** drop-down menu.
 
-    ![Android Studio Run Configuration menu](./images/android-run-config-menu.png)
+    ![Android Studio Run Configuration menu](../images/android-run-config-menu.png)
 
 2. From the **target device** drop-down menu, select the device that you want to run your app on.
 
-    ![Android Studio Target Device menu](./images/android-target-device-menu.png)
+    ![Android Studio Target Device menu](../images/android-target-device-menu.png)
 
 3. Select Run ▷. This will launch the [Android Emulator](https://developer.android.com/studio/run/emulator).
 
@@ -52,11 +52,11 @@ Run the app on your device:
 
 1. In the Android Studio toolbar, select your app from the **run configurations** drop-down menu.
 
-    ![Android Studio Run Configuration menu](./images/android-run-config-menu.png)
+    ![Android Studio Run Configuration menu](../images/android-run-config-menu.png)
 
 2. From the **target device** drop-down menu, select the device that you want to run your app on.
 
-    ![Android Studio Target Device menu](./images/android-target-device-menu.png)
+    ![Android Studio Target Device menu](../images/android-target-device-menu.png)
 
 3. Select Run ▷. This will launch the app on your connected device.
 
@@ -72,7 +72,7 @@ Before creating a virtual device with the Android emulator, it is recommended th
 
 1. To verify that your computer hardware and software is compatible with Hyper-V, open a command prompt and type the following command: `systeminfo`
 
-    ![Hyper-V requirements from systeminfo in command prompt](./images/systeminfo.png)
+    ![Hyper-V requirements from systeminfo in command prompt](../images/systeminfo.png)
 
 2. In the Windows search box (lower left) and enter "windows features". Select **Turn Windows features on or off** from the search results.
 
