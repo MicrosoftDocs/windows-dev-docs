@@ -20,13 +20,16 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 
 :::row:::
     :::column:::
+
 **Dialogs**
 
 ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
 
 Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+
     :::column-end:::
-    :::column::: 
+    :::column:::
+
 **Flyouts**
 
 ![Example of a flyout](../images/flyout-example2.png)
@@ -34,9 +37,9 @@ Dialogs are modal UI overlays that provide contextual app information. Dialogs b
 A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
 
 Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+
     :::column-end:::
 :::row-end:::
-
 
 ## Is this the right control?
 
