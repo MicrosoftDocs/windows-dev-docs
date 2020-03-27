@@ -101,10 +101,28 @@ For more information, see [Title bar customization](https://docs.microsoft.com/w
 ```xaml
 <Page>
     <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabViewItem Icon="Home" Header="Home" IsClosable="False" />
-        <TabViewItem Icon="Document" Header="Document 1" />
-        <TabViewItem Icon="Document" Header="Document 2" />
-        <TabViewItem Icon="Document" Header="Document 3" />
+        <TabView.TabItems>
+            <TabViewItem Header="Home" IsClosable="False">
+                <TabViewItem.IconSource>
+                    <SymbolIconSource Symbol="Home" />
+                </TabViewItem.IconSource>
+            </TabViewItem>
+            <TabViewItem Header="Document 1">
+                <TabViewItem.IconSource>
+                    <SymbolIconSource Symbol="Document" />
+                </TabViewItem.IconSource>
+            </TabViewItem>
+            <TabViewItem Header="Document 2">
+                <TabViewItem.IconSource>
+                    <SymbolIconSource Symbol="Document" />
+                </TabViewItem.IconSource>
+            </TabViewItem>
+            <TabViewItem Header="Document 3">
+                <TabViewItem.IconSource>
+                    <SymbolIconSource Symbol="Document" />
+                </TabViewItem.IconSource>
+            </TabViewItem>
+        </TabView.TabItems>
 
         <TabView.TabStripHeader>
             <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
