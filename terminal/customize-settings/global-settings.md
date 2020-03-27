@@ -14,7 +14,7 @@ The properties listed below affect the entire window, regardless of the profile 
 
 ## Default profile
 
-Sets the default profile which opens by typing `ctrl+t` or by clicking the '+' icon.
+Sets the default profile which opens by typing `ctrl+shift+t` or by clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -27,8 +27,8 @@ Sets the default profile which opens by typing `ctrl+t` or by clicking the '+' i
 ## Dark/Light theme
 
 :::row:::
-   :::column span="":::
-Sets the theme of the application. `"system"` will use them Windows is set to.
+:::column span="":::
+Sets the theme of the application. `"system"` will use the theme Windows is set to.
 
 **Property name:** `requestedTheme`
 
@@ -50,7 +50,9 @@ _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in
 
 ### Always show tabs
 
-When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after typing `ctrl+t`.
+:::row:::
+:::column span="":::
+When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t`.
 
 **Property name:** `alwaysShowTabs`
 
@@ -60,8 +62,17 @@ When set to `true`, tabs are always displayed. When set to `false` and `showTabs
 
 **Default value:** `true`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal always show tabs](./../images/always-show-tabs.gif)
+
+:::column-end:::
+:::row-end:::
+
 ### Tab width mode
 
+:::row:::
+:::column span="":::
 Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
 
 **Property name:** `tabWidthMode`
@@ -72,8 +83,17 @@ Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLeng
 
 **Default value:** `"equal"`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab width mode](./../images/tab-width-mode.gif)
+
+:::column-end:::
+:::row-end:::
+
 ### Hide close all tabs popup
 
+:::row:::
+:::column span="":::
 When set to `true`, closing a window with multiple tabs open _will_ require confirmation. When set to `false`, closing a window with multiple tabs open _will not_ require confirmation.
 
 **Property name:** `confirmCloseAllTabs`
@@ -83,6 +103,13 @@ When set to `true`, closing a window with multiple tabs open _will_ require conf
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal confirm close all tabs](./../images/confirm-close-all-tabs.png)
+
+:::column-end:::
+:::row-end:::
 
 ## Launch settings
 
@@ -138,6 +165,8 @@ The number of rows displayed in the window upon first load.
 
 ### Show/Hide the title bar
 
+:::row:::
+:::column span="":::
 When set to `true`, the tabs are moved into the title bar and the title bar disappears. When set to `false`, the title bar sits above the tabs.
 
 **Property name:** `showTabsInTitlebar`
@@ -147,6 +176,13 @@ When set to `true`, the tabs are moved into the title bar and the title bar disa
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal show tabs in title bar](./../images/show-tabs-in-title-bar.gif)
+
+:::column-end:::
+:::row-end:::
 
 ### Set the text in the title bar
 
