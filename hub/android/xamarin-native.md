@@ -32,7 +32,7 @@ You will also need an Android phone or configured emulator in which to run your 
 
 ## Create a new Xamarin.Android project
 
-Start Visual Studio. Click File > New > Project to create a new project.
+Start Visual Studio. Select File > New > Project to create a new project.
 
 In the new project dialog, select the **Android App (Xamarin)** template and click **Next**.
 
@@ -44,11 +44,11 @@ Xamarin will create a new solution with a single project named **TimeChangerAndr
 
 ## Create a UI with XAML
 
-Open **activity_main.xml** located in **Resources\layout**. The XML in this file defines the first screen a user will see when opening TimeChanger.
+In the **Resources\layout** directory of your project, open **activity_main.xml**. The XML in this file defines the first screen a user will see when opening TimeChanger.
 
-TimeChanger's UI is simple. It displays the current time, and has buttons to adjust the time in increments of one hour. It uses a vertical LinearLayout to align the time above the buttons, and a horizontal LinearLayout to arrange the buttons side-by-side. The content is centered in the screen by setting the vertical LinearLayout's **android:gravity** attribute to **center**.
+TimeChanger's UI is simple. It displays the current time and has buttons to adjust the time in increments of one hour. It uses a vertical `LinearLayout` to align the time above the buttons and a horizontal `LinearLayout` to arrange the buttons side-by-side. The content is centered in the screen by setting **android:gravity** attribute to **center** in the vertical `LinearLayout`.
 
-Replace the contents of activity_main.xml with the following code.
+Replace the contents of **activity_main.xml** with the following code.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -82,7 +82,7 @@ Replace the contents of activity_main.xml with the following code.
 </LinearLayout>
 ```
 
-At this point you can run TimeChangerAndroid and see the UI you've created. Unfortunately, the current time will not be displayed and though the buttons can be clicked, they will do not do anything. In the next section, you will add functionality to your UI.
+At this point you can run **TimeChangerAndroid** and see the UI you've created. In the next section, you will add functionality to your UI displaying the current time and enabling the buttons to perform an action.
 
 ## Add logic code with C#
 
@@ -90,13 +90,13 @@ Open **MainActivity.cs**. This file contains the code-behind logic that will add
 
 ### Set the current time
 
-First, get a reference to the TextView that will display the time. Use **FindViewById** to search all UI elements for the one with the correct **android:id** (which was set to `"@+id/timeDisplay"` in the xml from the previous step). This is the TextView that will display the current time.
+First, get a reference to the `TextView` that will display the time. Use **FindViewById** to search all UI elements for the one with the correct **android:id** (which was set to `"@+id/timeDisplay"` in the xml from the previous step). This is the `TextView` that will display the current time.
 
 ```csharp
 var currentTime = FindViewById<TextView>(Resource.Id.timeDisplay);
 ```
 
-UI controls must be updated on the UI thread. Changes made from another thread may not properly update the control as it displays on the screen. because there is no guarantee this code will always be running on the UI thread, use the **RunOnUiThread** method to make sure any updates display correctly. Here is the complete UpdateTimeLabel method.
+UI controls must be updated on the UI thread. Changes made from another thread may not properly update the control as it displays on the screen. Because there is no guarantee this code will always be running on the UI thread, use the **RunOnUiThread** method to make sure any updates display correctly. Here is the complete `UpdateTimeLabel` method.
 
 ```csharp
 private void UpdateTimeLabel(object state = null)
@@ -145,12 +145,14 @@ public void UpButton_Click(object sender, System.EventArgs e)
 
 ### Wire up the up and down buttons to their corresponding event handlers
 
-To associate the buttons with their corresponding event handlers, first use FindViewById to find the buttons by their ids. Once you have a reference to the button object, you can add an event handler to its Click event.
+To associate the buttons with their corresponding event handlers, first use FindViewById to find the buttons by their ids. Once you have a reference to the button object, you can add an event handler to its `Click` event.
 
 ```csharp
 Button upButton = FindViewById<Button>(Resource.Id.upButton);
 upButton.Click += UpButton_Click;
 ```
+
+## Completed MainActivity.cs file
 
 When you're finished, MainActivity.cs should look like this:
 
