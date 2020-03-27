@@ -14,6 +14,8 @@ The properties listed below affect the entire window, regardless of the profile 
 
 ## Default profile
 
+Sets the default profile which opens by typing `ctrl+t` or by clicking the '+' icon.
+
 **Property name:** `defaultProfile`
 
 **Necessity:** Required
@@ -22,9 +24,11 @@ The properties listed below affect the entire window, regardless of the profile 
 
 **Default value:** PowerShell's GUID
 
-Sets the default profile which opens by typing `ctrl+t` or by clicking the '+' icon.
-
 ## Dark/Light theme
+
+:::row:::
+   :::column span="":::
+Sets the theme of the application. `"system"` will use them Windows is set to.
 
 **Property name:** `requestedTheme`
 
@@ -34,11 +38,19 @@ Sets the default profile which opens by typing `ctrl+t` or by clicking the '+' i
 
 **Default value:** `"system"`
 
-Sets the theme of the application.
+:::column-end:::
+:::column span="":::
+![Windows Terminal dark theme](./../images/requested-themes.gif)
+_Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
+
+:::column-end:::
+:::row-end:::
 
 ## Tab settings
 
 ### Always show tabs
+
+When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after typing `ctrl+t`.
 
 **Property name:** `alwaysShowTabs`
 
@@ -48,9 +60,9 @@ Sets the theme of the application.
 
 **Default value:** `true`
 
-When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after typing `ctrl+t`.
-
 ### Tab width mode
+
+Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
 
 **Property name:** `tabWidthMode`
 
@@ -60,9 +72,9 @@ When set to `true`, tabs are always displayed. When set to `false` and `showTabs
 
 **Default value:** `"equal"`
 
-Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
-
 ### Hide close all tabs popup
+
+When set to `true`, closing a window with multiple tabs open _will_ require confirmation. When set to `false`, closing a window with multiple tabs open _will not_ require confirmation.
 
 **Property name:** `confirmCloseAllTabs`
 
@@ -72,11 +84,11 @@ Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLeng
 
 **Default value:** `true`
 
-When set to `true`, closing a window with multiple tabs open _will_ require confirmation. When set to `false`, closing a window with multiple tabs open _will not_ require confirmation.
-
 ## Launch settings
 
 ### Launch maximized
+
+Defines whether the Terminal will launch as maximized or not.
 
 **Property name:** `launchMode`
 
@@ -86,9 +98,9 @@ When set to `true`, closing a window with multiple tabs open _will_ require conf
 
 **Default value:** `"default"`
 
-Defines whether the Terminal will launch as maximized or not.
-
 ### Launch position
+
+The position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -98,9 +110,9 @@ Defines whether the Terminal will launch as maximized or not.
 
 **Default value:** `","`
 
-The position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
-
 ### Columns on first launch
+
+The number of columns displayed in the window upon first load.
 
 **Property name:** `initialCols`
 
@@ -110,9 +122,9 @@ The position of the top left corner of the window upon first load. On a system w
 
 **Default value:** `120`
 
-The number of columns displayed in the window upon first load.
-
 ### Rows on first launch
+
+The number of rows displayed in the window upon first load.
 
 **Property name:** `initialRows`
 
@@ -122,11 +134,11 @@ The number of columns displayed in the window upon first load.
 
 **Default value:** `30`
 
-The number of rows displayed in the window upon first load.
-
 ## Title bar settings
 
 ### Show/Hide the title bar
+
+When set to `true`, the tabs are moved into the title bar and the title bar disappears. When set to `false`, the title bar sits above the tabs.
 
 **Property name:** `showTabsInTitlebar`
 
@@ -136,9 +148,9 @@ The number of rows displayed in the window upon first load.
 
 **Default value:** `true`
 
-When set to `true`, the tabs are moved into the title bar and the title bar disappears. When set to `false`, the title bar sits above the tabs.
-
 ### Set the text in the title bar
+
+When set to `true`, the title bar displays the title of the selected tab. When set to `false`, title bar displays "Windows Terminal".
 
 **Property name:** `showTerminalTitleInTitlebar`
 
@@ -148,11 +160,11 @@ When set to `true`, the tabs are moved into the title bar and the title bar disa
 
 **Default value:** `true`
 
-When set to `true`, the title bar displays the title of the selected tab. When set to `false`, title bar displays "Windows Terminal".
-
 ## Selection settings
 
 ### Copy after selection is made
+
+When set to `true`, a selection is immediately copied to your clipboard upon creation. When set to `false`, the selection persists and awaits further action.
 
 **Property name:** `copyOnSelect`
 
@@ -162,9 +174,9 @@ When set to `true`, the title bar displays the title of the selected tab. When s
 
 **Default value:** `false`
 
-When set to `true`, a selection is immediately copied to your clipboard upon creation. When set to `false`, the selection persists and awaits further action.
-
 ### Word delimiters
+
+Determines the word delimiters used in a double click selection.
 
 **Property name:** `wordDelimiters`
 
@@ -174,9 +186,9 @@ When set to `true`, a selection is immediately copied to your clipboard upon cre
 
 **Default value:** <code>&nbsp;&#x2f;&#x5c;&#x28;&#x29;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x7e;&#x3f;│</code><br>_(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
 
-Determines the word delimiters used in a double click selection.
-
 ## Scroll speed
+
+The number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
 
 **Property name:** `rowsToScroll`
 
@@ -186,9 +198,9 @@ Determines the word delimiters used in a double click selection.
 
 **Default value:** `"system"`
 
-The number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
-
 ## Window resize behavior
+
+When set to `true`, the window will snap to the nearest character boundary on resize. When `false`, the window will resize "smoothly".
 
 **Property name:** `snapToGridOnResize`
 
@@ -197,5 +209,3 @@ The number of rows to scroll at a time with the mouse wheel. This will override 
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-When set to `true`, the window will snap to the nearest character boundary on resize. When `false`, the window will resize "smoothly".
