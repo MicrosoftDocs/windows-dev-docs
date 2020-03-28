@@ -11,7 +11,7 @@ dev_langs:
 - cppwinrt
 ---
 
-# Create and register a winmain background task
+# Create and register a winmain COM background task
 
 > [!TIP]
 > The BackgroundTaskBuilder.SetTaskEntryPointClsid method is available starting in Windows 10, version 2004.
@@ -49,14 +49,16 @@ The C++/WinRT example implements the background task class as a [**COM coclass**
 
 ```csharp
 
-using System.Text; // UnicodeEncoding
-using System.Threading; // Interlocked
+using System;
+using System.IO; // Path
+using System.Threading; // EventWaitHandle
 using System.Collections.Generic; // Queue
-using System.Runtime.InteropServices; // Guid
+using System.Runtime.InteropServices; // Guid, RegistrationServices
 using Windows.ApplicationModel.Background; // IBackgroundTask
+
 namespace PackagedWinMainBackgroundTaskSample
 {
-    // the clsid to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
+    // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
     [Guid("14C5882B-35D3-41BE-86B2-5106269B97E6")]
@@ -129,7 +131,7 @@ namespace PackagedWinMainBackgroundTaskSample
             {
                 currentNumber += 1;
             }
-    
+
             return currentNumber;
         }
 
@@ -255,10 +257,10 @@ namespace Win32BackgroundExecutionApiSample {
 ```
 
 </p>
-</details> 
+</details>
 
 
-## Add the support code to instantiate the COM class 
+## Add the support code to instantiate the COM class
 
 In order for the background task to be activated into a full trust winmain application, the background task class must have support code such that COM understands how to start the app process if it is not running, and then understanding which instance of the process is currently the server for handling new activations for that background task.
 
@@ -301,7 +303,7 @@ class SampleTaskServer
         comRegistrationToken = registrationServices.RegisterTypeForComClients(typeof(SampleTask), RegistrationClassContext.LocalServer, RegistrationConnectionType.MultipleUse);
 
         // Either have the background task signal this handle when it completes, or never signal this handle to keep this
-        // process as the COM server until it is closed. 
+        // process as the COM server until the process is closed.
         waitHandle.WaitOne();
     }
 
@@ -309,6 +311,7 @@ class SampleTaskServer
     {
         if (comRegistrationToken != 0)
         {
+            RegistrationServices registrationServices = new RegistrationServices();
             registrationServices.UnregisterTypeForComClients(registrationCookie);
         }
 
@@ -317,14 +320,14 @@ class SampleTaskServer
 
     private int comRegistrationToken;
     private EventWaitHandle waitHandle;
-};
+}
 
-SampleTaskServer sampleTaskServer = new SampleTaskServer();
+var sampleTaskServer = new SampleTaskServer();
 sampleTaskServer.Start();
 
 ```
 
-```cpp
+```cppwinrt
 
 class SampleTaskServer
 {
@@ -355,8 +358,9 @@ public:
                                                        REGCLS_MULTIPLEUSE,
                                                        &comRegistrationToken));
 
-            // This process now handles all new instances of SampleTask until it is closed.
-            Sleep(INFINITE);
+            // Either have the background task signal this handle when it completes, or never signal this handle to
+            // keep this process as the COM server until the process is closed.
+            waitHandle.WaitOne();
 
         }
         catch (...)
@@ -458,7 +462,7 @@ if (!taskRegistered)
 if (!taskRegistered)
 {
     BackgroundTaskBuilder builder;
-    
+
     builder.Name(sampleTaskName);
     builder.SetTaskEntryPointClsid(__uuidof(SampleTask));
     builder.SetTrigger(TimeTrigger(15, false));
@@ -490,7 +494,7 @@ The following code registers the background task and stores the result:
 
 try
 {
-    BackgroundTaskRegistration task = builder.Register();
+    var task = builder.Register();
 }
 catch (...)
 {
@@ -503,7 +507,7 @@ catch (...)
 
 try
 {
-    BackgroundTaskRegistration task = builder.Register();
+    auto task = builder.Register();
 }
 catch (...)
 {
@@ -512,19 +516,279 @@ catch (...)
 
 ```
 
+## Bringing it all together
+
+The following code samples show the complete code required to run and register your COM winmain background task:
+
+<details>
+<summary>Background task code sample</summary>
+<p>
+
+```csharp
+
+using System;
+using System.IO; // Path
+using System.Threading; // EventWaitHandle
+using System.Collections.Generic; // Queue
+using System.Runtime.InteropServices; // Guid, RegistrationServices
+using Windows.ApplicationModel.Background; // IBackgroundTask
+
+namespace PackagedWinMainBackgroundTaskSample
+{
+    // Background task implementation.
+    // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
+    [ComVisible(true)]
+    [ClassInterface(ClassInterfaceType.None)]
+    [Guid("14C5882B-35D3-41BE-86B2-5106269B97E6")]
+    [ComSourceInterfaces(typeof(IBackgroundTask))]
+    public class SampleTask : IBackgroundTask
+    {
+        private volatile int cleanupTask; // flag used to indicate to Run method that it should exit
+        private Queue<int> numbersQueue; // the data structure holding the set of primes in memory
+
+        private const int maxPrimeNumber = 100000; // the number up to which task will attempt to calculate primes
+        private const int queueDepthToWrite = 10; // how frequently this task should flush its queue of primes
+        private const string numbersQueueFile = "numbersQueue.log"; // the file to write to relative to AppData
+
+        public SampleTask()
+        {
+            cleanupTask = 0;
+            numbersQueue = new Queue<int>(queueDepthToWrite);
+        }
+
+        /// <summary>
+        /// This method writes all the numbers in the current queue to the specified file.
+        /// </summary>
+        private void FlushNumbersToFile(Queue<int> queueToWrite)
+        {
+            string logPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                        System.Diagnostics.Process.GetCurrentProcess().ProcessName);
+
+            if (!Directory.Exists(logPath))
+            {
+                Directory.CreateDirectory(logPath);
+            }
+
+            logPath = Path.Combine(logPath, numbersQueueFile);
+
+            const string delimiter = ", ";
+            UnicodeEncoding unicodeEncoding = new UnicodeEncoding();
+            // convert the queue to a list of comma separated values.
+            string stringToWrite = String.Join(delimiter, queueToWrite);
+            // Add the comma at the end.
+            stringToWrite += delimiter;
+
+            File.AppendAllText(logPath, stringToWrite);
+        }
+
+        /// <summary>
+        /// This method determines if the specified number is a prime number.
+        /// </summary>
+        private bool IsPrimeNumber(int dividend)
+        {
+            bool isPrime = true;
+            for (int divisor = dividend - 1; divisor > 1; divisor -= 1)
+            {
+                if ((dividend % divisor) == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            return isPrime;
+        }
+
+        /// <summary>
+        /// Given the current number, this method calculates the next prime number (excluding the specified number).
+        /// </summary>
+        private int GetNextPrime(int previousNumber)
+        {
+            int currentNumber = previousNumber + 1;
+            while (!IsPrimeNumber(currentNumber))
+            {
+                currentNumber += 1;
+            }
+
+            return currentNumber;
+        }
+
+        /// <summary>
+        /// This method is the main entry point for the background task. The system will believe this background task
+        /// is complete when this method returns.
+        /// </summary>
+        [MTAThread]
+        public void Run(IBackgroundTaskInstance taskInstance)
+        {
+            // Start with the first applicable number.
+            int currentNumber = 1;
+
+            taskDeferral = taskInstance.GetDeferral();
+
+            // Wire the cancellation handler.
+            taskInstance.Canceled += this.OnCanceled;
+
+            // Set the progress to indicate this task has started
+            taskInstance.Progress = 10;
+
+            // Calculate primes until a cancellation has been requested or until
+            // the maximum number is reached.
+            while ((cleanupTask == 0) && (currentNumber < maxPrimeNumber)) {
+                // Compute the next prime number and add it to our queue.
+                currentNumber = GetNextPrime(currentNumber);
+                numbersQueue.Enqueue(currentNumber);
+                // Once the queue is filled to its max size, flush the numbers to the file.
+                if (numbersQueue.Count >= queueDepthToWrite)
+                {
+                    FlushNumbersToFile(numbersQueue);
+                    numbersQueue.Clear();
+                }
+            }
+
+            // Flush any remaining numbers to the file as part of cleanup.
+            FlushNumbersToFile(numbersQueue);
+
+            if (taskDeferral != null)
+            {
+                taskDeferral.Complete();
+            }
+        }
+
+        /// <summary>
+        /// This method is signaled when the system requests the background task be canceled. This method will signal
+        /// to the Run method to clean up and return.
+        /// </summary>
+        [MTAThread]
+        public void OnCanceled(IBackgroundTaskInstance taskInstance, BackgroundTaskCancellationReason cancellationReason)
+        {
+            cleanupTask = 1;
+        }
+    }
 
 
+    // COM server startup code.
+    class SampleTaskServer
+    {
+        SampleTaskServer()
+        {
+            comRegistrationToken = 0;
+            waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
+        }
+
+        ~SampleTaskServer()
+        {
+            Stop();
+        }
+
+        public void Start()
+        {
+            RegistrationServices registrationServices = new RegistrationServices();
+            comRegistrationToken = registrationServices.RegisterTypeForComClients(typeof(SampleTask), RegistrationClassContext.LocalServer, RegistrationConnectionType.MultipleUse);
+
+            // Either have the background task signal this handle when it completes, or never signal this handle to keep this
+            // process as the COM server until the process is closed.
+            waitHandle.WaitOne();
+        }
+
+        public void Stop()
+        {
+            if (comRegistrationToken != 0)
+            {
+                RegistrationServices registrationServices = new RegistrationServices();
+                registrationServices.UnregisterTypeForComClients(registrationCookie);
+            }
+
+            waitHandle.Set();
+        }
+
+        private int comRegistrationToken;
+        private EventWaitHandle waitHandle;
+    }
 
 
+    // Background task registration code.
+    class SampleTaskRegistrar
+    {
+        public static void Register()
+        {
+            var taskRegistered = false;
+            var sampleTaskName = "SampleTask";
+
+            foreach (var task in BackgroundTaskRegistration.AllTasks)
+            {
+                if (task.Value.Name == sampleTaskName)
+                {
+                    taskRegistered = true;
+                    break;
+                }
+            }
+
+            if (!taskRegistered)
+            {
+                var builder = new BackgroundTaskBuilder();
+
+                builder.Name = sampleTaskName;
+                builder.SetTaskEntryPointClsid(typeof(SampleTask).GUID);
+                builder.SetTrigger(new TimeTrigger(15, false));
+            }
+
+            try
+            {
+                var task = builder.Register();
+            }
+            catch (...)
+            {
+                // Indicate an error was encountered.
+            }
+        }
+    }
 
 
+    // Application entry point.
+    static class Program
+    {
+        [MTAThread]
+        static void Main()
+        {
+            string[] commandLineArgs = Environment.GetCommandLineArgs();
+            if (commandLineArgs.Length < 2)
+            {
+                // Open the WPF UI when no arguments are specified.
+            }
+            else
+            {
+                if (commandLineArgs.Contains("-RegisterSampleTask", StringComparer.InvariantCultureIgnoreCase))
+                {
+                    SampleTaskRegistrar.Register();
+                }
+
+                if (commandLineArgs.Contains("-StartSampleTaskServer", StringComparer.InvariantCultureIgnoreCase))
+                {
+                    var sampleTaskServer = new SampleTaskServer();
+                    sampleTaskServer.Start();
+                }
+            }
+
+            return;
+        }
+    }
+}
+
+```
+
+```cppwinrt
+```
 
 
+</p>
+</details>
 
 
 ## Remarks
 
 Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby) to learn more.
+
+See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
 ## Related topics
 
@@ -536,7 +800,7 @@ Unlike UWP apps that can run background tasks in modern standby, WinMain apps ca
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
-* [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)  
+* [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)
 
 **Background task guidance**
 
