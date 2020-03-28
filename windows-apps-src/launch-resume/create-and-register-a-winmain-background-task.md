@@ -28,11 +28,11 @@ Create a background task class and register it to run in your full trust package
 > [!TIP]
 > This scenario is not applicable to UWP applications. UWP applications will encounter errors trying to implement this scenario.
 
-You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**TimeTrigger**](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
+You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
 
 The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface and add it to your main process.
 
-1.  [**See these instructions**](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
+1.  [**See these instructions**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
 2.  In that new class, implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. The [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
 > [!NOTE]
@@ -40,7 +40,7 @@ The following steps show you how to write a new class that implements the [**IBa
 
 The following sample code shows a basic a background task class that counts primes and writes it to a file until it is requested to be canceled.
 
-The C++/WinRT example implements the background task class as a [**COM coclass**](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
+The C++/WinRT example implements the background task class as a [**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
 
 
 <details>
@@ -68,7 +68,7 @@ namespace PackagedWinMainBackgroundTaskSample
         private volatile int cleanupTask; // flag used to indicate to Run method that it should exit
         private Queue<int> numbersQueue; // the data structure holding the set of primes in memory
 
-        private const int maxPrimeNumber = 100000; // the number up to which task will attempt to calculate primes
+        private const int maxPrimeNumber = 1000000000; // the number up to which task will attempt to calculate primes
         private const int queueDepthToWrite = 10; // how frequently this task should flush its queue of primes
         private const string numbersQueueFile = "numbersQueue.log"; // the file to write to relative to AppData
 
@@ -202,39 +202,36 @@ using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Foundation::Collections;
 using namespace winrt::Windows::ApplicationModel::Background;
 
-namespace Win32BackgroundExecutionApiSample {
-
-    handle _taskFactoryCompletionEvent{ CreateEvent(nullptr, false, false, nullptr) };
+namespace PackagedWinMainBackgroundTaskSample {
 
     // Note insert unique UUID.
     struct __declspec(uuid("14C5882B-35D3-41BE-86B2-5106269B97E6"))
     SampleTask : implements<SampleTask, IBackgroundTask>
     {
         const unsigned int MaximumPotentialPrime = 1000000000;
-        volatile bool IsCanceled = false;
-        BackgroundTaskDeferral TaskDeferral = nullptr;
+        volatile bool isCanceled = false;
+        BackgroundTaskDeferral taskDeferral = nullptr;
 
         void __stdcall Run (_In_ IBackgroundTaskInstance taskInstance)
         {
             taskInstance.Canceled({ this, &SampleTask::OnCanceled });
 
-            TaskDeferral = taskInstance.GetDeferral();
+            taskDeferral = taskInstance.GetDeferral();
 
             unsigned int currentPrimeNumber = 1;
-            while (!IsCanceled && (currentPrimeNumber < MaximumPotentialPrime))
+            while (!isCanceled && (currentPrimeNumber < MaximumPotentialPrime))
             {
                 currentPrimeNumber = GetNextPrime(currentPrimeNumber);
             }
 
-            check_bool(SetEvent(_taskFactoryCompletionEvent.get()));
-            TaskDeferral.Complete();
+            taskDeferral.Complete();
         }
 
         void __stdcall OnCanceled (_In_ IBackgroundTaskInstance, _In_ BackgroundTaskCancellationReason)
         {
-            IsCanceled = true;
+            isCanceled = true;
         }
-    }; // class SampleTask
+    };
 
     struct TaskFactory : implements<TaskFactory, IClassFactory>
     {
@@ -347,9 +344,6 @@ public:
     {
         try
         {
-            // Verify the global handle is correctly constructed.
-            check_bool(bool { _taskFactoryCompletionEvent });
-
             com_ptr<IClassFactory> taskFactory = make<TaskFactory>();
 
             winrt::check_hresult(CoRegisterClassObject(__uuidof(SampleTask),
@@ -392,7 +386,7 @@ sampleTaskServer.Start();
 
 ## Register the background task to run
 
-1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. *This step is important*; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete. An application is free to use the same entry point to handle all background tasks and use other properties like the [**Name**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) or [**TaskId**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) assigned to a [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) to decide what work should be done.
+1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. *This step is important*; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete. An application is free to use the same entry point to handle all background tasks and use other properties like the [**Name**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) or [**TaskId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) assigned to a [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) to decide what work should be done.
 
 The following example iterates on the **AllTasks** property and sets a flag variable to true if the task is already registered.
 
@@ -418,7 +412,7 @@ foreach (var task in BackgroundTaskRegistration.AllTasks)
 
 bool taskRegistered = false;
 std::wstring sampleTaskName = L"SampleTask";
-auto allTasks{ BackgroundTaskRegistration::AllTasks() };
+auto allTasks = BackgroundTaskRegistration::AllTasks();
 
 for (auto const& task : allTasks)
 {
@@ -435,7 +429,7 @@ for (auto const& task : allTasks)
 
 1.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
 
-The background task trigger controls when the background task will run. For a list of possible triggers, see the [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background) Namespace.
+The background task trigger controls when the background task will run. For a list of possible triggers, see the [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background) Namespace.
 
 > [!NOTE]
 > Only a subset of triggers are supported for packaged winmain background tasks.
@@ -521,7 +515,78 @@ catch (...)
 The following code samples show the complete code required to run and register your COM winmain background task:
 
 <details>
-<summary>Background task code sample</summary>
+<summary>Complete winmain app package manifest</summary>
+<p>
+
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap com">
+
+  <Identity
+    Name="SamplePackagedWinMainBackgroundApp"
+    Publisher="CN=Contoso"
+    Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>SamplePackagedWinMainBackgroundApp</DisplayName>
+    <PublisherDisplayName>Contoso</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+                 Executable="SampleBackgroundApp\$targetnametoken$.exe"
+                 EntryPoint="$targetentrypoint$">
+
+      <uap:VisualElements
+        DisplayName="SampleBackgroundApp"
+        Description="SampleBackgroundApp"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="SampleBackgroundApp\SampleBackgroundApp.exe" DisplayName="SampleBackgroundApp" Arguments="-StartSampleTaskServer">
+              <com:Class Id="14C5882B-35D3-41BE-86B2-5106269B97E6" DisplayName="Sample Task" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+  <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
+
+```
+
+</p>
+</details>
+
+
+<details>
+<summary>Complete background task code sample</summary>
 <p>
 
 ```csharp
@@ -546,7 +611,7 @@ namespace PackagedWinMainBackgroundTaskSample
         private volatile int cleanupTask; // flag used to indicate to Run method that it should exit
         private Queue<int> numbersQueue; // the data structure holding the set of primes in memory
 
-        private const int maxPrimeNumber = 100000; // the number up to which task will attempt to calculate primes
+        private const int maxPrimeNumber = 1000000000; // the number up to which task will attempt to calculate primes
         private const int queueDepthToWrite = 10; // how frequently this task should flush its queue of primes
         private const string numbersQueueFile = "numbersQueue.log"; // the file to write to relative to AppData
 
@@ -777,8 +842,197 @@ namespace PackagedWinMainBackgroundTaskSample
 ```
 
 ```cppwinrt
-```
 
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.ApplicationModel.Background.h>
+
+using namespace winrt;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Foundation::Collections;
+using namespace winrt::Windows::ApplicationModel::Background;
+
+namespace PackagedWinMainBackgroundTaskSample
+{
+    // Background task implementation.
+    // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
+    struct __declspec(uuid("14C5882B-35D3-41BE-86B2-5106269B97E6"))
+    SampleTask : implements<SampleTask, IBackgroundTask>
+    {
+        const unsigned int maxPrimeNumber = 1000000000;
+        volatile bool isCanceled = false;
+        BackgroundTaskDeferral taskDeferral = nullptr;
+
+        void __stdcall Run (_In_ IBackgroundTaskInstance taskInstance)
+        {
+            taskInstance.Canceled({ this, &SampleTask::OnCanceled });
+
+            taskDeferral = taskInstance.GetDeferral();
+
+            unsigned int currentPrimeNumber = 1;
+            while (!isCanceled && (currentPrimeNumber < maxPrimeNumber))
+            {
+                currentPrimeNumber = GetNextPrime(currentPrimeNumber);
+            }
+
+            taskDeferral.Complete();
+        }
+
+        void __stdcall OnCanceled (_In_ IBackgroundTaskInstance, _In_ BackgroundTaskCancellationReason)
+        {
+            isCanceled = true;
+        }
+    };
+
+    struct TaskFactory : implements<TaskFactory, IClassFactory>
+    {
+        HRESULT __stdcall CreateInstance (_In_opt_ IUnknown* aggregateInterface, _In_ REFIID interfaceId, _Outptr_ VOID** object) noexcept final
+        {
+            if (aggregateInterface != nullptr) {
+                return CLASS_E_NOAGGREGATION;
+            }
+
+            return make<SampleTask>().as(interfaceId, object);
+        }
+
+        HRESULT __stdcall LockServer (BOOL) noexcept final
+        {
+            return S_OK;
+        }
+    };
+
+
+    // COM server startup code.
+    class SampleTaskServer
+    {
+    public:
+        SampleTaskServer()
+        {
+            waitHandle = EventWaitHandle(false, EventResetMode::AutoResetEvent);
+            comRegistrationToken = 0;
+        }
+
+        ~SampleTaskServer()
+        {
+            Stop();
+        }
+
+        void Start()
+        {
+            try
+            {
+                com_ptr<IClassFactory> taskFactory = make<TaskFactory>();
+
+                winrt::check_hresult(CoRegisterClassObject(__uuidof(SampleTask),
+                                                           taskFactory.get(),
+                                                           CLSCTX_LOCAL_SERVER,
+                                                           REGCLS_MULTIPLEUSE,
+                                                           &comRegistrationToken));
+
+                // Either have the background task signal this handle when it completes, or never signal this handle to
+                // keep this process as the COM server until the process is closed.
+                waitHandle.WaitOne();
+
+            }
+            catch (...)
+            {
+                // Indicate an error has been encountered.
+            }
+        }
+
+        void Stop()
+        {
+            if (comRegistrationToken != 0)
+            {
+                CoRevokeClassObject(comRegistrationToken);
+            }
+
+            waitHandle.Set();
+        }
+
+    private:
+        DWORD comRegistrationToken;
+        EventWaitHandle waitHandle;
+    };
+
+
+    // Background task registration code.
+    class SampleTaskRegistrar
+    {
+        public static void Register()
+        {
+            bool taskRegistered = false;
+            std::wstring sampleTaskName = L"SampleTask";
+            auto allTasks = BackgroundTaskRegistration::AllTasks();
+
+            for (auto const& task : allTasks)
+            {
+                if (task.Value().Name() == sampleTaskName)
+                {
+                    taskRegistered = true;
+                    break;
+                }
+            }
+
+            if (!taskRegistered)
+            {
+                BackgroundTaskBuilder builder;
+
+                builder.Name(sampleTaskName);
+                builder.SetTaskEntryPointClsid(__uuidof(SampleTask));
+                builder.SetTrigger(TimeTrigger(15, false));
+            }
+
+            try
+            {
+                auto task = builder.Register();
+            }
+            catch (...)
+            {
+                // Indicate an error was encountered.
+            }
+        }
+    }
+
+}
+
+using namespace PackagedWinMainBackgroundTaskSample;
+
+// Application entry point.
+int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
+{
+    unsigned int argumentIndex;
+
+    winrt::init_apartment();
+
+    if (argc <= 1)
+    {
+        return E_INVALIDARG;
+    }
+
+    for (argumentIndex = 0; argumentIndex < argc ; argumentIndex += 1)
+    {
+        if (_wcsnicmp(L"RegisterSampleTask",
+                      argv[argumentIndex],
+                      wcslen(L"RegisterSampleTask")) == 0)
+        {
+            SampleTaskRegistrar::Register();
+        }
+
+        if (_wcsnicmp(L"StartSampleTaskServer",
+                      argv[argumentIndex],
+                      wcslen(L"StartSampleTaskServer")) == 0)
+        {
+            SampleTaskServer sampleTaskServer;
+            sampleTaskServer.Start();
+        }
+    }
+
+    return S_OK;
+}
+
+```
 
 </p>
 </details>
@@ -786,7 +1040,7 @@ namespace PackagedWinMainBackgroundTaskSample
 
 ## Remarks
 
-Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby) to learn more.
+Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby) to learn more.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
