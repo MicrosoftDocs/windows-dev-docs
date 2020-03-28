@@ -48,9 +48,9 @@ landingContent:
           - text: UWP apps on ARM
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
           - text: Debug on ARM
-            url: /windows-hardware/drivers/debugger/debugging-arm64
+            url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64
           - text: Build ARM64 Drivers with the WDK
-            url: /windows-hardware/drivers/develop/building-arm64-drivers
+            url: https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers
           - text: Develop x86 apps on ARM
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-x86
 
