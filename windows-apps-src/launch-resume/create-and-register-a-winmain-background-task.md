@@ -1,6 +1,6 @@
 ---
 title: Create and register a winmain background task
-description: Create a winmain background task that can run in your main process or out-of-process when your winmain app is not running.
+description: Create a COM background task that can run in your main process or out-of-process when your packaged winmain app may not be running.
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 03/27/2020
 ms.topic: article
@@ -16,17 +16,17 @@ dev_langs:
 > [!TIP]
 > The BackgroundTaskBuilder.SetTaskEntryPointClsid method is available starting in Windows 10, version 2004.
 
+> [!NOTE]
+> This scenario is not applicable to packaged WinMain apps. UWP applications will encounter errors trying to implement this scenario.
+
 **Important APIs**
 
 -   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
-Create a background task class and register it to run in your full trust packaged winmain app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
+Create a COM background task class and register it to run in your full trust packaged winmain app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
 
 ## Create the Background Task class
-
-> [!TIP]
-> This scenario is not applicable to UWP applications. UWP applications will encounter errors trying to implement this scenario.
 
 You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
 
