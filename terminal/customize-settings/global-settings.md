@@ -24,6 +24,8 @@ Sets the default profile which opens by typing `ctrl+shift+t` or by clicking the
 
 **Default value:** PowerShell's GUID
 
+<br />
+
 ___
 
 ## Dark/Light theme
@@ -47,6 +49,8 @@ _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in
 
 :::column-end:::
 :::row-end:::
+
+<br />
 
 ___
 
@@ -115,6 +119,8 @@ When set to `true`, closing a window with multiple tabs open _will_ require conf
 :::column-end:::
 :::row-end:::
 
+<br />
+
 ___
 
 ## Launch settings
@@ -167,6 +173,8 @@ The number of rows displayed in the window upon first load.
 
 **Default value:** `30`
 
+<br />
+
 ___
 
 ## Title bar settings
@@ -204,6 +212,8 @@ When set to `true`, the title bar displays the title of the selected tab. When s
 
 **Default value:** `true`
 
+<br />
+
 ___
 
 ## Selection settings
@@ -232,6 +242,8 @@ Determines the word delimiters used in a double click selection.
 
 **Default value:** <code>&nbsp;&#x2f;&#x5c;&#x28;&#x29;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x7e;&#x3f;│</code><br>_(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
 
+<br />
+
 ___
 
 ## Scroll speed
@@ -245,6 +257,8 @@ The number of rows to scroll at a time with the mouse wheel. This will override 
 **Accepts:** Integer
 
 **Default value:** `"system"`
+
+<br />
 
 ___
 
