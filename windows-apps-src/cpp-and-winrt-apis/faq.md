@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 # Frequently-asked questions about C++/WinRT
 Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
+> [!IMPORTANT]
+> For release notes about C++/WinRT, see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
+
 > [!NOTE]
 > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
 

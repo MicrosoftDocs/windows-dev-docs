@@ -25,7 +25,7 @@ ms.localizationpriority: medium
                         <h3>Learn about Windows 10 Apps</h3>
                         <p>Windows 10 and the Universal Windows Platform let you build apps that work and look great across all Windows device types, or update existing apps with modern features.</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">What's a UWP app?</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">What's a Windows app?</a></li>
                         </ul>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ ms.localizationpriority: medium
                     <h3>Samples</h3>
                     <p>Get firsthand experience with the Windows 10 platform and see APIs in action.</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Using UWP app samples</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Using Windows app samples</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Quiz Game (Project Rome)</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Windows code samples portal</a></p>

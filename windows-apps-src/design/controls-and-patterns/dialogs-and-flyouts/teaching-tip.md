@@ -12,18 +12,23 @@ ms.custom: 19H1
 ms.localizationpriority: medium
 ---
 
-
 # Teaching tip
 
 A teaching tip is a semi-persistent and content-rich flyout that provides contextual information. It is often used for informing, reminding, and teaching users about important and new features that may enhance their experience.
 
-**Important APIs:** [TeachingTip class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
-
 A teaching tip may be light-dismiss or require explicit action to close. A teaching tip can target a specific UI element with its tail and also be used without a tail or target.
 
-## Is this the right control? 
+**Get the Windows UI Library**
 
-Use a **TeachingTip** control to focus a user's attention on new or important updates and features, remind a user of nonessential options that would improve their experience, or teach a user how a task should be completed. 
+|  |  |
+| - | - |
+| ![WinUI logo](../images/winui-logo-64x64.png) | The **TeachingTip** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Windows UI Library APIs:** [TeachingTip class](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+
+## Is this the right control?
+
+Use a **TeachingTip** control to focus a user's attention on new or important updates and features, remind a user of nonessential options that would improve their experience, or teach a user how a task should be completed.
 
 Because teaching tip is transient, it would not be the recommended control for prompting users about errors or important status changes.
 
@@ -33,7 +38,7 @@ Because teaching tip is transient, it would not be the recommended control for p
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TeachingTip">open the app and see the TeachingTip in action</a>.</p>
     <ul>
@@ -46,7 +51,7 @@ Because teaching tip is transient, it would not be the recommended control for p
 
 A teaching tip can have several configurations, including these notable ones.
 
-A teaching tip can target a specific UI element with its tail to enhance contextual clarity of the information it is presenting. 
+A teaching tip can target a specific UI element with its tail to enhance contextual clarity of the information it is presenting.
 
 ![A sample app with a teaching tip targeting the save button. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-targeted.png)
 
@@ -54,14 +59,14 @@ When the information presented does not pertain to a particular UI element, a no
 
 ![A sample app with a teaching tip in the bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-non-targeted.png)
 
-A teaching tip can require the user to dismiss it via an "X" button in a top corner or a "Close" button at the bottom. A teaching tip may also be light-dismiss enabled in which case there is no dismiss button and the teaching tip will instead dismiss when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area. 
+A teaching tip can require the user to dismiss it via an "X" button in a top corner or a "Close" button at the bottom. A teaching tip may also be light-dismiss enabled in which case there is no dismiss button and the teaching tip will instead dismiss when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.
 
 ![A sample app with a light-dismiss teaching tip in the bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to."](../images/teaching-tip-light-dismiss.png)
 
 
 ### Create a teaching tip
 
-Here's the XAML for a targeted teaching tip control that demonstrates the default look of the TeachingTip with a title and subtitle. 
+Here's the XAML for a targeted teaching tip control that demonstrates the default look of the TeachingTip with a title and subtitle.
 Note that the teaching tip can appear anywhere in the element tree or code behind. In this example below, it's located in a ResourceDictionary.
 
 XAML
@@ -115,7 +120,7 @@ Note that in this example the TeachingTip is in the element tree rather than in 
 
 ### Preferred placement
 
-Teaching tip replicates Flyout's [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) placement behavior with the TeachingTipPlacementMode property. The default placement mode will try to place a targeted teaching tip above its target and a non-targeted teaching tip centered at the bottom of the xaml root. As with Flyout, if the preferred placement mode would not leave room for the teaching tip to show, another placement mode will be automatically chosen. 
+Teaching tip replicates Flyout's [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) placement behavior with the TeachingTipPlacementMode property. The default placement mode will try to place a targeted teaching tip above its target and a non-targeted teaching tip centered at the bottom of the xaml root. As with Flyout, if the preferred placement mode would not leave room for the teaching tip to show, another placement mode will be automatically chosen.
 
 For applications that predict gamepad input, please see [gamepad and remote control interactions]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). It is encouraged to test gamepad accessibility of each teaching tip using all possible configurations of an app's UI.
 
@@ -159,11 +164,11 @@ The diagram below depicts the result of all 13 PreferredPlacement modes that can
 The diagram below depicts the result of all 13 PreferredPlacement modes that can be set for non-targeted teaching tips.
 ![Illustration containing nine teaching tips, each demonstrating a different non-targeted placement mode. Each teaching tip is labeled with the mode it represents. The first word of a placement mode indicates the side of the xaml root that the teaching tip will appear centered on. If there is a second word in the placement mode, the teaching tip will position itself toward that specified corner of the xaml root. For example, the placement mode "TopRight" will make the teaching tip appear in the top right corner of the xaml root. For non-targeted placement modes, the order of the two words does not affect the placement. TopRight is equivalent to RightTop. The placement mode "Center" in unique and will make the teaching tip appear in the vertical and horizontal center of the xaml root.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
-### Add a placement margin  
+### Add a placement margin
 
 You can control how far a targeted teaching tip is set apart from its target and how far a non-targeted teaching tip is set apart from the edges of the xaml root by using the PlacementMargin property. Like [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin), PlacementMargin has four values – left, right, top, and bottom – so only the relevant values are used. For example, PlacementMargin.Left applies when the tip is left of the target or on the left edge of the xaml root.
 
-The following example shows a non-targeted tip with the PlacementMargin’s Left/Top/Right/Bottom all set to 80.
+The following example shows a non-targeted tip with the PlacementMargin's Left/Top/Right/Bottom all set to 80.
 
 XAML
 ```XAML
@@ -182,7 +187,7 @@ XAML
 
 ### Add content
 
-Content can be added to a teaching tip using the Content property. If there is more content to show than what the size of a teaching tip will allow, a scrollbar will be automatically enabled to allow a user to scroll the content area. 
+Content can be added to a teaching tip using the Content property. If there is more content to show than what the size of a teaching tip will allow, a scrollbar will be automatically enabled to allow a user to scroll the content area.
 
 XAML
 ```XAML
@@ -214,7 +219,7 @@ A custom action button can be added by setting ActionButtonContent property (and
 XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
-    <Button.Resources> 
+    <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
@@ -240,7 +245,7 @@ Edge to edge content can be added to a teaching tip by setting the HeroContent p
 XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
-    <Button.Resources> 
+    <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
@@ -257,7 +262,7 @@ XAML
 
 ### Add an icon
 
-An icon can be added beside the title and subtitle using the IconSource property. Recommended icon sizes include 16px, 24px, and 32px. 
+An icon can be added beside the title and subtitle using the IconSource property. Recommended icon sizes include 16px, 24px, and 32px.
 
 XAML
 ```XAML
@@ -279,9 +284,9 @@ XAML
 
 ### Enable light-dismiss
 
-Light-dismiss functionality is disabled by default but it can enabled so that a teaching tip will dismiss, for example, when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area. 
+Light-dismiss functionality is disabled by default but it can enabled so that a teaching tip will dismiss, for example, when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.
 
-The close button will be automatically removed from a light-dismiss enabled teaching tip to identify its light-dismiss behavior to users. 
+The close button will be automatically removed from a light-dismiss enabled teaching tip to identify its light-dismiss behavior to users.
 
 XAML
 ```XAML
@@ -319,7 +324,7 @@ XAML
 
 ### Canceling and deferring close
 
-The Closing event can be used to cancel and/or defer the close of a teaching tip. This can be used to keep the teaching tip open or allow time for an action or custom animation to occur. When the closing of a teaching tip is canceled, IsOpen will go back to true, however, it will stay false during the deferral. A programmatic close can also be canceled. 
+The Closing event can be used to cancel and/or defer the close of a teaching tip. This can be used to keep the teaching tip open or allow time for an action or custom animation to occur. When the closing of a teaching tip is canceled, IsOpen will go back to true, however, it will stay false during the deferral. A programmatic close can also be canceled.
 
 **Note: If no placement option would allow a teaching tip to fully show, teaching tip will iterate through its event lifecycle to force a close rather than display without an accessible close button. If the app cancels the Closing event, the teaching tip may remain open without an accessible Close button.**
 
@@ -354,16 +359,16 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 
 ## Remarks
 
-### Related articles 
+### Related articles
 
 * [Dialogs and flyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
 
 ### Recommendations
-* Tips are impermanent and should not contain information or options that are critical to the experience of an application. 
-* Try to avoid showing teaching tips too often. Teaching tips are most likely to each recieve individual attention when they are staggered throughout long sessions or across multiple sessions.    
+* Tips are impermanent and should not contain information or options that are critical to the experience of an application.
+* Try to avoid showing teaching tips too often. Teaching tips are most likely to each recieve individual attention when they are staggered throughout long sessions or across multiple sessions.
 * Keep tips succinct and their topic clear. Research shows users, on average, only read 3-5 words and only comprehend 2-3 words before deciding whether to interact with a tip.
 * Gamepad accessibility of a teaching tip is not guaranteed. For applications that predict gamepad input, please see [gamepad and remote control interactions]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). It is encouraged to test gamepad accessibility of each teaching tip using all possible configurations of an app's UI.
-* When enabling a teaching tip to escape the xaml root, it is encouraged to also enable the IsLightDismissEnabled property and set the PreferredPlacement mode nearest to the center of the xaml root. 
+* When enabling a teaching tip to escape the xaml root, it is encouraged to also enable the IsLightDismissEnabled property and set the PreferredPlacement mode nearest to the center of the xaml root.
 
 ### Reconfiguring an open teaching tip
 

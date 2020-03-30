@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 1. Power on your HoloLens and put on the device.
 2. Perform the [Start gesture](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) or [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture for HoloLens (1st Gen) to launch the main menu.
-3. Gaze at the **Settings** tile and perform the [air tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture on HoloLens (1st Gen) or select it on HoloLens 2 by [touching it or using a Hand ray](https://docs.microsoft.com/hololens/hololens2-basic-usage). The Settings app will launch after you select it.
+3. Gaze at the **Settings** tile and perform the [tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture on HoloLens (1st Gen) or select it on HoloLens 2 by [touching it or using a Hand ray](https://docs.microsoft.com/hololens/hololens2-basic-usage). The Settings app will launch after you select it.
 4. Select the **Update** menu item.
 5. Select the **For developers** menu item.
 6. Enable **Developer Mode**.
@@ -95,7 +95,7 @@ The home page shows the following info:
 - **Device** Status: monitors the health of your device and reports critical errors.
 - **Windows information**: shows the name of the HoloLens and the currently installed version of Windows.
 - **Preferences** section contains the following settings:
-    - **IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead. The setting takes effect immediately. The default value was calculated automatically when you set up your device.
+    - **IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead. The setting takes effect immediately. The default value was calculated automatically when you set up your device. **Valid for HoloLens (1st Gen) only, Hololens 2 computes eye position.** 
     - **Device name**: Assign a name to the HoloLens. You must reboot the device after changing this value for it to take effect. After clicking Save, a dialog will ask if you want to reboot the device immediately or reboot later.
     - **Sleep settings**: Sets the length of time to wait before the device goes to sleep when it's plugged in and when it's on battery.
 

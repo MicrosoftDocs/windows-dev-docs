@@ -215,4 +215,4 @@ To learn more about command bars, see the [command bar article](../controls-and-
 
 ## Related articles
 
-* [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md)
+* [App icons and logos](app-icons-and-logos.md)

@@ -37,13 +37,13 @@ Each app has its own set of credentials for its cloud service. These credentials
 Before you can send notifications through WNS, your app must be registered with the Partner Center Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, sign in to [Partner Center](https://partner.microsoft.com/dashboard). After you create your app, see [Product Management - WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions on how to retrieve the credentials (if you want to use the Live Services solution, follow the **Live services site** link on this page).
 
 To register:
-1.	Go to the Windows Store apps page of the Partner Center and sign in with your personal Microsoft account (ex: johndoe@outlook.com, janedoe@xboxlive.com).
-2.	Once you have signed in, click the Dashboard link.
-3.	On the Dashboard, select Create a new app.
+1.    Go to the Windows Store apps page of the Partner Center and sign in with your personal Microsoft account (ex: johndoe@outlook.com, janedoe@xboxlive.com).
+2.    Once you have signed in, click the Dashboard link.
+3.    On the Dashboard, select Create a new app.
 
 ![wns app registration](../images/wns-create-new-app.png)
 
-4.	Create your app by reserving an app name. Provide a unique name for your app. Enter the name and click the Reserve product name button. If the name is available, it is reserved for your app. Once you have successfully reserved a name for your app, the other details become available to modify should you choose to do so at this time.
+4.    Create your app by reserving an app name. Provide a unique name for your app. Enter the name and click the Reserve product name button. If the name is available, it is reserved for your app. Once you have successfully reserved a name for your app, the other details become available to modify should you choose to do so at this time.
 
 ![wns reserve product name](../images/wns-reserve-poduct-name.png)
  
@@ -51,24 +51,24 @@ To register:
 
 When you reserved a name for your app, the Windows Store created your associated credentials. It also assigned associated identity values—name and publisher— that must be present in your app's manifest file (package.appxmanifest). If you have already uploaded your app to the Windows Store, these values will have automatically been added to your manifest. If you have not uploaded your app, you will need to add the identity values to your manifest manually.
 
-1.	Select the Product management dropdown arrow
+1.    Select the Product management dropdown arrow
 
 ![wns product management](../images/wns-product-management.png)
 
-2.	On the Product management dropdown, select the WNS/MPNS link.
+2.    On the Product management dropdown, select the WNS/MPNS link.
 
 ![wns product management continuted](../images/wns-product-management2.png)
  
-3.	On the WNS/MPNS page, click the Live Services site link found under the Windows Push Notification Services (WNS) and Microsoft Azure Mobile Services section.
+3.    On the WNS/MPNS page, click the Live Services site link found under the Windows Push Notification Services (WNS) and Microsoft Azure Mobile Services section.
 
 ![wns live services](../images/wns-live-services-page.png)
  
-4.	The Application Registration Portal (previously the Live Services page) page gives you an identity element to include in your app's manifest. This includes the app secret(s), Package Security Identifier, and the Application Identity. Open your manifest in a text editor and add that element as the page instructs.	
+4.    The Application Registration Portal (previously the Live Services page) page gives you an identity element to include in your app's manifest. This includes the app secret(s), Package Security Identifier, and the Application Identity. Open your manifest in a text editor and add that element as the page instructs.    
 
 > [!NOTE]
 > If you are logged in with an AAD account, you will need to contact the Microsoft account owner who registered the app to obtain the associated app secrets. If you need help finding this contact person, click the gear in the top right corner of your screen, then click developer settings and the email address of who created the app with their Microsoft account will be displayed there.
  
-5.	Upload the SID and client secret to your cloud server.
+5.    Upload the SID and client secret to your cloud server.
 
 > [!Important]
 > The SID and client secret should be securely stored and accessed by your cloud service. Disclosure or theft of this information could enable an attacker to send notifications to your users without your permission or knowledge.
@@ -175,6 +175,7 @@ This diagram illustrates the data flow:
 -   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
 -   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). Note that toast notifications are never stored when the device is offline.
 -   In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.
+-   Windows Notification Platform maintains a periodic data connection with WNS to keep the socket alive and healthy. If there are no applications requesting or using notification channels then the socket will not be created.
 
 ## Expiration of tile and badge notifications
 

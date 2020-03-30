@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
-> **Important APIs**: [CommandBar class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **Platform APIs:** [CommandBar class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![Example of a command bar with icons](images/controls_appbar_icons.png)
 
@@ -34,7 +34,7 @@ The CommandBar control is a general-purpose, flexible, light-weight control that
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/CommandBar">open the app and see the CommandBar in action</a>.</p>
     <ul>
