@@ -133,7 +133,7 @@ Let's use the built-in OS module to get some information about your computer's o
 
 4) To view the the CPUs available on your system, enter: `os.cpus()`
 
-5) Leave the Node.js CLI by entering `.exit` or by selecting Ctrl+C twice.
+5) Leave the Node.js CLI by entering `.exit` or by clicking Ctrl+C twice.
 
    > [!TIP]
    > You can use the Node.js OS module to do things like check the platform and return a platform-specific variable: Win32/.bat for Windows development, darwin/.sh for Mac/unix, Linux, SunOS, and so on (for example, `var isWin = process.platform === "win32";`).
