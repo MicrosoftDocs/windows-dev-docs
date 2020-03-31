@@ -222,9 +222,11 @@ ___
 
 ## Color settings
 
+More detailed information can be found on the [color schemes page](./color-schemes.md).
+
 ### Color scheme
 
-The name of the color scheme is used to define which color scheme is used in the profile. Color schemes are defined in the `schemes` object. More information can be found on the [color schemes page](./color-schemes.md).
+The name of the color scheme is used to define which color scheme is used in the profile. Color schemes are defined in the `schemes` object.
 
 **Property name:** `colorScheme`
 
@@ -300,9 +302,11 @@ ___
 
 ## Background image settings
 
+More detailed information can be found on the [background images page](./../background-images.md).
+
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background. More information can be found on the [background images page](./../background-images.md).
+This sets the file location of the image to draw over the window background.
 
 **Property name:** `backgroundImage`
 
@@ -312,7 +316,7 @@ This sets the file location of the image to draw over the window background. Mor
 
 ### Background image stretch mode
 
-You can set how the background image is resized to fill the window. More information can be found on the [background images page](./../background-images.md).
+You can set how the background image is resized to fill the window.
 
 **Property name:** `backgroundImageStretchMode`
 
@@ -324,7 +328,7 @@ You can set how the background image is resized to fill the window. More informa
 
 ### Background image alignment
 
-This sets how the background image aligns to the boundaries of the window. More information can be found on the [background images page](./../background-images.md).
+This sets how the background image aligns to the boundaries of the window.
 
 **Property name:** `backgroundImageAlignment`
 
@@ -336,7 +340,7 @@ This sets how the background image aligns to the boundaries of the window. More 
 
 ### Background image opacity
 
-You can set the transparency of the background image. More information can be found on the [background images page](./../background-images.md).
+You can set the transparency of the background image.
 
 **Property name:** `backgroundImageOpacity`
 
