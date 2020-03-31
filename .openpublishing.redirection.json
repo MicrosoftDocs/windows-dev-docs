@@ -4884,6 +4884,11 @@
       "source_path": "windows-apps-src/porting/apps-on-arm-limitations.md",
       "redirect_url": "https://docs.microsoft.com/windows/uwp/porting/apps-on-arm-troubleshooting-x86",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/communication/ipc.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/communication/interprocess-communication",
+      "redirect_document_id": false
     }
   ]
 }

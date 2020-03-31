@@ -1,5 +1,5 @@
 ---
-description: This topic shows two helper functions that can be used to convert between C++/CX and C++/WinRT objects.
+description: This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects.
 title: Interop between C++/WinRT and C++/CX
 ms.date: 10/09/2018
 ms.topic: article
