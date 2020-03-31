@@ -272,4 +272,4 @@ When set to `true`, the window will snap to the nearest character boundary on re
 
 **Accepts:** `true`, `false`
 
-**Default value:** `false`
+**Default value:** `true`
