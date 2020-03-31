@@ -9,6 +9,10 @@ ms.localizationpriority: medium
 ---
 # Feedback report
 
+> [!WARNING]
+> Feedback report deprecation on April 15th 2020
+> This report will no longer be supported after April 15th 2020. Data on this report will not refresh after this date and the report will be removed in future without further notice. You can continue to view feedback received from your customers directly in the Feedback Hub.
+
 The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.
 
 > [!NOTE]
