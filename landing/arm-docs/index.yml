@@ -24,11 +24,11 @@ landingContent:
       - linkListType: overview
         links:
           - text: Windows 10 on ARM
-            url: /windows/uwp/porting/apps-on-arm.md
+            url: /windows/uwp/porting/apps-on-arm
       - linkListType: learn
         links:        
           - text: Learn how x86 emulation works
-            url: /windows/uwp/porting/apps-on-arm-x86-emulation.md            
+            url: /windows/uwp/porting/apps-on-arm-x86-emulation            
       - linkListType: video
         links:
           - text: Build ARM64 Win32 C++ Apps
@@ -46,13 +46,13 @@ landingContent:
           - text: Build ARM64 apps with the SDK
             url: https://blogs.windows.com/buildingapps/?p=52087
           - text: UWP apps on ARM
-            url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32.md
+            url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
           - text: Debug on ARM
-            url: /windows-hardware/drivers/debugger/debugging-arm64.md
+            url: /windows-hardware/drivers/debugger/debugging-arm64
           - text: Build ARM64 Drivers with the WDK
-            url: /windows-hardware/drivers/develop/building-arm64-drivers.md
+            url: /windows-hardware/drivers/develop/building-arm64-drivers
           - text: Develop x86 apps on ARM
-            url: /windows/uwp/porting/apps-on-arm-troubleshooting-x86.md
+            url: /windows/uwp/porting/apps-on-arm-troubleshooting-x86
 
   # Card
   - title: Any feedback?
