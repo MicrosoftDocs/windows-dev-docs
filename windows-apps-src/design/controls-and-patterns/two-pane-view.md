@@ -26,8 +26,6 @@ While it works on all Windows devices, the TwoPaneView control is designed to he
 | ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
->
-> **Platform APIs:** [TwoPaneView class](/uwp/api/windows.ui.xaml.controls.twopaneview)
 
 Throughout this document, we will use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element:
 
