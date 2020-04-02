@@ -18,9 +18,14 @@ The TabView control is a way to display a set of tabs and their respective conte
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+
+> [!TIP]
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## Is this the right control?
 
@@ -51,28 +56,28 @@ The next image shows the parts of the [TabViewItem](/uwp/api/microsoft.ui.xaml.c
 This example creates a simple [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) along with event handlers to support opening and closing tabs.
 
 ```xaml
-<TabView AddTabButtonClick="Tabs_AddTabButtonClick"
-         TabCloseRequested="Tabs_TabCloseRequested" />
+ <muxc:TabView AddTabButtonClick="TabView_AddTabButtonClick"
+               TabCloseRequested="TabView_TabCloseRequested"/>
 ```
 
 ```csharp
 // Add a new Tab to the TabView
-private void Tabs_AddTabButtonClick(TabView sender, TabViewAddTabButtonClickEventArgs e)
+private void TabView_AddTabButtonClick(muxc.TabView sender, object args)
 {
-    var newTab = new TabViewItem();
-    newTab.IconSource = new SymbolIconSource() { Symbol = Symbol.Document };
+    var newTab = new muxc.TabViewItem();
+    newTab.IconSource = new muxc.SymbolIconSource() { Symbol = Symbol.Document };
     newTab.Header = "New Document";
 
     // The Content of a TabViewItem is often a frame which hosts a page.
     Frame frame = new Frame();
     newTab.Content = frame;
-    frame.Navigate(typeof(BaconIpsumPage));
+    frame.Navigate(typeof(Page1));
 
     sender.TabItems.Add(newTab);
 }
 
 // Remove the requested tab from the TabView
-private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)
+private void TabView_TabCloseRequested(muxc.TabView sender, muxc.TabViewTabCloseRequestedEventArgs args)
 {
     sender.TabItems.Remove(args.Tab);
 }
@@ -84,8 +89,8 @@ There are a number of ways to take advantage of or extend a [TabView](/uwp/api/m
 
 ### Bind TabItemsSource to a TabViewItemCollection
 
-```csharp
-<TabView TabItemsSource="{x:Bind TabViewItemCollection}" />
+```xaml
+<muxc:TabView TabItemsSource="{x:Bind TabViewItemCollection}" />
 ```
 
 ### Display TabView tabs in a window's titlebar
@@ -99,39 +104,37 @@ For more information, see [Title bar customization](https://docs.microsoft.com/w
 ![Tabs in titlebar](images/tabview/tab-extend-to-title.png)
 
 ```xaml
-<Page>
-    <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabView.TabItems>
-            <TabViewItem Header="Home" IsClosable="False">
-                <TabViewItem.IconSource>
-                    <SymbolIconSource Symbol="Home" />
-                </TabViewItem.IconSource>
-            </TabViewItem>
-            <TabViewItem Header="Document 1">
-                <TabViewItem.IconSource>
-                    <SymbolIconSource Symbol="Document" />
-                </TabViewItem.IconSource>
-            </TabViewItem>
-            <TabViewItem Header="Document 2">
-                <TabViewItem.IconSource>
-                    <SymbolIconSource Symbol="Document" />
-                </TabViewItem.IconSource>
-            </TabViewItem>
-            <TabViewItem Header="Document 3">
-                <TabViewItem.IconSource>
-                    <SymbolIconSource Symbol="Document" />
-                </TabViewItem.IconSource>
-            </TabViewItem>
-        </TabView.TabItems>
+<muxc:TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <muxc:TabView.TabItems>
+        <muxc:TabViewItem Header="Home" IsClosable="False">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Home" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 1">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 2">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+        <muxc:TabViewItem Header="Document 3">
+            <muxc:TabViewItem.IconSource>
+                <muxc:SymbolIconSource Symbol="Document" />
+            </muxc:TabViewItem.IconSource>
+        </muxc:TabViewItem>
+    </muxc:TabView.TabItems>
 
-        <TabView.TabStripHeader>
-            <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
-        </TabView.TabStripHeader>
-        <TabView.TabStripFooter>
-            <Grid x:Name="CustomDragRegion" Background="Transparent" />
-        </TabView.TabStripFooter>
-    </TabView>
-</Page>
+    <muxc:TabView.TabStripHeader>
+        <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
+    </muxc:TabView.TabStripHeader>
+    <muxc:TabView.TabStripFooter>
+        <Grid x:Name="CustomDragRegion" Background="Transparent" />
+    </muxc:TabView.TabStripFooter>
+</muxc:TabView>
 ```
 
 ```csharp
@@ -234,8 +237,8 @@ Some applications may require more advanced keyboard control. Consider implement
 This example implements a number of the above recommendations on a [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview). Specifically, This example implements Ctrl + T, Ctrl + W, Ctrl + 1-8, and Ctrl + 9.
 
 ```xaml
-<controls:TabView x:Name="TabRoot">
-    <controls:TabView.KeyboardAccelerators>
+<muxc:TabView x:Name="TabRoot">
+    <muxc:TabView.KeyboardAccelerators>
         <KeyboardAccelerator Key="T" Modifiers="Control" Invoked="NewTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="W" Modifiers="Control" Invoked="CloseSelectedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number1" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
@@ -247,22 +250,31 @@ This example implements a number of the above recommendations on a [TabView](/uw
         <KeyboardAccelerator Key="Number7" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number8" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
         <KeyboardAccelerator Key="Number9" Modifiers="Control" Invoked="NavigateToNumberedTabKeyboardAccelerator_Invoked" />
-    </controls:TabView.KeyboardAccelerators>
+    </muxc:TabView.KeyboardAccelerators>
     <!-- ... some tabs ... -->
-</controls:TabView>
+</muxc:TabView>
 ```
 
 ```csharp
 private void NewTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-    // See previous sample
-    CreateNewTab();
+    // Create new tab.
+    var newTab = new muxc.TabViewItem();
+    newTab.IconSource = new muxc.SymbolIconSource() { Symbol = Symbol.Document };
+    newTab.Header = "New Document";
+
+    // The Content of a TabViewItem is often a frame which hosts a page.
+    Frame frame = new Frame();
+    newTab.Content = frame;
+    frame.Navigate(typeof(Page1));
+
+    TabRoot.TabItems.Add(newTab);
 }
 
 private void CloseSelectedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-    // Only close the selected tab if it is closeable
-    if (((TabViewItem)TabRoot.SelectedItem).IsCloseable)
+    // Only remove the selected tab if it can be closed.
+    if (((muxc.TabViewItem)TabRoot.SelectedItem).IsClosable)
     {
         TabRoot.TabItems.Remove(TabRoot.SelectedItem);
     }
