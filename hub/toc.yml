@@ -74,6 +74,10 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
         - name: Grant identity to non-packaged desktop apps
           href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
+  - name: Developing for Windows 10X
+    items:
+      - name: Windows 10X Dev FAQ
+        href: apps/10x/faq.md
   - name: Fluent Design System
     href: apps/fluent-design-system.md
   - name: Accessibility

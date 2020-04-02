@@ -119,7 +119,7 @@ After you create your package manifest, build the sparse package by using the [M
 The following example demonstrates how to create a sparse package from the command line.  
 
 ```Console
-MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output path>\MyPackage.msix  /nv
+MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
 ```
 
 Before your sparse package can be successfully installed on a target computer, you must sign it with a certificate that is trusted on the target computer. You can create a new self-signed certificate for development purposes and sign your sparse package using [SignTool](https://docs.microsoft.com/windows/msix/package/sign-app-package-using-signtool), which is available in the Windows SDK.
@@ -127,7 +127,7 @@ Before your sparse package can be successfully installed on a target computer, y
 The following example demonstrates how to sign a sparse package from the command line.
 
 ```Console
-SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <certificate password>  <path to sparse package>\MyPackage.msix
+SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to sparse package>\MyPackage.msix
 ```
 
 ### Add the package identity metadata to your desktop application manifest
