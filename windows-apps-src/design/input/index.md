@@ -3,17 +3,16 @@ description: Optimize your app for pen, Surface dial, and other types of input.
 title: Input and interactions
 keywords: app inputs, customize UWP application
 label: Input and interactions
-layout: LandingPage
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
 ---
-![Inputs icon](../images/inputs-2x.png)
+
 # Input and interactions
+
+![Inputs icon](../images/inputs-2x.png)
 
 <!-- <div>
   <img src="images/keyboard/keyboard-hero.jpg" alt="" />
@@ -24,109 +23,54 @@ UWP apps automatically handle a wide variety of inputs and run on a variety of d
 
 The design and coding instructions in this section help you customize your UWP app for specific types of inputs.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2" >
-                        <a href="input-primer.md">
-                            <img src="images/input-interactions/icons-inputdevices03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="input-primer.md">Input primer</a></h3>
-                        <p>Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2">
-                        <a href="identify-input-devices.md">
-                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
-                            </a>
-                        </div>
-                    </div> -->
-                    <div class="cardText">
-                        <h3><a href="gaze-interactions.md">NEW! Gaze input</a></h3>
-                        <p>Track a user's gaze based on the location and movement of their eyes and head.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input-primer.md">Input primer</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="gaze-interactions.md">Gaze input</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Track a user's gaze based on the location and movement of their eyes and head.</p>
+    :::column-end:::
+:::row-end:::
 
 <!-- 
 ## Input primer
 
 See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. -->
 
+:::row:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Input</h2>
+        <a href="/windows/uwp/design/input/identify-input-devices">Identify input devices</a><br/>
+        <a href="/windows/uwp/design/input/handle-pointer-input">Pointer</a><br/>
+        <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Pen and Windows Ink</a><br/>
+        <a href="/windows/uwp/design/input/touch-interactions">Touch</a><br/>
+        <a href="/windows/uwp/design/input/mouse-interactions">Mouse</a><br/>
+        <a href="/windows/uwp/design/input/keyboard-interactions">Keyboard</a><br/>
+        <a href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad and remote control</a><br/>
+        <a href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a><br/>
+        <a href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a><br/>
+        <a href="/windows/uwp/design/input/multiple-input-design-guidelines">Multiple inputs</a><br/>
+        <a href="/windows/uwp/design/input/input-injection">Input injection</a><br/>
+        <a href="/windows/uwp/design/input/custom-text-input">Custom text input</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Interactions</h2>
+        <a href="/windows/uwp/design/input/drag-and-drop">Drag and drop</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-panning">Panning</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-textselection">Selecting text and images</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-targeting">Targeting</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedbac</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Speech and AI</h2>
+        <a href="/windows/uwp/design/input/speech-interactions">Speech</a><br/>
+        <a href="/windows/uwp/design/input/cortana-interactions">Cortana</a><br/>
+    :::column-end:::
+:::row-end:::
 
-<ul class="panelContent cardsL" style="margin-left: 1px">
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Input</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identify input devices</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Pointer</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Pen and Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Touch</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Mouse</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Keyboard</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad and remote control</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Multiple inputs</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Input injection</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Custom text input</a></p>                        
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>  
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Interactions</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Drag and drop</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Panning</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Selecting text and images</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Targeting</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedback</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Speech and AI</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Speech</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>            
-       
-</ul>
 
 <!-- <div class="side-by-side">
 <div class="side-by-side-content">

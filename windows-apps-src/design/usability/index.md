@@ -2,13 +2,13 @@
 description: Learn how to make your app inclusive and accessible to people around the world.
 keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: Usability in UWP apps - Windows app development
-layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ---
+
 # Usability for UWP apps
 
 It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
@@ -173,7 +173,18 @@ Accessibility is about making your app usable by people who have limitations tha
 
 App settings let you the user customize your app, optimizing it for their individual needs and preferences. Providing the right settings and storing them properly can make a great user experience even better.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Best practices for creating and displaying app settings.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">How to store and retrieve local, roaming, and temporary app data.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -196,7 +207,7 @@ App settings let you the user customize your app, optimizing it for their indivi
             </div>
         </div>
     </li>
-</ul>
+</ul> -->
 
 ## Globalization and localization
 
@@ -207,7 +218,28 @@ Windows is used worldwide by audiences that are diverse in terms of language, re
 ## In-app help
 No matter how well you’ve designed your app, some users will need a little extra help.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Applications can be complex, and providing effective help for your users can greatly improve their experience.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">Instructional UI</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">In-app help</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">External help</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -253,5 +285,5 @@ No matter how well you’ve designed your app, some users will need a little ext
             </div>
         </div>
     </li>        
-</ul>
+</ul> -->
 
