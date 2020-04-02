@@ -17,7 +17,9 @@ ms.localizationpriority: medium
 
 Parallax is a visual effect where items closer to the viewer move faster than items in the background. Parallax creates a feeling of depth, perspective, and movement. In a UWP app, you can use the ParallaxView control to create a parallax effect.  
 
-> **Important APIs**: [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [VerticalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **Windows UI Library APIs:** [ParallaxView class](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+>
+> **Platform APIs**: [ParallaxView class](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## Examples
 
@@ -41,7 +43,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 ## How it works in a user interface
 
-In a UI, you can create a parallax effect by moving different objects at different rates when the UI scrolls or pans. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> To demonstrate, let’s look at two layers of content, a list and a background image.  The list is placed on top of the background image which already gives the illusion that the list might be closer to the viewer.  Now, to achieve the parallax effect, we want the object closest to us to travel “faster” than the object that is farther away.  As the user scrolls the interface, the list moves at a faster rate than the background image, which creates the illusion of depth.
+In a UI, you can create a parallax effect by moving different objects at different rates when the UI scrolls or pans. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> To demonstrate, let's look at two layers of content, a list and a background image.  The list is placed on top of the background image which already gives the illusion that the list might be closer to the viewer.  Now, to achieve the parallax effect, we want the object closest to us to travel "faster" than the object that is farther away.  As the user scrolls the interface, the list moves at a faster rate than the background image, which creates the illusion of depth.
 
  ![An example of parallax with a list and background image](images/_Parallax_v2.gif)
 
@@ -61,40 +63,40 @@ This example creates a parallax effect for a list:
  
 ```xaml
 <Grid>
-	<ParallaxView Source="{x:Bind ForegroundElement}" VerticalShift="50"> 
-	
-		<!-- Background element --> 
-		<Image x:Name="BackgroundImage" Source="Assets/turntable.png"
+    <ParallaxView Source="{x:Bind ForegroundElement}" VerticalShift="50"> 
+    
+        <!-- Background element --> 
+        <Image x:Name="BackgroundImage" Source="Assets/turntable.png"
                Stretch="UniformToFill"/>
-	</ParallaxView>
-	
-	<!-- Foreground element -->
-	<ListView x:Name="ForegroundElement">
-	   <x:String>Item 1</x:String> 
-	   <x:String>Item 2</x:String> 
-	   <x:String>Item 3</x:String> 
-	   <x:String>Item 4</x:String> 
-	   <x:String>Item 5</x:String> 	
-	   <x:String>Item 6</x:String> 
-	   <x:String>Item 7</x:String> 
-	   <x:String>Item 8</x:String> 
-	   <x:String>Item 9</x:String> 
-	   <x:String>Item 10</x:String> 	
-	   <x:String>Item 11</x:String> 
-	   <x:String>Item 13</x:String> 
-	   <x:String>Item 14</x:String> 
-	   <x:String>Item 15</x:String> 
-	   <x:String>Item 16</x:String> 	
-	   <x:String>Item 17</x:String> 
-	   <x:String>Item 18</x:String> 
-	   <x:String>Item 19</x:String> 
-	   <x:String>Item 20</x:String> 
-	   <x:String>Item 21</x:String> 	   
-	</ListView>
+    </ParallaxView>
+    
+    <!-- Foreground element -->
+    <ListView x:Name="ForegroundElement">
+       <x:String>Item 1</x:String> 
+       <x:String>Item 2</x:String> 
+       <x:String>Item 3</x:String> 
+       <x:String>Item 4</x:String> 
+       <x:String>Item 5</x:String>     
+       <x:String>Item 6</x:String> 
+       <x:String>Item 7</x:String> 
+       <x:String>Item 8</x:String> 
+       <x:String>Item 9</x:String> 
+       <x:String>Item 10</x:String>     
+       <x:String>Item 11</x:String> 
+       <x:String>Item 13</x:String> 
+       <x:String>Item 14</x:String> 
+       <x:String>Item 15</x:String> 
+       <x:String>Item 16</x:String>     
+       <x:String>Item 17</x:String> 
+       <x:String>Item 18</x:String> 
+       <x:String>Item 19</x:String> 
+       <x:String>Item 20</x:String> 
+       <x:String>Item 21</x:String>        
+    </ListView>
 </Grid>
-```	
+```    
 
-The ParallaxView automatically adjusts the size of the image so it works for the parallax operation so you don’t have to worry about the image scrolling out of view.
+The ParallaxView automatically adjusts the size of the image so it works for the parallax operation so you don't have to worry about the image scrolling out of view.
 
 ## Customizing the parallax effect 
 
@@ -107,11 +109,11 @@ Larger values create a more dramatic effect.
 
 For the complete list of ways to customize parallax, see the ParallaxView class. 
 
-## Do’s and don’ts
+## Do's and don'ts
 
 - Use parallax in lists with a background image
 - Consider using parallax in ListViewItems when ListViewItems contain an image
-- Don’t use it everywhere, overuse can diminish its impact
+- Don't use it everywhere, overuse can diminish its impact
 
 ## Related articles
 
