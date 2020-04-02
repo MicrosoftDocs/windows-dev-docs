@@ -7,14 +7,13 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-layout: LandingPage
 ---
+
 # Design and code Windows apps
 
 ![hero image](images/ficon-1x.png)
 
 Fluent Design guidelines and UI code examples for creating app experiences on Windows 10.
-
 
 :::row:::
     :::column:::
