@@ -67,9 +67,9 @@ If the available options are based on the app's current context, or can otherwis
 </tr>
 </table>
 
-Radio buttons in the Microsoft Edge browser settings.
+Radio buttons in browser settings.
 
-![Radio buttons in the Microsoft Edge browser settings](images/control-examples/radio-buttons-edge.png)
+![Radio buttons in browser settings](images/control-examples/radio-buttons-edge.png)
 
 ## Create a radio button
 
