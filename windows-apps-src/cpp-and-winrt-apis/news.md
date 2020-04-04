@@ -84,7 +84,7 @@ For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://marke
 
 - The `cppwinrt.exe` tool is now included in the Microsoft.Windows.CppWinRT NuGet package, and the tool generates platfom projection headers for each project on demand. Consequently, the `cppwinrt.exe` tool no longer depends on the Windows SDK (although, the tool still ships with the SDK for compatibility reasons).
 - `cppwinrt.exe` now generates projection headers under each platform/configuration-specific intermediate folder ($IntDir) to enable parallel builds.
-- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
+- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
 - Numerous bug fixes have been made.
 
 ### Changes to C++/WinRT for version 2.0
@@ -93,7 +93,7 @@ For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://marke
 
 The `cppwinrt.exe` tool takes a Windows Runtime metadata (`.winmd`) file, and generates from it a header-file-based standard C++ library that *projects* the APIs described in the metadata. That way, you can consume those APIs from your C++/WinRT code.
 
-This tool is now an entirely open source project, available on GitHub. Visit [Microsoft\/xlang](https://github.com/Microsoft/xlang), and then click in to **src** > **tool** > **cppwinrt**.
+This tool is now an entirely open source project, available on GitHub. Visit [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt).
 
 #### xlang libraries
 
