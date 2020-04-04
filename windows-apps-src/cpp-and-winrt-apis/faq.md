@@ -30,7 +30,7 @@ Install the **Microsoft.Windows.CppWinRT** NuGet package into your project. For 
 
 ## How do I customize the build support in the NuGet package?
 
-C++/WinRT build support (props/targets) is documented in the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
+C++/WinRT build support (props/targets) is documented in the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
 
 ## What are the requirements for the C++/WinRT Visual Studio Extension (VSIX)?
 For version 1.0.190128.4 of the VSIX extension and later, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). For other versions, see [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
