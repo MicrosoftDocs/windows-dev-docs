@@ -73,15 +73,6 @@ If you are using in-app acrylic on navigation surfaces, consider extending conte
 
 Consider the following usage patterns to decide how best to incorporate acrylic into your app:
 
-### Horizontal navigation or commanding
-
-If your app is not able to leverage NavigationView and you plan on adding acrylic on your own, we recommend using relatively translucent acrylic with 60% tint opacity.
- - When the pane opens as an overlay above other app content, this should be [60% in-app acrylic](#acrylic-theme-resources)
-
-![Maps app using in-app horizontal commanding](images/Maps_In_App_Acrylic_1.png)
-
-In addition, having your content extend or scroll under the acrylic at the top will give your app a more immersive and seamless experience.
-
 ### Vertical Panes
 
 For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Compact** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
@@ -198,7 +189,7 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
 
 To add an acrylic brush, define the three resources for dark, light and high contrast themes. Note that in high contrast, we recommend using a SolidColorBrush with the same x:Key as the dark/light AcrylicBrush.
 
-> [!Note] 
+> [!Note]
 > If you don't specify a TintLuminosityOpacity value, the system will automatically adjust its value based on your TintColor and TintOpacity.
 
 ```xaml
