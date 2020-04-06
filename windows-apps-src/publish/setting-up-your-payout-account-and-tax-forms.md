@@ -118,7 +118,9 @@ If you elected to use a bank account to receive payouts, you'll complete the fol
 
     ![Payout use bank profile](images/payout-use-bank-profile.png)
 
-6. Click submit to save your changes.
+6. Select a currency from the drop down menu.
+
+7. Click submit to save your changes.
 
 > [!NOTE]
 > Microsoft may take up to 48 hours to validate the information in your profile. When this process is complete *verification status* will show **Complete**
