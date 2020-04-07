@@ -736,22 +736,22 @@ public class MyPage : Page
 {
     // ...
 
-    protected override void OnNavigatedTo(NavigationEventArgs e)
+     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         base.OnNavigatedTo(e);
 
-            // retrieve saved offset + index(es) of the tracked element and then bring it into view.
-            // ... 
+        // retrieve saved offset + index(es) of the tracked element and then bring it into view.
+        // ... 
+        
+        var element = repeater.GetOrCreateElement(index);
 
-            var element = repeater.GetOrCreateElement(index);
+        // ensure the item is given a valid position
+        element.UpdateLayout();
 
-            // ensure the item is given a valid position
-            element.UpdateLayout();
-
-            element.StartBringIntoView(new BringIntoViewOptions()
-            {
-                VerticalOffset = relativeVerticalOffset
-            });
+        element.StartBringIntoView(new BringIntoViewOptions()
+        {
+            VerticalOffset = relativeVerticalOffset
+        });
     }
 
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -761,8 +761,8 @@ public class MyPage : Page
         // retrieve and save the relative offset and index(es) of the scrollviewer's current anchor element ...
         var anchor = this.scrollviewer.CurrentAnchor;
         var index = this.repeater.GetElementIndex(anchor);
-        var anchorBounds = anchor.TransformToVisual(this.scrollviewer).TransformBounds(new Rect(0, 0, anchor.ActualWidth, anchor.ActualHeight));
-        relativeVerticalOffset = this.sv.VerticalOffset – anchorBounds.Top;
+        var anchorBounds = anchor.TransformToVisual(this.scrollviewer).TransformBounds(new Rect(0, 0, anchor.ActualSize.X, anchor.ActualSize.Y));
+        relativeVerticalOffset = this.scrollviewer.VerticalOffset - anchorBounds.Top;
     }
 }
 
