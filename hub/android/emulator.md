@@ -15,17 +15,21 @@ There are several ways to test and debug your Android application using a real d
 
 ## Run on a real Android device
 
-To run your app on a real Android device, you will first need to enable your Android device for development.
+To run your app on a real Android device, you will first need to enable your Android device for development. Developer options on Android have been hidden by default since version 4.2 and enabling them can vary based on the Android version.
 
 ### Enable your device for development
 
+For Android 9.0+:
+
 1. Connect your device to your Windows development machine with a USB cable. You may receive a notification to install a USB driver.
-2. Open the **Settings** app on your Android device.
-3. Scroll to the bottom and select **About phone**.
-4. Scroll to the bottom and tap **Build number** seven times.
+2. Open the **Settings** screen on your Android device.
+3. Select **About phone**.
+4. Scroll to the bottom and tap **Build number** seven times, until **You are now a developer!** is visible.
 5. Return to the previous screen, select **System**.
 6. Select **Advanced**, scroll to the bottom, and tap **Developer options**.
 7. In the **Developer options** window, scroll down to find and enable **USB debugging**.
+
+For older version of Android, see [Set Up Device for Development](https://docs.microsoft.com/xamarin/android/get-started/installation/set-up-device-for-development).
 
 ### Run your app on the device
 
@@ -58,7 +62,7 @@ Before creating a virtual device with the Android emulator, it is recommended th
 4. Restart your computer when prompted.
 
 > [!CAUTION]
-> To run Hyper-V and Windows Hypervisor, your computer must have 4GB of memory, with a 64-bit Intel processor or an AMD Ryzen CPU with Second Level Address Translation (SLAT). You also must be updated to Windows 10 April 2018 update (build 1803) or later. To verify: Enter "About" in the Windows search box. Select **About your PC** in the search results. Verify that the version is at least 1803 in the Windows specifications section. [Check for Windows updates](ms-settings:windowsupdate?activationSource=SMC-IA-4027667). For more information, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration?tabs=vswin&pivots=windows#related-links).
+> To run Hyper-V and Windows Hypervisor, your computer must have 4GB of memory, with a 64-bit Intel processor or an AMD Ryzen CPU with Second Level Address Translation (SLAT). You also must be updated to Windows 10 April 2018 update (build 1803) or later. To verify: Enter "About" in the Windows search box. Select **About your PC** in the search results. Verify that the version is at least 1803 in the Windows specifications section. [Check for Windows updates](ms-settings:windowsupdate). For more information, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration?tabs=vswin&pivots=windows#related-links).
 
 ### Emulator for native development with Android Studio
 
@@ -95,4 +99,4 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 5. In the Visual Studio toolbar, choose between **Debug** (attaches to the application process running inside the emulator after your app starts) or **Release** mode (disables the debugger). Then choose a virtual device from the device drop-down menu and select the **Play** button ▷ to run your application in the emulator.
 
-![Visual Studio launch Android Emulator](../images/vs-target-device-menu.png)
+    ![Visual Studio launch Android Emulator](../images/vs-target-device-menu.png)
