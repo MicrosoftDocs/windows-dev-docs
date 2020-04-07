@@ -180,9 +180,9 @@ Set the padding around the text within the window. This will accept three differ
 
 ### Antialiasing text
 
-:::row:::
-:::column span="":::
 You can control how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
+
+![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
 
 **Property name:** `antialiasingMode`
 
@@ -191,13 +191,6 @@ You can control how text is antialiased in the renderer. Note that changing this
 **Accepts:** `"grayscale"`, `"cleartype"`, `"aliased"`
 
 **Default value:** `"grayscale"`
-
-:::column-end:::
-:::column span="":::
-![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
-
-:::column-end:::
-:::row-end:::
 
 <br />
 
@@ -339,11 +332,9 @@ ___
 
 ## Background image settings
 
-More detailed information can be found on the [background images page](./../background-images.md).
-
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background.
+This sets the file location of the image to draw over the window background. The background image can be a jpg, png, or gif file.
 
 **Property name:** `backgroundImage`
 
@@ -368,7 +359,7 @@ You can set how the background image is resized to fill the window.
 :::column-end:::
 :::column span="":::
 ![Windows Terminal background image stretch mode](./../images/background-image-stretch-mode.gif)
-[Background image source](https://wallpaperhub.app/wallpapers/6287)
+_[Background image source](https://wallpaperhub.app/wallpapers/6287)_
 
 :::column-end:::
 :::row-end:::
@@ -390,7 +381,7 @@ This sets how the background image aligns to the boundaries of the window.
 :::column-end:::
 :::column span="":::
 ![Windows Terminal background image alignment](./../images/background-image-alignment.gif)
-[Background image source](https://design.ubuntu.com/brand/ubuntu-logo/)
+_[Background image source](https://design.ubuntu.com/brand/ubuntu-logo/)_
 
 :::column-end:::
 :::row-end:::
@@ -400,6 +391,9 @@ This sets how the background image aligns to the boundaries of the window.
 :::row:::
 :::column span="":::
 You can set the transparency of the background image.
+
+:::column-end:::
+:::row-end:::
 
 **Property name:** `backgroundImageOpacity`
 

@@ -22,8 +22,6 @@
       href: search.md
     - name: Panes
       href: panes.md
-    - name: Background images
-      href: background-images.md
     - name: Tutorials
       items:
         - name: Powerline setup
