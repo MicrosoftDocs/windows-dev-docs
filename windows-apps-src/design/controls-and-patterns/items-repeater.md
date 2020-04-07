@@ -294,7 +294,7 @@ You can also set minimum spacing for the layout to include between rows and colu
 
 ![Uniform grid sizing and spacing](images/uniform-grid-sizing-spacing.png)
 
-After the number if items in a row or column has been determined based on the item's minimum size and spacing, there might be unused space left after the last item in the row or column (as illustrated in the previous image). You can specify whether any extra space is ignored, used to increase the size of each item, or used to create extra space between the items. This is controlled by the [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) and [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) properties.
+After the number of items in a row or column has been determined based on the item's minimum size and spacing, there might be unused space left after the last item in the row or column (as illustrated in the previous image). You can specify whether any extra space is ignored, used to increase the size of each item, or used to create extra space between the items. This is controlled by the [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) and [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) properties.
 
 You can set the [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) property to specify how the item size is increased to fill the unused space.
 
