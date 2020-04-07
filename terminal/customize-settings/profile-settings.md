@@ -66,6 +66,9 @@ ___
 
 ## Dropdown settings
 
+![Windows Terminal dropdown](./../images/dropdown.png)
+_Configuration: [Raspberry Ubuntu](./../custom-terminal-gallery/raspberry-ubuntu.md)_
+
 ### Name
 
 This is the name of the profile that will be displayed in the dropdown menu. This value is also used as the "title" to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`cmd`, `powershell`) may use this value over the lifetime of the application. This "title" behavior can be overridden by using `tabTitle`.
@@ -156,6 +159,8 @@ Sets the profile's font size.
 
 ### Padding
 
+:::row:::
+:::column span="":::
 Set the padding around the text within the window. This will accept three different formats: `"#"` sets the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
 
 **Property name:** `padding`
@@ -166,8 +171,17 @@ Set the padding around the text within the window. This will accept three differ
 
 **Default value:** `"8, 8, 8, 8"`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal padding](./../images/padding.gif)
+
+:::column-end:::
+:::row-end:::
+
 ### Antialiasing text
 
+:::row:::
+:::column span="":::
 You can control how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
 
 **Property name:** `antialiasingMode`
@@ -177,6 +191,13 @@ You can control how text is antialiased in the renderer. Note that changing this
 **Accepts:** `"grayscale"`, `"cleartype"`, `"aliased"`
 
 **Default value:** `"grayscale"`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
+
+:::column-end:::
+:::row-end:::
 
 <br />
 
@@ -222,11 +243,9 @@ ___
 
 ## Color settings
 
-More detailed information can be found on the [color schemes page](./color-schemes.md).
-
 ### Color scheme
 
-The name of the color scheme is used to define which color scheme is used in the profile. Color schemes are defined in the `schemes` object.
+The name of the color scheme is used to define which color scheme is used in the profile. Color schemes are defined in the `schemes` object. More detailed information can be found on the [color schemes page](./color-schemes.md).
 
 **Property name:** `colorScheme`
 
@@ -274,6 +293,8 @@ ___
 
 ### Enable acrylic
 
+:::row:::
+:::column span="":::
 When set to `true`, the window will have an acrylic background. When set to `false`, the window will have a plain, untextured background. The transparency only applies to focused windows due to OS limitation.
 
 **Property name:** `useAcrylic`
@@ -284,8 +305,17 @@ When set to `true`, the window will have an acrylic background. When set to `fal
 
 **Default value:** `false`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal acrylic](./../images/acrylic.gif)
+
+:::column-end:::
+:::row-end:::
+
 ### Acrylic opacity
 
+:::row:::
+:::column span="":::
 When `useAcrylic` is set to `true`, this sets the transparency of the window for the profile. Accepts floating point values from 0-1.
 
 **Property name:** `acrylicOpacity`
@@ -295,6 +325,13 @@ When `useAcrylic` is set to `true`, this sets the transparency of the window for
 **Accepts:** Number as a floating point value from 0-1
 
 **Default value:** `0.5`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal acrylic opacity](./../images/acrylic-opacity.gif)
+
+:::column-end:::
+:::row-end:::
 
 <br />
 
@@ -316,6 +353,8 @@ This sets the file location of the image to draw over the window background.
 
 ### Background image stretch mode
 
+:::row:::
+:::column span="":::
 You can set how the background image is resized to fill the window.
 
 **Property name:** `backgroundImageStretchMode`
@@ -326,8 +365,18 @@ You can set how the background image is resized to fill the window.
 
 **Default value:** `"uniformToFill"`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal background image stretch mode](./../images/background-image-stretch-mode.gif)
+[Background image source](https://wallpaperhub.app/wallpapers/6287)
+
+:::column-end:::
+:::row-end:::
+
 ### Background image alignment
 
+:::row:::
+:::column span="":::
 This sets how the background image aligns to the boundaries of the window.
 
 **Property name:** `backgroundImageAlignment`
@@ -338,8 +387,18 @@ This sets how the background image aligns to the boundaries of the window.
 
 **Default value:** `"center"`
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal background image alignment](./../images/background-image-alignment.gif)
+[Background image source](https://design.ubuntu.com/brand/ubuntu-logo/)
+
+:::column-end:::
+:::row-end:::
+
 ### Background image opacity
 
+:::row:::
+:::column span="":::
 You can set the transparency of the background image.
 
 **Property name:** `backgroundImageOpacity`
@@ -374,7 +433,7 @@ When set to `true`, the window will scroll to the command input line when typing
 
 **Necessity:** Optional
 
-**Accepts:** `true`, `true`
+**Accepts:** `true`, `false`
 
 **Default value:** `true`
 
@@ -412,6 +471,8 @@ ___
 
 ## Retro Terminal Effects
 
+:::row:::
+:::column span="":::
 When set to `true`, enable retro terminal effects. This is an experimental feature and its continued existence is not guaranteed.
 
 **Property name:** `experimental.retroTerminalEffect`
@@ -421,3 +482,11 @@ When set to `true`, enable retro terminal effects. This is an experimental featu
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal experimental retro terminal effect](./../images/experimental-retro-terminal-effect.gif)
+_Configuration: [Retro Command Prompt](./../custom-terminal-gallery/retro-command-prompt.md)_
+
+:::column-end:::
+:::row-end:::

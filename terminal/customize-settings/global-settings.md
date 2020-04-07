@@ -45,7 +45,7 @@ Sets the theme of the application. `"system"` will use the theme Windows is set 
 :::column-end:::
 :::column span="":::
 ![Windows Terminal dark theme](./../images/requested-themes.gif)
-_Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
+_Configuration: [Powerline in PowerShell](./../custom-terminal-gallery/powerline-in-powershell.md)_
 
 :::column-end:::
 :::row-end:::
@@ -220,7 +220,7 @@ ___
 
 ### Copy after selection is made
 
-When set to `true`, a selection is immediately copied to your clipboard upon creation. When set to `false`, the selection persists and awaits further action.
+When set to `true`, a selection is immediately copied to your clipboard upon creation. Right clicking will always paste in this case. When set to `false`, the selection persists and awaits further action. Right clicking will copy the selection.
 
 **Property name:** `copyOnSelect`
 

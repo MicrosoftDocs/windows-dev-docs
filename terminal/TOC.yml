@@ -42,6 +42,8 @@
           href: custom-terminal-gallery/raspberry-ubuntu.md
         - name: Light Theme
           href: custom-terminal-gallery/light-theme.md
+        - name: Retro Command Prompt
+          href: custom-terminal-gallery/retro-command-prompt.md
     - name: Troubleshooting
       href: troubleshooting.md
 
