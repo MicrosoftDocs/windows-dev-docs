@@ -7,3 +7,62 @@ ms.date: 05/19/2020
 ms.topic: overview
 ms.service: terminal
 ---
+
+# Color schemes in the Windows Terminal
+
+## Creating your own color scheme
+
+Color schemes can be defined in the `schemes` array of your settings.json file. They can be written in the following format:
+
+```json
+{
+    "name" : "",
+
+    "cursorColor": "#",
+    "selectionBackground": "#",
+
+    "background" : "#",
+    "foreground" : "#",
+
+    "black" : "#",
+    "blue" : "#",
+    "cyan" : "#",
+    "green" : "#",
+    "purple" : "#",
+    "red" : "#",
+    "white" : "#",
+    "yellow" : "#",
+    "brightBlack" : "#",
+    "brightBlue" : "#",
+    "brightCyan" : "#",
+    "brightGreen" : "#",
+    "brightPurple" : "#",
+    "brightRed" : "#",
+    "brightWhite" : "#",
+    "brightYellow" : "#"
+},
+```
+
+Every setting aside from `name` accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`.
+
+## Included color schemes
+
+The following color schemes come included in the Windows Terminal. If you would like to set one in a profile, you can add the `colorScheme` property with the color scheme's `name` as the value.
+
+```json
+"colorScheme": "COLOR SCHEME NAME"
+```
+
+### Campbell
+
+### Campbell Powershell
+
+### Vintage
+
+### One Half Dark
+
+### One Half Light
+
+### Solarized Dark
+
+### Solarized Light
