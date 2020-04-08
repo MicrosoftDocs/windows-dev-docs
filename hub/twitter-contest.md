@@ -5,6 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
+ms.prod: uwp
+ms.technology: apps
 ms.date: 03/19/2020
 ---
 
