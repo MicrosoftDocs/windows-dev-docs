@@ -45,6 +45,10 @@ Color schemes can be defined in the `schemes` array of your settings.json file. 
 
 Every setting aside from `name` accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`.
 
+<br />
+
+___
+
 ## Included color schemes
 
 The following color schemes come included in the Windows Terminal. If you would like to set one in a profile, you can add the `colorScheme` property with the color scheme's `name` as the value.
