@@ -33,6 +33,8 @@ Each of these controls (with the exception of ItemsRepeater) provide built-in st
 
 Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](selection-modes.md) to learn more.
 
+One of the scenarios not covered in this article is displaying collections in a table or across multiple columns. If you're looking to display a collection in this format, consider using the [DataGrid control](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) from the [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/). 
+
 > **Windows 10 Fall Creators Update - Behavior change**
 > By default, instead of performing selection, an active pen now scrolls/pans a list in UWP apps (like touch, touchpad, and passive pen).
 > If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. For details, see the API reference topic for the [Scroll Viewer Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
