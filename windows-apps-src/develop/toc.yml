@@ -181,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: Background transfers
           href: ../networking/background-transfers.md
+    - name: Sharing named objects
+      href: ../communication/sharing-named-objects.md
 - name: Data and files
   items:
     - name: App resources
