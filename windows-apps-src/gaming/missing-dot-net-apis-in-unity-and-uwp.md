@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, games, .net, unity
 ms.localizationpriority: medium
 ---
+
 # Missing .NET APIs in Unity and UWP
 
 When building a UWP game using .NET, you may find that some APIs that you might use in the Unity editor or for a standalone PC game are not present for UWP. That's because .NET for UWP apps includes a subset of the types provided in the full .NET Framework for each namespace.
@@ -54,7 +55,7 @@ Use the following directives to only compile code when running as a UWP app:
 ```
 
 > [!NOTE]
-> `NETFX_CORE` is only meant to check if you're compiling C# code against the .NET scripting backend. If you're using a different scripting backend, such as IL2CPP, use `UNITY_WSA_10_0` instead.
+> `NETFX_CORE` is only meant to check if you're compiling C# code against the .NET scripting backend. If you're using a different scripting backend, such as IL2CPP, use [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) instead.
 
 For the full list of platform-dependent compilation directives, see [Platform dependent compilation](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html).
 
