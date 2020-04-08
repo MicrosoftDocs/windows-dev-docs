@@ -55,14 +55,28 @@ The following color schemes come included in the Windows Terminal. If you would 
 
 ### Campbell
 
+![Windows Terminal Campbell color scheme](./../images/campbell-color-scheme.png)
+
 ### Campbell Powershell
+
+![Windows Terminal Campbell Powershell color scheme](./../images/campbell-powershell-color-scheme.png)
 
 ### Vintage
 
+![Windows Terminal Vintage color scheme](./../images/vintage-color-scheme.png)
+
 ### One Half Dark
+
+![Windows Terminal One Half Dark color scheme](./../images/one-half-dark-color-scheme.png)
 
 ### One Half Light
 
+![Windows Terminal One Half Light color scheme](./../images/one-half-light-color-scheme.png)
+
 ### Solarized Dark
 
+![Windows Terminal Solarized Dark color scheme](./../images/solarized-dark-color-scheme.png)
+
 ### Solarized Light
+
+![Windows Terminal Solarized Light color scheme](./../images/solarized-light-color-scheme.png)
