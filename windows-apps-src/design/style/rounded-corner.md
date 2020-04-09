@@ -145,11 +145,11 @@ This means if you want to change the roundness of all controls where roundness c
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary>
-                <CornerRadius x:Key="OverlayCornerRadius">4</CornerRadius>
-                <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
-            </ResourceDictionary>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <ResourceDictionary>
+                <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+                <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+            </ResourceDictionary>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 </Application.Resources>
