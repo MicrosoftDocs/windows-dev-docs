@@ -275,7 +275,7 @@ Here's the relevant code (from the C# project) that we need to port.
 ```
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public sealed partial class MainPage : Page
 {
@@ -388,7 +388,7 @@ Note that since strings are wide in the Windows Runtime, to port a string litera
 Here's the relevant C# code that we need to port.
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public sealed partial class MainPage : Page
 {
@@ -490,7 +490,7 @@ In the C# project, you'll find the implementation of the **MainPage.NotifyUser**
 Here's the relevant C# code that we need to port.
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public void NotifyUser(string strMessage, NotifyType type)
 if (Dispatcher.HasThreadAccess)
@@ -679,6 +679,8 @@ To port the use of the C# **System.Text.StringBuilder** type, we'll make use of 
 
 The C# code constructs a **StringBuilder** with the `new` keyword. In C#, objects are reference types by default, declared on the heap with `new`. In modern standard C++, objects are value types by default, declared on the stack (without using `new`). So we port `StringBuilder output = new StringBuilder();` to C++/WinRT as simply `std::wostringstream output;`.
 
+The C# `var` keyword asks the compiler to infer a type. You port `var` to `auto` in C++/WinRT. But in C++/WinRT, there are cases where (in order to avoid copies) you want a *reference* to an inferred (or deduced) type, and you express that with `auto&`. There are also cases where you want a special kind of reference that binds correctly whether it's initialized with an *lvalue* or with an *rvalue*. And you express that with `auto&&`. That's the form that you see used in the `for` loop in the ported code below. For an introduction to *lvalues* and *rvalues*, see [Value categories, and references to them](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories).
+
 Edit `pch.h`, `SampleConfiguration.h`, and `SampleConfiguration.cpp` to match the listings below.
 
 ```cppwinrt
@@ -842,7 +844,7 @@ Leave the event-handling delegates themselves (**OnClipboardChanged** and **OnWi
 ```
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     // Populate the scenario list from the SampleConfiguration.cs file
@@ -1103,9 +1105,116 @@ Add a new folder to the C++/WinRT project, immediately under the project node, a
 
 We've now finished porting **MainPage**, and if you've been following along with the steps then your C++/WinRT project will now build and run.
 
+## Consolidate your `.idl` files
+
+There's value in consolidating your runtime classes into a single IDL file (see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)). So next we'll consolidate the contents of `CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl`, and `OtherScenarios.idl` by moving that IDL into a single file named `Project.idl` (and then deleting the original files).
+
+While we're doing that, let's also remove the auto-generated dummy property (`Int32 MyProperty;`, and its implementation) from each of those five XAML page types.
+
+First, add a new **Midl File (.idl)** item to the C++/WinRT project. Name it `Project.idl`. Delete the default contents of `Project.idl`, and in its place paste the listing below.
+
+```idl
+// Project.idl
+namespace SDKTemplate
+{
+    [default_interface]
+    runtimeclass CopyFiles : Windows.UI.Xaml.Controls.Page
+    {
+        CopyFiles();
+    }
+
+    [default_interface]
+    runtimeclass CopyImage : Windows.UI.Xaml.Controls.Page
+    {
+        CopyImage();
+    }
+
+    [default_interface]
+    runtimeclass CopyText : Windows.UI.Xaml.Controls.Page
+    {
+        CopyText();
+    }
+
+    [default_interface]
+    runtimeclass HistoryAndRoaming : Windows.UI.Xaml.Controls.Page
+    {
+        HistoryAndRoaming();
+    }
+
+    [default_interface]
+    runtimeclass OtherScenarios : Windows.UI.Xaml.Controls.Page
+    {
+        OtherScenarios();
+    }
+}
+```
+
+As you can see, this is just a copy of the contents of the individual `.idl` files, all inside one namespace, and with `MyProperty` removed from each runtime class.
+
+In Solution Explorer in Visual Studio, multiple-select all of the original IDL files (`CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl`, and `OtherScenarios.idl`) and **Edit** > **Remove** them (choose **Delete** in the dialog).
+
+Finally&mdash;and to complete the removal of `MyProperty`&mdash;in the `.h` and `.cpp` files for each of the five XAML page types, delete the declarations and definitions of the `int32_t MyProperty()` accessor and `void MyProperty(int32_t)` mutator functions.
+
+## CopyFiles.xaml and CopyFiles.xaml.cs
+
+In the C# project, the **CopyFiles** XAML page type is implemented in the `CopyFiles.xaml` and `CopyFiles.xaml.cs` source code files. Let's take a look at each of the members of **CopyFiles** in turn.
+
+### rootPage
+
+This is a private field.
+
+```csharp
+// CopyFiles.xaml.cs
+...
+public sealed partial class CopyFiles : Page
+{
+    MainPage rootPage = MainPage.Current;
+    ...
+}
+...
+```
+
+In C++/WinRT, we can define and initialize it like this.
+
+```cppwinrt
+// CopyFiles.h
+...
+struct CopyFiles : CopyFilesT<CopyFiles>
+{
+    ...
+private:
+    SDKTemplate::MainPage rootPage{ MainPage::Current() };
+};
+...
+```
+
+Again (just like with **MainPage::current**), **CopyFiles::rootPage** is declared as being of type **SDKTemplate::MainPage**, which is the projected type, and not the implementation type.
+
+### Constructor (CopyFiles)
+
+In the C++/WinRT project, **CopyFiles** already has a constructor containing the code we want (it just calls **InitializeComponent**).
+
+### CopyButton_Click
+
+The C# **CopyButton_Click** method is an event handler, and from the `async` keyword in its signature we can tell that the method does asynchronous work. In C++/WinRT, we implement an asynchronous method as a *coroutine*. For an introduction to concurrency in C++/WinRT, together with a description of what a *coroutine* is, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+
+It's common to want to schedule further work after a coroutine completes, and for such cases the coroutine would return some asynchronous object type that can be awaited, and that optionally reports progress. But those considerations typically don't apply to an event handler. So when you have an event handler that performs asynchronous operations, you can implement that as a coroutine that returns **winrt::fire_and_forget**. For more info, see [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
+
+Although the idea of a fire-and-forget coroutine is that you don't care when it completes, work is still continuing (or is suspended, awaiting resumption) in the background. You can see from the C# implementation that **CopyButton_Click** depends on the `this` pointer (it accesses the instance data member `rootPage`). So we must be sure that the `this` pointer (a pointer to a **CopyFiles** object) outlives the **CopyButton_Click** coroutine. In a situation like this sample application, where the user navigates between UI pages, we can't directly control the lifetime of those pages. Should the **CopyFiles** page be destroyed (by navigating away from it) while **CopyButton_Click** is still in flight on a background thread, it won't be safe to access `rootPage`. To make the coroutine correct, it needs to obtain a strong reference to the `this` pointer, and keep that reference for the duration of the coroutine. For more info, see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
+
+If you look in the C++/WinRT version of the sample, at **CopyFiles::CopyButton_Click**, you'll see that it's done with a simple declaration on the stack.
+
+```cppwinrt
+fire_and_forget CopyFiles::CopyButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    auto lifetime{ get_strong() };
+    ...
+}
+```
+
 ## The remaining XAML pages
 
-It now remains to port the the remaining XAML pages&mdash;`CopyFiles.xaml`, `CopyImage.xaml`, `CopyText.xaml`, `HistoryAndRoaming.xaml`, and `OtherScenarios.xaml`.
+It now remains to port the the remaining XAML pages&mdash;`CopyImage.xaml`/`.xaml.cs`, `CopyText.xaml`/`.xaml.cs`, `HistoryAndRoaming.xaml`/`.xaml.cs`, and `OtherScenarios.xaml`/`.xaml.cs`.
 
 This topic has armed you with sufficient porting info and techniques that you can now go ahead and port these remaining XAML pages on your own, if you wish to. Alternatively, just see the C++/WinRT project in the Clipboard sample [source code](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) and compare it with the C# equivalent.
 

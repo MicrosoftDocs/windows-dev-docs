@@ -24,7 +24,7 @@ In order to publish your app to the Microsoft Store it must be written as a UWP 
 
 This project is built with JavaScript using Visual Studio. With some minor changes, it can also hosted on a website or adapted to other platforms. 
 
-**Note:** This is a not a complete (or good!) game; it is designed to demonstrate using JavaScript and a third party library to make an app ready to publish to the Microsoft Store.
+**Note:** This is a not a complete (or good!) game; it is designed to demonstrate using JavaScript and a third party library to make an app ready to publish to the Microsoft Store. 
 
 
 ## Requirements
@@ -36,6 +36,7 @@ To play with this project, you'll need the following:
 
 This project makes use of the CreateJS JavaScript framework. CreateJS is a free set of tools, released under a MIT license, designed to make it easy to create sprite-based games. The CreateJS libraries are already present in the project (look for *js/easeljs-0.8.2.min.js*, and *js/preloadjs-0.6.2.min.js* in the Solution Explorer view). More information about CreateJS can be found at the [CreateJS home page](https://www.createjs.com).
 
+**Note:** Javascript UWP app development is not supported in Visual Studio 2019. You must use Visual Studio 2017 to develop a Javascript UWP app.
 
 ## Getting started
 

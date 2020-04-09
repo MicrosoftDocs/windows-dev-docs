@@ -30,7 +30,7 @@ These two controls are flexible to many use cases, but overall work best with co
 ## Differences between ListView and GridView
 
 ### ListView
-The ListView displays data stacked vertically in a single column. ListView works better for items that have text as a focal point, and for collections that are meant to be read top to bottom (i.e. alphabetically ordered). A few common use cases for ListView include lists of messages and search results.
+The ListView displays data stacked vertically in a single column. ListView works better for items that have text as a focal point, and for collections that are meant to be read top to bottom (i.e. alphabetically ordered). A few common use cases for ListView include lists of messages and search results. Collections that need to be displayed in multiple columns or in a table-like format should _not_ use ListView, but should look into using a [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) instead.
 
 ![A list view with grouped data](images/listview-grouped-example-resized-final.png)
 

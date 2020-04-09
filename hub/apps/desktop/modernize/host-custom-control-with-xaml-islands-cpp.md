@@ -372,9 +372,11 @@ Next, update the **MyDesktopWin32App** project to define a macro for additional 
 4. In **Solution Explorer**, right-click **MyDesktopWin32App (Unloaded)** and select **Reload Project**.
 
 5. Right-click **MyDesktopWin32App**, select **Properties**, and click the **C/C++** node in the left pane. Confirm that the **Additional Include Directories** macro has been defined from the project file change you made in the previous step.
+
     ![C/C++ project settings](images/xaml-islands/xaml-island-cpp-7.png)
 
 6. In the **Property Pages** dialog, expand **Manifest Tool** -> **Input and Output**. Set the **DPI Awareness** property to **Per Monitor High DPI Aware**. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.
+
     ![C/C++ project settings](images/xaml-islands/xaml-island-cpp-8.png)
 
 ## Host the custom UWP XAML control in the desktop project
