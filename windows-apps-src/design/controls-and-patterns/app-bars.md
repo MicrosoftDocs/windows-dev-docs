@@ -45,9 +45,9 @@ The CommandBar control is a general-purpose, flexible, light-weight control that
 </tr>
 </table>
 
-An expanded command bar in the Microsoft Photos app.
+An expanded command bar.
 
-![Command bar in Microsoft Photos app](images/control-examples/command-bar-photos.png)
+![Expanded Command bar](images/control-examples/command-bar-photos.png)
 
 A command bar in the Outlook Calendar on Windows Phone.
 
