@@ -9,7 +9,11 @@ keywords: android on windows
 ms.date: 02/19/2020
 ---
 
-# Improve performance speed and build time by updating Windows Defender security settings
+# Update Windows Defender settings to improve performance
+
+This guide covers how to set up exclusions in your Windows Defender security settings in order to improve your build times and the overall performance speed of your Windows machine.
+
+## Windows Defender Overview
 
 In Windows 10, version 1703 and later, the [Windows Defender Antivirus](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Windows Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
 
@@ -19,10 +23,10 @@ During the Android build process, many files are created on your computer. With 
 
 Fortunately, Windows Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
 
-> [WARNING]
+> [!WARNING]
 > To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software.
 
-![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
+## Add exclusions to Windows Defender
 
 To improve your Android build speed, add exclusions in the [Windows Defender Security Center](windowsdefender://) by:
 
@@ -40,8 +44,17 @@ The following list shows the default location of each Android Studio directory t
 - Android SDK: `%USERPROFILE%\AppData\Local\Android\SDK`
 - Android Studio system files: `%USERPROFILE%\.AndroidStudio<version>\system`
 
+Additional exclusions you may want to consider include:
+
+- Visual Studio dev environment process: `devenv.exe`
+- Visual Studio build process: `msbuild.exe`
+- JetBrains directory: `%LOCALAPPDATA%\JetBrains\<Transient directory (folder)>`
+
+These directory locations may not apply to your project if you have not used the default locations set by Android Studio or if you have downloaded a project from GitHub (for example). Consider adding an exclusion to the directory of your current Android development project, wherever that may be located.
+
+![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
+
 For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the [Antivirus Impact](https://developer.android.com/studio/intro/studio-config#antivirus-impact) section of the Android Studio documentation.
 
-<!-- Todo: Do these Windows Defender exclusions apply for the Xamarin or React cross-plat build speeds for Android development?  -->
-
-<!-- Should we include any other recommended exclusions?? For example, Aaron Stannard was very excited about the improvements ReSharper stuggested to exclude R#  and VS: https://twitter.com/Aaronontheweb/status/1227654898843516928?s=20 -->
+> [!Note]
+> Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Windows Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).

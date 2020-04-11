@@ -122,11 +122,11 @@
               href: android/xamarin-forms.md
             - name: React Native
               href: android/react-native.md
-            - name: PWA (Ionic)
+            - name: PWA (Ionic, PhoneGap, Cordova)
               href: android/pwa.md
-        - name: Defender settings to improve perf
+        - name: Defender settings to improve performance
           href: android/defender-settings.md
-        - name: Device and emulator testing
+        - name: Test on device or emulator
           href: android/emulator.md
   - name: Mac to Windows guide
     items:
