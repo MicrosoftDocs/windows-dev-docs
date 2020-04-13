@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 
 Represents a control that can be used to display and edit numbers. This supports validation, increment stepping, and computing inline calculations of basic equations, such as multiplication, division, addition, and subtraction.
 
-![Example of a typical context menu](images/contextmenu_rs2_icons.png)
-
 **Get the Windows UI Library**
 
 |  |  |
