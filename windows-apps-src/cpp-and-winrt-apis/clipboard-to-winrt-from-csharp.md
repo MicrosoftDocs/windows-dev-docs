@@ -1,7 +1,7 @@
 ---
 title: Porting the Clipboard sample to C++/WinRT from C# (a case study)
 description: This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
-ms.date: 03/20/2020
+ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#, sample, clipboard, case, study
 ms.localizationpriority: medium
@@ -18,18 +18,18 @@ Also see [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-win
 Visit the [Clipboard sample](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/) web page, and click **Download ZIP**. Unzip the downloaded file, and take a look at the folder structure.
 
 - The C# version of the sample source code is contained in the folder named `cs`. Other files used by the C# version can be found in the `shared` and `SharedContent` folders.
-- You can find the C++/WinRT version of the sample source code in the [cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) folder in the sample's repo on GitHub.
+- You can find the C++/WinRT version of the sample source code in the [cppwinrt folder](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) in [the sample's repo](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard) on GitHub.
 
-The walkthrough in this topic shows how you can recreate the C++/WinRT version by porting it from the C# source code. That way, you can see how you can port your own C# projects to C++/WinRT.
+The walkthrough in this topic shows how you can recreate the C++/WinRT version of the Clipboard sample by porting it from the C# source code. That way, you can see how you can port your own C# projects to C++/WinRT.
 
-To get a feel for what the sample does, open the C# solution (`\Clipboard_sample\cs\Clipboard.sln`), change the configuration as appropriate (perhaps to *x64*), build, and run. The sample's user interface (UI) guides you through its various features, step by step.
+To get a feel for what the sample does, open the C# solution (`\Clipboard_sample\cs\Clipboard.sln`), change the configuration as appropriate (perhaps to *x64*), build, and run. The sample's own user interface (UI) guides you through its various features, step by step.
 
-## Create a Blank App (C++/WinRT), named Clipboard
+## Create a Blank App (C++/WinRT), named Clipboard
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Begin the porting process by creating a new C++/WinRT project in Microsoft Visual Studio. Create a new project using the **Blank App (C++/WinRT)** project template. Set its name to *Clipboard*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked.
+Begin the porting process by creating a new C++/WinRT project in Microsoft Visual Studio. Create a new project using the **Blank App (C++/WinRT)** project template. Set its name to *Clipboard*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked.
 
 Just to get a baseline, make sure that this new, empty, project builds and runs.
 
@@ -53,11 +53,11 @@ The C# project references asset files from a shared folder. You can do the same 
 
 Navigate to the `\Clipboard_sample\SharedContent\media` folder. Select the seven files that the C# project includes (`microsoft-sdk.png` through to `windows-sdk.png`), copy them, and paste them into the `\Clipboard\Clipboard\Assets` folder in the new project.
 
-Right-click the `Assets` folder (in Solution Explorer in the C++/WinRT project) > **Add** > **Existing item...* and navigate to `\Clipboard\Clipboard\Assets`. In the file picker, select the seven files and click **Add**.
+Right-click the `Assets` folder (in Solution Explorer in the C++/WinRT project) > **Add** > **Existing item...** and navigate to `\Clipboard\Clipboard\Assets`. In the file picker, select the seven files and click **Add**.
 
 `Package.appxmanifest` is now back in sync with the project's asset files.
 
-## **MainPage**, including the sample-configuration functionality
+## **MainPage**, including the functionality that configures the sample
 
 The Clipboard sample&mdash;like all of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples)&mdash;consists of a collection of scenarios that the user can step through one at a time. The collection of scenarios in a given sample is configured in the sample's source code. Each scenario in the collection is a data item that stores a title, as well as the type of the class in the project that implements the scenario.
 
@@ -71,12 +71,12 @@ The C# source code files that together implement the **MainPage** type are: `Mai
 
 In the C++/WinRT version, we'll factor our **MainPage** type into source code files in a similar way. We'll take the logic in `MainPage.xaml.cs` and translate it for the most part to `MainPage.h` and `MainPage.cpp`. And for the logic in `SampleConfiguration.cs`, we'll translate that to `SampleConfiguration.h` and `SampleConfiguration.cpp`.
 
-Classes in a C# Universal Windows Platform (UWP) application are Windows Runtime types. But when you author a type in a C++/WinRT application, you can choose whether that type is a Windows Runtime type, or a regular class/struct/enumeration.
+Classes in a C# Universal Windows Platform (UWP) application are Windows Runtime types. But when you author a type in a C++/WinRT application, you can choose whether that type is a Windows Runtime type, or a regular C++ class/struct/enumeration.
 
 In the C++/WinRT project, **MainPage** is already a Windows Runtime type, so we don't need to change that aspect of it. Specifically, it's a *runtime class*.
 
-- For more details about whether or not to author a runtime class, see the topic [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
-- The concepts of the *implementation type* and the *projected type* are important in C++/WinRT. You can learn about them in the topic mentioned above, and in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+- For more details about whether or not you should author a runtime class for a given type, see the topic [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+- The concepts of the *implementation type* and the *projected type* are important when you're working with C++/WinRT. You can learn about them in the topic mentioned above, and in [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
 - For info about the connection between runtime classes and `.idl` files, read and follow along with the topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
 
 For **MainPage**, we already have the necessary `MainPage.idl` file in the C++/WinRT project. But during this walkthrough, we'll be adding *new* `.idl` files to the project.
@@ -101,6 +101,8 @@ It's those `public` members that are candidates for declaring in `MainPage.idl`.
 - The property **Scenarios** is a collection of objects of type **Scenario** (a type that we mentioned earlier). We'll talk about **Scenario** in the next subsection, so let's leave the **Scenarios** property until then, too.
 - The methods **BuildClipboardFormatsOutputString**, **DisplayToast**, and **EnableClipboardContentChangedNotifications** are utility functions that feel more to do with the general state of the sample than about the main page. So during the port, we'll refactor these three methods onto a new utility type named **SampleState** (which doesn't need to be a Windows Runtime type). For that reason, these three methods won't go in the IDL.
 - The method **NotifyUser** is called from within the individual scenario XAML pages on the instance of **MainPage** that's returned from the static *Current* field. Since (as already noted) **Current** is an instance of the projected type, we need to declare **NotifyUser** in the IDL. **NotifyUser** takes a parameter of type **NotifyType**. We'll talk about that in the next subsection.
+
+Any member that you want to databind to also needs to be declared in IDL (whether you're using `{x:Bind}` or `{Binding}`). For more info, see [Data binding](/windows/uwp/data-binding/).
 
 We're making progress: we're developing a list of which members to add, and which not to add, to the `MainPage.idl` file. But we still have to discuss the **Scenarios** property, and the **NotifyType** type. So let's do that next.
 
@@ -186,7 +188,7 @@ In those two stub files, you'll see stub implementations of the new members of *
 
 In fact, the only member of the current version of **MainPage** that we want to keep is the constructor.
 
-Once you've copied the new members from the stub files, deleted the members we don't want, and updated the namespace, the `MainPage.h` and `MainPage.cpp` files in your project should look like this. Notice that the only change we've made to the **factory_implementation** type is to update its namespace.
+Once you've copied the new members from the stub files, deleted the members we don't want, and updated the namespace, the `MainPage.h` and `MainPage.cpp` files in your project should look like the code listings below. Notice that there are two **MainPage** types. One in the **implementation** namespace, and a second one in the **factory_implementation** namespace. The only change we've made to the **factory_implementation** one is to add **SDKTemplate** to its namespace.
 
 ```cppwinrt
 // MainPage.h
@@ -250,7 +252,7 @@ For an explanation of the `const&` parameters in the method signatures, see [Par
 
 ### Update all remaining namespace declarations/references, and build
 
-Before building the C++/WinRT project, find any declarations of or references to the **Clipboard** namespace, and change them to **SDKTemplate**.
+Before building the C++/WinRT project, find any declarations of (and references to) the **Clipboard** namespace, and change them to **SDKTemplate**.
 
 - `MainPage.xaml` and `App.xaml`. The namespace appears in the values of the `x:Class` and `xmlns:local` attributes.
 - `App.idl`.
@@ -679,7 +681,7 @@ To port the use of the C# **System.Text.StringBuilder** type, we'll make use of 
 
 The C# code constructs a **StringBuilder** with the `new` keyword. In C#, objects are reference types by default, declared on the heap with `new`. In modern standard C++, objects are value types by default, declared on the stack (without using `new`). So we port `StringBuilder output = new StringBuilder();` to C++/WinRT as simply `std::wostringstream output;`.
 
-The C# `var` keyword asks the compiler to infer a type. You port `var` to `auto` in C++/WinRT. But in C++/WinRT, there are cases where (in order to avoid copies) you want a *reference* to an inferred (or deduced) type, and you express that with `auto&`. There are also cases where you want a special kind of reference that binds correctly whether it's initialized with an *lvalue* or with an *rvalue*. And you express that with `auto&&`. That's the form that you see used in the `for` loop in the ported code below. For an introduction to *lvalues* and *rvalues*, see [Value categories, and references to them](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories).
+The C# `var` keyword asks the compiler to infer a type. You port `var` to `auto` in C++/WinRT. But in C++/WinRT, there are cases where (in order to avoid copies) you want a *reference* to an inferred (or deduced) type, and you express an lvalue reference to a deduced type with `auto&`. There are also cases where you want a special kind of reference that binds correctly whether it's initialized with an *lvalue* or with an *rvalue*. And you express that with `auto&&`. That's the form that you see used in the `for` loop in the ported code below. For an introduction to *lvalues* and *rvalues*, see [Value categories, and references to them](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories).
 
 Edit `pch.h`, `SampleConfiguration.h`, and `SampleConfiguration.cpp` to match the listings below.
 
@@ -785,6 +787,8 @@ private void OnWindowActivated(object sender, WindowActivatedEventArgs e) { ... 
 In C++/WinRT, we'll make it a public static method of **SampleState**.
 
 In C#, you use the `+=` and `-=` operator syntax to register and revoke event-handling delegates. In C++/WinRT, you have several syntactic options to register/revoke a delegate, as described in [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). But the general form is that you register and revoke with calls to a pair of functions named for the event. To register, you pass your delegate to the registering function, and you retrieve a revocation token in return (a [**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token)). To revoke, you pass that token to the revocation function. In this case, the hander is static and (as you can see in the following code listing) the function call syntax is straightforward.
+
+Similar tokens *are* actually used, behind the scenes, in C#. But the language makes that detail implicit. C++/WinRT makes it explicit.
 
 The **object** type appears in the C# event handler signatures. In the C# language, **object** is an [alias](/dotnet/csharp/language-reference/builtin-types/reference-types) for the .NET [**System.Object**](/dotnet/api/system.object) type. The equivalent in C++/WinRT is [**winrt::Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable). So, you'll see **IInspectable** in the C++/WinRT event handlers.
 
@@ -934,12 +938,14 @@ Same pattern as **isApplicationWindowActive** (see the heading immediately befor
 
 #### **Button_Click**
 
-**Button_Click** is a private (event-handling) method of the C# **MainPage** class, and it's defined in `MainPage.xaml.cs`. Here it is, together with XAML **SplitView** that it references.
+**Button_Click** is a private (event-handling) method of the C# **MainPage** class, and it's defined in `MainPage.xaml.cs`. Here it is, together with the XAML **SplitView** that it references, and the **ToggleButton** that registers it.
 
 ```xaml
 <!-- MainPage.xaml -->
 ...
 <SplitView x:Name="Splitter" ... />
+...
+<ToggleButton Click="Button_Click" .../>
 ...
 ```
 
@@ -950,7 +956,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-And the equivalent, ported to C++/WinRT. Note that in the C++/WinRT version, the event handler is `public` (as you can see, you declare it *before* the `private:`declarations).
+And here's the equivalent, ported to C++/WinRT. Note that in the C++/WinRT version, the event handler is `public` (as you can see, you declare it *before* the `private:`declarations). This is because an event handler that's registered in XAML markup, like this one is, needs to be `public` in C++/WinRT in order for the XAML markup to access it. If you register an event handler in imperative code (like we did in **MainPage::EnableClipboardContentChangedNotifications** earlier), then the event handler doesn't need to be `public`.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -1032,7 +1038,7 @@ While, technically, the method is asynchronous, it doesn't do anything after the
 
 The equivalent C++/WinRT method will also be asynchronous (because it calls [**Launcher.LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)). But it doesn't need to `co_await`, nor to return an asynchronous object. For info about `co_await` and asynchronous objects, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
-Now let's talk about what the method is doing. Because this is an event handler for the **Click** event of a **HyperlinkButton**, the object named *sender* is actually a **HyperlinkButton**. So the cast is safe (we could alternatively have expressed this cast as `sender as HyperlinkButton`). Next, we retrieve the value of the **Tag** property (if you look at the XAML markup in the C# project, you'll see that this is set to a string representing a web url). Although the **FrameworkElement.Tag** property (**HyperlinkButton** is a **FrameworkElement**) is of type **object**, in C# we can stringify that with [**Object.ToString**](/dotnet/api/system.object.tostring). From the resulting string, we construct a **Uri** object. And finally (with the help of the Shell) we launch a browser and navigate to the url.
+Now let's talk about what the method is doing. Because this is an event handler for the **Click** event of a **HyperlinkButton**, the object named *sender* is actually a **HyperlinkButton**. So the type conversion is safe (we could alternatively have expressed this conversion as `sender as HyperlinkButton`). Next, we retrieve the value of the **Tag** property (if you look at the XAML markup in the C# project, you'll see that this is set to a string representing a web url). Although the **FrameworkElement.Tag** property (**HyperlinkButton** is a **FrameworkElement**) is of type **object**, in C# we can stringify that with [**Object.ToString**](/dotnet/api/system.object.tostring). From the resulting string, we construct a **Uri** object. And finally (with the help of the Shell) we launch a browser and navigate to the url.
 
 Here's the method ported to C++/WinRT (again, expanded for clarity), after which is a description of the details.
 
@@ -1062,7 +1068,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 }
 ```
 
-As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to cast it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing scalar values to IInspectable](/windows/uwp/cpp-and-winrt-apis/boxing).
+As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing scalar values to IInspectable](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 The last two lines repeat porting patterns we've seen before, and they pretty much echo the C# version.
 
@@ -1160,6 +1166,8 @@ In Solution Explorer in Visual Studio, multiple-select all of the original IDL f
 
 Finally&mdash;and to complete the removal of `MyProperty`&mdash;in the `.h` and `.cpp` files for each of the five XAML page types, delete the declarations and definitions of the `int32_t MyProperty()` accessor and `void MyProperty(int32_t)` mutator functions.
 
+Incidentally, it's always a good idea to have the name of your XAML files match the name of the class that they represent. For example, if you have `x:Class="MyNamespace.MyPage"` in a XAML markup file, then that file should be named `MyPage.xaml`. While this isn't a technical requirement, not having to juggle different names for the same artifact will make your project more understandable and maintainable, and easier to work with.
+
 ## **CopyFiles**
 
 In the C# project, the **CopyFiles** XAML page type is implemented in the `CopyFiles.xaml` and `CopyFiles.xaml.cs` source code files. Let's take a look at each of the members of **CopyFiles** in turn.
@@ -1239,7 +1247,7 @@ Next, consider this line of C# code.
 dataPackage.SetStorageItems(storageItems);
 ```
 
-C# is able to implicitly convert the **IReadOnlyList<StorageFile>** represented by *storageItems* into the **IEnumerable<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly cast from **IVectorView<StorageFile>** to **IIterable<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
+C# is able to implicitly convert the **IReadOnlyList<StorageFile>** represented by *storageItems* into the **IEnumerable<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView<StorageFile>** to **IIterable<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
 
 ```cppwinrt
 dataPackage.SetStorageItems(storageItems.as<IVectorView<IStorageItem>>());
@@ -1272,7 +1280,7 @@ if (file != null)
 ...
 ```
 
-To port the C# `as` keyword to C++/WinRT, so far we've seen the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function used a couple of times. That function throws an exception if the cast fails. But if we want the cast to return `nullptr` if it fails (so that we can handle that condition in the code), then we instead use the [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) function.
+To port the C# `as` keyword to C++/WinRT, so far we've seen the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function used a couple of times. That function throws an exception if the type conversion fails. But if we want the conversion to return `nullptr` if it fails (so that we can handle that condition in the code), then we instead use the [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) function.
 
 ```cppwinrt
 auto file{ storageItem.try_as<StorageFile>() };
@@ -1319,7 +1327,7 @@ Next, consider the C# expression `(uint)(imageDecoder.OrientedPixelWidth * 0.5)`
 
 The C# version of **CopyImage.OnDeferredImageRequestedHandler** has a `finally` clause, but not a `catch` clause. We went just a little bit further in the C++/WinRT version, and implemented a `catch` clause so that we can report whether or not the delayed rendering was successful.
 
-Porting the remainder of this XAML page doesn't yield anything new to discuss. Just like with **CopyFiles**, the last step in the port is to select the entire contents of `CopyImage.xaml`, and paste it into the same file in the C++/WinRT project.
+Porting the remainder of this XAML page doesn't yield anything new to discuss. Remember to delete the dummy **ClickHandler** function. And, just like with **CopyFiles**, the last step in the port is to select the entire contents of `CopyImage.xaml`, and paste it into the same file in the C++/WinRT project.
 
 ## **CopyText**
 
@@ -1333,9 +1341,11 @@ First, take a look at the C# source code, and follow the flow of control from **
 
 And second, when we do finally reach our fire-and-forget **CheckHistoryAndRoaming** coroutine, the first thing we do is to take a strong reference to `this` to guarantee that the **HistoryAndRoaming** page lives at least until the coroutine finally completes. For more info about both of the aspects just described, see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
 
-We find another point of interest while porting **CheckHistoryAndRoaming**. It contains code to update the UI; so we need to be certain that we're doing that on the main UI thread. Typically, an asynchronous method can execute and/or resume on any arbitrary thread. In C#, the solution is to call [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync), and update the UI from within the lambda function. In C++/WinRT, we can use the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function together with the `this` pointer's [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) to suspend the coroutine and immediately resume on the main UI thread.
+We find another point of interest while porting **CheckHistoryAndRoaming**. It contains code to update the UI; so we need to be certain that we're doing that on the main UI thread. The thread that initially calls into an event handler is the main UI thread. But typically, an asynchronous method can execute and/or resume on any arbitrary thread. In C#, the solution is to call [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync), and update the UI from within the lambda function. In C++/WinRT, we can use the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function together with the `this` pointer's [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) to suspend the coroutine and immediately resume on the main UI thread.
 
 The relevant expression is `co_await winrt::resume_foreground(Dispatcher());`. Alternatively, although with less clarity, we could express that simply as `co_await Dispatcher();`. The shorter version is achieved courtesy of a conversion operator supplied by C++/WinRT.
+
+Porting the remainder of this XAML page doesn't yield anything new to discuss. Remember to delete the dummy **ClickHandler** function, and to copy over the XAML markup.
 
 ## **OtherScenarios**
 
