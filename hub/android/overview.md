@@ -11,7 +11,7 @@ ms.date: 02/19/2020
 
 # Overview of Android development on Windows
 
-There are multiple paths for developing an application to use on Android devices using the Windows operating system. These paths fall into two main categories: **Native Android development** and **Cross-platform development**.
+There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into two main categories: **Native Android development** and **Cross-platform development**.
 
 ## Native Android
 
