@@ -37,20 +37,22 @@ To improve your Android build speed, add exclusions in the [Windows Defender Sec
 5. Scroll to the **Exclusions** heading and select **Add or remove exclusions**
 6. Select **+ Add an exclusion**. You will then need to choose whether the exclusion you wish to add is a **File**, **Folder**, **File type**, or **Process**.
 
-The following list shows the default location of each Android Studio directory that you should exclude from real-time scanning:
+## Recommended exclusions
+
+The following list shows the default location of each Android Studio directory recommended to add as an exclusion from Windows Defender real-time scanning:
 
 - Gradle cache: `%USERPROFILE%\.gradle`
 - Android Studio projects: `%USERPROFILE%\AndroidStudioProjects`
 - Android SDK: `%USERPROFILE%\AppData\Local\Android\SDK`
 - Android Studio system files: `%USERPROFILE%\.AndroidStudio<version>\system`
 
+These directory locations may not apply to your project if you have not used the default locations set by Android Studio or if you have downloaded a project from GitHub (for example). Consider adding an exclusion to the directory of your current Android development project, wherever that may be located.
+
 Additional exclusions you may want to consider include:
 
 - Visual Studio dev environment process: `devenv.exe`
 - Visual Studio build process: `msbuild.exe`
 - JetBrains directory: `%LOCALAPPDATA%\JetBrains\<Transient directory (folder)>`
-
-These directory locations may not apply to your project if you have not used the default locations set by Android Studio or if you have downloaded a project from GitHub (for example). Consider adding an exclusion to the directory of your current Android development project, wherever that may be located.
 
 ![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
 
