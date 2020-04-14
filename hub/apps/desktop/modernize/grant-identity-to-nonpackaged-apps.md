@@ -12,16 +12,11 @@ ms.custom: RS5
 
 # Grant identity to non-packaged desktop apps
 
-<!--
-> [!NOTE]
-> The features described in this article require Windows 10 Insider Preview Build 10.0.19000.0 or a later release.
--->
-
 Many Windows 10 extensibility features require [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the OS requires identity so that it can identify the caller of the corresponding API.
 
-In OS releases before Windows 10 Insider Preview Build 10.0.19000.0, the only way to grant identity to a desktop app is to [package it in a signed MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). For these apps, identity is specified in the package manifest and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
+In OS releases before Windows 10, version 2004, the only way to grant identity to a desktop app is to [package it in a signed MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). For these apps, identity is specified in the package manifest and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
 
-Starting in Windows 10 Insider Preview Build 10.0.19000.0, you can grant package identity to desktop apps that are not packaged in an MSIX package by building and registering a *sparse package* with your app. This support enables desktop apps that are not yet able to adopt MSIX packaging for deployment to use Windows 10 extensibility features that require package identity. For more background info, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Starting in Windows 10, version 2004, you can grant package identity to desktop apps that are not packaged in an MSIX package by building and registering a *sparse package* with your app. This support enables desktop apps that are not yet able to adopt MSIX packaging for deployment to use Windows 10 extensibility features that require package identity. For more background info, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 To build and register a sparse package that grants package identity to your desktop app, follow these steps.
 
@@ -157,9 +152,9 @@ The side-by-side application manifest must exist in the same directory as the ex
 
 ## Register your sparse package at run time
 
-To grant package identity to your desktop app, your app must register the sparse package by using the [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) class. You can add code to your app to register the sparse package when your app is run for the first time, or you can run code to register the package while your desktop app is installed (for example, if you're using MSI to install your desktop app, you can run this code from a custom action).
+To grant package identity to your desktop app, your app must register the sparse package by using the **AddPackageByUriAsync** method of the [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) class. This method is available starting in Windows 10, version 2004. You can add code to your app to register the sparse package when your app is run for the first time, or you can run code to register the package while your desktop app is installed (for example, if you're using MSI to install your desktop app, you can run this code from a custom action).
 
-The following example demonstrates how to register a sparse package. This code creates an **AddPackageOptions** object that contains the path to the external location where your package manifest can reference content outside the package. Then, the code passes this object to the **PackageManager.AddPackageByUriAsync**  method to register the sparse package. This method also receives the location of your signed sparse package as a URI. For a more complete example, see the `StartUp.cs` code file in the related [sample](#sample).
+The following example demonstrates how to register a sparse package. This code creates an **AddPackageOptions** object that contains the path to the external location where your package manifest can reference content outside the package. Then, the code passes this object to the **AddPackageByUriAsync**  method to register the sparse package. This method also receives the location of your signed sparse package as a URI. For a more complete example, see the `StartUp.cs` code file in the related [sample](#sample).
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)
