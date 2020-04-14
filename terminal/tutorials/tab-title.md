@@ -14,7 +14,7 @@ By default, the tab title is set to the shell's title. If a tab is composed of m
 
 ## Using the `tabTitle` setting
 
-The `tabTitle` setting allows you to define the starting title for a new instance of a shell. If it is not set, the profile `name` is used instead. Each shell responds to this setting differently. 
+The `tabTitle` setting allows you to define the starting title for a new instance of a shell. If it is not set, the profile `name` is used instead. Each shell responds to this setting differently.
 
 | Shell | Behavior |
 | --|--|
@@ -24,7 +24,6 @@ The `tabTitle` setting allows you to define the starting title for a new instanc
 | Debian | The title is set. |
 
 NOTE: Though Ubuntu and Debian both run bash, they have different behaviors. This is to show that different distributions may have different behavior.
-
 
 ## Setting the shell's title
 
@@ -37,11 +36,13 @@ A shell has full control over its own title. However, each shell sets its title 
 | bash* | `echo -ne "\033]0;New Title\a"` |
 
 NOTE: Some linux distributions (i.e. Ubuntu) set their title automatically as you use interact with the shell. If the above command doesn't work, run the following command:
+
 ```bash
-PS1=$ 
+PS1=$
 PROMPT_COMMAND=
 echo -ne "\033]0;New Title\a"
 ```
+
 This will change the title to 'New Title', and also set the prompt to '$'.
 
 Source: [https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)
@@ -50,6 +51,6 @@ Source: [https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-
 
 Since a shell has control over its title, it may choose to overwrite the tab title at any time. For example, the `posh-git` module for Powershell adds information about your git repository to the title.
 
-Windows Terminal allows you to suppress changes to the title by setting `suppressApplicationTitle` to `true` in your profile. This makes new instances of the profile set your visible title to `tabTitle`. If `tabTitle` is not set, the visible title is set to the profile's `name`. 
+Windows Terminal allows you to suppress changes to the title by setting `suppressApplicationTitle` to `true` in your profile. This makes new instances of the profile set your visible title to `tabTitle`. If `tabTitle` is not set, the visible title is set to the profile's `name`.
 
 Note: This decouples the shell's title from the visible title presented on the tab. If you read the shell's variable where the title is set, it may differ from the tab's title.
