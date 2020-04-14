@@ -23,8 +23,11 @@ In this article, you will create a simple Android app using Xamarin.Android and 
 To use this tutorial, you'll need the following:
 
 - Windows 10, version XXXX or higher
-- [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/)
+- [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
+
+> ![NOTE]
+> This guide will work with Visual Studio 2017 or 2019. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
 
 You will also need an Android phone or configured emulator in which to run your app. 
 
@@ -93,7 +96,7 @@ Open **MainActivity.cs**. This file contains the code-behind logic that will add
 First, get a reference to the `TextView` that will display the time. Use **FindViewById** to search all UI elements for the one with the correct **android:id** (which was set to `"@+id/timeDisplay"` in the xml from the previous step). This is the `TextView` that will display the current time.
 
 ```csharp
-var currentTime = FindViewById<TextView>(Resource.Id.timeDisplay);
+var timeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
 ```
 
 UI controls must be updated on the UI thread. Changes made from another thread may not properly update the control as it displays on the screen. Because there is no guarantee this code will always be running on the UI thread, use the **RunOnUiThread** method to make sure any updates display correctly. Here is the complete `UpdateTimeLabel` method.
@@ -103,8 +106,7 @@ private void UpdateTimeLabel(object state = null)
 {
     RunOnUiThread(() =>
     {
-        var currentTime = FindViewById<TextView>(Resource.Id.timeDisplay);
-        currentTime.Text = DateTime.Now.ToLongTimeString();
+        TimeDisplay.Text = DateTime.Now.ToLongTimeString();
     });
 }
 ```
@@ -128,7 +130,7 @@ public int HourOffset { get; private set; }
 Now update the UpdateTimeLabel method to be aware of the HourOffset property.
 
 ```csharp
-currentTime.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
+TimeDisplay.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
 ```
 
 ### Create the button Click event handlers
@@ -170,47 +172,43 @@ namespace TimeChangerAndroid
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        public TextView TimeDisplay { get; private set; }
         public int HourOffset { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             // Set the view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
 
             Button upButton = FindViewById<Button>(Resource.Id.upButton);
-            upButton.Click += UpButton_Click;
+            upButton.Click += OnUpButton_Click;
 
             Button downButton = FindViewById<Button>(Resource.Id.downButton);
-            downButton.Click += DownButton_Click;
-        }
+            downButton.Click += OnDownButton_Click;
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            TimeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
         }
 
         private void UpdateTimeLabel(object state = null)
         {
+            // Timer callbacks run on a background thread, but UI updates must run on the UI thread.
             RunOnUiThread(() =>
             {
-                var currentTime = FindViewById<TextView>(Resource.Id.timeDisplay);
-                currentTime.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
+                TimeDisplay.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
             });
         }
 
-        public void UpButton_Click(object sender, System.EventArgs e)
+        public void OnUpButton_Click(object sender, System.EventArgs e)
         {
             HourOffset++;
             UpdateTimeLabel();
         }
 
-        //[Export("DownButton_Click")]
-        public void DownButton_Click(object sender, System.EventArgs e)
+        public void OnDownButton_Click(object sender, System.EventArgs e)
         {
             HourOffset--;
             UpdateTimeLabel();
