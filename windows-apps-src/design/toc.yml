@@ -362,6 +362,8 @@
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Schedule toasts
+              href: shell/tiles-and-notifications/scheduled-toast.md
             - name: Custom audio
               href: shell/tiles-and-notifications/custom-audio-on-toasts.md
             - name: Progress bar
