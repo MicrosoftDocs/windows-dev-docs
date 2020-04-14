@@ -8,10 +8,28 @@ ms.topic: overview
 ms.service: terminal
 ---
 
-# Install Windows Terminal
+# Install and set up Windows Terminal
 
-Instructions on how to install and get started with Windows Terminal.
+## Installation
+
+You can install the Windows Terminal from the [Microsoft Store](https://aka.ms/terminal).
+
+If you don't have access to the Microsoft Store, the builds are published on the [GitHub releases page](https://github.com/microsoft/terminal/releases). If you install from GitHub, the Terminal will not automatically update with new versions.
+
+## First run
+
+After installation, when you open the Terminal, it will start with Powershell as the default profile in the open tab.
+
+![Windows Terminal first run](./images/first-run.png)
+
+## Open a new tab
+
+You can open a new tab of the default profile by pressing `Ctrl+Shift+T` or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
+
+## Configuration
+
+If you want to customize the settings of your Terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. This is a Windows OS setting that you can configure to choose which application will open your settings file.
 
 ## Troubleshooting
 
-Possibly call this page installation and troubleshooting? Keeping troubleshooting focused on any possible issues related to successful install and pointing any other sorts of trouble to the Microsoft/Terminal github repo issues..?
+If you encounter any difficulties using the Terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can click the feedback button in the dropdown menu of the Terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
