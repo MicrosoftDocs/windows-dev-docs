@@ -1,6 +1,6 @@
 ---
 title: Windows Terminal overview
-description: Learn about Windows Terminal and how it can improve your command-line workflow.
+description: Learn about Windows Terminal and how it can improve your command line workflow.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
@@ -11,7 +11,7 @@ ms.service: terminal
 
 # What is Windows Terminal?
 
-The Windows Terminal is a new, modern, fast, efficient, powerful, and productive terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and custom themes, styles, and configurations.
+The Windows Terminal is a new, modern, fast, efficient, powerful, and productive terminal application for users of command line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and custom schemes and configurations.
 
 ![Windows Terminal screenshot](./images/overview.png)
 
@@ -22,15 +22,15 @@ The Windows Terminal is a new, modern, fast, efficient, powerful, and productive
 
 The main features of Windows Terminal include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and custom themes, styles, and configurations.
 
-### Multiple profiles supporting a variety of command lines
+### Multiple profiles supporting a variety of command line applications
 
 Any application that has a command line interface can be run inside the Windows Terminal. This includes everything from PowerShell and Command Prompt to Azure Cloud Shell and any WSL distribution such as Ubuntu or Oh-My-Zsh.
 
-### Customized themes, styles, configurations
+### Customized schemes and configurations
 
 You can configure your Windows Terminal to have a variety of color schemes and settings. To learn how to make your own color scheme, visit the [Color schemes page](./customize-settings/color-schemes.md). You can also find custom Terminal configurations in the [Custom terminal gallery](./custom-terminal-gallery/powerline-in-powershell.md).
 
-### Custom Key Bindings
+### Custom key bindings
 
 There are a variety of custom key combinations you can use in the Windows Terminal to have it feel more natural to you. You can learn about customizing your key bindings on the [Key bindings page](./customize-settings/key-bindings.md).
 
