@@ -23,8 +23,11 @@ In this article, you will create a simple Android app using Xamarin Forms and Vi
 To use this tutorial, you'll need the following:
 
 - Windows 10, version XXXX or higher
-- [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/)
+- [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
+
+> ![NOTE]
+> This guide will work with Visual Studio 2017 or 2019. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
 
 You will also to have an Android phone or configured emulator in which to run your app. See Configuring an Android emulator.
 
@@ -59,20 +62,20 @@ Replace the contents of MainPage.xaml with the following code.
 
     <StackLayout HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-        <Label HorizontalOptions="CenterAndExpand"
+        <Label x:Name="time"
+               HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               x:Name="time"
                Text="At runtime, this Label will display the current time.">
         </Label>
         <StackLayout Orientation="Horizontal">
             <Button HorizontalOptions="End"
                     VerticalOptions="End"
                     Text="Up"
-                    Clicked="UpButton_Clicked"/>
+                    Clicked="OnUpButton_Clicked"/>
             <Button HorizontalOptions="Start"
                     VerticalOptions="End"
                     Text="Down"
-                    Clicked="DownButton_Clicked"/>
+                    Clicked="OnDownButton_Clicked"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
@@ -172,13 +175,13 @@ namespace TimeChangerForms
             );
         }
 
-        private void UpButton_Clicked(object sender, EventArgs e)
+        private void OnUpButton_Clicked(object sender, EventArgs e)
         {
             HourOffset++;
             UpdateTimeLabel();
         }
 
-        private void DownButton_Clicked(object sender, EventArgs e)
+        private void OnDownButton_Clicked(object sender, EventArgs e)
         {
             HourOffset--;
             UpdateTimeLabel();
@@ -200,5 +203,5 @@ To run the app, press **F5** or click Debug > Start Debugging. If you are using 
 **To do.**
 
 - Configure your dev machine to do Android development
-- [Create an Android sample app using Xamarin.Android](xamarin-android.md)
+- [Create an Android sample app using Xamarin.Android](xamarin-native.md)
 - Create an iOS sample app using Xamarin.iOS
