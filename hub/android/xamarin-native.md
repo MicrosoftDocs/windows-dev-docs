@@ -230,5 +230,5 @@ To run the app, press **F5** or click Debug > Start Debugging. If you are using 
 **To do.**
 
 - Configure your dev machine to do Android development
-- [Create an Android sample app using Xamarin Forms](xamarin-forms-android.md)
+- [Create an Android sample app using Xamarin Forms](xamarin-forms.md)
 - Create an iOS sample app using Xamarin.iOS
