@@ -144,7 +144,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 :no_entry_sign: Text controls that use `@Places` and `@People` content links. For more information about this feature, see [this article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
 
-:no_entry_sign: XAML Islands do not support hosting a [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) that contains a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) is not supported. If you do this, the **TextBox** will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) that contains a **TextBox**.
+:no_entry_sign: XAML Islands do not support hosting a [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) that contains a control that accepts text input, such as a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), or [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you do this, the input control will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) that contains the input control.
 
 ### Window host context for XAML Islands
 
