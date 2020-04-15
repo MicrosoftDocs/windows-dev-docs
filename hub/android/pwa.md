@@ -9,35 +9,197 @@ keywords: android on windows
 ms.date: 02/19/2020
 ---
 
-# Get started developing a PWA for Android
+# Get started developing a PWA or Hybrid web app for Android
 
-Progressive Web Apps (PWAs) are web-based applications that can be installed and used on an Android device like a native app, accessing the camera, GPS, Bluetooth, notifications, and contact list. This guide will get you started using Windows to create a PWA that will work on Android devices and can be distributed via the web or the Google Play Store.
+Web-based applications can work on an Android device in a way that looks to users very similar to a native app. Creating your application as a web-app enables you to use a single HTML, CSS, and JavaScript codebase to create an app that will work across device platforms (Android, iOS, Windows).
 
-## Components of a PWA
+## Features of a PWA or Hybrid web app
 
-Service Worker
-Trusted Web Activity
+There are two main types of web apps that can be installed on Android devices. The main difference being whether your application code is embedded in an app package (hybrid) or hosted on a web server (pwa).
 
-## Choosing a framework
+- **Hybrid web apps**: Code (HTML, JS, CSS) is packaged in an APK and can be distributed via the Google Play Store. The viewing engine is isolated from the users' internet browser, no session or cache sharing.
 
-You don't need a framework to create a PWAs 
-You don't need a platform to create a hybrid app, but they are helpful because they've already taken care of creating a bridge between native APIs and JavaScript APIs.
+- **Progressive Web Apps (PWAs)**: Code (HTML, JS, CSS) lives on the web and doesn't need to be packaged as an APK. Resources are downloaded and updated as needed using a Service Worker. The Chrome browser will render and display your app, but will look native and not include the normal browser address bar, etc. You can share storage, cache, and sessions with the browser. This is basically like installing a shortcut to the Chrome browser in a special mode. PWAs can also be listed in the Google Play Store using Trusted Web Activity.
 
-Progressive Web Apps simply run in the browser so they can be built with basic HTML, CSS and JavaScript.
+PWAs and hybrid web apps are very similar to a native Android app in that they:
 
-### Ionic with Apache Cordova
+- Can be installed via the App Store (Google Play Store and/or Microsoft Store)
+- Have access to native device features like camera, GPS, Bluetooth, notifications, and list of contacts
+- Work Offline (no internet connection)
 
-[Apache Cordova](https://cordova.apache.org/) is an open-source framework that enables developers to use a single HTML, CSS, and JavaScript codebase to create an application that will work across device platforms (Android, iOS, Windows).
+PWAs also have a few unique features:
 
-Cordova renders what would normally be a web application inside a native WebView. WebView is an application component, like a button or tab bar, used to display web content within a native application. WebView is like a web browser without the usual interface elements, such as a URL field or status bar. These types of apps are also referred to as "Hybrid apps." They aren't truly native apps, because the layout rendering happens via web views rather than the native platform UI framework, nor are they purely web-based, because they aren't just web apps but have access to native device APIs and can be packaged for distribution via an app store.
+- Can be installed on the Android home screen directly from the web (without an App Store)
+- Can additionally be installed via the Google Play Store [using a Trusted Web Activity](https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/)
+- Can be discovered via web search or shared via a URL link
+- Rely on a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers) to avoid the need to package native code
 
-## PhoneGap with Apache Cordova
+You don't need a framework to create a Hybrid app or PWA, but there are a few popular frameworks that will be covered in this guide, including PhoneGap (with Cordova) and Ionic (with Cordova or Capacitor using Angular or React).
 
-## Install
+### Apache Cordova
 
-## Create a new project
+[Apache Cordova](https://cordova.apache.org/) is an open-source framework that can simplify the communication between your JavaScript code living in a native [WebView](https://developer.android.com/reference/android/webkit/WebView) and the native Android platform by using [plugins](https://cordova.apache.org/plugins/?platforms=cordova-android). These plugins expose JavaScript endpoints that can be called from your code and used to call native Android device APIs. Some example Cordova plugins include access to device services like battery status, file access, vibration / ring tones, etc. These features are not typically available to web apps or browsers.
 
-## Deploy to a device emulator
+There are two popular distributions of Cordova:
 
-Notes:
-Typically, web-based applications are executed within a sandbox, meaning that they do not have direct access to various hardware and software features on the device. A good example of this is the contact database on your mobile device. This database of names, phone numbers, emails, and other bits of information is not accessible to a web app.
+- [PhoneGap](https://phonegap.com/)
+
+- [Ionic](https://ionicframework.com/)
+
+## Adobe PhoneGap
+
+[PhoneGap](https://phonegap.com/): A framework supported by Adobe that supports Cordova with additional tools, like a [command line](http://docs.phonegap.com/getting-started/1-install-phonegap/cli/), a [desktop app](https://phonegap.com/products#desktop-app-section), and [PhoneGap Build](https://build.phonegap.com/), a service that enables you to upload your code to an Adobe server that will build native apps for you without the need to install native SDKs on your local machine. This enables you to do things like build an iOS app using your Windows machine.
+
+### Install PhoneGap
+
+To get started building a PWA or hybrid web app with PhoneGap, you should first install the following tools:
+
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+
+Install PhoneGap by entering the following in your command line:
+
+```bash
+npm install -g phonegap
+```
+
+To create a new PhoneGap project, follow their steps to [Get started](https://phonegap.com/getstarted/). Visit the [PWA Features](http://stage.docs.phonegap.com/tutorials/stockpile/911-pwa-features/) section of the PhoneGap docs to learn how to move your app from being a hybrid to a PWA.  
+
+## Ionic with Angular or React
+
+[Ionic](https://ionicframework.com/) is a framework that adjusts the user interface (UI) of your app to match the design language of each platform (Android, iOS, Windows). Ionic enables you to use either [Angular](https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro) or [React](https://ionicframework.com/react).
+
+> [!NOTE]
+> There is a new version of Ionic that uses an alternative to Cordova, called [Capacitor](https://capacitor.ionicframework.com/). This alternative uses containers to make your app [more web-friendly](https://ionicframework.com/blog/announcing-capacitor-1-0/).
+
+### Get started with Ionic by installing required tools
+
+To get started building a PWA or hybrid web app with Ionic, you should first install the following tools:
+
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+
+- VS Code for writing your code. [Download VS Code for Windows](https://code.visualstudio.com/). You may also want to install the [WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you prefer to build your app with a Linux command line.
+
+- Windows Terminal for working with your preferred command-line interface (CLI). [Install Windows Terminal from Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+
+- Git for version control. [Download Git](https://git-scm.com/downloads).
+
+### Create a new project with Ionic Cordova and Angular
+
+Install Ionic and Cordova by entering the following in your command line:
+
+```bash
+npm install -g @ionic/cli cordova
+```
+
+Create an Ionic Angular app using the "Tabs" app template by entering the command:
+
+```bash
+ionic start photo-gallery tabs
+```
+
+Change into the app folder:
+
+```bash
+cd photo-gallery
+```
+
+Run the app in your web browser:
+
+```bash
+ionic serve
+```
+
+For more information, see the [Ionic Cordova Angular docs](https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro). Visit the [Making your Angular app a PWA](https://ionicframework.com/docs/angular/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.
+
+### Create a new project with Ionic Capacitor and Angular
+
+Install Ionic and Cordova-Res by entering the following in your command line:
+
+```bash
+npm install -g @ionic/cli native-run cordova-res
+```
+
+Create an Ionic Angular app using the "Tabs" app template and adding Capacitor by entering the command:
+
+```bash
+ionic start photo-gallery tabs --type=angular --capacitor
+```
+
+Change into the app folder:
+
+```bash
+cd photo-gallery
+```
+
+Add components to make the app a PWA:
+
+```bash
+npm install @ionic/pwa-elements
+```
+
+Import @ionic/pwa-elements by add the following to your `src/main.ts` file:
+
+```typescript
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
+```
+
+Run the app in your web browser:
+
+```bash
+ionic serve
+```
+
+For more information, see the [Ionic Capacitor Angular docs](https://ionicframework.com/docs/angular/your-first-app). Visit the [Making your Angular app a PWA](https://ionicframework.com/docs/angular/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.  
+
+### Create a new project with Ionic and React
+
+Install the Ionic CLI by entering the following in your command line:
+
+```bash
+npm install -g @ionic/cli
+```
+
+Create a new project with React by entering the command:
+
+```bash
+ionic start myApp blank --type=react
+```
+
+Change into the app folder:
+
+```bash
+cd myApp
+```
+
+Run the app in your web browser:
+
+```bash
+ionic serve
+```
+
+For more information, see the [Ionic React docs](https://ionicframework.com/docs/react/quickstart). Visit the [Making your React app a PWA](https://ionicframework.com/docs/react/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.
+
+### Test on a device or emulator
+
+To test your Ionic app on an Android device, plug-in your device ([make sure it is first enabled for development](../emulator#enable-your-device-for-development)), then in your command line enter:
+
+```bash
+ionic cordova run android
+```
+
+To test your Ionic app on an Android device emulator, you must:
+
+1. [Install the required components -- Java Development Kit (JDK), Gradle, and the Android SDK](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements).
+
+2. [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html).
+
+3. Enter the command for Ionic to build and deploy your app to the emulator: `ionic cordova emulate [<platform>] [options]`. In this case, the command should be:
+
+```bash
+ionic cordova emulate android --list
+```
+
+See the [Cordova Emulator](https://ionicframework.com/docs/cli/commands/cordova-emulate) in the Ionic docs for more info.
