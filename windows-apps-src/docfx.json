@@ -201,7 +201,7 @@
                 "design/shell/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
                 "design/style/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
                 "design/usability/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
-                "design/windows-template-studio/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+                "design/windows-template-studio/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose"
             },
             "feedback_system": {
                 "publish/index.md": "None"
