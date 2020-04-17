@@ -73,7 +73,7 @@ To see the countries/regions in which these payment methods are used for each ma
 | Cote D'Ivoire                    | Yes               | Yes                                      | Yes    | No              |
 | Croatia                          | Yes               | Yes                                      | Yes    | No              |
 | Cyprus                           | Yes               | Yes                                      | Yes    | Yes             |
-| Czech Republic                   | Yes               | Yes                                      | Yes    | Yes             |
+| Czechia                          | Yes               | Yes                                      | Yes    | Yes             |
 | Denmark                          | Yes               | Yes                                      | Yes    | Yes             |
 | Dominica                         | Yes               | Yes                                      | No     | Yes             |
 | Dominican Republic               | Yes               | Yes                                      | Yes    | Yes             |

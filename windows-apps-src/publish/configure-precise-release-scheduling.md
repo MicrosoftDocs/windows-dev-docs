@@ -134,7 +134,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Croatia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
 | CuraÃ§ao  |  (UTC-04:00) Cuiaba |
 | Cyprus  |  (UTC+02:00) Chisinau |
-| Czech Republic  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Czechia  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
 | Denmark  |  (UTC+01:00) Brussels, Copenhagen, Madrid, Paris |
 | Djibouti  |  (UTC+03:00) Nairobi |
 | Dominica  |  (UTC-04:00) Atlantic Time (Canada) |
