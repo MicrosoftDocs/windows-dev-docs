@@ -133,7 +133,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Croatia</td>
     <td>Curaçao</td>
     <td>Cyprus</td>
-    <td>Czech Republic *</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
     <td>Denmark *</td>
@@ -433,7 +433,7 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 | Chile                | Gift card       | 2.24%                         | March 2016     |
 | China                | Gift card       | 2.24%                         | March 2016     |
 | Colombia             | Gift card       | 2.24%                         | March 2016     |
-| Czech Republic       | Gift card       | 2.24%                         | March 2016     |
+| Czechia              | Gift card       | 2.24%                         | March 2016     |
 | Denmark              | Gift card       | 2.24%                         | March 2016     |
 | Finland              | Gift card       | 2.24%                         | March 2016     |
 | France               | Gift card       | 2.24%                         | March 2016     |

@@ -87,7 +87,7 @@ In the following table, the **Registration fee** is the current cost to register
 | Côte d'Ivoire                     | 19 USD              | 99 USD           |  
 | Croatia                           | 107 HRK             | 500 HRK          |  
 | Cyprus                            | 14 EUR              | 75 EUR           |  
-| Czech Republic                    | 365 CZK             | 1720 CZK         |  
+| Czechia                           | 365 CZK             | 1720 CZK         |  
 | Denmark                           | 106 DKK             | 530 DKK          |  
 | Djibouti                          | 19 USD              | 99 USD           | 
 | Dominica                          | 19 USD              | 99 USD           | 

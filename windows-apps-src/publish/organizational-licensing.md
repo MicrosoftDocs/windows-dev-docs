@@ -66,7 +66,7 @@ At this time, developers located in the following countries and regions can dist
 - Canada
 - Croatia
 - Cyprus
-- Czech Republic
+- Czechia
 - Denmark
 - Estonia
 - Finland
