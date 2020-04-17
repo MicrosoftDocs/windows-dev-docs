@@ -274,7 +274,7 @@ This example adds the restricted **broadFileSystemAccess** capability. In additi
 <Package
   ...
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap mp uap5 rescap">
+  IgnorableNamespaces="uap mp rescap">
 ...
 <Capabilities>
     <rescap:Capability Name="broadFileSystemAccess" />
