@@ -467,7 +467,7 @@ The **TreeView** control supports both single-selection and multi-selection. By 
 
 When multiple selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
 
-Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
+Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown in the indeterminate state.
 
 ![Multiple selection in a tree view](images/treeview-selection.png)
 

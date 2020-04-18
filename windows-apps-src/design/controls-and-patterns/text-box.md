@@ -288,11 +288,11 @@ For more info and examples, see [Use input scope to change the touch keyboard](h
 
 - Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
 
-    ![Formatted data input](images/textinput_example_productkey.png)
+    ![Formatted data input](images/textinput-example-productkey.png)
 
 - Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.
 
-    ![Assisted data input](images/textinput_example_assisted.png)
+    ![Assisted data input](images/textinput-example-assisted.png)
 
 ### Multi-line text input controls
 
