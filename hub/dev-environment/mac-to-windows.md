@@ -77,11 +77,11 @@ Incidentally, PowerShell is [also available for Mac](https://docs.microsoft.com/
 
 3. Windows Subsystem for Linux (WSL)
 
-WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+WSL allows you to run a Linux shell within Windows. This means you can run **bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 4. Windows Terminal (Preview)
 
-Windows Terminal is an application that combines command-line tools and shells from a number of sources, including the traditional Windows Command Line, PowerShell, and Windows Subsystem for Linux. While it is currently still in preview, it alreaedy contains several useful feature such as support for multiple tabs, split panes, custom themes and styles, and full Unicode support. Windows Terminal can be installed from the [Microsoft Store on Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+Windows Terminal is an application that combines command-line tools and shells from a number of sources, including the traditional Windows Command Line, PowerShell, and Windows Subsystem for Linux. While it is currently still in preview, it already contains several useful features such as support for multiple tabs, split panes, custom themes and styles, and full Unicode support. Windows Terminal can be installed from the [Microsoft Store on Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
 
 ## Apps and utilities
 
