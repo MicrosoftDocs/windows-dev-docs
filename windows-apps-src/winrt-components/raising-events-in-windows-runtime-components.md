@@ -6,15 +6,17 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+
 ---
 # Raising events in Windows Runtime components
+
 > [!NOTE]
-> To learn how to raise events in a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+> For more info about raising events in a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-If your Windows Runtime component raises an event of a user-defined delegate type on a background thread (worker thread) and you want JavaScript to be able to receive the event, you can implement and/or raise it in one of these ways:
+If your Windows Runtime component raises an event of a user-defined delegate type on a background thread (worker thread), and you want JavaScript to be able to receive the event, then you can implement and/or raise it in any one of these ways.
 
--   (Option 1) Raise the event through the [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) to marshal the event to the JavaScript thread context. Although typically this is the best option, in some scenarios it might not provide the fastest performance.
--   (Option 2) Use [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; but lose type information (but lose the event type information). If Option 1 is not feasible or its performance is not adequate, then this is a good second choice if loss of type information is acceptable.
+-   (Option 1) Raise the event through the [**Windows.UI.Core.CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) to marshal the event to the JavaScript thread context. Although typically this is the best option, in some scenarios it might not provide the fastest performance.
+-   (Option 2) Use **[Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)\<Object\>** (but lose the event type information). If Option 1 is not feasible, or if its performance is not adequate, then this is a good second choice provided that loss of type information is acceptable. If you're authoring a C# Windows Runtime Component, then the **Windows.Foundation.EventHandler\<Object\>** type is not available; instead, that type is projected to [**System.EventHandler**](/dotnet/api/system.eventhandler), so you should use that instead.
 -   (Option 3) Create your own proxy and stub for the component. This option is the most difficult to implement, but it preserves type information and might provide better performance compared to Option 1 in demanding scenarios.
 
 If you just raise an event on a background thread without using one of these options, a JavaScript client will not receive the event.
@@ -65,6 +67,9 @@ public void MakeToastWithDispatcher(string message)
 ```
 
 ## (Option 2) Use EventHandler&lt;Object&gt; but lose type information
+
+> [!NOTE]
+> If you're authoring a C# Windows Runtime Component, then the **Windows.Foundation.EventHandler\<Object\>** type is not available; instead, that type is projected to [**System.EventHandler**](/dotnet/api/system.eventhandler), so you should use that instead.
 
 Another way to send an event from a background thread is to use [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; as the type of the event. Windows provides this concrete instantiation of the generic type and provides a proxy and stub for it. The downside is that the type information of your event args and sender is lost. C++ and .NET clients must know through documentation what type to cast back to when the event is received. JavaScript clients don’t need the original type information. They find the arg properties, based on their names in the metadata.
 
