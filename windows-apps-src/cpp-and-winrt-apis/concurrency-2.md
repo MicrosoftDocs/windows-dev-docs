@@ -712,7 +712,7 @@ IAsyncAction SampleCaller()
 
 ## Asynchronous timeouts made easy
 
-C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::function**.
+C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -726,7 +726,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
