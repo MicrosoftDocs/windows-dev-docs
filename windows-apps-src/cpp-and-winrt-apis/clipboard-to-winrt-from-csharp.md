@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). You can gain porting practice and experience by following along with the walkthrough and porting the sample for yourself as you go.
 
-Also see [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp), which presents a number of sections that address specific technical details involved in porting from C# to C++/WinRT.
+For a comprehensive catalog of the technical details involved in porting to C++/WinRT from C#, see the companion topic [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp).
 
 ## Download and test the Clipboard sample
 
@@ -134,7 +134,9 @@ And you'll recall that **MainPage.Scenarios** is a collection of **Scenario** ob
 
 Now let's add to the `MainPage.idl` file the new types and the new member of **Mainpage** that we've decided to declare in IDL. At the same time, we'll remove from the IDL the placeholder members of **Mainpage** that the Visual Studio project template gave us.
 
-So, in your C++/WinRT project, open `MainPage.idl`, and edit it so that it looks like the listing below. Note that one of the edits is to change the namespace name from **Clipboard** to **SDKTemplate**. If you like, you can just delete the current contents of your `MainPage.idl`, and paste in the listing below. Another tweak to note is that we're changing the name of **Scenario::ClassType** to **Scenario::ClassName**.
+So, in your C++/WinRT project, open `MainPage.idl`, and edit it so that it looks like the listing below. Note that one of the edits is to change the namespace name from **Clipboard** to **SDKTemplate**. If you like, you can just replace the entire contents of `MainPage.idl` with the following code. Another tweak to note is that we're changing the name of **Scenario::ClassType** to **Scenario::ClassName**.
+
+
 
 ```idl
 // MainPage.idl
@@ -1122,7 +1124,7 @@ There's value in consolidating your runtime classes into a single IDL file (see 
 
 While we're doing that, let's also remove the auto-generated dummy property (`Int32 MyProperty;`, and its implementation) from each of those five XAML page types.
 
-First, add a new **Midl File (.idl)** item to the C++/WinRT project. Name it `Project.idl`. Delete the default contents of `Project.idl`, and in its place paste the listing below.
+First, add a new **Midl File (.idl)** item to the C++/WinRT project. Name it `Project.idl`. Replace the entire contents of `Project.idl` with the following code.
 
 ```idl
 // Project.idl
