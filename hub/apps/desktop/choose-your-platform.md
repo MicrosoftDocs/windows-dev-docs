@@ -27,6 +27,8 @@ All of these application platforms let you create desktop apps like Word, Excel,
 
 * **Win32 API**. The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
 
+On Windows 10, all these platforms support using the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui) to create their user interfaces. WinUI provides a set of modern controls, including both enhanced versions of existing XAML controls and brand new controls. WinUI also supports earlier versions of Windows 10 to maximize availability.
+
 Both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
 
 This article describes these platforms in more detail and helps you determine the best one for your application. 
