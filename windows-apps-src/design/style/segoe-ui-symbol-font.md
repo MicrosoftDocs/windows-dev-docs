@@ -147,9 +147,9 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
   <td>E712</td>
   <td>More</td>
  </tr>
-<tr><td><img src="images/segoe-mdl/E713.png" width="32" height="32" alt="Settings" /></td>
+<tr><td><img src="images/segoe-mdl/E713.png" width="32" height="32" alt="Setting" /></td>
   <td>E713</td>
-  <td>Settings</td>
+  <td>Setting</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E714.png" width="32" height="32" alt="Video" /></td>
   <td>E714</td>
