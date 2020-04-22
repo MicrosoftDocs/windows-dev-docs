@@ -58,7 +58,7 @@ Before creating a virtual device with the Android emulator, it is recommended th
 > * Be running Windows 10 build 1803+ ([Check your build #](ms-settings:about))
 > * Have updated graphics drivers (Device Manager > Display adapters > Update driver)
 >
-> If your machine doesn't fit this criteria, you may be able to run [Intel HAXM](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration?tabs=vswin&pivots=windows#accelerating-with-haxm) or [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). For more info, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) or the [Android Studio Emulator documentation](https://developer.android.com/studio/run/emulator).
+> If your machine doesn't fit this criteria, you may be able to run [Intel HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) or [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). For more info, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) or the [Android Studio Emulator documentation](https://developer.android.com/studio/run/emulator).
 
 1. Verify that your computer hardware and software is compatible with Hyper-V by opening a command prompt and entering the command: `systeminfo`
 

@@ -11,7 +11,9 @@ ms.date: 02/19/2020
 
 # Get started developing a PWA or Hybrid web app for Android
 
-Web-based applications can work on an Android device in a way that looks to users very similar to a native app. Creating your application as a web-app enables you to use a single HTML, CSS, and JavaScript codebase to create an app that will work across device platforms (Android, iOS, Windows).
+This guide will help you to get started creating a hybrid web app or Progressive Web App (PWA) on Windows using a single HTML/CSS/JavaScript codebase that can be used on the web and across device platforms (Android, iOS, Windows).
+
+By using the right frameworks and components, web-based applications can work on an Android device in a way that looks to users very similar to a native app.
 
 ## Features of a PWA or Hybrid web app
 
@@ -36,7 +38,7 @@ PWAs also have a few unique features:
 
 You don't need a framework to create a Hybrid app or PWA, but there are a few popular frameworks that will be covered in this guide, including PhoneGap (with Cordova) and Ionic (with Cordova or Capacitor using Angular or React).
 
-### Apache Cordova
+## Apache Cordova
 
 [Apache Cordova](https://cordova.apache.org/) is an open-source framework that can simplify the communication between your JavaScript code living in a native [WebView](https://developer.android.com/reference/android/webkit/WebView) and the native Android platform by using [plugins](https://cordova.apache.org/plugins/?platforms=cordova-android). These plugins expose JavaScript endpoints that can be called from your code and used to call native Android device APIs. Some example Cordova plugins include access to device services like battery status, file access, vibration / ring tones, etc. These features are not typically available to web apps or browsers.
 
@@ -64,7 +66,7 @@ npm install -g phonegap
 
 To create a new PhoneGap project, follow their steps to [Get started](https://phonegap.com/getstarted/). Visit the [PWA Features](http://stage.docs.phonegap.com/tutorials/stockpile/911-pwa-features/) section of the PhoneGap docs to learn how to move your app from being a hybrid to a PWA.  
 
-## Ionic with Angular or React
+## Ionic
 
 [Ionic](https://ionicframework.com/) is a framework that adjusts the user interface (UI) of your app to match the design language of each platform (Android, iOS, Windows). Ionic enables you to use either [Angular](https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro) or [React](https://ionicframework.com/react).
 
@@ -83,7 +85,7 @@ To get started building a PWA or hybrid web app with Ionic, you should first ins
 
 - Git for version control. [Download Git](https://git-scm.com/downloads).
 
-### Create a new project with Ionic Cordova and Angular
+## Create a new project with Ionic Cordova and Angular
 
 Install Ionic and Cordova by entering the following in your command line:
 
@@ -111,7 +113,7 @@ ionic serve
 
 For more information, see the [Ionic Cordova Angular docs](https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro). Visit the [Making your Angular app a PWA](https://ionicframework.com/docs/angular/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.
 
-### Create a new project with Ionic Capacitor and Angular
+## Create a new project with Ionic Capacitor and Angular
 
 Install Ionic and Cordova-Res by entering the following in your command line:
 
@@ -154,7 +156,7 @@ ionic serve
 
 For more information, see the [Ionic Capacitor Angular docs](https://ionicframework.com/docs/angular/your-first-app). Visit the [Making your Angular app a PWA](https://ionicframework.com/docs/angular/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.  
 
-### Create a new project with Ionic and React
+## Create a new project with Ionic and React
 
 Install the Ionic CLI by entering the following in your command line:
 
@@ -182,7 +184,7 @@ ionic serve
 
 For more information, see the [Ionic React docs](https://ionicframework.com/docs/react/quickstart). Visit the [Making your React app a PWA](https://ionicframework.com/docs/react/pwa) section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.
 
-### Test on a device or emulator
+## Test your Ionic app on a device or emulator
 
 To test your Ionic app on an Android device, plug-in your device ([make sure it is first enabled for development](../emulator#enable-your-device-for-development)), then in your command line enter:
 
