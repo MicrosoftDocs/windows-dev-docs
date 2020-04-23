@@ -22,6 +22,8 @@
       href: search.md
     - name: Panes
       href: panes.md
+    - name: Cascadia Code
+      href: cascadia-code.md
     - name: Tutorials
       items:
         - name: Powerline setup
