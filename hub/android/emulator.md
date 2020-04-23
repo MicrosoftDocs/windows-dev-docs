@@ -9,7 +9,7 @@ keywords: android on windows
 ms.date: 02/19/2020
 ---
 
-# Testing on an Android device or emulator
+# Test on an Android device or emulator
 
 There are several ways to test and debug your Android application using a real device or emulator on your Windows machine. We have outlined a few recommendations in this guide.
 

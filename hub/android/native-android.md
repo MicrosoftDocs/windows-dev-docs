@@ -133,4 +133,4 @@ design and build custom apps that are natively Android while still uniquely Flue
 
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)
 
-- [Enable Virtualization support to improve Emulator performance](emulator.md#enable-virtualization-support)
+- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

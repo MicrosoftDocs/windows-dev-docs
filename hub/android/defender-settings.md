@@ -67,4 +67,4 @@ For more information on adding antivirus scanning exclusions, including how to c
 
 - [Add Windows Defender exclusions to improve performance](./defender-settings.md)
 
-- [Enable Virtualization support to improve Emulator performance](./emulator.md#enable-virtualization-support)
+- [Enable Virtualization support to improve emulator performance](./emulator.md#enable-virtualization-support)

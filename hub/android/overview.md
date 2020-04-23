@@ -11,7 +11,19 @@ ms.date: 02/19/2020
 
 # Overview of Android development on Windows
 
-There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into two main categories: **Native Android development** and **Cross-platform development**.
+There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into two main types: **[Native Android development(#native-android)]** and **[Cross-platform development](#cross-platform)**. This overview will help you decide which development path to follow for developing an Android app and then provide [next steps](#next-steps) to help you get started using Windows to develop with:
+
+- [Native Android](native-android.md)
+- [Xamarin Native](xamarin-native.md)
+- [Xamarin Forms](xamarin-forms.md)
+- [React Native](react-native.md)
+- [Cordova, Ionic, or PhoneGap](pwa.md)
+
+In addition, this guide will provide tips on using Windows to:
+
+- [Test on an Android device or emulator](emulator.md)
+- [Update Windows Defender settings to improve performance](defender-settings.md)
+- [Develop dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
 
 ## Native Android
 
@@ -64,8 +76,11 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ## Next steps
 
-- [Get started with native Android development on Windows](./native-android.md)
+- [Get started with native Android development on Windows](native-android.md)
 - [Get started developing for Android using Xamarin Native](xamarin-native.md)
 - [Get started developing for Android using Xamarin Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](react-native.md)
 - [Get started developing a PWA for Android](pwa.md)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Add Windows Defender exclusions to improve performance](defender-settings.md)
+- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)
