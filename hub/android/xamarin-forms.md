@@ -1,6 +1,6 @@
 ---
-title: Create a simple Android app with Xamarin Forms
-description: How to get started writing Android apps with Xamarin Forms
+title: Create a simple Android app with Xamarin.Forms
+description: How to get started writing Android apps with Xamarin.Forms
 author: hickeys 
 ms.author: hickeys 
 manager: jken
@@ -12,26 +12,26 @@ ms.prod: "xamarin"
 ms.technology: "xamarin-forms"
 ---
 
-# Get started developing for Android using Xamarin Forms
+# Get started developing for Android using Xamarin.Forms
 
-This guide will help you to get started using Xamarin Forms on Windows to create a cross-platform app that will work on Android devices.
+This guide will help you to get started using Xamarin.Forms on Windows to create a cross-platform app that will work on Android devices.
 
-In this article, you will create a simple Android app using Xamarin Forms and Visual Studio 2019.
+In this article, you will create a simple Android app using Xamarin.Forms and Visual Studio 2019.
 
 ## Requirements
 
 To use this tutorial, you'll need the following:
 
-- Windows 10, version XXXX or higher
+- Windows 10
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
-> ![NOTE]
+> [!NOTE]
 > This guide will work with Visual Studio 2017 or 2019. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
 
-You will also to have an Android phone or configured emulator in which to run your app. See Configuring an Android emulator.
+You will also to have an Android phone or configured emulator in which to run your app. See [Test on an Android device or emulator](emulator.md).
 
-## Create a new Xamarin Forms project
+## Create a new Xamarin.Forms project
 
 Start Visual Studio. Click File > New > Project to create a new project.
 
@@ -192,16 +192,8 @@ namespace TimeChangerForms
 
 ## Run the app
 
-To run the app, press **F5** or click Debug > Start Debugging. If you are using an Android emulator, your app will start in the emulator you've configured. Otherwise, it will launch on your phone. **To do.** >> Phone requires some set up here.
-
-## Download the code
-
-**To do.** Download the complete code sample here.
+To run the app, press **F5** or click Debug > Start Debugging. Depending on how your [debugger is configured](emulator.md), your app will launch on a device or in an emulator.
 
 ## Related links
-
-**To do.**
-
-- Configure your dev machine to do Android development
+- [Test on an Android device or emulator](emulator.md).
 - [Create an Android sample app using Xamarin.Android](xamarin-native.md)
-- Create an iOS sample app using Xamarin.iOS
