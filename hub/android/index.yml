@@ -33,9 +33,9 @@ landingContent:
             url: ./react-native.md
           - text: PWA (Cordova, Ionic, PhoneGap) for Android
             url: ./pwa.md
-          - text: Xamarin Native for Android
-            url: ./xamarin-native.md
-          - text: Xamarin Forms for Android
+          - text: Xamarin.Android for Android
+            url: ./xamarin-android.md
+          - text: Xamarin.Forms for Android
             url: ./xamarin-forms.md
       - linkListType: concept
         links:
