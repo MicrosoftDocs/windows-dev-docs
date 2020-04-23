@@ -104,3 +104,9 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 5. In the Visual Studio toolbar, choose between **Debug** (attaches to the application process running inside the emulator after your app starts) or **Release** mode (disables the debugger). Then choose a virtual device from the device drop-down menu and select the **Play** button ▷ to run your application in the emulator.
 
     ![Visual Studio launch Android Emulator](../images/vs-target-device-menu.png)
+
+## Additional resources
+
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+
+- [Add Windows Defender exclusions to improve performance](defender-settings.md)

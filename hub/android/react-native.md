@@ -35,24 +35,24 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
 4. [Install NodeJS for Windows](https://nodejs.org/en/) You may want to consider using [Node Version Manager (nvm) for Windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) if you will be working with multiple projects and version of NodeJS. We recommend installing the latest LTS version for new projects.
 
 > [!NOTE]
-> You may also want to consider installing and using the [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) for working with your preferred command-line interface (CLI), as well as, [Git for version control](https://git-scm.com/downloads). The [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) comes packaged with Android Studio v2.2+, but if you need to update your JDK separately from Android Studio, use the [Windows x64 Installer](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html).
+> You may also want to consider installing and using the [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) for working with your preferred command-line interface (CLI), as well as, [Git for version control](https://git-scm.com/downloads). The [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) comes packaged with Android Studio v2.2+, but if you need to update your JDK separately from Android Studio, use the [Windows x64 Installer](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html).
 
 ## Create a new project with React Native
 
-1. Use npm to install the [Expo CLI](https://docs.expo.io/versions/latest/) command line utility from the Windows Command Prompt, PowerShell, [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab), or the integrated terminal in VS Code (View > Integrated Terminal).
+1. Use npm to install the [Expo CLI](https://docs.expo.io/versions/latest/) command line utility from the Windows Command Prompt, PowerShell, [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab), or the integrated terminal in VS Code (View > Integrated Terminal).
 
     ```powershell
     npm install -g expo-cli
     ```
 
-2. Use [NPX](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) with [Create-React-Native-App](https://github.com/expo/create-react-native-app) to create a React Native app that runs on iOS, Android, and web.
+2. Use Expo to create a React Native app that runs on iOS, Android, and web. You will need to then choose between project templates, which include **blank**, **blank (TypeScript)**, **tabs** (example screens using react-navigation), **minimal**, or **minimal (TypeScript)**.
 
     ```powershell
-    npx create-react-native-app my-new-app
+    expo init my-new-app
     ```
 
     > [!NOTE]
-    > We are using the `npx` command here to execute the React Native package without actually installing it (or by temporarily installing it depending on how you want to think of it). If you've previously installed create-react-native-app globally via `npm install -g create-react-native-app`, we recommend you uninstall the package using `npm uninstall -g create-react-native-app` to ensure that npx always uses the latest version. You can view a list of the packages that have been installed by using `npm list`. You are not required to have an Expo account to use `Create-react-native-app`. However, if prefer, you can create your React Native app using [`expo init my-new-app`](https://docs.expo.io/versions/v37.0.0/). [What's the difference?](https://stackoverflow.com/questions/51214823/differences-between-create-react-native-app-and-exp-init)
+    > If you're used to using `npx create-react-native-app`, that will still work, but the Expo-CLI init has [a few additional benefits](https://github.com/react-native-community/discussions-and-proposals/issues/23).
 
 3. Open your new "my-new-app" directory:
 
@@ -60,20 +60,21 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
     cd my-new-app
     ```
 
-4. To run your project, enter the following command. This will open a localhost window in your default internet browser displaying Node Metro Bundler. It will also display a QR code in both your command line and the Metro Bundler browser window.
+4. To run your project, enter the following command. This will open a localhost window in your default internet browser displaying Node Metro Bundler. It will also display a QR code in both your command line and the Metro Bundler browser window. *You can use the command: `npm start` or `npm run android` as well.
 
      ```powershell
     expo start
     ```
 
+    ![Screenshot of Metro Bundler in browser](./images/metro-bundler.png)
+
 5. To view your project running on an Android device, you will need to first [install the Expo Client app with the Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) on your Android device. Once the Expo client app is installed, open it on your device and select **Scan QR Code**. Once the QR code is registered, you will be able to see the package build both on your device and in the Metro Bundler window running on localhost in your browser.
 
-6. To view your project running on an Android emulator, follow the instructions here:
-https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
+6. To view your project running on an Android emulator, you will first need to open Android Studio, then create and start a virtual device. **Tools** > **AVD Manager** > **[+ Create Virtual Device...](https://developer.android.com/studio/run/managing-avds#createavd)**. Once your virtual device is created, select the launch button ▷ under the **Actions** column of the Android Virtual Device Manager to start emulating the device. Once the virtual device is open, return to the Metro Bundler window running in your internet browser window and select "Run on Android device/emulator" from the left column. You should see a pop-up letting your know that Metro Bundler is "Attempting to open a simulator..." and then see the Expo Client app open in your emulated Android device and, once it's finished downloading the JavaScript bundle, you will see your React Native app displayed. (If you run into problems, [check the Expo Android emulator docs](https://docs.expo.io/workflow/android-studio-emulator/).)
 
-7. Open the `App.tsx` file in your React Native project to start working on your app. You should see your changes auto-updated in the app running via the Expo Client on your device or in your Android Emulator.
+7. Open the your React Native project to start working on your app. You should see your changes auto-updated in the app running via the Expo Client on your device or in your Android Emulator.
 
-8. Try changing the landing page view text to say: "Hello World!".
+8. Try changing the landing page view text to say: "Hello World!". You can do this in the IDE of your choice. (We recommend VS Code or Android Studio.) The landing page file will differ depending on the template that you chose. It may be `App.js`, `App.tsx`, or `HomeScreen.js`.
 
     ```typescript
     export default function App() {
@@ -98,28 +99,13 @@ https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
     }
     ```
 
-You can also open up the projects in the ios and android directories with their respective IDEs. 
-
-*Figure out the difference between expo init and create-react-native-app and which I should use here.*
-
-Then open http://localhost:3000/ to see your app. For more information, see the [Create-React-Native-App docs](https://github.com/expo/create-react-native-app). **Notice that `create-react-native-app` is different than `create-react-app`.*
-
 > [!TIP]
 > If you want to add support for your React Native app so that it runs as a Windows 10 app, see the [Get started with React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started) docs.
 
-npm run android is different and doesn't seem to work ...The Node Metro Bundler launches, says press "d" to open the developer menu.... but doesn't work.
+## Additional resources
 
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
 
-## Use Expo to test your React Native app on an Android device
+- [Add Windows Defender exclusions to improve performance](defender-settings.md)
 
-https://expo.io/learn
-https://reactnative.dev/docs/environment-setup
-
-
-https://codeburst.io/setting-up-development-environment-using-react-native-on-windows-dd240e69f776
-https://shift.infinite.red/getting-started-with-react-native-development-on-windows-90d85a72ae65
-https://medium.com/@hwanderlustdev/react-native-environment-for-windows-e25806df867c
-
-EXPO vs React CLI: https://stackoverflow.com/questions/54862388/what-is-the-difference-between-expo-cli-and-react-native-cli
-
-React Native get started docs: https://devdocs.io/react_native/
+- [Enable Virtualization support to improve Emulator performance](emulator.md#enable-virtualization-support)

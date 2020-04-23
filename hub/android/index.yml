@@ -23,8 +23,23 @@ landingContent:
         links:
           - text: Overview of Android development on Windows
             url: ./overview.md
+          - text: Comparison of cross-platform frameworks for Android development
+            url: ./overview.md#cross-platform
+      - linkListType: get-started
+        links:
           - text: Native Android
             url: ./overview.md#native-android
-          - text: Cross-platform
-            url: ./overview.md#cross-platform
-  
+          - text: React Native for Android 
+            url: ./react-native.md
+          - text: PWA (Cordova, Ionic, PhoneGap) for Android
+            url: ./pwa.md
+          - text: Xamarin Native for Android
+            url: ./xamarin-native.md
+          - text: Xamarin Forms for Android
+            url: ./xamarin-forms.md
+      - linkListType: concept
+        links:
+          - text: Testing on an Android device or emulator
+            url: ./emulator.md
+          - text: Update Windows Defender settings to improve performance
+            url: ./defender-settings.md

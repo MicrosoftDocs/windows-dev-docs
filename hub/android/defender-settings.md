@@ -60,3 +60,11 @@ For more information on adding antivirus scanning exclusions, including how to c
 
 > [!Note]
 > Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Windows Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).
+
+## Additional resources
+
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+
+- [Add Windows Defender exclusions to improve performance](./defender-settings.md)
+
+- [Enable Virtualization support to improve Emulator performance](./emulator.md#enable-virtualization-support)

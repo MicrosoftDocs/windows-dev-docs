@@ -64,7 +64,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ## Next steps
 
-- [Get started with native Android development on Windows](native-android.md)
+- [Get started with native Android development on Windows](./native-android.md)
 - [Get started developing for Android using Xamarin Native](xamarin-native.md)
 - [Get started developing for Android using Xamarin Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](react-native.md)

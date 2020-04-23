@@ -125,12 +125,12 @@ design and build custom apps that are natively Android while still uniquely Flue
 - [Android User Interface Guidelines](https://developer.android.com/design/)
 - [Guidelines for Android app icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design)
 
-<!-- To do.
-Should this be it's own separate page? 
-The mistake of copying iOS UI/UX design by cross plat developers is common..? -->
-
 ## Additional resources
 
-<!-- - User interface principles for Android based on [Google Material Design](https://developer.android.com/design/material/index.html) -->
 - [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals): Learn more about the fundamentals in the Android docs.
-- [Create a sample app with Xamarin Forms](https://review.docs.microsoft.com/en-us/windows/xamarin/xamarin-forms-android?branch=android-draft): Try creating a sample Android application using Xamarin Forms.
+
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+
+- [Add Windows Defender exclusions to improve performance](defender-settings.md)
+
+- [Enable Virtualization support to improve Emulator performance](emulator.md#enable-virtualization-support)
