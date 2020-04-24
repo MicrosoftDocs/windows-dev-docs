@@ -353,11 +353,13 @@
             - name: Toast content schema
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Send local toast
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: UWP apps
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Desktop apps
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: Overview
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: C# apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL apps

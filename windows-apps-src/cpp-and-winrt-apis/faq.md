@@ -78,6 +78,8 @@ If you have a runtime class that frees resources in its destructor, and that run
 - If you can't guarantee that you have the last remaining reference to an object (because you passed it to other APIs, which could be keeping a reference), then calling **IClosable::Close** is a good idea.
 - When in doubt, it's safe to call **IClosable::Close** manually, rather than waiting for the wrapper to call it on destruction.
 
+So, if you know that you have the last reference, then you can let the wrapper destructor do the work. If you need to close before the last reference vanishes, then you need to call **Close**. To be exception-safe, you should **Close** in a resource-acquisition-is-initialization (RAII) type (so that close happens on unwind). C++/WinRT doesn't have a **unique_close** wrapper, but you can make your own.
+
 ## Can I use LLVM/Clang to compile with C++/WinRT?
 We don't support the LLVM and Clang toolchain for C++/WinRT, but we do make use of it internally to validate C++/WinRT's standards conformance. For example, if you wanted to emulate what we do internally, then you could try an experiment such as the one described below.
 
