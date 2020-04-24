@@ -216,7 +216,7 @@ Design and how-to: [Calendar, date, and time controls](date-and-time.md)
 ### Date picker
 A control that lets a user select a date.
 
-![Date picker control](images/controls/date-picker.png)
+![Date picker control](images/controls_datepicker_expand.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
@@ -229,7 +229,7 @@ Design and how-to: [Calendar, date, and time controls](date-and-time.md)
 ### Time picker
 A control that lets a user set a time value.
 
-![TimePicker control](images/controls/time-picker.png) 
+![TimePicker control](images/controls_timepicker_expand.png)
 
 ```xaml
 <TimePicker Header="Arrival Time"/>
