@@ -87,11 +87,11 @@ Helper functions, custom controls, and app services.<br />
 
 :::row:::
     :::column:::
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+<a href="https://download.microsoft.com/download/B/5/F/B5F22952-44DF-46EC-820B-11951AE01AEC/UWP tile and icon asset generator.zip"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
       **Tile and icon generator for Adobe Photoshop**
-      This set of actions for Adobe Photoshop generates the 68 recommended tile and icon assets from just 7 files. <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">Download the tile and icon generator</a></p>
+      This set of actions for Adobe Photoshop generates the 68 recommended tile and icon assets from just 7 files. <br/><a href="https://download.microsoft.com/download/B/5/F/B5F22952-44DF-46EC-820B-11951AE01AEC/UWP tile and icon asset generator.zip">Download the tile and icon generator</a></p>
     :::column-end:::
 :::row-end:::
 
