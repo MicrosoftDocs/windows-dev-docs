@@ -41,7 +41,7 @@ There are multiple ways to install Node.js. We recommend using a version manager
 
     ![NVM list showing installed Node versions](../images/windows-nvm-node-installs.png)
 
-9.  After installing the Node.js version numbers you need, select the version that you would like to use by entering: `nvm use <version>` (replacing `<version>` with the number, ie: `nvm install 12.14.0`).
+9.  After installing the Node.js version numbers you need, select the version that you would like to use by entering: `nvm use <version>` (replacing `<version>` with the number, ie: `nvm install 12.9.0`).
 
 10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, enter the directory `cd NodeTest`, then enter `nvm use <version>` replacing `<version>` with the new version number you'd like to use (ie v10.16.3`).
 
