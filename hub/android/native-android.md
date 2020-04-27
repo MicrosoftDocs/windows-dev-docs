@@ -104,7 +104,7 @@ To create a new project with C/C++ support:
 
 - Once Android Studio creates your new project, you can find a **cpp** folder in the **Project** pane that contains the native source files, headers, build scripts for CMake or ndk-build, and prebuilt libraries that are a part of your project. You can also find a sample C++ source file, `native-lib.cpp`, in the `src/main/cpp/` folder which provides a simple `stringFromJNI()` function returning the string "Hello from C++". Additionally, you will find a CMake build script, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html), in your module's root directory required for building your native library.
 
-To learn more, see the Android docs topic: [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). For samples, see the [Android NDK samples with Android Studio C++ integration repo](https://github.com/android/ndk-samples) on GitHub.
+To learn more, see the Android docs topic: [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). For samples, see the [Android NDK samples with Android Studio C++ integration repo](https://github.com/android/ndk-samples) on GitHub. To compile and run a C++ game on Android, use the [Google Play Game services API](https://developers.google.com/games/services/cpp/gettingStartedAndroid).
 
 ## Design guidelines
 
