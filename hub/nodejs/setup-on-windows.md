@@ -33,6 +33,7 @@ There are multiple ways to install Node.js. We recommend using a version manager
     ![NVM list showing no Node versions](../images/windows-nvm-powershell-no-node.png)
 
 6. Install the current release of Node.js (for testing the newest feature improvements, but more likely to have issues than the LTS version): `nvm install latest`
+
 7. Install the latest stable LTS release of Node.js (recommended) by first looking up what the current LTS version number is with: `nvm list available`, then installing the LTS version number with: `nvm install <version>` (replacing `<version>` with the number, ie: `nvm install 12.14.0`).
 
     ![NVM list of available versions](../images/windows-nvm-list.png)
