@@ -11,13 +11,14 @@ ms.date: 02/19/2020
 
 # Overview of Android development on Windows
 
-There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into two main types: **[Native Android development(#native-android)]** and **[Cross-platform development](#cross-platform)**. This overview will help you decide which development path to follow for developing an Android app and then provide [next steps](#next-steps) to help you get started using Windows to develop with:
+There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into three main types: **[Native Android development(#native-android)]**, **[Cross-platform development](#cross-platform)**, and **[Android game development](#game-development)**. This overview will help you decide which development path to follow for developing an Android app and then provide [next steps](#next-steps) to help you get started using Windows to develop with:
 
 - [Native Android](native-android.md)
 - [Xamarin Native](xamarin-native.md)
 - [Xamarin Forms](xamarin-forms.md)
 - [React Native](react-native.md)
 - [Cordova, Ionic, or PhoneGap](pwa.md)
+- [C/C++ for game development](native-android.md#use-c-or-c++-for-android-game-development)
 
 In addition, this guide will provide tips on using Windows to:
 
@@ -73,6 +74,12 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 - PWAs can be installed on a device (Android, iOS, or Windows) and can work offline thanks to the incorporation of a service-worker.
 - PWAs can be distributed and installed without an app store using only a web URL. The Microsoft Store and Google Play Store allow PWAs to be listed, the Apple Store currently does not, though they can still be installed on any iOS device running 12.2 or later.
 - To learn more, check out this [introduction to PWAs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction) on MDN.
+
+## Game development
+
+Game development for Android is often somewhat unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](https://docs.microsoft.com/cpp/cross-platform/?view=vs-2019), along with the Android [Native Development Kit (NDK)](https://docs.microsoft.com/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c++-for-android-game-development).
+
+Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](https://docs.microsoft.com/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](https://docs.microsoft.com/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
 
 ## Next steps
 
