@@ -774,7 +774,11 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 By default, any item can contain children, be invoked, or be selected.
 When providing users with a hierarchical tree of navigation options, you may choose to make parent items non-selectable, for example when your app doesn't have a destination page associated with that parent item. If your parent items _are_ selectable, it's recommend you use the Left-Expanded or Top pane display modes. LeftCompact mode will cause the user to navigate to the parent item in order to open the child subtree every time its invoked.
 
-Selected items will draw their selection indicators along their left edge when in left mode or their bottom edge when in top mode. 
+Selected items will draw their selection indicators along their left edge when in left mode or their bottom edge when in top mode. Shown below are NavigationViews in left and top mode where a parent item is selected.
+
+![NavigationView in left-mode with parent selected](images/navview_selection.png)
+
+![NavigationView in top-mode with parent selected](images/navview_selection_top.png)
 
 The selected item may not always remain visible.
 For example, the selected item may be a child node inside a non-expanded subtree.
