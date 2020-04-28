@@ -5,11 +5,8 @@ author: hickeys
 ms.author: hickeys 
 manager: jken
 ms.topic: article
-keywords: 
-ms.localizationpriority: medium
-ms.date: 01/24/2020
-ms.prod: "xamarin"
-ms.technology: "xamarin-android"
+keywords: android, windows, xamarin.android, tutorial, xaml
+ms.date: 04/28/2020
 ---
 
 # Get started developing for Android using Xamarin.Android
