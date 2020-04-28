@@ -28,9 +28,9 @@ For more info about game programming on Windows, check out the following resourc
 ## Blogs
 
 
--   [Games for Windows and the DirectX SDK]( http://blogs.msdn.com/b/chuckw/)
--   [DirectX Developer Blog]( http://blogs.msdn.com/b/directx/)
--   [Shawn Hargreaves Blog]( http://blogs.msdn.com/b/shawnhar/) (XNA game info).
+-   [Games for Windows and the DirectX SDK]( https://blogs.msdn.com/b/chuckw/)
+-   [DirectX Developer Blog]( https://blogs.msdn.com/b/directx/)
+-   [Shawn Hargreaves Blog]( https://blogs.msdn.com/b/shawnhar/) (XNA game info).
 
 ## Toolkits
 
