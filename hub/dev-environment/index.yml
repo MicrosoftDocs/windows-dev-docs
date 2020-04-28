@@ -81,29 +81,29 @@ landingContent:
       - linkListType: overview
         links:
           - text: Overview of Android development on Windows
-            url: ./overview.md
+            url: ../android/overview.md
           - text: Comparison of cross-platform frameworks for Android
-            url: ./overview.md#cross-platform
+            url: ../android/overview.md#cross-platform
       - linkListType: get-started
         links:
           - text: Native Android
-            url: ./overview.md#native-android
+            url: ../android/overview.md#native-android
           - text: Xamarin.Android
-            url: ./xamarin-android.md
+            url: ../android/xamarin-android.md
           - text: Xamarin.Forms
-            url: ./xamarin-forms.md
+            url: ../android/xamarin-forms.md
           - text: React Native 
-            url: ./react-native.md
+            url: ../android/react-native.md
           - text: PWA (Cordova, Ionic, PhoneGap)
-            url: ./pwa.md
+            url: ../android/pwa.md
           - text: Game development
-            url: ./overview.md#game-development
+            url: ../android/overview.md#game-development
       - linkListType: concept
         links:
           - text: Testing on an Android device or emulator
-            url: ./emulator.md
+            url: ../android/emulator.md
           - text: Update Windows Defender settings to improve performance
-            url: ./defender-settings.md
+            url: ../android/defender-settings.md
 
 # Card
   - title: Windows Subsystem for Linux (WSL)

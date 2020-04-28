@@ -14,7 +14,7 @@ ms.date: 02/19/2020
 There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into three main types: **[Native Android development(#native-android)]**, **[Cross-platform development](#cross-platform)**, and **[Android game development](#game-development)**. This overview will help you decide which development path to follow for developing an Android app and then provide [next steps](#next-steps) to help you get started using Windows to develop with:
 
 - [Native Android](native-android.md)
-- [Xamarin Native](xamarin-native.md)
+- [Xamarin Native](xamarin-android.md)
 - [Xamarin Forms](xamarin-forms.md)
 - [React Native](react-native.md)
 - [Cordova, Ionic, or PhoneGap](pwa.md)
@@ -42,7 +42,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ## Choosing a cross-platform framework
 
-[Xamarin Native (Xamarin.Android)](xamarin-native.md)
+[Xamarin Native (Xamarin.Android)](xamarin-android.md)
 
 - UI code: XML with Android Designer, and Material Theme
 - Logic code: C# or F#
@@ -84,7 +84,7 @@ Another common path for developing games for Android is to use a game engine. Th
 ## Next steps
 
 - [Get started with native Android development on Windows](native-android.md)
-- [Get started developing for Android using Xamarin Native](xamarin-native.md)
+- [Get started developing for Android using Xamarin Native](.md)
 - [Get started developing for Android using Xamarin Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](react-native.md)
 - [Get started developing a PWA for Android](pwa.md)
