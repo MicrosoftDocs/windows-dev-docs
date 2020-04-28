@@ -383,6 +383,6 @@ using namespace Windows::Web::Http;
 **Samples**
 
 * [DatagramSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
-* [HttpClient Sample]( http://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
+* [HttpClient Sample]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
 * [Proximity sample](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
 * [StreamSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
