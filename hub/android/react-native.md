@@ -30,7 +30,7 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
         - JAVA_HOME: C:\Program Files\Android\Android Studio\jre\jre
         - ANDROID_HOME: C:\Users\username\AppData\Local\Android\Sdk
 
-    ![Screenshot of adding environmental variable path](./images/add-environmental-variable-path.png)
+    ![Screenshot of adding environmental variable path](../images/add-environmental-variable-path.png)
 
 4. [Install NodeJS for Windows](https://nodejs.org/en/) You may want to consider using [Node Version Manager (nvm) for Windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) if you will be working with multiple projects and version of NodeJS. We recommend installing the latest LTS version for new projects.
 
@@ -66,7 +66,7 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
     expo start
     ```
 
-    ![Screenshot of Metro Bundler in browser](./images/metro-bundler.png)
+    ![Screenshot of Metro Bundler in browser](../images/metro-bundler.png)
 
 5. To view your project running on an Android device, you will need to first [install the Expo Client app with the Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) on your Android device. Once the Expo client app is installed, open it on your device and select **Scan QR Code**. Once the QR code is registered, you will be able to see the package build both on your device and in the Metro Bundler window running on localhost in your browser.
 
