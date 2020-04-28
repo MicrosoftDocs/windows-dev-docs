@@ -234,7 +234,7 @@ We've seen that the workflow is to use IDL to declare your runtime class and its
 Here are some examples.
 
 - You can relax parameter types. For example, if in IDL your method takes a **SomeClass**, then you could choose to change that to **IInspectable** in your implementation. This works because any **SomeClass** can be forwarded to **IInspectable** (the reverse, of course, wouldn't work).
-- You can accept a copyable parameter by value, instead of by reference. For example, change `SomeClass` to `SomeClass const&`. That's necessary when you need to avoid capturing a reference into a coroutine (see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- You can accept a copyable parameter by value, instead of by reference. For example, change `SomeClass const&` to `SomeClass`. That's necessary when you need to avoid capturing a reference into a coroutine (see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - You can relax the return value. For example, you can change **void** to [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 The last two are very useful when you're writing an asynchronous event handler.
