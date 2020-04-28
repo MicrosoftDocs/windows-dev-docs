@@ -124,6 +124,26 @@
           href: nodejs/databases.md
         - name: Get started with containers
           href: nodejs/containers.md
+  - name: Develop with Android
+    items:
+        - name: Overview
+          href: android/overview.md
+        - name: Get started with Native Android
+          href: android/native-android.md
+        - name: Get started with Cross-platform
+          items:
+            - name: Xamarin Native
+              href: android/xamarin-android.md
+            - name: Xamarin Forms
+              href: android/xamarin-forms.md
+            - name: React Native
+              href: android/react-native.md
+            - name: PWA (Ionic, PhoneGap, Cordova)
+              href: android/pwa.md
+        - name: Defender settings to improve performance
+          href: android/defender-settings.md
+        - name: Test on device or emulator
+          href: android/emulator.md
   - name: Mac to Windows guide
     items:
       - name: Changing your dev environment

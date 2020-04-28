@@ -76,6 +76,36 @@ landingContent:
             url: ../nodejs/web-frameworks.md#get-started-with-gatsbyjs
 
 # Card
+  - title: Get started with Android
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview of Android development on Windows
+            url: ../android/overview.md
+          - text: Comparison of cross-platform frameworks for Android
+            url: ../android/overview.md#cross-platform
+      - linkListType: get-started
+        links:
+          - text: Native Android
+            url: ../android/overview.md#native-android
+          - text: Xamarin.Android
+            url: ../android/xamarin-android.md
+          - text: Xamarin.Forms
+            url: ../android/xamarin-forms.md
+          - text: React Native 
+            url: ../android/react-native.md
+          - text: PWA (Cordova, Ionic, PhoneGap)
+            url: ../android/pwa.md
+          - text: Game development
+            url: ../android/overview.md#game-development
+      - linkListType: concept
+        links:
+          - text: Testing on an Android device or emulator
+            url: ../android/emulator.md
+          - text: Update Windows Defender settings to improve performance
+            url: ../android/defender-settings.md
+
+# Card
   - title: Windows Subsystem for Linux (WSL)
     linkLists:
       - linkListType: overview
