@@ -37,6 +37,7 @@
       {
         "python/**.md": "dev-environment",
         "nodejs/**.md": "dev-environment",
+        "android/**.md": "dev-environment",
         "dev-environment/**.md": "dev-environment"
       },
       "ms.technology":

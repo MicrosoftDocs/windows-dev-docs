@@ -30,7 +30,7 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
         - JAVA_HOME: C:\Program Files\Android\Android Studio\jre\jre
         - ANDROID_HOME: C:\Users\username\AppData\Local\Android\Sdk
 
-    ![Screenshot of adding environmental variable path](../images/add-environmental-variable-path.png)
+    ![Screenshot of adding environmental variable path](./images/add-environmental-variable-path.png)
 
 4. [Install NodeJS for Windows](https://nodejs.org/en/) You may want to consider using [Node Version Manager (nvm) for Windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) if you will be working with multiple projects and version of NodeJS. We recommend installing the latest LTS version for new projects.
 

@@ -82,7 +82,7 @@ Another common path for developing games for Android is to use a game engine. Th
 ## Next steps
 
 - [Get started with native Android development on Windows](native-android.md)
-- [Get started developing for Android using Xamarin Native](.md)
+- [Get started developing for Android using Xamarin Native](xamarin-android.md)
 - [Get started developing for Android using Xamarin Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](react-native.md)
 - [Get started developing a PWA for Android](pwa.md)

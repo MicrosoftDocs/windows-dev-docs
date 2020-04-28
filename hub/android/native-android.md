@@ -13,7 +13,7 @@ ms.date: 02/19/2020
 
 This guide will get you started using Windows to create native Android applications. If you would prefer a cross-platform solution, see [Overview of Android development on Windows](./overview.md) for a brief summary of some options.
 
-The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-for-android-development) if you have a specific purpose. The Android Studio SDK tools compile your code, data, and resource files into an archive Android package, .apk file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app.
+The most straight-forward way to create a native Android app is using Android Studio with either [Java or Kotlin](#java-or-kotlin), though it is also possible to [use C or C++ for Android development](#use-c-or-c-for-android-game-development) if you have a specific purpose. The Android Studio SDK tools compile your code, data, and resource files into an archive Android package, .apk file. One APK file contains all the contents of an Android app and is the file that Android-powered devices use to install the app.
 
 ## Install Android Studio
 

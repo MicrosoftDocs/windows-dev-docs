@@ -186,7 +186,7 @@ For more information, see the [Ionic React docs](https://ionicframework.com/docs
 
 ## Test your Ionic app on a device or emulator
 
-To test your Ionic app on an Android device, plug-in your device ([make sure it is first enabled for development](../emulator#enable-your-device-for-development)), then in your command line enter:
+To test your Ionic app on an Android device, plug-in your device ([make sure it is first enabled for development](emulator.md#enable-your-device-for-development)), then in your command line enter:
 
 ```bash
 ionic cordova run android
