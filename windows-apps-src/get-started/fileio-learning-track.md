@@ -135,8 +135,8 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 
 | Code sample | Description |
 |-----------------|---------------|
-| [Application data sample](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Shows  how to store and retrieve data that is specific to each user by using the application data APIs. |
+| [Application data sample](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | Shows  how to store and retrieve data that is specific to each user by using the application data APIs. |
 | [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Shows how to create, read, write, copy and delete a file. |
-| [File picker sample](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Shows how to access files and folders by letting the user choose them with UI, and how to save a file so that the user can specify the name, file type, and location of a file to save. |
+| [File picker sample](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | Shows how to access files and folders by letting the user choose them with UI, and how to save a file so that the user can specify the name, file type, and location of a file to save. |
 | [JSON sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Shows how to encode and decode JavaScript Object Notation (JSON) objects, arrays, strings, numbers and booleans using the [Windows.Data.Json namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Additional code samples](https://developer.microsoft.com/windows/samples) | Choose **Files, folder, and libraries** in the category drop-down list. |

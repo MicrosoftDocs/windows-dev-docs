@@ -556,7 +556,7 @@ void MainPage::UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType c
 ...
 ```
 
-In C#, you *dot into* nested properties. So, the C# **MainPage** type can access its own **Dispatcher** property with the syntax `Dispatcher`. And C# can further *dot into* that value with syntax such as `Dispatcher.HasThreadAccess`. In C++/WinRT, properties are implemented as accessor functions, so the syntax differs only in that you add parentheses for each function call.
+In C#, you can use dot notation to *dot into* nested properties. So, the C# **MainPage** type can access its own **Dispatcher** property with the syntax `Dispatcher`. And C# can further *dot into* that value with syntax such as `Dispatcher.HasThreadAccess`. In C++/WinRT, properties are implemented as accessor functions, so the syntax differs only in that you add parentheses for each function call.
 
 |C#|C++/WinRT|
 |-|-|
