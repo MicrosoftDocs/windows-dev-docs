@@ -82,7 +82,7 @@ We'll start with the basics:
 
    Your project files are created.
 
-Before we go on, let’s look at what's in the solution.
+Before we go on, let's look at what's in the solution.
 
 ![Universal app solution with nodes collapsed](images/vs2017-uwp-02.png)
 

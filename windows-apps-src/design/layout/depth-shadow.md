@@ -1,9 +1,8 @@
-﻿---
+---
 author: knicholasa
 description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
 title: Z-depth and shadow for UWP apps
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
@@ -34,7 +33,7 @@ If you use standard controls, ThemeShadow shadows will be incorporated automatic
 
 ## ThemeShadow
 
-The ThemeShadow type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. ThemeShadow also automatically adjusts for other environmental specifications:
+The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. ThemeShadow also automatically adjusts for other environmental specifications:
 
 - Adapts to changes in lighting, user theme, app environment, and shell.
 - Applies shadows to elements automatically based on their z-depth. 
@@ -155,7 +154,7 @@ DropShadow is not automatically responsive to its environment and does not use l
 ## Which shadow should I use?
 
 | Property | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **Min SDK** | Windows 10 version 1903 | 14393 |
 | **Adaptability** | Yes | No |
 | **Customization** | No | Yes |

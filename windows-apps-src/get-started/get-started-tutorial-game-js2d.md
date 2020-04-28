@@ -24,7 +24,7 @@ In order to publish your app to the Microsoft Store it must be written as a UWP 
 
 This project is built with JavaScript using Visual Studio. With some minor changes, it can also hosted on a website or adapted to other platforms. 
 
-**Note:** This is a not a complete (or good!) game; it is designed to demonstrate using JavaScript and a third party library to make an app ready to publish to the Microsoft Store.
+**Note:** This is a not a complete (or good!) game; it is designed to demonstrate using JavaScript and a third party library to make an app ready to publish to the Microsoft Store. 
 
 
 ## Requirements
@@ -36,6 +36,7 @@ To play with this project, you'll need the following:
 
 This project makes use of the CreateJS JavaScript framework. CreateJS is a free set of tools, released under a MIT license, designed to make it easy to create sprite-based games. The CreateJS libraries are already present in the project (look for *js/easeljs-0.8.2.min.js*, and *js/preloadjs-0.6.2.min.js* in the Solution Explorer view). More information about CreateJS can be found at the [CreateJS home page](https://www.createjs.com).
 
+**Note:** Javascript UWP app development is not supported in Visual Studio 2019. You must use Visual Studio 2017 to develop a Javascript UWP app.
 
 ## Getting started
 
@@ -160,7 +161,6 @@ Now we're going to make the clouds move. The secret to moving clouds - and movin
 Every time this function is called, it redraws the graphics in a slightly different place.
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> by Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 The code to do that is already in the **main.js** file, provided by the CreateJS library, EaselJS. It looks like this:
 

@@ -1,33 +1,30 @@
 ---
 title: Create and host an app extension
-description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
+description: Write and host app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
-ms.date: 10/05/2017
+ms.date: 01/28/2020
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Create and host an app extension
 
-This article shows you how to create a UWP app extension and host it in a UWP app.
+This article shows you how to create a Windows 10 app extension and host it in an app. App extensions are supported in UWP apps and [packaged desktop apps](/windows/apps/desktop/modernize/#msix-packages).
 
-This article is accompanied by a code sample:
-- Download and unzip [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
+To demonstrate how to create an app extension, this article uses package manifest XML and code snippets from the [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/MathExtensionSample). This sample is a UWP app, but the features demonstrated in the sample are also applicable to packaged desktop apps. Follow these instructions to get started with the sample:
+
+- Download and unzip the [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
 - In Visual Studio 2019, open MathExtensionSample.sln. Set the build type to x86 (**Build** > **Configuration Manager**, then change **Platform** to **x86** for both projects).
 - Deploy the solution: **Build** > **Deploy Solution**.
 
 ## Introduction to app extensions
 
-In the Universal Windows Platform (UWP), app extensions provide functionality similar to what plug-ins, add-ins, and add-ons do on other platforms. Microsoft Edge extensions are UWP app extensions, for example. UWP app extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
+In Windows 10, app extensions provide functionality similar to what plug-ins, add-ins, and add-ons do on other platforms. App extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
 
-UWP app extensions are UWP apps that have an extension declaration that allows them to share content and deployment events with a host app. An extension app can provide multiple extensions.
+App extensions are UWP apps or packaged desktop apps that have an extension declaration that allows them to share content and deployment events with a host app. An extension app can provide multiple extensions.
 
-Because app extensions are just UWP apps, they can also be fully functional apps, host extensions, and provide extensions to other apps--all without creating separate app packages.
+Because app extensions are just UWP apps or packaged desktop apps, they can also be fully functional apps, host extensions, and provide extensions to other apps--all without creating separate app packages.
 
 When you create an app extension host, you create an opportunity to develop an ecosystem around your app in which other developers can enhance your app in ways that you may not have expected or had the resources for. Consider Microsoft Office extensions, Visual Studio extensions, browser extensions, etc. These create richer experiences for those apps that go beyond the functionality they shipped with. Extensions can add value and longevity to your app.
-
-**Overview**
 
 At a high level, to set up an app extension relationship, we need to:
 

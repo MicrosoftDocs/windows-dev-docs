@@ -1,6 +1,6 @@
 ---
 title: Using MRT for Converted Desktop Apps and Games
-description: By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
+description: By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
@@ -8,11 +8,11 @@ ms.localizationpriority: medium
 ---
 # Use the Windows 10 Resource Management System in a legacy app or game
 
-.NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an MSIX or AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
+.NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 
 There are many ways to localize a traditional Win32 application, but Windows 8 introduced a [new resource-management system](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
 
-Combined with MSIX-based or AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
+Combined with MSIX-based or .appx-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
 localized listings in the Windows Shell and the Microsoft Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
 
@@ -296,7 +296,7 @@ You can open the mapping file `..\resources.map.txt` to verify it contains the f
 
 Now the PRI file is built, you can build and sign the package:
 
-1. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the MSIX/AppX file you want to create and making sure to choose a different directory for the file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory).
+1. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the .msix/.appx file you want to create and making sure to choose a different directory for the file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory).
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
@@ -321,7 +321,7 @@ including the private signing key!):
     ```
 
     You can type `signtool sign /?` to see what each parameter does, but in a nutshell:
-      * `/fd` sets the File Digest algorithm (SHA256 is the default for AppX)
+      * `/fd` sets the File Digest algorithm (SHA256 is the default for .appx)
       * `/a` will Automatically select the best certificate
       * `/f` specifies the input File that contains the signing certificate
 
@@ -611,7 +611,7 @@ the same - see the section on **Loading Win32 MUI resources**, below.
 #### Loading .NET resources
 
 Because .NET has a built-in mechanism for locating and loading resources (known as "Satellite Assemblies"), there is no explicit code to replace as in the synthetic example above - in 
-.NET you just need your resource DLLs in the appropriate directories and they are automatically located for you. When an app is packaged as an MSIX or AppX using resource packs, the directory 
+.NET you just need your resource DLLs in the appropriate directories and they are automatically located for you. When an app is packaged as an MSIX or .appx using resource packs, the directory 
 structure is somewhat different - rather than having the resource directories be subdirectories of the main application directory, they are peers of it (or not present at all if the 
 user doesn't have the language listed in their preferences). 
 
@@ -630,7 +630,7 @@ For example, imagine a .NET application with the following layout, where all the
 </pre>
 </blockquote>
 
-After conversion to AppX, the layout will look something like this, assuming `en-US` was the default language and the user has both German and French listed in their language list:
+After conversion to .appx, the layout will look something like this, assuming `en-US` was the default language and the user has both German and French listed in their language list:
 
 <blockquote>
 <pre>
@@ -669,7 +669,7 @@ static class PriResourceResolver
 
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
 
-    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with .appx, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
   }

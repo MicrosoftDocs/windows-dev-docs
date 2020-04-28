@@ -2,12 +2,15 @@
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, guidelines, best practices
 ms.localizationpriority: medium
 ---
 # UI and user experience guidelines for ads
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
 

@@ -15,7 +15,7 @@ If you’re required to provide a VAT ID number during the Partner Center regist
 ## Understanding VAT numbers
 
 
-A value added tax (VAT) number is an identifier used for countries or regions in the European Union. For more info, see the European Union’s official [VIES site](https://go.microsoft.com/fwlink/p/?LinkId=181246).
+A value added tax (VAT) number is an identifier used for countries or regions in the European Union. For more info, see the European Union’s official [VIES site](http://ec.europa.eu/taxation_customs/vies/vieshome.do).
 
 ## Accepted formats for VAT numbers
 
@@ -64,7 +64,7 @@ Note that Microsoft doesn’t provide tax advice, and the following table is pro
 <li>Example: 12345678, 123456789, or 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Czech Republic</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Czechia</td><td data-th="VAT info">
 <ul>
 <li>VAT Number Format: 8, 9, or 10 digits</li>
 <li>Country/region code: CZ</li>

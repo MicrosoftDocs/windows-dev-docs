@@ -5,12 +5,12 @@ label: Toast notifications from desktop apps
 template: detail.hbs
 ms.date: 05/01/2018
 ms.topic: article
-keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
+keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, sparse package, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---
 # Toast notifications from desktop apps
 
-Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few different options for desktop apps due to the different activation schemes.
+Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few different options for desktop apps due to the different activation schemes.
 
 In this article, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
 
@@ -30,7 +30,7 @@ The table below illustrates your options for supporting toasts within your deskt
 
 ## Preferred option - COM activator
 
-This is the preferred option that works for both Desktop Bridge and classic Win32, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](send-local-toast-desktop.md) and [C++ apps](send-local-toast-desktop-cpp-wrl.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
+This is the preferred option that works for desktop apps, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](send-local-toast-desktop.md) and [C++ apps](send-local-toast-desktop-cpp-wrl.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
@@ -38,7 +38,7 @@ This is the preferred option that works for both Desktop Bridge and classic Win3
 
 With the COM activator option, you can use the following notification templates and activation types in your app.<br/><br/>
 
-| Template and activation type | Desktop Bridge | Classic Win32 |
+| Template and activation type | MSIX/sparse package | Classic Win32 |
 | -- | -- | -- |
 | ToastGeneric Foreground | ✔️ | ✔️ |
 | ToastGeneric Background | ✔️ | ✔️ |
@@ -46,7 +46,7 @@ With the COM activator option, you can use the following notification templates 
 | Legacy templates | ✔️ | ❌ |
 
 > [!NOTE]
-> If you add the COM activator to your existing Desktop Bridge app, Foreground/Background and Legacy notification activations will now activate your COM activator instead of your command line.
+> If you add the COM activator to your existing MSIX/sparse package app, Foreground/Background and Legacy notification activations will now activate your COM activator instead of your command line.
 
 To learn how to use this option, see [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
 
@@ -61,14 +61,14 @@ This is an alternative option if you cannot implement a COM activator. However, 
 
 With this option, if you support classic Win32, you are much more limited in the notification templates and activation types that you can use, as seen below.<br/><br/>
 
-| Template and activation type | Desktop Bridge | Classic Win32 |
+| Template and activation type | MSIX/sparse package | Classic Win32 |
 | -- | -- | -- |
 | ToastGeneric Foreground | ✔️ | ❌ |
 | ToastGeneric Background | ✔️ | ❌ |
 | ToastGeneric Protocol | ✔️ | ✔️ |
 | Legacy templates | ✔️ | ❌ |
 
-For Desktop Bridge apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
+For packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps and apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps), just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
 
 For classic Win32 apps, set up the AUMID so that you can send toasts, and then also specify a CLSID on your shortcut. This can be any random GUID. Don't add the COM server/activator. You're adding a "stub" COM CLSID, which will cause Action Center to persist the notification. Note that you can only use protocol activation toasts, as the stub CLSID will break activation of any other toast activations. Therefore, you have to update your app to support protocol activation, and have the toasts protocol activate your own app.
 

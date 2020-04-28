@@ -1,4 +1,4 @@
-﻿---
+---
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -255,10 +255,9 @@ This section describes the properties that you can use for each entry.
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether items that have an official color property (such as transit lines in China) should draw that color. For example, turn this value off for a black and white map. |
 | rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether or not to draw raster regions where they have a better representation than vectors (Japan and Korea). |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether or not to draw elevation shading on the map. |
-| shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | The color of the dark-side of shaded relief.  Alpha channel represents the maximum alpha value. |
-| shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | The color of the light-side of shaded relief.  Alpha channel represents the maximum alpha value. |
 | shadowColor                  | Color   |      |      |      |  ✔   |  ✔   | The color of the shadow behind icons that use shadows. |
 | spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | The ARGB color value for area around the map. |
+| terrainFlat                  | Bool    |      |      |      |      |      | A flag that indicates whether the terrain should be flat (disabled) on the map. |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether the original colors in the SVG should be used rather than looking up the palette entry for colors in an image. |
 
 <a id="mapelement" />

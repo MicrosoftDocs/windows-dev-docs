@@ -1,7 +1,6 @@
 ---
 title: Commanding in Universal Windows Platform (UWP) apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
-author: Karl-Bridge-Microsoft
 ms.service: #Required; service per approved list.
 ms.topic: overview
 ms.date: 09/13/2019
@@ -33,7 +32,7 @@ Commands can operate on a specific context within your app, such as deleting tex
 
 The following image shows two command interfaces (a [CommandBar](app-bars.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
-![Command bar in Microsoft Photos](images/control-examples/command-bar-photos.png)<br>*Command bar in Microsoft Photos*
+![Expanded Command bar](images/control-examples/command-bar-photos.png)<br>*Command bar*
 
 ![Context menu in the Microsoft Photos gallery](images/ContextMenu_example.png)<br>*Context menu in the Microsoft Photos gallery*
 

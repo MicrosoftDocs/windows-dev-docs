@@ -160,6 +160,8 @@
           href: ../app-to-app/receive-data.md
         - name: Copy and paste
           href: ../app-to-app/copy-and-paste.md
+    - name: Interprocess communication (IPC)
+      href: ../communication/interprocess-communication.md
     - name: Networking and web services
       href: ../networking/index.md
       items:
@@ -179,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: Background transfers
           href: ../networking/background-transfers.md
+    - name: Sharing named objects
+      href: ../communication/sharing-named-objects.md
 - name: Data and files
   items:
     - name: App resources
@@ -793,6 +797,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: Porting a sample app from C#
+          href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: Move to C++/WinRT from C#
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interop with the ABI
@@ -1354,6 +1360,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Create and host an app extension
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Create hosted apps
+              href: ../launch-resume/hosted-apps.md
         - name: Support your app with background tasks
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:

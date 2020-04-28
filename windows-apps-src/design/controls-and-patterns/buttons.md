@@ -27,18 +27,20 @@ Control | Description
 [Button](/uwp/api/windows.ui.xaml.controls.button) | A button that initiates an immediate action. Can be used with a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event or [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) binding.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event continuously while pressed.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI logo](images/winui-logo-16x16.png) A button with a chevron to open an attached flyout.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI logo](images/winui-logo-16x16.png) A button with two sides. One side initiates an action, and the other side opens a menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI logo](images/winui-logo-16x16.png) A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | A button that can be on or off.
 
-| **Get the Windows UI Library** |
-| - |
-| **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Get the Windows UI Library**
 
-| **Platform APIs** | **Windows UI Library APIs** |
+|  |  |
 | - | - |
-| [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| ![WinUI logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Windows UI Library APIs:** [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
+>
+> **Platform APIs:** [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
 ## Is this the right control?
 
@@ -62,7 +64,7 @@ Use a **ToggleButton** control when you want the user to be able to immediately 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
@@ -515,8 +517,8 @@ private void ApplyListStyle(string listStyle)
 
 - When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
   - OK/[Do it]/Yes
-	- [Don't do it]/No
-	- Cancel
+    - [Don't do it]/No
+    - Cancel
 
 - Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
 

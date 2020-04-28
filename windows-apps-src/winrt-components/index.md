@@ -7,10 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Windows Runtime components
-Windows Runtime components are self-contained objects that you can instantiate and use from any language, including C#, Visual Basic, JavaScript, and C++.
 
-You can use Visual Studio and C#, Visual Basic, or C++ to create Windows Runtime components that can be used in Universal Windows Platform (UWP) apps.
+# Windows Runtime components
+
+Windows Runtime components are self-contained software modules that you can reference and use from any language, including C#, C++/WinRT, Visual Basic, JavaScript, and C++/CX. You can use Visual Studio to create Windows Runtime components that can be used in your Universal Windows Platform (UWP) apps.
+
+> [!NOTE]
+> For C++ developers, we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. To learn how to create a Windows Runtime component using C++/WinRT, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
 | Topic | Description |
 |-------|-------------|

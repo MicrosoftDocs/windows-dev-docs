@@ -14,7 +14,7 @@ If you are **not** a Microsoft employee, you can contribute through the [public 
 
 If you're already in the public content repository, start by navigating to the file you want to change. From there, select the pencil icon above the displayed content to begin editing.
 
-Alternately, if you're viewing a page in docs.microsoft.com, you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
+Alternately, if you're viewing a page in [docs.microsoft.com](https://docs.microsoft.com), you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
 
 When you begin editing, GitHub automatically forks the official repo into your personal GitHub account, where you can make your changes. When you're done, submit a pull request back to the **docs** branch.
 
@@ -48,4 +48,4 @@ The assigned reviewer(s) may approve or reject the PR, or work with you to make 
 
 If you want to provide feedback on the docs instead of making edits yourself, you can [create an issue in the public repo](https://github.com/MicrosoftDocs/windows-uwp/issues). Select the **Issues** tab and select the **New issue** button. Be sure to include the topic title and the URL for the page. Your issue will be assigned to members of the UWP documentation team for review.
 
-* For internal issues, use the [WDG Content Request Tool](https://aka.ms/pubrequest).
+* For internal issues, use the [WDG Content Request Tool](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx).

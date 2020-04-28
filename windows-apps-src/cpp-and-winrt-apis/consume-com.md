@@ -122,14 +122,7 @@ You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fu
 
 ## COM functions that take an **IUnknown** interface pointer
 
-You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
-
-```cppwinrt
-winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
-    ...
-    winrt::get_unknown(CoreWindow::GetForCurrentThread()),
-    ...));
-```
+You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer. See that topic for a code example.
 
 ## Passing and returning COM smart pointers
 
@@ -164,7 +157,11 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 ## Full source code listing of a minimal Direct2D application
 
-If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below.
+If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like.
+
+Open `pch.h`, and add `#include <unknwn.h>` immediately after including `windows.h`. This is because we're using [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). It's a good idea to `#include <unknwn.h>` explicity whenever you use **winrt::get_unknown**, even if that header has been included by another header.
+
+Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
 The code below uses the [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) where possible. `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 

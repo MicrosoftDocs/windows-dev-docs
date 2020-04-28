@@ -2,15 +2,15 @@
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Review the release notes for the Microsoft advertising libraries.
 title: Release notes for the advertising libraries
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes
 ms.localizationpriority: medium
 ---
 # Release notes for the advertising libraries
 
-
-
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This section provides release notes for the current release of the Microsoft advertising libraries. These libraries support XAML and JavaScript/HTML apps for Windows 10, Windows 8.1, Windows Phone 8.1 and Windows Phone 8.
 

@@ -1,7 +1,7 @@
 ---
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Payment thresholds, methods, and timeframes
-ms.date: 10/18/2018
+ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
@@ -73,7 +73,7 @@ To see the countries/regions in which these payment methods are used for each ma
 | Cote D'Ivoire                    | Yes               | Yes                                      | Yes    | No              |
 | Croatia                          | Yes               | Yes                                      | Yes    | No              |
 | Cyprus                           | Yes               | Yes                                      | Yes    | Yes             |
-| Czech Republic                   | Yes               | Yes                                      | Yes    | Yes             |
+| Czechia                          | Yes               | Yes                                      | Yes    | Yes             |
 | Denmark                          | Yes               | Yes                                      | Yes    | Yes             |
 | Dominica                         | Yes               | Yes                                      | No     | Yes             |
 | Dominican Republic               | Yes               | Yes                                      | Yes    | Yes             |

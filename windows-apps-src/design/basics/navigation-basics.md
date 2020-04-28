@@ -172,20 +172,32 @@ With few exceptions, any app that has multiple pages uses a frame. Typically, an
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
 	:::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**Top navigation**](../controls-and-patterns/navigationview.md)
 
-Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
+Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation pattern.
         
 Use top navigation when:
 
 - You want to show all navigation options on the screen.
 - You desire more space for your app's content.
 - Icons cannot clearly describe your navigation categories.
-		
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+	:::column span="2":::
+        [**Tabs**](../controls-and-patterns/tab-view.md)
+
+Displays a horizontal set of tabs and their respective content. The [TabView](../controls-and-patterns/tab-view.md) control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.
+	
 Use tabs when:
 
-- You want to preserve navigation history and page state.
-- You expect users to switch between tabs frequently.
+- You want users to be able to dynamically open, close, or rearrange tabs.
+- You expect that there might be a large number of tabs open at once.
+- You expect users to be able to easily move tabs between windows in your application that use tabs, similar to web browsers like Microsoft Edge.
 
 :::row-end:::
 

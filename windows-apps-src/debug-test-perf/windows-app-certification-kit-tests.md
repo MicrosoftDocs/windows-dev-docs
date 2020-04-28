@@ -78,7 +78,7 @@ Add the cancellation handler to your app. For more information see [Support your
 
 ## App count
 
-This verifies that an app package (APPX, app bundle) contains one application. This was changed in the kit to be a standalone test.
+This verifies that an app package (.msix, .appx, or app bundle) contains one application. This was changed in the kit to be a standalone test.
 
 ### Background
 
@@ -86,7 +86,7 @@ This test was implemented as per Store policy.
 
 ### Test details
 
-For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
+For Windows Phone 8.1 apps the test verifies the total number of .appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
 
 For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
 

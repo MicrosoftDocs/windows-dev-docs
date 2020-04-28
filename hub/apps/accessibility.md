@@ -10,7 +10,7 @@ author: Karl-Bridge-Microsoft
 
 # Accessibility in Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Accessibility hero image](images/hero-accessibility-bar-smaller.png)
 
 ## Build accessibility into your applications to empower people of all abilities
 
@@ -251,7 +251,6 @@ Various videos covering how to build accessible Windows applications to general 
       [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **Community and support**

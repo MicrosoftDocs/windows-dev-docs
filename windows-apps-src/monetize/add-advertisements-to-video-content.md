@@ -2,12 +2,15 @@
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Learn how to use the AdScheduler class to show ads in video content.
 title: Show ads in video content
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
 ms.localizationpriority: medium
 ---
 # Show ads in video content
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This walkthrough shows how to use the **AdScheduler** class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 

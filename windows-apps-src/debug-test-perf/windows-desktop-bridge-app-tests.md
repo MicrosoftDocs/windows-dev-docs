@@ -37,7 +37,7 @@ Converted desktop apps can be enhanced with a wide range of Universal Windows Pl
 See [Desktop to UWP Bridge: App extensions](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) for an explanation of these extensions and how to use them properly. 
 
 ### 3. Debug configuration test
-This test verifies that the appx is not a debug build.
+This test verifies that the .msix or .appx is not a debug build.
  
 **Background**  
 To be certified for the Microsoft Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.

@@ -1998,7 +1998,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :------          | :------ |
-| name | (**required**) The new name for the machine. |
+| name | (**required**) The new name for the machine. This should be base64 encoded. |
 
 **Request headers**
 

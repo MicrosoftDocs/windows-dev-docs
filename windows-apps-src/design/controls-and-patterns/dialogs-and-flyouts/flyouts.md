@@ -18,20 +18,26 @@ A flyout is a light dismiss container that can show arbitrary UI as its content.
 
 ![Context menu nested inside a flyout](../images/flyout-nested.png)
 
-> **Important APIs**: [Flyout class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](../images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Platform APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## Is this the right control?
 
 * Don't use a flyout instead of [tooltip](../tooltips.md) or [context menu](../menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.
 
-For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](index.md). 
+For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](index.md).
 
 ## Examples
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</p>
     <ul>
@@ -68,7 +74,7 @@ This example adds a simple flyout to an image. When the user taps the image, the
   <FlyoutBase.AttachedFlyout>
     <Flyout>
       <TextBlock Text="This is some text in a flyout."  />
-    </Flyout>        
+    </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
 ````
@@ -115,7 +121,7 @@ The previous examples defined their flyouts inline. You can also define a flyout
 ````csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
-    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);  
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
 ````
 
@@ -151,12 +157,12 @@ Light dismiss controls like flyout trap keyboard and gamepad focus inside their 
 
 ## Light dismiss behavior
 Flyouts can be closed with a quick light dismiss action, including
--	Tap outside the flyout
--	Press the Escape keyboard key
--	Press the hardware or software system Back button
--	Press the gamepad B button
+-    Tap outside the flyout
+-    Press the Escape keyboard key
+-    Press the hardware or software system Back button
+-    Press the gamepad B button
 
-When dismissing with a tap, this gesture is typically absorbed and not passed on to the UI underneath. For example, if there’s a button visible behind an open flyout, the user’s first tap dismisses the flyout but does not activate this button. Pressing the button requires a second tap.
+When dismissing with a tap, this gesture is typically absorbed and not passed on to the UI underneath. For example, if there's a button visible behind an open flyout, the user's first tap dismisses the flyout but does not activate this button. Pressing the button requires a second tap.
 
 You can change this behavior by designating the button as an input pass-through element for the flyout. The flyout will close as a result of the light dismiss actions described above and will also pass the tap event to its designated `OverlayInputPassThroughElement`. Consider adopting this behavior to speed up user interactions on functionally similar items. If your app has a favorites collection and each item in the collection includes an attached flyout, it's reasonable to expect that users may want to interact with multiple flyouts in rapid succession.
 
@@ -171,7 +177,7 @@ In the following example, all three buttons inside FavoritesBar will be activate
                 OverlayInputPassThroughElement="{x:Bind FavoritesBar}">
             <StackPanel>
                 <HyperlinkButton Content="Washington Trails Association"/>
-                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>  
+                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>
             </StackPanel>
         </Flyout>
     </Page.Resources>
@@ -182,7 +188,7 @@ In the following example, all three buttons inside FavoritesBar will be activate
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="FavoritesBar" Orientation="Horizontal">
-            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>  
+            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>
             <Button x:Name="Folder1" Content="Travel" Flyout="{StaticResource TravelFlyout}"/>
             <Button x:Name="Folder2" Content="Entertainment" Click="Folder2_Click"/>
         </StackPanel>
