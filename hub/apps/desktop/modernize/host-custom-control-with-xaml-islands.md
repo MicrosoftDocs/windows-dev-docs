@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a custom UWP control in a WPF app by using XAML Islands.
 title: Host a custom UWP control in a WPF app using XAML Islands
-ms.date: 08/20/2019
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, custom controls, user controls, host controls
 ms.author: mcleans
@@ -12,21 +12,22 @@ ms.custom: 19H1
 
 # Host a custom UWP control in a WPF app using XAML Islands
 
-This article demonstrates how to use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom UWP control in a WPF app that targets .NET Core 3. The custom control contains several first-party UWP controls from the Windows SDK and binds a property in one of the UWP controls to a string in the WPF app. This article also demonstrates how to also host a first-party UWP control from the [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/).
+This article demonstrates how to use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom UWP control in a WPF app that targets .NET Core 3. The custom control contains several first-party UWP controls from the Windows SDK and binds a property in one of the UWP controls to a string in the WPF app. This article also demonstrates how to also host a UWP control from the [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting UWP controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
 
-## Overview
+## Required components
 
-To host a custom UWP control in a WPF app, you'll need the following components. This article provides instructions for creating each of these components.
+To host a custom UWP control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.
 
-* **The project and source code for your WPF app**. Using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host custom UWP controls is supported only in WPF and Windows Forms apps that target .NET Core 3. This scenario is not supported in apps that target the .NET Framework.
+* **The project and source code for your app**. Using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host custom UWP controls is supported only in apps that target .NET Core 3. This scenario is not supported in apps that target the .NET Framework.
 
-* **The custom UWP control**. You'll need the source code for the custom UWP control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF (or Windows Forms) project.
+* **The custom UWP control**. You'll need the source code for the custom UWP control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.
 
-* **A UWP app project that defines a XamlApplication object**. Your WPF (or Windows Forms) project must have access to an instance of the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class provided by the Windows Community Toolkit. This object acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project.
-  > [!NOTE]
-  > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host UWP controls in the XAML Island.
+* **A UWP app project that defines a root Application class that derives from XamlApplication**. Your WPF or Windows Forms project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit so that it can discover and load custom UWP XAML controls. The recommended way to do this is to define this object in a separate UWP app project that is part of the solution for your WPF or Windows Forms app. 
+
+    > [!NOTE]
+    > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other UWP libraries and projects that are used host to UWP controls on the XAML Island.
 
 ## Create a WPF project
 
@@ -48,24 +49,24 @@ Before getting started, follow these instructions to create a WPF project and co
 
 5. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
 
-6. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package (version v6.0.0-preview7 or later), and install the package. This package provides everything you need to use the **WindowsXamlHost** control to host a UWP control, including other related NuGet packages.
+6. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package (version v6.0.0 or later), and install the package. This package provides everything you need to use the **WindowsXamlHost** control to host a UWP control, including other related NuGet packages.
     > [!NOTE]
-    > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) package (version v6.0.0-preview7 or later).
+    > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) package (version v6.0.0 or later).
 
 7. Configure your solution to target a specific platform such as x86 or x64. Custom UWP controls are not supported in projects that target **Any CPU**.
 
-    1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**. 
+    1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**.
     2. Under **Active solution platform**, select **New**. 
     3. In the **New Solution Platform** dialog, select **x64** or **x86** and press **OK**. 
     4. Close the open dialog boxes.
 
-## Create a XamlApplication object in a UWP app project
+## Define a XamlApplication class in a UWP app project
 
-Next, add a UWP app project to the same solution as your WPF project. You will revise the default `App` class in this project to derive from the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class provided by the Windows Community Toolkit. The **WindowsXamlHost** object in your WPF app needs this `XamlApplication` object to host custom UWP controls.
+Next, add a UWP app project to your solution and revise the default `App` class in this project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread. 
 
 1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
 2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903** or later.
-3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (version v6.0.0-preview7 or later).
+3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (version v6.0.0 or later).
 4. Open the **App.xaml** file and replace the contents of this file with the following XAML. Replace `MyUWPApp` with the namespace of your UWP app project.
 
     ```xml
@@ -83,7 +84,7 @@ Next, add a UWP app project to the same solution as your WPF project. You will r
     ```csharp
     namespace MyUWPApp
     {
-        sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+        public sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
         {
             public App()
             {
@@ -96,6 +97,38 @@ Next, add a UWP app project to the same solution as your WPF project. You will r
 6. Delete the **MainPage.xaml** file from the UWP app project.
 7. Clean the UWP app project and then build it.
 8. In your WPF project, right-click the **Dependencies** node and add a reference to your UWP app project.
+
+## Instantiate the XamlApplication object in the entry point of your WPF app
+
+Next, add code to the entry point for your WPF app to create an instance of the `App` class you just defined in the UWP project (this is the class that now derives from `XamlApplication`).
+
+1. In your WPF project, right-click the project node, select **Add** -> **New Item**, and then select **Class**. Name the class **Program** and click **Add**.
+
+2. Replace the generated `Program` class with the following code and then save the file. Replace `MyUWPApp` with the namespace of your UWP app project, and replace `MyWPFApp` with the namespace of your WPF app project.
+
+    ```csharp
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                MyWPFApp.App app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+    ```
+
+3. Right-click the project node and choose **Properties**.
+
+4. On the **Application** tab of the properties, click the **Startup object** drop-down and choose the fully qualified name of the `Program` class you added in the previous step. 
+    > [!NOTE]
+    > By default, WPF projects define a `Main` entry point function in a generated code file that isn't intended to be modified. This step changes the entry point for your project to the `Main` method of the new `Program` class, which enables you to add code that runs as early in the startup process of the app as possible. 
+
+5. Save your changes to the project properties.
 
 ## Create a custom UWP control
 
@@ -193,15 +226,13 @@ If you already have a custom control, you can use it instead of the control show
 
 ## Add a control from the WinUI library to the custom control
 
-Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of the first-party UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app. 
+This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app.
 
-1. In the UWP app project, install the latest prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
-    > [!NOTE]
-    > Make sure you install the latest *prerelease* version. Currently, only prerelease versions of this package will work if you choose to package your app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment.
+1. In the UWP app project, install the latest version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
-2. In the App.xaml file in this project, add the following child element to the `<xaml:Application>` element.
+2. In the App.xaml file in this project, add the following child element to the `<xaml:XamlApplication>` element.
 
     ```xml
     <Application.Resources>
@@ -224,7 +255,7 @@ This section demonstrates how to add a UWP control from the WinUI library to you
     </xaml:XamlApplication>
     ```
 
-3. In the UWP class library project, install the latest prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package (the same version that you installed in the UWP app project).
+3. In the UWP class library project, install the latest version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package (the same version that you installed in the UWP app project).
 
 4. In the same project, open the XAML file for the user control and add the following namespace declaration to the `<UserControl>` element.
 
@@ -247,57 +278,18 @@ This section demonstrates how to add a UWP control from the WinUI library to you
 
 ## Package the app
 
-You can optionally package the WPF app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, APPX, App-V and ClickOnce installation technologies.
+You can optionally package the WPF app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
 
 The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the WPF app in an MSIX package. Note that these steps currently include some workarounds specific to the scenario of hosting custom UWP controls.
+
+> [!NOTE]
+> If you choose to not package your application in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 1. Add a new [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the WPF project in your solution and click **OK**.
 
-3. Edit the packaging project file. These changes are currently required for packaging WPF apps that target .NET Core 3 and that host XAML Islands.
-
-    1. In Solution Explorer, right-click the packaging project node and select **Edit Project File**.
-    2. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file. Replace this element with the following XML. These changes are currently required for packaging WPF apps that target .NET Core 3 and that host UWP controls.
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. Save the project file and close it.
-
-4. Edit the package manifest to reference the correct default splash screen image. This workaround is currently required for packaging WPF apps that host custom UWP controls.
-
-    1. In the packaging project, right-click the **Package.appxmanifest** file and click **View Code**.
-    2. Locate the following element in the file.
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.png" />```
-
-    3. Change this element to:
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.scale-200.png" />```
-
-    4. Save the **Package.appxmanifest** file and close it.
-
-5. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
+3. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
 
     1. In Solution Explorer, right-click the WPF project node and select **Unload Project**.
     2. Right-click the WPF project node and select **Edit**.
@@ -312,9 +304,10 @@ The following instructions show you how to package the all the components in the
     4. Save the project file and close it.
     5. Right-click the WPF project node and choose **Reload Project**.
 
-6. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+4. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
 ## Related topics
 
-* [UWP controls in desktop applications](xaml-islands.md)
+* [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
+* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

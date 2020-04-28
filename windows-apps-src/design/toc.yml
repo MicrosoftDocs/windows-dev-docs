@@ -240,6 +240,8 @@
           href: controls-and-patterns/content-links.md
         - name: Handwriting view
           href: controls-and-patterns/text-handwriting-view.md
+    - name: Two-pane view
+      href: controls-and-patterns/two-pane-view.md
 - name: Style
   items:
     - name: Overview
@@ -351,15 +353,19 @@
             - name: Toast content schema
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Send local toast
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: UWP apps
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Desktop apps
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: Overview
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: C# apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Schedule toasts
+              href: shell/tiles-and-notifications/scheduled-toast.md
             - name: Custom audio
               href: shell/tiles-and-notifications/custom-audio-on-toasts.md
             - name: Progress bar

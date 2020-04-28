@@ -15,11 +15,9 @@ ms.localizationpriority: medium
 ---
 # Hyperlinks
 
- 
-
 Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
 
-> **Important APIs**: [Hyperlink text element](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **Platform APIs**: [Hyperlink text element](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![A hyperlink button](images/controls/hyperlink-button.png)
 
@@ -39,7 +37,7 @@ Choose the right type of hyperlink based on your needs:
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/HyperlinkButton">open the app and see the HyperlinkButton in action</a>.</p>
     <ul>

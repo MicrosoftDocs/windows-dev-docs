@@ -8,6 +8,9 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -15,14 +18,16 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "xref_query_tags": [ "/uwp/api" ]
+      "template_folder": "_themes"
     },
     {
       "docset_name": "windows-uwp-hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "hub",
       "locale": "en-us",
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -32,14 +37,16 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "version": 0
     },
     {
       "docset_name": "windows-uwp",
       "build_source_folder": "windows-apps-src",
       "build_output_subfolder": "windows-apps-src",
       "locale": "en-us",
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -49,8 +56,7 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "version": 0
     }
   ],
   "notification_subscribers": [],
@@ -80,10 +86,28 @@
       "url": "https://github.com/MicrosoftDocs/windows-code-snippets-pr",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "master",
+      "branch_mapping": {}
     }
   ],
-  "branch_target_mapping": {},
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
   "need_generate_pdf_url_template": true,
-  "targets": {},
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  },
   "need_generate_pdf": false
 }

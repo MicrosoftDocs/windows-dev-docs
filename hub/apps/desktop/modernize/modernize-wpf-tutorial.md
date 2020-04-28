@@ -64,7 +64,7 @@ Make sure you install the following workloads and optional features with Visual 
 
 Before you begin the tutorial, download the source code for the Contoso Expenses app and make sure you can build the code in Visual Studio.
 
-1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Open the zip file and extract all the content to the root of your **C:\\** drive. It will create a folder named **C:\WinAppsModernizationWorkshop**.
 3. Open Visual Studio 2019 and double click on the **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** file to open the solution.
 4. Verify that you can build, run, and debug the Contoso Expenses WPF project by pressing the **Start** button or CTRL + F5.
@@ -93,7 +93,7 @@ Going forward, most new Windows 10 features are exposed via WinRT APIs, includin
 
 ### MSIX packaging
 
-[MSIX](/windows/msix/) (formerly known as AppX) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
+[MSIX](/windows/msix/) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
 
 For more information, see these articles:
 

@@ -18,7 +18,7 @@ dev_langs:
 
 You can use managed code to create your own Windows Runtime types and package them in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps that are written in C++, JavaScript, Visual Basic, or C#. This topic outlines the rules for creating a component, and discusses some aspects of .NET support for the Windows Runtime. In general, that support is designed to be transparent to the .NET programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
 
-If you are creating a component for use only in UWP apps that are written in Visual Basic or C#, and the component does not contain UWP controls, then onsider using the **Class Library** template instead of the **Windows Runtime Component** project template in Microsoft Visual Studio. There are fewer restrictions on a simple class library.
+If you are creating a component for use only in UWP apps that are written in Visual Basic or C#, and the component does not contain UWP controls, then consider using the **Class Library** template instead of the **Windows Runtime Component** project template in Microsoft Visual Studio. There are fewer restrictions on a simple class library.
 
 ## Declaring types in Windows Runtime components
 

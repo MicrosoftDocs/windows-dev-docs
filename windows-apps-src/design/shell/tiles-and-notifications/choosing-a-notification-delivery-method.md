@@ -119,6 +119,7 @@ By default, scheduled notifications expire three days from the time they are del
 
 For more information, see these topics:
 
+-   [Scheduling a toast notification](scheduled-toast.md)
 -   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Periodic notifications

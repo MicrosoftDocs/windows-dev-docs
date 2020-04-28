@@ -25,7 +25,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Austria              | Hutchison 3G Austria, A1 Telekom, T-Mobile / tele.ring  |
 | Belgium              | Base, Proximus                                          |
 | Canada               | Telus                                                   |
-| Czech Republic       | T-Mobile                                                |
+| Czechia              | T-Mobile                                                |
 | Denmark              | 3, TDC / YouSee, Telenor, Telia                         |
 | Finland              | DNA, Elisa                                              |
 | France               | Orange                                                  |
@@ -38,6 +38,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Poland               | Orange, Play                                            |
 | Singapore            | M1 Limited, StarHub                                     |
 | Slovakia             | Slovak Telekom                                          |
+| South Africa         | Vodacom                                                 |
 | Spain                | Orange                                                  |
 | Sweden               | Telenor, 3                                              |
 | Switzerland          | Swisscom, Sunrise                                       |

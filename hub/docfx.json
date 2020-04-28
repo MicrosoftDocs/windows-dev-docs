@@ -35,16 +35,22 @@
     "fileMetadata": {
       "ms.prod":
       {
+        "apps/trace-processing/**.md": "traceprocessor",
         "python/**.md": "dev-environment",
         "nodejs/**.md": "dev-environment",
         "dev-environment/**.md": "dev-environment"
       },
       "ms.technology":
       {
-      "apps/**.md": "apps",
-      "python/**.md": "windows-python",
-      "nodejs/**.md": "windows-nodejs",
-      "android/**.md": "windows-nodejs"
+        "apps/**.md": "apps",
+        "apps/trace-processing/**.md": "",
+        "python/**.md": "windows-python",
+        "nodejs/**.md": "windows-nodejs",
+        "android/**.md": "windows-nodejs"
+      },	 
+      "feedback_product_url": 
+      {
+        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues"
       }
     },
     "template": [],

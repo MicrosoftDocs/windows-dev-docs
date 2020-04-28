@@ -5,12 +5,12 @@ label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, C++, cpp, cplusplus, WRL
+keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, sparse package, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ---
 # Send a local toast notification from desktop C++ WRL apps
 
-Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.
+Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](send-local-toast-desktop.md).
@@ -83,12 +83,12 @@ CoCreatableClass(NotificationActivator);
 
 ## Step 5: Register with notification platform
 
-Then, you must register with the notification platform. There are different steps depending on whether you are using the Desktop Bridge or classic Win32. If you support both, you must do both steps (however, no need to fork your code, our library handles that for you!).
+Then, you must register with the notification platform. There are different steps depending on whether you are using MSIX/sparse packages or classic Win32. If you support both, you must do both steps (however, no need to fork your code, our library handles that for you!).
 
 
-### Desktop Bridge
+### MSIX/sparse package
 
-If you're using Desktop Bridge (or if you support both), in your **Package.appxmanifest**, add:
+If you're using [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) or a [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
@@ -164,18 +164,18 @@ If you're using WiX for your installer, edit the **Product.wxs** file to add the
 Then, regardless of your installer, in your app's startup code (before calling any notification APIs), call the **RegisterAumidAndComServer** method, specifying your notification activator class from step #4 and your AUMID used above.
 
 ```cpp
-// Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+// Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
 hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"YourCompany.YourApp", __uuidof(NotificationActivator));
 ```
 
-If you support both Desktop Bridge and classic Win32, feel free to call this method regardless. If you're running under Desktop Bridge, this method will simply return immediately. There's no need to fork your code.
+If you support both MSIX/sparse package and classic Win32, feel free to call this method regardless. If you're running under an MSIX or sparse package, this method will simply return immediately. There's no need to fork your code.
 
 This method allows you to call the compat APIs to send and manage notifications without having to constantly provide your AUMID. And it inserts the LocalServer32 registry key for the COM server.
 
 
 ## Step 6: Register COM activator
 
-For both Desktop Bridge and classic Win32 apps, you must register your notification activator type, so that you can handle toast activations.
+For both MSIX/sparse package and classic Win32 apps, you must register your notification activator type, so that you can handle toast activations.
 
 In your app's startup code, call the following **RegisterActivator** method. This must be called in order for you to receive any toast activations.
 
@@ -187,12 +187,12 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## Step 7: Send a notification
 
-Sending a notification is identical to UWP apps, except that you will use **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between Desktop Bridge and classic Win32 so you do not have to fork your code. For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
+Sending a notification is identical to UWP apps, except that you will use **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between MSIX/sparse package and classic Win32 so you do not have to fork your code. For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
 
 Make sure you use the **ToastGeneric** binding as seen below since the legacy Windows 8.1 toast notification templates will not activate your COM notification activator you created in step #4.
 
 > [!IMPORTANT]
-> Http images are only supported in Desktop Bridge apps that have the internet capability in their manifest. Classic Win32 apps do not support http images; you must download the image to your local app data and reference it locally.
+> Http images are only supported in MSIX/sparse package apps that have the internet capability in their manifest. Classic Win32 apps do not support http images; you must download the image to your local app data and reference it locally.
 
 ```cpp
 // Construct XML
@@ -316,7 +316,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
     HRESULT hr = winRtInitializer;
     if (SUCCEEDED(hr))
     {
-        // Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+        // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
         hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"WindowsNotifications.DesktopToastsCpp", __uuidof(NotificationActivator));
         if (SUCCEEDED(hr))
         {
@@ -389,7 +389,7 @@ if (SUCCEEDED(hr))
 
 ## Step 10: Deploying and debugging
 
-To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
+To deploy and debug your MSIX/sparse package app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
 
 To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
@@ -397,11 +397,11 @@ If your notifications simply fail to appear in your classic Win32 app (and no ex
 
 If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
 
-If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations. That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked. Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.
+If you've installed both your MSIX/sparse package and classic Win32 app, note that the MSIX/sparse package app will supersede the classic Win32 app when handling toast activations. That means that toasts from the classic Win32 app will still launch the MSIX/sparse package app when clicked. Uninstalling the MSIX/sparse package app will revert activations back to the classic Win32 app.
 
 If you receive `HRESULT 0x800401f0 CoInitialize has not been called.`, be sure to call `CoInitialize(nullptr)` in your app before calling the APIs.
 
-If you receive `HRESULT 0x8000000e A method was called at an unexpected time.` while calling the Compat APIs, that likely means you failed to call the required Register methods (or if a Desktop Bridge app, you're not currently running your app under the Desktop Bridge context).
+If you receive `HRESULT 0x8000000e A method was called at an unexpected time.` while calling the Compat APIs, that likely means you failed to call the required Register methods (or if a MSIX/sparse package app, you're not currently running your app under the MSIX/sparse context).
 
 If you get numerous `unresolved external symbol` compilation errors, you likely forgot to add `runtimeobject.lib` to the **Additional Dependencies** in step #1 (or you only added it to the Debug configuration and not Release configuration).
 

@@ -17,11 +17,17 @@ Use a combo box (also known as a drop-down list) to present a list of items that
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
-> **Important APIs**: [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-A combo box in its compact state with a header.
-
 ![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+
+> _A combo box in its compact state with a header._
+
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Platform APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## Is this the right control?
 
@@ -35,7 +41,7 @@ A combo box in its compact state with a header.
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ComboBox">open the app and see the ComboBox in action</a>.</p>
     <ul>
@@ -94,7 +100,7 @@ public MainPage()
 
 ### Item selection
 
-Like ListView and GridView, ComboBox is derived from [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector), so you can get the user’s selection in the same standard way.
+Like ListView and GridView, ComboBox is derived from [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector), so you can get the user's selection in the same standard way.
 
 You can get or set the combo box's selected item by using the [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) property, and get or set the index of the selected item by using the [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) property.
 
@@ -204,7 +210,7 @@ A "recently used names" chooser lets the user enter custom strings. The 'Recentl
 
 ### Text submitted
 
-You can handle the [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user. In the event handler, you will typically validate that the value entered by the user is valid, then use the value in your app. Depending on the situation, you might also add the value to the combo box’s list of options for future use.
+You can handle the [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user. In the event handler, you will typically validate that the value entered by the user is valid, then use the value in your app. Depending on the situation, you might also add the value to the combo box's list of options for future use.
 
 The TextSubmitted event occurs when these conditions are met:
 
@@ -234,13 +240,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -273,7 +279,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }

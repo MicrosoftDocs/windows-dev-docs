@@ -2,12 +2,15 @@
 Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
-ms.date: 12/14/2017
+ms.date: 1/17/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Set up your payout account and tax forms
+
+> [!NOTE]
+> If you're looking for support regarding payouts, including configuring payout accounts, missing payouts, putting payouts on hold, or anything else, contact support [here](https://partner.microsoft.com/support).
 
 In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms in [Partner Center](https://partner.microsoft.com/dashboard).
 

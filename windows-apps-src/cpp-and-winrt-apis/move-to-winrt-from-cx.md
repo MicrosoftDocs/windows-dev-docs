@@ -1,5 +1,5 @@
 ---
-description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
+description: This topic describes the technical details involved in porting the source code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Move to C++/WinRT from C++/CX
 ms.date: 01/17/2019
 ms.topic: article
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Move to C++/WinRT from C++/CX
 
-This topic shows how to port the code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+This topic describes the technical details involved in porting the source code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## Porting strategies
 
@@ -25,7 +25,7 @@ If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/C
 
 Bearing in mind the exceptions mentioned above, the first step in porting a C++/CX project to C++/WinRT is to manually add C++/WinRT support to it (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). To do that, install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) into your project. Open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
 
-Alternatively, manually add the following property to your `.vcxproj` file using the C++/WinRT project property page in Visual Studio. For a list of similar customization options (which fine-tune the behavior of the `cppwinrt.exe` tool), see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
+Alternatively, manually add the following property to your `.vcxproj` file using the C++/WinRT project property page in Visual Studio. For a list of similar customization options (which fine-tune the behavior of the `cppwinrt.exe` tool), see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
 
 ```xml
 <syntaxhighlight lang="xml">
@@ -304,7 +304,18 @@ C++ collection types use the default constructor, which can result in unintended
 | Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-There's no shorthand for creating an array of empty references. You have to repeat `nullptr` for each element in the array. If you have too few, then the extras will be default-constructed.
+### More about collections of empty references
+
+Whenever you have a **Platform::Array\^** (see [Port **Platform::Array\^**](#port-platformarray)) in C++/CX, you have the choice to port that to a **std::vector** in C++/WinRT (in fact, any contiguous container) rather than leave it as an array. There are advantages to choosing **std::vector**.
+
+For example, while there is shorthand for creating a fixed-sized vector of empty references (see table above), there's no such shorthand for creating an *array* of empty references. You have to repeat `nullptr` for each element in an array. If you have too few, then the extras will be default-constructed.
+
+For a vector, you can fill it with empty references at initialization (as in the table above), or you can fill it with empty references post-initialization with code such as this.
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### More about the **std::map** example
 
@@ -526,7 +537,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### Port **Platform::Array\^**
 
-Your options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+In cases where C++/CX requires you to use an array, C++/WinRT allows you to use any contiguous container. See [How the default constructor affects collections](#how-the-default-constructor-affects-collections) for a reason why **std::vector** is a good choice.
+
+So, whenever you have a **Platform::Array\^** in C++/CX, your porting options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
 

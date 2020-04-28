@@ -1,13 +1,16 @@
 ---
 description: Learn how to update your app to use the latest supported Microsoft advertising libraries and make sure that your app continues to receive banner ads.
 title: Use the latest advertising libraries for banner ads
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, AdControl, AdMediatorControl, migrate
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ---
 # Update your app to the latest advertising libraries for banner ads
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 As of April 1, 2017, we no longer serve banner ads to apps that use an unsupported advertising SDK release. If you use **AdControl** to display banner ads in your Universal Windows Platform (UWP) app, use the information in this article to determine whether you are using an unsupported advertising SDK and migrate your app to a supported SDK.
 

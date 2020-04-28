@@ -16,14 +16,20 @@ ms.localizationpriority: medium
 ---
 # Date picker
 
- 
+The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 
-The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
+![Example of date picker](images/date-picker-closed.png)
 
-> **Important APIs**: [DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Date property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+**Get the Windows UI Library**
 
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Platform APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Date property](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## Is this the right control?
+
 Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
 For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
@@ -33,7 +39,7 @@ For more info about choosing the right date control, see the [Date and time cont
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/DatePicker">open the app and see the DatePicker in action</a>.</p>
     <ul>

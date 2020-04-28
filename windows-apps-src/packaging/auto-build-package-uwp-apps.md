@@ -109,7 +109,7 @@ If you want to build your solution by using the command line, or by using any ot
 
 ### Configure package signing
 
-To sign the MSIX (or APPX) package the pipeline needs to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
+To sign the MSIX (or .appx) package the pipeline needs to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
 This will give you access to the signing certificate via ```signingCert```.
 
 ```yml

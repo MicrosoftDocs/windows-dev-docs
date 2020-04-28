@@ -97,6 +97,11 @@ The draggable region of the title bar defines where the user can click and drag 
 
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 
+
+> [!IMPORTANT]
+> By default, some UI elements such as Grid do not participate in hit testing when they don't have a background set.
+>  For the grid `AppTitleBar` in the sample below to allow dragging, we therefore need to set the background to `Transparent`.
+
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
     <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->

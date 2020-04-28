@@ -12,6 +12,7 @@ dev_langs:
   - cpp
   - javascript
 ---
+
 # File access permissions
 
 Universal Windows Platform (UWP) apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
@@ -161,6 +162,7 @@ In addition, and unlike other locations, you can also access files in your app d
 You can't access the local, roaming, or temporary folders through the file picker.
 
 ### Removable devices
+
 Additionally, your app can access some of the files on connected devices by default. This is an option if your app uses the [AutoPlay extension](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)) to launch automatically when users connect a device, like a camera or USB thumb drive, to their system. The files your app can access are limited to specific file types that are specified via File Type Association declarations in your app manifest.
 
 Of course, you can also gain access to files and folders on a removable device by calling the file picker (using [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)) and letting the user pick files and folders for your app to access. Learn how to use the file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
@@ -169,6 +171,7 @@ Of course, you can also gain access to files and folders on a removable device b
 > For more info about accessing an SD card or other removable devices, see [Access the SD card](access-the-sd-card.md).
 
 ## Locations that UWP apps can access
+
 ### User's Downloads folder
 
 The folder where downloaded files are saved by default.
@@ -245,33 +248,33 @@ If you create a file or folder in the Downloads folder, we recommend that you ad
 
 ## Accessing additional locations
 
-In addition to the default locations, an app can access additional files and folders by declaring capabilities in the app manifest (see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)), or by calling a file picker to let the user pick files and folders for the app to access (see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)).
+In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by [calling a file picker](quickstart-using-file-and-folder-pickers.md) to let the user pick files and folders for the app to access.
 
-App's that that declare the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension, have file-system permissions from the directory that they are launched from in the console window, and downwards.
+Apps that that declare the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension have file-system permissions from the directory that they are launched from in the console window, and downwards.
 
-The following table lists additional locations that you can access by declaring a capability (or capabilities) and using the associated [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API:
+The following table lists additional locations that you can access by declaring one or more capabilities and using the associated [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API.
 
 | Location | Capability | Windows.Storage API |
 |----------|------------|---------------------|
-| All files that the user has access to. For example: documents, pictures, photos, downloads, desktop, OneDrive, etc. | broadFileSystemAccess<br><br>This is a restricted capability. Access is configurable in **Settings** > **Privacy** > **File system**. Because users can grant or deny the permission any time in **Settings**, you should ensure that your app is resilient to those changes. If you find that your app does not have access, you may choose to prompt the user to change the setting by providing a link to the [Windows 10 file system access and privacy](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy) article. Note that the user must close the app, toggle the setting, and restart the app. If they toggle the setting while the app is running, the platform will suspend your app so that you can save the state, then forcibly terminate the app in order to apply the new setting. In the April 2018 update, the default for the permission is On. In the October 2018 update, the default is Off.<br /><br />If you submit an app to the Store that declares this capability, you will need to supply additional descriptions of why your app needs this capability, and how it intends to use it.<br>This capability works for APIs in the [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) namespace. See the **Example** section at the end of this article for an example of how to enable this capability in your app. | n/a |
-| Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user's OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
-| Music     | MusicLibrary <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
-| Pictures  | PicturesLibrary<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
-| Videos    | VideosLibrary<br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
-| Removable devices  | RemovableDevices <br><br>Note  You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Also see [Access the SD card](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
-| Homegroup libraries  | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
-| Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
-| Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- PrivateNetworkClientServer <br><br>And at least one internet and public networks capability: <br>- InternetClient <br>- InternetClientServer <br><br>And, if applicable, the domain credentials capability:<br>- EnterpriseAuthentication <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
+| All files that the user has access to. For example: documents, pictures, photos, downloads, desktop, OneDrive, etc. | **broadFileSystemAccess**<br><br>This is a restricted capability. Access is configurable in **Settings** > **Privacy** > **File system**. Because users can grant or deny the permission any time in **Settings**, you should ensure that your app is resilient to those changes. If you find that your app does not have access, you may choose to prompt the user to change the setting by providing a link to the [Windows 10 file system access and privacy](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy) article. Note that the user must close the app, toggle the setting, and restart the app. If they toggle the setting while the app is running, the platform will suspend your app so that you can save the state, then forcibly terminate the app in order to apply the new setting. In the April 2018 update, the default for the permission is On. In the October 2018 update, the default is Off.<br /><br />If you submit an app to the Store that declares this capability, you will need to supply additional descriptions of why your app needs this capability, and how it intends to use it.<br/><br/>This capability works for APIs in the [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) namespace. See the **Example** section at the end of this article for an example of how to enable this capability in your app.<br/><br/>**Note:** This capability is not supported on Xbox. | n/a |
+| Documents | **documentsLibrary**<br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user's OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
+| Music     | **musicLibrary** <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
+| Pictures  | **picturesLibrary**<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
+| Videos    | **videosLibrary**<br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
+| Removable devices  | **removableStorage**  <br><br>Note  You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Also see [Access the SD card](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
+| Homegroup libraries  | At least one of the following capabilities is needed. <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
+| Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
+| Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- **privateNetworkClientServer** <br><br>And at least one internet and public networks capability: <br>- **internetClient** <br>- **internetClientServer** <br><br>And, if applicable, the domain credentials capability:<br>- **enterpriseAuthentication** <br><br>**Note:** You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
 
-**Example**
+### Example
 
-This example adds the restricted `broadFileSystemAccess` capability. In addition to specifying the capability, the `rescap` namespace must be added, and is also added to `IgnorableNamespaces`:
+This example adds the restricted **broadFileSystemAccess** capability. In addition to specifying the capability, the `rescap` namespace must be added, and is also added to `IgnorableNamespaces`.
 
 ```xaml
 <Package
   ...
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap mp uap5 rescap">
+  IgnorableNamespaces="uap mp rescap">
 ...
 <Capabilities>
     <rescap:Capability Name="broadFileSystemAccess" />

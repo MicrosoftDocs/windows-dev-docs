@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 # Frequently-asked questions about C++/WinRT
 Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
+> [!IMPORTANT]
+> For release notes about C++/WinRT, see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
+
 > [!NOTE]
 > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
 
@@ -27,7 +30,7 @@ Install the **Microsoft.Windows.CppWinRT** NuGet package into your project. For 
 
 ## How do I customize the build support in the NuGet package?
 
-C++/WinRT build support (props/targets) is documented in the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
+C++/WinRT build support (props/targets) is documented in the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
 
 ## What are the requirements for the C++/WinRT Visual Studio Extension (VSIX)?
 For version 1.0.190128.4 of the VSIX extension and later, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). For other versions, see [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
@@ -70,7 +73,12 @@ For a way of instantiating your locally-implemented runtime classes that *doesn'
 If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
 
 ## Do I need to call [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) on runtime classes that I consume?
-**IClosable** exists to support languages that lack deterministic finalization. So, you shouldn't call **IClosable::Close** from C++/WinRT, except in very rare cases involving shutdown races or semi-deadly embraces. If you're using **Windows.UI.Composition** types, as an example, then you may encounter cases where you want to dispose objects in a set sequence, as an alternative to allowing the destruction of the C++/WinRT wrapper do the work for you.
+**IClosable** exists to support languages that lack deterministic finalization. So, in general, you don't need to call **IClosable::Close** from C++/WinRT. But consider these exceptions to that general rule.
+- There are very rare cases involving shutdown races or semi-deadly embraces, where you do need to call **IClosable::Close**. If you're using **Windows.UI.Composition** types, as an example, then you may encounter cases where you want to dispose objects in a set sequence, as an alternative to allowing the destruction of the C++/WinRT wrapper do the work for you.
+- If you can't guarantee that you have the last remaining reference to an object (because you passed it to other APIs, which could be keeping a reference), then calling **IClosable::Close** is a good idea.
+- When in doubt, it's safe to call **IClosable::Close** manually, rather than waiting for the wrapper to call it on destruction.
+
+So, if you know that you have the last reference, then you can let the wrapper destructor do the work. If you need to close before the last reference vanishes, then you need to call **Close**. To be exception-safe, you should **Close** in a resource-acquisition-is-initialization (RAII) type (so that close happens on unwind). C++/WinRT doesn't have a **unique_close** wrapper, but you can make your own.
 
 ## Can I use LLVM/Clang to compile with C++/WinRT?
 We don't support the LLVM and Clang toolchain for C++/WinRT, but we do make use of it internally to validate C++/WinRT's standards conformance. For example, if you wanted to emulate what we do internally, then you could try an experiment such as the one described below.

@@ -2,12 +2,15 @@
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Use the walkthroughs in this section to learn how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK.
 title: Implement ads in your app
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ms.localizationpriority: medium
 ---
 # Implement ads in your app
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 The articles in this section show you how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK. For complete sample projects, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 

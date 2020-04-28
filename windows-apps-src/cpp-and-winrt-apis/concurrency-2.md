@@ -533,7 +533,7 @@ int main()
 
 ## Reporting progress
 
-If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
+If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress-1), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
 
 ```cppwinrt
 // main.cpp
@@ -712,7 +712,7 @@ IAsyncAction SampleCaller()
 
 ## Asynchronous timeouts made easy
 
-C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::function**.
+C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -726,7 +726,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -830,9 +830,9 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 
 ## Important APIs
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
-* [IAsyncOperation&lt;TResult&gt; interface](/uwp/api/windows.foundation.iasyncoperation_tresult_)
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
+* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [IAsyncOperation&lt;TResult&gt; interface](/uwp/api/windows.foundation.iasyncoperation-1)
+* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 * [winrt::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)

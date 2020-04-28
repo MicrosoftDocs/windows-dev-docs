@@ -262,15 +262,19 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## Creating a JavaScript client app
-If you just want to create a C# client, you can skip this section.
+## Creating a JavaScript client app (Visual Studio 2017)
+
+If you want to create a C# client, then you can skip this section.
+
+> [!NOTE]
+> Universal Windows Platform (UWP) projects are not supported in Visual Studio 2019. See [JavaScript and TypeScript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects). To follow along with this section, we recommend that you use Visual Studio 2017. See [JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### To create a JavaScript project
-1. In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.
+1. In Solution Explorer (in Visual Studio 2017; see **Note** above), open the shortcut menu for the Solution node and choose **Add, New Project**.
 
 2. Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.
 
-3. Accept the default name—App1—by choosing the **OK** button.
+3. Accept the default name&mdash;App1&mdash;by choosing the **OK** button.
 
 4. Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.
 

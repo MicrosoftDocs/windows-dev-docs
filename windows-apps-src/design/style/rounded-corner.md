@@ -145,11 +145,11 @@ This means if you want to change the roundness of all controls where roundness c
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary>
-                <CornerRadius x:Key="OverlayCornerRadius">4</CornerRadius>
-                <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
-            </ResourceDictionary>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <ResourceDictionary>
+                <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+                <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+            </ResourceDictionary>
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 </Application.Resources>
@@ -181,3 +181,15 @@ You can modify the [CornerRadius](/uwp/api/windows.ui.xaml.controls.control.corn
 |`<CheckBox Content="Checkbox"/>` | `<CheckBox Content="Checkbox" CornerRadius="5"/> ` |
 
 Not all controls' corners will respond to their `CornerRadius` property being modified. To ensure that the control whose corners you wish to round will indeed respond to their `CornerRadius` property the way you expect, first check that the `ControlCornerRadius` or `OverlayCornerRadius` global resources affect the control in question. If they do not, check that the control you wish to round has corners at all. Many of our controls do not render actual edges and therefore cannot make proper use of the `CornerRadius` property.
+
+### Basing custom styles on WinUI
+
+You can base your custom styles on the WinUI rounded corner styles by specifying the correct `BasedOn` attribute in your style. For example to create a custom button style based on WinUI button style, do the following:
+
+```xaml
+<Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+   ...
+</Style>
+```
+
+In general, WinUI control styles follow a consistent naming convention: "DefaultXYZStyle" where "XYZ" is the name of the control. For full reference, you can browse the XAML files in the WinUI repository.
