@@ -21,6 +21,7 @@ The different types of brushes are:
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
 -   [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)
 -   [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 
+-   [**RadialGradientBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush) 
 -   [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)
 -   [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)
 -   [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
@@ -111,6 +112,42 @@ Now that you know how linear gradients work, you can use Visual Studio or Blend 
 Now you can change the colors of the gradient stops and slide their positions using the bar on the bottom. You can also add new gradient stops by clicking on the bar and remove them by dragging the stops off of the bar (see next screenshot).
 
 ![Bar at bottom of properties window that controls gradient stops.](images/tool-gradient-brush-2.png)
+
+## <span id="Radial_gradient_brushes_"></span><span id="radial_gradient_brushes_"></span><span id="RADIAL_GRADIENT_BRUSHES_"></span>Radial gradient brushes
+
+A [**RadialGradientBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush) is drawn within an ellipse that is defined by the [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy) properties. Colors for the gradient start at the center of the ellipse and end at the radius.
+
+The colors for the radial gradient are defined by color stops added to the [**GradientStops**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientstops) collection property. Each gradient stop specifies a color and an offset along the gradient.
+
+The gradient origin defaults to center and can be offset using the [**GradientOrigin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) property.
+
+[MappingMode](radialgradientbrush_mappingmode.md) defines whether [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), [**RadiusY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy), and [**GradientOrigin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) represent relative or absolute coordinates.
+
+When [**MappingMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.mappingmode) is set to `RelativeToBoundingBox`, the X and Y values of the three properties are treated as relative to the element bounds, where `(0,0)` represents the top left and `(1,1)` represents the bottom right of the element bounds for the [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy) properties and `(0,0)` represents the center for the [**GradientOrigin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) property.
+
+When [**MappingMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.radialgradientbrush.mappingmode) is set to `Absolute`, the X and Y values of the three properties are treated as absolute coordinates within the element bounds.
+
+This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
+
+```xml
+<!-- This rectangle is painted with a radial gradient. -->
+<Rectangle Width="200" Height="200">
+    <Rectangle.Fill>
+        <media:RadialGradientBrush>
+            <GradientStop Color="Blue" Offset="0.0" />
+            <GradientStop Color="Yellow" Offset="0.2" />
+            <GradientStop Color="LimeGreen" Offset="0.4" />
+            <GradientStop Color="LightBlue" Offset="0.6" />
+            <GradientStop Color="Blue" Offset="0.8" />
+            <GradientStop Color="LightGray" Offset="1" />
+        </media:RadialGradientBrush>
+    </Rectangle.Fill>
+</Rectangle>
+```
+
+The color of each point between gradient stops is radially interpolated as a combination of the color specified by the two bounding gradient stops. The illustration highlights the gradient stops in the previous example. 
+
+![Gradient stops](images/radial-gradient.png)
 
 ## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Image brushes
 
