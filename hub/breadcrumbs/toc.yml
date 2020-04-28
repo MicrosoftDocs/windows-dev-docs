@@ -26,6 +26,9 @@
           - name: Node.js
             tocHref: /windows/nodejs/
             topicHref: "/windows/nodejs/"
+          - name: Android
+            tocHref: /windows/android/
+            topicHref: "/windows/android/"
           - name: Mac to Windows
             tocHref: /windows/dev-environment/mac-to-windows/
             topicHref: "/windows/dev-environment/mac-to-windows/"
