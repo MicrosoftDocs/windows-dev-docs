@@ -28,9 +28,7 @@ In addition, this guide will provide tips on using Windows to:
 
 ## Native Android
 
-We recommend using **Android Studio** for [native Android development on Windows](./native-android.md#install-android-studio).
-
-Native development means that your app is targeting only Android (not iOS or Windows devices). By using Android Studio, you can develop with the tools and within the ecosystem designed specifically for the Android operating system. Performance will be optimized for Android devices, the user-interface look and feel will be consistent with other native apps on the device, and any features or capabilities of the user's device will be straight-forward to access and utilize. Developing your app in a native format will help it to just 'feel right' because it follows all of the interaction patterns and user experience standards established specifically for Android devices.
+[Native Android development on Windows](./native-android.md) means that your app is targeting only Android (not iOS or Windows devices). You can use [Android Studio](https://developer.android.com/studio/install#windows) or [Visual Studio](https://visualstudio.microsoft.com/vs/android/) to develop within the ecosystem designed specifically for the Android operating system. Performance will be optimized for Android devices, the user-interface look and feel will be consistent with other native apps on the device, and any features or capabilities of the user's device will be straight-forward to access and utilize. Developing your app in a native format will help it to just 'feel right' because it follows all of the interaction patterns and user experience standards established specifically for Android devices.
 
 ## Cross-platform
 
