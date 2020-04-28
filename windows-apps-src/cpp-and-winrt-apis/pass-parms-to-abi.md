@@ -159,3 +159,5 @@ The **winrt::array_view\<T\>** is not in the **winrt::param** namespace, but it 
 | **std::vector<C>** | A C++ **std::vector** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
 | `{ T*, T* }` | A pair of pointers represent the range [begin, end).|
 | **std::initializer_list\<T\>** ||
+
+Also see the blog post [The various patterns for passing C-style arrays across the Windows Runtime ABI boundary](https://devblogs.microsoft.com/oldnewthing/20200205-00/?p=103398).
