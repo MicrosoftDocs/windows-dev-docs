@@ -5,8 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android on windows
-ms.date: 02/19/2020
+keywords: android, windows, react native, emulator, expo, metro bundler, terminal
+ms.date: 04/28/2020
 ---
 
 # Get started developing for Android using React Native

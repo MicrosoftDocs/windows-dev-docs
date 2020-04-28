@@ -5,8 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android on windows
-ms.date: 02/19/2020
+keywords: android, windows, android studio, visual studio, c++ android game, windows defender, emulator, virtual device, install, java, kotlin
+ms.date: 04/28/2020
 ---
 
 # Get started with native Android development on Windows
@@ -127,7 +127,7 @@ design and build custom apps that are natively Android while still uniquely Flue
 
 ## Additional resources
 
-- [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals): Learn more about the fundamentals in the Android docs.
+- [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals)
 
 - [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
 

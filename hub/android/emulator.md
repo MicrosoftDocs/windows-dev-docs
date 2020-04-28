@@ -1,12 +1,12 @@
 ---
 title: Running Android device or emulator from Windows
-description: Guide to testing your app on an Android device or emulator from Windows using Visual Studio or VS Code.
+description: Test your app on an Android device or emulator from Windows and enable virtualization with hyper-v and Windows Hypervisor Platform (WHPX).
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android on windows
-ms.date: 02/19/2020
+keywords: android, windows, emulator, virtual device, device setup, enable device, developer, configuration, virtualization, visual studio, hyper-v, intel, haxm, amd, Windows Hypervisor Platform, WHPX 
+ms.date: 04/28/2020
 ---
 
 # Test on an Android device or emulator

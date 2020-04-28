@@ -5,8 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android on windows
-ms.date: 02/19/2020
+keywords: android on windows, pwa, android, cordova, ionic, phonegap, hybrid web app
+ms.date: 04/28/2020
 ---
 
 # Get started developing a PWA or Hybrid web app for Android
