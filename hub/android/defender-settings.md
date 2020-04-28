@@ -5,8 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android on windows
-ms.date: 02/19/2020
+keywords: android, windows, windows defender, settings, configuration, exclusions, %USERPROFILE%, devenv.exe, performance, speed, build, gradle
+ms.date: 04/28/2020
 ---
 
 # Update Windows Defender settings to improve performance

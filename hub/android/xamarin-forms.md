@@ -5,11 +5,8 @@ author: hickeys
 ms.author: hickeys 
 manager: jken
 ms.topic: article
-keywords: 
-ms.localizationpriority: medium
-ms.date: 01/24/2020
-ms.prod: "xamarin"
-ms.technology: "xamarin-forms"
+keywords: android, windows, xamarin.forms, xaml, tutorial
+ms.date: 04/28/2020
 ---
 
 # Get started developing for Android using Xamarin.Forms
@@ -83,7 +80,7 @@ Replace the contents of MainPage.xaml with the following code.
 
 At this point, the UI is complete. TimeChangerForms, however, will not build because the methods **UpButton_Clicked** and **DownButton_Clicked** are referenced in the XAML but not defined anywhere. Even if the app did run, the current time would not be displayed. In the next section, you will fix these errors and add functionality to your UI.
 
-## ## Add logic code with C#
+## Add logic code with C#
 
 In the Solution Explorer, right click MainPage.xaml and click **View Code**. This file contains the code behind that will add functionality to the UI.
 
@@ -195,5 +192,7 @@ namespace TimeChangerForms
 To run the app, press **F5** or click Debug > Start Debugging. Depending on how your [debugger is configured](emulator.md), your app will launch on a device or in an emulator.
 
 ## Related links
+
 - [Test on an Android device or emulator](emulator.md).
+
 - [Create an Android sample app using Xamarin.Android](xamarin-android.md)
