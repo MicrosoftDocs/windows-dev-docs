@@ -146,7 +146,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 :no_entry_sign: XAML Islands do not support hosting a [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) that contains a control that accepts text input, such as a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), or [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you do this, the input control will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) that contains the input control.
 
-:no_entry_sign: XAML Islands do not currently support displaying SVG files in hosted [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) controls. As a workaround, convert the image files you want to display to raster-based formats such as JPG or PNG.
+:no_entry_sign: XAML Islands do not currently support displaying SVG files in a hosted [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) control or by using an [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) object. As a workaround, convert the image files you want to display to raster-based formats such as JPG or PNG.
 
 ### Window host context for XAML Islands
 
