@@ -668,7 +668,7 @@ Technically, our coroutine is receiving its parameters by value, as it should (s
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
