@@ -17,7 +17,7 @@ ms.custom: RS5
 
 The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.
 
-![An expanded text command bar flyout](images/command-bar-flyout-header.png)
+![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
 
 Like [CommandBar](app-bars.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
 
