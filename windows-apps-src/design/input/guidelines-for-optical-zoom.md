@@ -31,8 +31,8 @@ The following diagrams demonstrate the differences between resizing and optical 
 
 ![moving the fingers closer together shrinks an object and moving them apart enlarges it](images/objectresize.png)
 
->[!NOTE]  
->Optical zoom shouldn't be confused with [Semantic Zoom](../controls-and-patterns/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
+**Note**  
+Optical zoom shouldn't be confused with [Semantic Zoom](../controls-and-patterns/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
 
  
 
@@ -60,8 +60,8 @@ Use the following guidelines for apps that support either resizing or optical zo
     -   Drawing applications where resizable items can appear on a resizable canvas or art board.
     -   Webpages with an embedded object such as a map.
 
-    >[!NOTE]  
-    >In all cases, the content area is resized unless all touch points are within the resizable object.
+    **Note**  
+    In all cases, the content area is resized unless all touch points are within the resizable object.
 
 ## Related articles
 
