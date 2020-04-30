@@ -230,7 +230,10 @@ Traditionally, UWP controls have been released as part of the Windows 10 OS and 
 
 This section demonstrates how to add a UWP control from the WinUI library to your user control so you can host this control in your WPF app.
 
-1. In the UWP app project, install the latest version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+1. In the UWP app project, install the latest release or prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+
+    > [!NOTE]
+    > If your desktop app is packaged in an [MSIX package](https://docs.microsoft.com/windows/msix), you can use either a prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
 2. In the App.xaml file in this project, add the following child element to the `<xaml:XamlApplication>` element.
 
@@ -263,7 +266,7 @@ This section demonstrates how to add a UWP control from the WinUI library to you
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. In the same file, add a `<winui:RatingControl />` element as a child of the `<StackPanel>`. This element adds an instance of the [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2) class from the WinUI library. After adding this element, the `<StackPanel>` should now look similar to this.
+5. In the same file, add a `<winui:RatingControl />` element as a child of the `<StackPanel>`. This element adds an instance of the [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) class from the WinUI library. After adding this element, the `<StackPanel>` should now look similar to this.
 
     ```xml
     <StackPanel Background="LightCoral">
