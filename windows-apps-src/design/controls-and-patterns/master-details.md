@@ -19,6 +19,9 @@ The master/details pattern has a master pane (usually with a [list view](lists.m
 
 ![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
 
+> [!TIP]
+> If you'd like to use a XAML control that implements this pattern for you, we recommend the [MasterDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
+
 ## Is this the right pattern?
 
 The master/details pattern works well if you want to:
@@ -92,6 +95,9 @@ The following samples implement the master/details pattern with adaptive layouts
 - [Windows Template Studio Master/Detail sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
+
+> [!TIP]
+> If you'd like to use a XAML control that implements this pattern for you, we recommend the [MasterDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
 
 ## Related articles
 
