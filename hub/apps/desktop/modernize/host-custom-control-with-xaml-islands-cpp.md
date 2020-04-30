@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a custom UWP control in a C++ Win32 app by using the XAML Hosting API.
 title: Host a custom UWP control in a C++ Win32 app using the XAML Hosting API
-ms.date: 03/23/2020
+ms.date: 04/07/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
 ms.author: mcleans
@@ -507,6 +507,72 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 
 9. Save the file.
 10. Build the solution and confirm that it builds successfully.
+
+## Add a control from the WinUI library to the custom control
+
+Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+
+This section demonstrates how to add a UWP control from the WinUI library to your user control.
+
+1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+
+    > [!NOTE]
+    > If your desktop app is packaged in an [MSIX package](https://docs.microsoft.com/windows/msix), you can use either a prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+
+2. In the pch.h file in this project, add the following `#include` statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see [this article](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
+
+    ```cpp
+    #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+    #include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+    #include "winrt/Microsoft.UI.Xaml.Media.h"
+    #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+    ```
+
+3. In the App.xaml file in the same project, add the following child element to the `<xaml:XamlApplication>` element and save your changes.
+
+    ```xml
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+    </Application.Resources>
+    ```
+
+    After adding this element, the contents of this file should now look similar to this.
+
+    ```xml
+    <Toolkit:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns:Toolkit="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:MyUWPApp">
+        <Application.Resources>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+        </Application.Resources>
+    </Toolkit:XamlApplication>
+    ```
+
+4. In the same project, open the MyUserControl.xaml file and add the following namespace declaration to the `<UserControl>` element.
+
+    ```xml
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    ```
+
+5. In the same file, add a `<winui:RatingControl />` element as a child of the `<StackPanel>` and save your changes. This element adds an instance of the [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol class from the WinUI library. After adding this element, the `<StackPanel>` should now look similar to this.
+
+    ```xml
+    <StackPanel HorizontalAlignment="Center" Spacing="10" 
+                Padding="20" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
+                       Text="Hello from XAML Islands" FontSize="30" />
+        <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
+                       Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+        <Button HorizontalAlignment="Center" 
+                x:Name="Button" Click="ClickHandler">Click Me</Button>
+        <winui:RatingControl />
+    </StackPanel>
+    ```
+
+6. Build the solution and confirm that it builds successfully.
 
 ## Test the app
 
