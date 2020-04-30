@@ -79,7 +79,7 @@ private:
 
 In the **OnCanceled** method you created in step 1, set the flag variable **\_CancelRequested** to **true**.
 
-The full [background task sample]( http://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) **OnCanceled** method sets **\_CancelRequested** to **true** and writes potentially useful debug output.
+The full [background task sample]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) **OnCanceled** method sets **\_CancelRequested** to **true** and writes potentially useful debug output.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)

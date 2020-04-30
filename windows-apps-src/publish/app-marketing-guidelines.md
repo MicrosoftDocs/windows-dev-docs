@@ -15,7 +15,7 @@ Learn how to promote your apps and content in the Microsoft Store. These guideli
 
 We’ve created special promotional badges to help you drive more customers to your app's listing in the Microsoft Store. These badges are available in 44 languages. Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.
 
-[![Download button](images/downloadbutton.png)](http://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **Microsoft Store Badge Guidelines (PDF, English)**
+[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **Microsoft Store Badge Guidelines (PDF, English)**
 
 
 ## Badge generator and images
@@ -24,14 +24,14 @@ You can use our [badge generator](https://developer.microsoft.com/store/badges) 
 
 You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
-[![Download button](images/downloadbutton.png)](http://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All Badges.zip) **All badge images**
+[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All Badges.zip) **All badge images**
 
 
 ## Device images
 
-To promote your app, you may want to show how it looks when running on a Windows device. We have a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Microsoft Store Marketing Guidelines](http://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
+To promote your app, you may want to show how it looks when running on a Windows device. We have a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Microsoft Store Marketing Guidelines](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
 
-[![Download button](images/downloadbutton.png)](http://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows device art**
+[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows device art**
 
 ## License to Microsoft Marks
 
@@ -43,7 +43,7 @@ To promote your app, you may want to show how it looks when running on a Windows
 
 -   If you are not registered as an app developer in Partner Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Microsoft Store Badge Guidelines. Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted. Microsoft reserves all rights not expressly granted herein.
 
--   Follow the logo usage specifications described in the [Microsoft Store Badge Guidelines](http://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
+-   Follow the logo usage specifications described in the [Microsoft Store Badge Guidelines](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
 
 Microsoft is the sole owner of the Microsoft Marks and associated goodwill, and the sole beneficiary of the goodwill associated with your use of the Microsoft Marks. Microsoft may revoke this license at any time and at its sole discretion.
 

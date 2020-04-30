@@ -101,7 +101,7 @@ Copy this code into the Extensions element (you will add attributes in the follo
 
 Repeat step 2 for each additional background task class registered by your app.
 
-The following example is the complete Application element from the [background task sample]( http://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+The following example is the complete Application element from the [background task sample]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
 
 ```xml
 <Applications>
@@ -207,7 +207,7 @@ This example declares a background task that runs in a new process that gets its
 
 ```xml
 <Package
-    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    xmlns:uap4="https://schemas.microsoft.com/appx/manifest/uap/windows10/4"
     ...
     <Applications>
         <Application ...>
