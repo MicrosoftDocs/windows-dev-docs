@@ -290,7 +290,7 @@ function foo() {
 }
 ```
 
-For more information, see the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
+For more information, see the [sample applications](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady).
 
 ## See also
 - [PlayReady DRM](playready-client-sdk.md)
