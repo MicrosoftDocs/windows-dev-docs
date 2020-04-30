@@ -643,6 +643,8 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 }
 ```
 ## Hierarchical Navigation
+Some apps may have a more complex hierarchical structure that requires more than just a flat list of navigation items. You may want to use top-level navigation items to display categories of pages, with children items displaying specific pages. It is also useful if you have hub-style pages that only link to other pages. For these kinds of cases, you should create a hierarchical NavigationView.
+
 To show a hierarchical list of nested navigation items in the pane, use either the `MenuItems` property or the `MenuItemsSource` property of **NavigationViewItem**.
 Each NavigationViewItem can contain other NavigationViewItems and organizing elements like item headers and separators. 
 To show a hierarchical list when using `MenuItemsSource`, set the `ItemTemplate` to be a NavigationViewItem, and bind its `MenuItemsSource` property to the next level of the hierarchy.
@@ -780,10 +782,11 @@ Selected items will draw their selection indicators along their left edge when i
 
 ![NavigationView in top-mode with parent selected](images/navview_selection_top.png)
 
-The selected item may not always remain visible.
-For example, the selected item may be a child node inside a non-expanded subtree.
-In this situation, the first visible ancestor of the selected item will show as selected, and the selection indicator will move as users expand the subtree. 
-The entire navigation view will show no more than one selection indicator.
+The selected item may not always remain visible. If a child in a collapsed/non-expanded subtree is selected, their first visible ancestor will show as selected. The selection indicator will move back to the selected item if/when the sub-tree is expanded.
+
+For example - in the above image, the Calendar item may be selected by the user, and then the user may collapse its subtree. In this case, the selection indicator would show up underneath the Account item as Account is Calendar's first visible ancestor. The selection indicator will move back to the Calendar item as the user expands the subtree again. 
+
+The entire NavigationView will show no more than one selection indicator.
 
 In both Top and Left modes, clicking the arrows on NavigationViewItems will expand or collapse the subtree. Clicking or tapping 
 _elsewhere_ on the NavigationViewItem will trigger the `ItemInvoked` event, and it will also collapse or expand the subtree.
@@ -869,7 +872,7 @@ When in Left mode or Flyout, moves focus to the item directly above the item cur
 When in Top mode, does nothing.
 
 **Down Arrow**:
-When in Left mode or Flyout, moves focus the item directly below the item currently in focus; note that the items do not need to be visually adjecent, focus will move from the last item in the pane's list to the settings item.
+When in Left mode or Flyout, moves focus the item directly below the item currently in focus; note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item.
 When in Top mode, does nothing.
 
 **Right Arrow**:
@@ -888,6 +891,20 @@ When in flyout and on leaf node, invokes/selects item and closes flyout.
 
 **Esc Key**:
 When in flyout, closes the flyout.
+
+<!--
+| Key      |      In Left Mode      |  In Top Mode | In Flyout  |
+|----------|------------------------|--------------|------------|
+| Up |Moves focus to the item directly above the item currently in focus. | Does nothing. |Moves focus to the item directly above the item currently in focus.|
+| Down|Moves focus directly below the item currently in focus.* | Does nothing. | Moves focus directly below the item currently in focus.* |
+| Right |Does nothing.  |Moves focus to the item directly to the right of the item currently in focus. |Does nothing.|
+| Left |Does nothing. | Moves focus to the item directly to the left the item currently in focus.  |Does nothing. |
+| Space/Enter |If item has children, expands/collapses item and does not change focus.   | If item has children, expands children into a flyout and places focus on first item in flyout. | Invokes/selects item and closes flyout. |
+| Esc | Does nothing. | Does nothing. | Closes flyout.|
+
+The space or enter key always invokes/selects an item.
+
+*Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item. -->
 
 ## Navigation view customization
 
