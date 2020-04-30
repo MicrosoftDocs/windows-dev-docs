@@ -344,7 +344,7 @@ Note that the completion handler checks whether the work item was cancelled befo
 
 ## Summary and next steps
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
 
 ## Related topics
 
