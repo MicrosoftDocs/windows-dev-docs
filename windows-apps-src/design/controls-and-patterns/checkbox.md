@@ -83,11 +83,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### Bind to IsChecked
 
-Use the [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) boolean value, you must use a value converter to bind it to a boolean value.
+Use the [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value.
+However, because IsChecked is a [nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) boolean value, you must either use a cast or a value converter to bind it to a boolean property. This depends on the actual binding type you are using and you will find examples below for each possible type. 
 
 In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
 
-> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding and value converters, see [Data binding overview](../../data-binding/data-binding-quickstart.md).
+#### Using x:Bind
+
+> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding see [Data binding overview](../../data-binding/data-binding-quickstart.md). Specific {x:Bind} info (such as casting) is detailed [here](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+If the check box can also be in the **indeterminate** state, we use the binding's [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) property to specify the boolean value representing this state. In this case, we don't want to have the Submit button enabled as well:
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### Using x:Bind or Binding
+
+> Note&nbsp;&nbsp;We only show the relevant code here using {x:Bind}. In the {Binding} example, we would replace {x:Bind} with {Binding}. For more info about data binding, value converters and differences between the {x:Bind} and {Binding} markup extensions, see [Data binding overview](../../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -104,6 +126,7 @@ In this example, the **IsChecked** property of the check box to agree to terms o
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter
