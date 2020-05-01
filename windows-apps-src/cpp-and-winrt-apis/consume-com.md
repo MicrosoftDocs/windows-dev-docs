@@ -122,7 +122,13 @@ You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fu
 
 ## COM functions that take an **IUnknown** interface pointer
 
-You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer. See that topic for a code example.
+You can use [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
+
+You can use the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to return the address of (in other words, a pointer to) the underlying raw [IUnknown interface](/windows/win32/api/unknwn/nn-unknwn-iunknown) of an object of a projected type. You can then pass that address to a function that takes an **IUnknown** interface pointer.
+
+For info about *projected types*, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+For a code example of **get_unknown**, see [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), or the [Full source code listing of a minimal Direct2D application](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) in this topic.
 
 ## Passing and returning COM smart pointers
 
