@@ -4892,7 +4892,7 @@
     },
     {
       "source_path": "hub/android/index.md",
-      "redirect_url": "hub/android/overview.md",
+      "redirect_url": "/windows/android/overview",
       "redirect_document_id": true
     }
   ]
