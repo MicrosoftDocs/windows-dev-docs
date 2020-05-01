@@ -1,0 +1,85 @@
+- name: Windows development environment
+  href: index.yml
+  items:
+  - name: Develop with Python
+    items:
+        - name: Overview
+          href: ../python/index.yml
+        - name: Get started for beginners
+          href: ../python/beginners.md
+        - name: Get started with web dev
+          href: ../python/web-frameworks.md
+        - name: Get started with automation
+          href: ../python/scripting.md
+        - name: Get started with databases
+          href: ../python/databases.md
+        - name: FAQs
+          href: ../python/faqs.md
+        - name: Resources
+          href: ../python/resources.md
+  - name: Develop with Node.js
+    items: 
+        - name: Overview
+          href: ../nodejs/index.yml
+        - name: Setup with WSL2 (Linux)
+          href: ../nodejs/setup-on-wsl2.md
+        - name: Setup with Windows (Beginners)
+          href: ../nodejs/setup-on-windows.md
+        - name: Get started for beginners
+          href: ../nodejs/beginners.md
+        - name: Get started with web frameworks
+          href: ../nodejs/web-frameworks.md
+        - name: Get started with databases
+          href: ../nodejs/databases.md
+        - name: Get started with containers
+          href: ../nodejs/containers.md
+  - name: Develop with Android
+    items:
+        - name: Overview
+          href: ../android/overview.md
+        - name: Get started with Native Android
+          href: ../android/native-android.md
+        - name: Get started with Cross-platform
+          items:
+            - name: Xamarin Native
+              href: ../android/xamarin-android.md
+            - name: Xamarin Forms
+              href: ../android/xamarin-forms.md
+            - name: React Native
+              href: ../android/react-native.md
+            - name: PWA (Ionic, PhoneGap, Cordova)
+              href: ../android/pwa.md
+        - name: Defender settings to improve performance
+          href: ../android/defender-settings.md
+        - name: Test on device or emulator
+          href: ../android/emulator.md
+  - name: Mac to Windows guide
+    items:
+      - name: Changing your dev environment
+        href: mac-to-windows.md
+      - name: Keyboard shortcuts
+        href: mac-to-windows.md#keyboard-shortcuts
+      - name: Trackpad shortcuts
+        href: mac-to-windows.md#trackpad-shortcuts
+      - name: Terminal and Shell
+        href: mac-to-windows.md#terminal-and-shell
+      - name: Apps and utilities
+        href: mac-to-windows.md#apps-and-utilities
+  - name: Windows Subsystem for Linux
+    items:
+      - name: About WSL
+        href: https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context
+      - name: About WSL 2
+        href: https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context
+      - name: WSL 1 vs WSL 2
+        href: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context
+      - name: User accounts & permissions
+        href: https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context
+  - name: Windows Terminal
+    items:
+      - name: Overview
+        href: https://github.com/microsoft/terminal#terminal--console-overview
+      - name: User guide
+        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md
+      - name: Custom settings
+        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md
