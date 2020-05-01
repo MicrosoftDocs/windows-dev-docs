@@ -782,7 +782,7 @@ Selected items will draw their selection indicators along their left edge when i
 
 ![NavigationView in left-mode with parent selected](images/navigation-view-selection.png)
 
-![NavigationView in top-mode with parent selected](navigation-view-selection-top.png)
+![NavigationView in top-mode with parent selected](images/navigation-view-selection-top.png)
 
 The selected item may not always remain visible. If a child in a collapsed/non-expanded subtree is selected, their first visible ancestor will show as selected. The selection indicator will move back to the selected item if/when the sub-tree is expanded.
 
