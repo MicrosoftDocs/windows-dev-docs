@@ -654,7 +654,7 @@ We believe two levels is ideal for usability and comprehension.
 
 NavigationView shows hierarchy in Top, Left, and LeftCompact pane display modes. Here is what an expanded subtree looks like in each of the pane display modes:
 
-![NavigationView with Hierarchy](images/navview-hierarchy-labeled.png)
+![NavigationView with Hierarchy](images/navigation-view-hierarchy-labeled.png)
 
 ### Adding a hierarchy of items in markup
 Declare app navigation hierarchy in markup.
@@ -780,9 +780,9 @@ When providing users with a hierarchical tree of navigation options, you may cho
 
 Selected items will draw their selection indicators along their left edge when in left mode or their bottom edge when in top mode. Shown below are NavigationViews in left and top mode where a parent item is selected.
 
-![NavigationView in left-mode with parent selected](images/nav-view-selection.png)
+![NavigationView in left-mode with parent selected](images/navigation-view-selection.png)
 
-![NavigationView in top-mode with parent selected](images/navview-selection-top.png)
+![NavigationView in top-mode with parent selected](navigation-view-selection-top.png)
 
 The selected item may not always remain visible. If a child in a collapsed/non-expanded subtree is selected, their first visible ancestor will show as selected. The selection indicator will move back to the selected item if/when the sub-tree is expanded.
 
