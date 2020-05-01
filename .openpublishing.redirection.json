@@ -4889,6 +4889,11 @@
       "source_path": "windows-apps-src/communication/ipc.md",
       "redirect_url": "https://docs.microsoft.com/windows/uwp/communication/interprocess-communication",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/index.md",
+      "redirect_url": "hub/android/overview.md",
+      "redirect_document_id": true
     }
   ]
 }
