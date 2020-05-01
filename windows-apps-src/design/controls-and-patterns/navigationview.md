@@ -642,7 +642,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     }
 }
 ```
-## Hierarchical Navigation
+## Hierarchical navigation
 Some apps may have a more complex hierarchical structure that requires more than just a flat list of navigation items. You may want to use top-level navigation items to display categories of pages, with children items displaying specific pages. It is also useful if you have hub-style pages that only link to other pages. For these kinds of cases, you should create a hierarchical NavigationView.
 
 To show a hierarchical list of nested navigation items in the pane, use either the `MenuItems` property or the `MenuItemsSource` property of **NavigationViewItem**.
@@ -780,9 +780,9 @@ When providing users with a hierarchical tree of navigation options, you may cho
 
 Selected items will draw their selection indicators along their left edge when in left mode or their bottom edge when in top mode. Shown below are NavigationViews in left and top mode where a parent item is selected.
 
-![NavigationView in left-mode with parent selected](images/navview_selection.png)
+![NavigationView in left-mode with parent selected](images/nav-view-selection.png)
 
-![NavigationView in top-mode with parent selected](images/navview_selection_top.png)
+![NavigationView in top-mode with parent selected](images/navview-selection-top.png)
 
 The selected item may not always remain visible. If a child in a collapsed/non-expanded subtree is selected, their first visible ancestor will show as selected. The selection indicator will move back to the selected item if/when the sub-tree is expanded.
 
