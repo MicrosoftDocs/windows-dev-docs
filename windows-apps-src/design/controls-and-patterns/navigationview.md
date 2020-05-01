@@ -660,6 +660,7 @@ NavigationView shows hierarchy in Top, Left, and LeftCompact pane display modes.
 Declare app navigation hierarchy in markup.
 
 ```Xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <muxc:NavigationView>
     <muxc:NavigationView.MenuItems>
         <muxc:NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home"/>
@@ -682,6 +683,7 @@ Add a hierarchy of menu items to the NavigationView by
 This example also demonstrates the **Expanding** and **Collapsing** events. These events are raised for a menu item with children.
 
 ```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
     <muxc:NavigationViewItem Content="{x:Bind Name}" MenuItemsSource="{x:Bind Children}"/>
 </DataTemplate>
@@ -794,6 +796,7 @@ _elsewhere_ on the NavigationViewItem will trigger the `ItemInvoked` event, and 
 To prevent an item from showing the selection indicator when invoked, set its [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) property to False, as shown below:
 
 ```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
     <muxc:NavigationViewItem Content="{x:Bind Name}" 
         MenuItemsSource="{x:Bind Children}"
@@ -867,32 +870,6 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 Users can move focus around the navigation view using their [keyboard](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions). 
 The arrow keys expose "inner navigation" within the pane and follow the interactions provided in [tree view](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view). The key actions change when navigating through the NavigationView or its flyout menu, which is displayed in Top and Left-compact modes of HierarchicalNavigationView. Below are the specific actions that each key can take in a hierarchical NavigationView:
 
-**Up Arrow**:
-When in Left mode or Flyout, moves focus to the item directly above the item currently in focus.
-When in Top mode, does nothing.
-
-**Down Arrow**:
-When in Left mode or Flyout, moves focus the item directly below the item currently in focus; note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item.
-When in Top mode, does nothing.
-
-**Right Arrow**:
-When in Top mode, moves focus to the item directly to the right of the item currently in focus.
-When in Left mode or Flyout, does nothing.
-
-**Left Arrow**:
-When in Top mode, moves focus to the item directly to the left the item currently in focus.
-When in Left mode or Flyout, does nothing.
-
-**Space/Enter Key**:
-Invokes/Selects item
-When in Left mode and item has children, expands/collapses item and does not change focus.
-When in Left Compact/Top mode and item has children, expands children into a flyout and places focus on first item in flyout.
-When in flyout and on leaf node, invokes/selects item and closes flyout.
-
-**Esc Key**:
-When in flyout, closes the flyout.
-
-<!--
 | Key      |      In Left Mode      |  In Top Mode | In Flyout  |
 |----------|------------------------|--------------|------------|
 | Up |Moves focus to the item directly above the item currently in focus. | Does nothing. |Moves focus to the item directly above the item currently in focus.|
@@ -904,7 +881,7 @@ When in flyout, closes the flyout.
 
 The space or enter key always invokes/selects an item.
 
-*Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item. -->
+*Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item. 
 
 ## Navigation view customization
 
