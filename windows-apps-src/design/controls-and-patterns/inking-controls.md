@@ -66,7 +66,7 @@ Microsoft Edge uses the InkCanvas and InkToolbar for **Web Notes**.
 
 **Windows Ink Workspace**
 
-The InkCanvas and InkToolbar are also used for both **Sketchpad** and **Screen sketch** in the **Windows Ink Workspace**.  
+The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Windows Ink Workspace**.  
 ![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
 
 ## Create an InkCanvas and InkToolbar
