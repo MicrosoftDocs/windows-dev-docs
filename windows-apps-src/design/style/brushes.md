@@ -21,7 +21,7 @@ The different types of brushes are:
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
 -   [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)
 -   [**LinearGradientBrush**](/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) 
--   [**RadialGradientBrush**](/uwp/api/windows.ui.xaml.media.radialgradientbrush) 
+-   [**RadialGradientBrush**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush) 
 -   [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)
 -   [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)
 -   [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
@@ -122,17 +122,17 @@ Now you can change the colors of the gradient stops and slide their positions us
 
 ## Radial gradient brushes
 
-A [**RadialGradientBrush**](/uwp/api/windows.ui.xaml.media.radialgradientbrush) is drawn within an ellipse that is defined by the [**Center**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy) properties. Colors for the gradient start at the center of the ellipse and end at the radius.
+A [**RadialGradientBrush**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush) is drawn within an ellipse that is defined by the [**Center**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy) properties. Colors for the gradient start at the center of the ellipse and end at the radius.
 
-The colors for the radial gradient are defined by color stops added to the [**GradientStops**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientstops) collection property. Each gradient stop specifies a color and an offset along the gradient.
+The colors for the radial gradient are defined by color stops added to the [**GradientStops**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientstops) collection property. Each gradient stop specifies a color and an offset along the gradient.
 
-The gradient origin defaults to center and can be offset using the [**GradientOrigin**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) property.
+The gradient origin defaults to center and can be offset using the [**GradientOrigin**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin) property.
 
-[MappingMode](/uwp/api/windows.ui.xaml.media.radialgradientbrush.mappingmode) defines whether [**Center**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), [**RadiusY**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy), and [**GradientOrigin**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) represent relative or absolute coordinates.
+[MappingMode](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode) defines whether [**Center**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx), [**RadiusY**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy), and [**GradientOrigin**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin) represent relative or absolute coordinates.
 
-When [**MappingMode**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.mappingmode) is set to `RelativeToBoundingBox`, the X and Y values of the three properties are treated as relative to the element bounds, where `(0,0)` represents the top left and `(1,1)` represents the bottom right of the element bounds for the [**Center**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.radiusy) properties and `(0,0)` represents the center for the [**GradientOrigin**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.gradientorigin) property.
+When [**MappingMode**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode) is set to `RelativeToBoundingBox`, the X and Y values of the three properties are treated as relative to the element bounds, where `(0,0)` represents the top left and `(1,1)` represents the bottom right of the element bounds for the [**Center**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center), [**RadiusX**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx), and [**RadiusY**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy) properties and `(0,0)` represents the center for the [**GradientOrigin**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin) property.
 
-When [**MappingMode**](/uwp/api/windows.ui.xaml.media.radialgradientbrush.mappingmode) is set to `Absolute`, the X and Y values of the three properties are treated as absolute coordinates within the element bounds.
+When [**MappingMode**](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode) is set to `Absolute`, the X and Y values of the three properties are treated as absolute coordinates within the element bounds.
 
 This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
