@@ -4,7 +4,7 @@ description: Learn how to create color schemes for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: how-to
 ms.service: terminal
 ---
 
@@ -43,7 +43,7 @@ Color schemes can be defined in the `schemes` array of your settings.json file. 
 },
 ```
 
-Every setting aside from `name` accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`.
+Every setting aside from `name` accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`. `cursorColor` and `selectionBackground` are optional.
 
 <br />
 
@@ -84,3 +84,11 @@ The following color schemes come included in the Windows Terminal. If you would 
 ### Solarized Light
 
 ![Windows Terminal Solarized Light color scheme](./../images/solarized-light-color-scheme.png)
+
+### Tango Dark
+
+![Windows Terminal Tango Dark color scheme](./../images/tango-dark-color-scheme.png)
+
+### Tango Light
+
+![Windows Terminal Tango Light color scheme](./../images/tango-light-color-scheme.png)
