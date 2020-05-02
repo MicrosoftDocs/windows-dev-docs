@@ -25,7 +25,7 @@ After installation, when you open the Terminal, it will start with PowerShell as
 
 ## Open a new tab
 
-You can open a new tab of the default profile by pressing `Ctrl+Shift+T` or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
+You can open a new tab of the default profile by pressing `ctrl+shift+t` or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
 
 ## Configuration
 

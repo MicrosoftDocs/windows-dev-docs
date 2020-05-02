@@ -4,17 +4,17 @@ description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: how-to
 ms.service: terminal
 ---
 
 # Global settings in the Windows Terminal
 
-The properties listed below affect the entire window, regardless of the profile settings.
+The properties listed below affect the entire window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
 ## Default profile
 
-Sets the default profile which opens by typing `ctrl+shift+t` or by clicking the '+' icon.
+Sets the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -28,15 +28,31 @@ Sets the default profile which opens by typing `ctrl+shift+t` or by clicking the
 
 ___
 
+## Disable dynamic profiles
+
+Select which dynamic profile generators are disabled, preventing them from adding their profiles to the list of profiles on startup. For information on dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
+
+**Property name:** `disabledProfileSources`
+
+**Necessity:** Optional
+
+**Accepts:** `"Windows.Terminal.Wsl"`, `"Windows.Terminal.Azure"`, and/or `"Windows.Terminal.PowershellCore"` inside an array
+
+**Default value:** `[]`
+
+<br />
+
+___
+
 ## Dark/Light theme
 
 :::row:::
 :::column span="":::
-Sets the theme of the application. `"system"` will use the theme Windows is set to.
+Sets the theme of the application. `"system"` will use the same theme as Windows.
 
-**Property name:** `requestedTheme`
+**Property name:** `theme`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** `"system"`, `"dark"`, `"light"`
 
@@ -60,11 +76,11 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t`.
+When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t` or by typing the key binding assigned to `newTab`.
 
 **Property name:** `alwaysShowTabs`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** `true`, `false`
 
@@ -127,7 +143,7 @@ ___
 
 ### Launch maximized
 
-Defines whether the Terminal will launch as maximized or not.
+Defines whether the Terminal will launch as maximized to fill the entire screen or in a window.
 
 **Property name:** `launchMode`
 
@@ -139,23 +155,23 @@ Defines whether the Terminal will launch as maximized or not.
 
 ### Launch position
 
-The position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
+The pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the Terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
 **Necessity:** Optional
 
-**Accepts:** Coordinates as a string
+**Accepts:** Coordinates as a string in the following formats: `","`, `"#,#"`, `"#,"`, `",#"`
 
 **Default value:** `","`
 
 ### Columns on first launch
 
-The number of columns displayed in the window upon first load.
+The number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
 
 **Property name:** `initialCols`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** Integer
 
@@ -163,11 +179,11 @@ The number of columns displayed in the window upon first load.
 
 ### Rows on first launch
 
-The number of rows displayed in the window upon first load.
+The number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
 
 **Property name:** `initialRows`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** Integer
 
@@ -206,7 +222,7 @@ When set to `true`, the title bar displays the title of the selected tab. When s
 
 **Property name:** `showTerminalTitleInTitlebar`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** `true`, `false`
 
@@ -230,9 +246,21 @@ When set to `true`, a selection is immediately copied to your clipboard upon cre
 
 **Default value:** `false`
 
+### Copy formatting
+
+When set to `true`, the color and font formatting of selected text is also copied to your clipboard. When set to `false`, only plain text is copied to your clipboard.
+
+**Property name:** `copyFormatting`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
 ### Word delimiters
 
-Determines the word delimiters used in a double click selection.
+Determines the word delimiters used in a double click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
 
 **Property name:** `wordDelimiters`
 
@@ -264,6 +292,8 @@ ___
 
 ## Window resize behavior
 
+:::row:::
+:::column span="":::
 When set to `true`, the window will snap to the nearest character boundary on resize. When `false`, the window will resize "smoothly".
 
 **Property name:** `snapToGridOnResize`
@@ -273,3 +303,10 @@ When set to `true`, the window will snap to the nearest character boundary on re
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal snap to grid on resize](./../images/snap-to-grid-on-resize.gif)
+
+:::column-end:::
+:::row-end:::
