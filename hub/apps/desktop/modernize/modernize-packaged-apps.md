@@ -19,9 +19,9 @@ If you want to update your desktop app with [modern Windows 10 experiences](inde
 
 If your desktop app has package identity, you can use the following features in your app.
 
-## Use UWP APIs that require package identity
+## Use Windows Runtime APIs that require package identity
 
-The following list of UWP APIs require package identity to be used in a desktop app: [list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
+The following list of Windows Runtime APIs require package identity to be used in a desktop app: [list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
 
 ## Integrate with package extensions
 
@@ -31,7 +31,7 @@ For more information, see [Integrate your desktop app with package extensions](d
 
 ## Extend with UWP components
 
-Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. In general, you should first determine whether you can add your experience by [enhancing](desktop-to-uwp-enhance.md) your existing desktop application with UWP APIs. If you have to use a UWP component, to achieve the experience, then you can add a UWP project to your solution and use app services to communicate between your desktop application and the UWP component.
+Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. In general, you should first determine whether you can add your experience by [enhancing](desktop-to-uwp-enhance.md) your existing desktop application with Windows Runtime APIs. If you have to use a UWP component, to achieve the experience, then you can add a UWP project to your solution and use app services to communicate between your desktop application and the UWP component.
 
 For more information, see [Extend your desktop app with UWP components](desktop-to-uwp-extend.md).
 

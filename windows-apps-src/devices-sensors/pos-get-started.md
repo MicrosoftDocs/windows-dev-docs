@@ -1,6 +1,6 @@
 ﻿---
 title: Getting started with Point of Service
-description: This article contains information about getting started with the point of service UWP APIs.
+description: This article contains information about getting started with the point of service Windows Runtime APIs.
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Point of service, point of sale, or Point of Service devices are computer peripherals used to facilitate retail transactions. Examples of Point of Service devices include electronic cash registers, barcode scanners, magnetic stripe readers, and receipt printers.
 
-Here you’ll learn the basics of interfacing with Point of Service devices by using the Universal Windows Platform (UWP) PointOfService APIs. We’ll cover device enumeration, checking device capabilities, claiming devices, and device sharing. We use a barcode scanner device as an example, but almost all the guidance here applies to any UWP-compatible Point of Service device. (For a list of supported devices, see [Point of Service device support](pos-device-support.md)).
+Here you’ll learn the basics of interfacing with Point of Service devices by using the Windows Runtime Point of Service APIs. We’ll cover device enumeration, checking device capabilities, claiming devices, and device sharing. We use a barcode scanner device as an example, but almost all the guidance here applies to any UWP-compatible Point of Service device. (For a list of supported devices, see [Point of Service device support](pos-device-support.md)).
 
 ## Finding and connecting to Point of Service peripherals
 

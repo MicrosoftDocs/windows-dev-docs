@@ -1,6 +1,6 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
-title: UWP APIs available to a packaged desktop app (Desktop Bridge)
+Description: Packaged desktop apps can use a wide range of Windows Runtime APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+title: Windows Runtime APIs available to a packaged desktop app (Desktop Bridge)
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# UWP APIs available to desktop apps
+# Windows Runtime APIs available to desktop apps
 
 Desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your desktop app can use.
 
-Many UWP APIs require [package identity](modernize-packaged-apps.md) to be used in a desktop app. Most UWP APIs work well apps that have package identity. However, some feature areas are not yet fully tested or currently functioning as intended.
+Many Windows Runtime APIs require [package identity](modernize-packaged-apps.md) to be used in a desktop app. Most Windows Runtime APIs work well apps that have package identity. However, some feature areas are not yet fully tested or currently functioning as intended.
 
 | Feature area | Details |
 |--------------|---------|
@@ -40,9 +40,9 @@ Occasionally, APIs in these areas may appear to function correctly. However, if 
 
 ## List of APIs
 
-The following is a full list of UWP APIs supported in desktop apps. You can view [APIs supported only in apps with package identity](#new) or [APIs supported in all desktop apps](#both).
+The following is a full list of Windows Runtime APIs supported in desktop apps. You can view [APIs supported only in apps with package identity](#new) or [APIs supported in all desktop apps](#both).
 
-For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
+For examples on how to use Windows Runtime APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

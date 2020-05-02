@@ -31,11 +31,11 @@ For more information, see [Package desktop applications](/windows/msix/desktop/d
 
 For more information, see [What's new in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
-## UWP APIs
+## Windows Runtime APIs
 
-You can call many UWP APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call UWP APIs to add toast notifications to your desktop app.
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
 
-For more information, see [Use UWP APIs in desktop apps](desktop-to-uwp-enhance.md).
+For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
 
 ## Host UWP controls (XAML Islands)
 
@@ -45,13 +45,13 @@ For more information, see [UWP controls in desktop apps](xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
-You can now use UWP APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in UWP controls you can host by using XAML Islands.
+You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in UWP controls you can host by using XAML Islands.
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 
 ## Additional features available to apps with package identity
 
-Some modern Windows 10 experiences are available only in desktop apps that have [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain UWP APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
+Some modern Windows 10 experiences are available only in desktop apps that have [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
 
 There are several ways to grant identity to a desktop app:
 

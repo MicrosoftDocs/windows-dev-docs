@@ -1,6 +1,6 @@
 ﻿---
-Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
-title: Use UWP APIs in desktop apps
+Description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
+title: Call Windows Runtime APIs in desktop apps
 ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -10,17 +10,17 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Call UWP APIs in desktop apps
+# Call Windows Runtime APIs in desktop apps
 
 You can use Universal Windows Platform (UWP) APIs to add modern experiences to your desktop apps that light up for Windows 10 users.
 
-First, set up your project with the required references. Then, call UWP APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
+First, set up your project with the required references. Then, call Windows Runtime APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
 
-Some UWP APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
+Some Windows Runtime APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available Windows Runtime APIs](desktop-to-uwp-supported-api.md).
 
 ## Set up your project
 
-You'll have to make a few changes to your project to use UWP APIs.
+You'll have to make a few changes to your project to use Windows Runtime APIs.
 
 ### Modify a .NET project to use Windows Runtime APIs
 

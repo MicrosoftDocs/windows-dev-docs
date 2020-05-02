@@ -14,7 +14,7 @@ When building a UWP game using .NET, you may find that some APIs that you might 
 
 Additionally, some game engines use different flavors of .NET that aren't fully compatible with .NET for UWP, such as Unity's Mono. So when you're writing your game, everything might work fine in the editor, but when you go to build for UWP, you might get errors like this: **The type or namespace 'Formatters' does not exist in the namespace 'System.Runtime.Serialization' (are you missing an assembly reference?)**
 
-Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) discusses ways you can convert your code to use WinRT or .NET for UWP APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
+Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) discusses ways you can convert your code to use WinRT or .NET for Windows Runtime APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
 
 ## .NET Standard
 

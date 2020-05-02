@@ -68,7 +68,7 @@ In simple cases like this, where you're mapping the types in an old namespace to
 
 Once all the old using directives are removed and the new ones added, you can use Visual Studio's **Organize Usings** command to sort your directives and remove unused ones.
 
-Sometimes, fixing imperative code will be as minor as changing a parameter's type. Other times, you will need to use UWP APIs instead of .NET APIs for Windows Runtime 8.x apps. To identify which APIs are supported, use the rest of this porting guide in combination with [.NET for Windows Runtime 8.x apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) and the [Windows Runtime reference](https://docs.microsoft.com/uwp/api/).
+Sometimes, fixing imperative code will be as minor as changing a parameter's type. Other times, you will need to use Windows Runtime APIs instead of .NET APIs for Windows Runtime 8.x apps. To identify which APIs are supported, use the rest of this porting guide in combination with [.NET for Windows Runtime 8.x apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) and the [Windows Runtime reference](https://docs.microsoft.com/uwp/api/).
 
 And, if you just want to get to the stage where your project builds, you can comment or stub out any non-essential code. Then iterate, one issue at a time, and refer to the following topics in this section (and the previous topic: [Troubleshooting](wpsl-to-uwp-troubleshooting.md)), until any build and runtime issues are ironed-out and your port is complete.
 

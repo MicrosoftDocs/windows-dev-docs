@@ -13,7 +13,7 @@
           tocHref: /windows/apps/desktop/modernize/
           topicHref: "/windows/apps/desktop/modernize/"
           items:
-            - name: Call UWP APIs
+            - name: Call Windows Runtime APIs
               # tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
             - name: XAML Islands

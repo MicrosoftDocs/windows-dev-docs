@@ -1015,7 +1015,7 @@ These are some links to help you move your Windows desktop game to UWP.
         <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">How to: Use existing C++ code in a UWP app</a></td>
     </tr>
     <tr>
-        <td>UWP APIs for Win32 and COM APIs</td>
+        <td>Windows Runtime APIs for Win32 and COM APIs</td>
         <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Win32 and COM APIs for UWP apps</a></td>
     </tr>
     <tr>
