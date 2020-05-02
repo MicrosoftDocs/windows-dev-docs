@@ -4,7 +4,7 @@ description: Learn how to customize the individual profiles within Windows Termi
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: how-to
 ms.service: terminal
 ---
 
@@ -30,7 +30,7 @@ ___
 
 ### Command line
 
-The executable used in the profile.
+This is the executable used in the profile.
 
 **Property name:** `commandline`
 
@@ -38,9 +38,11 @@ The executable used in the profile.
 
 **Accepts:** Executable file name as a string
 
+**Default value:** `"cmd.exe"`
+
 ### Source
 
-Stores the name of the profile generator that originated this profile. _There are no discoverable values for this field._
+This stores the name of the profile generator that originated the profile. _There are no discoverable values for this field._ For additional information on dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
 
 **Property name:** `source`
 
@@ -50,7 +52,7 @@ Stores the name of the profile generator that originated this profile. _There ar
 
 ### Starting directory
 
-The directory the shell starts in when it is loaded.
+This is the directory the shell starts in when it is loaded.
 
 **Property name:** `startingDirectory`
 
@@ -71,7 +73,7 @@ _Configuration: [Raspberry Ubuntu](./../custom-terminal-gallery/raspberry-ubuntu
 
 ### Name
 
-This is the name of the profile that will be displayed in the dropdown menu. This value is also used as the "title" to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`cmd`, `powershell`) may use this value over the lifetime of the application. This "title" behavior can be overridden by using `tabTitle`.
+This is the name of the profile that will be displayed in the dropdown menu. This value is also used as the "title" to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`Command Prompt`, `PowerShell`) may use this value over the lifetime of the application. This "title" behavior can be overridden by using `tabTitle`.
 
 **Property name:** `name`
 
@@ -81,7 +83,7 @@ This is the name of the profile that will be displayed in the dropdown menu. Thi
 
 ### Icon
 
-Set the icon that displays within the tab and the dropdown menu.
+This sets the icon that displays within the tab and the dropdown menu.
 
 **Property name:** `icon`
 
@@ -91,7 +93,7 @@ Set the icon that displays within the tab and the dropdown menu.
 
 ### Hide a profile from the dropdown
 
-If `"hidden"` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file.
+If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-proifles.md).
 
 **Property name:** `hidden`
 
@@ -109,7 +111,7 @@ ___
 
 ### Custom tab title
 
-If set, this will replace the `name` as the title to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`cmd`, `powershell`) may use this value over the lifetime of the application. If you'd like to learn how to have the shell set your title, visit the [tab title tutorial](./../tutorials/tab-title.md).
+If set, this will replace the `name` as the title to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`Command Prompt`, `PowerShell`) may use this value over the lifetime of the application. If you'd like to learn how to have the shell set your title, visit the [tab title tutorial](./../tutorials/tab-title.md).
 
 **Property name:** `tabTitle`
 
@@ -119,7 +121,7 @@ If set, this will replace the `name` as the title to pass to the shell on startu
 
 ### Suppress title changes from the shell
 
-When set to `true`, `tabTitle` overrides the default title of the tab and any title change messages from the application will be suppressed. If `tabTitle` isn't set, `name` will be used instead. When set to `false`, `tabTitle` behaves as normal.
+When this is set to `true`, `tabTitle` overrides the default title of the tab and any title change messages from the application will be suppressed. If `tabTitle` isn't set, `name` will be used instead. When this is set to `false`, `tabTitle` behaves as normal.
 
 **Property name:** `suppressApplicationTitle`
 
@@ -135,7 +137,7 @@ ___
 
 ### Font face
 
-Name of the font face used in the profile. The Terminal will try to fallback to Consolas if this can't be found or is invalid. For other variants of the default font, Cascadia Code, visit the [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code).
+This is the name of the font face used in the profile. The Terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
 
 **Property name:** `fontFace`
 
@@ -143,11 +145,11 @@ Name of the font face used in the profile. The Terminal will try to fallback to 
 
 **Accepts:** Font name as a string
 
-**Default value:** `"Cascadia Code"`
+**Default value:** `"Cascadia Mono"`
 
 ### Font size
 
-Sets the profile's font size.
+This sets the profile's font size in points.
 
 **Property name:** `fontSize`
 
@@ -161,7 +163,7 @@ Sets the profile's font size.
 
 :::row:::
 :::column span="":::
-Set the padding around the text within the window. This will accept three different formats: `"#"` sets the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
+This sets the padding around the text within the window. This will accept three different formats: `"#"` sets the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
 
 **Property name:** `padding`
 
@@ -180,7 +182,7 @@ Set the padding around the text within the window. This will accept three differ
 
 ### Antialiasing text
 
-You can control how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
+This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new Terminal instance.
 
 ![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
 
@@ -200,7 +202,7 @@ ___
 
 ### Cursor shape
 
-Sets the cursor shape for the profile. The possible cursors are as follows: `"vintage"` ( &#x2583; ), `"bar"` ( &#x2503; ), `"underscore"` ( &#x2581; ), `"filledBox"` ( &#x2588; ), `"emptyBox"` ( &#x25AF; )
+This sets the cursor shape for the profile. The possible cursors are as follows: `"bar"` ( &#x2503; ), `"vintage"` ( &#x2583; ), `"underscore"` ( &#x2581; ), `"filledBox"` ( &#x2588; ), `"emptyBox"` ( &#x25AF; )
 
 **Property name:** `cursorShape`
 
@@ -212,7 +214,7 @@ Sets the cursor shape for the profile. The possible cursors are as follows: `"vi
 
 ### Cursor color
 
-Set the cursor color of the profile. This will override the `cursorColor` set in the color scheme if `colorScheme` is set.
+This sets the cursor color of the profile. This will override the `cursorColor` set in the color scheme if `colorScheme` is set.
 
 **Property name:** `cursorColor`
 
@@ -222,7 +224,7 @@ Set the cursor color of the profile. This will override the `cursorColor` set in
 
 ### Cursor height
 
-Set the percentage height of the cursor starting from the bottom. This will only work when `cursorShape` is set to `"vintage"`.
+This sets the percentage height of the cursor starting from the bottom. This will only work when `cursorShape` is set to `"vintage"`.
 
 **Property name:** `cursorHeight`
 
@@ -238,7 +240,7 @@ ___
 
 ### Color scheme
 
-The name of the color scheme is used to define which color scheme is used in the profile. Color schemes are defined in the `schemes` object. More detailed information can be found on the [color schemes page](./color-schemes.md).
+This is the name of the color scheme used in the profile. Color schemes are defined in the `schemes` object. More detailed information can be found on the [Color schemes page](./color-schemes.md).
 
 **Property name:** `colorScheme`
 
@@ -250,7 +252,7 @@ The name of the color scheme is used to define which color scheme is used in the
 
 ### Foreground color
 
-Change the foreground color of the profile. This overrides `foreground` set in the color scheme if `colorScheme` is set.
+This changes the foreground color of the profile. This overrides `foreground` set in the color scheme if `colorScheme` is set.
 
 **Property name:** `foreground`
 
@@ -260,7 +262,7 @@ Change the foreground color of the profile. This overrides `foreground` set in t
 
 ### Background color
 
-Change the background color of the profile with this setting. This overrides `background` set in the color scheme if `colorScheme` is set.
+This changes the background color of the profile with this setting. This overrides `background` set in the color scheme if `colorScheme` is set.
 
 **Property name:** `background`
 
@@ -270,7 +272,7 @@ Change the background color of the profile with this setting. This overrides `ba
 
 ### Selection background color
 
-Set the background color of a selection within the profile. This will override the `selectionBackground` set in the color scheme if `colorScheme` is set.
+This sets the background color of a selection within the profile. This will override the `selectionBackground` set in the color scheme if `colorScheme` is set.
 
 **Property name:** `selectionBackground`
 
@@ -288,7 +290,7 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, the window will have an acrylic background. When set to `false`, the window will have a plain, untextured background. The transparency only applies to focused windows due to OS limitation.
+When this is set to `true`, the window will have an acrylic background. When it's set to `false`, the window will have a plain, untextured background. The transparency only applies to focused windows due to OS limitations.
 
 **Property name:** `useAcrylic`
 
@@ -309,7 +311,7 @@ When set to `true`, the window will have an acrylic background. When set to `fal
 
 :::row:::
 :::column span="":::
-When `useAcrylic` is set to `true`, this sets the transparency of the window for the profile. Accepts floating point values from 0-1.
+When `useAcrylic` is set to `true`, this sets the transparency of the window for the profile. This accepts floating point values from 0-1.
 
 **Property name:** `acrylicOpacity`
 
@@ -334,7 +336,7 @@ ___
 
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background. The background image can be a jpg, png, or gif file.
+This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file.
 
 **Property name:** `backgroundImage`
 
@@ -346,7 +348,7 @@ This sets the file location of the image to draw over the window background. The
 
 :::row:::
 :::column span="":::
-You can set how the background image is resized to fill the window.
+This sets how the background image is resized to fill the window.
 
 **Property name:** `backgroundImageStretchMode`
 
@@ -390,7 +392,7 @@ _[Background image source](https://design.ubuntu.com/brand/ubuntu-logo/)_
 
 :::row:::
 :::column span="":::
-You can set the transparency of the background image.
+This sets the transparency of the background image.
 
 :::column-end:::
 :::row-end:::
@@ -411,7 +413,7 @@ ___
 
 ### Scrollbar visibility
 
-Set the visibility of the scrollbar.
+This sets the visibility of the scrollbar.
 
 **Property name:** `scrollbarState`
 
@@ -421,7 +423,7 @@ Set the visibility of the scrollbar.
 
 ### Scroll to input line when typing
 
-When set to `true`, the window will scroll to the command input line when typing. When set to `false`, the window will not scroll when you start typing.
+When this is set to `true`, the window will scroll to the command input line when typing. When it's set to `false`, the window will not scroll when you start typing.
 
 **Property name:** `snapOnInput`
 
@@ -433,7 +435,7 @@ When set to `true`, the window will scroll to the command input line when typing
 
 ### History size
 
-Set the number of lines above the ones displayed in the window you can scroll back to.
+This sets the number of lines above the ones displayed in the window you can scroll back to.
 
 **Property name:** `historySize`
 
@@ -449,7 +451,7 @@ ___
 
 ## How the profile closes when exiting
 
-Set how the profile reacts to termination or failure to launch. `"graceful"` will close the profile when `exit` is typed or when the process exits normally. `"always"` will always close the profile and `"never"` will never close the profile. `true` and `false` are accepted as synonyms for `"graceful"` and `"never"` respectively.
+This sets how the profile reacts to termination or failure to launch. `"graceful"` will close the profile when `exit` is typed or when the process exits normally. `"always"` will always close the profile and `"never"` will never close the profile. `true` and `false` are accepted as synonyms for `"graceful"` and `"never"`, respectively.
 
 **Property name:** `closeOnExit`
 
@@ -467,7 +469,7 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, enable retro terminal effects. This is an experimental feature and its continued existence is not guaranteed.
+When this is set to `true`, the Terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
 
 **Property name:** `experimental.retroTerminalEffect`
 

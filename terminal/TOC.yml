@@ -32,8 +32,6 @@
           href: tutorials/ssh.md
         - name: Set the tab title
           href: tutorials/tab-title.md
-        - name: References
-          href: tutorials/references.md
     - name: Custom Terminal gallery
       items:
         - name: Powerline in PowerShell

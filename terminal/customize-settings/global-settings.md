@@ -14,7 +14,7 @@ The properties listed below affect the entire window, regardless of the profile 
 
 ## Default profile
 
-Sets the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or clicking the '+' icon.
+This sets the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -30,7 +30,7 @@ ___
 
 ## Disable dynamic profiles
 
-Select which dynamic profile generators are disabled, preventing them from adding their profiles to the list of profiles on startup. For information on dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
+This sets which dynamic profile generators are disabled, preventing them from adding their profiles to the list of profiles on startup. For information on dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
 
 **Property name:** `disabledProfileSources`
 
@@ -48,7 +48,7 @@ ___
 
 :::row:::
 :::column span="":::
-Sets the theme of the application. `"system"` will use the same theme as Windows.
+This sets the theme of the application. `"system"` will use the same theme as Windows.
 
 **Property name:** `theme`
 
@@ -76,7 +76,7 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, tabs are always displayed. When set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t` or by typing the key binding assigned to `newTab`.
+When this is set to `true`, tabs are always displayed. When it's set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When this is set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t` or by typing the key binding assigned to `newTab`. Note that changing this setting will require starting a new Terminal instance.
 
 **Property name:** `alwaysShowTabs`
 
@@ -97,7 +97,7 @@ When set to `true`, tabs are always displayed. When set to `false` and `showTabs
 
 :::row:::
 :::column span="":::
-Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
+This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
 
 **Property name:** `tabWidthMode`
 
@@ -118,7 +118,7 @@ Sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLeng
 
 :::row:::
 :::column span="":::
-When set to `true`, closing a window with multiple tabs open _will_ require confirmation. When set to `false`, closing a window with multiple tabs open _will not_ require confirmation.
+When this is set to `true`, closing a window with multiple tabs open _will_ require confirmation. When it's set to `false`, closing a window with multiple tabs open _will not_ require confirmation.
 
 **Property name:** `confirmCloseAllTabs`
 
@@ -143,7 +143,7 @@ ___
 
 ### Launch maximized
 
-Defines whether the Terminal will launch as maximized to fill the entire screen or in a window.
+This defines whether the Terminal will launch as maximized to fill the entire screen or in a window.
 
 **Property name:** `launchMode`
 
@@ -155,7 +155,7 @@ Defines whether the Terminal will launch as maximized to fill the entire screen 
 
 ### Launch position
 
-The pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the Terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
+This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the Terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -167,7 +167,7 @@ The pixel position of the top left corner of the window upon first load. On a sy
 
 ### Columns on first launch
 
-The number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
+This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
 
 **Property name:** `initialCols`
 
@@ -179,7 +179,7 @@ The number of character columns displayed in the window upon first load. If `lau
 
 ### Rows on first launch
 
-The number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
+This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
 
 **Property name:** `initialRows`
 
@@ -199,7 +199,7 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, the tabs are moved into the title bar and the title bar disappears. When set to `false`, the title bar sits above the tabs.
+When this is set to `true`, the tabs are moved into the title bar and the title bar disappears. When it's set to `false`, the title bar sits above the tabs. Note that changing this setting will require starting a new Terminal instance.
 
 **Property name:** `showTabsInTitlebar`
 
@@ -218,7 +218,7 @@ When set to `true`, the tabs are moved into the title bar and the title bar disa
 
 ### Set the text in the title bar
 
-When set to `true`, the title bar displays the title of the selected tab. When set to `false`, title bar displays "Windows Terminal".
+When this is set to `true`, the title bar displays the title of the selected tab. When it's set to `false`, title bar displays "Windows Terminal". Note that changing this setting will require starting a new Terminal instance.
 
 **Property name:** `showTerminalTitleInTitlebar`
 
@@ -236,7 +236,7 @@ ___
 
 ### Copy after selection is made
 
-When set to `true`, a selection is immediately copied to your clipboard upon creation. Right clicking will always paste in this case. When set to `false`, the selection persists and awaits further action. Right clicking will copy the selection.
+When this is set to `true`, a selection is immediately copied to your clipboard upon creation. Right clicking will always paste in this case. When it's set to `false`, the selection persists and awaits further action. Right clicking will copy the selection.
 
 **Property name:** `copyOnSelect`
 
@@ -248,7 +248,7 @@ When set to `true`, a selection is immediately copied to your clipboard upon cre
 
 ### Copy formatting
 
-When set to `true`, the color and font formatting of selected text is also copied to your clipboard. When set to `false`, only plain text is copied to your clipboard.
+When this is set to `true`, the color and font formatting of selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard.
 
 **Property name:** `copyFormatting`
 
@@ -260,7 +260,7 @@ When set to `true`, the color and font formatting of selected text is also copie
 
 ### Word delimiters
 
-Determines the word delimiters used in a double click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
+This determines the word delimiters used in a double click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
 
 **Property name:** `wordDelimiters`
 
@@ -276,7 +276,7 @@ ___
 
 ## Scroll speed
 
-The number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
+This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
 
 **Property name:** `rowsToScroll`
 
@@ -294,7 +294,7 @@ ___
 
 :::row:::
 :::column span="":::
-When set to `true`, the window will snap to the nearest character boundary on resize. When `false`, the window will resize "smoothly".
+When this is set to `true`, the window will snap to the nearest character boundary on resize. When it's set to `false`, the window will resize "smoothly".
 
 **Property name:** `snapToGridOnResize`
 
