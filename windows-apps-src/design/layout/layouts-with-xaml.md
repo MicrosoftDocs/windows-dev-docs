@@ -5,6 +5,9 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
 ---
 # Responsive layouts with XAML
 
@@ -133,7 +136,8 @@ Here, a [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 
 ```xaml
-<Page ...>
+<Page ...
+    SizeChanged="CurrentWindow_SizeChanged">
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -183,6 +187,21 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
     else
         VisualStateManager.GoToState(this, "DefaultState", false);
 }
+```
+
+```cppwinrt
+// YourPage.h
+void CurrentWindow_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e);
+
+// YourPage.cpp
+void YourPage::CurrentWindow_SizeChanged(IInspectable const& sender, SizeChangedEventArgs const& e)
+{
+    if (e.NewSize.Width > 640)
+        VisualStateManager::GoToState(*this, "WideState", false);
+    else
+        VisualStateManager::GoToState(*this, "DefaultState", false);
+}
+
 ```
 
 ### Set visual states in XAML markup
