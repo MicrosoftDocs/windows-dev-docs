@@ -1,11 +1,12 @@
 ---
 title: Windows Terminal installation
-description: Learn how to install Windows Terminal.
+description: In this quickstart, you will learn how to install and run Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: quickstart
 ms.service: terminal
+# Customer intent: As a developer or IT admin, I want to install and run Windows Terminal so that I can have an improved workflow.
 ---
 
 # Install and set up Windows Terminal
@@ -18,7 +19,7 @@ If you don't have access to the Microsoft Store, the builds are published on the
 
 ## First run
 
-After installation, when you open the Terminal, it will start with Powershell as the default profile in the open tab.
+After installation, when you open the Terminal, it will start with PowerShell as the default profile in the open tab.
 
 ![Windows Terminal first run](./images/first-run.png)
 
@@ -28,8 +29,8 @@ You can open a new tab of the default profile by pressing `Ctrl+Shift+T` or by c
 
 ## Configuration
 
-If you want to customize the settings of your Terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. This is a Windows OS setting that you can configure to choose which application will open your settings file.
+If you want to customize the settings of your Terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. The application that opens is defined in your Windows OS settings.
 
 ## Troubleshooting
 
-If you encounter any difficulties using the Terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can click the feedback button in the dropdown menu of the Terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
+If you encounter any difficulties using the Terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can click the feedback link in the About menu of the Terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
