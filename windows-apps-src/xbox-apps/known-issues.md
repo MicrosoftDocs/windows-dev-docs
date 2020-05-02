@@ -59,9 +59,9 @@ Your app should bind to port 0 wherever possible, which allows the system to sel
 If you need to use a specific port, the port number must be in the range [1025, 49151], and you should check and avoid conflicts with the IANA registry. 
 For more information, see the [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
-## UWP API coverage
+## Windows Runtime API coverage
 
-Not all UWP APIs are supported on Xbox. For the list of APIs that we know don’t work, see [UWP features that aren't yet supported on Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). If you find issues with other APIs, please report them on the forums. 
+Not all Windows Runtime APIs are supported on Xbox. For the list of APIs that we know don’t work, see [UWP features that aren't yet supported on Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). If you find issues with other APIs, please report them on the forums. 
 
 
 ## Navigating to WDP causes a certificate warning

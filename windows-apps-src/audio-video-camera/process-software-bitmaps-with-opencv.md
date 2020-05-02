@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Process bitmaps with OpenCV
 
-This article explains how to use the **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** class, which is used by many different UWP APIs to represent images, with the Open Source Computer Vision Library (OpenCV), an open source, native code library that provides a wide variety of image processing algorithms. 
+This article explains how to use the **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** class, which is used by many different Windows Runtime APIs to represent images, with the Open Source Computer Vision Library (OpenCV), an open source, native code library that provides a wide variety of image processing algorithms. 
 
 The examples in this article walk you through creating a native code Windows Runtime component that can be used from a UWP app, including apps that are created using C#. This helper component will expose a single method, **Blur**, which will use OpenCV's blur image processing function. The component implements private methods that get a pointer to the underlying image data buffer which can be used directly by the OpenCV library, making it simple to extend the helper component to implement other OpenCV processing features. 
 

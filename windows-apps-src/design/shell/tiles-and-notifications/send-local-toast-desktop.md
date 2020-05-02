@@ -17,11 +17,11 @@ Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
-## Step 1: Enable the UWP APIs
+## Step 1: Enable the Windows Runtime APIs
 
-If you haven't referenced the UWP APIs from your Win32 app, you must do that first.
+If you haven't referenced the Windows Runtime APIs from your Win32 app, you must do that first.
 
-Simply install the `Microsoft.Windows.SDK.Contracts` [NuGet package](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) in your project. Learn more about [enabling UWP APIs here](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Simply install the `Microsoft.Windows.SDK.Contracts` [NuGet package](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) in your project. Learn more about [enabling Windows Runtime APIs here](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 
 ## Step 2: Copy compat library code
