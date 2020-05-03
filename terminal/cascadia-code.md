@@ -10,27 +10,26 @@ ms.service: terminal
 
 # Cascadia Code
 
-Cascadia Code is a new monospaced font shipped from Microsoft and provides a fresh experience for command line experiences and code editors. Cascadia Code was developed hand-in-hand with Windows Terminal. This font is most recommended to be used with terminal application and text editors such as Visual Studio and Visual Studio Code.
+Cascadia Code is a new monospaced font from Microsoft and provides a fresh experience for command line applications and text editors. Cascadia Code was developed alongside Windows Terminal. This font is most recommended to be used with terminal applications and text editors such as Visual Studio and Visual Studio Code.
 
 ## Cascadia Code versions
 
-There are multiple versions of Cascadia Code available:
+There are multiple versions of Cascadia Code available that include ligatures and glyphs. All versions of Cascadia Code can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases). The Windows Terminal ships Cascadia Code and Cascadia Mono in its package and uses Cascadia Mono by default.
 
-| Font Name        | Includes Ligatures | Includes Powerline Glyphs |
-|------------------|--------------------|---------------------------|
-| Cascadia Code    | ✔                  | ❌                       |
-| Cascadia Mono    | ❌                 | ❌                       |
-| Cascadia Code PL | ✔                  | ✔                        |
-| Cascadia Mono PL | ❌                 | ✔                        |
+| Font Name | Includes Ligatures | Includes Powerline Glyphs |
+| --------- | ------------------ | ------------------------- |
+| Cascadia Code | Yes | No |
+| Cascadia Mono | No  | No |
+| Cascadia Code PL | Yes | Yes |
+| Cascadia Mono PL | No | Yes |
 
-Programming ligatures are glyphs that are created by combining characters. They are must useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them. Below are a few of the ligatures included in Cascadia Code:
-http://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2019/09/programming-ligatures.gif
+## Powerline and programming ligatures
 
 Powerline is a common command line extension that allows you to display additional information in your prompt. It uses a few additional glyphs to display this information properly. To learn more about setting up Powerline in your command prompt, visit the [Powerline in Windows Terminal](./tutorials/powerline-setup.md) page.
 
-Cascadia Code and Cascadia Mono are installed side-by-side with Windows Terminal. Cascadia Mono is the default font for all of your profiles.
+Programming ligatures are glyphs that are created by combining characters. They are must useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them.
 
-You can install any of these versions on the GitHub releases page [here](https://github.com/microsoft/cascadia-code/releases).
+![Cascadia Code programming ligatures](./images/programming-ligatures.gif)
 
 ## Contributing to Cascadia Code
 
