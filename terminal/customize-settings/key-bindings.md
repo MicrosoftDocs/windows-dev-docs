@@ -83,7 +83,7 @@ ___
 | Function and alphanumeric keys | `f1-f24`, `a-z`, `0-9` |
 | Symbols | ``` ` ```, `-`, `=`, `[`, `]`, `\`, `;`, `'`, `,`, `.`, `/` |
 | Arrow keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home`, `plus` |
-| Action Keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert` |
+| Action keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert` |
 | Numpad keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
 
 <br />
