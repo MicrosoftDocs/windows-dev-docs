@@ -94,7 +94,7 @@ focus-tab [--target, -t tab-index]
 
 The Windows Terminal uses the semicolon character `;` as a delimiter for separating commands in the `wt` command line. Unfortunately, PowerShell also uses `;` as a command separator. To work around this, you can use the following tricks to help run multiple `wt` commands from PowerShell. In all the following examples, a new Terminal window is created with three panes - one running Command Prompt, one with PowerShell, and the last one running WSL.
 
-The following examples use the `Start-Process` command to run `wt`. For more information on why the Terminal uses `Start-Process`, see [Using Start-Process](#using-start) below.
+The following examples use the `Start-Process` command to run `wt`. For more information on why the Terminal uses `Start-Process`, see [Using start](#using-start) below.
 
 ### Single quoted parameters (if you aren't calculating anything):
 
@@ -115,11 +115,11 @@ start wt "new-tab cmd; split-pane -p `"Windows PowerShell`" ; split-pane -H $Thi
 
 Note the usage of  `` ` `` to escape the double-quotes (`"`) around "Windows PowerShell" in the `-p` parameter to the `split-pane` parameter.
 
-### Using `Start-Process`
+### Using `start`
 
-All the above examples explicitly used the `Start-Process` to launch the Terminal.
+All the above examples explicitly used `start` to launch the Terminal.
 
-The following examples do not use the `Start-Process` to run the command line. Instead, there are two other methods of escaping the command line:
+The following examples do not use `start` to run the command line. Instead, there are two other methods of escaping the command line:
 
 * Only escaping the semicolons so that `PowerShell` will ignore them and pass them straight to `wt`.
 * Using `--%`, so PowerShell will treat the rest of the command line as arguments to the application.
