@@ -4,7 +4,7 @@ description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: how-to
 ms.service: terminal
 ---
 
@@ -12,13 +12,33 @@ ms.service: terminal
 
 You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the Terminal using your keyboard.
 
+## Key binding formats
+
+Key bindings can be structured in the following formats:
+
+### Commands without arguments
+
+```json
+{ "command": "commandName", "keys": "modifiers+key" }
+```
+
+### Commands with arguments
+
+```json
+{ "command": { "action": "commandName", "argument": "value" }, "keys": "modifiers+key" }
+```
+
+<br />
+
+___
+
 ## Key binding properties
 
 Key bindings can be constructed using the following properties.
 
 ### Command
 
-The command executed when the associated keys are pressed.
+This is the command executed when the associated keys are pressed.
 
 **Property name:** `command`
 
@@ -28,7 +48,7 @@ The command executed when the associated keys are pressed.
 
 ### Keys
 
-Defines the key combinations used to call the command.
+This defines the key combinations used to call the command. Keys can have any number of modifiers with one key. Accepted modifiers and keys are listed [below](#accepted-modifiers-and-keys).
 
 **Property name:** `keys`
 
@@ -38,7 +58,7 @@ Defines the key combinations used to call the command.
 
 ### Action
 
-Adds additional functionality to certain commands.
+This adds additional functionality to certain commands.
 
 **Property name:** `action`
 
@@ -50,38 +70,21 @@ Adds additional functionality to certain commands.
 
 ___
 
-## Accepted Modifiers and Keys
+## Accepted modifiers and keys
 
 ### Modifiers
-`Ctrl+`, `Shift+`, `Alt+`
+
+`ctrl+`, `shift+`, `alt+`
 
 ### Keys
+
 | Type | Keys |
 | ---- | ---- |
-| Function and Alphanumeric Keys | `f1-f24`, `a-z`, `0-9` |
+| Function and alphanumeric keys | `f1-f24`, `a-z`, `0-9` |
 | Symbols | ``` ` ```, `-`, `=`, `[`, `]`, `\`, `;`, `'`, `,`, `.`, `/` |
-| Arrow Keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home`, `plus` |
+| Arrow keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home`, `plus` |
 | Action Keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert` |
-| Numpad Keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
-
-<br />
-
-___
-
-## Key binding formats
-
-Keybindings can be structured in the following formats:
-
-### Commands without arguments
-
-```json
-{ "command": "commandName", "keys": "modifiers+key" }
-```
-
-### Commands with arguments
-```json
-{ "command": { "action": "commandName", "argument": "value" }, "keys": "modifiers+key" }
-```
+| Numpad keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
 
 <br />
 
@@ -91,55 +94,69 @@ ___
 
 ### Close window
 
-Close the current window and all tabs within it.
+:::row:::
+:::column span="":::
+This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Global settings page](./global-settings.md#hide-close-all-tabs-popup).
 
 **Command name:** `closeWindow`
 
 **Default binding:**
+
 ```json
 { "command": "closeWindow", "keys": "alt+f4" }
 ```
 
+:::column-end:::
+:::column span="":::
+![Windows Terminal confirm close all tabs](./../images/confirm-close-all-tabs.png)
+
+:::column-end:::
+:::row-end:::
+
 ### Find
 
-Open the search dialog box. More information on search can be found on the [Search page](./../search.md).
+This opens the search dialog box. More information on search can be found on the [Search page](./../search.md).
 
 **Command name:** `find`
 
 **Default binding:**
+
 ```json
 { "command": "find", "keys": "ctrl+shift+f" }
 ```
 
 ### Open the dropdown
 
-Open the dropdown menu.
+This opens the dropdown menu.
 
 **Command name:** `openNewTabDropdown`
 
 **Default binding:**
+
 ```json
 { "command": "openNewTabDropdown", "keys": "ctrl+shift+space" }
 ```
 
 ### Open settings file
 
-Open the settings file.
+This opens the settings file.
 
 **Command name:** `openSettings`
 
 **Default binding:**
+
 ```json
 { "command": "openSettings", "keys": "ctrl+," }
 ```
 
 ### Toggle full screen
 
-Switch between full screen and default window sizes.
+This allows you to switch between full screen and default window sizes.
 
 **Command name:** `toggleFullscreen`
 
 **Default bindings:**
+
 ```json
 { "command": "toggleFullscreen", "keys": "alt+enter" },
 { "command": "toggleFullscreen", "keys": "f11" }
@@ -153,28 +170,30 @@ ___
 
 ### Close tab
 
-Close the current tab.
+This closes the current tab.
 
 **Command name:** `closeTab`
 
 ### Duplicate tab
 
-Make a copy and open the current tab.
+This makes a copy of the current tab and opens it.
 
 **Command name:** `duplicateTab`
 
 **Default binding:**
+
 ```json
 { "command": "duplicateTab", "keys": "ctrl+shift+d" }
 ```
 
 ### New tab
 
-Create a new tab. Without any arguments, this will open the default profile in a new tab.
+This creates a new tab. Without any arguments, this will open the default profile in a new tab. If an action is not specified, the default profile's equivalent setting will be used.
 
 **Command name:** `newTab`
 
 **Default bindings:**
+
 ```json
 { "command": "newTab", "keys": "ctrl+shift+t" },
 { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" },
@@ -200,33 +219,36 @@ Create a new tab. Without any arguments, this will open the default profile in a
 
 ### Open next tab
 
-Open the tab to the right of the current one.
+This opens the tab to the right of the current one.
 
 **Command name:** `nextTab`
 
 **Default binding:**
+
 ```json
 { "command": "nextTab", "keys": "ctrl+tab" }
 ```
 
 ### Open previous tab
 
-Open the tab to the left of the current one.
+This opens the tab to the left of the current one.
 
 **Command name:** `prevTab`
 
 **Default binding:**
+
 ```json
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
 
 ### Open a specific tab
 
-Open a specific tab depending on index.
+This opens a specific tab depending on the index.
 
 **Command name:** `switchToTab`
 
 **Default bindings:**
+
 ```json
 { "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+alt+1" },
 { "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+alt+2" },
@@ -253,22 +275,24 @@ ___
 
 ### Close pane
 
-Close the active pane. If there aren't any split panes, this will close the current tab. If there is only one tab open, this will close the window.
+This closes the active pane. If there aren't any split panes, this will close the current tab. If there is only one tab open, this will close the window.
 
 **Command name:** `closePane`
 
 **Default binding:**
+
 ```json
 { "command": "closePane", "keys": "ctrl+shift+w" }
 ```
 
 ### Move pane focus
 
-Focus on a different pane depending on direction.
+This changes focus to a different pane depending on the direction.
 
 **Command name:** `moveFocus`
 
 **Default bindings:**
+
 ```json
 { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
 { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
@@ -284,11 +308,12 @@ Focus on a different pane depending on direction.
 
 ### Resize a pane
 
-Change the size of the active pane.
+This changes the size of the active pane.
 
 **Command name:** `resizePane`
 
 **Default bindings:**
+
 ```json
 { "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+down" },
 { "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+left" },
@@ -304,12 +329,14 @@ Change the size of the active pane.
 
 ### Split a pane
 
-Halve the size of the active pane and open another. Without any arguments, this will open the default profile in the new pane.
+This halves the size of the active pane and opens another. Without any arguments, this will open the default profile in the new pane. If an action is not specified, the default profile's equivalent setting will be used.
 
 **Command name:** `splitPane`
 
 **Default bindings:**
+
 ```json
+{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
 { "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" },
 { "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" }
 ```
@@ -330,18 +357,20 @@ Halve the size of the active pane and open another. Without any arguments, this 
 
 ___
 
-## OS integration commands
+## Clipboard integration commands
 
 ### Copy
 
-Copy the selected terminal content to your Windows Clipboard.
+This copies the selected terminal content to your clipboard.
 
 **Command name:** `copy`
 
 **Default bindings:**
+
 ```json
-{ "command": "copy", "keys": "ctrl+shift+c" },
-{ "command": "copy", "keys": "ctrl+insert" }
+{ "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
+{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
 
 #### Actions
@@ -352,12 +381,14 @@ Copy the selected terminal content to your Windows Clipboard.
 
 ### Paste
 
-Insert the content that was copied onto the clipboard.
+This inserts the content that was copied onto the clipboard.
 
 **Command name:** `paste`
 
 **Default bindings:**
+
 ```json
+{ "command": "paste", "keys": "ctrl+v" },
 { "command": "paste", "keys": "ctrl+shift+v" },
 { "command": "paste", "keys": "shift+insert" }
 ```
@@ -368,46 +399,50 @@ ___
 
 ## Scrollback commands
 
-### Scroll down
-
-Move the screen down.
-
-**Command name:** `scrollDown`
-
-**Default binding:**
-```json
-{ "command": "scrollDown", "keys": "ctrl+shift+down" }
-```
-
 ### Scroll up
 
-Move the screen up.
+This scrolls the screen up.
 
 **Command name:** `scrollUp`
 
 **Default binding:**
+
 ```json
 { "command": "scrollUp", "keys": "ctrl+shift+up" }
 ```
 
+### Scroll down
+
+This scrolls the screen down.
+
+**Command name:** `scrollDown`
+
+**Default binding:**
+
+```json
+{ "command": "scrollDown", "keys": "ctrl+shift+down" }
+```
+
 ### Scroll up a whole page
 
-Move the screen up a whole page.
+This scrolls the screen up by a whole page, which is the height of the window.
 
 **Command name:** `scrollUpPage`
 
 **Default binding:**
+
 ```json
 { "command": "scrollUpPage", "keys": "ctrl+shift+pgup" }
 ```
 
 ### Scroll down a whole page
 
-Move the screen down a whole page.
+This scrolls the screen down by a whole page, which is the height of the window.
 
 **Command name:** `scrollDownPage`
 
 **Default binding:**
+
 ```json
 { "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" }
 ```
@@ -420,11 +455,12 @@ ___
 
 ### Adjust font size
 
-Change the text size by a specified point amount.
+This changes the text size by a specified point amount.
 
 **Command name:** `adjustFontSize`
 
 **Default bindings:**
+
 ```json
 { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
 { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" }
@@ -438,11 +474,12 @@ Change the text size by a specified point amount.
 
 ### Reset font size
 
-Reset the text size to the default value.
+This resets the text size to the default value.
 
 **Command name:** `resetFontSize`
 
 **Default binding:**
+
 ```json
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
@@ -453,6 +490,6 @@ ___
 
 ## Unbind keys
 
-Unbind the associated keys from any command.
+This unbinds the associated keys from any command.
 
 **Command name:** `unbound`
