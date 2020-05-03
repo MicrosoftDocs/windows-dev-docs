@@ -10,11 +10,11 @@ ms.service: terminal
 
 # How to search in Windows Terminal
 
-The Windows Terminal comes with a search feature that allows you to look through the text buffer for a specific keyword. This is useful when looking for a command you had run before or for a specific file name.
+The Windows Terminal comes with a search feature that allows you to look through the text buffer for a specific keyword. This is useful when trying to find a command you had run before or for a specific file name.
 
 ## Using search
 
-By default, you can open the search dialog by typing `Ctrl+Shift+F`. Once opened, you can type the keyword you're looking for into the text box and hit `Enter`.
+By default, you can open the search dialog by typing `ctrl+shift+f`. Once opened, you can type the keyword you're looking for into the text box and hit `enter` to search.
 
 ![Windows Terminal search screenshot](./images/search.png)
 _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
@@ -33,14 +33,16 @@ If you'd like to narrow down your search results, you can add case matching as a
 
 ## Searching within panes
 
-The search dialog works with [panes](./panes.md) as well. When focused on a pane, you can open the search dialog and it will appear on the right side of that pane. Then, whatever keyword you search for, the results will only be found within that pane.
+The search dialog works with [panes](./panes.md) as well. When focused on a pane, you can open the search dialog and it will appear on the upper-right of that pane. Then any keyword you enter will only show results found within that pane.
 
 ![Windows Terminal panes search screenshot](./images/search-panes.gif)
 
 ## Customize the search key binding
 
-You can open the search dialog with any key binding you feel comfortable with. This can be done by adding a key binding in your profiles.json file that uses the `find` command. By default, this command is bound to `Ctrl+Shift+F`. The below key binding will bind `find` to `Ctrl+F`, so when typing `Ctrl+F`, the search dialog will open.
+You can open the search dialog with any key binding you feel comfortable with. This can be done by changing the key binding in your settings.json file that uses the `find` command. By default, this command is bound to `ctrl+shift+f`. The below key binding will bind `find` to `ctrl+f`, so when typing `ctrl+f`, the search dialog will open.
 
-`{"command": "find", "keys": "Ctrl+F"}`
+```json
+{ "command": "find", "keys": "ctrl+f" }
+```
 
-To learn more about how key bindings work, visit the [key bindings page](./customize-settings/key-bindings.md).
+To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
