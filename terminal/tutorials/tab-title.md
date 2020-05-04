@@ -18,7 +18,7 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 > * Use the `tabTitle` setting
 > * Set the shell's title
-> * Add missing Powerline glyphs
+> * Using the `suppressApplicationTitle` setting
 
 ## Use the `tabTitle` setting
 
@@ -33,7 +33,7 @@ The `tabTitle` setting allows you to define the starting title for a new instanc
 
 Note that though Ubuntu and Debian both run bash, they have different behaviors. This is to show that different distributions may have different behaviors.
 
-## Setting the shell's title
+## Set the shell's title
 
 A shell has full control over its own title. However, each shell sets its title differently.
 
@@ -55,7 +55,7 @@ This will change the title to 'New Title', and also set the prompt to '$'.
 
 Source: [https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)
 
-## Using the `suppressApplicationTitle` setting
+## Use the `suppressApplicationTitle` setting
 
 Since a shell has control over its title, it may choose to overwrite the tab title at any time. For example, the `posh-git` module for PowerShell adds information about your Git repository to the title.
 
