@@ -10,6 +10,8 @@ ms.service: terminal
 
 # Retro Command Prompt in Windows Terminal
 
+![Windows Terminal Retro Command Prompt](./../images/retro-command-prompt.png)
+
 ```json
     {
         "requestedTheme": "dark",
@@ -20,6 +22,7 @@ ms.service: terminal
                 "closeOnExit" : true,
                 "colorScheme" : "Retro",
                 "cursorColor" : "#FFFFFF",
+                "cursorShape": "filledBox",
                 "fontSize" : 16,
                 "padding" : "5, 5, 5, 5",
                 "tabTitle" : "Command Prompt",

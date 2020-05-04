@@ -4,7 +4,7 @@ description: Learn fixes to common obstacles in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: troubleshooting
 ms.service: terminal
 ---
 

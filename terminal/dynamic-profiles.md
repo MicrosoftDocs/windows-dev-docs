@@ -15,7 +15,7 @@ The Windows Terminal will automatically create Windows Subsystem for Linux (WSL)
 Upon installing the Terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Global settings page](./customize-settings/global-settings.md).
 
 ![Windows Terminal dynamic profiles](./images/dynamic-profiles.png)
-_Configuration: [Light Theme](./custom-terminal-gallery/light-theme.md)_
+_Configuration: [Light Theme](./custom-terminal-gallery/frosted-glass-theme.md)_
 
 ## What if I install a new shell after installing the Terminal?
 

@@ -1,6 +1,6 @@
 ---
 title: Windows Terminal Light Theme Configuration
-description: This is the configuration for light theme.
+description: This is a sample configuration for a frosted glass theme.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
@@ -8,17 +8,19 @@ ms.topic: overview
 ms.service: terminal
 ---
 
-# Light Theme in Windows Terminal
+# Frosted Glass Theme in Windows Terminal
+
+![Windows Terminal Frosted Glass Theme](./../images/frosted-glass-theme.png)
 
 ```json
     {
         "requestedTheme": "light",
         "profiles": [
             {
-                "name" : "Powershell",
+                "name" : "PowerShell",
                 "source" : "Windows.Terminal.PowershellCore",
                 "acrylicOpacity": 0.7,
-                "colorScheme" : "Cinnamon",
+                "colorScheme" : "Frost",
                 "cursorColor" : "#000000",
                 "fontFace" : "Cascadia Code PL",
                 "padding" : "8, 8, 8, 8",
@@ -28,7 +30,7 @@ ms.service: terminal
         ],
         "schemes": [
             {
-                "name" : "Cinnamon",
+                "name" : "Frost",
                 "background" : "#FFFFFF",
                 "black" : "#3C5712",
                 "blue" : "#17b2ff",
