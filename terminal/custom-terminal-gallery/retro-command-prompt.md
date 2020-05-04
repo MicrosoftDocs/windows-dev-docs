@@ -1,10 +1,10 @@
 ---
-title: Windows Terminal Light Theme Configuration
-description: This is the configuration for light theme.
+title: Windows Terminal Retro Command Prompt Configuration
+description: This is the configuration for a retro command prompt in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: sample
 ms.service: terminal
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: Windows Terminal Light Theme Configuration
+title: Windows Terminal Frosted Glass Theme Configuration
 description: This is a sample configuration for a frosted glass theme.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: sample
 ms.service: terminal
 ---
 
