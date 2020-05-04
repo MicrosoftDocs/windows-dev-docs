@@ -1,18 +1,23 @@
 ---
 title: Windows Terminal SSH
-description: Learn how to set up an SSH connection in the Windows Terminal.
+description: In this tutorial, learn how to set up an SSH connection in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: tutorial
 ms.service: terminal
+#Customer intent: As a developer or IT admin, I want to set up am SSH connection in Windows Terminal so that I can connect to other servers.
 ---
 
-# SSH in Windows Terminal
+# Tutorial: SSH in Windows Terminal
+
+Windows 10 has a build-in SSH client that you can use in the Windows Terminal.
+
+In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH.
 
 ## Create a profile
 
-Normally, you can set up an ssh session by executing `ssh user@machine` and you'll be prompted to enter your password. You can create a profile that does this on startup by adding the `commandline` setting like this:
+You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your settings.json file.
 
 ```js
 "commandline": "ssh cinnamon@roll"
