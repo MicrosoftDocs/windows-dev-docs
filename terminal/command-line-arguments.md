@@ -25,7 +25,7 @@ The `wt` command line accepts two types of values: **options** and **commands**.
 wt [options] [command ; ]
 ```
 
-To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, or `wt -?`.
+To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
 
 ## Options and commands
 

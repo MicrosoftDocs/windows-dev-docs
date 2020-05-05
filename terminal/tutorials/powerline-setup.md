@@ -49,11 +49,11 @@ If you are using PowerShell Core, install PSReadline:
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
 ```
 
-[PSReadline](https://docs.microsoft.com/en-us/powershell/module/psreadline/?view=powershell-6) lets you customize the command line editing environment in PowerShell.
+[PSReadline](https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-6) lets you customize the command line editing environment in PowerShell.
 
 ### Customize your prompt
 
-Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. To learn more about PowerShell profiles, click [here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7).
+Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. To learn more about PowerShell profiles, click [here](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7).
 
 In your PowerShell profile, add the following to the end of the file:
 

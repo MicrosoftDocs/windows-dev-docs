@@ -104,7 +104,7 @@ This sets the icon that displays within the tab and the dropdown menu.
 
 ### Hide a profile from the dropdown
 
-If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-proifles.md).
+If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
 
 **Property name:** `hidden`
 

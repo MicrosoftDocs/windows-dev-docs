@@ -38,17 +38,11 @@ If you'd like to have the shell automatically set your tab title, [visit the tab
 
 ## Command line arguments in PowerShell
 
-PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for `wt` command line arguments, you need to escape semicolon characters using backticks `` ` ``. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim. For more information on command line arguments, visit the [Command line arguments page](./command-line-arguments.md).
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in PowerShell.
 
 ## Command line arguments in WSL
 
-Execution aliases do not work in WSL. If you want to use `wt.exe` from a WSL setting, you can spawn it from CMD directly by running the following:
-
-```sh
-$ cmd.exe /c "wt.exe"
-```
-
-The `/c` option makes CMD run the command, then terminate.
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in WSL.
 
 ## My profile's `startingDirectory` setting is being ignored
 
