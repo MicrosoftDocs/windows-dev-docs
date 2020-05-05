@@ -4,7 +4,7 @@ description: Learn how to search in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: how-to
+ms.topic: how-to 
 ms.service: terminal
 ---
 
@@ -39,10 +39,13 @@ The search dialog works with [panes](./panes.md) as well. When focused on a pane
 
 ## Customize the search key binding
 
-You can open the search dialog with any key binding you feel comfortable with. This can be done by changing the key binding in your settings.json file that uses the `find` command. By default, this command is bound to `ctrl+shift+f`. The below key binding will bind `find` to `ctrl+f`, so when typing `ctrl+f`, the search dialog will open.
+You can open the search dialog with any key binding (shortcut key combination) that you prefer. To change the search key binding, open your settings.json file and search for the `find` command. By default, this command is set to `ctrl+shift+f`.
 
 ```json
-{ "command": "find", "keys": "ctrl+f" }
+// Press Ctrl+Shift+F to open the search box
+        { "command": "find", "keys": "ctrl+shift+f" },
 ```
+
+For example, you can change "ctrl+shift+f" to "ctrl+f", so when typing `ctrl+f`, the search dialog will open.
 
 To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).

@@ -10,11 +10,11 @@ ms.service: terminal
 
 # Global settings in the Windows Terminal
 
-The properties listed below affect the entire window, regardless of the profile settings. These should be placed at the root of your settings.json file.
+The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
 ## Default profile
 
-This sets the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or clicking the '+' icon.
+Set the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or selecting the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -236,7 +236,7 @@ ___
 
 ### Copy after selection is made
 
-When this is set to `true`, a selection is immediately copied to your clipboard upon creation. Right clicking will always paste in this case. When it's set to `false`, the selection persists and awaits further action. Right clicking will copy the selection.
+When this is set to `true`, a selection is immediately copied to your clipboard upon creation. The right-click on your mouse will always paste in this case. When it's set to `false`, the selection persists and awaits further action. Using your mouse to right-click will copy the selection.
 
 **Property name:** `copyOnSelect`
 
@@ -260,7 +260,7 @@ When this is set to `true`, the color and font formatting of selected text is al
 
 ### Word delimiters
 
-This determines the word delimiters used in a double click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
+This determines the word delimiters used in a double-click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
 
 **Property name:** `wordDelimiters`
 

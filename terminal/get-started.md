@@ -25,12 +25,12 @@ After installation, when you open the Terminal, it will start with PowerShell as
 
 ## Open a new tab
 
-You can open a new tab of the default profile by pressing `ctrl+shift+t` or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
+You can open a new tab of the default profile by pressing `ctrl+shift+t` or by selecting the + (plus) button. To open a different profile, select the ˅ (arrow) next to the + button to open the dropdown menu. From there, you can select which profile to open.
 
 ## Configuration
 
-If you want to customize the settings of your Terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. The application that opens is defined in your Windows OS settings.
+To customize the settings of your Windows Terminal, select **Settings** in the dropdown menu. This will open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
 
 ## Troubleshooting
 
-If you encounter any difficulties using the Terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can click the feedback link in the About menu of the Terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
+If you encounter any difficulties using the Windows Terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can select the feedback link in the **About** menu of the terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
