@@ -52,7 +52,7 @@ To open a new terminal instance, in this case the command will open the profile 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt -p "Ubuntu-18.04"
 ```
 
@@ -82,7 +82,7 @@ To specify the folder that should be used as the starting directory for the cons
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt -d d:\
 ```
 
@@ -110,7 +110,7 @@ To open a new terminal instance with multiple tabs, enter:
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt ; ;
 ```
 
@@ -138,7 +138,7 @@ To open a new terminal instance with multiple tabs, in this case a Command Promp
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 ```
 
@@ -168,7 +168,7 @@ To open a new terminal instance with one tab containing three panes running a Co
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
@@ -200,7 +200,7 @@ To open a new terminal instance with a specific tab in focus, use the `-t` flag 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```dos
+```bash
 wt ; new-tab -p "Ubuntu-18.04" ; focus-tab -t 1
 ```
 
