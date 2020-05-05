@@ -34,7 +34,7 @@ For example, this default setting uses the shortcut key <kbd>alt+f4</kbd> to clo
 { "command": { "action": "commandName", "argument": "value" }, "keys": "modifiers+key" }
 ```
 
-For example, this default setting uses the shortcut key "ctrl+shift+1" to open a new tab in the terminal based on whatever command line is listed first in your dropdown menu (typically this will open the PowerShell profile):
+For example, this default setting uses the shortcut key <kbd>ctrl+shift+1</kbd> to open a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
 
 ```json
 { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" }
