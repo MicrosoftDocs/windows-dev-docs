@@ -67,7 +67,9 @@ wt -p "Ubuntu-18.04"
 ```bash
 cmd.exe /c "wt.exe"
 ```
+
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+
 ---
 <!-- End tab selectors.  -->
 
@@ -95,6 +97,7 @@ wt -d d:\
 ```bash
 wt -d d:\
 ```
+
 ---
 <!-- End tab selectors.  -->
 
@@ -115,14 +118,17 @@ wt ; ; ;
 wt `; `;
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
 ```bash
 cmd.exe /c "wt.exe" \; \;
 ```
+
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+
+
 ---
 <!-- End tab selectors.  -->
 
@@ -143,14 +149,16 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" `; split-pane -H wsl
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
 ```bash
 cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
 ```
+
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+
 ---
 <!-- End tab selectors.  -->
 
@@ -169,14 +177,16 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" `; split-pane -H wsl
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
 ```bash
 cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
 ```
+
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+
 ---
 <!-- End tab selectors.  -->
 
@@ -204,7 +214,9 @@ wt `; new-tab -p "Ubuntu-18.04"`; focus-tab --target 1
 ```bash
 cmd.exe /c "wt.exe" \; new-tab -p "Ubuntu-18.04" \; focus-tab -t1
 ```
+
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+
 ---
 <!-- End tab selectors.  -->
 
