@@ -17,11 +17,11 @@ You can package your desktop application in an MSIX package to get access to man
 
 For more information, see [Package desktop applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
-## Use UWP APIs
+## Use Windows Runtime APIs
 
-You can call many UWP APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call UWP APIs to add toast notifications to your desktop app.
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
 
-For more information, see [Use UWP APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+For more information, see [Use Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Migrate a .NET Framework app to a UWP app
 

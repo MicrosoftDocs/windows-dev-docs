@@ -19,7 +19,7 @@ Many UWP features, such as the [**MediaCapture**](https://docs.microsoft.com/uwp
 
 When you use asynchronous APIs in your Universal Windows Platform (UWP) app, your code makes non-blocking calls in a consistent way. When you implement these asynchronous patterns in your own API definitions, callers can understand and use your code in a predictable way.
 
-Here are some common tasks that require calling asynchronous UWP APIs.
+Here are some common tasks that require calling asynchronous Windows Runtime APIs.
 
 -   Displaying a message dialog
 

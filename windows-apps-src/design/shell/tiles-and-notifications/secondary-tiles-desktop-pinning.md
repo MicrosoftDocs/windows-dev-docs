@@ -23,7 +23,7 @@ Adding a secondary tile from your WPF or WinForms application is very similar to
 
 ## Package your app with Desktop Bridge
 
-If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.
+If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any Windows Runtime APIs.
 
 
 ## Enable access to IInitializeWithWindow interface

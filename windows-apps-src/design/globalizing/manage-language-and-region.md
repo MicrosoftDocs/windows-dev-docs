@@ -13,7 +13,7 @@ A Windows user can use **Settings** > **Time & Language** > **Region & language*
 
 Also in **Settings** > **Time & Language** > **Region & language**, but separate from language, the user can specify their location (known as region) in the world. Note that the display language (and regional variant) setting isn't a determiner of the region setting, and vice versa. For example, a user might be currently living in France but choose a preferred Windows display language of Español (México).
 
-For UWP apps, a language is represented as a [BCP-47 language tag](https://tools.ietf.org/html/bcp47). For example, the BCP-47 language tag "en-US" corresponds to English (United States) in **Settings**. Appropriate UWP APIs accept and return string representations of BCP-47 language tags.
+For UWP apps, a language is represented as a [BCP-47 language tag](https://tools.ietf.org/html/bcp47). For example, the BCP-47 language tag "en-US" corresponds to English (United States) in **Settings**. Appropriate Windows Runtime APIs accept and return string representations of BCP-47 language tags.
 
 Also see the [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry).
 

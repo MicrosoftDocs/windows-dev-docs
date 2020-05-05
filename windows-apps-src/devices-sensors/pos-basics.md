@@ -1,6 +1,6 @@
 ﻿---
 title: Point of Service basics
-description: This article contains information about getting started with the PointOfService UWP APIs.
+description: This article contains information about getting started with the PointOfService Windows Runtime APIs.
 ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

@@ -76,7 +76,7 @@ DirectSound is not supported for UWP:
 
 -   Use [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) to add sound effects to your game.
 
-##  Replace DirectInput with XInput and UWP APIs
+##  Replace DirectInput with XInput and Windows Runtime APIs
 
 
 DirectInput is not supported for UWP:

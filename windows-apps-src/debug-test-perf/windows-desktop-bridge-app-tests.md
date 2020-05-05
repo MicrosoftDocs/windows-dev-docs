@@ -31,7 +31,7 @@ Having digitally signed files is always recommended. For more information, see [
 This test scans the package registry to check if any file association verbs are registered. 
 
 **Test details**  
-Converted desktop apps can be enhanced with a wide range of Universal Windows Platform APIs. This test checks that the UWP binaries in the app don’t call non-UWP APIs. UWP binaries have the **AppContainer** flag set.
+Converted desktop apps can be enhanced with a wide range of Windows Runtime APIs. This test checks that the UWP binaries in the app don’t call non-Windows Runtime APIs. UWP binaries have the **AppContainer** flag set.
 
 **Corrective actions**  
 See [Desktop to UWP Bridge: App extensions](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) for an explanation of these extensions and how to use them properly. 

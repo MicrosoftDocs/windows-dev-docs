@@ -24,8 +24,8 @@ C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/vis
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
 
-### The C++/WinRT language projection in the Windows UWP API reference content
-When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
+### The C++/WinRT language projection in the Windows Runtime API reference content
+When you're browsing [Windows Runtime APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
 For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, install the **Universal Windows Platform Development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
@@ -146,4 +146,4 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 * [Get started with C++/WinRT](get-started.md)
 * [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)
 * [String handling in C++/WinRT](strings.md)
-* [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)
+* [Windows Runtime APIs](https://docs.microsoft.com/uwp/api/)
