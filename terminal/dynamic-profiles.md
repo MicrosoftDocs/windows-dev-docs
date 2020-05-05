@@ -23,7 +23,7 @@ Regardless of whether a new shell is installed before or after your terminal ins
 
 ## Hide a profile
 
-To hide a profile from your terminal dropdown menu, add the `hidden` property to the `profile` section of your settings.json file and set it to `true`.
+To hide a profile from your terminal dropdown menu, add the `hidden` property to the profile object in your settings.json file and set it to `true`.
 
 ```json
 "hidden": true
