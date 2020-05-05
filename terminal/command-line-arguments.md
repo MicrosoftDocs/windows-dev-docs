@@ -47,7 +47,7 @@ Commands may vary slightly depending on which command line you're using.
 
 ### Open a new profile instance
 
-To open a new Terminal instance, in this case the command will open the profile named "Ubuntu-18.04", enter:
+To open a new terminal instance, in this case the command will open the profile named "Ubuntu-18.04", enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
@@ -98,6 +98,8 @@ wt -d d:\
 cmd.exe /c "wt.exe" -d d:\
 ```
 
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+
 ---
 <!-- End tab selectors.  -->
 
@@ -132,21 +134,19 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Multiple panes
-
-To open a new Terminal instance with one tab containing two panes running a Command Prompt profile and the PowerShell profile, enter:
+To open a new terminal instance with multiple tabs, in this case a Command Prompt profile and a PowerShell profile, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
 ```bash
-	wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
+wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 ```
 
 #### [PowerShell](#tab/powershell)
 
 ```bash
-	wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
+wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 ```
 
 PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
@@ -162,7 +162,9 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-To open a new terminal instance with window panes split between the Command Prompt, PowerShell, and default WSL profile, enter:
+### Multiple panes
+
+To open a new terminal instance with one tab containing three panes running a Command Prompt profile, a PowerShell profile, and your default profile running a WSL command line, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
@@ -200,13 +202,13 @@ To open a new terminal instance with a specific tab in focus, use the `-t` flag 
 #### [Command Prompt](#tab/windows)
 
 ```bash
-wt ; new-tab -p "Ubuntu-18.04"; focus-tab -t 1
+wt ; new-tab -p "Ubuntu-18.04" ; focus-tab -t 1
 ```
 
 #### [PowerShell](#tab/powershell)
 
 ```bash
-wt `; new-tab -p "Ubuntu-18.04"`; focus-tab --target 1
+wt `; new-tab -p "Ubuntu-18.04" `; focus-tab -t 1
 ```
 
 #### [Linux](#tab/linux)
@@ -222,16 +224,16 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ## Examples of multiple commands from PowerShell
 
-The Windows Terminal uses the semicolon character `;` as a delimiter for separating commands in the `wt` command line. Unfortunately, PowerShell also uses `;` as a command separator. To work around this, you can use the following tricks to run multiple `wt` commands from PowerShell. In all the following examples, a new Terminal window is created with three panes - one running Command Prompt, one with PowerShell, and the last one running WSL.
+The Windows Terminal uses the semicolon character `;` as a delimiter for separating commands in the `wt` command line. Unfortunately, PowerShell also uses `;` as a command separator. To work around this, you can use the following tricks to run multiple `wt` commands from PowerShell. In all the following examples, a new terminal window is created with three panes - one running Command Prompt, one with PowerShell, and the last one running WSL.
 
-The following examples use the `Start-Process` command to run `wt`. For more information on why the Terminal uses `Start-Process`, see [Using start](#using-start) below.
+The following examples use the `Start-Process` command to run `wt`. For more information on why the terminal uses `Start-Process`, see [Using start](#using-start) below.
 
 ### Single quoted parameters
 
 In this example, the `wt` parameters are wrapped in single quotes (`'`). This syntax is useful if nothing is being calculated.
 
 ```PowerShell
-start wt 'new-tab "cmd"; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe'
+start wt 'new-tab "cmd" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe'
 ```
 
 ### Escaped quotes
@@ -240,14 +242,14 @@ When passing a value contained in a variable to the `wt` command line, use the f
 
 ```PowerShell
 $ThirdPane = "wsl.exe"
-start wt "new-tab cmd; split-pane -p `"Windows PowerShell`" ; split-pane -H $ThirdPane"
+start wt "new-tab cmd ; split-pane -p `"Windows PowerShell`" ; split-pane -H $ThirdPane"
 ```
 
 Note the usage of  `` ` `` to escape the double-quotes (`"`) around "Windows PowerShell" in the `-p` parameter to the `split-pane` parameter.
 
 ### Using `start`
 
-All the above examples explicitly used `start` to launch the Terminal.
+All the above examples explicitly used `start` to launch the terminal.
 
 The following examples do not use `start` to run the command line. Instead, there are two other methods of escaping the command line:
 
@@ -264,4 +266,4 @@ wt --% new-tab cmd ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 
 In both of these examples, the newly created Windows Terminal window will create the window by correctly parsing all the provided command line arguments.
 
-However, these methods are _not_ recommended currently, as PowerShell will wait for the newly-created Terminal window to be closed before returning control to PowerShell. By default, PowerShell will always wait for Windows Store applications (like the Windows Terminal) to close before returning to the prompt. Note that this is different than the behavior of Command Prompt, which will return to the prompt immediately.
+However, these methods are _not_ recommended currently, as PowerShell will wait for the newly-created terminal window to be closed before returning control to PowerShell. By default, PowerShell will always wait for Windows Store applications (like the Windows Terminal) to close before returning to the prompt. Note that this is different than the behavior of Command Prompt, which will return to the prompt immediately.

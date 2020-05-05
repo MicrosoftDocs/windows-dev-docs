@@ -10,26 +10,26 @@ ms.service: terminal
 
 # Dynamic profiles in Windows Terminal
 
-The Windows Terminal will automatically create Windows Subsystem for Linux (WSL) and PowerShell profiles for you if you have these shells installed on your machine. This makes it easier for you to have all of your shells included in the Terminal without having to locate their executable files. These profiles are generated with the `source` property, which tells the Terminal where to locate the proper executable.
+The Windows Terminal will automatically create Windows Subsystem for Linux (WSL) and PowerShell profiles for you if you have these shells installed on your machine. This makes it easier for you to have all of your shells included in the terminal without having to locate their executable files. These profiles are generated with the `source` property, which tells the terminal where to locate the proper executable.
 
-Upon installing the Terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Global settings page](./customize-settings/global-settings.md).
+Upon installing the terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Global settings page](./customize-settings/global-settings.md).
 
 ![Windows Terminal dynamic profiles](./images/dynamic-profiles.png)
 _Configuration: [Light Theme](./custom-terminal-gallery/frosted-glass-theme.md)_
 
 ## What if I install a new shell after installing the Terminal?
 
-The Terminal will create a new profile for the newly installed shell, regardless if it was installed before or after your Terminal installation.
+The terminal will create a new profile for the newly installed shell, regardless if it was installed before or after your terminal installation.
 
 ## How do I hide a profile?
 
-If you'd like to hide a profile from your Terminal dropdown, you can add the `hidden` property to your profile in your settings file and set it to `true`.
+If you'd like to hide a profile from your terminal dropdown, you can add the `hidden` property to your profile in your settings file and set it to `true`.
 
 ```json
 "hidden": true
 ```
 
-If you delete a dynamically-created profile from your settings file, the Terminal will automatically regenerate the profile and replace it in the JSON.
+If you delete a dynamically-created profile from your settings file, the terminal will automatically regenerate the profile and replace it in the JSON.
 
 ## How do I prevent a profile from being generated?
 

@@ -10,7 +10,7 @@ ms.service: terminal
 
 # Custom key bindings in Windows Terminal
 
-You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the Terminal using your keyboard.
+You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
 ## Key binding formats
 

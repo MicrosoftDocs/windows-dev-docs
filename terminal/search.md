@@ -21,7 +21,7 @@ _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in
 
 ## Directional search
 
-The Terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
+The terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
 
 ![Windows Terminal directional search screenshot](./images/search-direction.gif)
 
