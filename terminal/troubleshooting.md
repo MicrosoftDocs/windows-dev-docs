@@ -38,17 +38,11 @@ To have the shell automatically set your tab title, [visit the set the tab title
 
 ## Command line arguments in PowerShell
 
-PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for `wt` command line arguments, you need to escape semicolon characters using backticks `` ` ``. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim. For more information on command line arguments, visit the [Command line arguments page](./command-line-arguments.md).
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in PowerShell.
 
 ## Command line arguments in WSL
 
-Execution aliases do not work in WSL. If you want to use `wt.exe` from a WSL setting, you can spawn it from CMD directly by running the following:
-
-```sh
-$ cmd.exe /c "wt.exe"
-```
-
-The `/c` option makes CMD run the command, then terminate.
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in WSL.
 
 ## Problem setting `startingDirectory`
 
@@ -58,16 +52,16 @@ If your settings are correct, you may be running a startup script that sets the 
 
 Alternatively, if you are running a script using the `commandline` profile setting, it may be that you are setting the location there. Similar to PowerShell profiles, your commands there take precedence over the `startingDirectory` profile setting.
 
-The purose of `startingDirectory` is to launch a new Windows Terminal instance in the given directory. If the terminal runs any code that changes its directory, that may be a good place to take a look.
+The purpose of `startingDirectory` is to launch a new Windows Terminal instance in the given directory. If the terminal runs any code that changes its directory, that may be a good place to take a look.
 
 ## Ctrl+= does not increase the font size
 
-If you are using a German keyboard layout, you may run into this problem. `ctrl+=` gets deserialized as `ctrl+shift+0` if your main keyboard layout is set to German. This is the correct mapping for German keyboards.
+If you are using a German keyboard layout, you may run into this problem. <kbd>ctrl+=</kbd> gets deserialized as <kbd>ctrl+shift+0</kbd> if your main keyboard layout is set to German. This is the correct mapping for German keyboards.
 
-More importantly, the app never receives the `ctrl+shift+0` keystroke. This is because `ctrl+shift+0` is reserved by Windows if you have multiple keyboard layouts active.
+More importantly, the app never receives the <kbd>ctrl+shift+0</kbd> keystroke. This is because <kbd>ctrl+shift+0</kbd> is reserved by Windows if you have multiple keyboard layouts active.
 
 If you would like to disable this feature in order for `Ctrl+=` to work properly, follow the instructions for "Change Hotkeys to Switch Keyboard Layout in Windows 10" in this [blog post](https://winaero.com/blog/change-hotkeys-switch-keyboard-layout-windows-10/).
 
-Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of `ctrl+shift`), then select **OK** and then **Apply**. `ctrl+shift+0` should now work as a key binding and is passed through to the terminal.
+Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of <kbd>ctrl+shift</kbd>), then select **OK** and then **Apply**. <kbd>ctrl+shift+0</kbd> should now work as a key binding and is passed through to the terminal.
 
 On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./customize-settings/key-bindings.md) in your settings.json file.

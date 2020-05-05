@@ -14,20 +14,20 @@ The Windows Terminal comes with a search feature that allows you to look through
 
 ## Using search
 
-By default, you can open the search dialog by typing `ctrl+shift+f`. Once opened, you can type the keyword you're looking for into the text box and hit `enter` to search.
+By default, you can open the search dialog by typing <kbd>ctrl+shift+f</kbd>. Once opened, you can type the keyword you're looking for into the text box and hit <kbd>enter</kbd> to search.
 
 ![Windows Terminal search screenshot](./images/search.png)
 _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
 
 ## Directional search
 
-The Terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
+The terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
 
 ![Windows Terminal directional search screenshot](./images/search-direction.gif)
 
 ## Case match search
 
-If you'd like to narrow down your search results, you can add case matching as an option in your search. You can enable case matching by selecting the case match button, and the results that appear will only match the keyword entered with its specific letter casing.
+If you'd like to narrow down your search results, you can add case matching as an option in your search. You can toggle case matching by selecting the case match button, and the results that appear will only match the keyword entered with its specific letter casing.
 
 ![Windows Terminal case matching search screenshot](./images/search-case-match.gif)
 

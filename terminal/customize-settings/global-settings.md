@@ -14,7 +14,7 @@ The properties listed below affect the entire terminal window, regardless of the
 
 ## Default profile
 
-Set the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or selecting the '+' icon.
+Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the key binding assigned to `newTab`, running `wt new-tab` without specifying a profile, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -76,7 +76,7 @@ ___
 
 :::row:::
 :::column span="":::
-When this is set to `true`, tabs are always displayed. When it's set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When this is set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t` or by typing the key binding assigned to `newTab`. Note that changing this setting will require starting a new Terminal instance.
+When this is set to `true`, tabs are always displayed. When it's set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When this is set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing <kbd>ctrl+shift+t</kbd> or by typing the key binding assigned to `newTab`. Note that changing this setting will require starting a new terminal instance.
 
 **Property name:** `alwaysShowTabs`
 
@@ -143,7 +143,7 @@ ___
 
 ### Launch maximized
 
-This defines whether the Terminal will launch as maximized to fill the entire screen or in a window.
+This defines whether the terminal will launch as maximized to fill the entire screen or in a window.
 
 **Property name:** `launchMode`
 
@@ -155,7 +155,7 @@ This defines whether the Terminal will launch as maximized to fill the entire sc
 
 ### Launch position
 
-This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the Terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
+This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -199,7 +199,7 @@ ___
 
 :::row:::
 :::column span="":::
-When this is set to `true`, the tabs are moved into the title bar and the title bar disappears. When it's set to `false`, the title bar sits above the tabs. Note that changing this setting will require starting a new Terminal instance.
+When this is set to `true`, the tabs are moved into the title bar and the title bar disappears. When it's set to `false`, the title bar sits above the tabs. Note that changing this setting will require starting a new terminal instance.
 
 **Property name:** `showTabsInTitlebar`
 
@@ -218,7 +218,7 @@ When this is set to `true`, the tabs are moved into the title bar and the title 
 
 ### Set the text in the title bar
 
-When this is set to `true`, the title bar displays the title of the selected tab. When it's set to `false`, title bar displays "Windows Terminal". Note that changing this setting will require starting a new Terminal instance.
+When this is set to `true`, the title bar displays the title of the selected tab. When it's set to `false`, title bar displays "Windows Terminal". Note that changing this setting will require starting a new terminal instance.
 
 **Property name:** `showTerminalTitleInTitlebar`
 

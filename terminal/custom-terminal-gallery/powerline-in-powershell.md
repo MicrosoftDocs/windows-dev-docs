@@ -19,7 +19,7 @@ The prompt is styled using Powerline and is using the `Cascadia Code PL` font, w
 
 ```json
     {
-        "requestedTheme": "dark",
+        "theme": "dark",
         "profiles": [
             {
                 "name" : "Powershell",

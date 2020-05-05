@@ -15,11 +15,11 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ```json
 "defaults":
 {
-    SETTINGS TO APPLY TO ALL PROFILES
+    // SETTINGS TO APPLY TO ALL PROFILES
 },
 "list":
 [
-    PROFILE OBJECTS
+    // PROFILE OBJECTS
 ]
 ```
 
@@ -104,7 +104,7 @@ This sets the icon that displays within the tab and the dropdown menu.
 
 ### Hide a profile from the dropdown
 
-If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-proifles.md).
+If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
 
 **Property name:** `hidden`
 
@@ -148,7 +148,7 @@ ___
 
 ### Font face
 
-This is the name of the font face used in the profile. The Terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
+This is the name of the font face used in the profile. The terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
 
 **Property name:** `fontFace`
 
@@ -193,7 +193,7 @@ This sets the padding around the text within the window. This will accept three 
 
 ### Antialiasing text
 
-This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new Terminal instance.
+This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
 
 ![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
 
@@ -476,11 +476,11 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 
 ___
 
-## Retro Terminal Effects
+## Retro terminal effects
 
 :::row:::
 :::column span="":::
-When this is set to `true`, the Terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
+When this is set to `true`, the terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
 
 **Property name:** `experimental.retroTerminalEffect`
 

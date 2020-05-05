@@ -14,7 +14,7 @@ ms.service: terminal
 
 ```json
     {
-        "requestedTheme": "dark",
+        "theme": "dark",
         "profiles": [
             {
                 "name" : "Ubuntu",

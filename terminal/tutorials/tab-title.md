@@ -31,7 +31,8 @@ The `tabTitle` setting allows you to define the starting title for a new instanc
 | Ubuntu | The title is ignored, and instead set to `user@machine:path` |
 | Debian | The title is set. |
 
-Note that though Ubuntu and Debian both run bash, they have different behaviors. This is to show that different distributions may have different behaviors.
+> [!NOTE]
+> Though Ubuntu and Debian both run bash, they have different behaviors. This is to show that different distributions may have different behaviors.
 
 ## Set the shell's title
 
@@ -53,8 +54,6 @@ echo -ne "\033]0;New Title\a"
 
 This will change the title to 'New Title', and also set the prompt to '$'.
 
-Source: [https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)
-
 ## Use the `suppressApplicationTitle` setting
 
 Since a shell has control over its title, it may choose to overwrite the tab title at any time. For example, the `posh-git` module for PowerShell adds information about your Git repository to the title.
@@ -62,3 +61,8 @@ Since a shell has control over its title, it may choose to overwrite the tab tit
 Windows Terminal allows you to suppress changes to the title by setting `suppressApplicationTitle` to `true` in your profile. This makes new instances of the profile set your visible title to `tabTitle`. If `tabTitle` is not set, the visible title is set to the profile's `name`.
 
 Note that this decouples the shell's title from the visible title presented on the tab. If you read the shell's variable where the title is set, it may differ from the tab's title.
+
+## Resources
+
+* [Setting the console title to be your current working directory](https://devblogs.microsoft.com/powershell/setting-the-console-title-to-be-your-current-working-directory/)
+* [Change the title of a terminal on Ubuntu 16.04](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)

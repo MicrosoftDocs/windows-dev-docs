@@ -10,7 +10,7 @@ ms.service: terminal
 
 # Custom key bindings in Windows Terminal
 
-You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the Terminal using your keyboard.
+You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
 ## Key binding formats
 
@@ -336,7 +336,10 @@ This halves the size of the active pane and opens another. Without any arguments
 **Default bindings:**
 
 ```json
+// In settings.json
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+
+// In defaults.json
 { "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" },
 { "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" }
 ```
@@ -368,7 +371,10 @@ This copies the selected terminal content to your clipboard.
 **Default bindings:**
 
 ```json
-{ "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+// In settings.json
+{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+
+// In defaults.json
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
@@ -388,7 +394,10 @@ This inserts the content that was copied onto the clipboard.
 **Default bindings:**
 
 ```json
+// In settings.json
 { "command": "paste", "keys": "ctrl+v" },
+
+// In defaults.json
 { "command": "paste", "keys": "ctrl+shift+v" },
 { "command": "paste", "keys": "shift+insert" }
 ```
