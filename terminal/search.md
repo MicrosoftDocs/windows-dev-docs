@@ -14,7 +14,7 @@ The Windows Terminal comes with a search feature that allows you to look through
 
 ## Using search
 
-By default, you can open the search dialog by typing `ctrl+shift+f`. Once opened, you can type the keyword you're looking for into the text box and hit `enter` to search.
+By default, you can open the search dialog by typing <kbd>ctrl+shift+f</kbd>. Once opened, you can type the keyword you're looking for into the text box and hit `enter` to search.
 
 ![Windows Terminal search screenshot](./images/search.png)
 _Configuration: [Powerline in PowerShell](./custom-terminal-gallery/powerline-in-powershell.md)_
