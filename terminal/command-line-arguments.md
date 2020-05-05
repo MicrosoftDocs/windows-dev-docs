@@ -65,7 +65,7 @@ wt -p "Ubuntu-18.04"
 #### [Linux](#tab/linux)
 
 ```bash
-cmd.exe /c "wt.exe"
+cmd.exe /c "wt.exe" -p "Ubuntu-18.04"
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
@@ -95,7 +95,7 @@ wt -d d:\
 #### [Linux](#tab/linux)
 
 ```bash
-wt -d d:\
+cmd.exe /c "wt.exe" -d d:\
 ```
 
 ---
@@ -103,13 +103,13 @@ wt -d d:\
 
 ### Multiple tabs
 
-To open a new Terminal instance with multiple tabs, enter:
+To open a new terminal instance with multiple tabs, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
 ```bash
-wt ; ; ;
+wt ; ; 
 ```
 
 #### [PowerShell](#tab/powershell)
