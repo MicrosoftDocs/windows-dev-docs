@@ -25,7 +25,7 @@ The `wt` command line accepts two types of values: **options** and **commands**.
 wt [options] [command ; ]
 ```
 
-To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, or `wt -?`.
+To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
 
 ## Options and commands
 
@@ -59,7 +59,10 @@ wt -p "Ubuntu-18.04"
 # Linux distro
 cmd.exe /c "wt.exe" -p "Ubuntu-18.04"
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
  The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any Terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
@@ -78,7 +81,10 @@ wt -d d:\
 # Linux distro
 cmd.exe /c "wt.exe" -d d:\
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 ### Multiple tabs
@@ -92,12 +98,19 @@ wt ; ; ;
 # PowerShell
 wt `; `; `;
 
-# PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+# PowerShell uses a semicolon ; to delimit statements.
+# To interpret a semicolon ; as a command delimiter for wt command line arguments,
+# you need to escape semicolon characters using backticks `.
+# PowerShell also has the stop parsing operator (--%),
+# which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 # Linux distro
 cmd.exe /c "wt.exe" \; \; \;
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 To open a new Terminal instance with multiple tabs, in this case a Command Prompt profile and a PowerShell profile, enter:
@@ -112,7 +125,10 @@ wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 # Linux distro
 cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 ### Multiple panes
@@ -126,12 +142,19 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell"
 # PowerShell
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell"
 
-# PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
-    
+# PowerShell uses a semicolon ; to delimit statements.
+# To interpret a semicolon ; as a command delimiter for wt command line arguments,
+# you need to escape semicolon characters using backticks `.
+# PowerShell also has the stop parsing operator (--%),
+# which instructs it to stop interpreting anything after it and just pass it on verbatim.
+
 # Linux distro
 cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -p "Windows PowerShell"
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 To open a new Terminal instance with one tab containing three panes running a Command Prompt profile, a PowerShell profile, and your default profile running a WSL command line, enter:
@@ -143,12 +166,19 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.
 # PowerShell
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 
-# PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks `. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+# PowerShell uses a semicolon ; to delimit statements.
+# To interpret a semicolon ; as a command delimiter for wt command line arguments,
+# you need to escape semicolon characters using backticks `.
+# PowerShell also has the stop parsing operator (--%),
+# which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 # Linux distro
 cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -p "Windows PowerShell" \; split-pane -H wsl.exe
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
@@ -167,7 +197,10 @@ wt `; new-tab -p "Ubuntu-18.04" `; focus-tab -t 1
 # Linux distro
 cmd.exe /c "wt.exe" \; new-tab -p "Ubuntu-18.04" \; focus-tab -t 1
 
-# Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+# Execution aliases do not work in WSL distributions.
+# If you want to use wt.exe from a WSL command line,
+# you can spawn it from CMD directly by running `cmd.exe`.
+# The `/c` option tells CMD to terminate after running.
 ```
 
 ## Examples of multiple commands from PowerShell

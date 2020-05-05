@@ -14,7 +14,7 @@ The properties listed below affect the entire window, regardless of the profile 
 
 ## Default profile
 
-This sets the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the key binding assigned to `newTab`, or clicking the '+' icon.
+This sets the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the key binding assigned to `newTab`, running `wt new-tab` without specifying a profile, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
