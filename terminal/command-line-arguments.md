@@ -73,7 +73,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
- The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any Terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
+ The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
 
 ### Target a directory
 
@@ -194,13 +194,13 @@ The `-H` flag (or `--horizontal`) indicates that you would like the panes to be 
 
 ### Tab focus
 
-To open a new Terminal instance with a specific tab in focus, use the `-t` flag (or `--target`), along with the tab-index number. To open your default profile in the first tab and the "Ubuntu-18.04" profile focused in the second tab (`-t 1`), enter:
+To open a new terminal instance with a specific tab in focus, use the `-t` flag (or `--target`), along with the tab-index number. To open your default profile in the first tab and the "Ubuntu-18.04" profile focused in the second tab (`-t 1`), enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
 ```bash
-wt ; new-tab -p "Ubuntu-18.04"; focus-tab -t1
+wt ; new-tab -p "Ubuntu-18.04"; focus-tab -t 1
 ```
 
 #### [PowerShell](#tab/powershell)
@@ -212,7 +212,7 @@ wt `; new-tab -p "Ubuntu-18.04"`; focus-tab --target 1
 #### [Linux](#tab/linux)
 
 ```bash
-cmd.exe /c "wt.exe" \; new-tab -p "Ubuntu-18.04" \; focus-tab -t1
+cmd.exe /c "wt.exe" \; new-tab -p "Ubuntu-18.04" \; focus-tab -t 1
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
