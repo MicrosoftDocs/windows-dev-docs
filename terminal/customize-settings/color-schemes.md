@@ -12,7 +12,7 @@ ms.service: terminal
 
 ## Creating your own color scheme
 
-Color schemes can be defined in the `schemes` array of your settings.json file. They can be written in the following format:
+Color schemes can be defined in the `schemes` array of your settings.json file. They are written in the following format:
 
 ```json
 {
@@ -43,7 +43,7 @@ Color schemes can be defined in the `schemes` array of your settings.json file. 
 },
 ```
 
-Every setting aside from `name` accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`. `cursorColor` and `selectionBackground` are optional.
+Every setting, aside from `name`, accepts a color as a string in hex format: `"#rgb"` or `"#rrggbb"`. The `cursorColor` and `selectionBackground` settings are optional.
 
 <br />
 
@@ -51,7 +51,7 @@ ___
 
 ## Included color schemes
 
-The following color schemes come included in the Windows Terminal inside the defaults.json file, which can be accessed by holding <kbd>alt</kbd> and clicking the settings button. If you would like to set one in a profile, you can add the `colorScheme` property with the color scheme's `name` as the value.
+Windows Terminal includes these color schemes inside the defaults.json file, which can be accessed by holding <kbd>alt</kbd> and selecting the settings button. If you would like to set up a color scheme inside one of your command line profiles, add the `colorScheme` property with the color scheme's `name` as the value.
 
 ```json
 "colorScheme": "COLOR SCHEME NAME"
