@@ -64,4 +64,5 @@ Note that this decouples the shell's title from the visible title presented on t
 
 ## Resources
 
-- [Change the title of a terminal on Ubuntu 16.04](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)
+* [Setting the console title to be your current working directory](https://devblogs.microsoft.com/powershell/setting-the-console-title-to-be-your-current-working-directory/)
+* [Change the title of a terminal on Ubuntu 16.04](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)
