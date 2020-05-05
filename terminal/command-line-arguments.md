@@ -27,6 +27,20 @@ wt [options] [command ; ]
 
 To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, or `wt -?`.
 
+## Options and commands
+
+Below is the full list of supported commands and options for the `wt` command line.
+
+| Option | Description |
+| ------ | ----------- |
+| `--help`, `-h`, `-?`, `/?` | Displays the help message. |
+
+| Command | Parameters | Description |
+| ------- | ---------- | ----------- |
+| `new-tab` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Creates a new tab. |
+| `split-pane` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Splits a new pane. |
+| `focus-tab` | `--target, -t tab-index` | Focuses on a specific tab. |
+
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
