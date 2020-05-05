@@ -14,7 +14,7 @@ Panes give you the ability to run multiple command line applications next to eac
 
 ## Creating a new pane
 
-You can either create a new vertical or horizontal pane in the Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type <kbd>alt+shift+plus</kbd>. For a horizontal pane of your default profile, you can type <kbd>alt+shift+-</kbd>.
+You can either create a new vertical or horizontal pane in the Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type <kbd>alt+shift+plus</kbd>. For a horizontal pane of your default profile, you can type <kbd>alt+shift+-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
@@ -29,7 +29,7 @@ If you would like to change these key bindings, you can create new ones using th
 
 ## Switching between panes
 
-The Terminal allows you to navigate between panes by using the keyboard. If you hold the <kbd>alt</kbd> key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
+The terminal allows you to navigate between panes by using the keyboard. If you hold the <kbd>alt</kbd> key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
 
 ![Windows Terminal switch panes](./images/navigate-panes.gif)
 
@@ -75,7 +75,7 @@ You can customize what opens inside a new pane depending on your custom key bind
 
 ### Duplicating a pane
 
-The Terminal allows you to duplicate the focused pane's profile into another pane.
+The terminal allows you to duplicate the focused pane's profile into another pane.
 
 ![Windows Terminal duplicate panes](./images/duplicate-panes.gif)
 
@@ -85,6 +85,6 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
 ```
 
-### New Terminal arguments
+### New terminal arguments
 
 [!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]

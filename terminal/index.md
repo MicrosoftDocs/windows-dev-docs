@@ -47,7 +47,7 @@ You can have background images and gifs inside your Windows Terminal window. Inf
 
 ## Command line arguments
 
-You can set the Windows Terminal to launch in a specific configuration using command line arguments. You can specify which profile to open in a new tab, which folder directory should be selected, open the Terminal with split window panes, and choose which tab should be in focus.
+You can set the Windows Terminal to launch in a specific configuration using command line arguments. You can specify which profile to open in a new tab, which folder directory should be selected, open the terminal with split window panes, and choose which tab should be in focus.
 
 For example, to open Windows Terminal from PowerShell with three panes, with the left pane running a Command Prompt profile and the right pane split between your PowerShell and your default profile running WSL, enter:
 

@@ -148,7 +148,7 @@ ___
 
 ### Font face
 
-This is the name of the font face used in the profile. The Terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
+This is the name of the font face used in the profile. The terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
 
 **Property name:** `fontFace`
 
@@ -193,7 +193,7 @@ This sets the padding around the text within the window. This will accept three 
 
 ### Antialiasing text
 
-This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new Terminal instance.
+This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
 
 ![Windows Terminal antialiasing text](./../images/antialiasing-mode.gif)
 
@@ -476,11 +476,11 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 
 ___
 
-## Retro Terminal Effects
+## Retro terminal effects
 
 :::row:::
 :::column span="":::
-When this is set to `true`, the Terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
+When this is set to `true`, the terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
 
 **Property name:** `experimental.retroTerminalEffect`
 
