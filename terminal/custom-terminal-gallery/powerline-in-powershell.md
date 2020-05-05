@@ -28,9 +28,7 @@ The prompt is styled using Powerline and is using the `Cascadia Code PL` font, w
                 "colorScheme" : "Campbell",
                 "cursorColor" : "#FFFFFD",
                 "fontFace" : "Cascadia Code PL",
-                "padding" : "8, 8, 8, 8",
-                "useAcrylic" : true,
-                "suppressApplicationTitle": true
+                "useAcrylic" : true
             }
         ]
     }

@@ -10,6 +10,11 @@ ms.service: terminal
 
 # Frosted Glass Theme in Windows Terminal
 
+The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
+
+> [!div class="nextstepaction"]
+> [Learn how to set up Powerline](./../tutorials/powerline-setup.md)
+
 ![Windows Terminal Frosted Glass Theme](./../images/frosted-glass-theme.png)
 
 ```json
@@ -23,8 +28,6 @@ ms.service: terminal
                 "colorScheme" : "Frost",
                 "cursorColor" : "#000000",
                 "fontFace" : "Cascadia Code PL",
-                "padding" : "8, 8, 8, 8",
-                "suppressApplicationTitle": true,
                 "useAcrylic": true
             }
         ],

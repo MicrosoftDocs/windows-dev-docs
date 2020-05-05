@@ -10,6 +10,8 @@ ms.service: terminal
 
 # Retro Command Prompt in Windows Terminal
 
+The prompt is using the `PxPlus IBM VGA8` font, which is not included in the Windows Terminal.
+
 ![Windows Terminal Retro Command Prompt](./../images/retro-command-prompt.png)
 
 ```json
