@@ -29,7 +29,7 @@ The terminal will automatically create profiles for you if you have WSL distros 
 
 ## Open a new tab
 
-You can open a new tab of the default profile by pressing <kbd>ctrl+shift+t</kbd> or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
+You can open a new tab of the default profile by pressing <kbd>ctrl+shift+t</kbd> or by selecting the + (plus) button. To open a different profile, select the ˅ (arrow) next to the + button to open the dropdown menu. From there, you can select which profile to open.
 
 ## Open a new pane
 
@@ -37,7 +37,7 @@ You can run multiple shells side-by-side using panes. To open a pane, you can us
 
 ## Configuration
 
-If you want to customize the settings of your terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. The application that opens is defined in your Windows OS settings.
+To customize the settings of your Windows Terminal, select **Settings** in the dropdown menu. This will open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
 
 The terminal supports customization of [global properties](./customize-settings/global-settings.md) that affect the whole application, [profile properties](./customize-settings/profile-settings.md) that affect the settings of each profile, and [key bindings](./customize-settings/key-bindings.md) that allow you to interact with the terminal using your keyboard.
 
@@ -47,4 +47,4 @@ You can launch the terminal in a specific configuration using command line argum
 
 ## Troubleshooting
 
-If you encounter any difficulties using the terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can click the feedback link in the About menu of the terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
+If you encounter any difficulties using the terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can select the feedback link in the **About** menu of the terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
