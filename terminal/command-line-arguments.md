@@ -134,19 +134,19 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ### Multiple panes
 
-To open a new Terminal instance with one tab containing two panes running a Command Prompt profile and the default WSL profile, enter:
+To open a new Terminal instance with one tab containing two panes running a Command Prompt profile and the PowerShell profile, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
 ```bash
-wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
+	wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 ```
 
 #### [PowerShell](#tab/powershell)
 
 ```bash
-wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
+	wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 ```
 
 PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
@@ -162,13 +162,13 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-To open a new terminal instance with window panes split between a Windows Command Prompt, a PowerShell command line, and an Ubuntu-18.04 command line, enter:
+To open a new terminal instance with window panes split between the Command Prompt, PowerShell, and default WSL profile, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
 ```bash
-wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
+wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
 #### [PowerShell](#tab/powershell)
@@ -182,7 +182,7 @@ PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; 
 #### [Linux](#tab/linux)
 
 ```bash
-cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
+cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -p "Windows PowerShell" \; split-pane -H wsl.exe
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
