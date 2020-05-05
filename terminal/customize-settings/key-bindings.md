@@ -10,7 +10,7 @@ ms.service: terminal
 
 # Custom key bindings in Windows Terminal
 
-You can create custom key bindings inside the Windows Terminal that give you control of how you interact with the terminal using your keyboard.
+You can create custom key bindings (keyboard shortcuts) inside the Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
 ## Key binding formats
 
@@ -22,10 +22,22 @@ Key bindings can be structured in the following formats:
 { "command": "commandName", "keys": "modifiers+key" }
 ```
 
+For example, this default setting uses the shortcut key <kbd>alt+f4</kbd> to close the terminal window:
+
+```json
+{ "command": "closeWindow", "keys": "alt+f4" }
+```
+
 ### Commands with arguments
 
 ```json
 { "command": { "action": "commandName", "argument": "value" }, "keys": "modifiers+key" }
+```
+
+For example, this default setting uses the shortcut key <kbd>ctrl+shift+1</kbd> to open a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
+
+```json
+{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" }
 ```
 
 <br />
@@ -76,7 +88,7 @@ ___
 
 `ctrl+`, `shift+`, `alt+`
 
-### Keys
+### Modifier keys
 
 | Type | Keys |
 | ---- | ---- |
@@ -379,7 +391,7 @@ This copies the selected terminal content to your clipboard.
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
 
-#### Actions
+#### Clipboard Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
