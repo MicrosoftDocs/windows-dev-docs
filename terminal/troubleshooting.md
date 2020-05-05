@@ -12,6 +12,22 @@ ms.service: terminal
 
 This guide addresses some of the common errors and obstacles you may encounter when using Windows Terminal.
 
+## Set your WSL distribution to start in the home `~` directory when launched
+
+By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL, however, you may want to use the WSL home path instead. `startingDirectory` only accepts a Windows-style path, so setting it to start within a WSL distribution requires a prefix.
+
+Beginning in Windows 10 version 1903, the file systems of WSL distributions can be addressed using the `\\wsl$\` prefix. For any WSL distribution with the name `DistroName`, use `\\wsl$\DistroName` as a Windows path that points to the root of that distribution's file system.
+
+For example, the following setting will launch the "Ubuntu-18.04" distribution in its home file path:
+
+```json
+{
+    "name": "Ubuntu-18.04",
+    "commandline" : "wsl -d Ubuntu-18.04",
+    "startingDirectory" : "//wsl$/Ubuntu-18.04/home/<Your Ubuntu Username>",
+}
+```
+
 ## Setting the tab title
 
 To have the shell automatically set your tab title, [visit the set the tab title tutorial](./tutorials/tab-title.md). If you want to set your own tab title, open the settings.json file and follow these steps:

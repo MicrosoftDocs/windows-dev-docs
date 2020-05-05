@@ -1,5 +1,5 @@
 ---
-title: Windows Terminal Search
+title: Windows Terminal Panes
 description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon

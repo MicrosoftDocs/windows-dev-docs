@@ -1,14 +1,18 @@
 ---
-title: Windows Terminal Light Theme Configuration
-description: This is the configuration for light theme.
+title: Windows Terminal Retro Command Prompt Configuration
+description: This is the configuration for a retro command prompt in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: sample
 ms.service: terminal
 ---
 
 # Retro Command Prompt in Windows Terminal
+
+The prompt is using the `PxPlus IBM VGA8` font, which is not included in the Windows Terminal.
+
+![Windows Terminal Retro Command Prompt](./../images/retro-command-prompt.png)
 
 ```json
     {
@@ -20,6 +24,7 @@ ms.service: terminal
                 "closeOnExit" : true,
                 "colorScheme" : "Retro",
                 "cursorColor" : "#FFFFFF",
+                "cursorShape": "filledBox",
                 "fontSize" : 16,
                 "padding" : "5, 5, 5, 5",
                 "tabTitle" : "Command Prompt",

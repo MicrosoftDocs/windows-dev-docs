@@ -10,7 +10,7 @@ ms.service: terminal
 
 # What is Windows Terminal?
 
-The Windows Terminal is a modern terminal application for users of command line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcut keybindings.
+The Windows Terminal is a modern terminal application for users of command line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcut key bindings.
 
 ![Windows Terminal screenshot](./images/overview.png)
 
@@ -29,7 +29,7 @@ You can configure your Windows Terminal to have a variety of color schemes and s
 
 There are a variety of custom key combinations you can use in the Windows Terminal to have it feel more natural to you. If you don't like a particular keyboard shortcut, you can change it to whatever you prefer.
 
-For example, the default shortcut keybinding to copy text from the command line is "ctrl+shift+c". You can change this to "ctrl+1" or whatever you prefer. To open a new tab, the default shortcut is "ctrl+t", but maybe you want to change this to "ctrl+2". The default shortcut to flip between the tabs you have open is "ctrl+tab", this could be changed to "ctrl+-" and used to create a new tab instead.
+For example, the default shortcut key binding to copy text from the command line is "ctrl+shift+c". You can change this to "ctrl+1" or whatever you prefer. To open a new tab, the default shortcut is "ctrl+t", but maybe you want to change this to "ctrl+2". The default shortcut to flip between the tabs you have open is "ctrl+tab", this could be changed to "ctrl+-" and used to create a new tab instead.
 
 You can learn about customizing your key bindings on the [Key bindings page](./customize-settings/key-bindings.md).
 
@@ -47,9 +47,9 @@ You can have background images and gifs inside your Windows Terminal window. Inf
 
 ## Command line arguments
 
-You can set the Windows Terminal to launch in a specific configuration using command line arguments. You can specify which command line to open in a new tab, which folder directory should be selected, open the terminal with split window panes, and choose which tab should be in focus.
+You can set the Windows Terminal to launch in a specific configuration using command line arguments. You can specify which profile to open in a new tab, which folder directory should be selected, open the Terminal with split window panes, and choose which tab should be in focus.
 
-For example, to open Windows Terminal with three panes, with the left pane running Windows Command Prompt and the right pane split between your PowerShell and your default WSL distribution, enter:
+For example, to open Windows Terminal from PowerShell with three panes, with the left pane running a Command Prompt profile and the right pane split between your PowerShell and your default profile running WSL, enter:
 
 ```bash
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

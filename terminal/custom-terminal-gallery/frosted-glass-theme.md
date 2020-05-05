@@ -1,34 +1,39 @@
 ---
-title: Windows Terminal Light Theme Configuration
-description: This is the configuration for light theme.
+title: Windows Terminal Frosted Glass Theme Configuration
+description: This is a sample configuration for a frosted glass theme.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: sample
 ms.service: terminal
 ---
 
-# Light Theme in Windows Terminal
+# Frosted Glass Theme in Windows Terminal
+
+The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
+
+> [!div class="nextstepaction"]
+> [Learn how to set up Powerline](./../tutorials/powerline-setup.md)
+
+![Windows Terminal Frosted Glass Theme](./../images/frosted-glass-theme.png)
 
 ```json
     {
         "requestedTheme": "light",
         "profiles": [
             {
-                "name" : "Powershell",
+                "name" : "PowerShell",
                 "source" : "Windows.Terminal.PowershellCore",
                 "acrylicOpacity": 0.7,
-                "colorScheme" : "Cinnamon",
+                "colorScheme" : "Frost",
                 "cursorColor" : "#000000",
                 "fontFace" : "Cascadia Code PL",
-                "padding" : "8, 8, 8, 8",
-                "suppressApplicationTitle": true,
                 "useAcrylic": true
             }
         ],
         "schemes": [
             {
-                "name" : "Cinnamon",
+                "name" : "Frost",
                 "background" : "#FFFFFF",
                 "black" : "#3C5712",
                 "blue" : "#17b2ff",

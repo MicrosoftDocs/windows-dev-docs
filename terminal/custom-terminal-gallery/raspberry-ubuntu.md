@@ -1,14 +1,16 @@
 ---
 title: Windows Terminal Raspberry Ubuntu Configuration
-description: This is the configuration for Raspberry Ubuntu.
+description: This is the theme for Raspberry Ubuntu.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
-ms.topic: overview
+ms.topic: sample
 ms.service: terminal
 ---
 
 # Raspberry Ubuntu in Windows Terminal
+
+![Windows Terminal Raspberry Ubuntu](./../images/raspberry-ubuntu.png)
 
 ```json
     {
