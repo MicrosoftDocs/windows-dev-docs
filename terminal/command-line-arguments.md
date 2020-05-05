@@ -52,13 +52,13 @@ To open a new terminal instance, in this case the command will open the profile 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```dos
 wt -p "Ubuntu-18.04"
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt -p "Ubuntu-18.04"
 ```
 
@@ -82,13 +82,13 @@ To specify the folder that should be used as the starting directory for the cons
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```dos
 wt -d d:\
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt -d d:\
 ```
 
@@ -110,13 +110,13 @@ To open a new terminal instance with multiple tabs, enter:
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
-wt ; ; 
+```dos
+wt ; ;
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt `; `;
 ```
 
@@ -130,7 +130,6 @@ cmd.exe /c "wt.exe" \; \;
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
 
-
 ---
 <!-- End tab selectors.  -->
 
@@ -139,13 +138,13 @@ To open a new terminal instance with multiple tabs, in this case a Command Promp
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```dos
 wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 ```
 
@@ -169,13 +168,13 @@ To open a new terminal instance with one tab containing three panes running a Co
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```dos
 wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
@@ -201,13 +200,13 @@ To open a new terminal instance with a specific tab in focus, use the `-t` flag 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```dos
 wt ; new-tab -p "Ubuntu-18.04" ; focus-tab -t 1
 ```
 
 #### [PowerShell](#tab/powershell)
 
-```bash
+```powershell
 wt `; new-tab -p "Ubuntu-18.04" `; focus-tab -t 1
 ```
 
@@ -232,7 +231,7 @@ The following examples use the `Start-Process` command to run `wt`. For more inf
 
 In this example, the `wt` parameters are wrapped in single quotes (`'`). This syntax is useful if nothing is being calculated.
 
-```PowerShell
+```powershell
 start wt 'new-tab "cmd" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe'
 ```
 
@@ -240,7 +239,7 @@ start wt 'new-tab "cmd" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl
 
 When passing a value contained in a variable to the `wt` command line, use the following syntax:
 
-```PowerShell
+```powershell
 $ThirdPane = "wsl.exe"
 start wt "new-tab cmd ; split-pane -p `"Windows PowerShell`" ; split-pane -H $ThirdPane"
 ```
@@ -256,11 +255,11 @@ The following examples do not use `start` to run the command line. Instead, ther
 * Only escaping the semicolons so that `PowerShell` will ignore them and pass them straight to `wt`.
 * Using `--%`, so PowerShell will treat the rest of the command line as arguments to the application.
 
-```PowerShell
+```powershell
 wt new-tab "cmd" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-```PowerShell
+```powershell
 wt --% new-tab cmd ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
