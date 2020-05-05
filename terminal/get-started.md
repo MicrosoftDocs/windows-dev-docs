@@ -23,13 +23,27 @@ After installation, when you open the Terminal, it will start with PowerShell as
 
 ![Windows Terminal first run](./images/first-run.png)
 
+### Dynamic profiles
+
+The Terminal will automatically create profiles for you if you have WSL distros or multiple versions of PowerShell installed. Learn more about dynamic profiles on the [Dynamic profiles page](./dynamic-profiles.md).
+
 ## Open a new tab
 
 You can open a new tab of the default profile by pressing <kbd>ctrl+shift+t</kbd> or by clicking the plus button. If you want to open a different profile, you can click the arrow next to the plus button to open the dropdown menu. From there, you can select which profile to open.
 
+## Open a new pane
+
+You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>alt+shift+d</kbd>. This key binding will open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
+
 ## Configuration
 
 If you want to customize the settings of your Terminal, you can click on the settings button in the dropdown menu. This will open the settings.json file in your default JSON text editor. The application that opens is defined in your Windows OS settings.
+
+The Terminal supports customization of [global properties](./customize-settings/global-settings.md) that affect the whole application, [profile properties](./customize-settings/profile-settings.md) that affect the settings of each profile, and [key bindings](./customize-settings/key-bindings.md) that allow you to interact with the Terminal using your keyboard.
+
+## Command line arguments
+
+You can launch the Terminal in a specific configuration using command line arguments. These arguments let you open the Terminal with specific tabs and panes with custom profile settings. Learn more about command line arguments on the [Command line arguments page](./command-line-arguments.md).
 
 ## Troubleshooting
 
