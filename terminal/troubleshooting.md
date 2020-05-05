@@ -70,4 +70,4 @@ If you would like to disable this feature in order for `Ctrl+=` to work properly
 
 Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of `ctrl+shift`), then select **OK** and then **Apply**. `ctrl+shift+0` should now work as a key binding and is passed through to the terminal.
 
-On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./key-bindings.md) in your settings.json file.
+On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./customize-settings/key-bindings.md) in your settings.json file.
