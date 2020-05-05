@@ -16,7 +16,7 @@ The prompt is using the `PxPlus IBM VGA8` font, which is not included in the Win
 
 ```json
     {
-        "requestedTheme": "dark",
+        "theme": "dark",
         "profiles": [
             {
                 "name": "Command Prompt",

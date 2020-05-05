@@ -14,7 +14,7 @@ Panes give you the ability to run multiple command line applications next to eac
 
 ## Creating a new pane
 
-You can either create a new vertical or horizontal pane in the Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type `alt+shift+plus`. For a horizontal pane of your default profile, you can type `alt+shift+-`.
+You can either create a new vertical or horizontal pane in the Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type <kbd>alt+shift+plus</kbd>. For a horizontal pane of your default profile, you can type <kbd>alt+shift+-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
@@ -29,7 +29,7 @@ If you would like to change these key bindings, you can create new ones using th
 
 ## Switching between panes
 
-The Terminal allows you to navigate between panes by using the keyboard. If you hold the `alt` key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
+The Terminal allows you to navigate between panes by using the keyboard. If you hold the <kbd>alt</kbd> key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
 
 ![Windows Terminal switch panes](./images/navigate-panes.gif)
 
@@ -44,7 +44,7 @@ You can customize this by adding key bindings for the `moveFocus` command and se
 
 ## Resizing a pane
 
-You can adjust the size of your panes by holding `alt+shift` and using your arrow keys to resize the focused pane.
+You can adjust the size of your panes by holding <kbd>alt+shift</kbd> and using your arrow keys to resize the focused pane.
 
 ![Windows Terminal create pane](./images/resize-panes.gif)
 
@@ -59,7 +59,7 @@ To customize this key binding, you can add new ones using the `resizePane` actio
 
 ## Closing a pane
 
-You can close the focused pane by typing `ctrl+shift+w`. If you only have one pane, `ctrl+shift+w` will close the tab. As always, closing the last tab will close the window.
+You can close the focused pane by typing <kbd>ctrl+shift+w</kbd>. If you only have one pane, <kbd>ctrl+shift+w</kbd> will close the tab. As always, closing the last tab will close the window.
 
 ![Windows Terminal close panes](./images/close-panes.gif)
 

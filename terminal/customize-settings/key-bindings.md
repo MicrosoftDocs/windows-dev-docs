@@ -368,7 +368,7 @@ This copies the selected terminal content to your clipboard.
 **Default bindings:**
 
 ```json
-{ "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```

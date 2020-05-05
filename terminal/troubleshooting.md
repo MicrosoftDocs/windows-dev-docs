@@ -62,11 +62,11 @@ In the end, `startingDirectory` launches a new Terminal instance in the given di
 
 ## `Ctrl+=` does not increase the font size
 
-If you are using a German keyboard layout, you may run into this problem. `ctrl+=` gets deserialized as `ctrl+shift+0` if your main keyboard layout is set to German. This is the correct mapping for German keyboards.
+If you are using a German keyboard layout, you may run into this problem. <kbd>ctrl+=</kbd> gets deserialized as <kbd>ctrl+shift+0</kbd> if your main keyboard layout is set to German. This is the correct mapping for German keyboards.
 
-More importantly, the app never receives the `ctrl+shift+0` keystroke, however. This is because `ctrl+shift+0` is reserved by Windows if you have multiple keyboard layouts active.
+More importantly, the app never receives the <kbd>ctrl+shift+0</kbd> keystroke, however. This is because <kbd>ctrl+shift+0</kbd> is reserved by Windows if you have multiple keyboard layouts active.
 
 If you would like to disable this feature to get it to work properly, follow the instructions for "Change Hotkeys to Switch Keyboard Layout in Windows 10" in this [blog post](https://winaero.com/blog/change-hotkeys-switch-keyboard-layout-windows-10/).
-Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of `ctrl+shift`), then click OK and then Apply. `ctrl+shift+0` should now work as a key binding and is passed through to the Terminal.
+Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of <kbd>ctrl+shift</kbd>), then click OK and then Apply. <kbd>ctrl+shift+0</kbd> should now work as a key binding and is passed through to the Terminal.
 
 On the other hand, if you do use this hotkey feature for multiple input languages, you can configure your own custom key binding in your settings.json file.

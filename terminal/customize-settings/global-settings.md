@@ -14,7 +14,7 @@ The properties listed below affect the entire window, regardless of the profile 
 
 ## Default profile
 
-This sets the default profile that opens by typing `ctrl+shift+t`, typing the key binding assigned to `newTab`, or clicking the '+' icon.
+This sets the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the key binding assigned to `newTab`, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 
@@ -76,7 +76,7 @@ ___
 
 :::row:::
 :::column span="":::
-When this is set to `true`, tabs are always displayed. When it's set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When this is set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing `ctrl+shift+t` or by typing the key binding assigned to `newTab`. Note that changing this setting will require starting a new Terminal instance.
+When this is set to `true`, tabs are always displayed. When it's set to `false` and `showTabsInTitlebar` is set to `true`, tabs are always displayed underneath the title bar. When this is set to `false` and `showTabsInTitlebar` is set to `false`, tabs only appear after more than one tab exists by typing <kbd>ctrl+shift+t</kbd> or by typing the key binding assigned to `newTab`. Note that changing this setting will require starting a new Terminal instance.
 
 **Property name:** `alwaysShowTabs`
 

@@ -15,11 +15,11 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ```json
 "defaults":
 {
-    SETTINGS TO APPLY TO ALL PROFILES
+    // SETTINGS TO APPLY TO ALL PROFILES
 },
 "list":
 [
-    PROFILE OBJECTS
+    // PROFILE OBJECTS
 ]
 ```
 

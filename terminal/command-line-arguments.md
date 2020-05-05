@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.service: terminal
 ---
 
-# Create command line arguments for Windows Terminal
+# Using command line arguments for Windows Terminal
 
 You can use `wt.exe` to open a new instance of Windows Terminal from the command line. You can also use the execution alias `wt` instead.
 
@@ -48,7 +48,7 @@ cmd.exe /c "wt.exe" -p "Ubuntu-18.04"
 # Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
 ```
 
- The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any Terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes to an existing instance.
+ The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any Terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
 
 ### Target a directory
 
