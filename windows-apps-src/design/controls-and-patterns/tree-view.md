@@ -33,7 +33,7 @@ The **TreeView** APIs support the following features:
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [TreeView class](/uwp/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Toast notifications from desktop apps
 
-Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few different options for desktop apps due to the different activation schemes.
+Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows app apps. However, there are a few different options for desktop apps due to the different activation schemes.
 
 In this article, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
 

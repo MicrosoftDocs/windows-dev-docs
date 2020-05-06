@@ -39,7 +39,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 ## Parallax and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
 
 ## How it works in a user interface
 

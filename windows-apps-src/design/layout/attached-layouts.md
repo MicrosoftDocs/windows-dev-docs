@@ -16,7 +16,7 @@ In this topic, we cover what's involved in creating an attached layout (virtuali
 
 | **Get the Windows UI Library** |
 | - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Important APIs**:
 

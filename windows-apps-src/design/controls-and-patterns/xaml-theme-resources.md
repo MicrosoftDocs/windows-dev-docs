@@ -51,7 +51,7 @@ Follow these guidelines when you define and consume your own custom theme resour
 
 The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
 
-For additional information about how to apply color in your UWP app, please see [Color in UWP apps](../style/color.md).
+For additional information about how to apply color in your Windows app, please see [Color in Windows apps](../style/color.md).
 
 ### Light and Dark theme colors
 
@@ -141,7 +141,7 @@ This table lists the key, simple name, and string representation of the color (u
 
 ### Windows system high-contrast colors
 
-In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
+In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Windows app apps. However, many of the XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
 This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
 
@@ -218,7 +218,7 @@ The styles look like this when applied to a [TextBlock](https://docs.microsoft.c
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-For guidance on how to use the UWP type ramp in your app, see [Typography in UWP apps](../style/typography.md).
+For guidance on how to use the Windows type ramp in your app, see [Typography in Windows apps](../style/typography.md).
 
 ### BaseTextBlockStyle
 

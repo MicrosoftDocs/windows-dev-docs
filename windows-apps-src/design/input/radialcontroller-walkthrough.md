@@ -1,7 +1,7 @@
 ---
 ms.assetid: 
-title: Support the Surface Dial (and other wheel devices) in your UWP app
-description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
+title: Support the Surface Dial (and other wheel devices) in your Windows app
+description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your Windows app.
 keywords: dial, radial, tutorial
 ms.date: 03/11/2019
 ms.topic: article
@@ -9,7 +9,7 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-# Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app
+# Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
@@ -23,7 +23,7 @@ We focus on the following:
 * Customizing click interactions
 * Customizing rotation interactions
 
-For more about implementing these and other features, see [Surface Dial interactions in UWP apps](windows-wheel-interactions.md).
+For more about implementing these and other features, see [Surface Dial interactions in Windows apps](windows-wheel-interactions.md).
 
 ## Introduction
 
@@ -40,7 +40,7 @@ The Dial supports three basic gestures:
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
-* If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  
+* If you're new to Windows app app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
@@ -79,12 +79,12 @@ Download this Visual Studio sample and source code from [GitHub](https://github.
 
 ## Components that support wheel functionality
 
-These objects provide the bulk of the wheel device experience for UWP apps.
+These objects provide the bulk of the wheel device experience for Windows apps.
 
 | Component | Description |
 | --- | --- |
 | [**RadialController** class](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) and related | Represents a wheel input device or accessory such as the Surface Dial. |
-| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a UWP app. |
+| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a Windows app. |
 
 ## Step 1: Run the sample
 
@@ -101,7 +101,7 @@ The app window opens, and after a splash screen appears for a few seconds, you�
 
 ![Empty app](images/radialcontroller/wheel-app-step1-empty.png)
 
-Okay, we now have the basic UWP app that we’ll use throughout the rest of this tutorial. In the following steps, we add our **RadialController** functionality.
+Okay, we now have the basic Windows app that we’ll use throughout the rest of this tutorial. In the following steps, we add our **RadialController** functionality.
 
 ## Step 2: Basic RadialController functionality
 
@@ -608,7 +608,7 @@ To see this in action (you'll need a Surface Studio):
 
 ## Summary
 
-Congratulations, you've completed the *Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app*! We showed you the basic code required for supporting a wheel device in your UWP apps, and how to provide some of the richer user experiences supported by the **RadialController** APIs.
+Congratulations, you've completed the *Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app*! We showed you the basic code required for supporting a wheel device in your Windows apps, and how to provide some of the richer user experiences supported by the **RadialController** APIs.
 
 ## Related articles
 

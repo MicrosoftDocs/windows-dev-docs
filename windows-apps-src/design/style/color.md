@@ -1,6 +1,6 @@
 ---
-description: Learn how to use accent colors and themes in your UWP apps.
-title: Color in UWP apps
+description: Learn how to use accent colors and themes in your Windows apps.
+title: Color in Windows apps
 ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -14,7 +14,7 @@ ms.custom: RS5
 
 Color provides an intuitive way of communicating information to users in your app: it can be used to indicate interactivity, give feedback to user actions, and give your interface a sense of visual continuity.
 
-In UWP apps, colors are primarily determined by accent color and theme. In this article, we'll discuss how you can use color in your app, and how to use accent color and theme resources to make your UWP app usable in any theme context.
+In Windows apps, colors are primarily determined by accent color and theme. In this article, we'll discuss how you can use color in your app, and how to use accent color and theme resources to make your Windows app usable in any theme context.
 
 ## Color principles
 
@@ -42,7 +42,7 @@ Consider how the colors you use will be interpreted by people from different cul
 
 ## Themes
 
-UWP apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls-and-patterns/index.md).
+Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls-and-patterns/index.md).
 
 ### Light theme
 
@@ -52,7 +52,7 @@ UWP apps can use a light or dark application theme. The theme affects the colors
 
 ![dark theme](images/color/dark-theme.svg)
 
-By default, your UWP app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on Xbox). However, you can set the theme for your UWP app.
+By default, your Windows app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on Xbox). However, you can set the theme for your Windows app.
 
 ### Changing the theme
 

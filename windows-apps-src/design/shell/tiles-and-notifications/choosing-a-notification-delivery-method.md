@@ -106,7 +106,7 @@ For more information, see these topics:
 
 -   [Send a local tile notification](sending-a-local-tile-notification.md)
 -   [Send a local toast notification](send-local-toast.md)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Scheduled notifications
 
@@ -120,7 +120,7 @@ By default, scheduled notifications expire three days from the time they are del
 For more information, see these topics:
 
 -   [Scheduling a toast notification](scheduled-toast.md)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Periodic notifications
 
@@ -134,7 +134,7 @@ By default, periodic notifications expire three days from the time polling occur
 For more information, see these topics:
 
 -   [Periodic notification overview](periodic-notification-overview.md)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Push notifications
 
@@ -149,7 +149,7 @@ For more information, see:
 
 -   [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
 -   [Guidelines for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## Related topics
@@ -161,7 +161,7 @@ For more information, see:
 * [Guidelines for toast notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Periodic notification overview](periodic-notification-overview.md)
 * [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
-* [Universal Windows Platform (UWP) notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Windows app notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

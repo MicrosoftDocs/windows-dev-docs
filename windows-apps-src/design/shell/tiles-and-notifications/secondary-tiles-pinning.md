@@ -1,5 +1,5 @@
 ---
-Description: Learn how to pin a secondary tile to Start from your UWP app.
+Description: Learn how to pin a secondary tile to Start from your Windows app.
 title: Pin secondary tiles to Start
 label: Pin secondary tiles to Start
 template: detail.hbs
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Pin secondary tiles to Start
 
 
-This topic walks you through the steps to create a secondary tile for your UWP app and pin it to the Start menu.
+This topic walks you through the steps to create a secondary tile for your Windows app and pin it to the Start menu.
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 

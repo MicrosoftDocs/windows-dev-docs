@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows apps.
 title: Simulate user input through input injection
 label: Input injection
 template: detail.hbs
@@ -10,19 +10,19 @@ ms.localizationpriority: medium
 ---
 # Simulate user input through input injection
 
-Simulate and automate user input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP applications.
+Simulate and automate user input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows applications.
 
 > **Important APIs**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## Overview
 
-Input injection enables your UWP application to simulate input from a variety of input devices and direct that input anywhere, including outside your app's client area (even to apps running with Adminstrator privileges, such as the Registry Editor).
+Input injection enables your Windows application to simulate input from a variety of input devices and direct that input anywhere, including outside your app's client area (even to apps running with Adminstrator privileges, such as the Registry Editor).
 
-Input injection is useful for UWP apps and tools that need to provide functionality that includes accessibility, testing (ad-hoc, automated), and remote access and support features.
+Input injection is useful for Windows apps and tools that need to provide functionality that includes accessibility, testing (ad-hoc, automated), and remote access and support features.
 
 ## Setup
 
-To use the input injection APIs in your UWP app you'll need to add the following to the app manifest:
+To use the input injection APIs in your Windows app you'll need to add the following to the app manifest:
 
 1. Right click the **Package.appxmanifest** file and select **View code**.
 1. Insert the following into the `Package` node:

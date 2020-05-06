@@ -1,5 +1,5 @@
 ---
-Description: Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: Testing procedures to follow to ensure that your Windows app app is accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Accessibility testing  
 
-Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
+Testing procedures to follow to ensure that your Windows app app is accessible.
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>

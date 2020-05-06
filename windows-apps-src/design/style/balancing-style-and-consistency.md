@@ -1,6 +1,6 @@
 ---
 description: Tips for creating consistent, usable apps that also demonstrate originality and creativity.
-title: Balancing style and consistency (UWP app design)
+title: Balancing style and consistency (Windows app design)
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article

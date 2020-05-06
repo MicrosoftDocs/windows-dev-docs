@@ -36,7 +36,7 @@ Control | Description
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -544,7 +544,7 @@ If your layout requires only one button, it should be either left- or right-alig
 
 ## Back buttons
 
-The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
+The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for Windows apps](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## Get the sample code

@@ -1,5 +1,5 @@
 ---
-Description: Build UWP apps and custom/templated controls that support platform text scaling.
+Description: Build Windows apps and custom/templated controls that support platform text scaling.
 title: Text scaling
 label: Text scaling
 template: detail.hbs
@@ -24,7 +24,7 @@ To ensure text is as legible as possible for the broadest range of users, Window
 
 Universal Windows applications (both standard and PWA), support text scaling by default.
 
-If your UWP application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.  
+If your Windows application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.  
 
 DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.  
 

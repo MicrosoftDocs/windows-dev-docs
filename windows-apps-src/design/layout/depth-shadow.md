@@ -1,7 +1,7 @@
 ---
 author: knicholasa
 description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
-title: Z-depth and shadow for UWP apps
+title: Z-depth and shadow for Windows apps
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![A gif showing four gray rectangles that are stacked diagonally, one on top of the other. The gif is animated so that shadows appear and disappear.](images/elevation-shadow/shadow.gif)
 
-Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software. This article discusses how to create elevation in a UWP app by using z-depth and shadow.
+Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software. This article discusses how to create elevation in a Windows app by using z-depth and shadow.
 
 Z-depth is a term used amongst 3D app creators to denote the distance between two surfaces along the z-axis. It illustrates how close an object is to the viewer. Think of it as a similar concept to x/y coordinates, but in the z direction.
 
@@ -27,7 +27,7 @@ In the physical world, we tend to focus on objects that are closer to us. We can
 
 Shadow is one way a user perceives elevation. Light above an elevated object creates a shadow on the surface below. The higher the object, the larger and softer the shadow becomes. Elevated objects in your UI don’t need to have shadows, but they help create the appearance of elevation.
 
-In UWP apps, shadows should be used in a purposeful rather than aesthetic manner. Using too many shadows will decrease or eliminate the ability of the shadow to focus the user.
+In Windows apps, shadows should be used in a purposeful rather than aesthetic manner. Using too many shadows will decrease or eliminate the ability of the shadow to focus the user.
 
 If you use standard controls, ThemeShadow shadows will be incorporated automatically into your UI. However, you can manually include shadows in your UI by using either the ThemeShadow or the DropShadow APIs. 
 

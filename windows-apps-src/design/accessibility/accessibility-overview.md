@@ -1,5 +1,5 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Accessibility overview
 
-This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
 

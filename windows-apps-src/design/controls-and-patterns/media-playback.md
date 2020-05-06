@@ -390,5 +390,5 @@ The default controls have been optimized for media playback, however you have th
 
 ## Related articles
 
-- [Command design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [Content design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [Command design basics for Windows apps](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [Content design basics for Windows apps](https://docs.microsoft.com/windows/uwp/layout/content-basics)
