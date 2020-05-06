@@ -13,6 +13,18 @@ This topic presents a case study of porting one of the [Universal Windows Platfo
 
 For a comprehensive catalog of the technical details involved in porting to C++/WinRT from C#, see the companion topic [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp).
 
+## A brief preface about C# and C++ source code files
+
+In a C# project, your source code files are primarily `.cs` files. When you move to C++, you'll notice that there are more kinds of source code files to get used to. The reason is to do with the difference between compilers, the way C++ source code is reused, and the notions of *declaring* and *defining* a type and its functions (its methods).
+
+A function *declaration* describes just the function's *signature* (its return type, its name, and its parameter types and names). A function *definition* includes the function's *body* (its implementation).
+
+It's a little different when it comes to types. You *define* a type by providing its name and by (at a minimum) just *declaring* all of its member functions (and other members). That's right, you can *define* a type even if you don't define its member functions.
+
+- Common C++ source code files are `.h` and `.cpp` files. A `.h` file is a *header* file, and it defines one or more types. While you *can* define member functions in a header, that's typically what a `cpp` file is for. So for a hypothetical C++ type **MyClass**, you'd define **MyClass** in `MyClass.h`, and you'd define its member functions in `MyClass.cpp`. For other developers to re-use your classes, you'd share out just the `.h` files and object code. You'd keep your `.cpp` files secret, because the implementation constitutes your intellectual property.
+- Precompiled header (`pch.h`). Typically there's a set of header files that you include in your application, and that set changes only rarely. So rather than processing the contents of that set of headers each time you compile, you can aggregate those headers into one, compile that once, and then use the output of that precompilation step each time you build. You do this via a *precompiled header* file (usually named `pch.h`).
+- `.idl` files. These files contain Interface Definition Language (IDL). You can think of IDL as header files for Windows Runtime types. We'll talk more about IDL in the section [IDL for the **MainPage** type](#idl-for-the-mainpage-type).
+
 ## Download and test the Clipboard sample
 
 Visit the [Clipboard sample](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/) web page, and click **Download ZIP**. Unzip the downloaded file, and take a look at the folder structure.
@@ -67,19 +79,30 @@ Over the next few subsections, we'll look at how to port **MainPage** and **Scen
 
 ### IDL for the **MainPage** type
 
+Let's begin this section by talking briefly about Interface Definition Language (IDL), and how it helps us when we're programming with C++/WinRT. IDL is a kind of source code that describes the callable surface of a Windows Runtime type. The callable (or public) surface of a type is *projected* out into the world, so that the type can be consumed. That *projected* portion of the type contrasts with the actual internal implementation of the type, which is of course not callable, and not public. It's only the projected portion that we define in IDL.
+
+Having authored IDL source code (within an `.idl` file), you can then compile the IDL into machine-readable metadata files (also known as Windows Metadata). Those metadata files have the extension `.winmd`, and here are some of their uses.
+
+- A `.winmd` can describe the Windows Runtime types in a component. When you reference a Windows Runtime Component (WRC) from an application project, the application project reads the Windows Metadata belonging to the WRC (that metadata may be in a separate file, or it may be packaged into the same file as the WRC itself) so that you can consume the WRC's types from within the application.
+- A `.winmd` can describe the Windows Runtime types in one part of your application so that they can be consumed by a different part of the same application. For example, a Windows Runtime type that's consumed by a XAML page in the same app.
+- To make it easier for you to consume Windows Runtime types (built-in or third party), the C++/WinRT build system uses `.winmd` files to generate wrapper types to represent the projected portions of those Windows Runtime types.
+- To make it easier for you to implement your own Windows Runtime types, the C++/WinRT build system turns your IDL into a `.winmd` file, and then uses that to generate wrappers for your projection, as well as stubs on which to base your implementation (we'll talk more about these stubs later in this topic).
+
+The specific version of IDL that we use with C++/WinRT is [Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro). In the remainder of this section, we'll examine the C# **MainPage** type in some detail. We'll decide which parts of it need to be in the *projection* of the C++/WinRT **MainPage** type (that is, in its callable, or public, surface), and which can be just part of its implementation. That distinction is important because when we come to author our IDL (which we'll do in the section after this one), we'll be defining only the callable parts in there.
+
 The C# source code files that together implement the **MainPage** type are: `MainPage.xaml` (which we'll port soon, by copying it), `MainPage.xaml.cs`, and `SampleConfiguration.cs`.
 
 In the C++/WinRT version, we'll factor our **MainPage** type into source code files in a similar way. We'll take the logic in `MainPage.xaml.cs` and translate it for the most part to `MainPage.h` and `MainPage.cpp`. And for the logic in `SampleConfiguration.cs`, we'll translate that to `SampleConfiguration.h` and `SampleConfiguration.cpp`.
 
-Classes in a C# Universal Windows Platform (UWP) application are Windows Runtime types. But when you author a type in a C++/WinRT application, you can choose whether that type is a Windows Runtime type, or a regular C++ class/struct/enumeration.
+The classes in a C# Universal Windows Platform (UWP) application are of course Windows Runtime types. But when you author a type in a C++/WinRT application, you can choose whether that type is a Windows Runtime type, or a regular C++ class/struct/enumeration.
 
-In the C++/WinRT project, **MainPage** is already a Windows Runtime type, so we don't need to change that aspect of it. Specifically, it's a *runtime class*.
+Any XAML page in our project needs to be a Windows Runtime type, so **MainPage** needs to be a Windows Runtime type. In the C++/WinRT project, **MainPage** is already a Windows Runtime type, so we don't need to change that aspect of it. Specifically, it's a *runtime class*.
 
 - For more details about whether or not you should author a runtime class for a given type, see the topic [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
-- The concepts of the *implementation type* and the *projected type* are important when you're working with C++/WinRT. You can learn about them in the topic mentioned above, and in [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
-- For info about the connection between runtime classes and `.idl` files, read and follow along with the topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
+- In C++/WinRT, the internal implementation of a runtime class, and the projected (public) parts of it, exist in the form of two different classes. These are known as the *implementation type* and the *projected type*. You can learn more about them in the topic mentioned in the bullet-point above, and also in [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+- For more info about the connection between runtime classes and IDL (`.idl` files), you can read and follow along with the topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
 
-For **MainPage**, we already have the necessary `MainPage.idl` file in the C++/WinRT project. But during this walkthrough, we'll be adding *new* `.idl` files to the project.
+For **MainPage**, we actually have the necessary `MainPage.idl` file already in the C++/WinRT project. That's because the project template created it for us. But later in this walkthrough we'll be adding further `.idl` files to the project.
 
 We'll shortly see a listing of exactly what IDL we need to add to the existing `MainPage.idl` file. Before that, we have some reasoning to do about what does, and what doesn't, need to go in the IDL.
 
@@ -136,8 +159,6 @@ Now let's add to the `MainPage.idl` file the new types and the new member of **M
 
 So, in your C++/WinRT project, open `MainPage.idl`, and edit it so that it looks like the listing below. Note that one of the edits is to change the namespace name from **Clipboard** to **SDKTemplate**. If you like, you can just replace the entire contents of `MainPage.idl` with the following code. Another tweak to note is that we're changing the name of **Scenario::ClassType** to **Scenario::ClassName**.
 
-
-
 ```idl
 // MainPage.idl
 namespace SDKTemplate
@@ -180,13 +201,15 @@ In Visual Studio, for the C++/WinRT project, set the project property **Com
 
 ### Save the IDL, and re-generate stub files
 
-If you've read the topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), then you'll have encountered the notion of *stub files*. Stub files are generated for you (by a tool named `cppwinrt.exe`, and based on the contents of your `.idl` files) when you build your C++/WinRT project. That topic contains more details about them.
+The topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property) introduces the notion of *stub files*, and shows you a walkthrough of them in action. We also mentioned stubs earlier in this topic when we mentioned that C++/WinRT build system turns the contents of your `.idl` files into Windows Metadata, and then from that metadata a tool named `cppwinrt.exe` generates stubs on which you can base your implementation.
+
+Each time you add, remove, or change something in your IDL, and build, the build system updates the stub implementations in those stubs files. So each time you change your IDL and build, we recommend that you view those stubs files, copy any changed signatures, and paste them into your project. We'll give more specifics and examples of exactly how to do that in a moment. But the advantage of doing this is to give you an error-free way of knowing at all times what the shape of your implementation type should be, and what the signature of its methods should be.
 
 At this point in the walkthrough, we're done editing the `MainPage.idl` file for the time being, so you should save it now. The project won't build to completion at the moment, but performing a build now is a useful thing to do because it regenerates the stub files for **MainPage**.
 
-For this C++/WinRT project, those stub files are generated in the `\Clipboard\Clipboard\Generated Files\sources` folder. You'll find them there after the partial build has completed (again, as expected, the build won't succeed entirely. But the step that we're interested in&mdash;generating stubs&mdash;*will* have succeeded). The files we're interested in are `MainPage.h` and `MainPage.cpp`.
+For this C++/WinRT project, the stub files are generated in the `\Clipboard\Clipboard\Generated Files\sources` folder. You'll find them there after the partial build has completed (again, as expected, the build won't succeed entirely. But the step that we're interested in&mdash;generating stubs&mdash;*will* have succeeded). The files we're interested in are `MainPage.h` and `MainPage.cpp`.
 
-In those two stub files, you'll see stub implementations of the new members of **MainPage** that we added to the IDL (**Current** and **FEATURE_NAME**, for example). We'll copy those stub implementations into the `MainPage.h` and `MainPage.cpp` files that are already in the project. At the same time, just as we did with the IDL, we'll remove from those existing files the placeholder members of **Mainpage** that the Visual Studio project template gave us (the dummy property named **MyProperty**, and the event handler named **ClickHandler**).
+In those two stub files, you'll see new stub implementations of the members of **MainPage** that we added to the IDL (**Current** and **FEATURE_NAME**, for example). You'll want to copy those stub implementations into the `MainPage.h` and `MainPage.cpp` files that are already in the project. At the same time, just as we did with the IDL, we'll remove from those existing files the placeholder members of **Mainpage** that the Visual Studio project template gave us (the dummy property named **MyProperty**, and the event handler named **ClickHandler**).
 
 In fact, the only member of the current version of **MainPage** that we want to keep is the constructor.
 
