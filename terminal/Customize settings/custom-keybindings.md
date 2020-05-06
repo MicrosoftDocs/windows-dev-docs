@@ -8,7 +8,4 @@ ms.topic: overview
 ms.service: terminal
 ---
 
-# Create custom keybindings
-
-Instructions on how to create custom keybindings with Windows Terminal.
-
+# Coming soon
