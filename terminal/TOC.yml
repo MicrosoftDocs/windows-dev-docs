@@ -1,0 +1,17 @@
+- name: Windows Terminal
+  items: 
+    - name: Overview
+      href: index.md
+    - name: Install
+      href: install.md
+    - name: Customize settings
+      items:
+        - name: Settings.json
+          href: customize-settings/settings-json.md
+        - name: Custom Keybindings
+          href: customize-settings/custom-keybindings.md
+    - name: Command line arguments
+      href: command-line-arguments.md
+
+
+    
