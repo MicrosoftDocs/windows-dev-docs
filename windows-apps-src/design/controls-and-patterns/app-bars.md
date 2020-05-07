@@ -277,5 +277,5 @@ Command bars can be placed in the following screen regions on single-view screen
 
 ## Related articles
 
-* [Command design basics for UWP apps](../basics/commanding-basics.md)
+* [Command design basics for Windows apps](../basics/commanding-basics.md)
 * [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

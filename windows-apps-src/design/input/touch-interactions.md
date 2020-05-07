@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
+Description: Create Windows app apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
 title: Touch interactions
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -23,7 +23,7 @@ However, keep in mind that a UI optimized for touch is not always superior to a 
 
 Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
 
-The Universal Windows Platform (UWP) includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a UWP app.
+The Windows app includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a Windows app.
 
 Touch interactions require three things:
 
@@ -49,7 +49,7 @@ Providing unique and distinctive interaction experiences for all input devices w
 
 ## Compare touch interaction requirements
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
+The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows apps.
 
 <table>
 <tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>

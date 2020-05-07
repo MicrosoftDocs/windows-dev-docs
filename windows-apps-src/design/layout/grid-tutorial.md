@@ -114,6 +114,6 @@ And that's it! You've successfully created the layout for a simple weather appli
 If you like, try experimenting with the layout above, and explore different ways you might represent weather data.
 
 ## Related articles
-For an introduction to designing UWP app layouts, see [Introduction to UWP app design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+For an introduction to designing Windows app layouts, see [Introduction to Windows app design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)

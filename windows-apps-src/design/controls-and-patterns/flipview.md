@@ -20,7 +20,7 @@ Use a flip view for browsing images or other items in a collection, such as phot
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Platform APIs:** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 

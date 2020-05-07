@@ -50,9 +50,9 @@ The *primary action* is what the user expects to happen when they press the list
 
 ## Options for secondary actions
 
-When creating list UI, you first need to make sure you account for all input methods that UWP supports. For more info about different kinds of input, see [Input primer](../input/index.md).
+When creating list UI, you first need to make sure you account for all input methods that Windows supports. For more info about different kinds of input, see [Input primer](../input/index.md).
 
-After you have made sure that your app supports all inputs that UWP supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
+After you have made sure that your app supports all inputs that Windows supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
 
 You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.
 
@@ -91,7 +91,7 @@ In these examples, we talk about list UI where the item flows more horizontally 
 
 ## Consider all inputs
 
-When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your UWP works with all input types.
+When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your Windows works with all input types.
 
 ## Nested UI handling
 

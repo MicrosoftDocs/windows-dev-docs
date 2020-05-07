@@ -1,5 +1,5 @@
 ---
-Description: Layout guidelines for forms in UWP apps.
+Description: Layout guidelines for forms in Windows apps.
 title: Forms
 template: detail.hbs
 ms.date: 11/07/2017
@@ -56,7 +56,7 @@ To facilitate the user experience and ensure that users are able to enter the co
 
 To [design for accessibility](../accessibility/accessibility.md), label all individual and groups of controls for clarity for both human and screen readers. 
 
-For font styles, use the default [UWP type ramp](../style/typography.md). Use `TitleTextBlockStyle` for page titles, `SubtitleTextBlockStyle` for group headings, and `BodyTextBlockStyle` for control labels.
+For font styles, use the default [Windows type ramp](../style/typography.md). Use `TitleTextBlockStyle` for page titles, `SubtitleTextBlockStyle` for group headings, and `BodyTextBlockStyle` for control labels.
 
 <div class="mx-responsive-img">
 <table>
@@ -143,7 +143,7 @@ Control | Use
 ### Additional Controls 
 For a complete list of UWP controls, see [index of controls by function](controls-by-function.md).
 
-For more complex and custom UI controls, look at UWP resources available from companies such as [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
+For more complex and custom UI controls, look at resources available from companies such as [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
 [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), and [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## One column form example

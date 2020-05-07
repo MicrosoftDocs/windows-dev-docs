@@ -1,5 +1,5 @@
 ---
-Description: Extend the basic functionality of Cortana with voice commands that activate a UWP app and execute a single action.
+Description: Extend the basic functionality of Cortana with voice commands that activate a Windows app and execute a single action.
 title: Cortana interactions
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -11,7 +11,7 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-# Cortana interactions in UWP apps
+# Cortana interactions in Windows apps
 
 Cortana offers a robust and comprehensive extensibility framework that enables you to seamlessly incorporate functionality from your app or service into the Cortana experience.
 
@@ -21,7 +21,7 @@ All developer documentation for Cortana features and services is now available t
 
 To get started, see the [Cortana Skills Kit overview](https://docs.microsoft.com/cortana/skills/overview).
 
-To learn how to extend Cortana with functionality from a UWP app using voice commands, see [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd). 
+To learn how to extend Cortana with functionality from a Windows app using voice commands, see [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd). 
 
 ## Related articles
 

@@ -10,7 +10,7 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Connected animation for UWP apps
+# Connected animation for Windows apps
 
 Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views. This helps the user maintain their context and provides continuity between the views.
 
@@ -49,7 +49,7 @@ In this short video, an app uses a connected animation to animate an item image 
 
 ## Connected animation and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
 
 ## Why connected animation?
 

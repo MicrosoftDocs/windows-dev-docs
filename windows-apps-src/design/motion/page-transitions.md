@@ -1,6 +1,6 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
-title: Page transitions in UWP apps
+Description: Learn how to use page transitions in your Windows apps.
+title: Page transitions
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
@@ -98,4 +98,4 @@ This can be useful when you modify navigation behavior dynamically based on scre
 ## Related topics
 
 - [Navigate between two pages](../basics/navigate-between-two-pages.md)
-- [Motion in UWP apps](index.md)
+- [Motion in UWindowsWP apps](index.md)

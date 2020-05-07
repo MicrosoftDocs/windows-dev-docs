@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+Description: Create Windows app apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
 title: Touchpad interactions
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -25,7 +25,7 @@ Touchpad interactions require three things:
 
 -   A standard touchpad or a Windows Precision Touchpad.
 
-    Precision touchpads are optimized for Universal Windows Platform (UWP) devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.
+    Precision touchpads are optimized for Windows app devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.
 
 -   The direct contact of one or more fingers on the touchpad.
 -   Movement of the touch contacts (or lack thereof, based on a time threshold).
@@ -36,7 +36,7 @@ The input data provided by the touchpad sensor can be:
 -   Recognized as an alternative input method, such as mouse or pen.
 -   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
-A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your UWP app design for touch input and get touchpad support by default.
+A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows app design for touch input and get touchpad support by default.
 
 Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
 

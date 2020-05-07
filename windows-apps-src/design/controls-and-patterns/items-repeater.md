@@ -20,7 +20,7 @@ You can think of [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeat
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ItemsRepeater** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ItemsRepeater** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -770,7 +770,7 @@ public class MyPage : Page
 
 ## Enable Accessibility
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for UWP apps](/windows/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](/windows/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/windows/uwp/design/accessibility/custom-automation-peers).
 
 ### Keyboarding
 The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).

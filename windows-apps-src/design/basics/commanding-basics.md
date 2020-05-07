@@ -1,6 +1,6 @@
 ---
-Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
-title: Command design basics for Universal Windows Platform (UWP) apps
+Description: In a Windows app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
+title: Command design basics for Windows app apps
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -11,9 +11,9 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Command design basics for UWP apps
+# Command design basics for Windows apps
 
-In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. *Command interfaces* are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.
+In a Windows app, *command elements* are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. *Command interfaces* are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.
 
 ## Provide the best command experience
 
@@ -27,7 +27,7 @@ Here are some common command experiences:
 - Opening, saving, and deleting files
 - Editing or creating content
 
-Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Universal Windows Platform (UWP) apps](../controls-and-patterns/commanding.md) for more detail).
+Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Windows app apps](../controls-and-patterns/commanding.md) for more detail).
 
 
 
@@ -37,7 +37,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## Choose the right command elements
 
-Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Universal Windows Platform (UWP). Here's a list of some of the most common UWP command elements.
+Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Windows app. Here's a list of some of the most common UWP command elements.
 
 :::row:::
     :::column:::

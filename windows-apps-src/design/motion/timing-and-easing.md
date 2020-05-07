@@ -1,6 +1,6 @@
 ---
 Description: Learn how Fluent motion uses timing and easing functions.
-title: Timing and easing - animation in UWP apps
+title: Timing and easing
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017

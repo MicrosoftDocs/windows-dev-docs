@@ -1,7 +1,7 @@
 ---
 description: Fluent Design guidelines and UI code examples for creating app experiences on Windows 10
 keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
-title: Design and UI for UWP
+title: Design and code for Windows apps
 ms.date: 05/06/2019
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa

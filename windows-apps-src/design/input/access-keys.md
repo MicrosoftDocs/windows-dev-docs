@@ -1,5 +1,5 @@
 ---
-Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
+Description: Learn how to improve both the usability and the accessibility of your Windows app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 title: Access keys design guidelines
 label: Access keys design guidelines
 keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
@@ -23,7 +23,7 @@ See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoki
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-The Universal Windows Platform (UWP) provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
+The Windows app provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
 
 ## Overview
 

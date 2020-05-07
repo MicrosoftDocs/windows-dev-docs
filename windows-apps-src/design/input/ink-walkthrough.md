@@ -1,7 +1,7 @@
 ---
 ms.assetid: 
-title: Support ink in your UWP app
-description: A step by step tutorial for adding ink support to your UWP app.
+title: Support ink in your Windows app
+description: A step by step tutorial for adding ink support to your Windows app.
 keywords: ink, inking, tuorial
 ms.date: 01/25/2018
 ms.topic: article
@@ -9,12 +9,12 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-# Tutorial: Support ink in your UWP app
+# Tutorial: Support ink in your Windows app
 
 ![Surface Pen](images/ink/ink-hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
-This tutorial steps through how to create a basic Universal Windows Platform (UWP) app that supports writing and drawing with Windows Ink. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated Windows Ink APIs (see [Components of the Windows Ink platform](#components-of-the-windows-ink-platform)) discussed in each step.
+This tutorial steps through how to create a basic Windows app app that supports writing and drawing with Windows Ink. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated Windows Ink APIs (see [Components of the Windows Ink platform](#components-of-the-windows-ink-platform)) discussed in each step.
 
 We focus on the following:
 * Adding basic ink support
@@ -23,7 +23,7 @@ We focus on the following:
 * Supporting basic shape recognition
 * Saving and loading ink
 
-For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
+For more detail about implementing these features, see [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 ## Introduction
 
@@ -35,7 +35,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
-* If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  
+* If you're new to Windows app app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
@@ -58,7 +58,7 @@ Download this Visual Studio sample and source code from [GitHub](https://github.
 
 ## Components of the Windows Ink platform
 
-These objects provide the bulk of the inking experience for UWP apps.
+These objects provide the bulk of the inking experience for Windows apps.
 
 | Component | Description |
 | --- | --- |
@@ -82,7 +82,7 @@ The app window opens, and after a splash screen appears for a few seconds, you�
 
 ![Empty app](images/ink/ink-app-step1-empty-small.png)
 
-Okay, we now have the basic UWP app that we’ll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
+Okay, we now have the basic Windows app that we’ll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
 
 ## Step 2: Use InkCanvas to support basic inking
 
@@ -90,7 +90,7 @@ Perhaps you've probably already noticed that the app, in it's initial form, does
 
 Let's fix that little shortcoming in this step.
 
-To add basic inking functionality, just place an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) UWP platform control on the appropriate page in your app.
+To add basic inking functionality, just place an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control on the appropriate page in your app.
 
 > [!NOTE]
 > An InkCanvas has default [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) and [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) properties of zero, unless it is the child of an element that automatically sizes its child elements. 
@@ -193,7 +193,7 @@ Here's an example of a custom **[InkToolbar](https://docs.microsoft.com/uwp/api/
 
 ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-For more details about customizing an [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](ink-toolbar.md).
+For more details about customizing an [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
 
 </td>
 </tr>
@@ -456,11 +456,11 @@ For more details about using the clipboard with ink, see [Store and retrieve Win
 
 ## Summary
 
-Congratulations, you've completed the **Input: Support ink in your UWP app** tutorial ! We showed you the basic code required for supporting ink in your UWP apps, and how to provide some of the richer user experiences supported by the Windows Ink platform.
+Congratulations, you've completed the **Input: Support ink in your Windows app** tutorial ! We showed you the basic code required for supporting ink in your Windows apps, and how to provide some of the richer user experiences supported by the Windows Ink platform.
 
 ## Related articles
 
-* [Pen interactions and Windows Ink in UWP apps](pen-and-stylus-interactions.md)
+* [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md)
 
 ### Samples
 
@@ -473,6 +473,6 @@ Congratulations, you've completed the **Input: Support ink in your UWP app** tut
 * [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
 * [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
 * [Ink sample (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
-* [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Get Started Tutorial: Support ink in your Windows app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 * [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 * [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

@@ -1,6 +1,6 @@
 ---
 Description: Learn how Fluent motion uses directionality and gravity.
-title: Directionality and gravity - animation in UWP apps
+title: Directionality and gravity - animation in Windows apps
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018

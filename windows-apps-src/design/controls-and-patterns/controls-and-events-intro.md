@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Intro to controls and patterns
 
-In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
+In Windows app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
 
 > **Important APIs**: [Windows.UI.Xaml.Controls namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
