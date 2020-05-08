@@ -94,6 +94,9 @@
       tocHref: /windows/dev-environment/
       topicHref: "/windows/dev-environment/"
       items:
+        - name: Windows Package Manager
+          tocHref: /windows/package-manager/
+          topicHref: "/windows/package-manager"
         - name: Python
           tocHref: /windows/python/
           topicHref: "/windows/python"

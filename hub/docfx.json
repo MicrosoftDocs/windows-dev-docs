@@ -41,7 +41,8 @@
         "python/**.md": "dev-environment",
         "nodejs/**.md": "dev-environment",
         "android/**.md": "dev-environment",
-        "dev-environment/**.md": "dev-environment"
+        "dev-environment/**.md": "dev-environment",
+        "package-manager/**.md": "dev-environment"
       },
       "ms.technology":
       {
@@ -50,12 +51,14 @@
         "apps/trace-processing/**.md": "",
         "python/**.md": "windows-python",
         "nodejs/**.md": "windows-nodejs",
-        "android/**.md": "windows-nodejs"
+        "android/**.md": "windows-nodejs",
+        "package-manager/**.md": ""
       },	 
       "feedback_product_url": 
       {
         "apps/winui/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
-        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues"	
+        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues",
+        "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues"
       },
       "author":
       {
