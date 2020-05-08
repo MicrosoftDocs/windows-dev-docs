@@ -501,6 +501,7 @@ If the last item has focus and the Down arrow key is pressed, focus moves to the
 
 We recommend that you emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Programmatic focus navigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) documentation.
 
+
 ## Test your app
 
 Test your app with all supported input devices to ensure UI elements can be navigated to in a coherent and intuitive way and that no unexpected elements interfere with the desired tab order.
@@ -510,6 +511,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 * [Identify input devices](identify-input-devices.md)
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+* [NavigationView control keyboarding specifics](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
 
 ## Appendix
 

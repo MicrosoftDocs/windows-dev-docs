@@ -645,7 +645,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 ## Hierarchical navigation
 Some apps may have a more complex hierarchical structure that requires more than just a flat list of navigation items. You may want to use top-level navigation items to display categories of pages, with children items displaying specific pages. It is also useful if you have hub-style pages that only link to other pages. For these kinds of cases, you should create a hierarchical NavigationView.
 
-To show a hierarchical list of nested navigation items in the pane, use either the `MenuItems` property or the `MenuItemsSource` property of **NavigationViewItem**.
+To show a hierarchical list of nested navigation items in the pane, use either the [MenuItems](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) property or the [MenuItemsSource](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) property of **NavigationViewItem**.
 Each NavigationViewItem can contain other NavigationViewItems and organizing elements like item headers and separators. 
 To show a hierarchical list when using `MenuItemsSource`, set the `ItemTemplate` to be a NavigationViewItem, and bind its `MenuItemsSource` property to the next level of the hierarchy.
 
@@ -680,7 +680,7 @@ Add a hierarchy of menu items to the NavigationView by
 * binding the MenuItemsSource property to the hierarchical data
 * defining the item template to be a NavigationViewMenuItem, with its Content set to be the label of the menu item, and its MenuItemsSource property bound to the next level of the hierarchy
 
-This example also demonstrates the **Expanding** and **Collapsing** events. These events are raised for a menu item with children.
+This example also demonstrates the [Expanding](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4) and [Collapsed](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4) events. These events are raised for a menu item with children.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
