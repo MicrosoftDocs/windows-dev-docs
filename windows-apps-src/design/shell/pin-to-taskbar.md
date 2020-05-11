@@ -49,7 +49,7 @@ else
 
 ## 2. Check whether taskbar is present and allows pinning
 
-UWP apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. 
+Windows apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. 
 
 Even if the taskbar is available, a group policy on the user's machine might disable taskbar pinning. So, before you attempt to pin your app, you need to check whether pinning to the taskbar is supported. The [TaskbarManager.IsPinningAllowed property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed) returns true if the taskbar is present and allows pinning. 
 

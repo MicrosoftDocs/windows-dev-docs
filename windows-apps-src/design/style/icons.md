@@ -12,7 +12,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Icons for UWP apps
+# Icons for Windows apps
 
 ![Icons header image](images/icons/header-icons.png)
 

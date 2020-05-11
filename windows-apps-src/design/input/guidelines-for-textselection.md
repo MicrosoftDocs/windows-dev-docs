@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
+Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your Windows app.
 title: Selecting text and images
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -43,9 +43,9 @@ Text selection and manipulation is particularly susceptible to user experience c
 
 **Considerations and recommendations**
 
-Use the built-in controls exposed through the language frameworks in Windows to build apps that provide the full platform user interaction experience, including selection and manipulation behaviors. You'll find the interaction functionality of the built-in controls sufficient for the majority of UWP apps.
+Use the built-in controls exposed through the language frameworks in Windows to build apps that provide the full platform user interaction experience, including selection and manipulation behaviors. You'll find the interaction functionality of the built-in controls sufficient for the majority of Windows apps.
 
-When using standard UWP text controls, the selection behaviors and visuals described in this topic cannot be customized.
+When using standard Windows text controls, the selection behaviors and visuals described in this topic cannot be customized.
 
 **Text selection**
 
@@ -88,7 +88,7 @@ Follow the same procedures as for editable text to adjust the selection and disp
 
 **Object manipulation**
 
-Wherever possible, use the same (or similar) gripper resources as text selection when implementing custom object manipulation in a UWP app. This helps provide a consistent interaction experience across the platform.
+Wherever possible, use the same (or similar) gripper resources as text selection when implementing custom object manipulation in a Windows app. This helps provide a consistent interaction experience across the platform.
 
 For example, grippers can also be used in image processing apps that support resizing and cropping or media player apps that provide adjustable progress bars, as shown in the following images.
 

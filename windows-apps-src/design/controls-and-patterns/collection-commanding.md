@@ -25,7 +25,7 @@ Many apps contain collections of content in the form of lists, grids, and trees 
 
 ## Creating commands for all input types
 
-Because users can interact with a UWP app using [a broad range of devices and inputs](../devices/index.md), your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.
+Because users can interact with a Windows app using [a broad range of devices and inputs](../devices/index.md), your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.
 
 This table shows some typical collection commands and ways to expose those commands. 
 
@@ -439,7 +439,7 @@ To optimize your app for pen input, see the [pen and stylus interaction](../inpu
 
 ## Do's and don'ts
 
-* Do make sure that users can access all commands from all types of UWP devices.
+* Do make sure that users can access all commands from all types of Windows devices.
 * Do include a context menu that provides access to all the commands available for a collection item. 
 * Do provide input accelerators for frequently-used commands. 
 * Do use the [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands. 

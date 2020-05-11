@@ -179,7 +179,7 @@ For example,
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Notice that Visual Studio doesn't generate a badge logo by default. That's because your badge logo is unique and probably shouldn't match your other app icons. For more info, see the  [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Notice that Visual Studio doesn't generate a badge logo by default. That's because your badge logo is unique and probably shouldn't match your other app icons. For more info, see the  [Badge notifications for Windows apps article](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
 
 ## More about app icon assets
@@ -247,13 +247,13 @@ Here are the size recommendations for target-based assets, at 100% scale:
 
 
 ## More about splash screen assets
-For more info about splash screens, see the [UWP splash screens article](/windows/uwp/launch-resume/splash-screens).
+For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens).
 
 ## More about badge logo assets
 
 When you use the asset generator to generate all the assets you need, there's a reason why it doesn't generate badge logos by default: they're very different from other app assets. The badge logo is a status image that appears in notifications and on the app's tiles. 
 
-For more information, see the [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges).
+For more information, see  [Badge notifications for Windows apps](/windows/uwp/design/shell/tiles-and-notifications/badges).
 
 
 ## Customizing asset padding

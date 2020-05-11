@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+There are two different controls that facilitate inking in Windows app apps: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.
 
@@ -78,7 +78,7 @@ Adding an InkCanvas to your app requires just one line of markup:
 ```
 
 > [!NOTE]
-> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in UWP apps"](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) article.
+> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in Windows apps"](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) article.
 
 The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
@@ -164,6 +164,6 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 
 ## Related articles
 
-- [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
 - [Recognize Windows Ink strokes as text and shapes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
 - [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

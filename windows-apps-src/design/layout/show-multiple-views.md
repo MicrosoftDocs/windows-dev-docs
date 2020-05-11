@@ -26,11 +26,11 @@ There are a variety of scenarios that can benefit from multiple views. Here are 
 
 While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the content that can be opened in a new window. Also consider including a [context menu](../controls-and-patterns/menus.md) option to "Open in a new window".
 
-To create separate instances of your app (rather than separate windows for the same instance), see [Create a multi-instance UWP app](../../launch-resume/multi-instance-uwp.md).
+To create separate instances of your app (rather than separate windows for the same instance), see [Create a multi-instance Windows app](../../launch-resume/multi-instance-uwp.md).
 
 ## Windowing hosts
 
-There are different ways that UWP content can be hosted inside an app.
+There are different ways that Windows content can be hosted inside an app.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -41,7 +41,7 @@ There are different ways that UWP content can be hosted inside an app.
     To learn how to use ApplicationView to show secondary windows in your app, see [Use ApplicationView](application-view.md).
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow simplifies the creation of multi-window UWP apps because it operates on the same UI thread that it’s created from.
+    AppWindow simplifies the creation of multi-window Windows apps because it operates on the same UI thread that it’s created from.
 
     The AppWindow class and other APIs in the [WindowManagement](/uwp/api/windows.ui.windowmanagement) namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must use ApplicationView to create secondary windows.
 

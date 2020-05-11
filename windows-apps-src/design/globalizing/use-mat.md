@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
 ms.date: 01/23/2018
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Use the Multilingual App Toolkit 4.0
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
+The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.

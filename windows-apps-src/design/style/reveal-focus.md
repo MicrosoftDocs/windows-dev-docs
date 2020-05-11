@@ -162,7 +162,7 @@ Another way to customize Reveal Focus is to opt out of the system-provided focus
 
 ## Reveal Focus and the Fluent Design System
 
-Reveal Focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
+Reveal Focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design overview](/windows/apps/fluent-design-system).
 
 ## Related articles
 

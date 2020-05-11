@@ -1,6 +1,6 @@
 ---
-Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
-title: UI considerations for UWP devices
+Description: Getting to know the devices that support Windows app apps will help you offer the best user experience for each form factor.
+title: UI considerations for Windows devices
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -11,11 +11,11 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-#  UI considerations for UWP devices
+#  UI considerations for Windows devices
 
 ![Devices](../images/devices-2x.png)
 
-Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
+Getting to know the devices that support Windows app apps will help you offer the best user experience for each form factor.
 
 ![windows-powered devices](images/device-primer/device-primer-ramp.png)
 
@@ -92,7 +92,7 @@ Typical device capabilities
 
 The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the **10-foot experience**. It is so named because the user is generally sitting approximately 10 feet away from the screen. This provides unique challenges that aren't present in, say, the *2-foot* experience, or interacting with a PC. If you are developing an app for Xbox One or any other device that's connected to a TV screen and might use a gamepad or remote for input, you should always keep this in mind.
 
-Designing your UWP app for the 10-foot experience is very different from designing for any of the other device categories listed here. For more information, see [Designing for Xbox and TV](designing-for-tv.md).
+Designing your Windows app for the 10-foot experience is very different from designing for any of the other device categories listed here. For more information, see [Designing for Xbox and TV](designing-for-tv.md).
 
 Screen sizes
 - 24" and up

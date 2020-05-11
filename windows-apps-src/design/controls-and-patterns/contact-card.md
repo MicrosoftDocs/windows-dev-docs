@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 # Contact card
 
-The contact card displays contact information, such as the name, phone number, and address, for a [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (the mechanism UWP uses to represent people and businesses).  The contact card also lets the user edit contact info. You can choose to display a compact contact card, or a full contact card that contains additional information.
+The contact card displays contact information, such as the name, phone number, and address, for a [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (the mechanism Windows uses to represent people and businesses).  The contact card also lets the user edit contact info. You can choose to display a compact contact card, or a full contact card that contains additional information.
 
 > **Important APIs**: [ShowContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard),   [ShowFullContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard),  [IsShowContactCardSupported method](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported),  [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 

@@ -1,5 +1,5 @@
 ---
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Description: Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 title: Identify input devices
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # Identify input devices
 
 
-Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 
 > **Important APIs**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 

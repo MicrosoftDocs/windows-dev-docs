@@ -1,6 +1,6 @@
 ---
 title: Gaze interactions
-Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
+Description: Learn how to design and optimize your Windows apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
 label: Gaze interactions
 template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
@@ -12,7 +12,7 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Gaze interactions and eye tracking in UWP apps
+# Gaze interactions and eye tracking in Windows apps
 
 ![Eye tracking hero](images/gaze/eyecontrolbanner1.png)
 
@@ -25,7 +25,7 @@ Provide support for tracking a user's gaze, attention, and presence based on the
 
 ## Overview
 
-Gaze input is a powerful way to interact and use Windows and UWP applications that is especially useful as an assistive technology for users with neuro-muscular diseases (such as ALS) and other disabilities involving impaired muscle or nerve functions.
+Gaze input is a powerful way to interact and use Windows applications that is especially useful as an assistive technology for users with neuro-muscular diseases (such as ALS) and other disabilities involving impaired muscle or nerve functions.
 
 In addition, gaze input offers equally compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).
 
@@ -34,13 +34,13 @@ In addition, gaze input offers equally compelling opportunities for both gaming 
 
 ## Privacy
 
-Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the `gazeInput` capability in the app manifest of your UWP application (see the following **Setup** section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.
+Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the `gazeInput` capability in the app manifest of your application (see the following **Setup** section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.
 
 In addition, if your app collects, stores, or transfers eye tracking data, you must describe this in your app's privacy statement and follow all other requirements for **Personal Information** in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 ## Setup
 
-To use the gaze input APIs in your UWP app you'll need to: 
+To use the gaze input APIs in your Windows app you'll need to: 
 
 - Specify the `gazeInput` capability in the app manifest.
 
@@ -58,7 +58,7 @@ To use the gaze input APIs in your UWP app you'll need to:
 
 ## Basic eye tracking
 
-In this example, we demonstrate how to track the user's gaze within a UWP application and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.
+In this example, we demonstrate how to track the user's gaze within a Windows app and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.
 
 A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) from the [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
 

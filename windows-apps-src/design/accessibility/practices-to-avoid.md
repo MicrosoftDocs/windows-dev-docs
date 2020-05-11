@@ -1,5 +1,5 @@
 ---
-Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
+Description: Lists the practices to avoid if you want to create an accessible Windows app app.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Accessibility practices to avoid
 label: Accessibility practices to avoid
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Accessibility practices to avoid
 
-If you want to create an accessible Universal Windows Platform (UWP) app, see this list of practices to avoid: 
+If you want to create an accessible Windows app app, see this list of practices to avoid: 
 
 * **Avoid building custom UI elements if you can use the default Windows controls** or controls that have already implemented Microsoft UI Automation support. Standard Windows controls are accessible by default and usually require adding only a few accessibility attributes that are app-specific. In contrast, implementing the [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) support for a true custom control is somewhat more involved (see [Custom automation peers](custom-automation-peers.md)).
 * **Don't put static text or other non-interactive elements into the tab order** (for example, by setting the [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) property for an element that is not interactive). If non-interactive elements are in the tab order, that is against keyboard accessibility guidelines because it decreases efficiency of keyboard navigation for users. Many assistive technologies use tab order and the ability to focus an element as part of their logic for how to present an app's interface to the assistive technology user. Text-only elements in the tab order can confuse users who expect only interactive elements in the tab order (buttons, check boxes, text input fields, combo boxes, lists, and so on).

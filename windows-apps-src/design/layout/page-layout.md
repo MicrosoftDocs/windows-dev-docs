@@ -1,6 +1,6 @@
 ---
-title: Page layout for UWP apps
-description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In UWP apps, each page generally has navigation, command, and content elements.
+title: Page layout for Windows apps
+description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In Windows apps, each page generally has navigation, command, and content elements.
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,16 +8,16 @@ localizationpriority: medium
 ---
 # Page layout
 
-In UWP apps, each [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 
+In Windows apps, each [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 
 
-Your app can have multiple pages: when a user launches a UWP app, the application code creates a [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) to place inside of the application's [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). The Frame can then [navigate](../basics/navigate-between-two-pages.md) between the application's [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) instances. 
+Your app can have multiple pages: when a user launches a Windows app, the application code creates a [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) to place inside of the application's [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). The Frame can then [navigate](../basics/navigate-between-two-pages.md) between the application's [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) instances. 
 
 Most pages follow a common layout structure, and this article covers which UI elements you'll need, and where they should go on a page. 
 
 ![page structure](images/page-components.svg)
 
 ## Navigation
-Your app layout begins with the navigation model you choose, which defines how your users navigate between pages in your app. For this article, we'll discuss two common navigation patterns: left nav and top nav. For guidance on choosing other navigation options, see [Navigation design basics for UWP apps](../basics/navigation-basics.md).
+Your app layout begins with the navigation model you choose, which defines how your users navigate between pages in your app. For this article, we'll discuss two common navigation patterns: left nav and top nav. For guidance on choosing other navigation options, see [Navigation design basics for Windows apps](../basics/navigation-basics.md).
 
 ![top and left navigation patterns](images/top-left-nav.svg)
 
@@ -85,7 +85,7 @@ The [master/details](../controls-and-patterns/master-details.md) model consists 
 A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
 ## Sample apps
-To see how these patterns can be implemented, check out our [UWP sample apps](https://developer.microsoft.com/windows/samples):
+To see how these patterns can be implemented, check out our [Windows sample apps](https://developer.microsoft.com/windows/samples):
 - [BuildCast Video Player](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook)

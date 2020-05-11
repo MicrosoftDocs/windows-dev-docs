@@ -1,6 +1,6 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
-title: Content design basics for Universal Windows Platform (UWP) apps
+Description: An overview of common page patterns and UI elements for displaying content in your Windows app.
+title: Content design basics for Windows app apps
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -10,7 +10,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Content design basics for UWP apps
+# Content design basics for Windows apps
 
 The main purpose of any app is to provide access to content. Since apps exist for many different purposes, content comes in many forms: in a photo-editing app, the photo is the content; in a travel app, maps and information about travel destinations is the content; and so on. 
 

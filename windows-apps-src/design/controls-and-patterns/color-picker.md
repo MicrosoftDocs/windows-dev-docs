@@ -22,7 +22,7 @@ A color picker is used to browse through and select colors. By default, it lets 
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ColorPicker** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ColorPicker** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [ColorPicker class](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color property](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -214,7 +214,7 @@ Hex values | IsHexInputVisible
 
 ## Related articles
 
-- [Pen and stylus interactions in UWP apps](../input/pen-and-stylus-interactions.md)
+- [Pen and stylus interactions in Windows apps](../input/pen-and-stylus-interactions.md)
 - [Inking](inking-controls.md)
 
 <!--

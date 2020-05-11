@@ -164,13 +164,13 @@ To accommodate as many users and devices as possible, we recommend that you desi
 <div class="side-by-side-content-left">
 <p>
 <b>[Identify input devices](identify-input-devices.md)</b><br/>
-Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 </p>
 </div>
 <div class="side-by-side-content-right">
 <p>
 <b>[Handle pointer input](handle-pointer-input.md)</b><br/>
-Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Universal Windows Platform (UWP) apps.
+Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Windows app apps.
 </p>
 </div>
 </div>

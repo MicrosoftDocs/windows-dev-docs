@@ -1,5 +1,5 @@
 ---
-Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
+Description: Learn how accelerator keys can improve the usability and accessibility of Windows apps.
 title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
@@ -29,7 +29,7 @@ See the [Access keys](access-keys.md) topic for details on navigating the UI of 
 Accelerators typically include the function keys F1 through F12 or some combination of a standard key paired with one or more modifier keys (CTRL, Shift).
 
 > [!NOTE]
-> The UWP platform controls have built-in keyboard accelerators. For example, ListView supports Ctrl+A for selecting all the items in the list, and RichEditBox supports Ctrl+Tab for inserting a Tab in the text box. These built-in keyboard accelerators are referred to as **control accelerators** and are executed only if the focus is on the element or one of its children. Accelerators defined by you using the keyboard accelerator APIs discussed here are referred to as **app accelerators**.
+> UWP platform controls have built-in keyboard accelerators. For example, ListView supports Ctrl+A for selecting all the items in the list, and RichEditBox supports Ctrl+Tab for inserting a Tab in the text box. These built-in keyboard accelerators are referred to as **control accelerators** and are executed only if the focus is on the element or one of its children. Accelerators defined by you using the keyboard accelerator APIs discussed here are referred to as **app accelerators**.
 
 Keyboard accelerators are not available for every action but are often associated with commands exposed in menus (and should be specified with the menu item content). Accelerators can also be associated with actions that do not have equivalent menu items. However, because users rely on an application's menus to discover and learn the available command set, you should try to make discovery of accelerators as easy as possible (using labels or established patterns can help with this).
 
@@ -323,7 +323,7 @@ In this example, the AutomationProperty.AcceleratorKey returns the string "Contr
 
 ## Common Keyboard Accelerators
 
-We recommend that you make keyboard accelerators consistent across UWP applications. Users have to memorize keyboard accelerators and expect the same (or similar) results.
+We recommend that you make keyboard accelerators consistent across Windows applications. Users have to memorize keyboard accelerators and expect the same (or similar) results.
 
 This might not always be possible due to differences in functionality across apps.
 
@@ -369,7 +369,7 @@ Notice that some of the combinations are not valid for localized versions of Win
 
 ### Tooltips
 
-As keyboard accelerators are not typically described directly in the UI of your UWP application, you can improve discoverability through [tooltips](../controls-and-patterns/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
+As keyboard accelerators are not typically described directly in the UI of your Windows application, you can improve discoverability through [tooltips](../controls-and-patterns/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
 
 **Windows 10, Version 1803 (April 2018 Update) and newer**
 

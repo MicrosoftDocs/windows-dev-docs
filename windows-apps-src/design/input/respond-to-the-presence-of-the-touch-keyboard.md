@@ -23,7 +23,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 
 <sup>The touch keyboard in default layout mode</sup>
 
-The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
+The touch keyboard enables text entry for devices that support touch. Windows app text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
 To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) and [Custom automation peers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
@@ -35,7 +35,7 @@ This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
 You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
-If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+If you're new to developing Windows app apps, have a look through these topics to get familiar with the technologies discussed here.
 
 - [Create your first app](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Learn about events with [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
@@ -56,7 +56,7 @@ Here are a few basic recommendations for custom text input controls.
 
 - Ensure that users can always see the input field that they're interacting with.
 
-    Because the touch keyboard occludes a large portion of the screen, the UWP ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
+    Because the touch keyboard occludes a large portion of the screen, Windows ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
 
     When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) and [Hiding](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) events exposed by the [**InputPane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) object.
 

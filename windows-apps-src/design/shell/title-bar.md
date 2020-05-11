@@ -27,7 +27,7 @@ Your other option is to hide the default title bar and replace it with your own 
 When you opt for full customization, you are responsible for putting content in the title bar area, and you can define your own draggable region. The system Back, Close, Minimize, and Maximize buttons are still available and handled by the system, but elements like the app title are not. You will need to create those elements yourself as needed by your app.
 
 > [!NOTE]
-> Simple color customization is available to UWP apps using XAML, DirectX, and HTML. Full customization is available only to UWP apps using XAML.
+> Simple color customization is available to Windows apps using XAML, DirectX, and HTML. Full customization is available only to Windows apps using XAML.
 
 ## Simple color customization
 

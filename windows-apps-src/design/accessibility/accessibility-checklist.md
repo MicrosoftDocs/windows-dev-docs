@@ -1,5 +1,5 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: Provides a checklist to help you ensure that your Windows app is accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Accessibility checklist
 label: Accessibility checklist
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Accessibility checklist
 
-Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible .
+Provides a checklist to help you ensure that your Windows app is accessible .
 
 Here we provide a checklist you can use to ensure that your app is accessible.
 

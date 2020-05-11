@@ -1,13 +1,13 @@
 ---
 title: Alternate push channels using VAPID in UWP
-description: Directions for using alternate push channels with the VAPID protocol from a UWP app
+description: Directions for using alternate push channels with the VAPID protocol from a Windows app
 ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
 ---
-# Alternate push channels using VAPID in UWP 
-Starting in the Fall Creators Update, UWP apps can use VAPID authentication to send push notifications.  
+# Alternate push channels using VAPID in Windows 
+Starting in the Fall Creators Update, Windows apps can use VAPID authentication to send push notifications.  
 
 > [!NOTE]
 > These APIs are intended for web browsers that are hosting other websites and creating channels on their behalf.  If you are looking to add webpush notifications to your web app, we recommend you follow the W3C and WhatWG standards for creating a service worker and sending a notification.
@@ -17,7 +17,7 @@ The introduction of the web push standard allows websites can act more like apps
 
 The VAPID authentication protocol was created to allow websites to authenticate with push servers in a vendor agnostic way. With all vendors using the VAPID protocol, websites can send push notifications without knowing the browser on which it is running. This is a significant improvement over implementing a different push protocol for each platform. 
 
-UWP apps can use VAPID to send push notifications with these advantages, as well. These protocols can save development time for new apps and simplify cross platform support for existing apps. Additionally, enterprise apps or sideloaded apps can now send notifications without registering in the Microsoft Store. Hopefully, this will open up new ways to engage with users across all platforms.  
+Windows apps can use VAPID to send push notifications with these advantages, as well. These protocols can save development time for new apps and simplify cross platform support for existing apps. Additionally, enterprise apps or sideloaded apps can now send notifications without registering in the Microsoft Store. Hopefully, this will open up new ways to engage with users across all platforms.  
 
 ## Alternate channels 
 In UWP, these VAPID channels are called alternate channels and provide similar functionality to a web push channel. They can trigger an app background task to run, enable message encryption, and allow for multiple channels from a single app. For more information about the difference between the different channel types, please see [Choosing the right channel](channel-types.md).
@@ -26,7 +26,7 @@ Using alternate channels is a great way to access push notifications if your app
 
 ## Code example
 
-The basic process of setting up an alternate channel for a UWP app is similar to setting up a primary or secondary channel. First, register for a channel with the [WNS server](windows-push-notification-services--wns--overview.md). Then, register to run as a background task. After the notification is sent and the background task is triggered, handle the event.  
+The basic process of setting up an alternate channel for a Windows app is similar to setting up a primary or secondary channel. First, register for a channel with the [WNS server](windows-push-notification-services--wns--overview.md). Then, register to run as a background task. After the notification is sent and the background task is triggered, handle the event.  
 
 ### Get a channel 
 To create an alternate channel, the app must provide two pieces of information: the public key for its server and the name of the channel it is creating. The details about the server keys are available in the web push spec, but we recommend using a standard web push library on the server to generate the keys.  
