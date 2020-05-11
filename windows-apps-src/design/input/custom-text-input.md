@@ -1,5 +1,5 @@
 ---
-Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Windows app app to receive text input from any text service supported on Windows devices.
+Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Windows app to receive text input from any text service supported on Windows devices.
 title: Custom text input overview
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 
 
-The core text APIs in the [**Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://docs.microsoft.com/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
+The core text APIs in the [**Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://docs.microsoft.com/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 
 > **Important APIs**: [**Windows.UI.Text.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core), [**CoreTextEditContext**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
 

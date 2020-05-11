@@ -1,5 +1,5 @@
 ---
-Description: Introduces accessibility concepts that relate to Windows app apps.
+Description: Introduces accessibility concepts that relate to Windows apps.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Accessibility  
 
-Accessibility is about building experiences that make your Windows app application usable by people who use technology in a wide range of environments and approach your UI with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
+Accessibility is about building experiences that make your Windows application usable by people who use technology in a wide range of environments and approach your UI with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
 > There's also a Microsoft Store declaration regarding accessibility for your app!
 
