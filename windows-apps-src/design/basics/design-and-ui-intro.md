@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Introduction to UWP app design
+# Introduction to Windows app design
 
 ![sample lighting app](images/introUWP-header.jpg)
 
