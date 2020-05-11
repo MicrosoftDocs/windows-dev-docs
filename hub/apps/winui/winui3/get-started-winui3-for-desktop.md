@@ -17,26 +17,27 @@ WinUI 3.0 Preview 1 introduces new project templates that enable you to create m
 WinUI 3.0 Preview 1 adds the following **WinUI in Desktop** project templates in Visual Studio 2019:
 
 * C# apps and libraries that target .NET 5:
-  * Blank App (WinUI in Desktop)
-  * Blank App, Packaged (WinUI in Desktop)
-  * Class Library (WinUI in Desktop)
+  * **Blank App (WinUI in Desktop)**
+  * **Blank App, Packaged (WinUI in Desktop)**
+  * **Class Library (WinUI in Desktop)**
 
 * Native C++ apps:
-  * Blank App (WinUI in Desktop)
-  * Blank App, Packaged (WinUI in Desktop)
+  * **Blank App (WinUI in Desktop)**
+  * **Blank App, Packaged (WinUI in Desktop)**
 
 > [!NOTE]
 > The **Blank App** and **Blank App, Packaged** project templates are similar except the latter include a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to package the app into an MSIX package.
 
 ## Prerequisites
 
-WinUI 3.0 Preview 1 requires:
+To use the WinUI 3 for desktop project templates described in this article, you must configure your development computer with the following software:
 
 * Windows 10, version 1803, or a later Windows 10 release.
 * Visual Studio 2019, version 16.7 Preview 1.
 * .NET 5 Preview 4.
+* WinUI 3.0 Preview 1.
 
-For instructions to install WinUI 3.0 Preview 1, including the project templates for managed C#/.NET and native C++/Win32 desktop apps, see [WinUI 3.0](index.md).
+For setup instructions, see [WinUI 3.0](index.md).
 
 ## Create a new WinUI 3 app for C# and .NET
 

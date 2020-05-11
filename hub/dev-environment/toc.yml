@@ -31,8 +31,6 @@
             href: ../package-manager/package/manifest.md
           - name: Submit your manifest to the repository
             href: ../package-manager/package/repository.md
-          - name: Manifest specification
-            href: ../package-manager/package/manifest-specification.md
   - name: Develop with Python
     items:
         - name: Overview
