@@ -307,7 +307,7 @@ An item’s control template contains the visuals that display state, like selec
 
 - Hover – A light gray rectangle drawn below the data template.  
 - Selection – A light blue rectangle drawn below the data template. 
-- Keyboard focus– A black and white dotted border drown on top of the item template. 
+- Keyboard focus– A light blue rectangle with a solid black border drown on top of the item template.
 
 ![List view state visuals](images/listview-state-visuals.png)
 
