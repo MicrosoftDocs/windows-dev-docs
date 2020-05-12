@@ -57,3 +57,7 @@ We are continuing to develop and evolve WinUI to support more developer scenario
 ## NuGet package list
 
 The Windows UI Library contains multiple NuGet packages: [Windows UI Library NuGet package list](nuget-packages.md).
+
+## See also
+
+[Windows UI Library 2.x Release Notes](release-notes/index.md)

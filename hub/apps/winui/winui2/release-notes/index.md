@@ -7,7 +7,7 @@ ms.date: 05/08/2020
 ms.topic: reference
 ---
 
-# Windows UI Library Release Notes
+# Windows UI Library 2.x Release Notes
 
 The Windows UI Library (WinUI) is an open source project hosted on GitHub. All new releases are built from the [Windows UI Library GitHub repo](https://aka.ms/winui). 
 
