@@ -212,7 +212,7 @@ There are many Windows 10 game and app samples available to help you understand 
     </tr>
     <tr>
         <td>Windows game samples (MSDN Code Gallery)</td>
-        <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Microsoft Store game samples</a></td>
+        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Microsoft Store game samples</a></td>
     </tr>
     <tr>
         <td>JavaScript 2D game sample</td>
