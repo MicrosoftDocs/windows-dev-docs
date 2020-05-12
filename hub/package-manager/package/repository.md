@@ -101,23 +101,17 @@ After you push your changes, return to [https://github.com/microsoft/winget-pkgs
 
 When you create a pull request, this will start an automation process that validates the manifest and processes your pull request. We add labels to your pull request so you cab track progress.
 
-### Validation steps
+### Submission expectations
 
-Our validation process includes these verification steps.
+All application submissions to the Windows Package Manager repository should be well-behaved. Here are some expectations for submissions:
 
-* Check the manifest file for valid YAML.
-* Check that the manifest complies with [our specification](https://github.com/microsoft/winget-cli). Certain fields are required. Missing fields or unsupported fields will cause the package to be rejected.
-* Analyze every URL in the manifest using SmartScreen.
-* Evaluate each installer for viruses, and make sure the installer matches the provided hash. Following the approval of the manifest, the installer and binaries are analyzed further.
-* Confirm the package installs correctly. Applications must successfully install whether the user is installing from a regular command prompt or with administrator privileges.
-* Check whether the installers install silently.
-    > [!NOTE]
-    > The current preview of Windows Package Manager only supports packages that support a silent or passive install.
-* Confirm that the tools installed by the installer match those implied by the manifest.
-* Confirm that the specified publisher and application name are correct. Manifests should accurately identify the publisher and application name.
-* Confirm that the URL the installer is installing from is a good distribution point for the publisher.
-* Check the installed package for viruses.
-* Confirm the package uninstalls correctly.
+* The manifest complies with the [schema requirements](manifest.md#manifest-contents).
+* All URLs in the manifest lead to safe websites.
+* The installer and application are virus free.
+* The application installs and uninstalls correctly for both administrators and non-administrators.
+* The installer supports non-interactive modes.
+* All manifest entries are accurate and not misleading.
+* The installer comes directly from the publisher's website.
 
 ### Pull request labels
 
@@ -125,6 +119,4 @@ During validation, we apply a series of labels to our pull request to communicat
 
 * **Needs: author feedback**: This label indicates there was a failure with the submission. We will reassign pull request back to you. If you do not address the issue within 10 days, we will close the pull request.
 * **AzurePipelinePassed**: This label indicates that the manifest has completed the first portion of validation. After this step, your pull request is assigned to our test team for final validation.
-* **Validation Completed**: This label indicates that the validation is complete and your pull request will be merged.
-
-![Labels](images\labels.png)
+* **Validation-Complete**: This label indicates that the validation is complete and your pull request will be merged.
