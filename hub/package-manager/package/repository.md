@@ -117,6 +117,14 @@ All application submissions to the Windows Package Manager repository should be 
 
 During validation, we apply a series of labels to our pull request to communicate progress.
 
-* **Needs: author feedback**: This label indicates there was a failure with the submission. We will reassign pull request back to you. If you do not address the issue within 10 days, we will close the pull request.
-* **AzurePipelinePassed**: This label indicates that the manifest has completed the first portion of validation. After this step, your pull request is assigned to our test team for final validation.
-* **Validation-Complete**: This label indicates that the validation is complete and your pull request will be merged.
+* **Needs: author feedback**: There is a failure with the submission. We will reassign pull request back to you. If you do not address the issue within 10 days, we will close the pull request.
+* **Manifest-Validation-Error**: The submitted manifest contains a syntax error.
+* **URL-Validation-Error**: One or more URLs in the submission failed [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) validation.
+* **Binary-Validation-Error**: The submitted application installer failed virus scan testing or there is a hash mismatch.
+* **Pull-Request-Error**: There is a problem with the pull request. For example, the folder structure does not have the [required format](#step-3-add-your-manifest-to-the-local-repository).
+* **Validation-Error**: The submitted application failed a general validation test.
+* **Validation-Installation-Error**: The submitted application failed install testing.
+* **Validation-Uninstall-Error**: The submitted application failed uninstall testing.
+* **Validation-Virus-Scan-Error**: The submitted application failed virus scan testing.
+* **Azure-Pipeline-Passed**: The manifest has completed the first portion of validation. After this step, your pull request is assigned to our test team for final validation.
+* **Validation-Completed**: The validation is complete and your pull request will be merged.
