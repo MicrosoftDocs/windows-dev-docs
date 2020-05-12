@@ -75,13 +75,13 @@
                 href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
   - name: Windows UI Library (WinUI)
     items:
-      - name: "Download and release notes"
+      - name: "Overview"
         href: winui/index.md
-      - name: "Windows UI 3.0 Library (Preview 1)"
+      - name: "Windows UI Library 3.0 Preview 1"
         items:
-          - name: "Overview"
+          - name: "Download and release notes"
             href: winui/winui3/index.md
-          - name: "Get started with WinUI 3 for desktop apps"
+          - name: "Get started with WinUI 3.0 for desktop apps"
             href: winui/winui3/get-started-winui3-for-desktop.md
       - name: "Windows UI 2.x Library"
         href: winui/winui2/index.md
