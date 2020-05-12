@@ -24,7 +24,7 @@ WinUI 3.0 is a major update to the Windows UI Library that transforms WinUI into
 
 For more information on the roadmap and benefits of WinUI 3.0, see the [Windows UI Library Roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on GitHub.
 
-We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml).>
+We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml).
 
 > [!Important]
 > This WinUI 3.0 preview release is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps. The forward-compatible official release is scheduled for later this year.
@@ -106,6 +106,21 @@ For more information on how to create a UWP app, see [Start coding](https://docs
 
 The main difference is that WinUI 3 APIs are in the `Microsoft.UI` namespace instead of the `Windows.UI` namespace, so you might need to update the namespaces when copying and pasting sample code. Similarly, libraries and components using UI controls from `Windows.UI.Xaml` are not compatible with WinUI 3.0 and must be updated to `Microsoft.UI.Xaml`.
 
+## Xaml Controls Gallery (WinUI 3.0 Preview 1 branch)
+
+See the [WinUI 3.0 Preview 1 branch of the Xaml Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1) for a sample app that includes all WinUI 3.0 Preview 1 controls and features.
+
+![WinUI 3.0 Preview 1 Xaml Controls Gallery app](images/WinUI3XamlControlsGallery.png)<br/>
+*Example of the WinUI 3.0 Preview 1 Xaml Controls Gallery app*
+
+To download the sample, clone the **winui3preview1** branch using the following command:
+
+> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
+
+After cloning, ensure that you switch to the **winui3preview1** branch in your local Git environment:
+
+> `git checkout winui3preview1`
+
 ## Preview 1 limitations and known issues
 
 The Preview 1 build is incomplete, so we expect some bugs, limitations, and issues.
@@ -146,18 +161,3 @@ Future updates will include support for a wider range of Windows versions and de
 - No inking support
 - Win10 desktop only (no support for xbox, hololens, etc.)
 - No support for windowed popups
-  
-## Xaml Controls Gallery (WinUI 3.0 Preview 1 branch)
-
-See the [WinUI 3.0 Preview 1 branch of the Xaml Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1) for a sample app that includes all WinUI 3.0 Preview 1 controls and features.
-
-![WinUI 3.0 Preview 1 Xaml Controls Gallery app](images/WinUI3XamlControlsGallery.png)<br/>
-*Example of the WinUI 3.0 Preview 1 Xaml Controls Gallery app*
-
-To download the sample, clone the **winui3preview1** branch using the following command:
-
-> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
-
-After cloning, ensure that you switch to the **winui3preview1** branch in your local Git environment:
-
-> `git checkout winui3preview1`
