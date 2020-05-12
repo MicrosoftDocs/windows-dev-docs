@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 ***Many interaction experiences are shared between gamepad, remote control, and keyboard***
 
-Build interaction experiences in your Windows app applications that ensure your app is usable and accessible through both the traditional input types of PCs, laptops, and tablets (mouse, keyboard, touch, and so on), as well as the input types typical of the TV and Xbox *10-foot* experience, such as the gamepad and remote control.
+Build interaction experiences in your Windows applications that ensure your app is usable and accessible through both the traditional input types of PCs, laptops, and tablets (mouse, keyboard, touch, and so on), as well as the input types typical of the TV and Xbox *10-foot* experience, such as the gamepad and remote control.
 
 See [Designing for Xbox and TV](../devices/designing-for-tv.md) for general design guidance on Windows applications in the *10-foot* experience.
 
@@ -568,4 +568,4 @@ You can build Windows applications that are optimized for a specific device or e
 ## Related articles
 
 - [Designing for Xbox and TV](../devices/designing-for-tv.md)
-- [Device primer for Windows app apps](index.md)
+- [Device primer for Windows apps](index.md)

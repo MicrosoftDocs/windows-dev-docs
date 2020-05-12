@@ -35,7 +35,7 @@ This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
 You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
-If you're new to developing Windows app apps, have a look through these topics to get familiar with the technologies discussed here.
+If you're new to developing Windows apps, have a look through these topics to get familiar with the technologies discussed here.
 
 - [Create your first app](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Learn about events with [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)

@@ -147,7 +147,6 @@ To understand your tax considerations for price selection, and tax responsibilit
 | Lithuania                        | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | Price minus 21% tax, minus Store fee  | Microsoft          |
 | Luxembourg                       | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | Price minus 17% tax, minus Store fee  | Microsoft          |
 | Macao SAR                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
-| Macedonia (FYROM)                | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Madagascar                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Malawi                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Malaysia                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | Price minus 6% tax, minus Store fee   | Microsoft          |
@@ -179,6 +178,7 @@ To understand your tax considerations for price selection, and tax responsibilit
 | Nigeria                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Niue                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Norfolk Island                   | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
+| North Macedonia                  | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Northern Mariana Islands         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Norway                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | Price minus 25% tax, minus Store fee  | Microsoft          |
 | Oman                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
@@ -257,9 +257,9 @@ To understand your tax considerations for price selection, and tax responsibilit
 | Zambia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 | Zimbabwe                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | Price minus Store fee                 | Developer          |
 
-The following applies only to Azure Marketplace Publishers, notwithstanding anything to the contrary above: 
+The following applies only to Azure Marketplace Publishers, notwithstanding anything to the contrary above:
 
-| Country/region                   | Tax consideration for price selection                                                                                                             | Tax management                    | 
+| Country/region                   | Tax consideration for price selection                                                                                                             | Tax management                    |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | Australia (for purchases made through all customer purchase scenarios except Enterprise Agreement) | Price being selected is the final sale price and includes any applicable taxes. | Microsoft |
 | Australia (only for purchases made through the Enterprise Agreement customer purchase scenario) | Price being selected is the final sale price and includes any applicable taxes. | Publisher |
@@ -287,7 +287,7 @@ The following applies only to Windows app/games developers:
 | China (except on mobile communication devices running Windows Phone 7.x and on personal computers running Windows 8.x) |
 | Brazil (only for purchases made via devices running Windows 10)     |
 
-The following applies only to Azure Marketplace Publishers: 
+The following applies only to Azure Marketplace Publishers:
 
 |                    Reseller countries/regions                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
@@ -296,7 +296,3 @@ The following applies only to Azure Marketplace Publishers:
 
 
  
-
-
-
-

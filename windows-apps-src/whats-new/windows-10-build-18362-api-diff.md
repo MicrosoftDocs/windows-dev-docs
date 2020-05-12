@@ -1,7 +1,7 @@
 ﻿---
 title: Windows 10 Build 18362 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 18362
-keywords: what's new, whats new, updates, Windows 10, newest, apis, 18362, may
+keywords: Windows 10, apis, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium

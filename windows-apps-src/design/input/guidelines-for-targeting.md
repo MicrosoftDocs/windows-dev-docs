@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Guidelines for touch targets
 
-All interactive UI elements in your Windows app application must be large enough for users to accurately access and use, regardless of device type or input method.
+All interactive UI elements in your Windows application must be large enough for users to accurately access and use, regardless of device type or input method.
 
 Supporting touch input (and the relatively imprecise nature of the touch contact area) requires further optimization with respect to target size and control layout as the larger, more complex set of input data reported by the touch digitizer is used to determine the user's intended (or most likely) target.
 

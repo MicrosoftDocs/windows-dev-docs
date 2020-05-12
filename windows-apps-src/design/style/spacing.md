@@ -10,7 +10,7 @@ ms.custom: 19H1
 
 # Control size and density
 
-Use a combination of control size and density to optimize your Windows app application and provide a user experience that is most appropriate for your app's functionality and interaction requirements.
+Use a combination of control size and density to optimize your Windows application and provide a user experience that is most appropriate for your app's functionality and interaction requirements.
 
 By default, UWP apps are rendered with a low-density (or `Standard`) layout. However, beginning with WinUI 2.1, a high-density (or `Compact`) layout option, for information rich UI and similar specialized scenarios, is also supported. This can be specified through a basic style resource (see examples below).
 

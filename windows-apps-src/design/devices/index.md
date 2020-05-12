@@ -1,5 +1,5 @@
 ---
-Description: Getting to know the devices that support Windows app apps will help you offer the best user experience for each form factor.
+Description: Getting to know the devices that support Windows apps will help you offer the best user experience for each form factor.
 title: UI considerations for Windows devices
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![Devices](../images/devices-2x.png)
 
-Getting to know the devices that support Windows app apps will help you offer the best user experience for each form factor.
+Getting to know the devices that support Windows apps will help you offer the best user experience for each form factor.
 
 ![windows-powered devices](images/device-primer/device-primer-ramp.png)
 
