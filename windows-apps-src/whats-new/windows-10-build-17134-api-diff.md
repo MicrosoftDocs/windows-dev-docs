@@ -1,7 +1,7 @@
 ---
 title: Windows 10 Build 17134 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17134
-keywords: what's new, whats new, updates, Windows 10, newest, apis, 17134
+keywords: Windows 10, apis, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 
