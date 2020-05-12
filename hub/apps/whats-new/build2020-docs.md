@@ -5,12 +5,14 @@ ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
-author: jken
+author: grantmestrength
 ---
 
-![Build hero image](../images/build-banner.jpeg)
+
 
 # Microsoft Build - the Windows Documentation
+
+![Build hero image](../images/build-banner.jpeg)
 
 We've gathered together links to documentation that supports the talks given as part of [Microsoft Build 2020](https://mybuild.microsoft.com). We will update this page as the event continues, so check back to see what's new!
 
