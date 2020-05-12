@@ -5,9 +5,9 @@ ms.date: 05/11/2020
 ms.topic: article
 ---
 
-# Windows UI Library (WinUI) 3.0 Preview 1 (May 2020)
+# Windows UI Library 3.0 Preview 1 (May 2020)
 
-WinUI 3.0 is a major update to the Windows UI Library that transforms WinUI into a full UX framework for all types of Windows apps—from Win32 to UWP.
+Windows UI Library (WinUI) 3.0 is a major update that transforms WinUI into a full UX framework for all types of Windows apps—from Win32 to UWP.
 
 ## New features in WinUI 3.0 Preview 1
 
