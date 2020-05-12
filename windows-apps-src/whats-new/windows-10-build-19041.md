@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Windows 10 build 19041 (also known as SDK version 2004), in combination with Visual Studio 2019 and related tools and features, provide you with everything you need to create remarkable Windows apps. [Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-This is a collection of new and improved features and guidance of interest to Windows developers in this release. For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers).
+This is a collection of new and improved features and guidance of interest to Windows developers in this release. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 build 19041 API changes](windows-10-build-19041-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers).
 
 ## Windows 10 apps
 

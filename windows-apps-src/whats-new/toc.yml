@@ -1,5 +1,8 @@
 - name: What's new in Windows 10 for developers, build 19041
   href: ../whats-new/windows-10-build-19041.md
+  items:
+    - name: API additions in Windows 10, build 19041
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 
 - name: Previous versions of Windows 10
   items:
