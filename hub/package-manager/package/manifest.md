@@ -34,9 +34,11 @@ These conventions are used in this article:
 
 ## Manifest contents
 
-A package manifest must include a set of required items, and can also include further optional items that can help improve the customer experience of installing your software. This section provides brief summaries of the required manifest schema and complete manifest schemas, and examples of each. 
+A package manifest must include a set of required items, and can also include further optional items that can help improve the customer experience of installing your software. This section provides brief summaries of the required manifest schema and complete manifest schemas, and examples of each.
 
-For a complete list and descriptions of items in a manifest, see [the specification](manifest-specification.md).
+Each field in the manifest file must be Pascal-cased and cannot be duplicated.
+
+For a complete list and descriptions of items in a manifest, see the manifest specification in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
 
 ### Minimal required schema
 

@@ -106,9 +106,9 @@ When you create a pull request, this will start an automation process that valid
 Our validation process includes these verification steps.
 
 * Check the manifest file for valid YAML.
-* Check that the manifest complies with [our specification](manifest-specification.md). Certain fields are required. Missing fields or unsupported fields will cause the bot to reject the package.
+* Check that the manifest complies with [our specification](https://github.com/microsoft/winget-cli). Certain fields are required. Missing fields or unsupported fields will cause the package to be rejected.
 * Analyze every URL in the manifest using SmartScreen.
-* Evaluate each installer wfor viruses, and make sure the installer matches the provided hash. Following the approval of the manifest, the installer and binaries are analyzed further.
+* Evaluate each installer for viruses, and make sure the installer matches the provided hash. Following the approval of the manifest, the installer and binaries are analyzed further.
 * Confirm the package installs correctly. Applications must successfully install whether the user is installing from a regular command prompt or with administrator privileges.
 * Check whether the installers install silently.
     > [!NOTE]
