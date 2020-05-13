@@ -17,51 +17,101 @@ WinUI 3.0 Preview 1 introduces new project templates that enable you to create m
 WinUI 3.0 Preview 1 adds the following **WinUI in Desktop** project templates in Visual Studio 2019:
 
 * C# apps and libraries that target .NET 5:
-  * **Blank App (WinUI in Desktop)**
-  * **Blank App, Packaged (WinUI in Desktop)**
-  * **Class Library (WinUI in Desktop)**
+  * Blank App, Packaged (WinUI in Desktop)
+  * Class Library (WinUI in Desktop)
 
-* Native C++ apps:
-  * **Blank App (WinUI in Desktop)**
-  * **Blank App, Packaged (WinUI in Desktop)**
+* C++/Win32 apps:
+  * Blank App, Packaged (WinUI in Desktop)
 
-> [!NOTE]
-> The **Blank App** and **Blank App, Packaged** project templates are similar except the latter include a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to package the app into an MSIX package.
+The app project templates generate a WinUI app project and a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](https://docs.microsoft.com/windows/msix/overview) for deployment.
 
 ## Prerequisites
 
-To use the WinUI 3 for desktop project templates described in this article, you must configure your development computer with the following software:
+To use the WinUI 3 for desktop project templates described in this article, configure your development computer by following these instructions:
 
-* Windows 10, version 1803, or a later Windows 10 release.
-* Visual Studio 2019, version 16.7 Preview 1.
-* .NET 5 Preview 4.
-* WinUI 3.0 Preview 1.
+1. Make sure that your development computer has Windows 10, version 1803, or a later Windows 10 release installed.
 
-For setup instructions, see [WinUI 3.0](index.md).
+2. Install Visual Studio 2019, version 16.7 Preview 1. For details, see [these instructions](index.md#set-up-visual-studio).
 
-## Create a new WinUI 3 app for C# and .NET
+3. Install both x64 and x86 versions of .NET 5 Preview 4:
+    * x64: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
+    * x86: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
+
+4. Install the VSIX extension that includes the WinUI 3.0 Preview 1 project templates for Visual Studio 2019. For details, see [these instructions](index.md#visual-studio-project-templates).
+
+## Create a new WinUI 3 app for C# and .NET 5
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 
-2. In the three drop-down boxes, select **C#**, **Windows**, and **WinUI**, respectively.
+2. In the project drop-down filters, select **C#**, **Windows**, and **WinUI**, respectively.
 
-3. Select the **Blank App (WinUI in Desktop)** project type and click **Next**.
+3. Select the **Blank App, Packaged (WinUI in Desktop)** project type and click **Next**.
+
+    ![Blank App Project Template](images/WinUI-csharp-newproject.png)
 
 4. Enter a project name, choose any other options as desired, and click **Create**.
 
-5. In the following dialog box, choose the **Target version** and **Minimum version** values for your project. If you're just interested in creating a test project to try out this application type, select the version of Windows 10 on your development computer for both fields.
+5. In the following dialog box, choose the **Target version** and **Minimum version** values for your project and then click **OK**. If you're just interested in creating a test project to try out this application type, select the version of Windows 10 on your development computer for both fields.
+
+6. At this point, Visual Studio generates two projects:
+
+    * ***Project name* (Desktop)**: This project contains your app's code. The **App.xaml.cs** code file defines an `Application` class that represents your app instance, and the **MainWindow.xaml.cs** code file defines a `MainWindow` class that represents the main window displayed by your app. This code differs from UWP projects in that these classes derive from types in the **Microsoft.UI.Xaml** namespace provided by WinUI, instead of the [Windows.UI.Xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml) namespace provided by the Windows SDK.
+
+        ![App Project](images/WinUI-csharp-appproject.png)
+
+    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an MSIX package for deployment. This project contains the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
+
+        ![App Project](images/WinUI-csharp-packageproject.png)
+
+7. To add a new item to your app project, right-click the ***Project name* (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. You can choose from the following types of items:
+
+    * **Blank Page**
+    * **Blank Window**
+    * **Custom Control**
+    * **Resource Dictionary**
+    * **Resources File**
+    * **User Control**
+
+    ![New Item](images/WinUI-csharp-newitem.png)
+
+8. Build and run your solution to confirm that the app runs without errors.
 
 ## Create a new WinUI 3 desktop app for C++/Win32
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 
-2. In the three drop-down boxes, select **C++**, **Windows**, and **WinUI**, respectively.
+2. In the project drop-down filters, select **C++**, **Windows**, and **WinUI**.
 
-3. Select the **Blank App (WinUI in Desktop)** project type and click **Next**.
+3. Select the **Blank App, Packaged (WinUI in Desktop)** project type and click **Next**.
+
+    ![Blank App Project Template](images/WinUI-cpp-newproject.png)
 
 4. Enter a project name, choose any other options as desired, and click **Create**.
 
-5. In the following dialog box, choose the **Target version** and **Minimum version** values for your project. If you're just interested in creating a test project to try out this application type, select the version of Windows 10 on your development computer for both fields.
+5. In the following dialog box, choose the **Target version** and **Minimum version** values for your project and then click **OK**. If you're just interested in creating a test project to try out this application type, select the version of Windows 10 on your development computer for both fields.
+
+6. At this point, Visual Studio generates two projects:
+
+    * ***Project name* (Desktop)**: This project contains your app's code. The **App.xaml** and various **App** code files define an `Application` class that represents your app instance, and the **MainWindow.xaml** and various **MainWindow** code files define a `MainWindow` class that represents the main window displayed by your app. These classes derive from types in the **Microsoft.UI.Xaml** namespace provided by WinUI.
+
+        ![App Project](images/WinUI-cpp-appproject.png)
+
+    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an MSIX package for deployment. This project contains the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
+
+        ![Package Project](images/WinUI-cpp-packageproject.png)
+
+7. To add a new item to your app project, right-click the ***Project name* (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. You can choose from the following types of items:
+
+    * **Blank Page**
+    * **Blank Window**
+    * **Custom Control**
+    * **Resource Dictionary**
+    * **Resources File**
+    * **User Control**
+
+    ![New Item](images/WinUI-cpp-newitem.png)
+
+8. Build and run your solution to confirm that the app runs without errors.
 
 ## Known issues and limitations
 
