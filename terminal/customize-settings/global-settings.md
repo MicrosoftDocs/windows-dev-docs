@@ -6,6 +6,7 @@ ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: how-to
 ms.service: terminal
+ms.localizationpriority: high
 ---
 
 # Global settings in the Windows Terminal

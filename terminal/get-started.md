@@ -6,7 +6,7 @@ ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: quickstart
 ms.service: terminal
-# Customer intent: As a developer or IT admin, I want to install and run Windows Terminal so that I can have an improved workflow.
+ms.localizationpriority: high
 ---
 
 # Install and set up Windows Terminal

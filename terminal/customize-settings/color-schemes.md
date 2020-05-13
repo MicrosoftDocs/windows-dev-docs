@@ -6,6 +6,7 @@ ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: how-to
 ms.service: terminal
+ms.localizationpriority: high
 ---
 
 # Color schemes in the Windows Terminal
