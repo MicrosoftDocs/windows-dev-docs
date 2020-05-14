@@ -58,15 +58,8 @@ The following table introduces the platforms. For an in-depth comparison of thes
 </tbody>
 </table>
 
-## Windows UI Library for desktop apps
-
-On Windows 10, each of the main desktop platforms also support using the [Windows UI (WinUI) Library](../winui/index.md) to create their user interfaces. WinUI started as a toolkit that provided new and updated versions of UWP controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and Win32.
-
-You can use WinUI in the following ways in desktop apps:
-
-* UWP apps can use WinUI controls in place of UWP controls provided by the Windows SDK.
-* You can update existing WPF, Windows Forms, and C++/Win32 apps to use [XAML Islands](modernize/xaml-islands.md) to host WinUI 2.x controls in the apps.
-* Starting with [WinUi 3.0 Preview 1](../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../winui/winui3/get-started-winui3-for-desktop.md).
+> [!NOTE]
+> All of these application platforms provide a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the Windows UI (WinUI) Library to create their user interfaces. For more information about WinUI for desktop apps, see [this section](choose-your-platform.md#windows-ui-library).
 
 ## Update existing desktop apps for Windows 10
 

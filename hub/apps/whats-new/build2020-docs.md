@@ -19,13 +19,14 @@ We've gathered together links to documentation that supports the talks given as 
 ## Windows Terminal
 
 * [Install and set up Windows Terminal](https://docs.microsoft.com/windows/terminal/get-started)
-* [Gallery of customized terminals](https://docs.microsoft.com/windows/terminal/)
+* [Set up custom key bindings](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
+* [Gallery of customized terminals](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
 ## Windows Subsystem for Linux (WSL)
 
-* [Windows Subsystem for Linux (WSL2)](https://docs.microsoft.com/windows/wsl/wsl2-about)
-* [Install WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-install)
-* [FAQs for WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-faq)
+* [What is WSL? (What is WSL 2?)](https://docs.microsoft.com/windows/wsl/about)
+* [Install WSL 2](https://docs.microsoft.com/windows/wsl/install-win10)
+* [Comparing WSL2 and WSL 1](https://docs.microsoft.com/windows/wsl/compare-versions)
 
 ## Windows Package Manager
 

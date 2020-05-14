@@ -14,27 +14,16 @@ keywords: windows win32, desktop development
 
 When you want to create a new desktop application for Windows PCs, the first decision you make is which application platform to use. Windows provides four main application platforms, each with different strengths:
 
-* [Universal Windows Platform (UWP)](#uwp)
-* [WPF (.NET)](#wpf)
-* [Windows Forms (.NET)](#windows-forms)
-* [Win32](#win32)
+* [Universal Windows Platform (UWP)](#uwp): This platform provides a common type system, APIs, and application model for all devices that run Windows 10. UWP applications can be native or managed.
+* [WPF](#wpf) and [Windows Forms](#windows-forms): These .NET-based platforms provide a common type system, APIs, and application model for managed applications.
+* [Win32](#win32): This is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
 
-All of these application platforms let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. Each of these platforms include a complete UI framework and set of UI controls. On Windows 10, each these platforms also support using the [Windows UI (WinUI) Library](#windows-ui-library) to create their user interfaces.
-
-> [!NOTE]
-> No matter which app platform you choose, you can use many Windows 10 features to deliver a modern experience in your app. For example, even if your desktop app is built using WPF, Windows Forms, or the Win32 API, you can still use MSIX package deployment. For more information about all the ways to modernize your desktop apps, see [Modernize your desktop apps](modernize/index.md).
-
-## Application types
+Each of these platforms include a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the [Windows UI (WinUI) Library](#windows-ui-library) to create their user interfaces.
 
 Some of these platforms share some traits and are better suited for certain types of applications. For example, both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
 
-Generally, each platform is best suited for the following types of applications:
-
-* **UWP**. This platform provides a common type system, APIs, and application model for all devices that run Windows 10. UWP applications can be native or managed.
-
-* **WPF and Windows Forms**. These platforms provide a common type system, APIs, and application model for managed applications running on .NET.
-
-* **Win32 API**. The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
+> [!NOTE]
+> No matter which app platform you choose, you can use many Windows 10 features to deliver a modern experience in your app. For example, even if your desktop app is built using WPF, Windows Forms, or the Win32 API, you can still use MSIX package deployment. For more information about all the ways to modernize your desktop apps, see [Modernize your desktop apps](modernize/index.md).
 
 ## UWP
 
