@@ -37,10 +37,10 @@ productDirectory:
     links:
       - url: /windows/apps/desktop/
         text: Get started
-  - title: Windows 10X and dual-screen devices
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+  - title: Windows UI Library (WinUI)
+    imageSrc: images/logo-winui.jpg
     links:
-      - url: https://docs.microsoft.com/dual-screen
+      - url: /windows/apps/winui/
         text: Get started
   - title: Windows Subsystem for Linux, Python, and other tools
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg

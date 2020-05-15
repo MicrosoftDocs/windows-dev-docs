@@ -16,6 +16,24 @@ metadata:
 
 landingContent:
   # Card
+  - title: Windows Package Manager
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: ../package-manager/index.md
+      - linkListType: get-started
+        links:
+          - text: Use the winget tool
+            url: ../package-manager/winget/index.md
+          - text: Submit packages
+            url: ../package-manager/package/index.md
+      - linkListType: reference
+        links:
+          - text: winget commands
+            url: ../package-manager/winget/index.md#commands
+
+  # Card
   - title: Get started with Python
     linkLists:
       - linkListType: get-started
