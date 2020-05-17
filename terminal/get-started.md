@@ -13,7 +13,7 @@ ms.service: terminal
 
 ## Installation
 
-You can install the Windows Terminal from the [Microsoft Store](https://aka.ms/terminal).
+You can install Windows Terminal from the [Microsoft Store](https://aka.ms/terminal).
 
 If you don't have access to the Microsoft Store, the builds are published on the [GitHub releases page](https://github.com/microsoft/terminal/releases). If you install from GitHub, the terminal will not automatically update with new versions.
 

@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.service: terminal
 ---
 
-# Color schemes in the Windows Terminal
+# Color schemes in Windows Terminal
 
 ## Creating your own color scheme
 

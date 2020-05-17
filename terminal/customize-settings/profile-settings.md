@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.service: terminal
 ---
 
-# Profile settings in the Windows Terminal
+# Profile settings in Windows Terminal
 
 The settings listed below are specific to each unique profile. If you'd like a setting to apply to all of your profiles, you can add it to the `defaults` section above the list of profiles in your settings.json file.
 

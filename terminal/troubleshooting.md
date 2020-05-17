@@ -65,3 +65,7 @@ If you would like to disable this feature in order for `Ctrl+=` to work properly
 Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of <kbd>ctrl+shift</kbd>), then select **OK** and then **Apply**. <kbd>ctrl+shift+0</kbd> should now work as a key binding and is passed through to the terminal.
 
 On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./customize-settings/key-bindings.md) in your settings.json file.
+
+## The text is blurry
+
+Some display drivers and hardware combinations do not handle scroll and/or dirty regions without blurring the data from the previous frame. To mitigate this problem, you can add a combination of [these global rendering settings](./customize-settings/global-settings#rendering-settings) to reduce the strain placed on your hardware caused by the terminal text renderer.
