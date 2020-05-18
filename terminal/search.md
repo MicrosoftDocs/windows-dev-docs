@@ -10,7 +10,7 @@ ms.service: terminal
 
 # How to search in Windows Terminal
 
-The Windows Terminal comes with a search feature that allows you to look through the text buffer for a specific keyword. This is useful when trying to find a command you had run before or for a specific file name.
+Windows Terminal comes with a search feature that allows you to look through the text buffer for a specific keyword. This is useful when trying to find a command you had run before or for a specific file name.
 
 ## Using search
 

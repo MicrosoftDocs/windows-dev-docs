@@ -11,7 +11,7 @@ ms.service: terminal
 
 # Tutorial: SSH in Windows Terminal
 
-Windows 10 has a build-in SSH client that you can use in the Windows Terminal.
+Windows 10 has a built-in SSH client that you can use in Windows Terminal.
 
 In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH.
 
