@@ -9,7 +9,7 @@ ms.service: terminal
 ms.localizationpriority: high
 ---
 
-# Global settings in the Windows Terminal
+# Global settings in Windows Terminal
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
@@ -311,3 +311,35 @@ When this is set to `true`, the window will snap to the nearest character bounda
 
 :::column-end:::
 :::row-end:::
+
+<br />
+
+___
+
+## Rendering settings
+
+If you are thinking about changing the rendering settings, additional information is provided on the [Troubleshooting page](./../troubleshooting.md#the-text-is-blurry) to help guide you.
+
+### Screen redrawing
+
+When this set to `true`, the terminal will redraw the entire screen each frame. When set to `false`, it will render only the updates to the screen between frames.
+
+**Property name:** `experimental.rendering.forceFullRepaint`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+### Software rendering
+
+When this is set to `true`, the terminal will use the software renderer (a.k.a. WARP) instead of the hardware one.
+
+**Property name:** `experimental.rendering.software`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
