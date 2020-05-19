@@ -59,12 +59,12 @@ Install Visual Studio 2019, version 16.7 Preview 1. You can download this from  
 
 You must include the following workloads when installing the Visual Studio Preview:
 
-- .NET Win32 Development
+- .NET Desktop Development
 - Universal Windows Platform development
 
 To build C++ apps you must also include the following workloads:
 
-- Win32 development with C++
+- Desktop development with C++
 - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload
 
 ### Visual Studio project templates
