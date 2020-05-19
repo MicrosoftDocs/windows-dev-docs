@@ -1,5 +1,5 @@
 ---
-Description: Build Windows app apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
+Description: Build Windows apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
 title: Pen interactions and Windows Ink in Windows apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 ## Overview
 
-Optimize your Windows app app for pen input to provide both standard [**pointer device**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) functionality and the best Windows Ink experience for your users.
+Optimize your Windows app for pen input to provide both standard [**pointer device**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) functionality and the best Windows Ink experience for your users.
 
 > [!NOTE]
 > This topic focuses on the Windows Ink platform. For general pointer input handling (similar to mouse, touch, and touchpad), see [Handle pointer input](handle-pointer-input.md).

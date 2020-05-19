@@ -44,7 +44,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 
 
 <table>
-  
+
   <tr>
     <td>Afghanistan</td>
     <td>Åland Islands</td>
@@ -238,7 +238,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Macao SAR</td>
   </tr>
   <tr>
-    <td>Macedonia, FYRO</td>
+    <td>North Macedonia</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
@@ -402,12 +402,12 @@ You can choose to list your app (or add-on) in one or more of the following mark
   <tr>
     <td>Vietnam</td>
     <td>Wallis and Futuna</td>
-    <td>Western Sahara (Disputed)</td>
     <td>Yemen</td>
+    <td>Zambia</td>
   </tr>
   <tr>
-    <td>Zambia</td>
     <td>Zimbabwe</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -607,7 +607,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao SAR</td>
-    <td>Macedonia, FYRO</td>
+    <td>North Macedonia</td>
   </tr>
   <tr>
     <td>Madagascar</td>

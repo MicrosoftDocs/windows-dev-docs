@@ -1,14 +1,14 @@
 ---
-title: Commanding in Windows app apps
+title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.service: #Required; service per approved list.
 ms.topic: overview
 ms.date: 09/13/2019
 ---
 
-# Commanding in Windows app apps using StandardUICommand, XamlUICommand, and ICommand
+# Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
 
-In this topic, we describe commanding in Windows app applications. Specifically, we discuss how you can use the [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
+In this topic, we describe commanding in Windows applications. Specifically, we discuss how you can use the [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 
 ![A diagram representing a common usage for a shared command: multiple UI surfaces with a 'favorite' command](images/commanding/generic-commanding.png)
 

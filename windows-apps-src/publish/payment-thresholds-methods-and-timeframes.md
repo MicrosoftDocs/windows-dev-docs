@@ -118,7 +118,6 @@ To see the countries/regions in which these payment methods are used for each ma
 | Liechtenstein                    | Yes               | Yes                                      | Yes    | Yes             |
 | Lithuania                        | Yes               | Yes                                      | Yes    | No              |
 | Luxembourg                       | Yes               | Yes                                      | Yes    | Yes             |
-| Macedonia                        | No                | Yes                                      | Yes    | No              |
 | Madagascar                       | Yes               | Yes                                      | Yes    | No              |
 | Malawi                           | Yes               | Yes                                      | Yes    | Yes             |
 | Malaysia                         | Yes               | Yes                                      | Yes    | Yes             |
@@ -137,6 +136,7 @@ To see the countries/regions in which these payment methods are used for each ma
 | Nicaragua                        | Yes               | Yes                                      | Yes    | Yes             |
 | Niger                            | Yes               | Yes                                      | Yes    | No              |
 | Nigeria                          | Yes               | Yes                                      | Yes    | No              |
+| North Macedonia                  | No                | Yes                                      | Yes    | No              |
 | Norway                           | Yes               | Yes                                      | Yes    | Yes             |
 | Oman                             | Yes               | Yes                                      | Yes    | Yes             |
 | Pakistan                         | Yes               | Yes                                      | Yes    | No              |

@@ -269,7 +269,7 @@ Here is an example of how to create and use an item template selector.  For more
         <muxc:TreeViewItem>
             <StackPanel Orientation="Horizontal">
                 <Image Width="20" Source="Assets/file.png"/>
-                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="{x:Bind Name}"/>
             </StackPanel>
         </muxc:TreeViewItem>
     </DataTemplate>
@@ -811,54 +811,55 @@ A custom item template is used to display the data items, which are of type [ISt
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TreeViewTest"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:storage="using:Windows.Storage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <DataTemplate x:Key="TreeViewItemDataTemplate">
+        <DataTemplate x:Key="TreeViewItemDataTemplate" x:DataType="TreeViewNode">
             <Grid Height="44">
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:IStorageItem)Content).Name}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </Grid>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicItemDataTemplate">
+        <DataTemplate x:Key="MusicItemDataTemplate" x:DataType="TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Audio" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFile)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureItemDataTemplate">
+        <DataTemplate x:Key="PictureItemDataTemplate" x:DataType="TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB9F;"
                           Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFile)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicFolderDataTemplate">
+        <DataTemplate x:Key="MusicFolderDataTemplate" x:DataType="TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="MusicInfo" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureFolderDataTemplate">
+        <DataTemplate x:Key="PictureFolderDataTemplate" x:DataType="TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Pictures" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>

@@ -1,7 +1,7 @@
 ---
 title: Windows 10 Fall Creators Update API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 16299
-keywords: what's new, whats new, updates, Windows 10, 1709, fall, creators, apis, 16299
+keywords: Windows 10, 1709, apis, 16299
 ms.date: 11/02/2017
 ms.topic: article
 

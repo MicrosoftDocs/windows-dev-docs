@@ -170,7 +170,7 @@ Identify the input devices connected to a Windows app device and identify their 
 <div class="side-by-side-content-right">
 <p>
 <b>[Handle pointer input](handle-pointer-input.md)</b><br/>
-Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Windows app apps.
+Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Windows apps.
 </p>
 </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 title: What's New in Windows 10, build 16299
 description: Windows 10 build 16299 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
-keywords: what's new, whats new, update, updates, features, new, Windows 10, 1709, October, newest, developers, 16299, Fall Creators
+keywords: Windows 10, 1709, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 

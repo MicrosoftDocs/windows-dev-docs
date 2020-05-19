@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 
 
-MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app app. Here, we demonstrate how to customize the MediaTransportControls template. We’ll show you how to work with the overflow menu, add a custom button and modify the slider.
+MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app. Here, we demonstrate how to customize the MediaTransportControls template. We’ll show you how to work with the overflow menu, add a custom button and modify the slider.
 
 > **Important APIs**: [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
 

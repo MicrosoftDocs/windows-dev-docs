@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 ![Surface Pen](images/ink/ink-hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
-This tutorial steps through how to create a basic Windows app app that supports writing and drawing with Windows Ink. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated Windows Ink APIs (see [Components of the Windows Ink platform](#components-of-the-windows-ink-platform)) discussed in each step.
+This tutorial steps through how to create a basic Windows app that supports writing and drawing with Windows Ink. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated Windows Ink APIs (see [Components of the Windows Ink platform](#components-of-the-windows-ink-platform)) discussed in each step.
 
 We focus on the following:
 * Adding basic ink support
@@ -35,7 +35,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
-* If you're new to Windows app app development with Visual Studio, have a look through these topics before you start this tutorial:  
+* If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
