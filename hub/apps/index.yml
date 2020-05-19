@@ -18,10 +18,9 @@ highlightedContent:
    - title: Get Visual Studio and the Windows SDK
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
-   - title: User Interface and design guidelines
+   - title: What's new for developers in the latest release
      itemType: overview
-     # Update following link!!!
-     url: /windows/apps/fluent-design-system
+     url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041
    - title: Join the Insider Program
      itemType: overview
      url: https://docs.microsoft.com/windows-insider
@@ -30,7 +29,7 @@ highlightedContent:
      url: https://docs.microsoft.com/learn/browse/?products=windows
 
 productDirectory:
-  title: Develop for Windows 
+  title: Develop for Windows
   items:
   - title: Desktop apps for Windows
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
@@ -42,7 +41,7 @@ productDirectory:
     links:
       - url: /windows/apps/winui/
         text: Get started
-  - title: Windows Subsystem for Linux, Python, and other tools
+  - title: Windows Subsystem for Linux, Windows Terminal, Python, and other tools
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
       - url: /windows/dev-environment/
