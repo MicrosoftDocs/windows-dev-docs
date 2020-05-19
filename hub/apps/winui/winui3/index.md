@@ -128,13 +128,19 @@ WinUI 3.0 Preview 1 is compatible with PCs running the Windows 10 April 2018 Upd
 - MapControl
 - Hierarchical navigation with NavigationView
 - SwapChainPanel does not support transparency
-- In C# you need to use `WinRT.WeakReference<T>` rather than `System.WeakReference<T>`.
 - Global Reveal uses fallback behavior, a solid brush
 - XAML Islands is not supported in this release
 - 3rd party ecosystem libraries will not fully function
 - IMEs do not work
 - Methods on Windows.UI.Text namespace cannot be called
-  
+
+### Known issues
+
+- In C# Desktop apps:
+   - You need to use `WinRT.WeakReference<T>` rather than `System.WeakReference<T>` for weak references to Windows objects (including Xaml objects).
+   - The [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect), and [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) structs have members that are of type Float rather than Double.
+
+
 ## Xaml Controls Gallery (WinUI 3.0 Preview 1 branch)
 
 See the [WinUI 3.0 Preview 1 branch of the Xaml Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview) for a sample app that includes all WinUI 3.0 Preview 1 controls and features.
