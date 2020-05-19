@@ -41,7 +41,11 @@
     "globalMetadata": {
       "breadcrumb_path": "/windows/terminal/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None"
+      "keywords": "Windows Terminal, terminal, windows shell, terminal docs",
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/terminal",
+      "feedback_product_url": "https://github.com/Microsoft/terminal/issues",
+      "searchScope": ["Terminal"],
     },
     "fileMetadata": {},
     "template": [],
