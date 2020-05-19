@@ -41,7 +41,8 @@
     "globalMetadata": {
       "breadcrumb_path": "/windows/terminal/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None"
+      "feedback_system": "None",
+      "keywords": "Windows Terminal, terminal, windows shell, terminal docs"
     },
     "fileMetadata": {},
     "template": [],
