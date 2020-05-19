@@ -16,6 +16,10 @@ author: grantmestrength
 
 We've gathered together links to documentation that supports the talks given as part of [Microsoft Build 2020](https://mybuild.microsoft.com). We will update this page as the event continues, so check back to see what's new!
 
+## Project Reunion
+
+* [Project Reunion](https://blogs.windows.com/windowsdeveloper/2020/05/19/developing-for-all-1-billion-windows-10-devices-and-beyond/) is the future of Windows development.
+
 ## Windows Terminal
 
 * [Install and set up Windows Terminal](https://docs.microsoft.com/windows/terminal/get-started)
