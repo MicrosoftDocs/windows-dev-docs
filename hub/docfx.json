@@ -17,6 +17,8 @@
     "externalReference": [],
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
+      "author": "GrantMeStrength",
+      "ms.author": "jken",
       "ms.prod": "uwp",
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-WinDevCenter",
@@ -39,19 +41,54 @@
         "python/**.md": "dev-environment",
         "nodejs/**.md": "dev-environment",
         "android/**.md": "dev-environment",
-        "dev-environment/**.md": "dev-environment"
+        "dev-environment/**.md": "dev-environment",
+        "package-manager/**.md": "dev-environment"
       },
       "ms.technology":
       {
         "apps/**.md": "apps",
+        "apps/winui/*.md": "winui", 
         "apps/trace-processing/**.md": "",
         "python/**.md": "windows-python",
         "nodejs/**.md": "windows-nodejs",
-        "android/**.md": "windows-nodejs"
+        "android/**.md": "windows-nodejs",
+        "package-manager/**.md": ""
       },	 
       "feedback_product_url": 
       {
-        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues"
+        "apps/winui/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues",
+        "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues"
+      },
+      "author":
+      {
+        "apps/10x/*.md": "QuinnRadich",
+        "apps/desktop/*.md": "mcleanbyron",
+        "apps/trace-processing/*.md": "maiak",
+        "apps/whats-new/*.md": "QuinnRadich",
+        "apps/winui/*.md": "Karl-Bridge-Microsoft",
+        "accessibility.md": "Karl-Bridge-Microsoft",
+        "features-and-technologies.md": "mcleanbyron",
+        "speech.md": "Karl-Bridge-Microsoft",
+        "dev-environment/*.md": "mattwojo",
+        "android/*.md": "mattwojo",
+        "nodejs/*.md": "mattwojo",
+        "python/*.md": "mattwojo"
+      },
+      "ms.author":
+      {
+        "apps/10x/*.md": "quradic",
+        "apps/desktop/*.md": "mcleans",
+        "apps/trace-processing/*.md": "maiak",
+        "apps/whats-new/*.md": "quradic",
+        "apps/winui/*.md": "kbridge",
+        "accessibility.md": "kbridge",
+        "features-and-technologies.md": "mcleans",
+        "speech.md": "kbridge",
+        "dev-environment/*.md": "mattwoj",
+        "android/*.md": "mattwoj",
+        "nodejs/*.md": "mattwoj",
+        "python/*.md": "mattwoj"
       }
     },
     "template": [],
