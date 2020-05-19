@@ -27,7 +27,7 @@ There are multiple versions of Cascadia Code available that include ligatures an
 
 Powerline is a common command line plugin that allows you to display additional information in your prompt. It uses a few additional glyphs to display this information properly. To learn more about setting up Powerline in your command prompt, visit the [Powerline in Windows Terminal](./tutorials/powerline-setup.md) page.
 
-Programming ligatures are glyphs that are created by combining characters. They are must useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them.
+Programming ligatures are glyphs that are created by combining characters. They are most useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them.
 
 ![Cascadia Code programming ligatures](./images/programming-ligatures.gif)
 
