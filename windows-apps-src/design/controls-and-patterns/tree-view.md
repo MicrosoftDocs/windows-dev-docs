@@ -816,7 +816,7 @@ A custom item template is used to display the data items, which are of type [ISt
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <DataTemplate x:Key="TreeViewItemDataTemplate" x:DataType="TreeViewNode">
+        <DataTemplate x:Key="TreeViewItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <Grid Height="44">
                 <TextBlock Text="{x:Bind ((storage:IStorageItem)Content).Name}"
                            HorizontalAlignment="Left"
@@ -825,7 +825,7 @@ A custom item template is used to display the data items, which are of type [ISt
             </Grid>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicItemDataTemplate" x:DataType="TreeViewNode">
+        <DataTemplate x:Key="MusicItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Audio" Margin="0,0,4,0"/>
                 <TextBlock Text="{x:Bind ((storage:StorageFile)Content).DisplayName}"
@@ -835,7 +835,7 @@ A custom item template is used to display the data items, which are of type [ISt
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureItemDataTemplate" x:DataType="TreeViewNode">
+        <DataTemplate x:Key="PictureItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB9F;"
                           Margin="0,0,4,0"/>
@@ -846,7 +846,7 @@ A custom item template is used to display the data items, which are of type [ISt
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicFolderDataTemplate" x:DataType="TreeViewNode">
+        <DataTemplate x:Key="MusicFolderDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="MusicInfo" Margin="0,0,4,0"/>
                 <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
@@ -856,7 +856,7 @@ A custom item template is used to display the data items, which are of type [ISt
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureFolderDataTemplate" x:DataType="TreeViewNode">
+        <DataTemplate x:Key="PictureFolderDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Pictures" Margin="0,0,4,0"/>
                 <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
