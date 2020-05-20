@@ -1,6 +1,6 @@
 ---
 Description: In a Windows app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
-title: Command design basics for Windows app apps
+title: Command design basics for Windows apps
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -27,7 +27,7 @@ Here are some common command experiences:
 - Opening, saving, and deleting files
 - Editing or creating content
 
-Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Windows app apps](../controls-and-patterns/commanding.md) for more detail).
+Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Windows apps](../controls-and-patterns/commanding.md) for more detail).
 
 
 

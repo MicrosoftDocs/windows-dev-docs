@@ -58,6 +58,9 @@ The following table introduces the platforms. For an in-depth comparison of thes
 </tbody>
 </table>
 
+> [!NOTE]
+> All of these application platforms provide a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the Windows UI (WinUI) Library to create their user interfaces. For more information about WinUI for desktop apps, see [this section](choose-your-platform.md#windows-ui-library).
+
 ## Update existing desktop apps for Windows 10
 
 If you have an existing WPF, Windows Forms, or native Win32 desktop app, Windows 10 and the Universal Windows Platform (UWP) offer many features you can use to deliver a modern experience in your app. Most of these features are available as modular components that you can adopt in your app at your own pace without having to rewrite your app for a different platform.
