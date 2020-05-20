@@ -1,14 +1,14 @@
 ---
-title: Commanding in Universal Windows Platform (UWP) apps
+title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.service: #Required; service per approved list.
 ms.topic: overview
 ms.date: 09/13/2019
 ---
 
-# Commanding in Universal Windows Platform (UWP) apps using StandardUICommand, XamlUICommand, and ICommand
+# Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
 
-In this topic, we describe commanding in Universal Windows Platform (UWP) applications. Specifically, we discuss how you can use the [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
+In this topic, we describe commanding in Windows applications. Specifically, we discuss how you can use the [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 
 ![A diagram representing a common usage for a shared command: multiple UI surfaces with a 'favorite' command](images/commanding/generic-commanding.png)
 
@@ -62,9 +62,9 @@ The following table shows some typical collection commands and ways to expose th
 
 **Always provide a context menu** We recommend including all relevant contextual commands in a traditional context menu or CommandBarFlyout, as both are supported for all input types. For example, if a command is exposed only during a pointer hover event, it cannot be used on a touch-only device.
 
-## Commands in UWP applications
+## Commands in Windows applications
 
-There are a few ways you can share and manage commanding experiences in a UWP application. You can define event handlers for standard interactions, such as Click, in code-behind (this can be quite inefficient, depending on the complexity of your UI), you can bind event listener for standard interactions to a shared handler, or you can bind the control's Command property to an ICommand implementation that describes the command logic.
+There are a few ways you can share and manage commanding experiences in a Windows application. You can define event handlers for standard interactions, such as Click, in code-behind (this can be quite inefficient, depending on the complexity of your UI), you can bind event listener for standard interactions to a shared handler, or you can bind the control's Command property to an ICommand implementation that describes the command logic.
 
 To provide rich and comprehensive user experiences across command surfaces efficiently and with minimal code duplication, we recommend using the command binding features described in this topic(for standard event handling, see the individual event topics).
 
@@ -609,7 +609,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## Command experiences using the ICommand interface
 
-Standard UWP controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for UWP apps](index.md).
+Standard UWP controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](index.md).
 
 The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
 
@@ -1082,7 +1082,7 @@ namespace UICommand1
 
 The Universal Windows Platform provides a robust and flexible commanding system that lets you build apps that share and manage commands across control types, devices, and input types.
 
-Use the following approaches when building commands for your UWP apps:
+Use the following approaches when building commands for your Windows apps:
 
 - Listen for and handle events in XAML/code-behind
 - Bind to an event handling method such as Click
@@ -1096,7 +1096,7 @@ For a complete example that demonstrates a [XamlUICommand](https://docs.microsof
 
 ## See also
 
-[Controls and patterns for UWP apps](index.md)
+[Controls and patterns for Windows apps](index.md)
 
 ### Samples
 

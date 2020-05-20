@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
+Description: This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.
 title: International fonts
 template: detail.hbs
 ms.date: 11/02/2017
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # International fonts
 
-This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
+This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.
 
 In the following table, the "Language tag" column lists the [BCP-47 language tag](https://tools.ietf.org/html/bcp47) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
 

@@ -17,7 +17,7 @@ ms.custom: RS5
 
 The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.
 
-![An expanded text command bar flyout](images/command-bar-flyout-header.png)
+![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
 
 Like [CommandBar](app-bars.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
 
@@ -30,7 +30,7 @@ The command bar flyout has two display modes: *collapsed* and *expanded*.
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 >**Windows UI Library APIs**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
@@ -411,5 +411,5 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 
 ## Related articles
 
-- [Command design basics for UWP apps](../basics/commanding-basics.md)
+- [Command design basics for Windows apps](../basics/commanding-basics.md)
 - [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

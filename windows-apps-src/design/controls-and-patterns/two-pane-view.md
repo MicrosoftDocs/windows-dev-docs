@@ -23,7 +23,7 @@ While it works on all Windows devices, the TwoPaneView control is designed to he
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 

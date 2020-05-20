@@ -65,7 +65,7 @@ else
 
 ## 2. Get the TaskbarManager instance
 
-UWP apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. Additionally, presence of the taskbar might come and go. To check whether taskbar is currently present, call the **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** method and check that the instance returned is not null. Don't display a pin button if the taskbar isn't present.
+Windows apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. Additionally, presence of the taskbar might come and go. To check whether taskbar is currently present, call the **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** method and check that the instance returned is not null. Don't display a pin button if the taskbar isn't present.
 
 We recommend holding onto the instance for the duration of a single operation, like pinning, and then grabbing a new instance the next time you need to do another operation.
 

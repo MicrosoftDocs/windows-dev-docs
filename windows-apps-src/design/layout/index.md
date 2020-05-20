@@ -1,6 +1,6 @@
 ---
-description: Learn how to design and code a UWP app that's easy to navigate and looks great on a variety of devices and screen sizes.
-title: Layout overview for UWP apps
+description: Learn how to design and code a Windows app that's easy to navigate and looks great on a variety of devices and screen sizes.
+title: Layout overview for Windows apps
 keywords: uwp app layout, universal windows platform, app design, interface
 ms.date: 03/07/2018
 ms.topic: article

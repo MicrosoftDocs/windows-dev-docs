@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Guidelines for app settings
 
-App settings are the user-customizable portions of your Universal Windows Platform (UWP) app accessed through an app settings page. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app could let the user choose between Celsius and Fahrenheit. This article provides recommendations and best practices for creating and displaying app settings.
+App settings are the user-customizable portions of your Windows app accessed through an app settings page. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app could let the user choose between Celsius and Fahrenheit. This article provides recommendations and best practices for creating and displaying app settings.
 
 ## When to provide a settings page
 

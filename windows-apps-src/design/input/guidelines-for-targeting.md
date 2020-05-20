@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Guidelines for touch targets
 
-All interactive UI elements in your Universal Windows Platform (UWP) application must be large enough for users to accurately access and use, regardless of device type or input method.
+All interactive UI elements in your Windows application must be large enough for users to accurately access and use, regardless of device type or input method.
 
 Supporting touch input (and the relatively imprecise nature of the touch contact area) requires further optimization with respect to target size and control layout as the larger, more complex set of input data reported by the touch digitizer is used to determine the user's intended (or most likely) target.
 
@@ -27,7 +27,7 @@ In this topic, we describe these default behaviors so you can design your app fo
 *Fluent Standard sizing* was created to provide a balance between information density and user comfort. Effectively, all items on the screen align to a 40x40 effective pixels (epx) target, which lets UI elements align to a grid and scale appropriately based on system level scaling.
 
 > [!NOTE]
->For more info on effective pixels and scaling, see [Introduction to UWP app design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+> For more info on effective pixels and scaling, see [Introduction to Windows app design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > For more info on system level scaling, see [Alignment, margin, padding](../layout/alignment-margin-padding.md).
 
@@ -72,7 +72,7 @@ These target size recommendations can be adjusted as required by your particular
 
 ## Related articles
 
-- [Introduction to UWP app design](../basics/design-and-ui-intro.md)
+- [Introduction to Windows app design](../basics/design-and-ui-intro.md)
 - [Control size and density](../style/spacing.md)
 - [Alignment, margin, padding](../layout/alignment-margin-padding.md)
 

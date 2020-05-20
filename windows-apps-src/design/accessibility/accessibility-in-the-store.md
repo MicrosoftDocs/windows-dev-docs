@@ -1,5 +1,5 @@
 ---
-Description: Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Microsoft Store.
+Description: Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Accessibility in the Store
 label: Accessibility in the Store
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 
 
-Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Microsoft Store.
+Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.
 
 While submitting your app to the Microsoft Store for certification, you can declare your app as accessible. Declaring your app as accessible makes it easier to discover for users who are interested in accessible apps, such as users who have visual impairments. Users discover accessible apps by using the **Accessible** filter while searching the Microsoft Store. Declaring your app as accessible also adds the **Accessible** tag to your app’s description.
 

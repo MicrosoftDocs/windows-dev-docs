@@ -1,7 +1,7 @@
 ---
-Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
-title: Add an InkToolbar to a Universal Windows Platform (UWP) app
-label: Add an InkToolbar to a Universal Windows Platform (UWP) app
+Description: Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
+title: Add an InkToolbar to a Windows app
+label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input
 ms.date: 02/08/2017
@@ -11,21 +11,21 @@ ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ---
-# Add an InkToolbar to a Universal Windows Platform (UWP) app
+# Add an InkToolbar to a Windows app
 
 
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+There are two different controls that facilitate inking in Windows apps: [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 The [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) control provides basic Windows Ink functionality. Use it to render pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke.
 
-> For InkCanvas implementation details, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
+> For InkCanvas implementation details, see [Pen and stylus interactions in Windows apps](pen-and-stylus-interactions.md).
 
 As a completely transparent overlay, the InkCanvas does not provide any built-in UI for setting ink stroke properties. If you want to change the default inking experience, let users set ink stroke properties, and support other custom inking features, you have two options:
 
 - In code-behind, use the underlying [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) object bound to the InkCanvas.
 
-  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
+  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in Windows apps](pen-and-stylus-interactions.md).
 
 - Bind an [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) to the InkCanvas. By default, the InkToolbar provides a customizable and extensible collection of buttons for activating ink-related features such as stroke size, ink color, and pen tip.
 
@@ -915,7 +915,7 @@ In this example, we define a custom tool button that, when selected, causes subs
 
    This handler configures the [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) to pass unprocessed input through to the app. 
 
-   For a more detailed step through of this code:  See the Pass-through input for advanced processing section of [Pen interactions and Windows Ink in UWP apps](pen-and-stylus-interactions.md).
+   For a more detailed step through of this code:  See the Pass-through input for advanced processing section of [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md).
 
    We also specified an icon for the button using the SymbolIcon element and the {x:Bind} markup extension that binds it to a field defined in the code-behind file (SelectIcon).
 
@@ -1109,7 +1109,7 @@ By default, ink input is processed on a low-latency background thread and render
 
 The ink platform enables you to override this behavior and completely customize the inking experience by custom drying the ink input.
 
-For more info on custom drying, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
+For more info on custom drying, see [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
 
 > [!NOTE]
 > Custom drying and the [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
@@ -1129,6 +1129,6 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 - [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
 - [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
 - [Ink sample (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
-- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Get Started Tutorial: Support ink in your Windows app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 - [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 - [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

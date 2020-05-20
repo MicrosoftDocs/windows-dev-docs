@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: Media casting
           href: ../audio-video-camera/media-casting.md
+        - name: Enable audio playback from remote Bluetooth-connected devices
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:
@@ -817,6 +819,8 @@
           items:
             - name: Value categories, and references
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
+    - name: C#/WinRT
+      href: ../csharp-winrt/index.md
     - name: Security
       href: ../security/index.md
       items:

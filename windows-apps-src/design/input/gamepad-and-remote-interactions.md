@@ -17,18 +17,18 @@ ms.localizationpriority: medium
 
 ***Many interaction experiences are shared between gamepad, remote control, and keyboard***
 
-Build interaction experiences in your Universal Windows Platform (UWP) applications that ensure your app is usable and accessible through both the traditional input types of PCs, laptops, and tablets (mouse, keyboard, touch, and so on), as well as the input types typical of the TV and Xbox *10-foot* experience, such as the gamepad and remote control.
+Build interaction experiences in your Windows applications that ensure your app is usable and accessible through both the traditional input types of PCs, laptops, and tablets (mouse, keyboard, touch, and so on), as well as the input types typical of the TV and Xbox *10-foot* experience, such as the gamepad and remote control.
 
-See [Designing for Xbox and TV](../devices/designing-for-tv.md) for general design guidance on UWP applications in the *10-foot* experience.
+See [Designing for Xbox and TV](../devices/designing-for-tv.md) for general design guidance on Windows applications in the *10-foot* experience.
 
 ## Overview
 
-In this topic, we discuss what you should consider in your interaction design (or what you don't, if the platform looks after it for you), and provide guidance, recommendations, and suggestions for building UWP applications that are enjoyable to use regardless of device, input type, or user abilities and preferences.
+In this topic, we discuss what you should consider in your interaction design (or what you don't, if the platform looks after it for you), and provide guidance, recommendations, and suggestions for building Windows applications that are enjoyable to use regardless of device, input type, or user abilities and preferences.
 
 Bottom line, your application should be as intuitive and easy to use in the *2-foot* environment as it is in the *10-foot* environment (and vice versa). Support the user's preferred devices, make the UI focus clear and unmistakable, arrange content so navigation is consistent and predictable, and give users the shortest path possible to what they want to do.
 
 > [!NOTE]
-> Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all UWP apps. If you're developing an HTML/JavaScript UWP app for Xbox, check out the excellent [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) library on GitHub.
+> Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all Windows apps. If you're developing an HTML/JavaScript Windows app for Xbox, check out the excellent [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) library on GitHub.
 
 
 ## Optimize for both 2-foot and 10-foot experiences
@@ -38,7 +38,7 @@ At a minimum, we recommend that you test your applications to ensure they work w
 Here are some other ways you can optimize your app for use in both 2-foot and 10-foot experiences and with all input devices (each links to the appropriate section in this topic).
 
 > [!NOTE]
-> Because Xbox gamepads and remote controls support many UWP keyboard behaviors and experiences, these recommendations are appropriate for both input types. See [Keyboard interactions](keyboard-interactions.md) for more detailed keyboard info.
+> Because Xbox gamepads and remote controls support many Windows keyboard behaviors and experiences, these recommendations are appropriate for both input types. See [Keyboard interactions](keyboard-interactions.md) for more detailed keyboard info.
 
 | Feature        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
@@ -64,7 +64,7 @@ Throughout this document, buttons will be referred to by the names given in the 
 
 As you can see from the diagram, there are some buttons that are supported on gamepad that are not supported on remote control, and vice versa. While you can use buttons that are only supported on one input device to make navigating the UI faster, be aware that using them for critical interactions may create a situation where the user is unable to interact with certain parts of the UI.
 
-The following table lists all of the hardware buttons supported by UWP apps, and which input device supports them.
+The following table lists all of the hardware buttons supported by Windows apps, and which input device supports them.
 
 | Button                    | Gamepad   | Remote control    |
 |---------------------------|-----------|-------------------|
@@ -86,7 +86,7 @@ The following table lists all of the hardware buttons supported by UWP apps, and
 
 ### Built-in button support
 
-The UWP automatically maps existing keyboard input behavior to gamepad and remote control input. The following table lists these built-in mappings.
+UWP automatically maps existing keyboard input behavior to gamepad and remote control input. The following table lists these built-in mappings.
 
 | Keyboard              | Gamepad/remote                        |
 |-----------------------|---------------------------------------|
@@ -140,13 +140,13 @@ private bool BackRequested()
 ```
 
 > [!NOTE]
-> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls-and-patterns/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
+> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls-and-patterns/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for Windows apps](../basics/navigation-history-and-backwards-navigation.md).
 
-UWP apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
+Windows apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
 
 ### Accelerator support
 
-Accelerator buttons are buttons that can be used to speed up navigation through a UI. However, these buttons may be unique to a certain input device, so keep in mind that not all users will be able to use these functions. In fact, gamepad is currently the only input device that supports accelerator functions for UWP apps on Xbox One.
+Accelerator buttons are buttons that can be used to speed up navigation through a UI. However, these buttons may be unique to a certain input device, so keep in mind that not all users will be able to use these functions. In fact, gamepad is currently the only input device that supports accelerator functions for Windows apps on Xbox One.
 
 The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.
 
@@ -170,7 +170,7 @@ Many events and properties are used by both keyboard and gamepad&mdash;they both
 If keyboard support is implemented properly, your app will work reasonably well; however, there may be some extra work required to support every scenario. Think about your app's specific needs to provide the best user experience possible.
 
 > [!IMPORTANT]
-> Mouse mode is enabled by default for UWP apps running on Xbox One. To disable mouse mode and enable XY focus navigation, set `Application.RequiresPointerMode=WhenRequested`.
+> Mouse mode is enabled by default for Windows apps running on Xbox One. To disable mouse mode and enable XY focus navigation, set `Application.RequiresPointerMode=WhenRequested`.
 
 ### Debugging focus issues
 
@@ -472,7 +472,7 @@ You can even opt out of the system-provided focus visuals by drawing your own us
 
 ### Light dismiss overlay
 
-To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, the UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls-and-patterns/menus.md).
+To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls-and-patterns/menus.md).
 
 ## Focus engagement
 
@@ -559,13 +559,13 @@ Some controls cause focus trapping commonly enough to warrant their default sett
 | SemanticZoom          | Off                       |
 | Slider                | On                        |
 
-All other UWP controls will result in no behavioral or visual changes when `IsFocusEngagementEnabled="True"`.
+All other Windows controls will result in no behavioral or visual changes when `IsFocusEngagementEnabled="True"`.
 
 ## Summary
 
-You can build UWP applications that are optimized for a specific device or experience, but the Universal Windows Platform also enables you to build apps that can be used successfully across devices, in both 2-foot and 10-foot experiences, and regardless of input device or user ability. Using the recommendations in this article can ensure that your app is as good as it can be on both the TV and a PC.
+You can build Windows applications that are optimized for a specific device or experience, but the Universal Windows Platform also enables you to build apps that can be used successfully across devices, in both 2-foot and 10-foot experiences, and regardless of input device or user ability. Using the recommendations in this article can ensure that your app is as good as it can be on both the TV and a PC.
 
 ## Related articles
 
 - [Designing for Xbox and TV](../devices/designing-for-tv.md)
-- [Device primer for Universal Windows Platform (UWP) apps](index.md)
+- [Device primer for Windows apps](index.md)

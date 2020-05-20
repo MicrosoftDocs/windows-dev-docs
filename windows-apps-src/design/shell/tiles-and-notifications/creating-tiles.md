@@ -1,6 +1,6 @@
 ---
-Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
-title: Tiles
+Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Windows app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
+title: Tiles for Windows apps
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Tiles for UWP apps
+# Tiles for Windows apps
 
  
 
-A *tile* is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo. Windows displays this tile when your app is first installed. After your app is installed, you can change your tile's content through notifications; for example, you can change the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.
+A *tile* is an app's representation on the Start menu. Every app has a tile. When you create a new Windows app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo. Windows displays this tile when your app is first installed. After your app is installed, you can change your tile's content through notifications; for example, you can change the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.
 
 ## Configure the default tile
 

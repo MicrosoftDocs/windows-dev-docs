@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your Windows app.
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Rotation
 
 
-This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your Windows app.
 
 > **Important APIs**: [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
@@ -25,7 +25,7 @@ This article describes the new Windows UI for rotation and provides user experie
 
 **Overview of rotation**
 
-Rotation is the touch-optimized technique used by UWP apps to enable users to turn an object in a circular direction (clockwise or counter-clockwise).
+Rotation is the touch-optimized technique used by Windows apps to enable users to turn an object in a circular direction (clockwise or counter-clockwise).
 
 Depending on the input device, the rotation interaction is performed using:
 

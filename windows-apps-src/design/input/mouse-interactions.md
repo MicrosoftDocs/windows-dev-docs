@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Mouse interactions
 
-Optimize your Universal Windows Platform (UWP) app design for touch input and get basic mouse support by default. 
+Optimize your Windows app design for touch input and get basic mouse support by default. 
 
 ![mouse](images/input-patterns/input-mouse.jpg)
 

@@ -1,6 +1,6 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-title: Navigation basics for UWP apps
+Description: Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+title: Navigation basics for Windows apps
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Navigation design basics for UWP apps
+# Navigation design basics for Windows apps
 
 ![Navigation basics header](images/nav/navigation-basics-header.jpg)
 

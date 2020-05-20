@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Send a local toast notification from desktop C# apps
 
-Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
+Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).

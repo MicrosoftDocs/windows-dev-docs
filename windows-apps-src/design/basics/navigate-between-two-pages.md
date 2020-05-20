@@ -1,5 +1,5 @@
 ---
-Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
+Description: Learn how to enable peer-to-peer navigation between two basic pages in an Windows app.
 title: Peer-to-peer navigation between two pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -445,6 +445,6 @@ Page1::Page1()
 ```
 
 ## Related articles
-* [Navigation design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Navigation design basics for Windows apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
 * [Pivot](../controls-and-patterns/pivot.md)
 * [Navigation view](../controls-and-patterns/navigationview.md)

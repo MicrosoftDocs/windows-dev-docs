@@ -1,6 +1,6 @@
 ---
 title: Focus navigation without a mouse
-Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
+Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your Windows apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: 
 template: detail.hbs
 keywords: keyboard, game controller, remote control, navigation, directional inner navigation, directional area, navigation strategy, input, user interaction, accessibility, usability
@@ -16,20 +16,20 @@ ms.localizationpriority: medium
 
 ![Keyboard, remote, and D-pad](images/dpad-remote/dpad-remote-keyboard.png)
 
-Use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
+Use focus navigation to provide comprehensive and consistent interaction experiences in your Windows apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 
 ## Overview
 
-Focus navigation refers to the underlying mechanism that enables users to navigate and interact with the UI of a UWP application using a keyboard, gamepad, or remote control.
+Focus navigation refers to the underlying mechanism that enables users to navigate and interact with the UI of a Windows application using a keyboard, gamepad, or remote control.
 
 > [!NOTE]
 > Input devices are typically classified as pointing devices, such as touch, touchpad, pen, and mouse, and non-pointing devices, such as keyboard, gamepad, and remote control.
 
-This topic describes how to optimize a UWP application and build custom interaction experiences for users that rely on non-pointing input types. 
+This topic describes how to optimize a Windows application and build custom interaction experiences for users that rely on non-pointing input types. 
 
-Even though we focus on keyboard input for custom controls in UWP apps on PCs, a well-designed keyboard experience is also important for software keyboards such as the touch keyboard and the On-Screen Keyboard (OSK), supporting accessibility tools such as Windows Narrator, and supporting the 10-foot experience.
+Even though we focus on keyboard input for custom controls in Windows apps on PCs, a well-designed keyboard experience is also important for software keyboards such as the touch keyboard and the On-Screen Keyboard (OSK), supporting accessibility tools such as Windows Narrator, and supporting the 10-foot experience.
 
-See [Handle pointer input](handle-pointer-input.md) for guidance on building custom experiences in UWP applications for pointing devices.
+See [Handle pointer input](handle-pointer-input.md) for guidance on building custom experiences in Windows applications for pointing devices.
 
 For more general information on building apps and experiences for keyboard, see [Keyboard Interaction](keyboard-interactions.md).
 
@@ -203,7 +203,7 @@ Here’s a more complex example of three nested directional areas where:
 
 ## Tab navigation
 
-While the arrow keys can be used for 2D directional navigation witin a control, or control group, the Tab key can be used to navigate between all controls in a UWP application. 
+While the arrow keys can be used for 2D directional navigation witin a control, or control group, the Tab key can be used to navigate between all controls in a Windows application. 
 
 All interactive controls support Tab key navigation by default ([IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) and [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property are **true**), with the logical tab order derived from the control layout in your application. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and certain properties that you can set on the child elements to influence the layout.
 
@@ -417,7 +417,7 @@ Here's the code for this example.
 
 ## 2D directional navigation for keyboard, gamepad, and remote control
 
-Non-pointer input types such as keyboard, gamepad, remote control, and accessibility tools like Windows Narrator, share a common, underlying mechanism for navigating and interacting with the UI of your UWP application.
+Non-pointer input types such as keyboard, gamepad, remote control, and accessibility tools like Windows Narrator, share a common, underlying mechanism for navigating and interacting with the UI of your Windows application.
 
 In this section, we cover how to specify a preferred navigation strategy and fine tune focus navigation within your application through a set of navigation strategy properties that support all focus-based, non-pointer input types.
 

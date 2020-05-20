@@ -1,7 +1,7 @@
 ---
 description: Learn how to make your app inclusive and accessible to people around the world.
 keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
-title: Usability in UWP apps - Windows app development
+title: Usability in Windows apps - Windows app development
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
@@ -9,11 +9,11 @@ ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ---
 
-# Usability for UWP apps
+# Usability for Windows apps
 
 It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
 
-The design and coding instructions in this section can make your UWP app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
+The design and coding instructions in this section can make your Windows app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
 
 ## Accessibility
 
@@ -28,7 +28,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-overview.md">Accessibility overview</a></b> <br/> This article is an overview of the concepts and technologies related to accessibility scenarios for UWP apps.</p>
+<p><b><a href="../accessibility/accessibility-overview.md">Accessibility overview</a></b> <br/> This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.</p>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible UWP apps.</p>
+<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible Windows apps.</p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-testing.md">Accessibility testing</a> </b><br/>Testing procedures to follow to ensure that your UWP app is accessible.</p>
+<p><b><a href="../accessibility/accessibility-testing.md">Accessibility testing</a> </b><br/>Testing procedures to follow to ensure that your Windows app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your UWP app as accessible in the Microsoft Store.</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>Provides a checklist to help you ensure that your UWP app is accessible.</p>
+<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>Provides a checklist to help you ensure that your Windows app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/high-contrast-themes.md">High-contrast themes</a></b><br/>Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. </p>
+<p><b><a href="../accessibility/high-contrast-themes.md">High-contrast themes</a></b><br/>Describes the steps needed to ensure your Windows app is usable when a high-contrast theme is active. </p>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessible-text-requirements.md">Accessible text requirements</a></b><br/>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics.</p>                    
+<p><b><a href="../accessibility/accessible-text-requirements.md">Accessible text requirements</a></b><br/>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Windows app can have, and best practices for text in graphics.</p>                    
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible UWP app.</p>                    
+<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible Windows app.</p>                    
                     </div>
                 </div>
             </div>

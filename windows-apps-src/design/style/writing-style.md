@@ -105,7 +105,7 @@ We couldn't save your file to that location.
 :::row:::
     :::column:::
 ![Do](images/do.svg)
-The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+The Windows app design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every Windows app, you can build user interfaces (UI) that scale across a range of devices.
     :::column-end:::
     :::column:::
     :::column-end:::

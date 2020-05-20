@@ -28,7 +28,7 @@ The PhotoLab app has two primary pages:
 
 ## Part 1: Create a fancy slider control  
 
-Universal Windows Platform (UWP) provides a number of ways to customize the look of your app. From fonts and typography settings to colors and gradients to blur effects, you have a lot of options. 
+Windows app provides a number of ways to customize the look of your app. From fonts and typography settings to colors and gradients to blur effects, you have a lot of options. 
 
 For the first part of the tutorial, let's jazz up some of our photo editing controls. 
 

@@ -41,7 +41,7 @@ With that in mind, the `BoxPanel` shown here is for a particular scenario. In th
 
 Start by deriving a custom class from [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel). Probably the easiest way to do this is to define a separate code file for this class, using the **Add** | **New Item** | **Class** context menu options for a project from the **Solution Explorer** in Microsoft Visual Studio. Name the class (and file) `BoxPanel`.
 
-The template file for a class doesn't start with many **using** statements because it's not specifically for Universal Windows Platform (UWP) apps. So first, add **using** statements. The template file also starts with a few **using** statements that you probably don't need, and can be deleted. Here's a suggested list of **using** statements that can resolve types you'll need for typical custom panel code:
+The template file for a class doesn't start with many **using** statements because it's not specifically for Windows apps. So first, add **using** statements. The template file also starts with a few **using** statements that you probably don't need, and can be deleted. Here's a suggested list of **using** statements that can resolve types you'll need for typical custom panel code:
 
 ```CSharp
 using System;

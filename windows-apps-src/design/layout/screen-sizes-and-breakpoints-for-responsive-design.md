@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 #  Screen sizes and breakpoints
 
-UWP apps can run on any device running Windows 10, which includes phones, tablets, desktops, TVs, and more. With a huge number of device targets and screen sizes across the Windows 10 ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called "breakpoints"): 
+Windows apps can run on any device running Windows, which includes phones, tablets, desktops, TVs, and more. With a huge number of device targets and screen sizes across the Windows 10 ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called "breakpoints"): 
 - Small (smaller than 640px)
 - Medium (641px to 1007px)
 - Large (1008px and larger)

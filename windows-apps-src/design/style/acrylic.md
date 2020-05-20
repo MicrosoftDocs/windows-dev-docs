@@ -32,7 +32,7 @@ Acrylic in dark theme
 
 ## Acrylic and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
 
  ## Video summary
 
@@ -98,7 +98,7 @@ In High Contrast mode, users continue to see the familiar background color of th
 
 In addition, only background acrylic will replace its translucency and texture with a solid color:
  - When an app window on desktop deactivates
- - When the UWP app is running on phone, Xbox, HoloLens or tablet mode
+ - When the Windows app is running on phone, Xbox, HoloLens or tablet mode
 
 ### Legibility considerations
 It’s important to ensure that any text your app presents to users [meets contrast ratios](../accessibility/accessible-text-requirements.md). We’ve optimized the acrylic recipe so that high-color black, white or even medium-color gray text meets contrast ratios on top of acrylic. The theme resources provided by the platform default to contrasting tint colors at 80% opacity. When placing high-color body text on acrylic, you can reduce tint opacity while maintaining legibility. In dark mode, tint opacity can be 70%, while light mode acrylic will meet contrast ratios at 50% opacity.

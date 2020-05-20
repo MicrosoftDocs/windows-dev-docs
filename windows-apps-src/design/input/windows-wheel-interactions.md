@@ -645,7 +645,7 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 ## Related articles
 
-[Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app](radialcontroller-walkthrough.md)
+[Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app](radialcontroller-walkthrough.md)
 
 ### API reference
 
@@ -672,7 +672,7 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 [Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
+[Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 
