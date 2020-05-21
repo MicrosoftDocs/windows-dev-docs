@@ -33,7 +33,7 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 
 For installation instructions see [Getting started with the Windows UI Library](winui2/getting-started.md).
 
-### Related links
+### Related links for WinUI 2.x
 
 - [WinUI 2.x Library overview](winui2/index.md)
 - [API docs](https://docs.microsoft.com/uwp/api/overview/winui/)
@@ -47,7 +47,7 @@ WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely
 By completely decoupling Xaml, composition, and input APIs from the UWP SDK, the Windows UI 3.0 Library can greatly expand the scope of WinUI to include the full Windows 10 native UI platform.
 
 WinUI serves as the path forward for all Windows apps - you can use it as the UI layer on your native UWP or Win32 app, or you can use it to modernize your desktop app piece by piece with [Xaml Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
- 
+
 > [!NOTE]
 > The WinUI 3.0 Preview 1 is a pre-release build of WinUI 3.0. We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml).
 
@@ -60,10 +60,10 @@ The Universal Windows Platform contains more than just the Xaml framework (such 
 > [!Important]
 > WinUI 3.0 Preview 1 is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
 
-### Related links
+### Related links for WinUI 3.0
 
 - [WinUI 3.0 Preview 1 (May 2020)](winui3/index.md)
-- [XAML Controls Gallery (WinUI 3.0 Preview 1) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3alpha)
+- [XAML Controls Gallery (WinUI 3.0 Preview 1) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## WinUI resources
 
