@@ -10,7 +10,11 @@ ms.localizationpriority: medium
 # Request a maps authentication key
 
 
-
+> [!WARNING]
+> Online maps services may not be available on older versions of Windows 10. On the following versions, 
+MapControl may no longer display maps and APIs in the Windows.Services.Maps namespace may not return results:
+> - Windows 10, version 1607 and earlier versions: map services will be unavailable worldwide starting in October 2020
+> - Windows 10, version 1703 and earlier versions: map services are unavailable on [some devices sold in China](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10)
 
 Your [Universal Windows app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) must be authenticated before it can use the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services in the [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
 
