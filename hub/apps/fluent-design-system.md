@@ -12,7 +12,7 @@ author: mcleanbyron
 
 # The Fluent Design System for Windows app creators
 
-![Fluent Design header](images/fluent/fluentdesign-app-header.jpg)
+![Fluent Design header](images/fluent/fluentdesign-app-header.png)
 
 ## Introduction
 
