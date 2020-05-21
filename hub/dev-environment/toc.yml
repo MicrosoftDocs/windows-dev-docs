@@ -1,6 +1,36 @@
 - name: Windows development environment
   href: index.yml
   items:
+  - name: Windows Package Manager
+    items:
+      - name: Overview
+        href: ../package-manager/index.md
+      - name: Use the winget tool
+        items:
+          - name: Overview
+            href: ../package-manager/winget/index.md
+          - name: hash command
+            href: ../package-manager/winget/hash.md
+          - name: help command
+            href: ../package-manager/winget/help.md
+          - name: install command
+            href: ../package-manager/winget/install.md
+          - name: search command
+            href: ../package-manager/winget/search.md
+          - name: show command
+            href: ../package-manager/winget/show.md
+          - name: source command
+            href: ../package-manager/winget/source.md
+          - name: validate command
+            href: ../package-manager/winget/validate.md
+      - name: Submit packages
+        items:
+          - name: Overview
+            href: ../package-manager/package/index.md
+          - name: Create your package manifest
+            href: ../package-manager/package/manifest.md
+          - name: Submit your manifest to the repository
+            href: ../package-manager/package/repository.md
   - name: Develop with Python
     items:
         - name: Overview

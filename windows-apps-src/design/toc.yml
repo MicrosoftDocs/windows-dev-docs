@@ -546,6 +546,8 @@
           href: accessibility/basic-accessibility-information.md
         - name: Keyboard accessibility
           href: accessibility/keyboard-accessibility.md
+        - name: Screen readers and hardware system buttons
+          href: accessibility/system-button-narration.md
         - name: Landmarks and Headings
           href: accessibility/landmarks-and-headings.md
         - name: High-contrast themes

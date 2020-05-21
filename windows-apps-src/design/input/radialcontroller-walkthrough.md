@@ -40,7 +40,7 @@ The Dial supports three basic gestures:
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
-* If you're new to Windows app app development with Visual Studio, have a look through these topics before you start this tutorial:  
+* If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 

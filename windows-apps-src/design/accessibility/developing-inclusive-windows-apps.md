@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Developing inclusive Windows apps  
 
-This article discusses how to develop accessible Windows app apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app. Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+This article discusses how to develop accessible Windows apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app. Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
 
 If you have not yet done so, please start by reading [Designing inclusive software](designing-inclusive-software.md).
 

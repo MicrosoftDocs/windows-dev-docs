@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Designing for Xbox and TV
 
-Design your Windows app app so that it looks good and functions well on Xbox One and television screens.
+Design your Windows app so that it looks good and functions well on Xbox One and television screens.
 
 See [Gamepad and remote control interactions](../input/gamepad-and-remote-interactions.md) for guidance on interaction experiences in UWP applications in the *10-foot* experience.
 
@@ -563,6 +563,6 @@ Designing for the 10-foot experience has special considerations to take into acc
 
 ## Related articles
 
-- [Device primer for Windows app apps](index.md)
+- [Device primer for Windows apps](index.md)
 - [Gamepad and remote control interactions](../input/gamepad-and-remote-interactions.md)
 - [Sound in UWP apps](../style/sound.md)

@@ -29,7 +29,7 @@ Note that you won't be able to configure dates in the **Schedule** section if yo
 
 Selections you make for the Base schedule will apply to all markets in which your app is available, unless you later add dates for specific markets (or market groups) by selecting [Customize for specific markets](#customize-the-schedule-for-specific-markets).
 
-You’ll see two options here: **Release** and **Stop acquisition**. 
+You’ll see two options here: **Release** and **Stop acquisition**.
 
 ## Release
 
@@ -56,9 +56,9 @@ It's important to understand that this option has the same impact as selecting *
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.
 
-## Customize the schedule for specific markets 
+## Customize the schedule for specific markets
 
-By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](define-pricing-and-market-selection.md) section, those markets will not be shown. 
+By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](define-pricing-and-market-selection.md) section, those markets will not be shown.
 
 To add a schedule for one market, select it and click **Save**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market.
 
@@ -67,7 +67,7 @@ To add a schedule that will apply to multiple markets, you’ll create a *market
 To add a custom schedule for an additional market, or an additional market group, just click **Customize for specific markets** again and repeat these steps. To change the markets included in a market group, select its name. To remove the custom schedule for a market group (or individual market), click **Remove**.
 
 > [!NOTE]
-> A market can’t belong to more than one of the market groups you use in the **Schedule** section. 
+> A market can’t belong to more than one of the market groups you use in the **Schedule** section.
 
 ## Global Time Zones
 
@@ -203,7 +203,6 @@ Below is a table that shows what specific time zones are used in each market, so
 | Lithuania  |  (UTC+02:00) Chisinau |
 | Luxembourg  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
 | Macao SAR  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
-| Macedonia, FYROM  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
 | Madagascar  |  (UTC+03:00) Nairobi |
 | Malawi  |  (UTC+02:00) Harare, Pretoria |
 | Malaysia  |  (UTC+08:00) Kuala Lumpur, Singapore |
@@ -237,6 +236,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Nigeria  |  (UTC+01:00) West Central Africa |
 | Niue  |  (UTC+13:00) Samoa |
 | Norfolk Island  |  (UTC+11:00) Solomon Is., New Caledonia |
+| North Macedonia  |  (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb |
 | Northern Mariana Islands  |  (UTC+10:00) Guam, Port Moresby |
 | Norway  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna |
 | Oman  |  (UTC+04:00) Abu Dhabi, Muscat |
@@ -313,7 +313,6 @@ Below is a table that shows what specific time zones are used in each market, so
 | Vanuatu  |  (UTC+11:00) Solomon Is., New Caledonia |
 | Vietnam  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
 | Wallis and Futuna  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Old |
-| Western Sahara (Disputed)  |  (UTC+00:00) Dublin, Edinburgh, Lisbon, London |
 | Yemen  |  (UTC+04:00) Abu Dhabi, Muscat |
 | Zambia  |  (UTC+02:00) Harare, Pretoria |
 | Zimbabwe  |  (UTC+02:00) Harare, Pretoria |
