@@ -23,6 +23,21 @@ You can start an SSH session in your command prompt by executing `ssh user@machi
 "commandline": "ssh cinnamon@roll"
 ```
 
+## Specify starting directory
+
+To specify the starting directory for a ssh session invoked by Windows Terminal, you can use this command:
+
+```bash
+"commandline": "ssh -t bob@foo \"cd /data/bob && exec bash -l\""
+```
+
+The `-t` flag forces pseudo-terminal allocation. This can be used to execute arbitrary screen-based programs on a remote machine, e.g. when implementing menu services. You will need to use escaped double quotes as bourne shell derivatives don't do any additional parsing for a string in single quotes.
+
+For more information, see:
+
+* [GH Issue: How to specify the starting directory for a ssh session?](https://github.com/MicrosoftDocs/terminal/issues/25)
+* [StackOverflow: How can I ssh directly to a particular directory?](https://stackoverflow.com/questions/626533/how-can-i-ssh-directly-to-a-particular-directory)
+
 ## Resources
 
 * [How to Enable and Use Windows 10’s New Built-in SSH Commands](https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/)
