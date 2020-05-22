@@ -20,7 +20,7 @@ Color schemes can be defined in the `schemes` array of your settings.json file. 
     "name" : "Campbell",
 
     "cursorColor": "#FFFFFF",
-    "selectionBackground": "#",
+    "selectionBackground": "#FFFFFF",
 
     "background" : "#0C0C0C",
     "foreground" : "#CCCCCC",
