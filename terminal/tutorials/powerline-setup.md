@@ -18,6 +18,7 @@ Powerline provides a customized command prompt experience providing Git status c
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
+>
 > * Set up Powerline in PowerShell
 > * Set up Powerline in Ubuntu/WSL
 > * Add missing Powerline glyphs
@@ -41,12 +42,15 @@ Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
 
+> [!TIP]
+> You may need to install NuGet if you don't already have it. Your PowerShell command line will ask if you want to install NuGet if this is the case. Select [Y] Yes. You may also need to approve that you are installing modules from [PSGallery](https://docs.microsoft.com/powershell/scripting/gallery/getting-started?view=powershell-7), an 'untrusted repository'. Select [Y] Yes.
+
 [Posh-Git](https://github.com/dahlbyk/posh-git) adds Git status information to your prompt as well as tab-completion for Git commands, parameters, remotes, and branch names. [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) provides theme capabilities for your PowerShell prompt.
 
 If you are using PowerShell Core, install PSReadline:
 
 ```powershell
-Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 ```
 
 [PSReadline](https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-6) lets you customize the command line editing environment in PowerShell.
@@ -64,6 +68,25 @@ Set-Theme Paradox
 ```
 
 Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting the Paradox theme from Oh-My-Posh. Oh-My-Posh comes with several [built-in themes](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
+
+### Set Cascadia Code PL as fontFace in settings
+
+To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-settings.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal drop-down menu.
+
+Once your settings.json file opens, find the Windows PowerShell profile and add: `"fontFace": "Cascadia Code PL"` to designate Cascadia Code PL as the font. This will provide those nice Cascadia Code Powerline glyphs. You should notice the change in your terminal as soon as you select **Save** in your editor.
+
+Your Windows PowerShell profile settings.json file should now look like this:
+
+```json
+{
+    // Make changes here to the powershell.exe profile.
+    "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "name": "Windows PowerShell",
+    "commandline": "powershell.exe",
+    "fontFace": "Cascadia Code PL",
+    "hidden": false
+},
+```
 
 ## Set up Powerline in WSL Ubuntu
 
