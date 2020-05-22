@@ -849,6 +849,8 @@ Click Run Selected. Further documentation on each test is available by right cli
 
 ### Appendix A - Raspberry Pi ASL Listing
 
+See also [Raspberry Pi 2 & 3 Pin Mappings](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi)
+
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 {
@@ -1008,6 +1010,8 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 ```
 
 ### Appendix B - MinnowBoardMax ASL Listing
+
+See also [MinnowBoard Max Pin Mappings](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsmbm)
 
 ```cpp
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
