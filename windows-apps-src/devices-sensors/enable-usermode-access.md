@@ -843,10 +843,10 @@ Click Run Selected. Further documentation on each test is available by right cli
 | GpioClx | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C Tests | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/GPIOTestTool |
-| I2cTestTool | https://developer.microsoft.com/windows/iot/samples/I2cTestTool |
-| SpiTestTool | https://developer.microsoft.com/windows/iot/samples/spitesttool |
-| MinComm (Serial) | https://github.com/ms-iot/samples/tree/develop/MinComm |
+| GpioTestTool | https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/GpioTestTool |
+| I2cTestTool | https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/I2cTestTool |
+| SpiTestTool | https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/SpiTestTool |
+| MinComm (Serial) | https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
 ## Appendix
