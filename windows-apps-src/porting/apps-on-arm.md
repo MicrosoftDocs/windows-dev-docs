@@ -1,7 +1,7 @@
 ---
 title: Windows 10 on ARM
 description: This article provides an overview of how experiences and apps will run on ARM, what the limitations are, and where you can go to learn more.
-ms.date: 02/15/2018
+ms.date: 05/22/2020
 ms.topic: article
 keywords: windows 10 s, always connected, ARM, ARM64, x86 emulation
 ms.localizationpriority: medium
@@ -29,6 +29,19 @@ Windows 10 on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/unive
 
 ### Win32 apps
 In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps unmodified, with good performance and a seamless user experience, just like any PC. These x86 Win32 apps don’t have to recompiled for ARM and don’t even realize they are running on an ARM processor. Note that 64-bit x64 Win32 apps are not supported, but the vast majority of apps have x86 versions available.  When given the choice of app architecture, just choose the 32-bit x86 version to run the app on a Windows 10 on ARM PC.
+
+## Downloads
+
+Visual Studio 2019 provides several tools downloads for Windows 10 on ARM. Users stil using Visual Studio 2017 can use the installer to find and install comparable tools and packages. Note that to follow these steps, you must be using Visual Studio 2019.
+
+### Visual C++ Redistributable
+
+The Visual C++ Redist package is available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Other tools and Frameworks**, then navigate to the **Microsoft Visual C++ Redistributable for Visual Studio 2019** entry. Select the **ARM64** radio button, then **Download**.
+
+### Remote Tools
+
+Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Tools for Visual Studio 2019**, then navigate to the **Remote Tools for Visual Studio 2019** entry. Select the **ARM64* radio button, then **Download**.
+
 
 ## In this section
 |Topic | Description |
