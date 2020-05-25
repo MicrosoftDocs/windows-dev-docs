@@ -8,6 +8,9 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
 ---
 # Intro to controls and patterns
 
@@ -96,6 +99,9 @@ Here's how to set the Foreground property in code.
 ```csharp
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
+```cppwinrt
+Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
+```
 
 ## Create an event handler 
 
@@ -116,6 +122,22 @@ private void Button_Click(object sender, RoutedEventArgs e)
     b.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
 }
 ```
+```cppwinrt
+#MainPage.h
+struct MainPage : MainPageT<MainPage>
+    {
+        MainPage();
+        ...
+        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+    };
+    
+#MainPage.cpp
+void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        auto b{ sender.as<winrt::Windows::UI::Xaml::Controls::Button>() };
+        b.Foreground(Media::SolidColorBrush(Windows::UI::Colors::Blue()));
+    }
+```
 
 You can also associate an event handler in XAML. In the XAML editor, type in the event name that you want to handle. Visual Studio shows an IntelliSense window when you begin typing. After you specify the event, you can double-click `<New Event Handler>` in the IntelliSense window to create a new event handler with the default name, or select an existing event handler from the list. 
 
@@ -133,6 +155,9 @@ You can also associate an event with its event handler in the code-behind. Here'
 
 ```csharp
 Button1.Click += new RoutedEventHandler(Button_Click);
+```
+```cppwinrt
+Button1().Click({ this, &MainPage::Button1_Click });
 ```
 
 ## Related topics

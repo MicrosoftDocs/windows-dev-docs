@@ -36,7 +36,7 @@ To submit a manifest to the repository, follow these steps.
 The **winget** tool provides the [validate](..\winget\validate.md) command to confirm that you have created your manifest correctly. To validate your manifest, use this command.
 
 ```CMD
-winget vaidate \<manifest-file>
+winget validate \<manifest-file>
 ```
 
 If your validation fails, use the errors to locate the line number and make a correction. After your manifest is validated, you can submit it to the repository.
