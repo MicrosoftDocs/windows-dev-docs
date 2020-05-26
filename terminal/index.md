@@ -11,16 +11,16 @@ ms.localizationpriority: high
 
 # What is Windows Terminal?
 
-Windows Terminal is a modern terminal application for users of command line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcut key bindings.
+Windows Terminal is a modern terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcut key bindings.
 
 ![Windows Terminal screenshot](./images/overview.png)
 
 > [!NOTE]
 > [What's the difference between a console, a terminal, and a shell?](https://www.hanselman.com/blog/WhatsTheDifferenceBetweenAConsoleATerminalAndAShell.aspx) Read Scott Hanselman's explanation.
 
-## Multiple profiles supporting a variety of command line applications
+## Multiple profiles supporting a variety of command-line applications
 
-Any application that has a command line interface can be run inside Windows Terminal. This includes everything from PowerShell and Command Prompt to Azure Cloud Shell and any WSL distribution such as Ubuntu or Oh-My-Zsh.
+Any application that has a command-line interface can be run inside Windows Terminal. This includes everything from PowerShell and Command Prompt to Azure Cloud Shell and any WSL distribution such as Ubuntu or Oh-My-Zsh.
 
 ## Customized schemes and configurations
 
@@ -40,7 +40,7 @@ Windows Terminal can display Unicode and UTF-8 characters such as emoji and char
 
 ## GPU accelerated text rendering
 
-Windows Terminal uses the GPU to render its text, thus providing improved performance over the default Windows command line experience.
+Windows Terminal uses the GPU to render its text, thus providing improved performance over the default Windows command-line experience.
 
 ## Background image support
 
@@ -48,7 +48,7 @@ You can have background images and gifs inside your Windows Terminal window. Inf
 
 ## Command line arguments
 
-You can set Windows Terminal to launch in a specific configuration using command line arguments. You can specify which profile to open in a new tab, which folder directory should be selected, open the terminal with split window panes, and choose which tab should be in focus.
+You can set Windows Terminal to launch in a specific configuration using command-line arguments. You can specify which profile to open in a new tab, which folder directory should be selected, open the terminal with split window panes, and choose which tab should be in focus.
 
 For example, to open Windows Terminal from PowerShell with three panes, with the left pane running a Command Prompt profile and the right pane split between your PowerShell and your default profile running WSL, enter:
 
@@ -56,4 +56,4 @@ For example, to open Windows Terminal from PowerShell with three panes, with the
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-Learn how to set up command line arguments on the [Command line arguments page](./command-line-arguments.md).
+Learn how to set up command-line arguments on the [Command line arguments page](./command-line-arguments.md).

@@ -10,7 +10,7 @@ ms.service: terminal
 
 # Panes in Windows Terminal
 
-Panes give you the ability to run multiple command line applications next to each other within the same tab. This minimizes the need to switch between tabs and lets you see multiple prompts at once.
+Panes give you the ability to run multiple command-line applications next to each other within the same tab. This minimizes the need to switch between tabs and lets you see multiple prompts at once.
 
 ## Creating a new pane
 

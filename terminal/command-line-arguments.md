@@ -1,6 +1,6 @@
 ---
-title: Windows Terminal Command Line Arguments
-description: Learn how to create command line arguments for Windows Terminal.
+title: Windows Terminal command-line arguments
+description: Learn how to create command-line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.service: terminal
 ---
 
-# Using command line arguments for Windows Terminal
+# Using command-line arguments for Windows Terminal
 
 You can use `wt.exe` to open a new instance of Windows Terminal from the command line. You can also use the execution alias `wt` instead.
 
 > [!NOTE]
 > If you built Windows Terminal from the source code on [GitHub](https://github.com/microsoft/terminal), you can open that build using `wtd.exe` or `wtd`.
 
-![Windows Terminal command line argument for split panes](./images/terminal-command-args.gif)
+![Windows Terminal command-line argument for split panes](./images/terminal-command-args.gif)
 
 ## Command line syntax
 
@@ -25,7 +25,7 @@ The `wt` command line accepts two types of values: **options** and **commands**.
 wt [options] [command ; ]
 ```
 
-To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
+To display a help message listing the available command-line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
 
 ## Options and commands
 
@@ -120,7 +120,7 @@ wt ; ;
 wt `; `;
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -148,7 +148,7 @@ wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -178,7 +178,7 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -263,6 +263,6 @@ wt new-tab "cmd" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 wt --% new-tab cmd ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
-In both of these examples, the newly created Windows Terminal window will create the window by correctly parsing all the provided command line arguments.
+In both of these examples, the newly created Windows Terminal window will create the window by correctly parsing all the provided command-line arguments.
 
 However, these methods are _not_ recommended currently, as PowerShell will wait for the newly-created terminal window to be closed before returning control to PowerShell. By default, PowerShell will always wait for Windows Store applications (like Windows Terminal) to close before returning to the prompt. Note that this is different than the behavior of Command Prompt, which will return to the prompt immediately.
