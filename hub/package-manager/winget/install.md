@@ -67,7 +67,7 @@ Usage: `winget install --manifest \<file>`
 
 ### Log files
 
-The log files for winget unless redirected, will be located in the following folder:  ** \%temp%\\AICLI\\*.log**
+The log files for winget unless redirected, will be located in the following folder:  **\%temp%\\AICLI\\*.log**
 
 ## Related topics
 
