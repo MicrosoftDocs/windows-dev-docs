@@ -43,7 +43,7 @@ The terminal supports customization of [global properties](./customize-settings/
 
 ## Command line arguments
 
-You can launch the terminal in a specific configuration using command line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command line arguments on the [Command line arguments page](./command-line-arguments.md).
+You can launch the terminal in a specific configuration using command-line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command-line arguments on the [Command line arguments page](./command-line-arguments.md).
 
 ## Troubleshooting
 
