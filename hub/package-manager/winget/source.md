@@ -71,16 +71,18 @@ The **add** sub command also supports the optional **type** parameter. The **typ
 
 the **list** sub command enumerates the currently enabled sources. This sub-command also provides details on a specific source.
 
-Usage: `winget list [-n, --name] \<name>`
+Usage: `winget source list [-n, --name] \<name>`
 
 ### list all
 
 The **list** sub-command by itself will reveal the complete list of supported sources. For example:
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### list source details
@@ -106,7 +108,7 @@ In order to get complete details on the source, pass in the name used to identif
 
 The **update** sub command forces an update to an individual source or for all.
 
-usage: `winget update [-n, --name] \<name>`
+usage: `winget source update [-n, --name] \<name>`
 
 ### update all
 
@@ -114,7 +116,7 @@ The **update** sub command by itself will request and update to each repo. For e
 
 ### update source
 
-The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `C:\winget update --name contoso`
+The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `C:\winget source update --name contoso`
 
 ## remove
 
