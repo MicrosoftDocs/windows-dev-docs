@@ -88,7 +88,7 @@ You're now ready to push your new manifest to the remote repository.
 
 3. Use the `push` command to push the changes the remote repository.
     ```CMD
-    `git push`
+    git push
     ```
 
 ### Step 5: Create a pull request
