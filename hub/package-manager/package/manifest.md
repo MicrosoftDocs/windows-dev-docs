@@ -165,3 +165,5 @@ ManifestVersion: 0.1.0
 * All packages should be submitted with a silent install if possible. If you have an executable that does not support a silent install, the user experience will be diminished.
 * Limit the length of strings in your manifest to 100 characters before a line break.
 * When more than one installer type exists for the specified version of the package, an instance of `InstallerType` can be placed under each of the `Installers`.
+* To get the correct `InstallerType` of a installer, you can use third-party tool such as [The Ultimate Silent Switch Finder (USSF)](https://deployhappiness.com/the-ultimate-exe-silent-switch-finder/).
+
