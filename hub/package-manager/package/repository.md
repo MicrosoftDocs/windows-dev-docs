@@ -86,9 +86,9 @@ You're now ready to push your new manifest to the remote repository.
     git commit -m "Submitting  ContosoApp version 1.0.0.yaml"
     ```
 
-3. Use the `push` command to push the changes the remote repository.
+3. Use the `push` command to push the changes to the remote repository.
     ```CMD
-    `git push`
+    git push
     ```
 
 ### Step 5: Create a pull request
@@ -99,7 +99,7 @@ After you push your changes, return to [https://github.com/microsoft/winget-pkgs
 
 ## Validation process
 
-When you create a pull request, this will start an automation process that validates the manifest and processes your pull request. We add labels to your pull request so you cab track progress.
+When you create a pull request, this will start an automation process that validates the manifest and processes your pull request. We add labels to your pull request so you can track progress.
 
 ### Submission expectations
 

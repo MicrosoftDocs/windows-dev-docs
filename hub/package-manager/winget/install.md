@@ -42,13 +42,13 @@ The options allow you to customize the install experience to meet your needs.
 | **--name**   |  Limits the search to the name of the application. |  
 | **--moniker**   | Limits the search to the moniker listed for the application. |  
 | **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |  
-| **-s, -source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
-| **-e, -exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
-| **-i, -interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
-| **-h, -silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
+| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
+| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
+| **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
+| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
-| **-override** | A string that will be passed directly to the installer.    |
-| **-l,--location** |    Location to install to (if supported). |
+| **--override** | A string that will be passed directly to the installer.    |
+| **-l, --location** |    Location to install to (if supported). |
 
 ## Multiple selections
 
@@ -62,11 +62,11 @@ Usage: `winget install --manifest \<file>`
 
 | Option  | Description |
 |-------------|-------------|  
-|  **-m,--manifest** | The path to the manifest of the application to install. |
+|  **-m, --manifest** | The path to the manifest of the application to install. |
 
 ### Log files
 
-The log files for winget unless redirected, will be located in the following folder:  ** \%temp%\\AICLI\\*.log**
+The log files for winget unless redirected, will be located in the following folder:  **\%temp%\\AICLI\\*.log**
 
 ## Related topics
 
