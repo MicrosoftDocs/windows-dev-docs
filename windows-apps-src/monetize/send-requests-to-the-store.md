@@ -28,7 +28,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
