@@ -30,7 +30,7 @@ You can configure your Windows Terminal to have a variety of color schemes and s
 
 There are a variety of custom key combinations you can use in Windows Terminal to have it feel more natural to you. If you don't like a particular keyboard shortcut, you can change it to whatever you prefer.
 
-For example, the default shortcut key binding to copy text from the command line is <kbd>ctrl+shift+c</kbd>. You can change this to <kbd>ctrl+1</kbd> or whatever you prefer. To open a new tab, the default shortcut is <kbd>ctrl+t</kbd>, but maybe you want to change this to <kbd>ctrl+2</kbd>. The default shortcut to flip between the tabs you have open is <kbd>ctrl+tab</kbd>, this could be changed to <kbd>ctrl+-</kbd> and used to create a new tab instead.
+For example, the default shortcut key binding to copy text from the command line is <kbd>ctrl+shift+c</kbd>. You can change this to <kbd>ctrl+1</kbd> or whatever you prefer. To open a new tab, the default shortcut is <kbd>ctrl+shift+t</kbd>, but maybe you want to change this to <kbd>ctrl+2</kbd>. The default shortcut to flip between the tabs you have open is <kbd>ctrl+tab</kbd>, this could be changed to <kbd>ctrl+-</kbd> and used to create a new tab instead.
 
 You can learn about customizing your key bindings on the [Key bindings page](./customize-settings/key-bindings.md).
 
