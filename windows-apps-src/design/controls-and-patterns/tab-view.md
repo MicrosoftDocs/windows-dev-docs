@@ -105,28 +105,26 @@ For more information, see [Title bar customization](https://docs.microsoft.com/w
 
 ```xaml
 <muxc:TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-    <muxc:TabView.TabItems>
-        <muxc:TabViewItem Header="Home" IsClosable="False">
-            <muxc:TabViewItem.IconSource>
-                <muxc:SymbolIconSource Symbol="Home" />
-            </muxc:TabViewItem.IconSource>
-        </muxc:TabViewItem>
-        <muxc:TabViewItem Header="Document 1">
-            <muxc:TabViewItem.IconSource>
-                <muxc:SymbolIconSource Symbol="Document" />
-            </muxc:TabViewItem.IconSource>
-        </muxc:TabViewItem>
-        <muxc:TabViewItem Header="Document 2">
-            <muxc:TabViewItem.IconSource>
-                <muxc:SymbolIconSource Symbol="Document" />
-            </muxc:TabViewItem.IconSource>
-        </muxc:TabViewItem>
-        <muxc:TabViewItem Header="Document 3">
-            <muxc:TabViewItem.IconSource>
-                <muxc:SymbolIconSource Symbol="Document" />
-            </muxc:TabViewItem.IconSource>
-        </muxc:TabViewItem>
-    </muxc:TabView.TabItems>
+    <muxc:TabViewItem Header="Home" IsClosable="False">
+        <muxc:TabViewItem.IconSource>
+            <muxc:SymbolIconSource Symbol="Home" />
+        </muxc:TabViewItem.IconSource>
+    </muxc:TabViewItem>
+    <muxc:TabViewItem Header="Document 1">
+        <muxc:TabViewItem.IconSource>
+            <muxc:SymbolIconSource Symbol="Document" />
+        </muxc:TabViewItem.IconSource>
+    </muxc:TabViewItem>
+    <muxc:TabViewItem Header="Document 2">
+        <muxc:TabViewItem.IconSource>
+            <muxc:SymbolIconSource Symbol="Document" />
+        </muxc:TabViewItem.IconSource>
+    </muxc:TabViewItem>
+    <muxc:TabViewItem Header="Document 3">
+        <muxc:TabViewItem.IconSource>
+            <muxc:SymbolIconSource Symbol="Document" />
+        </muxc:TabViewItem.IconSource>
+    </muxc:TabViewItem>
 
     <muxc:TabView.TabStripHeader>
         <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
