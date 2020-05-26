@@ -1367,7 +1367,7 @@ Start a Win32 process that runs in full-trust.
 
 This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 application to continue running in full-trust.
 
-Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](/windows/uwp/launch-resume/app-services.md) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](/windows/uwp/launch-resume/app-services) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 
 ## Next steps
 
