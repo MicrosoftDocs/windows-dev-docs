@@ -104,8 +104,8 @@ One benefit of the **uap10:HostRuntime** extension is that it enables a host to 
 
 Use the following methods of the [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) class to register an unsigned hosted app package. These methods are available starting in Windows 10, version 2004.
 
-* **AddPackageByUriAsync**: Registers an unsigned MSIX package by using the **AllowUnsigned** property of the *options* parameter.
-* **RegisterPackageByUriAsync**: Performs a loose package manifest file registration. If the package is signed, the folder containing the manifest must include a [.p7x file](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package) and catalog. If unsigned, the **AllowUnsigned** property of the *options* parameter must be set.
+* [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync): Registers an unsigned MSIX package by using the **AllowUnsigned** property of the *options* parameter.
+* [**RegisterPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync): Performs a loose package manifest file registration. If the package is signed, the folder containing the manifest must include a [.p7x file](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package) and catalog. If unsigned, the **AllowUnsigned** property of the *options* parameter must be set.
 
 ### Requirements for unsigned hosted apps
 
