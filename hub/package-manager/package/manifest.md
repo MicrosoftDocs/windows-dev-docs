@@ -38,7 +38,7 @@ A package manifest must include a set of required items, and can also include fu
 
 Each field in the manifest file must be Pascal-cased and cannot be duplicated.
 
-For a complete list and descriptions of items in a manifest, see the manifest specification in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
+For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md) in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
 
 ### Minimal required schema
 
