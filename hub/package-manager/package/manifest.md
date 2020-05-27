@@ -168,3 +168,5 @@ ManifestVersion: 0.1.0
 * All packages should be submitted with a silent install if possible. If you have an executable that does not support a silent install, the user experience will be diminished.
 * Limit the length of strings in your manifest to 100 characters before a line break.
 * When more than one installer type exists for the specified version of the package, an instance of `InstallerType` can be placed under each of the `Installers`.
+* There's [a blog](http://unattended.sourceforge.net/installers.php) may help you fill in the `Switches` and make the installation run unattendly.
+
