@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
 
+> [!NOTE]
+> The **source** command is currently for internal use only. Additional sources are not supported at this time.
+
 The **source** command of the [winget](index.md) tool manages the repositories accessed by Windows Package Manager. With the **source** command you can **add**, **remove**, **list**, and **update** the repositories.
 
 A source provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.

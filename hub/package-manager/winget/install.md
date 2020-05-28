@@ -50,6 +50,26 @@ The options allow you to customize the install experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
 
+### Example queries
+
+The following example installs a specific version of an application.
+
+```CMD
+winget install powertoys --version 0.15.2
+```
+
+The following example installs an application from its ID.
+
+```CMD
+winget install --id Microsoft.PowerToys
+```
+
+The following example installs an application by version and ID.
+
+```CMD
+winget install --id Microsoft.PowerToys --version 0.15.2
+```
+
 ## Multiple selections
 
 If the query provided to **winget** does not result in a single application, then **winget** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
