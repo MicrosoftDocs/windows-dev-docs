@@ -151,7 +151,7 @@ How-to articles and code for creating UWP apps for Windows 10.
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Platform</h3>
-        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT<</a><br/>
+        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a><br/>
         <a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a><br/>
         <a href="/windows/uwp/security/">Security</a><br/>
         <a href="/windows/uwp/threading-async/">Threading and async programming</a><br/>
