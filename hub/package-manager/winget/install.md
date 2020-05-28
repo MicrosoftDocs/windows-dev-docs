@@ -42,7 +42,6 @@ The options allow you to customize the install experience to meet your needs.
 | **--name**   |  Limits the search to the name of the application. |  
 | **--moniker**   | Limits the search to the moniker listed for the application. |  
 | **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |  
-| **--tag**   |   Limits the search to the tags listed for the application. |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
