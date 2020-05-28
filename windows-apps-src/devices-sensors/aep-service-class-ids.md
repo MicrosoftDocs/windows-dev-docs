@@ -7,24 +7,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # AEP service class IDs
-
-
-
-**Important APIs**
-
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them. These contracts are identified with the **System.Devices.AepService.ServiceClassId** property. This topic lists several well-known AEP service class IDs. The AEP service class ID is also applicable to protocols with custom class IDs.
 
 An app developer should use advanced query syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
+> **Important APIs**
+>
+> - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
+
 ## Bluetooth and Bluetooth LE services
 
 Bluetooth services fall under one of two protocols, either the Bluetooth protocol or the Bluetooth LE protocol. The identifiers for these protocols are:
 
--   Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
--   Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
+- Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+- Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 The Bluetooth protocol supports several services, all following the same basic format. The first four digits of the GUID vary based upon the service, but all Bluetooth GUIDs end with **0000-0000-1000-8000-00805F9B34FB**. For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00030000-0000-1000-8000-00805F9B34FB**. The following table lists some common Bluetooth services.
 
@@ -64,9 +63,7 @@ The Bluetooth protocol supports several services, all following the same basic f
 | GATT - User data                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT - Weight scale                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
-
-For a more complete listing of available Bluetooth services, see Bluetooth's protocol and service pages [here](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery) and [here](https://go.microsoft.com/fwlink/p/?LinkID=619587). You can also use the [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API to get some common GATT services.
+For a more complete listing of available Bluetooth services, see the [GATT Services specification](https://www.bluetooth.com/specifications/gatt/services/). You can also use the [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API to get some common GATT services.
 
 ## Custom Bluetooth LE services
 
@@ -95,8 +92,6 @@ In general, all UPnP services have their name hashed into a GUID using the algor
 | Content directory                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
-
 ## WSD services
 
 WSD services use the following protocol identifier: {782232aa-a2f9-4993-971b-aedc551346b0}
@@ -108,8 +103,6 @@ In general, all WSD services have their name hashed into a GUID using the algori
 | Printer      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | Scanner      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
- 
-
 ## AQS sample
 
 This AQS will filter for all UPnP **AssociationEndpointService** objects that support DIAL. In this case, [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpointService**.
@@ -118,7 +111,3 @@ This AQS will filter for all UPnP **AssociationEndpointService** objects that su
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
-
- 
-
- 

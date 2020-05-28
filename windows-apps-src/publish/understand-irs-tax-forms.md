@@ -17,8 +17,8 @@ Below, we'll explain more about these forms, including who will receive them and
 
 | IRS tax form | Description | Availability |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Account settings > Tax profile**) at the same time |
-|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Account settings > Tax profile**) at the same time |
+|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Partner Center Developer Settings** under **Payout and tax > Payout and tax profiles**) at the same time |
+|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Partner Center Developer Settings** under **Payout and tax > Payout and tax profiles**) at the same time  |
 
 > [!NOTE]
 > The address we use on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.

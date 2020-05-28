@@ -522,7 +522,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041-api-diff",
       "redirect_document_id": false
     },
     {
@@ -572,12 +572,12 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041-api-diff",
       "redirect_document_id": false
     },
     {
@@ -1857,7 +1857,7 @@
     },
     {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
-      "redirect_url": "/design/style/app-icons-and-logos",
+      "redirect_url": "/windows/uwp/design/style/app-icons-and-logos",
       "redirect_document_id": true
     },
     {

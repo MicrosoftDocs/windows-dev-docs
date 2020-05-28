@@ -20,30 +20,18 @@ We recommend installing Python on WSL when building web applications. Many of th
 
 If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for beginners](./beginners.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
-## Enable Windows Subsystem for Linux
+## Install Windows Subsystem for Linux
 
-WSL lets you run a GNU/Linux environment - including most command-line tools, utilities, and applications - directly on Windows, unmodified and fully integrated with your Windows file system and favorite tools like Visual Studio Code. Before enabling WSL, please check that you have the [most recent version of Windows 10](https://www.microsoft.com/software-download/windows10).
+WSL lets you run a GNU/Linux command line environment integrated directly with Windows and your favorite tools, like Visual Studio Code, Outlook, etc.
 
-To enable WSL on your computer, you need to:
+To enable and install WSL (or WSL 2 depending on your needs), follow the steps in the [WSL install documentation](https://docs.microsoft.com/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
-1. Go to your **Start** menu (lower left Windows icon), type "Turn windows features on or off", and select the link to the **Control panel** to open the **Windows features** pop-up menu. Find "Windows Subsystem for Linux" in the list and select the checkbox to turn the feature on.
+Once you have installed WSL and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
-2. Restart your computer when prompted.
-
-## Install a Linux distribution
-
-There are several Linux distributions available to run on WSL. You can find and install your favorite in the Microsoft Store. We recommend starting with [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) as it's current, popular, and well supported.
-
-1. Open this [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) link, open the Microsoft Store, and select **Get**. *(This is a fairly large download and may take some time to install.)*
-
-2. After the download completes, select **Launch** from the Microsoft Store or launch by typing "Ubuntu 18.04 LTS" into the **Start** menu.
-
-3. You will be asked to create an account name and password when you run the distribution for the first time. After this, you'll be automatically signed in as this user by default. You can choose any user name and password. They have no bearing on your Windows user name.
-
-You can check the Linux distribution that you are currently using by entering: `lsb_release -d`. To update your Ubuntu distribution, use: `sudo apt update && sudo apt upgrade`. We recommend updating regularly to ensure you have the most recent packages. Windows doesn't automatically handle this update. For links to other Linux distributions available in the Microsoft Store, alternative installation methods, or troubleshooting, see [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+We recommend updating your Linux distribution regularly, including immediately after you install, to ensure you have the most recent packages. Windows doesn't automatically handle this update. To update your distribution, use the command: `sudo apt update && sudo apt upgrade`.  
 
 > [!TIP]
-> Consider trying the new [Windows terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) if you plan to use multiple command lines (Ubuntu, PowerShell, Windows Command Prompt, etc) or if you want to [customize your terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md), including text, background colors, key bindings, etc.
+> Consider [installing the new Windows Terminal from the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701) to enable multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and set up custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/windows/terminal).
 
 ## Set up Visual Studio Code
 
@@ -67,7 +55,7 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 ![Ubuntu terminal](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the `/mnt/<drive>` folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). We are also excited to share that [WSL2 is coming soon to Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) and will offer some great improvements. You can [try it now on Windows Insiders build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install).
+> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the `/mnt/<drive>` folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/).
 
 ## Install Python, pip, and venv
 
@@ -94,7 +82,7 @@ Using virtual environments is a recommended best practice for Python development
 
 ## Open a WSL - Remote window
 
-VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl). 
+VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl).
 
 1. Open your project folder in VS Code from your Ubuntu terminal by entering: `code .` (the "." tells VS Code to open the current folder).
 

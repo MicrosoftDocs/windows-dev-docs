@@ -15,7 +15,7 @@ keywords: windows 10, uwp, toolkit sdk
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on trying out early previews of WinUI 3.0, see [WinUI 3.0 (Alpha)](../winui3/index.md).
+> For more information on trying out early previews of WinUI 3.0, see [WinUI 3.0 Preview 1](../winui3/index.md).
 
 ## Download and install the Windows UI Library
 
@@ -36,13 +36,13 @@ You can optionally check "Include prerelease" to see the latest prerelease versi
 
 4. Add the Windows UI (WinUI) Theme Resources to your App.xaml resources. There are two ways to do this, depending on whether you have additional application resources.
 
-    a. If you don't have other application resources, 
-    add `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` to your Application.Resources: 
+    a. If you don't have other application resources,
+    add `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` to your Application.Resources:
 
     ``` XAML
     <Application>
         <Application.Resources>
-            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" /> 
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
     </Application>
     ```
@@ -55,7 +55,7 @@ You can optionally check "Include prerelease" to see the latest prerelease versi
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                </ResourceDictionary.MergedDictionaries> 
+                </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
     </Application>
@@ -100,6 +100,6 @@ WinUI is an open source project hosted on GitHub.
 
 We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
 
-## Other resources 
+## Other resources
 
 If you're new to UWP, then we recommend that you visit the [Getting Started with UWP Development](https://developer.microsoft.com/windows/getstarted) pages on the Developer portal.

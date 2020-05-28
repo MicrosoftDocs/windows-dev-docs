@@ -25,7 +25,7 @@ These toolkits provide controls and layout templates for designing Windows apps.
     :::column:::
 ![hero image](images/figma.png)
 <b>Figma toolkit</b><br>
-WinUI 2.3, February 2020<br>
+WinUI 2.4, May 2020<br>
 <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
