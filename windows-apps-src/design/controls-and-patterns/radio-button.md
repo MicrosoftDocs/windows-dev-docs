@@ -51,6 +51,67 @@ If there are more than 8 options, use a [drop-down list](lists.md) or [list box]
 
 If the available options are based on the app's current context, or can otherwise vary dynamically, use a single-select [list box](lists.md).
 
+## RadioButtons behavior
+The RadioButtons control has special navigation behavior that helps not only keyboard accelerant users, but also accessibility users to navigate the list more quickly and more easily.
+
+### Navigating a RadioButtons group
+
+There are two states that the RadioButtons control can have with it's RadioButton content:
+- A list of RadioButton controls where none are selected/checked
+- A list of RadioButton controls where one is already selected/checked
+
+The following two sections (below) cover the focus behavior when tabbing into the list in both cases outlined in the bullet list above.
+
+#### An item is already selected
+
+When a RadioButton is selected and the user tabs into the list, focus is put on the selected RadioButton.
+
+|List not tab focused | Has initial tab focus|
+|:--:|:--:|
+| ![alt text](images/selecteditem_notabfocus.png) | ![alt text](images/selecteditem_tabfocus.png)|
+
+#### No item is selected
+
+When no RadioButton controls are selected in the RadioButtons list, focus is put on the first RadioButton in the list.
+
+> The item that receives tab focus from this initial navigation will not be selected/checked.
+
+|List not tab focused | Has initial tab focus|
+|:--:|:--:|
+| ![alt text](images/noselecteditem_notabfocus.png) | ![alt text](images/noselecteditem_tabfocus.png)|
+
+### Keyboarding navigation
+
+When you have a single column list of RadioButton control options and you have already put focus onto an item, you can navigate the RadioButtons list in logical sequential order using the keyboard.
+
+- The up or down arrow keys will move to the "next" or "previous" logical item (defined in markup)
+- The left or right arrow keys will move spatially
+
+![alt text](images/keyboardnav_singlecol.png)
+
+This means that in purely vertical RadioButton group lists, left/right arrow keys will not do anything, but up/down will still navigate as expected. However, in purely horizontal RadioButton group lists, left and right will navigate the same way as up and down.
+
+#### Navigating with multiple columns
+The keyboarding behavior is the same as the single-column navigation, it just wraps to the next column when there is more than one defined.
+
+![alt text](images/keyboardnav_multicol.png)
+
+##### Wrapping
+
+The RadioButtons group does not wrap. This is because when using a screen reader, a sense of boundary and clear indication of ends versus beginnings is lost and thus making it difficult for blind users to navigate the list easily. There is also no enumeration with a RadioButtons group, since groups like this are meant to have a resonable number of items within.
+
+## Selection follows Focus
+When you are navigating a RadioButtons list via the keyboard, as focus is placed on a previous or next RadioButton item, that item will also get selected/checked. This means the previous item that was selected/checked will be unselected, and the currently focused one will be instead.
+
+|Before keyboard navigation | After keyboard navigation|
+|:--|:--|
+| ![alt text](images/2selected_nonav.png) | ![alt text](images/3selected_yesnav.png)|
+| Focus is on the "2" RadioButton, and it is shown as selected | The down or right arrow key has been pressed, so focus was moved to the "3" RadioButton, thus selected 3 and unselected 2. |
+
+### Navigating with gamepad
+
+If you're navigating the RadioButtons container with a gamepad controller, the selection follows focus behavior will be disabled. When navigating a RadioButtons control, no gamepad engagement is necessary to initiate navigation or to select RadioButton elements within the group.
+
 ## Examples
 
 <table>
@@ -71,7 +132,73 @@ Radio buttons in the Microsoft Edge browser settings.
 
 ![Radio buttons in the Microsoft Edge browser settings](images/control-examples/radio-buttons-edge.png)
 
-## Create a radio button
+## Using the RadioButtons Control
+If you're using [WinUI](https://github.com/microsoft/microsoft-ui-xaml), then it's recommended that you utilize the RadioButtons control.
+
+The RadioButtons control is easy to set up and use and ensures proper and expected keyboarding and narrator behavior.
+
+```xaml
+<RadioButtons Header="App Mode" SelectedIndex="2">
+    <RadioButton>Item 1</RadioButton>
+    <RadioButton>Item 2</RadioButton>
+    <RadioButton>Item 3</RadioButton>         
+</RadioButtons>
+```
+
+![Radio buttons in two groups](images/DefaultRadioButtonGroup.png)
+
+### Definding multiple columns
+If you want to define multiple columns of RadioButton items with a RadioButtons control, you can do so by specifying the `MaxColumns` property on the RadioButtons control element:
+
+```xaml
+<muxc:RadioButtons Header="App Mode" MaxColumns="3">
+    <x:String>Column 1</x:String>
+    <x:String>Column 2</x:String>
+    <x:String>Column 3</x:String>
+    <x:String>Column 1</x:String>
+    <x:String>Column 2</x:String>
+    <x:String>Column 3</x:String>
+</muxc:RadioButtons>
+```
+
+![Radio buttons in two groups](images/multicolumns.png)
+
+### DataBinding with RadioButtons
+With the RadioButtons control, you can also data bind to the RadioButton elements that can go within.
+
+```xaml
+<RadioButtons Header="App Mode" ItemsSource="{x:Bind radioButtonItems}" />
+```
+
+```c#
+public sealed partial class MainPage : Page
+{
+    public class OptionDataModel
+    {
+        public string Label;
+        public override string ToString()
+        {
+            return Label;
+        }
+    }
+
+    List<OptionDataModel> radioButtonItems;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        radioButtonItems = new List<OptionDataModel>();
+        radioButtonItems.Add(new OptionDataModel() { label = "Item 1" });
+        radioButtonItems.Add(new OptionDataModel() { label = "Item 2" });
+        radioButtonItems.Add(new OptionDataModel() { label = "Item 3" });
+    }
+}
+```
+
+## Create your own radio button group
+
+> It is recommended to use a RadioButtons control to group RadioButton element  unless you are using an older version of WinUI and cannot take advantage of it.
 
 Radio buttons work in groups. There are 2 ways you can group radio button controls:
 - Put them inside the same parent container.
@@ -165,6 +292,14 @@ The radio button groups look like this.
 
 A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**. You can actually compare the **IsChecked** property with a bool by getting the **Value** of the **IsChecked** property
 
+### Visuals to consider
+
+This illustration shows the proper way to position and space radio buttons.
+
+![A set of radio buttons](images/radiobutton-layout.png)
+
+![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
+
 ## Recommendations
 
 -   Make sure the purpose and current state of a set of radio buttons is clear.
@@ -172,14 +307,6 @@ A radio button has two states: *selected* or *cleared*. When a radio button is s
 -   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
 -   Use the default font unless your brand guidelines tell you to use another.
 -   Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.
-
-## Additional usage guidance
-
-This illustration shows the proper way to position and space radio buttons.
-
-![A set of radio buttons](images/radiobutton-layout.png)
-
-![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
 
 ## Get the sample code
 
