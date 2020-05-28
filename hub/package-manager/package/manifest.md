@@ -38,23 +38,23 @@ A package manifest must include a set of required items, and can also include fu
 
 Each field in the manifest file must be Pascal-cased and cannot be duplicated.
 
-For a complete list and descriptions of items in a manifest, see the manifest specification in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
+For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md) in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
 
 ### Minimal required schema
 
 #### [Minimal required schema](#tab/minschema/)
 
 ```yaml
-Id: string # publisher.package format
-Publisher: string # the name of the publisher
-Name: string # the name of the application
-Version: string # version numbering format
-License: string # the open source license or copyright
-InstallerType: string # enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx)
+Id: string # Publisher.package format.
+Publisher: string # The name of the publisher.
+Name: string # The name of the application.
+Version: string # Version numbering format.
+License: string # The open source license or copyright.
+InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
-  - Arch: string # enumeration of supported architectures
-  - URL: string # path to download installation file
-  - Sha256: string # SHA256 calculated from installer
+  - Arch: string # Enumeration of supported architectures.
+  - URL: string # Path to download installation file.
+  - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
 
@@ -81,40 +81,40 @@ ManifestVersion: 0.1.0
 #### [Complete schema](#tab/compschema/)
 
 ```yaml
-Id: string # publisher.package format
-Publisher: string # the name of the publisher
-Name: string # the name of the application
-AppMoniker: string # the common name someone may use to search for the package
-Version: string # version numbering format for package version
-Channel: string # a string representing the flight ring
-License: string # the open source license or copyright
-LicenseUrl: string # valid secure URL to license
-MinOSVersion: string # version numbering format for minimum version of Windows supported
-Description: string # description of the package
-Homepage: string # valid secure URL for the package
-Tags: list # additional strings a user would use to search for the package
-FileExtensions: list # list of file extensions the package could support
-Protocols: list # list of protocols the package provides a handler for
-Commands: list # list of commands or aliases the user would use to run the package
-InstallerType: string # enumeration of supported installer types (exe, msi, msix)
-Custom: string # custom switches passed to the installer
-Silent: string # switches passed to the installer for silent installation
-SilentWithProgress: string # switches passed to the installer for non-interactive install
-Interactive: string # experimental
-Language: string # experimental
-Log: string # specifies log redirection switches and path
-InstallLocation: string # specifies alternate location to install package
-Installers: # nested map of keys for specific installer
-  - Arch: string # enumeration of supported architectures
-  - URL: string # path to download installation file
-  - Sha256: string # SHA256 calculated from installer
-  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file
-  - Switches: # collection of entries to override root keys
-  - Scope: string # experimental
-  - SystemAppId: string # experimental
-Localization: # nested map of keys for localization
-  - Language: string # locale for display fields and localized URLs
-ManifestVersion: string # version number format for manifest version
+Id: string # Publisher.package format.
+Publisher: string # The name of the publisher.
+Name: string # The name of the application.
+AppMoniker: string # The common name someone may use to search for the package.
+Version: string # Version numbering format for package version.
+Channel: string # A string representing the flight ring.
+License: string # The open source license or copyright.
+LicenseUrl: string # Valid secure URL to license.
+MinOSVersion: string # Version numbering format for minimum version of Windows supported.
+Description: string # Description of the package.
+Homepage: string # Valid secure URL for the package.
+Tags: list # Additional strings a user would use to search for the package.
+FileExtensions: list # List of file extensions the package could support.
+Protocols: list # List of protocols the package provides a handler for.
+Commands: list # List of commands or aliases the user would use to run the package.
+InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
+Custom: string # Custom switches passed to the installer.
+Silent: string # Switches passed to the installer for silent installation.
+SilentWithProgress: string # Switches passed to the installer for non-interactive install.
+Interactive: string # Experimental.
+Language: string # Experimental.
+Log: string # Specifies log redirection switches and path.
+InstallLocation: string # Specifies alternate location to install package.
+Installers: # Nested map of keys for specific installer.
+  - Arch: string # Enumeration of supported architectures.
+  - URL: string # Path to download installation file.
+  - Sha256: string # SHA256 calculated from installer.
+  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
+  - Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
+  - Scope: string # Experimental.
+  - SystemAppId: string # Experimental.
+Localization: # Nested map of keys for localization.
+  - Language: string # Locale for display fields and localized URLs.
+ManifestVersion: string # Version number format for manifest version.
 ```
 
 #### [Good example](#tab/good/)
@@ -156,6 +156,9 @@ ManifestVersion: 0.1.0
 ```
 
 * * *
+
+> [!NOTE]
+> if your installer is an .exe and it was built using Nullsoft or Inno, you may specify those values instead. When Nullsoft or Inno are specified, the client will automatically set the silent and silent with progress install behaviors for the installer.
 
 ## Tips and best practices
 
