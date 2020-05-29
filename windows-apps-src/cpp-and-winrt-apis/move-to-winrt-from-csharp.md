@@ -22,7 +22,7 @@ In terms of what kinds of porting changes to expect, you could group them into f
 - [**Port the language projection**](#port-the-language-projection). The Windows Runtime (WinRT) is *projected* into various programming languages. Each of those language projections is designed to feel idiomatic to the programming language in question. For C#, some Windows Runtime types are projected as .NET types. So for example you'll be translating [**System.Collections.Generic.IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1) back to [**Windows.Foundation.Collections.IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1). Also in C#, some Windows Runtime operations are projected as convenient C# language features. An example is that in C# you use the `+=` operator syntax to register an event-handling delegate. So you'll be translating language features such as that back to the fundamental operation that's being performed (event registration, in this example).
 - [**Port language syntax**](#port-language-syntax). Many of these changes are simple mechanical transforms, replacing one symbol for another. For example, changing dot (`.`) to double-colon (`::`).
 - [**Port language procedure**](#port-language-procedure). Some of these can be simple, repetitive changes (such as `myObject.MyProperty` to `myObject.MyProperty()`). Others need deeper changes (for example, porting a procedure that involves the use of **System.Text.StringBuilder** to one that involves the use of **std::wostringstream**).
-- [**Porting tasks that are specific to C++/WinRT**](#porting-tasks-that-are-specific-to-cwinrt). Certain details of the Windows Runtime are taken care of impliclicly by C#, behind the scenes. Those details are done explicitly in C++/WinRT. An example is that you use an `.idl` file to define your runtime classes.
+- [**Porting-related tasks that are specific to C++/WinRT**](#porting-related-tasks-that-are-specific-to-cwinrt). Certain details of the Windows Runtime are taken care of impliclicly by C#, behind the scenes. Those details are done explicitly in C++/WinRT. An example is that you use an `.idl` file to define your runtime classes.
 
 The rest of this topic is structured according to that taxonomy.
 
@@ -83,6 +83,21 @@ namespace winrt::MyProject::implementation
     }
 };
 ```
+
+One final scenario is where the C# project that you're porting *binds* to the event handler from markup (for more background on that scenario, see [Functions in x:Bind](/windows/uwp/data-binding/function-bindings)).
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+You could just change that markup to the more simple `Click="OpenButton_Click"`. Or, if you prefer, you can keep that markup as it is. All you have to do to support it is to declare the event handler in IDL.
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> Declare the function as `void` even if you *implement* it as [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
 
 ## Port language syntax
 
@@ -225,7 +240,7 @@ For string building, C# has a built-in [**StringBuilder**](/dotnet/api/system.te
 
 Also see [Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring), and [Porting the **DisplayChangedFormats** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
 
-## Porting tasks that are specific to C++/WinRT
+## Porting-related tasks that are specific to C++/WinRT
 
 ### Define your runtime classes in IDL
 
