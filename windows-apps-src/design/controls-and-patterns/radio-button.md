@@ -52,7 +52,9 @@ If there are more than 8 options, use a [drop-down list](lists.md) or [list box]
 If the available options are based on the app's current context, or can otherwise vary dynamically, use a single-select [list box](lists.md).
 
 ## RadioButtons behavior
-The RadioButtons control has special navigation behavior that helps not only keyboard accelerant users, but also accessibility users to navigate the list more quickly and more easily.
+The RadioButtons control is the recommended way to group RadioButton elements/items. It has special navigation behavior that helps not only keyboard accelerant users, but also accessibility users to navigate the list more quickly and more easily.
+
+In addition to accelerated keyboard and accessibility functionality, the RadioButtons control also orients the visuals of the items for you, meaning you don't need to specify spacing or margins of the items within, as you might have to do if you were using a more primitive grouping control like `StackPanel` or `Grid`.
 
 ### Navigating a RadioButtons group
 
@@ -111,6 +113,15 @@ When you are navigating a RadioButtons list via the keyboard, as focus is placed
 ### Navigating with gamepad
 
 If you're navigating the RadioButtons container with a gamepad controller, the selection follows focus behavior will be disabled. When navigating a RadioButtons control, no gamepad engagement is necessary to initiate navigation or to select RadioButton elements within the group.
+
+## Accessibility behavior
+
+Below is a detailed table of, depending on the user interaction, what the narrator will announce when verbose.
+
+|Upon *first* putting focus into the group | Navigating to a selected item |
+|:--|:--|
+| "Group name" RadioButton collection, x of N selected | RadioButton "name" selected, x of N |
+|"Group name" RadioButton collection, none selected| RadioButton "name" not selected, x of N <br> *(If navigating with shift-arrow keys, meaning no selection following focus)* |
 
 ## Examples
 
@@ -292,6 +303,14 @@ The radio button groups look like this.
 
 A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**. You can actually compare the **IsChecked** property with a bool by getting the **Value** of the **IsChecked** property
 
+## Recommendations
+
+-   Make sure the purpose and current state of a set of radio buttons is clear.
+-   Limit the radio button's text content to a single line.
+-   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
+-   Use the default font unless your brand guidelines tell you to use another.
+-   Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.
+
 ### Visuals to consider
 
 This illustration shows the proper way to position and space radio buttons.
@@ -300,13 +319,7 @@ This illustration shows the proper way to position and space radio buttons.
 
 ![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
 
-## Recommendations
-
--   Make sure the purpose and current state of a set of radio buttons is clear.
--   Limit the radio button's text content to a single line.
--   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
--   Use the default font unless your brand guidelines tell you to use another.
--   Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.
+> It's important to note when using the RadioButtons control to group your items that **no visuals need to be specified** because the control spaces and orients the items automatically for you.
 
 ## Get the sample code
 
