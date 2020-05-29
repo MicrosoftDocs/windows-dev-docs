@@ -2,13 +2,15 @@
 Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
-ms.date: 12/19/2018
+ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, mobile operators, mobile billing, mobile operator billing
 ms.localizationpriority: medium
 ---
 # Mobile operator billing
 
+> [!NOTE]
+> If you're looking for support regarding payouts, including configuring payout accounts, missing payouts, putting payouts on hold, or anything else, contact support [here](https://developer.microsoft.com/windows/support).
 
 The Microsoft Store offers Mobile Operator Billing as a payment method for devices running Windows 10, phones running Windows 10 Mobile, and Xbox One consoles. If a customer’s mobile operator supports this capability, the customer can add Mobile Operator Billing as a payment method and use it to make Store purchases using their mobile account.
 
@@ -47,18 +49,3 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | United Arab Emirates | Etisalat                                                |
 | United States        | Sprint, Verizon                                         |
 | United Kingdom       | O2, 3 UK, EE                                            |
-
- 
-
-
-
- 
-
-
- 
-
- 
-
-
-
-
