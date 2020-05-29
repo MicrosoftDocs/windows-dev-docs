@@ -75,6 +75,36 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
  The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
 
+
+### Terminal sings you a song ([v1.1 preview feature](https://insider.windows.com/))
+
+This is just a test to demonstrate incorporating preview features via a release branch in the GitHub repo. The preview feature link would like to an FAQ section once we add an FAQ page explaining how Windows Insider previews work and how to sign up.
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```bash
+telnet towel.blinkenlights.nl
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+telnet towel.blinkenlights.nl
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+telnet towel.blinkenlights.nl
+```
+
+---
+<!-- End tab selectors.  -->
+
+> [!IMPORTANT]
+> This feature is only available in the [v1.1 preview release](https://insider.windows.com/) of Windows Terminal.
+
 ### Target a directory
 
 To specify the folder that should be used as the starting directory for the console, in this case the d:\ directory, enter:
