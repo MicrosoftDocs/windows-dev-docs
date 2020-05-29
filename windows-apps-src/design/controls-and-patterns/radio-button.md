@@ -158,7 +158,7 @@ The RadioButtons control is easy to set up and use and ensures proper and expect
 
 ![Radio buttons in two groups](images/DefaultRadioButtonGroup.png)
 
-### Definding multiple columns
+### Defining multiple columns
 If you want to define multiple columns of RadioButton items with a RadioButtons control, you can do so by specifying the `MaxColumns` property on the RadioButtons control element:
 
 ```xaml
