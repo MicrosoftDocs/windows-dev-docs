@@ -55,7 +55,11 @@ Background tasks that run in the same process as the foreground app do not need 
 
 > **Important**  Starting in Windows 10, apps are no longer required to be on the lock screen as a prerequisite to run background tasks.
 
-Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any type of background task. This method will return [**BackgroundAccessStatus.DeniedByUser**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) if the user has explicitly denied background task permissions for your app in the device's settings. For more information on user choice around background activity and Battery Saver, see [Optimize Background Activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
+Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**GetAccessState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) and check that the app is not denied from running in the background. Ensure that [**GetAccessStatus**] does not return one of the denied [**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enums. For example, this method will return (https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) if the user has explicitly denied background task permissions for your app in the device's settings.
+
+If your app is denied from running in the background, your app should call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) and ensure the response is not denied before registering background tasks.
+
+For more information on user choice around background activity and Battery Saver, see [Optimize Background Activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## Background task checklist
 
 *Applies to both in-process and out-of-process background tasks*
