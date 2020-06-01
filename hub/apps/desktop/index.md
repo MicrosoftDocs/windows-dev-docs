@@ -53,7 +53,7 @@ The following table introduces the platforms. For an in-depth comparison of thes
 <tr class="even">
 <td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></td>
 <td><p>A .NET-based platform that is designed for managed line-of-business apps with a lightweight UI model. These apps can target <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">Samples</a></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a></td>
 </tr>
 </tbody>
 </table>
