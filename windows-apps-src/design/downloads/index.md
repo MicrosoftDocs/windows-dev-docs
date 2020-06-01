@@ -75,6 +75,10 @@ Helper functions, custom controls, and app services.<br />
 <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
+        ![Windows Template Studio thumbnail](images/Windows-template-studio.png)
+        <b>Windows Template Studio</b><br>
+        Quickly scaffold a UWP app using a wizard-based UI.<br />
+        <a href="https://aka.ms/wtsinstall">Download</a>
     :::column-end:::
 :::row-end:::
 
