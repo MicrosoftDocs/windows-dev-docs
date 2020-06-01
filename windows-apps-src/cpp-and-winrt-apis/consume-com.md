@@ -163,9 +163,19 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 ## Full source code listing of a minimal Direct2D application
 
-If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like.
+> [!NOTE]
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+If you want to build and run this source code example then first install (or update to) the latest version of the C++/WinRT Visual Studio Extension (VSIX); see the note above. Then, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Target the latest generally-available (that is, not preview) version of the Windows SDK.
+
+### Step 1. Edit `pch.h`
 
 Open `pch.h`, and add `#include <unknwn.h>` immediately after including `windows.h`. This is because we're using [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). It's a good idea to `#include <unknwn.h>` explicity whenever you use **winrt::get_unknown**, even if that header has been included by another header.
+
+> [!NOTE]
+> If you omit this step then you'll see the build error *'get_unknown': identifier not found*.
+
+### Step 2. Edit `App.cpp`
 
 Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
