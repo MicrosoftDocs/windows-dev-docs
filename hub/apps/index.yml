@@ -37,7 +37,7 @@ productDirectory:
       - url: /windows/apps/desktop/
         text: Get started
   - title: Windows UI Library (WinUI)
-    imageSrc: images/logo-winui.jpg
+    imageSrc: images/logo-winui.png
     links:
       - url: /windows/apps/winui/
         text: Get started
