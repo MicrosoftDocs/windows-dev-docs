@@ -7,6 +7,9 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
+dev_langs:
+  - csharp
+  - cppwinrt
 ---
 
 # Launch the Windows Settings app
@@ -43,6 +46,9 @@ Alternatively, your app can call the [**LaunchUriAsync**](https://docs.microsoft
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
+```
+```cppwinrt
+bool result = Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:privacy-webcam")).get();
 ```
 
 The code above launches the privacy settings page for the camera:
