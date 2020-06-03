@@ -14,7 +14,7 @@ The Windows developer docs are regularly updated with new and improved informati
 
 Here are some topics that have recently seen significant updates as of date ending June 2nd, 2020. 
 
-Note: with the release of Windows 10 build 19041 and some systemic restructuring of the documentation, this month the list is *very* long.
+Note: with the release of Windows 10 build 19041 and some systemic restructuring of the documentation, this month the list is *very* long. For a specific list of APIs added as part of Windows 10 build 19041, please see [this list](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
 ## WinRT Conceptual
 
