@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 
-![An auto suggest box](images/controls/controls_autosuggest_expanded01.png)
+![An auto suggest box](images/controls_autosuggest_expanded01.png)
 
 **Get the Windows UI Library**
 
