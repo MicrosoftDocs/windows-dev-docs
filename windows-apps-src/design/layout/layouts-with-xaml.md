@@ -401,6 +401,16 @@ else
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
 }
 ```
+```cppwinrt
+if (Windows::System::Profile::AnalyticsInfo::VersionInfo().DeviceFamily() == L"Windows.Tablet")
+{
+    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage_Tablet>(), box_value(e.Arguments()));
+}
+else
+{
+    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage>(), box_value(e.Arguments()));
+}
+```
 
 You can also use different criteria to determine which page to navigate to. For more examples, see the [Tailored multiple views sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews), which uses the [**GetIntegratedDisplaySize**](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) function to check the physical size of an integrated display.
 
