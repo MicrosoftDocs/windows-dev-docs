@@ -48,7 +48,7 @@ Alternatively, your app can call the [**LaunchUriAsync**](https://docs.microsoft
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 ```cppwinrt
-bool result = Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:privacy-webcam")).get();
+bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:privacy-webcam"));
 ```
 
 The code above launches the privacy settings page for the camera:
