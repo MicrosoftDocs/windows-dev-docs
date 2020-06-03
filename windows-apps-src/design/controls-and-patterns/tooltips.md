@@ -70,9 +70,9 @@ When should you use a tooltip? To decide, consider these questions:
 </tr>
 </table>
 
-A tooltip in the Bing Maps app.
+A tooltip in the Windows Maps app.
 
-![A tooltip in the Bing Maps app](images/control-examples/tool-tip-maps.png)
+![A tooltip in the Windows Maps app](images/control-examples/tool-tip-maps.png)
 
 ## Create a tooltip
 
