@@ -33,7 +33,7 @@ You can open a new tab of the default profile by pressing <kbd>ctrl+shift+t</kbd
 
 ## Open a new pane
 
-You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>alt+shift+d</kbd>. This key binding will open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
+You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>alt+shift+plus</kbd> for a vertical pane or <kbd>alt+shift+minus</kbd> for a horizontal one. This key binding will open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
 
 ## Configuration
 
