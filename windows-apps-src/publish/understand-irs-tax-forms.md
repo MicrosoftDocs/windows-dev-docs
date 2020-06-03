@@ -36,11 +36,11 @@ The tax forms will be sent to you from the following addresses:
 | Business Group         | Legal Entity          | Address                                          |
 |------------------------|-----------------------|--------------------------------------------------|
 | Windows, Office, Azure | Microsoft Ireland Operations Limited (Payment is made by Microsoft Corporation via Microsoft Ireland acting as qualified intermediary for Microsoft Corporation) | One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland|
-| Advertising            | Microsoft Ireland Operations Limited (Payment is made by Microsoft Online Inc. via Microsoft Ireland acting as payout agent for Microsoft Online Inc.) | One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland |
+| Advertising\*          | Microsoft Ireland Operations Limited (Payment is made by Microsoft Online Inc. via Microsoft Ireland acting as payout agent for Microsoft Online Inc.) | One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland |
 | Advertising            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 >[!NOTE]
-> Citizens of the following countries earning Advertising revenue will be paid through Microsoft Ireland Operations Limited: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Isle of Man, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, United Kingdom
+> \* Citizens of the following countries earning Advertising revenue will be paid through Microsoft Ireland Operations Limited: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Isle of Man, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, United Kingdom
 
 ## For developers located in the United States
 
