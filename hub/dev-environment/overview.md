@@ -1,6 +1,6 @@
 ---
-title: Optimize your Windows development environment
-description: A guide to help you optimize your Windows development environment.
+title: Set up your Windows 10 development environment
+description: A guide to help you setup and optimize your Windows development environment. We will get you started installing the languages and tools that you need to develop using Windows or Windows Subsystem for Linux.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -11,9 +11,36 @@ ms.localizationpriority: medium
 ms.date: 06/01/20
 ---
 
-# Optimize your Windows 10 development environment
+# Set up your Windows 10 development environment
 
-Statement about how developers can use Windows for xx (things that they didn't think were possible?)
+This guide will help you get started with installing and setting up the languages and tools you need to develop on Windows or Windows Subsystem for Linux.
+
+## Developer paths
+
+:::row:::
+    :::column:::
+       [![JavaScrip / NodeJS](../images/nodejs.png)](https://docs.microsoft.com/windows/nodejs)<br>
+        **[Get started with NodeJS](https://docs.microsoft.com/windows/nodejs)**<br>
+        Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
+    :::column-end:::
+    :::column:::
+       [![Python](../images/python.png)](https://docs.microsoft.com/windows/python)<br>
+        **[Get started with Python](https://docs.microsoft.com/windows/python)**<br>
+        Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.
+    :::column-end:::
+    :::column:::
+       [![Android / Java](../images/android-java.png)](https://docs.microsoft.com/windows/android)<br>
+        **[Get started with Android](https://docs.microsoft.com/windows/android)**<br>
+        Install Android Studio, or choose to use a cross-platform solution like Xamarin, React, or Cordova (Ionic/PhoneGap), and get your development environment setup on Windows.
+    :::column-end:::
+    :::column:::
+       [![C#](../images/c-sharp.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
+        **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
+        [Install C# support for Visual Studio Code](https://code.visualstudio.com/docs/languages/csharp) and get your development environment setup on Windows.
+    :::column-end:::
+:::row-end:::
+
+## Developer tools
 
 :::row:::
     :::column:::
@@ -38,26 +65,28 @@ Statement about how developers can use Windows for xx (things that they didn't t
     :::column-end:::
 :::row-end:::
 
+## Developer platforms
+
 :::row:::
     :::column:::
        [![VS Code](../images/vscode.png)](https://code.visualstudio.com/docs)<br>
         **[VS Code](https://code.visualstudio.com/docs)**<br>
-        A lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
+        [Install VS Code](https://code.visualstudio.com/download), a lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
     :::column-end:::
     :::column:::
        [![Azure](../images/azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)**<br>
-        A complete cloud platform that can host your existing applications and streamline new application development.
+        [Set up an Azure account](https://azure.microsoft.com/free/) and try the complete cloud platform that can host your existing applications and streamline new application development.
     :::column-end:::
     :::column:::
        [![.NET](../images/net.png)](https://dotnet.microsoft.com/)<br>
         **[.NET](https://dotnet.microsoft.com/)**<br>
-        A developer platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.
+        [Install .NET](https://dotnet.microsoft.com/download), the developer platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.
     :::column-end:::
     :::column:::
        [![PowerShell](../images/powershell.png)](https://docs.microsoft.com/powershell/)<br>
         **[PowerShell](https://docs.microsoft.com/powershell/)**<br>
-        A cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.
+        [Install PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7), the cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.
     :::column-end:::
 :::row-end:::
 
@@ -67,32 +96,25 @@ Statement about how developers can use Windows for xx (things that they didn't t
 
 <br>
 
-## Two operating systems
-
-Explain when to use WSL vs Windows and about sharing project files across file systems.
-
 ![Filler image](../images/flashy-office.png)
 
-## Tips
+## Developer tips
 
 What are the top tips users need to know about?
 
-## Mac to Windows guide
-
-Tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.
+* Adding Windows Defender exclusions?
+* Guidance on where to store project files when working between Windows and WSL file systems?
+* Other stuff to change that slows down or annoys devs using Windows 10?
 
 ![Filler image](../images/flashy-office2.png)
 
-## Development paths
+## Transitioning between Mac and Windows
 
-### Get started with NodeJS on Windows
+Read our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment, including [keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts), [trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts), [terminal and shell equivalents](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell), and [equivalent apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities).
 
-Short description of the NodeJS development pathways with links to get started.
+## Additional resources
 
-### Get started with Python on Windows
-
-Short description of the Python development pathways with links to get started.
-
-### Get started with Android on Windows
-
-Short description of the Android development pathways with links to get started.
+* [Microsoft Edge web browser docs](https://docs.microsoft.com/microsoft-edge/)
+* [Try WebHint to improve your website](https://webhint.io/)
+* [Check out Microsoft Graph](https://docs.microsoft.com/graph/)
+* [Microsoft's Game Stack documentation](https://docs.microsoft.com/gaming/)
