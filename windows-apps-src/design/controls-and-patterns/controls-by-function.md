@@ -621,7 +621,7 @@ A progress bar that shows a specific value.
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-![Indeterminate progress bar control](images/controls/progress-bar-indeterminate.png)
+![Indeterminate progress bar control](images/controls/progress-bar-indeterminate.gif)
 
 A progress bar that shows indeterminate progress.
 
