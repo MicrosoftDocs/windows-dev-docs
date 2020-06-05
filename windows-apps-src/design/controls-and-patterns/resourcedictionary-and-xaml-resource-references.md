@@ -143,7 +143,7 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page�
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Resources().Lookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
+        Windows::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
     }
 ```
 
@@ -178,10 +178,9 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Application().Current()
-                                                      .Resources()
-                                                      .Lookup(winrt::box_value(L"appButtonStyle"))
-                                                      .as<Windows::UI::Xaml::Style>();
+        Windows::UI::Xaml::Style style = Application::Current().Resources()
+                                                               .TryLookup(winrt::box_value(L"appButtonStyle"))
+                                                               .as<Windows::UI::Xaml::Style>();
     }
 ```
 
@@ -282,7 +281,7 @@ To access that element’s resources from code, use that element’s [Resources]
     MainPage::MainPage()
     {
         InitializeComponent();
-        textBlock3().Text(unbox_value<hstring>(border().Resources().Lookup(winrt::box_value(L"greeting"))));
+        textBlock3().Text(unbox_value<hstring>(border().Resources().TryLookup(winrt::box_value(L"greeting"))));
     }
 ```
 
