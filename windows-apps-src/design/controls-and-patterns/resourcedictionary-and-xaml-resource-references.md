@@ -11,6 +11,9 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
 ---
 # ResourceDictionary and XAML resource references
 
@@ -126,7 +129,7 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page�
 </Page>
 ```
 
-```CSharp
+```csharp
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -134,6 +137,13 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page�
             this.InitializeComponent();
             Style redButtonStyle = (Style)this.Resources["redButtonStyle"];
         }
+    }
+```
+```cppwinrt
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+        Windows::UI::Xaml::Style style = Resources().Lookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
     }
 ```
 
@@ -154,7 +164,7 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
 </Application>
 ```
 
-```CSharp
+```csharp
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -162,6 +172,16 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
             this.InitializeComponent();
             Style appButtonStyle = (Style)Application.Current.Resources["appButtonStyle"];
         }
+    }
+```
+```cppwinrt
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+        Windows::UI::Xaml::Style style = Application().Current()
+                                                      .Resources()
+                                                      .Lookup(winrt::box_value(L"appButtonStyle"))
+                                                      .as<Windows::UI::Xaml::Style>();
     }
 ```
 
@@ -174,7 +194,7 @@ There are two things to keep in mind when doing this.
 
 You can avoid both problems if you add the resource in the [Application.OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method, like this.
 
-```CSharp
+```csharp
 // App.xaml.cs
     
 sealed partial class App : Application
@@ -190,6 +210,26 @@ sealed partial class App : Application
         }
     }
 }
+```
+```cppwinrt
+// App.cpp
+
+void App::OnLaunched(LaunchActivatedEventArgs const& e)
+{
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
+    if (rootFrame == nullptr)
+    {
+        Windows::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
+        Resources().Insert(winrt::box_value(L"brush"), winrt::box_value(brush));
+        // … Other code that VS generates for you …
 ```
 
 ## Every FrameworkElement can have a ResourceDictionary
@@ -228,7 +268,7 @@ To access that element’s resources from code, use that element’s [Resources]
 
 ```
 
-```CSharp
+```csharp
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -236,6 +276,13 @@ To access that element’s resources from code, use that element’s [Resources]
             this.InitializeComponent();
             textBlock3.Text = (string)border.Resources["greeting"];
         }
+    }
+```
+```cppwinrt
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+        textBlock3().Text(unbox_value<hstring>(border().Resources().Lookup(winrt::box_value(L"greeting"))));
     }
 ```
 
