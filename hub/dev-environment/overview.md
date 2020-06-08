@@ -8,7 +8,7 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: 
 ms.localizationpriority: medium
-ms.date: 06/01/20
+ms.date: 07/01/2020
 ---
 
 # Set up your Windows 10 development environment
@@ -66,7 +66,7 @@ This guide will help you get started with installing and setting up the language
 :::row-end:::
 :::row:::
     :::column:::
-       [![VS Code](../images/vscode.png)](https://code.visualstudio.com/docs)<br>
+       [![VS Code](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
         **[VS Code](https://code.visualstudio.com/docs)**<br>
         A lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
         [Install VS Code](https://code.visualstudio.com/download)
@@ -78,7 +78,7 @@ This guide will help you get started with installing and setting up the language
         [Install Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio)
     :::column-end:::
     :::column:::
-       [![Azure](../images/azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
+       [![Azure](../images/Azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform that can host your existing applications and streamline new application development. Azure integrates the cloud services that you need to develop, test, deploy, and manage your applications, all while taking advantage of the efficiencies of cloud computing.<br>
         [Set up an Azure account](https://azure.microsoft.com/free/)
