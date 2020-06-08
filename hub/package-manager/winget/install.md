@@ -55,19 +55,19 @@ The options allow you to customize the install experience to meet your needs.
 The following example installs a specific version of an application.
 
 ```CMD
-winget install powertoys --version 0.15.2
+winget install powertoys --version=0.15.2 --exact
 ```
 
 The following example installs an application from its ID.
 
 ```CMD
-winget install --id Microsoft.PowerToys
+winget install --id=Microsoft.PowerToys --exact
 ```
 
 The following example installs an application by version and ID.
 
 ```CMD
-winget install --id Microsoft.PowerToys --version 0.15.2
+winget install --id=Microsoft.PowerToys --version=0.15.2 --exact
 ```
 
 ## Multiple selections
