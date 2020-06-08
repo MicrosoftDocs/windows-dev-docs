@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" width="455" height="500" viewBox="-26 -20 507 552"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xml:space="preserve">
+	<defs>
+		<clipPath id="hexagon">
+			<path d="M435.279,113.284L247.191,4.692c-10.835-6.257-28.567-6.257-39.402,0L19.701,113.284
+				C8.865,119.539,0,134.896,0,147.408v217.185c0.843,14.571,8.286,26.639,19.701,34.123l188.088,108.592
+				c10.835,6.257,28.567,6.257,39.402,0l188.088-108.592c12.248-8.146,19.219-20.408,19.701-34.123V147.408
+				C454.54,134.243,446.657,120.965,435.279,113.284z"/>
+		</clipPath>
+
+		<linearGradient id="top" gradientUnits="userSpaceOnUse" x1="121.0946" y1="55.8074" x2="261.7725" y2="235.867">
+			<stop offset="0" style="stop-color: #A47EDE"/>
+			<stop offset="1" style="stop-color: #9866D3"/>
+		</linearGradient>
+
+		<linearGradient id="centre" gradientUnits="userSpaceOnUse" x1="314.1754" y1="207.291" x2="443.4638" y2="372.7726">
+			<stop offset="0" style="stop-color: #3B009B"/>
+			<stop offset="1" style="stop-color: #390086"/>
+		</linearGradient>
+
+		<linearGradient id="bottom" gradientUnits="userSpaceOnUse" x1="115.2882" y1="326.1631" x2="252.7405" y2="502.094">
+			<stop offset="0" style="stop-color: #340084"/>
+			<stop offset="1" style="stop-color: #290064"/>
+		</linearGradient>
+	</defs>
+
+	<g clip-path="url(#hexagon)">
+		<rect fill="url(#centre)" x="222.588" y="124.487" width="267.464" height="273.493"/>
+		<polygon fill="url(#bottom)" points="490.052,407.802 145.845,208.63 -29.911,208.63 -29.911,538.353 490.052,538.353"/>
+		<polygon fill="url(#top)" points="-29.911,405.093 490.052,104.208 490.052,-14.513 -29.911,-14.513"/>
+	</g>
+
+	<path id="c" fill="#fff" d="M75.83,256.001c-0.891-148.089,197.459-213.479,282.996-75.878l-65.635,37.98
+		c-39.622-65.534-138.001-42.101-141.532,37.897c1.06,73.729,97.754,107.978,141.536,37.893l65.635,37.979
+		C283.448,462.735,79.632,415.653,75.83,256.001z"/>
+
+	<g id="sharp" aria-label="&#x266F;" data-name="&#x266F;">
+		<polygon fill="#fff" points="326,213 338.5,213 329.959,295.5 317.224,295.5"/>
+		<polygon fill="#fff" points="352.776,213 365.276,213 356.735,295.5 344,295.5"/>
+		<rect fill="#fff" x="312" y="232.592" width="62.5" height="12.072"/>
+		<rect fill="#fff" x="308.5" y="262" width="62.5" height="12.072"/>
+	</g>
+</svg>

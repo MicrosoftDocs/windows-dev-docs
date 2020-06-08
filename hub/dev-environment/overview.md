@@ -19,28 +19,28 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![JavaScrip / NodeJS](../images/nodejs.png)](https://docs.microsoft.com/windows/nodejs)<br>
+       [![JavaScrip / NodeJS](../images/Nodejs.svg)](https://docs.microsoft.com/windows/nodejs)<br>
         **[Get started with NodeJS](https://docs.microsoft.com/windows/nodejs)**<br>
         Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Python](../images/python.png)](https://docs.microsoft.com/windows/python)<br>
+       [![Python](../images/Python.svg)](https://docs.microsoft.com/windows/python)<br>
         **[Get started with Python](https://docs.microsoft.com/windows/python)**<br>
         Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Android / Java](../images/android-java.png)](https://docs.microsoft.com/windows/android)<br>
+       [![Android](../images/Android.svg)](https://docs.microsoft.com/windows/android)<br>
         **[Get started with Android](https://docs.microsoft.com/windows/android)**<br>
         Install Android Studio, or choose to use a cross-platform solution like Xamarin, React, or Cordova (Ionic/PhoneGap), and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
-       [![C#](../images/c-sharp.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
+       [![C#](../images/Csharp.svg)](https://docs.microsoft.com/dotnet/csharp/)<br>
         **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
         [Install C# support for Visual Studio Code](https://code.visualstudio.com/docs/languages/csharp) and get your development environment setup on Windows.
     :::column-end:::
 :::row-end:::
 
-## Developer tools
+## Developer tools and platforms
 
 :::row:::
     :::column:::
@@ -64,29 +64,30 @@ This guide will help you get started with installing and setting up the language
         A set of utilities for power users to tune and streamline their Windows experience for greater productivity.
     :::column-end:::
 :::row-end:::
-
-## Developer platforms
-
 :::row:::
     :::column:::
        [![VS Code](../images/vscode.png)](https://code.visualstudio.com/docs)<br>
         **[VS Code](https://code.visualstudio.com/docs)**<br>
-        [Install VS Code](https://code.visualstudio.com/download), a lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
+        A lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
+        [Install VS Code](https://code.visualstudio.com/download)
+    :::column-end:::
+    :::column:::
+       [![Visual Studio](../images/visualstudio.png)](https://docs.microsoft.com/visualstudio/windows/)<br>
+        **[Visual Studio](https://docs.microsoft.com/visualstudio/windows/)**<br>
+        An integrated development environment that you can use to edit, debug, build code, and then publish an app. Over and above the standard editor and debugger that most IDEs provide, Visual Studio includes compilers, code completion tools, graphical designers, and many more features to ease the software development process.<br>
+        [Install Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio)
     :::column-end:::
     :::column:::
        [![Azure](../images/azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)**<br>
-        [Set up an Azure account](https://azure.microsoft.com/free/) and try the complete cloud platform that can host your existing applications and streamline new application development.
+        A complete cloud platform that can host your existing applications and streamline new application development. Azure integrates the cloud services that you need to develop, test, deploy, and manage your applications, all while taking advantage of the efficiencies of cloud computing.<br>
+        [Set up an Azure account](https://azure.microsoft.com/free/)
     :::column-end:::
     :::column:::
        [![.NET](../images/net.png)](https://dotnet.microsoft.com/)<br>
-        **[.NET](https://dotnet.microsoft.com/)**<br>
-        [Install .NET](https://dotnet.microsoft.com/download), the developer platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.
-    :::column-end:::
-    :::column:::
-       [![PowerShell](../images/powershell.png)](https://docs.microsoft.com/powershell/)<br>
-        **[PowerShell](https://docs.microsoft.com/powershell/)**<br>
-        [Install PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7), the cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.
+        **[.NET](https://docs.microsoft.com/dotnet/standard/get-started/)**<br>
+        An open source development platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.<br>
+        [Install .NET](https://dotnet.microsoft.com/download)
     :::column-end:::
 :::row-end:::
 
@@ -111,6 +112,14 @@ What are the top tips users need to know about?
 ## Transitioning between Mac and Windows
 
 Read our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment, including [keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts), [trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts), [terminal and shell equivalents](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell), and [equivalent apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities).
+
+## Developer stories
+
+Links to a few stories from devs moving from Mac to Windows – “It wasn’t as hard as I thought – I can still use all my favorite open source tools AND I get to use use Office and tools which are only available on Windows”.
+
+## End to end tutorials
+
+Break down four scenarios and walking through the tools and set-up required for each, ie 'Build an Android app using Xamarine with a MySQL database deployed on Azure', 'Build a NodeJS web app using Next.js that displays a map control and integrates real-time weather', 'Build a Python web app using Django and a Azure Vision ML model` ...?
 
 ## Additional resources
 
