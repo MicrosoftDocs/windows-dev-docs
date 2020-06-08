@@ -238,7 +238,6 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
         ```cpp
         #include "pch.h"
         #include "App.h"
-        #include "App.g.cpp"
         using namespace winrt;
         using namespace Windows::UI::Xaml;
         namespace winrt::MyUWPApp::implementation
