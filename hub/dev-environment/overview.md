@@ -19,22 +19,22 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![JavaScrip / NodeJS](../images/Nodejs.svg)](https://docs.microsoft.com/windows/nodejs)<br>
+       [![JavaScrip / NodeJS](../images/nodejs-logo.png)](https://docs.microsoft.com/windows/nodejs)<br>
         **[Get started with NodeJS](https://docs.microsoft.com/windows/nodejs)**<br>
         Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Python](../images/Python.svg)](https://docs.microsoft.com/windows/python)<br>
+       [![Python](../images/python-logo.png)](https://docs.microsoft.com/windows/python)<br>
         **[Get started with Python](https://docs.microsoft.com/windows/python)**<br>
         Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Android](../images/Android.svg)](https://docs.microsoft.com/windows/android)<br>
+       [![Android](../images/android-logo.png)](https://docs.microsoft.com/windows/android)<br>
         **[Get started with Android](https://docs.microsoft.com/windows/android)**<br>
         Install Android Studio, or choose to use a cross-platform solution like Xamarin, React, or Cordova (Ionic/PhoneGap), and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
-       [![C#](../images/Csharp.svg)](https://docs.microsoft.com/dotnet/csharp/)<br>
+       [![C#](../images/csharp-logo.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
         **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
         [Install C# support for Visual Studio Code](https://code.visualstudio.com/docs/languages/csharp) and get your development environment setup on Windows.
     :::column-end:::
