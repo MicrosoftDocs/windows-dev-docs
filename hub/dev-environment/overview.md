@@ -15,7 +15,7 @@ ms.date: 07/01/2020
 
 This guide will help you get started with installing and setting up the languages and tools you need to develop on Windows or Windows Subsystem for Linux.
 
-## Developer paths
+## Development paths
 
 :::row:::
     :::column:::
@@ -40,7 +40,7 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
 :::row-end:::
 
-## Developer tools and platforms
+## Tools and platforms
 
 :::row:::
     :::column:::
@@ -99,7 +99,7 @@ This guide will help you get started with installing and setting up the language
 
 ![Filler image](../images/flashy-office.png)
 
-## Developer tips
+## Tips and tricks
 
 What are the top tips users need to know about?
 
@@ -113,7 +113,7 @@ What are the top tips users need to know about?
 
 Read our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment, including [keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts), [trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts), [terminal and shell equivalents](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell), and [equivalent apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities).
 
-## Developer stories
+## Stories from developers who have switched
 
 Links to a few stories from devs moving from Mac to Windows – “It wasn’t as hard as I thought – I can still use all my favorite open source tools AND I get to use use Office and tools which are only available on Windows”.
 
