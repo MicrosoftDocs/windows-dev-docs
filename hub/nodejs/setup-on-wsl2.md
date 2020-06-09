@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
-ms.date: 09/19/2019
+ms.date: 06/09/2020
 ---
 
 # Set up your Node.js development environment with WSL 2
@@ -46,7 +46,12 @@ There are multiple ways to install Node.js. We recommend using a version manager
 
 1. Open your Ubuntu 18.04 command line.
 2. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
-3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
+3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+
+> [!NOTE]
+> At the time of publication, NVM v0.35.3 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+
 4. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 5. List which versions of Node are currently installed (should be none at this point): `nvm ls`
 
@@ -62,10 +67,6 @@ There are multiple ways to install Node.js. We recommend using a version manager
 10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use node` to switch to the Current version, or `nvm use --lts` to switch to the LTS version. You can also use the specific number for any additional versions you've installed, like `nvm use v8.2.1`. (To list all of the versions of Node.js available, use the command: `nvm ls-remote`).
 
 If you are using NVM to install Node.js and NPM, you should not need to use the SUDO command to install new packages.
-
-> [!NOTE]
-> At the time of publication, NVM v0.35.2 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
-Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## Alternative version managers
 
