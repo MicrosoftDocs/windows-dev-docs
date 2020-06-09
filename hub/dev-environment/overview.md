@@ -31,12 +31,12 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Android](../images/android-logo.png)](https://docs.microsoft.com/windows/android)<br>
         **[Get started with Android](https://docs.microsoft.com/windows/android)**<br>
-        Install Android Studio, or choose to use a cross-platform solution like Xamarin, React, or Cordova (Ionic/PhoneGap), and get your development environment setup on Windows.
+        Install Android Studio, or choose a cross-platform solution like Xamarin, React, or Cordova, and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
        [![C#](../images/csharp-logo.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
         **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
-        [Install C# support for Visual Studio Code](https://code.visualstudio.com/docs/languages/csharp) and get your development environment setup on Windows.
+        Install C# support for Visual Studio or Visual Studio Code and get your development environment setup on Windows.
     :::column-end:::
 :::row-end:::
 
@@ -56,31 +56,31 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Package Manager](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows Package Manager](https://docs.microsoft.com/windows/package-manager/)**<br>
-        Use the comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows 10.
+        Use this comprehensive package manager with your command line to install applications on Windows 10.
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
         **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
-        A set of utilities for power users to tune and streamline their Windows experience for greater productivity.
+        Tune and streamline your Windows experience for greater productivity with this set of power user utilities.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
        [![VS Code](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
         **[VS Code](https://code.visualstudio.com/docs)**<br>
-        A lightweight but powerful source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
+        A lightweight source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
         [Install VS Code](https://code.visualstudio.com/download)
     :::column-end:::
     :::column:::
        [![Visual Studio](../images/visualstudio.png)](https://docs.microsoft.com/visualstudio/windows/)<br>
         **[Visual Studio](https://docs.microsoft.com/visualstudio/windows/)**<br>
-        An integrated development environment that you can use to edit, debug, build code, and then publish an app. Over and above the standard editor and debugger that most IDEs provide, Visual Studio includes compilers, code completion tools, graphical designers, and many more features to ease the software development process.<br>
+        An integrated development environment that you can use to edit, debug, build code, and publish apps, including compilers, intellisense code completion, and many more features.<br>
         [Install Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio)
     :::column-end:::
     :::column:::
        [![Azure](../images/Azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)**<br>
-        A complete cloud platform that can host your existing applications and streamline new application development. Azure integrates the cloud services that you need to develop, test, deploy, and manage your applications, all while taking advantage of the efficiencies of cloud computing.<br>
+        A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
         [Set up an Azure account](https://azure.microsoft.com/free/)
     :::column-end:::
     :::column:::
@@ -116,6 +116,14 @@ Read our [guide to transitioning between between a Mac and Windows](https://docs
 ## Developer stories
 
 Links to a few stories from devs moving from Mac to Windows – “It wasn’t as hard as I thought – I can still use all my favorite open source tools AND I get to use use Office and tools which are only available on Windows”.
+
+* Ken Wang, ["Think Different — Software Developer Switching from Mac to Windows"](https://medium.com/@kenwang_57215/software-developer-switching-from-mac-to-windows-66773d331910)
+* Owen Williams, ["The state of switching to Windows from Mac in 2019"](https://char.gd/blog/2019/the-state-of-switching-to-windows-from-mac-in-2019)
+* Brent Rose, ["What Happened When I Switched From Mac to Windows"](https://www.wired.com/story/rant-switching-from-mac-to-windows/)
+* Jack Franklin, ["Using Windows 10 and WSL for frontend web development"](https://www.jackfranklin.co.uk/blog/frontend-development-with-windows-10/)
+* Aaron Schlesinger, ["Coming from a Mac to Windows & WSL 2"](https://arschles.com/blog/coming-from-a-mac-to-windows-wsl-2/)
+* David Heinemeier Hansson, ["Back to windows after twenty years"](https://m.signalvnoise.com/back-to-windows-after-twenty-years/)
+* Ray Elenteny, ["Why I returned to Windows"](https://dzone.com/articles/why-i-returned-to-windows)
 
 ## End to end tutorials
 
