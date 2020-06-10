@@ -609,7 +609,7 @@ void AddAccelerator(
         Modifiers = keyModifiers, Key = key
       };
     accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
