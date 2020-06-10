@@ -70,17 +70,18 @@ When a RadioButton is selected and the user tabs into the list, focus is put on 
 
 |List not tab focused | Has initial tab focus|
 |:--:|:--:|
-| ![alt text](images/selecteditem_notabfocus.png) | ![alt text](images/selecteditem_tabfocus.png)|
+| ![alt text](images/selecteditem-notabfocus.png) | ![alt text](images/selecteditem-tabfocus.png)|
 
 #### No item is selected
 
 When no RadioButton controls are selected in the RadioButtons list, focus is put on the first RadioButton in the list.
 
+> [!NOTE]
 > The item that receives tab focus from this initial navigation will not be selected/checked.
 
 |List not tab focused | Has initial tab focus|
 |:--:|:--:|
-| ![alt text](images/noselecteditem_notabfocus.png) | ![alt text](images/noselecteditem_tabfocus.png)|
+| ![alt text](images/noselecteditem-notabfocus.png) | ![alt text](images/noselecteditem-tabfocus.png)|
 
 ### Keyboarding navigation
 
@@ -89,14 +90,14 @@ When you have a single column list of RadioButton control options and you have a
 - The up or down arrow keys will move to the "next" or "previous" logical item (defined in markup)
 - The left or right arrow keys will move spatially
 
-![alt text](images/keyboardnav_singlecol.png)
+![alt text](images/keyboardnav-singlecol.png)
 
 This means that in purely vertical RadioButton group lists, left/right arrow keys will not do anything, but up/down will still navigate as expected. However, in purely horizontal RadioButton group lists, left and right will navigate the same way as up and down.
 
 #### Navigating with multiple columns
 The keyboarding behavior is the same as the single-column navigation, it just wraps to the next column when there is more than one defined.
 
-![alt text](images/keyboardnav_multicol.png)
+![alt text](images/keyboardnav-multicol.png)
 
 ##### Wrapping
 
@@ -107,8 +108,8 @@ When you are navigating a RadioButtons list via the keyboard, as focus is placed
 
 |Before keyboard navigation | After keyboard navigation|
 |:--|:--|
-| ![alt text](images/2selected_nonav.png) | ![alt text](images/3selected_yesnav.png)|
-| Focus is on the "2" RadioButton, and it is shown as selected | The down or right arrow key has been pressed, so focus was moved to the "3" RadioButton, thus selected 3 and unselected 2. |
+| ![alt text](images/two-selected-before-kbd-nav.png) | ![alt text](images/three-selected-after-kbd-nav.png)|
+| Focus is on the "2" RadioButton, which is selected | The down or right arrow key is pressed, which moved focus to the "3" RadioButton, selecting "3"  and unselecting "2". |
 
 ### Navigating with gamepad
 
@@ -156,7 +157,7 @@ The RadioButtons control is easy to set up and use and ensures proper and expect
 </RadioButtons>
 ```
 
-![Radio buttons in two groups](images/DefaultRadioButtonGroup.png)
+![Radio buttons in two groups](images/default-radiobutton-group.png)
 
 ### Defining multiple columns
 If you want to define multiple columns of RadioButton items with a RadioButtons control, you can do so by specifying the `MaxColumns` property on the RadioButtons control element:
@@ -209,7 +210,8 @@ public sealed partial class MainPage : Page
 
 ## Create your own radio button group
 
-> It is recommended to use a RadioButtons control to group RadioButton element  unless you are using an older version of WinUI and cannot take advantage of it.
+> [!Important]
+> We recommend using a RadioButtons control to group RadioButton elements unless you are using an older version of WinUI and cannot take advantage of it.
 
 Radio buttons work in groups. There are 2 ways you can group radio button controls:
 - Put them inside the same parent container.
@@ -317,9 +319,10 @@ This illustration shows the proper way to position and space radio buttons.
 
 ![A set of radio buttons](images/radiobutton-layout.png)
 
-![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
+![spacing guidelines for radio buttons](images/radiobutton-redline.png)
 
-> It's important to note when using the RadioButtons control to group your items that **no visuals need to be specified** because the control spaces and orients the items automatically for you.
+> [!NOTE]
+> **No visuals need to be specified** when grouping items with the RadioButtons control, as items are spaced and oriented automatically.
 
 ## Get the sample code
 
