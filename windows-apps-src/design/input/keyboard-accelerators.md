@@ -608,7 +608,7 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
+    accelerator.Invoked += handler;
     this.KeyboardAccelerators.Add(accelerator);
   }
 ```
