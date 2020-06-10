@@ -68,9 +68,9 @@ The following two sections (below) cover the focus behavior when tabbing into th
 
 When a RadioButton is selected and the user tabs into the list, focus is put on the selected RadioButton.
 
-|List not tab focused | Has initial tab focus|
+|List not tab focused | Initial tab focus |
 |:--:|:--:|
-| ![alt text](images/selecteditem-notabfocus.png) | ![alt text](images/selecteditem-tabfocus.png)|
+| ![List not tab focused](images/radiobutton-selected-item-no-tab-focus.png) | ![Initial tab focus](images/radiobutton-selected-item-tab-focus.png)|
 
 #### No item is selected
 
@@ -79,9 +79,9 @@ When no RadioButton controls are selected in the RadioButtons list, focus is put
 > [!NOTE]
 > The item that receives tab focus from this initial navigation will not be selected/checked.
 
-|List not tab focused | Has initial tab focus|
+|List not tab focused | Initial tab focus|
 |:--:|:--:|
-| ![alt text](images/noselecteditem-notabfocus.png) | ![alt text](images/noselecteditem-tabfocus.png)|
+| ![List not tab focused](images/radiobutton-no-selected-item-no-tab-focus.png) | ![Initial tab focus](images/radiobutton-no-selected-item-tab-focus.png)|
 
 ### Keyboarding navigation
 
@@ -90,26 +90,27 @@ When you have a single column list of RadioButton control options and you have a
 - The up or down arrow keys will move to the "next" or "previous" logical item (defined in markup)
 - The left or right arrow keys will move spatially
 
-![alt text](images/keyboardnav-singlecol.png)
+![Example of keyboard navigation in a single column/row RadioButton group](images/radiobutton-keyboard-navigation-single-column-and-row.png)<br/>
+*Example of keyboard navigation in a single column/row RadioButton group*
 
 This means that in purely vertical RadioButton group lists, left/right arrow keys will not do anything, but up/down will still navigate as expected. However, in purely horizontal RadioButton group lists, left and right will navigate the same way as up and down.
 
 #### Navigating with multiple columns
 The keyboarding behavior is the same as the single-column navigation, it just wraps to the next column when there is more than one defined.
 
-![alt text](images/keyboardnav-multicol.png)
+![Example of keyboard navigation in a multi-column/row RadioButton group](images/radiobutton-keyboard-navigation-multi-column-and-row.png)
 
 ##### Wrapping
 
-The RadioButtons group does not wrap. This is because when using a screen reader, a sense of boundary and clear indication of ends versus beginnings is lost and thus making it difficult for blind users to navigate the list easily. There is also no enumeration with a RadioButtons group, since groups like this are meant to have a resonable number of items within.
+The RadioButtons group does not wrap. This is because when using a screen reader, a sense of boundary and clear indication of ends versus beginnings is lost and thus making it difficult for blind users to navigate the list easily. There is also no enumeration with a RadioButtons group, since groups like this are meant to have a reasonable number of items within.
 
 ## Selection follows Focus
+
 When you are navigating a RadioButtons list via the keyboard, as focus is placed on a previous or next RadioButton item, that item will also get selected/checked. This means the previous item that was selected/checked will be unselected, and the currently focused one will be instead.
 
 |Before keyboard navigation | After keyboard navigation|
 |:--|:--|
-| ![alt text](images/two-selected-before-kbd-nav.png) | ![alt text](images/three-selected-after-kbd-nav.png)|
-| Focus is on the "2" RadioButton, which is selected | The down or right arrow key is pressed, which moved focus to the "3" RadioButton, selecting "3"  and unselecting "2". |
+| ![Example of focus and selection before keyboard navigation](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Example of focus and selection before keyboard navigation* | ![Example of focus and selection after keyboard navigation](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Example of focus and selection after keyboard navigation where the down or right arrow key is pressed, which moves focus to the "3" RadioButton, selects "3", and unselects "2".*
 
 ### Navigating with gamepad
 
@@ -173,7 +174,7 @@ If you want to define multiple columns of RadioButton items with a RadioButtons 
 </muxc:RadioButtons>
 ```
 
-![Radio buttons in two groups](images/multicolumns.png)
+![Radio buttons in two column groups](images/radiobutton-multi-columns.png)
 
 ### DataBinding with RadioButtons
 With the RadioButtons control, you can also data bind to the RadioButton elements that can go within.
