@@ -90,7 +90,7 @@ When you have a single column list of RadioButton control options and you have a
 - The up or down arrow keys will move to the "next" or "previous" logical item (defined in markup)
 - The left or right arrow keys will move spatially
 
-![Example of keyboard navigation in a single column/row RadioButton group](images/radiobutton-keyboard-navigation-single-column-and-row.png)<br/>
+![Example of keyboard navigation in a single column/row RadioButton group](images/radiobutton-keyboard-navigation-single-column-row.png)<br/>
 *Example of keyboard navigation in a single column/row RadioButton group*
 
 This means that in purely vertical RadioButton group lists, left/right arrow keys will not do anything, but up/down will still navigate as expected. However, in purely horizontal RadioButton group lists, left and right will navigate the same way as up and down.
@@ -98,7 +98,7 @@ This means that in purely vertical RadioButton group lists, left/right arrow key
 #### Navigating with multiple columns
 The keyboarding behavior is the same as the single-column navigation, it just wraps to the next column when there is more than one defined.
 
-![Example of keyboard navigation in a multi-column/row RadioButton group](images/radiobutton-keyboard-navigation-multi-column-and-row.png)
+![Example of keyboard navigation in a multi-column/row RadioButton group](images/radiobutton-keyboard-navigation-multi-column-row.png)
 
 ##### Wrapping
 
