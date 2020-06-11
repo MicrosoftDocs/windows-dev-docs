@@ -91,7 +91,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Pivot](pivot.md)
 - [Progress bar](progress-controls.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Progress ring](progress-controls.md)
-- [Radio button](radio-button.md)
+- [Radio button](radio-button.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Rating control](rating.md) ![WinUI logo](images/winui-logo-16x16.png)
 - [Repeat button](buttons.md#create-a-repeat-button)
 - [Rich edit box](rich-edit-box.md)
