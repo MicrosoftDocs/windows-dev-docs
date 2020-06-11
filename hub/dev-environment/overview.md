@@ -105,9 +105,13 @@ We've gathered a few tips that we hope will help to make your workflow more effi
 
 * You can improve your build speed by updating your Windows Defender settings to add exclusions for project folders or file types that you trust enough to avoid scanning for security threats. Learn more about how to [Update Windows Defender settings to improve performance](https://docs.microsoft.com/windows/android/defender-settings).
 
+![Windows Defender screenshot](../images/windows-defender-exclusions.png)
+
 * If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](https://docs.microsoft.com/en-us/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
 
 * You can launch VS Code from your command line into the project that you have open by using the command: `code .` or open your project directory from the command line with Windows File Explorer using `explorer.exe .` from Windows or your WSL distribution. You may need to add the VS Code executable to your PATH environment variable if this doesn't work by default. Learn more about [Launching from the Command Line](https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line).
+
+![Windows File Explorer screenshot](../images/wsl-file-explorer.png)
 
 * If you're using Git for version control and collaboration, you can streamline your authentication process by [setting up Git Credential Manager](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) to store your tokens in the Windows Credential Manager. We also recommend [adding a .gitignore file](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) to your project.
 
