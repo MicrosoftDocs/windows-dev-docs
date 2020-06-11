@@ -99,9 +99,9 @@ This guide will help you get started with installing and setting up the language
 
 ![Filler image](../images/flashy-office.png)
 
-## Tips and tricks
+## Tips for improving your workflow
 
-What are the top tips users need to know about?
+We've gathered a few tips that we hope will help to make your workflow more efficient and enjoyable. Do you have additional tips to share? File a pull request, using the "Edit" button above, or an issue, using the "Feedback" button below and we may add it to the list.
 
 * You can improve your build speed by updating your Windows Defender settings to add exclusions for project folders or file types that you trust enough to avoid scanning for security threats. Learn more about how to [Update Windows Defender settings to improve performance](https://docs.microsoft.com/windows/android/defender-settings).
 
@@ -130,7 +130,7 @@ Check out our [guide to transitioning between between a Mac and Windows](https:/
 
 ## Stories from developers who have switched
 
-We thought it may be helpful to hear from other developers about their experiences switching between a Mac and Windows development environment. Most found the process reasonably simple, appreciated that they could still use their favorite Linux and open source tools, while also having integrated access to Windows productivity tools, like Office, Outlook, and Teams. Here are a few articles and blog entries that we found:
+We thought it may be helpful to hear from other developers about their experiences switching between a Mac and Windows development environment. Most found the process reasonably simple, appreciated that they could still use their favorite Linux and open source tools, while also having integrated access to Windows productivity tools, like [Microsoft Office](https://www.microsoft.com/microsoft-365/products-apps-services), [Outlook](https://www.microsoft.com/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook), and [Teams](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software). Here are a few articles and blog entries that we found:
 
 * Ken Wang, ["Think Different — Software Developer Switching from Mac to Windows"](https://medium.com/@kenwang_57215/software-developer-switching-from-mac-to-windows-66773d331910)
 * Owen Williams, ["The state of switching to Windows from Mac in 2019"](https://char.gd/blog/2019/the-state-of-switching-to-windows-from-mac-in-2019)
@@ -140,9 +140,9 @@ We thought it may be helpful to hear from other developers about their experienc
 * David Heinemeier Hansson, ["Back to windows after twenty years"](https://m.signalvnoise.com/back-to-windows-after-twenty-years/)
 * Ray Elenteny, ["Why I returned to Windows"](https://dzone.com/articles/why-i-returned-to-windows)
 
-## End to end tutorials
+## Tutorials, courses, and code samples
 
-Break down 3-4 scenarios and write a step-by-step walk-through of setting up the tools, coding, building, and deploying an actual app, For example:
+We've listed a few tutorials, course, and code samples below to help you get started on some common work scenarios.
 
 * [Create a MongoDB app with React and Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/tutorial-develop-mongodb-react)
 
@@ -158,9 +158,13 @@ Break down 3-4 scenarios and write a step-by-step walk-through of setting up the
 
 * [Build a Java app with Microsoft Graph](https://docs.microsoft.com/graph/tutorials/java)
 
+* [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/?view=aspnetcore-3.1)
+
 * [Create and deploy a cloud-native ASP.NET Core microservice](https://docs.microsoft.com/learn/modules/microservices-aspnet-core/?view=aspnetcore-3.1)
 
-* [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/?view=aspnetcore-3.1)
+* [Explore free online courses on Microsoft Learn](https://docs.microsoft.com/learn/browse/)
+
+![Filler image](../images/flashy-office3.png)
 
 ## Additional resources
 
