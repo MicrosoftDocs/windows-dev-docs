@@ -103,19 +103,34 @@ This guide will help you get started with installing and setting up the language
 
 What are the top tips users need to know about?
 
-* Adding Windows Defender exclusions?
-* Guidance on where to store project files when working between Windows and WSL file systems?
-* Other stuff to change that slows down or annoys devs using Windows 10?
+* You can improve your build speed by updating your Windows Defender settings to add exclusions for project folders or file types that you trust enough to avoid scanning for security threats. Learn more about how to [Update Windows Defender settings to improve performance](https://docs.microsoft.com/windows/android/defender-settings).
+
+* If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](https://docs.microsoft.com/en-us/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
+
+* You can launch VS Code from your command line into the project that you have open by using the command: `code .` or open your project directory from the command line with Windows File Explorer using `explorer.exe .` from Windows or your WSL distribution. You may need to add the VS Code executable to your PATH environment variable if this doesn't work by default. Learn more about [Launching from the Command Line](https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line).
+
+* If you're using Git for version control and collaboration, you can streamline your authentication process by [setting up Git Credential Manager](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) to store your tokens in the Windows Credential Manager. We also recommend [adding a .gitignore file](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) to your project.
+
+* You can launch multiple command lines, like PowerShell, Ubuntu, and Azure CLI, all into a single window with multiple panes using [Windows Terminal Command Line Arguments](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). After installing [Windows Terminal](https://docs.microsoft.com/windows/terminal/get-started), [WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10), and [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), enter this command in PowerShell to open a new multi-pane window with all three:
+
+    ```powershell
+    wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
+    ```
 
 ![Filler image](../images/flashy-office2.png)
 
 ## Transitioning between Mac and Windows
 
-Read our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment, including [keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts), [trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts), [terminal and shell equivalents](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell), and [equivalent apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities).
+Check out our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
+
+* [Keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts)
+* [Trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts)
+* [Terminal and shell tools](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell)
+* [Apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities)
 
 ## Stories from developers who have switched
 
-Links to a few stories from devs moving from Mac to Windows – “It wasn’t as hard as I thought – I can still use all my favorite open source tools AND I get to use use Office and tools which are only available on Windows”.
+We thought it may be helpful to hear from other developers about their experiences switching between a Mac and Windows development environment. Most found the process reasonably simple, appreciated that they could still use their favorite Linux and open source tools, while also having integrated access to Windows productivity tools, like Office, Outlook, and Teams. Here are a few articles and blog entries that we found:
 
 * Ken Wang, ["Think Different — Software Developer Switching from Mac to Windows"](https://medium.com/@kenwang_57215/software-developer-switching-from-mac-to-windows-66773d331910)
 * Owen Williams, ["The state of switching to Windows from Mac in 2019"](https://char.gd/blog/2019/the-state-of-switching-to-windows-from-mac-in-2019)
@@ -127,11 +142,28 @@ Links to a few stories from devs moving from Mac to Windows – “It wasn’t a
 
 ## End to end tutorials
 
-Break down four scenarios and walking through the tools and set-up required for each, ie 'Build an Android app using Xamarine with a MySQL database deployed on Azure', 'Build a NodeJS web app using Next.js that displays a map control and integrates real-time weather', 'Build a Python web app using Django and a Azure Vision ML model` ...?
+Break down 3-4 scenarios and write a step-by-step walk-through of setting up the tools, coding, building, and deploying an actual app, For example:
+
+* [Create a MongoDB app with React and Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/tutorial-develop-mongodb-react)
+
+* [Build an Android dual-screen app with drag and drop capabilities](https://docs.microsoft.com/dual-screen/android/samples)
+
+* [Build a to-do list cross-platform app with Xamarin.Forms](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+
+* [Build a Xamarin.Android app that utilizes Google Play Services to demo the Google Maps API](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+
+* [Deploy a Python (Django) web app with PostgreSQL in Azure App Service](https://docs.microsoft.com/azure/app-service/containers/tutorial-python-postgresql-app?tabs=bash)
+
+* [Build your first ASP.Net Core web app with Blazor](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1)
+
+* [Build a Java app with Microsoft Graph](https://docs.microsoft.com/graph/tutorials/java)
+
+* [Create and deploy a cloud-native ASP.NET Core microservice](https://docs.microsoft.com/learn/modules/microservices-aspnet-core/?view=aspnetcore-3.1)
+
+* [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/?view=aspnetcore-3.1)
 
 ## Additional resources
 
 * [Microsoft Edge web browser docs](https://docs.microsoft.com/microsoft-edge/)
 * [Try WebHint to improve your website](https://webhint.io/)
-* [Check out Microsoft Graph](https://docs.microsoft.com/graph/)
 * [Microsoft's Game Stack documentation](https://docs.microsoft.com/gaming/)
