@@ -42,22 +42,6 @@ v1901, January 2019<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![hero image](images/adobe-illustrator.png)
-<b>Adobe Illustrator toolkit</b><br>
-v1806, June 2018<br>
-<a href="https://aka.ms/adobeillustratortoolkit">Download</a>
-    :::column-end:::
-    :::column:::
-![hero image](images/adobe-photoshop.png)
-<b>Adobe Photoshop toolkit</b><br>
-v1705, May 2017<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## Developer toolkits and libraries
 
