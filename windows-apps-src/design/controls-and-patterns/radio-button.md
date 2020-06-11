@@ -4,7 +4,7 @@ title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 06/10/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,117 +13,129 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Radio buttons
 
-Radio buttons allow users to select one option from a set. Each option is represented by one radio button, and users can only select one radio button in a radio button group.
+Radio buttons let users select one option from a collection of two or more mutually-exclusive, but related, options. Each option is represented by one radio button.
 
-(If you're curious about the name, radio buttons are named after the channel preset buttons on a radio.)
+In the default state, no radio buttons in a group are selected. However, when a radio button option is selected by a user, the unselected state of the group cannot be restored by the user.
+
+The singular behavior of a radio button group distinguishes it from  [Check boxes](checkbox.md), which support multi-selection and deselection.
 
 ![Radio buttons](images/controls/radio-button.png)
 
-> **Platform APIs**: [RadioButton class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [Checked event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+**Get the Windows UI Library**
+
+|  |  |
+| - | - |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **RadioButtons** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **Windows UI Library APIs:** [RadioButtons class](/uwp/api/microsoft.ui.xaml.controls.radiobuttons), [SelectionChanged event](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [SelectedItem property](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
+>
+> **Platform APIs:** [RadioButton class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [Checked event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [IsChecked property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## Is this the right control?
 
-Use radio buttons to present users with two or more mutually exclusive options.
+Use radio buttons to provide users with the ability to select from two or more mutually-exclusive options.
 
 ![A group of radio buttons](images/radiobutton_basic.png)
 
-Use radio buttons when users need to see all options to make a selection. Since radio buttons emphasize all options equally, they may draw more attention to the options than necessary. Unless the options deserve extra attention from the user, consider using other controls. For example, if the default option is recommended for most users in most situations, use a [drop-down list](lists.md) instead.
+Use radio buttons when users need to see all options to make a selection. Since radio buttons emphasize all options equally, they may draw more attention to the options than is necessary or desired. Unless all options deserve equal attention from the user, consider using other controls. For example, if the default option is recommended for most users and in most situations, use a [combo box](combo-box.md) instead.
 
-![drop-down list](images/combo_box_collapsed.png)
+![A drop-down list used to emphasize a default option](images/combo_box_collapsed.png)
 
-If there are only two mutually exclusive options, combine them into a single [checkbox](checkbox.md) or [toggle switch](toggles.md). For example, use a checkbox for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
+If there are only two mutually-exclusive options, combine them into a single [checkbox](checkbox.md) or [toggle switch](toggles.md). For example, use a checkbox for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
 
-![Two ways of presenting a binary choice](images/radiobutton_vs_checkbox.png)
+![A checkbox is a good alternative for presenting a binary choice](images/radiobutton_vs_checkbox.png)
 
 When the user can select multiple options, use a [checkbox](checkbox.md).
 
-![Selecting multiple options with check boxes](images/checkbox2.png)
+![Checkboxes support multi-selection](images/checkbox2.png)
 
 When options are numbers that have fixed steps (10, 20, 30), use a [slider](slider.md) control.
 
-![slider control](images/controls/slider.png)
+![A slider used for selecting stepped values](images/controls/slider.png)
 
-If there are more than 8 options, use a [drop-down list](lists.md) or [list box](lists.md).
+If there are more than 8 options, use a [combo box or a list box](combo-box.md).
 
-![combo box](images/combo_box_scroll.png)
+![A list box used to present multiple options](images/combo_box_scroll.png)
 
-If the available options are based on the app's current context, or can otherwise vary dynamically, use a single-select [list box](lists.md).
+> [!NOTE]
+> If the available options are based on the app's current context, or can otherwise vary dynamically, use a single-select [list box](combo-box.md#list-boxes).
 
 ## RadioButtons behavior
-The RadioButtons control is the recommended way to group RadioButton elements/items. It has special navigation behavior that helps not only keyboard accelerant users, but also accessibility users to navigate the list more quickly and more easily.
 
-In addition to accelerated keyboard and accessibility functionality, the RadioButtons control also orients the visuals of the items for you, meaning you don't need to specify spacing or margins of the items within, as you might have to do if you were using a more primitive grouping control like `StackPanel` or `Grid`.
+Keyboard access and navigation behavior has been optimized in [RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton?view=winrt-19041) groups to help both accessibility and keyboard power users navigate the list of options more quickly and easily.
+
+In addition to keyboard shortcuts and accessibility improvements, the default visual layout of individual radio buttons in a RadioButton group has also been optimized through automated orientation, spacing, and margin settings. This eliminates the requirement to specify these properties, as you might have to do when using a more primitive grouping control such as [StackPanel](../layout/layout-panels.md#stackpanel) or [Grid](../layout/layout-panels.md#grid).
 
 ### Navigating a RadioButtons group
 
-There are two states that the RadioButtons control can have with it's RadioButton content:
+There are two states that the RadioButtons control supports:
+
 - A list of RadioButton controls where none are selected/checked
 - A list of RadioButton controls where one is already selected/checked
 
-The following two sections (below) cover the focus behavior when tabbing into the list in both cases outlined in the bullet list above.
+The following two sections cover both radio button focus behaviors.
 
-#### An item is already selected
+#### Item already selected
 
-When a RadioButton is selected and the user tabs into the list, focus is put on the selected RadioButton.
+When a radio button is selected and the user tabs into the list, the selected radio button gets focus.
 
-|List not tab focused | Initial tab focus |
+|List without tab focus | List with initial tab focus |
 |:--:|:--:|
-| ![List not tab focused](images/radiobutton-selected-item-no-tab-focus.png) | ![Initial tab focus](images/radiobutton-selected-item-tab-focus.png)|
+| ![List without tab focus](images/radiobutton-selected-item-no-tab-focus.png) | ![ist with initial tab focus](images/radiobutton-selected-item-tab-focus.png)|
 
-#### No item is selected
+#### No item selected
 
-When no RadioButton controls are selected in the RadioButtons list, focus is put on the first RadioButton in the list.
+When no radio button is selected, the first radio button in the list gets focus.
 
 > [!NOTE]
-> The item that receives tab focus from this initial navigation will not be selected/checked.
+> The item that receives tab focus from the initial tab navigation will not be selected/checked.
 
-|List not tab focused | Initial tab focus|
+|List without tab focus | List with initial tab focus|
 |:--:|:--:|
-| ![List not tab focused](images/radiobutton-no-selected-item-no-tab-focus.png) | ![Initial tab focus](images/radiobutton-no-selected-item-tab-focus.png)|
+| ![List without tab focus](images/radiobutton-no-selected-item-no-tab-focus.png) | ![List with initial tab focus](images/radiobutton-no-selected-item-tab-focus.png)|
 
-### Keyboarding navigation
+### Keyboard navigation
 
-When you have a single column list of RadioButton control options and you have already put focus onto an item, you can navigate the RadioButtons list in logical sequential order using the keyboard.
+When you have a single row/column of radio button options, and an item has already received tab focus, the arrow keys provide "inner navigation" between items within the RadioButtons control. For more detail on keyboard navigation behaviors, see [Keyboard interactions - Navigation](../input/keyboard-interactions.md#navigation).
 
-- The up or down arrow keys will move to the "next" or "previous" logical item (defined in markup)
-- The left or right arrow keys will move spatially
+For a RadioButtons control, when the list of options is arranged vertically (exclusively), the Up/Down arrow keys navigate between items and the Left/Right arrow keys don't do anything. However, in a list that is arranged horizontally (exclusively), Left/Right and Up/Down arrow keys all navigate between items in the same way.
 
 ![Example of keyboard navigation in a single column/row RadioButton group](images/radiobutton-keyboard-navigation-single-column-row.png)<br/>
 *Example of keyboard navigation in a single column/row RadioButton group*
 
-This means that in purely vertical RadioButton group lists, left/right arrow keys will not do anything, but up/down will still navigate as expected. However, in purely horizontal RadioButton group lists, left and right will navigate the same way as up and down.
+#### Navigating within multi-column/row layouts
 
-#### Navigating with multiple columns
-The keyboarding behavior is the same as the single-column navigation, it just wraps to the next column when there is more than one defined.
+Keyboard "inner navigation" behavior is the same as single-column navigation, but "wraps" to the next column.
 
 ![Example of keyboard navigation in a multi-column/row RadioButton group](images/radiobutton-keyboard-navigation-multi-column-row.png)
 
 ##### Wrapping
 
-The RadioButtons group does not wrap. This is because when using a screen reader, a sense of boundary and clear indication of ends versus beginnings is lost and thus making it difficult for blind users to navigate the list easily. There is also no enumeration with a RadioButtons group, since groups like this are meant to have a reasonable number of items within.
+The RadioButtons group does not wrap. This is because when using a screen reader, a sense of boundary and a clear indication of beginning and end is lost, making it difficult for vision-impaired users to navigate the list. The RadioButtons control also doesn't support enumeration, as it is intended to contain a reasonable number of items (see [Is this the right control?](#is-this-the-right-control)).
 
 ## Selection follows Focus
 
-When you are navigating a RadioButtons list via the keyboard, as focus is placed on a previous or next RadioButton item, that item will also get selected/checked. This means the previous item that was selected/checked will be unselected, and the currently focused one will be instead.
+When using the keyboard to navigate between items in a RadioButtons list (where an item is already selected), as focus moves from one item to the next, the newly focused item gets selected/checked and the previously focused item is deselected/unchecked.
 
 |Before keyboard navigation | After keyboard navigation|
 |:--|:--|
-| ![Example of focus and selection before keyboard navigation](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Example of focus and selection before keyboard navigation* | ![Example of focus and selection after keyboard navigation](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Example of focus and selection after keyboard navigation where the down or right arrow key is pressed, which moves focus to the "3" RadioButton, selects "3", and unselects "2".*
+| ![Example of focus and selection before keyboard navigation](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Example of focus and selection before keyboard navigation* | ![Example of focus and selection after keyboard navigation](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Example of focus and selection after keyboard navigation where the down or right arrow key moves focus to the "3" RadioButton, selects "3", and unselects "2".*
 
-### Navigating with gamepad
+### Navigating with Xbox gamepad and remote control
 
-If you're navigating the RadioButtons container with a gamepad controller, the selection follows focus behavior will be disabled. When navigating a RadioButtons control, no gamepad engagement is necessary to initiate navigation or to select RadioButton elements within the group.
+If you're using a gamepad to navigate within a RadioButtons control, the selection follows focus behavior is disabled. When navigating a RadioButtons control, no gamepad engagement is necessary to initiate navigation or to select RadioButton elements within the group.
 
 ## Accessibility behavior
 
-Below is a detailed table of, depending on the user interaction, what the narrator will announce when verbose.
+The following table details how Narrator handles a radio button group and what is announced (this depends on Narrator detail preferences set by the user).
 
-|Upon *first* putting focus into the group | Navigating to a selected item |
+| Initial focus | Focus moves to a selected item |
 |:--|:--|
 | "Group name" RadioButton collection, x of N selected | RadioButton "name" selected, x of N |
-|"Group name" RadioButton collection, none selected| RadioButton "name" not selected, x of N <br> *(If navigating with shift-arrow keys, meaning no selection following focus)* |
+|"Group name" RadioButton collection, none selected| RadioButton "name" not selected, x of N <br> *(If navigating with shift-arrow keys, which indicates no selection following focus)* |
 
 ## Examples
 
@@ -141,27 +153,27 @@ Below is a detailed table of, depending on the user interaction, what the narrat
 </tr>
 </table>
 
-Radio buttons in browser settings.
+## Using the WinUI RadioButtons control
 
-![Radio buttons in browser settings](images/control-examples/radio-buttons-edge.png)
-
-## Using the RadioButtons Control
-If you're using [WinUI](https://github.com/microsoft/microsoft-ui-xaml), then it's recommended that you utilize the RadioButtons control.
+If you're using [WinUI](https://github.com/microsoft/microsoft-ui-xaml), we recommend using the [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons) control.
 
 The RadioButtons control is easy to set up and use and ensures proper and expected keyboarding and narrator behavior.
+
+Here, we declare a basic RadioButtons control with three options.
 
 ```xaml
 <RadioButtons Header="App Mode" SelectedIndex="2">
     <RadioButton>Item 1</RadioButton>
     <RadioButton>Item 2</RadioButton>
-    <RadioButton>Item 3</RadioButton>         
+    <RadioButton>Item 3</RadioButton>
 </RadioButtons>
 ```
 
 ![Radio buttons in two groups](images/default-radiobutton-group.png)
 
 ### Defining multiple columns
-If you want to define multiple columns of RadioButton items with a RadioButtons control, you can do so by specifying the `MaxColumns` property on the RadioButtons control element:
+
+You can declare a multi-column RadioButtons control by specifying the [MaxColumns property](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.maxcolumns).
 
 ```xaml
 <muxc:RadioButtons Header="App Mode" MaxColumns="3">
@@ -176,8 +188,9 @@ If you want to define multiple columns of RadioButton items with a RadioButtons 
 
 ![Radio buttons in two column groups](images/radiobutton-multi-columns.png)
 
-### DataBinding with RadioButtons
-With the RadioButtons control, you can also data bind to the RadioButton elements that can go within.
+### Data binding
+
+The RadioButtons control supports data binding using it's [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property, as shown in the following snippet.
 
 ```xaml
 <RadioButtons Header="App Mode" ItemsSource="{x:Bind radioButtonItems}" />
@@ -212,11 +225,12 @@ public sealed partial class MainPage : Page
 ## Create your own radio button group
 
 > [!Important]
-> We recommend using a RadioButtons control to group RadioButton elements unless you are using an older version of WinUI and cannot take advantage of it.
+> We recommend using the WinUI RadioButtons control to group RadioButton elements (unless you are using an older version of WinUI).
 
 Radio buttons work in groups. There are 2 ways you can group radio button controls:
-- Put them inside the same parent container.
-- Set the [GroupName](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) property on each radio button to the same value.
+
+- Put them inside the same parent container
+- Set the [GroupName](/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) property on each radio button to the same value
 
 In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between 2 stack panels, so they're explicitly grouped by GroupName.
 
@@ -300,30 +314,32 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-The radio button groups look like this.
+The following image shows how this radio button group is rendered:
 
 ![Radio buttons in two groups](images/radio-button-groups.png)
 
-A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**. You can actually compare the **IsChecked** property with a bool by getting the **Value** of the **IsChecked** property
+## Radio button states
+
+A radio button has two states: checked or unchecked. When a radio button is selected, its [IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is **true**. When a radio button is unchecked, its **IsChecked** property is **false**. A radio button can be unchecked by clicking another radio button in the same group, but it cannot be unchecked by clicking it again. However, you can uncheck a radio button programmatically by setting its IsChecked property to **false**.
 
 ## Recommendations
 
--   Make sure the purpose and current state of a set of radio buttons is clear.
--   Limit the radio button's text content to a single line.
--   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
--   Use the default font unless your brand guidelines tell you to use another.
--   Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.
+- Make sure the purpose and current state of a set of radio buttons is clear.
+- Limit the radio button's text content to a single line.
+- If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
+- Use the default font unless your brand guidelines tell you otherwise.
+- Don't put two radio button groups side by side. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group.
 
 ### Visuals to consider
 
-This illustration shows the proper way to position and space radio buttons.
+The following images show how best to lay out the radio buttons in a RadioButton group.
 
 ![A set of radio buttons](images/radiobutton-layout.png)
 
 ![spacing guidelines for radio buttons](images/radiobutton-redline.png)
 
 > [!NOTE]
-> **No visuals need to be specified** when grouping items with the RadioButtons control, as items are spaced and oriented automatically.
+> If using a WinUI RadioButtons control, spacing, margins, and orientation are already optimized.
 
 ## Get the sample code
 
