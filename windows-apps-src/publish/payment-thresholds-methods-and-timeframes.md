@@ -13,6 +13,9 @@ The estimated time to transfer payments, and Microsoft marketplaces from which y
 
 For any given country/region, we will either use ACH/SEPA or wire transfer to deliver our payments. Additionally, some countries/regions support PayPal as a payment method.
 
+> [!NOTE]
+> Due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another. Exchange rates are calculated monthly. Based on when your transaction took place, the appropriate exchange rate is applied. The exchange rate and the date range for which it was in force are indicated on your payout report in the columns exchangeRate and exchangeRateDate respectively.
+
 ## Number of days for payments to reach payout account
 
 We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below.
