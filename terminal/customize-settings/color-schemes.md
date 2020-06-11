@@ -52,7 +52,7 @@ ___
 
 ## Included color schemes
 
-Windows Terminal includes these color schemes inside the defaults.json file, which can be accessed by holding <kbd>alt</kbd> and selecting the settings button. If you would like to set up a color scheme inside one of your command line profiles, add the `colorScheme` property with the color scheme's `name` as the value.
+Windows Terminal includes these color schemes inside the defaults.json file, which can be accessed by holding <kbd>alt</kbd> and selecting the settings button. If you would like to set up a color scheme inside one of your command-line profiles, add the `colorScheme` property with the color scheme's `name` as the value.
 
 ```json
 "colorScheme": "COLOR SCHEME NAME"

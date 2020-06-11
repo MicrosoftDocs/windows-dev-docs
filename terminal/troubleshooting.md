@@ -39,11 +39,11 @@ To have the shell automatically set your tab title, [visit the set the tab title
 
 ## Command line arguments in PowerShell
 
-Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in PowerShell.
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command-line arguments operate in PowerShell.
 
 ## Command line arguments in WSL
 
-Visit the [Command line arguments page](./command-line-arguments.md) to learn how command line arguments operate in WSL.
+Visit the [Command line arguments page](./command-line-arguments.md) to learn how command-line arguments operate in WSL.
 
 ## Problem setting `startingDirectory`
 
