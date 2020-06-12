@@ -49,7 +49,8 @@ Scan the image of a package below with your camera barcode scanner application t
 ![Sample Barcode - GS1DWCode](images/pos/rice-box-v7.jpg)
 
 > [!NOTE]
-> The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/)
+> Windows 10 uses a software decoder in combination with a standard lens camera to produce a functional barcode scanner. This article refers to the symbologies supported by the software decoder. Additional symbologies may be supported by dedicated Barcode Scanner devices. Symbologies listed are supported in all editions of Windows 10 build 17134 or later, unless otherwise specified.
+> The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/).
 
 ## See also
 
