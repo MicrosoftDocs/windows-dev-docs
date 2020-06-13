@@ -556,7 +556,9 @@ private void NavView_SelectionChanged(muxc.NavigationView sender,
     }
 }
 
-private void NavView_Navigate(string navItemTag, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfo)
+private void NavView_Navigate(
+    string navItemTag,
+    Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfo)
 {
     Type _page = null;
     if (navItemTag == "settings")
@@ -1121,19 +1123,23 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
         Category();
         Category(winrt::hstring name,
             winrt::hstring categoryIcon,
-            Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> children);
+            Windows::Foundation::Collections::
+                IObservableVector<HierarchicalNavigationViewDataBinding::Category> children);
 
         winrt::hstring Name();
         void Name(winrt::hstring const& value);
         winrt::hstring CategoryIcon();
         void CategoryIcon(winrt::hstring const& value);
-        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> Children();
-        void Children(Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> const& value);
+        Windows::Foundation::Collections::
+            IObservableVector<HierarchicalNavigationViewDataBinding::Category> Children();
+        void Children(Windows::Foundation::Collections:
+            IObservableVector<HierarchicalNavigationViewDataBinding::Category> const& value);
 
     private:
         winrt::hstring m_name;
         winrt::hstring m_categoryIcon;
-        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> m_children;
+        Windows::Foundation::Collections::
+            IObservableVector<HierarchicalNavigationViewDataBinding::Category> m_children;
     };
 }
 
@@ -1149,7 +1155,11 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
         m_children = winrt::single_threaded_observable_vector<HierarchicalNavigationViewDataBinding::Category>();
     }
 
-    Category::Category(winrt::hstring name, winrt::hstring categoryIcon, Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> children)
+    Category::Category(
+        winrt::hstring name,
+        winrt::hstring categoryIcon,
+        Windows::Foundation::Collections::
+            IObservableVector<HierarchicalNavigationViewDataBinding::Category> children)
     {
         m_name = name;
         m_categoryIcon = categoryIcon;
@@ -1176,12 +1186,15 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
         m_categoryIcon = value;
     }
 
-    Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> Category::Children()
+    Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category>
+        Category::Children()
     {
         return m_children;
     }
 
-    void Category::Children(Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> const& value)
+    void Category::Children(
+        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category>
+            const& value)
     {
         m_children = value;
     }
@@ -1216,14 +1229,20 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
     {
         MainPage();
 
-        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> Categories();
+        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category>
+            Categories();
 
         void OnItemInvoked(muxc::NavigationView const& sender, muxc::NavigationViewItemInvokedEventArgs const& args);
-        void OnItemExpanding(muxc::NavigationView const& sender, muxc::NavigationViewItemExpandingEventArgs const& args);
-        void OnItemCollapsed(muxc::NavigationView const& sender, muxc::NavigationViewItemCollapsedEventArgs const& args);
+        void OnItemExpanding(
+            muxc::NavigationView const& sender,
+            muxc::NavigationViewItemExpandingEventArgs const& args);
+        void OnItemCollapsed(
+            muxc::NavigationView const& sender,
+            muxc::NavigationViewItemCollapsedEventArgs const& args);
 
     private:
-        Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> m_categories;
+        Windows::Foundation::Collections::
+            IObservableVector<HierarchicalNavigationViewDataBinding::Category> m_categories;
     };
 }
 
@@ -1300,7 +1319,8 @@ namespace winrt::HierarchicalNavigationViewDataBinding::implementation
         m_categories.Append(*menuItem10);
     }
 
-    Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category> MainPage::Categories()
+    Windows::Foundation::Collections::IObservableVector<HierarchicalNavigationViewDataBinding::Category>
+        MainPage::Categories()
     {
         return m_categories;
     }
