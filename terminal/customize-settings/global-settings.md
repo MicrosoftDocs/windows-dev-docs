@@ -142,17 +142,20 @@ ___
 
 ## Launch settings
 
-### Launch maximized
+### Launch size
 
-This defines whether the terminal will launch as maximized to fill the entire screen or in a window.
+This defines whether the terminal will launch as maximized, fullscreen, or in a window.
 
 **Property name:** `launchMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"default"`, `"maximized"`
+**Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
 
 **Default value:** `"default"`
+
+> [!IMPORTANT]
+> The `"fullscreen"` setting is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 ### Launch position
 
