@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 06/18/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -26,7 +26,7 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 **Default value:** PowerShell's GUID
 
 > [!IMPORTANT]
-> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -119,7 +119,7 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 :::row-end:::
 
 > [!IMPORTANT]
-> The `"compact"` setting is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> The `"compact"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Hide close all tabs popup
 
@@ -161,7 +161,7 @@ This defines whether the terminal will launch as maximized, fullscreen, or in a 
 **Default value:** `"default"`
 
 > [!IMPORTANT]
-> The `"fullscreen"` setting is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> The `"fullscreen"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 

@@ -3,7 +3,7 @@ title: Windows Terminal Panes
 description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 06/18/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -29,12 +29,12 @@ If you would like to change these key bindings, you can create new ones using th
 { "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+|" }
 ```
 
-### Using the dropdown menu ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+### Using the dropdown menu ([Windows Terminal Preview feature](https://aka.ms/terminal-preview/))
 
 If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. This will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ## Switching between panes
 

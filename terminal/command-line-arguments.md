@@ -3,7 +3,7 @@ title: Windows Terminal command-line arguments
 description: Learn how to create command-line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 06/18/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -38,7 +38,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 
 > [!IMPORTANT]
-> `--maximized`, `-M` and `--fullscreen`, `-F` are only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> `--maximized`, `-M` and `--fullscreen`, `-F` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
@@ -47,7 +47,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `focus-tab` | `--target, -t tab-index` | Focuses on a specific tab. |
 
 > [!IMPORTANT]
-> `--title` is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> `--title` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ## Command line argument examples
 
@@ -201,7 +201,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
 
-### Tab title ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+### Tab title ([Windows Terminal Preview feature](https://aka.ms/terminal-preview/))
 
 To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
 
@@ -230,7 +230,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 <!-- End tab selectors.  -->
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Tab focus
 

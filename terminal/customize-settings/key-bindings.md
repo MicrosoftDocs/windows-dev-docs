@@ -3,7 +3,7 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 06/18/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -150,17 +150,27 @@ This opens the dropdown menu.
 { "command": "openNewTabDropdown", "keys": "ctrl+shift+space" }
 ```
 
-### Open settings file
+### Open settings files
 
-This opens the settings file.
+This opens either the default or custom settings files. Without the `target` field, this will open the settings.json file.
 
 **Command name:** `openSettings`
 
 **Default binding:**
 
 ```json
-{ "command": "openSettings", "keys": "ctrl+," }
+{ "command": "openSettings", "keys": "ctrl+," },
+{ "command": { "action": "openSettings", "target": "defaultFile" }, "keys": "ctrl+alt+," },
 ```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"allFiles"` | The settings file to open. |
+
+> [!IMPORTANT]
+> The `target` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Toggle full screen
 
