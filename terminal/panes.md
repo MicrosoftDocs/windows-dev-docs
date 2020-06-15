@@ -14,6 +14,8 @@ Panes give you the ability to run multiple command-line applications next to eac
 
 ## Creating a new pane
 
+### Using the keyboard
+
 You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type <kbd>alt+shift+plus</kbd>. For a horizontal pane of your default profile, you can type <kbd>alt+shift+-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
@@ -26,6 +28,13 @@ If you would like to change these key bindings, you can create new ones using th
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
 { "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+|" }
 ```
+
+### Using the dropdown menu ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+
+If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. This will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 ## Switching between panes
 
