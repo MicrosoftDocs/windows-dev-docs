@@ -265,7 +265,7 @@ ___
 
 ## Keyboard settings
 
-### AltGr Aliasing ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+### AltGr aliasing ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
 
 This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
 

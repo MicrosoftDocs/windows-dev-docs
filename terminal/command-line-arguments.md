@@ -34,12 +34,20 @@ Below is the full list of supported commands and options for the `wt` command li
 | Option | Description |
 | ------ | ----------- |
 | `--help`, `-h`, `-?`, `/?` | Displays the help message. |
+| `--maximized`, `-M` | Launches the terminal maximized. |
+| `--fullscreen`, `-F` | Launches the terminal as full screen. |
+
+> [!IMPORTANT]
+> `--maximized`, `-M` and `--fullscreen`, `-F` are only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
-| `new-tab` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Creates a new tab. |
-| `split-pane` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Splits a new pane. |
+| `new-tab` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Creates a new tab. |
+| `split-pane` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Splits a new pane. |
 | `focus-tab` | `--target, -t tab-index` | Focuses on a specific tab. |
+
+> [!IMPORTANT]
+> `--title` is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 ## Command line argument examples
 
