@@ -101,13 +101,13 @@ When this is set to `true`, tabs are always displayed. When it's set to `false` 
 
 :::row:::
 :::column span="":::
-This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
+This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title. `"compact"` will shrink every inactive tab to the width of the icon, leaving the active tab more space to display its full title.
 
 **Property name:** `tabWidthMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"equal"`, `"titleLength"`
+**Accepts:** `"equal"`, `"titleLength"`, `"compact"`
 
 **Default value:** `"equal"`
 
