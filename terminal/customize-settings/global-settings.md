@@ -21,9 +21,12 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 
 **Necessity:** Required
 
-**Accepts:** GUID as a string
+**Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
+
+> [!IMPORTANT]
+> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 <br />
 
