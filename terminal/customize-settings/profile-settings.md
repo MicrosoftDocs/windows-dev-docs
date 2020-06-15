@@ -248,6 +248,27 @@ This sets the percentage height of the cursor starting from the bottom. This wil
 
 ___
 
+## Keyboard settings
+
+### AltGr Aliasing ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+
+This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
+
+**Property name:** `altGrAliasing`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+
+<br />
+
+___
+
 ## Color settings
 
 ### Color scheme
