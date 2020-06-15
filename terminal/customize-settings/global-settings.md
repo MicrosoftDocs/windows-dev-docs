@@ -118,6 +118,9 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 :::column-end:::
 :::row-end:::
 
+> [!IMPORTANT]
+> The `"compact"` setting is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+
 ### Hide close all tabs popup
 
 :::row:::
