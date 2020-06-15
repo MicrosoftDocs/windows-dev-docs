@@ -75,36 +75,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
  The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
 
-
-### Terminal sings you a song ([v1.1 preview feature](https://insider.windows.com/))
-
-This is just a test to demonstrate incorporating preview features via a release branch in the GitHub repo. The preview feature link would like to an FAQ section once we add an FAQ page explaining how Windows Insider previews work and how to sign up.
-
-<!-- Start tab selectors. -->
-#### [Command Prompt](#tab/windows)
-
-```bash
-telnet towel.blinkenlights.nl
-```
-
-#### [PowerShell](#tab/powershell)
-
-```powershell
-telnet towel.blinkenlights.nl
-```
-
-#### [Linux](#tab/linux)
-
-```bash
-telnet towel.blinkenlights.nl
-```
-
----
-<!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in the [v1.1 preview release](https://insider.windows.com/) of Windows Terminal.
-
 ### Target a directory
 
 To specify the folder that should be used as the starting directory for the console, in this case the d:\ directory, enter:
@@ -223,7 +193,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
 
-### Tab title
+### Tab title ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
 
 To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
 
@@ -250,6 +220,9 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
 
 ### Tab focus
 
