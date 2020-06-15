@@ -171,6 +171,21 @@ This sets the profile's font size in points.
 
 **Default value:** `12`
 
+### Font weight ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+
+This sets the weight (lightness or heaviness of the strokes) for the profile's font.
+
+**Property name:** `fontWeight`
+
+**Necessity:** Optional
+
+**Accepts:** `"normal"`, `"thin"`, `"extra-light"`, `"light"`, `"semi-light"`, `"medium"`, `"semi-bold"`, `"bold"`, `"extra-bold"`, `"black"`, `"extra-black"`, or an integer corresponding to the numeric representation of the OpenType font weight
+
+**Default value:** `"normal"`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview 1.1](https://aka.ms/terminal-preview/).
+
 ### Padding
 
 :::row:::
