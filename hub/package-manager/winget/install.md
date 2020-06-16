@@ -74,6 +74,12 @@ winget install --id Microsoft.PowerToys --version 0.15.2
 
 If the query provided to **winget** does not result in a single application, then **winget** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
 
+The best way to limit the selection to one file is to use the **id** of the application combined with the **exact** query option.  For example:
+
+```CMD
+winget install --id Git.Git -e 
+```
+
 ## Local install
 
 The **manifest** option enables you to install an application by passing in a YAML file directly to the client. The **manifest** option has the following usage.
