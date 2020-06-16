@@ -29,7 +29,7 @@ If you would like to change these key bindings, you can create new ones using th
 { "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+|" }
 ```
 
-### Using the dropdown menu ([Windows Terminal Preview feature](https://aka.ms/terminal-preview/))
+### Using the dropdown menu ([Preview](https://aka.ms/terminal-preview/))
 
 If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. This will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 

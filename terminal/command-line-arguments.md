@@ -201,7 +201,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
 
-### Tab title ([Windows Terminal Preview feature](https://aka.ms/terminal-preview/))
+### Tab title ([Preview](https://aka.ms/terminal-preview/))
 
 To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
 

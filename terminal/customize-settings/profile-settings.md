@@ -171,7 +171,7 @@ This sets the profile's font size in points.
 
 **Default value:** `12`
 
-### Font weight ([Windows Terminal Preview 1.1 feature](https://aka.ms/terminal-preview/))
+### Font weight ([Preview](https://aka.ms/terminal-preview/))
 
 This sets the weight (lightness or heaviness of the strokes) for the profile's font.
 
@@ -265,7 +265,7 @@ ___
 
 ## Keyboard settings
 
-### AltGr aliasing ([Windows Terminal Preview feature](https://aka.ms/terminal-preview/))
+### AltGr aliasing ([Preview](https://aka.ms/terminal-preview/))
 
 This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
 
