@@ -19,14 +19,14 @@ The case study [Porting the Clipboard sample to C++/WinRT from C#](/windows/u
 
 In terms of what kinds of porting changes to expect, you could group them into four categories.
 
-- [**Port the language projection**](#port-the-language-projection). The Windows Runtime (WinRT) is *projected* into various programming languages. Each of those language projections is designed to feel idiomatic to the programming language in question. For C#, some Windows Runtime types are projected as .NET types. So for example you'll be translating [**System.Collections.Generic.IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1) back to [**Windows.Foundation.Collections.IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1). Also in C#, some Windows Runtime operations are projected as convenient C# language features. An example is that in C# you use the `+=` operator syntax to register an event-handling delegate. So you'll be translating language features such as that back to the fundamental operation that's being performed (event registration, in this example).
-- [**Port language syntax**](#port-language-syntax). Many of these changes are simple mechanical transforms, replacing one symbol for another. For example, changing dot (`.`) to double-colon (`::`).
-- [**Port language procedure**](#port-language-procedure). Some of these can be simple, repetitive changes (such as `myObject.MyProperty` to `myObject.MyProperty()`). Others need deeper changes (for example, porting a procedure that involves the use of **System.Text.StringBuilder** to one that involves the use of **std::wostringstream**).
+- [**Port the language projection**](#changes-that-involve-the-language-projection). The Windows Runtime (WinRT) is *projected* into various programming languages. Each of those language projections is designed to feel idiomatic to the programming language in question. For C#, some Windows Runtime types are projected as .NET types. So for example you'll be translating [**System.Collections.Generic.IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1) back to [**Windows.Foundation.Collections.IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1). Also in C#, some Windows Runtime operations are projected as convenient C# language features. An example is that in C# you use the `+=` operator syntax to register an event-handling delegate. So you'll be translating language features such as that back to the fundamental operation that's being performed (event registration, in this example).
+- [**Port language syntax**](#changes-that-involve-the-language-syntax). Many of these changes are simple mechanical transforms, replacing one symbol for another. For example, changing dot (`.`) to double-colon (`::`).
+- [**Port language procedure**](#changes-that-involve-procedures-within-the-language). Some of these can be simple, repetitive changes (such as `myObject.MyProperty` to `myObject.MyProperty()`). Others need deeper changes (for example, porting a procedure that involves the use of **System.Text.StringBuilder** to one that involves the use of **std::wostringstream**).
 - [**Porting-related tasks that are specific to C++/WinRT**](#porting-related-tasks-that-are-specific-to-cwinrt). Certain details of the Windows Runtime are taken care of impliclicly by C#, behind the scenes. Those details are done explicitly in C++/WinRT. An example is that you use an `.idl` file to define your runtime classes.
 
 The rest of this topic is structured according to that taxonomy.
 
-## Port the language projection
+## Changes that involve the language projection
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
@@ -100,29 +100,30 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 > [!NOTE]
 > Declare the function as `void` even if you *implement* it as [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
 
-## Port language syntax
+## Changes that involve the language syntax
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#button_click)|
+|Access a data member|`this.variable`|`this->variable`||
 |Async action|`async Task ...`|`IAsyncAction ...`||
 |Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`||
 |Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
-|Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
 |Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)|
+|Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
+|Collection of projected types as a private field|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
+|GUID construction|`private static readonly Guid myGuid = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");`|`winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };`||
 |Namespace separator|`A.B.T`|`A::B::T`||
 |Null|`null`|`nullptr`|[Porting the **UpdateStatus** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#updatestatus)|
+|Obtain a type object|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[Porting the **Scenarios** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)|
 |Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |Call a static method|`T.Method()`|`T::Method()`||
 |Strings|`string`, or **System.String**|[**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)|
 |String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Obtain a type object|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[Porting the **Scenarios** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)|
-|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
-|Access a data member|`this.variable`|`this->variable`||
-|Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
 |Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
-|Collection of projected types as a private field|`private List<MyRuntimeClass> collectionOfMyRuntimeClass = new List<MyRuntimeClass>();`|`std::vector<MyProjectNamespaceName::MyRuntimeClass> m_collectionOfMyRuntimeClass;`||
+|Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
+|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
 
 > [!NOTE]
 > If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast).
@@ -143,7 +144,7 @@ For member functions, again, you'll need to decide for each one whether or not i
 
 In the case of [Porting the Clipboard sample to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp), we were able to use *the same* XAML markup (including resources) and asset files across the C# and the C++/WinRT project. In some cases, edits to markup will be necessary to achieve that. See [Copy the XAML and styles necessary to finish up porting **MainPage**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage).
 
-## Port language procedure
+## Changes that involve procedures within the language
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
@@ -172,10 +173,33 @@ In the case of [Porting the Clipboard sample to C++/WinRT from C#](/windows/u
 |Type conversion (null on failure)|`v as MyType`|`v.try_as<MyType>()`|[Porting the **PasteButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
 |XAML elements with x:Name are properties|`MyNamedElement`|`MyNamedElement()`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
 |Switch to the UI thread|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync**, or [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Porting the **NotifyUser** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser), and [Porting the **HistoryAndRoaming** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#historyandroaming)|
-|Construct a UI element in imperative code in a XAML page|`var myTextBlock = new TextBlock(){`<br>&nbsp;&nbsp;&nbsp;&nbsp;`Text = "Text",`<br>&nbsp;&nbsp;&nbsp;&nbsp;`Style = (Style)this.Resources["MyTextBlockStyle"]`<br>`};`|`TextBlock myTextBlock;`<br>`myTextBlock.Text(L"Text");`<br>`myTextBlock.Style(`<br>&nbsp;&nbsp;&nbsp;&nbsp;`winrt::unbox_value<Style>(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Resources().Lookup(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`winrt::box_value(L"MyTextBlockStyle")`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br>`);`||
-|Construct a GUID|`private static readonly Guid myGuid = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");`|`winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };`||
+|UI element construction in imperative code in a XAML page|See [UI element construction](#ui-element-construction)|See [UI element construction](#ui-element-construction)||
 
 The following sections go into more detail regarding some of the items in the table.
+
+### UI element construction
+
+These code examples show the construction of a UI element in the imperative code of a XAML page.
+
+```csharp
+var myTextBlock = new TextBlock()
+{
+    Text = "Text",
+    Style = (Windows.UI.Xaml.Style)this.Resources["MyTextBlockStyle"]
+};
+```
+
+```cppwinrt
+TextBlock myTextBlock;
+myTextBlock.Text(L"Text");
+myTextBlock.Style(
+    winrt::unbox_value<Windows::UI::Xaml::Style>(
+        Resources().Lookup(
+            winrt::box_value(L"MyTextBlockStyle")
+        )
+    )
+);
+```
 
 ### ToString()
 
