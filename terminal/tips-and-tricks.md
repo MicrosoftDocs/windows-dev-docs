@@ -15,12 +15,16 @@ ms.localizationpriority: high
 
 You can right click on a tab and select Rename Tab to rename a tab for that terminal session. Clicking this option in the context menu will change your tab title into a text field, where you can then edit the title. If you'd like to set the tab title for that profile for every terminal instance, you can learn more in the [Tab title tutorial](./tutorials/tab-title.md).
 
+![Windows Terminal tab rename](./images/tab-rename.gif)
+
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ## Color a tab ([Preview](https://aka.ms/terminal-preview/))
 
 You can right click on a tab and select Color... to color the tab for that terminal session. You can select from a predefined list of colors or you can click Custom... to pick any color using the color picker or the RGB/HSV or hex fields.
+
+![Windows Terminal tab color](./images/tab-color.png)
 
 > [!TIP]
 > Use the hex field to set your tab to the same color as your background color for a seamless look.

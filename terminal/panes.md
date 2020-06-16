@@ -33,6 +33,8 @@ If you would like to change these key bindings, you can create new ones using th
 
 If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. This will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 
+![Windows Terminal dropdown pane](./images/alt-click-pane.gif)
+
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
