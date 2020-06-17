@@ -170,7 +170,7 @@ This opens either the default or custom settings files. Without the `target` fie
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"allFiles"` | The settings file to open. |
 
 > [!IMPORTANT]
-> The `target` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+> The `target` field is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Toggle full screen
 
