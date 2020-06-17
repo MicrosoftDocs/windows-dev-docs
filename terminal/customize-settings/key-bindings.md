@@ -160,7 +160,7 @@ This opens either the default or custom settings files. Without the `target` fie
 
 ```json
 { "command": "openSettings", "keys": "ctrl+," },
-{ "command": { "action": "openSettings", "target": "defaultFile" }, "keys": "ctrl+alt+," },
+{ "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
 ```
 
 #### Actions
