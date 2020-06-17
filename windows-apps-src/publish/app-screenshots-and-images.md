@@ -55,7 +55,7 @@ You can upload Store logos to create a more customized display in the Store. We 
 
 You can provide these images as .png files (no greater than 50 MB), each of which should follow the guidelines below.
 
-### 9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)
+### 2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
 This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
 
@@ -66,7 +66,7 @@ This image should include your app’s name, and any text on the image should me
 
 ### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
-This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **9:16 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
+This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
 
 > [!NOTE]
 > If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
@@ -141,7 +141,7 @@ When providing your trailers, be sure to follow these requirements:
 - The video format must be MOV or MP4.
 - The file size of the trailer shouldn't exceed 2 GB.
 - The video resolution must be 1920 x 1080 pixels.
-- The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
+- The thumbnail must be a PNG file with a resolution of 1920 x 1080 pixels.
 - The title can’t exceed 255 characters.
 - Do not include age ratings in your trailers.
 

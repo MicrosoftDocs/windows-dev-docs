@@ -44,14 +44,20 @@ namespace Bookstore
 >
 > Any runtime class that you declare in the application that *does* derive from a base class is known as a *composable* class. And there are constraints around composable classes. For an application to pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (and therefore for the application to be successfully ingested into the Microsoft Store), a composable class must ultimately derive from a Windows base class. Meaning that the class at the very root of the inheritance hierarchy must be a type originating in a Windows.* namespace. If you do need to derive a runtime class from a base class&mdash;for example, to implement a **BindableBase** class for all of your view models to derive from&mdash;then you can derive from [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject).
 >
-> A view model is an abstraction of a view, and so it's bound directly to the view (the XAML markup). A data model is an abstraction of data, and it's consumed only from your view models, and not bound directly to XAML. So, you can declare your data models not as runtime classes, but as C++ structs or classes. They don't need to be declared in MIDL, and you're free to use whatever inheritance hierarchy you like.
+> A view model is an abstraction of a view, and so it's bound directly to the view (the XAML markup). A data model is an abstraction of data, and it's consumed only from your view models, and not bound directly to XAML. So you can declare your data models not as runtime classes, but as C++ structs or classes. They don't need to be declared in MIDL, and you're free to use whatever inheritance hierarchy you like.
 
 Save the file and build the project. During the build process, the `midl.exe` tool is run to create a Windows Runtime metadata file (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) describing the runtime class. Then, the `cppwinrt.exe` tool is run to generate source code files to support you in authoring and consuming your runtime class. These files include stubs to get you started implementing the **BookSku** runtime class that you declared in your IDL. Those stubs are `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` and `BookSku.cpp`.
 
 Right-click the project node and click **Open Folder in File Explorer**. This opens the project folder in File Explorer. There, copy the stub files `BookSku.h` and `BookSku.cpp` from the `\Bookstore\Bookstore\Generated Files\sources\` folder and into the project folder, which is `\Bookstore\Bookstore\`. In **Solution Explorer**, with the project node selected, make sure **Show All Files** is toggled on. Right-click the stub files that you copied, and click **Include In Project**.
 
 ## Implement **BookSku**
-Now, let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. In `BookSku.h`, add a constructor that takes a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), a private member to store the title string, and another for the event that we'll raise when the title changes. After making these changes, your `BookSku.h` will look like this.
+Now let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. In `BookSku.h`, make these changes.
+
+- Add a constructor that takes a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) value. This value is the title string.
+- Add a private member to store the title string.
+- Add another private member for the event that we'll raise when the title changes.
+
+After making these changes, your `BookSku.h` will look like this.
 
 ```cppwinrt
 // BookSku.h
@@ -117,7 +123,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-In the **Title** mutator function, we check whether a value is being set that's different from the current value. And, if so, we update the title and also raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event with an argument equal to the name of the property that has changed. This is so that the user-interface (UI) will know which property's value to re-query.
+In the **Title** mutator function, we check whether a value is being set that's different from the current value. And, if so, then we update the title and also raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event with an argument equal to the name of the property that has changed. This is so that the user-interface (UI) will know which property's value to re-query.
 
 ## Declare and implement **BookstoreViewModel**
 Our main XAML page is going to bind to a main view model. And that view model is going to have several properties, including one of type **BookSku**. In this step, we'll declare and implement our main view model runtime class.

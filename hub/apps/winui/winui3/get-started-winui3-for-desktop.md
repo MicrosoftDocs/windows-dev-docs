@@ -37,6 +37,9 @@ To use the WinUI 3 for desktop project templates described in this article, conf
     * x64: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
     * x86: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
 
+    > [!NOTE]
+    > WinUI 3.0 Preview 1 requires .NET 5 Preview 4. Later preview versions of .NET 5 are not supported with WinUI 3.0 Preview 1.
+
 4. Install the VSIX extension that includes the WinUI 3.0 Preview 1 project templates for Visual Studio 2019. For details, see [these instructions](index.md#visual-studio-project-templates).
 
 ## Create a WinUI 3 desktop app for C# and .NET 5

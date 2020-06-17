@@ -1,36 +1,6 @@
 - name: Windows development environment
   href: index.yml
   items:
-  - name: Windows Package Manager
-    items:
-      - name: Overview
-        href: ../package-manager/index.md
-      - name: Use the winget tool
-        items:
-          - name: Overview
-            href: ../package-manager/winget/index.md
-          - name: hash command
-            href: ../package-manager/winget/hash.md
-          - name: help command
-            href: ../package-manager/winget/help.md
-          - name: install command
-            href: ../package-manager/winget/install.md
-          - name: search command
-            href: ../package-manager/winget/search.md
-          - name: show command
-            href: ../package-manager/winget/show.md
-          - name: source command
-            href: ../package-manager/winget/source.md
-          - name: validate command
-            href: ../package-manager/winget/validate.md
-      - name: Submit packages
-        items:
-          - name: Overview
-            href: ../package-manager/package/index.md
-          - name: Create your package manifest
-            href: ../package-manager/package/manifest.md
-          - name: Submit your manifest to the repository
-            href: ../package-manager/package/repository.md
   - name: Develop with Python
     items:
         - name: Overview
@@ -83,6 +53,40 @@
           href: ../android/defender-settings.md
         - name: Test on device or emulator
           href: ../android/emulator.md
+  - name: Windows Package Manager
+    items:
+      - name: Overview
+        href: ../package-manager/index.md
+      - name: Use the winget tool
+        items:
+          - name: Overview
+            href: ../package-manager/winget/index.md
+          - name: hash command
+            href: ../package-manager/winget/hash.md
+          - name: help command
+            href: ../package-manager/winget/help.md
+          - name: install command
+            href: ../package-manager/winget/install.md
+          - name: search command
+            href: ../package-manager/winget/search.md
+          - name: show command
+            href: ../package-manager/winget/show.md
+          - name: source command
+            href: ../package-manager/winget/source.md
+          - name: validate command
+            href: ../package-manager/winget/validate.md
+      - name: Submit packages
+        items:
+          - name: Overview
+            href: ../package-manager/package/index.md
+          - name: Create your package manifest
+            href: ../package-manager/package/manifest.md
+          - name: Submit your manifest to the repository
+            href: ../package-manager/package/repository.md
+  - name: Windows Subsystem for Linux
+    href: https://docs.microsoft.com/windows/wsl/
+  - name: Windows Terminal
+    href: https://docs.microsoft.com/windows/terminal/
   - name: Mac to Windows guide
     items:
       - name: Changing your dev environment
@@ -95,21 +99,3 @@
         href: mac-to-windows.md#terminal-and-shell
       - name: Apps and utilities
         href: mac-to-windows.md#apps-and-utilities
-  - name: Windows Subsystem for Linux
-    items:
-      - name: About WSL
-        href: https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context
-      - name: About WSL 2
-        href: https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context
-      - name: WSL 1 vs WSL 2
-        href: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context
-      - name: User accounts & permissions
-        href: https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context
-  - name: Windows Terminal
-    items:
-      - name: Overview
-        href: https://github.com/microsoft/terminal#terminal--console-overview
-      - name: User guide
-        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md
-      - name: Custom settings
-        href: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md

@@ -19,9 +19,9 @@ This topic demonstrates how to author a Windows Runtime component containing a r
 
 ## Create a Windows Runtime component (BankAccountWRC)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime component"). Naming the project *BankAccountWRC* will give you the easiest experience with the rest of the steps in this topic. Don't built the project yet.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime component"). Naming the project *BankAccountWRC* will give you the easiest experience with the rest of the steps in this topic. Don't build the project yet.
 
-The newly-created project contains a file named `Class.idl`. Rename that file `BankAccount.idl` (renaming the `.idl` file automatically renames the dependent `.h` and `.cpp` files, too). Replace the contents of `BankAccount.idl` with the listing below.
+The newly-created project contains a file named `Class.idl`. In Solution Explorer, rename that file `BankAccount.idl` (renaming the `.idl` file automatically renames the dependent `.h` and `.cpp` files, too). Replace the contents of `BankAccount.idl` with the listing below.
 
 ```idl
 // BankAccountWRC.idl
@@ -87,6 +87,8 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
+You'll also need to delete the `static_assert` from both files.
+
 > [!NOTE]
 > For details of what an auto event revoker is, see [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate). You get auto event revoker implementation for free for your event. In other words, you don't need to implement the overload for the event revoker&mdash;that's provided for you by the C++/WinRT projection.
 
@@ -98,7 +100,7 @@ If any warnings prevent you from building, then either resolve them or set the p
 
 ## Create a Core App (BankAccountCoreApp) to test the Windows Runtime component
 
-Now create a new project (either in your *BankAccountWRC* solution, or in a new one). Create a **Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
+Now create a new project (either in your *BankAccountWRC* solution, or in a new one). Create a **Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*. Set *BankAccountCoreApp* as the startup project if the two projects are in the same solution.
 
 > [!NOTE]
 > As mentioned earlier, the Windows Runtime metadata file for your Windows Runtime component (whose project you named *BankAccountWRC*) is created in the folder `\BankAccountWRC\Debug\BankAccountWRC\`. The first segment of that path is the name of the folder that contains your solution file; the next segment is the subdirectory of that named `Debug`; and the last segment is the subdirectory of that named for your Windows Runtime component. If you didn't name your project *BankAccountWRC*, then your metadata file will be in the folder `\<YourProjectName>\Debug\<YourProjectName>\`.
@@ -150,11 +152,117 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression that's handling the **AccountIsInDebit** event, run the app, and click inside the window.
 
-## Parameterized delegates, and simple signals, across an ABI
+## Parameterized delegates across an ABI
 
 If your event must be accessible across an application binary interface (ABI)&mdash;such as between a component and its consuming application&mdash;then your event must use a Windows Runtime delegate type. The example above uses the [**Windows::Foundation::EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler) Windows Runtime delegate type. [**TypedEventHandler\<TSender, TResult\>**](/uwp/api/windows.foundation.eventhandler) is another example of a Windows Runtime delegate type.
 
-The type parameters for those two delegate types have to cross the ABI, so the type parameters must be Windows Runtime types, too. That includes first- and third-party runtime classes, as well as primitive types such as numbers and strings. The compiler helps you with a "*must be WinRT type*" error if you forget that constraint.
+The type parameters for those two delegate types have to cross the ABI, so the type parameters must be Windows Runtime types, too. That includes Windows runtime classes, third-party runtime classes, and primitive types such as numbers and strings. The compiler helps you with a "*must be WinRT type*" error if you forget that constraint.
+
+Below is an example in the form of code listings. Begin with the **BankAccountWRC** and **BankAccountCoreApp** projects that you created earlier in this topic, and edit the code in those projects to look like the code in these listings.
+
+This first listing is for the **BankAccountWRC** project. After editing `BankAccountWRC.idl` as shown below, build the project, and then copy `MyEventArgs.h` and `.cpp` into the project (from the `Generated Files` folder) just like you did earlier with `BankAccount.h` and `.cpp`.
+
+```cppwinrt
+// BankAccountWRC.idl
+namespace BankAccountWRC
+{
+    [default_interface]
+    runtimeclass MyEventArgs
+    {
+        Single Balance{ get; };
+    }
+
+    [default_interface]
+    runtimeclass BankAccount
+    {
+        ...
+        event Windows.Foundation.EventHandler<BankAccountWRC.MyEventArgs> AccountIsInDebit;
+        ...
+    };
+}
+
+// MyEventArgs.h
+#pragma once
+#include "MyEventArgs.g.h"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    struct MyEventArgs : MyEventArgsT<MyEventArgs>
+    {
+        MyEventArgs() = default;
+        MyEventArgs(float balance);
+        float Balance();
+
+    private:
+        float m_balance{ 0.f };
+    };
+}
+
+// MyEventArgs.cpp
+#include "pch.h"
+#include "MyEventArgs.h"
+#include "MyEventArgs.g.cpp"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    MyEventArgs::MyEventArgs(float balance) : m_balance(balance)
+    {
+    }
+
+    float MyEventArgs::Balance()
+    {
+        return m_balance;
+    }
+}
+
+// BankAccount.h
+...
+struct BankAccount : BankAccountT<BankAccount>
+{
+...
+    winrt::event_token AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler);
+...
+private:
+    winrt::event<Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs>> m_accountIsInDebitEvent;
+...
+}
+...
+
+// BankAccount.cpp
+#include "MyEventArgs.h"
+...
+winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler) { ... }
+...
+void BankAccount::AdjustBalance(float value)
+{
+    m_balance += value;
+
+    if (m_balance < 0.f)
+    {
+        auto args = winrt::make_self<winrt::BankAccountWRC::implementation::MyEventArgs>(m_balance);
+        m_accountIsInDebitEvent(*this, *args);
+    }
+}
+...
+```
+
+This listing is for the **BankAccountCoreApp** project.
+
+```cppwinrt
+// App.cpp
+...
+void Initialize(CoreApplicationView const&)
+{
+    m_eventToken = m_bankAccount.AccountIsInDebit([](const auto&, BankAccountWRC::MyEventArgs args)
+    {
+        float balance = args.Balance();
+        WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
+    });
+}
+...
+```
+
+## Simple signals across an ABI
 
 If you don't need to pass any parameters or arguments with your event, then you can define your own simple Windows Runtime delegate type. The example below shows a simpler version of the **BankAccount** runtime class. It declares a delegate type named **SignalDelegate** and then it uses that to raise a signal-type event instead of an event with a parameter.
 
