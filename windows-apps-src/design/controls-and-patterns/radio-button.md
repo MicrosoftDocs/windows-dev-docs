@@ -108,9 +108,11 @@ For a RadioButtons control, when the list of options is arranged vertically (exc
 
 #### Navigating within multi-column/row layouts
 
-Keyboard "inner navigation" behavior is the same as single-column navigation, but "wraps" to the next column.
+In column-major order (where items fill in top to bottom, left to right), when the focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column. This same behavior occurs in reverse: When focus is set to the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column.
 
 ![Example of keyboard navigation in a multi-column/row RadioButton group](images/radiobutton-keyboard-navigation-multi-column-row.png)
+
+In row-major order (where items fill in left to right, top to bottom), when the focus is on the last item in a row and the Right arrow key is pressed, focus moves to the first item in the next row. This same behavior occurs in reverse: When focus is set to the first item in a row and the Left arrow key is pressed, focus moves to the last item in the previous row.
 
 ##### Wrapping
 
@@ -126,7 +128,7 @@ When using the keyboard to navigate between items in a RadioButtons list (where 
 
 ### Navigating with Xbox gamepad and remote control
 
-If you're using a gamepad to navigate within a RadioButtons control, the selection follows focus behavior is disabled. When navigating a RadioButtons control, no gamepad engagement is necessary to initiate navigation or to select RadioButton elements within the group.
+If you're using an Xbox gamepad or remote control to navigate within a RadioButtons control, the "selection follows focus" behavior is disabled and the "A" button must be pressed to select the radio button with focus.
 
 ## Accessibility behavior
 
