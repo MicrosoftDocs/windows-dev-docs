@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 06/18/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -21,9 +21,12 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 
 **Necessity:** Required
 
-**Accepts:** GUID as a string
+**Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
+
+> [!IMPORTANT]
+> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -98,13 +101,13 @@ When this is set to `true`, tabs are always displayed. When it's set to `false` 
 
 :::row:::
 :::column span="":::
-This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
+This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title. `"compact"` will shrink every inactive tab to the width of the icon, leaving the active tab more space to display its full title.
 
 **Property name:** `tabWidthMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"equal"`, `"titleLength"`
+**Accepts:** `"equal"`, `"titleLength"`, `"compact"`
 
 **Default value:** `"equal"`
 
@@ -114,6 +117,9 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> The `"compact"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Hide close all tabs popup
 
@@ -142,17 +148,35 @@ ___
 
 ## Launch settings
 
-### Launch maximized
+### Launch on startup ([Preview](https://aka.ms/terminal-preview/))
 
-This defines whether the terminal will launch as maximized to fill the entire screen or in a window.
+When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
+
+**Property name:** `startOnUserLogin`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+### Launch size
+
+This defines whether the terminal will launch as maximized, fullscreen, or in a window.
 
 **Property name:** `launchMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"default"`, `"maximized"`
+**Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
 
 **Default value:** `"default"`
+
+> [!IMPORTANT]
+> The `"fullscreen"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 
