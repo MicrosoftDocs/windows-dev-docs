@@ -34,9 +34,9 @@ This guide will help you get started with installing and setting up the language
         Install Android Studio, or choose a cross-platform solution like Xamarin, React, or Cordova, and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
-       [![C#](../images/csharp-logo.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
-        **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
-        Install C# support for Visual Studio or Visual Studio Code and get your development environment setup on Windows.
+       [![Windows Desktop](../images/windows-logo.png)](https://docs.microsoft.com/windows/apps/)<br>
+        **[Get started with Windows](https://docs.microsoft.com/windows/apps/)**<br>
+        Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
 
