@@ -148,6 +148,21 @@ ___
 
 ## Launch settings
 
+### Launch on startup ([Preview](https://aka.ms/terminal-preview/))
+
+When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
+
+**Property name:** `startOnUserLogin`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Launch size
 
 This defines whether the terminal will launch as maximized, fullscreen, or in a window.
