@@ -6,6 +6,9 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs: 
+- csharp
+- cppwinrt
 ---
 
 # Capture photos and video with the Windows built-in camera UI
