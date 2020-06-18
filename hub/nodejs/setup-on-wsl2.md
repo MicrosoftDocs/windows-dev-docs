@@ -127,11 +127,7 @@ A few additional extensions you may want to consider include:
 
 ## Set up Git (optional)
 
-If you plan to collaborate with others, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI.
-
-1. Git comes installed with the Windows Subsystem for Linux distros, however, you will need to set up your git config file. To do so, in your terminal enter: `git config --global user.name "Your Name"` and then, `git config --global user.email "youremail@domain.com"`. If you don't yet have a Git account, you can [sign-up for one on GitHub](https://github.com/join). If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started. If you need to edit your git config, you can do so with a built-in text editor like nano: `nano ~/.gitconfig`.
-
-2. We recommend adding a [.gitignore file](https://help.github.com/en/articles/ignoring-files) to your Node projects. Here is [GitHub's default gitignore template for Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore). If you choose to [create a new repo using the GitHub website](https://help.github.com/articles/create-a-repo), there are check boxes available to initialize your repo with a README file, .gitignore file set up for Node.js projects, and options to add a license if you need one.
+To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git) in the WSL documentation.
 
 ## Next steps
 
