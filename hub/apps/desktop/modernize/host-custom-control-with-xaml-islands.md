@@ -292,7 +292,41 @@ The following instructions show you how to package the all the components in the
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the WPF project in your solution and click **OK**.
 
-3. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
+3. Edit the Packaging project file (.wapproj) to add necessary things.
+
+    1. In Solution Explorer, right-click the Packaging project node and select **Edit Project File**.
+    2. Locate the following line (it should be at the end of file).
+    
+        ``` xml
+        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+        ```
+        
+    3. Replace above line with the following code.
+    
+        ``` xml
+        <ItemGroup>
+            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+                <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+                <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+                <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+                <Implicit>true</Implicit>
+            </SDKReference>
+        </ItemGroup>
+  
+        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+  
+        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+            <ItemGroup>
+                <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+                <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+                <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+                    <SourceProject></SourceProject>
+                </_FilteredNonWapProjProjectOutput>
+            </ItemGroup>
+        </Target>
+        ```
+
+4. Edit the WPF project file. These changes are currently required for packaging WPF apps that host custom UWP controls.
 
     1. In Solution Explorer, right-click the WPF project node and select **Unload Project**.
     2. Right-click the WPF project node and select **Edit**.
@@ -307,7 +341,7 @@ The following instructions show you how to package the all the components in the
     4. Save the project file and close it.
     5. Right-click the WPF project node and choose **Reload Project**.
 
-4. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+5. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
 ## Related topics
 
