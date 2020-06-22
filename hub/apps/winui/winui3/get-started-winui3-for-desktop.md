@@ -14,7 +14,7 @@ ms.custom: 19H1
 
 WinUI 3.0 Preview 1 introduces new project templates that enable you to create managed desktop C#/.NET and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3.0. 
 
-WinUI 3.0 Preview 1 adds the following **WinUI in Desktop** project templates in Visual Studio 2019:
+WinUI 3.0 Preview 1 adds the following Visual Studio 2019 project templates in **WinUI for desktop app**:
 
 * C# apps and libraries that target .NET 5:
   * Blank App, Packaged (WinUI in Desktop)
