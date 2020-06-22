@@ -383,6 +383,6 @@ using namespace Windows::Web::Http;
 **Samples**
 
 * [DatagramSocket sample](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20StreamSocket%20sample%20(Windows%208))
-* [HttpClient Sample]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
+* [HttpClient sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/HttpClient%20sample)
 * [Proximity sample](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/Proximity%20sample%20(Windows%208))
 * [StreamSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

@@ -679,12 +679,11 @@ task<void> BasicLoader::LoadShaderAsync(
         }
     });
 }
-
 ```
 
 In this code, once you've read in the byte data for the vertex shader's CSO file, you create the vertex shader by calling [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader). After that, you create your input layout for the shader in the same lambda.
 
-Other shader types, such as hull and geometry shaders, can also require specific configuration. Complete code for a variety of shader loading methods is provided in [Complete code for BasicLoader](complete-code-for-basicloader.md) and in the [Direct3D resource loading sample]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148).
+Other shader types, such as hull and geometry shaders, can also require specific configuration. Complete code for a variety of shader loading methods is provided in [Complete code for BasicLoader](complete-code-for-basicloader.md) and in the [Direct3D resource loading sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B).
 
 ## Remarks
 
@@ -692,7 +691,7 @@ At this point, you should understand and be able to create or modify methods for
 
 ## Related topics
 
-* [Direct3D resource loading sample]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)
+* [Direct3D resource loading sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)
 * [Complete code for BasicLoader](complete-code-for-basicloader.md)
 * [Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)
