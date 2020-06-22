@@ -160,6 +160,17 @@ ManifestVersion: 0.1.0
 > [!NOTE]
 > if your installer is an .exe and it was built using Nullsoft or Inno, you may specify those values instead. When Nullsoft or Inno are specified, the client will automatically set the silent and silent with progress install behaviors for the installer.
 
+## Installer switches
+
+You can often figure out what silent `Switches` are available for an installer by passing in a `-?` to the installer from the command line. Here are some common silent `Swtiches` that can be used for different installer types.
+
+| Installer | Command  | Documentation |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [MSI Command-Line Options](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [InstallShield Command-Line Parameters](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup documentation](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Nullsoft Silent Installers/Uninstallers](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
+
 ## Tips and best practices
 
 * For the best customer experience when finding and installing your software, we recommend that you include as many optional items beyond the required schema as possible. For example, the `AppMoniker` field is optional. However, if you include this field, customers will see results associated with the `AppMoniker` value when performing the [search](../winget/search.md) command (for example, **vscode** for **Visual Studio Code**). If there is only one app with the specified `AppMoniker` value, customers can install your application by specifying the moniker rather than the fully qualified ID.
