@@ -7,7 +7,13 @@ keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
 # Symbologies
+
 This topic provides sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10, including: UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code and GS1DWCode.
+
+Windows 10 uses a standard lens camera combined with a software decoder to generate a barcode scanner. This article refers to the symbologies supported by the software decoder. Additional symbologies might be supported by dedicated barcode scanner devices. The symbologies listed are supported in all editions of Windows 10 build 17134 or later, unless otherwise specified.
+
+> [!NOTE]
+> The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/).
 
 ## 1D Symbologies
 
@@ -47,10 +53,6 @@ This topic provides sample barcodes for each of the symbologies supported by the
 Scan the image of a package below with your camera barcode scanner application to see GS1DWCode in action.  The image is encoded with UPCA 856107006854.  Please visit http://www.digimarc.com for more information about GS1DWCode capabilities.
 
 ![Sample Barcode - GS1DWCode](images/pos/rice-box-v7.jpg)
-
-> [!NOTE]
-> Windows 10 uses a software decoder in combination with a standard lens camera to produce a functional barcode scanner. This article refers to the symbologies supported by the software decoder. Additional symbologies may be supported by dedicated Barcode Scanner devices. Symbologies listed are supported in all editions of Windows 10 build 17134 or later, unless otherwise specified.
-> The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/).
 
 ## See also
 
