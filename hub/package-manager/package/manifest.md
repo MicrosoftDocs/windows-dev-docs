@@ -168,3 +168,12 @@ ManifestVersion: 0.1.0
 * All packages should be submitted with a silent install if possible. If you have an executable that does not support a silent install, the user experience will be diminished.
 * Limit the length of strings in your manifest to 100 characters before a line break.
 * When more than one installer type exists for the specified version of the package, an instance of `InstallerType` can be placed under each of the `Installers`.
+* You can often figure out what silent `switches` are available for an installer by passing in a `-?` to the installer from the command line.  Here are some common silent `switches` that can be used:   
+
+| Installer | Command  | Documentation |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [MSI Commands](https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options)
+InstallSheild | `/s`  | [Flexera](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm)
+Inno Setup | `/SILENT or /VERYSILENT` | [jrsoftware.org](https://jrsoftware.org/isinfo.php)
+Nullsoft | `/S` | [Nullsoft](http://nsis.sourceforge.net/)
+
