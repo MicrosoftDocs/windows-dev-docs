@@ -27,7 +27,7 @@ Packaged applications with the [runFullTrust](/windows/uwp/packaging/app-capabil
 
 ### BroadFileSystemAccess
 
-Packaged applications can perform IPC using the broad filesystem by declaring the [broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) restricted capability.
+Packaged applications can perform IPC using the broad filesystem by declaring the [broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) restricted capability. This capability grants [Windows.Storage](/uwp/api/Windows.Storage) APIs and [-FromApp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32 APIs access to the broad filesystem.
 
 By default, IPC via the filesystem for packaged applications is restricted to the other mechanisms described in this section.
 
