@@ -484,6 +484,10 @@ If your tree view has unrealized nodes, they are not taken into account for sele
 - The **SelectAll** method only adds realized nodes to the **SelectedNodes** collection.
 - If a parent node with unrealized children is selected, the children will be selected as they are realized.
 
+#### SelectedItem/SelectedItems
+
+Starting in WinUI 2.2, TreeView has the [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) and [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.
+
 ## Code examples
 
 The following code examples demonstrate various features of the tree view control.
