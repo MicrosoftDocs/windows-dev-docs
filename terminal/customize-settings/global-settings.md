@@ -325,18 +325,6 @@ When this is set to `true`, trying to paste text with multiple lines will displa
 
 **Default value:** `true`
 
-### Word delimiters
-
-This determines the word delimiters used in a double-click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
-
-**Property name:** `wordDelimiters`
-
-**Necessity:** Optional
-
-**Accepts:** Characters as a string
-
-**Default value:** <code>&nbsp;&#x2f;&#x5c;&#x28;&#x29;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x7e;&#x3f;│</code><br>_(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
-
 <br />
 
 ___
