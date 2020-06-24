@@ -1,8 +1,6 @@
 ---
 title: winget validate Command
 description: Validates a manifest file for submitting software to the Microsoft Community Package Manifest Repository on GitHub.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: article
 ms.localizationpriority: medium

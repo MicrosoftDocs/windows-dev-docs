@@ -76,7 +76,8 @@
         "dev-environment/*.md": "mattwojo",
         "android/*.md": "mattwojo",
         "nodejs/*.md": "mattwojo",
-        "python/*.md": "mattwojo"
+        "python/*.md": "mattwojo",
+        "package-manager/*.md": "KevinLaMS"
       },
       "ms.author":
       {
@@ -94,7 +95,8 @@
         "dev-environment/*.md": "mattwoj",
         "android/*.md": "mattwoj",
         "nodejs/*.md": "mattwoj",
-        "python/*.md": "mattwoj"
+        "python/*.md": "mattwoj",
+        "package-manager/*.md": "kevinla"
       }
     },
     "template": [],

@@ -30,7 +30,7 @@ You don't have to sign your application before you submit it to the Store.
 >[!IMPORTANT]
 > If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
-<a id="side-load" />
+<a id="side-load"></a>
 
 ## Distribute your application without placing it onto the Microsoft Store
 
@@ -53,7 +53,7 @@ To sign your application by using a certificate, see [Sign an application packag
 
 To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
-<a id="transition-users" />
+<a id="transition-users"></a>
 
 ## Transition users to your packaged app
 
@@ -121,7 +121,7 @@ To view the complete context of this snippet, see the **MainWindow.cs** file of 
 
 ```csharp
 private void RemoveDesktopApp()
-{              
+{
     //Typically, you can find your uninstall string at this location.
     String uninstallString = (String)Microsoft.Win32.Registry.GetValue
         (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +

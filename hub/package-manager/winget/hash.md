@@ -1,8 +1,6 @@
 ---
 title: winget hash command
 description: Generates the SHA256 hash for an installer.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: article
 ms.localizationpriority: medium

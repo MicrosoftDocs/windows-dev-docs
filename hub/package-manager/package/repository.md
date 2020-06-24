@@ -1,8 +1,6 @@
 ---
 title: Submit your manifest to the repository
-description: 
-author: denelon
-ms.author: denelon
+description: After you create a package manifest that describes your application, you're ready to submit your manifest to the Windows Package Manager repository.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium

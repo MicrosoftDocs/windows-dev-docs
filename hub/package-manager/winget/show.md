@@ -1,8 +1,6 @@
 ---
 title: show Command
 description: Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium

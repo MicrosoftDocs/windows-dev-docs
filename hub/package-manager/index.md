@@ -1,8 +1,6 @@
 ---
 title: Windows Package Manager
-description: 
-author: denelon
-ms.author: denelon
+description: Windows Package Manager is a comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows 10.
 ms.date: 05/03/2020
 ms.topic: overview
 ms.localizationpriority: medium

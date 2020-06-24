@@ -1,8 +1,6 @@
 ---
 title: Create your package manifest
-description: 
-author: denelon
-ms.author: denelon
+description: If you want to submit a software package to the Windows Package Manager repository, start by creating a package manifest.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium

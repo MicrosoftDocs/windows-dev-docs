@@ -1,8 +1,6 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
