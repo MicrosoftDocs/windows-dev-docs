@@ -69,7 +69,7 @@ You can optionally check "Include prerelease" to see the latest prerelease versi
     * In your XAML page, add a reference at the top of your page
 
         ```xaml
-        xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+        xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
         ```
 
     * In your code (if you want to use the type names without qualifying them), you can add a using directive.
