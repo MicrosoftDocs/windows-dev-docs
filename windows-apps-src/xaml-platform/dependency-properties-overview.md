@@ -49,26 +49,26 @@ Here is a summation of the terminology that we use in the documentation when dis
 
 The property wrapper is not just convenience for callers, it also exposes the dependency property to any process, tool or projection that uses Windows Runtime definitions for properties.
 
-The following example defines a custom "IsSpinning" dependency property as defined for C#, and shows the relationship of the dependency property identifier to the property wrapper.
+The following example defines a custom dependency property as defined for C#, and shows the relationship of the dependency property identifier to the property wrapper.
 
 ```csharp
-// IsSpinningProperty is the dependency property identifier
-// no need for info in the last PropertyMetadata parameter, so we pass null
-public static readonly DependencyProperty IsSpinningProperty =
-    DependencyProperty.Register(
-        "IsSpinning", typeof(Boolean),
-        typeof(ExampleClass), null
-    );
-// The property wrapper, so that callers can use this property through a simple ExampleClassInstance.IsSpinning usage rather than requiring property system APIs
-public bool IsSpinning
+public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+  "Label",
+  typeof(string),
+  typeof(ImageWithLabelControl),
+  new PropertyMetadata(null)
+);
+
+
+public string Label
 {
-    get { return (bool)GetValue(IsSpinningProperty); }
-    set { SetValue(IsSpinningProperty, value); }
+    get { return (string)GetValue(LabelProperty); }
+    set { SetValue(LabelProperty, value); }
 }
 ```
 
 > [!NOTE]
-> The preceding example is not intended as the complete example for how to create a custom dependency property. It is intended to show dependency property concepts for anyone that prefers learning concepts through code. For a more complete example, see [Custom dependency properties](custom-dependency-properties.md).
+> The preceding example is not intended as the complete example for how to create a custom dependency property. It is intended to show dependency property concepts for anyone that prefers learning concepts through code. For a more complete explanation of this example, see [Custom dependency properties](custom-dependency-properties.md).
 
 ## Dependency property value precedence
 
