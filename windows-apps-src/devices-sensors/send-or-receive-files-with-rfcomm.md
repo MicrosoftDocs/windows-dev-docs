@@ -2,7 +2,7 @@
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-ms.date: 07/19/2018
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,6 +20,11 @@ dev_langs:
 - [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
+
+> [!Important]
+> You must declare the "bluetooth" capability in *Package.appxmanifest*.
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## Overview
 
