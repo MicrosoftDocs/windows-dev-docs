@@ -578,43 +578,47 @@ InteractionTrackerPositionUpdateOption
 
 ### [Windows.UI.Core.Preview.Communications](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications)
 
-#### [PreviewMeetingInfoDisplayKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewsystemstate)
+#### [PreviewMeetingInfoDisplayKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewmeetinginfodisplaykind)
 
 PreviewMeetingInfoDisplayKind
 
-#### [PreviewSystemState](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcleanuprequestedeventargs)
+#### [PreviewSystemState](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewsystemstate)
 
-PreviewSystemState <br> PreviewTeamCleanupRequestedEventArgs
+PreviewSystemState
 
-#### [PreviewTeamCleanupRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcommandinvokedeventargs)
+#### [PreviewTeamCleanupRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcleanuprequestedeventargs)
 
-PreviewTeamCleanupRequestedEventArgs.GetDeferral <br> PreviewTeamCommandInvokedEventArgs
+PreviewTeamCleanupRequestedEventArgs <br> PreviewTeamCleanupRequestedEventArgs.GetDeferral
 
-#### [PreviewTeamCommandInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamdevicecredentials)
+#### [PreviewTeamCommandInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcommandinvokedeventargs)
 
-PreviewTeamCommandInvokedEventArgs.Command <br> PreviewTeamDeviceCredentials <br> PreviewTeamDeviceCredentials.#ctor <br> PreviewTeamDeviceCredentials.DomainUserName <br> PreviewTeamDeviceCredentials.Password
+PreviewTeamCommandInvokedEventArgs </br> PreviewTeamCommandInvokedEventArgs.Command
 
-#### [PreviewTeamDeviceCredentials](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingkind)
+#### [PreviewTeamDeviceCredentials](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamdevicecredentials)
 
-PreviewTeamDeviceCredentials.UserPrincipalName
+PreviewTeamDeviceCredentials <br> PreviewTeamDeviceCredentials.DomainUserName <br> PreviewTeamDeviceCredentials.Password <br> PreviewTeamDeviceCredentials.UserPrincipalName
 
-#### [PreviewTeamEndMeetingKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingrequestedeventargs)
+#### [PreviewTeamEndMeetingKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingkind)
 
-PreviewTeamEndMeetingKind <br> PreviewTeamEndMeetingRequestedEventArgs
+PreviewTeamEndMeetingKind
 
-#### [PreviewTeamEndMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamjoinmeetingrequestedeventargs)
+#### [PreviewTeamEndMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingrequestedeventargs)
 
-PreviewTeamEndMeetingRequestedEventArgs.GetDeferral <br> PreviewTeamJoinMeetingRequestedEventArgs <br> PreviewTeamJoinMeetingRequestedEventArgs.GetDeferral
+PreviewTeamEndMeetingRequestedEventArgs <br> PreviewTeamEndMeetingRequestedEventArgs.GetDeferral
 
-#### [PreviewTeamJoinMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamview)
+#### [PreviewTeamJoinMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamjoinmeetingrequestedeventargs)
 
-PreviewTeamJoinMeetingRequestedEventArgs.MeetingUri <br> PreviewTeamView <br> PreviewTeamView.CleanupRequested <br> PreviewTeamView.CommandInvoked <br> PreviewTeamView.EndMeetingRequested <br> PreviewTeamView.EnterFullScreen <br> PreviewTeamView.GetForCurrentView <br> PreviewTeamView.IsFullScreen <br> PreviewTeamView.IsFullScreenChanged <br> PreviewTeamView.IsScreenSharing <br> PreviewTeamView.IsScreenSharingChanged <br> PreviewTeamView.JoinMeetingRequested <br> PreviewTeamView.JoinMeetingWithUri <br> PreviewTeamView.LeaveFullScreen <br> PreviewTeamView.MeetingInfoDisplayType <br> PreviewTeamView.MeetingUri <br> PreviewTeamView.NotifyMeetingEnded <br> PreviewTeamView.RequestForeground <br> PreviewTeamView.SetButtonLabel <br> PreviewTeamView.SetTitle <br> PreviewTeamView.SharingScreenBounds <br> PreviewTeamView.SharingScreenBoundsChanged <br> PreviewTeamView.StartSharingScreen <br> PreviewTeamView.StopSharingScreen <br> PreviewTeamView.SystemState
+PreviewTeamJoinMeetingRequestedEventArgs <br> PreviewTeamJoinMeetingRequestedEventArgs.GetDeferral <br> PreviewTeamJoinMeetingRequestedEventArgs.MeetingUri
 
-#### [PreviewTeamView](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamviewcommand)
+#### [PreviewTeamView](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamview)
+
+PreviewTeamView <br> PreviewTeamView.CleanupRequested <br> PreviewTeamView.CommandInvoked <br> PreviewTeamView.EndMeetingRequested <br> PreviewTeamView.EnterFullScreen <br> PreviewTeamView.GetForCurrentView <br> PreviewTeamView.IsFullScreen <br> PreviewTeamView.IsFullScreenChanged <br> PreviewTeamView.IsScreenSharing <br> PreviewTeamView.IsScreenSharingChanged <br> PreviewTeamView.JoinMeetingRequested <br> PreviewTeamView.JoinMeetingWithUri <br> PreviewTeamView.LeaveFullScreen <br> PreviewTeamView.MeetingInfoDisplayType <br> PreviewTeamView.MeetingUri <br> PreviewTeamView.NotifyMeetingEnded <br> PreviewTeamView.RequestForeground <br> PreviewTeamView.SetButtonLabel <br> PreviewTeamView.SetTitle <br> PreviewTeamView.SharingScreenBounds <br> PreviewTeamView.SharingScreenBoundsChanged <br> PreviewTeamView.StartSharingScreen <br> PreviewTeamView.StopSharingScreen <br> PreviewTeamView.SystemState
+
+#### [PreviewTeamView](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamview)
 
 PreviewTeamView.SystemStateChanged
 
-#### [PreviewTeamViewCommand](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.windows)
+#### [PreviewTeamViewCommand](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamviewcommand)
 
 PreviewTeamViewCommand
 
@@ -662,25 +666,9 @@ ManipulationUpdatedEventArgs.ContactCount <br> ManipulationUpdatedEventArgs.Curr
 
 RightTappedEventArgs.ContactCount
 
-#### [TappedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.systembuttoneventcontroller)
+#### [TappedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.tappedeventargs)
 
-TappedEventArgs.ContactCount <br> ichEditMathMode <br> ichEditTextDocument.GetMath <br> ichEditTextDocument.SetMath <br> ichEditTextDocument.SetMathMode <br> nagement.Core.CoreInputView.PrimaryViewHiding
-
-#### [nagement](https://docs.microsoft.com/uwp/api/windows.ui.input.systemfunctionbuttoneventargs)
-
-nagement.Core.CoreInputView.PrimaryViewShowing <br> nagement.Core.CoreInputViewHidingEventArgs <br> nagement.Core.CoreInputViewHidingEventArgs.TryCancel
-
-#### [nagement](https://docs.microsoft.com/uwp/api/windows.ui.input.systemfunctionlockchangedeventargs)
-
-nagement.Core.CoreInputViewShowingEventArgs <br> nagement.Core.CoreInputViewShowingEventArgs.TryCancel <br> nagement.Core.UISettingsController <br> nagement.Core.UISettingsController.RequestDefaultAsync
-
-#### [nagement](https://docs.microsoft.com/uwp/api/windows.ui.input.systemfunctionlockindicatorchangedeventargs)
-
-nagement.Core.UISettingsController.SetAdvancedEffectsEnabled <br> nagement.Core.UISettingsController.SetAnimationsEnabled <br> nagement.Core.UISettingsController.SetAutoHideScrollBars <br> nagement.Core.UISettingsController.SetMessageDuration
-
-#### [nagement](https://docs.microsoft.com/uwp/api/windows.ui.input.tappedeventargs)
-
-nagement.Core.UISettingsController.SetTextScaleFactor
+TappedEventArgs.ContactCount 
 
 ### [Windows.UI.ViewManagement](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement)
 
