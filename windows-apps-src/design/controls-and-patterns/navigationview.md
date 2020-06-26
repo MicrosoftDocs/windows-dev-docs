@@ -1655,11 +1655,15 @@ This example shows how to override the theme resources in App.xaml. When you ove
 ```
 
 ### Top whitespace
+
+> The `IsTitleBarAutoPaddingEnabled` property requires the [Windows UI Library](/uwp/toolkits/winui/) 2.2 or later.
+
 Some apps choose to [customize their window's title bar](/windows/uwp/design/shell/title-bar), potentially extending their app content into the title bar area. 
-When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](/windows/uwp/design/shell/title-bar#draggable-regions). 
+When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](/windows/uwp/design/shell/title-bar#draggable-regions).
+
 ![An app extending into the title bar](images/navigation-view-with-titlebar-padding.png)
 
-If your app specifies the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set `IsTitleBarAutoPaddingEnabled` to False.
+If your app specifies the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set [IsTitleBarAutoPaddingEnabled](/uwp/api/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) to **false**.
 
 ![App extending into the title bar without extra padding](images/navigation-view-no-titlebar-padding.png)
 
