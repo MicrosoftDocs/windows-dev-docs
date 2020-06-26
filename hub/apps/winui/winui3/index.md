@@ -104,6 +104,7 @@ WinUI 3.0 Preview 1 is compatible with PCs running the Windows 10 April 2018 Upd
 
 ### Developer tools
 
+- Only C# and C++/WinRT apps are supported at this time
 - Desktop apps support .NET 5 and C# 8, and must be packaged.
 - UWP apps support .NET Native and C# 7.3
 - Intellisense is incomplete
@@ -118,7 +119,6 @@ WinUI 3.0 Preview 1 is compatible with PCs running the Windows 10 April 2018 Upd
 
 ### Missing Platform Features
 
-- Only C# and C++/WinRT are supported at this time
 - No support for Xbox
 - No support for HoloLens
 - No support for windowed popups
