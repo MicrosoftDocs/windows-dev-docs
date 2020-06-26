@@ -118,6 +118,7 @@ WinUI 3.0 Preview 1 is compatible with PCs running the Windows 10 April 2018 Upd
 
 ### Missing Platform Features
 
+- Only C# and C++/WinRT are supported at this time
 - No support for Xbox
 - No support for HoloLens
 - No support for windowed popups
