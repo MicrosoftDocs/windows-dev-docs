@@ -8,8 +8,8 @@ metadata:
   description: This page provides the information for you to get started developing ARM64 win32 and UWP apps. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: guidance #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.topic: landing-page # Required
-  author: msatranjr #Required; your GitHub user alias, with correct capitalization.
-  ms.author: misatran #Required; microsoft alias of author; optional team alias.
+  author: hickeys #Required; your GitHub user alias, with correct capitalization.
+  ms.author: hickeys #Required; microsoft alias of author; optional team alias.
   ms.date: 05/08/2018 #Required; mm/dd/yyyy format.
   ms.localizationpriority: medium
 
