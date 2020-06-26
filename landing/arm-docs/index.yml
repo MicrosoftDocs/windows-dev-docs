@@ -44,7 +44,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Build ARM64 apps with the SDK
-            url: https://blogs.windows.com/buildingapps/?p=52087
+            url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
           - text: UWP apps on ARM
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
           - text: Debug on ARM
