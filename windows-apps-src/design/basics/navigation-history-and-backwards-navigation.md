@@ -195,7 +195,7 @@ App.xaml code-behind:
 ```csharp
 // App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
-Frame rootFrame = Window.Current.Content;
+Frame rootFrame = Window.Current.Content as Frame;
 rootFrame.PointerPressed += On_PointerPressed;
 
 private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
