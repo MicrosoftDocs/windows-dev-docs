@@ -25,15 +25,15 @@ In the following diagrams, both the device and display orientation are in [Lands
 
 This diagram shows both the display and device orientation in [Landscape](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Display and device orientation in Landscape](images/sensor-orientation-a.PNG)
+:::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="Display and device orientation in Landscape":::
 
 This next diagram shows both the display and device orientation in [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Display and device orientation in LandscapeFlipped](images/sensor-orientation-b.PNG)
+![Display and device orientation in LandscapeFlipped](images/sensor-orientation-b-small.jpg)
 
 This final diagram shows the display orientation in Landscape while the device orientation is [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/sensor-orientation-c.PNG)
+![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/sensor-orientation-c-small.jpg)
 
 You can query the orientation values through the [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) class by using the [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) method with the [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
 
@@ -43,10 +43,10 @@ Manufacturers produce both landscape-first and portrait-first devices. The refer
 
 | Orientation | Landscape-first | Portrait-first |
 |-------------|-----------------|----------------|
-| **Landscape** | ![Landscape-first device in Landscape orientation](images/sensor-orientation-0.PNG) | ![Portrait-first device in Landscape orientation](images/sensor-orientation-1.PNG) |
-| **Portrait** | ![Landscape-first device in Portrait orientation](images/sensor-orientation-2.PNG) | ![Portrait-first device in Portrait orientation](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped** | ![Landscape-first device in LandscapeFlipped orientation](images/sensor-orientation-4.PNG) | ![Portrait-first device in LandscapeFlipped orientation](images/sensor-orientation-5.PNG) | 
-| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/sensor-orientation-6.PNG)| ![Portrait-first device in PortraitFlipped orientation](images/sensor-orientation-7.PNG) |
+| **Landscape** | ![Landscape-first device in Landscape orientation](images/sensor-orientation-0-small.jpg) | ![Portrait-first device in Landscape orientation](images/sensor-orientation-1-small.jpg) |
+| **Portrait** | ![Landscape-first device in Portrait orientation](images/sensor-orientation-2-small.jpg) | ![Portrait-first device in Portrait orientation](images/sensor-orientation-3-small.jpg) |
+| **LandscapeFlipped** | ![Landscape-first device in LandscapeFlipped orientation](images/sensor-orientation-4-small.jpg) | ![Portrait-first device in LandscapeFlipped orientation](images/sensor-orientation-5-small.jpg) | 
+| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/sensor-orientation-6-small.jpg)| ![Portrait-first device in PortraitFlipped orientation](images/sensor-orientation-7-small.jpg) |
 
 ## Devices broadcasting display and headless devices
 
