@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
+      "redirect_url": "/windows/uwp/get-started/get-app-samples",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
       "redirect_document_id": false

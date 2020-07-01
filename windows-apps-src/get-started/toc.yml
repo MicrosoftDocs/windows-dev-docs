@@ -32,4 +32,4 @@
     - name: Building a complex app
       href: ../get-started/plan-your-app.md
 - name: Get Windows app samples
-  href: ../get-started/get-uwp-app-samples.md
+  href: ../get-started/get-app-samples.md
