@@ -36,7 +36,7 @@ How-to articles and code for creating UWP apps for Windows 10.
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt="UWP overview"/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -55,7 +55,7 @@ How-to articles and code for creating UWP apps for Windows 10.
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Porting guide" />
                         </div>
                     </div>                
                     <div class="cardText">

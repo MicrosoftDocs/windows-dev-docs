@@ -229,7 +229,7 @@ To resolve these errors, install the [Windows Compatibility](https://www.nuget.o
 2. Choose **Manage NuGet Packages**.
 3. In the **NuGet Package Manager** window, click **Browse**. Search for the `Microsoft.Windows.Compatibility` package and install the latest stable version.
 
-    ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
+    ![Install NuGet package](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 
 4. Now try again to compile the project, by right clicking on the **ContosoExpenses.Data** project and choosing **Build**.
 
