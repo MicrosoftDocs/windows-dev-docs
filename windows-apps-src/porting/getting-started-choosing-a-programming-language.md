@@ -25,7 +25,7 @@ Although we're focusing on C# in this article, the other languages offer unique 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://bugs.chromium.org/p/angleproject/)
 -   [Create your first UWP app using DirectX](https://docs.microsoft.com/previous-versions/windows/apps/br229580(v=win.10))
--   [UWP app samples that use DirectX](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=DirectX)
+-   [UWP app samples that use DirectX](https://docs.microsoft.com/en-us/samples/browse/?expanded=windows&products=windows-uwp&terms=directx)
 -   [Where is the DirectX SDK?](https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-)
 
 ## Giving C# a go
@@ -33,7 +33,7 @@ Although we're focusing on C# in this article, the other languages offer unique 
 As an iOS developer, you're accustomed to Objective-C and Swift. The closest Microsoft programming language to both is C#. For most developers and most apps, we think C# is the easiest and fastest language to learn and use, so this article's info and walkthroughs focus on that language. To learn more about C#, see the following:
 
 -   [Create your first UWP app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [UWP app samples that use C#](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)
+-   [UWP app samples that use C#](https://docs.microsoft.com/en-us/samples/browse/?expanded=windows&products=windows-uwp&languages=csharp)
 -   [Visual C#](https://msdn.microsoft.com/library/kx37x362.aspx)
 
 Following is a class written in Objective-C and C#. The Objective-C version is shown first, followed by the C# version.
