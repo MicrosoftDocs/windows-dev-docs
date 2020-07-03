@@ -21,7 +21,12 @@ Sensor data from the [**Accelerometer**](https://docs.microsoft.com/uwp/api/Wind
 
 In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device.
 
-In the following diagrams, both the device and display orientation are in [Landscape](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (the sensor axes shown are specific to landscape orientation), with the positive z-axis extending out from the device.
+> [!NOTE]
+> The positive z-axis extends out from the device screen, as show in the following image.
+> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Z-axis for laptop":::
+
+In the following diagrams, both the device and display orientation are in [Landscape](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (the sensor axes shown are specific to landscape orientation).
+
 
 This diagram shows both the display and device orientation in [Landscape](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
@@ -154,7 +159,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## Display orientation and device orientation
 
-The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
+The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
 :::image type="content" source="images/eulers-formula.png" alt-text="Euler's formula":::
 
