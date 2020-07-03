@@ -29,11 +29,11 @@ This diagram shows both the display and device orientation in [Landscape](https:
 
 This next diagram shows both the display and device orientation in [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Display and device orientation in LandscapeFlipped](images/sensor-orientation-b-small.jpg)
+:::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="Display and device orientation in LandscapeFlipped":::
 
 This final diagram shows the display orientation in Landscape while the device orientation is [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/sensor-orientation-c-small.jpg)
+:::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Display orientation in Landscape while the device orientation is LandscapeFlipped":::
 
 You can query the orientation values through the [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) class by using the [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) method with the [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
 
@@ -43,10 +43,10 @@ Manufacturers produce both landscape-first and portrait-first devices. The refer
 
 | Orientation | Landscape-first | Portrait-first |
 |-------------|-----------------|----------------|
-| **Landscape** | ![Landscape-first device in Landscape orientation](images/sensor-orientation-0-small.jpg) | ![Portrait-first device in Landscape orientation](images/sensor-orientation-1-small.jpg) |
-| **Portrait** | ![Landscape-first device in Portrait orientation](images/sensor-orientation-2-small.jpg) | ![Portrait-first device in Portrait orientation](images/sensor-orientation-3-small.jpg) |
-| **LandscapeFlipped** | ![Landscape-first device in LandscapeFlipped orientation](images/sensor-orientation-4-small.jpg) | ![Portrait-first device in LandscapeFlipped orientation](images/sensor-orientation-5-small.jpg) | 
-| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/sensor-orientation-6-small.jpg)| ![Portrait-first device in PortraitFlipped orientation](images/sensor-orientation-7-small.jpg) |
+| **Landscape** | :::image type="content" source="images/sensor-orientation-0-small.jpg" alt-text="Landscape-first device in Landscape orientation"::: | :::image type="content" source="images/sensor-orientation-1-small.jpg" alt-text="Portrait-first device in Landscape orientation"::: |
+| **Portrait** | :::image type="content" source="images/sensor-orientation-2-small.jpg" alt-text="Landscape-first device in Portrait orientation"::: | :::image type="content" source="images/sensor-orientation-3-small.jpg" alt-text="Portrait-first device in Portrait orientation"::: |
+| **LandscapeFlipped** | :::image type="content" source="images/sensor-orientation-4-small.jpg" alt-text="Landscape-first device in LandscapeFlipped orientation"::: | :::image type="content" source="images/sensor-orientation-5-small.jpg" alt-text="Portrait-first device in LandscapeFlipped orientation":::
+| **PortraitFlipped** | :::image type="content" source="images/sensor-orientation-6-small.jpg" alt-text="Landscape-first device in PortraitFlipped orientation"::: | :::image type="content" source="images/sensor-orientation-7-small.jpg" alt-text="Portrait-first device in PortraitFlipped orientation"::: |
 
 ## Devices broadcasting display and headless devices
 
@@ -156,11 +156,11 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
-![Euler's formula](images/eulers-formula.png)
+:::image type="content" source="images/eulers-formula.png" alt-text="Euler's formula":::
 
 To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
 
-![Multiply the reference object against the absolute object](images/orientation-formula.png)
+:::image type="content" source="images/orientation-formula.png" alt-text="Multiply the reference object against the absolute object":::
 
 In the preceding expression, the absolute object is returned by the sensor data.
 
