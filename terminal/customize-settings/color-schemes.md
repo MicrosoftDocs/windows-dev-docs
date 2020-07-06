@@ -78,14 +78,6 @@ Windows Terminal includes these color schemes inside the defaults.json file, whi
 
 ![Windows Terminal One Half Light color scheme](./../images/one-half-light-color-scheme.png)
 
-### Solarized Dark
-
-![Windows Terminal Solarized Dark color scheme](./../images/solarized-dark-color-scheme.png)
-
-### Solarized Light
-
-![Windows Terminal Solarized Light color scheme](./../images/solarized-light-color-scheme.png)
-
 ### Tango Dark
 
 ![Windows Terminal Tango Dark color scheme](./../images/tango-dark-color-scheme.png)
