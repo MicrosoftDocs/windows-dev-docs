@@ -23,6 +23,8 @@ In this tutorial, you learn how to:
 > * Set up Powerline in Ubuntu/WSL
 > * Add missing Powerline glyphs
 
+> [!VIDEO https://www.youtube.com/embed/lu__oGZVT98]
+
 ## Prerequisites
 
 ### Install a Powerline font
