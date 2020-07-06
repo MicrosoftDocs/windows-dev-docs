@@ -2,23 +2,24 @@
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Write a custom plugin for device portal
 description: Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
-ms.date: 03/24/2017
+ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
+
 # Write a custom plugin for Device Portal
 
-Learn how to write a UWP app that uses th Windows Device Portal to host a web page and provide diagnostic information.
+Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
 
-Starting with the Creators Update, you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the appxmanifest changes, setting up your app’s connection to the Device Portal service, and handling an incoming request. A sample app is also provided to get started (Coming soon) . 
+Starting with Windows 10 Creators Update (version 1703, build 15063), you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the [application package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) changes, setting up your app’s connection to the [Device Portal service](/windows/uwp/debug-test-perf/device-portal), and handling an incoming request.
 
 ## Create a new UWP app project
-In this guide, we'll create everything in one solution for simplicity.
 
-In Microsoft Visual Studio 2019, create a new UWP app project. Go to File > New > Project and select Blank App (Windows Universal) for C#, and then click Next. In the Configure your new project dialog box. Name the project "DevicePortalProvider" and then click Create. This will be the app that contains the app service. Ensure that you choose "Windows 10 Creators Update (10.0; Build 15063)" to support.  You may need to update Visual Studio or install the new SDK - see [here](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/) for details. 
+In Microsoft Visual Studio, create a new UWP app project. Go to **File > New > Project** and select **Blank App (Windows Universal) for C#**, and then click **Next**. In the **Configure your new project** dialog box. Name the project "DevicePortalProvider" and then click **Create**. This will be the app that contains the app service. You may need to update Visual Studio or install the latest [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
-## Add the devicePortalProvider extension to your package.appxmanifest file
+## Add the devicePortalProvider extension to your application package manifest
+
 You will need to add some code to your *package.appxmanifest* file in order to make your app functional as a Device Portal plugin. First, add the following namespace definitions at the top of the file. Also add them to the `IgnorableNamespaces` attribute.
 
 ```xml
