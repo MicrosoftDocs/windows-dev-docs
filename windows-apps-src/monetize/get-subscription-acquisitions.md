@@ -84,7 +84,7 @@ Elements in the *Value* array contain the following values.
 | applicationId       | string  | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you are retrieving subscription add-on acquisition data.   |
 | applicationName     | string  | The display name of the app.     |
 | skuId     | string  | The ID of the [SKU](in-app-purchases-and-trials.md#products-skus) of the subscription add-on for which you are retrieving acquisition data.     |
-| deviceType          | string  |  One of the following strings that specifies the type of device that completed the acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>       |
+| deviceType          | string  |  One of the following strings that specifies the type of device that completed the acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>       |
 | market           | string  | The ISO 3166 country code of the market where the acquisition occurred.     |
 | currencyCode         | string  | The currency code in ISO 4217 format for gross sales before taxes.       |
 | grossSalesBeforeTax           | integer  | The gross sales in the local currency specified by the *currencyCode* value.     |

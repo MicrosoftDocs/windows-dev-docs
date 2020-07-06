@@ -93,7 +93,7 @@ Objects in the *Value* array contain the following values.
 | referrerUriDomain           | string |  Specifies the domain where the app listing with the custom app promotion campaign ID was activated.   |
 | channelType           | string |  One of the following strings that specifies the channel for the conversion:<ul><li><strong>CustomCampaignId</strong></li><li><strong>Store Traffic</strong></li><li><strong>Other</strong></li></ul>    |
 | storeClient         | string | The version of the Store where the conversion occurred. Currently, the only supported value is **SFC**.    |
-| deviceType          | string | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>            |
+| deviceType          | string | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>            |
 | market              | string | The ISO 3166 country code of the market where the conversion occurred.    |
 | clickCount              | number  |     The number of customer clicks on your app listing link.      |           
 | conversionCount            | number  |   The number of customer conversions.         |          
