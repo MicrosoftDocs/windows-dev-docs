@@ -65,12 +65,12 @@ When users' options lie within a range of values (for example, *10, 20, 30, ... 
 
 ![A slider control, displaying one value in a range of values](images/controls/slider.png)
 
-If there are eight or more options, use a [combo box or a list box](combo-box.md).
+If there are eight or more options, use a [combo box](combo-box.md).
 
 ![A list box, displaying multiple options](images/combo_box_scroll.png)
 
 > [!NOTE]
-> If the available options are based on an app's current context, or they can otherwise vary dynamically, use a single-select [list box](combo-box.md#list-boxes).
+> If the available options are based on an app's current context, or they can otherwise vary dynamically, use a list control.
 
 ## RadioButtons behavior
 
@@ -123,6 +123,8 @@ In column-major order, focus moves from top to bottom and from left to right). W
 ![Example of keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row.png)
 
 In row-major order (where items fill in left to right, top to bottom), when the focus is on the last item in a row and the Right arrow key is pressed, focus moves to the first item in the next row. This same behavior occurs in reverse: when focus is set to the first item in a row and the Left arrow key is pressed, focus moves to the last item in the previous row.
+
+For more information, see [Keyboard interactions](https://docs.microsoft.com/en-us/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items).
 
 ##### Wrapping
 
@@ -333,7 +335,7 @@ The following image shows how this RadioButtons group is rendered:
 
 ## Radio button states
 
-A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) is *true*. When a radio button is cleared, its IsChecked property is *false*. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its IsChecked property to *false*.
+A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) is `true`. When a radio button is cleared, its IsChecked property is `false`. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its IsChecked property to `false`.
 
 ## Recommendations
 
