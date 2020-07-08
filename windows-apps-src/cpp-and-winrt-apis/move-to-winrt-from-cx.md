@@ -51,7 +51,7 @@ If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/
 
 ### XAML markup files
 
-| | C++/CX | C++/WinRT |
+| File origin | C++/CX | C++/WinRT |
 | - | - | - |
 | **Developer XAML files** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (see below) |
 | **Generated XAML files** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
@@ -694,7 +694,7 @@ These bindings will perform **winrt::to_hstring** of the bound property. In the 
 
 C++/CX and C++/WinRT defer to the standard **std::wstringstream** for string building.
 
-| | C++/CX | C++/WinRT |
+| Operation | C++/CX | C++/WinRT |
 |-|-|-|
 | Append string, preserving nulls | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
 | Append string, stop on first null | `stream << s->Data();` | `stream << s.c_str();` |
@@ -722,11 +722,11 @@ In the examples below, *ws* is a variable of type **std::wstring**. Also, while 
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Author events in C++/WinRT](author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
-* [Consume APIs with C++/WinRT](consume-apis.md)
-* [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
+* [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events)
+* [Interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
 * [Microsoft Interface Definition Language 3.0 reference](/uwp/midl-3)
-* [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md)
-* [String handling in C++/WinRT](strings.md)
+* [Move to C++/WinRT from WRL](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
+* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)

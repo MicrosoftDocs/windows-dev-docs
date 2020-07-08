@@ -16,7 +16,8 @@ ms.custom: RS5
 One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](/windows/uwp/xaml-platform/custom-dependency-properties) and [attached properties](/windows/uwp/xaml-platform/custom-attached-properties), and [control templates](/windows/uwp/design/controls-and-patterns/control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
 ## Create a Blank App (BgLabelControlApp)
-Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, set its name to *BgLabelControlApp*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked.
+
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, set its name to *BgLabelControlApp*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
 In a later section of this topic, you'll be directed to build your project (but don't build until then).
 

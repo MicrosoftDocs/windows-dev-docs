@@ -930,6 +930,8 @@
     - name: Windows Runtime components
       href: ../winrt-components/index.md
       items:
+        - name: Windows Runtime components with C++/WinRT
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Windows Runtime components with C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
         - name: Walkthrough of a C++/CX Windows Runtime component

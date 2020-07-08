@@ -17,6 +17,7 @@ If you want to follow along with this topic, then we recommend that you first cr
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a collection?
+
 If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event whenever an element is added to it or removed from it, then the runtime class is an observable collection. A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.
 
 > [!NOTE]
@@ -88,6 +89,7 @@ Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> Bookstor
 ```
 
 ## Bind a ListBox to the **BookSkus** property
+
 Open `MainPage.xaml`, which contains the XAML markup for our main UI page. Add the following markup inside the same **StackPanel** as the **Button**.
 
 ```xaml
@@ -116,9 +118,11 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 Now build and run the project. Click the button to execute the **Click** event handler. We saw that the implementation of **Append** raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value. Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.
 
 ## Important APIs
+
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 
 ## Related topics
+
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [Author APIs with C++/WinRT](author-apis.md)

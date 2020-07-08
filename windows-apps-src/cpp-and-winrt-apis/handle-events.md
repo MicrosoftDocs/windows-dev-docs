@@ -290,6 +290,6 @@ If you handle an event with an object's member function, or from within a lambda
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## Related topics
-* [Author events in C++/WinRT](author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
-* [Strong and weak references in C++/WinRT](weak-references.md)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references)
