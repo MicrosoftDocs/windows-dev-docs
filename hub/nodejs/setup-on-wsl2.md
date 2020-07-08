@@ -135,5 +135,5 @@ You now have a Node.js development environment set up. To get started using your
 
 - [Get started with Node.js for beginners](./beginners.md)
 - [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
-- [Get started connecting Node.js apps to a database](./databases.md)
+- [Get started connecting Node.js apps to a database](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [Get started using Docker containers with Node.js](./containers.md)
