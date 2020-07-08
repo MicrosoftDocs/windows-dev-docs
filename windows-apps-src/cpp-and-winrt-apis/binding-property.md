@@ -238,7 +238,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-In `\Bookstore\Bookstore\MainPage.cpp`, call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the implementation type) to assign a new instance of the projected type to m_mainViewModel. Assign an initial value for the book's title. Implement the accessor for the MainViewModel property. And finally, update the book's title in the button's event handler. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.cpp`, as shown in the listing below, make the following changes. Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the **BookstoreViewModel** implementation type) to assign a new instance of the projected **BookstoreViewModel** type to *m_mainViewModel*. As we saw above, the **BookstoreViewModel** constructor creates a new **BookSku** object as a private data member, setting its title initially to `L"Atticus"`. In the button's event handler (**ClickHandler**), update the book's title to its published title. And finally, implement the accessor for the **MainViewModel** property. Also remove the **MyProperty** property.
 
 ```cppwinrt
 // MainPage.cpp
