@@ -722,8 +722,6 @@
                   href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
                 - name: Renew a Microsoft Store ID key
                   href: ../monetize/renew-a-windows-store-id-key.md
-            - name: App metadata API for advertising networks
-              href: ../monetize/app-metadata-api-for-advertising-networks.md
         - name: Send requests to the Store
           href: ../monetize/send-requests-to-the-store.md
         - name: Add retail demo (RDX) features
