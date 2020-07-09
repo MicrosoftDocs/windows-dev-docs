@@ -722,8 +722,6 @@
                   href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
                 - name: Renew a Microsoft Store ID key
                   href: ../monetize/renew-a-windows-store-id-key.md
-            - name: App metadata API for advertising networks
-              href: ../monetize/app-metadata-api-for-advertising-networks.md
         - name: Send requests to the Store
           href: ../monetize/send-requests-to-the-store.md
         - name: Add retail demo (RDX) features
@@ -930,6 +928,8 @@
     - name: Windows Runtime components
       href: ../winrt-components/index.md
       items:
+        - name: Windows Runtime components with C++/WinRT
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Windows Runtime components with C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
         - name: Walkthrough of a C++/CX Windows Runtime component

@@ -53,7 +53,7 @@ In addition to design guidance, our Fluent Design articles also show you how to 
 </Grid>
 ```
 
-![](images/fluent/xaml-example.png)
+![XAML example](images/fluent/xaml-example.png)
 
 
 > If you're new to UWP development, check out our [Get started with UWP page](/windows/uwp/get-started).

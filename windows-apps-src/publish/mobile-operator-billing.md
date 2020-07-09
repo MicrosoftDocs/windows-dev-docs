@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, mobile operators, mobile billing, mobile operator billing
 ms.localizationpriority: medium
 ---
+
 # Mobile operator billing
 
 > [!NOTE]
@@ -24,7 +25,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Country/region       | Mobile operators                                        |
 |----------------------|---------------------------------------------------------|
 | Australia            | Optus                                                   |
-| Austria              | Hutchison 3G Austria, A1 Telekom, T-Mobile / tele.ring  |
+| Austria              | A1 Telekom, Hutchison 3G Austria, T-Mobile / tele.ring  |
 | Belgium              | Base, Proximus                                          |
 | Canada               | Telus                                                   |
 | Czechia              | T-Mobile                                                |
@@ -33,7 +34,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | France               | Orange                                                  |
 | Germany              | O2, Telekom Deutschland, Vodafone                       |
 | Hungary              | Telenor                                                 |
-| Italy                | Wind, Tre                                               |
+| Italy                | Tre, Wind                                               |
 | Malaysia             | Digi                                                    |
 | Netherlands          | KPN / Telfort                                           |
 | Norway               | Telenor / Talkmore, Telia / OneCall                     |
@@ -42,10 +43,10 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Slovakia             | Slovak Telekom                                          |
 | South Africa         | Vodacom                                                 |
 | Spain                | Orange                                                  |
-| Sweden               | Telenor, 3                                              |
-| Switzerland          | Swisscom, Sunrise                                       |
+| Sweden               | 3, Telenor                                              |
+| Switzerland          | Sunrise, Swisscom                                       |
 | Taiwan               | FarEasTone                                              |
 | Turkey               | Turkcell                                                |
 | United Arab Emirates | Etisalat                                                |
 | United States        | Sprint, Verizon                                         |
-| United Kingdom       | O2, 3 UK, EE                                            |
+| United Kingdom       | 3 UK, EE, O2, Vodaphone                                 |

@@ -8,12 +8,14 @@ ms.localizationpriority: medium
 ---
 
 # XAML controls; bind to a C++/WinRT property
+
 A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them (for background info, see [Data binding](/windows/uwp/data-binding)).
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a property?
+
 Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** chooses to raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
 
 A XAML text element, or control, can bind to, and handle, these events by retrieving the updated value(s) and then updating itself to show the new value.
@@ -22,7 +24,8 @@ A XAML text element, or control, can bind to, and handle, these events by retrie
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Create a Blank App (Bookstore)
-Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *Bookstore*.
+
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *Bookstore*. Make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
 We're going to author a new class to represent a book that has an observable title property. We're authoring and consuming the class within the same compilation unit. But we want to be able to bind to this class from XAML, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
@@ -235,7 +238,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-In `\Bookstore\Bookstore\MainPage.cpp`, call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the implementation type) to assign a new instance of the projected type to m_mainViewModel. Assign an initial value for the book's title. Implement the accessor for the MainViewModel property. And finally, update the book's title in the button's event handler. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.cpp`, as shown in the listing below, make the following changes. Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the **BookstoreViewModel** implementation type) to assign a new instance of the projected **BookstoreViewModel** type to *m_mainViewModel*. As we saw above, the **BookstoreViewModel** constructor creates a new **BookSku** object as a private data member, setting its title initially to `L"Atticus"`. In the button's event handler (**ClickHandler**), update the book's title to its published title. And finally, implement the accessor for the **MainViewModel** property. Also remove the **MyProperty** property.
 
 ```cppwinrt
 // MainPage.cpp

@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
+      "redirect_url": "/windows/uwp/get-started/get-app-samples",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
       "redirect_document_id": false
@@ -4903,6 +4908,11 @@
     {
       "source_path": "hub/nodejs/databases.md",
       "redirect_url": "https://docs.microsoft.com/windows/wsl/tutorials/wsl-database",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/app-metadata-api-for-advertising-networks.md",
+      "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
     }
   ]

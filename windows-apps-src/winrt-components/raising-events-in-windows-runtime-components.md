@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 # Raising events in Windows Runtime components
 
 > [!NOTE]
-> For more info about raising events in a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+> For more info about raising events in a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows Runtime Component, see [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
 
 If your Windows Runtime component raises an event of a user-defined delegate type on a background thread (worker thread), and you want JavaScript to be able to receive the event, then you can implement and/or raise it in any one of these ways.
 

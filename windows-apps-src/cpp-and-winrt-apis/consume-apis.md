@@ -275,7 +275,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
+For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
 
 ## If the API is implemented in the consuming project
 A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
@@ -444,7 +444,8 @@ The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/w
 * [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
-* [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Interop between C++/WinRT and the ABI](interop-winrt-abi.md)
-* [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md)
-* [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Interop between C++/WinRT and the ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
+* [Introduction to C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property)
