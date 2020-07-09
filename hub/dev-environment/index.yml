@@ -28,8 +28,8 @@ landingContent:
             url: ../python/web-frameworks.md
           - text: Set up for automation scripts
             url: ../python/scripting.md
-          - text: Set up databases with WSL
-            url: ../python/databases.md
+          - text: Connect databases with WSL
+            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
       - linkListType: tutorial
         links:
           - text: Try some Python basics
@@ -60,8 +60,8 @@ landingContent:
             url: ../nodejs/beginners.md
           - text: Develop web apps
             url: ../nodejs/web-frameworks.md
-          - text: Connect databases
-            url: ../nodejs/databases.md
+          - text: Connect databases with WSL
+            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
           - text: Use Docker containers
             url: ../nodejs/containers.md
       - linkListType: tutorial

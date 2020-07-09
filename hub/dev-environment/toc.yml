@@ -12,7 +12,7 @@
         - name: Get started with automation
           href: ../python/scripting.md
         - name: Get started with databases
-          href: ../python/databases.md
+          href: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
         - name: FAQs
           href: ../python/faqs.md
         - name: Resources
@@ -30,7 +30,7 @@
         - name: Get started with web frameworks
           href: ../nodejs/web-frameworks.md
         - name: Get started with databases
-          href: ../nodejs/databases.md
+          href: .https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
         - name: Get started with containers
           href: ../nodejs/containers.md
   - name: Develop with Android

@@ -4901,6 +4901,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/python/databases.md",
+      "redirect_url": "https://docs.microsoft.com/windows/wsl/tutorials/wsl-database",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/nodejs/databases.md",
+      "redirect_url": "https://docs.microsoft.com/windows/wsl/tutorials/wsl-database",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/monetize/app-metadata-api-for-advertising-networks.md",
       "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
