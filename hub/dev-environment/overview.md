@@ -46,22 +46,27 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![WSL](../images/windows-linux-dev-env.png)](https://docs.microsoft.com/windows/wsl/)<br>
         **[Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/)**<br>
-        Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).
+        Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
+        [Install WSL](https://docs.microsoft.com/windows/wsl/install-win10)
     :::column-end:::
     :::column:::
        [![Windows Terminal](../images/terminal.png)](https://docs.microsoft.com/windows/terminal/)<br>
         **[Windows Terminal](https://docs.microsoft.com/windows/terminal/)**<br>
         Customize your terminal environment to work with multiple command line shells.
+        <br>
+        [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
     :::column-end:::
     :::column:::
        [![Windows Package Manager](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows Package Manager](https://docs.microsoft.com/windows/package-manager/)**<br>
-        Use WinGet, the comprehensive package manager, with your command line to install applications on Windows 10.
+        Use WinGet, the comprehensive package manager, with your command line to install applications on Windows 10.<br>
+        [Install WinGet](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
         **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
-        Tune and streamline your Windows experience for greater productivity with this set of power user utilities.
+        Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
+        [Install PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::
