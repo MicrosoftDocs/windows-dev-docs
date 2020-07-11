@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Create a "Hello world" app in C++/CX
+# Create a "Hello, World!" app in C++/CX
 
 > [!IMPORTANT]
 > This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
@@ -241,9 +241,9 @@ In the app, you can type in the [**TextBox**](https://docs.microsoft.com/uwp/api
 
    At the same time, in MainPage.xaml, the XAML for the [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) is updated to declare the [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event handler, like this:
 
-    ```xaml
-    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-    ```
+```xaml
+<Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
+```
 
    You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
 
@@ -251,12 +251,12 @@ In the app, you can type in the [**TextBox**](https://docs.microsoft.com/uwp/api
 
 5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) displays the result.
 
-    ```cpp
-    void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-    {
-        greetingOutput->Text = "Hello, " + nameInput->Text + "!";
-    }
-    ```
+```cpp
+void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    greetingOutput->Text = "Hello, " + nameInput->Text + "!";
+}
+```
 
 6.  Set the project as the startup, and then press F5 to build and run the app. When you type a name in the text box and click the button, the app displays a personalized greeting.
 
@@ -273,20 +273,20 @@ It's easy to customize the look and feel of your app. By default, your app uses 
 1.  Open App.xaml.
 2.  In the opening [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag, edit the [**RequestedTheme**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
-    ```xaml
-    RequestedTheme="Dark"
-    ```
+```xaml
+RequestedTheme="Dark"
+```
 
     Here's the full [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
-    ```xaml
-        <Application
-        x:Class="HelloWorld.App"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld"
-        RequestedTheme="Dark">
-    ```
+```xaml
+    <Application
+    x:Class="HelloWorld.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWorld"
+    RequestedTheme="Dark">
+```
 
 3.  Press F5 to build and run it. Notice that it uses the dark theme.
 
@@ -315,9 +315,9 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 
      On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is updated:
 
-    ```xaml
-    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
-    ```
+```xaml
+<TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
+```
 
 7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
 
@@ -325,16 +325,16 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 
     Your XAML now looks like this:
 
-    ```xaml
-    <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
-        <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
-            <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-        </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+```xaml
+<StackPanel x:Name="contentPanel" Margin="120,30,0,0">
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
+    <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
+        <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
+        <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     </StackPanel>
-    ```
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+</StackPanel>
+```
 
 8.  Press F5 to build and run the app. It now looks like this:
 
@@ -348,27 +348,27 @@ Now we'll make the UI adapt to different screen sizes so it looks good on mobile
 
 1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) element.
 
-    ```xaml
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState x:Name="wideState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="641" />
-                </VisualState.StateTriggers>
-            </VisualState>
-            <VisualState x:Name="narrowState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="0" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
-                    <Setter Target="inputPanel.Orientation" Value="Vertical"/>
-                    <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-    ```
+```xaml
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState x:Name="wideState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="641" />
+            </VisualState.StateTriggers>
+        </VisualState>
+        <VisualState x:Name="narrowState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="0" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
+                <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+                <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
+```
 
 2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 device-independent pixels (DIPs).
 3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.

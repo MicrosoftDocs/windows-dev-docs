@@ -7,8 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Getting started: Choosing a programming language
 
+# Getting started: Choosing a programming language
 
 ## Choosing a programming language
 
@@ -18,9 +18,10 @@ You can develop using C++, C#, Microsoft Visual Basic, and JavaScript. JavaScrip
 
 Although we're focusing on C# in this article, the other languages offer unique benefits, which you may want to explore. For example, if your app's performance is a primary concern, especially for intensive graphics, then C++ might be the right choice. The Microsoft .NET version of Visual Basic is great for Visual Basic app developers. JavaScript with HTML5 is great for those coming from a web development background. For more info, see one of the following:
 
--   [Create your first UWP app using C++](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [Create your first UWP app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [Create your first UWP app using JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [Create a "Hello, World!" app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [Create a "Hello, World!" app using C++/WinRT](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cppwinrt)
+-   [Create a "Hello, World!" app using C++/CX](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)
+-   [Create a "Hello, World!" app using JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://bugs.chromium.org/p/angleproject/)
