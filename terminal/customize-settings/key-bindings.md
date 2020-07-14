@@ -218,7 +218,7 @@ _This command is not currently bound in the default settings_.
 ```
 
 > [!IMPORTANT]
-> The `"toggleAlwaysOnTop"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.3.
+> The `"toggleAlwaysOnTop"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
 
 
 <br />
