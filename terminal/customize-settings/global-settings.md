@@ -299,22 +299,6 @@ This determines the word delimiters used in a double-click selection. Word delim
 
 ___
 
-## Scroll speed
-
-This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
-
-**Property name:** `rowsToScroll`
-
-**Necessity:** Optional
-
-**Accepts:** Integer
-
-**Default value:** `"system"`
-
-<br />
-
-___
-
 ## Window resize behavior
 
 :::row:::
