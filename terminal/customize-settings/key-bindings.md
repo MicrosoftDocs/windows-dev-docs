@@ -185,6 +185,24 @@ This allows you to switch between full screen and default window sizes.
 { "command": "toggleFullscreen", "keys": "f11" }
 ```
 
+### Toggle focus mode
+
+This allows you to enter "focus mode", which hides the tabs and titlebar.
+
+**Command name:** `toggleFocusMode`
+
+**Default bindings:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "toggleFocusMode" }
+```
+
+> [!IMPORTANT]
+> The `"toggleFocusMode"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+
+
 <br />
 
 ___
