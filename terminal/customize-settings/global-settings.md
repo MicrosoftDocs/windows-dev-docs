@@ -309,7 +309,7 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 
 **Accepts:** Integer
 
-**Default value:** `"system"
+**Default value:** `"system"`
 
 <br />
 
