@@ -308,6 +308,86 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
+
+### Rename tab
+
+This command can be used to rename a tab to a specific string.
+
+**Command name:** `renameTab`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+**Example binding:**
+```jsonc
+// Rename a tab to "Foo"
+{ "command": { "action": "renameTab", "title": "Foo" } }
+
+// Reset the tab's name
+{ "command": { "action": "renameTab", "title": null } }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to it's original value. |
+
+
+> [!IMPORTANT]
+> The `"renameTab"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+
+
+### Change tab color
+
+This command can be used to change the color of a tab to a specific value.
+
+**Command name:** `setTabColor`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+**Example binding:**
+```jsonc
+// Change the tab's color to a bright magenta
+{ "command": { "action": "setTabColor", "color": "#ffooff" } }
+
+// Reset the tab's color
+{ "command": { "action": "setTabColor", "color": null } }
+```
+
+#### Arguments
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The new color to use for this tab. If omitted, this command will revert the tab's color back to it's original value. |
+
+
+> [!IMPORTANT]
+> The `"setTabColor"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+
+
+### Open tab color picker
+
+This command can be used to open the color picker for the active tab. The color picker can be used to set a color for the tab at runtime.
+
+**Command name:** `openTabColorPicker`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+**Example binding:**
+```jsonc
+{ "command": "openTabColorPicker" }
+```
+
+> [!IMPORTANT]
+> The `"openTabColorPicker"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+
+
 <br />
 
 ___
@@ -533,6 +613,23 @@ This resets the text size to the default value.
 ```json
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
+
+### Toggle retro terminal effects
+
+This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`
+
+**Command name:** `toggleRetroEffect`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "toggleRetroEffect" }
+```
+
+> [!IMPORTANT]
+> The `"toggleRetroEffect"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
 
 <br />
 
