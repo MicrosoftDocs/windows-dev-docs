@@ -237,7 +237,7 @@ When set to true, Windows Terminal windows will launch on top of all other windo
 :::row-end:::
 
 > [!IMPORTANT]
-> The `"alwaysOnTop"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.3.
+> The `"alwaysOnTop"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
 
 
 <br />
