@@ -214,6 +214,32 @@ This is the number of rows displayed in the window upon first load. If `launchMo
 
 **Default value:** `30`
 
+
+### Always on top mode
+
+:::row:::
+:::column span="":::
+When set to true, Windows Terminal windows will launch on top of all other windows on the desktop. This state can also be toggled with the `toggleAlwaysOnTop` keybinding.
+
+**Property name:** `alwaysOnTop`
+
+**Necessity:** Optional
+
+**Accepts:** `true, false`
+
+**Default value:** `false`
+
+:::column-end:::
+:::column span="":::
+
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> The `"alwaysOnTop"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.3.
+
+
 <br />
 
 ___
