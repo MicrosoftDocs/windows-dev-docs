@@ -2,7 +2,7 @@
 title: License for the Windows UI Library 
 description: Windows UI Library license. 
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit sdk
 ---
 # License for the Windows UI Library 
