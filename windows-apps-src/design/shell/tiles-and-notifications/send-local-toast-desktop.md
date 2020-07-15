@@ -6,7 +6,7 @@ label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, sparse packages, C#, c sharp, toast notification, wpf
+keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, sparse packages, C#, c sharp, toast notification, wpf, send toast notification wpf, send toast notification winforms, send toast notification c#, send notification wpf, send notification c#, toast notification wpf, toast notification c#
 ms.localizationpriority: medium
 ---
 # Send a local toast notification from desktop C# apps
