@@ -15,9 +15,7 @@ This article provides the info you need to get started building desktop apps for
 
 ## Platforms for desktop apps
 
-There are four main platforms for building desktop apps for Windows PCs. Each platform provides an app model that defines the lifecycle of the app, a complete set of UI controls, and access to a comprehensive set of managed or native APIs for using Windows features.
-
-The following table introduces the platforms. For an in-depth comparison of these platforms along with additional resources for each platform, see [Choose your app platform](choose-your-platform.md).
+There are four main platforms for building desktop apps for Windows PCs. Each platform provides an app model that defines the lifecycle of the app, a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop, and access to a comprehensive set of managed or native APIs for using Windows features. For an in-depth comparison of these platforms along with additional resources for each platform, see [Choose your app platform](choose-your-platform.md).
 
 <br/>
 
@@ -41,8 +39,8 @@ The following table introduces the platforms. For an in-depth comparison of thes
 <td><a href="/windows/uwp/get-started/">Get started</a><br/><a href="/uwp/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Samples</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
-<td><p>The platform of choice for native C/C++ Windows apps that require direct access to Windows and hardware.</p></td>
+<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><p>The platform of choice for native Windows apps that require direct access to Windows and hardware.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Get started</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Samples</a></td>
 </tr>
 <tr class="odd">
@@ -59,7 +57,7 @@ The following table introduces the platforms. For an in-depth comparison of thes
 </table>
 
 > [!NOTE]
-> All of these application platforms provide a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the Windows UI (WinUI) Library to create their user interfaces. For more information about WinUI for desktop apps, see [this section](choose-your-platform.md#windows-ui-library).
+> On Windows 10, each these platforms also support using the Windows UI (WinUI) Library to create user interfaces. For more information about WinUI for desktop apps, see [this section](choose-your-platform.md#windows-ui-library).
 
 ## Update existing desktop apps for Windows 10
 
@@ -89,6 +87,7 @@ If you are creating a new desktop app for Windows, here are some resources to he
 | Article | Description |
 |---------|-------------|
 | [Choose your app platform](choose-your-platform.md) | Provides an in-depth comparison of the main desktop app platforms and can help you choose the right platform for your needs. This article also provides useful links to docs for each platform. |
+| [Visual Studio project templates for Windows apps](visual-studio-templates.md) | Describes the project and item templates that Visual Studio provides to help you build apps for Windows 10 devices by using C\# or C++. |
 | [Modernize desktop apps](/windows/apps/desktop/modernize) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
 | [Features and technologies](/windows/apps/features-and-technologies) | Provides an overview of Windows features that are accessible via each of the main desktop app platforms and links to the related docs. |
 

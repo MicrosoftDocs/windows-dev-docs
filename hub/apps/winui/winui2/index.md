@@ -2,7 +2,7 @@
 title: Windows UI library
 description: Provides info for WinUI 2.x and Windows app development. 
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 ms.custom: RS5
 ---
@@ -16,7 +16,7 @@ The Windows UI Library provides official native Windows UI controls and other us
 It maintains down-level compatibility with earlier versions of Windows 10, so your app works even if users don't have the latest OS.
 
 > [!NOTE]
-> Check out the [WinUI 3.0 Preview 1](../winui3/index.md), a major update to the Windows 10 UI platform planned for release in 2020.
+> Check out the [Windows UI Library 3 Preview 2 (July 2020)](../winui3/index.md), a major update to the Windows 10 UI platform.
 
 ## Features
 
