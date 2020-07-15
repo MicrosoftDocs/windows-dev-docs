@@ -34,6 +34,7 @@ Not only can you use UWP to create desktop applications for Windows PCs, but UWP
 For more information about UWP, see the following articles:
 
 * [Get started](/windows/uwp/get-started/)
+* [Project templates](visual-studio-templates.md#uwp-templates)
 * [Design and UI](/windows/uwp/design/)
 * [Technologies and features](/windows/uwp/develop/)
 * [API reference](/uwp/)
@@ -45,7 +46,8 @@ WPF is the established platform for managed Windows applications with access to 
 
 For more information about WPF, see the following articles:
 
-* [Getting started (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/).
+* [Getting started (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Project templates](visual-studio-templates.md#net-templates)
 * [Create your first app (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Create your first app (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrate WPF apps to .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
@@ -59,6 +61,7 @@ Windows Forms is the original platform for managed Windows applications with a l
 For more information about Windows Forms, see the following articles:
 
 * [Getting started with Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Project templates](visual-studio-templates.md#net-templates)
 * [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API reference (.NET)](https://docs.microsoft.com/dotnet/api/index)
@@ -79,6 +82,7 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 For more information, see the following articles:
 
 * [Get started](/windows/win32/desktop-programming/)
+* [Project templates](visual-studio-templates.md#cwin32-templates)
 * [Create your first Win32 and C++ app](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [Technologies and features](/windows/win32/desktop-app-technologies)
 * [API reference](/windows/win32/apiindex/windows-api-list/)
@@ -92,7 +96,7 @@ You can use WinUI in the following ways in desktop apps:
 
 * UWP apps can use WinUI controls in place of UWP controls provided by the Windows SDK.
 * You can update existing WPF, Windows Forms, and C++/Win32 apps to use [XAML Islands](modernize/xaml-islands.md) to host WinUI 2.x controls in the apps.
-* Starting with [WinUi 3.0 Preview 1](../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../winui/winui3/get-started-winui3-for-desktop.md).
+* Starting with [WinUi 3.0](../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../winui/winui3/get-started-winui3-for-desktop.md).
 
 ## Platform comparison: UWP, WPF, and Windows Forms
 

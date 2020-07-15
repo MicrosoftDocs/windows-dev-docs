@@ -3,7 +3,7 @@ title: WinUI Release Notes
 description: Index of WinUI release notes.
 
 
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 ms.topic: reference
 ---
 
@@ -49,6 +49,6 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 | [2.1](winui-2.1.md) | stable | April 2019 | [Release Notes](winui-2.1.md) | **First open source release** from [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Includes [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
 | [2.0](winui-2.0.md) | stable | October 2018 | [Release Notes](winui-2.0.md) | **Initial release**. Includes official native Fluent controls and features for Windows UWP apps.  |
 
-### WinUI 3 Preview 1
+### Windows UI Library 3 Preview 2 (July 2020)
 
-For information on trying out early previews of WinUI 3 see [WinUI 3.0 Preview 1](../../winui3/index.md).
+For information on trying out early previews of WinUI 3 see [Windows UI Library 3 Preview 2 (July 2020)](../../winui3/index.md).
