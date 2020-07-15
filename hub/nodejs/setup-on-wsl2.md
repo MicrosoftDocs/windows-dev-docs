@@ -82,7 +82,7 @@ While nvm is currently the most popular version manager for node, there are a fe
 
 We recommend using Visual Studio Code with the Remote-WSL Extension for Node.js projects. This splits VS Code into a “client-server” architecture, with the client (the VS Code user interface) running on your Windows operating system and the server (your code, Git, plugins, etc) running "remotely" on your WSL Linux distribution. 
 
-> [NOTE]
+> [!NOTE]
 > This “remote” scenario is a bit different than you may be accustomed to. WSL supports an actual Linux distribution where your project code is running, separately from your Windows operating system, but still on your local machine. The Remote-WSL extension connects with your Linux subsystem as if it were a remote server, though it’s not running in the cloud… it’s still running on your local machine in the WSL environment that you enabled to run alongside Windows. 
 
 - Linux-based Intellisense and linting is supported.
