@@ -31,7 +31,7 @@ We recommend updating your Linux distribution regularly, including immediately a
 
 The new Windows Terminal enables multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/windows/terminal).
 
-1. Get [Windows Terminal (Preview) in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
+1. Get [Windows Terminal in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
 
 2. Once installed, open Windows Terminal and select **Settings** to customize your terminal using the `settings.json` file.
 
