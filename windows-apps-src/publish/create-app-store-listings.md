@@ -88,7 +88,7 @@ You can submit additional assets for your product, including video trailers and 
 
 For more info, see [Trailers and additional assets](app-screenshots-and-images.md#trailers-and-additional-assets).
 
-<a id="supplemental-information" />
+<span id="supplemental-information" />
 
 ## Supplemental fields
 
