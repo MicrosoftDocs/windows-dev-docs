@@ -1,4 +1,4 @@
-﻿---
+---
 Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
@@ -54,7 +54,7 @@ The description field is where you can tell customers what your app does. This f
 
 For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
 
-<span id="release-notes" />
+<a name="release-notes"></a>
 
 ## What's new in this version
 
@@ -88,7 +88,7 @@ You can submit additional assets for your product, including video trailers and 
 
 For more info, see [Trailers and additional assets](app-screenshots-and-images.md#trailers-and-additional-assets).
 
-<span id="supplemental-information" />
+<a name="supplemental-information"></a>
 
 ## Supplemental fields
 
@@ -129,7 +129,7 @@ You can enter up to 11 items for both **Minimum hardware** and **Recommended har
 > [!NOTE]
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
 
-<span id="shared-fields" />
+<a name="shared-fields"></a>
 
 ## Additional information
 
@@ -161,7 +161,7 @@ Enter text here if you want to include a **Developed by** field in your app's St
 
 This field has a 255 character limit.
  
-<span id="privacy-policy" />
+<a name="privacy-policy"></a>
 
 > [!NOTE]
 > The **Privacy policy**, **Website**, and **Support contact info** fields are now located on the [Properties](enter-app-properties.md) page.
