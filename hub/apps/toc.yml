@@ -95,7 +95,7 @@
             href: winui/winui2/index.md
           - name: "Setup"
             items: 
-              - name: "Get started"
+              - name: "Get started with WinUI 2.x"
                 href: winui/winui2/getting-started.md
               - name: "NuGet package list"
                 href: winui/winui2/nuget-packages.md

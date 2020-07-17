@@ -8,7 +8,7 @@ ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit sdk
 ---
 
-# Getting started with the Windows UI Library
+# Getting started with the Windows UI 2.x Library
 
 [WinUI 2.4](release-notes/winui-2.4.md) is the latest stable version of WinUI and should be used for apps in production.
 
