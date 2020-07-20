@@ -3,7 +3,7 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -168,9 +168,6 @@ This opens either the default or custom settings files. Without the `target` fie
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"allFiles"` | The settings file to open. |
-
-> [!IMPORTANT]
-> The `target` field is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Toggle full screen
 

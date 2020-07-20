@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -24,9 +24,6 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 **Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
-
-> [!IMPORTANT]
-> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -118,9 +115,6 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 :::column-end:::
 :::row-end:::
 
-> [!IMPORTANT]
-> The `"compact"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Hide close all tabs popup
 
 :::row:::
@@ -148,7 +142,7 @@ ___
 
 ## Launch settings
 
-### Launch on startup ([Preview](https://aka.ms/terminal-preview/))
+### Launch on startup
 
 When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
 
@@ -160,12 +154,9 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 **Default value:** `false`
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Launch size
 
-This defines whether the terminal will launch as maximized, fullscreen, or in a window.
+This defines whether the terminal will launch as maximized, full screen, or in a window.
 
 **Property name:** `launchMode`
 
@@ -174,9 +165,6 @@ This defines whether the terminal will launch as maximized, fullscreen, or in a 
 **Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
 
 **Default value:** `"default"`
-
-> [!IMPORTANT]
-> The `"fullscreen"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 

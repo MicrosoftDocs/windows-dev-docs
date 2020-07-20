@@ -3,7 +3,7 @@ title: Windows Terminal command-line arguments
 description: Learn how to create command-line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -37,17 +37,14 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--maximized`, `-M` | Launches the terminal maximized. |
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 
-> [!IMPORTANT]
-> `--maximized`, `-M` and `--fullscreen`, `-F` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
-| `new-tab` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Creates a new tab. |
-| `split-pane` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Splits a new pane. |
-| `focus-tab` | `--target, -t tab-index` | Focuses on a specific tab. |
+| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Creates a new tab. |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Splits a new pane. |
+| `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
 
 > [!IMPORTANT]
-> `--title` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+> `nt`, `sp`, and `ft` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ## Command line argument examples
 
@@ -161,7 +158,7 @@ PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; 
 #### [Linux](#tab/linux)
 
 ```bash
-cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
+cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows PowerShell"
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
@@ -201,7 +198,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
 
-### Tab title ([Preview](https://aka.ms/terminal-preview/))
+### Tab title
 
 To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
 
@@ -228,9 +225,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Tab focus
 
