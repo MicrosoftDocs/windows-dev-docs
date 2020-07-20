@@ -3,7 +3,7 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -169,9 +169,6 @@ This opens either the default or custom settings files. Without the `target` fie
 | ---- | --------- | ------- | ----------- |
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"allFiles"` | The settings file to open. |
 
-> [!IMPORTANT]
-> The `target` field is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Toggle full screen
 
 This allows you to switch between full screen and default window sizes.
@@ -185,9 +182,9 @@ This allows you to switch between full screen and default window sizes.
 { "command": "toggleFullscreen", "keys": "f11" }
 ```
 
-### Toggle focus mode
+### Toggle focus mode ([Preview](https://aka.ms/terminal-preview/))
 
-This allows you to enter "focus mode", which hides the tabs and titlebar.
+This allows you to enter "focus mode", which hides the tabs and title bar.
 
 **Command name:** `toggleFocusMode`
 
@@ -196,14 +193,13 @@ This allows you to enter "focus mode", which hides the tabs and titlebar.
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": "toggleFocusMode" }
+{ "command": "toggleFocusMode", "keys": "" }
 ```
 
 > [!IMPORTANT]
-> The `"toggleFocusMode"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
-
-### Toggle always on top mode
+### Toggle always on top mode ([Preview](https://aka.ms/terminal-preview/))
 
 This allows you toggle the "always on top" state of the window. When in "always on top" mode, the window will appear on top of all other non-topmost windows.
 
@@ -214,12 +210,11 @@ This allows you toggle the "always on top" state of the window. When in "always 
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": "toggleAlwaysOnTop" }
+{ "command": "toggleAlwaysOnTop", "keys": "" }
 ```
 
 > [!IMPORTANT]
-> The `"toggleAlwaysOnTop"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
-
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -326,8 +321,7 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
-
-### Rename tab
+### Rename tab ([Preview](https://aka.ms/terminal-preview/))
 
 This command can be used to rename a tab to a specific string.
 
@@ -337,27 +331,24 @@ This command can be used to rename a tab to a specific string.
 
 _This command is not currently bound in the default settings_.
 
-**Example binding:**
-```jsonc
+```json
 // Rename a tab to "Foo"
-{ "command": { "action": "renameTab", "title": "Foo" } }
+{ "command": { "action": "renameTab", "title": "Foo" }, "keys": "" }
 
 // Reset the tab's name
-{ "command": { "action": "renameTab", "title": null } }
+{ "command": { "action": "renameTab", "title": null }, "keys": "" }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to it's original value. |
-
+| `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
 > [!IMPORTANT]
-> The `"renameTab"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
-
-### Change tab color
+### Change tab color ([Preview](https://aka.ms/terminal-preview/))
 
 This command can be used to change the color of a tab to a specific value.
 
@@ -367,27 +358,24 @@ This command can be used to change the color of a tab to a specific value.
 
 _This command is not currently bound in the default settings_.
 
-**Example binding:**
-```jsonc
+```json
 // Change the tab's color to a bright magenta
-{ "command": { "action": "setTabColor", "color": "#ffooff" } }
+{ "command": { "action": "setTabColor", "color": "#ff00ff" }, "keys": "" }
 
 // Reset the tab's color
-{ "command": { "action": "setTabColor", "color": null } }
+{ "command": { "action": "setTabColor", "color": null }, "keys": "" }
 ```
 
 #### Arguments
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The new color to use for this tab. If omitted, this command will revert the tab's color back to it's original value. |
-
+| `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The new color to use for this tab. If omitted, this command will revert the tab's color back to its original value. |
 
 > [!IMPORTANT]
-> The `"setTabColor"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
-
-### Open tab color picker
+### Open tab color picker ([Preview](https://aka.ms/terminal-preview/))
 
 This command can be used to open the color picker for the active tab. The color picker can be used to set a color for the tab at runtime.
 
@@ -397,14 +385,12 @@ This command can be used to open the color picker for the active tab. The color 
 
 _This command is not currently bound in the default settings_.
 
-**Example binding:**
-```jsonc
-{ "command": "openTabColorPicker" }
+```json
+{ "command": "openTabColorPicker", "keys": "" }
 ```
 
 > [!IMPORTANT]
-> The `"openTabColorPicker"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
-
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -632,9 +618,9 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
 
-### Toggle retro terminal effects
+### Toggle retro terminal effects ([Preview](https://aka.ms/terminal-preview/))
 
-This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`
+This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
 **Command name:** `toggleRetroEffect`
 
@@ -643,11 +629,11 @@ This toggles the "retro terminal effect", which is enabled with the profile sett
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": "toggleRetroEffect" }
+{ "command": "toggleRetroEffect", "keys": "" }
 ```
 
 > [!IMPORTANT]
-> The `"toggleRetroEffect"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
