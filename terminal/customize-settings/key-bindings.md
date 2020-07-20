@@ -203,6 +203,24 @@ _This command is not currently bound in the default settings_.
 > The `"toggleFocusMode"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
 
 
+### Toggle always on top mode
+
+This allows you toggle the "always on top" state of the window. When in "always on top" mode, the window will appear on top of all other non-topmost windows.
+
+**Command name:** `toggleAlwaysOnTop`
+
+**Default bindings:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "toggleAlwaysOnTop" }
+```
+
+> [!IMPORTANT]
+> The `"toggleAlwaysOnTop"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
+
+
 <br />
 
 ___
