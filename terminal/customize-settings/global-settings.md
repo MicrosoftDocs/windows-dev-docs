@@ -214,12 +214,9 @@ This is the number of rows displayed in the window upon first load. If `launchMo
 
 **Default value:** `30`
 
+### Always on top mode ([Preview](https://aka.ms/terminal-preview/))
 
-### Always on top mode
-
-:::row:::
-:::column span="":::
-When set to true, Windows Terminal windows will launch on top of all other windows on the desktop. This state can also be toggled with the `toggleAlwaysOnTop` keybinding.
+When set to true, Windows Terminal windows will launch on top of all other windows on the desktop. This state can also be toggled with the `toggleAlwaysOnTop` key binding.
 
 **Property name:** `alwaysOnTop`
 
@@ -229,16 +226,8 @@ When set to true, Windows Terminal windows will launch on top of all other windo
 
 **Default value:** `false`
 
-:::column-end:::
-:::column span="":::
-
-
-:::column-end:::
-:::row-end:::
-
 > [!IMPORTANT]
-> The `"alwaysOnTop"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2.
-
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -327,7 +316,7 @@ ___
 
 ## Paste warnings
 
-### Warn when the text to paste is very large
+### Warn when the text to paste is very large ([Preview](https://aka.ms/terminal-preview/))
 
 When this is set to `true`, trying to paste text with more than 5 KiB of characters will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. If you often right-click on the terminal by accident after having selected a lot of text, this might be useful to prevent the terminal from becoming unresponsive while the program connected to the terminal receives the clipboard's content.
 
@@ -339,7 +328,10 @@ When this is set to `true`, trying to paste text with more than 5 KiB of charact
 
 **Default value:** `true`
 
-### Warn when the text to paste contains multiple lines
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+### Warn when the text to paste contains multiple lines ([Preview](https://aka.ms/terminal-preview/))
 
 When this is set to `true`, trying to paste text with multiple lines will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. In most shells, one line corresponds to one command so if you paste text that contains the "new line" character into a shell, one or more command(s) might be executed automatically upon paste, without you having time to validate the commands. This can be useful if you often copy and paste commands from untrusted websites.
 
@@ -350,6 +342,9 @@ When this is set to `true`, trying to paste text with multiple lines will displa
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -367,10 +362,10 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 
 **Default value:** `"system"`
 
-<br />
+> [!CAUTION]
+> The `rowsToScroll` setting is no longer available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2. This version of Windows Terminal will always use the value configured in the system Mouse settings panel.
 
-> [!IMPORTANT]
-> The `"rowsToScroll"` setting is no longer available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2. This version of Windows Terminal will always use the value configured in the system Mouse settings panel.
+<br />
 
 ___
 
