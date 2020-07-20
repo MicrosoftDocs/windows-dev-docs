@@ -339,6 +339,9 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 
 <br />
 
+> [!IMPORTANT]
+> The `"rowsToScroll"` setting is no longer available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2. This version of Windows Terminal will always use the value configured in the system Mouse settings panel.
+
 ___
 
 ## Window resize behavior
