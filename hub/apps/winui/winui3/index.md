@@ -99,6 +99,9 @@ The following item templates are available to be used in a WinUI project. To acc
 
 This is a comprehensive list of bug fixes and other updates for Preview 2. See our [release announcement](https://aka.ms/winui3/preview2-announcement) for a list of the most critical bug fixes addressed in this release.
 
+> [!NOTE]
+> WinUI 3 Preview 2 is using version 2.4.2 of the WinUI 2 Library. 
+
 - [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) and [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) now work as expected in C# Desktop apps
   - This cleared up a couple of other issues that revolved around collections controls not updating in the UI while being updated in the backend.
   - *Thanks to @hshristov for filing a [similar issue](https://github.com/microsoft/microsoft-ui-xaml/issues/2490) on GitHub!*
