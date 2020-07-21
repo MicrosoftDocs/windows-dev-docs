@@ -68,10 +68,6 @@ Use a slider if:
 </tr>
 </table>
 
-A slider to control the volume on Windows Phone.
-
-![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
-
 A slider to change text size in Windows display settings.
 
 ![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)

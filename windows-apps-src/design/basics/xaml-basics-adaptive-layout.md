@@ -328,4 +328,4 @@ Alternatively, if you want to learn more about how the initial photo editing app
 
 ## Get the final version of the PhotoLab sample
 
-This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support.
+This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and styles.
