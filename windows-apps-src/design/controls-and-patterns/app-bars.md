@@ -49,13 +49,9 @@ An expanded command bar.
 
 ![Expanded Command bar](images/control-examples/command-bar-photos.png)
 
-A command bar in the Outlook Calendar on Windows Phone.
-
-![Command bar in Outlook Calendar app](images/control-examples/command-bar-calendar-phone.png)
-
 ## Anatomy
 
-By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[•••\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
+By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[***\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
 
 ![A closed command bar](images/command-bar-compact.png)
 
@@ -70,7 +66,7 @@ Here's the same command bar in its open state. The labels identify the main part
 The command bar is divided into 4 main areas:
 - The content area is aligned to the left side of the bar. It is shown if the [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property is populated.
 - The primary command area is aligned to the right side of the bar. It is shown if the [PrimaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) property is populated.  
-- The "see more" \[•••\] button is shown on the right of the bar. Pressing the "see more" \[•••\] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the [OverflowButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility) property.
+- The "see more" \[***\] button is shown on the right of the bar. Pressing the "see more" \[***\] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the [OverflowButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility) property.
 - The overflow menu is shown only when the command bar is open and the [SecondaryCommands](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) property is populated. When space is limited, primary commands will move into the SecondaryCommands area. To change default behavior, use the [IsDynamicOverflowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled) property.
 
 The layout is reversed when the [FlowDirection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) is **RightToLeft**.
@@ -175,7 +171,7 @@ The command bar can be open or closed. When it's open, it shows primary command 
 The command bar opens the overflow menu upwards (above the primary commands) or downwards (below the primary commands). 
 The default direction is up, but if there's not enough space to open the overflow menu upwards, the command bar opens it downwards. 
 
-A user can switch between these states by pressing the "see more" \[•••\] button. You can switch between them programmatically by setting the [IsOpen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.isopen) property. 
+A user can switch between these states by pressing the "see more" \[***\] button. You can switch between them programmatically by setting the [IsOpen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.isopen) property. 
 
 You can use the [Opening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.opening), [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.opened), [Closing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closing), and [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closed) events to respond to the command bar being opened or closed.  
 - The Opening and Closing events occur before the transition animation begins.
@@ -210,15 +206,15 @@ private void CommandBar_Closing(object sender, object e)
 
 ### IsSticky
 
-If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called *light dismiss*. You can control light dismiss behavior by setting the [IsSticky](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.issticky) property. When `IsSticky="true"`, the bar remains open until the user presses the "see more" \[•••\] button or selects an item from the overflow menu. 
+If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called *light dismiss*. You can control light dismiss behavior by setting the [IsSticky](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.issticky) property. When `IsSticky="true"`, the bar remains open until the user presses the "see more" \[***\] button or selects an item from the overflow menu. 
 
 We recommend avoiding sticky command bars because they don't conform to users' expectations for [light dismiss and keyboard focus behavior](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss).
 
 ### Display Mode
 
 You can control how the command bar is shown in its closed state by setting the [ClosedDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) property. There are 3 closed display modes to choose from:
-- **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[•••\] button.
-- **Minimal**: Shows only a thin bar that acts as the "see more" \[•••\] button. The user can press anywhere on the bar to open it.
+- **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[***\] button.
+- **Minimal**: Shows only a thin bar that acts as the "see more" \[***\] button. The user can press anywhere on the bar to open it.
 - **Hidden**: The command bar is not shown when it's closed. This can be useful for showing contextual commands with an inline command bar. In this case, you must open the command bar programmatically by setting the **IsOpen** property or changing the ClosedDisplayMode to **Minimal** or **Compact**.
 
 Here, a command bar is used to hold simple formatting commands for a [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). When the edit box doesn't have focus, the formatting commands can be distracting, so they're hidden. When the edit box is being used, the command bar's ClosedDisplayMode is changed to Compact so the formatting commands are visible.

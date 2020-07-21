@@ -14,7 +14,7 @@ Suppose you've designed and implemented a nice looking UI filled with placeholde
 
 In this tutorial, you'll learn how to replace your boilerplate with data bindings and create other direct links between your UI and your data. You'll also learn how to format or convert your data for display, and keep your UI and data in sync. When you complete this tutorial, you'll be able to improve the simplicity and organization of the XAML and C# code, making it easier to maintain and extend.
 
-You'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and phone support. You can find the final version in the root folder of the [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) repo. 
+You'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and adaptive layouts. You can find the final version in the root folder of the [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) repo. 
 
 ## Prerequisites
 
@@ -189,7 +189,7 @@ To test this, we're going to temporarily add a button that deletes the currently
 
     ```c#
     private void DeleteSelectedImage() =>
-	    Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
+        Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
     ```
 
     This method simply deletes the selected image from the **Images** collection. 
@@ -337,15 +337,15 @@ Now that the UI can respond to **ItemSize** changes, you need to actually make s
             // this value needs to be updated to match.
             int margins = (int)this.Resources["LargeItemMarginValue"] * 4;
             double gridWidth = ImageGridView.ActualWidth -
-			    (int)this.Resources["DesktopWindowSidePaddingValue"];
+                (int)this.Resources["DesktopWindowSidePaddingValue"];
     
             if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" &&
                 UIViewSettings.GetForCurrentView().UserInteractionMode ==
-				    UserInteractionMode.Touch)
+                    UserInteractionMode.Touch)
             {
                 margins = (int)this.Resources["SmallItemMarginValue"] * 4;
                 gridWidth = ImageGridView.ActualWidth -
-				    (int)this.Resources["MobileWindowSidePaddingValue"];
+                    (int)this.Resources["MobileWindowSidePaddingValue"];
             }
     
             double ItemWidth = ZoomSlider.Value + margins;

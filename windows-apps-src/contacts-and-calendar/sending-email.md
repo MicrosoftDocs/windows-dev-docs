@@ -52,7 +52,4 @@ This topic has shown you how to launch the compose email dialog. For information
 ## Related topics
 
 * [Selecting contacts](selecting-contacts.md)
-* [How to continue your Windows Phone app after calling a file picker](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
- 
-
  
