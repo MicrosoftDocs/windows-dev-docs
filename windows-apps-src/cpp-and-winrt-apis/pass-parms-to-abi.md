@@ -52,7 +52,7 @@ Windows Runtime collections are already **IIterable**.
 
 Note that **IIterable\<U\>** and **std::vector\<U\>** are not permitted, even if **U** is convertible to **T**. For **std::vector\<U\>**, you can use the double-iterator version (more details below).
 
-In some cases, the object that you have may actually implement the **IIterable** that you want. For example, the **IVectorView\<StorageFile\>** produced by [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implements **IIterable<StorageFile>**. But it also implements **IIterable<IStorageItem>**; you just have to ask for it explicitly.
+In some cases, the object that you have may actually implement the **IIterable** that you want. For example, the **IVectorView\<StorageFile\>** produced by [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implements **IIterable\<StorageFile\>**. But it also implements **IIterable\<IStorageItem\>**; you just have to ask for it explicitly.
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
