@@ -76,7 +76,7 @@ Some display drivers and hardware combinations do not handle scroll and/or dirty
 > [!IMPORTANT]
 > This applies only to version 1.2+ of Windows Terminal. If you are seeing color issues in Windows Terminal 1.0 or 1.1, or issues that are not captured here, please file a bug.
 
-Windows Terminal 1.2 and beyond have an improved understanding of certain application color settings. Because of this improved understanding, we have been able to remove a number of compatibility blocks that resulted in a poorer user experience. Unfortunately, there is a small number of applications that may experience issues.
+Windows Terminal 1.2 and beyond has an improved understanding of certain application color settings. Because of this improved understanding, we have been able to remove a number of compatibility blocks that resulted in a poor user experience. Unfortunately, there is a small number of applications that may experience issues.
 
 We will keep this troubleshooting item up-to-date with the list of known issues and their workarounds.
 
@@ -84,7 +84,7 @@ We will keep this troubleshooting item up-to-date with the list of known issues 
 
 Terminal, when coupled with PowerShell's line editing library [PSReadline](https://www.powershellgallery.com/packages/PSReadLine), may draw black lines across the screen. These miscolored regions will extend across the screen beyond your prompt wherever there are command parameters, strings or operators.
 
-PSReadline verisons **2.0.3** and **2.1.0-beta4** (prerelease) have been released and contain a fix for this issue.
+PSReadline verisons **2.0.3** and **2.1.0-beta3** (prerelease) have been released and contain a fix for this issue.
 
 To update to the newest version of PSReadline, please run the following command:
 
