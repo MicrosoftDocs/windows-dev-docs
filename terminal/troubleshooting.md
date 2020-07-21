@@ -70,3 +70,33 @@ On the other hand, if you do use this hotkey feature for multiple input language
 ## The text is blurry
 
 Some display drivers and hardware combinations do not handle scroll and/or dirty regions without blurring the data from the previous frame. To mitigate this problem, you can add a combination of [these global rendering settings](./customize-settings/global-settings.md#rendering-settings) to reduce the strain placed on your hardware caused by the terminal text renderer.
+
+## My colors look strange! There are black bars on my screen!
+
+> ![NOTE]
+> This applies only to version 1.2+ of Windows Terminal. If you are seeing color issues in Windows Terminal 1.0 or 1.1, please file a bug.
+
+Windows Terminal 1.2 and beyond have an improved understanding of certain application color settings. Because of this improved understanding, we have been able to remove a number of compatibility blocks that resulted in a poorer user experience. Unfortunately, there is a small number of applications that may experience issues.
+
+We will keep this troubleshooting item up-to-date with the list of known issues and their workarounds.
+
+### Black lines in PowerShell (5.1, 6.x, 7.0)
+
+Terminal, when coupled with PowerShell's line editing library [PSReadline](https://www.powershellgallery.com/packages/PSReadLine), may draw black lines across the screen. These miscolored regions will extend across the screen beyond your prompt wherever there are command parameters, strings or operators.
+
+PSReadline verisons **2.0.3** and **2.1.0-beta4** (prerelease) have been released and contain a fix for this issue.
+
+To update to the newest version of PSReadline, please run the following command:
+
+```powershell
+Update-Module PSReadline
+
+# If you're using a prerelease version of PSReadline or PowerShell 7.1, you may prefer
+# Update-Module PSReadline -AllowPrerelease
+```
+
+### Technical Notes
+
+Applications that use the [`GetConsoleScreenBufferInfo` family of APIs](https://docs.microsoft.com/en-us/windows/console/getconsolescreenbufferinfoex) to retrieve the active console colors in Win32 format and then attempt to transform them into cross-platform VT sequences (for example, by transforming `BACKGROUND_RED` to `\x1b[41m`) may interfere with Terminal's ability to detect what background color the application is attempting to use.
+
+Application developers are encouraged to choose either Windows API functions _or_ VT sequences for adjusting colors and not attempt to mix them.
