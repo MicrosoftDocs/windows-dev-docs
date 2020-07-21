@@ -73,7 +73,7 @@ Some display drivers and hardware combinations do not handle scroll and/or dirty
 
 ## My colors look strange! There are black bars on my screen!
 
-> [!NOTE]
+> [!IMPORTANT]
 > This applies only to version 1.2+ of Windows Terminal. If you are seeing color issues in Windows Terminal 1.0 or 1.1, or issues that are not captured here, please file a bug.
 
 Windows Terminal 1.2 and beyond have an improved understanding of certain application color settings. Because of this improved understanding, we have been able to remove a number of compatibility blocks that resulted in a poorer user experience. Unfortunately, there is a small number of applications that may experience issues.
