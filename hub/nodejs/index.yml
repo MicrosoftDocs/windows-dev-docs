@@ -59,16 +59,10 @@ landingContent:
   # Card
   - title: Get started with databases
     linkLists:
-      - linkListType: concept
-        links:
-          - text: MongoDB vs PostgreSQL
-            url: ./databases.md
       - linkListType: quickstart
         links:
-          - text: Get started with MongoDB
-            url: ./databases.md#install-mongodb
-          - text: Get started with PostgreSQL
-            url: ./databases.md#install-postgresql
+          - text: Install and run MySQL, PostgreSQL, SQLite, Microsoft SQL Server, MongoDB, or Redis
+            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
 
   # Card
   - title: Get started with containers

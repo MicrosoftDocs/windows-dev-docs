@@ -367,7 +367,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 ```
 
 > [!NOTE] 
-> This only adds an icon to the **AccountsSettingsPane** and runs the method you specify when the icon is clicked (GetTwitterTokenAsync, in this case). You must provide the code that handles the actual authentication. For more information, see (Web authentication broker)[web-authentication-broker], which provides helper methods for authenticating using REST services. 
+> This only adds an icon to the **AccountsSettingsPane** and runs the method you specify when the icon is clicked (GetTwitterTokenAsync, in this case). You must provide the code that handles the actual authentication. For more information, see [Web authentication broker](web-authentication-broker.md), which provides helper methods for authenticating using REST services. 
 
 ## Add a custom header
 

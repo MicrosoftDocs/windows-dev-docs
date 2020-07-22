@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
-ms.date: 09/19/2019
+ms.date: 06/09/2020
 ---
 
 # Set up your Node.js development environment with WSL 2
@@ -31,7 +31,7 @@ We recommend updating your Linux distribution regularly, including immediately a
 
 The new Windows Terminal enables multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/windows/terminal).
 
-1. Get [Windows Terminal (Preview) in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
+1. Get [Windows Terminal in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
 
 2. Once installed, open Windows Terminal and select **Settings** to customize your terminal using the `settings.json` file.
 
@@ -46,7 +46,12 @@ There are multiple ways to install Node.js. We recommend using a version manager
 
 1. Open your Ubuntu 18.04 command line.
 2. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
-3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
+3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+
+> [!NOTE]
+> At the time of publication, NVM v0.35.3 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+
 4. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 5. List which versions of Node are currently installed (should be none at this point): `nvm ls`
 
@@ -62,10 +67,6 @@ There are multiple ways to install Node.js. We recommend using a version manager
 10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use node` to switch to the Current version, or `nvm use --lts` to switch to the LTS version. You can also use the specific number for any additional versions you've installed, like `nvm use v8.2.1`. (To list all of the versions of Node.js available, use the command: `nvm ls-remote`).
 
 If you are using NVM to install Node.js and NPM, you should not need to use the SUDO command to install new packages.
-
-> [!NOTE]
-> At the time of publication, NVM v0.35.2 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
-Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## Alternative version managers
 
@@ -126,11 +127,7 @@ A few additional extensions you may want to consider include:
 
 ## Set up Git (optional)
 
-If you plan to collaborate with others, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI.
-
-1. Git comes installed with the Windows Subsystem for Linux distros, however, you will need to set up your git config file. To do so, in your terminal enter: `git config --global user.name "Your Name"` and then, `git config --global user.email "youremail@domain.com"`. If you don't yet have a Git account, you can [sign-up for one on GitHub](https://github.com/join). If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started. If you need to edit your git config, you can do so with a built-in text editor like nano: `nano ~/.gitconfig`.
-
-2. We recommend adding a [.gitignore file](https://help.github.com/en/articles/ignoring-files) to your Node projects. Here is [GitHub's default gitignore template for Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore). If you choose to [create a new repo using the GitHub website](https://help.github.com/articles/create-a-repo), there are check boxes available to initialize your repo with a README file, .gitignore file set up for Node.js projects, and options to add a license if you need one.
+To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git) in the WSL documentation.
 
 ## Next steps
 
@@ -138,5 +135,5 @@ You now have a Node.js development environment set up. To get started using your
 
 - [Get started with Node.js for beginners](./beginners.md)
 - [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
-- [Get started connecting Node.js apps to a database](./databases.md)
+- [Get started connecting Node.js apps to a database](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [Get started using Docker containers with Node.js](./containers.md)

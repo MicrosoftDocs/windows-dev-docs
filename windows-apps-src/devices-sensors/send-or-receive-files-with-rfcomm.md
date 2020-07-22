@@ -2,7 +2,7 @@
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-ms.date: 07/19/2018
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -19,7 +19,12 @@ dev_langs:
 - [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
 - [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
-This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file..
+This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
+
+> [!Important]
+> You must declare the "bluetooth" capability in *Package.appxmanifest*.
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## Overview
 
@@ -46,7 +51,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.Rfcomm;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
-using Windows.Devices.Enumeration;
+using Windows.Devices.Bluetooth;
 
 Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService _service;
 Windows.Networking.Sockets.StreamSocket _socket;
@@ -64,8 +69,10 @@ async void Initialize()
         // Initialize the target Bluetooth BR device
         var service = await RfcommDeviceService.FromIdAsync(services[0].Id);
 
+        bool isCompatibleVersion = await IsCompatibleVersionAsync(service);
+
         // Check that the service meets this App's minimum requirement
-        if (SupportsProtection(service) && IsCompatibleVersion(service))
+        if (SupportsProtection(service) && isCompatibleVersion)
         {
             _service = service;
 
@@ -93,27 +100,27 @@ bool SupportsProtection(RfcommDeviceService service)
 {
     switch (service.ProtectionLevel)
     {
-    case SocketProtectionLevel.PlainSocket:
-        if ((service.MaxProtectionLevel == SocketProtectionLevel
-                .BluetoothEncryptionWithAuthentication)
-            || (service.MaxProtectionLevel == SocketProtectionLevel
-                .BluetoothEncryptionAllowNullAuthentication))
-        {
-            // The connection can be upgraded when opening the socket so the
-            // App may offer UI here to notify the user that Windows may
-            // prompt for a PIN exchange.
+        case SocketProtectionLevel.PlainSocket:
+            if ((service.MaxProtectionLevel == SocketProtectionLevel
+                    .BluetoothEncryptionWithAuthentication)
+                || (service.MaxProtectionLevel == SocketProtectionLevel
+                    .BluetoothEncryptionAllowNullAuthentication))
+            {
+                // The connection can be upgraded when opening the socket so the
+                // App may offer UI here to notify the user that Windows may
+                // prompt for a PIN exchange.
+                return true;
+            }
+            else
+            {
+                // The connection cannot be upgraded so an App may offer UI here
+                // to explain why a connection won't be made.
+                return false;
+            }
+        case SocketProtectionLevel.BluetoothEncryptionWithAuthentication:
             return true;
-        }
-        else
-        {
-            // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won't be made.
-            return false;
-        }
-    case SocketProtectionLevel.BluetoothEncryptionWithAuthentication:
-        return true;
-    case SocketProtectionLevel.BluetoothEncryptionAllowNullAuthentication:
-        return true;
+        case SocketProtectionLevel.BluetoothEncryptionAllowNullAuthentication:
+            return true;
     }
     return false;
 }
@@ -122,10 +129,10 @@ bool SupportsProtection(RfcommDeviceService service)
 const uint SERVICE_VERSION_ATTRIBUTE_ID = 0x0300;
 const byte SERVICE_VERSION_ATTRIBUTE_TYPE = 0x0A;   // UINT32
 const uint MINIMUM_SERVICE_VERSION = 200;
-bool IsCompatibleVersion(RfcommDeviceService service)
+async Task<bool> IsCompatibleVersionAsync(RfcommDeviceService service)
 {
     var attributes = await service.GetSdpRawAttributesAsync(
-        BluetothCacheMode.Uncached);
+        BluetoothCacheMode.Uncached);
     var attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
     var reader = DataReader.FromBuffer(attribute);
 
@@ -137,6 +144,7 @@ bool IsCompatibleVersion(RfcommDeviceService service)
         uint version = reader.ReadUInt32();
         return version >= MINIMUM_SERVICE_VERSION;
     }
+    else return false;
 }
 ```
 
@@ -362,12 +370,13 @@ Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider _provider;
 async void Initialize()
 {
     // Initialize the provider for the hosted RFCOMM service
-    _provider = await Windows.Devices.Bluetooth.
-        RfcommServiceProvider.CreateAsync(RfcommServiceId.ObexObjectPush);
+    _provider =
+        await Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider.CreateAsync(
+            RfcommServiceId.ObexObjectPush);
 
     // Create a listener for this service and start listening
     StreamSocketListener listener = new StreamSocketListener();
-    listener.ConnectionReceived += OnConnectionReceived;
+    listener.ConnectionReceived += OnConnectionReceivedAsync;
     await listener.BindServiceNameAsync(
         _provider.ServiceId.AsString(),
         SocketProtectionLevel
@@ -381,26 +390,27 @@ async void Initialize()
 const uint SERVICE_VERSION_ATTRIBUTE_ID = 0x0300;
 const byte SERVICE_VERSION_ATTRIBUTE_TYPE = 0x0A;   // UINT32
 const uint SERVICE_VERSION = 200;
+
 void InitializeServiceSdpAttributes(RfcommServiceProvider provider)
 {
-    auto writer = new Windows.Storage.Streams.DataWriter();
+    Windows.Storage.Streams.DataWriter writer = new Windows.Storage.Streams.DataWriter();
 
     // First write the attribute type
     writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE);
     // Then write the data
-    writer.WriteUInt32(SERVICE_VERSION);
+    writer.WriteUInt32(MINIMUM_SERVICE_VERSION);
 
-    auto data = writer.DetachBuffer();
+    IBuffer data = writer.DetachBuffer();
     provider.SdpRawAttributes.Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
 
-void OnConnectionReceived(
+void OnConnectionReceivedAsync(
     StreamSocketListener listener,
     StreamSocketListenerConnectionReceivedEventArgs args)
 {
     // Stop advertising/listening so that we're only serving one client
     _provider.StopAdvertising();
-    await listener.Close();
+    listener.Dispose();
     _socket = args.Socket;
 
     // The client socket is connected. At this point the App can wait for

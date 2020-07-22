@@ -84,19 +84,19 @@
       items:
         - name: Buttons
           href: controls-and-patterns/buttons.md
-        - name: Check box
+        - name: Check boxes
           href: controls-and-patterns/checkbox.md
         - name: Combo boxes and list boxes
           href: controls-and-patterns/combo-box.md
         - name: Hyperlinks
           href: controls-and-patterns/hyperlinks.md
-        - name: Radio button
+        - name: Radio buttons
           href: controls-and-patterns/radio-button.md
         - name: Rating control
           href: controls-and-patterns/rating.md
-        - name: Slider
+        - name: Sliders
           href: controls-and-patterns/slider.md
-        - name: Toggle
+        - name: Toggle switches
           href: controls-and-patterns/toggles.md
     - name: Collections
       items:

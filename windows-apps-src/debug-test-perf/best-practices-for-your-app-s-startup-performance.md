@@ -317,7 +317,7 @@ It’s critical that an app with an extended initialization period show a loadin
 > End Class
 > ```
 
-For an example of using extended splash screens, see [Splash screen sample](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78).
+For an example of using extended splash screens, see [Splash screen sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Splash%20screen%20sample%20(Windows%208)).
 
 ### Phase 3
 

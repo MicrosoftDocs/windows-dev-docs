@@ -49,10 +49,6 @@ An expanded command bar.
 
 ![Expanded Command bar](images/control-examples/command-bar-photos.png)
 
-A command bar in the Outlook Calendar on Windows Phone.
-
-![Command bar in Outlook Calendar app](images/control-examples/command-bar-calendar-phone.png)
-
 ## Anatomy
 
 By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[•••\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.

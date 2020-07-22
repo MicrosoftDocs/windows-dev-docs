@@ -57,7 +57,7 @@ In this example, we initiate pairing with a device using no encryption. Note, th
 
 You don't have to pair devices before using them if leveraging Bluetooth RFCOMM (classic). Starting with Windows 10 release 1607, you can simply query for nearby devices and connect to them. The updated [RFCOMM Chat Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) shows this functionality. 
 
-**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) APIs in order access these devices.
+**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) APIs in order to access these devices.
 
 **(15030 and above)** Pairing Bluetooth devices is no longer needed. Use the new Async APIs like GetGattServicesAsync and GetCharacteristicsAsync in order to query the current state of the remote device. See the [Client docs](gatt-client.md) for more details. 
 

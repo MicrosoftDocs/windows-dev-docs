@@ -2,7 +2,7 @@
 title: NuGet package list for the Windows UI Library
 description: Lists the NuGet packages for the Windows UI Library 
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit sdk
 ---
 
@@ -21,7 +21,7 @@ NuGet is a standard package manager for .Net applications that is built into Vis
 
 Searching in Visual Studio package manager you should see a list similar to this one (version numbers may be different, but names should be the same).
 
-![](images/NugetPackages.png)
+![NuGet Package Manager](images/NugetPackages.png)
 
 ## Update NuGet Packages
 

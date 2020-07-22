@@ -4,18 +4,18 @@ description: How to install and use the Windows UI Library.
 ms.topic: reference
 
 
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit sdk
 ---
 
-# Getting started with the Windows UI Library
+# Getting started with the Windows UI 2.x Library
 
 [WinUI 2.4](release-notes/winui-2.4.md) is the latest stable version of WinUI and should be used for apps in production.
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on trying out early previews of WinUI 3.0, see [WinUI 3.0 Preview 1](../winui3/index.md).
+> For more information on trying out early previews of WinUI 3, see [Windows UI Library 3 Preview 2 (July 2020)](../winui3/index.md).
 
 ## Download and install the Windows UI Library
 
@@ -69,7 +69,7 @@ You can optionally check "Include prerelease" to see the latest prerelease versi
     * In your XAML page, add a reference at the top of your page
 
         ```xaml
-        xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+        xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
         ```
 
     * In your code (if you want to use the type names without qualifying them), you can add a using directive.

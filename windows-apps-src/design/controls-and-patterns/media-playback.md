@@ -79,7 +79,7 @@ The transport controls support single- and double-row layouts. The first example
 
 The double-row controls layout (below) is recommended for most usage scenarios, especially on larger screens. This layout provides more space for controls and makes the timeline easier for the user to operate.
 
-![Example of MTC controls on phone, double row](images/controls/mtc_double_inprod.png)
+![Example of MTC controls, double row](images/controls/mtc_double_inprod.png)
 
 **System media transport controls**
 

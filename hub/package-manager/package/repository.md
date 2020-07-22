@@ -1,8 +1,6 @@
 ---
 title: Submit your manifest to the repository
-description: 
-author: denelon
-ms.author: denelon
+description: After you create a package manifest that describes your application, you're ready to submit your manifest to the Windows Package Manager repository.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
@@ -107,7 +105,7 @@ All application submissions to the Windows Package Manager repository should be 
 
 * The manifest complies with the [schema requirements](manifest.md#manifest-contents).
 * All URLs in the manifest lead to safe websites.
-* The installer and application are virus free.
+* The installer and application are virus free. The package may be identified as malware by mistake. If you believe it's a false positive you can submit the installer to the defender team for analysis from [here](https://www.microsoft.com/wdsi/filesubmission).
 * The application installs and uninstalls correctly for both administrators and non-administrators.
 * The installer supports non-interactive modes.
 * All manifest entries are accurate and not misleading.

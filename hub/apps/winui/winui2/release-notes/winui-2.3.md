@@ -1,7 +1,7 @@
 ---
 title: WinUI 2.3 Release Notes
 description: Release notes for WinUI 2.3 including new features and bug fixes.
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 ms.topic: article
 ---
 

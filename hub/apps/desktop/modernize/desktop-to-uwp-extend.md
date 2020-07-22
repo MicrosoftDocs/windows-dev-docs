@@ -20,7 +20,7 @@ In many cases you can call Windows Runtime APIs directly from your desktop appli
 
 If you're ready, let's start.
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## First, setup your Solution
 
@@ -105,7 +105,7 @@ To show a XAML-based UI, do these things:
 
 :five: [In the UWP project, show the page that you want](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### Setup your Solution
 
@@ -117,7 +117,7 @@ Your solution would look something like this:
 
 In this example, the Windows Forms project is named **Landmarks** and the UWP project that contains the XAML UI is named **MapUI**.
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### Create a XAML UI
 
@@ -166,7 +166,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 > [!NOTE]
 > Map controls download data from the internet so if you use one, you'll have to add the "internet client" capability to your manifest as well.
 
-<a id="start" />
+<a id="start"></a>
 
 ### Start the UWP app
 
@@ -191,7 +191,7 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### Parse parameters and show a page
 
@@ -266,7 +266,7 @@ To make your application a share target, do these things:
 
 :five: [Modify the desktop application to get the shared file](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 The following steps  
 
@@ -294,7 +294,7 @@ Provide the name of the executable produced by the UWP project, and the name of 
 
 You'll also have to specify what types of files can be shared with your app. In this example, we are making the [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop application a share target for bitmap images so we specify `Bitmap` for the supported file type.
 
-<a id="override" />
+<a id="override"></a>
 
 ### Override the OnShareTargetActivated event handler
 
@@ -327,7 +327,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 In this code, we save the image that is being shared by the user into a apps local storage folder. Later, we'll modify the desktop application to pull images from that same folder. The desktop application can do that because it is included in the same package as the UWP app.
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### Add desktop extensions to the UWP project
 
@@ -335,7 +335,7 @@ Add the **Windows Desktop Extensions for the UWP** extension to the UWP app proj
 
 ![desktop extension](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### Add the full trust process extension
 
@@ -351,7 +351,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of the Packagin
 
 This extension will enable the UWP app to start the desktop application to which you would like the share a file. In example, we refer to the executable of the [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop application.
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### Modify the desktop application to get the shared file
 
@@ -409,7 +409,7 @@ To create a background service, do these things:
 
 :three: [Register the background task](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### Implement the background task
 
@@ -450,7 +450,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### Configure the background task
 
@@ -468,7 +468,7 @@ Provide the fully qualified name of the class in your Windows Runtime component 
 
 ![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### Register the background task
 

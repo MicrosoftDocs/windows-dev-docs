@@ -1,7 +1,7 @@
 ---
 title: Bluetooth GATT Client
 description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Client for Universal Windows Platform (UWP) apps, along with sample code for common use cases.
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -15,6 +15,11 @@ This article demonstrates usage of the Bluetooth Generic Attribute (GATT) Client
 - Enumerate the supported services and characteristics of the device
 - Read and write to a characteristic
 - Subscribe for notifications when characteristic value changes
+
+> [!Important]
+> You must declare the "bluetooth" capability in *Package.appxmanifest*.
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **Important APIs**
 >

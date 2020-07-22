@@ -1,8 +1,6 @@
 ---
 title: Submit packages to Windows Package Manager
-description: 
-author: denelon
-ms.author: denelon
+description: You can use Windows Package Manager as a distribution channel for software packages containing your applications.
 ms.date: 04/29/2020
 ms.topic: overview
 ms.localizationpriority: medium

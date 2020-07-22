@@ -7,6 +7,8 @@
           href: desktop/index.md
         - name: Choose your app platform
           href: desktop/choose-your-platform.md
+        - name: Visual Studio templates for Windows apps
+          href: desktop/visual-studio-templates.md
         - name: Modernize your desktop apps
           items:
               - name: Overview
@@ -77,18 +79,23 @@
     items:
       - name: "Overview"
         href: winui/index.md
-      - name: "Windows UI Library 3.0 Preview 1"
+      - name: "Windows UI Library 3.0 Preview 2"
         items:
-          - name: "Download and release notes"
+          - name: "Overview and release notes"
             href: winui/winui3/index.md
-          - name: "Get started with WinUI 3.0 for desktop apps"
+          - name: "Get started with WinUI 3 for desktop apps"
             href: winui/winui3/get-started-winui3-for-desktop.md
+          - name: "Get started with WinUI 3 for UWP apps"
+            href: winui/winui3/get-started-winui3-for-uwp.md
+          - name: "Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT"
+            href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
       - name: "Windows UI 2.x Library"
-        href: winui/winui2/index.md
         items: 
+          - name: "Overview"
+            href: winui/winui2/index.md
           - name: "Setup"
             items: 
-              - name: "Get started"
+              - name: "Get started with WinUI 2.x"
                 href: winui/winui2/getting-started.md
               - name: "NuGet package list"
                 href: winui/winui2/nuget-packages.md

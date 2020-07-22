@@ -1,8 +1,6 @@
 ---
 title: Create your package manifest
-description: 
-author: denelon
-ms.author: denelon
+description: If you want to submit a software package to the Windows Package Manager repository, start by creating a package manifest.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
@@ -53,7 +51,7 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
@@ -159,6 +157,17 @@ ManifestVersion: 0.1.0
 
 > [!NOTE]
 > if your installer is an .exe and it was built using Nullsoft or Inno, you may specify those values instead. When Nullsoft or Inno are specified, the client will automatically set the silent and silent with progress install behaviors for the installer.
+
+## Installer switches
+
+You can often figure out what silent `Switches` are available for an installer by passing in a `-?` to the installer from the command line. Here are some common silent `Swtiches` that can be used for different installer types.
+
+| Installer | Command  | Documentation |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [MSI Command-Line Options](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [InstallShield Command-Line Parameters](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup documentation](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Nullsoft Silent Installers/Uninstallers](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
 ## Tips and best practices
 

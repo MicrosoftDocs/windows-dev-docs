@@ -31,7 +31,7 @@ Help users transition to your packaged app.
 * [Add options to the context menus of files that have a certain file type](#add)
 * [Open certain types of files directly by using a URL](#open)
 
-<a id="point" />
+<a id="point"></a>
 
 ### Point existing Start tiles and taskbar buttons to your packaged app
 
@@ -50,7 +50,6 @@ Your users might have pinned your desktop application to the taskbar or the Star
         <DesktopApp ShortcutPath="[path]" />
     </DesktopAppMigration>
 </Extension>
-
 ```
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
@@ -88,7 +87,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="make" />
+<a id="make"></a>
 
 ### Make your packaged application open files instead of your desktop app
 
@@ -149,7 +148,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="associate" />
+<a id="associate"></a>
 
 ### Associate your packaged application with a set of file types
 
@@ -207,7 +206,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="add" />
+<a id="add"></a>
 
 ### Add options to the context menus of files that have a certain file type
 
@@ -274,7 +273,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="open" />
+<a id="open"></a>
 
 ### Open certain types of files directly by using a URL
 
@@ -336,7 +335,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 * [Create firewall exception for your app](#rules)
 * [Place your DLL files into any folder of the package](#load-paths)
 
-<a id="rules" />
+<a id="rules"></a>
 
 ### Create firewall exception for your app
 
@@ -398,7 +397,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="load-paths" />
+<a id="load-paths"></a>
 
 ### Place your DLL files into any folder of the package
 
@@ -462,7 +461,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Specify a context menu handler for a file type](#context-menu)
 * [Make files from your cloud service appear in File Explorer](#cloud-files)
 
-<a id="define" />
+<a id="define"></a>
 
 ### Define how your application behaves when users select and open multiple files at the same time
 
@@ -536,7 +535,7 @@ packaged desktop apps have the same three options as regular desktop apps.
 
 If the user opens 15 or fewer files, the default choice for the **MultiSelectModel** attribute is *Player*. Otherwise, the default is *Document*. UWP apps are always started as *Player*.
 
-<a id="show" />
+<a id="show"></a>
 
 ### Show file contents in a thumbnail image within File Explorer
 
@@ -599,7 +598,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="preview" />
+<a id="preview"></a>
 
 ### Show file contents in the Preview pane of File Explorer
 
@@ -660,7 +659,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="enable" />
+<a id="enable"></a>
 
 ### Enable users to group files by using the Kind column in File Explorer
 
@@ -728,7 +727,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="make-file-properties" />
+<a id="make-file-properties"></a>
 
 ### Make file properties available to search, index, property dialogs, and the details pane
 
@@ -785,7 +784,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="context-menu" />
+<a id="context-menu"></a>
 
 ### Specify a context menu handler for a file type
 
@@ -883,7 +882,7 @@ To register your context menu handler, follow these instructions.
 </Package>
 ```
 
-<a id="cloud-files" />
+<a id="cloud-files"></a>
 
 ### Make files from your cloud service appear in File Explorer
 
@@ -946,7 +945,7 @@ Register the handlers that you implement in your application. You can also add c
 </Package>
 ```
 
-<a id="start" />
+<a id="start"></a>
 
 ## Start your application in different ways
 
@@ -956,7 +955,7 @@ Register the handlers that you implement in your application. You can also add c
 * [Enable users to start your application when they connect a device to their PC](#autoplay)
 * [Restart automatically after receiving an update from the Microsoft Store](#updates)
 
-<a id="protocol" />
+<a id="protocol"></a>
 
 ### Start your application by using a protocol
 
@@ -1007,7 +1006,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="alias" />
+<a id="alias"></a>
 
 ### Start your application by using an alias
 
@@ -1063,7 +1062,7 @@ Users and other processes can use an alias to start your application without hav
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-<a id="executable" />
+<a id="executable"></a>
 
 ### Start an executable file when users log into Windows
 
@@ -1126,7 +1125,7 @@ Users can manually disable your app's startup task by using Task Manager. If a u
  </Package>
 ```
 
-<a id="autoplay" />
+<a id="autoplay"></a>
 
 ### Enable users to start your application when they connect a device to their PC
 
@@ -1185,7 +1184,7 @@ AutoPlay can present your application as an option when a user connects a device
 </Package>
 ```
 
-<a id="updates" />
+<a id="updates"></a>
 
 ### Restart automatically after receiving an update from the Microsoft Store
 
@@ -1198,7 +1197,7 @@ Each active window in your application receives a [WM_QUERYENDSESSION](https://d
 When each active window in your application receives the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message, your application should save data and shut down.
 
 >[!NOTE]
-Your active windows also receive the [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) message in case the application doesn't handle the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message.
+> Your active windows also receive the [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) message in case the application doesn't handle the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message.
 
 At this point, your application has 30 seconds to close it's own processes or the platform terminates them forcefully.
 
@@ -1212,7 +1211,7 @@ Integrate with other apps, start other processes or share information.
 * [Share fonts with other Windows applications](#fonts)
 * [Start a Win32 process from a Universal Windows Platform (UWP) app](#win32-process)
 
-<a id="printing" />
+<a id="printing"></a>
 
 ### Make your application appear as the print target in applications that support printing
 
@@ -1264,7 +1263,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 Find a sample that uses this extension [Here](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
-<a id="fonts" />
+<a id="fonts"></a>
 
 ### Share fonts with other Windows applications
 
@@ -1312,7 +1311,7 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 </Package>
 ```
 
-<a id="win32-process" />
+<a id="win32-process"></a>
 
 ### Start a Win32 process from a Universal Windows Platform (UWP) app
 

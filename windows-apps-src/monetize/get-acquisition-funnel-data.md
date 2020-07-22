@@ -55,7 +55,7 @@ The following filter fields are supported. String values must be surrounded by s
 |---------------|-----------------|
 | campaignId | The ID string for a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md) that is associated with the acquisition. |
 | market | A string that contains the ISO 3166 country code of the market where the acquisition occurred. |
-| deviceType | One of the following strings that specifies the device type on which the acquisition occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType | One of the following strings that specifies the device type on which the acquisition occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | ageGroup | One of the following strings that specifies the age group of the user who completed the acquisition:<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 or over</strong></li><li><strong>Unknown</strong></li></ul> |
 | gender | One of the following strings that specifies the gender of the user who completed the acquisition:<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Unknown</strong></li></ul> |
 

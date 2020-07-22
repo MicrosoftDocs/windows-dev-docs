@@ -27,10 +27,11 @@ It's a little different when it comes to types. You *define* a type by providing
 
 ## Download and test the Clipboard sample
 
-Visit the [Clipboard sample](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/) web page, and click **Download ZIP**. Unzip the downloaded file, and take a look at the folder structure.
+Visit the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) web page, and click **Download ZIP**. Unzip the downloaded file, and take a look at the folder structure.
 
-- The C# version of the sample source code is contained in the folder named `cs`. Other files used by the C# version can be found in the `shared` and `SharedContent` folders.
-- You can find the C++/WinRT version of the sample source code in the [cppwinrt folder](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) in [the sample's repo](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard) on GitHub.
+- The C# version of the sample source code is contained in the folder named `cs`.
+- The C++/WinRT version of the sample source code is contained in the folder named `cppwinrt`.
+- Other files&mdash;used by both the C# version and the C++/WinRT version&mdash;can be found in the `shared` and `SharedContent` folders.
 
 The walkthrough in this topic shows how you can recreate the C++/WinRT version of the Clipboard sample by porting it from the C# source code. That way, you can see how you can port your own C# projects to C++/WinRT.
 
@@ -774,7 +775,7 @@ Apart from those items, just follow the same guidance that you did previously to
 
 A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](/windows/uwp/cpp-and-winrt-apis/faq#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
 
-If you want to follow along with the walkthrough and port **DisplayToast** yourself, then you can compare your results to the code in the C++/WinRT version of the Clipboard sample source code that you downloaded (it's in [`Windows-universal-samples/Samples/Clipboard/cppwinrt`](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)`/Clipboard.sln`).
+If you want to follow along with the walkthrough and port **DisplayToast** yourself, then you can compare your results to the code in the C++/WinRT version in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded.
 
 #### **EnableClipboardContentChangedNotifications**
 
@@ -1043,7 +1044,7 @@ void SampleState::DisplayChangedFormats()
 
 There is a small inefficiency in the design of the C++/WinRT version above. First, we create a **std::wostringstream**. But we also call the **BuildClipboardFormatsOutputString** method (which we ported earlier). That method creates its own **std::wostringstream**. And it turns its stream into a **winrt::hstring** and returns that. We call the [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) function to turn that returned **hstring** back into a C-style string, and then we insert that into our stream. It would be more efficient to create just one **std::wostringstream**, and pass (a reference to) that around, so that methods can insert strings into it directly.
 
-That's what we do in the C++/WinRT version of the Clipboard sample [source code](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt). In that source code, there's a new private static method named **SampleState::AddClipboardFormatsOutputString**, which takes and operates on a reference to an output stream. And then the methods **SampleState::DisplayChangedFormats** and **SampleState::BuildClipboardFormatsOutputString** are refactored to call that new method. It's functionally equivalent to the code listings in this topic, but it's more efficient.
+That's what we do in the C++/WinRT version of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code (in the ZIP that you downloaded). In that source code, there's a new private static method named **SampleState::AddClipboardFormatsOutputString**, which takes and operates on a reference to an output stream. And then the methods **SampleState::DisplayChangedFormats** and **SampleState::BuildClipboardFormatsOutputString** are refactored to call that new method. It's functionally equivalent to the code listings in this topic, but it's more efficient.
 
 #### **Footer_Click**
 
@@ -1099,7 +1100,7 @@ The last two lines repeat porting patterns we've seen before, and they pretty mu
 
 #### **HandleClipboardChanged**
 
-There's nothing new involved in porting this method. You can compare the C# and C++/WinRT versions in the sample source code.
+There's nothing new involved in porting this method. You can compare the C# and C++/WinRT versions in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded.
 
 #### **OnClipboardChanged** and **OnWindowActivated**
 

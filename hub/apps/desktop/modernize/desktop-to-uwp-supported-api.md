@@ -44,7 +44,7 @@ The following is a full list of Windows Runtime APIs supported in desktop apps. 
 
 For examples on how to use Windows Runtime APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
-<a id="new" />
+<a id="new"></a>
 
 ### APIs supported only in apps with package identity
 
@@ -370,7 +370,7 @@ For examples on how to use Windows Runtime APIs, see the [Desktop Bridge Samples
 * [Windows.UI.StartScreen.JumpList](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpList)
 * [Windows.UI.StartScreen.JumpListItem](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpListItem)
 
-<a id="both" />
+<a id="both"></a>
 
 ### APIs supported in all desktop applications
 

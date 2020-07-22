@@ -23,13 +23,15 @@
     - name: Your first app
       href: ../get-started/your-first-app.md
       items:
-        - name: Create "Hello, world" app (C#)
+        - name: A "Hello, World!" app in C#
           href: ../get-started/create-a-hello-world-app-xaml-universal.md
-        - name: Create "Hello, world" app (C++)
+        - name: A "Hello, World!" app in C++/WinRT
+          href: ../get-started/create-a-basic-windows-10-app-in-cppwinrt.md
+        - name: A "Hello, World!" app in C++/CX
           href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-        - name: Create "Hello, world" app (JS)
+        - name: A "Hello, World!" app in JavaScript
           href: ../get-started/create-a-hello-world-app-js-uwp.md
     - name: Building a complex app
       href: ../get-started/plan-your-app.md
 - name: Get Windows app samples
-  href: ../get-started/get-uwp-app-samples.md
+  href: ../get-started/get-app-samples.md

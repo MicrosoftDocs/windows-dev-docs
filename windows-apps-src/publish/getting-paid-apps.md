@@ -2,7 +2,7 @@
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 03/05/2019
+ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, payments, app sales, app proceeds, payout, store fee, payout hold, percentage
 ms.localizationpriority: medium
@@ -12,6 +12,9 @@ Here’s some important info about receiving payment for your apps, add-ons, and
 
 > [!IMPORTANT]
 > Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+
+> [!NOTE]
+> If you're looking for support regarding payouts, including configuring payout accounts, missing payouts, putting payouts on hold, or anything else, contact support [here](https://developer.microsoft.com/windows/support).
 
 ## Store fee
 
@@ -31,7 +34,7 @@ You can offer your app for free, or you can pick a price that customers must pay
 > [!NOTE] 
 > These price tiers also apply to any add-ons that you offer from within your app.
 
-Each price tier has a corresponding value in each of the currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
+Each price tier has a corresponding value in each of the currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another. Exchange rates are calculated monthly. Based on when your transaction took place, the appropriate exchange rate is applied. The exchange rate and the date range for which it was in force are indicated on your payout report in the columns exchangeRate and exchangeRateDate respectively.
 
 You also have the option to enter a free-form price of your choosing in a specific market’s local currency. When you do this, the price will not be adjusted (even if conversion rates change) unless you submit an update with a new price. 
 

@@ -93,7 +93,7 @@
           items:
             - name: Set up project
               href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-            - name: UWP framework
+            - name: UWP app framework
               href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
             - name: Game flow management
               href: ../gaming/tutorial-game-flow-management.md

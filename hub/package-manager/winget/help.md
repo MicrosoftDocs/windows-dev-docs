@@ -1,8 +1,6 @@
 ---
 title: winget help Command
 description: Displays help for all the supported commands.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: article
 ms.localizationpriority: medium

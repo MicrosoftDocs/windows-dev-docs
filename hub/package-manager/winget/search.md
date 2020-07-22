@@ -1,8 +1,6 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
@@ -45,7 +43,7 @@ Search strings can be filtered with the following options.
 | **--name**      |  Limits the search to the name of the application. |
 | **--moniker**  |    Limits the search to the moniker specified. |
 | **--tag**    |  Limits the search to the tags listed for the application. |
-| **--command**   |   Limits the search to the name of the application. |
+| **--command**   |   Limits the search to the commands listed for the application. |
 
 The string will be treated as a substring. The search by default is also case insensitive. For example, `winget search micro` could return the following:
 
