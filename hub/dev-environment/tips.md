@@ -12,7 +12,7 @@ ms.date: 07/21/2020
 ROBOTS: NOINDEX
 ---
 
-# Tips for improving your development workflow on Windows 10
+# Tips for improving performance and development workflows on Windows 10
 
 We've gathered a few tips that we hope will help to make your workflow more efficient and enjoyable. Do you have additional tips to share? File a pull request, using the "Edit" button above, or an issue, using the "Feedback" button below and we may add it to the list.
 
