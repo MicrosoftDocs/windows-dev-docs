@@ -1,6 +1,18 @@
 - name: Windows development environment
-  href: index.yml
+  href: overview.md
   items:
+  - name: Overview
+    items:
+        - name: Workflow & performance tips
+          href: tips.md
+        - name: Developer stories
+          href: dev-stories.md
+        - name: Popular tutorials
+          href: tutorials.md
+        - name: Mac to Windows guide
+          href: mac-to-windows.md
+        - name: Keyboard shortcuts
+          href: mac-to-windows.md#keyboard-shortcuts
   - name: Develop with Python
     items:
         - name: Overview
@@ -87,15 +99,3 @@
     href: https://docs.microsoft.com/windows/wsl/
   - name: Windows Terminal
     href: https://docs.microsoft.com/windows/terminal/
-  - name: Mac to Windows guide
-    items:
-      - name: Changing your dev environment
-        href: mac-to-windows.md
-      - name: Keyboard shortcuts
-        href: mac-to-windows.md#keyboard-shortcuts
-      - name: Trackpad shortcuts
-        href: mac-to-windows.md#trackpad-shortcuts
-      - name: Terminal and Shell
-        href: mac-to-windows.md#terminal-and-shell
-      - name: Apps and utilities
-        href: mac-to-windows.md#apps-and-utilities
