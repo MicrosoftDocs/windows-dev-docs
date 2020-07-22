@@ -84,15 +84,12 @@ We will keep this troubleshooting item up-to-date with the list of known issues 
 
 Terminal, when coupled with PowerShell's line editing library [PSReadline](https://www.powershellgallery.com/packages/PSReadLine), may draw black lines across the screen. These miscolored regions will extend across the screen beyond your prompt wherever there are command parameters, strings or operators.
 
-PSReadline verisons **2.0.3** and **2.1.0-beta3** (prerelease) have been released and contain a fix for this issue.
+PSReadline version **2.0.3** has been released and contains a fix for this issue. If you are using the prerelease version of PSReadline, note that a fix is not yet available.
 
 To update to the newest version of PSReadline, please run the following command:
 
 ```powershell
 Update-Module PSReadline
-
-# If you're using a prerelease version of PSReadline or PowerShell 7.1, you may prefer
-# Update-Module PSReadline -AllowPrerelease
 ```
 
 ### Technical Notes
