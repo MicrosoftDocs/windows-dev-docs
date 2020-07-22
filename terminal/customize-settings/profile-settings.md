@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -174,7 +174,7 @@ This sets the profile's font size in points.
 
 **Default value:** `12`
 
-### Font weight ([Preview](https://aka.ms/terminal-preview/))
+### Font weight
 
 This sets the weight (lightness or heaviness of the strokes) for the profile's font.
 
@@ -185,9 +185,6 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 **Accepts:** `"normal"`, `"thin"`, `"extra-light"`, `"light"`, `"semi-light"`, `"medium"`, `"semi-bold"`, `"bold"`, `"extra-bold"`, `"black"`, `"extra-black"`, or an integer corresponding to the numeric representation of the OpenType font weight
 
 **Default value:** `"normal"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Padding
 
@@ -268,7 +265,7 @@ ___
 
 ## Keyboard settings
 
-### AltGr aliasing ([Preview](https://aka.ms/terminal-preview/))
+### AltGr aliasing
 
 This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
 
@@ -279,9 +276,6 @@ This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 

@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 06/18/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -24,9 +24,6 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 **Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
-
-> [!IMPORTANT]
-> Using the profile name for `defaultProfile` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -118,9 +115,6 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 :::column-end:::
 :::row-end:::
 
-> [!IMPORTANT]
-> The `"compact"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Hide close all tabs popup
 
 :::row:::
@@ -148,7 +142,7 @@ ___
 
 ## Launch settings
 
-### Launch on startup ([Preview](https://aka.ms/terminal-preview/))
+### Launch on startup
 
 When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
 
@@ -160,12 +154,9 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 **Default value:** `false`
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Launch size
 
-This defines whether the terminal will launch as maximized, fullscreen, or in a window.
+This defines whether the terminal will launch as maximized, full screen, or in a window.
 
 **Property name:** `launchMode`
 
@@ -174,9 +165,6 @@ This defines whether the terminal will launch as maximized, fullscreen, or in a 
 **Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
 
 **Default value:** `"default"`
-
-> [!IMPORTANT]
-> The `"fullscreen"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 
@@ -213,6 +201,21 @@ This is the number of rows displayed in the window upon first load. If `launchMo
 **Accepts:** Integer
 
 **Default value:** `30`
+
+### Always on top mode ([Preview](https://aka.ms/terminal-preview/))
+
+When set to true, Windows Terminal windows will launch on top of all other windows on the desktop. This state can also be toggled with the `toggleAlwaysOnTop` key binding.
+
+**Property name:** `alwaysOnTop`
+
+**Necessity:** Optional
+
+**Accepts:** `true, false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -299,6 +302,42 @@ This determines the word delimiters used in a double-click selection. Word delim
 
 ___
 
+## Paste warnings
+
+### Warn when the text to paste is very large ([Preview](https://aka.ms/terminal-preview/))
+
+When this is set to `true`, trying to paste text with more than 5 KiB of characters will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. If you often right-click on the terminal by accident after having selected a lot of text, this might be useful to prevent the terminal from becoming unresponsive while the program connected to the terminal receives the clipboard's content.
+
+**Property name:** `largePasteWarning`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+### Warn when the text to paste contains multiple lines ([Preview](https://aka.ms/terminal-preview/))
+
+When this is set to `true`, trying to paste text with multiple lines will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. In most shells, one line corresponds to one command so if you paste text that contains the "new line" character into a shell, one or more command(s) might be executed automatically upon paste, without you having time to validate the commands. This can be useful if you often copy and paste commands from untrusted websites.
+
+**Property name:** `multiLinePasteWarning`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+<br />
+
+___
+
 ## Scroll speed
 
 This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
@@ -310,6 +349,9 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 **Accepts:** Integer
 
 **Default value:** `"system"`
+
+> [!CAUTION]
+> The `rowsToScroll` setting is no longer available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.2. This version of Windows Terminal will always use the value configured in the system Mouse settings panel.
 
 <br />
 
