@@ -70,7 +70,7 @@ Choose the **Browse** tab, and search for the **Microsoft.Data.SQLite** package.
 
 ![SQLite package](images/sqlite-package.png)
 
-Move onto the [Add and retrieve data in a SQLite database](#use-data) section of this guide.
+Move onto the [Add and retrieve data in a SQLite database](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database) section of this guide.
 
 ### The minimum version of your project targets the Fall Creators Update
 
@@ -117,7 +117,6 @@ You don't have to do this. But if you have a reason to include a specific versio
 
 ![SQLite package](images/sqlite-package-v2.png)
 
-<a id="use-data" />
 
 ## Add and retrieve data in a SQLite database
 
@@ -168,7 +167,6 @@ using Microsoft.Data.Sqlite;
 using System.Collections.Generic;
 ```
 
-<a id="initialize" />
 
 ### Initialize the SQLite database
 
@@ -212,7 +210,6 @@ public App()
 }
 ```
 
-<a id="insert" />
 
 ### Insert data into the SQLite database
 
@@ -242,7 +239,6 @@ public static void AddData(string inputText)
 }
 ```
 
-<a id="retrieve" />
 
 ### Retrieve data from the SQLite database
 
