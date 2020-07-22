@@ -364,17 +364,8 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-
-**Developers**
 * [Speech interactions](speech-interactions.md)
-**Designers**
-* [Speech design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+
 **Samples**
+
 * [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
-
-
-
-
