@@ -54,7 +54,7 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
     :::column:::
        [![Azure for Java](../images/java-logo.png)](https://docs.microsoft.com/azure/developer/java/)<br>
-        **[Get started with Java on Azure](tps://docs.microsoft.com/azure/developer/java/)**<br>
+        **[Get started with Java on Azure](https://docs.microsoft.com/azure/developer/java/)**<br>
         Get started developing apps for the cloud with these tutorials and tools for Java developers.
     :::column-end:::
     :::column:::
