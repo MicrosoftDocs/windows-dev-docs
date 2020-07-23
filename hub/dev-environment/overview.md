@@ -36,7 +36,7 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
     :::column:::
        [![Windows Desktop](../images/windows-logo.png)](https://docs.microsoft.com/windows/apps/)<br>
-        **[Get started with Windows](https://docs.microsoft.com/windows/apps/)**<br>
+        **[Get started with Windows Desktop](https://docs.microsoft.com/windows/apps/)**<br>
         Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
@@ -122,7 +122,11 @@ This guide will help you get started with installing and setting up the language
 
 <br>
 
-![Office image](../images/flashy-office.png)
+## Run Windows and Linux
+
+Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true). You can also integrate all of your favorite command lines - whether that's Windows PowerShell, Ubuntu, Debian, Azure CLI, Zsh, etc - all in multiple windows panes or tabs using Windows Terminal. Learn more in the [Windows Terminal docs](https://docs.microsoft.com/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 
