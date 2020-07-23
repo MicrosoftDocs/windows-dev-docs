@@ -45,17 +45,17 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![C / C++](../images/c-logo.png)](https://docs.microsoft.com/cpp/)<br>
         **[Get started with C++ and C](https://docs.microsoft.com/cpp/)**<br>
-        Get started with C++, C, and assembly language to develop applications, services, and tools for your platforms and devices.
+        Get started with C++, C, and assembly to develop apps, services, and tools.
     :::column-end:::
     :::column:::
-       [![C#](../images/c-sharp.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
+       [![C#](../images/csharp-logo.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
         **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
-        Get started building applications using C# and .NET Core.
+        Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
        [![Azure for Java](../images/java-logo.png)](https://docs.microsoft.com/azure/developer/java/)<br>
         **[Get started with Java on Azure](https://docs.microsoft.com/azure/developer/java/)**<br>
-        Get started developing apps for the cloud with these tutorials and tools for Java developers.
+        Get started building apps for the cloud with these tutorials and tools for Java developers.
     :::column-end:::
     :::column:::
        [![PowerShell](../images/powershell.png)](https://docs.microsoft.com/powershell/)<br>
