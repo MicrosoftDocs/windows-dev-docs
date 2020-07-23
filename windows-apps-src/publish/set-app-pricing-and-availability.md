@@ -15,7 +15,7 @@ The **Pricing and availability** page of the [app submission process](app-submis
 
 ## Markets
 
-The Microsoft Store reaches customers in over 200 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. 
+The Microsoft Store reaches customers in over 240 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. 
 
 For more info, see [Define market selection](define-pricing-and-market-selection.md).
 
@@ -36,7 +36,7 @@ For more info, see [Configure precise release scheduling](configure-precise-rele
 
 ## Pricing
 
-You are required to select a base price for your app (unless you have selected the **Stop acquisition** option under **Make this app available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
+You are required to select a base price for your app (unless you have selected the **Stop acquisition** option under **Make this app available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. Microsoft periodically updates the recommended prices, to account for currency fluctuations in different markets. When a recommended price changes, the pricing area will show a warning indicator if the prices you’ve selected are not aligned with the new recommended values. The prices in your products will not change, you are in control of when and if you want to update these prices. 
 
 For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.md).
 
