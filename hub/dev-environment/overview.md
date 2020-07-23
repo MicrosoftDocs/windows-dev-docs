@@ -41,6 +41,29 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![C / C++](../images/c-logo.png)](https://docs.microsoft.com/cpp/)<br>
+        **[Get started with C++ and C](https://docs.microsoft.com/cpp/)**<br>
+        Get started with C++, C, and assembly language to develop applications, services, and tools for your platforms and devices.
+    :::column-end:::
+    :::column:::
+       [![C#](../images/c-sharp.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
+        **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
+        Get started building applications using C# and .NET Core.
+    :::column-end:::
+    :::column:::
+       [![Azure for Java](../images/java-logo.png)](https://docs.microsoft.com/azure/developer/java/)<br>
+        **[Get started with Java on Azure](tps://docs.microsoft.com/azure/developer/java/)**<br>
+        Get started developing apps for the cloud with these tutorials and tools for Java developers.
+    :::column-end:::
+    :::column:::
+       [![PowerShell](../images/powershell.png)](https://docs.microsoft.com/powershell/)<br>
+        **[Get started with PowerShell](https://docs.microsoft.com/powershell/)**<br>
+        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+    :::column-end:::
+:::row-end:::
+
 ## Tools and platforms
 
 :::row:::
