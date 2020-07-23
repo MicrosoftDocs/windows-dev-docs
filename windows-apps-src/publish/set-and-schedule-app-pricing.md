@@ -17,19 +17,23 @@ The **Pricing** section of the [Pricing and availability](set-app-pricing-and-av
 
 When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you override the base price in any market(s).
 
-You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher. 
+You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (e.g. 1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher. 
 
 > [!NOTE]
-> These price tiers also apply to add-ons. 
+> These price tiers also apply to other products, like add-ons. 
 
-Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets. Note that at times we may adjust the corresponding value in a certain market to account for changes in currency conversion rates.
+Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets. Note that at times we may adjust the corresponding value in a certain market to account for changes in currency conversion rates, and our recommended price changes will change, the page will show up prices that don’t align with our recommended prices, and you are responsible for updating the price. 
 
-In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](../monetize/manage-app-submissions.md#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
+In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies.You can click **Download** to download a copy of the price tier table as a .csv file.
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). You should also review the [price considerations for specific markets](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
 > If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
+
+
+> [!Important not for agency products]
+> From time to time some markets change the VAT rate. When this happens, Partner Center will show an alert notifying the change, and indicating the date of change. At the change date, for agency products, the retail prices will remain the same, though the proceeds you’ll be paid will be adjusted accordingly, reducing them by the VAT value.  
 
 ## Schedule price changes
 
