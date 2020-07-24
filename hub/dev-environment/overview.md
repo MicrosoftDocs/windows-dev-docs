@@ -128,11 +128,13 @@ Windows Subsystem for Linux allows developers to run a Linux operating system ri
 
 - Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
+
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
 - Learn more in the [Windows Terminal docs](https://docs.microsoft.com/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 
