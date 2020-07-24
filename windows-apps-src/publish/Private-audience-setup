@@ -53,18 +53,29 @@ Recommended settings for common scenarios:
 
 - Ensure that the Schedule section has the following options selected
 
- 
+
+ ![](images/Scenario1-visibility-schedule.PNG)
+
  **Scenario 2:** I know the date that my game/bundle/add-on is going to release but I would like to test my game under private audience and transition over to public audience
+ 
 - Select the Enable Private Audience checkbox under the visibility section
 - Select the End Private Audience Restrictions on and fill in the date you want your game to transition from private to public audience
+
+ ![](images/Scenario2-visibility-1.PNG)
+ 
 - Ensure that the Schedule section has the following options selected
 
 
- 
+![](images/Scenario2-visibility-schedule.PNG)
+
 
 **Scenario 3:** My game/bundle has a pre-order, I would like to start the pre-order under private audience and then transition over to public audience
 - 	Select the Enable Private Audience checkbox under the visibility section
 -   Select the End Private Audience Restrictions on and fill in the date you want your game to transition from private to public audience
 
+ ![](images/Scenario3-visibility-1.PNG)
  
-•	Fill out the dates in the Schedule section as per your product requirements
+-	Fill out the dates in the Schedule section as per your product requirements
+
+
+ ![](Scenario3-visibility-schedule.PNG)
