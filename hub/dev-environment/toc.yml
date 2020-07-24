@@ -25,17 +25,13 @@
                 href: ../python/web-frameworks.md
               - name: Get started with automation
                 href: ../python/scripting.md
-              - name: Get started with databases
-                href: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
               - name: FAQs
                 href: ../python/faqs.md
-              - name: Resources
-                href: ../python/resources.md
         - name: Get started with Node.js
           items: 
               - name: Overview
                 href: ../nodejs/index.yml
-              - name: Setup with WSL2 (Linux)
+              - name: Setup with WSL2
                 href: ../nodejs/setup-on-wsl2.md
               - name: Setup with Windows (Beginners)
                 href: ../nodejs/setup-on-windows.md
@@ -43,10 +39,6 @@
                 href: ../nodejs/beginners.md
               - name: Get started with web frameworks
                 href: ../nodejs/web-frameworks.md
-              - name: Get started with databases
-                href: .https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
-              - name: Get started with containers
-                href: ../nodejs/containers.md
         - name: Get started with Android
           items:
               - name: Overview
@@ -77,6 +69,10 @@
           href: https://docs.microsoft.com/powershell/
   - name: Tools and platforms
     items:
+        - name: Windows Subsystem for Linux
+          href: https://docs.microsoft.com/windows/wsl/
+        - name: Windows Terminal
+          href: https://docs.microsoft.com/windows/terminal/
         - name: Windows Package Manager
           items:
             - name: Overview
@@ -107,10 +103,6 @@
                   href: ../package-manager/package/manifest.md
                 - name: Submit your manifest to the repository
                   href: ../package-manager/package/repository.md
-        - name: Windows Subsystem for Linux
-          href: https://docs.microsoft.com/windows/wsl/
-        - name: Windows Terminal
-          href: https://docs.microsoft.com/windows/terminal/
         - name: PowerToys
           href: https://github.com/microsoft/PowerToys
         - name: VS Code
