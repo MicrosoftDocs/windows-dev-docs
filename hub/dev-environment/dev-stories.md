@@ -6,10 +6,9 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: 
+keywords: Microsoft, Windows, Developer, Stories, Switch from Mac to Windows, Mac to Windows, WSL
 ms.localizationpriority: medium
-ms.date: 07/21/2020
-ROBOTS: NOINDEX
+ms.date: 07/24/2020
 ---
 
 # Stories from developers who have switched from Mac to Windows

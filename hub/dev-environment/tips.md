@@ -6,10 +6,9 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: 
+keywords: Microsoft, Windows, Developer, Tips, Performance, WSL
 ms.localizationpriority: medium
-ms.date: 07/21/2020
-ROBOTS: NOINDEX
+ms.date: 07/24/2020
 ---
 
 # Tips for improving performance and development workflows

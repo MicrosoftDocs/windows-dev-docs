@@ -1,15 +1,14 @@
 ---
 title: Set up your Windows 10 development environment
-description: A guide to help you setup and optimize your Windows development environment. We will get you started installing the languages and tools that you need to develop using Windows or Windows Subsystem for Linux.
+description: A guide to help you setup your Windows development environment. We will get you started installing the languages and tools that you need for your development work using Windows or Windows Subsystem for Linux.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: 
+keywords: Set up windows, Dev Environment, Dev tools, development paths, Microsoft, Windows, Developer, Tips, Performance, WSL, terminal, nodejs, python
 ms.localizationpriority: medium
-ms.date: 07/01/2020
-ROBOTS: NOINDEX
+ms.date: 07/24/2020
 ---
 
 # Set up your Windows 10 development environment
