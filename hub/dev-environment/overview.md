@@ -124,7 +124,13 @@ This guide will help you get started with installing and setting up the language
 
 ## Run Windows and Linux
 
-Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true). You can also integrate all of your favorite command lines - whether that's Windows PowerShell, Ubuntu, Debian, Azure CLI, Zsh, etc - all in multiple windows panes or tabs using Windows Terminal. Learn more in the [Windows Terminal docs](https://docs.microsoft.com/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. 
+
+- Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
+
+You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
+
+- Learn more in the [Windows Terminal docs](https://docs.microsoft.com/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
