@@ -4,7 +4,7 @@ title: Command bar
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/23/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -251,7 +251,7 @@ Although the Minimal and Hidden modes are useful in some situations, keep in min
 Changing the ClosedDisplayMode to provide more or less of a hint to the user affects the layout of surrounding elements. In contrast, when the CommandBar transitions between closed and open, it does not affect the layout of other elements.
 
 ## Placement
-Command bars can be placed at the top of the app window, at the bottom of the app window, and inline.
+Command bars can be placed at the top of the app window, at the bottom of the app window, and inline, by embedding them in a layout control such as ```Grid.row```.
 
 ![Example 1 of app bar placement](images/AppbarGuidelines_Placement1.png)
 

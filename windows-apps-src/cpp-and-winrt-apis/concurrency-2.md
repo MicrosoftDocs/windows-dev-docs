@@ -650,7 +650,7 @@ The first argument (the *sender*) is left unnamed, because we never use it. For 
 
 ## Awaiting a kernel handle
 
-C++/WinRT provides a **resume_on_signal** class, which you can use to suspend until a kernel event is signaled. You're responsible for ensuring that the handle remains valid until your `co_await resume_on_signal(h)` returns. **resume_on_signal** itself can't do that for you, because you may have lost the handle even before the **resume_on_signal** starts, as in this first example.
+C++/WinRT provides a [**winrt::resume_on_signal**](/uwp/cpp-ref-for-winrt/resume-on-signal) function, which you can use to suspend until a kernel event is signaled. You're responsible for ensuring that the handle remains valid until your `co_await resume_on_signal(h)` returns. **resume_on_signal** itself can't do that for you, because you may have lost the handle even before the **resume_on_signal** starts, as in this first example.
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -707,6 +707,21 @@ IAsyncAction SampleCaller()
     event.close(); // Our handle is closed, but Async still has a valid handle.
 
     co_await async; // Will wake up when *event* is signaled.
+}
+```
+
+You can pass a timeout value to **resume_on_signal**, as in this example.
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
 }
 ```
 

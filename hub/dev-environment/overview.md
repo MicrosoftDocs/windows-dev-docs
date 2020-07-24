@@ -123,8 +123,7 @@ This guide will help you get started with installing and setting up the language
 
 ## Run Windows and Linux
 
-Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. 
-
+Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting.
 - Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]

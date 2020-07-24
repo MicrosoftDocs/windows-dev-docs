@@ -25,6 +25,10 @@ It may be impossible or undesirable (perhaps for reasons of privacy or performan
 -   Download the [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
 -   Download the [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) app.
 
+
+> [!NOTE]
+> Screenshots in this article were taken from a previous version of Visual Studio. They might not precisely match your development experience if you are using Visual Studio 2019.
+
 Setting DataContext in markup
 -----------------------------
 
@@ -42,7 +46,7 @@ But if you do that then your page isn't as "designable" as it could be. The reas
 
 ![Sparse design UI.](images/displaying-data-in-the-designer-01.png)
 
-The first remedy to try is to comment out that **DataContext** assignment and set the **DataContext** in your page markup instead. That way, your live data shows up at design-time as well as at run-time. To do this, first open your XAML page. Then, in the **Document Outline** window, click the root designable element (usually with the label **\[Page\]**) to select it. In the **Properties** window, find the **DataContext** property (inside the Common category), and then click **New**. Click your view model type from the **Select Object** dialog box, and then click **OK**.
+The first remedy to try is to comment out that **DataContext** assignment and set the **DataContext** in your page markup instead. That way, your live data shows up at design-time as well as at run-time. To do this, first open your XAML page. Then, in the **Document Outline** window, click the root designable element (usually with the label **\[Page\]**) to select it. In the **Properties** window, find the **DataContext** property (inside the Common category), and modify it. Select your view model type from the **Select Object** dialog box, and then click **OK**.
 
 ![UI for setting DataContext.](images/displaying-data-in-the-designer-02.png)
 
