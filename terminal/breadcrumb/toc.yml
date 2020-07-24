@@ -6,6 +6,6 @@
       tocHref: /windows/dev-environment/overview
       topicHref: /windows/dev-environment/overview
       items:
-        - name: Terminal
+        - name: Windows Terminal
           tocHref: /windows/terminal/
           topicHref: /windows/terminal/
