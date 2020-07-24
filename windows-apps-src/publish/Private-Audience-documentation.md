@@ -46,9 +46,15 @@ Recommended settings for common scenarios:
 
 **Scenario 1:** I do not know the exact date that my game/bundle/add-on is going to release but I would like to test my game under private audience
 - Select the Enable Private Audience checkbox under the visibility section
+![](images/Scenario1-visibility-1.PNG)
+
+
+
+
+
+
 - Ensure that the Schedule section has the following options selected
 
- png1
  
  **Scenario 2:** I know the date that my game/bundle/add-on is going to release but I would like to test my game under private audience and transition over to public audience
 - Select the Enable Private Audience checkbox under the visibility section
