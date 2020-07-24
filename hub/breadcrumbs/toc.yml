@@ -108,6 +108,12 @@
           topicHref: "/windows/android/overview"
         - name: Mac to Windows
           topicHref: "/windows/dev-environment/mac-to-windows"
+        - name: Tips
+          topicHref: "/windows/dev-environment/tips"
+        - name: Dev stories
+          topicHref: "/windows/dev-environment/dev-stories"
+        - name: Tutorials
+          topicHref: "/windows/dev-environment/tutorials"
         - name: Windows Subsystem for Linux
           tocHref: /windows/dev-environment/wsl
           topicHref: "/windows/wsl/about"
