@@ -67,6 +67,8 @@
           href: https://docs.microsoft.com/azure/developer/java/
         - name: Get started with Powershell
           href: https://docs.microsoft.com/powershell/
+        - name: Get started with databases on WSL
+          href: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
   - name: Tools and platforms
     items:
         - name: Windows Subsystem for Linux
