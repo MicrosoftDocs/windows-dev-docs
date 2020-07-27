@@ -4916,7 +4916,7 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "hub/dev-environment",
+      "source_path": "hub/dev-environment/index.yml",
       "redirect_url": "https://docs.microsoft.com/windows/dev-environment/overview",
       "redirect_document_id": false
     }
