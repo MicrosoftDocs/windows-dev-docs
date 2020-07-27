@@ -4917,7 +4917,7 @@
     },
     {
       "source_path": "hub/dev-environment",
-      "redirect_url": "hub/dev-environment/overview",
+      "redirect_url": "https://docs.microsoft.com/windows/dev-environment/overview",
       "redirect_document_id": false
     }
   ]
