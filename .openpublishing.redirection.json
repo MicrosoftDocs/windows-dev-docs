@@ -4914,6 +4914,11 @@
       "source_path": "windows-apps-src/monetize/app-metadata-api-for-advertising-networks.md",
       "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/dev-environment",
+      "redirect_url": "hub/dev-environment/overview",
+      "redirect_document_id": true
     }
   ]
 }
