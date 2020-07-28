@@ -1,6 +1,6 @@
 ---
-title: Set up your Windows 10 development environment
-description: A guide to help you setup your Windows development environment. We will get you started installing the languages and tools that you need for your development work using Windows or Windows Subsystem for Linux.
+title: Set up your development environment on Windows 10
+description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. Whether you prefer using Python, NodeJS, VS Code, Git, Bash, Linux tools and commands, Android Studio, we've got your covered with great new tools like Windows Terminal and WSL.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ms.date: 07/24/2020
 ---
 
-# Set up your Windows 10 development environment
+# Set up your development environment on Windows 10
 
 This guide will help you get started with installing and setting up the languages and tools you need to develop on Windows or Windows Subsystem for Linux.
 
@@ -123,7 +123,7 @@ This guide will help you get started with installing and setting up the language
 
 ## Run Windows and Linux
 
-Windows Subsystem for Linux allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting.
+Windows Subsystem for Linux (WSL) allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. WSL enables you to use BASH and will provide the kind of environment most familiar to Mac users.
 - Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
