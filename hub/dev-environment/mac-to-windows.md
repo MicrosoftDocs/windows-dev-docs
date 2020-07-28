@@ -84,13 +84,15 @@ Windows has two primary command-line shells:
 
 ### Linux shells
 
-Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10). Linux distribution that can be installed on Windows with WSL include:
+Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10). Linux distributions that can be installed on Windows with WSL include:
 
 1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
 2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
 3. [Debian GNU/Linux](https://www.microsoft.com/store/apps/9MSVKQC78PK6)
+4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
+5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-    Just to name a few. Find more in the [WSL install docs](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice).
+Just to name a few. Find more in the [WSL install docs](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools).
 
 ## Windows Terminals
 
@@ -105,7 +107,6 @@ In addition to many 3rd party offerings, Microsoft provides two “terminals” 
     However, due to a quirk of history, Windows users traditionally start their shell, and Windows automatically starts and connects a GUI Console app.
 
     While one can still launch shells directly and use the legacy Windows Console, it’s highly recommended that users instead install and use Windows Terminal to experience the best, fastest, most productive command-line experience.
-
 
 ## Apps and utilities
 
