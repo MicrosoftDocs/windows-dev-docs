@@ -329,6 +329,14 @@ GUID abiguid;
 | From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
 
+You can construct a **winrt::guid** like this.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+For a gist showing how to construct a **winrt::guid** from a string, see [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
+
 ## Interoperating with the ABI's HSTRING
 
 The table that follows shows conversions between **winrt::hstring** and [**HSTRING**](/windows/win32/winrt/hstring), and other operations. For the code in the table, assume these declarations.

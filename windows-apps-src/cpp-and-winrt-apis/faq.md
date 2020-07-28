@@ -193,5 +193,8 @@ To remedy one or both issues, you can do this.
 #pragma pop_macro("GetCurrentTime")
 ```
 
+## How do I speed up symbol loading?
+In Visual Studio, **Tools** > **Options** > **Debugging** > **Symbols** > check *Load only specified modules*. You can then right-click DLLs in the stack list, and load individual modules.
+
 > [!NOTE]
 > If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

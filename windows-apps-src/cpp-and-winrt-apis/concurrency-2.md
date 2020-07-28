@@ -76,11 +76,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+The **winrt::resume_foreground** function takes an optional priority parameter. If you're using that parameter, then the pattern shown above is appropriate. If not, then you can choose to simplify `co_await winrt::resume_foreground(someDispatcherObject);` into just `co_await someDispatcherObject;`.
 
 ## Execution contexts, resuming, and switching in a coroutine
 

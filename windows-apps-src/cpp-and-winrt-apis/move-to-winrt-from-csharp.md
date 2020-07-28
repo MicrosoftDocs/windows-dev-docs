@@ -270,6 +270,34 @@ For string building, C# has a built-in [**StringBuilder**](/dotnet/api/system.te
 
 Also see [Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring), and [Porting the **DisplayChangedFormats** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
 
+### Running code on the main UI thread 
+
+This example is taken from the [Barcode scanner sample](/samples/microsoft/windows-universal-samples/barcodescanner/).
+
+When you want to do work on the main UI thread in a C# project, you typically use the [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) method, like this.
+
+```csharp
+private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        // Do work on the main UI thread here.
+    });
+}
+```
+
+It's much simpler to express that in C++/WinRT. Notice that we're accepting parameters by value on the assumption we'll want to access them after the first suspension point (the `co_await`, in this case). For more info, see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
+
+```cppwinrt
+winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
+{
+    co_await Dispatcher();
+    // Do work on the main UI thread here.
+}
+```
+
+If you need to do the work at a priority other than the default, then see the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function, which has an overload that takes a priority. For code examples showing how to await a call to **winrt::resume_foreground**, see [Programming with thread affinity in mind](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind).
+
 ## Porting-related tasks that are specific to C++/WinRT
 
 ### Define your runtime classes in IDL

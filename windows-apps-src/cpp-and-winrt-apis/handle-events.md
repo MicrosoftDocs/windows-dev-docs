@@ -34,10 +34,14 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 
 ```cppwinrt
 // MainPage.h
-void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */)
 {
     Button().Content(box_value(L"Clicked"));
 }
@@ -62,7 +66,9 @@ Here's an example that uses a static member function; note the simpler syntax.
 
 ```cppwinrt
 // MainPage.h
-static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+static void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 MainPage::MainPage()
@@ -71,7 +77,9 @@ MainPage::MainPage()
 
     Button().Click( MainPage::ClickHandler );
 }
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */) { ... }
 ```
 
 There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
@@ -101,7 +109,9 @@ The syntax of the function call operator is also helpful to see. It tells you wh
 > That info tells us that the **UIElement.KeyDown** event (the topic we're on) has a delegate type of **KeyEventHandler**, since that's the type that you pass when you register a delegate with this event type. So, now follow the link on the topic to that [KeyEventHandler delegate](/uwp/api/windows.ui.xaml.input.keyeventhandler) type. Here, the syntax block contains a function call operator. And, as mentioned above, that tells you what your delegate's parameters need to be.
 > 
 > ```cppwinrt
-> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> void operator()(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
 >  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) as the args.
@@ -177,7 +187,10 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+        m_event_revoker = button.Click(
+            winrt::auto_revoke,
+            [this](IInspectable const& /* sender */,
+            RoutedEventArgs const& /* args */)
         {
             // ...
         });
@@ -188,7 +201,7 @@ private:
 };
 ```
 
-Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload.
+Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload. And you can pass the same kinds of delegates to both the *register* and the *revoke with event_revoker* overloads.
 
 ```cppwinrt
 // Register
@@ -231,14 +244,20 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& /* sender */,
+            RetrievalProgress const& args)
         {
             uint32_t bytes_retrieved = args.BytesRetrieved;
             // use bytes_retrieved;
         });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& sender,
+            AsyncStatus const /* asyncStatus */)
         {
             SyndicationFeed syndicationFeed = sender.GetResults();
             // use syndicationFeed;
