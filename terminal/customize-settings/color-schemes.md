@@ -114,4 +114,4 @@ Windows Terminal includes these color schemes inside the defaults.json file, whi
 
 ## More schemes
 
-For more schemes, see the [Custom Terminal Gallery](custom-terminal-gallery/custom-schemes) section.
+For more schemes, see the [Custom Terminal Gallery](custom-terminal-gallery/custom-schemes.md) section.

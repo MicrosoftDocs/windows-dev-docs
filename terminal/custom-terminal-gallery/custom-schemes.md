@@ -87,25 +87,25 @@ After:
 
 ![Windows Terminal Frosted Glass Theme](./../images/frosted-glass-theme.png)
 
-[Details](frosted-glass-theme)
+[Details](frosted-glass-theme.md)
 
 ## Powerline
 
 ![Windows Terminal Powerline PowerShell](./../images/powerline-powershell.png)
 
-[Details](powerline-in-powershell)
+[Details](powerline-in-powershell/md)
 
 ## Raspberry Ubuntu
 
 ![Windows Terminal Raspberry Ubuntu](./../images/raspberry-ubuntu.png)
 
-[Details](raspberry-ubuntu)
+[Details](raspberry-ubuntu.md)
 
 ## Retro Command
 
 ![Windows Terminal Retro Command Prompt](./../images/retro-command-prompt.png)
 
-[Details](retro-command-prompt)
+[Details](retro-command-prompt.md)
 
 ## Share!
 
