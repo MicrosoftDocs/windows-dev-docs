@@ -93,7 +93,7 @@ After:
 
 ![Windows Terminal Powerline PowerShell](./../images/powerline-powershell.png)
 
-[Details](powerline-in-powershell/md)
+[Details](powerline-in-powershell.md)
 
 ## Raspberry Ubuntu
 
