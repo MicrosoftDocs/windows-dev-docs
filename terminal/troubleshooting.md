@@ -25,7 +25,7 @@ For example, the following setting will launch the "Ubuntu-18.04" distribution i
 {
     "name": "Ubuntu-18.04",
     "commandline" : "wsl -d Ubuntu-18.04",
-    "startingDirectory" : "//wsl$/Ubuntu-18.04/home/<Your Ubuntu Username>",
+    "startingDirectory" : "//wsl$/Ubuntu-18.04/home/<Your Ubuntu Username>"
 }
 ```
 
