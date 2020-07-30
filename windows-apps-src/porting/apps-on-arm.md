@@ -36,11 +36,11 @@ Visual Studio 2019 provides several tools downloads for Windows 10 on ARM. Users
 
 ### Visual C++ Redistributable
 
-The Visual C++ Redist package is available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Other tools and Frameworks**, then navigate to the **Microsoft Visual C++ Redistributable for Visual Studio 2019** entry. Select the **ARM64** radio button, then **Download**.
+The Visual C++ Redist package is available for ARM apps. Visit the [Visual Studio downloads page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Other tools and Frameworks**, then navigate to the **Microsoft Visual C++ Redistributable for Visual Studio 2019** entry. Select the **ARM64** radio button, then **Download**.
 
 ### Remote Tools
 
-Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Tools for Visual Studio 2019**, then navigate to the **Remote Tools for Visual Studio 2019** entry. Select the **ARM64* radio button, then **Download**.
+Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Studio downloads page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Tools for Visual Studio 2019**, then navigate to the **Remote Tools for Visual Studio 2019** entry. Select the **ARM64* radio button, then **Download**.
 
 
 ## In this section
