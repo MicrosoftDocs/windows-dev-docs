@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -75,6 +75,9 @@ This is the directory the shell starts in when it is loaded.
 **Default value:** `"%USERPROFILE%"`
 
 <br />
+
+> [!NOTE]
+> When setting the starting directory that your installed WSL distributions open to, you should use this format: "startingDirectory": "//wsl$/<distro name>", replacing with the name of your distribution. For example, "startingDirectory": "//wsl$/Ubuntu-20.04".
 
 ___
 
@@ -171,6 +174,18 @@ This sets the profile's font size in points.
 
 **Default value:** `12`
 
+### Font weight
+
+This sets the weight (lightness or heaviness of the strokes) for the profile's font.
+
+**Property name:** `fontWeight`
+
+**Necessity:** Optional
+
+**Accepts:** `"normal"`, `"thin"`, `"extra-light"`, `"light"`, `"semi-light"`, `"medium"`, `"semi-bold"`, `"bold"`, `"extra-bold"`, `"black"`, `"extra-black"`, or an integer corresponding to the numeric representation of the OpenType font weight
+
+**Default value:** `"normal"`
+
 ### Padding
 
 :::row:::
@@ -243,6 +258,24 @@ This sets the percentage height of the cursor starting from the bottom. This wil
 **Necessity:** Optional
 
 **Accepts:** Integer from 25-100
+
+<br />
+
+___
+
+## Keyboard settings
+
+### AltGr aliasing
+
+This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
+
+**Property name:** `altGrAliasing`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
 
 <br />
 
