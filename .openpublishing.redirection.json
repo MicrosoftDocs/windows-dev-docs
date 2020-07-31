@@ -4919,6 +4919,11 @@
       "source_path": "hub/dev-environment/index.yml",
       "redirect_url": "https://docs.microsoft.com/windows/dev-environment/overview",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/payment-request.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
     }
   ]
 }
