@@ -62,9 +62,9 @@ Windows Terminal includes these color schemes inside the defaults.json file, whi
 
 ![Windows Terminal Campbell color scheme](./../images/campbell-color-scheme.png)
 
-### Campbell Powershell
+### Campbell PowerShell
 
-![Windows Terminal Campbell Powershell color scheme](./../images/campbell-powershell-color-scheme.png)
+![Windows Terminal Campbell PowerShell color scheme](./../images/campbell-powershell-color-scheme.png)
 
 ### Vintage
 
