@@ -46,6 +46,9 @@ Below is the full list of supported commands and options for the `wt` command li
 > [!IMPORTANT]
 > `nt`, `sp`, and `ft` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
+> [!NOTE]
+> When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
+
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
