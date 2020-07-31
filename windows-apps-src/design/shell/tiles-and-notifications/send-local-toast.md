@@ -287,6 +287,9 @@ In the example you see below, you can retrieve the arguments string you initiall
 > [!IMPORTANT]
 > You must initialize your frame and activate your window just like your **OnLaunched** code. **OnLaunched is NOT called if the user clicks on your toast**, even if your app was closed and is launching for the first time. We often recommend combining **OnLaunched** and **OnActivated** into your own `OnLaunchedOrActivated` method since the same initialization needs to occur in both.
 
+> [!NOTE]
+> Starting WinRT 19041, MSIX packaged desktop applications should use the [OnActivated](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application.onactivated) for handling toast activations. For more details [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {

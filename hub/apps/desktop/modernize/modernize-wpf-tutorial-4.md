@@ -444,6 +444,9 @@ To add a notification to the app:
 
 This exception is caused by the fact that the Contoso Expenses app doesn't yet have package identity. Some WinRT APIs, including the notifications API, require package identity before they can be used in an app. UWP apps receive package identity by default because they can only be distributed via MSIX packages. Other types of Windows apps, including WPF apps, can also be deployed via MSIX packages to obtain package identity. The next part of this tutorial will explore how to do this.
 
+> [!NOTE]
+> Starting WinRT 19041, MSIX packaged desktop applications should use the [OnActivated](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application.onactivated) for handling toast activations. For more details [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+
 ## Next steps
 
 At this point in the tutorial, you have successfully added a user activity to the app that integrates with Windows Timeline, and you have also added a notification to the app that is triggered when users create a new expense. However, the notification doesn't yet work because the app requires package identity to use the notifications API. To learn how to build an MSIX package for the app to obtain package identity and gain other deployment benefits, see [Part 5: Package and deploy with MSIX](modernize-wpf-tutorial-5.md).
