@@ -193,7 +193,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 Now the **NextButtonText** property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the **PropertyChanged** event. When that event is raised, the binding object's handler receives an argument containing the name of the property that has changed. That's how the binding object knows which property's value to go and read again.
 
-So that you don't have to implement the pattern shown above multiple times, if you're using C# then you can just derive from the **BindableBase** bass class that you'll find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder). Here's an example of how that looks.
+So that you don't have to implement the pattern shown above multiple times, if you're using C# then you can just derive from the **BindableBase** base class that you'll find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder). Here's an example of how that looks.
 
 ```csharp
 public class HostViewModel : BindableBase
