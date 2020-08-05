@@ -450,6 +450,18 @@
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: Use input scope to change the touch keyboard
           href: input/use-input-scope-to-change-the-touch-keyboard.md
+    - name: Text input
+      items:
+        - name: Custom text input
+          href: input/custom-text-input.md
+        - name: Text scaling
+          href: input/text-scaling.md
+        - name: Selecting text and images
+          href: input/guidelines-for-textselection.md
+        - name: Input Method Editors
+          href: input/input-method-editors.md
+        - name: Input Method Editor requirements
+          href: input/input-method-editor-requirements.md
     - name: Gamepad and remote control
       href: input/gamepad-and-remote-interactions.md
     - name: Touchpad
@@ -497,10 +509,6 @@
       href: input/input-injection.md
     - name: Identify input devices
       href: input/identify-input-devices.md
-    - name: Custom text input
-      href: input/custom-text-input.md
-    - name: Text scaling
-      href: input/text-scaling.md
     - name: Drag and drop
       href: input/drag-and-drop.md
     - name: Optical zoom and resizing
@@ -509,8 +517,6 @@
       href: input/guidelines-for-panning.md
     - name: Rotation
       href: input/guidelines-for-rotation.md
-    - name: Selecting text and images
-      href: input/guidelines-for-textselection.md
     - name: Targeting
       href: input/guidelines-for-targeting.md
     - name: Visual feedback
