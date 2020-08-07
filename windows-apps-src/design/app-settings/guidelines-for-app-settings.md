@@ -4,7 +4,7 @@ title: Guidelines for app settings
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -41,13 +41,13 @@ The way that users get to your app settings page should be based on your app's l
 
 For a nav pane layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom:
 
-![app settings entry point for nav pane](images/appsettings-entrypoint-navpane.png)
+![app settings entry point for nav pane](images/appsettings-nav-settings.png)
 
 **App bar**
 
 If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as the last item in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
 
-![app settings entry point for app bar](images/appsettings-entrypoint-tabs.png)
+![app settings entry point for app bar](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **Hub**
 
@@ -64,15 +64,10 @@ Instead of burying the app settings entry point deeply within a master-details p
 ## Layout
 
 
-On both desktop and mobile, the app settings window should open full-screen and fill the whole window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
-
-Desktop:
+The app settings window should open full-screen and fill the whole window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
 
 ![layout for app settings page on desktop](images/appsettings-layout-navpane-desktop.png)
 
-Mobile:
-
-![layout for app settings page on phone](images/appsettings-layout-navpane-mobile.png)
 
 ## "Color mode" settings
 

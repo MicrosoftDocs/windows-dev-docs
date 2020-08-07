@@ -114,13 +114,13 @@ Search as an action in the Windows tool bar:
 
 Search as an input on the app canvas:
 
-![example of search on an app canvas](images/search-canvas-contacts.png)
+![example of search on an app canvas](images/search-app-canvas.png)
 
  
 
-Search in a navigation pane:
+Search in a navigation pane in the Maps app:
 
-![example of search in a navigation menu](images/search-navmenu.png)
+![example of search in a navigation menu](images/search-nav-mapsapp.png)
 
  
 
