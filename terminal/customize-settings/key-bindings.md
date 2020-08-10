@@ -321,6 +321,40 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
+
+### Open the Tab Switcher
+
+This opens the tab switcher in either anchored or unanchored mode.
+
+**Command name:** `tabSwitcher`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "tabSwitcher", "keys": "ctrl+shift+t"}
+{"command": {"action":"tabSwitcher", "anchorKey": "ctrl"}, "keys": "ctrl+tab"}
+{"command": {"action":"tabSwitcher", "anchorKey": "alt"}, "keys": "alt+`"}
+{"command": {"action":"tabSwitcher", "anchorKey": "shift"}, "keys": "shift+`"}
+```
+
+The tab switcher can be cycled through with the keyboard using either the up/down arrow keys and the <kbd>tab</kbd>/<kbd>shift+tab</kbd> keys.
+
+With an `anchorKey` argument, the tab switcher will open in _anchored_ mode. This means that when the `anchorKey` is released, the tab switcher will close and the selected tab is focused. Anchored mode does not have a search bar.
+Without an `anchorKey` argument, the tab switcher will open in _unanchored_ mode. It will stay open until a tab is selected or the switcher is dismissed. Unanchored mode appears with a search bar.
+
+Please note that while <kbd>alt</kbd> and <kbd>shift</kbd> can be specified as anchor keys, certain keychord combinations with those modifiers set as anchors might result in unwanted behavior: i.e.
+1. Having <kbd>alt</kbd> as an anchor will force you to use the arrow keys instead of <kbd>tab</kbd>/<kbd>shift+tab</kbd> to cycle through tabs, since <kbd>alt+tab</kbd> will be handled by Windows.
+2. Having <bkd>shift(anchor)+tab</kbd> will result in the tab switcher always going backwards because <kbd>shift+tab</kbd> always goes backwards by default. Use the arrow keys to go forward.
+
+#### Arguments
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `anchorKey` | Optional | String - can be `ctrl`, `alt`, or `shift` | If provided, opens the tab switcher in _anchored_ mode with the given key as the anchor. If omitted, opens the tab switcher in _unanchored_ mode. |
+
+
 ### Rename tab ([Preview](https://aka.ms/terminal-preview/))
 
 This command can be used to rename a tab to a specific string.
