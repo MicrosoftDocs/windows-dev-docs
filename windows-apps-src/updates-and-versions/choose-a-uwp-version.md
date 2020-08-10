@@ -6,12 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, version, build, versions, windows, choose, update, updates
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-f1_keywords: UniversalProjects.TargetPlatformWizardPicker
+f1_keywords:
+ - UniversalProjects.TargetPlatformWizardPicker 
 dev_langs:
-  - csharp
-  - cppwinrt
-  - cpp
-  - vb
+ - csharp
+ - cppwinrt
+ - cpp
+ - vb
 ---
 # Choose a UWP version
 
