@@ -60,7 +60,7 @@
           href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
           items:
             - name: Process audio frames with MediaFrameReader
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
             - name: Use OpenCV with MediaFrameReader
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Capture from multiple sources using MediaFrameSourceGroup
