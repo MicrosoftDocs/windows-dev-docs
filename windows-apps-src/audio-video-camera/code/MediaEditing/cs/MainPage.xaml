@@ -16,7 +16,7 @@
         <StackPanel Margin="0,0,0,10">
             <TextBlock Text="Description:" />
             <TextBlock TextWrapping="Wrap">
-                        Using Windows.Media.Editing API to trim a clip.
+                        Using Windows.Media.Editing API.
             </TextBlock>
         </StackPanel>
 
@@ -33,7 +33,9 @@
                 <Button x:Name="EffectsButton" Content="EFFECTS" Click="EffectsButton_Click" Margin="5" RelativePanel.AlignLeftWith="mediaPlayerElement" RelativePanel.Below="OverlayButton" />
                 <Button x:Name="SaveButton" Content="SAVE" Click="SaveButton_Click" Margin="5" RelativePanel.AlignLeftWith="mediaPlayerElement" RelativePanel.Below="EffectsButton" />
                 <Button x:Name="OpenButton" Content="OPEN" Click="OpenButton_Click" Margin="5" RelativePanel.AlignLeftWith="mediaPlayerElement" RelativePanel.Below="SaveButton" />
-            </RelativePanel>
+                <Button x:Name="ThumbnailButton" Content="GENERATE THUMBNAILS" Click="ThumbnailButton_Click" Margin="5" RelativePanel.AlignLeftWith="mediaPlayerElement" RelativePanel.Below="OpenButton" />
+                <StackPanel x:Name="ThumbnailStackPanel" RelativePanel.AlignLeftWith="mediaPlayerElement" RelativePanel.Below="ThumbnailButton" />
+            </RelativePanel >
         </ScrollViewer>
 
 
