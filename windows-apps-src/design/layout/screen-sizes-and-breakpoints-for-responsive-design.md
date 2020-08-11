@@ -92,8 +92,3 @@ UWP apps automatically scale your UI to guarantee that your app will be legible 
 - Use up to three columns/regions.
 - Show the search box.
 - Put the [navigation pane](../controls-and-patterns/navigationview.md) into docked mode so that it always shows.
-
->[!TIP] 
-> With [**Continuum for Phones**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the size class.
-
-

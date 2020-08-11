@@ -17,7 +17,7 @@ dev_langs:
 > The BackgroundTaskBuilder.SetTaskEntryPointClsid method is available starting in Windows 10, version 2004.
 
 > [!NOTE]
-> This scenario is not applicable to packaged WinMain apps. UWP applications will encounter errors trying to implement this scenario.
+> This scenario is only applicable to packaged WinMain apps. UWP applications will encounter errors trying to implement this scenario.
 
 **Important APIs**
 

@@ -99,7 +99,10 @@ Next, add a UWP app project to your solution and revise the default `App` class 
 
 6. Delete the **MainPage.xaml** file from the UWP app project.
 7. Build the UWP app project.
-8. In your WPF project, right-click the **Dependencies** node and add a reference to your UWP app project.
+8. In your WPF project, add a reference to your UWP app project. 
+
+    * If your WPF project targets .NET Core, right-click the **Dependencies** node and add a reference to your UWP app project. 
+    * If your WPF project targets the .NET Framework, right-click the project node, select **Build Dependencies** -> **Project Dependencies**, and select your UWP app project.
 
 ## Instantiate the XamlApplication object in the entry point of your WPF app
 

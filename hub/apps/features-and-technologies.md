@@ -33,9 +33,9 @@ For more information about the different ways to use Windows Ink in Windows apps
 
 ### Speech interactions
 
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
+![initial recognition screen for a constraint based on a SGRS grammar file](images/speech-listening-initial.png)
 
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
+![final recognition screen for a constraint based on a SGRS grammar file](images/speech-listening-complete.png)
 
 Windows provides many ways to integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app. Speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
 

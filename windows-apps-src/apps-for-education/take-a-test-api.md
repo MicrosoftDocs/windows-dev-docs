@@ -220,7 +220,7 @@ Windows 10, version 1709
 Gets the time that the testing app was started.
 
 **Syntax**  
-`DateTime SecureBrowser.settings.getStartTime();`
+`DateTime SecureBrowser.security.getStartTime();`
 
 **Return**  
 A DateTime object indicating the time the testing app was started.

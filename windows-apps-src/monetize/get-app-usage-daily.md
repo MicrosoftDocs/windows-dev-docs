@@ -79,7 +79,7 @@ Elements in the *Value* array contain the following values.
 | date                      | string  | The first date in the date range for the usage data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range.        |
 | applicationId             | string  | The Store ID of the app for which you are retrieving usage data.          |
 | applicationName           | string  | The display name of the app.                                              |
-| deviceType                | string  | One of the following strings that specifies the type of device where usage occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |
+| deviceType                | string  | One of the following strings that specifies the type of device where usage occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console-Xbox One**</li><li>**Console-Xbox Series X**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |
 | packageVersion            | string  | The version of the package where usage occurred.                          |
 | market                    | string  | The ISO 3166 country code of the market where the customer used your app. |
 | subscriptionName          | string  | Indicates if usage was through Xbox Game Pass.                            |

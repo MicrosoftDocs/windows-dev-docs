@@ -17,8 +17,8 @@ Below, we'll explain more about these forms, including who will receive them and
 
 | IRS tax form | Description | Availability |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Account settings > Tax profile**) at the same time |
-|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Account settings > Tax profile**) at the same time |
+|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Partner Center Developer Settings** under **Payout and tax > Payout and tax profiles**) at the same time |
+|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Partner Center Developer Settings** under **Payout and tax > Payout and tax profiles**) at the same time  |
 
 > [!NOTE]
 > The address we use on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.
@@ -26,20 +26,21 @@ Below, we'll explain more about these forms, including who will receive them and
 The tax forms will be sent to you from the following addresses:
 
 **US Citizens:**
-<table>
-<tr><th>Business Group</th><th>Legal Entity</th><th>Address</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
-<tr><td>Advertising</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<table> 
+
+| Business Group         | Legal Entity          | Address                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows, Office, Azure | Microsoft Corporation | One Microsoft Way<br>Redmond, WA 98052 USA       |
+| Advertising            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 **Non-US Citizens:**
-<table>
-<tr><th>Business Group</th><th>Legal Entity</th><th>Address</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Payment is made by Microsoft Corporation via Microsoft Ireland acting as qualified intermediary for Microsoft Corporation)</td><td>One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
-<tr><td>Advertising *</td><td>Microsoft Ireland Operations Limited (Payment is made by Microsoft Online Inc. via Microsoft Ireland acting as payout agent for Microsoft Online Inc.)</td><td>One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland</td></tr>
-<tr><td>Advertising</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<tr><td colspan="3">* Citizens of the following countries earning Advertising revenue will be paid through Microsoft Ireland Operations Limited: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Isle of Man, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, United Kingdom</td></tr>
-</table>
+| Business Group         | Legal Entity          | Address                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows, Office, Azure | Microsoft Ireland Operations Limited (Payment is made by Microsoft Corporation via Microsoft Ireland acting as qualified intermediary for Microsoft Corporation) | One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland|
+| Advertising\*          | Microsoft Ireland Operations Limited (Payment is made by Microsoft Online Inc. via Microsoft Ireland acting as payout agent for Microsoft Online Inc.) | One Microsoft Place<br>South&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Ireland |
+| Advertising            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
+
+>[!NOTE]
+> \* Citizens of the following countries earning Advertising revenue will be paid through Microsoft Ireland Operations Limited: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Isle of Man, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, United Kingdom
 
 ## For developers located in the United States
 

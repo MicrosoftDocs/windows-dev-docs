@@ -841,9 +841,6 @@ list of loaded modules.
 
 -   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
--   [NorthwindRT Brokered WinRT Component
-    Sample](https://code.msdn.microsoft.com/Northwind-Brokered-WinRTC-5143a67c)
-
 -   [Delivering reliable and trustworthy Microsoft Store
     apps](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
 

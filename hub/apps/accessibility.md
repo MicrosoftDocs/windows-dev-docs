@@ -135,7 +135,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN Code Gallery (GitHub archive)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.
    :::column-end:::

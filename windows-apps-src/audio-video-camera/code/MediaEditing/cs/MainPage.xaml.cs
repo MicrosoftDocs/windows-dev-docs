@@ -150,7 +150,7 @@ namespace MediaEditingSnippets
                         try
                         {
                             var results = info.GetResults();
-                            if (results != TranscodeFailureReason.None || status != AsyncStatus.Completed)
+                            if (results != TranscodeFailureReason.None || status != AsyncStatus.Completed)   
                             {
                                 ShowErrorMessage("Saving was unsuccessful");
                             }

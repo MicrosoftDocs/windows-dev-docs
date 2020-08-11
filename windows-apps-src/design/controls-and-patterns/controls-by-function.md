@@ -318,7 +318,7 @@ Reference: [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.I
 
 Design and how-to: [Image and ImageBrush](images-imagebrushes.md) 
 
-Sample code: [XAML images sample](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)
+Sample code: [XAML Controls Gallery](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
 
 ## Graphics and ink
 
@@ -347,7 +347,7 @@ Reference: [Shapes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes.Sh
 
 How to: [Drawing shapes](../../graphics/drawing-shapes.md) 
 
-Sample code: [XAML vector-based drawing sample](https://code.msdn.microsoft.com/windowsapps/Drawing-bfc39296)
+Sample code: [XAML vector-based drawing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20vector-based%20drawing%20sample%20(Windows%208))
 
 ## Layout controls
 
@@ -447,7 +447,7 @@ Reference: [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Con
 
 Design and how-to: [Scroll and panning controls guide](scroll-controls.md) 
 
-Sample code: [XAML scrolling, panning and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+Sample code: [XAML scrolling, panning and zooming sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample%20(Windows%208))
 
 ### Stack panel
 A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.
@@ -585,7 +585,7 @@ Reference: [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls
 
 Design and how-to: Guidelines for Web views 
 
-Sample code: [XAML WebView control sample](https://code.msdn.microsoft.com/windowsapps/XAML-WebView-control-sample-58ad63f7)
+Sample code: [XAML WebView control sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20WebView%20control%20sample%20(Windows%208))
 
 ### Semantic zoom
 
@@ -606,7 +606,7 @@ Reference: [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Con
 
 Design and how-to: [Semantic zoom control guide](semantic-zoom.md)
 
-Sample code: [XAML GridView grouping and SemanticZoom sample](https://code.msdn.microsoft.com/windowsapps/groupedgridview-77c59e8e)
+Sample code: [XAML GridView grouping and SemanticZoom sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20GridView%20grouping%20and%20SemanticZoom%20sample%20(Windows%208))
 
 ## Progress controls
 
@@ -621,7 +621,7 @@ A progress bar that shows a specific value.
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-![Indeterminate progress bar control](images/controls/progress-bar-indeterminate.png)
+![Indeterminate progress bar control](images/controls/progress-bar-indeterminate.gif)
 
 A progress bar that shows indeterminate progress.
 
@@ -676,7 +676,7 @@ Reference: [PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 
 Design and how-to: [Text controls](text-controls.md), [Password box control guide](password-box.md) 
 
-Sample code: [XAML text display sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a), [XAML text editing sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+Sample code: [XAML text display sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208)), [XAML text editing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 
 ### Rich edit box
 A control that lets a user edit rich text documents with content like formatted text, hyperlinks, and images.
@@ -689,7 +689,7 @@ Reference: [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 
 Design and how-to: [Text controls](text-controls.md), [Rich edit box control guide](rich-edit-box.md)
 
-Sample code: [XAML text sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+Sample code: [XAML text sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### Search box
 See Auto suggest box.

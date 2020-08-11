@@ -82,7 +82,7 @@ Elements in the Value array contain the following values.
 | addonProductName | string | The display name of the add-on. This value only appears in the response data if the *aggregationLevel* parameter is set to **day**, unless you specify the **addonProductName** field in the *groupby* parameter. |
 | applicationId | string | The *productId* of the app for which you want to retrieve add-on acquisition data. |
 | applicationName | string | The display name of the game. |
-| deviceType | string | One of the following strings that specifies the type of device that completed the acquisition: <ul><li>"PC"</li><li>"Phone"</li><li>"Console"</li><li>"IoT"</li><li>"Server"</li><li>"Tablet"</li><li>"Holographic"</li><li>"Unknown"</li></ul> |
+| deviceType | string | One of the following strings that specifies the type of device that completed the acquisition: <ul><li>"PC"</li><li>"Phone"</li><li>"Console-Xbox One"</li><li>"Console-Xbox Series X"</li><li>"IoT"</li><li>"Server"</li><li>"Tablet"</li><li>"Holographic"</li><li>"Unknown"</li></ul> |
 | storeClient | string | One of the following strings that indicates the version of the Store where the acquisition occurred: <ul><li>"Windows Phone Store (client)"</li><li>"Microsoft Store (client)" (or "Windows Store (client)" if querying for data before March 23, 2018)</li><li>"Microsoft Store (web)" (or "Windows Store (web)" if querying for data before March 23, 2018)</li><li>"Volume purchase by organizations"</li><li>"Other"</li></ul> |
 | osVersion | string | The OS version on which the acquisition occurred. For this method, this value is always "Windows 10". |
 | market | string | The ISO 3166 country code of the market where the acquisition occurred. |

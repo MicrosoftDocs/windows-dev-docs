@@ -173,7 +173,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 So, in this scenario, at the root of the inheritance hierarchy is the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct template once again.
 
-For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
+For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
 
 ## If you're authoring a runtime class to be referenced in your XAML UI
 
@@ -746,5 +746,7 @@ This requires that all members of the class hierarchy agree on the return value 
 * [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## Related topics
-* [Consume APIs with C++/WinRT](consume-apis.md)
-* [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
+* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property)

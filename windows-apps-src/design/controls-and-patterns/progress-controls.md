@@ -207,7 +207,3 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 - [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
 - [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
-
-**For developers (XAML)**
-- [Adding progress controls](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [How to create a custom indeterminate progress bar for Windows Phone](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

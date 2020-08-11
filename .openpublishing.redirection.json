@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
+      "redirect_url": "/windows/uwp/get-started/get-app-samples",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
       "redirect_document_id": false
@@ -522,7 +527,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041-api-diff",
       "redirect_document_id": false
     },
     {
@@ -572,12 +577,12 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-18362-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-19041-api-diff",
       "redirect_document_id": false
     },
     {
@@ -1857,7 +1862,7 @@
     },
     {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
-      "redirect_url": "/design/style/app-icons-and-logos",
+      "redirect_url": "/windows/uwp/design/style/app-icons-and-logos",
       "redirect_document_id": true
     },
     {
@@ -4893,6 +4898,31 @@
     {
       "source_path": "hub/android/index.md",
       "redirect_url": "/windows/android/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/databases.md",
+      "redirect_url": "https://docs.microsoft.com/windows/wsl/tutorials/wsl-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/databases.md",
+      "redirect_url": "https://docs.microsoft.com/windows/wsl/tutorials/wsl-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/app-metadata-api-for-advertising-networks.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/dev-environment/index.yml",
+      "redirect_url": "https://docs.microsoft.com/windows/dev-environment/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/payment-request.md",
+      "redirect_url": "/windows/uwp/monetize",
       "redirect_document_id": true
     }
   ]

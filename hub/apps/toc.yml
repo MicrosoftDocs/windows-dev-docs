@@ -7,72 +7,112 @@
           href: desktop/index.md
         - name: Choose your app platform
           href: desktop/choose-your-platform.md
-  - name: Modernize your desktop apps
+        - name: Visual Studio templates for Windows apps
+          href: desktop/visual-studio-templates.md
+        - name: Modernize your desktop apps
+          items:
+              - name: Overview
+                href: desktop/modernize/index.md
+              - name: Call Windows Runtime APIs
+                items:
+                    - name: Overview
+                      href: desktop/modernize/desktop-to-uwp-enhance.md
+                    - name: Available Windows Runtime APIs
+                      href: desktop/modernize/desktop-to-uwp-supported-api.md
+              - name: Host UWP XAML controls (XAML Islands)
+                items:
+                    - name: Overview
+                      href: desktop/modernize/xaml-islands.md
+                    - name: XAML Islands in WPF and Windows Forms apps
+                      items:
+                          - name: Host a standard UWP control
+                            href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                          - name: Host a custom UWP control
+                            href: desktop/modernize/host-custom-control-with-xaml-islands.md
+                    - name: XAML Islands in C++ Win32 apps
+                      items:
+                          - name: Using the UWP XAML hosting API
+                            href: desktop/modernize/using-the-xaml-hosting-api.md
+                          - name: Host a standard UWP control
+                            href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                          - name: Host a custom UWP control
+                            href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                          - name: Advanced scenarios
+                            href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+              - name: Using the Visual layer (Windows.UI.Composition)
+                items:
+                    - name: Overview
+                      href: desktop/modernize/visual-layer-in-desktop-apps.md
+                    - name: WPF
+                      href: desktop/modernize/using-the-visual-layer-with-wpf.md
+                    - name: Windows Forms
+                      href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+                    - name: Win32
+                      href: desktop/modernize/using-the-visual-layer-with-win32.md
+              - name: Features that require package identity
+                items:
+                    - name: Overview
+                      href: desktop/modernize/modernize-packaged-apps.md
+                    - name: Integrate with package extensions
+                      href: desktop/modernize/desktop-to-uwp-extensions.md
+                    - name: Extend with UWP components
+                      href: desktop/modernize/desktop-to-uwp-extend.md
+                    - name: Distribute your packaged app
+                      href: desktop/modernize/desktop-to-uwp-distribute.md
+              - name: "Tutorial: Modernize a WPF app"
+                items:
+                  - name: Overview
+                    href: desktop/modernize/modernize-wpf-tutorial.md
+                  - name: "Migrate the Contoso Expenses app to .NET Core 3"
+                    href: desktop/modernize/modernize-wpf-tutorial-1.md
+                  - name: "Add a UWP InkCanvas control using XAML Islands"
+                    href: desktop/modernize/modernize-wpf-tutorial-2.md
+                  - name: "Add a UWP CalendarView control using XAML Islands"
+                    href: desktop/modernize/modernize-wpf-tutorial-3.md
+                  - name: "Add Windows 10 user activities and notifications"
+                    href: desktop/modernize/modernize-wpf-tutorial-4.md
+                  - name: "Package and deploy with MSIX"
+                    href: desktop/modernize/modernize-wpf-tutorial-5.md
+              - name: Grant identity to non-packaged desktop apps
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+  - name: Windows UI Library (WinUI)
     items:
-        - name: Overview
-          href: desktop/modernize/index.md
-        - name: Call Windows Runtime APIs
-          items:
-              - name: Overview
-                href: desktop/modernize/desktop-to-uwp-enhance.md
-              - name: Available Windows Runtime APIs
-                href: desktop/modernize/desktop-to-uwp-supported-api.md
-        - name: Host UWP XAML controls (XAML Islands)
-          items:
-              - name: Overview
-                href: desktop/modernize/xaml-islands.md
-              - name: XAML Islands in WPF and Windows Forms apps
-                items:
-                    - name: Host a standard UWP control
-                      href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                    - name: Host a custom UWP control
-                      href: desktop/modernize/host-custom-control-with-xaml-islands.md
-              - name: XAML Islands in C++ Win32 apps
-                items:
-                    - name: Using the UWP XAML hosting API
-                      href: desktop/modernize/using-the-xaml-hosting-api.md
-                    - name: Host a standard UWP control
-                      href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                    - name: Host a custom UWP control
-                      href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
-                    - name: Advanced scenarios
-                      href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
-        - name: Using the Visual layer (Windows.UI.Composition)
-          items:
-              - name: Overview
-                href: desktop/modernize/visual-layer-in-desktop-apps.md
-              - name: WPF
-                href: desktop/modernize/using-the-visual-layer-with-wpf.md
-              - name: Windows Forms
-                href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
-              - name: Win32
-                href: desktop/modernize/using-the-visual-layer-with-win32.md
-        - name: Features that require package identity
-          items:
-              - name: Overview
-                href: desktop/modernize/modernize-packaged-apps.md
-              - name: Integrate with package extensions
-                href: desktop/modernize/desktop-to-uwp-extensions.md
-              - name: Extend with UWP components
-                href: desktop/modernize/desktop-to-uwp-extend.md
-              - name: Distribute your packaged app
-                href: desktop/modernize/desktop-to-uwp-distribute.md
-        - name: "Tutorial: Modernize a WPF app"
-          items:
-            - name: Overview
-              href: desktop/modernize/modernize-wpf-tutorial.md
-            - name: "Migrate the Contoso Expenses app to .NET Core 3"
-              href: desktop/modernize/modernize-wpf-tutorial-1.md
-            - name: "Add a UWP InkCanvas control using XAML Islands"
-              href: desktop/modernize/modernize-wpf-tutorial-2.md
-            - name: "Add a UWP CalendarView control using XAML Islands"
-              href: desktop/modernize/modernize-wpf-tutorial-3.md
-            - name: "Add Windows 10 user activities and notifications"
-              href: desktop/modernize/modernize-wpf-tutorial-4.md
-            - name: "Package and deploy with MSIX"
-              href: desktop/modernize/modernize-wpf-tutorial-5.md
-        - name: Grant identity to non-packaged desktop apps
-          href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+      - name: "Overview"
+        href: winui/index.md
+      - name: "Windows UI Library 3.0 Preview 2"
+        items:
+          - name: "Overview and release notes"
+            href: winui/winui3/index.md
+          - name: "Get started with WinUI 3 for desktop apps"
+            href: winui/winui3/get-started-winui3-for-desktop.md
+          - name: "Get started with WinUI 3 for UWP apps"
+            href: winui/winui3/get-started-winui3-for-uwp.md
+          - name: "Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT"
+            href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
+      - name: "Windows UI 2.x Library"
+        items: 
+          - name: "Overview"
+            href: winui/winui2/index.md
+          - name: "Setup"
+            items: 
+              - name: "Get started with WinUI 2.x"
+                href: winui/winui2/getting-started.md
+              - name: "NuGet package list"
+                href: winui/winui2/nuget-packages.md
+          - name: "Release Notes"
+            items: 
+              - name: "Overview"
+                href:  winui/winui2/release-notes/index.md
+              - name: "WinUI 2.4"
+                href: winui/winui2/release-notes/winui-2.4.md
+              - name: "WinUI 2.3"
+                href: winui/winui2/release-notes/winui-2.3.md
+              - name: "WinUI 2.2"
+                href: winui/winui2/release-notes/winui-2.2.md
+              - name: "WinUI 2.1"
+                href: winui/winui2/release-notes/winui-2.1.md
+              - name: "WinUI 2.0"
+                href: winui/winui2/release-notes/winui-2.0.md
   - name: Developing for Windows 10X
     items:
       - name: Windows 10X Dev FAQ
@@ -87,3 +127,5 @@
     href: features-and-technologies.md
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
+  - name: Docs related to Microsoft Build 2020
+    href: whats-new/build2020-docs.md

@@ -1,5 +1,4 @@
 ---
-author: mijacobs
 Description: Many enterprises use firewalls to block unwanted traffic. This doc describes how to allow WNS traffic to pass through firewalls.
 title: Adding WNS Traffic to the Firewall Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD

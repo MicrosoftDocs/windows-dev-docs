@@ -13,7 +13,7 @@ This topic describes the technical details involved in porting the source code i
 
 ## Porting strategies
 
-If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/CX and C++/WinRT code can coexist in the same project, with the exceptions of XAML compiler support and Windows Runtime components. For those two exceptions, you'll need to target either C++/CX or C++/WinRT within the same project.
+If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/CX and C++/WinRT code can coexist in the same project, with the exceptions of XAML compiler support and Windows Runtime components. For those two exceptions, you'll need to target either C++/CX or C++/WinRT within the same project. That means that all of your XAML page types need to be either entirely C++/CX or entirely C++/WinRT. You can still mix C++/CX and C++/WinRT outside of XAML page types within the same project.
 
 > [!IMPORTANT]
 > If your project builds a XAML application, then one workflow that we recommend is to first create a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Then, start copying source code and markup over from the C++/CX project. You can add new XAML pages with **Project** \> **Add New Item...** \> **Visual C++** > **Blank Page (C++/WinRT)**.
@@ -23,9 +23,13 @@ If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/C
 > [!NOTE]
 > Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you port from C++/CX to C++/WinRT at your own pace.
 
-Bearing in mind the exceptions mentioned above, the first step in porting a C++/CX project to C++/WinRT is to manually add C++/WinRT support to it (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). To do that, install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) into your project. Open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
+## First steps in porting a C++/CX project to C++/WinRT
 
-Alternatively, manually add the following property to your `.vcxproj` file using the C++/WinRT project property page in Visual Studio. For a list of similar customization options (which fine-tune the behavior of the `cppwinrt.exe` tool), see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
+Bearing in mind the exceptions mentioned above, the first step in porting a C++/CX project to C++/WinRT is to manually add C++/WinRT support to it (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). To do that, install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) into your project. Open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. One effect of that change is that support for C++/CX is turned off in the project.
+
+If you can port in one shot, then it's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX.
+
+Or, if you need to port gradually, then turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**). Alternatively (or, for a XAML project, in addition), manually add the following property to your `.vcxproj` file using the C++/WinRT project property page in Visual Studio (in project properties, **Common Properties** \> **C++/WinRT** \> **Project Language** \> **C++/CX**). For a list of similar customization options (which fine-tune the behavior of the `cppwinrt.exe` tool), see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing). Bear in mind that you'll need to change that property value back to **C++/WinRT** whenever you need to process the contents of a **Midl File (.idl)** into stub files.
 
 ```xml
 <syntaxhighlight lang="xml">
@@ -51,7 +55,7 @@ If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/
 
 ### XAML markup files
 
-| | C++/CX | C++/WinRT |
+| File origin | C++/CX | C++/WinRT |
 | - | - | - |
 | **Developer XAML files** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (see below) |
 | **Generated XAML files** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
@@ -694,7 +698,7 @@ These bindings will perform **winrt::to_hstring** of the bound property. In the 
 
 C++/CX and C++/WinRT defer to the standard **std::wstringstream** for string building.
 
-| | C++/CX | C++/WinRT |
+| Operation | C++/CX | C++/WinRT |
 |-|-|-|
 | Append string, preserving nulls | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
 | Append string, stop on first null | `stream << s->Data();` | `stream << s.c_str();` |
@@ -722,11 +726,11 @@ In the examples below, *ws* is a variable of type **std::wstring**. Also, while 
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Author events in C++/WinRT](author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
-* [Consume APIs with C++/WinRT](consume-apis.md)
-* [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
+* [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events)
+* [Interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
 * [Microsoft Interface Definition Language 3.0 reference](/uwp/midl-3)
-* [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md)
-* [String handling in C++/WinRT](strings.md)
+* [Move to C++/WinRT from WRL](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
+* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)

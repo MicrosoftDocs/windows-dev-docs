@@ -143,5 +143,5 @@ Let's use the built-in OS module to get some information about your computer's o
 In this guide, you learned a few basic things about what you can do with Node.js, tried using the Node.js command line in VS Code, created a simple web app with Express.js and ran it locally in your web browser, and then tried using a few of the built-in Node.js modules. To learn more about how to install and use some popular Node.js web frameworks, continue to the next guide which covers Next.js (a server-rendered web framework based on React), Nuxt.js (a server-rendered web framework based on Vue), and Gatsby (a statically-rendered web framework based on React). You can also skip to learning about how to work with MongoDB or PostgreSQL databases or Docker containers.
 
 - [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
-- [Get started connecting Node.js apps to a database](./databases.md)
+- [Get started connecting Node.js apps to a database](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [Get started using Docker containers with Node.js](./containers.md)

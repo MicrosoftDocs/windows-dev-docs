@@ -17,6 +17,17 @@ This article describes the Windows 10 and UWP features that you can use in your 
 > [!NOTE]
 > Do you need assistance migrating desktop apps to Windows 10? The [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
 
+## Windows UI Library
+
+The Windows UI Library is a set of NuGet packages that provide controls and other user interface elements for Windows 10 apps. WinUI started as a toolkit that provided new and updated versions of UWP controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and Win32.
+
+You can use WinUI in the following ways in desktop apps:
+
+* You can update existing WPF, Windows Forms, and C++/Win32 apps to use [XAML Islands](xaml-islands.md) to host WinUI 2.x controls in the apps.
+* Starting with [WinUi 3.0 Preview 1](../../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../../winui/winui3/get-started-winui3-for-desktop.md).
+
+See [Windows UI (WinUI) Library](../../winui/index.md).
+
 ## MSIX packages
 
 MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies to provide a modern and reliable packaging experience.
@@ -58,7 +69,7 @@ There are several ways to grant identity to a desktop app:
 * Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
 * If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
 
-<a id="desktop-uwp-controls"/>
+<a id="desktop-uwp-controls"></a>
 
 ## UWP controls optimized for desktop apps
 
@@ -74,12 +85,6 @@ Whether you're building a UWP app that exclusively targets the desktop device fa
 | [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | You can now make a combo box editable so the user can enter values that aren't listed in the control.  |
 | [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | You can now configure a tree view to enable data binding, item templates, and drag and drop.  |
 | [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   Provides a flexible way to display a collection of data in rows and columns. This control is available in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/).  |
-
-## Windows UI Library
-
-The Windows UI Library is a set of NuGet packages that provide new controls and other user interface elements for UWP apps. Windows UI Library APIs work on earlier versions of Windows 10, so your app works even if users aren't running the latest version of Windows 10. This lets you adopt new controls as they are released in the Windows UI Library without having to worry about including version checks or conditional XAML.
-
-See [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 ## Other technologies for modern desktop apps
 

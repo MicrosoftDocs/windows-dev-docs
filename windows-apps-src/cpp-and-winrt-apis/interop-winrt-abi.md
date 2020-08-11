@@ -103,6 +103,9 @@ int main()
 
 The implementations of the **as** functions call [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
 
+> [!IMPORTANT]
+> When interoperating with ABI types it's critical that the ABI type used corresponds to the default interface of the C++/WinRT object. Otherwise, invocations of methods on the ABI type will actually end up calling methods in the same vtable slot on the default interface with very unexpected results. Note that [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) does not protect against this at compile time since it uses **void\*** for all ABI types and assumes that the caller has been careful not to mis-match the types. This is to avoid requiring C++/WinRT headers to reference ABI headers when ABI types may never be used.
+
 ```cppwinrt
 int main()
 {
@@ -112,11 +115,11 @@ int main()
 
     // Convert to an ABI type.
     ptr = nullptr;
-    winrt::copy_to_abi(uri, *ptr.put_void());
+    winrt::copy_to_abi(uriAsIStringable, *ptr.put_void());
 
     // Convert from an ABI type.
     uri = nullptr;
-    winrt::copy_from_abi(uri, ptr.get());
+    winrt::copy_from_abi(uriAsIStringable, ptr.get());
     ptr = nullptr;
 }
 ```
@@ -128,11 +131,11 @@ Here are other similarly low-level conversions techniques but using raw pointers
 
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning{ nullptr };
-    winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
+    winrt::copy_to_abi(uriAsIStringable, *reinterpret_cast<void**>(&owning));
 
     // Copy from a raw ABI pointer.
     uri = nullptr;
-    winrt::copy_from_abi(uri, owning);
+    winrt::copy_from_abi(uriAsIStringable, owning);
     owning->Release();
 ```
 
@@ -146,14 +149,14 @@ For the lowest-level conversions, which only copy addresses, you can use the [**
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uri)) };
+    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
-    WINRT_ASSERT(!uri);
-    winrt::attach_abi(uri, owning);
-    WINRT_ASSERT(uri);
+    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    WINRT_ASSERT(!uriAsIStringable);
+    winrt::attach_abi(uriAsIStringable, owning);
+    WINRT_ASSERT(uriAsIStringable);
 ```
 
 ## convert_from_abi function
@@ -325,6 +328,14 @@ GUID abiguid;
 |-|-|-|
 | From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+You can construct a **winrt::guid** like this.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+For a gist showing how to construct a **winrt::guid** from a string, see [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
 
 ## Interoperating with the ABI's HSTRING
 

@@ -379,7 +379,7 @@ Run the app now to see the **GridView** control with the item template that you 
 
 ## Part 4: Modify the item container style
 
-An item’s control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Here, you'll modify the **Background** and **Margin** properties of the control template to give the **GridView** items a gray background.
+An item's control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Here, you'll modify the **Background** and **Margin** properties of the control template to give the **GridView** items a gray background.
 
 To modify the item container:
 
@@ -554,5 +554,4 @@ Now that you've created the basic UI, check out these other tutorials. They're a
 
 ## Get the final version of the PhotoLab sample
 
-This tutorial doesn't build up to the complete photo-editing app. So be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features, such as custom animations and phone support.
-
+This tutorial doesn't build up to the complete photo-editing app. So be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features, such as custom animations and adaptive layouts.

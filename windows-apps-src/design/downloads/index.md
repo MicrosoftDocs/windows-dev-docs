@@ -3,7 +3,7 @@ description: Get the latest downloads and tools for Windows apps user interface 
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
 ms.date: 03/23/2020
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -25,7 +25,7 @@ These toolkits provide controls and layout templates for designing Windows apps.
     :::column:::
 ![hero image](images/figma.png)
 <b>Figma toolkit</b><br>
-WinUI 2.3, February 2020<br>
+WinUI 2.4, May 2020<br>
 <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
@@ -42,22 +42,6 @@ v1901, January 2019<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![hero image](images/adobe-illustrator.png)
-<b>Adobe Illustrator toolkit</b><br>
-v1806, June 2018<br>
-<a href="https://aka.ms/adobeillustratortoolkit">Download</a>
-    :::column-end:::
-    :::column:::
-![hero image](images/adobe-photoshop.png)
-<b>Adobe Photoshop toolkit</b><br>
-v1705, May 2017<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## Developer toolkits and libraries
 
@@ -75,6 +59,10 @@ Helper functions, custom controls, and app services.<br />
 <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
+        ![Windows Template Studio thumbnail](images/Windows-template-studio.png)
+        <b>Windows Template Studio</b><br>
+        Quickly scaffold a UWP app using a wizard-based UI.<br />
+        <a href="https://aka.ms/wtsinstall">Download</a>
     :::column-end:::
 :::row-end:::
 

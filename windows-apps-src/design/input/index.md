@@ -62,7 +62,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
         <a href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a><br/>
         <a href="/windows/uwp/design/input/guidelines-for-textselection">Selecting text and images</a><br/>
         <a href="/windows/uwp/design/input/guidelines-for-targeting">Targeting</a><br/>
-        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedbac</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedback</a><br/>
     :::column-end:::
     :::column:::
         <h2 style="margin-top: 10px; margin-bottom: 0px">Speech and AI</h2>

@@ -58,12 +58,7 @@ Next, add a **UWP (C++/WinRT)** app project to your solution and make some confi
     1. Right-click the **MyUWPApp** project and choose **Manage NuGet Packages**.
     2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) package, and install v6.0.0 or a later version of this package.
 
-4. Right-click the **MyUWPApp** node and select **Properties**. On the **Common Properties** -> **C++/WinRT** page, set the following properties and then click **Apply**.
-
-    * Set **Verbosity** to **normal**.
-    * Set **Optimized** to **No**.
-
-    When you are done, the properties page should look like this.
+4. Right-click the **MyUWPApp** node and select **Properties**. On the **Common Properties** -> **C++/WinRT** page, set the **Verbosity** property to **normal** and then click **Apply**. When you are done, the properties page should look like this.
 
     ![C++/WinRT project properties](images/xaml-islands/xaml-island-cpp-1.png)
 
@@ -238,6 +233,7 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
         ```cpp
         #include "pch.h"
         #include "App.h"
+        #include "App.g.cpp"
         using namespace winrt;
         using namespace Windows::UI::Xaml;
         namespace winrt::MyUWPApp::implementation
@@ -254,6 +250,9 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
             }
         }
         ```
+
+        > [!NOTE]
+        > The `#include "App.g.cpp"` statement is necessary when the **Optimized** property on the **Common Properties** -> **C++/WinRT** page of the project properties is set to **Yes**. This is the default for new C++/WinRT projects. For more details about the effects of the **Optimized** property, see [this section](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 4. Add a new header file to the **MyUWPApp** project named **app.base.h**.
 5. Add the following code to the **app.base.h** file, save the file, and close it.

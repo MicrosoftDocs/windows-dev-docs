@@ -2,7 +2,7 @@
 Description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 05/5/2020
+ms.date: 08/3/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,52 +10,60 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen recent significant updates:
+The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen recent significant updates as of date ending August 3rd, 2020.
 
-Here are some topics that have recently seen significant updates (date ending May 5th, 2020):
+Note: For a specific list of APIs added as part of Windows 10 build 19041 (also known as 2004), please see [this list](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
-## Conceptual content
-
+## WinRT conceptual
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">Concurrency and asynchronous operations with C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/consume-com">Consume COM components with C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/index">Contacts and calendar</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Frequently-asked questions about C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">What's new in C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/downloads/index">Design toolkits and samples for Windows apps</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/index">Design and UI for UWP</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/custom-text-input">Custom text input overview</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">Get started with C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Create a user interface tutorial</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/input/index">Input and interactions</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">Keyboard events</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/motion/parallax">Use parallax to add depth and movement to your app.</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/shell/title-bar">Title bar customization</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/acrylic">Acrylic material</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/brushes">Use brushes</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/rounded-corner">Corner radius</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/usability/index">Usability in UWP apps - Windows app development</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/develop/index">Develop UWP apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/ble-beacon">Bluetooth Advertisements</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth">Bluetooth</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/gatt-client">Bluetooth GATT Client</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Windows 10 game development guide</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/gaming/load-a-game-asset">Load resources in your DirectX game</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/hosted-apps">Create hosted apps</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate">Share code between a desktop application and a UWP app</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/index">Publish Windows apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial--adding-sound">Add sound</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial-game-rendering">Set up</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial-resources">Extend the sample game</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/get-app-samples">Get Windows app samples</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">Create your first app</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP App lifecycle</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/acquisitions-data">Get acquisitions data for your games and apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-acquisitions">Get app acquisitions</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-installs">Get app installs</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-ratings">Get app ratings</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-reviews">Get app reviews</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-usage-daily">Get daily app usage</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-app-usage-monthly">Get monthly app usage</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/apps-on-arm">Windows 10 on ARM</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/app-submissions">App submissions</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps">Getting paid</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/in-app-ads">In-app ads</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/web-account-manager">Web Account Manager</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/winrt-components/index">Windows Runtime components</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/known-issues">Known issues with UWP on Xbox Developer Program</a></li>
 </ul>
 
-## WinRT API Reference
-
+## UWP API reference
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.imagefeaturevalue">Windows.AI.MachineLearning.ImageFeatureValue</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfloat">Windows.AI.MachineLearning.TensorFloat</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.input.pointerdevice">Windows.Devices.Input.PointerDevice</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad">Windows.Gaming.Input.Gamepad</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitoringpermission">Windows.Gaming.UI.GameMonitoringPermission</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.media.windows.media">Windows.Media</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.endpointpair">Windows.Networking.EndpointPair</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader">Windows.Storage.Streams.DataReader</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corecursortype">Windows.UI.Core.CoreCursorType</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source">Windows.UI.Xaml.Controls.Image.Source</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.holdingroutedeventargs">Windows.UI.Xaml.Input.HoldingRoutedEventArgs</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientbrush">Windows.UI.Xaml.Media.GradientBrush</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdevice">Windows.Devices.Usb.UsbDevice</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.windows.devices.usb">N:Windows.Devices.Usb</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager">Windows.Management.Deployment.PackageManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.management.deployment.packagetypes">Windows.Management.Deployment.PackageTypes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.composition.visual">Windows.UI.Composition.Visual</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown">Windows.UI.Core.CoreWindow.KeyDown</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup">Windows.UI.Core.CoreWindow.KeyUp</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerwheelchanged">Windows.UI.Core.CoreWindow.PointerWheelChanged</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.icorewindow.keydown">Windows.UI.Core.ICoreWindow.KeyDown</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.icorewindow.keyup">Windows.UI.Core.ICoreWindow.KeyUp</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.icorewindow.pointerwheelchanged">Windows.UI.Core.ICoreWindow.PointerWheelChanged</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer">Windows.UI.Input.GestureRecognizer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uiviewsettings">Windows.UI.ViewManagement.UIViewSettings</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">Windows.UI.Xaml.Controls.GridView</a></li>
 </ul>

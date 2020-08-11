@@ -7,11 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, games, input
 ms.localizationpriority: medium
 ---
+
 # Input practices for games
 
-This page describes patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
+This topic describes patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
 
-By reading this page, you'll learn:
+By reading this topic, you'll learn:
 
 * how to track players and which input and navigation devices they're currently using
 * how to detect button transitions (pressed-to-released, released-to-pressed)
@@ -166,8 +167,7 @@ User identity is also the way that an input device is associated with its corres
 
 For these reasons, player input should be tracked and correlated with the [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) property of the device class (inherited from the [IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) interface).
 
-The [UserGamepadPairingUWP (GitHub)](
-https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/UserGamepadPairingUWP) sample demonstrates how you can keep track of users and the devices they're using.
+The [UserGamepadPairingUWP](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/) sample demonstrates how you can keep track of users and the devices they're using.
 
 ## Detecting button transitions
 
@@ -314,3 +314,4 @@ If your code performs some action (like drawing UI) based on the percentage of b
 * [Windows.System.User class](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Windows.Gaming.Input.IGameController interface](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
 * [Windows.Gaming.Input.GamepadButtons enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [UserGamepadPairingUWP sample](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)
