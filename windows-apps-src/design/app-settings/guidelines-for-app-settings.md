@@ -45,7 +45,7 @@ For a nav pane layout, app settings should be the last item in the list of navig
 
 **App bar**
 
-If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as the last item in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
+If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
 
 ![app settings entry point for app bar](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
