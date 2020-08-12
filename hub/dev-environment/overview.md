@@ -82,8 +82,8 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Package Manager](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows Package Manager](https://docs.microsoft.com/windows/package-manager/)**<br>
-        Use WinGet, the comprehensive package manager, with your command line to install applications on Windows 10.<br>
-        [Install WinGet (public preview)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows 10.<br>
+        [Install Windows Package Manager (public preview)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
