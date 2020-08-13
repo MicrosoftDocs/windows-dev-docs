@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions about using Python on Windows
-description: Frequently Asked Questions about using Python on Windows
+description: "Get help by reviewing frequently asked questions (FAQs) about using Python on Windows, such as "What is py.exe?'."
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
