@@ -2,58 +2,51 @@
 title: Create adaptive layouts tutorial
 description: This article covers the basics of adaptive layout in XAML
 keywords: XAML, UWP, Getting Started
-ms.date: 08/30/2017
+ms.date: 08/20/2020
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Tutorial: Create adaptive layouts
 
-This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. We'll use these tools to optimize an image editing program for smaller device screens. 
+This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. We'll use these tools to optimize an image editing program for smaller device screens.
 
-The image editing program you'll be working on has two pages/screens:
-
-The **main page**, which displays a photo gallery view, along with some information about each image file.
+The image editing program has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-The **details page**, which displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
 ## Prerequisites
 
-* Visual Studio 2019: [Download Visual Studio 2019 Community (free)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows mobile emulator: [Download the Windows 10 mobile emulator (free)](https://developer.microsoft.com/windows/downloads/sdk-archive)
++ Visual Studio 2019: [Download Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (The Community edition is free.)
++ Windows 10 SDK (10.0.17763.0 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
++ Windows 10, Version 1809 or later
 
 ## Part 0: Get the starter code from github
 
-For this tutorial, you'll start with a simplified version of the PhotoLab sample. 
+For this tutorial, you'll start with a simplified version of the PhotoLab sample.
 
-1. Go to [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). This takes you to the GitHub page for the sample. 
+1. Go to the GitHub page for the sample: [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab).
 2. Next, you'll need to clone or download the sample. Click the **Clone or download** button. A sub-menu appears.
-    <figure>
-        <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>The <b>Clone or download</b> menu on the Photo lab sample's GitHub page.</figcaption>
-    </figure>
+    ![The Clone or download menu on the PhotoLab sample's GitHub page](images/xaml-basics/clone-repo.png)
 
     **If you're not familiar with GitHub:**
-    
+
     a. Click **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
 
-    b. Extract the file. Use the File Explorer to navigate to the .zip file you just downloaded, right-click it, and select **Extract All...**. 
+    b. Extract the file. Use File Explorer to browse to the .zip file you just downloaded, right-click it, and select **Extract All...**.
 
-    c. Navigate to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` directory.    
+    c. Browse to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` directory.
 
     **If you are familiar with GitHub:**
 
     a. Clone the master branch of the repo locally.
 
-    b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
+    b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
 
-3. Open the project by clicking `Photolab.sln`.
+3. Double-click `Photolab.sln` to open the solution in Visual Studio.
 
 ## Part 1: Run the mobile emulator
 
@@ -76,7 +69,7 @@ We're going to tailor the gallery view of the application by creating a new Data
     <!-- Create image grid -->
     <Grid Height="{Binding ItemSize, ElementName=page}"
           Width="{Binding ItemSize, ElementName=page}">
-        
+
         <!-- Place image in grid, stretching it to fill the pane-->
         <Image x:Name="ItemImage"
                Source="{x:Bind ImagePreview}"
@@ -155,7 +148,7 @@ We've now created a new layout for our data, but the app currently has no way of
 This adds a new **VisualState** and **StateTrigger**, which will be triggered when the app detects that it is running on a mobile device (the logic for this operation can be found in MobileScreenTrigger.cs, which is provided for you in the PhotoLab directory). When the **StateTrigger** starts, the app will use whatever layout attributes are assigned to this **VisualState**.
 
 ### Add VisualState setters
-Next, we'll use **VisualState** setters to tell the **VisualStateManager** what attributes to apply when the state is triggered. Each setter targets one property of a particular XAML element and sets it to the given value. Add this code to the mobile **VisualState** you just created, below the **VisualState.StateTriggers** element. 
+Next, we'll use **VisualState** setters to tell the **VisualStateManager** what attributes to apply when the state is triggered. Each setter targets one property of a particular XAML element and sets it to the given value. Add this code to the mobile **VisualState** you just created, below the **VisualState.StateTriggers** element.
 
 ```XAML
 <VisualStateManager.VisualStateGroups>
@@ -248,7 +241,7 @@ Next, we create the **VisualStates** and **StateTriggers** that correspond to ea
             <VisualState.StateTriggers>
                 <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}"/>
             </VisualState.StateTriggers>
-     
+
         </VisualState>
 
         <!-- Medium window VisualState -->
@@ -258,7 +251,7 @@ Next, we create the **VisualStates** and **StateTriggers** that correspond to ea
             <VisualState.StateTriggers>
                 <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}"/>
             </VisualState.StateTriggers>
-        
+
         </VisualState>
 
         <!-- Small window VisualState -->

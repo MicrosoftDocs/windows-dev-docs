@@ -2,29 +2,51 @@
 title: Create custom styles
 description: This article covers the basics of styling UI elements in XAML
 keywords: XAML, UWP, Getting Started
-ms.date: 08/31/2017
+ms.date: 08/20/2020
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Tutorial: Create custom styles
 
-This tutorial shows you how to customize the UI of our XAML app. Warning: this tutorial might or might not involve a unicorn. (It does!)  
+This tutorial shows you how to customize the UI of our XAML app. Warning: this tutorial might or might not involve a unicorn. (It does!)
 
-## Prerequisites
-* [Visual Studio 2019 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
+The PhotoLab sample app has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
-## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2019.
-
-The PhotoLab app has two primary pages:
-
-**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
+
+## Prerequisites
+
++ Visual Studio 2019: [Download Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (The Community edition is free.)
++ Windows 10 SDK (10.0.17763.0 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
++ Windows 10, Version 1809 or later
+
+## Part 0: Get the starter code from GitHub
+
+For this tutorial, you'll start with a simplified version of the PhotoLab sample.
+
+1. Go to the GitHub page for the sample: [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab).
+2. Next, you'll need to clone or download the sample. Select the **Clone or download** button. A sub-menu appears.
+    ![The Clone or download menu on the PhotoLab sample's GitHub page](images/xaml-basics/clone-repo.png)
+
+    **If you're not familiar with GitHub:**
+
+    a. Select **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
+
+    b. Extract the file. Use File Explorer to browse to the .zip file that you just downloaded, right-click it, and select **Extract All...**.
+
+    c. Browse to your local copy of the sample, and go to the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\style` directory.
+
+    **If you are familiar with GitHub:**
+
+    a. Clone the master branch of the repo locally.
+
+    b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\style` directory.
+
+3. Double-click `Photolab.sln` to open the solution in Visual Studio.
 
 ## Part 1: Create a fancy slider control  
 
