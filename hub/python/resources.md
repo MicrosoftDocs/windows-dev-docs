@@ -1,6 +1,6 @@
 ---
 title: Resources for developing with Python on Windows
-description: A list of resources for developing with Python on Windows.
+description: Learn about helpful resources for developing with Python on Windows, such as online courses and web development.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
