@@ -29,7 +29,9 @@ The good news is that conversion from tasks to coroutines results in significant
 
 Often, an algorithm was originally written to suit synchronous APIs. And then that was translated into tasks and explicit continuations&mdash;the result often being an inadvertent obfuscation of the underlying logic. For example, loops become recursion; if-else branches turn into a nested tree (a chain) of tasks; shared variables become **shared_ptr**. To deconstruct the often unnatural structure of PPL source code, we recommend that you first step back and understand the intent of the original code (that is, discover the original synchronous version). And then insert `co_await` (cooperatively await) into the appropriate places.
 
-For that reason, if you have a C# (rather than C++/CX) version of the asynchronous code from which to begin your port, then that can give you an easier time, and a cleaner port. C# code uses `await`. So C# code already essentially follows a philosophy of beginning with a synchronous version and then inserting `await` into the appropriate places. If you don't have a C# version of your project, then you can use the techniques described in this topic.
+For that reason, if you have a C# (rather than C++/CX) version of the asynchronous code from which to begin your port, then that can give you an easier time, and a cleaner port. C# code uses `await`. So C# code already essentially follows a philosophy of beginning with a synchronous version and then inserting `await` into the appropriate places.
+
+If you *don't* have a C# version of your project, then you can use the techniques described in this topic. And once you've ported to C++/WinRT, the structure of your async code will then be easier to port to C#, should you wish to.
 
 ## Some background in asynchronous programming
 
@@ -123,6 +125,7 @@ Use this next table to jump straight to the section in this topic that describes
 |Wrap **create_async** around a task that uses `co_return`.|[Wrap **create_async** around a task that uses `co_return`](#wrap-create_async-around-a-task-that-uses-co_return)|
 |Port **concurrency::wait**.|[Port **concurrency::wait** to `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
 |Return **winrt::IAsyncXxx** instead of **task\<void\>**.|[Port a **task\<void\>** return type to **winrt::IAsyncXxx**](#port-a-taskvoid-return-type-to-winrtiasyncxxx)|
+|`co_await` a **winrt::IAsyncOperation\<bool\>**, but return a **task\<bool\>**.|[Convert a primitive **winrt::IAsyncXxx** result to a task](#convert-a-primitive-winrtiasyncxxx-result-to-a-task)|
 
 And here's a short code example illustrating some of the support.
 
@@ -610,7 +613,7 @@ You can't `co_return` an **IAsyncXxx**\^ directly, but you can achieve something
 Here's a hypothetical example, since there isn't an example we can lift from **Simple3DGameDX**.
 
 ```cppcx
-Windows::Foundation::IAsyncOperation<bool>^ Simple3DGame::ReturnBooleanAsync()
+Windows::Foundation::IAsyncOperation<bool>^ MyClass::ReturnBooleanAsync()
 {
     return concurrency::create_async(
         [this]() -> concurrency::task<bool> {
@@ -621,6 +624,52 @@ Windows::Foundation::IAsyncOperation<bool>^ Simple3DGame::ReturnBooleanAsync()
 ```
 
 As you can see, you could obtain the return value from any method that you can `co_await`.
+
+## Convert a primitive **winrt::IAsyncXxx** result to a task
+
+This pattern works only with primitive values (we'll use a Boolean value in the example). Consider the case where you have a method with the following signature that you've already ported to C++/WinRT.
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<bool>
+MyClass::BooleanMemberFunctionAsync()
+{
+    ...
+}
+```
+
+You can convert that to a task like this.
+
+```cppcx
+task<bool> MyClass::ReturnBooleanAsync()
+{
+    co_return co_await BooleanMemberFunctionAsync();
+}
+```
+
+Or like this.
+
+```cppcx
+task<bool> MyClass::ReturnBooleanAsync()
+{
+    return concurrency::create_task(
+        [this]() -> concurrency::task<bool> {
+            auto result = co_await BooleanMemberFunctionAsync();
+            co_return result;
+        });
+}
+```
+
+Or from within an arbitrary task chain like this.
+
+```cppcx
+...
+.then([this]() -> concurrency::task<bool> {
+    co_return co_await BooleanMemberFunctionAsync();
+}).then([this](bool result) {
+    ...
+});
+...
+```
 
 ## Port **concurrency::wait** to `co_await winrt::resume_after`
 

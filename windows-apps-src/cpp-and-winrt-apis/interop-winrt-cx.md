@@ -22,7 +22,9 @@ After reading this topic, for info and code examples showing how to support PPL 
 
 ## The **from_cx** and **to_cx** functions
 
-Here's a source code listing of a header file named `interop_helpers.h`, containing two conversion helper functions. The following sections explain the functions, and how to create and use the header file in your project.
+Here's a source code listing of a header file named `interop_helpers.h`, containing two conversion helper functions. As you gradually port your project, there will be parts still in C++/CX, and parts that you've ported to C++/WinRT. You can use these helper functions to convert objects to and from C++/CX and C++/WinRT in your project at the boundary points between those two parts.
+
+The sections that follow the code listing explain the two functions, and how to create and use the header file in your project.
 
 ```cppwinrt
 // interop_helpers.h
