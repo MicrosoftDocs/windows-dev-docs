@@ -36,8 +36,7 @@ T from_cx(Platform::Object^ from)
     T to{ nullptr };
 
     winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(),
-            reinterpret_cast<void**>(winrt::put_abi(to))));
+        ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
 
     return to;
 }
@@ -96,11 +95,9 @@ If you're porting in one pass, then you don't need to do this. But if you need t
 Alternatively (or, for a XAML project, in addition), you can add C++/CX support by using the C++/WinRT project property page in Visual Studio. In project properties, **Common Properties** \> **C++/WinRT** \> **Project Language** \> **C++/CX**. Doing that will add the following property to your `.vcxproj` file.
 
 ```xml
-<syntaxhighlight lang="xml">
   <PropertyGroup Label="Globals">
     <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
   </PropertyGroup>
-</syntaxhighlight>
 ```
 
 > [!IMPORTANT]
