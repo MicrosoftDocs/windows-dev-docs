@@ -17,7 +17,7 @@ Use a combo box (also known as a drop-down list) to present a list of items that
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
-![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+![Example of a drop-down list in its compact state](images/combo-box-expand.gif)
 
 > _A combo box in its compact state with a header._
 
