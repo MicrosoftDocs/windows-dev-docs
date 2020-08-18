@@ -125,7 +125,8 @@ Use this next table to jump straight to the section in this topic that describes
 |Wrap **create_async** around a task that uses `co_return`.|[Wrap **create_async** around a task that uses `co_return`](#wrap-create_async-around-a-task-that-uses-co_return)|
 |Port **concurrency::wait**.|[Port **concurrency::wait** to `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
 |Return **winrt::IAsyncXxx** instead of **task\<void\>**.|[Port a **task\<void\>** return type to **winrt::IAsyncXxx**](#port-a-taskvoid-return-type-to-winrtiasyncxxx)|
-|`co_await` a **winrt::IAsyncOperation\<bool\>**, but return a **task\<bool\>**.|[Convert a primitive **winrt::IAsyncXxx** result to a task](#convert-a-primitive-winrtiasyncxxx-result-to-a-task)|
+|Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**.|[Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**](#convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt)|
+|Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^.|[Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^](#convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt)|
 
 And here's a short code example illustrating some of the support.
 
@@ -548,7 +549,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-Not only can we `co_await` Windows APIs, we can also `co_return` the value that the method returns asynchronously (in this case, an array of bytes). This first step shows how to make just those changes; we'll actually port the C++/CX code to C++/WinRT in the next section.
+The code listing below shows that we can `co_await` Windows APIs that return **IAsyncXxx**^. Not only that, we can also `co_return` the value that **BasicReaderWriter::ReadDataAsync** returns asynchronously (in this case, an array of bytes). This first step shows how to make just those changes; we'll actually port the C++/CX code to C++/WinRT in the next section.
 
 ```cppcx
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -596,64 +597,45 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 > [!NOTE]
 > In **ReadDataAsync** above, we construct and return a new C++/CX array. And of course we do that to satisfy the method's return type (so that we don't have to change the rest of the project).
 >
-> You may come across other examples in your own project where, after porting, you reach the end of the method and all you have is a C++/WinRT object. To `co_return` that, just call **to_cx** to convert it. Here's a hypothetical example.
+> You may come across other examples in your own project where, after porting, you reach the end of the method and all you have is a C++/WinRT object. To `co_return` that, just call **to_cx** to convert it. There's more info about that, and an example, the next section.
 
-```cppcx
-task<Windows::Storage::StorageFile^> RetrieveFileAsync()
-{
-    winrt::Windows::Storage::StorageFile storageFile = co_await ...
-    co_return to_cx<Windows::Storage::StorageFile>(storageFile);
-}
-```
+## Convert a **winrt::IAsyncXxx\<T\>** to a **task\<T\>**
 
-## Wrap **create_async** around a task that uses `co_return`
+This section deals with the situation where you've ported an asynchronous method to C++/WinRT (so that it returns a **winrt::IAsyncXxx\<T\>**), but you still have C++/CX code calling that method as if it's still returning a task.
 
-You can't `co_return` an **IAsyncXxx**\^ directly, but you can achieve something similar. If you have a task that cooperatively returns a value, then you can wrap that inside a call to [**concurrency::create_async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async).
+- One case is where **T** is primitive, which needs no conversion.
+- The other case is where **T** is a Windows Runtime type, in which case you'll need to convert that to a **T**^.
 
-Here's a hypothetical example, since there isn't an example we can lift from **Simple3DGameDX**.
+### Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**
 
-```cppcx
-Windows::Foundation::IAsyncOperation<bool>^ MyClass::ReturnBooleanAsync()
-{
-    return concurrency::create_async(
-        [this]() -> concurrency::task<bool> {
-            bool result = co_await BooleanMemberFunctionAsync();
-            co_return result;
-        });
-}
-```
-
-As you can see, you could obtain the return value from any method that you can `co_await`.
-
-## Convert a primitive **winrt::IAsyncXxx** result to a task
-
-This pattern works only with primitive values (we'll use a Boolean value in the example). Consider the case where you have a method with the following signature that you've already ported to C++/WinRT.
+The pattern in this section applies when you're asynchronously returning a primitive value (we'll use a Boolean value to illustrate). Consider an example where the method that you've already ported to C++/WinRT has this signature.
 
 ```cppwinrt
 winrt::Windows::Foundation::IAsyncOperation<bool>
-MyClass::BooleanMemberFunctionAsync()
+MyClass::GetBoolMemberFunctionAsync()
 {
-    ...
+    bool value = ...
+    co_return value;
 }
 ```
 
-You can convert that to a task like this.
+You can convert a call to that method into a task like this.
 
 ```cppcx
-task<bool> MyClass::ReturnBooleanAsync()
+task<bool> MyClass::RetrieveBoolTask()
 {
-    co_return co_await BooleanMemberFunctionAsync();
+    co_return co_await GetBoolMemberFunctionAsync();
 }
 ```
 
 Or like this.
 
 ```cppcx
-task<bool> MyClass::ReturnBooleanAsync()
+task<bool> MyClass::RetrieveBoolTask()
 {
     return concurrency::create_task(
         [this]() -> concurrency::task<bool> {
-            auto result = co_await BooleanMemberFunctionAsync();
+            auto result = co_await GetBoolMemberFunctionAsync();
             co_return result;
         });
 }
@@ -664,12 +646,81 @@ Or from within an arbitrary task chain like this.
 ```cppcx
 ...
 .then([this]() -> concurrency::task<bool> {
-    co_return co_await BooleanMemberFunctionAsync();
+    co_return co_await GetBoolMemberFunctionAsync();
 }).then([this](bool result) {
     ...
 });
 ...
 ```
+
+### Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^
+
+The pattern in this section applies when you're asynchronously returning a Windows Runtime value (we'll use a **StorageFile** value to illustrate). Consider an example where the method that you've already ported to C++/WinRT has this signature.
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
+MyClass::GetStorageFileMemberFunctionAsync()
+{
+    co_return co_await winrt::Windows::Storage::StorageFile::GetFileFromPathAsync
+    (L"MyFile.txt");
+}
+```
+
+This next listing shows how to convert a call to that method into a task. Notice that we need to call **to_cx** to convert the returned C++/WinRT object into a C++/CX handle (also knowns as a *hat*) object.
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    winrt::Windows::Storage::StorageFile storageFile =
+        co_await GetStorageFileMemberFunctionAsync();
+    co_return to_cx<Windows::Storage::StorageFile>(storageFile);
+}
+```
+
+Here's a more succinct version of that.
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    co_return to_cx<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+And you can even choose to wrap that pattern up into a reusable function template, and `return` it just like you'd normally return a task.
+
+```cppcx
+template<typename ResultTypeCX, typename Awaitable>
+concurrency::task<ResultTypeCX^> to_task(Awaitable awaitable)
+{
+    co_return to_cx<ResultTypeCX>(co_await awaitable);
+}
+
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    return to_task<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+If you like that idea, you might want to add **to_task** to `interop_helpers.h`.
+
+## Wrap **create_async** around a task that uses `co_return`
+
+You can't `co_return` an **IAsyncXxx**\^ directly, but you can achieve something similar. If you have a task that cooperatively returns a value, then you can wrap that inside a call to [**concurrency::create_async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async).
+
+Here's a hypothetical example, since there isn't an example we can lift from **Simple3DGameDX**.
+
+```cppcx
+Windows::Foundation::IAsyncOperation<bool>^ MyClass::RetrieveBoolAsync()
+{
+    return concurrency::create_async(
+        [this]() -> concurrency::task<bool> {
+            bool result = co_await GetBoolMemberFunctionAsync();
+            co_return result;
+        });
+}
+```
+
+As you can see, you could obtain the return value from any method that you can `co_await`.
 
 ## Port **concurrency::wait** to `co_await winrt::resume_after`
 
@@ -792,9 +843,9 @@ winrt::Windows::Foundation::IAsyncAction GameRenderer::LoadLevelResourcesAsync()
 }
 ```
 
-### **BasicReaderWriter::ReadDataAsync**
+### The goal&mdash;fully port a method to C++/WinRT
 
-Let's finish this walkthrough by fully porting the method **BasicReaderWriter::ReadDataAsync** to C++/WinRT.
+Let's wrap up this walkthrough with an example of the end goal, by fully porting the method **BasicReaderWriter::ReadDataAsync** to C++/WinRT.
 
 Last time we looked at this method (in the section [Port **ReadDataAsync** (mostly) to C++/WinRT, leaving the rest of the project unchanged](#port-readdataasync-mostly-to-cwinrt-leaving-the-rest-of-the-project-unchanged)), it was *mostly* ported to C++/WinRT. But it still returned a task of **Platform::Array\<byte\>**^.
 
