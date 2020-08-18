@@ -7,21 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx 9, directx 11, porting
 ms.localizationpriority: medium
 ---
+
 # Map DirectX 9 features to DirectX 11 APIs
-
-
-
-**Summary**
-
--   [Plan your DirectX port](plan-your-directx-port.md)
--   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
--   Feature mapping
-
 
 Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the Universal Windows Platform (UWP).
 
-## Mapping Direct3D 9 to DirectX 11 APIs
+Also see [Plan your DirectX port](plan-your-directx-port.md), and [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md).
 
+## Mapping Direct3D 9 to DirectX 11 APIs
 
 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) is still the foundation of DirectX graphics, but the API has changed since DirectX 9:
 
@@ -33,7 +26,6 @@ For a full list of Direct3D 11 features, see [Direct3D 11 Features](https://docs
 
 ## Moving from Direct2D 9 to Direct2D 11
 
-
 [Direct2D (Windows)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) is still an important part of DirectX graphics and Windows. You can still use Direct2D to draw 2D games, and to draw overlays (HUDs) on top of Direct3D.
 
 Direct2D runs on top of Direct3D; 2D games can be implemented using either API. For example, a 2D game implemented using Direct3D can use orthographic projection, set Z-values to control the drawing order of primitives, and use pixel shaders to add special effects.
@@ -44,7 +36,6 @@ The [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-
 
 ## Replace deprecated helper libraries
 
-
 D3DX and DXUT are deprecated and cannot be used by UWP games. These helper libraries provided resources for tasks such as texture loading and mesh loading.
 
 -   The [Simple port from Direct3D 9 to UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough demonstrates how to set up a window, initialize Direct3D, and do basic 3D rendering.
@@ -52,7 +43,6 @@ D3DX and DXUT are deprecated and cannot be used by UWP games. These helper libra
 -   The [DirectX Tool Kit](https://github.com/Microsoft/DirectXTK) community project offers helper classes for use with Direct3D 11 and UWP apps.
 
 ## Move shader programs from FX to HLSL
-
 
 The D3DX utility library (D3DX 9, D3DX 10, and D3DX 11), including Effects, is deprecated for UWP. All DirectX games for UWP drive the graphics pipeline using [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) without Effects.
 
@@ -64,20 +54,17 @@ Direct3D 11 introduced Shader Model 5, which requires Direct3D feature level 11\
 
 ## Replace XNAMath and D3DXMath
 
-
 Code using XNAMath (or D3DXMath) should be migrated to [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal). DirectXMath includes types that are portable across x86, x64, and ARM. See [Code Migration from the XNA Math Library](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration).
 
 Note that DirectXMath float types are convenient for use with shaders. For example [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) and [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) conveniently align data for constant buffers.
 
 ## Replace DirectSound with XAudio2 (and background audio)
 
-
 DirectSound is not supported for UWP:
 
 -   Use [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) to add sound effects to your game.
 
 ##  Replace DirectInput with XInput and Windows Runtime APIs
-
 
 DirectInput is not supported for UWP:
 
@@ -87,11 +74,9 @@ DirectInput is not supported for UWP:
 
 ## Use Microsoft Media Foundation instead of DirectShow
 
-
 DirectShow is no longer part of the DirectX API (or the Windows API). [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) provides video content to Direct3D using shared surfaces. See [Direct3D 11 Video APIs](https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis).
 
 ## Replace DirectPlay with networking code
-
 
 Microsoft DirectPlay has been deprecated. If your game uses network services, you need to provide networking code that complies with UWP requirements. Use the following APIs:
 
@@ -111,7 +96,6 @@ The following articles help you add networking features and declare support for 
 Note that all UWP apps (including games) use specific types of background tasks to maintain connectivity while the app is suspended. If your game needs to maintain connection state while suspended see [Networking basics](https://docs.microsoft.com/windows/uwp/networking/networking-basics).
 
 ## Function mapping
-
 
 Use the following table to help convert code from Direct3D 9 to Direct3D 11. This can also help distinguish between the device and device context.
 
@@ -225,15 +209,12 @@ Use the following table to help convert code from Direct3D 9 to Direct3D 11. Thi
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9:CheckDeviceFormat</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9:GetDeviceCaps</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9:ValidateDevice</a></p></td>
-<td align="left"><p>Capability bits are replaced with feature levels. Only a few format and feature usage cases are optional for any given feature level. These can be checked with <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> and <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a>.</p></td>
+<td align="left"><p>Capability bits are replaced by feature levels. Only a few format and feature usage cases are optional for any given feature level. These can be checked with <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> and <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a>.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## Surface format mapping
-
 
 Use the following table to convert Direct3D 9 formats into DXGI formats.
 
@@ -659,12 +640,28 @@ Use the following table to convert Direct3D 9 formats into DXGI formats.
 </tbody>
 </table>
 
- 
+## Additional mapping info
 
- 
+**IDirect3DDevice9::SetCursorPosition** is replaced by [**SetCursorPos**](/windows/desktop/api/winuser/nf-winuser-setcursorpos).
+**IDirect3DDevice9::SetCursorProperties** is replaced by [**SetCursor**](/windows/desktop/api/winuser/nf-winuser-setcursor).
+**IDirect3DDevice9::SetIndices** is replaced by [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer).
+**IDirect3DDevice9::SetRenderTarget** is replaced by [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets).
+**IDirect3DDevice9::SetScissorRect** is replaced by [**ID3D11DeviceContext::RSSetScissorRects**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetscissorrects).
+**IDirect3DDevice9::SetStreamSource** is replaced by [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
+**IDirect3DDevice9::SetVertexDeclaration** is replaced by [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout).
+**IDirect3DDevice9::SetViewport** is replaced by [**ID3D11DeviceContext::RSSetViewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports).
+**IDirect3DDevice9::ShowCursor** is replaced by [**ShowCursor**](/windows/desktop/api/winuser/nf-winuser-showcursor).
 
- 
+Control of the video card's hardware gamma ramp through **IDirect3DDevice9::SetGammaRamp** is replaced by **IDXGIOutput::SetGammaControl**. See [Using gamma correction](/windows/win32/direct3ddxgi/using-gamma-correction).
 
+**IDirect3DDevice9::ProcessVertices** is replaced by the Stream-Output functionality of Geometry Shaders. See [Getting started with the Stream-Output Stage](/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage-getting-started).
 
+The method **IDirect3DDevice9::SetClipPlane** to set user clip-planes was replaced by either the HLSL **SV_ClipDistance** vertex shader output semantic (see [Semantics](/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics)), available in VS_4_0 and up, or the new HLSL clipplanes function attribute (see [User clip planes on feature level 9 hardware](/windows/win32/direct3dhlsl/user-clip-planes-on-10level9)).
 
+**IDirect3DDevice9::SetPaletteEntries** and **IDirect3DDevice9::SetCurrentTexturePalette** are deprecated. Replace these with a pixel shader that looks up colors in a 256x1 **R8G8B8A8** texture instead.
 
+Fixed-function tessellation functions like **DrawRectPatch**, **DrawTriPatch**, **SetNPatchMode**, and **DeletePatch** are deprecated. Replace these with programmable-pipeline SM5.0 Tessellation shaders (if hardware supports tessellation shaders).
+
+**IDirect3DDevice9::SetFVF**, and FVF codes, are no longer supported. You should port from D3D8/D3D9 FVF codes to D3D9 Vertex Declarations before porting to D3D11 Input Layouts.
+
+All of the D3DDECLTYPE types that are not directly supported can be emulated fairly efficiently with a small number of bitwise operations at the beginning of a vertex shader in VS_4_0 and up.
