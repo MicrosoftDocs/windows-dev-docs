@@ -126,7 +126,7 @@ Use this next table to jump straight to the section in this topic that describes
 |Port **concurrency::wait**.|[Port **concurrency::wait** to `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
 |Return **winrt::IAsyncXxx** instead of **task\<void\>**.|[Port a **task\<void\>** return type to **winrt::IAsyncXxx**](#port-a-taskvoid-return-type-to-winrtiasyncxxx)|
 |Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**.|[Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**](#convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt)|
-|Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^.|[Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^](#convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt)|
+|Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T^\>**.|[Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T^\>**](#convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt)|
 
 And here's a short code example illustrating some of the support.
 
@@ -608,7 +608,7 @@ This section deals with the situation where you've ported an asynchronous method
 
 ### Convert a **winrt::IAsyncXxx\<T\>** (T is primitive) to a **task\<T\>**
 
-The pattern in this section applies when you're asynchronously returning a primitive value (we'll use a Boolean value to illustrate). Consider an example where the method that you've already ported to C++/WinRT has this signature.
+The pattern in this section applies when you're asynchronously returning a primitive value (we'll use a Boolean value to illustrate). Consider an example where a method that you've already ported to C++/WinRT has this signature.
 
 ```cppwinrt
 winrt::Windows::Foundation::IAsyncOperation<bool>
@@ -641,7 +641,9 @@ task<bool> MyClass::RetrieveBoolTask()
 }
 ```
 
-Or from within an arbitrary task chain like this.
+Notice that the **task** return type of the lambda function is explicit, because the compiler can't deduce it.
+
+We could also call the method from within an arbitrary task chain like this. Again, with an explicit lambda return type.
 
 ```cppcx
 ...
@@ -653,9 +655,9 @@ Or from within an arbitrary task chain like this.
 ...
 ```
 
-### Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T\>**^
+### Convert a **winrt::IAsyncXxx\<T\>** (T is a Windows Runtime type) to a **task\<T^\>**
 
-The pattern in this section applies when you're asynchronously returning a Windows Runtime value (we'll use a **StorageFile** value to illustrate). Consider an example where the method that you've already ported to C++/WinRT has this signature.
+The pattern in this section applies when you're asynchronously returning a Windows Runtime value (we'll use a **StorageFile** value to illustrate). Consider an example where a method that you've already ported to C++/WinRT has this signature.
 
 ```cppwinrt
 winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
@@ -666,7 +668,7 @@ MyClass::GetStorageFileMemberFunctionAsync()
 }
 ```
 
-This next listing shows how to convert a call to that method into a task. Notice that we need to call **to_cx** to convert the returned C++/WinRT object into a C++/CX handle (also knowns as a *hat*) object.
+This next listing shows how to convert a call to that method into a task. Notice that we need to call the **to_cx** interop helper function to convert the returned C++/WinRT object into a C++/CX handle (also known as a *hat*) object.
 
 ```cppcx
 task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
