@@ -276,13 +276,13 @@ When this is set to `true`, a selection is immediately copied to your clipboard 
 
 ### Copy formatting
 
-When this is set to `true`, the color and font formatting of selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard.
+When this is set to `true`, the color and font formatting of the selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy.
 
 **Property name:** `copyFormatting`
 
 **Necessity:** Optional
 
-**Accepts:** `true`, `false`
+**Accepts:** `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"`
 
 **Default value:** `false`
 
