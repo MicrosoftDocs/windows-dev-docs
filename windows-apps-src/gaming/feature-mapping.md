@@ -642,15 +642,15 @@ Use the following table to convert Direct3D 9 formats into DXGI formats.
 
 ## Additional mapping info
 
-**IDirect3DDevice9::SetCursorPosition** is replaced by [**SetCursorPos**](/windows/desktop/api/winuser/nf-winuser-setcursorpos).
-**IDirect3DDevice9::SetCursorProperties** is replaced by [**SetCursor**](/windows/desktop/api/winuser/nf-winuser-setcursor).
-**IDirect3DDevice9::SetIndices** is replaced by [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer).
-**IDirect3DDevice9::SetRenderTarget** is replaced by [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets).
-**IDirect3DDevice9::SetScissorRect** is replaced by [**ID3D11DeviceContext::RSSetScissorRects**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetscissorrects).
-**IDirect3DDevice9::SetStreamSource** is replaced by [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
-**IDirect3DDevice9::SetVertexDeclaration** is replaced by [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout).
-**IDirect3DDevice9::SetViewport** is replaced by [**ID3D11DeviceContext::RSSetViewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports).
-**IDirect3DDevice9::ShowCursor** is replaced by [**ShowCursor**](/windows/desktop/api/winuser/nf-winuser-showcursor).
+- **IDirect3DDevice9::SetCursorPosition** is replaced by [**SetCursorPos**](/windows/desktop/api/winuser/nf-winuser-setcursorpos).
+- **IDirect3DDevice9::SetCursorProperties** is replaced by [**SetCursor**](/windows/desktop/api/winuser/nf-winuser-setcursor).
+- **IDirect3DDevice9::SetIndices** is replaced by [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer).
+- **IDirect3DDevice9::SetRenderTarget** is replaced by [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets).
+- **IDirect3DDevice9::SetScissorRect** is replaced by [**ID3D11DeviceContext::RSSetScissorRects**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetscissorrects).
+- **IDirect3DDevice9::SetStreamSource** is replaced by [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
+- **IDirect3DDevice9::SetVertexDeclaration** is replaced by [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout).
+- **IDirect3DDevice9::SetViewport** is replaced by [**ID3D11DeviceContext::RSSetViewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports).
+- **IDirect3DDevice9::ShowCursor** is replaced by [**ShowCursor**](/windows/desktop/api/winuser/nf-winuser-showcursor).
 
 Control of the video card's hardware gamma ramp through **IDirect3DDevice9::SetGammaRamp** is replaced by **IDXGIOutput::SetGammaControl**. See [Using gamma correction](/windows/win32/direct3ddxgi/using-gamma-correction).
 
@@ -664,4 +664,4 @@ Fixed-function tessellation functions like **DrawRectPatch**, **DrawTriPatch**, 
 
 **IDirect3DDevice9::SetFVF**, and FVF codes, are no longer supported. You should port from D3D8/D3D9 FVF codes to D3D9 Vertex Declarations before porting to D3D11 Input Layouts.
 
-All of the D3DDECLTYPE types that are not directly supported can be emulated fairly efficiently with a small number of bitwise operations at the beginning of a vertex shader in VS_4_0 and up.
+All of the **D3DDECLTYPE** types that are not directly supported can be emulated fairly efficiently with a small number of bitwise operations at the beginning of a vertex shader in VS_4_0 and up.
