@@ -149,7 +149,7 @@ The tab switcher will open on the initial press of the keybindings for `nextTab`
 
 **Accepts:** `true`, `false`
 
-**Default value:** `false`
+**Default value:** `true`
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
