@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Tutorial: Create adaptive layouts
 
-This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. We'll use these tools to optimize an image editing program for smaller device screens.
+This tutorial covers the basics of using XAML's adaptive layout features, which let you create apps that look good at any size. You'll learn how to add window breakpoints, create a new DataTemplate, and use the VisualStateManager class tailor your app's layout. You'll use these tools to optimize an image editing program for smaller window sizes.
 
 The image editing program has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
@@ -48,22 +48,45 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
 3. Double-click `Photolab.sln` to open the solution in Visual Studio.
 
-## Part 1: Run the mobile emulator
+## Part 1: Define window breakpoints
 
-In the Visual Studio toolbar, make sure your Solution Platform is set to x86 or x64, not ARM, and then change your target device from Local Machine to one of the mobile emulators that you've installed (for example, Mobile Emulator 10.0.15063 WVGA 5 inch 1GB). Try running the Photo Gallery app in the mobile emulator you've selected by pressing **F5**.
+Run the app. It looks good at full screen, but the user interface (UI) isn't ideal when you shrink the window too small. You can ensure that the end-user experience always looks and feels right by using the [VisualStateManager](/uwp/api/windows.ui.xaml.visualstatemanager) class to adapt the UI to different window sizes.
 
-As soon as the app starts, you'll probably notice that while the app works, it doesn't look great on such a small viewport. The fluid Grid element tries to accommodate for the limited screen real estate by reducing the number of columns displayed, but we are left with a layout that looks uninspired and ill-fitted to such a small viewport.
+![Small window: before](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-![Mobile layout: after](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
+For more info about app layout, see the [Layout](/windows/uwp/design/layout/) section of the docs.
 
-## Part 2: Build a tailored mobile layout
-To make this app look good on smaller devices, we're going to create a separate set of styles in our XAML page that will only be used if a mobile device is detected.
+### Add window breakpoints
+
+The first step is to define the _breakpoints_ at which different visual states are applied. See [Screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for more information about the breakpoints for small, medium, and large screens.
+
+Open **App.xaml** from the Solution Explorer, and add the following code after the `MergedDictionaries`, right before the closing `</ResourceDictionary>` tag.
+
+```xaml
+    <!--  Window width adaptive breakpoints.  -->
+    <x:Double x:Key="MinWindowBreakpoint">0</x:Double>
+    <x:Double x:Key="MediumWindowBreakpoint">641</x:Double>
+    <x:Double x:Key="LargeWindowBreakpoint">1008</x:Double>
+```
+
+This creates 3 breakpoints, which lets you create new visual states for 3 ranges of window sizes:
+
++ Small (0 - 640 pixels wide)
++ Medium (641 - 1007 pixels wide)
++ Large (> 1007 pixels wide)
+
+In this example, you create a new look only for the small window size. The medium and large sizes use the same look.
+
+## Part 2: Add a data template for small window sizes
+
+To make this app look good even when it's shown in a small window, you can create a new data template that optimizes how the images in the image gallery view are shown when the user shrinks the window.
 
 ### Create a new DataTemplate
-We're going to tailor the gallery view of the application by creating a new DataTemplate for the images. Open MainPage.xaml from the Solution Explorer, and add the following code within the **Page.Resources** tags.
 
-```XAML
-<DataTemplate x:Key="ImageGridView_MobileItemTemplate"
+ Open **MainPage.xaml** from the Solution Explorer, and add the following code within the `Page.Resources` tags.
+
+```xaml
+<DataTemplate x:Key="ImageGridView_SmallItemTemplate"
               x:DataType="local:ImageFileInfo">
 
     <!-- Create image grid -->
@@ -72,7 +95,6 @@ We're going to tailor the gallery view of the application by creating a new Data
 
         <!-- Place image in grid, stretching it to fill the pane-->
         <Image x:Name="ItemImage"
-               Source="{x:Bind ImagePreview}"
                Stretch="UniformToFill">
         </Image>
 
@@ -80,14 +102,13 @@ We're going to tailor the gallery view of the application by creating a new Data
 </DataTemplate>
 ```
 
-This gallery template saves screen real estate by eliminating the border around images, and getting rid of the image metadata (filename, ratings, and so on.) below each thumbnail. Instead, we show each thumbnail as a simple square.
+This gallery template saves screen real estate by eliminating the border around images, and getting rid of the image metadata (filename, ratings, and so on.) below each thumbnail. Instead, you show each thumbnail as a simple square.
 
 ### Add metadata to a tooltip
-We still want the user to be able to access the metadata for each image, so we'll add a tooltip to each image item. Add the following code within the **Image** tags of the DataTemplate you just created.
 
-```XAML
-<Image ...>
+You still want the user to be able to access the metadata for each image, so add a tooltip to each image item. Add the following code within the `Image` tags of the DataTemplate you just created.
 
+```xaml
     <!-- Add a tooltip to the image that displays metadata -->
     <ToolTipService.ToolTip>
         <ToolTip x:Name="tooltip">
@@ -119,117 +140,47 @@ We still want the user to be able to access the metadata for each image, so we'l
             </StackPanel>
         </ToolTip>
     </ToolTipService.ToolTip>
-</Image>
 ```
 
 This will show the title, file type, and dimensions of an image when you hover the mouse over the thumbnail (or press and hold on a touch screen).
 
-### Add a VisualStateManager and StateTrigger
+## Part 3: Define visual states
 
-We've now created a new layout for our data, but the app currently has no way of knowing when to use this layout over the default styles. To fix this, we'll need to add a **VisualStateManager**. Add the following code to the root element of the page, **RelativePanel**.
+You've now created a new layout for your data, but the app currently has no way of knowing when to use this layout over the default styles. To fix this, you need to add a [VisualStateManager](/uwp/api/windows.ui.xaml.visualstatemanager) and [VisualState](/uwp/api/windows.ui.xaml.visualstate) definitions.
 
-```XAML
+### Add a VisualStateManager
+
+Add the following code to the root element of the page, `RelativePanel`.
+
+```xaml
 <VisualStateManager.VisualStateGroups>
     <VisualStateGroup>
+    ...
 
-        <!-- Add a new VisualState for mobile devices -->
-        <VisualState x:Key="Mobile">
-
-            <!-- Trigger visualstate when a mobile device is detected -->
-            <VisualState.StateTriggers>
-                <local:MobileScreenTrigger InteractionMode="Touch" />
-            </VisualState.StateTriggers>
+        <!-- Large window VisualState -->
+        <VisualState x:Key="LargeWindow">
 
         </VisualState>
+
+        <!-- Medium window VisualState -->
+        <VisualState x:Key="MediumWindow">
+
+        </VisualState>
+
+        <!-- Small window VisualState -->
+        <VisualState x:Key="SmallWindow">
+
+        </VisualState>
+
     </VisualStateGroup>
 </VisualStateManager.VisualStateGroups>
 ```
 
-This adds a new **VisualState** and **StateTrigger**, which will be triggered when the app detects that it is running on a mobile device (the logic for this operation can be found in MobileScreenTrigger.cs, which is provided for you in the PhotoLab directory). When the **StateTrigger** starts, the app will use whatever layout attributes are assigned to this **VisualState**.
+### Create StateTriggers to apply the visual state
 
-### Add VisualState setters
-Next, we'll use **VisualState** setters to tell the **VisualStateManager** what attributes to apply when the state is triggered. Each setter targets one property of a particular XAML element and sets it to the given value. Add this code to the mobile **VisualState** you just created, below the **VisualState.StateTriggers** element.
+Next, create the **StateTriggers** that correspond to each snap point. In MainPage.xaml, add the following code to the **VisualStateManager** that you created in Part 2.
 
-```XAML
-<VisualStateManager.VisualStateGroups>
-    <VisualStateGroup>
-
-        <VisualState x:Key="Mobile">
-            ...
-
-            <!-- Add setters for mobile visualstate -->
-            <VisualState.Setters>
-
-                <!-- Move GridView about the command bar -->
-                <Setter Target="ImageGridView.(RelativePanel.Above)"
-                        Value="MainCommandBar" />
-
-                <!-- Switch to mobile layout -->
-                <Setter Target="ImageGridView.ItemTemplate"
-                        Value="{StaticResource ImageGridView_MobileItemTemplate}" />
-
-                <!-- Switch to mobile container styles -->
-                <Setter Target="ImageGridView.ItemContainerStyle"
-                        Value="{StaticResource ImageGridView_MobileItemContainerStyle}" />
-
-                <!-- Move command bar to bottom of the screen -->
-                <Setter Target="MainCommandBar.(RelativePanel.AlignBottomWithPanel)"
-                        Value="True" />
-                <Setter Target="MainCommandBar.(RelativePanel.AlignLeftWithPanel)"
-                        Value="True" />
-                <Setter Target="MainCommandBar.(RelativePanel.AlignRightWithPanel)"
-                        Value="True" />
-
-                <!-- Adjust the zoom slider to fit mobile screens -->
-                <Setter Target="ZoomSlider.Minimum"
-                        Value="80" />
-                <Setter Target="ZoomSlider.Maximum"
-                        Value="180" />
-                <Setter Target="ZoomSlider.TickFrequency"
-                        Value="20" />
-                <Setter Target="ZoomSlider.Value"
-                        Value="100" />
-            </VisualState.Setters>
-
-        </VisualState>
-    </VisualStateGroup>
-</VisualStateManager.VisualStateGroups>
-
-```
-
-These setters set the **ItemTemplate** of the image gallery to the new **DataTemplate** that we created in the first part, and align the command bar and zoom slider with the bottom of the screen, so they are easier to reach with your thumb on a mobile phone screen.
-
-### Run the app
-Now try running the app using a mobile emulator. Does the new layout display successfully? You should see a grid of small thumbnails as below. If you still see the old layout, there may be a typo in your **VisualStateManager** code.
-
-![Mobile layout: after](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
-
-## Part 3: Adapt to multiple window sizes on a single device
-Creating a new tailored layout solves the challenge of responsive design for mobile devices, but what about desktops and tablets? The app may look good at full screen, but if the user shrinks the window, they may end up with an awkward interface. We can ensure that the end-user experience always looks and feels right by using the **VisualStateManager** to adapt to multiple window sizes on a single device.
-
-![Small window: before](../basics/images/xaml-basics/adaptive-layout-small-before.png)
-
-### Add window snap points
-The first step is to define the "snap points" at which different **VisualStates** will be triggered. Open App.xaml from the Solution Explorer, and add the following code between the **Application** tags.
-
-```XAML
-<Application.Resources>
-    <!--  window width adaptive snap points  -->
-    <x:Double x:Key="MinWindowSnapPoint">0</x:Double>
-    <x:Double x:Key="MediumWindowSnapPoint">641</x:Double>
-    <x:Double x:Key="LargeWindowSnapPoint">1008</x:Double>
-</Application.Resources>
-```
-
-This gives us three snap points, which allow us to create new **VisualStates** for three ranges of window sizes:
-+ Small (0 - 640 pixels wide)
-+ Medium (641 - 1007 pixels wide)
-+ Large (> 1007 pixels wide)
-
-### Create new VisualStates and StateTriggers
-Next, we create the **VisualStates** and **StateTriggers** that correspond to each snap point. In MainPage.xaml, add the following code to the **VisualStateManager** that you created in Part 2.
-
-```XAML
+```xaml
 <VisualStateManager.VisualStateGroups>
     <VisualStateGroup>
     ...
@@ -268,22 +219,21 @@ Next, we create the **VisualStates** and **StateTriggers** that correspond to ea
 </VisualStateManager.VisualStateGroups>
 ```
 
-### Add setters
-Finally, add these setters to the **SmallWindow** state.
+When each visual state is triggered, the app will use whatever layout attributes are assigned to the active `VisualState`.
 
-```XAML
+### Set properties for each visual state
 
-<VisualState x:Key="SmallWindow">
-    ...
+Finally, set properties for each visual state to tell the `VisualStateManager` what attributes to apply when the state is triggered. Each setter targets one property of a particular XAML element and sets it to the given value. Add this code to the `SmallWindow` visual state you just created, after the `StateTriggers`.
 
+```xaml
     <!-- Small window setters -->
     <VisualState.Setters>
 
-        <!-- Apply mobile itemtemplate and styles -->
+        <!-- Apply small template and styles -->
         <Setter Target="ImageGridView.ItemTemplate"
-                Value="{StaticResource ImageGridView_MobileItemTemplate}" />
+                Value="{StaticResource ImageGridView_SmallItemTemplate}" />
         <Setter Target="ImageGridView.ItemContainerStyle"
-                Value="{StaticResource ImageGridView_MobileItemContainerStyle}" />
+                Value="{StaticResource ImageGridView_SmallItemContainerStyle}" />
 
         <!-- Adjust the zoom slider to fit small windows-->
         <Setter Target="ZoomSlider.Minimum"
@@ -295,12 +245,9 @@ Finally, add these setters to the **SmallWindow** state.
         <Setter Target="ZoomSlider.Value"
                 Value="100" />
     </VisualState.Setters>
-
-</VisualState>
-
 ```
 
-These setters apply the mobile **DataTemplate** and styles to the desktop app, whenever the viewport is less than 641 pixels wide. They also tweak the zoom slider to better fit the small screen.
+These setters set the `ItemTemplate` of the image gallery to the new `DataTemplate` that you created in the previous section. They also tweak the zoom slider to better fit the small screen.
 
 ### Run the app
 
@@ -310,12 +257,12 @@ In the Visual Studio toolbar set the target device to **Local Machine**, and run
 
 ## Going further
 
-Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. Try adding a rating control to the mobile-only tooltip you added earlier. Or, for a bigger challenge, try optimizing the layout for larger screen sizes (think TV screens or a Surface Studio)
+Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio) if you'd like to test a Surface Hub layout.
 
 If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](../layout/layouts-with-xaml.md).
 
-+ [Visual states and state triggers](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Tailored layouts](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [Visual states and state triggers](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [Tailored layouts](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
 
 Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
 

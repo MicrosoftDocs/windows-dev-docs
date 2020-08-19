@@ -34,7 +34,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
 1. Go to the GitHub page for the sample: [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab).
 2. Next, you'll need to clone or download the sample. Select the **Clone or download** button. A sub-menu appears.
-    ![The Clone or download menu on the PhotoLab sample's GitHub page](images/xaml-basics/clone-repo.png)
+    ![The Clone or download menu on the PhotoLab sample's GitHub page](../design/basics/images/xaml-basics/clone-repo.png)
 
     **If you're not familiar with GitHub:**
 
@@ -119,7 +119,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
         <TextBlock Text="PNG file" ... />
         <TextBlock Text="50 x 50" ... />
     </StackPanel>
-    <telerikInput:RadRating Value="3" ... />
+    <muxc:RatingControl Value="3" ... />
     ```
 
     **After:**
@@ -129,7 +129,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
         <TextBlock Text="{x:Bind ImageFileType}" ... />
         <TextBlock Text="{x:Bind ImageDimensions}" ... />
     </StackPanel>
-    <telerikInput:RadRating Value="{x:Bind ImageRating}" ... />
+    <muxc:RatingControl Value="{x:Bind ImageRating}" ... />
     ```
 
 Run the app to see how it looks so far. No more placeholders! We're off to a good start.
@@ -358,17 +358,7 @@ Now that the UI can respond to **ItemSize** changes, you need to actually make s
             // this value needs to be updated to match.
             int margins = (int)this.Resources["LargeItemMarginValue"] * 4;
             double gridWidth = ImageGridView.ActualWidth -
-                (int)this.Resources["DesktopWindowSidePaddingValue"];
-
-            if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" &&
-                UIViewSettings.GetForCurrentView().UserInteractionMode ==
-                    UserInteractionMode.Touch)
-            {
-                margins = (int)this.Resources["SmallItemMarginValue"] * 4;
-                gridWidth = ImageGridView.ActualWidth -
-                    (int)this.Resources["MobileWindowSidePaddingValue"];
-            }
-
+                (int)this.Resources["DefaultWindowSidePaddingValue"];
             double ItemWidth = ZoomSlider.Value + margins;
             // We need at least 1 column.
             int columns = (int)Math.Max(gridWidth / ItemWidth, 1);
@@ -388,24 +378,28 @@ Now that the UI can respond to **ItemSize** changes, you need to actually make s
 2. In MainPage.xaml, navigate to the top of the file and add a **SizeChanged** event binding to the **Page** element.
 
     **Before:**
+
     ```xaml
     <Page x:Name="page"
     ```
 
     **After:**
+
     ```xaml
     <Page x:Name="page"
           SizeChanged="{x:Bind DetermineItemSize}"
     ```
 
-3. Find the **Slider** named **ZoomSlider** and add a **ValueChanged** event binding.
+3. Find the **Slider** named **ZoomSlider** (in the `Page.Resources` section) and add a **ValueChanged** event binding.
 
     **Before:**
+
     ```xaml
     <Slider x:Name="ZoomSlider"
     ```
 
     **After:**
+
     ```xaml
     <Slider x:Name="ZoomSlider"
             ValueChanged="{x:Bind DetermineItemSize}"
@@ -414,11 +408,13 @@ Now that the UI can respond to **ItemSize** changes, you need to actually make s
 4. Find the **ToggleSwitch** named **FitScreenToggle** and add a **Toggled** event binding.
 
     **Before:**
+
     ```xaml
     <ToggleSwitch x:Name="FitScreenToggle"
     ```
 
     **After:**
+
     ```xaml
     <ToggleSwitch x:Name="FitScreenToggle"
                   Toggled="{x:Bind DetermineItemSize}"
@@ -430,7 +426,6 @@ Run the app and use the zoom slider and **Fit to screen** toggle to change the i
 
 > [!NOTE]
 > For a challenge, try adding a **TextBlock** after the **ZoomSlider** and binding the **Text** property to the **ItemSize** property. Because it's not in a data template, you can use **x:Bind** instead of **Binding** like in the previous **ItemSize** bindings.
-}
 
 ## Part 5: Enable user edits
 
@@ -448,11 +443,13 @@ First, however, you need to attach the **DetailPage** so that the app navigates 
     > If you type in the change below instead of copy/pasting, you'll see an IntelliSense pop-up that says "\<New Event Handler\>". If you press the Tab key, it will fill in the value with a default method handler name, and automatically stub out the method shown in the next step. You can then press F12 to navigate to the method in the code-behind.
 
     **Before:**
+
     ```xaml
     <GridView x:Name="ImageGridView"
     ```
 
     **After:**
+
     ```xaml
     <GridView x:Name="ImageGridView"
               ItemClick="ImageGridView_ItemClick"
@@ -482,23 +479,25 @@ All the controls are already bound using the plain **x:Bind** expressions we cov
 
 **Make the editing controls interactive**
 
-1. In DetailPage.xaml, find the **TextBlock** named **TitleTextBlock** and the **RadRating** control after it, and update their **x:Bind** expressions to include **Mode=TwoWay**.
+1. In DetailPage.xaml, find the **TextBlock** named **TitleTextBlock** and the **RatingControl** control after it, and update their **x:Bind** expressions to include **Mode=TwoWay**.
 
     **Before:**
+
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
                Text="{x:Bind item.ImageTitle}"
                ... >
-    <telerikInput:RadRating Value="{x:Bind item.ImageRating}"
+    <muxc:RatingControl Value="{x:Bind item.ImageRating}"
                             ... >
     ```
 
     **After:**
+
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
                Text="{x:Bind item.ImageTitle, Mode=TwoWay}"
                ... >
-    <telerikInput:RadRating Value="{x:Bind item.ImageRating, Mode=TwoWay}"
+    <muxc:RatingControl Value="{x:Bind item.ImageRating, Mode=TwoWay}"
                             ... >
     ```
 
@@ -570,17 +569,13 @@ Now when you run the app, everything works, including the slider labels.
 
 ![Effect sliders with working labels](../design/basics/images/xaml-basics/effect-sliders-after-label-fix.png)
 
-> [!NOTE]
-> Try using function binding with the **TextBlock** from the last play-point and bind it to a new method that returns a string in "000 x 000" format when you pass it the **ItemSize** value.
-
-
 ## Conclusion
 
 This tutorial has given you a taste of data binding and shown you some of the functionality available. One word of caution before we wrap up: not everything is bindable, and sometimes the values you try to connect to are incompatible with the properties you are trying to bind. There is a lot of flexibility in binding, but it won't work in every situation.
 
 One example of a problem not addressed by binding is when a control has no suitable properties to bind to, as with the detail page zoom feature. This zoom slider needs to interact with the **ScrollViewer** that displays the image, but **ScrollViewer** can only be updated through its **ChangeView** method. In this case, we use conventional event handlers to keep the **ScrollViewer** and the zoom slider in sync; see the **DetailPage** **ZoomSlider_ValueChanged** and **MainImageScroll_ViewChanged** methods for details.
 
-Nonetheless, binding is a powerful and flexible way to simplify your code and keep your UI logic separate from your data logic. This will make it much easier for you adjust either side of this divide while reducing the risk of introducing bugs on the other side.
+Nonetheless, binding is a powerful and flexible way to simplify your code and keep your UI logic separate from your data logic. This will make it much easier for you to adjust either side of this divide while reducing the risk of introducing bugs on the other side.
 
 One example of UI and data separation is with the **ImageFileInfo.ImageTitle** property. This property (and the **ImageRating** property) is slightly different than the **ItemSize** property you created in Part 4 because the value is stored in the file metadata (exposed through the **ImageProperties** type) instead of in a field. Additionally, **ImageTitle** returns the **ImageName** value (set to the file name) if there is no title in the file metadata.
 
