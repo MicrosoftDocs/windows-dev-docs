@@ -88,8 +88,7 @@ To add a control by using XAML Designer:
     Your XAML will look something like the following. Don't worry if it's not formatted exactly like this. We abbreviated here to make it easier to read.
 
     ```xaml
-    <TextBlock x:Name="textBlock"
-               HorizontalAlignment="Left"
+    <TextBlock HorizontalAlignment="Left"
                Margin="351,44,0,0"
                TextWrapping="Wrap"
                Text="TextBlock"
@@ -119,7 +118,7 @@ To add a control by using XAML Designer:
 
     ![Document Outline](images/xaml-basics/doc-outline-reset.png)
 
-7. In the **Properties** panel, enter **margin** into the search box to easily find the **Margin** property. Set the left and bottom margins to 24.
+7. In the **Properties** panel, enter `Margin` into the search box to easily find the `Margin` property. Set the left and bottom margins to 24.
 
     ![TextBlock margins](images/xaml-basics/margins.png)
 
@@ -137,7 +136,7 @@ To add a control by using XAML Designer:
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. In the **Properties** panel, enter "**textwrapping**" into the search box to find the `TextWrapping` property. Select the _property marker_ for the `TextWrapping` property to open its menu. (The property marker is the small box symbol to the right of each property value. The property marker is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the `TextWrapping` property.
+9. In the **Properties** panel, enter **textwrapping** into the search box to find the `TextWrapping` property. Select the _property marker_ for the `TextWrapping` property to open its menu. (The property marker is the small box symbol to the right of each property value. The property marker is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the `TextWrapping` property.
 
     Visual Studio adds this property, but it's already set in the style you applied, so you don't need it here.
 
@@ -211,7 +210,7 @@ To add a control by using the XAML editor:
 
 3. For the `GridView` control to show anything, you need to give it a collection of data to show. Open **MainPage.xaml.cs** and find the `GetItemsAsync` method. This method populates a collection called **Images**, which is a property that we've added to **MainPage**.
 
-    After the `foreach` loop in `GetItemsAsync`, add this line of code.
+    At the end of the `GetItemsAsync` method, add this line of code.
 
     ```csharp
     ImageGridView.ItemsSource = Images;
@@ -359,11 +358,102 @@ To add a data template to a grid view:
     </Grid>
     ```
 
-Run the app now to see the `GridView` control with the item template that you just created. Resize the app window. The `GridView` control takes care of rearranging the images for you, but at some widths, there's a lot of space on the right side of the app window. It would look better if the images were centered. We'll take care of that next.
+Run the app now to see the `GridView` control with the item template that you just created. Next, you'll change the background color and add some space between the grid items.
+
+![App UI checkpoint 3](images/xaml-basics/layout-1.png)
+
+## Part 4: Modify the item container style
+
+An item's control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Here, you'll modify the `Background` and `Margin` properties of the control template to give the `GridView` items a gray background.
+
+To modify the item container:
+
+1. In Document Outline, right-click **ImageGridView**. On the shortcut menu, select **Edit Additional Templates** > **Edit Generated Item Container (ItemContainerStyle)** > **Edit a Copy**. The **Create Resource** dialog box opens.
+
+2. In the dialog box, change the **Name (key)** value to **ImageGridView_DefaultItemContainerStyle**, and then select **OK**.
+
+    A copy of the default style is added to the **Page.Resources** section of your XAML.
+
+    ```xaml
+    <Style x:Key="ImageGridView_DefaultItemContainerStyle" TargetType="GridViewItem">
+        <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
+        <Setter Property="Foreground" Value="{ThemeResource GridViewItemForeground}"/>
+        <Setter Property="TabNavigation" Value="Local"/>
+        <Setter Property="IsHoldingEnabled" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,4,4"/>
+        <Setter Property="MinWidth" Value="{ThemeResource GridViewItemMinWidth}"/>
+        <Setter Property="MinHeight" Value="{ThemeResource GridViewItemMinHeight}"/>
+        <Setter Property="AllowDrop" Value="False"/>
+        <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+        <Setter Property="FocusVisualMargin" Value="-2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GridViewItem">
+                <!-- XAML removed for clarity
+                    <ListViewItemPresenter ... />
+                -->   
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    ```
+
+    The `GridViewItem` default style sets a lot of properties. However, in your copy of the template, you only need to keep the properties that want to modify.
+
+    As in the previous step, the **GridView** control's **ItemContainerStyle** property is set to the new **Style** resource.
+
+    ```xaml
+        <GridView x:Name="ImageGridView"
+                  Margin="0,0,0,8"
+                  RelativePanel.AlignLeftWithPanel="True"
+                  RelativePanel.AlignRightWithPanel="True"
+                  RelativePanel.Below="TitleTextBlock"
+                  ItemTemplate="{StaticResource ImageGridView_DefaultItemTemplate}"
+                  ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
+    ```
+
+3. Delete all the `Setter` elements except `Background` and `Margin`.
+
+4. Change the value for the `Background` property to `Gray`.
+
+    **Before**
+
+    ```xaml
+        <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
+    ```
+
+    **After**
+
+    ```xaml
+        <Setter Property="Background" Value="Gray"/>
+    ```
+
+5. Change the value for the `Margin` property to `8`.
+
+    **Before**
+
+    ```xaml
+        <Setter Property="Margin" Value="0,0,4,4"/>
+    ```
+
+    **After**
+
+    ```xaml
+        <Setter Property="Margin" Value="8"/>
+    ```
+
+Run the app and see how it looks now. Resize the app window. The `GridView` control takes care of rearranging the images for you, but at some widths, there's a lot of space on the right side of the app window. It would look better if the images were centered. You'll take care of that next.
 
 ![App UI checkpoint 3](images/xaml-basics/layout-2.png)
 
-## Part 4: Apply some final adjustments to the layout
+> [!Note]
+> If you want to experiment, try setting the `Background` and `Margin` properties to different values and see what effect it has.
+
+## Part 5: Apply some final adjustments to the layout
 
 To center the images on the page, you need to adjust the alignment of the `Grid` control on the page. Or do you need to adjust the alignment of the images in the `GridView`? Does it matter? Let's see.
 
