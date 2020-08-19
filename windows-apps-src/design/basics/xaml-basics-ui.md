@@ -194,6 +194,7 @@ To add a control by using the XAML editor:
     ```
 
     **After TextBlock**
+
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
