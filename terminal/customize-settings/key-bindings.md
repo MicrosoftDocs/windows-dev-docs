@@ -655,6 +655,34 @@ _This command is not currently bound in the default settings_.
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
+
+
+### Set the color scheme ([Preview](https://aka.ms/terminal-preview/))
+
+Changes the active color scheme.
+
+**Command name:** `setColorScheme`
+
+#### Arguments
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `colorScheme` | Required | String | The `name` of the color scheme to apply. |
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+**Example binding:**
+
+```json
+{ "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+
 <br />
 
 ___
