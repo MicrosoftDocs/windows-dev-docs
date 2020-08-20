@@ -60,7 +60,7 @@ For more info about app layout, see the [Layout](/windows/uwp/design/layout/) se
 
 The first step is to define the _breakpoints_ at which different visual states are applied. See [Screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for more information about the breakpoints for small, medium, and large screens.
 
-Open **App.xaml** from the Solution Explorer, and add the following code after the `MergedDictionaries`, right before the closing `</ResourceDictionary>` tag.
+Open App.xaml from the Solution Explorer, and add the following code after the `MergedDictionaries`, right before the closing `</ResourceDictionary>` tag.
 
 ```xaml
     <!--  Window width adaptive breakpoints.  -->
@@ -83,7 +83,7 @@ To make this app look good even when it's shown in a small window, you can creat
 
 ### Create a new DataTemplate
 
- Open **MainPage.xaml** from the Solution Explorer, and add the following code within the `Page.Resources` tags.
+ Open MainPage.xaml from the Solution Explorer, and add the following code within the `Page.Resources` tags.
 
 ```xaml
 <DataTemplate x:Key="ImageGridView_SmallItemTemplate"
@@ -95,6 +95,7 @@ To make this app look good even when it's shown in a small window, you can creat
 
         <!-- Place image in grid, stretching it to fill the pane-->
         <Image x:Name="ItemImage"
+               Source="{x:Bind ImageSource, Mode=OneWay}"
                Stretch="UniformToFill">
         </Image>
 
@@ -178,7 +179,7 @@ Add the following code to the root element of the page, `RelativePanel`.
 
 ### Create StateTriggers to apply the visual state
 
-Next, create the **StateTriggers** that correspond to each snap point. In MainPage.xaml, add the following code to the **VisualStateManager** that you created in Part 2.
+Next, create the `StateTriggers` that correspond to each snap point. In MainPage.xaml, add the following code to the `VisualStateManager` that you created in Part 2.
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -251,7 +252,7 @@ These setters set the `ItemTemplate` of the image gallery to the new `DataTempla
 
 ### Run the app
 
-In the Visual Studio toolbar set the target device to **Local Machine**, and run the app. When the app loads, try changing the size of the window. When you shrink the window to a small size, you should see the app switch to the mobile layout you created in Part 2.
+Run the app. When the app loads, try changing the size of the window. When you shrink the window to a small size, you should see the app switch to the small layout you created in Part 2.
 
 ![Small window: after](../basics/images/xaml-basics/adaptive-layout-small-after.png)
 
