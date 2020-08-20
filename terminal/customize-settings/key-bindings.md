@@ -216,6 +216,25 @@ _This command is not currently bound in the default settings_.
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
+### Send Input ([Preview](https://aka.ms/terminal-preview/))
+
+Send arbitrary text input to the shell.
+As an example the input `"text\n"` will write "text" followed by a newline to the shell.
+
+ANSI escape sequences may be used, but escape codes like `\x1b` must be written as `\u001b`.
+For instance `"\u001b[A"` will behave as if the up arrow button had been pressed.
+
+**Command name:** `sendInput`
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `input` | Required | String | The text input to feed into the shell. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 <br />
 
 ___
