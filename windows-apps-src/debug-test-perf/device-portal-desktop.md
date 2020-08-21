@@ -2,7 +2,7 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
-ms.date: 02/06/2019
+ms.date: 08/20/2020
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -10,7 +10,10 @@ ms.localizationpriority: medium
 
 # Device Portal for Windows Desktop
 
-Windows Device Portal lets you view diagnostic information and interact with your desktop over HTTP from a browser window. You can use Device Portal to do the following:
+Windows Device Portal is a debugging tool that lets you view diagnostic information and interact with your desktop PC over HTTP from a web browser. To debug other devices, see  [Windows Device Portal overview](device-portal.md).
+
+
+You can use Device Portal to do the following:
 - See and manipulate a list of running processes
 - Install, delete, launch, and terminate apps
 - Change Wi-Fi profiles, view signal strength, and see ipconfig
@@ -30,37 +33,46 @@ Starting in Windows 10, version 1607, some of the newer features for desktop are
 
 ### Turn on Device Portal
 
-You can enable Device Portal in the **For developers** section of **Settings**. When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials. 
+You can enable Device Portal in the **For developers** section of **Settings**. When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials.
 
-![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
+![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png)
 
-Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. 
+Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop.
 
-These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host.
+These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host. Once you connect, it should look something like this:
+
+![Device Portal](images/device-portal/device-portal-example.png)
+
+
+### Turn off Device Portal
+
+You can disable Device Portal in the **For developers** section of **Settings**.
 
 ### Connect to Device Portal
 
-To connet through local host, open a browser window and enter the address shown here for the connection type you're using.
+To connect through local host, open a browser window and enter the address shown here for the connection type you're using.
 
 * Localhost: `http://127.0.0.1:<PORT>` or `http://localhost:<PORT>`
 * Local Network: `https://<IP address of the desktop>:<PORT>`
 
 HTTPS is required for authentication and secure communication.
 
-If you are using Device Portal in a protected environment, like a test lab, in which you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable the Authentication option. This enables unencrypted communication, and allows anyone with the IP address of your computer to connect to and control it.
+If you are using Device Portal in a protected environment, for example, in a test lab, in which you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable the Authentication option. This enables unencrypted communication, and allows anyone with the IP address of your computer to connect to and control it.
 
 ## Device Portal content on Windows Desktop
 
-Device Portal on Windows Desktop provides the standard set of pages. For detailed descriptions of these, see [Windows Device Portal overview](device-portal.md).
+Device Portal on Windows Desktop will display the set of pages described in [Windows Device Portal overview](device-portal.md).
 
 - Apps manager
+- Xbox Live
 - File explorer
 - Running Processes
 - Performance
 - Debug
-- Event Tracing for Windows (ETW)
+- ETW (Event Tracing for Windows) logging
 - Performance tracing
 - Device manager
+- Bluetooth
 - Networking
 - Crash data
 - Features
@@ -68,6 +80,12 @@ Device Portal on Windows Desktop provides the standard set of pages. For detaile
 - Streaming Install Debugger
 - Location
 - Scratch
+
+## Using Device Portal for Windows Desktop to test and debug MSIX apps
+
+
+> [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
+
 
 ## More Device Portal options
 
@@ -100,7 +118,7 @@ From an administrative command prompt, you can enable and configure parts of Dev
 	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
 	- See the [MSDN Magazine article](https://msdn.microsoft.com/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
 
-## Common errors and issues
+## Troubleshooting
 
 Below are some common errors that you may encounter when setting up Device Portal.
 
