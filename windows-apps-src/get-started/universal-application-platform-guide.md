@@ -2,14 +2,21 @@
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 05/07/2018
+ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
 # What's a Universal Windows Platform (UWP) app?
 
-![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, partner center, and cloud services](images/universalapps-overview.png)
+
+## Where does UWP fit in the Microsoft development story?
+
+UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
+
+The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+
+## Features of a UWP app
 
 A UWP app is:
 
@@ -71,7 +78,7 @@ You can choose how you'll monetize your app. There are a number of ways to make 
 - A paid download is the simplest option. Just name the price.
 - Trials let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
 - Sale prices to incentivize users.
-- In-app purchases and ads are also available.
+- In-app purchases.
 
 ### Apps from the Microsoft Store provide a seamless install, uninstall, and upgrade experience
 
