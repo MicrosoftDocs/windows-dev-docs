@@ -33,7 +33,7 @@ The APIs found in the **Windows.Graphics.Capture** namespace require a general c
 
 Before launching the system UI, you can check to see if your application is currently able to take screen captures. There are several reasons why your application might not be able to use screen capture, including if the device does not meet hardware requirements or if the application targeted for capture blocks screen capture. Use the **IsSupported** method in the [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) class to determine if UWP screen capture is supported:
 
-```cs
+```csharp
 // This runs when the application starts.
 public void OnInitialization()
 {
@@ -55,7 +55,7 @@ End Sub
 
 Once you've verified that screen capture is supported, use the [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) class to invoke the system picker UI. The end user uses this UI to select the display or application window of which to take screen captures. The picker will return a [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem) that will be used to create a **GraphicsCaptureSession**:
 
-```cs
+```csharp
 public async Task StartCaptureAsync()
 {
     // The GraphicsCapturePicker follows the same pattern the
@@ -90,7 +90,7 @@ End Function
 
 Because this is UI code, it needs to be called on the UI thread. If you're calling it from the code-behind for a page of your application (like **MainPage.xaml.cs**) this is done for you automatically, but if not, you can force it to run on the UI thread with the following code:
 
-```cs
+```csharp
 CoreWindow window = CoreApplication.MainView.CoreWindow;
 
 await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
@@ -109,7 +109,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 Using the **GraphicsCaptureItem**, you will create a [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) with your D3D device, supported pixel format (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**), number of desired frames (which can be any integer), and frame size. The **ContentSize** property of the **GraphicsCaptureItem** class can be used as the size of your frame:
 
-```cs
+```csharp
 private GraphicsCaptureItem _item;
 private Direct3D11CaptureFramePool _framePool;
 private CanvasDevice _canvasDevice;
@@ -146,7 +146,7 @@ End Sub
 
 Next, get an instance of the **GraphicsCaptureSession** class for your **Direct3D11CaptureFramePool** by passing the **GraphicsCaptureItem** to the **CreateCaptureSession** method:
 
-```cs
+```csharp
 _session = _framePool.CreateCaptureSession(_item);
 ```
 
@@ -162,7 +162,7 @@ To capture multiple items at the same time, your application must create a captu
 
 With your frame pool and capture session created, call the **StartCapture** method on your **GraphicsCaptureSession** instance to notify the system to start sending capture frames to your app:
 
-```cs
+```csharp
 _session.StartCapture();
 ```
 
@@ -172,7 +172,7 @@ _session.StartCapture()
 
 To acquire these capture frames, which are [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe) objects, you can use the **Direct3D11CaptureFramePool.FrameArrived** event:
 
-```cs
+```csharp
 _framePool.FrameArrived += (s, a) =>
 {
     // The FrameArrived event fires for every frame on the thread that
@@ -226,7 +226,7 @@ The underlying Direct3D surface will always be the size specified when creating 
 
 In our example, we convert each **Direct3D11CaptureFrame** into a [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), which is part of the [Win2D APIs](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
-```cs
+```csharp
 // Convert our D3D11 surface into a Win2D object.
 CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     _canvasDevice,
@@ -235,7 +235,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
 
 Once we have the **CanvasBitmap**, we can save it as an image file. In the following example, we save it as a PNG file in the user's **Saved Pictures** folder.
 
-```cs
+```csharp
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
 StorageFile file = await pictureFolder.CreateFileAsync("test.png", CreationCollisionOption.ReplaceExisting);
 
@@ -258,7 +258,7 @@ The following code snippet is an end-to-end example of how to implement screen c
 > [!NOTE]
 > This snippet uses [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), a library for 2D graphics rendering. See their documentation for information about how to set it up for your project.
 
-```cs
+```csharp
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.UI.Composition;
 using System;
