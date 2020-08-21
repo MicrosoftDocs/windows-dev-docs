@@ -279,12 +279,12 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
             }
         private:
             bool _contentLoaded{ false };
-            std::shared_ptr<XamlMetaDataProvider> _appProvider;
-            std::shared_ptr<XamlMetaDataProvider> AppProvider()
+            std::unique_ptr<XamlMetaDataProvider> _appProvider;
+            std::unique_ptr<XamlMetaDataProvider> AppProvider()
             {
                 if (!_appProvider)
                 {
-                    _appProvider = std::make_shared<XamlMetaDataProvider>();
+                    _appProvider = std::make_unique<XamlMetaDataProvider>();
                 }
                 return _appProvider;
             }
