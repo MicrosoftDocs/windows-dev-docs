@@ -168,7 +168,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 In this example, we pass the string "wl.basic" to the _scope_ parameter. Scope represents the type of information you are requesting from the providing service on a specific user. Certain scopes provide access only to a user's basic information, like name and email address, while other scopes might grant access to sensitive information such as the user's photos or email inbox. Generally, your app should use the least permissive scope necessary to achieve its function. Service providers will provide documentation on which scopes are needed to get tokens for use with their services. 
 
-* For Microsoft 365 and Outlook.com scopes, see [Authenticate Microsoft 365 and Outlook.com APIs using the v2.0 authentication endpoint](https://developer.microsoft.com/graph/docs/concepts/auth_overview). 
+* For Microsoft 365 and Outlook.com scopes, see [Use the Outlook REST API (version 2.0)](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). 
 * For OneDrive scopes, see [OneDrive authentication and sign-in](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
