@@ -3,7 +3,7 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/21/2020
+ms.date: 08/25/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -182,7 +182,7 @@ This allows you to switch between full screen and default window sizes.
 { "command": "toggleFullscreen", "keys": "f11" }
 ```
 
-### Toggle focus mode ([Preview](https://aka.ms/terminal-preview/))
+### Toggle focus mode
 
 This allows you to enter "focus mode", which hides the tabs and title bar.
 
@@ -196,10 +196,7 @@ _This command is not currently bound in the default settings_.
 { "command": "toggleFocusMode", "keys": "" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Toggle always on top mode ([Preview](https://aka.ms/terminal-preview/))
+### Toggle always on top mode
 
 This allows you toggle the "always on top" state of the window. When in "always on top" mode, the window will appear on top of all other non-topmost windows.
 
@@ -213,10 +210,7 @@ _This command is not currently bound in the default settings_.
 { "command": "toggleAlwaysOnTop", "keys": "" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Send Input ([Preview](https://aka.ms/terminal-preview/))
+### Send input ([Preview](https://aka.ms/terminal-preview/))
 
 Send arbitrary text input to the shell.
 As an example the input `"text\n"` will write "text" followed by a newline to the shell.
@@ -340,7 +334,7 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
-### Rename tab ([Preview](https://aka.ms/terminal-preview/))
+### Rename tab
 
 This command can be used to rename a tab to a specific string.
 
@@ -364,10 +358,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Change tab color ([Preview](https://aka.ms/terminal-preview/))
+### Change tab color
 
 This command can be used to change the color of a tab to a specific value.
 
@@ -391,10 +382,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The new color to use for this tab. If omitted, this command will revert the tab's color back to its original value. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Open tab color picker ([Preview](https://aka.ms/terminal-preview/))
+### Open tab color picker
 
 This command can be used to open the color picker for the active tab. The color picker can be used to set a color for the tab at runtime.
 
@@ -407,9 +395,6 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "openTabColorPicker", "keys": "" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -638,7 +623,7 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
 
-### Toggle retro terminal effects ([Preview](https://aka.ms/terminal-preview/))
+### Toggle retro terminal effects
 
 This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
@@ -651,11 +636,6 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "toggleRetroEffect", "keys": "" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-
 
 ### Set the color scheme ([Preview](https://aka.ms/terminal-preview/))
 
