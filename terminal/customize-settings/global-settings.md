@@ -283,6 +283,9 @@ When this is set to `true`, the color and font formatting of the selected text i
 
 **Default value:** `false`
 
+> [!IMPORTANT]
+> `"all"`, `"none"`, `"html"`, and `"rtf"` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Word delimiters
 
 This determines the word delimiters used in a double-click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.

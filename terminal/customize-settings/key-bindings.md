@@ -518,6 +518,9 @@ This copies the selected terminal content to your clipboard.
 | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
 | `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `copyFormatting` behavior is inherited. |
 
+> [!IMPORTANT]
+> `copyFormatting` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Paste
 
 This inserts the content that was copied onto the clipboard.
