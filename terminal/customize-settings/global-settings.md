@@ -89,13 +89,14 @@ The tab switcher will open on the initial press of the keybindings for `nextTab`
 
 **Default value:** `true`
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 :::column-end:::
 :::column span="":::
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Always show tabs
 

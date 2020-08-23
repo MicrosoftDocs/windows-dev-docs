@@ -196,13 +196,13 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 
 :::row:::
 :::column span="":::
-This sets the padding around the text within the window. This will accept three different formats: `"#"` sets the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
+This sets the padding around the text within the window. This will accept three different formats: `"#"` and `#` set the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
 
 **Property name:** `padding`
 
 **Necessity:** Optional
 
-**Accepts:** Values as a string in the following formats: `"#"`, `"#, #"`, `"#, #, #, #"`
+**Accepts:** Values as a string in the following formats: `"#"`, `"#, #"`, `"#, #, #, #"` or value as an integer: `#`
 
 **Default value:** `"8, 8, 8, 8"`
 
@@ -212,6 +212,9 @@ This sets the padding around the text within the window. This will accept three 
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> `padding` as an integer is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Antialiasing text
 
