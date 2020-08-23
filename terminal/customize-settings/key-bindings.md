@@ -311,6 +311,23 @@ This opens the tab to the left of the current one.
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
 
+### Tab search ([Preview](https://aka.ms/terminal-preview/))
+
+This opens the tab search box.
+
+**Command name:** `tabSearch`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "tabSearch", "keys": "ctrl+shift+t"}
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Open a specific tab
 
 This opens a specific tab depending on the index.
