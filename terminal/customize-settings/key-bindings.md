@@ -321,24 +321,6 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
-
-### Tab Search ([Preview](https://aka.ms/terminal-preview/))
-
-This opens the tab search box.
-
-**Command name:** `tabSearch`
-
-**Default binding:**
-
-_This command is not currently bound in the default settings_.
-
-```json
-{"command": "tabSearch", "keys": "ctrl+shift+t"}
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Rename tab ([Preview](https://aka.ms/terminal-preview/))
 
 This command can be used to rename a tab to a specific string.
