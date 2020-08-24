@@ -463,6 +463,23 @@ This changes focus to a different pane depending on the direction.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
 
+### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
+
+This expands the focused pane to fill the entire contents of the window.
+
+**Command name:** `togglePaneZoom`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "togglePaneZoom", "keys": "" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Resize a pane
 
 This changes the size of the active pane.
