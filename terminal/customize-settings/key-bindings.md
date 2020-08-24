@@ -3,7 +3,7 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/25/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high

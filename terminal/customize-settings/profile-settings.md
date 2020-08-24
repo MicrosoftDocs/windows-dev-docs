@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/21/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -303,6 +303,19 @@ This is the name of the color scheme used in the profile. Color schemes are defi
 **Accepts:** Name of color scheme as a string
 
 **Default value:** `"Campbell"`
+
+### Tab color ([Preview](https://aka.ms/terminal-preview))
+
+This sets the color of the profile's tab. Using the tab color picker will override this color.
+
+**Property name:** `tabColor`
+
+**Necessity:** Optional
+
+**Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Foreground color
 
