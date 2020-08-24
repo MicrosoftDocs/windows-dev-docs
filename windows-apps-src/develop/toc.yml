@@ -1379,6 +1379,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: Create and register an out-of-process background task
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: Create and register a winmain COM background task
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: Port an out-of-process background task to an in-process background task
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: Debug a background task
