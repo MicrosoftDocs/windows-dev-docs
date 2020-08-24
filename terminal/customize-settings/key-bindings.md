@@ -223,6 +223,14 @@ For instance `"\u001b[A"` will behave as if the up arrow button had been pressed
 
 **Command name:** `sendInput`
 
+**Default bindings:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "sendInput", "input": "\u001b[A" }, "keys": "" }
+```
+
 #### Actions
 
 | Name | Necessity | Accepts | Description |
