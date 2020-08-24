@@ -252,6 +252,52 @@ This closes the current tab.
 
 **Command name:** `closeTab`
 
+### Close all other tabs ([Preview](https://aka.ms/terminal-preview/))
+
+This closes all tabs except for the one at an index.
+
+**Command name:** `closeOtherTabs`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "closeOtherTabs", "index": "" }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Required | Integer | Position of the tab to be kept open. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+### Close tabs after index ([Preview](https://aka.ms/terminal-preview/))
+
+This closes the tabs following the tab at an index.
+
+**Command name:** `closeTabsAfter`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "closeTabsAfter", "index": "" }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Required | Integer | Position of the last tab to be kept open. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Duplicate tab
 
 This makes a copy of the current tab and opens it.
