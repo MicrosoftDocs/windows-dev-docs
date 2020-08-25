@@ -263,7 +263,7 @@ This closes all tabs except for the one at an index.
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": { "action": "closeOtherTabs", "index": "" }, "keys": "" }
+{ "command": { "action": "closeOtherTabs", "index":  }, "keys": "" }
 ```
 
 #### Actions
@@ -286,7 +286,7 @@ This closes the tabs following the tab at an index.
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": { "action": "closeTabsAfter", "index": "" }, "keys": "" }
+{ "command": { "action": "closeTabsAfter", "index":  }, "keys": "" }
 ```
 
 #### Actions
