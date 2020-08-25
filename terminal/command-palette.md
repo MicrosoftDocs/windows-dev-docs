@@ -30,7 +30,7 @@ There are three different ways you can define a command in Windows Terminal.
 
 1. With a value for `keys` without a `name`
 
-This is the behavior that is documented on the [key bindings page](./customize-settings/key-bindings.md). These commands will **not** appear in the command palette.
+This is the behavior that is documented on the [key bindings page](./customize-settings/key-bindings.md). These commands can be invoked with the defined key binding. The commands will appear in the command palette if Windows Terminal can autogenerate a reasonable name for it.
 
 ```json
 { "command": "newTab", "keys": "ctrl+shift+t" }
