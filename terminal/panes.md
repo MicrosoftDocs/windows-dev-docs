@@ -57,7 +57,7 @@ You can customize this by adding key bindings for the `moveFocus` command and se
 
 You can adjust the size of your panes by holding <kbd>alt+shift</kbd> and using your arrow keys to resize the focused pane.
 
-![Windows Terminal create pane](./images/resize-panes.gif)
+![Windows Terminal resize pane](./images/resize-panes.gif)
 
 To customize this key binding, you can add new ones using the `resizePane` action and setting the `direction` to either `down`, `left`, `right`, or `up`.
 

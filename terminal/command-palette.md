@@ -56,32 +56,30 @@ These commands will be added to the command palette and can be invoked with the 
 
 ### Adding an icon
 
-You can optionally add an icon to a command that appears in the command palette. This can be done by adding the `icon` property to the command.
+You can optionally add an icon to a command that appears in the command palette. This can be done by adding the `icon` property to the command. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
 
 ```json
-{ "icon": "", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" }
+{ "icon": "C:\\Images\\my-icon.png", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" },
+{ "icon": "\uE756", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" },
+{ "icon": "⚡", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" }
 ```
 
 ### Nested commands
 
-Nested commands let you group multiple commands under one item in the command palette. This can be done with the following syntax:
+Nested commands let you group multiple commands under one item in the command palette. The example below groups the font resize commands under one command palette item called "Change font size...".
 
 ```json
 {
-    "name": "Split PowerShell panes",
+    "name": "Change font size...",
     "commands": [
-        {
-            "command": { "action": "splitPane", "profile": "PowerShell", "split": "auto" }
-        },
-        {
-            "command": { "action": "splitPane", "profile": "PowerShell", "split": "vertical" }
-        },
-        {
-            "command": { "action": "splitPane", "profile": "PowerShell", "split": "horizontal" }
-        }
+        { "command": { "action": "adjustFontSize", "delta": 1 } },
+        { "command": { "action": "adjustFontSize", "delta": -1 } },
+        { "command": "resetFontSize" },
     ]
 },
 ```
+
+((ADD A GIF))
 
 ### Iterable commands
 
@@ -99,4 +97,12 @@ Iterable commands let you iterate over an array defined in your settings.json fi
         }
     ]
 },
+```
+
+## Hiding a command
+
+If you would like to keep a command in your key bindings list but not have it appear in the command palette, you can hide it by setting its `name` to `null`. The example below hides the "New tab" action from the command palette.
+
+```json
+{ "name": null, "command": "newTab", "keys": "ctrl+shift+t" }
 ```
