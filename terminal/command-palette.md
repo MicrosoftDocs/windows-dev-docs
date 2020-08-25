@@ -31,7 +31,7 @@ If you'd like to enter a `wt` command into the command palette, you can do so by
 
 ## Defining commands
 
-There are three different ways you can define a command in Windows Terminal.
+Commands are automatically generated for each of the actions in your `keybindings`, when possible. If you'd like to add other commands to the command palette, you can define them in three different ways.
 
 #### With a value for `keys` without a `name`
 
@@ -90,11 +90,11 @@ Iterable commands let you create multiple commands at the same time, generated f
 
 You can currently iterate over the following properties:
 
-| Object | Property |
-| ------ | -------- |
-| `profiles` | `name` |
-| `profiles` | `icon` |
-| `schemes` | `name` |
+| `iterateOn` | Property | Property syntax |
+| ----------- | -------- | --------------- |
+| `profiles` | `name` | `"name": "{$profile.name}"` |
+| `profiles` | `icon` | `"icon": "{$profile.icon}"` |
+| `schemes` | `name` | `"name": "{$scheme.name}"` |
 
 #### Example
 
