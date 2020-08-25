@@ -268,6 +268,58 @@ private async Task TryPostJsonAsync()
 }
 ```
 
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Security.Cryptography.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+#include <sstream>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+
+int main()
+{
+    init_apartment();
+
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Construct the HttpClient and Uri. This endpoint is for test purposes only.
+        Windows::Web::Http::HttpClient httpClient;
+        Uri requestUri{ L"https://www.contoso.com/post" };
+
+        // Construct the JSON to post.
+        Windows::Web::Http::HttpStringContent jsonContent(
+            L"{ \"firstName\": \"Eliot\" }",
+            UnicodeEncoding::Utf8,
+            L"application/json");
+
+        // Post the JSON, and wait for a response.
+        httpResponseMessage = httpClient.PostAsync(
+            requestUri,
+            jsonContent).get();
+
+        // Make sure the post succeeded, and write out the response.
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+        std::wcout << httpResponseBody.c_str();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        std::wcout << ex.message().c_str();
+    }
+}
+```
+
 ## Exceptions in Windows.Web.Http
 
 An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) object.

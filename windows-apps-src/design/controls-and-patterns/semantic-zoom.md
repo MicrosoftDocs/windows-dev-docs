@@ -4,7 +4,7 @@ title: Semantic zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -53,17 +53,17 @@ Don't confuse semantic zooming with optical zooming. While they share both the s
 </tr>
 </table>
 
+**XAML Controls Gallery**
+
+The SemanticZoom section within the Controls Gallery demonstrates a navigation experience that allows users to quickly zoom in and out of grouped sections of control types. 
+
+![example of semantic zoom used in the XAMl Controls Gallery](images/semanticzoom-gallery.gif)
+
 **Photos app**
 
 Here's a semantic zoom used in the Photos app. Photos are grouped by month. Selecting a month header in the default grid view zooms out to the month list view for quicker navigation.
 
 ![A semantic zoom used in the Photos app](images/control-examples/semantic-zoom-photos.png)
-
-**Address book**
-
-An address book is another example of a data set that can be much easier to navigate using semantic zoom. You can use the zoomed-out view to quickly jump to the letter you need (left image), while the zoomed-in view displays the individual data items (right image).
-
-![example of semantic zoom used in a contacts list](images/semanticzoom-win10.png)
 
 ## Create a semantic zoom
 

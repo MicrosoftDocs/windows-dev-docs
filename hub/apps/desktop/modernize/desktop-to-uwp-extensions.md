@@ -1,7 +1,7 @@
 ---
-Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
+description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 title: Modernize existing desktop apps using Desktop Bridge
-ms.date: 04/18/2018
+ms.date: 08/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
@@ -401,11 +401,15 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 ### Place your DLL files into any folder of the package
 
-Use an extension to identify those folders. That way, the system can find and load the files that you place in them. Think of this extension as a replacement of the _%PATH%_ environment variable.
+Use the [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) extension to declare up to five folder paths in the app package, relative to the app package root path, to be used in the loader search path for the app's processes.
 
-If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
+The [DLL search order](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order) for Windows apps includes packages in the package dependency graph if the packages have execution rights. By default, this includes main, optional and framework packages, although this can be overwritten by the [uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) element in the package manifest.
 
-Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](/windows/msix/package/optional-packages).
+A package that is included in the DLL search order will, by default, include its *effective path*. For more information about effective paths, see the [EffectivePath](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.effectivepath) property (WinRT) and the [PackagePathType](https://docs.microsoft.com/windows/win32/api/appmodel/ne-appmodel-packagepathtype) enumeration (Win32).
+
+If a package specifies [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride), then this information is used instead of the package's effective path.
+
+Each package can contain only one [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) extension. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](/windows/msix/package/optional-packages).
 
 #### XML namespace
 
@@ -427,7 +431,7 @@ Declare this extension at the package-level of your app manifest.
 |Name | Description |
 |-------|-------------|
 |Category |Always ``windows.loaderSearchPathOverride``.
-|FolderPath | The path of the folder that contains your dll files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't included duplicate paths and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.|
+|FolderPath | The path of the folder that contains your DLL files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't include duplicate paths, and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.|
 
 #### Example
 

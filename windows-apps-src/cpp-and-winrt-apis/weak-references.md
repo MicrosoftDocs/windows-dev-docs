@@ -100,7 +100,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
+A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
 
 > [!IMPORTANT]
 > Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -248,7 +248,7 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 
 ### The solution
 
-The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
+The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 > [!IMPORTANT]
 > Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).

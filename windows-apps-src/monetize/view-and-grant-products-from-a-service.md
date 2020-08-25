@@ -17,7 +17,7 @@ These APIs consist of REST methods that are designed to be used by developers wi
 -   Microsoft Store purchase API: [Grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), and [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
-> The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.
+> The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory.
 
 ## Overview
 

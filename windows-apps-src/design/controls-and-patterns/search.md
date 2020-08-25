@@ -81,13 +81,12 @@ For most apps, it's best to have a text input field as the search entry point, w
 
 Before clicking search icon:
 
-![example of a search icon and collapsed search box](images/search-icon-collapsed.png)
+![example of a search icon and collapsed search box](images/search-icon-collapsed-maps.png)
 
- 
 
 After clicking search icon:
 
-![example of a search icon and expanded search box](images/search-icon-expanded.png)
+![example of search in a navigation menu](images/search-icon-expanded-maps.png)
 
  
 
@@ -114,13 +113,13 @@ Search as an action in the Windows tool bar:
 
 Search as an input on the app canvas:
 
-![example of search on an app canvas](images/search-canvas-contacts.png)
+![example of search on an app canvas](images/search-app-canvas.png)
 
  
 
-Search in a navigation pane:
+Search in a navigation pane in the Maps app:
 
-![example of search in a navigation menu](images/search-navmenu.png)
+![example of search in a navigation menu](images/search-icon-expanded-maps.png)
 
  
 

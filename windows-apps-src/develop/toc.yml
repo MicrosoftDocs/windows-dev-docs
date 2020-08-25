@@ -60,7 +60,7 @@
           href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
           items:
             - name: Process audio frames with MediaFrameReader
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
             - name: Use OpenCV with MediaFrameReader
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Capture from multiple sources using MediaFrameSourceGroup
@@ -795,6 +795,8 @@
           href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
         - name: Interop with C++/CX
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: Asynchrony, and interop with C++/CX
+          href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
         - name: Porting a sample app from C#
@@ -1377,6 +1379,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: Create and register an out-of-process background task
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: Create and register a winmain COM background task
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: Port an out-of-process background task to an in-process background task
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: Debug a background task
