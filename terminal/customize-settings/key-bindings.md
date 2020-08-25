@@ -380,7 +380,7 @@ This opens the tab search box.
 _This command is not currently bound in the default settings_.
 
 ```json
-{"command": "tabSearch", "keys": "ctrl+shift+t"}
+{"command": "tabSearch", "keys": ""}
 ```
 
 > [!IMPORTANT]
