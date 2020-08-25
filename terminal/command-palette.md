@@ -36,7 +36,7 @@ This is the behavior that is documented on the [key bindings page](./customize-s
 { "command": "newTab", "keys": "ctrl+shift+t" }
 ```
 
-2. Without a value for `keys` with a `name`
+2. Without a value for `keys`, but with a `name`
 
 These commands will be added to the command palette, however they cannot be invoked solely with the keyboard.
 
