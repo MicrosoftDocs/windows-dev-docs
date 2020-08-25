@@ -11,10 +11,10 @@ ms.localizationpriority: high
 
 # Custom key bindings in Windows Terminal
 
-You can create custom key bindings (keyboard shortcuts) inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
-
 > [!NOTE]
 > If you are using [Windows Terminal Preview](https://aka.ms/terminal-preview) and want to customize commands in the command palette, additional information can be found on the [Command palette page](./../command-palette.md).
+
+You can create custom key bindings (keyboard shortcuts) inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
 ## Key binding formats
 
