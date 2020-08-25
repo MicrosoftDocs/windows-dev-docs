@@ -254,7 +254,7 @@ This closes the current tab.
 
 ### Close all other tabs ([Preview](https://aka.ms/terminal-preview/))
 
-This closes all tabs except for the one at an index.
+This closes all tabs except for the one at an index. If no index is provided, use the focused tab's index.
 
 **Command name:** `closeOtherTabs`
 
@@ -263,21 +263,23 @@ This closes all tabs except for the one at an index.
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": { "action": "closeOtherTabs", "index":  }, "keys": "" }
+{ "command": { "action": "closeOtherTabs", "index": 1 }, "keys": "" }
+{ "command": { "action": "closeOtherTabs", "index": null }, "keys": "" }
+{ "command": "closeOtherTabs", "keys": "" }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `index` | Required | Integer | Position of the tab to be kept open. |
+| `index` | Optional | Integer | Position of the tab to be kept open. |
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Close tabs after index ([Preview](https://aka.ms/terminal-preview/))
 
-This closes the tabs following the tab at an index.
+This closes the tabs following the tab at an index. If no index is provided, use the focused tab's index.
 
 **Command name:** `closeTabsAfter`
 
@@ -286,14 +288,16 @@ This closes the tabs following the tab at an index.
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": { "action": "closeTabsAfter", "index":  }, "keys": "" }
+{ "command": { "action": "closeTabsAfter", "index": 1 }, "keys": "" }
+{ "command": { "action": "closeTabsAfter", "index": null }, "keys": "" }
+{ "command": "closeTabsAfter", "keys": "" }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `index` | Required | Integer | Position of the last tab to be kept open. |
+| `index` | Optional | Integer | Position of the last tab to be kept open. |
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
