@@ -1,6 +1,6 @@
 ---
-Description: Common questions about ad campaigns
 title: View answers to common questions about ad campaigns for your apps on topics including cost, billing, customization, and support.
+description: Common questions about ad campaigns
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article

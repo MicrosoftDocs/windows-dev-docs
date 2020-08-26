@@ -1,6 +1,6 @@
 ---
-Description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.
 title: Directionality and gravity - animation in Windows apps
+description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
