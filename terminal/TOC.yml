@@ -16,12 +16,14 @@
           href: customize-settings/key-bindings.md
     - name: Command line arguments
       href: command-line-arguments.md
-    - name: Dynamic profiles
-      href: dynamic-profiles.md
+    - name: Command palette
+      href: command-palette.md
     - name: Search
       href: search.md
     - name: Panes
       href: panes.md
+    - name: Dynamic profiles
+      href: dynamic-profiles.md
     - name: Cascadia Code
       href: cascadia-code.md
     - name: Tips and tricks
