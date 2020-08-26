@@ -29,7 +29,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 
 1. Ensure that your development computer has Windows 10, version 1803 (build 17134), or newer installed.
 
-2. Install [Visual Studio 2019, version 16.7 Preview 3](https://visualstudio.microsoft.com/vs/preview)
+2. Install [Visual Studio 2019, version 16.7.2](https://visualstudio.microsoft.com/vs/)
 
     You must include the following workloads when installing Visual Studio:
     - .NET Desktop Development
@@ -39,6 +39,9 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
 
+    Once you've downloaded Visual Studio, make sure you enable .NET previews within the program: 
+    - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
+
 3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5:
 
     - x64: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
@@ -47,6 +50,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 4. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
     For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+
 
 ## Create WinUI projects
 
