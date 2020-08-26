@@ -388,15 +388,15 @@ _This command is not currently bound in the default settings_.
 {"command": "tabSearch", "keys": ""}
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 :::column-end:::
 :::column span="":::
 ![Windows Terminal tab search](./../images/tab-search.gif)
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Open a specific tab
 
@@ -541,15 +541,15 @@ _This command is not currently bound in the default settings_.
 { "command": "togglePaneZoom", "keys": "" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 :::column-end:::
 :::column span="":::
 ![Windows Terminal toggle pane zoom](./../images/toggle-pane-zoom.gif)
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Resize a pane
 
