@@ -1,5 +1,5 @@
 ---
-Description: View different parts of your app in separate windows.
+description: Help users be more productive by letting them view independent parts of your app in separate windows.
 title: Show multiple views for an app
 ms.date: 05/19/2017
 ms.topic: article

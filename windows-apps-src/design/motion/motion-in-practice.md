@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+description: Learn how Fluent motion fundamentals like timing, easing, directionality, and gravity come together in your app.
 title: Motion in practice - animation in Windows apps
 label: Motion in practice
 template: detail.hbs

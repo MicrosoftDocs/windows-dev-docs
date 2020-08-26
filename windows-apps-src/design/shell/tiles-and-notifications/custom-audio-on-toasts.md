@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+description: Learn how to use custom audio on your toast notifications to let your app express your brand's unique sound effects.
 title: Custom audio on toasts
 label: Custom audio on toasts
 template: detail.hbs
