@@ -1,5 +1,5 @@
 ---
-Description: description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
+description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
 title: Command bar
 label: App bars/command bars
 template: detail.hbs
