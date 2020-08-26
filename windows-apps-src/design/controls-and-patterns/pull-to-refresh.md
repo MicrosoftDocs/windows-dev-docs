@@ -1,5 +1,5 @@
 ---
-Description: Use the pull-to-refresh control to get new content into a list.
+Description: Learn how to implement a pull-to-refresh control that lets a user pull down on a list of data using touch in order to retrieve more data.
 title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs

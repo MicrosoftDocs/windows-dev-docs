@@ -1,5 +1,5 @@
 ---
-Description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes.
+Description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.
 title: Directionality and gravity - animation in Windows apps
 label: Directionality and gravity
 template: detail.hbs
@@ -53,7 +53,7 @@ When navigation causes an object to travel from the previous scene to the new sc
 
 For back navigation, the move is reversed (B-to-A). When the user navigates back, they have an expectation to be returned to the previous state as soon as possible. The timing is quicker, more direct, and uses the decelerate easing.
 
-Here, these priciples are applied as the selected item stays on screen during forward and back navigation.
+Here, these principles are applied as the selected item stays on screen during forward and back navigation.
 
 ![UI example of continuous motion](images/continuous3.gif)
 

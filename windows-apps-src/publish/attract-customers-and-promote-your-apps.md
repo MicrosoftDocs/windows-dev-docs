@@ -1,5 +1,5 @@
 ---
-Description: Attract customers and promote your apps
+Description: Learn about features in Partner Center like ad campaigns, promo codes, and sale pricing that help you promote your apps and attract customers.
 title: Attract customers and promote your apps
 ms.date: 10/31/2018
 ms.topic: article
