@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Storyboarded animations
-description: Storyboarded animations are not just animations in the visual sense.
+description: Learn how to use storyboarded animations to change the value of a dependency property as a function of time.
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
