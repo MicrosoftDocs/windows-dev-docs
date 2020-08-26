@@ -96,6 +96,4 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
 ```
 
-### New terminal arguments
-
 [!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]
