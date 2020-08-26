@@ -374,6 +374,8 @@ This opens the tab to the left of the current one.
 
 ### Tab search ([Preview](https://aka.ms/terminal-preview/))
 
+:::row:::
+:::column span="":::
 This opens the tab search box.
 
 **Command name:** `tabSearch`
@@ -388,6 +390,13 @@ _This command is not currently bound in the default settings_.
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab search](./../images/tab-search.gif)
+
+:::column-end:::
+:::row-end:::
 
 ### Open a specific tab
 

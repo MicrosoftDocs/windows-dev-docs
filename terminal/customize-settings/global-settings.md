@@ -91,6 +91,7 @@ The tab switcher will open on the initial press of the keybindings for `nextTab`
 
 :::column-end:::
 :::column span="":::
+![Windows Terminal tab switcher](./../images/tab-switcher.gif)
 
 :::column-end:::
 :::row-end:::
