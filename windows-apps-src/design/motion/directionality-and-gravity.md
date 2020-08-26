@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes.
 title: Directionality and gravity - animation in Windows apps
 label: Directionality and gravity
 template: detail.hbs
