@@ -527,6 +527,8 @@ This changes focus to a different pane depending on the direction.
 
 ### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
 
+:::row:::
+:::column span="":::
 This expands the focused pane to fill the entire contents of the window.
 
 **Command name:** `togglePaneZoom`
@@ -541,6 +543,13 @@ _This command is not currently bound in the default settings_.
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal toggle pane zoom](./../images/toggle-pane-zoom.gif)
+
+:::column-end:::
+:::row-end:::
 
 ### Resize a pane
 
