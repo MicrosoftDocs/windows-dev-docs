@@ -1,7 +1,7 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: Getting started with common controls
 title: Getting started with Common Controls
+description: View a list of links to topics about common Universal Windows Platform (UWP) controls and their equivalent iOS controls.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

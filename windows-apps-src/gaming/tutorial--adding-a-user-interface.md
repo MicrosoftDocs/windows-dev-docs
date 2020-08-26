@@ -1,6 +1,6 @@
 ---
 title: Add a user interface
-description: Learn how to add a 2D user interface overlay to a DirectX UWP game.
+description: Learn how to use Direct2D APIs to add a 2D user interface overlay with a heads up display and game state menus to a DirectX UWP game.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article

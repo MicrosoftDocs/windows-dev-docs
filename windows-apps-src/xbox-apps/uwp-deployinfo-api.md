@@ -1,6 +1,6 @@
 ---
 title: Device Portal deploy info API reference
-description: Learn how to access the deploy info API programatically.
+description: Learn how to use the Xbox Device Portal REST API deployinfo to request deployment information for one or more installed packages.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017

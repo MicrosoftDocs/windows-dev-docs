@@ -1,6 +1,6 @@
 ---
 title: Visual Studio tools for game programming
-description: An overview of DirectX specific tools available in Visual Studio.
+description: Learn about the tools for DirectX game programming that are available in Visual Studio, including the Image Editor, Model Editor, and Shader Designer.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.date: 02/08/2017
 ms.topic: article

@@ -1,6 +1,6 @@
 ---
 title: Change history for Microsoft Store Policies
-description: Change history for Microsoft Store Policies
+description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
 ms.date: 10/01/2019
 ms.topic: article
 keywords: store policies agreement
