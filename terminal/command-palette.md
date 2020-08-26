@@ -27,7 +27,7 @@ You can invoke the command palette by typing `ctrl+shift+p`. This can be customi
 
 If you'd like to enter a `wt` command into the command palette, you can do so by starting with the `>` character. This will run the `wt` command in the current window. More information on `wt` commands can be found on the [Command line arguments page](./command-line-arguments.md).
 
-((ADD A GIF))
+![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
 ## Defining commands
 
@@ -79,10 +79,10 @@ Nested commands let you group multiple commands under one item in the command pa
         { "command": { "action": "adjustFontSize", "delta": -1 } },
         { "command": "resetFontSize" },
     ]
-},
+}
 ```
 
-((ADD A GIF))
+![Windows Terminal nested commands](./images/command-palette-nested-commands.gif)
 
 ### Iterable commands
 
@@ -100,7 +100,7 @@ You can currently iterate over the following properties:
 
 Create a new tab command for each profile.
 
-((ADD A GIF))
+![Windows Terminal iterable commands](./images/command-palette-iterable-commands.gif)
 
 ```json
 {
@@ -113,7 +113,7 @@ Create a new tab command for each profile.
             "command": { "action": "newTab", "profile": "${profile.name}" }
         }
     ]
-},
+}
 ```
 
 In the above example:
@@ -153,7 +153,7 @@ The above command would behave like the following three commands:
             "command": { "action": "newTab", "profile": "Ubuntu" }
         }
     ]
-},
+}
 ```
 
 ## Hiding a command
