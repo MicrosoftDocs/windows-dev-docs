@@ -1,6 +1,6 @@
 ---
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
-description: Handle system-supported metadata cues during media playback
+description: Learn how to take advantage of several formats of timed metadata that may be embedded in media files or streams.
 title: System-supported timed metadata cues
 ms.date: 04/18/2017
 ms.topic: article

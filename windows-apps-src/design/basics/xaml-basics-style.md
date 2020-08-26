@@ -1,6 +1,6 @@
 ---
 title: Create custom styles
-description: This article covers the basics of styling UI elements in XAML
+description: Follow this tutorial to learn how to create custom styles and slider controls to customize the UI of your XAML app.
 keywords: XAML, UWP, Getting Started
 ms.date: 08/20/2020
 ms.topic: article
