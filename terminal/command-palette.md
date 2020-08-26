@@ -92,9 +92,9 @@ You can currently iterate over the following properties:
 
 | `iterateOn` | Property | Property syntax |
 | ----------- | -------- | --------------- |
-| `profiles` | `name` | `"name": "{$profile.name}"` |
-| `profiles` | `icon` | `"icon": "{$profile.icon}"` |
-| `schemes` | `name` | `"name": "{$scheme.name}"` |
+| `profiles` | `name` | `"name": "${profile.name}"` |
+| `profiles` | `icon` | `"icon": "${profile.icon}"` |
+| `schemes` | `name` | `"name": "${scheme.name}"` |
 
 #### Example
 
