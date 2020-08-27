@@ -1,5 +1,5 @@
 ---
-description: Learn about raw notifications, short, general purpose push notifications that are strictly instructional and don't include a UI component.
+description: Learn about raw notifications, which are short, general purpose push notifications that are strictly instructional and don't include a UI component.
 title: Raw notification overview
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs

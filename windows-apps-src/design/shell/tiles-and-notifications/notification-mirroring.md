@@ -1,5 +1,5 @@
 ---
-description: Learn how to use notification mirroring, powered by Action Center in the Cloud, to see your phone's notifications on your PC.
+description: Learn how to use notification mirroring, powered by Action Center in the Cloud, to see your phone's toast notifications on your PC.
 title: Notification mirroring
 label: Notification mirroring
 template: detail.hbs

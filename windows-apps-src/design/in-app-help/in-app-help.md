@@ -1,5 +1,5 @@
 ---
-description: Learn about using in-app help as the default method of displaying help for users, and about types of in-app help. 
+description: Learn about using reactive in-app help as the default method of displaying help for users, and about types of in-app help.
 title: Guidelines for designing in-app help.
 label: In-app help
 template: detail.hbs
