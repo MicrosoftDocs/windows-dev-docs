@@ -1,6 +1,6 @@
 ---
-Description: Optimize your app for input from Xbox gamepad and remote control.
 title: Gamepad and remote control interactions
+description: View guidance, recommendations, and suggestions for how to optimize your app for input from the Xbox gamepad and remote control.
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs

@@ -1,6 +1,6 @@
 ---
-Description: Manage ad campaigns for your apps in Partner Center.
 title: Manage your ad campaign
+description: Learn about the features in Partner Center for managing the ad campaigns for your app including editing and reporting campaign details.
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.date: 02/18/2020
 ms.topic: article

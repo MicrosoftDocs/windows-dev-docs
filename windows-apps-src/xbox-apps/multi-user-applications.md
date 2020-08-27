@@ -1,6 +1,6 @@
 ---
 title: Introduction to multi-user applications
-description: A simple high-level introduction to the Xbox multi-user model.
+description: Get a high-level introduction to the Xbox One multi-user model that supports multiple users playing games cooperatively on a single device.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
