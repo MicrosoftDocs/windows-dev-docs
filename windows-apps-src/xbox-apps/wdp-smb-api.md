@@ -1,6 +1,6 @@
 ---
 title: Device Portal SMB API reference
-description: Learn how to access the SMB APIs programatically.
+description: Learn how to use the Xbox Device Portal REST API /ext/smb/developerfolder to access the developer folder on your Xbox One console through File Explorer.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

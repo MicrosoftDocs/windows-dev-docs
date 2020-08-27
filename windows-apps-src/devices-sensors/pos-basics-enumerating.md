@@ -1,6 +1,6 @@
 ---
 title: Enumerating PointOfService devices
-description: Learn how to enumerate PointOfService devices
+description: Learn how to define a device selector and walk through four methods for using it to query and enumerate the PointOfService devices avilable to your system.
 ms.date: 10/08/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
