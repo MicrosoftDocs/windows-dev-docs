@@ -1,6 +1,6 @@
 ---
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: Learn about how to install the Microsoft Advertising SDK.
+description: Learn how to install the Microsoft Advertising SDK to display ads in Universal Windows Platform (UWP) apps for Windows 10.
 title: Install the Microsoft Advertising SDK
 ms.date: 02/18/2020
 ms.topic: article

@@ -1,6 +1,6 @@
 ---
 title: Guidelines for background tasks
-description: Ensure your app meets the requirements for running background tasks.
+description: View detailed guidance on developing and running in-process and out-of-process background tasks in your applications.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
 ms.topic: article

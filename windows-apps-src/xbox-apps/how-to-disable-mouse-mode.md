@@ -1,6 +1,6 @@
 ---
 title: How to disable mouse mode
-description: Instructions for disabling default mouse mode.
+description: Learn how to turn off the default mouse mode in HTML and  XAML/C# Universal Windows Platform (UWP) applications.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
