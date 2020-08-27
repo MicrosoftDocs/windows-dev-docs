@@ -1,6 +1,6 @@
 ---
 title: Create data bindings
-description: This article covers the basics of data binding in XAML
+description: Learn how to create data bindings using XAML and C# to form a direct link between your UI and data by following this tutorial.
 keywords: XAML, UWP, Getting Started
 ms.date: 08/20/2020
 ms.topic: article

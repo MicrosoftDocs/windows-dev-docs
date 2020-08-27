@@ -1,7 +1,7 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: Learn how to catch AdControl errors in your app.
 title: Error handling in XAML/C# walkthrough
+description: Learn how to catch and handle errors from an AdControl in a XAML/C# app by following this walkthrough.
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, error handling, XAML, c#

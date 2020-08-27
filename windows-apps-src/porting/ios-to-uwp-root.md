@@ -1,7 +1,7 @@
 ---
-description: Move from iOS to UWP
 Search.SourceType: Video
 title: Move from iOS to UWP
+description: Learn about the tools available to help an iOS developer expand their user base to include Windows 10 and the Universal Windows Platform (UWP).
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
