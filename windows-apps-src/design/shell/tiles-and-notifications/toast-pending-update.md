@@ -1,5 +1,5 @@
 ---
-Description: Learn how to create multi-step interactions in your notifications.
+description: Learn how to use toast with pending update activation to create multi-step interactions in your toast notifications. 
 title: Toast with pending update activation
 label: Toast with pending update activation
 template: detail.hbs

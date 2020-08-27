@@ -1,6 +1,6 @@
 ---
 ms.assetid: 
-description: Shows how to record game audio, video, and metadata for in a UWP app.
+description: Learn how to capture game video, audio, and screenshots, and how to submit metadata that the system embeds in captured and broadcast media.
 title: Capture game audio, video, screenshots, and metadata
 ms.date: 02/08/2017
 ms.topic: article

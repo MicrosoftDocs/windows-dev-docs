@@ -1,6 +1,6 @@
 ---
 title: DirectX samples
-description: DirectX game samples.
+description: Get code samples for developing a basic DirectX 3D game and a game that works on various types of devices.
 ms.assetid: a54273f8-1e91-4d02-8762-6eab2f00f7b0
 ms.date: 02/08/2017
 ms.topic: article

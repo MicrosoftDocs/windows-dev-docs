@@ -1,6 +1,6 @@
 ﻿---
 title: Working with barcode scanner symbologies
-description: This article contains information about barcode scanner symbologies.
+description: Use the UWP barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

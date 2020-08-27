@@ -1,5 +1,5 @@
 ---
-description: A type of brush that creates a translucent texture.
+description: Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.
 title: Acrylic material
 template: detail.hbs
 ms.date: 08/09/2017

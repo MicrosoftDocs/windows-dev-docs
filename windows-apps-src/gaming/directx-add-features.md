@@ -1,6 +1,6 @@
 ---
 title: Add features to DirectX games
-description: Add features to your DirectX game.
+description: Learn how to use DirectX and XAML to build UI interfaces, add controls, and handle screen rotation in your DirectX games.
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
 ms.date: 02/08/2017
 ms.topic: article

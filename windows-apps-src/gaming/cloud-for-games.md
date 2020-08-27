@@ -1,6 +1,6 @@
 ---
 title: Using cloud services for UWP games
-description: Learn more about implementing cloud as a backend for your UWP games.
+description: When developing UWP games across platforms and devices, use a cloud backend to help scale your games according to demand.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
