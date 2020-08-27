@@ -1,6 +1,6 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
+description: View a table of the languages and corresponding language codes that are supported for submitting apps to the Microsoft Store.
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 03/07/2019
 ms.topic: article

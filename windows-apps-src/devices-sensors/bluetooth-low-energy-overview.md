@@ -1,6 +1,6 @@
 ---
 title: Bluetooth Low Energy
-description: This topic provides a quick overview of Bluetooth LE in UWP apps.
+description: Learn about the Bluetooth Low Energy (LE) specification in UWP apps that defines protocols for discovery and communication between power-efficient devices.
 ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, central, peripheral, client, server, watcher, publisher
