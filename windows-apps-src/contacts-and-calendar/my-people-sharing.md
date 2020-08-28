@@ -1,6 +1,6 @@
 ---
 title: My People sharing
-description: Explains how to add support for My People sharing
+description: Use My People sharing to let users pin contacts to their taskbar and stay in touch easily from anywhere in Windows.
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp

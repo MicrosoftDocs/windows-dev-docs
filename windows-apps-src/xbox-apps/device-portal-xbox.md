@@ -1,7 +1,7 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for Xbox
-description: Learn how to enable the Device Portal for Xbox One which gives you remote access to your development Xbox.
+description: Learn how to enable the Xbox Device Portal for Xbox One, which gives you remote access to your development Xbox.
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal

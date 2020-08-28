@@ -1,6 +1,6 @@
 ---
 title: Relation based animations
-description: Create motion based on a property on another object.
+description: Learn how to use ExpressionAnimations to create relation-based animations when motion depends on a property of another object.
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation

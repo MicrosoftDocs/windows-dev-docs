@@ -1,5 +1,5 @@
 ---
-description: The xBind markup extension allows functions to be used in markup.
+description: Learn about using functions as the leaf step of the data binding path in the xBind markup extension.
 title: Functions in x:Bind
 ms.date: 02/06/2019
 ms.topic: article
