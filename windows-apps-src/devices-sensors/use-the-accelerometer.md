@@ -1,7 +1,7 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Use the accelerometer
-description: Learn how to create a simple app that relies on a single sensor, the accelerometer, to respond to user movements.
+description: Learn how to create a basic app that relies on a single sensor, the accelerometer, to respond to user movements.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
