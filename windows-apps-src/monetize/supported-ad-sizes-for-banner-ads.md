@@ -1,6 +1,6 @@
 ---
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: Learn about the banner ad sizes that are supported for Universal Windows Platform (UWP) apps, and see examples of banner ad sizes. 
+description: Learn about the banner ad sizes that are supported for Universal Windows Platform (UWP) apps, and see examples of banner ad sizes.
 title: Supported banner ad sizes
 ms.date: 02/18/2020
 ms.topic: article
