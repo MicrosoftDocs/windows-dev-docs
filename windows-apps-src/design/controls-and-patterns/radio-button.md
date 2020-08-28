@@ -1,5 +1,5 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
+description: Learn how to use radio buttons to let users select one option from a collection of two or more mutually exclusive, but related, options.
 title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons

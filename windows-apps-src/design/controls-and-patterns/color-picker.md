@@ -1,5 +1,5 @@
 ---
-Description: A color picker lets a user browse through and select colors.
+description: Learn how to use a color picker to let users browse through and select colors, or specify colors in RGB, HSV, or hexadecimal formats.
 title: Color Picker
 label: Color Picker
 template: detail.hbs

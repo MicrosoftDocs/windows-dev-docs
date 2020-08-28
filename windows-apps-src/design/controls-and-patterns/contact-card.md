@@ -1,5 +1,5 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+description: Learn how to use contact cards to let users display and edit contact information, such as names, phone numbers, and addresses.
 title: Contact card
 ms.date: 03/07/2018
 ms.topic: article

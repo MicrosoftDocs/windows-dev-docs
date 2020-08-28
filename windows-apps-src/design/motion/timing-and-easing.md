@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+description: Learn the importance of timing and easing in making motion feel natural for objects entering, exiting, or moving within the UI.
 title: Timing and easing
 label: Timing and easing
 template: detail.hbs

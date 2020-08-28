@@ -1,5 +1,5 @@
 ---
-Description: Ink tools described
+description: Learn about the InkCanvas and InkToolbar controls that facilitate inking and ink-related features in Windows apps.
 title: Inking Controls
 label: Inking Controls
 template: detail.hbs
