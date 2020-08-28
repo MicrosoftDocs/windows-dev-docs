@@ -1,6 +1,6 @@
 ---
 title: Optimization and advanced topics for DirectX games
-description: Optimization and advanced topics for DirectX game programming.
+description: See articles that give information about optimizing your DirectX game performance and other advanced topics.
 ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
 ms.date: 02/08/2017
 ms.topic: article

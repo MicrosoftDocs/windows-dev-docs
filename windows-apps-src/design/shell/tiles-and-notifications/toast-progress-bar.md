@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use a progress bar within your toast notification.
+description: Use a progress bar inside your toast notification to convey the status of long-running operations to the user.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs

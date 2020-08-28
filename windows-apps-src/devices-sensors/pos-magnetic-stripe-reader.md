@@ -1,6 +1,6 @@
 ---
 title: Magnetic stripe reader
-description: Index topic for the magnetic stripe reader UWP documentation.
+description: Use a magnetic stripe reader point of service device in your UWP application to scan cards that have magnetic stripes on them.
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader

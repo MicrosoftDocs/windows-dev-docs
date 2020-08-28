@@ -1,6 +1,6 @@
 ---
 title: PointOfService device claim and enable model
-description: Learn about PointOfService claim and enable model
+description: Use the Point of Service device claim and enable APIs to claim devices and enable them for I/O operations. 
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

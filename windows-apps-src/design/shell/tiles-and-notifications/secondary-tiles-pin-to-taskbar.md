@@ -1,5 +1,5 @@
 ---
-Description: Learn how to pin secondary tiles to taskbar.
+description: Learn how to pin secondary tiles to the taskbar, giving your users quick access to content within your app.
 title: Pin secondary tiles to taskbar
 label: Pin secondary tiles to taskbar
 template: detail.hbs
