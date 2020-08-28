@@ -1,6 +1,6 @@
 ---
 title: Extend the sample game
-description: Learn how to use XAML instead of Direct2D for the overlay in the basic Universal Windows Platform (UWP) DirectX 3D game.
+description: Learn how to use XAML instead of Direct2D for the overlay in the basic Universal Windows Platform (UWP) DirectX game.
 keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
