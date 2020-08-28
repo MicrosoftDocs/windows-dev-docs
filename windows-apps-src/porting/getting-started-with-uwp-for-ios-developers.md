@@ -1,5 +1,5 @@
 ---
-description: Getting started with UWP for iOS developers
+description: See walkthrough articles that help iOS developers get started creating and publishing UWP apps in Visual Studio.
 title: Getting started with UWP for iOS developers
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ms.date: 02/08/2017

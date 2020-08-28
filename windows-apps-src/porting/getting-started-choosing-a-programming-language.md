@@ -1,7 +1,7 @@
 ---
 title: Choosing a programming language
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: Choosing a programming language
+description: Learn what programming languages you can choose from when you develop Universal Windows Platform (UWP) apps.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

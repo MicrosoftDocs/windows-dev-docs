@@ -1,6 +1,6 @@
 ---
 title: Unity - Version control your UWP project
-description: Version your Unity UWP project.
+description: Learn how to use version control with a Unity game for Xbox using the Universal Windows Platform (UWP).
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017

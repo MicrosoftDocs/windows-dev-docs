@@ -1,7 +1,7 @@
 ---
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: Best practices for using the thread pool
-description: This topic describes best practices for working with the thread pool.
+description: Learn best practices for working with the thread pool to accomplish work asynchronously in parallel threads. 
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, thread, thread pool
