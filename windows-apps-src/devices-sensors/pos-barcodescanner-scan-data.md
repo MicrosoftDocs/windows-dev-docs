@@ -1,6 +1,6 @@
 ---
 title: Obtain and understand barcode data
-description: Learn how to obtain and interpret the barcode data that you scan.
+description: Learn how to obtain data from a barcode scanner in a BarcodeScannerReport object and understand its format and contents.
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
