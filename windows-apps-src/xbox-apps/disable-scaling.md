@@ -1,6 +1,6 @@
 ---
 title: How to turn off scaling
-description: Instructions for turning off the default scale factor.
+description: description: Learn how to turn off the default scale factor and cause your application to use the actual 1910 x 1080 pixel device dimensions.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

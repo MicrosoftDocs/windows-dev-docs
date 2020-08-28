@@ -1,6 +1,6 @@
 ---
 title: Xbox Device Portal REST API
-description: API reference for UWP on Xbox One.
+description: See a list of reference topics for the Xbox Device Portal REST API, used to remotely configure and manage your console.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp

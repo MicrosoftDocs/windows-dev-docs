@@ -1,6 +1,6 @@
 ---
 title: What's new for UWP on Xbox One
-description: Highlights new features for UWP apps on Xbox One.
+description: See new features, updates to existing features, and bug fixes for developers in the latest update of UWP on Xbox One.
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp

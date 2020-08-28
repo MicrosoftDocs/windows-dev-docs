@@ -1,6 +1,6 @@
 ---
 title: Device Portal Xbox Developer settings API reference
-description: Learn how to access Xbox developer settings.
+description: Learn how to access Xbox One settings that are useful for development by using the Xbox Device Portal REST API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
