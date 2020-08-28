@@ -1,6 +1,6 @@
 ---
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: Technologies for accessing networks, and web services.
+description: View a list of links to articles about the networking and web services technologies available for Universal Windows Platform (UWP) developers.
 title: Networking and web services
 ms.date: 11/26/2017
 ms.topic: article

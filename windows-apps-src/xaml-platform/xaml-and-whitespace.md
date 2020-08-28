@@ -1,5 +1,5 @@
 ---
-description: Learn about the whitespace processing rules as used by XAML.
+description: Learn about the rules used by XAML for processing the whitespace characters space, linefeed, and tab.
 title: XAML and whitespace
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.date: 02/08/2017

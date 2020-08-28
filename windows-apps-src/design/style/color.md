@@ -1,5 +1,5 @@
 ---
-description: Learn how to use accent colors and themes in your Windows apps.
+description: Learn how to use color effectively in your Universal Windows Platform (UWP) app by manipulating accent colors and theme resources.
 title: Color in Windows apps
 ms.date: 04/07/2019
 ms.topic: article

@@ -1,6 +1,6 @@
 ---
-Description: Use content links to embed rich data in your text controls.
 title: Content links in text controls
+description: Learn how to use content links to embed rich data in the TextBlock, RichTextBlock, and RichEditBox controls.
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018

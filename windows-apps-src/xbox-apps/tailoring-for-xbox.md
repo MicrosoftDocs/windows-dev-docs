@@ -1,6 +1,6 @@
 ---
 title: Xbox best practices
-description: How to optimize your application for Xbox.
+description: Learn how to optimize your Universal Windows Platform (UWP) application for Xbox One by following these Xbox development best practices.
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
