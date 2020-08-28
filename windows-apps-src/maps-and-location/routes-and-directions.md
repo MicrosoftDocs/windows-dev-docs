@@ -1,6 +1,6 @@
 ---
 title: Display routes and directions on a map
-description: Request routes and directions, and display them in your app.
+description: Learn how to retrieve routes and directions using the MapRouteFinder class and display them on a MapControl in a Universal Windows Platform (UWP) app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 09/20/2017
 ms.topic: article

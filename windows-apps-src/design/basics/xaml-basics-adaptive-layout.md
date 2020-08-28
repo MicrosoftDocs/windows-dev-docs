@@ -1,6 +1,6 @@
 ---
 title: Create adaptive layouts tutorial
-description: This article covers the basics of adaptive layout in XAML
+description: Learn how to use the adaptive layout features in XAML to create apps that look good at any window size.
 keywords: XAML, UWP, Getting Started
 ms.date: 08/20/2020
 ms.topic: article

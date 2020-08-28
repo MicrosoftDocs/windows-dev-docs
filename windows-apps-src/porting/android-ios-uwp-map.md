@@ -1,6 +1,6 @@
 ---
-Description: Compare platform features between iOS, Android, and Windows 10.
-title: Windows apps concept mapping for Android and iOS developers
+title: Compare platform features between iOS, Android, and Windows 10.
+description: View a detailed comparison of development concepts and platform features between iOS, Android, and the Universal Windows Platform (UWP) on Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

@@ -1,6 +1,6 @@
 ---
 title: Adding WebVR support to a 3D Babylon.js game
-description: Learn how to add WebVR support to an existing 3D Babylon.js game.
+description: Learn how to add WebVR virtual reality support to an existing 3D Babylon.js game by following this tutorial.
 ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript

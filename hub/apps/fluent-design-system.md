@@ -1,5 +1,5 @@
 ---
-description: Learn about the Fluent Design System that is built into Universal Windows Platform (UWP) and how to incorporate it into your apps.
+description: Learn about the Fluent Design System in the Universal Windows Platform (UWP) and how to incorporate it into your apps.
 title: Fluent Design System for Windows
 keywords: uwp app layout, universal windows platform, app design, interface, fluent design system
 ms.date: 03/07/2018
