@@ -224,7 +224,8 @@ WinUI 3 Preview 2 is compatible with PCs running the Windows 10 April 2018 Updat
     - `INotifyCollectionChanged`
     - `ICommand`
 
-> [!Note] With `INotifyPropertyChanged` and `INotifyCollectionChanged` not working as expected, the `ObservableCollection<T>` class will also be affected. For an example of implementing your own version of `ObservableCollection<T>`, see [this sample](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs). 
+> [!Note] 
+> With `INotifyPropertyChanged` and `INotifyCollectionChanged` not working as expected, the `ObservableCollection<T>` class will also be affected. For an example of implementing your own version of `ObservableCollection<T>`, see [this sample](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs). 
 
 
 ## XAML Controls Gallery (WinUI 3 Preview 2 branch)
