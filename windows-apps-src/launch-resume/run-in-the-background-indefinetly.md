@@ -23,12 +23,14 @@ If you are developing an app that is not intended to be submitted into the Micro
 
 The `extendedExecutionUnconstrained` capability is added as a restricted capability in your app's manifest. See [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) for more information about restricted capabilities.
 
-> **Note:**
+> [!NOTE]
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
-For more information, see the Restricted Capabilities section of the 
-[App capability declrations topic](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
+>
+> For more information, see the Restricted Capabilities section of [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ...
@@ -70,10 +72,14 @@ Registering for the **Revoked** event will enable your app to do any cleanup wor
 
 In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
 
-> **Note:**
+> [!NOTE]
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
+>
+> For more information, see the Restricted Capabilities section of [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ... 
