@@ -25,6 +25,8 @@ The `extendedExecutionUnconstrained` capability is added as a restricted capabil
 
 > **Note:**
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
+For more information, see the Restricted Capabilities section of the 
+[App capability declrations topic](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
 
 _Package.appxmanifest_
 ```xml
