@@ -210,8 +210,6 @@ WinUI 3 Preview 2 is compatible with PCs running the Windows 10 April 2018 Updat
 
 ### Known issues
 
-- C# Desktop apps:
-  - You need to use `WinRT.WeakReference<T>` rather than `System.WeakReference<T>` for weak references to Windows objects (including XAML objects).
 
 - C# UWP apps:
 
