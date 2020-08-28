@@ -1,6 +1,6 @@
 ---
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: Learn how to use the AdScheduler class to show ads in video content.
+description: Learn how to use the AdScheduler class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 title: Show ads in video content
 ms.date: 02/18/2020
 ms.topic: article

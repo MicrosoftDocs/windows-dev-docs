@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: Game development learning guide
+description: Learn how to get started right away developing games for Windows or Xbox by following this quick start guide.
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.date: 01/25/2018
 ms.topic: article

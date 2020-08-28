@@ -1,7 +1,7 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Use a timer to submit a work item
-description: Learn how to create a work item that runs after a timer elapses.
+description: Learn how to create a timer that submits a work item when the timer elapses in a Universal Windows Platform (UWP) app by using the ThreadPoolTimer API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, timer, threads

@@ -1,6 +1,6 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
+description: Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.
 label: Buttons
 template: detail.hbs
 ms.date: 10/02/2018

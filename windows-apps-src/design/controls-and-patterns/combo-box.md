@@ -1,5 +1,5 @@
 ---
-Description: A text entry box that provides suggestions as the user types.
+description: Learn how to use list boxes and combo boxes, also called drop-down lists, to present lists of items that users can select from. 
 title: Combo box and list box
 label: Combo box and list box
 template: detail.hbs

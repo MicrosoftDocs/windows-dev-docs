@@ -1,5 +1,5 @@
 ---
-description: How to use contacts and calendar info in your UWP app.
+description: See ways to let users access their contacts and appointments to share content, email, calendar information, or messages.
 title: Contacts and calendar
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.date: 05/18/2018

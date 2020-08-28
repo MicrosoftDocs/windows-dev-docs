@@ -1,5 +1,5 @@
 ---
-Description: Item templates for grid view
+description: Get item templates that you can use with a GridView control to display image galleries, images and text, and images with text overlays.
 title: Item templates for grid view
 template: detail.hbs
 ms.date: 11/03/2017

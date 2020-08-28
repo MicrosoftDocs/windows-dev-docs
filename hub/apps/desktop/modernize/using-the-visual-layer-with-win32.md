@@ -1,6 +1,6 @@
 ---
 title: Using the Visual Layer with Win32
-description: Use the Visual layer to enhance the UI of your Win32 desktop app.
+description: Learn how to use the Universal Windows Platform (UWP) Windows Runtime Composition APIs, also known as the Visual layer, to enhance the UI of a Win32 C++ app.
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article

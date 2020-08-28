@@ -1,5 +1,5 @@
 ---
-description: News and changes to C++/WinRT.
+description: See recent additions and improvements, and news and changes for C++/WinRT 2.0 and Windows SDK version 10.0.17763.0.
 title: What's new in C++/WinRT
 ms.date: 03/16/2020
 ms.topic: article

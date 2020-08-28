@@ -1,5 +1,5 @@
 ---
-Description: Lists display and enable interaction with collection-based content.
+description: Learn about collections and lists as representations of multiple related data items that appear together. 
 title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists

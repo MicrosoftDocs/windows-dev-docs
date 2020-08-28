@@ -1,6 +1,6 @@
 ---
 title: Pull-to-refresh with source modifiers
-description: Create custom Pull-to-Refresh controls using SourceModifiers
+description: Learn how to use an InteractionTracker’s SourceModifier feature to create a custom pull-to-refresh control.
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation

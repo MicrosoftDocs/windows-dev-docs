@@ -1,5 +1,5 @@
 ---
-Description: Item templates for list view
+description: Get item templates that you can use with a ListView control to display single, double, triple, and tabular list items.
 title: Item templates for list view
 template: detail.hbs
 ms.date: 11/03/2017

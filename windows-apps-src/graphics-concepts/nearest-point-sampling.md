@@ -1,6 +1,6 @@
 ---
 title: Nearest-point sampling
-description: Applications are not required to use texture filtering.
+description: Learn about using nearest point sampling in Direct3D as an alternative to texture filtering for processing textures in an application.
 ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords:
 - Nearest-point sampling
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 # <span id="direct3dconcepts.nearest-point_sampling"></span>Nearest-point sampling
 
 
-Applications are not required to use texture filtering. Direct3D can be set so that it computes the texel address, which often does not evaluate to integers, and copies the color of the texel with the closest integer address. This process is called *nearest-point sampling*. Nearest-point sampling can be a fast and efficient way to process textures if the size of the texture is similar to the size of the primitive's image on the screen. If not, the texture must be magnified or minified. The result of mismatching texture sizes to primitive image size can be a chunky, aliased, or blurred image.
+Applications are not required to use texture filtering. Direct3D can be set so that it computes the texel address, which often does not evaluate to integers, and copies the color of the texel with the closest integer address. This process is called *nearest-point sampling*. Nearest-point sampling can be as  if the size of the texture is similar to the size of the primitive's image on the screen. If not, the texture must be magnified or minified. The result of mismatching texture sizes to primitive image size can be a chunky, aliased, or blurred image.
 
 Use nearest-point sampling carefully, because it can sometimes cause graphic artifacts when the texture is sampled at the boundary between two texels. This boundary is the position along the texture (u or v) at which the sampled texel transitions from one texel to the next. When point sampling is used, the system chooses one sample texel or the other, and the result can change abruptly from one texel to the next texel as the boundary is crossed. This effect can appear as undesired graphic artifacts in the displayed texture. When linear filtering is used, the resulting texel is computed from both adjacent texels and smoothly blends between them as the texture index moves through the boundary.
 
