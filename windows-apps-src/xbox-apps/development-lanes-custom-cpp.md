@@ -1,6 +1,6 @@
 ---
 title: C++ game development on Xbox using UWP
-description: C++ UWP game development on Xbox.
+description: Learn about C++ game development on the Universal Windows Platform (UWP) for Xbox One including how to turn your console into a development kit.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

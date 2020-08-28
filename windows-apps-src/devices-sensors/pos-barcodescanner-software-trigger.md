@@ -1,6 +1,6 @@
 ---
 title: Use a software trigger
-description: Learn how to control the act of scanning from software.
+description: Learn how to control the barcode scanning process programmatically using an asynchronous software trigger.
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

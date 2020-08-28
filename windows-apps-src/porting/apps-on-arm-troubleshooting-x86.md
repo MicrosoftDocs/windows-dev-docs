@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting x86 desktop apps
-description: Common issues with x86 apps when running on ARM, and how to fix them.
+description: Learn how to troubleshoot and fix common issues with an x86 desktop app running on ARM64 including information about drivers, shell extensions, and debugging.
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting

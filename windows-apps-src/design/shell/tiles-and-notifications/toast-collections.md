@@ -1,6 +1,6 @@
 ---
-Description: Learn how to group notifications in Action Center using collections.
 title: Toast Collections
+description: Learn how to organize toast notifications for your app by creating, updating, or removing notification collections in Action Center.
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018

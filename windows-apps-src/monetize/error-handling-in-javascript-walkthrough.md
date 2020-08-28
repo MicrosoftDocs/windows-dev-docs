@@ -1,6 +1,6 @@
 ---
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: Learn how to catch AdControl errors in your app.
+description: Learn how to catch and handle errors from an AdControl in a JavaScript and HTML5 app by following this walkthrough.
 title: Error handling in JavaScript walkthrough
 ms.date: 02/18/2020
 ms.topic: article
