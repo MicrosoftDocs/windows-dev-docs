@@ -1,5 +1,5 @@
 ---
-description: Learn how to use native ads, a component-based ad format where each piece of the ad  is delivered to your app as an individual element.
+description: Learn how to use native ads, a component-based ad format where each piece of the ad is delivered to your app as an individual element.
 title: Native ads
 ms.date: 02/18/2020
 ms.topic: article
