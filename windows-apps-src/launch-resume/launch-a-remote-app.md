@@ -1,6 +1,6 @@
 ---
 title: Launch an app on a remote device
-description: Learn how to launch an app on a remote device using Project Rome.
+description: Learn how to launch a UWP app or Windows desktop application remotely on another device, letting a user start a task on one device and finish it on another.
 ms.date: 02/12/2018
 ms.topic: article
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome

@@ -1,6 +1,6 @@
 ---
 title: Launch the default app for a file
-description: Learn how to launch the default app for a file.
+description: Learn how to use the Windows.System.Launcher API to launch the default handler for a file that your app can't handle itself.
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ms.date: 07/05/2018
 ms.topic: article

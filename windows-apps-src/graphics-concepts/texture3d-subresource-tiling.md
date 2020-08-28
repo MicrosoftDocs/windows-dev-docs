@@ -1,6 +1,6 @@
 ---
 title: Texture3D subresource tiling
-description: This table shows how Texture3D subresources are tiled.
+description: See a table that shows how Texture3D subresources are tiled, based on the bits per pixel of the Texture2D tiling.
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
 keywords:
 - Texture3D subresource tiling

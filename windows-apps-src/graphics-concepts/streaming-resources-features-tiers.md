@@ -1,6 +1,6 @@
 ---
 title: Streaming resources features tiers
-description: Direct3D supports streaming resources in three tiers of capabilities.
+description: Access articles about the three tiers of feature capabilities for Direct3D streaming resources, previously called tiled resources.
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
 keywords:
 - Streaming resources features tiers

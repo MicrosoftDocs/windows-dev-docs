@@ -1,5 +1,5 @@
 ---
-description: The entries and properties of a map style sheet
+description: Learn about using map style sheets to define the appearance of maps, including those displayed in a Windows Store application's MapControl.
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Map style sheet reference
