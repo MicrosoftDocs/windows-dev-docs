@@ -1,5 +1,5 @@
 ---
-description: Shows how to add your app next to actions in a contact card
+description: Learn how to connect your app to actions on a contact card so that users can choose your app to open a profile page, place a call, or send a message.
 MSHAttr: PreferredLib:/library/windows/apps
 title: Connect your app to actions on a contact card
 ms.date: 02/08/2017

@@ -1,6 +1,6 @@
 ---
 description: Getting around in Visual Studio
-title: Getting around in Visual Studio
+title: Learn how to get started in a Microsoft Visual Studio project by adding controls, setting their properties, and responding to events.
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
