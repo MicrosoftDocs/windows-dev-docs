@@ -29,7 +29,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 
 1. Ensure that your development computer has Windows 10, version 1803 (build 17134), or newer installed.
 
-2. Install [Visual Studio 2019, version 16.7 Preview 3](https://visualstudio.microsoft.com/vs/preview)
+2. Install [Visual Studio 2019, version 16.7.2](https://visualstudio.microsoft.com/vs/)
 
     You must include the following workloads when installing Visual Studio:
     - .NET Desktop Development
@@ -39,7 +39,10 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
 
-3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5:
+    Once you've downloaded Visual Studio, make sure you enable .NET previews within the program: 
+    - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
+
+3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
 
     - x64: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
     - x86: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
@@ -47,6 +50,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 4. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
     For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+
 
 ## Create WinUI projects
 
@@ -206,8 +210,23 @@ WinUI 3 Preview 2 is compatible with PCs running the Windows 10 April 2018 Updat
 
 ### Known issues
 
-- In C# Desktop apps:
-  - You need to use `WinRT.WeakReference<T>` rather than `System.WeakReference<T>` for weak references to Windows objects (including XAML objects).
+
+- C# UWP apps:
+
+  The WinUI 3 framework is a set of WinRT components, and while WinRT has similar types and objects like those found in .NET, they are not inherently compatible.  The C#/WinRT projections handle the interop between .NET and WinRT in .NET 5, allowing you to freely use .NET interfaces in your .NET 5 app today. 
+  
+  However, C#/WinRT is not able to handle the interop in .NET Native apps, so the WinUI 3 APIs are projected directly in UWP apps. Thus, you are no longer able to use those same .NET interfaces. **Once UWP apps are no longer using .NET Native, this limitation will no longer exist**.
+
+  For example, the `INotifyPropertyChanged` API is projected in the `System.ComponentModel` namespace for WinUI3 in Desktop apps, but it appears in the `Microsoft.UI.Xaml.Data` namespace for WinUI3 in UWP apps (and all C++ apps). 
+  
+  This issue applies to:
+    - `INotifyPropertyChanged` (and related types)
+    - `INotifyCollectionChanged`
+    - `ICommand`
+
+> [!Note] 
+> With `INotifyPropertyChanged` and `INotifyCollectionChanged` not working as expected, the `ObservableCollection<T>` class will also be affected. For an example of implementing your own version of `ObservableCollection<T>`, see [this sample](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs). 
+
 
 ## XAML Controls Gallery (WinUI 3 Preview 2 branch)
 
