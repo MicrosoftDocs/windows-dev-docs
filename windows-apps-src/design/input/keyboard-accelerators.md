@@ -373,7 +373,7 @@ As keyboard accelerators are not typically described directly in the UI of your 
 
 **Windows 10, Version 1803 (April 2018 Update) and newer**
 
-By default, When keyboard accelerators are declared, all controls (except [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) present the corresponding key combinations in a tooltip.
+By default, when keyboard accelerators are declared, all controls (except [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) present the corresponding key combinations in a tooltip.
 
 > [!NOTE] 
 > If a control has more than one accelerator defined, only the first is presented.
@@ -382,7 +382,7 @@ By default, When keyboard accelerators are declared, all controls (except [MenuF
 
 *Accelerator key combo in tooltip*
 
-For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the control's default tooltip. For [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) objects, the keyboard accelerator is displayed with the flyout text.
+For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the control's default tooltip. For [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) objects, the keyboard accelerator is displayed with the flyout text.
 
 > [!NOTE]
 > Specifying a tooltip (see Button1 in the following example) overrides this behavior.
