@@ -1,6 +1,6 @@
 ---
 title: Voice Enabled Shell (VES) on Xbox
-description: Learn how to add voice control support to your UWP apps on Xbox.
+description: Learn how to add voice control support to your Universal Windows Platform (UWP) apps on Xbox by using the Voice Enabled Shell (VES).
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox, speech, voice enabled shell

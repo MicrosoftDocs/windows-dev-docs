@@ -1,5 +1,5 @@
 ---
-Description: Layout guidelines for forms in Windows apps.
+Description: Learn the guidelines for designing and creating XAML layouts for forms in a Universal Windows Platform (UWP) app.
 title: Forms
 template: detail.hbs
 ms.date: 11/07/2017

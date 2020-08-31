@@ -1,6 +1,6 @@
 ---
 title: UWP programming
-description: View a list of links to articles about developing Universal Windows Platform (UWP)  games including topics about audio, input, and networking features.
+description: View a list of links to articles about developing Universal Windows Platform (UWP) games that includes topics about audio, input, and networking features.
 ms.assetid: af7a642e-d448-4a7d-8e90-7065b23e24fb
 ms.date: 02/08/2017
 ms.topic: article

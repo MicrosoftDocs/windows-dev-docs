@@ -1,6 +1,6 @@
 ---
 title: Learning track - Construct and configure a form
-description: Learn how to contruct and configure a robust form in a Universal Windows Platform (UWP) app.
+description: Learn how to construct and configure a robust form  in a Universal Windows Platform (UWP) app for handling the input of a significant amount of information.
 ms.date: 05/07/2018
 ms.topic: article
 keywords: get started, uwp, windows 10, learning track, layout, form
