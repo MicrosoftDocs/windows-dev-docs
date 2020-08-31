@@ -1,6 +1,6 @@
 ---
 title: Direct3D graphics glossary
-description: Defines graphics terms used by Microsoft Direct3D.
+description: See a glossary that defines, at a high level, general 3D computer graphics terms that are used in Direct3D game and app development.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D Graphics Glossary
