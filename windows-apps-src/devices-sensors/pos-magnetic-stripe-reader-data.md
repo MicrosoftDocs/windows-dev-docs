@@ -1,6 +1,6 @@
 ---
 title: Obtain and understand magnetic stripe data
-description: Learn how to obtain and interpret the data from a magnetic stripe.
+description: Learn how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
