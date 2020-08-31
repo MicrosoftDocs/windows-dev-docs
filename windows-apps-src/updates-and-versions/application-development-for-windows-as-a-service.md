@@ -1,6 +1,6 @@
 ---
 title: App development for Windows as a service
-description: Decouple app release and support from specific Windows builds.
+description: Learn about the Windows as a service (WaaS) approach to innovation, development, and delivery, and the community-centric Windows Insider testing program.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

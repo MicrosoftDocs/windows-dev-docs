@@ -1,5 +1,5 @@
 ---
-description: In XAML markup, specifies a null value for a property.
+description: Learn how you can use the x:Null markup extension in XAML markup to specify a null value for a property.
 title: xNull markup extension
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ms.date: 02/08/2017
