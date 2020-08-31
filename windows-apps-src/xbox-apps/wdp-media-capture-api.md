@@ -1,6 +1,6 @@
 ---
 title: Media Capture API reference
-description: Learn how to access the media capture API programatically.
+description: Learn how to capture a PNG representation of the current screen by using the Xbox Device Portal REST API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

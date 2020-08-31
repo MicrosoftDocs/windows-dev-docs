@@ -1,7 +1,7 @@
 ---
 title: How x86 and ARM32 emulation work on ARM
 
-description: An overview of emulation of x86 apps on ARM.
+description: Learn how emulation for x86 apps makes the rich ecosystem of existing Win32 apps available on ARM devices.
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM

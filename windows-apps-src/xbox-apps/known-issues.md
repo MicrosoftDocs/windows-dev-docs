@@ -1,6 +1,6 @@
 ---
 title: Known issues with UWP on Xbox Developer Program
-description: Lists the known issues for the UWP on Xbox developer program.
+description: Learn about some known issues with the UWP on Xbox One Developer Program, and see how to access other help resources.
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp
