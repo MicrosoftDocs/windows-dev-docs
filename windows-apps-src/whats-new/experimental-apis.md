@@ -1,6 +1,6 @@
 ---
 title: Experimental APIs
-description: Understand experimental APIs
+description: Learn how experimental APIs are flighted externally using Windows Insider SDKs, so developers can try them out.
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, experimental, api

@@ -1,6 +1,6 @@
 ---
 title: Device Portal folder upload API reference
-description: Learn how to access the folder upload APIs programatically.
+description: Learn how you can upload a folder to the development directory by using the Xbox Device Portal REST API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

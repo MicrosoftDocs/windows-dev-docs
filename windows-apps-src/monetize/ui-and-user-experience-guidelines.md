@@ -1,6 +1,6 @@
 ---
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: Learn about UI and user experience guidelines for ads in apps.
+description: See guidelines for providing great UI and user experiences with banner ads, interstitial ads, and native ads in your apps.
 title: UI and user experience guidelines for ads
 ms.date: 02/18/2020
 ms.topic: article

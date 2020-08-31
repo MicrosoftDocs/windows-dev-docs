@@ -1,6 +1,6 @@
 ---
 title: System resources for UWP apps and games on Xbox One
-description: UWP on Xbox system resources
+description: Learn how UWP apps running on Xbox One share resources with the system and other apps, and about resource requirements for UWP apps or games.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
