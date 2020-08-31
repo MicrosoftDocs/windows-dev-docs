@@ -87,7 +87,7 @@ technique RenderSceneSimple
 }
 ```
 
-In Direct3D 11, we can still use our HLSL shaders. We put each shader in its own HLSL file so that Visual Studio compiles them into separate files and later, we'll load them as separate Direct3D resources. We set the target level to [Shader Model 4 Level 9\_1 (/4\_0\_level\_9\_1)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro) because these shaders are written for DirectX 9.1 GPUs.
+In Direct3D 11, we can still use our HLSL shaders. We put each shader in its own HLSL file so that Visual Studio compiles them into separate files and later, we'll load them as separate Direct3D resources. We set the target level to [Shader Model 4 Level 9\_1 (/4\_0\_level\_9\_1)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro) because these shaders are written for DirectX 9.1 GPUs.
 
 When we defined the input layout, we made sure it represented the same data structure we use to store per-vertex data in system memory and in GPU memory. Similarly, the output of a vertex shader should match the structure used as input to the pixel shader. The rules are not the same as passing data from one function to another in C++; you can omit unused variables at the end of the structure. But the order can't be rearranged and you can't skip content in the middle of the data structure.
 
@@ -96,7 +96,7 @@ The rules in Direct3D 9 for binding vertex shaders to pixel shaders were more re
 
  
 
-It's possible that your HLSL files uses older syntax for shader semantics - for example, COLOR instead of SV\_TARGET. If so you'll need to enable HLSL compatibility mode (/Gec compiler option) or update the shader [semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) to the current syntax. The vertex shader in this example has been updated with current syntax.
+It's possible that your HLSL files uses older syntax for shader semantics - for example, COLOR instead of SV\_TARGET. If so you'll need to enable HLSL compatibility mode (/Gec compiler option) or update the shader [semantics](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) to the current syntax. The vertex shader in this example has been updated with current syntax.
 
 Here's our hardware transformation vertex shader, this time defined in its own file.
 
@@ -180,7 +180,7 @@ PS_OUTPUT main(PS_INPUT In)
 ## Compile and load shaders
 
 
-Direct3D 9 games often used the Effects library as a convenient way to implement programmable pipelines. Effects could be compiled at run-time using the [**D3DXCreateEffectFromFile function**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dxcreateeffectfromfile) method.
+Direct3D 9 games often used the Effects library as a convenient way to implement programmable pipelines. Effects could be compiled at run-time using the [**D3DXCreateEffectFromFile function**](/windows/desktop/direct3d9/d3dxcreateeffectfromfile) method.
 
 Loading an effect in Direct3D 9
 
@@ -229,7 +229,7 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-To include the shader bytecode in your compiled app package, just add the HLSL file to the Visual Studio project. Visual Studio will use the [Effect-Compiler Tool](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) (FXC) to compile HLSL files into compiled shader objects (.CSO files) and include them in the app package.
+To include the shader bytecode in your compiled app package, just add the HLSL file to the Visual Studio project. Visual Studio will use the [Effect-Compiler Tool](/windows/desktop/direct3dtools/fxc) (FXC) to compile HLSL files into compiled shader objects (.CSO files) and include them in the app package.
 
 > **Note**   Be sure to set the correct target feature level for the HLSL compiler: right-click the HLSL source file in Visual Studio, select Properties, and change the **Shader Model** setting under **HLSL Compiler -&gt; General**. Direct3D checks this property against the hardware capabilities when your app creates the Direct3D shader resource.
 
@@ -237,11 +237,11 @@ To include the shader bytecode in your compiled app package, just add the HLSL f
 
 ![hlsl shader properties](images/hlslshaderpropertiesmenu.png)![hlsl shader type](images/hlslshadertypeproperties.png)
 
-This is a good place to create the input layout, which corresponds to the vertex stream declaration in Direct3D 9. The per-vertex data structure needs to match what the vertex shader uses; in Direct3D 11 we have more control over the input layout; we can define the array size and bit length of floating-point vectors and specify semantics for the vertex shader. We create a [**D3D11\_INPUT\_ELEMENT\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structure and use it to inform Direct3D what the per-vertex data will look like. We waited until after we loaded the vertex shader to define the input layout because the API validates the input layout against the vertex shader resource. If the input layout isn't compatible then Direct3D throws an exception.
+This is a good place to create the input layout, which corresponds to the vertex stream declaration in Direct3D 9. The per-vertex data structure needs to match what the vertex shader uses; in Direct3D 11 we have more control over the input layout; we can define the array size and bit length of floating-point vectors and specify semantics for the vertex shader. We create a [**D3D11\_INPUT\_ELEMENT\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structure and use it to inform Direct3D what the per-vertex data will look like. We waited until after we loaded the vertex shader to define the input layout because the API validates the input layout against the vertex shader resource. If the input layout isn't compatible then Direct3D throws an exception.
 
-Per-vertex data has to be stored in compatible types in system memory. DirectXMath data types can help; for example, DXGI\_FORMAT\_R32G32B32\_FLOAT corresponds to [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3).
+Per-vertex data has to be stored in compatible types in system memory. DirectXMath data types can help; for example, DXGI\_FORMAT\_R32G32B32\_FLOAT corresponds to [**XMFLOAT3**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat3).
 
-> **Note**   Constant buffers use a fixed input layout that aligns to four floating-point numbers at a time. [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) (and its derivatives) are recommended for constant buffer data.
+> **Note**   Constant buffers use a fixed input layout that aligns to four floating-point numbers at a time. [**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) (and its derivatives) are recommended for constant buffer data.
 
  
 
@@ -478,12 +478,8 @@ Presenting a frame to the screen using DirectX 11
 m_swapChain->Present(1, 0);
 ```
 
-The rendering chain we just created will be called from a game loop implemented in the [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) method. This is shown in [Part 3: Viewport and game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+The rendering chain we just created will be called from a game loop implemented in the [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run) method. This is shown in [Part 3: Viewport and game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
 
  
 
  
-
-
-
-

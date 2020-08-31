@@ -20,7 +20,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 The following features have been added to the Windows Insider Preview builds, available through the [Windows Insider](https://insider.windows.com/) program.
 
-* The [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
+* The [Windows UI Library](/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface.
 
@@ -34,7 +34,7 @@ The following features have been added to the Windows Insider Preview builds, av
 
 The package support framework is an open-source kit that helps you apply fixes to your win32 application when you don’t have access to the source code, so that it can run in an MSIX container.
 
-To learn more, see [Apply runtime fixes to an MSIX package by using the Package Support Framework](../porting/package-support-framework.md).
+To learn more, see [Apply runtime fixes to an MSIX package by using the Package Support Framework](/windows/msix/psf/package-support-framework).
 
 ## Developer Guidance
 
@@ -48,7 +48,7 @@ We've added 250 [C++/WinRT](../cpp-and-winrt-apis/index.md) code listings to top
 
 ### Project Rome
 
-The [Project Rome docs](https://docs.microsoft.com/windows/project-rome/) site has been reorganized into a feature-first approach. This should make it easier for developers to find what they're looking for, and to implement features of their choice across multiple platforms.
+The [Project Rome docs](/windows/project-rome/) site has been reorganized into a feature-first approach. This should make it easier for developers to find what they're looking for, and to implement features of their choice across multiple platforms.
 
 ## Videos
 

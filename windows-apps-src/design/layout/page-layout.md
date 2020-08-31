@@ -8,9 +8,9 @@ localizationpriority: medium
 ---
 # Page layout
 
-In Windows apps, each [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 
+In Windows apps, each [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 
 
-Your app can have multiple pages: when a user launches a Windows app, the application code creates a [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) to place inside of the application's [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). The Frame can then [navigate](../basics/navigate-between-two-pages.md) between the application's [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) instances. 
+Your app can have multiple pages: when a user launches a Windows app, the application code creates a [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) to place inside of the application's [**Window**](/uwp/api/windows.ui.xaml.window). The Frame can then [navigate](../basics/navigate-between-two-pages.md) between the application's [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) instances. 
 
 Most pages follow a common layout structure, and this article covers which UI elements you'll need, and where they should go on a page. 
 
@@ -27,7 +27,7 @@ Left nav, or the [nav pane](../controls-and-patterns/navigationview.md) pattern,
 - Entry point into app settings
 - Entry point into account settings
 
-The [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) control implements the left nav pattern for UWP.
+The [NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) control implements the left nav pattern for UWP.
 
 When a navigation item is selected, the Frame should navigate to the selected item's Page.
 

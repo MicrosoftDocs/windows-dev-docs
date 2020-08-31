@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 -   Windows 10 Mobile
 -   Windows 10 IoT Core 
 
-In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
+In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
 
 Builds distributed as flights provide the Windows engineering team with significant data regarding how well builds are performing in actual use. Flighting with Windows Insiders also enables Microsoft to test builds in much more diverse hardware, application, and networking environments than in the past, and to identify issues far more quickly. As a result, Microsoft believes that community-focused flighting will enable both a faster pace of innovation delivery and better public release quality than ever.
 
@@ -36,7 +36,7 @@ The following table shows describes the various servicing channels and their key
 | Semi-Annual Channel | Approximately 4 months after first published by Microsoft | 18 months from when first published | Provides additional time to test new feature upgrades before deployment | Pro, Education, Enterprise, Mobile Enterprise, IoT Core Pro |
 | Long-Term Servicing Channel (LTSC) | Immediately after published by Microsoft | 10 Years | Enables long-term deployment of selected Windows 10 releases in low-change configurations | Enterprise LTSB |
 
-For more information, see [Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels).
+For more information, see [Windows 10 servicing options for updates and upgrades](/windows/deployment/update/waas-overview#servicing-channels).
 
 ## Supporting apps in Windows as a service
 
@@ -86,7 +86,7 @@ Some apps perform a version check and simply pass a warning to users. However, t
 -   If the app is dependent on specific API functionality, ensure you target the correct API version.
 -   Ensure you detect the change via APISet or another public API, and do not use the version as a proxy for some feature or fix. If there are breaking changes and a proper check is not exposed, then that is a bug.
 -   Ensure the app does NOT check for version in odd ways, such as via the registry, file versions, offsets, kernel mode, drivers, or other means. If the app absolutely needs to check the version, use the GetVersion APIs, which should return the major, minor, and build number.
--   If you are using the [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API, remember that the behavior of this API has changed since Windows 8.1.
+-   If you are using the [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion) API, remember that the behavior of this API has changed since Windows 8.1.
 
 If you own apps such as antimalware or firewall apps, you should work through your usual feedback channels and via the Windows Insider program.
 
@@ -155,4 +155,4 @@ Let us know how your app is performing against flighted builds. As you discover 
 
 
 ## Related topics
-[Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10 servicing options for updates and upgrades](/windows/manage/introduction-to-windows-10-servicing)

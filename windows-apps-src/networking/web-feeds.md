@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom)
--   [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)
--   [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)
+-   [**Windows.Data.Xml.Dom**](/uwp/api/Windows.Data.Xml.Dom)
+-   [**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub)
+-   [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication)
 
-Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) namespace.
+Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace.
 
 ## What is a feed?
 
@@ -24,11 +24,11 @@ A web feed is a document that contains any number of individual entries made up 
 
 ## Which feed format standards are supported?
 
-The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
+The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
 
-Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationNode) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom) namespace, allows apps to access attributes, extensions, and any content that they may contain.
+Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](/uwp/api/Windows.Web.Syndication.SyndicationNode) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](/uwp/api/Windows.Data.Xml.Dom) namespace, allows apps to access attributes, extensions, and any content that they may contain.
 
-Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)) only supports feed content operations according to the Atom and Atom Publication standards.
+Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub)) only supports feed content operations according to the Atom and Atom Publication standards.
 
 ## Using syndicated content with network isolation
 
@@ -36,7 +36,7 @@ The network isolation feature in the UWP enables a developer to control and limi
 
 Network isolation allows a developer to define for each app the scope of required network access. An app without the appropriate scope defined is prevented from accessing the specified type of network, and specific type of network request (outbound client-initiated requests or both inbound unsolicited requests and outbound client-initiated requests). The ability to set and enforce network isolation ensures that if an app does get compromised, it can only access networks where the app has explicitly been granted access. This significantly reduces the scope of the impact on other applications and on Windows.
 
-Network isolation affects any class elements in the [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) and [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
+Network isolation affects any class elements in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) and [**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
 
 The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Microsoft Visual Studio 2015 when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
 
@@ -44,7 +44,7 @@ For more detailed information on network isolation and networking capabilities, 
 
 ## How to access a web feed
 
-This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) namespace in your UWP app written in C# or Javascript.
+This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace in your UWP app written in C# or Javascript.
 
 **Prerequisites**
 
@@ -52,9 +52,9 @@ To ensure your UWP app is network ready, you must set any network capabilities t
 
 **Retrieving syndicated content from a web feed**
 
-Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), which defines the methods and properties we'll use to retrieve and display the feed.
+Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](/uwp/api/Windows.Web.Syndication.SyndicationClient), which defines the methods and properties we'll use to retrieve and display the feed.
 
-The [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
+The [**Uri**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -87,13 +87,13 @@ try {
 }
 ```
 
-Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) property), proxy credentials (the [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) property), and HTTP headers (the [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) method) needed. With the basic request parameters configured, a valid [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) function to request the feed.
+Next we configure the request by setting any Server credentials (the [**ServerCredential**](/uwp/api/windows.web.syndication.syndicationclient.servercredential) property), proxy credentials (the [**ProxyCredential**](/uwp/api/windows.web.syndication.syndicationclient.proxycredential) property), and HTTP headers (the [**SetRequestHeader**](/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) method) needed. With the basic request parameters configured, a valid [**Uri**](/uwp/api/windows.foundation.uri) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) function to request the feed.
 
 Assuming the desired feed content was returned, the example code iterates through each feed item, calling **displayCurrentItem** (which we define next), to display items and their contents as a list through the UI.
 
 You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-The [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
+The [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](/uwp/api/windows.foundation.uri) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -151,7 +151,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-In the previous step, [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) returned the requested feed content and the example code got to work iterating through available feed items. Each of these items is represented using a [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) object that contains all of the item properties and content afforded by the relevant syndication standard (RSS or Atom). In the following example we observe the **displayCurrentItem** function working through each item and displaying its content through various named UI elements.
+In the previous step, [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) returned the requested feed content and the example code got to work iterating through available feed items. Each of these items is represented using a [**SyndicationItem**](/uwp/api/Windows.Web.Syndication.SyndicationItem) object that contains all of the item properties and content afforded by the relevant syndication standard (RSS or Atom). In the following example we observe the **displayCurrentItem** function working through each item and displaying its content through various named UI elements.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -193,7 +193,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-As suggested earlier, the type of content represented by a [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (for example, Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions) property and then displayed as demonstrated in the following example code.
+As suggested earlier, the type of content represented by a [**SyndicationItem**](/uwp/api/Windows.Web.Syndication.SyndicationItem) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](/uwp/api/windows.web.syndication.syndicationitem.contributors), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (for example, Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](/uwp/api/windows.web.syndication.syndicationitem.elementextensions) property and then displayed as demonstrated in the following example code.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

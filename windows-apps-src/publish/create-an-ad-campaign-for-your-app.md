@@ -95,6 +95,6 @@ Here's how to create an ad campaign to promote an app.
 
 ## Review ad campaign performance
 
-To see how your campaigns are performing, return to the **Ad campaigns** page. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. For more info, see [Ad campaign report](promote-your-app-report.md).
+To see how your campaigns are performing, return to the **Ad campaigns** page. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. For more info, see [Ad campaign report](/windows/uwp/publish/ad-campaign-report).
 
 To edit a campaign, select its name in the list.

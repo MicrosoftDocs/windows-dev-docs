@@ -1,6 +1,6 @@
 ---
-Description: Use content links to embed rich data in your text controls.
 title: Content links in text controls
+description: Learn how to use content links to embed rich data in the TextBlock, RichTextBlock, and RichEditBox controls.
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
@@ -156,7 +156,7 @@ The People picker creates a ContentLinkInfo with a Uri that uses the **ms-people
 - If LinkContentKind is not "People", it opens the **People** app. For example, this can happen if you’ve modified the LinkContentKind in the ContentLinkChanged event handler.
 
 > [!TIP]
-> For more info about opening other apps and websites from your app, see the topics under [Launch an app with a Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> For more info about opening other apps and websites from your app, see the topics under [Launch an app with a Uri](../../launch-resume/launch-app-with-uri.md).
 
 #### Invoked
 
@@ -297,7 +297,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> When you use a ContentLink in a text control with other text elements in XAML, place the content in a [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the ContentLink and other elements.
+> When you use a ContentLink in a text control with other text elements in XAML, place the content in a [Span](/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the ContentLink and other elements.
 
 ## Examples
 

@@ -38,7 +38,7 @@ Defining overlay | Defined in a XAML file, `\*.xaml`. Once understanding XAML, c
 User interface elements | XAML user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](/uwp/api/Windows.UI.Xaml) and [**Windows::UI::Xaml::Controls**](/uwp/api/Windows.UI.Xaml.Controls). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp. | Simple shapes can be drawn like rectangles and ellipses.
 Window resizing | Naturally handles resize and view state change events, transforming the overlay accordingly | Need to manually specify how to redraw the overlay's components.
 
-Another big difference involves the [swap chain](/windows/uwp/graphics-concepts/swap-chains). You don't have to attach the swap chain to a [**Windows::UI::Core::CoreWindow**](/uwp/api/windows.ui.core.corewindow) object. Instead, a DirectX app that incorporates XAML associates a swap chain when a new [**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) object is constructed. 
+Another big difference involves the [swap chain](../graphics-concepts/swap-chains.md). You don't have to attach the swap chain to a [**Windows::UI::Core::CoreWindow**](/uwp/api/windows.ui.core.corewindow) object. Instead, a DirectX app that incorporates XAML associates a swap chain when a new [**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) object is constructed. 
 
 The following snippet show how to declare XAML for the **SwapChainPanel** in the [**DirectXPage.xaml**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml) file.
 ```xml

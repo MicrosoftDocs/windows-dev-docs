@@ -24,7 +24,7 @@ using Windows.Media.Capture;
 ```
 
 ## Step 4: Set up your MediaCapture initialization settings
-The following example initializes the [**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings). 
+The following example initializes the [**MediaCaptureInitializationSettings**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings). 
 
 ```Csharp
  private void InitCaptureSettings()
@@ -51,7 +51,7 @@ try
 ```
 
 > [!TIP]
-> See [Display the camera preview](https://docs.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your application.
+> See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your application.
 
 ## See also
 

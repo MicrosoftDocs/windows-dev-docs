@@ -643,4 +643,4 @@
         - name: /ext/xboxlive/sandbox
           href: ../xbox-apps/wdp-sandbox-api.md
 - name: Xbox Live
-  href: https://docs.microsoft.com/gaming/xbox-live/index
+  href: /gaming/xbox-live/index

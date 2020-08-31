@@ -60,21 +60,21 @@
               - name: Test on device or emulator
                 href: ../android/emulator.md
         - name: Get started with C and C++
-          href: https://docs.microsoft.com/cpp/
+          href: /cpp/
         - name: Get started with C#
-          href: https://docs.microsoft.com/dotnet/csharp/
+          href: /dotnet/csharp/
         - name: Get started with Java on Azure
-          href: https://docs.microsoft.com/azure/developer/java/
+          href: /azure/developer/java/
         - name: Get started with Powershell
-          href: https://docs.microsoft.com/powershell/
+          href: /powershell/
         - name: Get started with databases on WSL
-          href: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
+          href: /windows/wsl/tutorials/wsl-database
   - name: Tools and platforms
     items:
         - name: Windows Subsystem for Linux
-          href: https://docs.microsoft.com/windows/wsl/
+          href: /windows/wsl/
         - name: Windows Terminal
-          href: https://docs.microsoft.com/windows/terminal/
+          href: /windows/terminal/
         - name: Windows Package Manager
           items:
             - name: Overview
@@ -110,8 +110,8 @@
         - name: VS Code
           href: https://code.visualstudio.com/docs
         - name: Visual Studio
-          href: https://docs.microsoft.com/visualstudio/windows/?view=vs-2019
+          href: /visualstudio/windows/?view=vs-2019
         - name: Azure
-          href: https://docs.microsoft.com/azure/?product=featured
+          href: /azure/?product=featured
         - name: .NET
-          href: https://docs.microsoft.com/dotnet/
+          href: /dotnet/

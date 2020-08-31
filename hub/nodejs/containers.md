@@ -30,7 +30,7 @@ This guide assumes that you've already completed the steps to [set up your Node.
 
 Docker containers are similar to virtual machines, but don't create an entire virtual operating system. Instead, Docker enables the app to use the same Linux kernel as the system that it's running on. This allows the app package to only require parts not already on the host computer, reducing the package size and improving performance.
 
-Continuous availability, using Docker containers with tools like [Kubernetes](https://docs.microsoft.com/azure/aks/), is another reason for the popularity of containers. This enables multiple versions of your app container to be created at different times. Rather than needing to take down an entire system for updates or maintenance, each container (and it's specific microservices) can be replaced on the fly. You can prepare a new container with all of your updates, set up the container for production, and just point to the new container once it's ready. You can also archive different versions of your app using containers and keep them running as a safety fallback if needed.
+Continuous availability, using Docker containers with tools like [Kubernetes](/azure/aks/), is another reason for the popularity of containers. This enables multiple versions of your app container to be created at different times. Rather than needing to take down an entire system for updates or maintenance, each container (and it's specific microservices) can be replaced on the fly. You can prepare a new container with all of your updates, set up the container for production, and just point to the new container once it's ready. You can also archive different versions of your app using containers and keep them running as a safety fallback if needed.
 
 ## Install Docker Desktop WSL 2 Tech Preview
 
@@ -156,21 +156,21 @@ To upload your new container image to a repo hosted on Docker Hub:
 
 7. Typically, once a container is stopped, it should also be removed. Removing a container cleans up any resources it leaves behind. Once you remove a container, any changes you made within its image filesystem are permanently lost. You will need to build a new image to represent changes. TO remove your container, use the command: `docker rm <container ID>`
 
-Learn more about [building a containerized web application with Docker](https://docs.microsoft.com/learn/modules/intro-to-containers/).
+Learn more about [building a containerized web application with Docker](/learn/modules/intro-to-containers/).
 
 ## Deploy to Azure Container Registry
 
-[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) enables you to store, manage, and keep your container images safe in private, authenticated, repositories. Compatible with standard Docker commands, ACR can handle critical tasks for you like container health monitoring and maintenance, pairing with [Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes) to create scalable orchestration systems. Build on demand, or fully automate builds with triggers such as source code commits and base image updates. ACR also leverages the vast Azure cloud network to manage network latency, global deployments, and create a seamless native experience for anyone using [Azure App Service](https://docs.microsoft.com/azure/app-service/) (for web hosting, mobile back ends, REST APIs), or [other Azure cloud services](https://azure.microsoft.com/product-categories/containers/).
+[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) enables you to store, manage, and keep your container images safe in private, authenticated, repositories. Compatible with standard Docker commands, ACR can handle critical tasks for you like container health monitoring and maintenance, pairing with [Kubernetes](/azure/aks/intro-kubernetes) to create scalable orchestration systems. Build on demand, or fully automate builds with triggers such as source code commits and base image updates. ACR also leverages the vast Azure cloud network to manage network latency, global deployments, and create a seamless native experience for anyone using [Azure App Service](/azure/app-service/) (for web hosting, mobile back ends, REST APIs), or [other Azure cloud services](https://azure.microsoft.com/product-categories/containers/).
 
 > [!IMPORTANT]
 > You need your own Azure subscription to deploy a container to Azure and you may receive a charge. If you don't already have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
-For help creating an Azure Container Registry and deploy your app container image, see the exercise: [Deploy a Docker image to an Azure Container Instance](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance).
+For help creating an Azure Container Registry and deploy your app container image, see the exercise: [Deploy a Docker image to an Azure Container Instance](/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance).
 
 ## Additional resources
 
 - [Node.js on Azure](https://azure.microsoft.com/develop/nodejs/)
-- Quickstart: [Create a Node.js web app in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
-- Online course: [Administer containers in Azure](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
+- Quickstart: [Create a Node.js web app in Azure](/azure/app-service/app-service-web-get-started-nodejs)
+- Online course: [Administer containers in Azure](/learn/paths/administer-containers-in-azure/)
 - Using VS Code: [Working with Docker](https://code.visualstudio.com/docs/azure/docker)
 - Docker Docs: [Docker Desktop WSL 2 Tech Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)

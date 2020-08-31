@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Test Surface Hub apps using Visual Studio
 The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves with the Surface Hub's screen size and resolution.
 
-For more information on the simulator tool in general, see [Run UWP apps in the simulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
+For more information on the simulator tool in general, see [Run UWP apps in the simulator](/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
 
 ## Add Surface Hub resolutions to the simulator
 To add Surface Hub resolutions to the simulator:
@@ -84,7 +84,7 @@ By default, Surface Hub only installs apps from the Microsoft Store. To install 
 3. Choose **Developer mode** and accept the warning prompt.
 
 ### Deploy your app from Visual Studio
-For more information on the deployment process in general, see [Deploying and debugging UWP apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+For more information on the deployment process in general, see [Deploying and debugging UWP apps](./deploying-and-debugging-uwp-apps.md).
 
    > [!NOTE]
    > This feature requires Visual Studio 2015 Update 1 or later, however we recommend that you use the latest most up to date version of Visual Studio. An up to date Visual Studio instance will gibe you all the latest development and security updates.

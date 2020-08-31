@@ -19,9 +19,9 @@ ms.custom: RS5
 Provide support for tracking a user's gaze, attention, and presence based on the location and movement of their eyes.
 
 > [!NOTE]
-> For gaze input in [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/), see [Gaze](https://docs.microsoft.com/windows/mixed-reality/gaze).
+> For gaze input in [Windows Mixed Reality](/windows/mixed-reality/), see [Gaze](/windows/mixed-reality/gaze).
 
-**Important APIs**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Important APIs**: [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview), [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## Overview
 
@@ -30,13 +30,13 @@ Gaze input is a powerful way to interact and use Windows applications that is es
 In addition, gaze input offers equally compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).
 
 > [!NOTE]
-> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech. A set of Windows Runtime APIs ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) for building applications that can interact with eye tracking hardware is available with **Windows 10 April 2018 Update (Version 1803, build 17134)** and newer.
+> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech. A set of Windows Runtime APIs ([Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview)) for building applications that can interact with eye tracking hardware is available with **Windows 10 April 2018 Update (Version 1803, build 17134)** and newer.
 
 ## Privacy
 
 Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the `gazeInput` capability in the app manifest of your application (see the following **Setup** section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.
 
-In addition, if your app collects, stores, or transfers eye tracking data, you must describe this in your app's privacy statement and follow all other requirements for **Personal Information** in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+In addition, if your app collects, stores, or transfers eye tracking data, you must describe this in your app's privacy statement and follow all other requirements for **Personal Information** in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies).
 
 ## Setup
 
@@ -60,7 +60,7 @@ To use the gaze input APIs in your Windows app you'll need to:
 
 In this example, we demonstrate how to track the user's gaze within a Windows app and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.
 
-A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) from the [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
+A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar) from the [Windows Community Toolkit](/windows/communitytoolkit/) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
 
 ![Gaze tracking with timer sample](images/gaze/gaze-input-timed2.gif)
 
@@ -148,7 +148,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 2. Next, we initialize our app.
 
-    In this snippet, we declare our global objects and override the [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) page event to start our [gaze device watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) and the [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) page event to stop our [gaze device watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
+    In this snippet, we declare our global objects and override the [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) page event to start our [gaze device watcher](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) and the [OnNavigatedFrom](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) page event to stop our [gaze device watcher](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
 
     ```csharp
     using System;
@@ -227,7 +227,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 3. Next, we add our gaze device watcher methods. 
     
-    In `StartGazeDeviceWatcher`, we call [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) and declare the eye-tracking device event listeners ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated), and [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
+    In `StartGazeDeviceWatcher`, we call [CreateWatcher](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) and declare the eye-tracking device event listeners ([DeviceAdded](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated), and [DeviceRemoved](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
     In `DeviceAdded`, we check the state of the eye-tracking device. If a viable device, we increment our device count and enable gaze tracking. See next step for details.
 
@@ -324,10 +324,10 @@ A small ellipse is used to show where the gaze point is within the application v
 
 4. Here, we check if the device is viable in `IsSupportedDevice` and, if so, attempt to enable gaze tracking in `TryEnableGazeTrackingAsync`.
 
-    In `TryEnableGazeTrackingAsync`, we declare the gaze event handlers, and call [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) to get a reference to the input source (this must be called on the UI thread, see [Keep the UI thread responsive](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)).
+    In `TryEnableGazeTrackingAsync`, we declare the gaze event handlers, and call [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) to get a reference to the input source (this must be called on the UI thread, see [Keep the UI thread responsive](../../debug-test-perf/keep-the-ui-thread-responsive.md)).
 
     > [!NOTE]
-    > You should call [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) only when a compatible eye-tracking device is connected and required by your application. Otherwise, the consent dialog is unnecessary.
+    > You should call [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) only when a compatible eye-tracking device is connected and required by your application. Otherwise, the consent dialog is unnecessary.
 
 ```csharp
     /// <summary>
@@ -399,7 +399,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
     We display and hide the gaze tracking ellipse in `GazeEntered` and `GazeExited`, respectively.
 
-    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), which triggers repositioning of the progress bar. See next step for details.
+    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar), which triggers repositioning of the progress bar. See next step for details.
 
     ```csharp
     /// <summary>
@@ -594,7 +594,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 ### Resources
 
-- [Windows Community Toolkit Gaze library](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows Community Toolkit Gaze library](/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### Topic samples
 

@@ -47,7 +47,7 @@ Before describing how to create explicit time-based animations with KeyFrameAnim
 - Animation Group – starting multiple animations at the same time.
   - Often used when wanting to animate multiple properties at the same time.
 
-For more info, see [CompositionAnimationGroup](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimationgroup).
+For more info, see [CompositionAnimationGroup](/uwp/api/windows.ui.composition.compositionanimationgroup).
 
 With these concepts in mind, let’s talk through the general formula for constructing a KeyFrameAnimation:
 

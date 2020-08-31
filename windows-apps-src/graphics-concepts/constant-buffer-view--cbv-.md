@@ -17,7 +17,7 @@ Constant buffers contain shader constant data. The value of them is that the dat
 
 Typical data for a constant buffer would be world, projection and view matrices, which remain constant throughout the drawing of one frame.
 
-Constant buffer layout should match the HLSL layout (refer to [Packing Rules for Constant Variables](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules)).
+Constant buffer layout should match the HLSL layout (refer to [Packing Rules for Constant Variables](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules)).
 
 ## <span id="related-topics"></span>Related topics
 
@@ -27,7 +27,3 @@ Constant buffer layout should match the HLSL layout (refer to [Packing Rules for
  
 
  
-
-
-
-

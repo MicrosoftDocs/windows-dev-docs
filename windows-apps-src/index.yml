@@ -28,11 +28,11 @@ landingContent:
       - linkListType: concept
         links:
           - text: UWP vs other Windows app platforms
-            url: https://docs.microsoft.com/windows/apps/desktop/choose-your-platform
+            url: /windows/apps/desktop/choose-your-platform
       - linkListType: learn
         links:
           - text: Browse Windows courses on Microsoft Learn
-            url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
+            url: /learn/browse/?products=windows&resource_type=module
           - text: What's a UWP app?
             url: get-started/universal-application-platform-guide.md
 
@@ -41,15 +41,15 @@ landingContent:
       - linkListType: whats-new
         links:
           - text: Learn about the newest UWP features
-            url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest
+            url: ./whats-new/windows-10-build-19041.md
           - text: Explore highlighted features of Windows 10
             url: https://developer.microsoft.com/windows/windows-10-for-developers
       - linkListType: concept
         links:
           - text: Check out the latest in the C# language
-            url: https://docs.microsoft.com/dotnet/csharp/index
+            url: /dotnet/csharp/index
           - text: Explore new features in Visual Studio
-            url: https://docs.microsoft.com/visualstudio/ide/
+            url: /visualstudio/ide/
 
   - title: Develop
     linkLists:
@@ -62,7 +62,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Browse API reference docs for UWP
-            url: https://docs.microsoft.com/uwp/
+            url: /uwp/
           - text: Explore Windows code samples
             url: https://developer.microsoft.com/windows/samples
       - linkListType: download
@@ -79,7 +79,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Add UI controls with the Windows UI Library
-            url: https://docs.microsoft.com/uwp/toolkits/winui/
+            url: /uwp/toolkits/winui/
 
   - title: Publish
     linkLists:

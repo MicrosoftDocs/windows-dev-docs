@@ -30,9 +30,9 @@ A secondary tile provides a consistent, efficient way for users to directly acce
 
 Older devices don't have the taskbar pinning APIs (if you're targeting older versions of Windows 10). Therefore, you shouldn't display a pin button on these devices that aren't capable of pinning.
 
-Additionally, this feature is locked under Limited-Access. To gain access, contact Microsoft. API calls to **[TaskbarManager.RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**, **[TaskbarManager.IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**, and **[TaskbarManager.TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** will fail with an Access Denied exception. Apps are not allowed to use this API without permission, and the API definition may change at any time.
+Additionally, this feature is locked under Limited-Access. To gain access, contact Microsoft. API calls to **[TaskbarManager.RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**, **[TaskbarManager.IsSecondaryTilePinnedAsync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**, and **[TaskbarManager.TryUnpinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** will fail with an Access Denied exception. Apps are not allowed to use this API without permission, and the API definition may change at any time.
 
-Use the [ApiInformation.IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) method to determine if the APIs are present. And then use the **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API to try unlocking the API.
+Use the [ApiInformation.IsMethodPresent](/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) method to determine if the APIs are present. And then use the **[LimitedAccessFeatures](/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API to try unlocking the API.
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -65,7 +65,7 @@ else
 
 ## 2. Get the TaskbarManager instance
 
-Windows apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. Additionally, presence of the taskbar might come and go. To check whether taskbar is currently present, call the **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** method and check that the instance returned is not null. Don't display a pin button if the taskbar isn't present.
+Windows apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. Additionally, presence of the taskbar might come and go. To check whether taskbar is currently present, call the **[TaskbarManager.GetDefault](/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** method and check that the instance returned is not null. Don't display a pin button if the taskbar isn't present.
 
 We recommend holding onto the instance for the duration of a single operation, like pinning, and then grabbing a new instance the next time you need to do another operation.
 
@@ -85,7 +85,7 @@ else
 
 ## 3. Check whether your tile is currently pinned to the taskbar
 
-If your tile is already pinned, you should display an unpin button instead. You can use the **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** method to check whether your tile is currently pinned (users can unpin it at any time). In this method, you pass the **TileId** of the tile you want to know is pinned.
+If your tile is already pinned, you should display an unpin button instead. You can use the **[IsSecondaryTilePinnedAsync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** method to check whether your tile is currently pinned (users can unpin it at any time). In this method, you pass the **TileId** of the tile you want to know is pinned.
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -102,7 +102,7 @@ else
 
 ## 4. Check whether pinning is allowed
 
-Pinning to the taskbar can be disabled by Group Policy. The [TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) property lets you check whether pinning is allowed.
+Pinning to the taskbar can be disabled by Group Policy. The [TaskbarManager.IsPinningAllowed](/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) property lets you check whether pinning is allowed.
 
 When the user clicks your pin button, you should check this property, and if it's false, you should display a message dialog informing the user that pinning is not allowed on this machine.
 
@@ -131,7 +131,7 @@ The user has clicked your pin button, and you've determined that the APIs are pr
 
 First, construct your secondary tile just like you would when pinning to Start. You can learn more about the secondary tile properties by reading [Pin secondary tiles to Start](secondary-tiles-pinning.md). However, when pinning to taskbar, in addition to the previously required properties, Square44x44Logo (this is the logo used by taskbar) is also required. Otherwise, an exception will be thrown.
 
-Then, pass the tile to the **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** method. Since this is under limited-access, this will not display a confirmation dialog and does not require a UI thread. But in the future when this is opened up beyond limited-access, callers not utilizing limited-access will receive a dialog and be required to use the UI thread.
+Then, pass the tile to the **[RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** method. Since this is under limited-access, this will not display a confirmation dialog and does not require a UI thread. But in the future when this is opened up beyond limited-access, callers not utilizing limited-access will receive a dialog and be required to use the UI thread.
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -150,7 +150,7 @@ This method returns a boolean value that indicates whether your tile is now pinn
 
 ## Enumerate tiles
 
-To see all the tiles that you created and are still pinned somewhere (Start, taskbar, or both), use **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. You can subsequently check whether these tiles are pinned to the taskbar and/or Start. If the surface isn't supported, these methods return false.
+To see all the tiles that you created and are still pinned somewhere (Start, taskbar, or both), use **[FindAllAsync](/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. You can subsequently check whether these tiles are pinned to the taskbar and/or Start. If the surface isn't supported, these methods return false.
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -174,12 +174,12 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 
 ## Update a tile
 
-To update an already pinned tile, you can use the [**SecondaryTile.UpdateAsync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) method as described in [Updating a secondary tile](secondary-tiles-pinning.md#updating-a-secondary-tile).
+To update an already pinned tile, you can use the [**SecondaryTile.UpdateAsync**](/uwp/api/windows.ui.startscreen.secondarytile.updateasync) method as described in [Updating a secondary tile](secondary-tiles-pinning.md#updating-a-secondary-tile).
 
 
 ## Unpin a tile
 
-Your app should provide an unpin button if the tile is currently pinned. To unpin the tile, simply call **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, passing in the **TileId** of the secondary tile you would like unpinned.
+Your app should provide an unpin button if the tile is currently pinned. To unpin the tile, simply call **[TryUnpinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, passing in the **TileId** of the secondary tile you would like unpinned.
 
 This method returns a boolean value that indicates whether your tile is no longer pinned to the taskbar. If your tile wasn't pinned in the first place, this also returns true. If unpinning wasn't allowed, this returns false.
 
@@ -196,7 +196,7 @@ if (taskbarManager != null)
 
 ## Delete a tile
 
-If you want to unpin a tile from everywhere (Start, taskbar), use the **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** method.
+If you want to unpin a tile from everywhere (Start, taskbar), use the **[RequestDeleteAsync](/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** method.
 
 This is appropriate for cases where the content the user pinned is no longer applicable. For example, if your app lets you pin a notebook to Start and taskbar, and then the user deletes the notebook, you should simply delete the tile associated with the notebook.
 
@@ -212,7 +212,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## Unpin only from Start
 
-If you only want to unpin a secondary tile from Start while leaving it on Taskbar, you can call the **[StartScreenManager.TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** method. This will similarly delete the tile if it is no longer pinned to any other surfaces.
+If you only want to unpin a secondary tile from Start while leaving it on Taskbar, you can call the **[StartScreenManager.TryRemoveSecondaryTileAsync](/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** method. This will similarly delete the tile if it is no longer pinned to any other surfaces.
 
 This method returns a boolean value that indicates whether your tile is no longer pinned to Start. If your tile wasn't pinned in the first place, this also returns true. If unpinning wasn't allowed or Start isn't supported, this returns false.
 
@@ -223,5 +223,5 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 
 ## Resources
 
-* [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [TaskbarManager class](/uwp/api/windows.ui.shell.taskbarmanager)
 * [Pin secondary tiles to Start](secondary-tiles-pinning.md)

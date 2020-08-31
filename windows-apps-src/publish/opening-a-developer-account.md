@@ -29,7 +29,7 @@ This article describes how to register for a Windows developer account in [Partn
 5.  Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. For company accounts, be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
 
     > [!NOTE]
-    > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
+    > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
 
 6.  Enter the contact info you want to use for your developer account.
 
@@ -42,7 +42,7 @@ This article describes how to register for a Windows developer account in [Partn
 
 8.  Enter your payment info for the one-time registration fee. If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal info in supported markets). Note that prepaid credit cards can't be used for this purchase. When you're finished, select **Next** to move on to the **Review** screen.
 
-9.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Check the box to indicate you've read these terms and accept them.
+9.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement). Check the box to indicate you've read these terms and accept them.
 
 10.  Select **Finish** to confirm your registration. Your payment will be processed and we'll send a confirmation message to your email address.
 

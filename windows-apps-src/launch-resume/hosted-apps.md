@@ -22,12 +22,12 @@ The hosted apps feature is supported by several elements and attributes in the p
 
 The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++/Win32) that have *package identity*. UWP apps are not supported as hosts at this time. There are several ways for a desktop app to have package identity:
 
-* The most common way to grant package identity to a desktop app is by [packaging it in an MSIX package](https://docs.microsoft.com/windows/msix).
-* In some cases, you may alternatively choose to grant package identity by creating a [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). This option is useful if you are unable to adopt MSIX packaging for deploying your desktop app.
+* The most common way to grant package identity to a desktop app is by [packaging it in an MSIX package](/windows/msix).
+* In some cases, you may alternatively choose to grant package identity by creating a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). This option is useful if you are unable to adopt MSIX packaging for deploying your desktop app.
 
-The host is declared in its package manifest by the [**uap10:HostRuntime**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) extension. This extension has an **Id** attribute that must be assigned a value that is also referenced by the package manifest for the hosted app. When the hosted app is activated, the host is launched under the identity of the hosted app and can load content or binaries from the hosted app package.
+The host is declared in its package manifest by the [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) extension. This extension has an **Id** attribute that must be assigned a value that is also referenced by the package manifest for the hosted app. When the hosted app is activated, the host is launched under the identity of the hosted app and can load content or binaries from the hosted app package.
 
-The following example demonstrates how to define a host in a package manifest. The **uap10:HostRuntime** extension is package-wide and is therefore declared as a child of the [**Package**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-package) element.
+The following example demonstrates how to define a host in a package manifest. The **uap10:HostRuntime** extension is package-wide and is therefore declared as a child of the [**Package**](/uwp/schemas/appxpackage/uapmanifestschema/element-package) element.
 
 ``` xml
 <Package xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10">
@@ -48,22 +48,22 @@ Make note of these important details about the following elements.
 
 | Element              | Details |
 |----------------------|-------|
-| [**uap10:Extension**](https://docs.microsoft.com/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | The `windows.hostRuntime` category declares a package-wide extension that defines the runtime information to be used when activating a hosted app. A hosted app will run with the definitions declared in the extension. When using the host app declared in the previous example, a hosted app will run as the executable **PyScriptEngine.exe** at the **mediumIL** trust level.<br/><br/>The **Executable**, **uap10:RuntimeBehavior**, and **uap10:TrustLevel** attributes specify the name of the host process binary in the package and how the hosted apps will run. For example, a hosted app using the attributes in the previous example will run as the executable PyScriptEngine.exe at mediumIL trust level. |
-| [**uap10:HostRuntime**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | The **Id** attribute declares the unique identifier of this specific host app in the package. A package can have multiple host apps, and each must have a **uap10:HostRuntime** element with a unique **Id**.
+| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | The `windows.hostRuntime` category declares a package-wide extension that defines the runtime information to be used when activating a hosted app. A hosted app will run with the definitions declared in the extension. When using the host app declared in the previous example, a hosted app will run as the executable **PyScriptEngine.exe** at the **mediumIL** trust level.<br/><br/>The **Executable**, **uap10:RuntimeBehavior**, and **uap10:TrustLevel** attributes specify the name of the host process binary in the package and how the hosted apps will run. For example, a hosted app using the attributes in the previous example will run as the executable PyScriptEngine.exe at mediumIL trust level. |
+| [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | The **Id** attribute declares the unique identifier of this specific host app in the package. A package can have multiple host apps, and each must have a **uap10:HostRuntime** element with a unique **Id**.
 
 ## Declare a hosted app
 
-A *hosted app* declares a package dependency on a *host*. The hosted app leverages the host's ID (that is, the **Id** attribute of the **uap10:HostRuntime** extension in the host package) for activation instead of specifying an entry point executable in its own package. The hosted app typically contains content, visual assets, scripts, or binaries that may be accessed by the host. The [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) value in the hosted app package should target the same value as the host.
+A *hosted app* declares a package dependency on a *host*. The hosted app leverages the host's ID (that is, the **Id** attribute of the **uap10:HostRuntime** extension in the host package) for activation instead of specifying an entry point executable in its own package. The hosted app typically contains content, visual assets, scripts, or binaries that may be accessed by the host. The [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) value in the hosted app package should target the same value as the host.
 
 Hosted app packages can be signed or unsigned:
 
 * Signed packages may contain executable files. This is useful in scenarios that have a binary extension mechanism, which enables the host to load a DLL or registered component in the hosted app package.
-* Unsigned packages can only contain non-executable files. This is useful in scenarios where the host only needs to load images, assets and content or script files. Unsigned packages must include a special `OID` value in their [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element or they won’t be allowed to register. This prevents unsigned packages from conflicting with or spoofing the identity of a signed package.
+* Unsigned packages can only contain non-executable files. This is useful in scenarios where the host only needs to load images, assets and content or script files. Unsigned packages must include a special `OID` value in their [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element or they won’t be allowed to register. This prevents unsigned packages from conflicting with or spoofing the identity of a signed package.
 
 To define a hosted app, declare the following items in the package manifest:
 
-* The [**uap10:HostRuntimeDependency**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency) element. This is a child of the [Dependencies](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-dependencies) element.
-* The **uap10:HostId** attribute of the [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) element (for an app) or [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element (for an activatable extension).
+* The [**uap10:HostRuntimeDependency**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency) element. This is a child of the [Dependencies](/uwp/schemas/appxpackage/uapmanifestschema/element-dependencies) element.
+* The **uap10:HostId** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element (for an app) or [**Extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element (for an activatable extension).
 
 The following example demonstrates the relevant sections of a package manifest for an unsigned hosted app.
 
@@ -93,35 +93,35 @@ Make note of these important details about the following elements.
 
 | Element              | Details |
 |----------------------|-------|
-| [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | Because the hosted app package in this example is unsigned, the **Publisher** attribute must include the `OID.2.25.311729368913984317654407730594956997722=1` string. This ensures that the unsigned package cannot spoof the identity of a signed package. |
-| [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | The **MinVersion** attribute must specify 10.0.19041.0 or a later OS version. |
-| [**uap10:HostRuntimeDependency**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | This element element declares a dependency on the host app package. This consists of the **Name** and **Publisher** of the host package, and the **MinVersion** it depends on. These values can be found under the [Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in the host package. |
-| [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) | The **uap10:HostId** attribute expresses the dependency on the host. The hosted app package must declare this attribute instead of the usual **Executable** and **EntryPoint** attributes for an [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) or [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element. As a result, the hosted app inherits the **Executable**, **EntryPoint** and runtime attributes from the host with the corresponding **HostId** value.<br/><br/>The **uap10:Parameters** attribute specifies parameters that are passed to the entry point function of the host executable. Because the host needs to know what to do with these parameters, there is an implied contract between the host and hosted app. |
+| [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | Because the hosted app package in this example is unsigned, the **Publisher** attribute must include the `OID.2.25.311729368913984317654407730594956997722=1` string. This ensures that the unsigned package cannot spoof the identity of a signed package. |
+| [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | The **MinVersion** attribute must specify 10.0.19041.0 or a later OS version. |
+| [**uap10:HostRuntimeDependency**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | This element element declares a dependency on the host app package. This consists of the **Name** and **Publisher** of the host package, and the **MinVersion** it depends on. These values can be found under the [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in the host package. |
+| [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) | The **uap10:HostId** attribute expresses the dependency on the host. The hosted app package must declare this attribute instead of the usual **Executable** and **EntryPoint** attributes for an [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) or [**Extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element. As a result, the hosted app inherits the **Executable**, **EntryPoint** and runtime attributes from the host with the corresponding **HostId** value.<br/><br/>The **uap10:Parameters** attribute specifies parameters that are passed to the entry point function of the host executable. Because the host needs to know what to do with these parameters, there is an implied contract between the host and hosted app. |
 
 ## Register an unsigned hosted app package at run time
 
-One benefit of the **uap10:HostRuntime** extension is that it enables a host to dynamically generate a hosted app package at runtime and register it by using the [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) API, without needing to sign it. This enables a host to dynamically generate the content and manifest for the hosted app package and then register it.
+One benefit of the **uap10:HostRuntime** extension is that it enables a host to dynamically generate a hosted app package at runtime and register it by using the [**PackageManager**](/uwp/api/windows.management.deployment.packagemanager) API, without needing to sign it. This enables a host to dynamically generate the content and manifest for the hosted app package and then register it.
 
-Use the following methods of the [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) class to register an unsigned hosted app package. These methods are available starting in Windows 10, version 2004.
+Use the following methods of the [**PackageManager**](/uwp/api/windows.management.deployment.packagemanager) class to register an unsigned hosted app package. These methods are available starting in Windows 10, version 2004.
 
-* [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync): Registers an unsigned MSIX package by using the **AllowUnsigned** property of the *options* parameter.
-* [**RegisterPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync): Performs a loose package manifest file registration. If the package is signed, the folder containing the manifest must include a [.p7x file](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package) and catalog. If unsigned, the **AllowUnsigned** property of the *options* parameter must be set.
+* [**AddPackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync): Registers an unsigned MSIX package by using the **AllowUnsigned** property of the *options* parameter.
+* [**RegisterPackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync): Performs a loose package manifest file registration. If the package is signed, the folder containing the manifest must include a [.p7x file](/windows/msix/overview#inside-an-msix-package) and catalog. If unsigned, the **AllowUnsigned** property of the *options* parameter must be set.
 
 ### Requirements for unsigned hosted apps
 
-* The [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) or [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) elements in the package manifest cannot contain activation data such as the **Executable**, **EntryPoint**, or **TrustLevel** attributes. Instead, these elements can only contain a **uap10:HostId** attribute that expresses the dependency on the host and a **uap10:Parameters** attribute.
+* The [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) or [**Extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) elements in the package manifest cannot contain activation data such as the **Executable**, **EntryPoint**, or **TrustLevel** attributes. Instead, these elements can only contain a **uap10:HostId** attribute that expresses the dependency on the host and a **uap10:Parameters** attribute.
 * The package must be a main package. It cannot be a bundle, framework package, resource, or optional package.
 
 ### Requirements for a host that installs and registers an unsigned hosted app package
 
 * The host must have [package identity](#define-a-host).
-* The host must have the **packageManagement** [restricted capability](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+* The host must have the **packageManagement** [restricted capability](../packaging/app-capability-declarations.md#restricted-capabilities).
     ```xml
     <rescap:Capability Name="packageManagement" />
     ```
 
 <!--
-* If the host runs in app container (for example, it is a UWP app), it must also have the unsigned package management [custom capability](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#custom-capabilities) and a [Signed Custom Capability Descriptor (SCCD) file](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#preparing-the-signed-custom-capability-descriptor-sccd-file).
+* If the host runs in app container (for example, it is a UWP app), it must also have the unsigned package management [custom capability](../packaging/app-capability-declarations.md#custom-capabilities) and a [Signed Custom Capability Descriptor (SCCD) file](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#preparing-the-signed-custom-capability-descriptor-sccd-file).
     ```xml
     <uap4:CustomCapability Name="Microsoft.unsignedPackageManagement_cw5n1h2txyewy" />
     ```
@@ -138,7 +138,7 @@ The host is named **PyScriptEngine**. This is a wrapper written in C# that runs 
 The package manifest for the host app (the Package.appxmanifest file in the PyScriptEnginePackage folder) contains a **uap10:HostRuntime** extension that declares the app as a host with the ID **PythonHost** and the executable **PyScriptEngine.exe**.  
 
 > [!NOTE]
-> In this sample, the package manifest is named Package.appxmanifest and it is part of a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). When this project is built, it [generates a manifest named AppxManifest.xml](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) and builds the MSIX package for the host app.
+> In this sample, the package manifest is named Package.appxmanifest and it is part of a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). When this project is built, it [generates a manifest named AppxManifest.xml](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) and builds the MSIX package for the host app.
 
 ### The hosted app
 
@@ -146,8 +146,8 @@ The hosted app consists of a python script and package artifacts such as the pac
 
 The package manifest for the hosted app (the NumberGuesser/AppxManifest.xml file) contains the following items:
 
-* The **Publisher** attribute of the [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifer, which is required for an unsigned package.
-* The **uap10:HostId** attribute of the [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) element identifies **PythonHost** as its host.
+* The **Publisher** attribute of the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifer, which is required for an unsigned package.
+* The **uap10:HostId** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element identifies **PythonHost** as its host.
 
 ### Run the sample
 
@@ -164,6 +164,6 @@ The sample requires version 10.0.19041.0 or later of Windows 10 and the Windows 
     ```
 
     > [!NOTE]
-    > You can run `pyscriptengine` on the command line because the host in the sample declares an [**AppExecutionAlias**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias).
+    > You can run `pyscriptengine` on the command line because the host in the sample declares an [**AppExecutionAlias**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias).
 
 6. Open the **Start** menu and click **NumberGuesser** to run the hosted app.

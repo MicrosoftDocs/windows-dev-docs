@@ -25,7 +25,7 @@ For a complete code example that demonstrates all of these steps, see the [code 
 
 In your app's code, get a Microsoft Account (MSA) token for the current signed-in user. You must pass this token in the ```Authorization``` request header for the Microsoft Store targeted offers API. This token is used by the Store to retrieve the targeted offers that are available for the current user.
 
-To get the MSA token, use the [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) class to request a token using the scope ```devcenter_implicit.basic,wl.basic```. The following example demonstrates how to do this. This example is an excerpt from the [complete example](#code-example), and it requires **using** statements that are provided in the complete example.
+To get the MSA token, use the [WebAuthenticationCoreManager](/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) class to request a token using the scope ```devcenter_implicit.basic,wl.basic```. The following example demonstrates how to do this. This example is an excerpt from the [complete example](#code-example), and it requires **using** statements that are provided in the complete example.
 
 [!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 

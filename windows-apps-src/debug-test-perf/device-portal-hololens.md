@@ -15,8 +15,8 @@ ms.localizationpriority: medium
 ### Enable Device Portal
 
 1. Power on your HoloLens and put on the device.
-2. Perform the [Start gesture](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) or [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture for HoloLens (1st Gen) to launch the main menu.
-3. Gaze at the **Settings** tile and perform the [tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture on HoloLens (1st Gen) or select it on HoloLens 2 by [touching it or using a Hand ray](https://docs.microsoft.com/hololens/hololens2-basic-usage). The Settings app will launch after you select it.
+2. Perform the [Start gesture](/hololens/hololens2-basic-usage#start-gesture) or [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture for HoloLens (1st Gen) to launch the main menu.
+3. Gaze at the **Settings** tile and perform the [tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture on HoloLens (1st Gen) or select it on HoloLens 2 by [touching it or using a Hand ray](/hololens/hololens2-basic-usage). The Settings app will launch after you select it.
 4. Select the **Update** menu item.
 5. Select the **For developers** menu item.
 6. Enable **Developer Mode**.
@@ -171,5 +171,5 @@ Click or tap the region under Virtual keyboard to enable sending keystrokes to t
 ## See also
 
 * [Windows Device Portal overview](device-portal.md)
-* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (APIs common to all Windows 10 devices)
-* [Device Portal mixed reality API reference](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference) (an extended list of all REST APIs available for HoloLens)
+* [Device Portal core API reference](./device-portal-api-core.md) (APIs common to all Windows 10 devices)
+* [Device Portal mixed reality API reference](/windows/mixed-reality/device-portal-api-reference) (an extended list of all REST APIs available for HoloLens)

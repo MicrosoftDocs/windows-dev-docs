@@ -44,12 +44,12 @@ There are four main platforms for building desktop apps for Windows PCs. Each pl
 <td><a href="/windows/win32/desktop-programming/">Get started</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Samples</a></td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></td>
+<td><a href="/dotnet/framework/wpf/">WPF</a></td>
 <td><p>The established .NET-based platform for graphically-rich managed Windows apps with a XAML UI model. These apps can target <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
 <td><a href="/dotnet/framework/wpf/getting-started/">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Samples</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></td>
+<td><a href="/dotnet/framework/winforms/">Windows Forms</a></td>
 <td><p>A .NET-based platform that is designed for managed line-of-business apps with a lightweight UI model. These apps can target <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
 <td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a></td>
 </tr>
@@ -66,8 +66,8 @@ If you have an existing WPF, Windows Forms, or native Win32 desktop app, Windows
 Here are just a few of the features available to enhance your existing desktop apps:
 
 * Use [MSIX](/windows/msix/) to package and deploy your desktop apps. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies and is built to be safe, secure, and reliable.
-* Integrate your desktop app with Windows 10 experiences by using [package extensions](/windows/apps/desktop/modernize/desktop-to-uwp-extensions). For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
-* Use [XAML Islands](/windows/apps/desktop/modernize/xaml-islands) to host UWP XAML controls in your desktop app. Many of the latest Windows 10 UI features are only available to UWP XAML controls.
+* Integrate your desktop app with Windows 10 experiences by using [package extensions](./modernize/desktop-to-uwp-extensions.md). For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
+* Use [XAML Islands](./modernize/xaml-islands.md) to host UWP XAML controls in your desktop app. Many of the latest Windows 10 UI features are only available to UWP XAML controls.
 
 For more information, see these articles.
 
@@ -75,8 +75,8 @@ For more information, see these articles.
 
 | Article | Description |
 |---------|-------------|
-| [Modernize desktop apps](/windows/apps/desktop/modernize) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
-| [Tutorial: Modernize a WPF app](/windows/apps/desktop/modernize/modernize-wpf-tutorial) | Follow step-by-step instructions to modernize an existing WPF line-of-business sample app by adding UWP Ink and calendar controls to the app and packaging it in an MSIX package.  |
+| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
+| [Tutorial: Modernize a WPF app](./modernize/modernize-wpf-tutorial.md) | Follow step-by-step instructions to modernize an existing WPF line-of-business sample app by adding UWP Ink and calendar controls to the app and packaging it in an MSIX package.  |
 
 ## Create new desktop apps
 
@@ -88,20 +88,20 @@ If you are creating a new desktop app for Windows, here are some resources to he
 |---------|-------------|
 | [Choose your app platform](choose-your-platform.md) | Provides an in-depth comparison of the main desktop app platforms and can help you choose the right platform for your needs. This article also provides useful links to docs for each platform. |
 | [Visual Studio project templates for Windows apps](visual-studio-templates.md) | Describes the project and item templates that Visual Studio provides to help you build apps for Windows 10 devices by using C\# or C++. |
-| [Modernize desktop apps](/windows/apps/desktop/modernize) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
-| [Features and technologies](/windows/apps/features-and-technologies) | Provides an overview of Windows features that are accessible via each of the main desktop app platforms and links to the related docs. |
+| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
+| [Features and technologies](../features-and-technologies.md) | Provides an overview of Windows features that are accessible via each of the main desktop app platforms and links to the related docs. |
 
 ## Related documentation and technologies
 
 | Resource | Description |
 |---------|-------------|
-| [.NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0) | Learn about the latest features of .NET Core 3.0, including enhancements for WPF and Windows Forms apps. |
-| [Desktop guide for WPF and .NET Core 3.0](https://docs.microsoft.com/dotnet/desktop-wpf/overview/index) | Develop WPF apps that target .NET Core 3.0 instead of the full .NET Framework.  |
-| [Azure](https://docs.microsoft.com/azure/) | Extend the reach of your apps with Azure cloud services. |
-| [Visual Studio](https://docs.microsoft.com/visualstudio/) | Learn how to use Visual Studio to develop apps and services. |
-| [MSIX](https://docs.microsoft.com/windows/msix/) | Package and deploy any Windows app in a modern and universal packaging format. |
-| [Windows AI](https://docs.microsoft.com/windows/ai/) | Use Windows AI to build intelligent solutions for complex problems in your apps. |
-| [Windows Containers](https://docs.microsoft.com/virtualization/windowscontainers/) | Package your applications with their dependencies in fast, fully isolated Windows environments. |
-| [Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | Convert your web apps into Progressive Web Apps that can be distributed and run as UWP apps on Windows 10. |
-| [Xamarin](https://docs.microsoft.com/xamarin/) | Build cross-platform apps for Windows, Android, iOS, and macOS using .NET code and platform-specific user interfaces. |
-| [Docs archive for Windows 8.x and earlier](https://docs.microsoft.com/previous-versions/windows/) | Access archived documentation about building apps for Windows 8.x and earlier versions. |
+| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | Learn about the latest features of .NET Core 3.0, including enhancements for WPF and Windows Forms apps. |
+| [Desktop guide for WPF and .NET Core 3.0](/dotnet/desktop-wpf/overview/index) | Develop WPF apps that target .NET Core 3.0 instead of the full .NET Framework.  |
+| [Azure](/azure/) | Extend the reach of your apps with Azure cloud services. |
+| [Visual Studio](/visualstudio/) | Learn how to use Visual Studio to develop apps and services. |
+| [MSIX](/windows/msix/) | Package and deploy any Windows app in a modern and universal packaging format. |
+| [Windows AI](/windows/ai/) | Use Windows AI to build intelligent solutions for complex problems in your apps. |
+| [Windows Containers](/virtualization/windowscontainers/) | Package your applications with their dependencies in fast, fully isolated Windows environments. |
+| [Progressive Web Apps](/microsoft-edge/progressive-web-apps) | Convert your web apps into Progressive Web Apps that can be distributed and run as UWP apps on Windows 10. |
+| [Xamarin](/xamarin/) | Build cross-platform apps for Windows, Android, iOS, and macOS using .NET code and platform-specific user interfaces. |
+| [Docs archive for Windows 8.x and earlier](/previous-versions/windows/) | Access archived documentation about building apps for Windows 8.x and earlier versions. |

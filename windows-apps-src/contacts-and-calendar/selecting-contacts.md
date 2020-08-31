@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 
 
 
-Through the [**Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
+Through the [**Windows.ApplicationModel.Contacts**](/uwp/api/Windows.ApplicationModel.Contacts) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
 
 ## Set up the contact picker
 
-Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker) and assign it to a variable.
+Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker) and assign it to a variable.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
@@ -25,15 +25,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## Set the selection mode (optional)
 
-By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
+By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
 
-First, set the [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:
+First, set the [**SelectionMode**](/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Then, use the [**DesiredFieldsWithContactFieldType**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
+Then, use the [**DesiredFieldsWithContactFieldType**](/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -45,7 +45,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Use [**PickContactsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.
+Use [**PickContactsAsync**](/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.
 
 ```cs
 public IList<Contact> contacts;
@@ -56,7 +56,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
 
-This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) control called *OutputName*.
+This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) control called *OutputName*.
 
 ```cs
 if (contact != null)
@@ -163,7 +163,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## Complete example (multiple contacts)
 
-This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) control called `OutputContacts`.
+This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) control called `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;

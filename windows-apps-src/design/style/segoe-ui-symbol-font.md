@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 This article lists the icons provided by the Segoe MDL2 Assets font. 
 
-> **Important APIs**: [**Symbol enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Important APIs**: [**Symbol enum**](/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon class**](/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## About Segoe MDL2 Assets
 
@@ -37,13 +37,13 @@ All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent 
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
 ## Using the icons
-If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Segoe MDL2 Assets with the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Segoe MDL2 Assets with the [Symbol enumeration](/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not included in the Symbol enum, then use a [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
+If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not included in the Symbol enum, then use a [**FontIcon**](/uwp/api/windows.ui.xaml.controls.fonticon).
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
@@ -5515,7 +5515,5 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
 ## Related articles
 
 * [Guidelines for icons](../style/icons.md)
-* [Symbol enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
-
-
+* [Symbol enumeration](/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [FontIcon class](/uwp/api/windows.ui.xaml.controls.fonticon)

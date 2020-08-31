@@ -9,11 +9,11 @@ ms.topic: article
 
 The latest official version of the Windows UI Library – WinUI 2.1 – was just released April 8, 2019 
 
-WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [XAML Controls Gallery](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
+WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [XAML Controls Gallery](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
 
 Download the [WinUI 2.1 NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
-You can choose to use the WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/getting-started) for more information.
+You can choose to use the WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started) for more information.
 
 WinUI is an open source project hosted on GitHub. We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
 
@@ -26,7 +26,7 @@ Unlike ListView, ItemsRepeater does not provide a comprehensive end-user experie
 
 ![Example](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
-[Documentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater)
+[Documentation](/windows/uwp/design/controls-and-patterns/items-repeater)
 
 ### AnimatedVisualPlayer
 
@@ -34,7 +34,7 @@ The AnimatedVisualPlayer hosts and controls playback of animated visuals, enabli
 
 ![Example](../images/AnimatedVisualPlayerUpdated.gif)
 
-[Documentation](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie)
+[Documentation](/windows/communitytoolkit/animations/lottie)
 
 ### TeachingTip
 
@@ -42,7 +42,7 @@ TeachingTip provides an engaging and Fluent way for applications to guide and in
 
 ![Example](../images/TeachingTipUpdated.gif)
 
-[Documentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
+[Documentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
 ### RadioMenuFlyoutItem
 
@@ -50,7 +50,7 @@ Includes the ability to have 'Radio Button' style options in a MenuBar. This ena
 
 ![Example](../images/RadioMenuFlyoutItem1.png)
 
-[Documentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
+[Documentation](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
 ### CompactDensity
 
@@ -58,7 +58,7 @@ Compact mode enables developers to create comfortable experiences for any number
 
 ![Compact Density Example](../images/CompactDensityUpdated.png)
 
-[Documentation](https://docs.microsoft.com/windows/uwp/design/style/spacing )
+[Documentation](/windows/uwp/design/style/spacing)
 
 ### Shadows
 
@@ -96,7 +96,7 @@ April 2019
 
 #### New feature (not included in earlier pre-releases)
 
-* [CompactDensity](https://docs.microsoft.com/windows/uwp/design/style/spacing):
+* [CompactDensity](/windows/uwp/design/style/spacing):
 Compact mode enable developers to create comfortable experiences for any number of scenarios. Simply by adding a resource dictionary your application can fit on average ~33% more UI.
 
 * Shadows:
@@ -125,8 +125,8 @@ February 2019
 
 New experimental features:
 
-* [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
-  This new control enables playing complex high performance vector animations, including [Lottie](https://github.com/airbnb/lottie) animations created using [Lottie-Windows](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie).
+* [AnimatedVisualPlayer](/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
+  This new control enables playing complex high performance vector animations, including [Lottie](https://github.com/airbnb/lottie) animations created using [Lottie-Windows](/windows/communitytoolkit/animations/lottie).
 
 ### Microsoft.UI.Xaml 2.1.181217001-prerelease
 
@@ -138,8 +138,8 @@ December 2018
 
 New experimental features:
 
-* [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+* [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
-* [RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)
+* [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)

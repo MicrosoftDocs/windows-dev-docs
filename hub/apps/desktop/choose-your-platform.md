@@ -46,12 +46,12 @@ WPF is the established platform for managed Windows applications with access to 
 
 For more information about WPF, see the following articles:
 
-* [Getting started (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
 * [Project templates](visual-studio-templates.md#net-templates)
 * [Create your first app (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Create your first app (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrate WPF apps to .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [API reference (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API reference (.NET)](/dotnet/api/index)
 * [Samples](https://github.com/Microsoft/WPF-Samples)
 
 ## Windows Forms
@@ -60,11 +60,11 @@ Windows Forms is the original platform for managed Windows applications with a l
 
 For more information about Windows Forms, see the following articles:
 
-* [Getting started with Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Project templates](visual-studio-templates.md#net-templates)
 * [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [API reference (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API reference (.NET)](/dotnet/api/index)
 * [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
 ## Win32
@@ -120,7 +120,7 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 
 ### Progressive Web Apps (PWAs)
 
-PWAs let developers package their website code so it can be installed and run like an application on Windows 10 PCs. For more information, see [Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started).
+PWAs let developers package their website code so it can be installed and run like an application on Windows 10 PCs. For more information, see [Progressive Web Apps](/microsoft-edge/progressive-web-apps/get-started).
 
 ### Xamarin
 
@@ -128,4 +128,4 @@ Use Xamarin to build cross-platform applications for Windows 10 that can also ru
 
 ### Uno Platform
 
-The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents?view=winrt-19041), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).
+The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).

@@ -32,7 +32,7 @@ Visual updates and minor changes have been made to the following Fluent Design p
 * [Alignment, padding, margins](../design/layout/alignment-margin-padding.md)
 * [Color](../design/style/color.md)
 * [Command basics](../design/basics/commanding-basics.md)
-* [Fluent Design for Windows apps](../design/fluent-design-system/index.md)
+* [Fluent Design for Windows apps](/windows/apps/fluent-design-system)
 * [Introduction to app design](../design/basics/design-and-ui-intro.md)
 * [Navigation basics](../design/basics/navigation-basics.md)
 * [Responsive design techniques](../design/layout/responsive-design.md)
@@ -49,13 +49,13 @@ In addition, we've rewritten the following pages with all-new information on the
 
 ### App Installer files in Visual Studio
 
-App Installer files can now be created with Visual Studio 2017, Update 15.7, and later versions. [Learn how to use Visual Studio to create an App Installer file](../packaging/create-appinstallerfile-vs.md) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](../packaging/troubleshoot-appinstaller-issues.md) to view common issues and solutions.
+App Installer files can now be created with Visual Studio 2017, Update 15.7, and later versions. [Learn how to use Visual Studio to create an App Installer file](/windows/msix/app-installer/create-appinstallerfile-vs) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](/windows/msix/app-installer/troubleshoot-appinstaller-issues) to view common issues and solutions.
 
 ### Edge WebView control for Windows Forms and WPF applications
 
-Show web content in your desktop application by using the WebView control, previously only available to UWP applications. This control uses the Microsoft Edge rendering engine to embed a view that renders richly formatted HTML content from a remote web server, dynamically generated code, or content files. Find the WebView control in the latest release of the [Windows Community Toolkit.](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
+Show web content in your desktop application by using the WebView control, previously only available to UWP applications. This control uses the Microsoft Edge rendering engine to embed a view that renders richly formatted HTML content from a remote web server, dynamically generated code, or content files. Find the WebView control in the latest release of the [Windows Community Toolkit.](/windows/uwpcommunitytoolkit/)
 
-Look for other controls like WebView in future releases of the Windows Community Toolkit. For more information, see [Host UWP controls in WPF and Windows Forms applications.](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+Look for other controls like WebView in future releases of the Windows Community Toolkit. For more information, see [Host UWP controls in WPF and Windows Forms applications.](/windows/apps/desktop/modernize/xaml-islands)
 
 ### Gaze input and interactions
 
@@ -85,7 +85,7 @@ Optional packages in your app can now contain executable C# code. [Learn how to 
 
 ### Project Rome
 
-The Project Rome team has overhauled their iOS and Android SDKs, adding new features like User Activities and refactoring much of their code to provide a consistent programming experience across the different SDKs. [All new API reference and how-to docs](https://docs.microsoft.com/windows/project-rome/) will go live  during the Build 2018 developer conference.
+The Project Rome team has overhauled their iOS and Android SDKs, adding new features like User Activities and refactoring much of their code to provide a consistent programming experience across the different SDKs. [All new API reference and how-to docs](/windows/project-rome/) will go live  during the Build 2018 developer conference.
 
 ### Sets
 

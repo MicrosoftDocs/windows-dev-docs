@@ -19,17 +19,17 @@ Windows apps that support Windows Ink can serialize and deserialize ink strokes 
 > [!NOTE]
 > ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
 
-> **Important APIs**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Important APIs**: [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## Save ink strokes to a file
 
-Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
+Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
 
 **Download this sample from [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  First, we set up the UI.
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -59,7 +59,7 @@ Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https:/
 
 2.  We then set some basic ink input behaviors.
 
-    The [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), and listeners for the click events on the buttons are declared.
+    The [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), and listeners for the click events on the buttons are declared.
 ```csharp
 public MainPage()
     {
@@ -81,11 +81,11 @@ public MainPage()
 
 3.  Finally, we save the ink in the click event handler of the **Save** button.
 
-    A [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) lets the user select both the file and the location where the ink data is saved.
+    A [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) lets the user select both the file and the location where the ink data is saved.
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) stream set to [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
+    Once a file is selected, we open an [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) stream set to [**ReadWrite**](/uwp/api/Windows.Storage.FileAccessMode).
 
-    We then call [**SaveAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) to the stream.
+    We then call [**SaveAsync**](/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync) to serialize the ink strokes managed by the [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) to the stream.
 
 ```csharp
 // Save ink data to a file.
@@ -151,17 +151,17 @@ public MainPage()
 ```
 
 > [!NOTE]
-> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) method (demonstrated in the next section) does support additional formats for backward compatibility.
+> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) method (demonstrated in the next section) does support additional formats for backward compatibility.
 
 ## Load ink strokes from a file
 
-Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
+Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
 
 **Download this sample from [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  First, we set up the UI.
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -191,7 +191,7 @@ Here, we demonstrate how to load ink strokes from a file and render them on an [
 
 2.  We then set some basic ink input behaviors.
 
-    The [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), and listeners for the click events on the buttons are declared.
+    The [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), and listeners for the click events on the buttons are declared.
 ```csharp
 public MainPage()
     {
@@ -213,11 +213,11 @@ public MainPage()
 
 3.  Finally, we load the ink in the click event handler of the **Load** button.
 
-    A [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) lets the user select both the file and the location from where to retrieve the saved ink data.
+    A [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) lets the user select both the file and the location from where to retrieve the saved ink data.
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) stream set to [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
+    Once a file is selected, we open an [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) stream set to [**Read**](/uwp/api/Windows.Storage.FileAccessMode).
 
-    We then call [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) to immediately render them to the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+    We then call [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) to immediately render them to the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
     > [!NOTE]
     > All existing strokes in the InkStrokeContainer are cleared before new strokes are loaded.
@@ -256,7 +256,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) method does support the following formats for backward compatibility.
+> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) method does support the following formats for backward compatibility.
 
 | Format                    | Description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -269,7 +269,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
 
-To support clipboard functionality, the built-in [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) cut and copy commands require one or more ink strokes be selected.
+To support clipboard functionality, the built-in [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) cut and copy commands require one or more ink strokes be selected.
 
 For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 
@@ -277,7 +277,7 @@ For this example, we enable stroke selection when input is modified with a pen b
 
 1.  First, we set up the UI.
 
-    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and a selection canvas.
+    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and a selection canvas.
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -313,7 +313,7 @@ For this example, we enable stroke selection when input is modified with a pen b
 
 2.  We then set some basic ink input behaviors.
 
-    The [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
+    The [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
 
     For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 ```csharp
@@ -363,9 +363,9 @@ public MainPage()
 
 3.  Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the **Cut**, **Copy**, and **Paste** buttons.
 
-    For cut, we first call [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) on the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter).
+    For cut, we first call [**CopySelectedToClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) on the [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter).
 
-    We then call [**DeleteSelected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) to remove the strokes from the ink canvas.
+    We then call [**DeleteSelected**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) to remove the strokes from the ink canvas.
 
     Finally, we delete all selection strokes from the selection canvas.
     
@@ -399,7 +399,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-For copy, we simply call [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) on the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter).
+For copy, we simply call [**CopySelectedToClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) on the [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter).
 
 
 ```csharp
@@ -409,9 +409,9 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-For paste, we call [**CanPasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) to ensure that the content on the clipboard can be pasted to the ink canvas.
+For paste, we call [**CanPasteFromClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) to ensure that the content on the clipboard can be pasted to the ink canvas.
 
-If so, we call [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) to insert the clipboard ink strokes into the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter), which then renders the strokes to the ink canvas.
+If so, we call [**PasteFromClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) to insert the clipboard ink strokes into the [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) of the [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter), which then renders the strokes to the ink canvas.
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
@@ -443,6 +443,3 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [Get Started Tutorial: Support ink in your Windows app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 * [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 * [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)
-
-
-

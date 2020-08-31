@@ -16,7 +16,7 @@ This topic describes how to use DirectX and C++ to create a 3D Universal Windows
 > To download the *Marble Maze* source code, see the [sample on GitHub](https://github.com/microsoft/Windows-appsample-marble-maze).
 
 > [!IMPORTANT]
-> *Marble Maze* illustrates design patterns that we consider to be best practices for creating UWP games. You can adapt many of the implementation details to fit your own practices and the unique requirements of the game you are developing. Feel free to use different techniques or libraries when those better suit your needs. (However, always ensure that your code passes the [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).) When we consider an implementation used here to be essential for successful game development, we emphasize it in this documentation.
+> *Marble Maze* illustrates design patterns that we consider to be best practices for creating UWP games. You can adapt many of the implementation details to fit your own practices and the unique requirements of the game you are developing. Feel free to use different techniques or libraries when those better suit your needs. (However, always ensure that your code passes the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md).) When we consider an implementation used here to be essential for successful game development, we emphasize it in this documentation.
 
 ## Introducing *Marble Maze*
 
@@ -47,9 +47,9 @@ The document [Walkthrough: create a simple UWP game with DirectX](tutorial--crea
 This documentation teaches how to:
 
 -   Use the Windows Runtime API and DirectX to create a UWP game.
--   Use [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) to work with visual content such as models, textures, vertex and pixel shaders, and 2D overlays.
+-   Use [Direct3D](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct2D](/windows/desktop/Direct2D/direct2d-portal) to work with visual content such as models, textures, vertex and pixel shaders, and 2D overlays.
 -   Integrate input mechanisms such as touch, accelerometer, and the Xbox One controller.
--   Use [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) to incorporate music and sound effects.
+-   Use [XAudio2](/windows/desktop/xaudio2/xaudio2-apis-portal) to incorporate music and sound effects.
 
 ## What this documentation does not cover
 
@@ -62,7 +62,7 @@ This documentation does not cover the following aspects of game development. The
 -   How to prepare your game for use in other parts of the world.
 -   How to certify and publish your game to the Microsoft Store.
 
-*Marble Maze* also uses the [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) library to work with 3D geometry and perform physics calculations, such as collisions. DirectXMath is not covered in-depth in this section. For details about how *Marble Maze* uses DirectXMath, refer to the source code.
+*Marble Maze* also uses the [DirectXMath](/windows/desktop/dxmath/directxmath-portal) library to work with 3D geometry and perform physics calculations, such as collisions. DirectXMath is not covered in-depth in this section. For details about how *Marble Maze* uses DirectXMath, refer to the source code.
 
 Although *Marble Maze* provides many reusable components, it is not a complete game development framework. When we consider a *Marble Maze* component to be reusable in your game, we emphasize it in the documentation.
 

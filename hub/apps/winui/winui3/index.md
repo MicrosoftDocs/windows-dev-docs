@@ -29,7 +29,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 
 1. Ensure that your development computer has Windows 10, version 1803 (build 17134), or newer installed.
 
-2. Install [Visual Studio 2019, version 16.7 Preview 3](https://visualstudio.microsoft.com/vs/preview)
+2. Install [Visual Studio 2019, version 16.7.2](https://visualstudio.microsoft.com/vs/)
 
     You must include the following workloads when installing Visual Studio:
     - .NET Desktop Development
@@ -39,14 +39,18 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
 
-3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5:
+    Once you've downloaded Visual Studio, make sure you enable .NET previews within the program: 
+    - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
+
+3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
 
     - x64: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
     - x86: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
 
 4. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
-    For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+    For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+
 
 ## Create WinUI projects
 
@@ -90,10 +94,10 @@ The following item templates are available to be used in a WinUI project. To acc
 |----------|----------|-------------|
 | Blank Page (WinUI) | C# and C++ | Adds a XAML file and code file that defines a new page that derives from the **Microsoft.UI.Xaml.Controls.Page** class in the WinUI library. |
 | Blank Window (WinUI in Desktop) | C# and C++ | Adds a XAML file and code file that defines a new window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library. |
-| Custom Control (WinUI) | C# and C++ | Adds a code file for creating a templated control with a default style. The templated control derives from the **Microsoft.UI.Xaml.Controls.Control** class in the WinUI library.<p></p>For a walkthrough that demonstrates how to use this item template, see [Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT](xaml-templated-controls-cppwinrt-winui3.md). For more information about templated controls, see [Custom XAML Controls](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| Custom Control (WinUI) | C# and C++ | Adds a code file for creating a templated control with a default style. The templated control derives from the **Microsoft.UI.Xaml.Controls.Control** class in the WinUI library.<p></p>For a walkthrough that demonstrates how to use this item template, see [Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT](xaml-templated-controls-cppwinrt-winui3.md). For more information about templated controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 | Resource Dictionary (WinUI) | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references). |
 | Resources File (WinUI) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
-| User Control (WinUI) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| User Control (WinUI) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 
 ## Bug fixes and other improvements in WinUI 3 Preview 2
 
@@ -102,10 +106,10 @@ This is a comprehensive list of bug fixes and other updates for Preview 2. See o
 > [!NOTE]
 > WinUI 3 Preview 2 uses version 2.4.2 of the WinUI 2 Library. 
 
-- [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) and [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) now work as expected in C# Desktop apps
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) and [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) now work as expected in C# Desktop apps
   - This cleared up a couple of other issues that revolved around collections controls not updating in the UI while being updated in the backend.
   - *Thanks to @hshristov for filing a [similar issue](https://github.com/microsoft/microsoft-ui-xaml/issues/2490) on GitHub!*
-- Preview 2 is now compatible with [.NET 5 Preview 5](https://docs.microsoft.com/dotnet/api/?view=net-5.0) for Desktop apps
+- Preview 2 is now compatible with [.NET 5 Preview 5](/dotnet/api/?view=net-5.0) for Desktop apps
 - WinUI 3 now has parity with [WinUI 2.4](../winui2/release-notes/winui-2.4.md), which includes new controls and features like [hierarchical NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) and [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring).
 - Crash fixed: Using [TabView](/windows/uwp/design/controls-and-patterns/tab-view) with touch
 - [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) in the [XAML Controls Gallery sample](#xaml-controls-gallery-winui-3-preview-2-branch) now uses Left mode instead of Left-compact mode
@@ -113,7 +117,7 @@ This is a comprehensive list of bug fixes and other updates for Preview 2. See o
   - *Thanks to @paulovilla for filing [this issue](https://github.com/microsoft/microsoft-ui-xaml/issues/2563) on GitHub!*
 - Crash fixed: interacting with XAML UI while the [TextBox](/windows/uwp/design/controls-and-patterns/text-box) menu is up
 - [XAML Controls Gallery sample](#xaml-controls-gallery-winui-3-preview-2-branch) title text is no longer scrambled after navigating to multiple pages
-- Using touch with [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) no longer gives you a slight offset in position
+- Using touch with [WebView2](/microsoft-edge/webview2/) no longer gives you a slight offset in position
 - Classes in WinUIEdit.dll have been moved from Windows.UI.Text namespace to Microsoft.UI.Text namespace
 - Crash fixed: selecting item in [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) in multi-select mode (in  Windows 10 version 1803)
 - Point, Rect, and Size members are now Double-type in the C# projection of the APIs for Desktop apps.
@@ -143,7 +147,7 @@ The following features and capabilities were introduced in WinUI 3 Preview 1 and
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
 - Dark theme updates
-- Improvements and updates to [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2)
+- Improvements and updates to [WebView2](/microsoft-edge/hosting/webview2)
   - Support for High DPI
   - Support for window resizing and moving
   - Updated to target more recent version of Edge
@@ -206,8 +210,23 @@ WinUI 3 Preview 2 is compatible with PCs running the Windows 10 April 2018 Updat
 
 ### Known issues
 
-- In C# Desktop apps:
-  - You need to use `WinRT.WeakReference<T>` rather than `System.WeakReference<T>` for weak references to Windows objects (including XAML objects).
+
+- C# UWP apps:
+
+  The WinUI 3 framework is a set of WinRT components, and while WinRT has similar types and objects like those found in .NET, they are not inherently compatible.  The C#/WinRT projections handle the interop between .NET and WinRT in .NET 5, allowing you to freely use .NET interfaces in your .NET 5 app today. 
+  
+  However, C#/WinRT is not able to handle the interop in .NET Native apps, so the WinUI 3 APIs are projected directly in UWP apps. Thus, you are no longer able to use those same .NET interfaces. **Once UWP apps are no longer using .NET Native, this limitation will no longer exist**.
+
+  For example, the `INotifyPropertyChanged` API is projected in the `System.ComponentModel` namespace for WinUI3 in Desktop apps, but it appears in the `Microsoft.UI.Xaml.Data` namespace for WinUI3 in UWP apps (and all C++ apps). 
+  
+  This issue applies to:
+    - `INotifyPropertyChanged` (and related types)
+    - `INotifyCollectionChanged`
+    - `ICommand`
+
+> [!Note] 
+> With `INotifyPropertyChanged` and `INotifyCollectionChanged` not working as expected, the `ObservableCollection<T>` class will also be affected. For an example of implementing your own version of `ObservableCollection<T>`, see [this sample](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs). 
+
 
 ## XAML Controls Gallery (WinUI 3 Preview 2 branch)
 

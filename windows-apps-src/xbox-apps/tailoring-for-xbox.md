@@ -1,6 +1,6 @@
 ---
 title: Xbox best practices
-description: How to optimize your application for Xbox.
+description: Learn how to optimize your Universal Windows Platform (UWP) application for Xbox One by following these Xbox development best practices.
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -24,7 +24,7 @@ Most Xbox users are sitting across the living room from their TV, so keep in min
 
 ###	*Do:* Integrate with the SystemMediaTransportControls class
 
-Xbox users want to control media apps with the Xbox Media Remote, Cortana (especially the "Play" and "Pause" voice commands), and Xbox SmartGlass. To get these features for free your app should use the [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols) class, which is automatically included in the Xbox media controls. If your app has custom media controls, make sure to integrate with the **SystemMediaTransportControls** class to provide these features to your users. If you are creating a background music app, integrate with the **SystemMediaTransportControls** class to ensure that the background music controls work correctly in the Xbox multitasking tab.
+Xbox users want to control media apps with the Xbox Media Remote, Cortana (especially the "Play" and "Pause" voice commands), and Xbox SmartGlass. To get these features for free your app should use the [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) class, which is automatically included in the Xbox media controls. If your app has custom media controls, make sure to integrate with the **SystemMediaTransportControls** class to provide these features to your users. If you are creating a background music app, integrate with the **SystemMediaTransportControls** class to ensure that the background music controls work correctly in the Xbox multitasking tab.
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -68,4 +68,4 @@ The **App Dev on Xbox** event is a great starting point for developers new to bu
 
 - [UWP on Xbox One](index.md)
 - [Designing for Xbox and TV](../design/devices/designing-for-tv.md)
-- [Progressive Web Apps for Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [Progressive Web Apps for Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations)

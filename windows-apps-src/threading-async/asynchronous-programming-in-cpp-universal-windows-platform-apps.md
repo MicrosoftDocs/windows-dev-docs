@@ -67,7 +67,7 @@ void App::TestAsync()
 }
 ```
 
-The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_#Windows_Foundation_IAsyncOperation_1_GetResults) if you were using the **IAsyncOperation** interface directly.
+The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](/uwp/api/Windows.Foundation.IAsyncOperation_TResult_#Windows_Foundation_IAsyncOperation_1_GetResults) if you were using the **IAsyncOperation** interface directly.
 
 The [**task::then**][taskThen] method returns immediately, and its delegate doesn't run until the asynchronous work completes successfully. In this example, if the asynchronous operation causes an exception to be thrown, or ends in the canceled state as a result of a cancellation request, the continuation will never execute. Later, we’ll describe how to write continuations that execute even if the previous task was cancelled or failed.
 
@@ -125,7 +125,7 @@ In the previous example, notice that the task returns a **task<void>** even thou
 
 
 ## Canceling tasks
-It is often a good idea to give the user the option to cancel an asynchronous operation. And in some cases you might have to cancel an operation programmatically from outside the task chain. Although each \***Async** return type has a [**Cancel**][IAsyncInfoCancel] method that it inherits from [**IAsyncInfo**][IAsyncInfo], it's awkward to expose it to outside methods. The preferred way to support cancellation in a task chain is to use a [**cancellation\_token\_source**](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-source-class) to create a [**cancellation\_token**](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-class), and then pass the token to the constructor of the initial task. If an asynchronous task is created with a cancellation token, and [**cancellation\_token\_source::cancel**](https://docs.microsoft.com/cpp/parallel/concrt/reference/cancellation-token-source-class?view=vs-2017) is called, the task automatically calls **Cancel** on the **IAsync\*** operation and passes the cancellation request down its continuation chain. The following pseudocode demonstrates the basic approach.
+It is often a good idea to give the user the option to cancel an asynchronous operation. And in some cases you might have to cancel an operation programmatically from outside the task chain. Although each \***Async** return type has a [**Cancel**][IAsyncInfoCancel] method that it inherits from [**IAsyncInfo**][IAsyncInfo], it's awkward to expose it to outside methods. The preferred way to support cancellation in a task chain is to use a [**cancellation\_token\_source**](/cpp/parallel/concrt/reference/cancellation-token-source-class) to create a [**cancellation\_token**](/cpp/parallel/concrt/reference/cancellation-token-class), and then pass the token to the constructor of the initial task. If an asynchronous task is created with a cancellation token, and [**cancellation\_token\_source::cancel**](/cpp/parallel/concrt/reference/cancellation-token-source-class?view=vs-2017) is called, the task automatically calls **Cancel** on the **IAsync\*** operation and passes the cancellation request down its continuation chain. The following pseudocode demonstrates the basic approach.
 
 ``` cpp
 //Class member:
@@ -140,11 +140,11 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-When a task is canceled, a [**task\_canceled**][taskCanceled] exception is propagated down the task chain. Value-based continuations will simply not execute, but task-based continuations will cause the exception to be thrown when [**task::get**][taskGet] is called. If you have an error-handling continuation, make sure that it catches the **task\_canceled** exception explicitly. (This exception is not derived from [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class).)
+When a task is canceled, a [**task\_canceled**][taskCanceled] exception is propagated down the task chain. Value-based continuations will simply not execute, but task-based continuations will cause the exception to be thrown when [**task::get**][taskGet] is called. If you have an error-handling continuation, make sure that it catches the **task\_canceled** exception explicitly. (This exception is not derived from [**Platform::Exception**](/cpp/cppcx/platform-exception-class).)
 
-Cancellation is cooperative. If your continuation does some long-running work beyond just invoking a UWP method, then it is your responsibility to check the state of the cancellation token periodically and stop execution if it is canceled. After you clean up all resources that were allocated in the continuation, call [**cancel\_current\_task**](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) to cancel that task and propagate the cancellation down to any value-based continuations that follow it. Here's another example: you can create a task chain that represents the result of a [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) operation. If the user chooses the **Cancel** button, the [**IAsyncInfo::Cancel**][IAsyncInfoCancel] method is not called. Instead, the operation succeeds but returns **nullptr**. The continuation can test the input parameter and call **cancel\_current\_task** if the input is **nullptr**.
+Cancellation is cooperative. If your continuation does some long-running work beyond just invoking a UWP method, then it is your responsibility to check the state of the cancellation token periodically and stop execution if it is canceled. After you clean up all resources that were allocated in the continuation, call [**cancel\_current\_task**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) to cancel that task and propagate the cancellation down to any value-based continuations that follow it. Here's another example: you can create a task chain that represents the result of a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) operation. If the user chooses the **Cancel** button, the [**IAsyncInfo::Cancel**][IAsyncInfoCancel] method is not called. Instead, the operation succeeds but returns **nullptr**. The continuation can test the input parameter and call **cancel\_current\_task** if the input is **nullptr**.
 
-For more information, see [Cancellation in the PPL](https://docs.microsoft.com/cpp/parallel/concrt/cancellation-in-the-ppl)
+For more information, see [Cancellation in the PPL](/cpp/parallel/concrt/cancellation-in-the-ppl)
 
 ## Handling errors in a task chain
 If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task<TResult>** or **task<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
@@ -192,7 +192,7 @@ Only catch the exceptions that you can handle. If your app encounters an error t
 ## Managing the thread context
 The UI of a UWP app runs in a single-threaded apartment (STA). A task whose lambda returns either an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation] is apartment-aware. If the task is created in the STA, then all of its continuations will run also run in it by default, unless you specify otherwise. In other words, the entire task chain inherits apartment-awareness from the parent task. This behavior helps simplify interactions with UI controls, which can only be accessed from the STA.
 
-For example, in a UWP app, in the member function of any class that represents a XAML page, you can populate a [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) control from within a [**task::then**][taskThen] method without having to use the [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) object.
+For example, in a UWP app, in the member function of any class that represents a XAML page, you can populate a [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) control from within a [**task::then**][taskThen] method without having to use the [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) object.
 
 ``` cpp
 #include <ppltasks.h>
@@ -213,9 +213,9 @@ void App::SetFeedText()
 
 If a task doesn't return an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation], then it's not apartment-aware and, by default, its continuations are run on the first available background thread.
 
-You can override the default thread context for either kind of task by using the overload of [**task::then**][taskThen] that takes a [**task\_continuation\_context**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class). For example, in some cases, it might be desirable to schedule the continuation of an apartment-aware task on a background thread. In such a case, you can pass [**task\_continuation\_context::use\_arbitrary**][useArbitrary] to schedule the task’s work on the next available thread in a multi-threaded apartment. This can improve the performance of the continuation because its work doesn't have to be synchronized with other work that's happening on the UI thread.
+You can override the default thread context for either kind of task by using the overload of [**task::then**][taskThen] that takes a [**task\_continuation\_context**](/cpp/parallel/concrt/reference/task-continuation-context-class). For example, in some cases, it might be desirable to schedule the continuation of an apartment-aware task on a background thread. In such a case, you can pass [**task\_continuation\_context::use\_arbitrary**][useArbitrary] to schedule the task’s work on the next available thread in a multi-threaded apartment. This can improve the performance of the continuation because its work doesn't have to be synchronized with other work that's happening on the UI thread.
 
-The following example demonstrates when it's useful to specify the [**task\_continuation\_context::use\_arbitrary**][useArbitrary] option, and it also shows how the default continuation context is useful for synchronizing concurrent operations on non-thread-safe collections. In this code, we loop through a list of URLs for RSS feeds, and for each URL, we start up an async operation to retrieve the feed data. We can’t control the order in which the feeds are retrieved, and we don't really care. When each [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.isyndicationclient.retrievefeedasync) operation completes, the first continuation accepts the [**SyndicationFeed^**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) object and uses it to initialize an app-defined `FeedData^` object. Because each of these operations is independent from the others, we can potentially speed things up by specifying the **task\_continuation\_context::use\_arbitrary** continuation context. However, after each `FeedData` object is initialized, we have to add it to a [**Vector**](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class), which is not a thread-safe collection. Therefore, we create a continuation and specify [**task\_continuation\_context::use\_current**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017) to ensure that all the calls to [**Append**](https://docs.microsoft.com/uwp/api/windows.foundation.collections.ivector_t_.append) occur in the same Application Single-Threaded Apartment (ASTA) context. Because [**task\_continuation\_context::use\_default**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017) is the default context, we don’t have to specify it explicitly, but we do so here for the sake of clarity.
+The following example demonstrates when it's useful to specify the [**task\_continuation\_context::use\_arbitrary**][useArbitrary] option, and it also shows how the default continuation context is useful for synchronizing concurrent operations on non-thread-safe collections. In this code, we loop through a list of URLs for RSS feeds, and for each URL, we start up an async operation to retrieve the feed data. We can’t control the order in which the feeds are retrieved, and we don't really care. When each [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.isyndicationclient.retrievefeedasync) operation completes, the first continuation accepts the [**SyndicationFeed^**](/uwp/api/Windows.Web.Syndication.SyndicationFeed) object and uses it to initialize an app-defined `FeedData^` object. Because each of these operations is independent from the others, we can potentially speed things up by specifying the **task\_continuation\_context::use\_arbitrary** continuation context. However, after each `FeedData` object is initialized, we have to add it to a [**Vector**](/cpp/cppcx/platform-collections-vector-class), which is not a thread-safe collection. Therefore, we create a continuation and specify [**task\_continuation\_context::use\_current**](/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017) to ensure that all the calls to [**Append**](/uwp/api/windows.foundation.collections.ivector_t_.append) occur in the same Application Single-Threaded Apartment (ASTA) context. Because [**task\_continuation\_context::use\_default**](/cpp/parallel/concrt/reference/task-continuation-context-class?view=vs-2017) is the default context, we don’t have to specify it explicitly, but we do so here for the sake of clarity.
 
 ``` cpp
 #include <ppltasks.h>
@@ -279,27 +279,27 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 Nested tasks, which are new tasks that are created inside a continuation, don't inherit apartment-awareness of the initial task.
 
 ## Handing progress updates
-Methods that support [**IAsyncOperationWithProgress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) or [**IAsyncActionWithProgress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) property. A typical use of the delegate is to update a progress bar in the UI.
+Methods that support [**IAsyncOperationWithProgress**](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) or [**IAsyncActionWithProgress**](/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) property. A typical use of the delegate is to update a progress bar in the UI.
 
 ## Related topics
-* [Creating Asynchronous Operations in C++/CX for UWP apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)
-* [Visual C++ Language Reference](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)
+* [Creating Asynchronous Operations in C++/CX for UWP apps](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)
+* [Visual C++ Language Reference](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Asynchronous Programming][AsyncProgramming]
 * [Task Parallelism (Concurrency Runtime)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)
 
 <!-- LINKS -->
-[AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"
-[concurrencyNamespace]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace> "Concurrency Namespace"
-[createTask]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task> "CreateTask"
-[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx> "IAsyncAction"
-[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
-[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
-[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
-[taskCanceled]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/task-canceled-class> "TaskCancelled"
-[task-class]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class#get> "Task Class"
-[taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
-[taskParallelism]: <https://docs.microsoft.com/cpp/parallel/concrt/task-parallelism-concurrency-runtime> "Task Parallelism"
-[taskThen]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class#then> "TaskThen"
-[useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
+[AsyncProgramming]: ./asynchronous-programming-universal-windows-platform-apps.md "AsyncProgramming"
+[concurrencyNamespace]: /cpp/parallel/concrt/reference/concurrency-namespace "Concurrency Namespace"
+[createTask]: /cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task "CreateTask"
+[deleteAsync]: /uwp/api/Windows.Storage.StorageFile "DeleteAsync"
+[IAsyncAction]: /uwp/api/Windows.Foundation.IAsyncAction "IAsyncAction"
+[IAsyncOperation]: /uwp/api/windows.foundation.iasyncoperation-1 "IAsyncOperation"
+[IAsyncInfo]: /uwp/api/Windows.Foundation.IAsyncInfo "IAsyncInfo"
+[IAsyncInfoCancel]: /uwp/api/Windows.Foundation.IAsyncInfo "IAsyncInfoCancel"
+[taskCanceled]: /cpp/parallel/concrt/reference/task-canceled-class "TaskCancelled"
+[task-class]: /cpp/parallel/concrt/reference/task-class#get "Task Class"
+[taskGet]: /cpp/parallel/concrt/reference/task-class "TaskGet"
+[taskParallelism]: /cpp/parallel/concrt/task-parallelism-concurrency-runtime "Task Parallelism"
+[taskThen]: /cpp/parallel/concrt/reference/task-class#then "TaskThen"
+[useArbitrary]: /cpp/parallel/concrt/reference/task-continuation-context-class "UseArbitrary"

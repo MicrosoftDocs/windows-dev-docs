@@ -35,7 +35,7 @@ Outside your app, Windows uses an icon to represent your app in the start menu a
     :::column-end:::
 :::row-end:::
 
-This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](./app-icons-and-logos.md).
 
 ## When to use icons
 
@@ -100,7 +100,7 @@ You don't have to use the Segoe MDL2 Assets font--you can use any font the user 
 ### Use a Scalable Vector Graphics (SVG) file.
 :::row:::
     :::column:::
-SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. For instructions, see [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
+SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. For instructions, see [SVGImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
     :::column-end:::
     :::column:::
         ![SVG image](images/icons/icon-scale.gif)
@@ -157,10 +157,10 @@ Set the button's font family to `Segoe MDL2 Assets` and its content property to 
 :::row:::
     :::column span="2":::
         <b>Step 2</b><br>
-You can use one of the icon element objects: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon),
-[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), 
-[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon), or
-[SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
+You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon),
+[FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), 
+[PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), or
+[SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
     :::column-end:::
 	:::column:::
         ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
@@ -180,7 +180,7 @@ You can use one of the icon element objects: [BitmapIcon](https://docs.microsoft
 
 :::row:::
     :::column span:::
-When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls-and-patterns/app-bars.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
+When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls-and-patterns/app-bars.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
     :::column-end:::
 	:::column:::
         ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
@@ -201,13 +201,13 @@ The easiest way is to use the list of predefined icons we provide—simply speci
 </CommandBar>
 
 ```
-For the complete list of icon names, see the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+For the complete list of icon names, see the [Symbol enumeration](/uwp/api/windows.ui.xaml.controls.symbol). 
 
 There are other ways to provide icons for a button in a command bar:
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
++ [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.
++ [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.
++ [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
 
 To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md). 
 

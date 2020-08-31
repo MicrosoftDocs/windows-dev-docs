@@ -15,9 +15,9 @@ In order to add and manage account users, you must first associate your Partner 
 
 This section describes how to do the following:
 
--   [Associate Azure Active Directory with your Partner Center account](associate-azure-ad-with-dev-center.md)
+-   [Associate Azure Active Directory with your Partner Center account](./associate-azure-ad-with-partner-center.md)
 -   [Add users, groups, and Azure AD applications to your Partner Center account](add-users-groups-and-azure-ad-applications.md)
 -   [Set roles and custom permissions for account users](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> These topics are specific to the Windows apps developer program in Partner Center, but associating a tenant and managing users works similarly for accounts in the Windows Hardware Developer Program (see [Dashboard Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) for more info) or in the Windows Desktop Application Program (see [Windows Desktop Application Program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) for more info).
+> These topics are specific to the Windows apps developer program in Partner Center, but associating a tenant and managing users works similarly for accounts in the Windows Hardware Developer Program (see [Dashboard Administration](/windows-hardware/drivers/dashboard/dashboard-administration) for more info) or in the Windows Desktop Application Program (see [Windows Desktop Application Program](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) for more info).

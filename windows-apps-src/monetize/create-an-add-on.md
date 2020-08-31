@@ -44,7 +44,7 @@ The request body has the following parameters.
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  applicationIds  |  array  |  An array that contains the Store ID of the app that this add-on is associated with. Only one item is supported in this array.   |  Yes  |
-|  productId  |  string  |  The product ID of the add-on. This is an identifier that can use in code to refer to the add-on. For more information, see [Set your product type and product ID](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Yes  |
+|  productId  |  string  |  The product ID of the add-on. This is an identifier that can use in code to refer to the add-on. For more information, see [Set your product type and product ID](../publish/set-your-add-on-product-id.md).  |  Yes  |
 |  productType  |  string  |  The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |  Yes  |
 
 

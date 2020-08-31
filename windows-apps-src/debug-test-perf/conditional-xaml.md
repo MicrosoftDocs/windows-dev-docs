@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Conditional XAML
 
-*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
+*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
 
 Conditional XAML is available starting with the Creators Update (version 1703, build 15063). To use conditional XAML, the Minimum Version of your Visual Studio project must be set to build 15063 (Creators Update) or later, and the Target Version be set to a later version than the Minimum. See [Version adaptive apps](version-adaptive-apps.md) for more info about configuring your Visual Studio project.
 
@@ -53,7 +53,7 @@ We discuss these methods further in later sections of this article.
 
 In this example, you display, "Hello, Conditional XAML", as the content of a text block if the app runs on the Fall Creators Update or later, and default to no content if it's on a previous version.
 
-First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (https://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
+First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (https://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
 
 You then define a conditional that returns **true** on devices that are running the Fall Creators Update or later. You use the ApiInformation method **IsApiContractPresent** to check for the 5th version of the UniversalApiContract. Version 5 of the UniversalApiContract was released with the Fall Creators Update (SDK 16299).
 
@@ -153,7 +153,7 @@ Here's another example that sets the background of a button. The [Acrylic materi
 
 So far, you’ve seen how to set properties using conditional XAML, but you can also conditionally instantiate controls based on the API contract available at runtime.
 
-Here, a [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) is instantiated when the app runs on the Fall Creators Update where the control is available. The ColorPicker isn't available prior to the Fall Creators Update, so when the app runs on earlier versions, you use a [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) to provide simplified color choices to the user.
+Here, a [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) is instantiated when the app runs on the Fall Creators Update where the control is available. The ColorPicker isn't available prior to the Fall Creators Update, so when the app runs on earlier versions, you use a [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) to provide simplified color choices to the user.
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -238,7 +238,7 @@ When the app runs on the Fall Creators Update, you use a ColorPicker to let the 
 
 ## Related articles
 
-- [Guide to UWP apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Guide to UWP apps](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)
 - [Universal device family API contracts](/uwp/extension-sdks/windows-universal-sdk)

@@ -1,5 +1,5 @@
 ---
-description: This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects.
+description: This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](./intro-to-using-cpp-with-winrt.md) objects.
 title: Interop between C++/WinRT and C++/CX
 ms.date: 10/09/2018
 ms.topic: article
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Interop between C++/WinRT and C++/CX
 
-Before reading this topic, you'll need the info in the topic [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx). That topic introduces two main strategy options for porting your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Before reading this topic, you'll need the info in the topic [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md). That topic introduces two main strategy options for porting your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 - Port the entire project in one pass. The simplest option for a project that's not too large. If you have a Windows Runtime component project, then this strategy is your only option.
 - Port the project gradually (the size or complexity of your codebase might make this necessary). But this strategy calls for you to follow a porting process in which for a time C++/CX and C++/WinRT code exists side by side in the same project. For a XAML project, at any given time, your XAML page types must be *either* all C++/WinRT *or* all C++/CX.
@@ -18,7 +18,7 @@ This interop topic is relevant for that *second* strategy&mdash;for cases when y
 
 These helper functions will be very useful as you port your code gradually from C++/CX to C++/WinRT. Or you might just choose to use both the C++/WinRT and C++/CX language projections in the same project, whether you're porting or not, and use these helper functions to interoperate between the two.
 
-After reading this topic, for info and code examples showing how to support PPL tasks and coroutines side by side in the same project (for example, calling coroutines from task chains), see the more advanced topic [Asynchrony, and interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async).
+After reading this topic, for info and code examples showing how to support PPL tasks and coroutines side by side in the same project (for example, calling coroutines from task chains), see the more advanced topic [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md).
 
 ## The **from_cx** and **to_cx** functions
 
@@ -75,7 +75,7 @@ To use the two helper functions in your project, follow these steps.
 
 ## Taking a C++/CX project and adding C++/WinRT support
 
-This section describes what to do if you've decided to take your existing C++/CX project, add C++/WinRT support to it, and do your porting work there. Also see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+This section describes what to do if you've decided to take your existing C++/CX project, add C++/WinRT support to it, and do your porting work there. Also see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 To mix C++/CX and C++/WinRT in a C++/CX project&mdash;including using the **from_cx** and **to_cx** helper functions in the project&mdash;you'll need to manually add C++/WinRT support to the project.
 
@@ -138,7 +138,7 @@ This section describes what to do if you've decided to create a new C++/WinRT pr
 
 To mix C++/WinRT and C++/CX in a C++/WinRT project&mdash;including using the **from_cx** and **to_cx** helper functions in the project&mdash;you'll need to manually add C++/CX support to the project.
 
-- Create a new C++/WinRT project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+- Create a new C++/WinRT project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 - Turn on project support for C++/CX. In project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**.
 
 ### An example C++/WinRT project showing the two helper functions in use
@@ -339,5 +339,5 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [Asynchrony, and interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)
+* [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md)
+* [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md)

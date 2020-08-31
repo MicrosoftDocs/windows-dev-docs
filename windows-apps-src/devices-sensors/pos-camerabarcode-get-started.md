@@ -44,7 +44,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 
 ## Step 4: Enumerate all barcode scanners
 
-If you do not expect the list of devices to change over the lifespan of your application you can enumerate a snapshot just once with [DeviceInformation.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync), but if you believe that the list of barcode scanners could change over the lifespan of your application you should use a [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) instead.  
+If you do not expect the list of devices to change over the lifespan of your application you can enumerate a snapshot just once with [DeviceInformation.FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync), but if you believe that the list of barcode scanners could change over the lifespan of your application you should use a [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) instead.  
 
 > [!Important]
 > Using GetDefaultAsync to enumerate PointOfService devices can result in inconsistent behavior as it simply returns the first device found in the class and this can change from session to session.
@@ -56,7 +56,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 ```
 
 > [!TIP]
-> See [*Enumerate a snapshot of devices*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-a-snapshot-of-devices) for more information on using *FindAllAsync*.
+> See [*Enumerate a snapshot of devices*](./enumerate-devices.md#enumerate-a-snapshot-of-devices) for more information on using *FindAllAsync*.
 
 ### **Option B: Enumerate available barcode scanners and watch for changes to the available scanners**
 
@@ -69,13 +69,13 @@ watcher.Start();
 ```
 
 > [!TIP]
-> See [*Enumerate and watch device changes*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices) and [*DeviceWatcher*](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) for more information.
+> See [*Enumerate and watch device changes*](./enumerate-devices.md#enumerate-and-watch-devices) and [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) for more information.
 
 ## Step 5: Identify camera barcode scanners
 
 A camera barcode scanner is created dynamically as Windows pairs the camera(s) attached to your computer with a software decoder.  Each camera - decoder pair is a fully functional barcode scanner.
 
-For each barcode scanner in the resulting device collection, you can differentiate between camera barcode scanners and physical barcode scanners by checking the [*BarcodeScanner.VideoDeviceID*](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) property.  A non-NULL VideoDeviceID indicates that the barcode scanner object from your device collection is a camera barcode scanner.  If you have more than one camera barcode scanner you might want to build a separate collection which excludes physical barcode scanners.
+For each barcode scanner in the resulting device collection, you can differentiate between camera barcode scanners and physical barcode scanners by checking the [*BarcodeScanner.VideoDeviceID*](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) property.  A non-NULL VideoDeviceID indicates that the barcode scanner object from your device collection is a camera barcode scanner.  If you have more than one camera barcode scanner you might want to build a separate collection which excludes physical barcode scanners.
 
 Camera barcode scanners using the decoder that ships with Windows are identified as:
 
@@ -120,7 +120,7 @@ private async void ScannerSelection_Changed(object sender, SelectionChangedEvent
 
 ## Step 6: Claim the camera barcode scanner
 
-Use [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) to obtain exclusive use of the camera barcode scanner.
+Use [BarcodeScanner.ClaimScannerAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) to obtain exclusive use of the camera barcode scanner.
 
 ```csharp
 private async Task SelectScannerAsync(string scannerDeviceId)
@@ -148,18 +148,18 @@ private async Task SelectScannerAsync(string scannerDeviceId)
 
 ## Step 7: System provided preview
 
-A camera preview is needed for the user to successfully aim the camera at barcodes.  Windows provides a simple camera preview that launches a dialog for basic control of the camera barcode scanner.  Simply call [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it when finished.
+A camera preview is needed for the user to successfully aim the camera at barcodes.  Windows provides a simple camera preview that launches a dialog for basic control of the camera barcode scanner.  Simply call [ClaimedBarcodeScanner.ShowVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [ClaimedBarcodeScanner.HideVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it when finished.
 
 > [!TIP]
 > See [Hosting Preview](pos-camerabarcode-hosting-preview.md) to host the preview for camera barcode scanner in your application.
 
 ## Step 8: Initiate scan
 
-You can initiate the scan process by calling [**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).
+You can initiate the scan process by calling [**StartSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).
 
-Depending on the value of [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) the scanner might scan only one barcode then stop or scan continuously until you call [**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync).
+Depending on the value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) the scanner might scan only one barcode then stop or scan continuously until you call [**StopSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync).
 
-Set the desired value of [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) to control the scanner behavior when a barcode is decoded.
+Set the desired value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) to control the scanner behavior when a barcode is decoded.
 
 | Value | Description |
 | ----- | ----------- |

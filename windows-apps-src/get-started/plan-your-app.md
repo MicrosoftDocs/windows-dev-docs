@@ -122,7 +122,7 @@ Common techniques:
 -   **Play To**  Let your users enjoy audio, video, or images streamed from your app to other devices in their home network.
 -   **File picker and file picker extensions**   Let your users load and save their files from the local file system, connected storage devices, HomeGroup, or even other apps. You can also provide a file picker extension so other apps can load your app's content.
 
-For more info, see [App contracts and extensions](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)).
+For more info, see [App contracts and extensions](/previous-versions/windows/apps/hh464906(v=win.10)).
 <!-- Win 8 page. Should have replacement. -->
 
 **Different views, form factors, and hardware configurations**  Windows puts users in charge and your app in the forefront. You want your app UI to shine on any device, using any input mode, in any orientation, in any hardware configuration, and in whatever circumstance the user decides to use it.
@@ -135,22 +135,22 @@ Of course, you can take advantage of a number of touch interactions, like rotate
 
 **Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
 
--   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
+-   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../design/motion/xaml-animation.md).
 -   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../design/shell/tiles-and-notifications/index.md).
 -   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../design/shell/tiles-and-notifications/creating-tiles.md).
 
 **Personalization**
 
--   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../design/app-settings/app-settings-and-data.md).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../design/app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data).
+-   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../design/app-settings/guidelines-for-app-settings.md).
+-   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../design/app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](../design/app-settings/store-and-retrieve-app-data.md).
 -   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
 **Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
 
--   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10)).
--   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10)).
+-   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](/previous-versions/windows/apps/hh465229(v=win.10)).
+-   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](/previous-versions/windows/apps/hh465189(v=win.10)).
 -   **Accelerometers and other sensors**     Devices come with a number of sensors nowadays. Your app can dim or brighten the display based on ambient light, reflow the UI if the user rotates the display, or react to any physical movement. Learn more about [sensors](../devices-sensors/sensors.md).
--   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10)).
+-   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](/previous-versions/windows/apps/hh465139(v=win.10)).
 
 Let's consider the travel app example again. To be great at helping friends collaboratively create itineraries for group trips, you could use some of these features, just to name a few:
 
@@ -206,15 +206,15 @@ For more details on how to use different surfaces, take a look at <!--[Command d
 -   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
 -   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
 
-    -   In the [command bar](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
+    -   In the [command bar](../design/controls-and-patterns/app-bars.md): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
     -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
-    -   In a [context menu](https://docs.microsoft.com/windows/uwp/controls-and-patterns/menus): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
+    -   In a [context menu](../design/controls-and-patterns/menus.md): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
 
 **Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
 
 ![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
+For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ## Make a good first impression
 
@@ -232,4 +232,4 @@ Think about what you want users to think, feel, or do when they first launch you
 
 Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Microsoft Store. You can use [the Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
 
-Use the [detailed UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design) to stay focused on important features. Use the [Visual Studio performance tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) to analyze the performance of each of your app's scenarios.
+Use the [detailed UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design) to stay focused on important features. Use the [Visual Studio performance tools](/visualstudio/profiling/profiling-tools?view=vs-2015) to analyze the performance of each of your app's scenarios.

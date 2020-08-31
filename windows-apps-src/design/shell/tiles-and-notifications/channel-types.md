@@ -16,11 +16,11 @@ This article covers the three types of Windows push notification channels (prima
 
 There are three types of push channels that can be used to send notifications to a Windows app. They are: 
 
-[Primary channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications. [Learn more here](windows-push-notification-services--wns--overview.md).
+[Primary channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications. [Learn more here](windows-push-notification-services--wns--overview.md).
 
-[Secondary tile channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates to a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
+[Secondary tile channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates to a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
 
-[Alternate channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any Windows app, including those which aren't registered in the Store. 
+[Alternate channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any Windows app, including those which aren't registered in the Store. 
 
 > [!NOTE]
 > No matter which push channel you use, once your app is running on the device, it will always be able to send local toast, tile, or badge notifications. It can send local notifications from the foreground app processes or from a background task. 
@@ -161,11 +161,11 @@ In general, we recommend using the primary channel in your app, with a few excep
 
 * [Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Adaptive and interactive toast notifications](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [How to update a badge through push notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [How to intercept notifications for running applications](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Quickstart: Sending a push notification](/previous-versions/windows/apps/hh868252(v=win.10))
+* [How to update a badge through push notifications](/previous-versions/windows/apps/hh465450(v=win.10))
+* [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh465412(v=win.10))
+* [How to intercept notifications for running applications](/previous-versions/windows/apps/hh465450(v=win.10))
+* [How to authenticate with the Windows Push Notification Service (WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push notification service request and response headers](/previous-versions/windows/apps/hh465435(v=win.10))
+* [Guidelines and checklist for push notifications](./windows-push-notification-services--wns--overview.md)
 * [Raw notifications](raw-notification-overview.md)

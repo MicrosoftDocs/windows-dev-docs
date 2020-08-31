@@ -128,7 +128,7 @@ The `SupportsMultipleInstances` attribute indicates that each time the app servi
     * If the caller is in the foreground, the app service lifetime is the same as the caller.
     * If the caller is in the background, the app service gets 30 seconds to run. Taking out a deferral provides an additional one time 5 seconds.
 
-    **OnTaskCanceled** is called when the task is canceled. The task is canceled when the client app disposes the [AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), the client app is suspended, the OS is shut down or sleeps, or the OS runs out of resources to run the task.
+    **OnTaskCanceled** is called when the task is canceled. The task is canceled when the client app disposes the [AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), the client app is suspended, the OS is shut down or sleeps, or the OS runs out of resources to run the task.
 
 ## Write the code for the app service
 
@@ -197,15 +197,15 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-Note that **OnRequestReceived** is **async** because we make an awaitable method call to [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) in this example.
+Note that **OnRequestReceived** is **async** because we make an awaitable method call to [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) in this example.
 
-A deferral is taken so that the service can use **async** methods in the **OnRequestReceived** handler. It ensures that the call to **OnRequestReceived** does not complete until it is done processing the message.  [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) sends the result to the caller. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [SendMessageAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.sendmessageasync) that **OnRequestReceived** has completed. The call to **SendResponseAsync** is wrapped in a try/finally block because you must complete the deferral even if **SendResponseAsync** throws an exception.
+A deferral is taken so that the service can use **async** methods in the **OnRequestReceived** handler. It ensures that the call to **OnRequestReceived** does not complete until it is done processing the message.  [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) sends the result to the caller. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [SendMessageAsync](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.sendmessageasync) that **OnRequestReceived** has completed. The call to **SendResponseAsync** is wrapped in a try/finally block because you must complete the deferral even if **SendResponseAsync** throws an exception.
 
-App services use [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) objects to exchange information. The size of the data you may pass is only limited by system resources. There are no predefined keys for you to use in your **ValueSet**. You must determine which key values you will use to define the protocol for your app service. The caller must be written with that protocol in mind. In this example, we have chosen a key named `Command` that has a value that indicates whether we want the app service to provide the name of the inventory item or its price. The index of the inventory name is stored under the `ID` key. The return value is stored under the `Result` key.
+App services use [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) objects to exchange information. The size of the data you may pass is only limited by system resources. There are no predefined keys for you to use in your **ValueSet**. You must determine which key values you will use to define the protocol for your app service. The caller must be written with that protocol in mind. In this example, we have chosen a key named `Command` that has a value that indicates whether we want the app service to provide the name of the inventory item or its price. The index of the inventory name is stored under the `ID` key. The return value is stored under the `Result` key.
 
-An [AppServiceClosedStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceClosedStatus) enum is returned to the caller to indicate whether the call to the app service succeeded or failed. An example of how the call to the app service could fail is if the OS aborts the service endpoint because its resources have been exceeded. You can return additional error information via the [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). In this example, we use a key named `Status` to return more detailed error information to the caller.
+An [AppServiceClosedStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceClosedStatus) enum is returned to the caller to indicate whether the call to the app service succeeded or failed. An example of how the call to the app service could fail is if the OS aborts the service endpoint because its resources have been exceeded. You can return additional error information via the [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet). In this example, we use a key named `Status` to return more detailed error information to the caller.
 
-The call to [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) returns the [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) to the caller.
+The call to [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) returns the [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) to the caller.
 
 ## Deploy the service app and get the package family name
 
@@ -297,9 +297,9 @@ You will also need the package family name of the app service provider in order 
 
     The code first establishes a connection with the app service. The connection will remain open until you dispose `this.inventoryService`. The app service name must match the `AppService` element's `Name` attribute that you added to the **AppServiceProvider** project's **Package.appxmanifest** file. In this example, it is `<uap3:AppService Name="com.microsoft.inventory"/>`.
 
-    A [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) named `message` is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the text box in the client app, and then call the service with the `Item` command to get the description of the item. Then, we make the call with the `Price` command to get the item's price. The button text is set to the result.
+    A [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) named `message` is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the text box in the client app, and then call the service with the `Item` command to get the description of the item. Then, we make the call with the `Price` command to get the item's price. The button text is set to the result.
 
-    Because [AppServiceResponseStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) only indicates whether the operating system was able to connect the call to the app service, we check the `Status` key in the [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) we receive from the app service to ensure that it was able to fulfill the request.
+    Because [AppServiceResponseStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) only indicates whether the operating system was able to connect the call to the app service, we check the `Status` key in the [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) we receive from the app service to ensure that it was able to fulfill the request.
 
 6. Set the **ClientApp** project to be the startup project (right-click it in the **Solution Explorer** > **Set as StartUp Project**) and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
 
@@ -335,9 +335,9 @@ If you encounter an **AppUnavailable** status after trying to connect to an app 
 - Ensure that the app service provider project and app service project are deployed. Both need to be deployed before running the client because otherwise the client won't have anything to connect to. You can deploy from Visual Studio by using **Build** > **Deploy Solution**.
 - In the **Solution Explorer**, ensure that your app service provider project has a project-to-project reference to the project that implements the app service.
 - Verify that the `<Extensions>` entry, and its child elements, have been added to the **Package.appxmanifest** file belonging to the app service provider project as specified above in [Add an app service extension to Package.appxmanifest](#appxmanifest).
-- Ensure that the [AppServiceConnection.AppServiceName](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.appservicename) string in your client that calls the app service provider matches the `<uap3:AppService Name="..." />` specified in the app service provider project's **Package.appxmanifest** file.
-- Ensure that the [AppServiceConnection.PackageFamilyName](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.packagefamilyname) matches the package family name of the app service provider component as specified above in [Add an app service extension to Package.appxmanifest](#appxmanifest)
-- For out-of-proc app services such as the one in this example, validate that the `EntryPoint` specified in the `<uap:Extension ...>` element of your app service provider project's **Package.appxmanifest** file matches the namespace and class name of the public class that implements [IBackgroundTask](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) in your app service project.
+- Ensure that the [AppServiceConnection.AppServiceName](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.appservicename) string in your client that calls the app service provider matches the `<uap3:AppService Name="..." />` specified in the app service provider project's **Package.appxmanifest** file.
+- Ensure that the [AppServiceConnection.PackageFamilyName](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.packagefamilyname) matches the package family name of the app service provider component as specified above in [Add an app service extension to Package.appxmanifest](#appxmanifest)
+- For out-of-proc app services such as the one in this example, validate that the `EntryPoint` specified in the `<uap:Extension ...>` element of your app service provider project's **Package.appxmanifest** file matches the namespace and class name of the public class that implements [IBackgroundTask](/uwp/api/windows.applicationmodel.background.ibackgroundtask) in your app service project.
 
 ### Troubleshoot debugging
 
@@ -354,7 +354,7 @@ This example provides an introduction to creating an app service that runs as a 
 * Add the `windows.appService` extension to the app service provider's **Package.appxmanifest** file.
 * Obtain the package family name of the app service provider so that we can connect to it from the client app.
 * Add a project-to-project reference from the app service provider project to the app service project.
-* Use [Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) to call the service.
+* Use [Windows.ApplicationModel.AppService.AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) to call the service.
 
 ## Full code for MyAppService
 

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # User Activities best practices
 
-This guide outlines the recommended practices for creating and updating User Activities. For an overview of the User Activities feature on Windows, see [Continue user activity, even across devices](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities). Or, see the [User Activities section](https://docs.microsoft.com/windows/project-rome/user-activities/) of Project Rome for the implementations of Activities on other development platforms.
+This guide outlines the recommended practices for creating and updating User Activities. For an overview of the User Activities feature on Windows, see [Continue user activity, even across devices](./useractivities.md). Or, see the [User Activities section](/windows/project-rome/user-activities/) of Project Rome for the implementations of Activities on other development platforms.
 
 ## When to create or update User Activities
 
@@ -40,15 +40,15 @@ While every app is different, most apps will fall into one of the following inte
 ## User Activity design
 
 User Activities consist of three components: an activation URI, visual data, and content metadata.
-* The activation URI is a URI that can be passed to an application or experience in order to resume the application with a specific context. Typically, these links take the form of protocol handler for a scheme (for example, "my-app://page2?action=edit"). It is up to the developer to determine how URI parameters will be handled by their app. See [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation) for more information.
+* The activation URI is a URI that can be passed to an application or experience in order to resume the application with a specific context. Typically, these links take the form of protocol handler for a scheme (for example, "my-app://page2?action=edit"). It is up to the developer to determine how URI parameters will be handled by their app. See [Handle URI activation](./handle-uri-activation.md) for more information.
 * The visual data, consisting of a set of required and optional properties (for example: title, description, or Adaptive Card elements), allow users to visually identify an Activity. See below for guidelines on creating Adaptive Card visuals for your Activity.
 * The content metadata is JSON data that can be used to group and retrieve activities under a specific context. Typically, this takes the form of http://schema.org data. See below for guidelines on filling out this data.
 
 ### Adaptive Card design guidelines
 
-When Activities appear in Timeline, they are displayed using the [Adaptive Card framework](https://docs.microsoft.com/adaptive-cards/). If the developer does not provide an Adaptive Card for each Activity, Timeline will automatically create a simple card based on the app name/icon, the required Title field, and the optional Description field. 
+When Activities appear in Timeline, they are displayed using the [Adaptive Card framework](/adaptive-cards/). If the developer does not provide an Adaptive Card for each Activity, Timeline will automatically create a simple card based on the app name/icon, the required Title field, and the optional Description field. 
 
-App developers are encouraged to provide custom cards using the simple Adaptive Card JSON schema. See the [Adaptive Cards documentation](https://docs.microsoft.com/adaptive-cards/authoring-cards/getting-started) for technical instructions on how to construct Adaptive Card objects. Refer to the guidelines below for designing Adaptive Cards in User Activities.
+App developers are encouraged to provide custom cards using the simple Adaptive Card JSON schema. See the [Adaptive Cards documentation](/adaptive-cards/authoring-cards/getting-started) for technical instructions on how to construct Adaptive Card objects. Refer to the guidelines below for designing Adaptive Cards in User Activities.
 * Use images
   * Use a unique image for each Activity, if possible. Your application name and icon will automatically be displayed next to your Activity's card; additional images will help users locate the Activity they are looking for.
   * Images should not include text that the user is expected to read. This text won't be available to users with accessibility needs and cannot be searched.
@@ -91,13 +91,13 @@ In the following example, the content metadata JSON, following the standards of 
 
 ## Key APIs
 
-* [UserActivities namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities namespace](/uwp/api/windows.applicationmodel.useractivities)
 
 ## Related topics
 
-* [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
+* [User Activities (Project Rome docs)](/windows/project-rome/user-activities/)
+* [Adaptive cards](/adaptive-cards/)
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
-* [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Handle URI activation](./handle-uri-activation.md)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

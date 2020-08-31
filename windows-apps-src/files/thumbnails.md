@@ -14,7 +14,7 @@ These guidelines describe how to use thumbnail images to help users preview file
 
 **Important APIs**
 
--   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+-   [**ThumbnailMode**](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## Should my app include thumbnails?
 
@@ -30,7 +30,7 @@ Use thumbnails when:
     ![video preview](images/thumbnail-preview.png)
 
 ## Dos and don'ts
-- Specify the [thumbnail mode](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView, or SingleItem) when you retrieve thumbnails. This ensures that thumbnail images are optimized to display the type of files users want to see. 
+- Specify the [thumbnail mode](/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView, or SingleItem) when you retrieve thumbnails. This ensures that thumbnail images are optimized to display the type of files users want to see. 
     - Use the SingleItem mode to retrieve a thumbnail for a single item, regardless of file type. The other thumbnail modes are meant to display previews of multiple files. 
 
 - Display generic placeholder images in place of thumbnails while thumbnails load. Using placeholders helps your app seem more responsive because users can interact with previews before the thumbnail load. 
@@ -49,7 +49,7 @@ Use thumbnails when:
 - Don't display additional file info for picture and video files. In most cases, a thumbnail image is sufficient for users browsing through pictures and videos. 
 
 ## Additional usage guidelines
-Recommended [thumbnail modes](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) and their features:
+Recommended [thumbnail modes](/uwp/api/windows.storage.fileproperties.thumbnailmode) and their features:
 
 <table>
 <tr>
@@ -157,8 +157,8 @@ Otherwise, no thumbnail is retrieved.</td>
 </div>
 
 ## Related topics
-- [ThumbnailMode enum](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
-- [StorageItemThumbnail class](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [StorageFile class](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [ThumbnailMode enum](/uwp/api/windows.storage.fileproperties.thumbnailmode)
+- [StorageItemThumbnail class](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
+- [StorageFile class](/uwp/api/windows.storage.storagefile)
 - [File and folder thumbnail sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
 - [List and grid view](../design/controls-and-patterns/lists.md)

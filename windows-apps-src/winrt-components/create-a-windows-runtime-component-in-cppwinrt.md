@@ -1,6 +1,6 @@
 ---
 title: Windows Runtime components with C++/WinRT
-description: This topic shows how to use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language.
+description: This topic shows how to use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language.
 ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10, uwp, windows, runtime, component, components, Windows Runtime Component, WRC, C++/WinRT
@@ -9,24 +9,24 @@ ms.localizationpriority: medium
 
 # Windows Runtime components with C++/WinRT
 
-This topic shows how to use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language.
+This topic shows how to use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language.
 
 There are several reasons for building a Windows Runtime component in C++/WinRT.
 - To enjoy the performance advantage of C++ in complex or computationally intensive operations.
 - To reuse standard C++ code that's already written and tested.
 - To expose Win32 functionality to a Universal Windows Platform (UWP) app written in, for example, C#.
 
-In general, when you author your C++/WinRT component, you can use types from the standard C++ library, and built-in types, except at the application binary interface (ABI) boundary where you're passing data to and from code in another `.winmd` package. At the ABI, use Windows Runtime types. In addition, in your C++/WinRT code, use types such as delegate and event to implement events that can be raised from your component and handled in another language. See [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) for more info about C++/WinRT.
+In general, when you author your C++/WinRT component, you can use types from the standard C++ library, and built-in types, except at the application binary interface (ABI) boundary where you're passing data to and from code in another `.winmd` package. At the ABI, use Windows Runtime types. In addition, in your C++/WinRT code, use types such as delegate and event to implement events that can be raised from your component and handled in another language. See [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for more info about C++/WinRT.
 
 The remainder of this topic walks you through how to author a Windows Runtime component in C++/WinRT, and then how to consume it from an application.
 
 The Windows Runtime component that you'll build in this topic contains a runtime class representing a bank account. The topic also demonstrates a Core App that consumes the bank account runtime class, and calls a function to adjust the balance.
 
 > [!NOTE]
-> For info about installing and using the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 > [!IMPORTANT]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis) and [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](../cpp-and-winrt-apis/consume-apis.md) and [Author APIs with C++/WinRT](../cpp-and-winrt-apis/author-apis.md).
 
 ## Create a Windows Runtime component (BankAccountWRC)
 
@@ -134,4 +134,4 @@ Each time you click the window, you increment the bank account object's balance.
 
 To add even more functionality, or new Windows Runtime types, to your C++/WinRT Windows Runtime component, you can follow the same patterns shown above. First, use IDL to define the functionality you want to expose. Then build the project in Visual Studio to generate a stub implementation. And then complete the implementation as appropriate. Any methods, properties, and events that you define in IDL are visible to the application that consumes your Windows Runtime Component. For more info about IDL, see [Introduction to Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro).
 
-For an example of how to add an event to your Windows Runtime Component, see [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+For an example of how to add an event to your Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).

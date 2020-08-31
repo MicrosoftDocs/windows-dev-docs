@@ -67,7 +67,7 @@ Compact sizing enables dense, information-rich groups of controls and can help w
 
 ### Examples
 
-Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) Nuget package.
+Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](/uwp/toolkits/winui/) Nuget package.
 
 The following examples show how the the `Compact` style can be applied for the page and an individual Grid control.
 
@@ -96,6 +96,6 @@ The following examples show how the the `Compact` style can be applied for the p
 ## Related articles
 
 - [Guidelines for touch targets](../input/guidelines-for-targeting.md)
-- [ResourceDictionary and XAML resource references](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-- [Resource Dictionary](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary)
-- [XAML Styles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [ResourceDictionary and XAML resource references](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+- [Resource Dictionary](/uwp/api/windows.ui.xaml.resourcedictionary)
+- [XAML Styles](../controls-and-patterns/xaml-styles.md)
