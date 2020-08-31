@@ -105,7 +105,7 @@ Modifier keys are keys such as Ctrl or Shift that users typically press in combi
 
 You detect shortcut key combinations by using code in your [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) event handlers. Within those handlers, you can track the pressed state of the modifier keys you are interested in (by storing whether or not Ctrl is pressed, for example). When a keyboard event occurs for a non-modifier key, you can check whether a modifier key is in the pressed state at the same time.
 
-Alternatively, you can use the [**GetKeyState()**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getkeystate) function of the [**CoreWindow**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) (available via [**CoreWindow::GetForCurrentThread()**](https://docs.microsoft.comuwp/api/windows.ui.core.corewindow.getforcurrentthread), for example) to check modifier states on-demand when a non-modifier key is pressed.
+Alternatively, you can use the [**GetKeyState()**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getkeystate) function of the [**CoreWindow**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) (available via [**CoreWindow::GetForCurrentThread()**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread), for example) to check modifier states on-demand when a non-modifier key is pressed.
 
 The following examples implement this second method while also including stub code for the first implementation.
 
