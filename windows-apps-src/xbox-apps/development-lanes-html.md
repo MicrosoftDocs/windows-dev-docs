@@ -1,6 +1,6 @@
 ---
 title: HTML game development on Xbox
-description: HTML UWP game development on Xbox.
+description: Learn about HTML 5 game development for the Universal Windows Platform (UWP) on Xbox One including how to build Packaged and Hosted Web apps.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

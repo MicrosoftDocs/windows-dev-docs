@@ -1,6 +1,6 @@
 ---
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
-description: Learn how to launch an interstitial ad using JavaScript/HTML.
+description: Learn how to launch an interstitial ad using a Universal Windows Platform (UWP) app written in JavaScript and HTML.
 title: Interstitial ad sample code in JavaScript
 ms.date: 02/18/2020
 ms.topic: article
