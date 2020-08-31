@@ -93,6 +93,6 @@ There is one final step that you need to do. **But only if you deleted the `Lang
 
 ## Related topics
 
-* [Package a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps)
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Specify the default resources that your app uses](specify-default-resources-installed.md)

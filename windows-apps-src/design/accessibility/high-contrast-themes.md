@@ -33,14 +33,14 @@ While common controls come with full high contrast support for free, care needs 
 
 When the `#E6E6E6` color is set inline in the first example, the Grid will retain that background color in all themes. If the user switches to the High Contrast Black theme, they'll expect your app to have a black background. Since `#E6E6E6` is almost white, some users may not be able to interact with your app.
 
-In the second example, the [**{ThemeResource} markup extension**](../../xaml-platform/themeresource-markup-extension.md) is used to reference a color in the [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection, a dedicated property of a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) element. **ThemeDictionaries** allows XAML to automatically swap colors for you based on the user's current theme.
+In the second example, the [**{ThemeResource} markup extension**](../../xaml-platform/themeresource-markup-extension.md) is used to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection, a dedicated property of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element. **ThemeDictionaries** allows XAML to automatically swap colors for you based on the user's current theme.
 
 ## Theme dictionaries
 
 When you need to change a color from its system default, create a ThemeDictionaries collection for your app.
 
 1. Start by creating the proper plumbing, if it doesn't already exist. In App.xaml, create a **ThemeDictionaries** collection, including **Default** and **HighContrast** at a minimum.
-2. In **Default**, create the type of [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) you need, usually a **SolidColorBrush**. Give it a *x:Key* name specific to what it is being used for.
+2. In **Default**, create the type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) you need, usually a **SolidColorBrush**. Give it a *x:Key* name specific to what it is being used for.
 3. Assign the **Color** you want for it.
 4. Copy that **Brush** into **HighContrast**.
 
@@ -161,7 +161,7 @@ Pages, panes, popups, and bars should all use **SystemColorWindowColor** for the
 
 ## List items
 
-In high contrast, items in a [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) have their background set to **SystemColorHighlightColor** when they are hovered, pressed, or selected. Complex list items commonly have a bug where the content of the list item fails to invert its color when the item is hovered, pressed, or selected. This makes the item impossible to read.
+In high contrast, items in a [ListView](/uwp/api/windows.ui.xaml.controls.listview) have their background set to **SystemColorHighlightColor** when they are hovered, pressed, or selected. Complex list items commonly have a bug where the content of the list item fails to invert its color when the item is hovered, pressed, or selected. This makes the item impossible to read.
 
 ![Simple list in light theme and High Contrast Black theme](images/high-contrast-list1.png)
 
@@ -170,7 +170,7 @@ In high contrast, items in a [ListView](https://docs.microsoft.com/uwp/api/windo
 
 ### List items with colored text
 
-One culprit is setting TextBlock.Foreground in the ListView's [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). This is commonly done to establish visual hierarchy. The Foreground property is set on the [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem), and TextBlocks in the DataTemplate inherit the correct Foreground color when the item is hovered, pressed, or selected. However, setting Foreground breaks the inheritance.
+One culprit is setting TextBlock.Foreground in the ListView's [DataTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). This is commonly done to establish visual hierarchy. The Foreground property is set on the [ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem), and TextBlocks in the DataTemplate inherit the correct Foreground color when the item is hovered, pressed, or selected. However, setting Foreground breaks the inheritance.
 
 ![Complex list in light theme and High Contrast Black theme](images/high-contrast-list2.png)
 
@@ -222,7 +222,7 @@ You can work around this by setting Foreground conditionally via a Style that's 
 
 ## Detecting high contrast
 
-You can programmatically check if the current theme is a high contrast theme by using members of the [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) class.
+You can programmatically check if the current theme is a high contrast theme by using members of the [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) class.
 
 > [!NOTE]
 > Make sure you call the **AccessibilitySettings** constructor from a scope where the app is initialized and is already displaying content.
@@ -232,4 +232,4 @@ You can programmatically check if the current theme is a high contrast theme by 
 * [UI contrast and settings sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
 * [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [XAML high contrast sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
-* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)
+* [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

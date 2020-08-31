@@ -17,11 +17,11 @@ However, developers writing UWP apps for personal use (that is, side loaded apps
 
 ## Run while minimized
 
-UWP apps move to a suspended state when they are not running in the foreground. On desktop, this occurs when a user minimizes the app. Apps use an extended execution session in order to continue running while minimized. The extended execution APIs that are accepted by the Microsoft Store are detailed in [Postpone app suspension with extended execution](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution).
+UWP apps move to a suspended state when they are not running in the foreground. On desktop, this occurs when a user minimizes the app. Apps use an extended execution session in order to continue running while minimized. The extended execution APIs that are accepted by the Microsoft Store are detailed in [Postpone app suspension with extended execution](./run-minimized-with-extended-execution.md).
 
-If you are developing an app that is not intended to be submitted into the Microsoft Store, then you can use the [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) with the `extendedExecutionUnconstrained` restricted capability so that your app can continue to run while minimized, regardless of the energy state of the device.  
+If you are developing an app that is not intended to be submitted into the Microsoft Store, then you can use the [ExtendedExecutionForegroundSession](/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) with the `extendedExecutionUnconstrained` restricted capability so that your app can continue to run while minimized, regardless of the energy state of the device.  
 
-The `extendedExecutionUnconstrained` capability is added as a restricted capability in your app's manifest. See [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) for more information about restricted capabilities.
+The `extendedExecutionUnconstrained` capability is added as a restricted capability in your app's manifest. See [App capability declarations](../packaging/app-capability-declarations.md) for more information about restricted capabilities.
 
 > **Note:**
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
@@ -39,7 +39,7 @@ _Package.appxmanifest_
 </Package>
 ```
 
-When you use the `extendedExecutionUnconstrained` capability, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) and [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) are used rather than [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) and [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). The same pattern for creating the session, setting members, and requesting the extension asynchronously still applies: 
+When you use the `extendedExecutionUnconstrained` capability, [ExtendedExecutionForegroundSession](/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) and [ExtendedExecutionForegroundReason](/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) are used rather than [ExtendedExecutionSession](/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) and [ExtendedExecutionReason](/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). The same pattern for creating the session, setting members, and requesting the extension asynchronously still applies: 
 
 ```cs
 var newSession = new ExtendedExecutionForegroundSession();
@@ -62,11 +62,11 @@ switch (result)
 
 You can request this extended execution session as soon as the app comes to the foreground. Unconstrained extended execution sessions are not limited by energy quotas or by the operating system battery saver. As long as a reference to the session object exists, the app will stay in the running state and not enter the suspended state. If the app is closed by the user, the session will be revoked.
 
-Registering for the **Revoked** event will enable your app to do any cleanup work required. In the suspending state, you can create an extended execution session with   [ExtendedExecutionReason.SavingData](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) to save user data before the app is terminated and removed from memory.
+Registering for the **Revoked** event will enable your app to do any cleanup work required. In the suspending state, you can create an extended execution session with   [ExtendedExecutionReason.SavingData](/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) to save user data before the app is terminated and removed from memory.
 
 ## Run background tasks indefinitely
 
-In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
+In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](../packaging/app-capability-declarations.md) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
 
 > **Note:**
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
@@ -84,7 +84,7 @@ _Package.appxmanifest_
 </Package>
 ```
 
-This capability removes execution time limitations and the idle task watchdog. Once a background task has started, whether by a trigger or an app service call, once it takes a deferral on the [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) provided by the **Run** method, it can run indefinitely. If the app is set to **Managed By Windows**, then it still may have an energy quota applied to it, and its background tasks will not activated when Battery Saver is active. This can be changed with OS settings. More information is available in [Optimizing Background Activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
+This capability removes execution time limitations and the idle task watchdog. Once a background task has started, whether by a trigger or an app service call, once it takes a deferral on the [BackgroundTaskInstance](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) provided by the **Run** method, it can run indefinitely. If the app is set to **Managed By Windows**, then it still may have an energy quota applied to it, and its background tasks will not activated when Battery Saver is active. This can be changed with OS settings. More information is available in [Optimizing Background Activity](../debug-test-perf/optimize-background-activity.md).
 
 The Universal Windows Platform monitors background task execution to ensure good battery life and a smooth foreground app experience. However, personal apps and Enterprise line-of-Business apps can use extended execution and the **extendedBackgroundTaskTime** capability to create apps that will run as long as needed regardless of the device's resource availability.
 
@@ -92,4 +92,4 @@ Be aware that the **extendedExecutionUnconstrained** and **extendedBackgroundTas
 
 ## See also
 
-[Remove background task resource restrictions](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[Remove background task resource restrictions](/windows/application-management/enterprise-background-activity-controls)

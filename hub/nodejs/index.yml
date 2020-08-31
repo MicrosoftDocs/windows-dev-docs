@@ -62,7 +62,7 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Install and run MySQL, PostgreSQL, SQLite, Microsoft SQL Server, MongoDB, or Redis
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
+            url: /windows/wsl/tutorials/wsl-database
 
   # Card
   - title: Get started with containers

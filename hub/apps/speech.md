@@ -28,17 +28,17 @@ This page provides information on how the various Windows development frameworks
 
       Build speech-enabled apps on the modern platform for Windows 10 applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
-      [Speech interactions](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
+      [Speech interactions](/windows/uwp/design/input/speech-interactions)
 
-      [Speech recognition](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
+      [Speech recognition](/windows/uwp/design/input/speech-recognition)
 
-      [Continuous dictation](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
+      [Continuous dictation](/windows/uwp/design/input/enable-continuous-dictation)
 
-      [Speech synthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+      [Speech synthesis](/uwp/api/windows.media.speechsynthesis)
 
-      [Conversational agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+      [Conversational agents](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana voice commands](https://docs.microsoft.com/cortana/voice-commands/vcd)
+      [Cortana voice commands](/cortana/voice-commands/vcd)
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -60,7 +60,7 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
-      [System.Speech Programming Guide for .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [System.Speech Programming Guide for .NET Framework](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Azure speech services](images/platform-azure-speech.png)
@@ -75,7 +75,7 @@ This page provides information on how the various Windows development frameworks
       
       [Speech translation](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
-      [Voice-first virtual assistants](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
+      [Voice-first virtual assistants](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -87,16 +87,16 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      [Microsoft Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
+      [Microsoft Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
    :::column-end:::
    :::column:::
-      [Microsoft Speech API (SAPI) 5.3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
+      [Microsoft Speech API (SAPI) 5.3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
-      [Microsoft Speech API (SAPI) 5.4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
+      [Microsoft Speech API (SAPI) 5.4](/previous-versions/windows/desktop/ee125663(v=vs.85))
 
-      [The Bing Speech Recognition Control](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
+      [The Bing Speech Recognition Control](/previous-versions/bing/speech/dn434583(v=msdn.10))
    :::column-end:::
 :::row-end:::
 
@@ -106,7 +106,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/samples/browse/?term=speech)
+      [Code sample browser](/samples/browse/?term=speech)
 
       The new samples browser (replaces the MSDN Code Gallery).
    :::column-end:::

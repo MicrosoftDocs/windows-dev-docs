@@ -185,7 +185,6 @@ The cache layout illustrated in Figure 1 is an example of the type of layout you
 The CPUSets API available for UWP development provides a considerable amount of information and control over your multithreading options. The added complexities compared to previous multithreaded APIs for Windows development has some learning curve, but the increased flexibility ultimately allows for better performance across a range of consumer PCs and other hardware targets.
 
 ## Additional resources
-- [CPU Sets (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
+- [CPU Sets (MSDN)](/windows/desktop/ProcThread/cpu-sets)
 - [CPUSets sample provided by ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [UWP on Xbox One](index.md)
-

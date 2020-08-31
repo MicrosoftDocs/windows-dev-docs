@@ -108,7 +108,7 @@ Your product must not attempt to change or extend its described functionality th
 
 **10.2.3**
 
-Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria).
+Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](/windows/security/threat-protection/intelligence/criteria).
 
 **10.2.4**
 
@@ -291,7 +291,7 @@ If you purchase or create promotional ad campaigns to promote your products thro
 
 Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
 
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including the following requirements:
+If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
 
 **10.10.4**
 
@@ -350,7 +350,7 @@ Game products that use Xbox Live must:
 
 Game products that use Xbox Live and offer multiplayer gameplay, user generated content or user communication:
 - Must not allow gameplay until the user signs in to Xbox Live.
-- Must respect [parental and service controls](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
+- Must respect [parental and service controls](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
 
 **10.13.7**
 
@@ -472,4 +472,4 @@ User generated content is content that users contribute to an app or product and
 
 - [Change history for Microsoft Store Policies](store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)

@@ -1,6 +1,6 @@
 ---
 title: Choosing a resource
-description: A resource is a collection of data that is used by the 3D pipeline.
+description: Learn how to identify and select the best resources to bind with different stages of the 3D graphics pipeline in your application.
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords:
 - Choosing a resource

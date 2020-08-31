@@ -18,11 +18,11 @@ ms.localizationpriority: medium
 
  Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
  
- > **Platform APIs**: [TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **Platform APIs**: [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## Is this the right control?
 
-A text block is typically easier to use and provides better text rendering performance than a rich text block, so it's preferred for most app UI text. You can easily access and use text from a text block in your app by getting the value of the [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) property. It also provides many of the same formatting options for customizing how your text is rendered.
+A text block is typically easier to use and provides better text rendering performance than a rich text block, so it's preferred for most app UI text. You can easily access and use text from a text block in your app by getting the value of the [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) property. It also provides many of the same formatting options for customizing how your text is rendered.
 
 Although you can put line breaks in the text, text block is designed to display a single paragraph and doesn't support text indentation. Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images.
 
@@ -64,7 +64,7 @@ textBlock1.Text = "Hello, world!";
 
 ### Content model
 
-There are two properties you can use to add content to a TextBlock: [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) and [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines).
+There are two properties you can use to add content to a TextBlock: [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) and [Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines).
 
 The most common way to display text is to set the Text property to a string value, as shown in the previous example.
 
@@ -82,22 +82,22 @@ Elements derived from the Inline class, such as Bold, Italic, Run, Span, and Lin
 Whenever possible, XAML uses a more efficient code path to layout text. This fast path both decreases overall memory use and greatly reduces the CPU time to do text measuring and arranging. This fast path applies only to TextBlock, so it should be preferred when possible over RichTextBlock.
 
 Certain conditions require TextBlock to fall back to a more feature-rich and CPU intensive code path for text rendering. To keep text rendering on the fast path, be sure to follow these guidelines when setting the properties listed here.
-- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text): The most important condition is that the fast path is used only when you set text by explicitly setting the Text property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock's Inlines collection (such as `<TextBlock>Inline text</TextBlock>`) will disable the fast path, due to the potential complexity of multiple formats.
-- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
-- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
+- [Text](/uwp/api/windows.ui.xaml.controls.textblock.text): The most important condition is that the fast path is used only when you set text by explicitly setting the Text property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock's Inlines collection (such as `<TextBlock>Inline text</TextBlock>`) will disable the fast path, due to the potential complexity of multiple formats.
+- [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
+- [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
 
 > **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see Version adaptive code.
-- [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various Typography properties are fast path.
-- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
-- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only **false** is fast path. Setting this property to **true** disables the fast path.
+- [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various Typography properties are fast path.
+- [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
+- [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only **false** is fast path. Setting this property to **true** disables the fast path.
 
-You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to **true** during debugging to determine whether text is using fast path rendering. When this property is set to true, the text that is on the fast path displays in a bright green color.
+You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to **true** during debugging to determine whether text is using fast path rendering. When this property is set to true, the text that is on the fast path displays in a bright green color.
 
 >**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- [XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
 
 
-You typically set debug settings in the [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method override in the code-behind page for App.xaml, like this.
+You typically set debug settings in the [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method override in the code-behind page for App.xaml, like this.
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -136,7 +136,7 @@ Although the Text property stores plain text, you can apply various formatting o
 
 ### Inline elements
 
-The [Windows.UI.Xaml.Documents](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak.
+The [Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak.
 
 You can display a series of strings in a TextBlock, where each string has different formatting. You can do this by using a Run element to display each string with its formatting and by separating each Run element with a LineBreak element.
 
@@ -164,7 +164,7 @@ Here's the result.
 
 ### Typography
 
-The attached properties of the [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the TextBlock, or on individual inline text elements. These examples show both.
+The attached properties of the [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the TextBlock, or on individual inline text elements. These examples show both.
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"
@@ -192,6 +192,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [Guidelines for spell checking](text-controls.md)
 - [Adding search](search.md)
 - [Guidelines for text input](text-controls.md)
-- [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length property](/dotnet/api/system.string.length)

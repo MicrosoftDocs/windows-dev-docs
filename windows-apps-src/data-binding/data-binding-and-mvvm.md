@@ -29,7 +29,7 @@ In contrast with MVVM, an app with a more conventional "code-behind" structure t
 When using the MVVM pattern, an app is divided into the following layers:
 
 * The **model** layer defines the types that represent your business data. This includes everything required to model the core app domain, and often includes core app logic. This layer is completely independent of the view and view-model layers, and often resides partially in the cloud. Given a fully implemented model layer, you can create multiple different client apps if you so choose, such as UWP and web apps that work with the same underlying data.
-* The **view** layer defines the UI using XAML markup. The markup includes data binding expressions (such as [x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) that define the connection between specific UI components and various view-model and model members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a view-model method that performs the work. 
+* The **view** layer defines the UI using XAML markup. The markup includes data binding expressions (such as [x:Bind](../xaml-platform/x-bind-markup-extension.md)) that define the connection between specific UI components and various view-model and model members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a view-model method that performs the work. 
 * The **view-model** layer provides data binding targets for the view. In many cases, the view-model exposes the model directly, or provides members that wrap specific model members. The view-model can also define members for keeping track of data that is relevant to the UI but not to the model, such as the display order of a list of items. The view-model also serves as an integration point with other services such as database-access code. For simple projects, you might not need a separate model layer, but only a view-model that encapsulates all the data you need. 
 
 ## Basic and advanced MVVM
@@ -38,7 +38,7 @@ As with any design pattern, there is more than one way to implement MVVM, and ma
 
 Although sophisticated MVVM frameworks can be very useful, especially for enterprise-scale projects, there is typically a cost associated with adopting any particular pattern or technique, and the benefits are not always clear, depending on the scale and size of your project. Fortunately, you can adopt only those techniques that provide a clear and tangible benefit, and ignore others until you need them. 
 
-In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
+In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
 
 For additional guidance on using basic, out-of-the-box MVVM, check out the [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) on GitHub. Many of the other [UWP app samples](https://github.com/Microsoft?q=windows-appsample
 ) also use a basic MVVM architecture, and the [Traffic App sample](https://github.com/Microsoft/Windows-appsample-trafficapp) includes both code-behind and MVVM versions, with notes describing the [MVVM conversion](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md). 
@@ -47,11 +47,11 @@ For additional guidance on using basic, out-of-the-box MVVM, check out the [Cust
 
 ### Topics
 
-[Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
-[{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
+[Data binding in depth](./data-binding-in-depth.md)  
+[{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md)  
 
 ### Samples
 
 [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)  
 [VanArsdel Inventory sample](https://github.com/Microsoft/InventorySample)  
-[Traffic App sample](https://github.com/Microsoft/Windows-appsample-trafficapp)  
+[Traffic App sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

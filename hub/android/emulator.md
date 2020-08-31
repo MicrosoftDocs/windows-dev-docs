@@ -29,7 +29,7 @@ For a device running a recent version of Android 9.0+:
 6. Select **Advanced**, scroll to the bottom, and tap **Developer options**.
 7. In the **Developer options** window, scroll down to find and enable **USB debugging**.
 
-For a device running an older version of Android, see [Set Up Device for Development](https://docs.microsoft.com/xamarin/android/get-started/installation/set-up-device-for-development).
+For a device running an older version of Android, see [Set Up Device for Development](/xamarin/android/get-started/installation/set-up-device-for-development).
 
 ### Run your app on the device
 
@@ -58,7 +58,7 @@ Before creating a virtual device with the Android emulator, it is recommended th
 > * Be running Windows 10 build 1803+ ([Check your build #](ms-settings:about))
 > * Have updated graphics drivers (Device Manager > Display adapters > Update driver)
 >
-> If your machine doesn't fit this criteria, you may be able to run [Intel HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) or [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). For more info, see the article: [Hardware acceleration for emulator performance](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) or the [Android Studio Emulator documentation](https://developer.android.com/studio/run/emulator).
+> If your machine doesn't fit this criteria, you may be able to run [Intel HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) or [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). For more info, see the article: [Hardware acceleration for emulator performance](/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) or the [Android Studio Emulator documentation](https://developer.android.com/studio/run/emulator).
 
 1. Verify that your computer hardware and software is compatible with Hyper-V by opening a command prompt and entering the command: `systeminfo`
 
@@ -93,13 +93,13 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 ### Install Android emulator with Visual Studio
 
-1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
+1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
 
-2. Create a new project. Once you've [set up the Android Emulator](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/), you can use the [Android Device Manager](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#requirements) to create, duplicate, customize, and launch a variety of Android virtual devices. Launch the Android Device Manager from the Tools menu with: **Tools** > **Android** > **Android Device Manager**.
+2. Create a new project. Once you've [set up the Android Emulator](/xamarin/android/get-started/installation/android-emulator/), you can use the [Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements) to create, duplicate, customize, and launch a variety of Android virtual devices. Launch the Android Device Manager from the Tools menu with: **Tools** > **Android** > **Android Device Manager**.
 
 3. Once the Android Device Manager opens, select **+ New** to create a new device.
 
-4. You will need to give the device a name, choose the base device type from a drop-down menu, choose a processor, and OS version, along with several other variables for the virtual device. For more information, [Android Device Manager Main Screen](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#main-screen).
+4. You will need to give the device a name, choose the base device type from a drop-down menu, choose a processor, and OS version, along with several other variables for the virtual device. For more information, [Android Device Manager Main Screen](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#main-screen).
 
 5. In the Visual Studio toolbar, choose between **Debug** (attaches to the application process running inside the emulator after your app starts) or **Release** mode (disables the debugger). Then choose a virtual device from the device drop-down menu and select the **Play** button ▷ to run your application in the emulator.
 
@@ -107,6 +107,6 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 ## Additional resources
 
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)

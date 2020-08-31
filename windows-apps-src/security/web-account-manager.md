@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Web Account Manager
 
-This article describes how to use the **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive account). The steps are similar for getting user permission and access with any identity provider that supports the Web Account Manager.
+This article describes how to use the **[AccountsSettingsPane](/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive account). The steps are similar for getting user permission and access with any identity provider that supports the Web Account Manager.
 
 > [!NOTE]
 > For a complete code sample, see the [WebAccountManagement sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
@@ -70,7 +70,7 @@ If you run your app and click the "Log in" button, it should display an empty wi
 The pane is empty because the system only provides a UI shell - it's up to the developer to programatically populate the pane with the identity providers. 
 
 > [!TIP]
-> Optionally, you can use **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** instead of **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, which will return an **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, to query for the status of the operation. 
+> Optionally, you can use **[ShowAddAccountAsync](/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** instead of **[Show](/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, which will return an **[IAsyncAction](/uwp/api/Windows.Foundation.IAsyncAction)**, to query for the status of the operation. 
 
 ## Register for AccountCommandsRequested
 
@@ -127,7 +127,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 Notice that we also pass the string "consumers" to the optional *authority* parameter. This is because Microsoft provides two different types of authentication - Microsoft Accounts (MSA) for "consumers", and Azure Active Directory (AAD) for "organizations". The "consumers" authority indicates we want the MSA option. If you're developing an enterprise app, use the string "organizations" instead.
 
-Finally, add the provider to the **AccountsSettingsPane** by creating a new **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** like this: 
+Finally, add the provider to the **AccountsSettingsPane** by creating a new **[WebAccountProviderCommand](/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** like this: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -172,7 +172,7 @@ In this example, we pass the string "wl.basic" to the _scope_ parameter. Scope r
 * For OneDrive scopes, see [OneDrive authentication and sign-in](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Optionally, if your app uses a login hint (to populate the user field with a default email address) or other special property related to the sign-in experience, list it in the **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** property. This will cause the system to ignore the property when caching the web account, which prevents account mismatches in the cache.
+> Optionally, if your app uses a login hint (to populate the user field with a default email address) or other special property related to the sign-in experience, list it in the **[WebTokenRequest.AppProperties](/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** property. This will cause the system to ignore the property when caching the web account, which prevents account mismatches in the cache.
 
 If you're developing an enterprise app, you'll likely want to connect to an Azure Active Directory (AAD) instance and use the Microsoft Graph API instead of regular MSA services. In this scenario, use the following code instead: 
 
@@ -208,7 +208,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > If you receive an error when requesting a token, make sure you've associated your app with the Store as described in step one. Your app won't be able to get a token if you skipped this step. 
 
-Once you have a token, you can use it to call your provider's API. In the code below, we'll call the [user info Microsoft Live API](https://docs.microsoft.com/office/) to obtain basic information about the user and display it in our UI. Note however that in most cases it is recommended that you store the token once obtained and then use it in a separate method.
+Once you have a token, you can use it to call your provider's API. In the code below, we'll call the [user info Microsoft Live API](/office/) to obtain basic information about the user and display it in our UI. Note however that in most cases it is recommended that you store the token once obtained and then use it in a separate method.
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -244,7 +244,7 @@ How you call various REST APIs varies between providers; see the provider's API 
 
 Tokens are useful for immediately obtaining information about a user, but they usually have varying lifespans - MSA tokens, for instance, are only valid for a few hours. Fortunately, you don't need to re-show the **AccountsSettingsPane** each time a token expires. Once a user has authorized your app once, you can store the user's account information for future use. 
 
-To do this, use the **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)** class. A **WebAccount** is returned by the same method you used to request the token:
+To do this, use the **[WebAccount](/uwp/api/windows.security.credentials.webaccount)** class. A **WebAccount** is returned by the same method you used to request the token:
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -259,7 +259,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
+Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](../design/app-settings/store-and-retrieve-app-data.md).
 
 ```csharp
 private async void StoreWebAccount(WebAccount account)
@@ -332,7 +332,7 @@ Because obtaining a token silently is very simple, you should use this process t
 
 ## Remove a stored account
 
-If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
+If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -416,11 +416,11 @@ Theoretically, you can use settings commands for anything. However, we suggest l
 
 ## See also
 
-[Windows.Security.Authentication.Web.Core namespace](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Windows.Security.Authentication.Web.Core namespace](/uwp/api/windows.security.authentication.web.core)
 
-[Windows.Security.Credentials namespace](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Windows.Security.Credentials namespace](/uwp/api/windows.security.credentials)
 
-[AccountsSettingsPane class](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
+[AccountsSettingsPane class](/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Web authentication broker](web-authentication-broker.md)
 

@@ -11,7 +11,7 @@ This topic explains how to share named objects between Universal Windows Platfor
 
 ## Named objects in packaged applications
 
-[Named objects](/windows/win32/sync/object-names) provide an easy way for processes to share object handles. After a process has created a named object, other processes can use the name to call the appropriate function to open a handle to the object. Named objects are commonly used for [thread synchronization](/windows/win32/sync/interprocess-synchronization) and [interprocess communication](/windows/uwp/communication/interprocess-communication).
+[Named objects](/windows/win32/sync/object-names) provide an easy way for processes to share object handles. After a process has created a named object, other processes can use the name to call the appropriate function to open a handle to the object. Named objects are commonly used for [thread synchronization](/windows/win32/sync/interprocess-synchronization) and [interprocess communication](./interprocess-communication.md).
 
 By default, packaged applications can only access named objects they've created. In order to share named objects with packaged applications, permissions must be set when objects are created, and names must be qualified when objects are opened.
 
@@ -30,7 +30,7 @@ All of these APIs share an `LPSECURITY_ATTRIBUTES` parameter which enables the c
 Security identifiers (SIDs) represent identities within ACLs. Every packaged application has its own SID based on its package family name. You can generate the SID for a packaged application by passing its package family name to [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername).
 
 > [!NOTE]
-> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](/windows/uwp/publish/view-app-identity-details) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
 
 [This sample](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath#examples) demonstrates the basic pattern needed to ACL a named object. To share named objects with packaged applications, build an [EXPLICIT_ACCESS](/windows/win32/api/accctrl/ns-accctrl-explicit_access_w) structure for each application:
 
@@ -64,7 +64,7 @@ Named objects created by a packaged application are created within the namespace
 [GetAppContainerNamedObjectPath](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath) will return the named object path for a packaged application based on its SID. You can generate the SID for a packaged application by passing its package family name to [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername).
 
 > [!NOTE]
-> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](/windows/uwp/publish/view-app-identity-details) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
 
 When opening named objects created by a packaged application, use the format `<PATH>\<NAME>`:
 

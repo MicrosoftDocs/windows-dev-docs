@@ -22,7 +22,7 @@ For peer-to-peer games, each player's app handles the input and graphics. In mos
 
 For single-player games, a central Web server or service is often used to store user names, game scores, and other miscellaneous information. In these games, the speed and latency of networking transfers is less of a concern since it doesn't directly affect game operation.
 
-Network conditions can change at any time, so any game that uses networking APIs needs to handle network exceptions that may occur. To learn more about handling network exceptions, see [Networking basics](/windows/uwp/networking/networking-basics).
+Network conditions can change at any time, so any game that uses networking APIs needs to handle network exceptions that may occur. To learn more about handling network exceptions, see [Networking basics](../networking/networking-basics.md).
 
 Firewalls and web proxies are common and can affect the ability to use networking features. A game that uses networking needs to be prepared to properly handle firewalls and proxies.
 
@@ -357,7 +357,7 @@ using namespace Windows::Web::Http;
 * [Connecting to a network resource with a stream socket](/previous-versions/windows/apps/jj150599(v=win.10))
 * [Connecting to network services](/previous-versions/windows/apps/hh452976(v=win.10))
 * [Connecting to web services](/previous-versions/windows/apps/hh761504(v=win.10))
-* [Networking basics](/windows/uwp/networking/networking-basics)
+* [Networking basics](../networking/networking-basics.md)
 * [How to configure network isolation capabilities](/previous-versions/windows/apps/hh770532(v=win.10))
 * [How to enable loopback and debug network isolation](/previous-versions/windows/apps/hh780593(v=win.10))
 

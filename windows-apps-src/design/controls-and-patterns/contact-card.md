@@ -168,12 +168,12 @@ private void onUserClickShowContactCard()
 
 ## Retrieving "real" contacts
 
-The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](/windows/uwp/contacts-and-calendar/).
+The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](../../contacts-and-calendar/index.md).
 
 
 
 
 ## Related articles
-- [Contacts and calendar](/windows/uwp/contacts-and-calendar/)
+- [Contacts and calendar](../../contacts-and-calendar/index.md)
 - [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [People picture control](/windows/uwp/controls-and-patterns/person-picture/)

@@ -76,15 +76,15 @@ You can now use your performance goals to influence your app's design. Using the
 **UI**
 
 -   Maximize parse and load time and memory efficiency for each page of your app's UI (especially the initial page) by [optimizing your XAML markup](optimize-xaml-loading.md). In a nutshell, defer loading UI and code until it's needed.
--   For [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) and [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
+-   For [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) and [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
 -   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
 -   Delay creating UI elements until the user needs them. See the [**x:Load**](../xaml-platform/x-load-attribute.md) attribute.
--   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
--   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) method.
+-   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](../design/motion/xaml-animation.md). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
+-   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync) method.
 
 **CPU, memory, and power**
 
--   Schedule lower-priority work to run on lower-priority threads and/or cores. See [Asynchronous programming](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps), the [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.dispatcher) property, and the [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) class.
+-   Schedule lower-priority work to run on lower-priority threads and/or cores. See [Asynchronous programming](../threading-async/asynchronous-programming-universal-windows-platform-apps.md), the [**Dispatcher**](/uwp/api/windows.ui.xaml.window.dispatcher) property, and the [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) class.
 -   Minimize your app's memory footprint by releasing expensive resources (such as media) on suspend.
 -   Minimize your code's working set.
 -   Avoid memory leaks by unregistering event handlers and dereferencing UI elements whenever possible.
@@ -92,29 +92,29 @@ You can now use your performance goals to influence your app's design. Using the
 
 **Data access**
 
--   If possible, prefetch content. For automatic prefetching, see the [**ContentPrefetcher**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) class. For manual prefetching, see the [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background) namespace and the [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) class.
--   If possible, cache content that's expensive to access. See the [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) and [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) properties.
+-   If possible, prefetch content. For automatic prefetching, see the [**ContentPrefetcher**](/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) class. For manual prefetching, see the [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background) namespace and the [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) class.
+-   If possible, cache content that's expensive to access. See the [**LocalFolder**](/uwp/api/windows.storage.applicationdata.localfolder) and [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) properties.
 -   For cache misses, show a placeholder UI as quickly as possible that indicates that the app is still loading content. Transition from placeholder to live content in a way that is not jarring to the user. For example, don't change the position of content under the user's finger or mouse pointer as the app loads live content.
 
 **App launch and resume**
 
--   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx) and [Display a splash screen for more time](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen).
+-   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx) and [Display a splash screen for more time](../launch-resume/create-a-customized-splash-screen.md).
 -   Disable animations that occur immediately after the splash screen is dismissed, as these will only lead to a perception of delay in app launch time.
 
 **Adaptive UI, and orientation**
 
--   Use the [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) class.
+-   Use the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) class.
 -   Complete only required work immediately, deferring intensive app work until later—your app has between 200 and 800 milliseconds to complete work before the user sees your app's UI in a cropped state.
 
 With your performance-related designs in place, you can start coding your app.
 
 ## Instrument for performance
 
-As you code, add code that logs messages and events at certain points while your app runs. Later, when you're testing your app, you can use profiling tools such as Windows Performance Recorder and Windows Performance Analyzer (both are included in the [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))) to create and view a report about your app's performance. In this report, you can look for these messages and events to help you more easily analyze the report's results.
+As you code, add code that logs messages and events at certain points while your app runs. Later, when you're testing your app, you can use profiling tools such as Windows Performance Recorder and Windows Performance Analyzer (both are included in the [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))) to create and view a report about your app's performance. In this report, you can look for these messages and events to help you more easily analyze the report's results.
 
-The Universal Windows Platform (UWP) provides logging APIs, backed by [Event Tracing for Windows (ETW)](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal), that together offer a rich event logging and tracing solution. The APIs, which are part of the [**Windows.Foundation.Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics) namespace, include the [**FileLoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession), [**LoggingActivity**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity), [**LoggingChannel**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel), and [**LoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession) classes.
+The Universal Windows Platform (UWP) provides logging APIs, backed by [Event Tracing for Windows (ETW)](/windows/desktop/ETW/event-tracing-portal), that together offer a rich event logging and tracing solution. The APIs, which are part of the [**Windows.Foundation.Diagnostics**](/uwp/api/Windows.Foundation.Diagnostics) namespace, include the [**FileLoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession), [**LoggingActivity**](/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity), [**LoggingChannel**](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel), and [**LoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.LoggingSession) classes.
 
-To log a message in the report at a specific point while the app is running, create a **LoggingChannel** object, and then call the object's [**LogMessage**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) method, like this.
+To log a message in the report at a specific point while the app is running, create a **LoggingChannel** object, and then call the object's [**LogMessage**](/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) method, like this.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -127,7 +127,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) constructor, like this.
+To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) constructor, like this.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -165,13 +165,13 @@ Use these techniques and tools to test how your app stacks up against your origi
     -   Run the app multiple times to help eliminate random testing variables and help ensure consistent measurements.
 -   Test for reduced power availability. Your users' device might have significantly less power than your development machine. Windows was designed with low-power devices, such as mobile devices, in mind. Apps that run on the platform should ensure they perform well on these devices. As a heuristic, expect that a low power device runs at about a quarter the speed of a desktop computer, and set your goals accordingly.
 -   Use a combination of tools like Microsoft Visual Studio and Windows Performance Analyzer to measure app performance. Visual Studio is designed to provide app-focused analysis, such as source code linking. Windows Performance Analyzer is designed to provide system-focused analysis, such as providing system info, info about touch manipulation events, and info about disk input/output (I/O) and graphics processing unit (GPU) cost. Both tools provide trace capture and export, and can reopen shared and post-mortem traces.
--   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [UWP app test cases](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10)).
+-   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [UWP app test cases](/previous-versions/windows/apps/dn275879(v=win.10)).
 
 For more info, see these resources and profiling tools.
 
--   [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
--   [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [Analyze performance using Visual Studio diagnostic tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
+-   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
+-   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
+-   [Analyze performance using Visual Studio diagnostic tools](/visualstudio/profiling/profiling-tools?view=vs-2015)
 -   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 

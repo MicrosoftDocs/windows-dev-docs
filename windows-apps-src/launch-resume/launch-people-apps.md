@@ -66,7 +66,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </tr>
 <tr class="even">
 <td align="left">Launches to the add a new contact page within the People app to save the given contact.
-<div class="alert"><p>Use <a href="https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">LaunchUriForResultsAsync</a> to open the save new contact page. Using <strong>LaunchUriAsync</strong> will only launch the People app Main page.</p>
+<div class="alert"><p>Use <a href="/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">LaunchUriForResultsAsync</a> to open the save new contact page. Using <strong>LaunchUriAsync</strong> will only launch the People app Main page.</p>
 <p>The parameters are case sensitive.</p>
 <p>The order of the parameters doesn’t matter.</p>
 <p>You can use any combination of supported parameters.</p>

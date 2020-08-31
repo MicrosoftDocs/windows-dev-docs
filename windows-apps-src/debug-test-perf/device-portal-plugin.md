@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
 
-Starting with Windows 10 Creators Update (version 1703, build 15063), you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the [application package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) changes, setting up your app’s connection to the [Device Portal service](/windows/uwp/debug-test-perf/device-portal), and handling an incoming request.
+Starting with Windows 10 Creators Update (version 1703, build 15063), you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the [application package manifest](/uwp/schemas/appxpackage/appx-package-manifest) changes, setting up your app’s connection to the [Device Portal service](./device-portal.md), and handling an incoming request.
 
 ## Create a new UWP app project
 
@@ -70,10 +70,10 @@ Two new capabilities are required for this functionality. they must also be adde
 ```
 
 > [!NOTE]
-> The capability "devicePortalProvider" is restricted ("rescap"), which means you must get prior approval from the Store before your app can be published there. However, this does not prevent you from testing your app locally through sideloading. For more information about restricted capabilities, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> The capability "devicePortalProvider" is restricted ("rescap"), which means you must get prior approval from the Store before your app can be published there. However, this does not prevent you from testing your app locally through sideloading. For more information about restricted capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).
 
 ## Set up your background task and WinRT Component
-In order to set up the Device Portal connection, your app must hook up an app service connection from the Device Portal service with the instance of Device Portal running within your app. To do this, add a new WinRT Component to your application with a class that implements [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask).
+In order to set up the Device Portal connection, your app must hook up an app service connection from the Device Portal service with the instance of Device Portal running within your app. To do this, add a new WinRT Component to your application with a class that implements [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask).
 
 ```csharp
 namespace MySampleProvider {
@@ -83,7 +83,7 @@ namespace MySampleProvider {
     }
 ```
 
-Make sure that its name matches the namespace and class name set up by the AppService EntryPoint ("MySampleProvider.SampleProvider"). When you make your first request to your Device Portal provider, Device Portal will stash the request, launch your app's background task, call its **Run** method, and pass in an [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Your app then uses it to set up a [**DevicePortalConnection**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) instance.
+Make sure that its name matches the namespace and class name set up by the AppService EntryPoint ("MySampleProvider.SampleProvider"). When you make your first request to your Device Portal provider, Device Portal will stash the request, launch your app's background task, call its **Run** method, and pass in an [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Your app then uses it to set up a [**DevicePortalConnection**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) instance.
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -103,10 +103,10 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-There are two events that must be handled by the app to complete the request handling loop: **Closed**, for whenever the Device Portal service shuts down, and [**RequestReceived**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), which surfaces incoming HTTP requests and provides the main functionality of the Device Portal provider. 
+There are two events that must be handled by the app to complete the request handling loop: **Closed**, for whenever the Device Portal service shuts down, and [**RequestReceived**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), which surfaces incoming HTTP requests and provides the main functionality of the Device Portal provider. 
 
 ## Handle the RequestReceived event
-The **RequestReceived** event will be raised once for every HTTP request that is made on your plugin's specified Handler Route. The request handling loop for Device Portal providers is similar to that in NodeJS Express: the request and response objects are provided together with the event, and the handler responds by filling in the response object. In Device Portal providers, the **RequestReceived** event and its handlers use [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage) and [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage) objects.   
+The **RequestReceived** event will be raised once for every HTTP request that is made on your plugin's specified Handler Route. The request handling loop for Device Portal providers is similar to that in NodeJS Express: the request and response objects are provided together with the event, and the handler responds by filling in the response object. In Device Portal providers, the **RequestReceived** event and its handlers use [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/windows.web.http.httprequestmessage) and [**HttpResponseMessage**](/uwp/api/windows.web.http.httpresponsemessage) objects.   
 
 ```csharp
 // Sample RequestReceived echo handler: respond with an HTML page including the query and some additional process information. 
@@ -131,7 +131,7 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-In this sample request handler, we first pull the request and response objects out of the *args* parameter, then create a string with the request URL and some additional HTML formatting. This is added into the Response object as an [**HttpStringContent**](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent) instance. Other [**IHttpContent**](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent) classes, such as those for "String" and "Buffer," are also allowed.
+In this sample request handler, we first pull the request and response objects out of the *args* parameter, then create a string with the request URL and some additional HTML formatting. This is added into the Response object as an [**HttpStringContent**](/uwp/api/windows.web.http.httpstringcontent) instance. Other [**IHttpContent**](/uwp/api/windows.web.http.ihttpcontent) classes, such as those for "String" and "Buffer," are also allowed.
 
 The response is then set as an HTTP response and given a 200 (OK) status code. It should render as expected in the browser that made the original call. Note that when the **RequestReceived** event handler returns, the response message is automatically returned to the user agent: no additional "send" method is needed.
 
@@ -171,7 +171,7 @@ Static content served by a Device Portal provider is served on the same port as 
 
 ![device portal plugin output](images/device-portal/plugin-output.png)
  
-Importantly, use of the HttpPost/DeleteExpect200 methods on webbRest will automatically do the [CSRF handling](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) for you, which allows your webpage to call state-changing REST APIs.  
+Importantly, use of the HttpPost/DeleteExpect200 methods on webbRest will automatically do the [CSRF handling](/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) for you, which allows your webpage to call state-changing REST APIs.  
 
 > [!NOTE] 
 > The static content included with Device Portal does not come with a guarantee against breaking changes. While the APIs are not expected to change often, they may, especially in the *common.js* and *controls.js* files, which your provider should not use. 
@@ -192,6 +192,4 @@ In order to debug your background task, you must change the way Visual Studio ru
 
 ## Related topics
 * [Windows Device Portal overview](device-portal.md)
-* [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-
-
+* [Create and consume an app service](../launch-resume/how-to-create-and-consume-an-app-service.md)

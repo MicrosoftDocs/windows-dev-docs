@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 The BC7 format is a texture compression format used for high-quality compression of RGB and RGBA data.
 
-For info about the block modes of the BC7 format, see [BC7 Format Mode Reference](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference).
+For info about the block modes of the BC7 format, see [BC7 Format Mode Reference](/windows/desktop/direct3d11/bc7-format-mode-reference).
 
 ## <span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>About BC7/DXGI\_FORMAT\_BC7
 
@@ -26,7 +26,7 @@ BC7 is specified by the following DXGI\_FORMAT enumeration values:
 -   **DXGI\_FORMAT\_BC7\_UNORM**.
 -   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**.
 
-The BC7 format can be used for [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (including arrays), Texture3D, or TextureCube (including arrays) texture resources. Similarly, this format applies to any MIP-map surfaces associated with these resources.
+The BC7 format can be used for [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (including arrays), Texture3D, or TextureCube (including arrays) texture resources. Similarly, this format applies to any MIP-map surfaces associated with these resources.
 
 BC7 uses a fixed block size of 16 bytes (128 bits) and a fixed tile size of 4x4 texels. As with previous BC formats, texture images larger than the supported tile size (4x4) are compressed by using multiple blocks. This addressing identity also applies to three-dimensional images and MIP-maps, cubemaps, and texture arrays. All image tiles must be of the same format.
 
@@ -351,7 +351,3 @@ In BC7, you can encode the alpha component in one of the following ways:
  
 
  
-
-
-
-

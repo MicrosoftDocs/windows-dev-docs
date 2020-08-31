@@ -172,7 +172,7 @@ We use the 6 event handlers to capture the input data we use to update the state
 
 And finally, we use these methods and properties to initialize, access, and update the controllers' state info.
 
--   **Initialize**. Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) object that describes our display window.
+-   **Initialize**. Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object that describes our display window.
 -   **SetPosition**. Our app calls this method to set the (x, y, and z) coordinates of our controls in the scene space.
 -   **SetOrientation**. Our app calls this method to set the pitch and yaw of the camera.
 -   **get\_Position**. Our app accesses this property to get the current position of the camera in the scene space. You use this property as the method of communicating the current camera position to the app.
@@ -186,17 +186,17 @@ Now, you have here all the components you need to implement your move-look contr
 
 The Windows Runtime event dispatcher provides 5 events we want instances of the **MoveLookController** class to handle:
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
--   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
--   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](/uwp/api/windows.ui.core.corewindow.keydown)
 
-These events are implemented on the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) type. We assume that you have a **CoreWindow** object to work with. If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
+These events are implemented on the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) type. We assume that you have a **CoreWindow** object to work with. If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](/previous-versions/windows/apps/hh465077(v=win.10)).
 
 As these events fire while our app is running, the handlers update the controllers' state info defined in our private fields.
 
-First, let's populate the mouse and touch pointer event handlers. In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) that manages our display when the user clicks the mouse or touches the screen in the look controller region.
+First, let's populate the mouse and touch pointer event handlers. In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) that manages our display when the user clicks the mouse or touches the screen in the look controller region.
 
 **OnPointerPressed**
 
@@ -293,11 +293,11 @@ void MoveLookController::OnPointerMoved(
 
 The **OnPointerMoved** event handler fires whenever the pointer moves (in this case, if a touch screen pointer is being dragged, or if the mouse pointer is being moved while the left button is pressed). If the pointer ID is the same as the move controller pointer's ID, then it's the move pointer; otherwise, we check if it's the look controller that's the active pointer.
 
-If it's the move controller, we just update the pointer position. We keep updating it as long the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.
+If it's the move controller, we just update the pointer position. We keep updating it as long the [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.
 
 If it's the look controller, things are a little more complicated. We need to calculate a new look point and center the camera on it, so we calculate the delta between the last look point and the current screen position, and then we multiply versus our scale factor, which we can tweak to make the look movements smaller or larger relative to the distance of the screen movement. Using that value, we calculate the pitch and the yaw.
 
-Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen. We use **OnPointerReleased**, which we call when [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.
+Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen. We use **OnPointerReleased**, which we call when [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.
 
 **OnPointerReleased**
 
@@ -418,7 +418,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**. It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.
+**Initialize** takes a reference to the app's [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**. It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.
 
 ## Getting and setting the position and orientation of the camera
 
@@ -576,7 +576,3 @@ Congratulations! You've implemented basic move-look controls for both touch scre
  
 
  
-
-
-
-

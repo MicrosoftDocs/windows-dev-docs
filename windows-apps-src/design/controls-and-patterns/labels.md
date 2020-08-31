@@ -18,9 +18,9 @@ ms.localizationpriority: medium
 
 A label is the name or title of a control or a group of related controls.
 
-> **Important APIs**: Header property, [TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **Important APIs**: Header property, [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
+In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
 
 ![a screenshot that illustrates the standard label control](images/label-standard.png)
 
@@ -37,20 +37,16 @@ In XAML, many controls have a built-in Header property that you use to display t
 
 ## Related topics
 * [Text controls](text-controls.md)
-* [TextBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
-* [PasswordBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
-* [ToggleSwitch.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
-* [DatePicker.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
-* [TimePicker.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
-* [Slider.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
-* [ComboBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
-* [RichEditBox.Header property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
-* [TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [TextBox.Header property](/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [PasswordBox.Header property](/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [ToggleSwitch.Header property](/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [DatePicker.Header property](/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [TimePicker.Header property](/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Slider.Header property](/uwp/api/windows.ui.xaml.controls.slider.header)
+* [ComboBox.Header property](/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [RichEditBox.Header property](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 
  
-
-
-
-

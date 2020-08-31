@@ -113,7 +113,7 @@ We use these 3 event handlers to update the camera controller state info.
 
 Finally, we use these methods and properties to initialize, access, and update the camera controller state information.
 
--   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) object that describes your display window.
+-   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object that describes your display window.
 -   **SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space. Note that our z-coordinate is 0 throughout this tutorial.
 -   **get\_Position** is a property that our app accesses to get the current position of the camera in the scene space. You use this property as the way of communicating the current camera position to the app.
 -   **get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing. In this example, it is locked normal to the x-y plane.
@@ -128,15 +128,15 @@ Now, let's connect these pieces together.
 
 The Windows Runtime event dispatcher provides 3 events we want our app to handle:
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-These events are implemented on the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
+These events are implemented on the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](/previous-versions/windows/apps/hh465077(v=win.10)).
 
 As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.
 
-First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) that manages our display when the user touches the screen or clicks the mouse.
+First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) that manages our display when the user touches the screen or clicks the mouse.
 
 **OnPointerPressed**
 
@@ -184,7 +184,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
+Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
 
 **OnPointerReleased**
 
@@ -233,7 +233,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
+**Initialize** takes a reference to the app's [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
 
 ## Getting and setting the position of the camera controller
 
@@ -341,7 +341,3 @@ Congratulations! You've implemented a simple set of camera panning touch control
  
 
  
-
-
-
-

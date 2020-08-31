@@ -39,7 +39,7 @@ That improvement doesn't affect code size&mdash;as described below in [Optimized
 
 ### More efficient boxing
 
-When used in a XAML application, [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) is now more efficient (see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing)). Applications that do a lot of boxing will also notice a reduction in code size.
+When used in a XAML application, [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) is now more efficient (see [Boxing and unboxing](./boxing.md)). Applications that do a lot of boxing will also notice a reduction in code size.
 
 ### Support for implementing COM interfaces that implement IInspectable
 
@@ -200,7 +200,7 @@ A new project (from a project template) will use `-opt` by default.
 
 These two optimizations allow your component direct access to its own implementation types, even when it's only using the projected types. There's no need to use [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self), nor [**get_self**](/uwp/cpp-ref-for-winrt/get-self) if you simply want to use the public API surface. Your calls will compile down to direct calls into the implementation, and those might even be entirely inlined.
 
-For more info, and code examples, see [Opt in to uniform construction, and direct implementation access](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
+For more info, and code examples, see [Opt in to uniform construction, and direct implementation access](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ##### Type-erased factories
 
@@ -240,7 +240,7 @@ The coroutine helpers are now also decorated with `[[nodiscard]]`, thereby impro
 
 Since the projected and implementation class names are (by default) the same, and only differ by namespace, it's possible to mistake the one for the other, and to accidentally create an implementation on the stack, rather than using the [**make**](/uwp/cpp-ref-for-winrt/make) family of helpers. This can be hard to diagnose in some cases, because the object may be destroyed while outstanding references are still in flight. An assertion now picks this up, for debug builds. While the assertion doesn't detect stack allocation inside a coroutine, it's nevertheless helpful in catching most such mistakes.
 
-For more info, see [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+For more info, see [Diagnosing direct allocations](./diag-direct-alloc.md).
 
 #### Improved capture helpers, and variadic delegates
 
@@ -309,7 +309,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-For more info, see [Deferred destruction](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction).
+For more info, see [Deferred destruction](./details-about-destructors.md#deferred-destruction).
 
 #### Improved support for COM-style single interface inheritance
 
@@ -336,7 +336,7 @@ The table below contains news and changes for C++/WinRT in the Windows SDK versi
 | **Breaking change**. For it to compile, C++/WinRT doesn't depend on headers from the Windows SDK. | See [Isolation from Windows SDK header files](#isolation-from-windows-sdk-header-files), below. |
 | The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
 | There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](collections.md). |
-| You can use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). |
+| You can use the [{Binding}](../xaml-platform/binding-markup-extension.md) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](../data-binding/data-binding-quickstart.md). |
 | Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asynchronous operation, and cancellation callbacks](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | When creating a delegate pointing to a member function, you can establish a strong or a weak reference to the current object (instead of a raw *this* pointer) at the point where the handler is registered. | For more info, and code examples, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Bugs are fixed that were uncovered by Visual Studio's improved conformance to the C++ standard. The LLVM and Clang toolchain is also better leveraged to validate C++/WinRT's standards conformance. | You'll no longer encounter the issue described in [Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
@@ -370,7 +370,7 @@ If you previously left it to C++/WinRT to include any Windows headers in your pr
 
 Currently, the only exceptions to Windows SDK header file isolation are for intrinsics, and numerics. There are no known issues with these last remaining dependencies.
 
-In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
+In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
 
 ### How to retarget your C++/WinRT project to a later version of the Windows SDK
 

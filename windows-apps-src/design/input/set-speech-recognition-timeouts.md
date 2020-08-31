@@ -16,12 +16,12 @@ ms.localizationpriority: medium
 
 Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 
-> **Important APIs**: [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [**SpeechRecognizerTimeouts**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
+> **Important APIs**: [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [**SpeechRecognizerTimeouts**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
 
 ## Set a timeout
 
 
-Here, we specify various [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts) values:
+Here, we specify various [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts) values:
 
 -   InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.
 -   BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.

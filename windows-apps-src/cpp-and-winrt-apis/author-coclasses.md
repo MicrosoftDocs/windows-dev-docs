@@ -10,7 +10,7 @@ ms.custom: RS5
 
 # Author COM components with C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. This topic shows you how.
+[C++/WinRT](./intro-to-using-cpp-with-winrt.md) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. This topic shows you how.
 
 ## How C++/WinRT behaves, by default, with respect to COM interfaces
 
@@ -113,7 +113,7 @@ Also see [Consume COM components with C++/WinRT](consume-com.md).
 
 The remainder of this topic walks through creating a minimal console application project that uses C++/WinRT to implement a basic coclass (COM component, or COM class) and class factory. The example application shows how to deliver a toast notification with a callback button on it, and the coclass (which implements the **INotificationActivationCallback** COM interface) allows the application to be launched and called back when the user clicks that button on the toast.
 
-More background about the toast notification feature area can be found at [Send a local toast notification](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). None of the code examples in that section of the documentation use C++/WinRT, though, so we recommend that you prefer the code shown in this topic.
+More background about the toast notification feature area can be found at [Send a local toast notification](../design/shell/tiles-and-notifications/send-local-toast.md). None of the code examples in that section of the documentation use C++/WinRT, though, so we recommend that you prefer the code shown in this topic.
 
 ## Create a Windows Console Application project (ToastAndCallback)
 
@@ -215,7 +215,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
@@ -476,7 +476,7 @@ Alternatively (and arguably more likely), you can choose to host your coclass(es
 
 You can begin the task of creating an in-process COM server by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Dynamic-Link Library (DLL)** project.
 
-To add C++/WinRT support to the new project, follow the steps described in [Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+To add C++/WinRT support to the new project, follow the steps described in [Modify a Windows Desktop application project to add C++/WinRT support](./get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ### Implement the coclass, class factory, and in-proc server exports
 
@@ -581,10 +581,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## Important APIs
 * [IInspectable interface](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [IUnknown interface](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics
-* [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Author APIs with C++/WinRT](./author-apis.md)
 * [Consume COM components with C++/WinRT](consume-com.md)
-* [Send a local toast notification](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [Send a local toast notification](../design/shell/tiles-and-notifications/send-local-toast.md)

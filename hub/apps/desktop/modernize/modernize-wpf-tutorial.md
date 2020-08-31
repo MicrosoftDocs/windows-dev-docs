@@ -106,13 +106,13 @@ Starting in Windows 10, version 1903, you can host UWP controls in non-UWP deskt
 
 For more information, see [UWP controls in desktop applications (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). This tutorial guides you through the process of using two different types of XAML Island controls:
 
-* The [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.
+* The [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.
 
-* The UWP [Calendar view](/windows/uwp/design/controls-and-patterns/calendar-view) control. This is a standard UWP control that you will host by using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit.
+* The UWP [Calendar view](/windows/uwp/design/controls-and-patterns/calendar-view) control. This is a standard UWP control that you will host by using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit.
 
 ### .NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) is an open-source framework that implements a cross-platform, lightweight and easily extensible version of the full .NET Framework. Compared to the full .NET Framework, .NET Core startup time is much faster and many of the APIs have been optimized.
+[.NET Core](/dotnet/core/) is an open-source framework that implements a cross-platform, lightweight and easily extensible version of the full .NET Framework. Compared to the full .NET Framework, .NET Core startup time is much faster and many of the APIs have been optimized.
 
 Through its first several releases, the focus of .NET Core was for supporting web or back-end apps. With .NET Core, you can easily build scalable web apps or APIs that can be hosted on Windows, Linux, or in micro-service architectures like Docker containers.
 
@@ -121,4 +121,4 @@ Through its first several releases, the focus of .NET Core was for supporting we
 > [!NOTE]
 > WPF and Windows Forms are not becoming cross-platform, and you cannot run a WPF or Windows Forms on Linux and MacOS. The UI components of WPF and Windows Forms still have a dependency on the Windows rendering system.
 
-For more information, see [What's new in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).

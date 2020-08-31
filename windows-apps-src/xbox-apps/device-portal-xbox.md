@@ -48,7 +48,7 @@ Under **Xbox Live test accounts**, you can manage the accounts associated with y
 
 ### Xbox Live (Game saves)
 
-Both the Windows Device Portal and the Xbox Device Portal have an **Xbox Live** page. However, the Xbox Device Portal has a unique section, **Xbox Live game saves**, where you can save data for games installed on your Xbox. Enter the **Service Configuration ID (SCID)** (see [Xbox Live service configuration](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) for more information), **Membername (MSA)**, and **Package Family Name (PFN)** associated with the title and game save, browse for the **Input File (.json or .xml)**, and then select one of the buttons (**Reset**, **Import**, **Export**, and **Delete**) to manipulate the save data.
+Both the Windows Device Portal and the Xbox Device Portal have an **Xbox Live** page. However, the Xbox Device Portal has a unique section, **Xbox Live game saves**, where you can save data for games installed on your Xbox. Enter the **Service Configuration ID (SCID)** (see [Xbox Live service configuration](/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) for more information), **Membername (MSA)**, and **Package Family Name (PFN)** associated with the title and game save, browse for the **Input File (.json or .xml)**, and then select one of the buttons (**Reset**, **Import**, **Export**, and **Delete**) to manipulate the save data.
 
 In the **Generate** section, you can generate dummy data and save to the specified input file. Simply enter the **Containers (default 2)**, **Blobs (default 3)**, and **Blob Size (default 1024)**, and select **Generate**.
 
@@ -197,4 +197,4 @@ On the **Game event data** page, you can view a realtime graph that streams in t
 ## See also
 
 * [Windows Device Portal overview](../debug-test-perf/device-portal.md)
-* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal core API reference](../debug-test-perf/device-portal-api-core.md)

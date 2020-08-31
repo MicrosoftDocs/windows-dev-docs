@@ -17,7 +17,7 @@ Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as 
 - A way for bindings to depend on more than one parameter
 
 > [!NOTE]
-> To use functions with **{x:Bind}**, your app's minimum target SDK version must be 14393 or later. You can't use functions when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> To use functions with **{x:Bind}**, your app's minimum target SDK version must be 14393 or later. You can't use functions when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](../debug-test-perf/version-adaptive-code.md).
 
 In the following example, the background and foreground of the item are bound to functions to do conversion based on the color parameter
 

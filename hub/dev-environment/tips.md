@@ -23,7 +23,7 @@ You can launch VS Code from your command line into the project that you have ope
 
 ## Use the Credential Manager to your streamline authentication process
 
-If you're using Git for version control and collaboration, you can streamline your authentication process by [setting up Git Credential Manager](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) to store your tokens in the Windows Credential Manager. We also recommend [adding a .gitignore file](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) to your project.
+If you're using Git for version control and collaboration, you can streamline your authentication process by [setting up Git Credential Manager](/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) to store your tokens in the Windows Credential Manager. We also recommend [adding a .gitignore file](/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) to your project.
 
 ## Use WSL for testing your production pipeline before deploying to the cloud
 
@@ -35,17 +35,17 @@ For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](https
 
 ## Improve performance speed for WSL by not crossing over file systems
 
-If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](https://docs.microsoft.com/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
+If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
 
 ## Improve build speeds by adding Windows Defender exclusions
 
-You can improve your build speed by updating your Windows Defender settings to add exclusions for project folders or file types that you trust enough to avoid scanning for security threats. Learn more about how to [Update Windows Defender settings to improve performance](https://docs.microsoft.com/windows/android/defender-settings).
+You can improve your build speed by updating your Windows Defender settings to add exclusions for project folders or file types that you trust enough to avoid scanning for security threats. Learn more about how to [Update Windows Defender settings to improve performance](../android/defender-settings.md).
 
 ![Windows Defender screenshot](../images/windows-defender-exclusions.png)
 
 ## Launch all your command lines in Windows Terminal at once
 
-* You can launch multiple command lines, like PowerShell, Ubuntu, and Azure CLI, all into a single window with multiple panes using [Windows Terminal Command Line Arguments](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). After installing [Windows Terminal](https://docs.microsoft.com/windows/terminal/get-started), [WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10), and [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), enter this command in PowerShell to open a new multi-pane window with all three:
+* You can launch multiple command lines, like PowerShell, Ubuntu, and Azure CLI, all into a single window with multiple panes using [Windows Terminal Command Line Arguments](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). After installing [Windows Terminal](/windows/terminal/get-started), [WSL/Ubuntu](/windows/wsl/install-win10), and [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), enter this command in PowerShell to open a new multi-pane window with all three:
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

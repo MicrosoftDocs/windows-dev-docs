@@ -129,7 +129,7 @@ To configure NuGet packages for the **ContosoExpenses.Data** project:
     ```
 
     > [!NOTE]
-    > You may also notice that you're installing the same packages for this .NET Core 3 project as the ones used by .NET Framework 4.7.2 projects. NuGet packages supports multi-targeting. Library authors can include different versions of a library in the same package, compiled for different architectures and platforms. These packages support the full .NET Framework as well as .NET Standard 2.0, which is compatible with .NET Core 3 projects. For more info about the differences .NET Framework, .NET Core and .NET Standard, see [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
+    > You may also notice that you're installing the same packages for this .NET Core 3 project as the ones used by .NET Framework 4.7.2 projects. NuGet packages supports multi-targeting. Library authors can include different versions of a library in the same package, compiled for different architectures and platforms. These packages support the full .NET Framework as well as .NET Standard 2.0, which is compatible with .NET Core 3 projects. For more info about the differences .NET Framework, .NET Core and .NET Standard, see [.NET Standard](/dotnet/standard/net-standard).
 
 To configure NuGet packages for the **ContosoExpenses.Core** project:
 

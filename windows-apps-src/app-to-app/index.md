@@ -32,4 +32,4 @@ UWP apps can also create [app services](../launch-resume/how-to-create-and-consu
 
 ## See also
 
-- [Develop UWP apps](https://docs.microsoft.com/windows/uwp/develop/)
+- [Develop UWP apps](../develop/index.md)

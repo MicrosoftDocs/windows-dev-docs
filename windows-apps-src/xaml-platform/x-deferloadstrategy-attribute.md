@@ -27,17 +27,17 @@ However, the tracking of deferred elements by the XAML framework adds about 600 
 The restrictions for using **x:DeferLoadStrategy** are:
 
 - You must define an [x:Name](x-name-attribute.md) for the element, as there needs to be a way to find the element later.
-- You can only defer types that derive from [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) or [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase).
-- You cannot defer root elements in a [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page), a [**UserControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol), or a [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate).
-- You cannot defer elements in a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary).
-- You cannot defer loose XAML loaded with [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load).
+- You can only defer types that derive from [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) or [**FlyoutBase**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase).
+- You cannot defer root elements in a [**Page**](/uwp/api/windows.ui.xaml.controls.page), a [**UserControl**](/uwp/api/windows.ui.xaml.controls.usercontrol), or a [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate).
+- You cannot defer elements in a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary).
+- You cannot defer loose XAML loaded with [**XamlReader.Load**](/uwp/api/windows.ui.xaml.markup.xamlreader.load).
 - Moving a parent element will clear out any elements that have not been realized.
 
 There are several different ways to realize the deferred elements:
 
-- Call [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) with the name that you defined on the element.
-- Call [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) with the name that you defined on the element.
-- In a [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState), use a [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) or **Storyboard** animation that targets the deferred element.
+- Call [**FindName**](/uwp/api/windows.ui.xaml.frameworkelement.findname) with the name that you defined on the element.
+- Call [**GetTemplateChild**](/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) with the name that you defined on the element.
+- In a [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState), use a [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) or **Storyboard** animation that targets the deferred element.
 - Target the deferred element in any **Storyboard**.
 - Use a binding that targets the deferred element.
 
@@ -45,15 +45,15 @@ There are several different ways to realize the deferred elements:
 
 Once a deferred element is created in any of the ways listed previously, several things happen:
 
-- The [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) event on the element is raised.
+- The [**Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) event on the element is raised.
 - Any bindings on the element are evaluated.
 - If you have registered to receive property change notifications on the property containing the deferred element(s), the notification is raised.
 
 You can nest deferred elements, however they have to be realized from the outer-most element in.  If you try to realize a child element before the parent has been realized, an exception is raised.
 
-Typically, we recommend that you defer elements that are not viewable in the first frame. A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). Also, UI that is triggered by user interaction is a good place to look for elements that you can defer.
+Typically, we recommend that you defer elements that are not viewable in the first frame. A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility). Also, UI that is triggered by user interaction is a good place to look for elements that you can defer.
 
-Be wary of deferring elements in a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating. If you are looking to increase panning performance, see the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
+Be wary of deferring elements in a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView), as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating. If you are looking to increase panning performance, see the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
 
 If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings are applied up to and including the current phase. The phase specified for **x:Phase** does not affect or control the deferral of the element. When a list item is recycled as part of panning, realized elements behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) are processed using the same rules, including phasing.
 

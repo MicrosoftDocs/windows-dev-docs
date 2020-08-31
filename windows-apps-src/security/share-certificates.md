@@ -64,11 +64,11 @@ You can repeat the previous steps to create multiple web services that can be ac
 ## Create a UWP app that uses certificate authentication
 
 
-Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.
+Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.
 
 If there are no client certificates available, then the user will need to add a certificate to the certificate store. You can include code in your app that enables a user to select a PFX file that contains a client certificate and then import that certificate into the client certificate store.
 
-**Tip**  You can use makecert.exe to create a PFX file to use with this quickstart. For information on using makecert.exe, see [MakeCert.](https://docs.microsoft.com/windows/desktop/SecCrypto/makecert)
+**Tip**  You can use makecert.exe to create a PFX file to use with this quickstart. For information on using makecert.exe, see [MakeCert.](/windows/desktop/SecCrypto/makecert)
 
  
 

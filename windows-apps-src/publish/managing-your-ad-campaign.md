@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 >[!WARNING]
 > As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-To manage ad campaigns for your app in [Partner Center](https://partner.microsoft.com/dashboard), expand **Attract** in the left navigation menu and then select **Ad campaigns**. You'll see all of the ad campaigns associated with your apps, along with the impressions, clicks, and installs for each ad campaign. For more information about impressions, clicks, and installs, see the definitions for these terms in [Ad campaign report](promote-your-app-report.md).
+To manage ad campaigns for your app in [Partner Center](https://partner.microsoft.com/dashboard), expand **Attract** in the left navigation menu and then select **Ad campaigns**. You'll see all of the ad campaigns associated with your apps, along with the impressions, clicks, and installs for each ad campaign. For more information about impressions, clicks, and installs, see the definitions for these terms in [Ad campaign report](/windows/uwp/publish/ad-campaign-report).
 
 To filter the list of ad campaigns, click the **Section filters** drop-down and choose from the following filters:
 
@@ -27,7 +27,7 @@ To filter the list of ad campaigns, click the **Section filters** drop-down and 
 ## Reporting
 
 
-Reporting details are shown on this page. For more info, see [Ad campaign report](promote-your-app-report.md).
+Reporting details are shown on this page. For more info, see [Ad campaign report](/windows/uwp/publish/ad-campaign-report).
 
 
 ## Edit an ad campaign
@@ -40,12 +40,8 @@ To make changes to an ad campaign, click its name to go to the details page for 
 
 * [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
 * [About house ads](about-house-ads.md)
-* [App install ads report](app-install-ads-reports.md)
+* [App install ads report](/windows/uwp/publish/ad-campaign-report)
 * [Common questions](common-questions.md)
  
 
  
-
-
-
-

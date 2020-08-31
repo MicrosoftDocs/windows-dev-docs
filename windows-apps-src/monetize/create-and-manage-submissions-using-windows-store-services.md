@@ -35,21 +35,21 @@ The following steps describe the end-to-end process of using the Microsoft Store
 
 Before you start writing code to call the Microsoft Store submission API, make sure that you have completed the following prerequisites.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
 
 * You must [associate an Azure AD application with your Partner Center account](#associate-an-azure-ad-application-with-your-windows-partner-center-account) and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Microsoft Store submission API.
 
 * Prepare your app for use with the Microsoft Store submission API:
 
-  * If your app does not yet exist in Partner Center, you must [create your app by reserving its name in Partner Center](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
+  * If your app does not yet exist in Partner Center, you must [create your app by reserving its name in Partner Center](../publish/create-your-app-by-reserving-a-name.md). You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
 
-  * Before you can create a submission for a given app using this API, you must first [create one submission for the app in Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions), including answering the [age ratings](https://docs.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API. You do not need to create an add-on submission or package flight submission before using the API for those types of submissions.
+  * Before you can create a submission for a given app using this API, you must first [create one submission for the app in Partner Center](../publish/app-submissions.md), including answering the [age ratings](../publish/age-ratings.md) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API. You do not need to create an add-on submission or package flight submission before using the API for those types of submissions.
 
-  * If you are creating or updating an app submission and you need to include an app package, [prepare the app package](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+  * If you are creating or updating an app submission and you need to include an app package, [prepare the app package](../publish/app-package-requirements.md).
 
-  * If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
+  * If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](../publish/app-screenshots-and-images.md).
 
-  * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions).
+  * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](../publish/create-add-on-store-listings.md).
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -74,7 +74,7 @@ Before you can use the Microsoft Store submission API, you must associate an Azu
 
 Before you call any of the methods in the Microsoft Store submission API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
-To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
+To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -89,7 +89,7 @@ grant_type=client_credentials
 
 For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
 For examples that demonstrate how to obtain an access token by using C#, Java, or Python code, see the Microsoft Store submission API [code examples](#code-examples).
 
@@ -131,7 +131,7 @@ For more information, see our [StoreBroker page on GitHub](https://github.com/Mi
 
 | Issue      | Resolution                                          |
 |---------------|---------------------------------------------|
-| After calling the Microsoft Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet and then back to JSON format using the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Microsoft Store submission API. When you call the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
+| After calling the Microsoft Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet and then back to JSON format using the [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Microsoft Store submission API. When you call the [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
 
 ## Additional help
 

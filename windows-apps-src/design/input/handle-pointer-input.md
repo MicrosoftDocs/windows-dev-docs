@@ -19,9 +19,9 @@ Receive, process, and manage input data from pointing devices (such as touch, mo
 > If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the [platform controls](../controls-and-patterns/controls-by-function.md). The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. 
 
 ## Important APIs
-- [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
-- [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
-- [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+- [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
+- [Windows.UI.Input](/uwp/api/Windows.UI.Core)
+- [Windows.UI.Xaml.Input](/uwp/api/Windows.UI.Input)
 
 ## Pointers
 Most interaction experiences typically involve the user identifying the object they want to interact with by pointing at it through input devices such as touch, mouse, pen/stylus, and touchpad. Because the raw Human Interface Device (HID) data provided by these input devices includes many common properties, the data is promoted and consolidated into a unified input stack and exposed as device-agnostic pointer data. Your Windows applications can then consume this data without worrying about the input device being used.
@@ -29,7 +29,7 @@ Most interaction experiences typically involve the user identifying the object t
 > [!NOTE]
 > Device-specific info is also promoted from the raw HID data should your app require it.
 
-Each input point (or contact) on the input stack is represented by a [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) object exposed through the [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) parameter in the various pointer event handlers. In the case of multi-pen or multi-touch input, each contact is treated as a unique input pointer.
+Each input point (or contact) on the input stack is represented by a [**Pointer**](/uwp/api/Windows.UI.Xaml.Input.Pointer) object exposed through the [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) parameter in the various pointer event handlers. In the case of multi-pen or multi-touch input, each contact is treated as a unique input pointer.
 
 ## Pointer events
 
@@ -38,7 +38,7 @@ Pointer events expose basic info such as input device type and detection state (
 Windows apps can listen for the following pointer events:
 
 > [!NOTE]
-> Constrain pointer input to a specific UI element by calling  [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The [**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
+> Constrain pointer input to a specific UI element by calling  [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer) on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
 
 <table>
 <colgroup>
@@ -103,7 +103,7 @@ Windows apps can listen for the following pointer events:
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.</p>
-<p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> must be called from the handler for this event.</p></td>
+<p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> must be called from the handler for this event.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
@@ -112,7 +112,7 @@ Windows apps can listen for the following pointer events:
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>Occurs when the mouse wheel is rotated.</p>
-<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> event.</p></td>
+<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> event.</p></td>
 </tr>
 </tbody>
 </table> 
@@ -127,9 +127,9 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 
 ### Create the UI
 
-For this example, we use a [Rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
+For this example, we use a [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
 
-Details for each pointer are displayed in a floating [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
+Details for each pointer are displayed in a floating [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
 
 This is the Extensible Application Markup Language (XAML) for the UI in this example. 
 
@@ -186,9 +186,9 @@ This is the Extensible Application Markup Language (XAML) for the UI in this exa
 
 ### Listen for pointer events
 
-In most cases, we recommend that you get pointer info through the [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) of the event handler.
+In most cases, we recommend that you get pointer info through the [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) of the event handler.
 
-If the event argument doesn't expose the pointer details required, you can get access to extended [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) info exposed through the [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
+If the event argument doesn't expose the pointer details required, you can get access to extended [**PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) info exposed through the [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
 
 The following code sets up the global dictionary object for tracking each active pointer, and identifies the various pointer event listeners for the target object.
 
@@ -232,10 +232,10 @@ public MainPage()
 
 Next, we use UI feedback to demonstrate basic pointer event handlers.
 
--   This handler manages the [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.
+-   This handler manages the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.
 
     > [!NOTE]
-    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled), and [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).
+    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled), and [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).
          
 
 ```csharp
@@ -278,7 +278,7 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.
+-   This handler manages the [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.
 
 ```csharp
 /// <summary>
@@ -315,10 +315,10 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) event. We add the event to the event log and update the pointer details.
+-   This handler manages the [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) event. We add the event to the event log and update the pointer details.
 
     > [!Important]
-    > Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. The [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) event.     
+    > Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. The [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) event.     
 
 ```csharp
 /// <summary>
@@ -365,7 +365,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.
+-   This handler manages the [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.
 
 ```csharp
 /// <summary>
@@ -395,7 +395,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.
+-   This handler manages the [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -447,7 +447,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) event (when contact with the digitizer is maintained). We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) event (when contact with the digitizer is maintained). We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -482,7 +482,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -521,10 +521,10 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) can occur instead of [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) can occur instead of [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -565,9 +565,9 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### Get pointer properties
 
-As stated earlier, you must get most extended pointer info from a [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) object obtained through the [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). The following code snippets show how.
+As stated earlier, you must get most extended pointer info from a [**Windows.UI.Input.PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) object obtained through the [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). The following code snippets show how.
 
--   First, we create a new [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) for each pointer.
+-   First, we create a new [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) for each pointer.
 
 ```csharp
 /// <summary>
@@ -590,7 +590,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   Then we provide a way to update the pointer info in an existing [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) associated with that pointer.
+-   Then we provide a way to update the pointer info in an existing [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) associated with that pointer.
 
 ```csharp
 /// <summary>
@@ -674,7 +674,7 @@ String QueryPointer(PointerPoint ptrPt)
 ## Primary pointer
 Some input devices, such as a touch digitizer or touchpad, support more than the typical single pointer of a mouse or a pen (in most cases as the Surface Hub supports two pen inputs). 
 
-Use the read-only **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** property of the **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** class to identify and differentiate a single primary pointer (the primary pointer is always the first pointer detected during an input sequence). 
+Use the read-only **[IsPrimary](/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** property of the **[PointerPointerProperties](/uwp/api/windows.ui.input.pointerpointproperties)** class to identify and differentiate a single primary pointer (the primary pointer is always the first pointer detected during an input sequence). 
 
 By identifying the primary pointer, you can use it to emulate mouse or pen input, customize interactions, or provide some other specific functionality or UI.
 
@@ -693,7 +693,7 @@ This particular app uses both color and animation to highlight the primary point
 
 ### Visual feedback
 
-We define a **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
+We define a **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
 
 **Here's the XAML:**
 
@@ -885,7 +885,7 @@ namespace UWP_Pointers
 ```
 
 ### Create the UI
-The UI in this example is limited to the input **[Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.
+The UI in this example is limited to the input **[Canvas](/uwp/api/windows.ui.xaml.controls.canvas)** where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.
 
 Here's the MainPage.xaml:
 

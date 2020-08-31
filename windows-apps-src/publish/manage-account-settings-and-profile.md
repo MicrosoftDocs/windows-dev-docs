@@ -42,9 +42,7 @@ Below are some of the other items you'll find in the **Account settings** sectio
 - **Payout account** and **Tax profile**: Here's where you [set up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md). You'll need to do this before you can charge money for apps or add-ons.
 - **Enterprise associations**: Accept invitations from enterprises who'd like you to publish apps for their exclusive use. For more info, see [Distribute line-of-business apps to enterprises](distribute-lob-apps-to-enterprises.md).
 - **Users**: Add users to your account and assign them roles and permissions. For more info, see [Manage account users](manage-account-users.md).
-- **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Partner Center account](associate-azure-ad-with-dev-center.md).
+- **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Partner Center account](./associate-azure-ad-with-partner-center.md).
 - **Programs**: View details about the programs in which you are participating, and learn about other programs that may be of interest.
 - **Agreements**: View the agreements that your account has accepted.
-- **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](https://docs.microsoft.com/previous-versions/windows/apps/dn614128(v=win.10)?redirectedfrom=MSDN) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md). 
-
-
+- **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](/previous-versions/windows/apps/dn614128(v=win.10)) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md).

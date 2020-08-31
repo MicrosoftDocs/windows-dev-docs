@@ -13,7 +13,7 @@ The Visits feature streamlines the process of location tracking to make it more 
 
 ## Preliminary setup
 
-Before going further, make sure your app is capable of accessing the device's location. You will need to declare the `Location` capability in the manifest and call the **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** method to ensure that users give the app location permissions. See [Get the user's location](get-location.md) for more information on how to do this. 
+Before going further, make sure your app is capable of accessing the device's location. You will need to declare the `Location` capability in the manifest and call the **[Geolocator.RequestAccessAsync](/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** method to ensure that users give the app location permissions. See [Get the user's location](get-location.md) for more information on how to do this. 
 
 Remember to add the `Geolocation` namespace to your class. This will be needed for all of the code snippets in this guide to work.
 
@@ -22,7 +22,7 @@ using Windows.Devices.Geolocation;
 ```
 
 ## Check the latest Visit
-The simplest way to use the Visits tracking feature is to retrieve the last known Visit-related state change. A state change is a platform-logged event in which either the user enters/exits a location of significance, there is significant movement since the last report, or the user's location is lost (see the **[VisitStateChange](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.visitstatechange)** enum). State changes are represented by **[Geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)** instances. To retrieve the **Geovisit** instance for the last recorded state change, simply use the designated method in the **[GeovisitMonitor](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisitmonitor)** class.
+The simplest way to use the Visits tracking feature is to retrieve the last known Visit-related state change. A state change is a platform-logged event in which either the user enters/exits a location of significance, there is significant movement since the last report, or the user's location is lost (see the **[VisitStateChange](/uwp/api/windows.devices.geolocation.visitstatechange)** enum). State changes are represented by **[Geovisit](/uwp/api/windows.devices.geolocation.geovisit)** instances. To retrieve the **Geovisit** instance for the last recorded state change, simply use the designated method in the **[GeovisitMonitor](/uwp/api/windows.devices.geolocation.geovisitmonitor)** class.
 
 > [!NOTE]
 > Checking the last logged Visit does not guarantee that Visits are currently being tracked by the system. In order to track Visits as they happen, you must either be monitoring them in the foreground or register for background tracking (see sections below).
@@ -125,7 +125,7 @@ public void UnregisterFromVisits() {
 
 You can also implement Visit monitoring in a background task, so that Visit-related activity can be handled on the device even when your app isn't open. This is the recommended method, as it is more versatile and energy-efficient. 
 
-This guide will use the model in [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task), in which the main application files live in one project and the background task file lives in a separate project in the same solution. If you are new to implementing background tasks, it is recommended that you follow that guidance primarily, making the necessary substitutions below to create a Visit-handling background task.
+This guide will use the model in [Create and register an out-of-process background task](../launch-resume/create-and-register-a-background-task.md), in which the main application files live in one project and the background task file lives in a separate project in the same solution. If you are new to implementing background tasks, it is recommended that you follow that guidance primarily, making the necessary substitutions below to create a Visit-handling background task.
 
 > [!NOTE]
 > In the following snippets, some important functionality such as error handling and local storage is absent for the sake of simplicity. For a robust implementation of background Visits handling, see the [sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
@@ -263,6 +263,6 @@ This establishes that a background task class called `VisitBackgroundTask` in th
 Your app should now be capable of registering the Visits-handling background task, and this task should be activated whenever the device logs a Visit-related state change. You will need to fill in the logic in your background task class to determine what to do with this state change information.
 
 ## Related topics
-* [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [Create and register an out-of-process background task](../launch-resume/create-and-register-a-background-task.md)
 * [Get the user's location](get-location.md)
-* [Windows.Devices.Geolocation namespace](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Windows.Devices.Geolocation namespace](/uwp/api/windows.devices.geolocation)

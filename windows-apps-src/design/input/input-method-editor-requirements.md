@@ -176,7 +176,7 @@ When alternatives are provided, the app should treat each alternative as a query
 
 ## UI design guidelines
 
-All IMEs must follow the user experience guidelines described in [Design and code Windows apps](/windows/uwp/design/).
+All IMEs must follow the user experience guidelines described in [Design and code Windows apps](../index.md).
 
 ### Don't use sticky windows
 
@@ -296,4 +296,4 @@ Implement the following convention to make your IMEs conform to the accessibilit
 - [ITfFnSearchCandidateProvider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider)
 - [ITfIntegratableCandidateListUIElement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)
 - [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput)
-- [Accessibility](/windows/uwp/design/accessibility/accessibility)
+- [Accessibility](../accessibility/accessibility.md)

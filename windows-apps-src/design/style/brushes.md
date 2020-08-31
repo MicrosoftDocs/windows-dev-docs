@@ -44,7 +44,7 @@ Here's an example that sets the [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape
 
 *SolidColorBrush applied to a Rectangle*
 
-If you are defining a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) using code rather than XAML, each named color is available as a static property value of the [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) class. For example, to declare a [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) value of a **SolidColorBrush** to represent the named color "Orchid", set the **Color** value to the static value [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid).
+If you are defining a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) using code rather than XAML, each named color is available as a static property value of the [**Colors**](/uwp/api/windows.ui.colors) class. For example, to declare a [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) value of a **SolidColorBrush** to represent the named color "Orchid", set the **Color** value to the static value [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid).
 
 ### Hexadecimal color values
 
@@ -60,7 +60,7 @@ This XAML example sets the [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill
 
 ### Property element syntax
 
-You can use property element syntax to define a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity). For more info on XAML syntax, including property element syntax, see the [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) and [XAML syntax guide](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide).
+You can use property element syntax to define a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity). For more info on XAML syntax, including property element syntax, see the [XAML overview](../../xaml-platform/xaml-overview.md) and [XAML syntax guide](../../xaml-platform/xaml-syntax-guide.md).
 
 In the previous examples, the brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definitions simple for the most common cases. The next example creates a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and explicitly creates the [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) as an element value for a [**Rectangle.Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill) property. The [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) of the **SolidColorBrush** is set to [**Blue**](/uwp/api/windows.ui.colors.blue) and the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) is set to 0.5.
 
@@ -178,7 +178,7 @@ The next example creates an [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.Imag
 
 *A rendered ImageBrush*
 
-[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) and [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes).
+[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) and [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](../controls-and-patterns/images-imagebrushes.md).
 
 ## Brushes and text
 
@@ -192,9 +192,9 @@ A [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) is a specia
 
 ## XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
+[**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
 
-This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer). 
+This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](../../composition/visual-layer.md). 
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 
@@ -237,7 +237,3 @@ For code examples, see [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Controls.WebV
  
 
  
-
-
-
-

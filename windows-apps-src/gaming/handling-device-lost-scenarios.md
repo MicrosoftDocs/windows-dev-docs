@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This topic explains how to recreate the Direct3D and DXGI device interface chain when the graphics adapter is removed or reinitialized.
 
-In DirectX 9, applications could encounter a "[device lost](https://docs.microsoft.com/windows/desktop/direct3d9/lost-devices)" condition where the D3D device enters a non-operational state. For example, when a full-screen Direct3D 9 application loses focus, the Direct3D device becomes "lost;" any attempts to draw with a lost device will silently fail. Direct3D 11 uses virtual graphics device interfaces, enabling multiple programs to share the same physical graphics device and eliminating conditions where apps lose control of the Direct3D device. However, it is still possible for graphics adapter availability to change. For example:
+In DirectX 9, applications could encounter a "[device lost](/windows/desktop/direct3d9/lost-devices)" condition where the D3D device enters a non-operational state. For example, when a full-screen Direct3D 9 application loses focus, the Direct3D device becomes "lost;" any attempts to draw with a lost device will silently fail. Direct3D 11 uses virtual graphics device interfaces, enabling multiple programs to share the same physical graphics device and eliminating conditions where apps lose control of the Direct3D device. However, it is still possible for graphics adapter availability to change. For example:
 
 -   The graphics driver is upgraded.
 -   The system changes from a power-saving graphics adapter to a performance graphics adapter.
@@ -26,7 +26,7 @@ When such circumstances arise, DXGI returns an error code indicating that the Di
 
 ### <span></span>Step 1:
 
-Include a check for the device removed error in the rendering loop. Present the frame by calling [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) (or [**Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1), and so on). Then, check whether it returned [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) or **DXGI\_ERROR\_DEVICE\_RESET**.
+Include a check for the device removed error in the rendering loop. Present the frame by calling [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) (or [**Present1**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1), and so on). Then, check whether it returned [**DXGI\_ERROR\_DEVICE\_REMOVED**](/windows/desktop/direct3ddxgi/dxgi-error) or **DXGI\_ERROR\_DEVICE\_RESET**.
 
 First, the template stores the HRESULT returned by the DXGI swap chain:
 
@@ -51,13 +51,13 @@ else
 
 ### Step 2:
 
-Also, include a check for the device removed error when responding to window size changes. This is a good place to check for [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) or **DXGI\_ERROR\_DEVICE\_RESET** for several reasons:
+Also, include a check for the device removed error when responding to window size changes. This is a good place to check for [**DXGI\_ERROR\_DEVICE\_REMOVED**](/windows/desktop/direct3ddxgi/dxgi-error) or **DXGI\_ERROR\_DEVICE\_RESET** for several reasons:
 
 -   Resizing the swap chain requires a call to the underlying DXGI adapter, which can return the device removed error.
 -   The app might have moved to a monitor that's attached to a different graphics device.
 -   When a graphics device is removed or reset, the desktop resolution often changes, resulting in a window size change.
 
-The template checks the HRESULT returned by [**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers):
+The template checks the HRESULT returned by [**ResizeBuffers**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers):
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -86,7 +86,7 @@ else
 
 ### Step 3:
 
-Any time your app receives the [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) error, it must reinitialize the Direct3D device and recreate any device-dependent resources. Release any references to graphics device resources created with the previous Direct3D device; those resources are now invalid, and all references to the swap chain must be released before a new one can be created.
+Any time your app receives the [**DXGI\_ERROR\_DEVICE\_REMOVED**](/windows/desktop/direct3ddxgi/dxgi-error) error, it must reinitialize the Direct3D device and recreate any device-dependent resources. Release any references to graphics device resources created with the previous Direct3D device; those resources are now invalid, and all references to the swap chain must be released before a new one can be created.
 
 The HandleDeviceLost method releases the swap chain and notifies app components to release device resources:
 
@@ -132,16 +132,16 @@ When the HandleDeviceLost method exits, control returns to the rendering loop, w
 
 ### Investigating the cause of device removed errors
 
-Repeat issues with DXGI device removed errors can indicate that your graphics code is creating invalid conditions during a drawing routine. It can also indicate a hardware failure or a bug in the graphics driver. To investigate the cause of device removed errors, call [**ID3D11Device::GetDeviceRemovedReason**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) before releasing the Direct3D device. This method returns one of six possible DXGI error codes indicating the reason for the device removed error:
+Repeat issues with DXGI device removed errors can indicate that your graphics code is creating invalid conditions during a drawing routine. It can also indicate a hardware failure or a bug in the graphics driver. To investigate the cause of device removed errors, call [**ID3D11Device::GetDeviceRemovedReason**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) before releasing the Direct3D device. This method returns one of six possible DXGI error codes indicating the reason for the device removed error:
 
 -   **DXGI\_ERROR\_DEVICE\_HUNG**: The graphics driver stopped responding because of an invalid combination of graphics commands sent by the app. If you get this error repeatedly, it is a likely indication that your app caused the device to hang and needs to be debugged.
 -   **DXGI\_ERROR\_DEVICE\_REMOVED**: The graphics device has been physically removed, turned off, or a driver upgrade has occurred. This happens occasionally and is normal; your app or game should recreate device resources as described in this topic.
 -   **DXGI\_ERROR\_DEVICE\_RESET**: The graphics device failed because of a badly formed command. If you get this error repeatedly, it may mean that your code is sending invalid drawing commands.
 -   **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**: The graphics driver encountered an error and reset the device.
 -   **DXGI\_ERROR\_INVALID\_CALL**: The application provided invalid parameter data. If you get this error even once, it means that your code caused the device removed condition and must be debugged.
--   **S\_OK**: Returned when a graphics device was enabled, disabled, or reset without invalidating the current graphics device. For example, this error code can be returned if an app is using [Windows Advanced Rasterization Platform (WARP)](https://docs.microsoft.com/windows/desktop/direct3darticles/directx-warp) and a hardware adapter becomes available.
+-   **S\_OK**: Returned when a graphics device was enabled, disabled, or reset without invalidating the current graphics device. For example, this error code can be returned if an app is using [Windows Advanced Rasterization Platform (WARP)](/windows/desktop/direct3darticles/directx-warp) and a hardware adapter becomes available.
 
-The following code will retrieve the [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) error code and print it to the debug console. Insert this code at the beginning of the HandleDeviceLost method:
+The following code will retrieve the [**DXGI\_ERROR\_DEVICE\_REMOVED**](/windows/desktop/direct3ddxgi/dxgi-error) error code and print it to the debug console. Insert this code at the beginning of the HandleDeviceLost method:
 
 ```cpp
     HRESULT reason = m_d3dDevice->GetDeviceRemovedReason();
@@ -154,7 +154,7 @@ The following code will retrieve the [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://
 #endif
 ```
 
-For more details, see [**GetDeviceRemovedReason**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) and [**DXGI\_ERROR**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error).
+For more details, see [**GetDeviceRemovedReason**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) and [**DXGI\_ERROR**](/windows/desktop/direct3ddxgi/dxgi-error).
 
 ### Testing Device Removed Handling
 

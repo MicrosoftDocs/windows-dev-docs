@@ -27,7 +27,7 @@ The following illustration shows a normal vector for a front face:
 ## <span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Culling back faces
 
 
-Any face that is not a front face is a back face. Direct3D does not always render back faces; back faces are said to be culled. Back face culling means eliminating back faces from rendering. You can change the culling mode to render back faces if you want. See [Culling State](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state) for more information.
+Any face that is not a front face is a back face. Direct3D does not always render back faces; back faces are said to be culled. Back face culling means eliminating back faces from rendering. You can change the culling mode to render back faces if you want. See [Culling State](/windows/desktop/direct3d9/culling-state) for more information.
 
 ## <span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Vertex unit normals
 
@@ -89,7 +89,3 @@ Another alternative is to change to flat shading when rendering objects with sha
  
 
  
-
-
-
-

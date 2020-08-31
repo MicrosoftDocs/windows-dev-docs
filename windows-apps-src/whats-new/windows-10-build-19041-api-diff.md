@@ -14,672 +14,672 @@ For information on APIs added in the previous public release, see [New APIs in t
 
 ## Windows.AI
 
-### [Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)
+### [Windows.AI.MachineLearning](/uwp/api/windows.ai.machinelearning)
 
-#### [LearningModelSessionOptions](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions)
+#### [LearningModelSessionOptions](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions)
 
 LearningModelSessionOptions.CloseModelOnSessionCreation
 
 ## Windows.ApplicationModel
 
-### [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)
+### [Windows.ApplicationModel.Background](/uwp/api/windows.applicationmodel.background)
 
-#### [BackgroundTaskBuilder](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)
+#### [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)
 
 BackgroundTaskBuilder.SetTaskEntryPointClsid
 
-#### [BluetoothLEAdvertisementPublisherTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.bluetoothleadvertisementpublishertrigger)
+#### [BluetoothLEAdvertisementPublisherTrigger](/uwp/api/windows.applicationmodel.background.bluetoothleadvertisementpublishertrigger)
 
 BluetoothLEAdvertisementPublisherTrigger.IncludeTransmitPowerLevel <br> BluetoothLEAdvertisementPublisherTrigger.IsAnonymous <br> BluetoothLEAdvertisementPublisherTrigger.PreferredTransmitPowerLevelInDBm <br> BluetoothLEAdvertisementPublisherTrigger.UseExtendedFormat
 
-#### [BluetoothLEAdvertisementWatcherTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.bluetoothleadvertisementwatchertrigger)
+#### [BluetoothLEAdvertisementWatcherTrigger](/uwp/api/windows.applicationmodel.background.bluetoothleadvertisementwatchertrigger)
 
 BluetoothLEAdvertisementWatcherTrigger.AllowExtendedAdvertisements
 
-### [Windows.ApplicationModel.ConversationalAgent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+### [Windows.ApplicationModel.ConversationalAgent](/uwp/api/windows.applicationmodel.conversationalagent)
 
-#### [ActivationSignalDetectionConfiguration](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectionconfiguration)
+#### [ActivationSignalDetectionConfiguration](/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectionconfiguration)
 
 ActivationSignalDetectionConfiguration <br> ActivationSignalDetectionConfiguration.ApplyTrainingData <br> ActivationSignalDetectionConfiguration.ApplyTrainingDataAsync <br> ActivationSignalDetectionConfiguration.AvailabilityChanged <br> ActivationSignalDetectionConfiguration.AvailabilityInfo <br> ActivationSignalDetectionConfiguration.ClearModelData <br> ActivationSignalDetectionConfiguration.ClearModelDataAsync <br> ActivationSignalDetectionConfiguration.ClearTrainingData <br> ActivationSignalDetectionConfiguration.ClearTrainingDataAsync <br> ActivationSignalDetectionConfiguration.DisplayName <br> ActivationSignalDetectionConfiguration.GetModelData <br> ActivationSignalDetectionConfiguration.GetModelDataAsync <br> ActivationSignalDetectionConfiguration.GetModelDataType <br> ActivationSignalDetectionConfiguration.GetModelDataTypeAsync <br> ActivationSignalDetectionConfiguration.IsActive <br> ActivationSignalDetectionConfiguration.ModelId <br> ActivationSignalDetectionConfiguration.SetEnabled <br> ActivationSignalDetectionConfiguration.SetEnabledAsync <br> ActivationSignalDetectionConfiguration.SetModelData <br> ActivationSignalDetectionConfiguration.SetModelDataAsync <br> ActivationSignalDetectionConfiguration.SignalId <br> ActivationSignalDetectionConfiguration.TrainingDataFormat <br> ActivationSignalDetectionConfiguration.TrainingStepsCompleted <br> ActivationSignalDetectionConfiguration.TrainingStepsRemaining
 
-#### [ActivationSignalDetectionTrainingDataFormat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectiontrainingdataformat)
+#### [ActivationSignalDetectionTrainingDataFormat](/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectiontrainingdataformat)
 
 ActivationSignalDetectionTrainingDataFormat
 
-#### [ActivationSignalDetector](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetector)
+#### [ActivationSignalDetector](/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetector)
 
 ActivationSignalDetector <br> ActivationSignalDetector.CanCreateConfigurations <br> ActivationSignalDetector.CreateConfiguration <br> ActivationSignalDetector.CreateConfigurationAsync <br> ActivationSignalDetector.GetConfiguration <br> ActivationSignalDetector.GetConfigurationAsync <br> ActivationSignalDetector.GetConfigurations <br> ActivationSignalDetector.GetConfigurationsAsync <br> ActivationSignalDetector.GetSupportedModelIdsForSignalId <br> ActivationSignalDetector.GetSupportedModelIdsForSignalIdAsync <br> ActivationSignalDetector.Kind <br> ActivationSignalDetector.ProviderId <br> ActivationSignalDetector.RemoveConfiguration <br> ActivationSignalDetector.RemoveConfigurationAsync <br> ActivationSignalDetector.SupportedModelDataTypes <br> ActivationSignalDetector.SupportedPowerStates <br> ActivationSignalDetector.SupportedTrainingDataFormats
 
-#### [ActivationSignalDetectorKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectorkind)
+#### [ActivationSignalDetectorKind](/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectorkind)
 
 ActivationSignalDetectorKind
 
-#### [ActivationSignalDetectorPowerState](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectorpowerstate)
+#### [ActivationSignalDetectorPowerState](/uwp/api/windows.applicationmodel.conversationalagent.activationsignaldetectorpowerstate)
 
 ActivationSignalDetectorPowerState
 
-#### [ConversationalAgentDetectorManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.conversationalagentdetectormanager)
+#### [ConversationalAgentDetectorManager](/uwp/api/windows.applicationmodel.conversationalagent.conversationalagentdetectormanager)
 
 ConversationalAgentDetectorManager <br> ConversationalAgentDetectorManager.Default <br> ConversationalAgentDetectorManager.GetActivationSignalDetectors <br> ConversationalAgentDetectorManager.GetActivationSignalDetectorsAsync <br> ConversationalAgentDetectorManager.GetAllActivationSignalDetectors <br> ConversationalAgentDetectorManager.GetAllActivationSignalDetectorsAsync
 
-#### [DetectionConfigurationAvailabilityChangeKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilitychangedeventargs)
+#### [DetectionConfigurationAvailabilityChangeKind](/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilitychangedeventargs)
 
 DetectionConfigurationAvailabilityChangeKind <br> DetectionConfigurationAvailabilityChangedEventArgs
 
-#### [DetectionConfigurationAvailabilityChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilitychangekind)
+#### [DetectionConfigurationAvailabilityChangedEventArgs](/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilitychangekind)
 
 DetectionConfigurationAvailabilityChangedEventArgs.Kind
 
-#### [DetectionConfigurationAvailabilityInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilityinfo)
+#### [DetectionConfigurationAvailabilityInfo](/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationavailabilityinfo)
 
 DetectionConfigurationAvailabilityInfo <br> DetectionConfigurationAvailabilityInfo.HasLockScreenPermission <br> DetectionConfigurationAvailabilityInfo.HasPermission <br> DetectionConfigurationAvailabilityInfo.HasSystemResourceAccess <br> DetectionConfigurationAvailabilityInfo.IsEnabled
 
-#### [DetectionConfigurationTrainingStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationtrainingstatus)
+#### [DetectionConfigurationTrainingStatus](/uwp/api/windows.applicationmodel.conversationalagent.detectionconfigurationtrainingstatus)
 
 DetectionConfigurationTrainingStatus
 
-### [Windows.ApplicationModel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
+### [Windows.ApplicationModel](/uwp/api/windows.applicationmodel)
 
-#### [AppInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinfo)
+#### [AppInfo](/uwp/api/windows.applicationmodel.appinfo)
 
 AppInfo.Current <br> AppInfo.GetFromAppUserModelId <br> AppInfo.GetFromAppUserModelIdForUser <br> AppInfo.Package
 
-#### [IAppInfoStatics](https://docs.microsoft.com/uwp/api/windows.applicationmodel.iappinfostatics)
+#### [IAppInfoStatics](/uwp/api/windows.applicationmodel.iappinfostatics)
 
 IAppInfoStatics <br> IAppInfoStatics.Current <br> IAppInfoStatics.GetFromAppUserModelId <br> IAppInfoStatics.GetFromAppUserModelIdForUser
 
-#### [Package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
+#### [Package](/uwp/api/windows.applicationmodel.package)
 
 Package.EffectiveExternalLocation <br> Package.EffectiveExternalPath <br> Package.EffectivePath <br> Package.GetAppListEntries <br> Package.GetLogoAsRandomAccessStreamReference <br> Package.InstalledPath <br> Package.IsStub <br> Package.MachineExternalLocation <br> Package.MachineExternalPath <br> Package.MutablePath <br> Package.UserExternalLocation <br> Package.UserExternalPath
 
 ## Windows.Devices
 
-### [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+### [Windows.Devices.Bluetooth.Advertisement](/uwp/api/windows.devices.bluetooth.advertisement)
 
-#### [BluetoothLEAdvertisementPublisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)
+#### [BluetoothLEAdvertisementPublisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher)
 
 BluetoothLEAdvertisementPublisher.IncludeTransmitPowerLevel <br> BluetoothLEAdvertisementPublisher.IsAnonymous <br> BluetoothLEAdvertisementPublisher.PreferredTransmitPowerLevelInDBm <br> BluetoothLEAdvertisementPublisher.UseExtendedAdvertisement
 
-#### [BluetoothLEAdvertisementPublisherStatusChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisherstatuschangedeventargs)
+#### [BluetoothLEAdvertisementPublisherStatusChangedEventArgs](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisherstatuschangedeventargs)
 
 BluetoothLEAdvertisementPublisherStatusChangedEventArgs.SelectedTransmitPowerLevelInDBm
 
-#### [BluetoothLEAdvertisementReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementreceivedeventargs)
+#### [BluetoothLEAdvertisementReceivedEventArgs](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementreceivedeventargs)
 
 BluetoothLEAdvertisementReceivedEventArgs.BluetoothAddressType <br> BluetoothLEAdvertisementReceivedEventArgs.IsAnonymous <br> BluetoothLEAdvertisementReceivedEventArgs.IsConnectable <br> BluetoothLEAdvertisementReceivedEventArgs.IsDirected <br> BluetoothLEAdvertisementReceivedEventArgs.IsScanResponse <br> BluetoothLEAdvertisementReceivedEventArgs.IsScannable <br> BluetoothLEAdvertisementReceivedEventArgs.TransmitPowerLevelInDBm
 
-#### [BluetoothLEAdvertisementWatcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)
+#### [BluetoothLEAdvertisementWatcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher)
 
 BluetoothLEAdvertisementWatcher.AllowExtendedAdvertisements
 
-### [Windows.Devices.Bluetooth.Background](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.background)
+### [Windows.Devices.Bluetooth.Background](/uwp/api/windows.devices.bluetooth.background)
 
-#### [BluetoothLEAdvertisementPublisherTriggerDetails](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.background.bluetoothleadvertisementpublishertriggerdetails)
+#### [BluetoothLEAdvertisementPublisherTriggerDetails](/uwp/api/windows.devices.bluetooth.background.bluetoothleadvertisementpublishertriggerdetails)
 
 BluetoothLEAdvertisementPublisherTriggerDetails.SelectedTransmitPowerLevelInDBm
 
-### [Windows.Devices.Bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
+### [Windows.Devices.Bluetooth](/uwp/api/windows.devices.bluetooth)
 
-#### [BluetoothAdapter](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothadapter)
+#### [BluetoothAdapter](/uwp/api/windows.devices.bluetooth.bluetoothadapter)
 
 BluetoothAdapter.IsExtendedAdvertisingSupported <br> BluetoothAdapter.MaxAdvertisementDataLength
 
-### [Windows.Devices.Display](https://docs.microsoft.com/uwp/api/windows.devices.display)
+### [Windows.Devices.Display](/uwp/api/windows.devices.display)
 
-#### [DisplayMonitor](https://docs.microsoft.com/uwp/api/windows.devices.display.displaymonitor)
+#### [DisplayMonitor](/uwp/api/windows.devices.display.displaymonitor)
 
 DisplayMonitor.IsDolbyVisionSupportedInHdrMode
 
-### [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/windows.devices.input)
+### [Windows.Devices.Input](/uwp/api/windows.devices.input)
 
-#### [PenButtonListener](https://docs.microsoft.com/uwp/api/windows.devices.input.penbuttonlistener)
+#### [PenButtonListener](/uwp/api/windows.devices.input.penbuttonlistener)
 
 PenButtonListener <br> PenButtonListener.GetDefault <br> PenButtonListener.IsSupported <br> PenButtonListener.IsSupportedChanged <br> PenButtonListener.TailButtonClicked <br> PenButtonListener.TailButtonDoubleClicked <br> PenButtonListener.TailButtonLongPressed
 
-#### [PenDockListener](https://docs.microsoft.com/uwp/api/windows.devices.input.pendockedeventargs)
+#### [PenDockListener](/uwp/api/windows.devices.input.pendockedeventargs)
 
 PenDockListener
 
-#### [PenDockListener](https://docs.microsoft.com/uwp/api/windows.devices.input.pendocklistener)
+#### [PenDockListener](/uwp/api/windows.devices.input.pendocklistener)
 
 PenDockListener.Docked <br> PenDockListener.GetDefault <br> PenDockListener.IsSupported <br> PenDockListener.IsSupportedChanged <br> PenDockListener.Undocked <br> PenDockedEventArgs
 
-#### [PenTailButtonClickedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.pentailbuttonclickedeventargs)
+#### [PenTailButtonClickedEventArgs](/uwp/api/windows.devices.input.pentailbuttonclickedeventargs)
 
 PenTailButtonClickedEventArgs
 
-#### [PenTailButtonDoubleClickedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.pentailbuttondoubleclickedeventargs)
+#### [PenTailButtonDoubleClickedEventArgs](/uwp/api/windows.devices.input.pentailbuttondoubleclickedeventargs)
 
 PenTailButtonDoubleClickedEventArgs
 
-#### [PenTailButtonLongPressedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.pentailbuttonlongpressedeventargs)
+#### [PenTailButtonLongPressedEventArgs](/uwp/api/windows.devices.input.pentailbuttonlongpressedeventargs)
 
 PenTailButtonLongPressedEventArgs
 
-#### [PenUndockedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.penundockedeventargs)
+#### [PenUndockedEventArgs](/uwp/api/windows.devices.input.penundockedeventargs)
 
 PenUndockedEventArgs
 
-### [Windows.Devices.Sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
+### [Windows.Devices.Sensors](/uwp/api/windows.devices.sensors)
 
-#### [Accelerometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
+#### [Accelerometer](/uwp/api/windows.devices.sensors.accelerometer)
 
 Accelerometer.ReportThreshold
 
-#### [AccelerometerDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometerdatathreshold)
+#### [AccelerometerDataThreshold](/uwp/api/windows.devices.sensors.accelerometerdatathreshold)
 
 AccelerometerDataThreshold <br> AccelerometerDataThreshold.XAxisInGForce <br> AccelerometerDataThreshold.YAxisInGForce <br> AccelerometerDataThreshold.ZAxisInGForce
 
-#### [Barometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometer)
+#### [Barometer](/uwp/api/windows.devices.sensors.barometer)
 
 Barometer.ReportThreshold
 
-#### [BarometerDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometerdatathreshold)
+#### [BarometerDataThreshold](/uwp/api/windows.devices.sensors.barometerdatathreshold)
 
 BarometerDataThreshold <br> BarometerDataThreshold.Hectopascals
 
-#### [Compass](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compass)
+#### [Compass](/uwp/api/windows.devices.sensors.compass)
 
 Compass.ReportThreshold
 
-#### [CompassDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compassdatathreshold)
+#### [CompassDataThreshold](/uwp/api/windows.devices.sensors.compassdatathreshold)
 
 CompassDataThreshold <br> CompassDataThreshold.Degrees
 
-#### [Gyrometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
+#### [Gyrometer](/uwp/api/windows.devices.sensors.gyrometer)
 
 Gyrometer.ReportThreshold
 
-#### [GyrometerDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometerdatathreshold)
+#### [GyrometerDataThreshold](/uwp/api/windows.devices.sensors.gyrometerdatathreshold)
 
 GyrometerDataThreshold <br> GyrometerDataThreshold.XAxisInDegreesPerSecond <br> GyrometerDataThreshold.YAxisInDegreesPerSecond <br> GyrometerDataThreshold.ZAxisInDegreesPerSecond
 
-#### [Inclinometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometer)
+#### [Inclinometer](/uwp/api/windows.devices.sensors.inclinometer)
 
 Inclinometer.ReportThreshold
 
-#### [InclinometerDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometerdatathreshold)
+#### [InclinometerDataThreshold](/uwp/api/windows.devices.sensors.inclinometerdatathreshold)
 
 InclinometerDataThreshold <br> InclinometerDataThreshold.PitchInDegrees <br> InclinometerDataThreshold.RollInDegrees <br> InclinometerDataThreshold.YawInDegrees
 
-#### [LightSensor](https://docs.microsoft.com/uwp/api/windows.devices.sensors.lightsensor)
+#### [LightSensor](/uwp/api/windows.devices.sensors.lightsensor)
 
 LightSensor.ReportThreshold
 
-#### [LightSensorDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.lightsensordatathreshold)
+#### [LightSensorDataThreshold](/uwp/api/windows.devices.sensors.lightsensordatathreshold)
 
 LightSensorDataThreshold <br> LightSensorDataThreshold.AbsoluteLux <br> LightSensorDataThreshold.LuxPercentage
 
-#### [Magnetometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometer)
+#### [Magnetometer](/uwp/api/windows.devices.sensors.magnetometer)
 
 Magnetometer.ReportThreshold
 
-#### [MagnetometerDataThreshold](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometerdatathreshold)
+#### [MagnetometerDataThreshold](/uwp/api/windows.devices.sensors.magnetometerdatathreshold)
 
 MagnetometerDataThreshold <br> MagnetometerDataThreshold.XAxisMicroteslas <br> MagnetometerDataThreshold.YAxisMicroteslas <br> MagnetometerDataThreshold.ZAxisMicroteslas
 
 ## Windows.Foundation
 
-### [Windows.Foundation.Metadata](https://docs.microsoft.com/uwp/api/windows.foundation.metadata)
+### [Windows.Foundation.Metadata](/uwp/api/windows.foundation.metadata)
 
-#### [AttributeNameAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.attributenameattribute)
+#### [AttributeNameAttribute](/uwp/api/windows.foundation.metadata.attributenameattribute)
 
 AttributeNameAttribute <br> AttributeNameAttribute.#ctor
 
-#### [FastAbiAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.fastabiattribute)
+#### [FastAbiAttribute](/uwp/api/windows.foundation.metadata.fastabiattribute)
 
 FastAbiAttribute <br> FastAbiAttribute.#ctor <br> FastAbiAttribute.#ctor <br> FastAbiAttribute.#ctor
 
-#### [NoExceptionAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.noexceptionattribute)
+#### [NoExceptionAttribute](/uwp/api/windows.foundation.metadata.noexceptionattribute)
 
 NoExceptionAttribute <br> NoExceptionAttribute.#ctor
 
 ## Windows.Globalization
 
-### [Windows.Globalization](https://docs.microsoft.com/uwp/api/windows.globalization)
+### [Windows.Globalization](/uwp/api/windows.globalization)
 
-#### [Language](https://docs.microsoft.com/uwp/api/windows.globalization.language)
+#### [Language](/uwp/api/windows.globalization.language)
 
 Language.AbbreviatedName <br> Language.GetMuiCompatibleLanguageListFromLanguageTags
 
 ## Windows.Graphics
 
-### [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+### [Windows.Graphics.Capture](/uwp/api/windows.graphics.capture)
 
-#### [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession)
+#### [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession)
 
 GraphicsCaptureSession.IsCursorCaptureEnabled
 
-### [Windows.Graphics.Holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
+### [Windows.Graphics.Holographic](/uwp/api/windows.graphics.holographic)
 
-#### [HolographicFrame](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe)
+#### [HolographicFrame](/uwp/api/windows.graphics.holographic.holographicframe)
 
 HolographicFrame.Id
 
-#### [HolographicFrameId](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframeid)
+#### [HolographicFrameId](/uwp/api/windows.graphics.holographic.holographicframeid)
 
 HolographicFrameId
 
-#### [HolographicFrameRenderingReport](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframerenderingreport)
+#### [HolographicFrameRenderingReport](/uwp/api/windows.graphics.holographic.holographicframerenderingreport)
 
 HolographicFrameRenderingReport <br> HolographicFrameRenderingReport.FrameId <br> HolographicFrameRenderingReport.MissedLatchCount <br> HolographicFrameRenderingReport.SystemRelativeActualGpuFinishTime <br> HolographicFrameRenderingReport.SystemRelativeFrameReadyTime <br> HolographicFrameRenderingReport.SystemRelativeTargetLatchTime
 
-#### [HolographicFrameScanoutMonitor](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframescanoutmonitor)
+#### [HolographicFrameScanoutMonitor](/uwp/api/windows.graphics.holographic.holographicframescanoutmonitor)
 
 HolographicFrameScanoutMonitor <br> HolographicFrameScanoutMonitor.Close <br> HolographicFrameScanoutMonitor.ReadReports
 
-#### [HolographicFrameScanoutReport](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframescanoutreport)
+#### [HolographicFrameScanoutReport](/uwp/api/windows.graphics.holographic.holographicframescanoutreport)
 
 HolographicFrameScanoutReport <br> HolographicFrameScanoutReport.MissedScanoutCount <br> HolographicFrameScanoutReport.RenderingReport <br> HolographicFrameScanoutReport.SystemRelativeLatchTime <br> HolographicFrameScanoutReport.SystemRelativePhotonTime <br> HolographicFrameScanoutReport.SystemRelativeScanoutStartTime
 
-#### [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace)
+#### [HolographicSpace](/uwp/api/windows.graphics.holographic.holographicspace)
 
 HolographicSpace.CreateFrameScanoutMonitor
 
 ## Windows.Management
 
-### [Windows.Management.Deployment](https://docs.microsoft.com/uwp/api/windows.management.deployment)
+### [Windows.Management.Deployment](/uwp/api/windows.management.deployment)
 
-#### [AddPackageOptions](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions)
+#### [AddPackageOptions](/uwp/api/windows.management.deployment.addpackageoptions)
 
 AddPackageOptions <br> AddPackageOptions.#ctor <br> AddPackageOptions.AllowUnsigned <br> AddPackageOptions.DeferRegistrationWhenPackagesAreInUse <br> AddPackageOptions.DependencyPackageUris <br> AddPackageOptions.DeveloperMode <br> AddPackageOptions.ExternalLocationUri <br> AddPackageOptions.ForceAppShutdown <br> AddPackageOptions.ForceTargetAppShutdown <br> AddPackageOptions.ForceUpdateFromAnyVersion <br> AddPackageOptions.InstallAllResources <br> AddPackageOptions.OptionalPackageFamilyNames <br> AddPackageOptions.OptionalPackageUris <br> AddPackageOptions.RelatedPackageUris <br> AddPackageOptions.RequiredContentGroupOnly <br> AddPackageOptions.RetainFilesOnFailure <br> AddPackageOptions.StageInPlace <br> AddPackageOptions.StubPackageOption <br> AddPackageOptions.TargetVolume
 
-#### [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)
+#### [PackageManager](/uwp/api/windows.management.deployment.packagemanager)
 
 PackageManager.AddPackageByUriAsync <br> PackageManager.FindProvisionedPackages <br> PackageManager.GetPackageStubPreference <br> PackageManager.RegisterPackageByUriAsync <br> PackageManager.RegisterPackagesByFullNameAsync <br> PackageManager.SetPackageStubPreference <br> PackageManager.StagePackageByUriAsync
 
-#### [PackageStubPreference](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagestubpreference)
+#### [PackageStubPreference](/uwp/api/windows.management.deployment.packagestubpreference)
 
 PackageStubPreference
 
-#### [RegisterPackageOptions](https://docs.microsoft.com/uwp/api/windows.management.deployment.registerpackageoptions)
+#### [RegisterPackageOptions](/uwp/api/windows.management.deployment.registerpackageoptions)
 
 RegisterPackageOptions <br> RegisterPackageOptions.#ctor <br> RegisterPackageOptions.AllowUnsigned <br> RegisterPackageOptions.AppDataVolume <br> RegisterPackageOptions.DeferRegistrationWhenPackagesAreInUse <br> RegisterPackageOptions.DependencyPackageUris <br> RegisterPackageOptions.DeveloperMode <br> RegisterPackageOptions.ExternalLocationUri <br> RegisterPackageOptions.ForceAppShutdown <br> RegisterPackageOptions.ForceTargetAppShutdown <br> RegisterPackageOptions.ForceUpdateFromAnyVersion <br> RegisterPackageOptions.InstallAllResources <br> RegisterPackageOptions.OptionalPackageFamilyNames <br> RegisterPackageOptions.StageInPlace
 
-#### [StagePackageOptions](https://docs.microsoft.com/uwp/api/windows.management.deployment.stagepackageoptions)
+#### [StagePackageOptions](/uwp/api/windows.management.deployment.stagepackageoptions)
 
 StagePackageOptions <br> StagePackageOptions.#ctor <br> StagePackageOptions.AllowUnsigned <br> StagePackageOptions.DependencyPackageUris <br> StagePackageOptions.DeveloperMode <br> StagePackageOptions.ExternalLocationUri <br> StagePackageOptions.ForceUpdateFromAnyVersion <br> StagePackageOptions.InstallAllResources <br> StagePackageOptions.OptionalPackageFamilyNames <br> StagePackageOptions.OptionalPackageUris <br> StagePackageOptions.RelatedPackageUris <br> StagePackageOptions.RequiredContentGroupOnly <br> StagePackageOptions.StageInPlace <br> StagePackageOptions.StubPackageOption <br> StagePackageOptions.TargetVolume
 
-#### [StubPackageOption](https://docs.microsoft.com/uwp/api/windows.management.deployment.stubpackageoption)
+#### [StubPackageOption](/uwp/api/windows.management.deployment.stubpackageoption)
 
 StubPackageOption
 
 ## Windows.Media
 
-### [Windows.Media.Audio](https://docs.microsoft.com/uwp/api/windows.media.audio)
+### [Windows.Media.Audio](/uwp/api/windows.media.audio)
 
-#### [AudioPlaybackConnection](https://docs.microsoft.com/uwp/api/windows.media.audio.audioplaybackconnection)
+#### [AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackconnection)
 
 AudioPlaybackConnection <br> AudioPlaybackConnection.Close <br> AudioPlaybackConnection.DeviceId <br> AudioPlaybackConnection.GetDeviceSelector <br> AudioPlaybackConnection.Open <br> AudioPlaybackConnection.OpenAsync <br> AudioPlaybackConnection.Start <br> AudioPlaybackConnection.StartAsync <br> AudioPlaybackConnection.State <br> AudioPlaybackConnection.StateChanged <br> AudioPlaybackConnection.TryCreateFromId
 
-#### [AudioPlaybackConnectionOpenResult](https://docs.microsoft.com/uwp/api/windows.media.audio.audioplaybackconnectionopenresult)
+#### [AudioPlaybackConnectionOpenResult](/uwp/api/windows.media.audio.audioplaybackconnectionopenresult)
 
 AudioPlaybackConnectionOpenResult <br> AudioPlaybackConnectionOpenResult.ExtendedError <br> AudioPlaybackConnectionOpenResult.Status
 
-#### [AudioPlaybackConnectionOpenResultStatus](https://docs.microsoft.com/uwp/api/windows.media.audio.audioplaybackconnectionopenresultstatus)
+#### [AudioPlaybackConnectionOpenResultStatus](/uwp/api/windows.media.audio.audioplaybackconnectionopenresultstatus)
 
 AudioPlaybackConnectionOpenResultStatus
 
-#### [AudioPlaybackConnectionState](https://docs.microsoft.com/uwp/api/windows.media.audio.audioplaybackconnectionstate)
+#### [AudioPlaybackConnectionState](/uwp/api/windows.media.audio.audioplaybackconnectionstate)
 
 AudioPlaybackConnectionState
 
-### [Windows.Media.Capture.Frames](https://docs.microsoft.com/uwp/api/windows.media.capture.frames)
+### [Windows.Media.Capture.Frames](/uwp/api/windows.media.capture.frames)
 
-#### [MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)
+#### [MediaFrameSourceInfo](/uwp/api/windows.media.capture.frames.mediaframesourceinfo)
 
 MediaFrameSourceInfo.GetRelativePanel
 
-### [Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)
+### [Windows.Media.Capture](/uwp/api/windows.media.capture)
 
-#### [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)
+#### [MediaCapture](/uwp/api/windows.media.capture.mediacapture)
 
 MediaCapture.CreateRelativePanelWatcher
 
-#### [MediaCaptureInitializationSettings](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings)
+#### [MediaCaptureInitializationSettings](/uwp/api/windows.media.capture.mediacaptureinitializationsettings)
 
 MediaCaptureInitializationSettings.DeviceUri <br> MediaCaptureInitializationSettings.DeviceUriPasswordCredential
 
-#### [MediaCaptureRelativePanelWatcher](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturerelativepanelwatcher)
+#### [MediaCaptureRelativePanelWatcher](/uwp/api/windows.media.capture.mediacapturerelativepanelwatcher)
 
 MediaCaptureRelativePanelWatcher <br> MediaCaptureRelativePanelWatcher.Changed <br> MediaCaptureRelativePanelWatcher.Close <br> MediaCaptureRelativePanelWatcher.RelativePanel <br> MediaCaptureRelativePanelWatcher.Start <br> MediaCaptureRelativePanelWatcher.Stop
 
-### [Windows.Media.Devices](https://docs.microsoft.com/uwp/api/windows.media.devices)
+### [Windows.Media.Devices](/uwp/api/windows.media.devices)
 
-#### [PanelBasedOptimizationControl](https://docs.microsoft.com/uwp/api/windows.media.devices.panelbasedoptimizationcontrol)
+#### [PanelBasedOptimizationControl](/uwp/api/windows.media.devices.panelbasedoptimizationcontrol)
 
 PanelBasedOptimizationControl <br> PanelBasedOptimizationControl.IsSupported <br> PanelBasedOptimizationControl.Panel
 
-#### [VideoDeviceController](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller)
+#### [VideoDeviceController](/uwp/api/windows.media.devices.videodevicecontroller)
 
 VideoDeviceController.PanelBasedOptimizationControl
 
-### [Windows.Media.MediaProperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties)
+### [Windows.Media.MediaProperties](/uwp/api/windows.media.mediaproperties)
 
-#### [MediaEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)
+#### [MediaEncodingSubtypes](/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)
 
 MediaEncodingSubtypes.Pgs <br> MediaEncodingSubtypes.Srt <br> MediaEncodingSubtypes.Ssa <br> MediaEncodingSubtypes.VobSub
 
-#### [TimedMetadataEncodingProperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties)
+#### [TimedMetadataEncodingProperties](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties)
 
 TimedMetadataEncodingProperties.CreatePgs <br> TimedMetadataEncodingProperties.CreateSrt <br> TimedMetadataEncodingProperties.CreateSsa <br> TimedMetadataEncodingProperties.CreateVobSub
 
 ## Windows.Networking
 
-### [Windows.Networking.BackgroundTransfer](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer)
+### [Windows.Networking.BackgroundTransfer](/uwp/api/windows.networking.backgroundtransfer)
 
-#### [DownloadOperation](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.downloadoperation)
+#### [DownloadOperation](/uwp/api/windows.networking.backgroundtransfer.downloadoperation)
 
 DownloadOperation.RemoveRequestHeader <br> DownloadOperation.SetRequestHeader
 
-#### [UploadOperation](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.uploadoperation)
+#### [UploadOperation](/uwp/api/windows.networking.backgroundtransfer.uploadoperation)
 
 UploadOperation.RemoveRequestHeader <br> UploadOperation.SetRequestHeader
 
-### [Windows.Networking.NetworkOperators](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators)
+### [Windows.Networking.NetworkOperators](/uwp/api/windows.networking.networkoperators)
 
-#### [NetworkOperatorTetheringAccessPointConfiguration](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.networkoperatortetheringaccesspointconfiguration)
+#### [NetworkOperatorTetheringAccessPointConfiguration](/uwp/api/windows.networking.networkoperators.networkoperatortetheringaccesspointconfiguration)
 
 NetworkOperatorTetheringAccessPointConfiguration.Band <br> NetworkOperatorTetheringAccessPointConfiguration.IsBandSupported <br> NetworkOperatorTetheringAccessPointConfiguration.IsBandSupportedAsync
 
-#### [NetworkOperatorTetheringManager](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.networkoperatortetheringmanager)
+#### [NetworkOperatorTetheringManager](/uwp/api/windows.networking.networkoperators.networkoperatortetheringmanager)
 
 NetworkOperatorTetheringManager.DisableNoConnectionsTimeout <br> NetworkOperatorTetheringManager.DisableNoConnectionsTimeoutAsync <br> NetworkOperatorTetheringManager.EnableNoConnectionsTimeout <br> NetworkOperatorTetheringManager.EnableNoConnectionsTimeoutAsync <br> NetworkOperatorTetheringManager.IsNoConnectionsTimeoutEnabled
 
-#### [TetheringWiFiBand](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringwifiband)
+#### [TetheringWiFiBand](/uwp/api/windows.networking.networkoperators.tetheringwifiband)
 
 TetheringWiFiBand
 
-### [Windows.Networking.PushNotifications](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications)
+### [Windows.Networking.PushNotifications](/uwp/api/windows.networking.pushnotifications)
 
-#### [RawNotification](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.rawnotification)
+#### [RawNotification](/uwp/api/windows.networking.pushnotifications.rawnotification)
 
 RawNotification.ContentBytes
 
 ## Windows.Security
 
-### [Windows.Security.Authentication.Web.Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+### [Windows.Security.Authentication.Web.Core](/uwp/api/windows.security.authentication.web.core)
 
-#### [WebAccountMonitor](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webaccountmonitor)
+#### [WebAccountMonitor](/uwp/api/windows.security.authentication.web.core.webaccountmonitor)
 
 WebAccountMonitor.AccountPictureUpdated
 
-### [Windows.Security.Isolation](https://docs.microsoft.com/uwp/api/windows.security.isolation)
+### [Windows.Security.Isolation](/uwp/api/windows.security.isolation)
 
-#### [IsolatedWindowsEnvironment](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironment)
+#### [IsolatedWindowsEnvironment](/uwp/api/windows.security.isolation.isolatedwindowsenvironment)
 
 IsolatedWindowsEnvironment <br> IsolatedWindowsEnvironment.CreateAsync <br> IsolatedWindowsEnvironment.CreateAsync <br> IsolatedWindowsEnvironment.FindByOwnerId <br> IsolatedWindowsEnvironment.GetById <br> IsolatedWindowsEnvironment.Id <br> IsolatedWindowsEnvironment.LaunchFileWithUIAsync <br> IsolatedWindowsEnvironment.LaunchFileWithUIAsync <br> IsolatedWindowsEnvironment.RegisterMessageReceiver <br> IsolatedWindowsEnvironment.ShareFolderAsync <br> IsolatedWindowsEnvironment.ShareFolderAsync <br> IsolatedWindowsEnvironment.StartProcessSilentlyAsync <br> IsolatedWindowsEnvironment.StartProcessSilentlyAsync <br> IsolatedWindowsEnvironment.TerminateAsync <br> IsolatedWindowsEnvironment.TerminateAsync
 
-#### [IsolatedWindowsEnvironment](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentactivator)
+#### [IsolatedWindowsEnvironment](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentactivator)
 
 IsolatedWindowsEnvironment.UnregisterMessageReceiver
 
-#### [IsolatedWindowsEnvironmentActivator](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentallowedclipboardformats)
+#### [IsolatedWindowsEnvironmentActivator](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentallowedclipboardformats)
 
 IsolatedWindowsEnvironmentActivator
 
-#### [IsolatedWindowsEnvironmentAllowedClipboardFormats](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentavailableprinters)
+#### [IsolatedWindowsEnvironmentAllowedClipboardFormats](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentavailableprinters)
 
 IsolatedWindowsEnvironmentAllowedClipboardFormats
 
-#### [IsolatedWindowsEnvironmentAvailablePrinters](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentclipboardcopypastedirections)
+#### [IsolatedWindowsEnvironmentAvailablePrinters](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentclipboardcopypastedirections)
 
 IsolatedWindowsEnvironmentAvailablePrinters
 
-#### [IsolatedWindowsEnvironmentClipboardCopyPasteDirections](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreateprogress)
+#### [IsolatedWindowsEnvironmentClipboardCopyPasteDirections](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreateprogress)
 
 IsolatedWindowsEnvironmentClipboardCopyPasteDirections
 
-#### [IsolatedWindowsEnvironmentCreateProgress](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreateresult)
+#### [IsolatedWindowsEnvironmentCreateProgress](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreateresult)
 
 IsolatedWindowsEnvironmentCreateProgress <br> IsolatedWindowsEnvironmentCreateResult <br> IsolatedWindowsEnvironmentCreateResult.Environment <br> IsolatedWindowsEnvironmentCreateResult.ExtendedError
 
-#### [IsolatedWindowsEnvironmentCreateResult](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreatestatus)
+#### [IsolatedWindowsEnvironmentCreateResult](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentcreatestatus)
 
 IsolatedWindowsEnvironmentCreateResult.Status
 
-#### [IsolatedWindowsEnvironmentCreateStatus](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentfile)
+#### [IsolatedWindowsEnvironmentCreateStatus](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentfile)
 
 IsolatedWindowsEnvironmentCreateStatus <br> IsolatedWindowsEnvironmentFile <br> IsolatedWindowsEnvironmentFile.Close <br> IsolatedWindowsEnvironmentFile.HostPath
 
-#### [IsolatedWindowsEnvironmentFile](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmenthost)
+#### [IsolatedWindowsEnvironmentFile](/uwp/api/windows.security.isolation.isolatedwindowsenvironmenthost)
 
 IsolatedWindowsEnvironmentFile.Id <br> IsolatedWindowsEnvironmentHost <br> IsolatedWindowsEnvironmentHost.HostErrors
 
-#### [IsolatedWindowsEnvironmentHost](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmenthosterror)
+#### [IsolatedWindowsEnvironmentHost](/uwp/api/windows.security.isolation.isolatedwindowsenvironmenthosterror)
 
 IsolatedWindowsEnvironmentHost.IsReady
 
-#### [IsolatedWindowsEnvironmentHostError](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentlaunchfileresult)
+#### [IsolatedWindowsEnvironmentHostError](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentlaunchfileresult)
 
 IsolatedWindowsEnvironmentHostError <br> IsolatedWindowsEnvironmentLaunchFileResult <br> IsolatedWindowsEnvironmentLaunchFileResult.ExtendedError <br> IsolatedWindowsEnvironmentLaunchFileResult.File
 
-#### [IsolatedWindowsEnvironmentLaunchFileResult](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentlaunchfilestatus)
+#### [IsolatedWindowsEnvironmentLaunchFileResult](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentlaunchfilestatus)
 
 IsolatedWindowsEnvironmentLaunchFileResult.Status
 
-#### [IsolatedWindowsEnvironmentLaunchFileStatus](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentoptions)
+#### [IsolatedWindowsEnvironmentLaunchFileStatus](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentoptions)
 
 IsolatedWindowsEnvironmentLaunchFileStatus <br> IsolatedWindowsEnvironmentOptions <br> IsolatedWindowsEnvironmentOptions.#ctor <br> IsolatedWindowsEnvironmentOptions.AllowCameraAndMicrophoneAccess <br> IsolatedWindowsEnvironmentOptions.AllowGraphicsHardwareAcceleration <br> IsolatedWindowsEnvironmentOptions.AllowedClipboardFormats <br> IsolatedWindowsEnvironmentOptions.AvailablePrinters <br> IsolatedWindowsEnvironmentOptions.ClipboardCopyPasteDirections <br> IsolatedWindowsEnvironmentOptions.EnvironmentOwnerId <br> IsolatedWindowsEnvironmentOptions.PersistUserProfile <br> IsolatedWindowsEnvironmentOptions.ShareHostFolderForUntrustedItems <br> IsolatedWindowsEnvironmentOptions.SharedFolderNameInEnvironment
 
-#### [IsolatedWindowsEnvironmentOptions](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistration)
+#### [IsolatedWindowsEnvironmentOptions](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistration)
 
 IsolatedWindowsEnvironmentOptions.SharedHostFolderPath <br> IsolatedWindowsEnvironmentOwnerRegistration <br> IsolatedWindowsEnvironmentOwnerRegistration.Register
 
-#### [IsolatedWindowsEnvironmentOwnerRegistration](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationdata)
+#### [IsolatedWindowsEnvironmentOwnerRegistration](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationdata)
 
 IsolatedWindowsEnvironmentOwnerRegistration.Unregister <br> IsolatedWindowsEnvironmentOwnerRegistrationData <br> IsolatedWindowsEnvironmentOwnerRegistrationData.#ctor <br> IsolatedWindowsEnvironmentOwnerRegistrationData.ActivationFileExtensions <br> IsolatedWindowsEnvironmentOwnerRegistrationData.ProcessesRunnableAsSystem <br> IsolatedWindowsEnvironmentOwnerRegistrationData.ProcessesRunnableAsUser
 
-#### [IsolatedWindowsEnvironmentOwnerRegistrationData](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationresult)
+#### [IsolatedWindowsEnvironmentOwnerRegistrationData](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationresult)
 
 IsolatedWindowsEnvironmentOwnerRegistrationData.ShareableFolders <br> IsolatedWindowsEnvironmentOwnerRegistrationResult <br> IsolatedWindowsEnvironmentOwnerRegistrationResult.ExtendedError
 
-#### [IsolatedWindowsEnvironmentOwnerRegistrationResult](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationstatus)
+#### [IsolatedWindowsEnvironmentOwnerRegistrationResult](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentownerregistrationstatus)
 
 IsolatedWindowsEnvironmentOwnerRegistrationResult.Status
 
-#### [IsolatedWindowsEnvironmentOwnerRegistrationStatus](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprocess)
+#### [IsolatedWindowsEnvironmentOwnerRegistrationStatus](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprocess)
 
 IsolatedWindowsEnvironmentOwnerRegistrationStatus <br> IsolatedWindowsEnvironmentProcess <br> IsolatedWindowsEnvironmentProcess.ExitCode <br> IsolatedWindowsEnvironmentProcess.State <br> IsolatedWindowsEnvironmentProcess.WaitForExit <br> IsolatedWindowsEnvironmentProcess.WaitForExitAsync
 
-#### [IsolatedWindowsEnvironmentProcess](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprocessstate)
+#### [IsolatedWindowsEnvironmentProcess](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprocessstate)
 
 IsolatedWindowsEnvironmentProcess.WaitForExitWithTimeout
 
-#### [IsolatedWindowsEnvironmentProcessState](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprogressstate)
+#### [IsolatedWindowsEnvironmentProcessState](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentprogressstate)
 
 IsolatedWindowsEnvironmentProcessState
 
-#### [IsolatedWindowsEnvironmentProgressState](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderrequestoptions)
+#### [IsolatedWindowsEnvironmentProgressState](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderrequestoptions)
 
 IsolatedWindowsEnvironmentProgressState <br> IsolatedWindowsEnvironmentShareFolderRequestOptions <br> IsolatedWindowsEnvironmentShareFolderRequestOptions.#ctor
 
-#### [IsolatedWindowsEnvironmentShareFolderRequestOptions](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderresult)
+#### [IsolatedWindowsEnvironmentShareFolderRequestOptions](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderresult)
 
 IsolatedWindowsEnvironmentShareFolderRequestOptions.AllowWrite <br> IsolatedWindowsEnvironmentShareFolderResult <br> IsolatedWindowsEnvironmentShareFolderResult.ExtendedError
 
-#### [IsolatedWindowsEnvironmentShareFolderResult](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderstatus)
+#### [IsolatedWindowsEnvironmentShareFolderResult](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentsharefolderstatus)
 
 IsolatedWindowsEnvironmentShareFolderResult.Status
 
-#### [IsolatedWindowsEnvironmentShareFolderStatus](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentstartprocessresult)
+#### [IsolatedWindowsEnvironmentShareFolderStatus](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentstartprocessresult)
 
 IsolatedWindowsEnvironmentShareFolderStatus <br> IsolatedWindowsEnvironmentStartProcessResult <br> IsolatedWindowsEnvironmentStartProcessResult.ExtendedError <br> IsolatedWindowsEnvironmentStartProcessResult.Process
 
-#### [IsolatedWindowsEnvironmentStartProcessResult](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmentstartprocessstatus)
+#### [IsolatedWindowsEnvironmentStartProcessResult](/uwp/api/windows.security.isolation.isolatedwindowsenvironmentstartprocessstatus)
 
 IsolatedWindowsEnvironmentStartProcessResult.Status
 
-#### [IsolatedWindowsEnvironmentStartProcessStatus](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowsenvironmenttelemetryparameters)
+#### [IsolatedWindowsEnvironmentStartProcessStatus](/uwp/api/windows.security.isolation.isolatedwindowsenvironmenttelemetryparameters)
 
 IsolatedWindowsEnvironmentStartProcessStatus <br> IsolatedWindowsEnvironmentTelemetryParameters <br> IsolatedWindowsEnvironmentTelemetryParameters.#ctor
 
-#### [IsolatedWindowsEnvironmentTelemetryParameters](https://docs.microsoft.com/uwp/api/windows.security.isolation.isolatedwindowshostmessenger)
+#### [IsolatedWindowsEnvironmentTelemetryParameters](/uwp/api/windows.security.isolation.isolatedwindowshostmessenger)
 
 IsolatedWindowsEnvironmentTelemetryParameters.CorrelationId <br> IsolatedWindowsHostMessenger <br> IsolatedWindowsHostMessenger.GetFileId
 
-#### [IsolatedWindowsHostMessenger](https://docs.microsoft.com/uwp/api/windows.security.isolation.messagereceivedcallback)
+#### [IsolatedWindowsHostMessenger](/uwp/api/windows.security.isolation.messagereceivedcallback)
 
 IsolatedWindowsHostMessenger.PostMessageToReceiver
 
-#### [MessageReceivedCallback](https://docs.microsoft.com/uwp/api/windows.security.isolation.windows)
+#### [MessageReceivedCallback](/uwp/api/windows.security.isolation.windows)
 
 MessageReceivedCallback
 
 ## Windows.Storage
 
-### [Windows.Storage.Provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
+### [Windows.Storage.Provider](/uwp/api/windows.storage.provider)
 
-#### [StorageProviderSyncRootManager](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageprovidersyncrootmanager)
+#### [StorageProviderSyncRootManager](/uwp/api/windows.storage.provider.storageprovidersyncrootmanager)
 
 StorageProviderSyncRootManager.IsSupported
 
-### [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage)
+### [Windows.Storage](/uwp/api/windows.storage)
 
-#### [KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders)
+#### [KnownFolders](/uwp/api/windows.storage.knownfolders)
 
 KnownFolders.GetFolderAsync <br> KnownFolders.RequestAccessAsync <br> KnownFolders.RequestAccessForUserAsync
 
-#### [KnownFoldersAccessStatus](https://docs.microsoft.com/uwp/api/windows.storage.knownfoldersaccessstatus)
+#### [KnownFoldersAccessStatus](/uwp/api/windows.storage.knownfoldersaccessstatus)
 
 KnownFoldersAccessStatus
 
-#### [StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+#### [StorageFile](/uwp/api/windows.storage.storagefile)
 
 StorageFile.GetFileFromPathForUserAsync
 
-#### [StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder)
+#### [StorageFolder](/uwp/api/windows.storage.storagefolder)
 
 StorageFolder.GetFolderFromPathForUserAsync
 
 ## Windows.System
 
-### [Windows.System](https://docs.microsoft.com/uwp/api/windows.system)
+### [Windows.System](/uwp/api/windows.system)
 
-#### [UserChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.userchangedeventargs)
+#### [UserChangedEventArgs](/uwp/api/windows.system.userchangedeventargs)
 
 UserChangedEventArgs.ChangedPropertyKinds
 
-#### [UserWatcherUpdateKind](https://docs.microsoft.com/uwp/api/windows.system.userwatcherupdatekind)
+#### [UserWatcherUpdateKind](/uwp/api/windows.system.userwatcherupdatekind)
 
 UserWatcherUpdateKind
 
 ## Windows.UI
 
-### [Windows.UI.Composition.Interactions](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions)
+### [Windows.UI.Composition.Interactions](/uwp/api/windows.ui.composition.interactions)
 
-#### [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
+#### [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker)
 
 InteractionTracker.TryUpdatePosition
 
-#### [InteractionTrackerPositionUpdateOption](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerpositionupdateoption)
+#### [InteractionTrackerPositionUpdateOption](/uwp/api/windows.ui.composition.interactions.interactiontrackerpositionupdateoption)
 
 InteractionTrackerPositionUpdateOption
 
-### [Windows.UI.Core.Preview.Communications](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications)
+### [Windows.UI.Core.Preview.Communications](/uwp/api/windows.ui.core.preview.communications)
 
-#### [PreviewMeetingInfoDisplayKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewmeetinginfodisplaykind)
+#### [PreviewMeetingInfoDisplayKind](/uwp/api/windows.ui.core.preview.communications.previewmeetinginfodisplaykind)
 
 PreviewMeetingInfoDisplayKind
 
-#### [PreviewSystemState](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewsystemstate)
+#### [PreviewSystemState](/uwp/api/windows.ui.core.preview.communications.previewsystemstate)
 
 PreviewSystemState
 
-#### [PreviewTeamCleanupRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcleanuprequestedeventargs)
+#### [PreviewTeamCleanupRequestedEventArgs](/uwp/api/windows.ui.core.preview.communications.previewteamcleanuprequestedeventargs)
 
 PreviewTeamCleanupRequestedEventArgs <br> PreviewTeamCleanupRequestedEventArgs.GetDeferral
 
-#### [PreviewTeamCommandInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamcommandinvokedeventargs)
+#### [PreviewTeamCommandInvokedEventArgs](/uwp/api/windows.ui.core.preview.communications.previewteamcommandinvokedeventargs)
 
 PreviewTeamCommandInvokedEventArgs </br> PreviewTeamCommandInvokedEventArgs.Command
 
-#### [PreviewTeamDeviceCredentials](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamdevicecredentials)
+#### [PreviewTeamDeviceCredentials](/uwp/api/windows.ui.core.preview.communications.previewteamdevicecredentials)
 
 PreviewTeamDeviceCredentials <br> PreviewTeamDeviceCredentials.DomainUserName <br> PreviewTeamDeviceCredentials.Password <br> PreviewTeamDeviceCredentials.UserPrincipalName
 
-#### [PreviewTeamEndMeetingKind](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingkind)
+#### [PreviewTeamEndMeetingKind](/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingkind)
 
 PreviewTeamEndMeetingKind
 
-#### [PreviewTeamEndMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingrequestedeventargs)
+#### [PreviewTeamEndMeetingRequestedEventArgs](/uwp/api/windows.ui.core.preview.communications.previewteamendmeetingrequestedeventargs)
 
 PreviewTeamEndMeetingRequestedEventArgs <br> PreviewTeamEndMeetingRequestedEventArgs.GetDeferral
 
-#### [PreviewTeamJoinMeetingRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamjoinmeetingrequestedeventargs)
+#### [PreviewTeamJoinMeetingRequestedEventArgs](/uwp/api/windows.ui.core.preview.communications.previewteamjoinmeetingrequestedeventargs)
 
 PreviewTeamJoinMeetingRequestedEventArgs <br> PreviewTeamJoinMeetingRequestedEventArgs.GetDeferral <br> PreviewTeamJoinMeetingRequestedEventArgs.MeetingUri
 
-#### [PreviewTeamView](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamview)
+#### [PreviewTeamView](/uwp/api/windows.ui.core.preview.communications.previewteamview)
 
 PreviewTeamView <br> PreviewTeamView.CleanupRequested <br> PreviewTeamView.CommandInvoked <br> PreviewTeamView.EndMeetingRequested <br> PreviewTeamView.EnterFullScreen <br> PreviewTeamView.GetForCurrentView <br> PreviewTeamView.IsFullScreen <br> PreviewTeamView.IsFullScreenChanged <br> PreviewTeamView.IsScreenSharing <br> PreviewTeamView.IsScreenSharingChanged <br> PreviewTeamView.JoinMeetingRequested <br> PreviewTeamView.JoinMeetingWithUri <br> PreviewTeamView.LeaveFullScreen <br> PreviewTeamView.MeetingInfoDisplayType <br> PreviewTeamView.MeetingUri <br> PreviewTeamView.NotifyMeetingEnded <br> PreviewTeamView.RequestForeground <br> PreviewTeamView.SetButtonLabel <br> PreviewTeamView.SetTitle <br> PreviewTeamView.SharingScreenBounds <br> PreviewTeamView.SharingScreenBoundsChanged <br> PreviewTeamView.StartSharingScreen <br> PreviewTeamView.StopSharingScreen <br> PreviewTeamView.SystemState
 
-#### [PreviewTeamView](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamview)
+#### [PreviewTeamView](/uwp/api/windows.ui.core.preview.communications.previewteamview)
 
 PreviewTeamView.SystemStateChanged
 
-#### [PreviewTeamViewCommand](https://docs.microsoft.com/uwp/api/windows.ui.core.preview.communications.previewteamviewcommand)
+#### [PreviewTeamViewCommand](/uwp/api/windows.ui.core.preview.communications.previewteamviewcommand)
 
 PreviewTeamViewCommand
 
-### [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
+### [Windows.UI.Input.Inking](/uwp/api/windows.ui.input.inking)
 
-#### [InkModelerAttributes](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmodelerattributes)
+#### [InkModelerAttributes](/uwp/api/windows.ui.input.inking.inkmodelerattributes)
 
 InkModelerAttributes.UseVelocityBasedPressure
 
-### [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+### [Windows.UI.Input](/uwp/api/windows.ui.input)
 
-#### [CrossSlidingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.crossslidingeventargs)
+#### [CrossSlidingEventArgs](/uwp/api/windows.ui.input.crossslidingeventargs)
 
 CrossSlidingEventArgs.ContactCount
 
-#### [DraggingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.draggingeventargs)
+#### [DraggingEventArgs](/uwp/api/windows.ui.input.draggingeventargs)
 
 DraggingEventArgs.ContactCount
 
-#### [GestureRecognizer](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer)
+#### [GestureRecognizer](/uwp/api/windows.ui.input.gesturerecognizer)
 
 GestureRecognizer.HoldMaxContactCount <br> GestureRecognizer.HoldMinContactCount <br> GestureRecognizer.HoldRadius <br> GestureRecognizer.HoldStartDelay <br> GestureRecognizer.TapMaxContactCount <br> GestureRecognizer.TapMinContactCount <br> GestureRecognizer.TranslationMaxContactCount <br> GestureRecognizer.TranslationMinContactCount
 
-#### [HoldingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.holdingeventargs)
+#### [HoldingEventArgs](/uwp/api/windows.ui.input.holdingeventargs)
 
 HoldingEventArgs.ContactCount <br> HoldingEventArgs.CurrentContactCount
 
-#### [ManipulationCompletedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.manipulationcompletedeventargs)
+#### [ManipulationCompletedEventArgs](/uwp/api/windows.ui.input.manipulationcompletedeventargs)
 
 ManipulationCompletedEventArgs.ContactCount <br> ManipulationCompletedEventArgs.CurrentContactCount
 
-#### [ManipulationInertiaStartingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.manipulationinertiastartingeventargs)
+#### [ManipulationInertiaStartingEventArgs](/uwp/api/windows.ui.input.manipulationinertiastartingeventargs)
 
 ManipulationInertiaStartingEventArgs.ContactCount
 
-#### [ManipulationStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.manipulationstartedeventargs)
+#### [ManipulationStartedEventArgs](/uwp/api/windows.ui.input.manipulationstartedeventargs)
 
 ManipulationStartedEventArgs.ContactCount
 
-#### [ManipulationUpdatedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.manipulationupdatedeventargs)
+#### [ManipulationUpdatedEventArgs](/uwp/api/windows.ui.input.manipulationupdatedeventargs)
 
 ManipulationUpdatedEventArgs.ContactCount <br> ManipulationUpdatedEventArgs.CurrentContactCount
 
-#### [RightTappedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.righttappedeventargs)
+#### [RightTappedEventArgs](/uwp/api/windows.ui.input.righttappedeventargs)
 
 RightTappedEventArgs.ContactCount
 
-#### [TappedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.tappedeventargs)
+#### [TappedEventArgs](/uwp/api/windows.ui.input.tappedeventargs)
 
 TappedEventArgs.ContactCount 
 
-### [Windows.UI.ViewManagement](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement)
+### [Windows.UI.ViewManagement](/uwp/api/windows.ui.viewmanagement)
 
-#### [UISettings](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings)
+#### [UISettings](/uwp/api/windows.ui.viewmanagement.uisettings)
 
 UISettings.AnimationsEnabledChanged <br> UISettings.MessageDurationChanged
 
-#### [UISettingsAnimationsEnabledChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettingsanimationsenabledchangedeventargs)
+#### [UISettingsAnimationsEnabledChangedEventArgs](/uwp/api/windows.ui.viewmanagement.uisettingsanimationsenabledchangedeventargs)
 
 UISettingsAnimationsEnabledChangedEventArgs
 
-#### [UISettingsMessageDurationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettingsmessagedurationchangedeventargs)
+#### [UISettingsMessageDurationChangedEventArgs](/uwp/api/windows.ui.viewmanagement.uisettingsmessagedurationchangedeventargs)
 
 UISettingsMessageDurationChangedEventArgs

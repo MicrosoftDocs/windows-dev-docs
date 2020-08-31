@@ -14,14 +14,14 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [HLSL Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)
--   [Shader Constants (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)
+-   [HLSL Semantics](/windows/desktop/direct3dhlsl/dcl-usage---ps)
+-   [Shader Constants (HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)
 
 Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 
 In OpenGL ES 2.0, shaders return data after execution using intrinsics such as **gl\_Position**, **gl\_FragColor**, or **gl\_FragData\[n\]** (where n is the index for a specific render target). In Direct3D, there are no specific intrinsics, and the shaders return data as the return type of their respective main() functions.
 
-Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
+Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](/windows/desktop/direct3dhlsl/dcl-usage---ps). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
 
 `float4 vertPos : POSITION;`
 
@@ -48,7 +48,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants).
+Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants).
 
 Instructions
 ------------
@@ -155,10 +155,10 @@ Next step
 [Draw to the screen](draw-to-the-screen.md)
 Remarks
 -------
-Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax), [Introduction to Buffers in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro), and [How to: Create a Constant Buffer](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
+Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax), [Introduction to Buffers in Direct3D 11](/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro), and [How to: Create a Constant Buffer](/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
 -   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.
--   In your renderer's C++ code, use [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) types in your constant buffer declarations to ensure proper data packing.
+-   In your renderer's C++ code, use [DirectXMath](/windows/desktop/dxmath/directxmath-portal) types in your constant buffer declarations to ensure proper data packing.
 -   The best way to efficiently use constant buffers is to organize shader variables into constant buffers based on their frequency of update. For example, if you have some uniform data that is updated once per frame, and other uniform data that is updated only when the camera moves, consider separating that data into two separate constant buffers.
 -   Semantics that you have forgotten to apply or which you have applied incorrectly will be your earliest source of shader compilation (FXC) errors. Double-check them! The docs can be a bit confusing, as many older pages and samples refer to different versions of HLSL semantics prior to Direct3D 11.
 -   Make sure you know which Direct3D feature level you are targeting for each shader. The semantics for feature level 9\_\* are different from those for 11\_1.
@@ -178,7 +178,3 @@ Understanding HLSL semantics and the packing of constant buffers can save you a 
  
 
  
-
-
-
-

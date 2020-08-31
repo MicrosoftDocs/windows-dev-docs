@@ -148,7 +148,7 @@ By default, push notifications expire three days from the time they are received
 For more information, see:
 
 -   [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
--   [Guidelines for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [Guidelines for push notifications](./windows-push-notification-services--wns--overview.md)
 -   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -157,15 +157,11 @@ For more information, see:
 
 * [Send a local tile notification](sending-a-local-tile-notification.md)
 * [Send a local toast notification](send-local-toast.md)
-* [Guidelines for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Guidelines for toast notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+* [Guidelines for push notifications](./windows-push-notification-services--wns--overview.md)
+* [Guidelines for toast notifications](./index.md)
 * [Periodic notification overview](periodic-notification-overview.md)
 * [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
 * [Windows app notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
-
-
-
-

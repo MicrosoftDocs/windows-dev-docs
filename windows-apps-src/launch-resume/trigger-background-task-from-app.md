@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Trigger a background task from within your app
 
-Learn how to use the [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) to activate a background task from within your app.
+Learn how to use the [ApplicationTrigger](/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) to activate a background task from within your app.
 
 For an example of how to create an Application trigger, see this [example](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
 
@@ -20,7 +20,7 @@ Use an **ApplicationTrigger** to run code in a separate process from the foregro
 
 ## Create an application trigger
 
-Create a new [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger). You could store it in a field as is done in the snippet below. This is for convenience so that we don't have to create a new instance later when we want to signal the trigger. But you can use any **ApplicationTrigger** instance to signal the trigger.
+Create a new [ApplicationTrigger](/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger). You could store it in a field as is done in the snippet below. This is for convenience so that we don't have to create a new instance later when we want to signal the trigger. But you can use any **ApplicationTrigger** instance to signal the trigger.
 
 ```csharp
 // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive
@@ -50,7 +50,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -69,7 +69,7 @@ For more in-depth information on conditions and types of background triggers, se
 
 ##  Call RequestAccessAsync()
 
-Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
+Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](../debug-test-perf/optimize-background-activity.md) for more information about the ways users can control the settings for background activity.
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -112,13 +112,13 @@ Background task registration parameters are validated at the time of registratio
 
 ## Trigger the background task
 
-Before you trigger the background task, use [BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) to verify that the background task is registered. A good time to verify that all of your background tasks are registered is during app launch.
+Before you trigger the background task, use [BackgroundTaskRegistration](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) to verify that the background task is registered. A good time to verify that all of your background tasks are registered is during app launch.
 
-Trigger the background task by calling [ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger). Any **ApplicationTrigger** instance will do.
+Trigger the background task by calling [ApplicationTrigger.RequestAsync](/uwp/api/windows.applicationmodel.background.applicationtrigger). Any **ApplicationTrigger** instance will do.
 
 Note that **ApplicationTrigger.RequestAsync** can't be called from the background task itself, or when the app is in the background running state (see [App lifecycle](app-lifecycle.md) for more information about application states).
-It may return [DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult) if the user has set energy or privacy policies that prevent the app from performing background activity.
-Also, only one AppTrigger can run at a time. If you attempt to run an AppTrigger while another is already running, the function will return [CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult).
+It may return [DisabledByPolicy](/uwp/api/windows.applicationmodel.background.applicationtriggerresult) if the user has set energy or privacy policies that prevent the app from performing background activity.
+Also, only one AppTrigger can run at a time. If you attempt to run an AppTrigger while another is already running, the function will return [CurrentlyRunning](/uwp/api/windows.applicationmodel.background.applicationtriggerresult).
 
 ```csharp
 var result = await _AppTrigger.RequestAsync();
@@ -126,9 +126,9 @@ var result = await _AppTrigger.RequestAsync();
 
 ## Manage resources for your background task
 
-Use [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.  
+Use [BackgroundExecutionManager.RequestAccessAsync](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](../debug-test-perf/optimize-background-activity.md) for more information about the ways users can control the settings for background activity.  
 
-- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
+- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](/uwp/api/windows.system.memorymanager) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
 - CPU time: Background tasks are limited by the amount of wall-clock usage time they get based on trigger type. Background tasks triggered by the Application trigger are limited to about 10 minutes.
 
 See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
@@ -137,7 +137,7 @@ See [Support your app with background tasks](support-your-app-with-background-ta
 
 Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks.
 
-A background task will only run using an **ApplicationTrigger** if you have called [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) first.
+A background task will only run using an **ApplicationTrigger** if you have called [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) first.
 
 ## Related topics
 
@@ -149,7 +149,7 @@ A background task will only run using an **ApplicationTrigger** if you have call
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Free memory when your app moves to the background](reduce-memory-usage.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](/previous-versions/hh974425(v=vs.110))
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Postpone app suspension with extended execution](run-minimized-with-extended-execution.md)
 * [Register a background task](register-a-background-task.md)

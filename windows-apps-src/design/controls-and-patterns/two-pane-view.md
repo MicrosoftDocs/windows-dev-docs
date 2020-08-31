@@ -17,18 +17,18 @@ ms.localizationpriority: medium
 While it works on all Windows devices, the TwoPaneView control is designed to help you take full advantage of dual-screen devices automatically, with no special coding needed. On a dual-screen device, the two-pane view ensures that the user interface (UI) is split cleanly when it spans the gap between screens, so that your content is presented on either side of the gap.
 
 > [!NOTE]
-> A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](/windows/uwp/design/layout/show-multiple-views) for more info about ways you can optimize your app for multiple monitors.)
+> A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](../layout/show-multiple-views.md) for more info about ways you can optimize your app for multiple monitors.)
 
 **Get the Windows UI Library**
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -68,7 +68,7 @@ The two-pane view has two panes where you place your content. It adjusts the siz
 
 You configure the two-pane view by setting the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) to specify which pane is shown when there is space for only one pane. Then, you specify whether `Pane1` is shown on the top or bottom for tall windows, or on the left or right for wide windows.
 
-The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](/windows/uwp/design/layout/layouts-with-xaml) and [Layout panels](/windows/uwp/design/layout/layout-panels) for more info about creating an adaptive UI.
+The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
 The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) manages the display of the panes based on the spanning state of the app.
 
@@ -86,7 +86,7 @@ The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) doesn't have 
 
 ### Add content to the panes
 
-Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](/windows/uwp/design/layout/layouts-with-xaml) and [Layout panels](/windows/uwp/design/layout/layout-panels) for more info about creating an adaptive UI.
+Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
 This example creates the the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
 
@@ -184,7 +184,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### Pane sizing
 
-On a single screen, the size of the panes is determined by the [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/uwp/api/windows.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](/windows/uwp/design/layout/layouts-with-xaml#layout-properties) for an explanation of auto and star sizing.
+On a single screen, the size of the panes is determined by the [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/uwp/api/windows.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
 
 By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its content. `Pane2Length` is set to `*` and it uses all the remaining space.
 

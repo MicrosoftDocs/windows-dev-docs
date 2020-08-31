@@ -47,7 +47,7 @@ To use the WinUI 3 for UWP project templates described in this article, configur
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Visual Studio 2019 - Configure a new project dialog":::
 
-    - **Package.appxmanifest**: Contains info the system needs to deploy, display, or update your app. For more details, see [App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)
+    - **Package.appxmanifest**: Contains info the system needs to deploy, display, or update your app. For more details, see [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-file-package-manifest.png" alt-text="Visual Studio 2019 - App package manifest":::
 

@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 
 Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows 10. This tutorial takes 10-20 minutes.
 
-> **Important APIs**: [Grid class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## Prerequisites
 - Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Click here to learn how to get set up with Visual Studio](../../get-started/get-set-up.md).
-- Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+- Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](../../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## Step 1: Create a blank app
 1. In Visual Studio menu, select **File** > **New Project**.
@@ -45,7 +45,7 @@ To start creating a layout, open **MainPage.xaml** by using the **Solution Explo
 
 The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "2\*" and "\*" respectively, so the **Grid** allocates two times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
 
-To learn about other methods of sizing rows and columns, see [Define layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+To learn about other methods of sizing rows and columns, see [Define layouts with XAML](./layouts-with-xaml.md).
 
 If you run the application now you won't see anything except a blank page, because none of the **Grid** areas have any content. To show the **Grid** let's give it some color.
 
@@ -114,6 +114,6 @@ And that's it! You've successfully created the layout for a simple weather appli
 If you like, try experimenting with the layout above, and explore different ways you might represent weather data.
 
 ## Related articles
-For an introduction to designing Windows app layouts, see [Introduction to Windows app design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+For an introduction to designing Windows app layouts, see [Introduction to Windows app design](../basics/design-and-ui-intro.md)
 
-To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)

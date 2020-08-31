@@ -48,7 +48,7 @@ To opt into the multi-user model:
 Developers can use KeyRoutedEventArgs.DeviceId, used by KeyUp and KeyDown routed events, to differentiate the events generated from different inputs.
 Using the Windows.System.UserDeviceAssociation.FindUserFromDeviceId method will help to identify the user associated to a specific input.
 
-See the [KeyRoutedEventArgs.DeviceId](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) topic for more information.
+See the [KeyRoutedEventArgs.DeviceId](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) topic for more information.
 
 
 ## Guidance on which model to choose

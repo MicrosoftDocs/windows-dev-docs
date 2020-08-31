@@ -95,7 +95,7 @@ UWP automatically maps existing keyboard input behavior to gamepad and remote co
 | Enter                 | A/Select button                       |
 | Escape                | B/Back button*                        |
 
-\*When neither the [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) nor [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) events for the B button are handled by the app, the [SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event will be fired, which should result in back navigation within the app. However, you have to implement this yourself, as in the following code snippet:
+\*When neither the [KeyDown](/uwp/api/windows.ui.xaml.uielement.keydown) nor [KeyUp](/uwp/api/windows.ui.xaml.uielement.keyup) events for the B button are handled by the app, the [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event will be fired, which should result in back navigation within the app. However, you have to implement this yourself, as in the following code snippet:
 
 ```csharp
 // This code goes in the MainPage class
@@ -152,12 +152,12 @@ The following table lists the accelerator support built into the UWP, as well as
 
 | Interaction   | Keyboard/Mouse   | Gamepad      | Built-in for:  | Recommended for: |
 |---------------|------------|--------------|----------------|------------------|
-| Page up/down  | Page up/down | Left/right triggers | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Views that support vertical scrolling
-| Page left/right | None | Left/right bumpers | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Views that support horizontal scrolling
+| Page up/down  | Page up/down | Left/right triggers | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Views that support vertical scrolling
+| Page left/right | None | Left/right bumpers | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Views that support horizontal scrolling
 | Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
 | Open/close nav pane | None | View | None | Navigation panes |
 | Search | None | Y button | None | Shortcut to the main search function in the app |
-| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Context menus |
+| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Context menus |
 
 ## XY focus navigation and interaction
 
@@ -174,7 +174,7 @@ If keyboard support is implemented properly, your app will work reasonably well;
 
 ### Debugging focus issues
 
-The [FocusManager.GetFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) method will tell you which element currently has focus. This is useful for situations where the location of the focus visual may not be obvious. You can log this information to the Visual Studio output window like so:
+The [FocusManager.GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) method will tell you which element currently has focus. This is useful for situations where the location of the focus visual may not be obvious. You can log this information to the Visual Studio output window like so:
 
 ```csharp
 page.GotFocus += (object sender, RoutedEventArgs e) =>
@@ -190,8 +190,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 There are three common reasons why XY navigation might not work the way you expect:
 
-* The [IsTabStop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop) or [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) property is set wrong.
-* The control getting focus is actually bigger than you think&mdash;XY navigation looks at the total size of the control ([ActualWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) and [ActualHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)), not just the portion of the control that renders something interesting.
+* The [IsTabStop](/uwp/api/windows.ui.xaml.controls.control.istabstop) or [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) property is set wrong.
+* The control getting focus is actually bigger than you think&mdash;XY navigation looks at the total size of the control ([ActualWidth](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) and [ActualHeight](/uwp/api/windows.ui.xaml.frameworkelement.actualheight)), not just the portion of the control that renders something interesting.
 * One focusable control is on top of another&mdash;XY navigation doesn't support controls that are overlapped.
 
 If XY navigation is still not working the way you expect after fixing these issues, you can manually point to the element that you want to get focus using the method described in [Overriding the default navigation](#overriding-the-default-navigation).
@@ -199,7 +199,7 @@ If XY navigation is still not working the way you expect after fixing these issu
 If XY navigation is working as intended but no focus visual is displayed, one of the following issues may be the cause:
 
 * You re-templated the control and didn't include a focus visual. Set `UseSystemFocusVisuals="True"` or add a focus visual manually.
-* You moved the focus by calling `Focus(FocusState.Pointer)`. The [FocusState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FocusState) parameter controls what happens to the focus visual. Generally you should set this to `FocusState.Programmatic`, which keeps the focus visual visible if it was visible before, and hidden if it was hidden before.
+* You moved the focus by calling `Focus(FocusState.Pointer)`. The [FocusState](/uwp/api/Windows.UI.Xaml.FocusState) parameter controls what happens to the focus visual. Generally you should set this to `FocusState.Programmatic`, which keeps the focus visual visible if it was visible before, and hidden if it was hidden before.
 
 The rest of this section goes into detail about common design challenges when using XY navigation, and offers several ways to solve them.
 
@@ -269,18 +269,18 @@ In the sample above, if the focus is on `Button` Two and the user navigates to t
 
 ### Path of least clicks
 
-Try to allow the user to perform the most common tasks in the least number of clicks. In the following example, the [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is placed between the **Play** button (which initially gets focus) and a commonly used element, so that an unnecessary element is placed in between priority tasks.
+Try to allow the user to perform the most common tasks in the least number of clicks. In the following example, the [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is placed between the **Play** button (which initially gets focus) and a commonly used element, so that an unnecessary element is placed in between priority tasks.
 
 ![Navigation best practices provide path with least clicks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-In the following example, the [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is placed above the **Play** button instead.
+In the following example, the [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is placed above the **Play** button instead.
 Simply rearranging the UI so that unnecessary elements are not placed in between priority tasks will greatly improve your app's usability.
 
 ![TextBlock moved above Play button so that it is no longer between priority tasks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
 ### CommandBar and ContextFlyout
 
-When using a [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar), keep in mind the issue of scrolling through a list as mentioned in [Problem: UI elements located after long scrolling list/grid](#problem-ui-elements-located-after-long-scrolling-list-grid). The following image shows a UI layout with the `CommandBar` on the bottom of a list/grid. The user would need to scroll all the way down through the list/grid to reach the `CommandBar`.
+When using a [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar), keep in mind the issue of scrolling through a list as mentioned in [Problem: UI elements located after long scrolling list/grid](#problem-ui-elements-located-after-long-scrolling-list-grid). The following image shows a UI layout with the `CommandBar` on the bottom of a list/grid. The user would need to scroll all the way down through the list/grid to reach the `CommandBar`.
 
 ![CommandBar at bottom of list/grid](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
@@ -288,7 +288,7 @@ What if you put the `CommandBar` *above* the list/grid? While a user who scrolle
 
 While you can't stack a `CommandBar`'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.
 
-If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) and is the [context menu](../controls-and-patterns/dialogs-and-flyouts/index.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
+If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) and is the [context menu](../controls-and-patterns/dialogs-and-flyouts/index.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
 
 ### UI layout challenges
 
@@ -309,7 +309,7 @@ The following is an imaginary real estate app which shows a list of houses avail
 
 #### Problem: UI elements located after long scrolling list/grid <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-The [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) of properties shown in the following image is a very long scrolling list. If [engagement](#focus-engagement) is *not* required on the `ListView`, when the user navigates to the list, focus will be placed on the first item in the list. For the user to reach the **Previous** or **Next** button, they must go through all the items in the list. In cases like this where requiring the user to traverse the entire list is painful&mdash;that is, when the list is not short enough for this experience to be acceptable&mdash;you may want to consider other options.
+The [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) of properties shown in the following image is a very long scrolling list. If [engagement](#focus-engagement) is *not* required on the `ListView`, when the user navigates to the list, focus will be placed on the first item in the list. For the user to reach the **Previous** or **Next** button, they must go through all the items in the list. In cases like this where requiring the user to traverse the entire list is painful&mdash;that is, when the list is not short enough for this experience to be acceptable&mdash;you may want to consider other options.
 
 ![Real estate app: list with 50 items takes 51 clicks to reach buttons below](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -332,7 +332,7 @@ When engagement is *required*, the entire `ListView` becomes a single focus targ
 #### Problem: ScrollViewer without any focusable elements
 
 Because XY focus navigation relies on navigating to one focusable UI element at a time,
-a [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`.
+a [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`.
 For solutions to this and other related scenarios, see [Focus engagement](#focus-engagement).
 
 ![Real estate app: ScrollViewer with only text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
@@ -347,8 +347,8 @@ In such cases, you can turn on [mouse mode](#mouse-mode) to allow the user to na
 ## Mouse mode
 
 As described in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction), on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right.
-However, some controls, such as [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) and
-[MapControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl),
+However, some controls, such as [WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView) and
+[MapControl](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl),
 require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control.
 There are also some apps where it makes sense for the user to be able to move the pointer across the entire page, having an experience with gamepad/remote similar to what users can find on a PC with a mouse.
 
@@ -382,7 +382,7 @@ The following diagram shows the button mappings for gamepad/remote in mouse mode
 > [!NOTE]
 > Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.
 
-Use the [RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) property on a control or page to activate mouse mode on it. This property has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
+Use the [RequiresPointer](/uwp/api/windows.ui.xaml.controls.requirespointer) property on a control or page to activate mouse mode on it. This property has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
 
 ### Activating mouse mode on a control
 
@@ -415,7 +415,7 @@ When a page has the property `RequiresPointer="WhenFocused"`, mouse mode will be
 ```
 
 > [!NOTE]
-> The `WhenFocused` value is only supported on [Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) objects. If you try to set this value on a control, an exception will be thrown.
+> The `WhenFocused` value is only supported on [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) objects. If you try to set this value on a control, an exception will be thrown.
 
 ### Disabling mouse mode for full screen content
 
@@ -453,7 +453,7 @@ An exception to this rule would be for full-screen experiences, such as watching
 
 Reveal focus is a lighting effect that animates the border of focusable elements, such as a button, when the user moves gamepad or keyboard focus to them. By animating the glow around the border of the focused elements, Reveal focus gives users a better understanding of where focus is and where focus is going.
 
-Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind) in your app constructor.
+Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the [Application.FocusVisualKind property](/uwp/api/windows.ui.xaml.application.FocusVisualKind) in your app constructor.
 
 ```csharp
     if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -462,13 +462,13 @@ Reveal focus is off by default. For 10 foot experiences you should opt-in to rev
     }
 ```
 
-For more information see the guidance for [Reveal focus](/windows/uwp/design/style/reveal-focus).
+For more information see the guidance for [Reveal focus](../style/reveal-focus.md).
 
 ### Customizing the focus visual
 
 If you'd like to customize the focus visual, you can do so by modifying the properties related to the focus visual for each control. There are several such properties that you can take advantage of to personalize your app.
 
-You can even opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState).
+You can even opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see [VisualState](/uwp/api/Windows.UI.Xaml.VisualState).
 
 ### Light dismiss overlay
 
@@ -481,7 +481,7 @@ Focus engagement is intended to make it easier to use a gamepad or remote to int
 > [!NOTE]
 > Setting focus engagement does not impact keyboard or other input devices.
 
-When the property `IsFocusEngagementEnabled` on a [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) object is set to `True`, it marks the control as requiring focus engagement. This means that the user must press the **A/Select** button to "engage" the control and interact with it. When they are finished, they can press the **B/Back** button to disengage the control and navigate out of it.
+When the property `IsFocusEngagementEnabled` on a [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) object is set to `True`, it marks the control as requiring focus engagement. This means that the user must press the **A/Select** button to "engage" the control and interact with it. When they are finished, they can press the **B/Back** button to disengage the control and navigate out of it.
 
 > [!NOTE]
 > `IsFocusEngagementEnabled` is a new API and not yet documented.
@@ -495,7 +495,7 @@ The following example shows UI that creates focus trapping.
 ![Buttons to the left and right of a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
 If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice.
-However, if the [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the `Slider`, and when they press right again, the `Slider`'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.
+However, if the [Slider](/uwp/api/Windows.UI.Xaml.Controls.Slider) doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the `Slider`, and when they press right again, the `Slider`'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.
 
 There are several approaches to getting around this issue. One is to design a different layout, similar to the real estate app example in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) where we relocated the **Previous** and **Next** buttons above the `ListView`. Stacking the controls vertically instead of horizontally as in the following image would solve the problem.
 
@@ -511,12 +511,12 @@ When the `Slider` requires focus engagement, the user can get to the button on t
 
 ### Items controls
 
-Aside from the [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) control, there are other controls which you may want to require engagement, such as:
+Aside from the [Slider](/uwp/api/Windows.UI.Xaml.Controls.Slider) control, there are other controls which you may want to require engagement, such as:
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-- [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView)
 
 Unlike the `Slider` control, these controls don't trap focus within themselves; however, they can cause usability issues when they contain large amounts of data. The following is an example of a `ListView` that contains a large amount of data.
 
@@ -536,7 +536,7 @@ they will not be able to scroll through the list or choose an item from it unles
 
 #### ScrollViewer
 
-Slightly different from these controls is the [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer),
+Slightly different from these controls is the [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer),
 which has its own quirks to consider. If you have a `ScrollViewer` with focusable content, by default navigating to the `ScrollViewer` will allow you to move through its focusable elements. Like in a `ListView`, you must scroll through each item to navigate outside of the `ScrollViewer`.
 
 If the `ScrollViewer` has *no* focusable content&mdash;for example, if it only contains text&mdash;you can set `IsFocusEngagementEnabled="True"` so the user can engage the `ScrollViewer` by using the **A/Select** button. After they have engaged, they can scroll through the text by using the **D-pad/left stick**, and then press the **B/Back** button to disengage when they're finished.

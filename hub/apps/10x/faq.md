@@ -20,7 +20,7 @@ Windows 10X is a product line in the Windows family optimized for use on dual-sc
  
 *[Pre-release product shown, screens simulated and subject to change]*
 
-For more information about building dual-screen experiences and Windows 10X, check out the virtual sessions from the [Microsoft 365 Dev Day](https://developer.microsoft.com/microsoft-365/virtual-events), or the [dual-screen developer docs](https://docs.microsoft.com/dual-screen/). For at-a-glance information, here are answers to some questions you might have.
+For more information about building dual-screen experiences and Windows 10X, check out the virtual sessions from the [Microsoft 365 Dev Day](https://developer.microsoft.com/microsoft-365/virtual-events), or the [dual-screen developer docs](/dual-screen/). For at-a-glance information, here are answers to some questions you might have.
 
 ### How is this different from developing for Windows 10?
 
@@ -36,7 +36,7 @@ Windows 10X will be released to accompany the Surface Neo and other third-party 
 
 ### When can I start development for Windows 10X?
 
-You can download the [Microsoft Emulator and the Windows 10X Emulator Image](https://docs.microsoft.com/dual-screen/windows/get-dev-tools) today. We will continue to improve this emulator, and complement it with support for other Windows 10X-enabled devices. These emulators, combined with prerelease versions of the Windows SDK, will allow you to develop for Windows 10X before the first dual-screen device is publicly released.
+You can download the [Microsoft Emulator and the Windows 10X Emulator Image](/dual-screen/windows/get-dev-tools) today. We will continue to improve this emulator, and complement it with support for other Windows 10X-enabled devices. These emulators, combined with prerelease versions of the Windows SDK, will allow you to develop for Windows 10X before the first dual-screen device is publicly released.
 
 ### Will my Universal Windows Platform (UWP) apps run on Windows 10X?
 
@@ -52,4 +52,4 @@ As Windows 10X continues its prerelease development, we will release documentati
 
 ### If I enhance my app with Windows 10X features, will it still run on devices running desktop Windows 10?
 
-Apps designed for Windows 10X still work on devices that run the desktop version of Windows 10, though these new Windows APIs won't be added to desktop versions of Windows 10 until the next major version update. Just as if you were developing an app supported on multiple versions of desktop Windows 10, follow [adaptive coding best practices](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code) to ensure that your app works gracefully on both 10X and desktop Windows 10. 
+Apps designed for Windows 10X still work on devices that run the desktop version of Windows 10, though these new Windows APIs won't be added to desktop versions of Windows 10 until the next major version update. Just as if you were developing an app supported on multiple versions of desktop Windows 10, follow [adaptive coding best practices](/windows/uwp/debug-test-perf/version-adaptive-code) to ensure that your app works gracefully on both 10X and desktop Windows 10.

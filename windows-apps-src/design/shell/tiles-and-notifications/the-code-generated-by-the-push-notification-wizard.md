@@ -36,7 +36,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## Registration for push notifications
 
 
-In push.register.\*, the UploadChannel method registers the device to receive push notifications. The Store tracks installed instances of your app and provides the push notification channel. See [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+In push.register.\*, the UploadChannel method registers the device to receive push notifications. The Store tracks installed instances of your app and provides the push notification channel. See [**PushNotificationChannelManager**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 The client code is similar for both the JavaScript backend and the .NET backend. By default, when you add push notifications for a JavaScript backend service, a sample call to notifyAllUsers custom API is inserted into the UploadChannel method.
 
@@ -168,9 +168,9 @@ Push notification tags provide a way to restrict notifications to a subset of cl
 ## Server-side scripts (JavaScript backend only)
 
 
-For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context. See [Azure Mobile Services REST API Reference](https://msdn.microsoft.com/library/azure/jj710108.aspx).
+For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context. See [Azure Mobile Services REST API Reference](/previous-versions/azure/reference/jj710108(v=azure.100)).
 
-A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](https://msdn.microsoft.com/library/azure/dn167708.aspx). For a reference to all available functions, see [Mobile Services server script reference](https://msdn.microsoft.com/library/windowsazure/jj554226).
+A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](https://msdn.microsoft.com/library/azure/dn167708.aspx). For a reference to all available functions, see [Mobile Services server script reference](/previous-versions/azure/reference/jj554226(v=azure.100)).
 
 The following custom API code in Notifyallusers.js is also created:
 
@@ -210,24 +210,24 @@ The sendNotifications function sends a single notification as a toast notificati
 
 Windows supports notifications that aren't push notifications. For general information about notifications, see [Choosing a notification delivery method](choosing-a-notification-delivery-method.md).
 
-Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)).
+Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](/previous-versions/windows/apps/hh868259(v=win.10)).
 
 Because Windows responds to push notifications, it can handle most of these notifications when the app isn't running. For example, a push notification could let a user know when a new mail message is available even when the local mail app isn't running. Windows handles a toast notification by displaying a message, such as the first line of a text message. Windows handles a tile or badge notification by updating an app's live tile to reflect the number of new mail messages. In this way, you can prompt users of your app to check it for new information. Your app can receive raw notifications when it's running, and you can use them to send data to your app. If your app isn't running, you can set up a background task to monitor push notifications.
 
-You should use push notifications according to the guidelines for Windows apps, because those notifications use up a user's resources and can be distracting if overused. See [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview).
+You should use push notifications according to the guidelines for Windows apps, because those notifications use up a user's resources and can be distracting if overused. See [Guidelines and checklist for push notifications](./windows-push-notification-services--wns--overview.md).
 
-If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles).
+If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](./creating-tiles.md).
 
 ## Next steps
 
 
 ### Using the Windows Push Notification Services (WNS)
 
-You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) or [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10)).
+You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](/previous-versions/windows/apps/hh465407(v=win.10)) or [(C#/C++/VB)](/previous-versions/windows/apps/hh868206(v=win.10)).
 
-You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/).
+You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](/azure/).
 
-**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Running the wizard more than once per project generates code that results in overlapping calls to the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) method, which leads to a runtime exception. If you want to register for push notifications for more than one mobile service, run the wizard once and then rewrite the registration code to ensure that calls to **CreatePushNotificationChannelForApplicationAsync** do not run at the same time. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
+**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Running the wizard more than once per project generates code that results in overlapping calls to the [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) method, which leads to a runtime exception. If you want to register for push notifications for more than one mobile service, run the wizard once and then rewrite the registration code to ensure that calls to **CreatePushNotificationChannelForApplicationAsync** do not run at the same time. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
 
  
 
@@ -236,13 +236,9 @@ You can also send push notifications by running a scheduled task in your mobile 
 
 * [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
 * [Raw notification overview](raw-notification-overview.md)
-* [Connecting to Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [Quickstart: Adding push notifications for a mobile service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [Connecting to Windows Azure Mobile Services (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
+* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
+* [Quickstart: Adding push notifications for a mobile service (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  
-
-
-
-

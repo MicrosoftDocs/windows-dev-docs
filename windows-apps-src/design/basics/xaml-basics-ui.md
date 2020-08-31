@@ -179,7 +179,7 @@ To add a control by using the XAML editor:
     </RelativePanel>
     ```
 
-    For more info about layout using `RelativePanel`, see [Layout panels](/windows/uwp/layout/layout-panels#relativepanel).
+    For more info about layout using `RelativePanel`, see [Layout panels](../layout/layout-panels.md#relativepanel).
 
 2. Below the `TextBlock` element, add a `GridView` control named **ImageGridView**. Set the `RelativePanel` _attached properties_ to place the control below the title text and make it stretch across the entire width of the screen.
 
@@ -207,7 +207,7 @@ To add a control by using the XAML editor:
     </RelativePanel>
     ```
 
-    For more info about panel attached properties, see [Layout panels](/windows/uwp/layout/layout-panels).
+    For more info about panel attached properties, see [Layout panels](../layout/layout-panels.md).
 
 3. For the `GridView` control to show anything, you need to give it a collection of data to show. Open **MainPage.xaml.cs** and find the `GetItemsAsync` method. This method populates a collection called **Images**, which is a property that we've added to **MainPage**.
 
@@ -226,7 +226,7 @@ This is a good place to run the app and make sure everything's working. It shoul
 You'll notice that the app isn't showing images yet. By default, it shows the `ToString` value of the data type that's in the collection. Next, you'll create a data template to define how the data is shown.
 
 > [!NOTE]
-> You can learn more about layout using `RelativePanel` in the [Layout panels](/windows/uwp/layout/layout-panels#relativepanel) article. Take a look, and then experiment with some different layouts by setting `RelativePanel` attached properties on `TextBlock` and `GridView`.
+> You can learn more about layout using `RelativePanel` in the [Layout panels](../layout/layout-panels.md#relativepanel) article. Take a look, and then experiment with some different layouts by setting `RelativePanel` attached properties on `TextBlock` and `GridView`.
 
 ## Part 3: Add a DataTemplate object to display your data
 
@@ -261,7 +261,7 @@ To add a data template to a grid view:
       NavigationCacheMode="Enabled">
     ```
 
-    For more info about XAML namespaces, see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    For more info about XAML namespaces, see [XAML namespaces and namespace mapping](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md).
 
 3. In Document Outline, right-click **ImageGridView**. On the shortcut menu, select **Edit Additional Templates** > **Edit Generated Items (ItemTemplate)** > **Create Empty**. The **Create Resource** dialog box opens.
 
@@ -311,7 +311,7 @@ To add a data template to a grid view:
     </Grid>
     ```
 
-    For more info about `Grid` layouts, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#grid).
+    For more info about `Grid` layouts, see [Layout panels](../layout/layout-panels.md#grid).
 
 6. Add controls to the `Grid` layout.
 
@@ -319,7 +319,7 @@ To add a data template to a grid view:
 
     b. Add `TextBlock` controls to show the image's name, file type, and dimensions. For this, you use `StackPanel` controls to arrange the text blocks. Use the `Grid.Row` attached property to place the outermost `StackPanel` in the second row (row 1).
 
-    For more info about `StackPanel` layout, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel).
+    For more info about `StackPanel` layout, see [Layout panels](../layout/layout-panels.md#stackpanel).
 
     c. Add the `RatingControl` to the outer (vertical) `StackPanel` control. Place it after the inner (horizontal) `StackPanel` control.
 

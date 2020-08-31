@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
 
-> **Important APIs**: [**PopInThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation), [**PopupThemeTransition class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+> **Important APIs**: [**PopInThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation), [**PopupThemeTransition class**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## Do's and don'ts
@@ -27,17 +27,13 @@ Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI
 
 ## Related articles
 
-* [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animating pop-up UI](https://docs.microsoft.com/previous-versions/windows/apps/jj649433(v=win.10))
-* [Quickstart: Animating your UI using library animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**PopInThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
-* [**PopOutThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
-* [**PopupThemeTransition class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+* [Animations overview](./xaml-animation.md)
+* [Animating pop-up UI](/previous-versions/windows/apps/jj649433(v=win.10))
+* [Quickstart: Animating your UI using library animations](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**PopInThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
+* [**PopOutThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
+* [**PopupThemeTransition class**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
  
 
  
-
-
-
-
