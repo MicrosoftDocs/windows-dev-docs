@@ -29,7 +29,7 @@ You can use Device Portal to do the following:
 Starting in Windows 10, version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
 > [!IMPORTANT]
-> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
+> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
 ### Turn on Device Portal
 
@@ -112,11 +112,11 @@ From an administrative command prompt, you can enable and configure parts of Dev
 - `-DeleteSSL` 
 	- This resets the SSL certificate cache used for HTTPS connections. If you encounter TLS connection errors that cannot be bypassed (as opposed to the expected certificate warning), this option may fix the problem for you. 
 - `-SetCert <pfxPath> <pfxPassword>`
-	- See [Provisioning Device Portal with a custom SSL certificate](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl) for details.  
+	- See [Provisioning Device Portal with a custom SSL certificate](./device-portal-ssl.md) for details.  
 	- This allows you to install your own SSL certificate to fix the SSL warning page that is typically seen in Device Portal. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-	- See the [MSDN Magazine article](https://msdn.microsoft.com/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
+	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](./device-portal-plugin.md). 
+	- See the [MSDN Magazine article](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in) for details on how to run this as System to fully test your packaged plugin.
 
 ## Troubleshooting
 
@@ -145,4 +145,4 @@ You may get this error if you're on a metered internet connection. You won't be 
 ## See also
 
 * [Windows Device Portal overview](device-portal.md)
-* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal core API reference](./device-portal-api-core.md)

@@ -26,11 +26,11 @@ Displaying images at their non-native sizes can negatively impact both CPU time 
 
 #### Image is not being set asynchronously
 
-App is using SetSource() instead of SetSourceAsync(). You should always avoid using [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) and instead use [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) when setting a stream to decode images asynchronously. 
+App is using SetSource() instead of SetSourceAsync(). You should always avoid using [**SetSource**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) and instead use [**SetSourceAsync**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) when setting a stream to decode images asynchronously. 
 
 #### Image is being called when the ImageSource is not in the live tree
 
-The BitmapImage is connected to the live XAML tree after setting the content with SetSourceAsync or UriSource. You should always attach a [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below. 
+The BitmapImage is connected to the live XAML tree after setting the content with SetSourceAsync or UriSource. You should always attach a [**BitmapImage**](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below. 
 
 **Live tree examples**
 
@@ -66,7 +66,7 @@ myImage.Source = bitmapImage;
 
 When an image is used for a non-rectangular brush, the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. For example, if an image is used as a brush for an ellipse, the potentially large full image will be stored twice internally. When using a non-rectangular brush, your app should pre-scale its images to approximately the size they will be rendered at.
 
-Alternatively, you can set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
+Alternatively, you can set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
 
 ```xml
 <Image>
@@ -77,21 +77,21 @@ Alternatively, you can set an explicit decode size to create a version of the im
 </Image>
 ```
 
-The units for [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) are by default physical pixels. The [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for example, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control that the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself, and you should listen for scale change notifications in case the user changes their display preferences.
+The units for [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) are by default physical pixels. The [**DecodePixelType**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for example, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control that the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself, and you should listen for scale change notifications in case the user changes their display preferences.
 
 In some cases where an appropriate decode size cannot be determined ahead of time, you should defer to XAML’s automatic right-size-decoding, which will make a best effort attempt to decode the image at the appropriate size if an explicit DecodePixelWidth/DecodePixelHeight is not specified.
 
-You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control, and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
+You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control, and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
 
 Note that Image.Stretch should be considered when determining the size of the decoded content.
 
 #### Images used inside of BitmapIcons fall back to decoding to natural size 
 
-Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
+Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
 
 #### Images that appear extremely large on screen fall back to decoding to natural size 
 
-Images that appear extremely large on screen fall back to decoding to natural size. Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
+Images that appear extremely large on screen fall back to decoding to natural size. Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
 
 #### Image is hidden
 
@@ -99,7 +99,7 @@ The image is hidden via setting Opacity to 0 or Visibility to Collapsed on the h
 
 #### Image is using NineGrid property
 
-When an image is used for a [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. When using **NineGrid**, your app should pre-scale its images to approximately the size they will be rendered at.
+When an image is used for a [**NineGrid**](/uwp/api/windows.ui.xaml.controls.image.ninegrid), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. When using **NineGrid**, your app should pre-scale its images to approximately the size they will be rendered at.
 
 Images that use the NineGrid property fall back to decoding to natural size. Consider adding the ninegrid effect to the original image.
 
@@ -109,7 +109,7 @@ If DecodePixelWidth/Height are explicitly set larger than the image that will be
 
 #### Image is decoded as part of producing a Drag and Drop image
 
-Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
+Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) and [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) properties.
 
 ## Collapsed elements at load time
 
@@ -127,7 +127,7 @@ This rule was triggered because an element was collapsed at load time. Collapsin
 
 ### Solution
 
-Using [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute), you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible in the first frame. You can opt to load the element when needed, or as part of a set of delayed logic. To trigger loading, call findName on the element you wish to load. x:Load extends the capabilities of x:DeferLoadStrategy enabling elements to be unloaded, and for the loading state to be controlled via x:Bind.
+Using [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md), you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible in the first frame. You can opt to load the element when needed, or as part of a set of delayed logic. To trigger loading, call findName on the element you wish to load. x:Load extends the capabilities of x:DeferLoadStrategy enabling elements to be unloaded, and for the loading state to be controlled via x:Bind.
 
 In some cases, using findName to show a piece of UI may not be the answer. This is true if you are expecting to realize a significant piece of UI on the click of a button with very low latency. In this case, you may want to trade off faster UI latency at the cost of additional memory, if so you should use x:DeferLoadStrategy and set Visibility to Collapsed on the element you wish to realize. After the page has been loaded and the UI thread is free, you can call findName when necessary to load the elements. The elements won't be visible to the user until you set the Visibility of the element to Visible.
 
@@ -135,7 +135,7 @@ In some cases, using findName to show a piece of UI may not be the answer. This 
 
 UI virtualization is the most important improvement you can make to improve collection performance. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time because they can't all be displayed at the same time. ListView and GridView (and other standard ItemsControl-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
 
-UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) and [ListView and Gridview data virtualization](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](./optimize-gridview-and-listview.md) and [ListView and Gridview data virtualization](./listview-and-gridview-data-optimization.md).
 
 ### Impact
 
@@ -153,7 +153,7 @@ Restore virtualization by setting a width and height on the ItemsControl you are
 
 UI thread blocking refers to synchronous calls to functions executing off-thread that block the UI thread.  
 
-For a full list of best practices to improve your app's startup performance, see [Best practices for your app's startup performance](https://docs.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance) and [Keep the UI thread responsive](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive).
+For a full list of best practices to improve your app's startup performance, see [Best practices for your app's startup performance](./best-practices-for-your-app-s-startup-performance.md) and [Keep the UI thread responsive](./keep-the-ui-thread-responsive.md).
 
 ### Impact
 
@@ -207,7 +207,7 @@ If you provide a custom items panel template (see ItemsPanel), make sure you use
 
 UI virtualization is the most important improvement you can make to improve collection performance. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time because they can't all be displayed at the same time. ListView and GridView (and other standard ItemsControl-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
 
-UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) and [ListView and Gridview data virtualization](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](./optimize-gridview-and-listview.md) and [ListView and Gridview data virtualization](./listview-and-gridview-data-optimization.md).
 
 ### Impact
 
@@ -256,5 +256,3 @@ UIA elements with the same UIA parent have the same Name and ControlType.
 ### Solution
 
 Set a name in XAML using AutomationProperties.Name. In lists where this commonly occurs, use binding to bind the value of the AutomationProperties.Name to a data source.
-
-

@@ -39,8 +39,8 @@ The other type of form allows the user to choose when to submit data with a clic
 This type of form gives the user flexibility in responding. Typically, this type of form contains more free form input fields, and thus receives a greater variety of responses. To ensure valid user input and properly formatted data upon submission, consider the following recommendations:
 
 - Make it impossible to submit invalid information by using the correct control (i.e., use a CalendarDatePicker rather than a TextBox for calendar dates). See more on selecting the appropriate input controls in your form in the Input Controls section later.
-- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) property.
-- Provide users with the appropriate on-screen keyboard by stating the expected input of a control with the [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) property.
+- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) property.
+- Provide users with the appropriate on-screen keyboard by stating the expected input of a control with the [InputScope](/uwp/api/windows.ui.xaml.input.inputscope) property.
 - Mark required input with an asterisk * on the label.
 - Disable the submit button until all required information is filled in.
 - If there is invalid data upon submission, mark the controls with invalid input with highlighted fields or borders, and require the user to resubmit the form.
@@ -52,7 +52,7 @@ This type of form gives the user flexibility in responding. Typically, this type
 To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms. 
 
 ### Labels
-[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
+[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
 
 To [design for accessibility](../accessibility/accessibility.md), label all individual and groups of controls for clarity for both human and screen readers. 
 
@@ -122,8 +122,8 @@ Control | Use | Example
 Control | Use | Example
 - | - | -
 [ComboBox](combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Arrange and browse image-based collections | Pick a photo, color, display theme
+[ListView](./lists.md#list-views) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
+[GridView](./lists.md#grid-views) | Arrange and browse image-based collections | Pick a photo, color, display theme
 
 ### Numeric input
 Control | Use | Example

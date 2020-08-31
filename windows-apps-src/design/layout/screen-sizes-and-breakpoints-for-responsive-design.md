@@ -84,7 +84,7 @@ UWP apps automatically scale your UI to guarantee that your app will be legible 
 - Use up to two columns/regions.
 - Show the search box.
 - Put the [navigation pane](../controls-and-patterns/navigationview.md) into sliver mode so a narrow strip of icons always shows.
-- Consider further tailoring for [TV experiences](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
+- Consider further tailoring for [TV experiences](../devices/designing-for-tv.md).
 
 ### Large
 - Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.

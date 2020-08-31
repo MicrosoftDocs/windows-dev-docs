@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 ## Creating a device object
 
-Once you have identified the PointOfService device that you want to use, either from a fresh enumeration or a stored DeviceID, you just call [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) with the[**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) that you have chosen programmatically or the user has selected to create a new Point of Service device object.
+Once you have identified the PointOfService device that you want to use, either from a fresh enumeration or a stored DeviceID, you just call [**FromIdAsync**](/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) with the[**DeviceID**](/uwp/api/windows.devices.enumeration.deviceinformation.id) that you have chosen programmatically or the user has selected to create a new Point of Service device object.
 
 This sample attempts to create a new BarcodeScanner object with FromIdAsync using a DeviceID. If there is a failure creating the object a debug message is written.
 

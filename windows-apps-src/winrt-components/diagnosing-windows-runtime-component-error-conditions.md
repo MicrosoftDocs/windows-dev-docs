@@ -10,13 +10,13 @@ ms.localizationpriority: medium
 
 # Diagnosing Windows Runtime Component error conditions
 
-This article provides additional information about restrictions on Windows Runtime components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool), and complements the information on restrictions that is provided in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+This article provides additional information about restrictions on Windows Runtime components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool), and complements the information on restrictions that is provided in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 This article doesn’t cover all errors. The errors discussed here are grouped by general category, and each category includes a table of associated error messages. Search for message text (omitting specific values for placeholders) or for message number. If you don’t find the information you need here, please help us improve the documentation by using the feedback button at the end of this article. Include the error message. Alternatively, you can file a bug at the Microsoft Connect website.
 
 ## Error message for implementing async interface provides incorrect type
 
-Managed Windows Runtime components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)). Instead, .NET provides the [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime) class for generating async operations in Windows Runtime components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. .NET no longer includes the AsyncInfoFactory class.
+Managed Windows Runtime components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](/uwp/api/Windows.Foundation.IAsyncOperation_TResult_), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)). Instead, .NET provides the [AsyncInfo](/dotnet/api/system.runtime.interopservices.windowsruntime) class for generating async operations in Windows Runtime components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. .NET no longer includes the AsyncInfoFactory class.
 
 | Error number | Message Text|       
 |--------------|-------------|
@@ -93,13 +93,13 @@ A type in a Windows Runtime Component cannot have a name that is the same as a n
 
 The public interface of your component must expose only UWP types. However, .NET provides mappings for a number of commonly used types that are slightly different in .NET and the UWP. This enables the .NET developer to work with familiar types instead of learning new ones. You can use these mapped .NET types in the public interface of your component. See "Declaring types in Windows Runtime components" and "Passing Universal Windows Platform types to managed code" in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md), and [.NET mappings of Windows Runtime types](net-framework-mappings-of-windows-runtime-types.md).
 
-Many of these mappings are interfaces. For example, [IList&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1) maps to the UWP interface [IVector&lt;T&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector_T_). If you use List&lt;string&gt; (`List(Of String)` in Visual Basic) instead of IList&lt;string&gt; as a parameter type, Winmdexp.exe provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) in Visual Basic), Winmdexp.exe offers choices for each level of nesting. These lists can become quite long.
+Many of these mappings are interfaces. For example, [IList&lt;T&gt;](/dotnet/api/system.collections.generic.ilist-1) maps to the UWP interface [IVector&lt;T&gt;](/uwp/api/Windows.Foundation.Collections.IVector_T_). If you use List&lt;string&gt; (`List(Of String)` in Visual Basic) instead of IList&lt;string&gt; as a parameter type, Winmdexp.exe provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) in Visual Basic), Winmdexp.exe offers choices for each level of nesting. These lists can become quite long.
 
 In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.
 
 > **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
-> **Caution**  Avoid using the non-generic [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) and [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) and [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
+> **Caution**  Avoid using the non-generic [IList](/dotnet/api/system.collections.ilist) and [IEnumerable](/dotnet/api/system.collections.ienumerable) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](/uwp/api/windows.ui.xaml.interop.ibindablevector) and [IBindableIterator](/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
 
  
 
@@ -169,7 +169,7 @@ In the UWP, arrays in member signatures must be one-dimensional with a lower bou
 ## Array parameters must specify whether array contents are readable or writable
 
 
-In the UWP, parameters must be read-only or write-only. Parameters cannot be marked **ref** (**ByRef** without the [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) attribute in Visual Basic). This applies to the contents of arrays, so array parameters must indicate whether the array contents are read-only or write-only. The direction is clear for **out** parameters (**ByRef** parameter with the OutAttribute attribute in Visual Basic), but array parameters that are passed by value (ByVal in Visual Basic) must be marked. See [Passing arrays to a Windows Runtime Component](passing-arrays-to-a-windows-runtime-component.md).
+In the UWP, parameters must be read-only or write-only. Parameters cannot be marked **ref** (**ByRef** without the [OutAttribute](/dotnet/api/system.runtime.interopservices.outattribute) attribute in Visual Basic). This applies to the contents of arrays, so array parameters must indicate whether the array contents are read-only or write-only. The direction is clear for **out** parameters (**ByRef** parameter with the OutAttribute attribute in Visual Basic), but array parameters that are passed by value (ByVal in Visual Basic) must be marked. See [Passing arrays to a Windows Runtime Component](passing-arrays-to-a-windows-runtime-component.md).
 
 | Error number | Message Text         |
 |--------------|----------------------|
@@ -207,7 +207,7 @@ In the UWP, return values are considered to be output parameters, and the names 
 
 > **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
 
-JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute) attribute.
+JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute) attribute.
 
 | Error number | Message Text |
 |--------------|--------------|
@@ -219,4 +219,4 @@ JavaScript code can access the output parameters of a method by name, including 
 ## Related topics
 
 * [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)
+* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)

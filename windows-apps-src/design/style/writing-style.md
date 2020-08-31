@@ -76,7 +76,7 @@ An error occured, and we weren't able to upload the picture. Please try again, a
 
 ## Style conventions
 
-If you don't consider yourself to be a writer, it can be intimidating to try to implement these principles and recommendations. But don't worry — using simple and straightforward language is a great way to provide a good user experience. And if you're still unsure how to structure your words, here are some helpful guidelines. And if you want more information, check out the [Microsoft Style Guide](https://docs.microsoft.com/style-guide/welcome/).
+If you don't consider yourself to be a writer, it can be intimidating to try to implement these principles and recommendations. But don't worry — using simple and straightforward language is a great way to provide a good user experience. And if you're still unsure how to structure your words, here are some helpful guidelines. And if you want more information, check out the [Microsoft Style Guide](/style-guide/welcome/).
 
 ### Addressing the user
 
@@ -231,7 +231,7 @@ The same general principles and recommendations apply when writing text for spok
 
 ## Accessibility and localization
 
-Your app can reach a wider audience if it's written with accessibility and localization in mind. This is something that can't only be accomplished through text, though straightforward and friendly language is a great start. For more information, see our [accessibility overview](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview) and [localization guidelines](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal).
+Your app can reach a wider audience if it's written with accessibility and localization in mind. This is something that can't only be accomplished through text, though straightforward and friendly language is a great start. For more information, see our [accessibility overview](../accessibility/accessibility-overview.md) and [localization guidelines](../globalizing/globalizing-portal.md).
 
 * **Be ready to lend a hand** by taking different experiences into account. Avoid phrases that might not make sense to an international audience, and don't use words that make assumptions about what the user can and can't do.
 

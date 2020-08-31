@@ -14,7 +14,7 @@ ms.custom: RS5, 19H1
 
 This is the second part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 1](modernize-wpf-tutorial-1.md).
 
-In the fictional scenario of this tutorial, the Contoso development team wants to add support for digital signatures to the Contoso Expenses app. The UWP **InkCanvas** control is a great option for this scenario, because it supports digital ink and AI-powered features like the capability to recognize text and shapes. To do this, you will use the [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control available in the Windows Community Toolkit. This control wraps the interface and functionality of the UWP **InkCanvas** control for use in a WPF app. For more details about wrapped UWP controls, see [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md).
+In the fictional scenario of this tutorial, the Contoso development team wants to add support for digital signatures to the Contoso Expenses app. The UWP **InkCanvas** control is a great option for this scenario, because it supports digital ink and AI-powered features like the capability to recognize text and shapes. To do this, you will use the [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control available in the Windows Community Toolkit. This control wraps the interface and functionality of the UWP **InkCanvas** control for use in a WPF app. For more details about wrapped UWP controls, see [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md).
 
 ## Configure the project to use XAML Islands
 
@@ -31,7 +31,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 3. Right-click **ContosoExpenses.Core** project in **Solution Explorer** and choose **Add -> New item**.
 
-4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**. For more information about application manifests, see [this article](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
+4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**. For more information about application manifests, see [this article](/windows/desktop/SbsCs/application-manifests).
 
 5. In the manifest file, uncomment the following `<supportedOS>` element for Windows 10.
 
@@ -75,11 +75,11 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 ## Add an InkCanvas control to the app
 
-Now that you have configured your project to use UWP XAML Islands, you are now ready to add an [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control to the app.
+Now that you have configured your project to use UWP XAML Islands, you are now ready to add an [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control to the app.
 
 1. In **Solution Explorer**, expand the **Views** folder of the **ContosoExpenses.Core** project and double-click the **ExpenseDetail.xaml** file.
 
-2. In the **Window** element near the top of the XAML file, add the following attribute. This references the XAML namespace for the [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control.
+2. In the **Window** element near the top of the XAML file, add the following attribute. This references the XAML namespace for the [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control.
 
     ```xml
     xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"

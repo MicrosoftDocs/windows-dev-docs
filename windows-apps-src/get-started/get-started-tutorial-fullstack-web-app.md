@@ -268,9 +268,9 @@ With this change, the **GET /game** method will return all the card values (incl
 
 The Azure docs will walk you through:
 
- - [Registering a new *API App* with Azure Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
- - [Setting up Git deployment for your API app](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), and
- - [Deploying your API app code to Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [Registering a new *API App* with Azure Portal](/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Setting up Git deployment for your API app](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), and
+ - [Deploying your API app code to Azure](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 When registering your app, try to differentiate your *App name* (to avoid naming collisions with others requesting variations on the *http://memorygameapi.azurewebsites.net* URL).
 
@@ -284,7 +284,7 @@ Here are some useful resources for going further:
 
  - [Advanced Node.js debugging with Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + Mobile docs](https://docs.microsoft.com/azure/#pivot=services&panel=web)
+ - [Azure Web + Mobile docs](/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB docs](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -629,13 +629,13 @@ You can now deploy your app to Azure (or any other cloud hosting service) for te
 The basic steps for publishing to the Microsoft Store are:
 
  1. Create a [Windows Developer](https://developer.microsoft.com/store/register) account
- 2. Use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
- 3. Submit your app for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 2. Use the app submission [checklist](../publish/app-submissions.md)
+ 3. Submit your app for [certification](../publish/the-app-certification-process.md)
 
 Here are some useful resources for going further:
 
- - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [Deploy your application development project to Azure Websites](/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
+ - [Convert your web application to a Universal Windows Platform (UWP) app](/microsoft-edge/progressive-web-apps)
 
- - [Publish Windows apps](https://docs.microsoft.com/windows/uwp/publish/)
+ - [Publish Windows apps](../publish/index.md)

@@ -8,7 +8,7 @@ localizationpriority: medium
 ---
 # Get upgrade block details for your desktop application
 
-Use this REST URI to get details for Windows 10 devices on which a specific executable in your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in Partner Center.
+Use this REST URI to get details for Windows 10 devices on which a specific executable in your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in Partner Center.
 
 This URI is similar to [Get upgrade blocks for your desktop application](get-desktop-block-data.md), but it returns device block info for a specific executable in your desktop application.
 
@@ -41,7 +41,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
 | fileName | string | The name of the blocked executable |
 | startDate | date | The start date in the date range of block data to retrieve. The default is 90 days prior to the current date. |  No  |
 | endDate | date | The end date in the date range of block data to retrieve. The default is the current date. |  No  |
@@ -89,7 +89,7 @@ Elements in the *Value* array contain the following values.
 | osRelease           | string | One of the following strings that specifies the OS release or flighting ring (as a subpopulation within OS version) on which the desktop application is currently running.<p/><p>For Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p/><p>For Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>For Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>For Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>For Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>If the OS release or flighting ring is unknown, this field has the value <strong>Unknown</strong>.</p> |
 | market              | string | The ISO 3166 country code of the market in which the desktop application is blocked. |
 | deviceType          | string | One of the following strings that specifies the type of device on which the desktop application is blocked:<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul> |
-| blockType            | string | One of the following strings that specifies the type of block found on the device:<p/><ul><li><strong>Potential Sediment</strong></li><li><strong>Temporary Sediment</strong></li><li><strong>Runtime Notification</strong></li></ul><p/><p/>For more information about these block types and what they mean to developers and users, see the description of the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report). |
+| blockType            | string | One of the following strings that specifies the type of block found on the device:<p/><ul><li><strong>Potential Sediment</strong></li><li><strong>Temporary Sediment</strong></li><li><strong>Runtime Notification</strong></li></ul><p/><p/>For more information about these block types and what they mean to developers and users, see the description of the [Application blocks report](/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report). |
 | architecture        | string | The architecture of the device on which the block exists: <p/><ul><li><strong>ARM64</strong></li><li><strong>X86</strong></li></ul> |
 | targetOs            | string | One of the following strings that specifies the Windows 10 OS release on which the desktop application is blocked from running: <p/><ul><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li></ul> |
 | deviceCount         | number | The number of distinct devices that have blocks at the specified aggregation level. |
@@ -125,5 +125,5 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
+* [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program)
 * [Get upgrade blocks for your desktop application](get-desktop-block-data.md)

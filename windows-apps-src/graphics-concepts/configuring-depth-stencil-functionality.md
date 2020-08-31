@@ -20,7 +20,7 @@ Once you know how to use the depth-stencil buffer and the corresponding depth-st
 ## <span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Create Depth-Stencil State
 
 
-The depth-stencil state tells the output-merger stage how to perform the [depth-stencil test](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). The depth-stencil test determines whether or not a given pixel should be drawn.
+The depth-stencil state tells the output-merger stage how to perform the [depth-stencil test](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). The depth-stencil test determines whether or not a given pixel should be drawn.
 
 ## <span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Bind Depth-Stencil Data to the OM Stage
 
@@ -94,4 +94,4 @@ An inactive depth-stencil buffer can be read by a shader as a texture. An applic
 
 [Graphics pipeline](graphics-pipeline.md)
 
-[Output-Merger Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)
+[Output-Merger Stage](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

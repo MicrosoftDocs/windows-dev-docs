@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Handle events by using delegates in C++/WinRT
 
-This topic shows how to register and revoke event-handling delegates using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). You can handle an event using any standard C++ function-like object.
+This topic shows how to register and revoke event-handling delegates using [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -309,6 +309,6 @@ If you handle an event with an object's member function, or from within a lambda
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## Related topics
-* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references)
+* [Author events in C++/WinRT](./author-events.md)
+* [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md)
+* [Strong and weak references in C++/WinRT](./weak-references.md)

@@ -18,7 +18,7 @@ For example, a news app could use this feature to determine which news story the
 > **Requires Anniversary Update**: To use chaseable tile notifications with C#, C++, or VB-based UWP apps, you must target SDK 14393 and be running build 14393 or higher. For JavaScript-based UWP apps, you must target SDK 17134 and be running build 17134 or higher. 
 
 
-> **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## How it works
@@ -99,11 +99,11 @@ TileContent content = new TileContent()
 
 ## How to check for the arguments property when your app launches
 
-Most apps have an App.xaml.cs file that contains an override for the [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method. As its name suggests, your app calls this method when it's launched. It takes a single argument, a [LaunchActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object.
+Most apps have an App.xaml.cs file that contains an override for the [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method. As its name suggests, your app calls this method when it's launched. It takes a single argument, a [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object.
 
-The LaunchActivatedEventArgs object has a property that enables chaseable notifications: the [TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), which provides access to a [TileActivatedInfo object](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo). When the user launches your app from its tile (rather than the app list, search, or any other entry point), your app initializes this property.
+The LaunchActivatedEventArgs object has a property that enables chaseable notifications: the [TileActivatedInfo property](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), which provides access to a [TileActivatedInfo object](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo). When the user launches your app from its tile (rather than the app list, search, or any other entry point), your app initializes this property.
 
-The [TileActivatedInfo object](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) contains a property called [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), which contains a list of notifications that have been shown on the tile within the last 15 minutes. The first item in the list represents the notification currently on the tile, and the subsequent items represent the notifications that the user saw before the current one. If your tile has been cleared, this list is empty.
+The [TileActivatedInfo object](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) contains a property called [RecentlyShownNotifications](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), which contains a list of notifications that have been shown on the tile within the last 15 minutes. The first item in the list represents the notification currently on the tile, and the subsequent items represent the notifications that the user saw before the current one. If your tile has been cleared, this list is empty.
 
 Each ShownTileNotification has an Arguments property. The Arguments property will be initialized with the arguments string from your tile notification payload, or null if your payload didn't include the arguments string.
 
@@ -136,7 +136,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### Accessing OnLaunched from desktop applications
 
-Desktop apps (like Win32, WPF, etc) using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root).
+Desktop apps (like Win32, WPF, etc) using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](/windows/msix/desktop/source-code-overview).
 
 > [!IMPORTANT]
 > **Requires October 2018 Update**: To use the `AppInstance.GetActivatedEventArgs()` API, you must target SDK 17763 and be running build 17763 or higher.
@@ -215,5 +215,5 @@ If you're using raw XML instead of the Notifications library, here's the XML.
 
 ## Related articles
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
-- [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [TileActivatedInfo class](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

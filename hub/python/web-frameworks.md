@@ -24,14 +24,14 @@ If you are using Python for something other than web development, we recommend y
 
 WSL lets you run a GNU/Linux command line environment integrated directly with Windows and your favorite tools, like Visual Studio Code, Outlook, etc.
 
-To enable and install WSL (or WSL 2 depending on your needs), follow the steps in the [WSL install documentation](https://docs.microsoft.com/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+To enable and install WSL (or WSL 2 depending on your needs), follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
 Once you have installed WSL and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
 We recommend updating your Linux distribution regularly, including immediately after you install, to ensure you have the most recent packages. Windows doesn't automatically handle this update. To update your distribution, use the command: `sudo apt update && sudo apt upgrade`.  
 
 > [!TIP]
-> Consider [installing the new Windows Terminal from the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701) to enable multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and set up custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/windows/terminal).
+> Consider [installing the new Windows Terminal from the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701) to enable multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and set up custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](/windows/terminal).
 
 ## Set up Visual Studio Code
 
@@ -316,5 +316,5 @@ Congratulations, you've created a Django web application using VS Code and Windo
 
 - [Python Tutorial with VS Code](https://code.visualstudio.com/docs/python/python-tutorial): An intro tutorial to VS Code as a Python environment, primarily how to edit, run, and debug code.
 - [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Learn how to use Git version control basics in VS Code.  
-- [Learn about updates coming soon with WSL 2!](https://docs.microsoft.com/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
-- [Working with multiple Linux distributions on Windows](https://docs.microsoft.com/windows/wsl/wsl-config): Learn how to manage multiple different Linux distributions on your Windows machine.
+- [Learn about updates coming soon with WSL 2!](/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
+- [Working with multiple Linux distributions on Windows](/windows/wsl/wsl-config): Learn how to manage multiple different Linux distributions on your Windows machine.

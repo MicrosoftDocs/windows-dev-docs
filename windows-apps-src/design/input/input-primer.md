@@ -76,11 +76,11 @@ In Windows 10, **Cortana** extensibility lets you handle voice commands from a 
 
 A voice command is a single utterance, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**. The app can be launched in the foreground or background, depending on the level and complexity of the interaction. For instance, voice commands that require additional context or user input are best handled in the foreground, while basic commands can be handled in the background.
 
-Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines).
+Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](/cortana/skills/cortana-design-guidelines).
 
 ### More info
 
-[Cortana design guidelines](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
+[Cortana design guidelines](/cortana/skills/cortana-design-guidelines)
  
 
 ## Speech
@@ -129,7 +129,7 @@ Dictation is typically used when an app doesn’t need to understand meaning or 
 
 ### More info
 
-[Speech design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+[Speech design guidelines](./speech-interactions.md)
  
 
 ## Pen
@@ -162,7 +162,7 @@ You should provide pen-specific UI commands, or affordances, to support these in
 
 ### More info
 
-[Pen design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
+[Pen design guidelines](./pen-and-stylus-interactions.md)
  
 
 ## Touch
@@ -197,7 +197,7 @@ In general, touch is:
 
 ### More info
 
-[Touch design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
+[Touch design guidelines](./touch-interactions.md)
  
 
 ## Touchpad
@@ -221,14 +221,14 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Touchpad design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
+[Touchpad design guidelines](./touch-interactions.md)
  
 
 ## Keyboard
 
 A keyboard is the primary input device for text, and is often indispensable to people with certain disabilities or users who consider it a faster and more efficient way to interact with an app.
 
-With [Continuum for Phone](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
+With [Continuum for Phone](/windows-hardware/design/device-experiences/continuum-phone), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
 
 ### Device support
 
@@ -261,7 +261,7 @@ In general, a keyboard is:
 
 ### More info
 
-[Keyboard design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+[Keyboard design guidelines](./keyboard-interactions.md)
  
 
 ## Mouse
@@ -288,7 +288,7 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Mouse design guidelines](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
+[Mouse design guidelines](./mouse-interactions.md)
  
 
 ## Gesture

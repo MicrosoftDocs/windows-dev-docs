@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 Microsoft.Windows.EventTracing.Processing.All
 
-This package allows you to access data in a trace file. If you do not already have a trace file, you can use [Windows Performance Recorder](https://docs.microsoft.com/windows-hardware/test/wpt/start-a-recording) to create one.
+This package allows you to access data in a trace file. If you do not already have a trace file, you can use [Windows Performance Recorder](/windows-hardware/test/wpt/start-a-recording) to create one.
 
 The following example console app shows how to access the command lines of all processes contained in the trace:
 
@@ -51,13 +51,13 @@ class Program
 
 ## Using TraceProcessor
 
-To process a trace, call [TraceProcessor.Create](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create). The core interface is [ITraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itraceprocessor), and using this interface involves the following pattern:
+To process a trace, call [TraceProcessor.Create](/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create). The core interface is [ITraceProcessor](/dotnet/api/microsoft.windows.eventtracing.itraceprocessor), and using this interface involves the following pattern:
 
 1. First, tell the processor what data you want to use from a trace
 2. Second, process the trace; and
 3. Finally, access the results.
 
-Telling the processor what kinds of data you want up front means you do not need to spend time processing large volumes of all possible kinds of trace data. Instead, [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor) just does the work needed to provide the specific kinds of data you request.
+Telling the processor what kinds of data you want up front means you do not need to spend time processing large volumes of all possible kinds of trace data. Instead, [TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) just does the work needed to provide the specific kinds of data you request.
 
 ## Recommended project settings
 
@@ -138,7 +138,7 @@ An .etl file can capture many kinds of data in a trace. Note that which data is 
 | trace.UseWinINetData()                    | Provides data from a trace about internet activity via Windows Internet (WinINet).                                         | Download Details table                                               |
 | trace.UseWorkingSetData()                 | Provides data from a trace about pages of virtual memory that were in the working set for each process or kernel category. | Virtual Memory Snapshots table                                       |
 
-See also the extension methods on [ITraceSource](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itracesource) for all available trace data, or examine the method available from "trace." shown by IntelliSense.
+See also the extension methods on [ITraceSource](/dotnet/api/microsoft.windows.eventtracing.itracesource) for all available trace data, or examine the method available from "trace." shown by IntelliSense.
 
 ## Next Steps
 

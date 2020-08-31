@@ -129,7 +129,7 @@ design and build custom apps that are natively Android while still uniquely Flue
 
 - [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals)
 
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)
 

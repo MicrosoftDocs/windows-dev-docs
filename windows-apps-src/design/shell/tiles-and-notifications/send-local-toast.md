@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement.
 
 > [!IMPORTANT]
-> Desktop applications (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) have different steps for sending notifications and handling activation. Please see the [Desktop apps](toast-desktop-apps.md) documentation to learn how to implement toasts.
+> Desktop applications (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) have different steps for sending notifications and handling activation. Please see the [Desktop apps](toast-desktop-apps.md) documentation to learn how to implement toasts.
 
 We will go through the following things:
 
@@ -33,14 +33,14 @@ We will go through the following things:
 * Handling foreground activation
 * Handling background activation
 
-> **Important APIs**: [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **Important APIs**: [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## Prerequisites
 
 To fully understand this topic, the following will be helpful...
 
-* A working knowledge of toast notification terms and concepts. For more information, see [Toast and action center overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* A working knowledge of toast notification terms and concepts. For more information, see [Toast and action center overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
 * A familiarity with Windows 10 toast notification content. For more information, see [toast content documentation](adaptive-interactive-toasts.md).
 * A Windows 10 UWP app project
 
@@ -48,7 +48,7 @@ To fully understand this topic, the following will be helpful...
 > Unlike Windows 8/8.1, you no longer need to declare in your app's manifest that your app is capable of showing toast notifications. All apps are capable of sending and displaying toast notifications.
 
 > [!NOTE]
-> **Windows 8/8.1 apps**: Please use the [archived documentation](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
+> **Windows 8/8.1 apps**: Please use the [archived documentation](/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
 ## Install NuGet packages
@@ -187,7 +187,7 @@ ToastActionsCustom actions = new ToastActionsCustom()
 
 ### Combining the above to construct the full content
 
-The construction of the content is now complete, and we can use it to instantiate your [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) object.
+The construction of the content is now complete, and we can use it to instantiate your [**ToastNotification**](/uwp/api/Windows.UI.Notifications.ToastNotification) object.
 
 **Note**: you can also provide an activation type inside the root element, to specify what type of activation needs to happen when the user taps on the body of the toast notification. Normally, tapping the body of the toast should launch your app in the foreground to create a consistent user experience, but you can use other activation types to fit your specific scenario where it makes most sense to the user.
 
@@ -232,9 +232,9 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 If you want to programmatically remove or replace the notification you send, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to remove or replace the notification.
 
-To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -244,7 +244,7 @@ toast.Group = "wallPosts";
 
 ## Send the notification
 
-Once you have initialized your toast, simply create a [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) and call Show(), passing in your toast notification.
+Once you have initialized your toast, simply create a [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) and call Show(), passing in your toast notification.
 
 ```csharp
 ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -261,10 +261,10 @@ Here's an example of what a messaging app should do…
 
 1. User receives multiple toasts about new messages in a conversation
 2. User taps one of those toasts to open the conversation
-3. The app opens the conversation and then clears all toasts for that conversation (by using [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) on the app-supplied group for that conversation)
+3. The app opens the conversation and then clears all toasts for that conversation (by using [RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) on the app-supplied group for that conversation)
 4. User's Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.
 
-To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## Activation handling
@@ -355,7 +355,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 When you specify background activation on your toast (or on a button inside the toast), your background task will be executed instead of activating your foreground app.
 
-For more information on background tasks, please see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+For more information on background tasks, please see [Support your app with background tasks](../../../launch-resume/support-your-app-with-background-tasks.md).
 
 If you are targeting build 14393 or higher, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.
 
@@ -412,7 +412,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 ## Plain "Vanilla" code snippets
 
-If you're not using the Notifications library from NuGet, you can manually construct your XML as seen below to create a [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
+If you're not using the Notifications library from NuGet, you can manually construct your XML as seen below to create a [ToastNotification](/uwp/api/Windows.UI.Notifications.ToastNotification).
 
 ```csharp
 using Windows.UI.Notifications;
@@ -497,5 +497,5 @@ var toast = new ToastNotification(toastXml);
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Toast content documentation](adaptive-interactive-toasts.md)
-* [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
-* [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+* [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
+* [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

@@ -10,24 +10,24 @@ ms.localizationpriority: medium
 
 # Distribute LOB apps to enterprises
 
-You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](https://docs.microsoft.com/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store for Business or Microsoft Store for Education.
+You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store for Business or Microsoft Store for Education.
 
 ## Microsoft Endpoint Configuration Manager and Microsoft Intune
 
 If your organization uses Microsoft Endpoint Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:
 
-* [Introduction to application management in Configuration Manager](https://docs.microsoft.com/configmgr/apps/understand/introduction-to-application-management)
-* [Overview of the app lifecycle in Microsoft Intune](https://docs.microsoft.com/intune/apps/app-lifecycle)
+* [Introduction to application management in Configuration Manager](/configmgr/apps/understand/introduction-to-application-management)
+* [Overview of the app lifecycle in Microsoft Intune](/intune/apps/app-lifecycle)
 
 ## App Installer
 
 App Installer enables Windows 10 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an .appinstaller file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.
 
-App Installer can be downloaded for offline use in the enterprise from Microsoft Store for Business [web portal](https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 apps with App Installer](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root).
+App Installer can be downloaded for offline use in the enterprise from Microsoft Store for Business [web portal](https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 apps with App Installer](/windows/msix/app-installer/app-installer-root).
 
 ## Sideloading
 
-Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
+Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
 ## Microsoft Store for Business or Microsoft Store for Education
 
@@ -44,7 +44,7 @@ You can publish line-of-business (LOB) apps directly to enterprises for volume a
 The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
 > [!IMPORTANT]
-> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps).
+> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](/microsoft-store/working-with-line-of-business-apps).
 
 When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings** (as long as you are signed in with the Microsoft account that was used to open the developer account).
 
@@ -81,9 +81,9 @@ For LOB apps, the [age ratings](age-ratings.md) step of the submission process w
 After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store for Business or Microsoft Store for Education portal. The enterprise can then deploy the app to its users.
 
 > [!NOTE]
-> In order to get your LOB app, the organization must be located in a [supported market](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](define-pricing-and-market-selection.md) when submitting your app. 
+> In order to get your LOB app, the organization must be located in a [supported market](/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](./define-market-selection.md) when submitting your app. 
 
-For more info, see [Working with line-of-business apps](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps) and [Distribute apps using your private store](https://docs.microsoft.com/microsoft-store/distribute-apps-from-your-private-store).
+For more info, see [Working with line-of-business apps](/microsoft-store/working-with-line-of-business-apps) and [Distribute apps using your private store](/microsoft-store/distribute-apps-from-your-private-store).
 
 ### Update LOB apps
 

@@ -2751,4 +2751,4 @@ The following tables show the video codec and format support for each device fam
 <sup>2</sup> DNG images with a non-RAW embedded preview are supported.  
 <sup>3</sup> Only certain camera RAW formats are supported.  
 
-For more information on image codecs, see [Native WIC Codecs](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs).
+For more information on image codecs, see [Native WIC Codecs](/windows/desktop/wic/native-wic-codecs).

@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 
 
 
-This article shows you how to use the [**MediaProcessingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) and a background task to process media files in the background.
+This article shows you how to use the [**MediaProcessingTrigger**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) and a background task to process media files in the background.
 
-The example app described in this article allows the user to select an input media file to transcode and specify an output file for the transcoding result. Then, a background task is launched to perform the transcoding operation. The [**MediaProcessingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) is intended to support many different media processing scenarios besides transcoding, including rendering media compositions to disk and uploading processed media files after processing is complete.
+The example app described in this article allows the user to select an input media file to transcode and specify an output file for the transcoding result. Then, a background task is launched to perform the transcoding operation. The [**MediaProcessingTrigger**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) is intended to support many different media processing scenarios besides transcoding, including rendering media compositions to disk and uploading processed media files after processing is complete.
 
 For more detailed information on the different Universal Windows app features utilized in this sample, see:
 
 -   [Transcode media files](transcode-media-files.md)
--   [Launching resuming and background tasks](https://docs.microsoft.com/windows/uwp/launch-resume/index)
--   [Tiles badges and notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+-   [Launching resuming and background tasks](../launch-resume/index.md)
+-   [Tiles badges and notifications](../design/shell/tiles-and-notifications/index.md)
 
 ## Create a media processing background task
 
@@ -36,32 +36,32 @@ In the renamed class file, add the following **using** directives to include the
                                   
 [!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-Update your class declaration to make your class inherit from [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
+Update your class declaration to make your class inherit from [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
 Add the following member variables to your class:
 
--   An [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) that will be used to update the foreground app with the progress of the background task.
--   A [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) that keeps the system from shutting down your background task while media transcoding is being performed asynchronously.
+-   An [**IBackgroundTaskInstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) that will be used to update the foreground app with the progress of the background task.
+-   A [**BackgroundTaskDeferral**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) that keeps the system from shutting down your background task while media transcoding is being performed asynchronously.
 -   A **CancellationTokenSource** object that can be used to cancel the asynchronous transcoding operation.
--   The [**MediaTranscoder**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.MediaTranscoder) object that will be used to transcode media files.
+-   The [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) object that will be used to transcode media files.
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-The system calls [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method of a background task when the task is launched. Set the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) object passed into the method to the corresponding member variable. Register a handler for the [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) event, which will be raised if the system needs to shut down the background task. Then, set the [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) property to zero.
+The system calls [**Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method of a background task when the task is launched. Set the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) object passed into the method to the corresponding member variable. Register a handler for the [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) event, which will be raised if the system needs to shut down the background task. Then, set the [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) property to zero.
 
-Next, call the background task object's [**GetDeferral**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.getdeferral) method to obtain a deferral. This tells the system not to shut down your task because you are performing asynchronous operations.
+Next, call the background task object's [**GetDeferral**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.getdeferral) method to obtain a deferral. This tells the system not to shut down your task because you are performing asynchronous operations.
 
 Next, call the helper method **TranscodeFileAsync**, which is defined in the next section. If that completes successfully, a helper method is called to launch a toast notification to alert the user that transcoding is complete.
 
-At the end of the **Run** method, call [**Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) on the deferral object to let the system know that your background task is complete and can be terminated.
+At the end of the **Run** method, call [**Complete**](/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) on the deferral object to let the system know that your background task is complete and can be terminated.
 
 [!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
 
-In the **TranscodeFileAsync** helper method, the file names for the input and output files for the transcoding operations are retrieved from the [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) for your app. These values will be set by your foreground app. Create a [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) object for the input and output files and then create an encoding profile to use for transcoding.
+In the **TranscodeFileAsync** helper method, the file names for the input and output files for the transcoding operations are retrieved from the [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) for your app. These values will be set by your foreground app. Create a [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) object for the input and output files and then create an encoding profile to use for transcoding.
 
-Call [**PrepareFileTranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync), passing in the input file, output file, and encoding profile. The [**PrepareTranscodeResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) object returned from this call lets you know if transcoding can be performed. If the [**CanTranscode**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.cantranscode) property is true, call [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) to perform the transcoding operation.
+Call [**PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync), passing in the input file, output file, and encoding profile. The [**PrepareTranscodeResult**](/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) object returned from this call lets you know if transcoding can be performed. If the [**CanTranscode**](/uwp/api/windows.media.transcoding.preparetranscoderesult.cantranscode) property is true, call [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) to perform the transcoding operation.
 
 The **AsTask** method enables you to track the progress the asynchronous operation or cancel it. Create a new **Progress** object, specifying the units of progress you desire and the name of the method that will be called to notify you of the current progress of the task. Pass the **Progress** object into the **AsTask** method along with the cancellation token that allows you to cancel the task.
 
@@ -71,11 +71,11 @@ In the method you used to create the Progress object in the previous step, **Pro
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-The **SendToastNotification** helper method creates a new toast notification by getting a template XML document for a toast that only has text content. The text element of the toast XML is set and then a new [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) object is created from the XML document. Finally, the toast is shown to the user by calling [**ToastNotifier.Show**](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier.show).
+The **SendToastNotification** helper method creates a new toast notification by getting a template XML document for a toast that only has text content. The text element of the toast XML is set and then a new [**ToastNotification**](/uwp/api/Windows.UI.Notifications.ToastNotification) object is created from the XML document. Finally, the toast is shown to the user by calling [**ToastNotifier.Show**](/uwp/api/windows.ui.notifications.toastnotifier.show).
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
-In the handler for the [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) event, which is called when the system cancels your background task, you can log the error for telemetry purposes.
+In the handler for the [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) event, which is called when the system cancels your background task, you can log the error for telemetry purposes.
 
 [!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
@@ -104,23 +104,23 @@ Next, add the following member variables that are needed to register the backgro
 
 [!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-The **PickFilesToTranscode** helper method uses a [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and a [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) to open the input and output files for transcoding. The user may select files in a location that your app does not have access to. To make sure your background task can open the files, add them to the [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) for your app.
+The **PickFilesToTranscode** helper method uses a [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to open the input and output files for transcoding. The user may select files in a location that your app does not have access to. To make sure your background task can open the files, add them to the [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) for your app.
 
-Finally, set entries for the input and output file names in the [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) for your app. The background task retrieves the file names from this location.
+Finally, set entries for the input and output file names in the [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) for your app. The background task retrieves the file names from this location.
 
 [!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-To register the background task, create a new [**MediaProcessingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) and a new [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Set the name of the background task builder so that you can identify it later. Set the [**TaskEntryPoint**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint) to the same namespace and class name string you used in the manifest file. Set the [**Trigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.trigger) property to the **MediaProcessingTrigger** instance.
+To register the background task, create a new [**MediaProcessingTrigger**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) and a new [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Set the name of the background task builder so that you can identify it later. Set the [**TaskEntryPoint**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint) to the same namespace and class name string you used in the manifest file. Set the [**Trigger**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.trigger) property to the **MediaProcessingTrigger** instance.
 
-Before registering the task, make sure you unregister any previously registered tasks by looping through the [**AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) collection and calling [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.unregister) on any tasks that have the name you specified in the [**BackgroundTaskBuilder.Name**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.name) property.
+Before registering the task, make sure you unregister any previously registered tasks by looping through the [**AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) collection and calling [**Unregister**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.unregister) on any tasks that have the name you specified in the [**BackgroundTaskBuilder.Name**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.name) property.
 
-Register the background task by calling [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register). Register handlers for the [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed) and [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.progress) events.
+Register the background task by calling [**Register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register). Register handlers for the [**Completed**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed) and [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.progress) events.
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
 A typical app will register their background task when the app is initially launched, such as in the **OnNavigatedTo** event.
 
-Launch the background task by calling the **MediaProcessingTrigger** object's [**RequestAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger.requestasync) method. The [**MediaProcessingTriggerResult**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTriggerResult) object returned by this method lets you know whether the background task was started successfully, and if not, lets you know why the background task wasn't launched. 
+Launch the background task by calling the **MediaProcessingTrigger** object's [**RequestAsync**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger.requestasync) method. The [**MediaProcessingTriggerResult**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTriggerResult) object returned by this method lets you know whether the background task was started successfully, and if not, lets you know why the background task wasn't launched. 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
@@ -138,7 +138,3 @@ The **OnCompleted** event handler is called when the background task has finishe
  
 
  
-
-
-
-

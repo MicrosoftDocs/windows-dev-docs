@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
 
-When you want to access a large collection of files and you want to access property values other than the typical Name, FileType, and Path properties, access them by creating [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) and calling [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). The **SetPropertyPrefetch** method can dramatically improve the performance of apps that display a collection of items obtained from the file system, such as a collection of images. The next set of examples shows a few ways to access multiple files.
+When you want to access a large collection of files and you want to access property values other than the typical Name, FileType, and Path properties, access them by creating [**QueryOptions**](/uwp/api/Windows.Storage.Search.QueryOptions) and calling [**SetPropertyPrefetch**](/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). The **SetPropertyPrefetch** method can dramatically improve the performance of apps that display a collection of items obtained from the file system, such as a collection of images. The next set of examples shows a few ways to access multiple files.
 
-The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve the name info for a set of files. This approach provides good performance, because the example accesses only the name property.
+The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve the name info for a set of files. This approach provides good performance, because the example accesses only the name property.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -38,7 +38,7 @@ The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https:/
 > Next i
 > ```
 
-The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) and then retrieves the image properties for each file. This approach provides poor performance.
+The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) and then retrieves the image properties for each file. This approach provides poor performance.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -64,7 +64,7 @@ The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https:
 > Next i
 > ```
 
-The third example uses [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) to get info about a set of files. This approach provides much better performance than the previous example.
+The third example uses [**QueryOptions**](/uwp/api/Windows.Storage.Search.QueryOptions) to get info about a set of files. This approach provides much better performance than the previous example.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -127,7 +127,7 @@ If you're performing multiple operations on Windows.Storage objects such as `Win
 
 ### Buffering between UWP and .NET streams
 
-There are many scenarios when you might want to convert a UWP stream (such as a [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) or [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) to a .NET stream ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream)). For example, this is useful when you are writing a UWP app and want to use existing .NET code that works on streams with the UWP file system. In order to enable this, .NET APIs for UWP apps provides extension methods that allow you to convert between .NET and UWP stream types. For more info, see [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions).
+There are many scenarios when you might want to convert a UWP stream (such as a [**Windows.Storage.Streams.IInputStream**](/uwp/api/Windows.Storage.Streams.IInputStream) or [**IOutputStream**](/uwp/api/Windows.Storage.Streams.IOutputStream)) to a .NET stream ([**System.IO.Stream**](/dotnet/api/system.io.stream)). For example, this is useful when you are writing a UWP app and want to use existing .NET code that works on streams with the UWP file system. In order to enable this, .NET APIs for UWP apps provides extension methods that allow you to convert between .NET and UWP stream types. For more info, see [**WindowsRuntimeStreamExtensions**](/dotnet/api/system.io.windowsruntimestreamextensions).
 
 When you convert a UWP stream to a .NET stream, you effectively create an adapter for the underlying UWP stream. Under some circumstances, there is a runtime cost associated with invoking methods on UWP streams. This may affect the speed of your app, especially in scenarios where you perform many small, frequent read or write operations.
 
@@ -188,7 +188,7 @@ This default buffering behavior is desirable in most scenarios where you convert
 
 ### Working with large data sets
 
-When reading or writing larger sets of data you may be able to increase your read or write throughput by providing a large buffer size to the [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0), and [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) extension methods. This gives the stream adapter a larger internal buffer size. For instance, when passing a stream that comes from a large file to an XML parser, the parser can make many sequential small reads from the stream. A large buffer can reduce the number of calls to the underlying UWP stream and boost performance.
+When reading or writing larger sets of data you may be able to increase your read or write throughput by providing a large buffer size to the [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0), and [**AsStream**](/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) extension methods. This gives the stream adapter a larger internal buffer size. For instance, when passing a stream that comes from a large file to an XML parser, the parser can make many sequential small reads from the stream. A large buffer can reduce the number of calls to the underlying UWP stream and boost performance.
 
 > **Note**   You should be careful when setting a buffer size that is larger than approximately 80 KB, as this may cause fragmentation on the garbage collector heap (see [Improve garbage collection performance](improve-garbage-collection-performance.md)). The following code example creates a managed stream adapter with an 81,920 byte buffer.
 
@@ -202,7 +202,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-The [**Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto) and [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync) methods also allocate a local buffer for copying between streams. As with the [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0) extension method, you may be able to get better performance for large stream copies by overriding the default buffer size. The following code example demonstrates changing the default buffer size of a **CopyToAsync** call.
+The [**Stream.CopyTo**](/dotnet/api/system.io.stream.copyto) and [**CopyToAsync**](/dotnet/api/system.io.stream.copytoasync) methods also allocate a local buffer for copying between streams. As with the [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0) extension method, you may be able to get better performance for large stream copies by overriding the default buffer size. The following code example demonstrates changing the default buffer size of a **CopyToAsync** call.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -230,6 +230,4 @@ When you are working with a large number of streams simultaneously, you might wa
 
 You might also want to avoid buffering if you want low-latency reads and writes and do not want to read in large blocks out of the underlying UWP stream. For example, you might want low-latency reads and writes if you are using the stream for network communications.
 
-In a chat app you might use a stream over a network interface to send messages back in forth. In this case you want to send messages as soon as they are ready and not wait for the buffer to fill up. If you set the buffer size to 0 when calling the [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0), and [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) extension methods, then the resulting adapter will not allocate a buffer, and all calls will manipulate the underlying UWP stream directly.
-
-
+In a chat app you might use a stream over a network interface to send messages back in forth. In this case you want to send messages as soon as they are ready and not wait for the buffer to fill up. If you set the buffer size to 0 when calling the [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0), and [**AsStream**](/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) extension methods, then the resulting adapter will not allocate a buffer, and all calls will manipulate the underlying UWP stream directly.

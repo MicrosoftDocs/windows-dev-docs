@@ -21,18 +21,18 @@ dev_langs:
 
 **Important APIs**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Create a COM background task class and register it to run in your full trust packaged winmain app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
 
 ## Create the Background Task class
 
-You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
+You can run code in the background by writing classes that implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**TimeTrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
 
-The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface and add it to your main process.
+The following steps show you how to write a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface and add it to your main process.
 
-1.  [**See these instructions**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
+1.  [**See these instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
 2.  In that new class, implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. The [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
 > [!NOTE]
@@ -40,7 +40,7 @@ The following steps show you how to write a new class that implements the [**IBa
 
 The following sample code shows a basic a background task class that counts primes and writes it to a file until it is requested to be canceled.
 
-The C++/WinRT example implements the background task class as a [**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
+The C++/WinRT example implements the background task class as a [**COM coclass**](../cpp-and-winrt-apis/author-coclasses.md#implement-the-coclass-and-class-factory).
 
 
 <details>
@@ -386,7 +386,7 @@ sampleTaskServer.Start();
 
 ## Register the background task to run
 
-1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. *This step is important*; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete. An application is free to use the same entry point to handle all background tasks and use other properties like the [**Name**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) or [**TaskId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) assigned to a [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) to decide what work should be done.
+1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. *This step is important*; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete. An application is free to use the same entry point to handle all background tasks and use other properties like the [**Name**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) or [**TaskId**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) assigned to a [**BackgroundTaskRegistration**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) to decide what work should be done.
 
 The following example iterates on the **AllTasks** property and sets a flag variable to true if the task is already registered.
 
@@ -427,9 +427,9 @@ for (auto const& task : allTasks)
 
 ```
 
-1.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
+1.  If the background task is not already registered, use [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
 
-The background task trigger controls when the background task will run. For a list of possible triggers, see the [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background) Namespace.
+The background task trigger controls when the background task will run. For a list of possible triggers, see the [**Windows.ApplicationModel.Background**](/uwp/api/windows.applicationmodel.background) Namespace.
 
 > [!NOTE]
 > Only a subset of triggers are supported for packaged winmain background tasks.
@@ -466,7 +466,7 @@ if (!taskRegistered)
 
 ```
 
-1.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until internet is available, use the condition **InternetAvailable**. For a list of possible conditions, see [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+1.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until internet is available, use the condition **InternetAvailable**. For a list of possible conditions, see [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 The following sample code assigns a condition requiring the user to be present:
 
@@ -480,7 +480,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object. Store the [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) result so it can be used in the next step. Note that the register function may return errors in the form of exceptions. Be sure to call Register in a try-catch.
+4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object. Store the [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) result so it can be used in the next step. Note that the register function may return errors in the form of exceptions. Be sure to call Register in a try-catch.
 
 The following code registers the background task and stores the result:
 
@@ -1040,7 +1040,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## Remarks
 
-Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby) to learn more.
+Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
@@ -1060,8 +1060,8 @@ See the following related topics for API reference, background task conceptual g
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](/previous-versions/hh974425(v=vs.110))
 
 **Background Task API Reference**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

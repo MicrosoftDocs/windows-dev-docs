@@ -28,11 +28,11 @@ Note that Eve, a third party eavesdropping on the conversation between Bob and A
 
 Creating a message authentication code ensures only that the original message was not altered and, by using a shared secret key, that the message hash was signed by someone with access to that private key.
 
-You can use the [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class to perform the necessary encryption that creates the MAC value.
+You can use the [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class to perform the necessary encryption that creates the MAC value.
 
 Digital signatures are the public key equivalent of private key message authentication codes (MACs). Although MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-This example code shows how to use the [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) class to create a hashed message authentication code (HMAC).
+This example code shows how to use the [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) class to create a hashed message authentication code (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -131,11 +131,11 @@ A cryptographic hash function takes an arbitrarily long block of data and return
 
 Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
 
-You can use the [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the available hash algorithms and create a [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) value.
+You can use the [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the available hash algorithms and create a [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) value.
 
 Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-The [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method hashes the data and resets the object for another use. This is shown by the following example.
+The [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](/uwp/api/windows.security.cryptography.core.cryptographichash.append) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method hashes the data and resets the object for another use. This is shown by the following example.
 
 ```cs
 public void SampleReusableHash()
@@ -185,4 +185,4 @@ Because most public key signature operations are computationally intensive, howe
 
 Signing ensures only that the original message was not altered and, by using the sender's public key, that the message hash was signed by someone with access to the private key.
 
-You can use an [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class to sign a message or verify a signature.
+You can use an [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class to sign a message or verify a signature.

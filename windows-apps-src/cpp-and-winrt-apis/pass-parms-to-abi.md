@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Passing parameters into the ABI boundary
 
-With the types in the **winrt::param** namespace, C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. You can see more details, and code examples, in [String handling](/windows/uwp/cpp-and-winrt-apis/strings) and [Standard C++ data types and C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types).
+With the types in the **winrt::param** namespace, C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. You can see more details, and code examples, in [String handling](./strings.md) and [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md).
 
 > [!IMPORTANT]
 > You shouldn't use the types in the **winrt::param** namespace yourself. They're for the benefit of the projection.

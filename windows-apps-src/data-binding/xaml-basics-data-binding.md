@@ -621,5 +621,5 @@ As you might have noticed, if you change the zoom level on the details page, it 
 
 You should have all the info you need in this tutorial, but if you need more guidance, the data binding docs are only a click away. Start here:
 
-+ [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md)
++ [Data binding in depth](./data-binding-in-depth.md)

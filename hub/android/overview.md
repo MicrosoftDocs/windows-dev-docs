@@ -24,7 +24,7 @@ In addition, this guide will provide tips on using Windows to:
 
 - [Test on an Android device or emulator](emulator.md)
 - [Update Windows Defender settings to improve performance](defender-settings.md)
-- [Develop dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 ## Native Android
 
@@ -75,9 +75,9 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ## Game development
 
-Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](https://docs.microsoft.com/cpp/cross-platform/?view=vs-2019), along with the Android [Native Development Kit (NDK)](https://docs.microsoft.com/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development).
+Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](/cpp/cross-platform/?view=vs-2019), along with the Android [Native Development Kit (NDK)](/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development).
 
-Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](https://docs.microsoft.com/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](https://docs.microsoft.com/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
+Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
 
 ## Next steps
 
@@ -86,6 +86,6 @@ Another common path for developing games for Android is to use a game engine. Th
 - [Get started developing for Android using Xamarin.Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](react-native.md)
 - [Get started developing a PWA for Android](pwa.md)
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)
 - [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

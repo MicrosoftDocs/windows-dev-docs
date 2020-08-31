@@ -45,7 +45,7 @@ For a full list of the available parameters, see the [bingmaps:](#bingmaps-param
 ## Launch a URI from your app
 
 
-To launch the Windows Maps app from your app, call the [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
+To launch the Windows Maps app from your app, call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -57,7 +57,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-In this example, the [**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions) class is used to help ensure the Windows Maps app is launched.
+In this example, the [**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions) class is used to help ensure the Windows Maps app is launched.
 
 ## Display known locations
 

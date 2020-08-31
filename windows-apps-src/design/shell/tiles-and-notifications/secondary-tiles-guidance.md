@@ -43,6 +43,6 @@ Consider the following recommendations when enabling secondary tiles in your app
 
 * [Secondary tiles overview](secondary-tiles.md)
 * [Pin secondary tiles](secondary-tiles-pinning.md)
-* [Tile assets](app-assets.md)
+* [Tile assets](../../style/app-icons-and-logos.md)
 * [Tile content documentation](create-adaptive-tiles.md)
 * [Send a local tile notification](sending-a-local-tile-notification.md)

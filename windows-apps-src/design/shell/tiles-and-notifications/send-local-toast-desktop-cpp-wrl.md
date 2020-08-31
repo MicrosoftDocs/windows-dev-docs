@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Send a local toast notification from desktop C++ WRL apps
 
-Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
+Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](send-local-toast-desktop.md).
@@ -88,7 +88,7 @@ Then, you must register with the notification platform. There are different step
 
 ### MSIX/sparse package
 
-If you're using [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) or a [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
+If you're using [MSIX](/windows/msix/desktop/source-code-overview) or a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
@@ -389,7 +389,7 @@ if (SUCCEEDED(hr))
 
 ## Step 10: Deploying and debugging
 
-To deploy and debug your MSIX/sparse package app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
+To deploy and debug your MSIX/sparse package app, see [Run, debug, and test a packaged desktop app](/windows/msix/desktop/desktop-to-uwp-debug).
 
 To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
@@ -410,7 +410,7 @@ If you get numerous `unresolved external symbol` compilation errors, you likely 
 
 If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows 10 before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
 
-Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
+Windows 8 introduced toast notifications, but used the [legacy toast templates](/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
 
 | OS | ToastGeneric | COM activator | Legacy toast templates |
 | -- | ------------ | ------------- | ---------------------- |

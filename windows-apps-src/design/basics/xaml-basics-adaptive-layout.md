@@ -54,11 +54,11 @@ Run the app. It looks good at full screen, but the user interface (UI) isn't ide
 
 ![Small window: before](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-For more info about app layout, see the [Layout](/windows/uwp/design/layout/) section of the docs.
+For more info about app layout, see the [Layout](../layout/index.md) section of the docs.
 
 ### Add window breakpoints
 
-The first step is to define the _breakpoints_ at which different visual states are applied. See [Screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for more information about the breakpoints for small, medium, and large screens.
+The first step is to define the _breakpoints_ at which different visual states are applied. See [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) for more information about the breakpoints for small, medium, and large screens.
 
 Open App.xaml from the Solution Explorer, and add the following code after the `MergedDictionaries`, right before the closing `</ResourceDictionary>` tag.
 
@@ -258,12 +258,12 @@ Run the app. When the app loads, try changing the size of the window. When you s
 
 ## Going further
 
-Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio) if you'd like to test a Surface Hub layout.
+Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md) if you'd like to test a Surface Hub layout.
 
 If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](../layout/layouts-with-xaml.md).
 
-+ [Visual states and state triggers](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Tailored layouts](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [Visual states and state triggers](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [Tailored layouts](../layout/layouts-with-xaml.md#tailored-layouts)
 
 Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
 

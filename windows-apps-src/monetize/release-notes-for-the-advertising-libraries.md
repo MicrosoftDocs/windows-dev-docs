@@ -29,7 +29,7 @@ When using the Microsoft advertising libraries, you cannot target **Any CPU** in
 
 ## C++ Support
 
-The Microsoft advertising libraries (which include the **AdControl** and **InterstitialAd** classes) support apps written in C++ and DirectX using Windows Runtime Interoperability (*interop*). For more information and examples about programming using XAML and C++, see [Type System](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+The Microsoft advertising libraries (which include the **AdControl** and **InterstitialAd** classes) support apps written in C++ and DirectX using Windows Runtime Interoperability (*interop*). For more information and examples about programming using XAML and C++, see [Type System](/cpp/cppcx/type-system-c-cx).
 
 ## No toolbox control
 

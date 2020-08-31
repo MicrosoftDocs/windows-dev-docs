@@ -21,7 +21,7 @@ We recommend that you install and run the updated WSL 2, as you will benefit fro
 
 ## Install WSL 2
 
-To enable and install WSL 2, follow the steps in the [WSL install documentation](https://docs.microsoft.com/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
 Once you have installed WSL 2 and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
@@ -29,7 +29,7 @@ We recommend updating your Linux distribution regularly, including immediately a
 
 ## Install Windows Terminal (optional)
 
-The new Windows Terminal enables multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/windows/terminal).
+The new Windows Terminal enables multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](/windows/terminal).
 
 1. Get [Windows Terminal in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
 
@@ -73,7 +73,7 @@ If you are using NVM to install Node.js and NPM, you should not need to use the 
 While nvm is currently the most popular version manager for node, there are a few alternatives to consider:
 
 - [n](https://www.npmjs.com/package/n#installation) is a long-standing `nvm` alternative that accomplishes the same thing with slightly different commands and is installed via `npm` rather than a bash script.
-- [fnm](https://github.com/Schniz/fnm#using-a-script) is a newer version manager, claiming to be much faster than `nvm`. (It also uses [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops).)
+- [fnm](https://github.com/Schniz/fnm#using-a-script) is a newer version manager, claiming to be much faster than `nvm`. (It also uses [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops).)
 - [Volta](https://github.com/volta-cli/volta#installing-volta) is a new version manager from the LinkedIn team that claims improved speed and cross-platform support.
 - [asdf-vm](https://asdf-vm.com/#/core-manage-asdf-vm) is a single CLI for multiple languages, like ike gvm, nvm, rbenv & pyenv (and more) all in one.
 - [nvs](https://github.com/jasongin/nvs) (Node Version Switcher) is a cross-platform `nvm` alternative with the ability to [integrate with VS Code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
@@ -130,7 +130,7 @@ A few additional extensions you may want to consider include:
 
 ## Set up Git (optional)
 
-To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git) in the WSL documentation.
+To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.
 
 ## Next steps
 
@@ -138,5 +138,5 @@ You now have a Node.js development environment set up. To get started using your
 
 - [Get started with Node.js for beginners](./beginners.md)
 - [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
-- [Get started connecting Node.js apps to a database](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
+- [Get started connecting Node.js apps to a database](/windows/wsl/tutorials/wsl-database)
 - [Get started using Docker containers with Node.js](./containers.md)

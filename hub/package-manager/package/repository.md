@@ -117,7 +117,7 @@ During validation, we apply a series of labels to our pull request to communicat
 
 * **Needs: author feedback**: There is a failure with the submission. We will reassign pull request back to you. If you do not address the issue within 10 days, we will close the pull request.
 * **Manifest-Validation-Error**: The submitted manifest contains a syntax error.
-* **URL-Validation-Error**: One or more URLs in the submission failed [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) validation.
+* **URL-Validation-Error**: One or more URLs in the submission failed [SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) validation.
 * **Binary-Validation-Error**: The submitted application installer failed virus scan testing or there is a hash mismatch.
 * **Pull-Request-Error**: There is a problem with the pull request. For example, the folder structure does not have the [required format](#step-3-add-your-manifest-to-the-local-repository).
 * **Validation-Error**: The submitted application failed a general validation test.

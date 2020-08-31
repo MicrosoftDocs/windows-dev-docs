@@ -28,7 +28,7 @@ The singular behavior of a RadioButtons group distinguishes it from [check boxes
 
 | &nbsp; | &nbsp; |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The RadioButtons control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more information, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The RadioButtons control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more information, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 **Windows UI Library APIs**: 
 * [RadioButtons class](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
@@ -37,9 +37,9 @@ The singular behavior of a RadioButtons group distinguishes it from [check boxes
 * [SelectedIndex property](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
 
 **Platform APIs**: 
-* [RadioButton class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
-* [Checked event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-* [IsChecked property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+* [RadioButton class](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
+* [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+* [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## Is this the right control?
 
@@ -124,7 +124,7 @@ In column-major order, focus moves from top to bottom and from left to right). W
 
 In row-major order (where items fill in left to right, top to bottom), when the focus is on the last item in a row and the Right arrow key is pressed, focus moves to the first item in the next row. This same behavior occurs in reverse: when focus is set to the first item in a row and the Left arrow key is pressed, focus moves to the last item in the previous row.
 
-For more information, see [Keyboard interactions](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items).
+For more information, see [Keyboard interactions](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
 ##### Wrapping
 
@@ -372,4 +372,4 @@ The following images show how best to arrange the radio buttons in a RadioButton
 
 ### For developers (XAML)
 
-- [RadioButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton)

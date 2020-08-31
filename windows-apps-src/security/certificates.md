@@ -47,7 +47,7 @@ The X.509 public key certificate standard has been revised over time. Each succe
 
 ![x.509 certificate versions 1, 2, and 3](images/x509certificateversions.png)
 
-Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
+Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
 
 ### Version 1 fields
 
@@ -90,4 +90,3 @@ An X.509 version 3 certificate contains the fields defined in version 1 and vers
 | Subject Alternative Name | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs. |
 | Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs. |
 | Subject Key Identifier | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key. |
-

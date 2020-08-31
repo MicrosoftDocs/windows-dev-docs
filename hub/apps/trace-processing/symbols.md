@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Use symbols in .NET TraceProcessing
 
-[TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor) supports loading symbols and getting stacks from several data sources. The following console application looks at CPU samples and outputs the estimated duration that a specific function was running (based on the trace’s statistical sampling of CPU usage).
+[TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) supports loading symbols and getting stacks from several data sources. The following console application looks at CPU samples and outputs the estimated duration that a specific function was running (based on the trace’s statistical sampling of CPU usage).
 
 ```csharp
 using Microsoft.Windows.EventTracing;
@@ -89,7 +89,7 @@ winlogon.exe: 20.15 ms
 
 ## Symbols format
 
-Internally, TraceProcessor uses the [SymCache](https://docs.microsoft.com/windows-hardware/test/wpt/loading-symbols#symcache-path) format, which is a cache of some of the data stored in a PDB. When loading symbols, TraceProcessor requires specifying a location to use for these SymCache files (a SymCache path) and supports optionally specifying a SymbolPath to access PDBs. When a SymbolPath is provided, TraceProcessor will create SymCache files out of PDB files as needed, and subsequent processing of the same data can use the SymCache files directly for better performance.
+Internally, TraceProcessor uses the [SymCache](/windows-hardware/test/wpt/loading-symbols#symcache-path) format, which is a cache of some of the data stored in a PDB. When loading symbols, TraceProcessor requires specifying a location to use for these SymCache files (a SymCache path) and supports optionally specifying a SymbolPath to access PDBs. When a SymbolPath is provided, TraceProcessor will create SymCache files out of PDB files as needed, and subsequent processing of the same data can use the SymCache files directly for better performance.
 
 ## Next steps
 

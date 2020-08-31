@@ -45,7 +45,7 @@ VES is a UI Automation client and relies on information exposed by the app throu
 
 All UWP apps have access to the UI Automation framework and can expose information about the UI independent of which graphics framework they are built upon (XAML, DirectX/Direct3D, Xamarin, etc.).  In some cases, like XAML, most of the heavy lifting is done by the framework, greatly reducing the work required to support Narrator and VES.
 
-For more info on UI Automation see [UI Automation Fundamentals](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "UI Automation Fundamentals").
+For more info on UI Automation see [UI Automation Fundamentals](/dotnet/framework/ui-automation/ui-automation-fundamentals "UI Automation Fundamentals").
 
 ## Control invocation name ##
 VES employs the following heuristic for determining what phrase to register with the speech recognizer as the control’s name (ie. what the user needs to speak to invoke the control).  This is also the phrase that will show up in the voice tip label.
@@ -79,7 +79,7 @@ To resolve this, starting with Windows 10 Creators Update, Narrator was updated 
 
 ![](images/ves_narrator.jpg)
 
-For more info see [Automation Properties for Accessibility Support in UI](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automation Properties for Accessibility Support in UI").
+For more info see [Automation Properties for Accessibility Support in UI](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automation Properties for Accessibility Support in UI").
 
 ## Active Listening Mode (ALM) ##
 ### Entering ALM ###
@@ -212,7 +212,7 @@ With `comboBox`, we used the `LabeledBy` property to reference `label1` as the s
 Finally, with `button3`, VES grabs the `Name` from the first child element since `button3` itself does not have an `AutomationProperties.Name` set.
 
 ## See also
-- [UI Automation Fundamentals](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "UI Automation Fundamentals")
-- [Automation Properties for Accessibility Support in UI](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automation Properties for Accessibility Support in UI")
+- [UI Automation Fundamentals](/dotnet/framework/ui-automation/ui-automation-fundamentals "UI Automation Fundamentals")
+- [Automation Properties for Accessibility Support in UI](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automation Properties for Accessibility Support in UI")
 - [Frequently asked questions](frequently-asked-questions.md)
 - [UWP on Xbox One](index.md)

@@ -17,7 +17,7 @@ By default, your add-on will be listed in all possible markets, including any fu
 
 However, just as with an app, you have the option to choose the markets in which you'd like to offer your add-on. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. 
 
-For more info and a full list of the available markets, see [Define market selection](define-pricing-and-market-selection.md).
+For more info and a full list of the available markets, see [Define market selection](./define-market-selection.md).
 
 ## Visibility
 
@@ -56,6 +56,3 @@ For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.m
 ## Sale pricing
 
 If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
-
-
-

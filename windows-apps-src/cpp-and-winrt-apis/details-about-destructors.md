@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Extension points for your implementation types
 
-The [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements) is the base from which your own [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementations (of runtime classes and activation factories) directly or indirectly derive.
+The [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements) is the base from which your own [C++/WinRT](./intro-to-using-cpp-with-winrt.md) implementations (of runtime classes and activation factories) directly or indirectly derive.
 
 This topic discusses the extension points of **winrt::implements** in C++/WinRT 2.0. You can choose to implement these extension points on your implementation types, in order to customize the default behavior of inspectable objects (*inspectable* in the sense of the [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) interface).
 
@@ -17,7 +17,7 @@ These extension points allow you to defer destruction of your implementation typ
 
 ## Deferred destruction
 
-In the [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc) topic, we mentioned that your implementation type can't have a private destructor.
+In the [Diagnosing direct allocations](./diag-direct-alloc.md) topic, we mentioned that your implementation type can't have a private destructor.
 
 The benefit of having a public destructor is that it enables deferred destruction, which is the ability to detect the final [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) call on your object, and then to take ownership of that object to defer its destruction indefinitely.
 

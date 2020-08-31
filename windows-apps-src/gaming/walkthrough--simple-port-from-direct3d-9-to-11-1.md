@@ -55,9 +55,9 @@ Upon completing this walkthrough, you should be familiar with the following basi
 -   The separation of device, device context, and graphics infrastructure.
 -   The process of compiling shaders, and loading shader bytecode at runtime.
 -   How to configure per-vertex data for the Input Assembler (IA) stage.
--   How to use an [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) to create a CoreWindow view.
+-   How to use an [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) to create a CoreWindow view.
 
-Note that this walkthrough uses [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) for simplicity, and does not cover XAML interop.
+Note that this walkthrough uses [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) for simplicity, and does not cover XAML interop.
 
 ## Prerequisites
 
@@ -70,11 +70,10 @@ Visit [Porting concepts and considerations](porting-considerations.md) to gain a
 
 **Direct3D**
 
-* [Writing HLSL Shaders in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
+* [Writing HLSL Shaders in Direct3D 9](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [DirectX game project templates](user-interface.md)
 
 **Microsoft Store**
 
-* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
-* [**Handle to Object Operator (^)**](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
-
+* [**Microsoft::WRL::ComPtr**](/cpp/windows/comptr-class)
+* [**Handle to Object Operator (^)**](/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)

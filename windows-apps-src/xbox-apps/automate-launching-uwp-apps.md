@@ -42,7 +42,7 @@ The app can be protocol-activated by using the command line with the command sta
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri). 
+The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](/uwp/api/windows.foundation.uri). 
 
 Examples:
 
@@ -130,7 +130,7 @@ This option does not support command-line arguments.
 
 ### Launcher application
 
-You can create a separate application that supports using COM to use for launching. The following example shows C++ code for launching with launch activation in a launcher program. With this code, you can create an **ApplicationActivationManager** object and call **ActivateApplication** passing in the AUMID found previously and any arguments. For more information about the other parameters, see [IApplicationActivationManager::ActivateApplication method (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
+You can create a separate application that supports using COM to use for launching. The following example shows C++ code for launching with launch activation in a launcher program. With this code, you can create an **ApplicationActivationManager** object and call **ActivateApplication** passing in the AUMID found previously and any arguments. For more information about the other parameters, see [IApplicationActivationManager::ActivateApplication method (MSDN)](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
 
 ```
 #include <ShObjIdl.h>
@@ -206,4 +206,3 @@ In summary, you can use various methods to launch the UWP app. Depending on the 
 
 ## See also
 - [UWP on Xbox One](index.md)
-

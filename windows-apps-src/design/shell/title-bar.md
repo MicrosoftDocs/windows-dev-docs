@@ -14,13 +14,13 @@ ms.localizationpriority: medium
 
 When your app is running in a desktop window, you can customize the title bars to match the personality of your app. The title bar customization APIs let you specify colors for title bar elements, or extend your app content into the title bar area and take full control of it.
 
-> **Important APIs**: [ApplicationView.TitleBar property](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar class](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Important APIs**: [ApplicationView.TitleBar property](/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar class](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar class](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## How much to customize the title bar
 
 There are two levels of customization that you can apply to the title bar.
 
-For simple color customization, you can set [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) properties to specify the colors you want to use for title bar elements. In this case, the system retains responsibility for all other aspects of the title bar, such as drawing the app title and defining draggable areas.
+For simple color customization, you can set [ApplicationViewTitleBar](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) properties to specify the colors you want to use for title bar elements. In this case, the system retains responsibility for all other aspects of the title bar, such as drawing the app title and defining draggable areas.
 
 Your other option is to hide the default title bar and replace it with your own XAML content. For example, you can place text, buttons, or custom menus in the title bar area. You will also need to use this option to extend an [acrylic](../style/acrylic.md) background into the title bar area.
 
@@ -31,7 +31,7 @@ When you opt for full customization, you are responsible for putting content in 
 
 ## Simple color customization
 
-If you want only to customize the title bar colors and not do anything too fancy (such as putting tabs in your title bar), you can set the color properties on the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) for your app window.
+If you want only to customize the title bar colors and not do anything too fancy (such as putting tabs in your title bar), you can set the color properties on the [ApplicationViewTitleBar](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) for your app window.
 
 This example shows how to get an instance of ApplicationViewTitleBar and set its color properties.
 
@@ -58,10 +58,10 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
-> This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), or in your app's first page.
+> This code can be placed in your app's [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), after the call to [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate), or in your app's first page.
 
 > [!TIP]
-> The Windows Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [Windows Community Toolkit documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
+> The Windows Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [Windows Community Toolkit documentation](/windows/uwpcommunitytoolkit/extensions/viewextensions).
 
 There are a few things to be aware of when setting title bar colors:
 
@@ -70,15 +70,15 @@ There are a few things to be aware of when setting title bar colors:
 - Setting a color property to **null** resets it to the default system color.
 - You can't set transparent colors. The color's alpha channel is ignored.
 
-Windows gives a user the option to apply their selected [accent color](https://docs.microsoft.com/windows/uwp/style/color#accent-color) to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.
+Windows gives a user the option to apply their selected [accent color](../style/color.md#accent-color) to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.
 
 ## Full customization
 
 When you opt-in to full title bar customization, your app’s client area is extended to cover the entire window, including the title bar area. You are responsible for drawing and input-handling for the entire window except the caption buttons, which are overlaid on top of the app’s canvas.
 
-To hide the default title bar and extend your content into the title bar area, set the [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) property to **true**.
+To hide the default title bar and extend your content into the title bar area, set the [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) property to **true**.
 
-This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), or in your app's first page.
+This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), or in your app's first page.
 
 ```csharp
 // using Windows.ApplicationModel.Core;
@@ -93,7 +93,7 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 ### Draggable regions
 
-The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
+The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
 
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 
@@ -145,7 +145,7 @@ The UIElement (`AppTitleBar`) is part of the XAML for your app. You can either d
 You can call SetTitleBar to switch to a new title bar element while your app is running. You can also pass **null** as the parameter to SetTitleBar to revert to the default dragging behavior. (See "Default draggable region" for more info.)
 
 > [!IMPORTANT]
-> The draggable region you specify needs to be hit testable, which means, for some elements, you might need to set a transparent background brush. See the remarks on [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) for more info.
+> The draggable region you specify needs to be hit testable, which means, for some elements, you might need to set a transparent background brush. See the remarks on [VisualTreeHelper.FindElementsInHostCoordinates](/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) for more info.
 >
 >For example, if you define a Grid as your draggable region, set `Background="Transparent"` to make it draggable.
 >
@@ -163,11 +163,11 @@ If you do define a draggable region, the system shrinks the default draggable re
 
 The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (Back, Minimize, Maximize, Close). The system retains control of the caption control area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.
 
-The dimensions and position of the caption control area is communicated by the CoreApplicationViewTitleBar class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) or [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) properties, and its height is given by the [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) property.
+The dimensions and position of the caption control area is communicated by the CoreApplicationViewTitleBar class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [SystemOverlayLeftInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) or [SystemOverlayRightInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) properties, and its height is given by the [Height](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) property.
 
 You can draw content underneath the caption control area defined by these properties, such as your app background, but you should not put any UI that you expect the user to be able to interact with. It does not receive any input because input for the caption controls is handled by the system.
 
-You can handle the [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) event to respond to changes in the size of the caption buttons. For example, this can happen when the system back button is shown or hidden. Handle this event to verify and update the positioning of UI elements that depend on the title bar's size.
+You can handle the [LayoutMetricsChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) event to respond to changes in the size of the caption buttons. For example, this can happen when the system back button is shown or hidden. Handle this event to verify and update the positioning of UI elements that depend on the title bar's size.
 
 This example shows how to adjust the layout of your title bar to account for changes like the system back button being shown or hidden. `AppTitleBar`, `LeftPaddingColumn`, and `RightPaddingColumn` are declared in the XAML shown previously.
 
@@ -232,7 +232,7 @@ Here, the `TitleBarButton` element has a higher z-order than `AppTitleBar`, so i
 
 ### Transparency in caption buttons
 
-When you set ExtendViewIntoTitleBar to **true**, you can make the background of the caption buttons transparent to let your app background show through. You typically set the background to [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent) for full transparency. For partial transparency, set the alpha channel for the [Color](https://docs.microsoft.com/uwp/api/windows.ui.color) you set the property to.
+When you set ExtendViewIntoTitleBar to **true**, you can make the background of the caption buttons transparent to let your app background show through. You typically set the background to [Colors.Transparent](/uwp/api/windows.ui.colors.Transparent) for full transparency. For partial transparency, set the alpha channel for the [Color](/uwp/api/windows.ui.color) you set the property to.
 
 These ApplicationViewTitleBar properties can be transparent:
 
@@ -248,7 +248,7 @@ All other color properties will continue to ignore the alpha channel. If ExtendV
 ### Full screen and tablet mode
 
 When your app runs in _full screen_ or _tablet mode_, the system hides the title bar and caption control buttons. However, the user can invoke the title bar to have it shown as an overlay on top of the app’s UI.
-You can handle the [CoreApplicationViewTitleBar.IsVisibleChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) event to be notified when the title bar is hidden or invoked, and show or hide your custom title bar content as needed.
+You can handle the [CoreApplicationViewTitleBar.IsVisibleChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) event to be notified when the title bar is hidden or invoked, and show or hide your custom title bar content as needed.
 
 This example shows how to handle IsVisibleChanged to show and hide the `AppTitleBar` element shown previously.
 
@@ -278,7 +278,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) for more info. [_Tablet mode_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
+>_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) for more info. [_Tablet mode_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
 
 ## Full customization example
 

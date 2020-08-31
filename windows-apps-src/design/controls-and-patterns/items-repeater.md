@@ -20,7 +20,7 @@ You can think of [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeat
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ItemsRepeater** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ItemsRepeater** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -89,7 +89,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](../../data-binding/data-binding-quickstart.md).
 
 
 ```xaml
@@ -105,7 +105,7 @@ However, you typically want to show a more rich presentation of your data by usi
 In this example, the data object is a simple string. The **DataTemplate** includes an image to the left of the text, and styles the **TextBlock** to display the string in a teal color.
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](../../xaml-platform/x-bind-markup-extension.md) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -770,14 +770,14 @@ public class MyPage : Page
 
 ## Enable Accessibility
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](/windows/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](../usability/index.md) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](../accessibility/custom-automation-peers.md).
 
 ### Keyboarding
-The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
+The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
 ![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-The ItemsRepeater's [XYFocusKeyboardNavigation mode](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](/windows/uwp/design/input/keyboard-interactions) such as Home, End, PageUp, and PageDown.
+The ItemsRepeater's [XYFocusKeyboardNavigation mode](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
 
 The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
 

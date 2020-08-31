@@ -17,7 +17,7 @@ The **Pricing and availability** page of the [app submission process](app-submis
 
 The Microsoft Store reaches customers in over 240 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. 
 
-For more info, see [Define market selection](define-pricing-and-market-selection.md).
+For more info, see [Define market selection](./define-market-selection.md).
 
 
 ## Visibility
@@ -84,5 +84,3 @@ For more info, see [Organizational licensing options](organizational-licensing.m
 ## Publish date
 
 Previously, the **Publish date** section appeared on this page. This functionality can now be found on the [Submission options](manage-submission-options.md) page, in the **Publishing hold options** section. (Note that to control when your app should be published to the Store, we recommend using the [Schedule](configure-precise-release-scheduling.md) section of the **Pricing and availability** page.)
-
-

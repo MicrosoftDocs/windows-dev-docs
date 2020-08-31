@@ -29,7 +29,7 @@ First, let's note the Windows Runtime namespaces that you must include (with **u
 
 ## The Windows Runtime app object
 
-In your UWP app, you want to get a window and a view provider from which you can get a view and to which you can connect your swap chain (your display buffers). You can also hook this view into the window-specific events for your running app. To get the parent window for the app object, defined by the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) type, create a type that implements [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource). For a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) code example showing how to implement **IFrameworkViewSource**, see [Composition native interoperation with DirectX and Direct2D](/windows/uwp/composition/composition-native-interop).
+In your UWP app, you want to get a window and a view provider from which you can get a view and to which you can connect your swap chain (your display buffers). You can also hook this view into the window-specific events for your running app. To get the parent window for the app object, defined by the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) type, create a type that implements [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource). For a [C++/WinRT](../cpp-and-winrt-apis/index.md) code example showing how to implement **IFrameworkViewSource**, see [Composition native interoperation with DirectX and Direct2D](../composition/composition-native-interop.md).
 
 Here's the basic set of steps to get a window using the core user interface framework.
 
@@ -129,6 +129,6 @@ If you're porting existing code to run on the ASTA thread, keep these considerat
     -   Using the **async** pattern defined in the Parallel Patterns Library (PPLTasks.h)
     -   Calling [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) from your app's ASTA (the main thread of your app) as soon as possible to allow arbitrary calls.
 
-    That said, you cannot rely on immediate delivery of unrelated calls to your app's ASTA. For more info about async calls, read [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    That said, you cannot rely on immediate delivery of unrelated calls to your app's ASTA. For more info about async calls, read [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 Overall, when designing your UWP app, use the [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) for your app's [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) and [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) to handle all UI threads rather than trying to create and manage your MTA threads yourself. When you need a separate thread that you cannot handle with the **CoreDispatcher**, use async patterns and follow the guidance mentioned earlier to avoid reentrancy issues.

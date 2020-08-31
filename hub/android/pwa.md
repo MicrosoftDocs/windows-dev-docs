@@ -56,7 +56,7 @@ There are two popular distributions of Cordova:
 
 To get started building a PWA or hybrid web app with PhoneGap, you should first install the following tools:
 
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
 
 Install PhoneGap by entering the following in your command line:
 
@@ -77,7 +77,7 @@ To create a new PhoneGap project, follow their steps to [Get started](https://ph
 
 To get started building a PWA or hybrid web app with Ionic, you should first install the following tools:
 
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
 
 - VS Code for writing your code. [Download VS Code for Windows](https://code.visualstudio.com/). You may also want to install the [WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you prefer to build your app with a Linux command line.
 
@@ -208,7 +208,7 @@ See the [Cordova Emulator](https://ionicframework.com/docs/cli/commands/cordova-
 
 ## Additional resources
 
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)
 

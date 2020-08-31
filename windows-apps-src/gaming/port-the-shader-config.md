@@ -19,8 +19,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
--   [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
+-   [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
+-   [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
 
 When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.
 
@@ -28,7 +28,7 @@ When porting the simple renderer from OpenGL ES 2.0, the first step is to set up
 
  
 
-Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context. However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.
+Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context. However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.
 
 Instructions
 ------------
@@ -167,7 +167,7 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-Direct3D does not have the concept of a shader program object. Rather, the shaders are created when one of the shader creation methods on the [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) interface (such as [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) or [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)) is called. To set the shaders for the current drawing context, we provide them to corresponding [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) with a set shader method, such as [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) for the vertex shader or [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) for the fragment shader.
+Direct3D does not have the concept of a shader program object. Rather, the shaders are created when one of the shader creation methods on the [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) interface (such as [**ID3D11Device::CreateVertexShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) or [**ID3D11Device::CreatePixelShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)) is called. To set the shaders for the current drawing context, we provide them to corresponding [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) with a set shader method, such as [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) for the vertex shader or [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) for the fragment shader.
 
 Direct3D 11: Set the shaders for the graphics device drawing context.
 
@@ -226,7 +226,7 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D does not have the concept of an "attribute" or a "uniform" in the same sense (or, at least, it does not share this syntax). Rather, it has constant buffers, represented as Direct3D subresources -- resources that are shared between the main program and the shader programs. Some of these subresources, such as vertex positions and colors, are described as HLSL semantics. For more info on constant buffers and HLSL semantics as they relate to OpenGL ES 2.0 concepts, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).
 
-When moving this process to Direct3D, we convert the uniform to a Direct3D constant buffer (cbuffer) and assign it a register for lookup with the **register** HLSL semantic. The two vertex attributes are handled as input elements to the shader pipeline stages, and are also assigned [HLSL semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION and COLOR0) that inform the shaders. The pixel shader takes an SV\_POSITION, with the SV\_ prefix indicating that it is a system value generated by the GPU. (In this case, it is a pixel position generated during scan conversion.) VertexShaderInput and PixelShaderInput are not declared as constant buffers because the former will be used to define the vertex buffer (see [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)), and the data for the latter is generated as the result of a previous stage in the pipeline, which in this case is the vertex shader.
+When moving this process to Direct3D, we convert the uniform to a Direct3D constant buffer (cbuffer) and assign it a register for lookup with the **register** HLSL semantic. The two vertex attributes are handled as input elements to the shader pipeline stages, and are also assigned [HLSL semantics](/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION and COLOR0) that inform the shaders. The pixel shader takes an SV\_POSITION, with the SV\_ prefix indicating that it is a system value generated by the GPU. (In this case, it is a pixel position generated during scan conversion.) VertexShaderInput and PixelShaderInput are not declared as constant buffers because the former will be used to define the vertex buffer (see [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)), and the data for the latter is generated as the result of a previous stage in the pipeline, which in this case is the vertex shader.
 
 Direct3D: HLSL definitions for the constant buffers and vertex data
 
@@ -274,7 +274,7 @@ struct VertexPositionColor
 
 Use the DirectXMath XM\* types for your constant buffer elements, since they provide proper packing and alignment for the contents when they are sent to the shader pipeline. If you use standard Windows platform float types and arrays, you must perform the packing and alignment yourself.
 
-To bind a constant buffer, create a layout description as a [**CD3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) structure, and pass it to [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Then, in your render method, pass the constant buffer to [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) before drawing.
+To bind a constant buffer, create a layout description as a [**CD3D11\_BUFFER\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) structure, and pass it to [**ID3DDevice::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Then, in your render method, pass the constant buffer to [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) before drawing.
 
 Direct3D 11: Bind the constant buffer
 
@@ -318,7 +318,3 @@ Next step
  
 
  
-
-
-
-

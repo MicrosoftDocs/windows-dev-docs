@@ -13,22 +13,22 @@ Add points of interest (POI) to a map using pushpins, images, shapes, and XAML U
 
 To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub: [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
-Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon), and [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) objects to a **MapElements** collection of a [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
+Display pushpins, images, and shapes on the map by adding [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon), and [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) objects to a **MapElements** collection of a [**MapElementsLayer**](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
 
 >[!NOTE]
-> In previous releases, this guide showed you how to add map elements to the [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection. While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. To learn more, see the [Working with layers](#layers) section of this guide.
+> In previous releases, this guide showed you how to add map elements to the [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection. While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. To learn more, see the [Working with layers](#layers) section of this guide.
 
-You can also display XAML user interface elements such as a [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), a [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), or a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) on the map by adding them to the [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) or as [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) of the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
+You can also display XAML user interface elements such as a [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button), a [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), or a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) on the map by adding them to the [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) or as [**Children**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
 If you have a large number of elements to place on the map, consider [overlaying tiled images on the map](overlay-tiled-images.md). To display roads on the map, see [Display routes and directions](routes-and-directions.md)
 
 ## Add a pushpin
 
-Display an image such a pushpin, with optional text, on the map by using the [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) class. You can accept the default image or provide a custom image by using the [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property. The following image displays the default image for a **MapIcon** with no value specified for the [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) property, with a short title, with a long title, and with a very long title.
+Display an image such a pushpin, with optional text, on the map by using the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) class. You can accept the default image or provide a custom image by using the [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property. The following image displays the default image for a **MapIcon** with no value specified for the [**Title**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) property, with a short title, with a long title, and with a very long title.
 
 ![sample mapicon with titles of different lengths.](images/mapctrl-mapicons.png)
 
-The following example shows a map of the city of Seattle and adds a [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) with the default image and an optional title to indicate the location of the Space Needle. It also centers the map over the icon and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
+The following example shows a map of the city of Seattle and adds a [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) with the default image and an optional title to indicate the location of the Space Needle. It also centers the map over the icon and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
 public void AddSpaceNeedleIcon()
@@ -66,27 +66,27 @@ This example displays the following POI on the map (the default image in the cen
 
 ![map with mapicon](images/displaypoidefault.png)
 
-The following line of code displays the [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) with a custom image saved in the Assets folder of the project. The [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) namespace.
+The following line of code displays the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) with a custom image saved in the Assets folder of the project. The [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) namespace.
 
 >[!NOTE]
->If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
+>If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-Keep these considerations in mind when working with the [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) class:
+Keep these considerations in mind when working with the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) class:
 
--   The [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property supports a maximum image size of 2048×2048 pixels.
--   By default, the map icon's image is not guaranteed to be shown. It may be hidden when it obscures other elements or labels on the map. To keep it visible, set the map icon's [**CollisionBehaviorDesired**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired) property to [**MapElementCollisionBehavior.RemainVisible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior).
--   The optional [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) of the [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) is not guaranteed to be shown. If you don't see the text, zoom out by decreasing the value of the [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) property of the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
--   When you display a [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) image that points to a specific location on the map - for example, a pushpin or an arrow - consider setting the value of the [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint) property to the approximate location of the pointer on the image. If you leave the value of **NormalizedAnchorPoint** at its default value of (0, 0), which represents the upper left corner of the image, changes in the [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) of the map may leave the image pointing to a different location.
--   If you don't explicitly set an [Altitude](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.basicgeoposition) and [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem), the [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) will be placed on the surface.
+-   The [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property supports a maximum image size of 2048×2048 pixels.
+-   By default, the map icon's image is not guaranteed to be shown. It may be hidden when it obscures other elements or labels on the map. To keep it visible, set the map icon's [**CollisionBehaviorDesired**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired) property to [**MapElementCollisionBehavior.RemainVisible**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior).
+-   The optional [**Title**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) of the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) is not guaranteed to be shown. If you don't see the text, zoom out by decreasing the value of the [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) property of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
+-   When you display a [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) image that points to a specific location on the map - for example, a pushpin or an arrow - consider setting the value of the [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint) property to the approximate location of the pointer on the image. If you leave the value of **NormalizedAnchorPoint** at its default value of (0, 0), which represents the upper left corner of the image, changes in the [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) of the map may leave the image pointing to a different location.
+-   If you don't explicitly set an [Altitude](/uwp/api/windows.devices.geolocation.basicgeoposition) and [AltitudeReferenceSystem](/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem), the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) will be placed on the surface.
 
 ## Add a 3D pushpin
 
-You can add three-dimensional objects to a map. Use the [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/specification/) file.
+You can add three-dimensional objects to a map. Use the [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/specification/) file.
 
 This image uses 3D coffee cups to mark the locations of coffee shops in a neighborhood.
 
@@ -120,11 +120,11 @@ public async void Add3DMapModel()
 
 ## Add an image
 
-Display large images that relate to map locations such as a picture of a restaurant or a landmark. As users zoom out, the image will shrink proportionally in size to enable the user to view more of the map. This is a bit different than a [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) which marks a specific location, is typically small, and remains the same size as users zoom in and out of a map.
+Display large images that relate to map locations such as a picture of a restaurant or a landmark. As users zoom out, the image will shrink proportionally in size to enable the user to view more of the map. This is a bit different than a [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) which marks a specific location, is typically small, and remains the same size as users zoom in and out of a map.
 
 ![MapBillboard image](images/map-billboard.png)
 
-The following code shows the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) presented in the image above.
+The following code shows the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) presented in the image above.
 
 ```csharp
 public void AddLandmarkPhoto()
@@ -157,30 +157,30 @@ public void AddLandmarkPhoto()
 }
 ```
 
-There's three parts of this code worth examining a little closer: The image, the reference camera, and the [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) property.
+There's three parts of this code worth examining a little closer: The image, the reference camera, and the [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) property.
 
 ### Image
 
-This example shows a custom image saved in the **Assets** folder of the project. The [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) property of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) expects a value of type [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) namespace.
+This example shows a custom image saved in the **Assets** folder of the project. The [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) property of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) expects a value of type [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) namespace.
 
 >[!NOTE]
->If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
+>If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
 
 ### Reference camera
 
- Because a [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) image scales in and out as the [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) of the map changes, it's important to define where in that [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) the image appears at a normal 1x scale. That position is defined in the reference camera of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), and to set it, you'll have to pass a [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object into the constructor of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard).
+ Because a [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) image scales in and out as the [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) of the map changes, it's important to define where in that [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) the image appears at a normal 1x scale. That position is defined in the reference camera of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), and to set it, you'll have to pass a [**MapCamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object into the constructor of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard).
 
- You can define the position that you want in a [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint), and then use that [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) to create a [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object.  However, in this example, we're just using the [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object returned by the [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) property of the map control. This is the map's internal camera. The current position of that camera becomes the reference camera position; the position where the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) image appears at 1x scale.
+ You can define the position that you want in a [**Geopoint**](/uwp/api/windows.devices.geolocation.geopoint), and then use that [**Geopoint**](/uwp/api/windows.devices.geolocation.geopoint) to create a [**MapCamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object.  However, in this example, we're just using the [**MapCamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) object returned by the [**ActualCamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) property of the map control. This is the map's internal camera. The current position of that camera becomes the reference camera position; the position where the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) image appears at 1x scale.
 
  If your app gives users the ability to zoom out on the map, the image decreases in size because the maps internal camera is rising in altitude while the image at 1x scale remains fixed at the reference camera's position.
 
 ### NormalizedAnchorPoint
 
-The [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) is the point of the image that is anchored to the [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) property of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard). The point 0.5,1 is the bottom center of the image. Because we've set the [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) property of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) to the center of the map's control, the bottom center of the image will be anchored at the center of the maps control. If you want your image to appear centered directly over a point, set the [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) to 0.5,0.5.  
+The [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) is the point of the image that is anchored to the [**Location**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) property of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard). The point 0.5,1 is the bottom center of the image. Because we've set the [**Location**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) property of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) to the center of the map's control, the bottom center of the image will be anchored at the center of the maps control. If you want your image to appear centered directly over a point, set the [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) to 0.5,0.5.  
 
 ## Add a shape
 
-Display a multi-point shape on the map by using the [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a red box with blue border on the map.
+Display a multi-point shape on the map by using the [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a red box with blue border on the map.
 
 ```csharp
 public void HighlightArea()
@@ -223,7 +223,7 @@ public void HighlightArea()
 ## Add a line
 
 
-Display a line on the map by using the [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a dashed line on the map.
+Display a line on the map by using the [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a dashed line on the map.
 
 ```csharp
 public void DrawLineOnMap()
@@ -264,10 +264,10 @@ public void DrawLineOnMap()
 
 Display custom UI elements on the map using XAML. Position XAML on the map by specifying the location and normalized anchor point of the XAML.
 
--   Set the location on the map where the XAML is placed by calling [**SetLocation**](https://docs.microsoft.com/windows/desktop/tablet/icontextnode-setlocation).
--   Set the relative location on the XAML that corresponds to the specified location by calling [**SetNormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setnormalizedanchorpoint).
+-   Set the location on the map where the XAML is placed by calling [**SetLocation**](/windows/desktop/tablet/icontextnode-setlocation).
+-   Set the relative location on the XAML that corresponds to the specified location by calling [**SetNormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setnormalizedanchorpoint).
 
-The following example shows a map of the city of Seattle and adds a XAML [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) control to indicate the location of the Space Needle. It also centers the map over the area and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
+The following example shows a map of the city of Seattle and adds a XAML [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border) control to indicate the location of the Space Needle. It also centers the map over the area and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -300,9 +300,9 @@ This example displays a blue border on the map.
 
 ![Screenshot of xaml displayed in the point-of-interst on the map](images/displaypoixaml.png)
 
-The next examples show how to add XAML UI elements directly in the XAML markup of the page using data binding. As with other XAML elements that display content, [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) is the default content property of the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and does not have to be specified explicitly in XAML markup.
+The next examples show how to add XAML UI elements directly in the XAML markup of the page using data binding. As with other XAML elements that display content, [**Children**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) is the default content property of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and does not have to be specified explicitly in XAML markup.
 
-This example shows how to display two XAML controls as implicit children of the [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). These controls appear on the map at the data bound locations.
+This example shows how to display two XAML controls as implicit children of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). These controls appear on the map at the data bound locations.
 
 ```xml
 <maps:MapControl>
@@ -318,7 +318,7 @@ public Geopoint SeattleLocation { get; set; }
 public Geopoint BellevueLocation { get; set; }
 ```
 
-This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).These controls appear on the map at the data bound locations.
+This example shows how to display two XAML controls contained within a [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).These controls appear on the map at the data bound locations.
 
 ```xml
 <maps:MapControl>
@@ -329,7 +329,7 @@ This example shows how to display two XAML controls contained within a [**MapIte
 </maps:MapControl>
 ```
 
-This example displays a collection of XAML elements bound to a [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).
+This example displays a collection of XAML elements bound to a [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).
 
 ```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
@@ -346,7 +346,7 @@ This example displays a collection of XAML elements bound to a [**MapItemsContro
 </maps:MapControl>
 ```
 
-The ``ItemsSource`` property in the example above is bound to a property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) in the code-behind file.
+The ``ItemsSource`` property in the example above is bound to a property of type [IList](/dotnet/api/system.collections.ilist) in the code-behind file.
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -388,7 +388,7 @@ public sealed partial class Scenario1 : Page
 
 ## Working with layers
 
-The examples in this guide add elements to a [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection as follows:
+The examples in this guide add elements to a [MapElementLayers](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection as follows:
 
 ```csharp
 var pikePlaceIcon = new MapIcon
@@ -405,7 +405,7 @@ myMap.MapElements.Add(pikePlaceIcon);
 
 While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. By grouping your elements into layers, you can manipulate each layer independently from one another. For example, each layer has it's own set of events so you can respond to an event on a specific layer and perform an action specific to that event.
 
-Also, you can bind XAML directly to a [MapLayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer). This is something that you can't do by using the [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)  collection.
+Also, you can bind XAML directly to a [MapLayer](/uwp/api/windows.ui.xaml.controls.maps.maplayer). This is something that you can't do by using the [MapElements](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)  collection.
 
 One way you could do this is by using a view model class, code-behind a XAML page, and a XAML page.
 
@@ -469,9 +469,9 @@ In your XAML page, bind to the property in your view model class that returns th
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
-* [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [Design guidelines for maps](./display-maps.md)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
-* [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
-* [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
+* [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
+* [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
