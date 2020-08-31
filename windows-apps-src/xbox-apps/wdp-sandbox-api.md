@@ -1,6 +1,6 @@
 ---
 title: Device Portal Xbox Live sandbox API reference
-description: Learn how to access the Xbox Live Sandbox programatically.
+description: Learn how to get and set the value for the device's Xbox Live sandbox by using the Xbox Device Portal REST API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

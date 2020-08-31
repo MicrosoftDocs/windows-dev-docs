@@ -1,6 +1,6 @@
 ---
 title: Xbox Live Test User Management API reference  
-description: Learn how to access the User Management APIs programmatically.
+description: Learn how to get or update the list of users on the console by using the Xbox Device Portal REST API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
