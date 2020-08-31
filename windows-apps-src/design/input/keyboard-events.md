@@ -103,11 +103,11 @@ The [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) event is raised if
 
 Modifier keys are keys such as Ctrl or Shift that users typically press in combination with other keys. Your app can use these combinations as keyboard shortcuts to invoke app commands.
 
-The following examples implement this second method while also including stub code for the first implementation.
-
 You detect shortcut key combinations by using code in your [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) event handlers. You can then track the pressed state of the modifier keys you are interested in. When a keyboard event occurs for a non-modifier key, you can check whether a modifier key is in the pressed state at the same time.
 
 Alternatively, you can use the [**GetKeyState()**](/uwp/api/windows.ui.core.corewindow.getkeystate) function of the [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) (available via [**CoreWindow::GetForCurrentThread()**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread), for example) to check modifier states on-demand when a non-modifier key is pressed.
+
+The following examples implement this second method while also including stub code for the first implementation.
 
 > [!NOTE]
 > The Alt key is represented by the **VirtualKey.Menu** value.
