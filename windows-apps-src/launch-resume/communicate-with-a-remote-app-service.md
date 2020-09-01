@@ -54,7 +54,7 @@ The device from which the remote app service is to be called needs an app with R
 
 The following **using** statements are needed for the code in this section to run as-is:
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetUsings":::
 
 
 You must first instantiate an [**AppServiceConnection**](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) object, just as if you were to call an app service locally. This process is covered in more detail in [Create and consume an app service](how-to-create-and-consume-an-app-service.md). In this example, the app service to target is the Random Number Generator service.
@@ -62,11 +62,11 @@ You must first instantiate an [**AppServiceConnection**](/uwp/api/Windows.Applic
 > [!NOTE]
 > It is assumed that a [RemoteSystem](/uwp/api/Windows.System.RemoteSystems.RemoteSystem) object has already been acquired by some means within the code that would call the following method. See [Launch a remote app](launch-a-remote-app.md) for instructions on how to set this up.
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetAppService":::
 
 Next, a [**RemoteSystemConnectionRequest**](/uwp/api/Windows.System.RemoteSystems.RemoteSystemConnectionRequest) object is created for the intended remote device. It is then used to open the **AppServiceConnection** to that device. Note that in the example below, error handling and reporting is greatly simplified for brevity.
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetRemoteConnection":::
 
 At this point, you should have an open connection to an app service on a remote machine.
 
@@ -74,7 +74,7 @@ At this point, you should have an open connection to an app service on a remote 
 
 From here, you can send and receive messages to and from the service in the form of [**ValueSet**](/uwp/api/windows.foundation.collections.valueset) objects (for more information, see [Create and consume an app service](how-to-create-and-consume-an-app-service.md)). The Random number generator service takes two integers with the keys `"minvalue"` and `"maxvalue"` as inputs, randomly selects an integer within their range, and returns it to the calling process with the key `"Result"`.
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 Now you have connected to an app service on a targeted host device, run an operation on that device, and received data to your client device in response.
 

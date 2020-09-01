@@ -62,19 +62,19 @@ Next, add the  *backgroundMediaPlayback* capability to the **Capabilities** elem
 ## Handle transitioning between foreground and background
 When your app moves from the foreground to the background, the [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) event is raised. And when your app returns to the foreground, the [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) event is raised. Because these are app lifecycle events, you should register handlers for these events when your app is created. In the default project template, this means adding it to the **App** class constructor in App.xaml.cs. 
 
-[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 Create a variable to track whether you are currently running in the background.
 
-[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetDeclareBackgroundMode":::
 
 When the [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) event is raised, set the tracking variable to indicate that you are currently running in the background. You should not perform long-running tasks in the **EnteredBackground** event because this may cause the transition to the background to appear slow to the user.
 
-[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 In the [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) event handler, you should set the tracking variable to indicate that your app is no longer running in the background.
 
-[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 ### Memory management requirements
 The most important part of handling the transition between foreground and background is managing the memory that your app uses. Because running in the background will reduce the memory resources your app is allowed to retain by the system, you should also register for the [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased) and [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) events. When these events are raised, you should check your app's current memory usage and the current limit, and then reduce your memory usage if needed. For information about reducing your memory usage while running in the background, see [Free memory when your app moves to the background](../launch-resume/reduce-memory-usage.md).

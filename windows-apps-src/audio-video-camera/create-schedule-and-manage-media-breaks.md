@@ -17,7 +17,7 @@ After you schedule one or more media breaks, the system will automatically play 
 ## Schedule media breaks
 Every **MediaPlaybackItem** object has its own [**MediaBreakSchedule**](/uwp/api/Windows.Media.Playback.MediaBreakSchedule) that you use to configure the media breaks that will play when the item is played. The first step for using media breaks in your app is to create a [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) for your main playback content. 
 
-[!code-cs[MoviePlaybackItem](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMoviePlaybackItem)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetMoviePlaybackItem":::
 
 For more information about working with **MediaPlaybackItem**, [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList) and other fundamental media playback APIs, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
 
@@ -29,54 +29,54 @@ The media break's [**PlaybackList**](/uwp/api/windows.media.playback.mediabreak.
 
 Finally, schedule the media break by using the main content playback item's [**BreakSchedule**](/uwp/api/windows.media.playback.mediaplaybackitem.breakschedule) property. Specify the break to be a preroll break by assigning it to the [**PrerollBreak**](/uwp/api/windows.media.playback.mediabreakschedule.prerollbreak) property of the schedule object.
 
-[!code-cs[PreRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPreRollBreak)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetPreRollBreak":::
 
 Now you can play back the main media item, and the media break that you created will play before the main content. Create a new [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) object and optionally set the [**AutoPlay**](/uwp/api/windows.media.playback.mediaplayer.autoplay) property to true to start playback automatically. Set the [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property of the **MediaPlayer** to your main content playback item. It's not required, but you can assign the **MediaPlayer** to a [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) to render the media in a XAML page. For more information about using **MediaPlayer**, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md).
 
-[!code-cs[Play](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetPlay":::
 
 Add a postroll break that plays after the **MediaPlaybackItem** containing your main content finishes playing, by using the same technique as a preroll break, except that you assign your **MediaBreak** object to the [**PostrollBreak**](/uwp/api/windows.media.playback.mediabreakschedule.postrollbreak) property.
 
-[!code-cs[PostRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPostRollBreak)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetPostRollBreak":::
 
 You can also schedule one or more midroll breaks that play at a specified time within the playback of the main content. In the following example, the [**MediaBreak**](/uwp/api/Windows.Media.Playback.MediaBreak) is created with the constructor overload that accepts a **TimeSpan** object, which specifies the time within the playback of the main media item when the break will be played. Again, [**MediaBreakInsertionMethod.Interrupt**](/uwp/api/Windows.Media.Playback.MediaBreakInsertionMethod) is specified to indicate that the main content's playback will be paused while the break plays. The midroll break is added to the schedule by calling [**InsertMidrollBreak**](/uwp/api/windows.media.playback.mediabreakschedule.insertmidrollbreak). You can get a read-only list of the current midroll breaks in the schedule by accessing the [**MidrollBreaks**](/uwp/api/windows.media.playback.mediabreakschedule.midrollbreaks) property.
 
-[!code-cs[MidrollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetMidrollBreak":::
 
 The next midroll break example shown uses the [**MediaBreakInsertionMethod.Replace**](/uwp/api/Windows.Media.Playback.MediaBreakInsertionMethod) insertion method, which means that the system will continue processing the main content while the break is playing. This option is typically used by live streaming media apps where you don't want the content to pause and fall behind the live stream while the ad is played. 
 
 This example also uses an overload of the [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) constructor that accepts two [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) parameters. The first parameter specifies the starting point within the media break item where playback will begin. The second parameter specifies the duration for which the media break item will be played. So, in the following example, the **MediaBreak** will begin playing at 20 minutes into the main content. When it plays, the media item will start 30 seconds from the beginning of the break media item and will play for 15 seconds before the main media content resumes playing.
 
-[!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetMidrollBreak2":::
 
 ## Skip media breaks
 As mentioned previously in this article, the [**CanSkip**](/uwp/api/windows.media.playback.mediaplaybackitem.canskip) property of a **MediaPlaybackItem** can be set to prevent the user from skipping the content with the built-in controls. However, you can call [**SkipCurrentBreak**](/uwp/api/windows.media.playback.mediabreakmanager.skipcurrentbreak) from your code at any time to skip the current break.
 
-[!code-cs[SkipButtonClick](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetSkipButtonClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetSkipButtonClick":::
 
 ## Handle MediaBreak events
 
 There are several events related to media breaks that you can register for in order to take action based on the changing state of media breaks.
 
-[!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetRegisterMediaBreakEvents":::
 
 The [**BreakStarted**](/uwp/api/windows.media.playback.mediabreakmanager.breakstarted) is raised when a media break starts. You may want to update your UI to let the user know that media break content is playing. This example uses the [**MediaBreakStartedEventArgs**](/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs) passed into the handler to get a reference to the media break that started. Then the [**CurrentItemIndex**](/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) property is used to determine which media item in the media break's playlist is being played. Then the UI is updated to show the user the current ad index and the number of ads remaining in the break. Remember that updates to the UI must be made on the UI thread, so the call should be made inside a call to [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync). 
 
-[!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetBreakStarted":::
 
 [**BreakEnded**](/uwp/api/windows.media.playback.mediabreakmanager.breakended) is raised when all of the media items in the break have finished playing or have been skipped over. You can use the handler for this event to update the UI to indicate that media break content is no longer playing.
 
-[!code-cs[BreakEnded](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakEnded)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetBreakEnded":::
 
 The **BreakSkipped** event is raised when the user presses the *Next* button in the built-in UI during playback of an item for which [**CanSkip**](/uwp/api/windows.media.playback.mediaplaybackitem.canskip) is true, or when you skip a break in your code by calling [**SkipCurrentBreak**](/uwp/api/windows.media.playback.mediabreakmanager.skipcurrentbreak).
 
 The following example uses the [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property of the **MediaPlayer** to get a reference to the media item for the main content. The skipped media break belongs to the break schedule of this item. Next, the code checks to see if the media break that was skipped is the same as the media break set to the [**PrerollBreak**](/uwp/api/windows.media.playback.mediabreakschedule.prerollbreak) property of the schedule. If so, this means that the preroll break was the break that was skipped, and in this case, a new midroll break is created and scheduled to play 10 minutes into the main content.
 
-[!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetBreakSkipped":::
 
 [**BreaksSeekedOver**](/uwp/api/windows.media.playback.mediabreakmanager.breaksseekedover) is raised when the playback position of the main media item passes over the scheduled time for one or more media breaks. The following example checks to see if more than one media break was seeked over, if the playback position was moved forward, and if it was moved forward less than 10 minutes. If so, the first break that was seeked over, obtained from the [**SeekedOverBreaks**](/uwp/api/windows.media.playback.mediabreakseekedovereventargs.seekedoverbreaks) collection exposed by the event args, is played immediately with a call to the [**PlayBreak**](/uwp/api/windows.media.playback.mediabreakmanager.playbreak) method of the **MediaPlayer.BreakManager**.
 
-[!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetBreakSeekedOver":::
 
 
 ## Access the current playback session
@@ -84,9 +84,9 @@ The [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSess
 
 The following example registers a handler for the **BufferingProgressChanged event**; in the event handler, it updates the UI to show the current buffering progress.
 
-[!code-cs[RegisterBufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterBufferingProgressChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetRegisterBufferingProgressChanged":::
 
-[!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaBreaks_RS1/cs/MainPage.xaml.cs" id="SnippetBufferingProgressChanged":::
 
 ## Related topics
 * [Media playback](media-playback.md)

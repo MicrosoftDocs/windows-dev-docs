@@ -21,7 +21,7 @@ Filter objects must be constructed before or while the **RemoteSystemWatcher** o
 > [!NOTE]
 > The code in these examples requires that you have a `using Windows.System.RemoteSystems` statement in your file.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetMakeFilterList":::
 
 > [!NOTE]
 > The "proximal" filter value does not guarantee the degree of physical proximity. For scenarios that require reliable physical proximity, use the value [**RemoteSystemDiscoveryType.SpatiallyProximal**](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) in your filter. Currently, this filter only allows devices that are discovered by Bluetooth. As new discovery mechanisms and protocols which guarantee physical proximity are supported, they will be included here as well.  
@@ -32,7 +32,7 @@ There is also a property in the [**RemoteSystem**](/uwp/api/Windows.System.Remot
 
 Once a list of [**IRemoteSystemFilter**](/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) objects is created, it can be passed into the constructor of a **RemoteSystemWatcher**.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetCreateWatcher":::
 
 When this watcher's [**Start**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.start) method is called, it will raise the [**RemoteSystemAdded**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded) event only if a device is detected that meets all of the following criteria:
 * It is discoverable by proximal connection
@@ -46,7 +46,7 @@ Some devices may not be associated with a user or discoverable with a scan, but 
 
 A **RemoteSystem** object is retrieved if a valid **HostName** object is provided. If the address data is invalid, a `null` object reference is returned.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetFindByHostName":::
 
 ## Querying a capability on a remote system
 

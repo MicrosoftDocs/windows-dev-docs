@@ -19,13 +19,13 @@ You can use the [**Windows.Media.Transcoding**](/uwp/api/Windows.Media.Transcodi
 
 In addition to the namespaces referenced by the default project template, you will need to reference these namespaces in order to transcode media files using the code in this article.
 
-[!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 ## Select source and destination files
 
 The way that your app determines the source and destination files for transcoding depends on your implementation. This example uses a [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to allow the user to pick a source and a destination file.
 
-[!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeGetFile":::
 
 ## Create a media encoding profile
 
@@ -56,7 +56,7 @@ Method  |Profile  |
 
 The following code creates a profile for MP4 video.
 
-[!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeMediaProfile":::
 
 The static [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) method creates an MP4 encoding profile. The parameter for this method gives the target resolution for the video. In this case, [**VideoEncodingQuality.hd720p**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality) means 1280 x 720 pixels at 30 frames per second. ("720p" stands for 720 progressive scan lines per frame.) The other methods for creating predefined profiles all follow this pattern.
 
@@ -66,10 +66,10 @@ Alternatively, you can create a profile that matches an existing media file by u
 
 To transcode the file, create a new [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) object and call the [**MediaTranscoder.PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) method. Pass in the source file, the destination file, and the encoding profile. Then call the [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) method on the [**PrepareTranscodeResult**](/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) object that was returned from the async transcode operation.
 
-[!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeTranscodeFile":::
 
 ## Respond to transcoding progress
 
 You can register events to respond when the progress of the asynchronous [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) changes. These events are part of the async programming framework for Universal Windows Platform (UWP) apps and are not specific to the transcoding API.
 
-[!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeCallbacks":::

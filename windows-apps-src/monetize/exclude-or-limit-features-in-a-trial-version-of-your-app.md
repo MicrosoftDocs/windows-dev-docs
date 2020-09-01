@@ -62,12 +62,12 @@ When your app is initializing, get the [LicenseInformation](/uwp/api/Windows.App
 For now, you will get simulated license information by using [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) instead of [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Before you submit the release version of your app to the **Store**, you must replace all **CurrentAppSimulator** references in your code with **CurrentApp**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
 
 Next, add an event handler to receive notifications when the license changes while the app is running. The app's license could change if the trial period expires or the customer buys the app through a Store, for example.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTestWithEvent":::
 
 ## Step 3: Code the features in conditional blocks
 
@@ -76,7 +76,7 @@ When the license change event is raised, your app must call the License API to d
 This example shows how to evaluate an app's license status so that you can enable or disable a feature of your app accordingly.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="ReloadLicense":::
 
 ## Step 4: Get an app's trial expiration date
 
@@ -85,7 +85,7 @@ Include code to determine the app's trial expiration date.
 The code in this example defines a function to get the expiration date of the app's trial license. If the license is still valid, display the expiration date with the number of days left until the trial expires.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="DisplayTrialVersionExpirationTime":::
 
 ## Step 5: Test the features using simulated calls to the License API
 
@@ -101,7 +101,7 @@ After you test your app with the simulated license server, and before you submit
 > Your app must use the **CurrentApp** object when you submit your app to a Store or it will fail certification.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseRetailWithEvent":::
 
 ## Step 7: Describe how the free trial works to your customers
 

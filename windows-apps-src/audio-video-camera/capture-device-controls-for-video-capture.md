@@ -17,7 +17,7 @@ The video device controls discussed in this article are all added to your app by
 
 All of the device control APIs discussed in this article are members of the [**Windows.Media.Devices**](/uwp/api/Windows.Media.Devices) namespace.
 
-[!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoControllersUsing":::
 
 > [!NOTE] 
 > This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
@@ -30,7 +30,7 @@ The HDR video control supports three modes: on, off, and automatic, which means 
 
 Enable or disable HDR video processing by setting the [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) to the desired mode.
 
-[!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSetHdrVideoMode":::
 
 ## Exposure priority
 
@@ -40,7 +40,7 @@ Determine if the exposure priority control is supported on the current device by
 
 Enable or disable the exposure priority control by setting the [**ExposurePriorityVideoControl.Enabled**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) to the desired mode.
 
-[!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetEnableExposurePriority":::
 
 ## Temporal denoising
 Starting with Windows 10, version 1803, you can enable temporal denoising for video on devices that support it. This feature fuses the image data from multiple adjacent frames in real time to produce video frames that have less visual noise.
@@ -49,32 +49,32 @@ The [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemp
 
 The following example uses a simple UI to provide radio buttons allowing the user to switch between denoising modes.
 
-[!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetDenoiseXAML":::
 
 In the following method, the [**VideoTemporalDenoisingControl.Supported**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) property is checked to see if temporal denoising is supported at all on the current device. If so, then we check to make sure that **Off** and **Auto** or **On** is supported, in which case we make our radio buttons visible. Next, the **Auto** and **On** buttons are made visible if those methods are supported.
 
-[!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetUpdateDenoiseCapabilities":::
 
 In the **Checked** event handler for the radio buttons, the name of the button is checked and the corresponding mode is set by setting the [**VideoTemporalDenoisingControl.Mode**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) property.
 
-[!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseButtonChecked":::
 
 ### Disabling temporal denoising while processing frames
 Video that has been processed using temporal denoising can be more pleasing to the human eye. However, because temporal denoising can impact image consistency and decrease the amount of details in the frame, apps that perform image processing on the frames, such as registration or optical character recognition, may want to programmatically disable denoising when image processing is enabled.
 
 The following example determines which denoising modes are supported and stores this information in some class variables.
 
-[!code-cs[SnippetDenoiseFrameReaderVars](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseFrameReaderVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseFrameReaderVars":::
 
-[!code-cs[SnippetDenoiseCapabilitiesForFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseCapabilitiesForFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseCapabilitiesForFrameProcessing":::
 
 When the app enables frame processing, it sets the denoising mode to **Off** if that mode is supported so that the frame processing can use raw frames that have not been denoised.
 
-[!code-cs[SnippetEnableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEnableFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetEnableFrameProcessing":::
 
 When the app disables frame prcessing, it sets the denoising mode to **On** or **Auto**, depending on which mode is supported.
 
-[!code-cs[SnippetDisableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDisableFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDisableFrameProcessing":::
 
 For more information on obtaining video frames for image processing, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md).
 

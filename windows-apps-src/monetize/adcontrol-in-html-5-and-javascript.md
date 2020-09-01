@@ -97,7 +97,7 @@ The following example shows the complete index.html for a simple app.
 The previous steps show how to declare an **AdControl** in your HTML markup. Alternatively, you can programmatically create an **AdControl** using JavaScript. This example assumes that you are using an existing **div** in your HTML with the ID **myAd**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/js/main.js" id="DeclareAdControl":::
 
 This example assumes that you have already declared event handler methods named **myAdError**, **myAdRefreshed**, and **myAdEngagedChanged**.
 

@@ -19,11 +19,11 @@ This article explains how to support the Share contract in a Universal Windows P
 
 Add a [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) event handler to be called whenever a user invokes share. This can occur either when the user taps a control in your app (such as a button or app bar command) or automatically in a specific scenario (if the user finishes a level and gets a high score, for example).
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetPrepareToShare":::
 
 When a [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) event occurs, your app receives a [**DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest) object. This contains a [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) that you can use to provide the content that the user wants to share. You must provide a title and data to share. A description is optional, but recommended.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetCreateRequest":::
 
 ## Choose data
 
@@ -39,7 +39,7 @@ You can share various types of data, including:
 
 The [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## Set properties
 
@@ -47,13 +47,13 @@ When you package data for sharing, you can supply a variety of properties that p
 
 All properties except the title are optional. The title property is mandatory and must be set.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetProperties":::
 
 ## Launch the share UI
 
 A UI for sharing is provided by the system. To launch it, call the [**ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetShowUI":::
 
 ## Handle errors
 

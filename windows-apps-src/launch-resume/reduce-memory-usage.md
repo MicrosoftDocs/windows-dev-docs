@@ -32,11 +32,11 @@ When your app moves from the foreground to the background, the [**EnteredBackgro
 
 Because running in the background will reduce the memory resources your app is allowed to retain, you should also register for the [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased) and [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) events which you can use to check your app's current memory usage and the current limit. The handlers for these events are shown in the following examples. For more information on the application lifecycle for UWP apps, see [App lifecycle](..//launch-resume/app-lifecycle.md).
 
-[!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 When the [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) event is raised, set the tracking variable to indicate that you are currently running in the background. This will be useful when you write the code for reducing memory usage.
 
-[!code-cs[EnteredBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 When your app transitions to the background, the system reduces the memory limit for the app to ensure that the current foreground app has sufficient resources to provide a responsive user experience
 
@@ -44,7 +44,7 @@ The [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appm
 
 In this example, this is done in the helper method **ReduceMemoryUsage**, which is defined later in this article.
 
-[!code-cs[MemoryUsageLimitChanging](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMemoryUsageLimitChanging":::
 
 > [!NOTE]
 > Some device configurations will allow an application to continue running over the new memory limit until the system experiences resource pressure, and some will not. On Xbox, in particular, apps will be suspended or terminated if they do not reduce memory to under the new limits within 2 seconds. This means that you can deliver the best experience across the broadest range of devices by using this event to reduce resource usage below the limit within 2 seconds of the event being raised.
@@ -53,26 +53,26 @@ It is possible that although your app's memory usage is currently under the memo
 
 Check to see if the [**AppMemoryUsageLevel**](/uwp/api/Windows.System.AppMemoryUsageLevel) is **High** or **OverLimit**, and if so, reduce your memory usage. In this example this is handled by the helper method, **ReduceMemoryUsage**. You can also subscribe to the [**AppMemoryUsageDecreased**](/uwp/api/windows.system.memorymanager.appmemoryusagedecreased) event, check to see if your app is under the limit, and if so then you know you can allocate additional resources.
 
-[!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMemoryUsageIncreased":::
 
 **ReduceMemoryUsage** is a helper method that you can implement to release memory when your app is over the usage limit while running in the background. How you release memory depends on the specifics of your app, but one recommended way to free up memory is to dispose of your UI and the other resources associated with your app view. To do so, ensure that you are running in the background state then set the [**Content**](/uwp/api/windows.ui.xaml.window.content) property of your app's window to `null` and unregister your UI event handlers and remove any other references you may have to the page. Failing to unregister your UI event handlers and clearing any other references you may have to the page will prevent the page resources from being released. Then call **GC.Collect** to reclaim the freed up memory immediately. Typically you don't force garbage collection because the system will take care of it for you. In this specific case, we are reducing the amount of memory charged to this application as it goes into the background to reduce the likelihood that the system will determine that it should terminate the app to reclaim memory.
 
-[!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetUnloadViewContent":::
 
 When the window content is collected, each Frame begins its disconnection process. If there are Pages in the visual object tree under the window content, these will begin firing their Unloaded event. Pages cannot be completely cleared from memory unless all references to them are removed. In the Unloaded callback, do the following to ensure that memory is quickly freed:
 * Clear and set any large data structures in your Page to `null`.
 * Unregister all event handlers that have callback methods within the Page. Make sure to register those callbacks during the Loaded event handler for the Page. The Loaded event is raised when the UI has been reconstituted and the Page has been added to the visual object tree.
 * Call `GC.Collect` at the end of the Unloaded callback to quickly garbage collect any of the large data structures you have just set to `null`. Again, typically you don't force garbage collection because the system will take care of it for you. In this specific case, we are reducing the amount of memory charged to this application as it goes into the background to reduce the likelihood that the system will determine that it should terminate the app to reclaim memory.
 
-[!code-cs[MainPageUnloaded](./code/ReduceMemory/cs/App.xaml.cs#SnippetMainPageUnloaded)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetMainPageUnloaded":::
 
 In the [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) event handler, set the tracking variable (`isInBackgroundMode`) to indicate that your app is no longer running in the background. Next, check to see if the [**Content**](/uwp/api/windows.ui.xaml.window.content) of the current window is `null`-- which it will be if you disposed of your app views in order to clear up memory while you were running in the background. If the window content is `null`, rebuild your app view. In this example, the window content is created in the helper method **CreateRootFrame**.
 
-[!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 The **CreateRootFrame** helper method recreates the view content for your app. The code in this method is nearly identical to the [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) handler code provided in the default project template. The one difference is that the **Launching** handler determines the previous execution state from the [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate) property of the [**LaunchActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) and the **CreateRootFrame** method simply gets the previous execution state passed in as an argument. To minimize duplicated code, you can refactor the default **Launching** event handler code to call **CreateRootFrame**.
 
-[!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/ReduceMemory/cs/App.xaml.cs" id="SnippetCreateRootFrame":::
 
 ## Guidelines
 

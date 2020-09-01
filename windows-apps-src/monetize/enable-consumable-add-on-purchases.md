@@ -69,7 +69,7 @@ After the user [purchases the add-on](enable-in-app-purchases-of-apps-and-add-on
 This example demonstrates how to report a Store-managed consumable as fulfilled.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs" id="ConsumeAddOn":::
 
 <span id="get_balance" />
 
@@ -78,7 +78,7 @@ This example demonstrates how to report a Store-managed consumable as fulfilled.
 This example demonstrates how to use the [GetConsumableBalanceRemainingAsync](/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) method of the [StoreContext](/uwp/api/windows.services.store.storecontext) class to get the remaining balance for a Store-managed consumable add-on.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs" id="GetRemainingAddOnBalance":::
 
 ## Related topics
 

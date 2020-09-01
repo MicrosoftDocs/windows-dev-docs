@@ -25,23 +25,23 @@ Next, get an instance of the **[AppBroadcastingUI](/uwp/api/windows.media.appbro
 
 The **[CanStartBroadcast](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** property of the **AppBroadcastingStatus** class tells you whether the app can currently start broadcasting. If not, you can check the **[Details](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** property to determine the reason broadcasting is not available. Depending on the reason, you may want to display the status to the user or show instructions for enabling broadcasting.
 
-[!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetCanStartBroadcast":::
 
 Request that the app broadcast UI be shown by the system by calling **[ShowBroadcastUI](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)**.
 
 > [!NOTE] 
 > The **ShowBroadcastUI** method represents a request that may not succeed, depending on the current state of the system. Your app should not assume that broadcasting has begun after calling this method. Use the **[IsCurrentAppBroadcastingChanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** event to be notified when broadcasting starts or stops.
 
-[!code-cpp[LaunchBroadcastUI](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetLaunchBroadcastUI)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetLaunchBroadcastUI":::
 
 ## Receive notifications when broadcasting starts and stops
 Register to receive notifications when the user uses the system UI to start or stop broadcasting your app by initializing an instance of **[AppBroadcastingMonitor](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** class and registering a handler for the  **[IsCurrentAppBroadcastingChanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** event. As discussed in the previous section, be sure to use the **[ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** at some point to verify that the broadcasting APIs are present on the device before attempting to use them. 
 
-[!code-cpp[AppBroadcastingRegisterChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingRegisterChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingRegisterChangedHandler":::
 
 In the handler for the **IsCurrentAppBroadcastingChanged** event, you may want to update your app's UI to reflect the current broadcasting state.
 
-[!code-cpp[AppBroadcastingChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingChangedHandler":::
 
 ## Related topics
 

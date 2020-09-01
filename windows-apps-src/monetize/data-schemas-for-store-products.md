@@ -32,7 +32,7 @@ The following schema describes the JSON-formatted string returned by [StoreProdu
 
 For an example of a JSON-formatted string returned by [StoreProduct.ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData), see [this section](#product-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json" range="1-729":::
 
 <span id="product-example" />
 
@@ -40,7 +40,7 @@ For an example of a JSON-formatted string returned by [StoreProduct.ExtendedJson
 
 The following example demonstrates a JSON-formatted string returned by the [StoreProduct.ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) property for app.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json" range="1-268":::
 
 ## Schema for StoreAppLicense and StoreLicense
 
@@ -48,7 +48,7 @@ The following schema describes the JSON-formatted string returned by [StoreAppLi
 
 For an example of a JSON-formatted string returned by [StoreAppLicense.ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData), see [this section](#license-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json" range="1-80":::
 
 <span id="license-example" />
 
@@ -56,13 +56,13 @@ For an example of a JSON-formatted string returned by [StoreAppLicense.ExtendedJ
 
 The following example demonstrates a JSON-formatted string returned by the [StoreAppLicense.ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) property for app.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json" range="1-28":::
 
 ## Schema for StorePurchaseProperties
 
 The following schema describes the JSON-formatted string returned by [StorePurchaseProperties.ExtendedJsonData](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json" range="1-12":::
 
 ## Related topics
 

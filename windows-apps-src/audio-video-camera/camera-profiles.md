@@ -24,7 +24,7 @@ Cameras on different devices support different capabilities including the set of
 
 Before initializing your [MediaCapture](./index.md) object, you can query the capture devices on the current device to see what profiles are supported. When you select a supported profile, you know that the capture device supports all of the capabilities in the profile's media descriptions. This eliminates the need for a trial and error approach to determining which combinations of capabilities are supported on a particular device.
 
-[!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetBasicInitExample":::
 
 The code examples in this article replace this minimal initialization with the discovery of camera profiles supporting various capabilities, which are then used to initialize the media capture device.
 
@@ -34,11 +34,11 @@ Before searching for supported camera profiles, you should find a capture device
 
 If a device that supports camera profiles is found on the specified panel, the [**Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id) value, containing the device's ID string, is returned.
 
-[!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetVideoProfileSupportedDeviceIdAsync":::
 
 If the device ID returned from the **GetVideoProfileSupportedDeviceIdAsync** helper method is null or an empty string, there is no device on the specified panel that supports camera profiles. In this case, you should initialize your media capture device without using profiles.
 
-[!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetDeviceWithProfileSupport":::
 
 ## Select a profile based on supported resolution and frame rate
 
@@ -48,11 +48,11 @@ Create a new [**MediaCaptureInitializationSettings**](/uwp/api/Windows.Media.Cap
 
 This example uses a Linq query method, included in the using **System.Linq** namespace, to select a profile that contains a [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) object where the [**Width**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.width), [**Height**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.height), and [**FrameRate**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.framerate) properties match the requested values. If a match is found, [**VideoProfile**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.videoprofile) and [**RecordMediaDescription**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.recordmediadescription) of the **MediaCaptureInitializationSettings** are set to the values from the anonymous type returned from the Linq query. If no match is found, the default profile is used.
 
-[!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindWVGA30FPSProfile":::
 
 After you populate the **MediaCaptureInitializationSettings** with your desired camera profile, you simply call [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) on your media capture object to configure it to the desired profile.
 
-[!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetInitCaptureWithProfile":::
 
 ## Use media frame source groups to get profiles
 
@@ -60,7 +60,7 @@ Starting with Windows 10, version 1803, you can use the [**MediaFrameSourceGroup
 
 The example method below shows how to use **MediaFrameSourceGroup** objects to find a camera profile that supports a known video profile, such as one that supports HDR or variable photo sequence. First, call [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) to get a list of all media frame source groups available on the current device. Loop through each source group and call [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) to get a list of all of the video profiles for the current source group that support the specified profile, in this case HDR with WCG photo. If a profile that meets the criteria is found, create a new **MediaCaptureInitializationSettings** object and set the **VideoProfile** to the select profile and the **VideoDeviceId** to the **Id** property of the current media frame source group. So, for example, you could pass the value **KnownVideoProfile.HdrWithWcgVideo** into this method to get media capture settings that support HDR video. Pass **KnownVideoProfile.VariablePhotoSequence** to get settings that support variable photo sequence.
 
- [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
+ :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindKnownVideoProfile":::
 
 ## Use known profiles to find a profile that supports HDR video (legacy technique)
 
@@ -69,23 +69,23 @@ The example method below shows how to use **MediaFrameSourceGroup** objects to f
 
 Selecting a profile that supports HDR begins like the other scenarios. Create a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
 
-[!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetHdrProfileSetup":::
 
 Use the **GetVideoProfileSupportedDeviceIdAsync** helper method defined above to get the device ID for a capture device that supports camera profiles.
 
-[!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindDeviceHDR":::
 
 The static method [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) returns the camera profiles supported by the specified device that is categorized by the specified [**KnownVideoProfile**](/uwp/api/Windows.Media.Capture.KnownVideoProfile) value. For this scenario, the **VideoRecording** value is specified to limit the returned camera profiles to ones that support video recording.
 
 Loop through the returned list of camera profiles. For each camera profile, loop through each [**VideoProfileMediaDescription**](/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) in the profile checking to see if the [**IsHdrVideoSupported**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.ishdrvideosupported) property is true. After a suitable media description is found, break out of the loop and assign the profile and description objects to the **MediaCaptureInitializationSettings** object.
 
-[!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetFindHDRProfile":::
 
 ## Determine if a device supports simultaneous photo and video capture
 
 Many devices support capturing photos and video simultaneously. To determine if a capture device supports this, call [**MediaCapture.FindAllVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findallvideoprofiles) to get all of the camera profiles supported by the device. Use a link query to find a profile that has at least one entry for both [**SupportedPhotoMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedphotomediadescription) and [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) which means that the profile supports simultaneous capture.
 
-[!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetPhotoAndVideoSupport":::
 
 You can refine this query to look for profiles that support specific resolutions or other capabilities in addition to simultaneous video record. You can also use the [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) and specify the [**BalancedVideoAndPhoto**](/uwp/api/Windows.Media.Capture.KnownVideoProfile) value to retrieve profiles that support simultaneous capture, but querying all profiles will provide more complete results.
 

@@ -42,7 +42,7 @@ The code in this example assumes:
 This example demonstrates how to use the [RequestPurchaseAsync](/uwp/api/windows.services.store.storecontext.requestpurchaseasync) method of the [StoreContext](/uwp/api/windows.services.store.storecontext) class to purchase an app or add-on with a known [Store ID](in-app-purchases-and-trials.md#store-ids). For a complete sample application, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs" id="PurchaseAddOn":::
 
 ## Video
 

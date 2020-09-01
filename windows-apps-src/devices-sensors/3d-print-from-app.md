@@ -23,25 +23,25 @@ Learn how to add 3D printing functionality to your Universal Windows app. This t
 
 In your application class that is to have 3D print functionality, add the [**Windows.Graphics.Printing3D**](/uwp/api/Windows.Graphics.Printing3D) namespace.
 
-[!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="Snippet3DPrintNamespace":::
 
 The following additional namespaces will be used in this guide.
 
-[!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetOtherNamespaces":::
 
 Next, give your class helpful member fields. Declare a [**Print3DTask**](/uwp/api/Windows.Graphics.Printing3D.Print3DTask) object to represent the printing task that is to be passed to the print driver. Declare a [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) object to hold the original 3D data file that will be loaded into the app. Declare a [**Printing3D3MFPackage**](/uwp/api/Windows.Graphics.Printing3D.Printing3D3MFPackage) object, which represents a print-ready 3D model with all necessary metadata.
 
-[!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetDeclareVars":::
 
 ## Create a simple UI
 
 This sample features three user controls: a Load button which will bring a file into program memory, a Fix button which will modify the file as necessary, and a Print button which will initiate the print job. The following code creates these buttons (with their on-click event handlers) in your .cs class' corresponding XAML file.
 
-[!code-xml[Buttons](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml" id="SnippetButtons":::
 
 Add a **TextBlock** for UI feedback.
 
-[!code-xml[OutputText](./code/3dprinthowto/cs/MainPage.xaml#SnippetOutputText)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml" id="SnippetOutputText":::
 
 
 
@@ -52,7 +52,7 @@ The method by which your app acquires 3D geometry data will vary. Your app may r
 
 In your `OnLoadClick` method, use the [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class to load a single file into your app's memory.
 
-[!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetFileLoad":::
 
 ## Use 3D Builder to convert to 3D Manufacturing Format (.3mf)
 
@@ -66,7 +66,7 @@ The [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) a
 > [!NOTE]  
 > In addition to converting file formats, 3D Builder provides simple tools to edit your models, add color data, and perform other print-specific operations, so it is often worth integrating into an app that deals with 3D printing.
 
-[!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetFileCheck":::
 
 ## Repair model data for 3D printing
 
@@ -74,18 +74,18 @@ Not all 3D model data is printable, even in the .3mf type. In order for the prin
 
 The 3D data file must be converted to implement [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream), which can then be used to generate a [**Printing3DModel**](/uwp/api/Windows.Graphics.Printing3D.Printing3DModel) object.
 
-[!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetRepairModel":::
 
 The **Printing3DModel** object is now repaired and printable. Use [**SaveModelToPackageAsync**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync) to assign the model to the **Printing3D3MFPackage** object that you declared when creating the class.
 
-[!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetSaveModel":::
 
 ## Execute printing task: create a TaskRequested handler
 
 
 Later on, when the 3D print dialog is displayed to the user and the user elects to begin printing, your app will need to pass in the desired parameters to the 3D print pipeline. The 3D print API will raise the **[TaskRequested](/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** event. You must write a method to handle this event appropriately. As always, the handler method must be of the same type as its event: The **TaskRequested** event has parameters [**Print3DManager**](/uwp/api/Windows.Graphics.Printing3D.Print3DManager) (a reference to its sender object) and a [**Print3DTaskRequestedEventArgs**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) object, which holds most of the relevant information.
 
-[!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetMyTaskTitle":::
 
 The core purpose of this method is to use the *args* parameter to send a **Printing3D3MFPackage** down the pipeline. The **Print3DTaskRequestedEventArgs** type has one property: [**Request**](/uwp/api/windows.graphics.printing3d.print3dtaskrequestedeventargs.request). It is of the type [**Print3DTaskRequest**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequest) and represents one print job request. Its method [**CreateTask**](/uwp/api/windows.graphics.printing3d.print3dtaskrequest.createtask) allows the program to submit the correct information for your print job, and it returns a reference to the **Print3DTask** object which was sent down the 3D print pipeline.
 
@@ -93,15 +93,15 @@ The core purpose of this method is to use the *args* parameter to send a **Print
 
 **Print3DTaskSourceRequestedHandler** takes one parameter, a [**Print3DTaskSourceRequestedArgs**](/uwp/api/Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs) object which provides the data to be sent. The one public method of this class, [**SetSource**](/uwp/api/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource), accepts the package to be printed. Implement a **Print3DTaskSourceRequestedHandler** delegate as follows.
 
-[!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetSourceHandler":::
 
 Next, call **CreateTask**, using the newly-defined delegate, `sourceHandler`.
 
-[!code-cs[CreateTask](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetCreateTask":::
 
 The returned **Print3DTask** is assigned to the class variable declared in the beginning. You can now (optionally) use this reference to handle certain events thrown by the task.
 
-[!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetOptional":::
 
 > [!NOTE]  
 > You must implement a `Task_Submitting` and `Task_Completed` method if you wish to register them to these events.
@@ -113,15 +113,15 @@ The final piece of code needed is that which launches the 3D print dialog. Like 
 
 Register your `MyTaskRequested` method with the **TaskRequested** event.
 
-[!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetRegisterMyTaskRequested":::
 
 After registering your **TaskRequested** event handler, you can invoke the method [**ShowPrintUIAsync**](/uwp/api/windows.graphics.printing3d.print3dmanager.showprintuiasync), which brings up the 3D print dialog in the current application window.
 
-[!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetShowDialog":::
 
 Finally, it is a good practice to de-register your event handlers once your app resumes control.  
 
-[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/MainPage.xaml.cs" id="SnippetDeregisterMyTaskRequested":::
 
 ## Related topics
 

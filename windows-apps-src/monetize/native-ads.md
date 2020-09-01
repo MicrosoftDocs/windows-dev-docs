@@ -40,21 +40,21 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
 4. In the appropriate code file in your app (for example, in MainPage.xaml.cs or a code file for some other page), add the following namespace references.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="Namespaces":::
 
 5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for native ads.
     > [!NOTE]
     > Every **NativeAdsManagerV2** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="Variables":::
 
 6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManagerV2** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="ConfigureNativeAd":::
 
 7.  When you're ready to show a native ad, call the **RequestAd** method to fetch an ad.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="RequestAd":::
 
 8.  When a native ad is ready for your app, your [AdReady](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) event handler is called, and a [NativeAdV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) object that represents the native ad is passed to the *e* parameter. Use the **NativeAdV2** properties to get each element of the native ad and display these elements on your page. Be sure to also call the **RegisterAdContainer** method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
     > [!NOTE]
@@ -90,11 +90,11 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     The following code example demonstrates an **AdReady** event handler that displays each element of the native ad in the controls in the **StackPanel** and then calls the **RegisterAdContainer** method to register the **StackPanel**. This code assumes that it is run from the code-behind file for the page that contains the **StackPanel**.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="AdReady":::
 
 9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. The following example writes error information to the Visual Studio **Output** window during testing.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="ErrorOccurred":::
 
 10.  Compile and run the app to see it with a test ad.
 

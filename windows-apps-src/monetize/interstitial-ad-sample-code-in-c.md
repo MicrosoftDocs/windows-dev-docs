@@ -26,12 +26,12 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
 ### MainPage.xaml
 
 > [!div class="tabbedCodeSnippets"]
-[!code-xml[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml#L1-L13)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml" range="1-13":::
 
 ### MainPage.xaml.cs
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="CompleteSample":::
 
  
 ## Related topics

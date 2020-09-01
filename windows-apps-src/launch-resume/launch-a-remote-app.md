@@ -39,18 +39,18 @@ You must first find the device that you want to connect with. [Discover remote d
 
 The code in these examples requires that you have a `using Windows.System.RemoteSystems` statement in your class file(s).
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetBuildDeviceList":::
 
 The first thing you must do before making a remote launch is call `RemoteSystem.RequestAccessAsync()`. Check the return value to make sure your app is allowed to access remote devices. One reason this check could fail is if you haven't added the `remoteSystem` capability to your app.
 
 The system watcher event handlers are called when a device that we can connect with is discovered or is no longer available. We will use these event handlers to keep an updated list of devices that we can connect to.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetEventHandlers":::
 
 
 We will track the devices by remote system ID using a **Dictionary**. An **ObservableCollection** is used to hold the list of devices that we can enumerate. An **ObservableCollection** also makes it easy to bind the list of devices to UI, though we won't do that in this example.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetMembers":::
 
 Add a call to `BuildDeviceList()` in your app startup code before you attempt to launch a remote app.
 
@@ -62,7 +62,7 @@ Other **RemoteLauncher.LaunchUriAsync** overloads allow you to specify options s
 
 In practical scenarios, you might provide UI to select the device you want to target. But to simplify this example, we'll just use the first remote device on the list.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetRemoteUriLaunch":::
 
 The [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
 

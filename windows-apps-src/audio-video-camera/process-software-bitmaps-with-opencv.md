@@ -45,21 +45,21 @@ The examples in this article walk you through creating a native code Windows Run
 
 Paste the following code into the OpenCVHelper.h header file. This code includes OpenCV header files for the *Core* and *ImgProc* packages we installed and declares three methods that will be shown in the following steps.
 
-[!code-cpp[OpenCVHelperHeader](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.h#SnippetOpenCVHelperHeader)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.h" id="SnippetOpenCVHelperHeader":::
 
 Delete the existing contents of the OpenCVHelper.cpp file and then add the following include directives. 
 
-[!code-cpp[OpenCVHelperInclude](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperInclude)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperInclude":::
 
 After the include directives, add the following **using** directives. 
 
-[!code-cpp[OpenCVHelperUsing](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperUsing)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperUsing":::
 
 Next, add the method **GetPointerToPixelData** to OpenCVHelper.cpp. This method takes a **[SoftwareBitmap](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** and, through a series of conversions, gets a COM interface representation of the pixel data through which we can get a pointer to the underlying data buffer as a **char** array. 
 
 First a **[BitmapBuffer](/uwp/api/windows.graphics.imaging.bitmapbuffer)** containing the pixel data is obtained by calling **[LockBuffer](/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, requesting a read/write buffer so that the OpenCV library can modify that pixel data.  **[CreateReference](/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** is called to get an **[IMemoryBufferReference](/uwp/api/windows.foundation.imemorybufferreference)** object. Next, the **IMemoryBufferByteAccess** interface is cast as an **IInspectable**, the base interface of all Windows Runtime classes, and **[QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** is called to get an **[IMemoryBufferByteAccess](/previous-versions/mt297505(v=vs.85))** COM interface that will allow us to obtain the pixel data buffer as a **char** array. Finally, populate the **char** array by calling **[IMemoryBufferByteAccess::GetBuffer](/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)**. If any of the conversion steps in this method fail, the method returns **false**, indicating that further processing can't continue.
 
-[!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperGetPointerToPixelData":::
 
 Next, add the method **TryConvert** method shown below. This method takes a **SoftwareBitmap** and attempts to convert it to a **Mat** object, which is the matrix object OpenCV uses to represent image data buffers. This method calls the **GetPointerToPixelData** method defined above to get a **char** array representation of the pixel data buffer. If this succeeds, the constructor for the **Mat** class is called, passing in the pixel width and height obtained from the source **SoftwareBitmap** object. 
 
@@ -68,11 +68,11 @@ Next, add the method **TryConvert** method shown below. This method takes a **So
 
 A shallow copy of the created **Mat** object is returned from the method so that further processing operates on the same data pixel data buffer referenced by the **SoftwareBitmap** and not a copy of this buffer.
 
-[!code-cpp[OpenCVHelperTryConvert](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperTryConvert)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperTryConvert":::
 
 Finally, this example helper class implements a single image processing method, **Blur**, which simply uses the **TryConvert** method defined above to retrieve a **Mat** object representing the source bitmap and the target bitmap for the blur operation, and then calls the **blur** method from the OpenCV ImgProc library. The other parameter to **blur** specifies the size of the blur effect in the X and Y directions.
 
-[!code-cpp[OpenCVHelperBlur](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperBlur)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperBlur":::
 
 
 ## A simple SoftwareBitmap OpenCV example using the helper component
@@ -88,9 +88,9 @@ A new instance of **OpenCVHelper** is created, and the **Blur** method is called
 
 This sample code uses APIs from the following namespaces, in addition to the namespaces included by the default project template.
 
-[!code-cs[OpenCVMainPageUsing](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVMainPageUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVMainPageUsing":::
 
-[!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVBlur":::
 
 ## Related topics
 

@@ -58,7 +58,7 @@ The creation of an upload begins with [**BackgroundUploader**](/uwp/api/Windows.
 
 Before we can begin with the creation of an [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), we first need to identify the URI of the location to upload to, and the file that will be uploaded. In the following example, the *uriString* value is populated using a string from UI input, and the *file* value using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) object returned by a [**PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) operation.
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_B":::
 
 **Create and initialize the upload operation**
 
@@ -68,7 +68,7 @@ Next, the properties of the provided [**StorageFile**](/uwp/api/Windows.Storage.
 
 Finally, [**BackgroundUploader**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundUploader) creates the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) (*upload*).
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Create and initialize the upload operation")]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_A":::
 
 Note the asynchronous method calls defined using JavaScript promises. Looking at a line from the last example:
 
@@ -148,11 +148,11 @@ On completion or cancellation of an [**UploadOperation**](/uwp/api/Windows.Netwo
 
 1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) objects that it will return:
 
-    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Restart interrupted upload operation")]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_C":::
 
 1.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks to the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), should it persist through app termination, is in the UploadOp class we define later in this section.
 
-    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_D":::
 
 ## Downloading files
 When using Background Transfer, each download exists as a [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) that exposes a number of control methods used to pause, resume, restart, and cancel the operation. App events (for example, suspension or termination) and connectivity changes are handled automatically by the system per **DownloadOperation**; downloads will continue during app suspension periods or pause and persist beyond app termination. For mobile network scenarios, setting the [**CostPolicy**](/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) property will indicate whether or not your app will begin or continue downloads while a metered network is being used for Internet connectivity.
@@ -164,7 +164,7 @@ The following examples will walk you through the creation and initialization of 
 ### Configure and start a Background Transfer file download
 The following example demonstrates how strings representing a URI and a file name can be used to create a [**Uri**](/uwp/api/Windows.Foundation.Uri) object and the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) that will contain the requested file. In this example, the new file is automatically placed in a pre-defined location. Alternatively, [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) can be used allow users to indicate where to save the file on the device. Note that the **load** method called to re-assign callbacks to the [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation), should it persist through app termination, is in the DownloadOp class defined later in this section.
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_A":::
 
 Note the asynchronous method calls defined using JavaScript promises. Looking at line 17 from the previous code example:
 
@@ -177,18 +177,18 @@ The async method call is followed by a then statement which indicates methods, d
 ### Adding additional operation control methods
 The level of control can be increased by implementing additional [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_B)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_B":::
 
 ### Enumerating persisted operations at start-up
 On completion or cancellation of a [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation), any associated system resources are released. However, if your app is terminated before either of these events occur, downloads will pause and persist in the background. The following examples demonstrate how to re-introduce persisted downloads into a new app session.
 
 1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects that it will return:
 
-    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_D":::
 
 1.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks for a persisted [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) is in the DownloadOp example we define later in this section.
 
-    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_E":::
 
 1.  You can now use the populated list to restart pending operations.
 
