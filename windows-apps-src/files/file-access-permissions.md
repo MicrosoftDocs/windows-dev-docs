@@ -244,13 +244,17 @@ By default, your app can only access files and folders in the user's Downloads f
 
     [**DownloadsFolder**](/uwp/api/Windows.Storage.DownloadsFolder).[**CreateFolderAsync**](/uwp/api/windows.storage.downloadsfolder.createfolderasync) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFolder**](/uwp/api/Windows.Storage.StorageFolder) that represents the subfolder that was created. This file is called `newFolder` in the example.
 
-If you create a file or folder in the Downloads folder, we recommend that you add that item to your app's [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) so that your app can readily access that item in the future.
-
 ## Accessing additional locations
 
 In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by [calling a file picker](quickstart-using-file-and-folder-pickers.md) to let the user pick files and folders for the app to access.
 
 Apps that that declare the [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension have file-system permissions from the directory that they are launched from in the console window, and downwards.
+
+### Retaining access to files and folders
+
+When your app retrieves a file or folder via a picker, a file activation, a drag-and-drop operation, etc. it only has access to that file or folder until the app is terminated. If you would like to automatically access the file or folder in the future, you can add it to the [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) so that your app can readily access that item in the future. You can also use the [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to easily manage a list of recently-used files.
+
+### Capabilities for accessing other locations
 
 The following table lists additional locations that you can access by declaring one or more capabilities and using the associated [**Windows.Storage**](/uwp/api/Windows.Storage) API.
 
