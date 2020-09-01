@@ -1,5 +1,5 @@
 ---
-description: Learn how to use the landmarks and headings features of accessibility to define sections for more efficient UI navigation by users of assistive technology (AT).
+description: Learn how to use the landmarks and headings features of UI Automation to define sections of content in your app, improve accessibility, and help users of assistive technology (AT) navigate the UI.
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
