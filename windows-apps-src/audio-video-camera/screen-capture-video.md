@@ -45,7 +45,7 @@ The **SetupEncoding** method described in this section initializes some of the m
 
 - **Initialize a GraphicsCaptureItem.** A [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem) represents an item on the screen that is going to be captured, either a window or the entire screen. Allow the user to pick an item to capture by creating a [GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) and calling [PickSingleItemAsync](/uwp/api/windows.graphics.capture.graphicscapturepicker.picksingleitemasync).
 
-- **Create a blank texture template.** Create a blank texture resource that will serve as the template for the textures that will be store each video frame. This texture can't be created until the **GraphicsCaptureItem** has been created and we know its dimensions. See the description of the **WaitForNewFrame** to see how this blank texture is used. The helper method for creating this texture is also shown later in this article.
+- **Create a composition texture.** Create a texture resource and an associated render target view that will be used to copy each video frame. This texture can't be created until the **GraphicsCaptureItem** has been created and we know its dimensions. See the description of the **WaitForNewFrame** to see how this composition texture is used. The helper method for creating this texture is also shown later in this article.
 
 - **Create a MediaEncodingProfile and VideoStreamDescriptor.** An instance of the [MediaStreamSource](/uwp/api/windows.media.core.mediastreamsource) class will take images captured from the screen and encode them into a video stream. Then, the video stream will be transcoded into a video file by the [MediaTranscoder](/uwp/api/windows.media.transcoding.mediatranscoder) class. A [VideoStreamDecriptor](/uwp/api/windows.media.core.videostreamdescriptor) provides encoding parameters, such as resolution and frame rate, for the **MediaStreamSource**. The video file encoding parameters for the **MediaTranscoder** are specified with a [MediaEncodingProfile](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile). Note that the size used for video encoding doesn't have to be the same as the size of the window being captured, but to keep this example simple, the encoding settings are hard-coded to use the capture item's actual dimensions.
 
@@ -88,7 +88,7 @@ The rest of the **StartCapture** method sets up the Windows.Graphics.Capture API
 ## Handle graphics capture events
 In the previous step we registered two handlers for graphics capture events and set up some events to help manage the flow of the capture loop.
 
-The **FrameArrived** event is raised when the **Direct3D11CaptureFramePool** has a new captured frame available. In the handler for this event, call [TryGetNextFrame](/uwp/api/windows.graphics.capture.direct3d11captureframepool.trygetnextframe) on the sender to get the next captured frame. It's possible that this method will return null, but that will be handled in the **WaitForNewFrame** helper method shown below. After the frame is retrieved, we set the **_frameEvent** so that our capture loop knows there is a new frame available.
+The **FrameArrived** event is raised when the **Direct3D11CaptureFramePool** has a new captured frame available. In the handler for this event, call [TryGetNextFrame](/uwp/api/windows.graphics.capture.direct3d11captureframepool.trygetnextframe) on the sender to get the next captured frame. After the frame is retrieved, we set the **_frameEvent** so that our capture loop knows there is a new frame available.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_OnFrameArrived":::
 
@@ -105,9 +105,11 @@ If the frame event is set, then we know that the **FrameArrived** event handler 
 
 This example uses a helper class, **SurfaceWithInfo**, which simply allows us to pass the video frame and the system time of the frame - both required by the **MediaStreamSource** - as a single object. The first step of the frame copy process is to instantiate this class and set the system time.
 
-The next steps are the part of this example that relies specifically on the SharpDX library. The helper functions used here are defined at the end of this article. First we use the **MultiThreadLock** to make sure no other threads access the video frame buffer while we are making the copy. Next, we call the helper method **CreateSharpDXTexture2D** to create a SharpDX **Texture2D** object from the video frame. This will be the source texture for the copy operation. We create a copy of the texture description to use when we create our target texture, but the description is modified, setting the **BindFlags** to **RenderTarget** so that the new texture has write access. Setting the **CpuAccessFlags** to **None** allows the system to optimize the copy operation.
+The next steps are the part of this example that relies specifically on the SharpDX library. The helper functions used here are defined at the end of this article. First we use the **MultiThreadLock** to make sure no other threads access the video frame buffer while we are making the copy. Next, we call the helper method **CreateSharpDXTexture2D** to create a SharpDX **Texture2D** object from the video frame. This will be the source texture for the copy operation. 
 
-Next, the target texture for the copy operation is created using the new texture description. A SharpDX **ResourceRegion** is created to define the area of the texture that will be copied, in this case the whole texture. **CopyResource** is called to create a resource that is has the same properties as the **_blankTexture** resource that was created earlier during initialization. **CopySubresourceRegion** performs the actual copy operation. Finally, **CreateDirect3DSurfaceFromSharpDXTexture** is called to create the **IDirect3DSurface** object that is returned from this method.
+Next, we copy from the **Texture2D** object created in the previous step into the composition texture we created earlier in the process. This composition texture acts as a swap buffer so that the encoding process can operate on the pixels while the next frame is being captured. To perform the copy, we clear the render target view associated with the composition texture, then we define the region within the texture we want to copy - the entire texture in this case, and then we call **CopySubresourceRegion** to actually copy the pixels to the composition texture.
+
+We create a copy of the texture description to use when we create our target texture, but the description is modified, setting the **BindFlags** to **RenderTarget** so that the new texture has write access. Setting the **CpuAccessFlags** to **None** allows the system to optimize the copy operation. The texture description is used to create a new texture resource and the composition texture resource is copied into this new resource with a call to **CopyResource**. Finally, **CreateDirect3DSurfaceFromSharpDXTexture** is called to create the **IDirect3DSurface** object that is returned from this method.
 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_WaitForNewFrame":::
@@ -122,7 +124,8 @@ The **Cleanup** method is used to properly dispose of the resources that were cr
 - The **Direct3D11CaptureFramePool** object used by the capture session
 - The **GraphicsCaptureSession** and **GraphicsCaptureItem**
 - The Direct3D and SharpDX devices
-- The blank SharpDX texture and the **Direct3D11CaptureFrame** used for storing the current frame.
+- The SharpDX texture and render target view used in the copy operation.
+- The **Direct3D11CaptureFrame** used for storing the current frame.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_Cleanup":::
 
