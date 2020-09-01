@@ -27,8 +27,8 @@ Suppose that you have an app that lists the titles of blog posts from a certain 
 The example here gets the lists of blog posts from a blog by calling the asynchronous method, [**SyndicationClient.RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), and awaiting the result.
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="SnippetDownloadRSS":::
-:::code language="vb" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="SnippetDownloadRSS":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/cs/MainPage.xaml.cs" id="SnippetDownloadRSS":::
+:::code language="vb" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/vb/MainPage.xaml.vb" id="SnippetDownloadRSS":::
 
 There are a couple of important things about this example. First, the line, `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` uses the **await** operator with the call to the asynchronous method, [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). You can think of the **await** operator as telling the compiler that you are calling an asynchronous method, which causes the compiler to do some extra work so you don’t have to. Next, the declaration of the event handler includes the keyword **async**. You must include this keyword in the method declaration of any method in which you use the **await** operator.
 

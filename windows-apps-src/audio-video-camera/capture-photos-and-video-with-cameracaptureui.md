@@ -52,8 +52,8 @@ First, include the [**Windows.Graphics.Imaging**](/uwp/api/Windows.Graphics.Imag
 
 Call [**OpenAsync**](/uwp/api/windows.storage.istoragefile.openasync) to get a stream from the image file. Call [**BitmapDecoder.CreateAsync**](/uwp/api/windows.graphics.imaging.bitmapdecoder.createasync) to get a bitmap decoder for the stream. Then, call [**GetSoftwareBitmap**](/uwp/api/windows.graphics.imaging.bitmapdecoder.getsoftwarebitmapasync) to get a **SoftwareBitmap** representation of the image.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml.cs" id="SnippetSoftwareBitmap":::
-:::code language="cppwinrt" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.cpp" id="SnippetSoftwareBitmap":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml" id="SnippetSoftwareBitmap":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.xaml" id="SnippetSoftwareBitmap":::
 
 To display the image in your UI, declare an [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) control in your XAML page.
 
