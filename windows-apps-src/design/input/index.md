@@ -1,5 +1,5 @@
 ---
-description: Optimize your app for pen, Surface dial, and other types of input. 
+description: Learn how to customize your Universal Windows Platform (UWP) app for interaction with specific types of inputs including pen, Surface dial, and speech.
 title: Input and interactions
 keywords: app inputs, customize UWP application
 label: Input and interactions

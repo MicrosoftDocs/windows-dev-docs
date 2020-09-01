@@ -1,6 +1,6 @@
 ---
 title: Texture3D subresource tiling
-description: This table shows how Texture3D subresources are tiled.
+description: See a table that shows how Texture3D subresources are tiled, based on the bits per pixel of the Texture2D tiling.
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
 keywords:
 - Texture3D subresource tiling
@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 # Texture3D subresource tiling
 
 
-This table shows how [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) subresources are tiled. The values in this table don't count tail mip packing.
+This table shows how [**Texture3D**](/windows/desktop/direct3dhlsl/sm5-object-texture3d) subresources are tiled. The values in this table don't count tail mip packing.
 
-This table takes the [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) tiling and divides the x/y dimensions by 4 each and adds 16 layers of depth. All the tiles for the first plane (2D plane of tiles defining the first 16 layers of depth) appear before the subsequent planes.
+This table takes the [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) tiling and divides the x/y dimensions by 4 each and adds 16 layers of depth. All the tiles for the first plane (2D plane of tiles defining the first 16 layers of depth) appear before the subsequent planes.
 
-**Note**  [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) support in streaming resources isn't exposed in the initial implementation of streaming resources, but the desired tile shapes are listed here for possible support in a future release.
+**Note**  [**Texture3D**](/windows/desktop/direct3dhlsl/sm5-object-texture3d) support in streaming resources isn't exposed in the initial implementation of streaming resources, but the desired tile shapes are listed here for possible support in a future release.
 
  
 
@@ -43,7 +43,3 @@ Format bit counts not supported with streaming resources are 96 bpp formats, vid
  
 
  
-
-
-
-

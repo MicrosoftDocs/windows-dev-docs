@@ -23,9 +23,9 @@ Use an AutoSuggestBox to provide a list of suggestions for a user to select from
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
-> **Platform APIs**: [AutoSuggestBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [TextChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **Platform APIs**: [AutoSuggestBox class](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [TextChanged event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ## Is this the right control?
 
@@ -72,9 +72,9 @@ To use an AutoSuggestBox, you need to respond to 3 user actions.
 
 ### Text changed
 
-The [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) event occurs whenever the content of the text box is updated. Use the event args [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) property to determine whether the change was due to user input. If the change reason is **UserInput**, filter your data based on the input. Then, set the filtered data as the [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) of the AutoSuggestBox to update the suggestion list.
+The [TextChanged](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) event occurs whenever the content of the text box is updated. Use the event args [Reason](/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) property to determine whether the change was due to user input. If the change reason is **UserInput**, filter your data based on the input. Then, set the filtered data as the [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) of the AutoSuggestBox to update the suggestion list.
 
-To control how items are displayed in the suggestion list, you can use [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) or [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
+To control how items are displayed in the suggestion list, you can use [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) or [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
 
 - To display the text of a single property of your data item, set the DisplayMemberPath property to choose which property from your object to display in the suggestion list.
 - To define a custom look for each item in the list, use the ItemTemplate property.
@@ -83,19 +83,19 @@ To control how items are displayed in the suggestion list, you can use [DisplayM
 
 When a user navigates through the suggestion list using the keyboard, you need to update the text in the text box to match.
 
-You can set the [TextMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) property to choose which property from your data object to display in the text box. If you specify a TextMemberPath, the text box is updated automatically. You should typically specify the same value for DisplayMemberPath and TextMemberPath so the text is the same in the suggestion list and the text box.
+You can set the [TextMemberPath](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) property to choose which property from your data object to display in the text box. If you specify a TextMemberPath, the text box is updated automatically. You should typically specify the same value for DisplayMemberPath and TextMemberPath so the text is the same in the suggestion list and the text box.
 
-If you need to show more than a simple property, handle the [SuggestionChosen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) event to populate the text box with custom text based on the selected item.
+If you need to show more than a simple property, handle the [SuggestionChosen](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) event to populate the text box with custom text based on the selected item.
 
 ### Query submitted
 
-Handle the [QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) event to perform a query action appropriate to your app and show the result to the user.
+Handle the [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) event to perform a query action appropriate to your app and show the result to the user.
 
 The QuerySubmitted event occurs when a user commits a query string. The user can commit a query in one of these ways:
-- While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) property is **null**.
+- While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) property is **null**.
 - While the focus is in the suggestion list, press Enter, click, or tap an item. The event args ChosenSuggestion property contains the item that was selected from the list.
 
-In all cases, the event args [QueryText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) property contains the text from the text box.
+In all cases, the event args [QueryText](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) property contains the text from the text box.
 
 Here is a simple AutoSuggestBox with the required event handlers.
 
@@ -143,7 +143,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 
-By default, the text entry box doesn't have a query button shown. You can set the [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a 'find' icon, like this.
+By default, the text entry box doesn't have a query button shown. You can set the [QueryIcon](/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a 'find' icon, like this.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -184,6 +184,6 @@ Here's an AutoSuggestBox with a 'find' icon.
 - [Text controls](text-controls.md)
 - [Spell checking](text-controls.md)
 - [Search](search.md)
-- [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length property](/dotnet/api/system.string.length)

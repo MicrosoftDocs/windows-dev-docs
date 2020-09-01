@@ -12,7 +12,7 @@ author: QuinnRadich
 
 The Windows developer docs are regularly updated with new and improved information and content. The following docs are some of which have seen recent significant updates as of date ending August 3rd, 2020.
 
-Note: For a specific list of APIs added as part of Windows 10 build 19041 (also known as 2004), please see [this list](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041-api-diff).
+Note: For a specific list of APIs added as part of Windows 10 build 19041 (also known as 2004), please see [this list](/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
 ## WinRT conceptual
 <ul>

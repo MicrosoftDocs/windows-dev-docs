@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 
-> **Important APIs**: [**FadeInThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**FadeOutThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **Important APIs**: [**FadeInThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**FadeOutThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## Do's and don'ts
@@ -28,16 +28,12 @@ Use fade animations to bring items into a view or to take items out of a view. T
 -   Fade-out is a subtle way to remove an element.
 ## Related articles
 
-* [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animating fades](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [Quickstart: Animating your UI using library animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**FadeInThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
-* [**FadeOutThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+* [Animations overview](./xaml-animation.md)
+* [Animating fades](/previous-versions/windows/apps/jj649429(v=win.10))
+* [Quickstart: Animating your UI using library animations](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**FadeInThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
+* [**FadeOutThemeAnimation class**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
  
 
  
-
-
-
-

@@ -42,15 +42,15 @@ We've described the factors involved in a meaningful understanding of screen siz
 
 The mobile version is constrained to portrait-only orientation because that's the best aspect ratio for the book list; and we'd do the same for a page of text, which is best kept to a single column on mobile devices. But, PC and tablet screens are large in either orientation, so that mobile device constraint seems like an unnecessary limitation on larger devices.
 
-Optically zooming the app to look like the mobile version, just bigger, doesn't take advantage of the device and its additional space, and that doesn't serve the user well. We should be thinking of showing more content, rather than the same content bigger. Even on a phablet, we could show some more rows of content. We could use extra space to display different content, such as ads, or we could change the list box into a list view and have it wrap items into multiple columns, when it can, to use the space that way. See [Guidelines for list and grid view controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists).
+Optically zooming the app to look like the mobile version, just bigger, doesn't take advantage of the device and its additional space, and that doesn't serve the user well. We should be thinking of showing more content, rather than the same content bigger. Even on a phablet, we could show some more rows of content. We could use extra space to display different content, such as ads, or we could change the list box into a list view and have it wrap items into multiple columns, when it can, to use the space that way. See [Guidelines for list and grid view controls](../design/controls-and-patterns/lists.md).
 
-In addition to new controls such as list view and grid view, most of the established layout types from Windows Phone Silverlight have equivalents in the Universal Windows Platform (UWP). For example, [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas), [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), and [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel). Porting much of the UI that uses these types should be straightforward, but always look for ways to leverage the dynamic layout capabilities of these layout panels to automatically resize and re-lay out on devices of different sizes.
+In addition to new controls such as list view and grid view, most of the established layout types from Windows Phone Silverlight have equivalents in the Universal Windows Platform (UWP). For example, [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas), [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid), and [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel). Porting much of the UI that uses these types should be straightforward, but always look for ways to leverage the dynamic layout capabilities of these layout panels to automatically resize and re-lay out on devices of different sizes.
 
 Going beyond the dynamic layout built into the system controls and layout panels, we can use a new Windows 10 feature called [Adaptive Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 ## Input modalities
 
-A Windows Phone Silverlight interface is touch-specific. And your ported app's interface should of course also support touch, but you can choose to support other input modalities in addition, such as mouse and keyboard. In the UWP, mouse, pen, and touch input are unified as *pointer input*. For more info, see [Handle pointer input](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input), and [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions).
+A Windows Phone Silverlight interface is touch-specific. And your ported app's interface should of course also support touch, but you can choose to support other input modalities in addition, such as mouse and keyboard. In the UWP, mouse, pen, and touch input are unified as *pointer input*. For more info, see [Handle pointer input](../design/input/handle-pointer-input.md), and [Keyboard interactions](../design/input/keyboard-interactions.md).
 
 ## Maximizing markup and code re-use
 
@@ -60,9 +60,8 @@ Refer back to the [maximizing markup and code reuse](wpsl-to-uwp-porting-to-a-uw
 
 -   [Design UWP apps](https://developer.microsoft.com/windows/apps/design)
 -   [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
--   [Plan for different form factors](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
+-   [Plan for different form factors](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 
 ## Related topics
 
 * [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
-

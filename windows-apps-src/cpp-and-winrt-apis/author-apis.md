@@ -9,10 +9,10 @@ ms.localizationpriority: medium
 
 # Author APIs with C++/WinRT
 
-This topic shows how to author [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
+This topic shows how to author [C++/WinRT](./intro-to-using-cpp-with-winrt.md) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
 
 > [!NOTE]
-> This topic touches on the subject of Windows Runtime components, but only in the context of C++/WinRT. If you're looking for content about Windows Runtime components that covers all Windows Runtime languages, then see [Windows Runtime components](/windows/uwp/winrt-components/).
+> This topic touches on the subject of Windows Runtime components, but only in the context of C++/WinRT. If you're looking for content about Windows Runtime components that covers all Windows Runtime languages, then see [Windows Runtime components](../winrt-components/index.md).
 
 - You're *not* authoring a Windows Runtime class (runtime class); you just want to implement one or more Windows Runtime interfaces for local consumption within your app. You derive directly from **winrt::implements** in this case, and implement functions.
 - You *are* authoring a runtime class. You might be authoring a component to be consumed from an app. Or you might be authoring a type to be consumed from XAML user interface (UI), and in that case you're both implementing and consuming a runtime class within the same compilation unit. In these cases, you let the tools generate classes for you that derive from **winrt::implements**.
@@ -173,7 +173,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 So, in this scenario, at the root of the inheritance hierarchy is the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct template once again.
 
-For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) and [Author events in C++/WinRT](./author-events.md).
 
 ## If you're authoring a runtime class to be referenced in your XAML UI
 
@@ -234,7 +234,7 @@ We've seen that the workflow is to use IDL to declare your runtime class and its
 Here are some examples.
 
 - You can relax parameter types. For example, if in IDL your method takes a **SomeClass**, then you could choose to change that to **IInspectable** in your implementation. This works because any **SomeClass** can be forwarded to **IInspectable** (the reverse, of course, wouldn't work).
-- You can accept a copyable parameter by value, instead of by reference. For example, change `SomeClass const&` to `SomeClass`. That's necessary when you need to avoid capturing a reference into a coroutine (see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- You can accept a copyable parameter by value, instead of by reference. For example, change `SomeClass const&` to `SomeClass`. That's necessary when you need to avoid capturing a reference into a coroutine (see [Parameter-passing](./concurrency.md#parameter-passing)).
 - You can relax the return value. For example, you can change **void** to [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 The last two are very useful when you're writing an asynchronous event handler.
@@ -463,7 +463,7 @@ Until you make the edit described above (to pass that constructor parameter on t
 As you've seen previously in this topic, a C++/WinRT runtime class exists in the form of more than one C++ class in more than one namespace. So, the name **MyRuntimeClass** has one meaning in the **winrt::MyProject** namespace, and a different meaning in the **winrt::MyProject::implementation** namespace. Be aware of which namespace you currently have in context, and then use namespace prefixes if you need a name from a different namespace. Let's look more closely at the namespaces in question.
 
 - **winrt::MyProject**. This namespace contains projected types. An object of a projected type is a proxy; it's essentially a smart pointer to a backing object, where that backing object might be implemented here in your project, or it might be implemented in another compilation unit.
-- **winrt::MyProject::implementation**. This namespace contains implementation types. An object of an implementation type is not a pointer; it's a value&mdash;a full C++ stack object. Don't construct an implementation type directly; instead, call [**winrt::make**](/uwp/cpp-ref-for-winrt/make), passing your implementation type as the template parameter. We've shown examples of **winrt::make** in action previously in this topic, and there's another example in [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Also see [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+- **winrt::MyProject::implementation**. This namespace contains implementation types. An object of an implementation type is not a pointer; it's a value&mdash;a full C++ stack object. Don't construct an implementation type directly; instead, call [**winrt::make**](/uwp/cpp-ref-for-winrt/make), passing your implementation type as the template parameter. We've shown examples of **winrt::make** in action previously in this topic, and there's another example in [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Also see [Diagnosing direct allocations](./diag-direct-alloc.md).
 - **winrt::MyProject::factory_implementation**. This namespace contains factories. An object in this namespace supports [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
 
 This table shows the minimum namespace qualification you need to use in different contexts.
@@ -478,7 +478,7 @@ This table shows the minimum namespace qualification you need to use in differen
 >
 > The problem with `MyRuntimeClass myRuntimeClass;` in that scenario is that it creates a **winrt::MyProject::implementation::MyRuntimeClass** object on the stack. That object (of implementation type) behaves like the projected type in some ways&mdash;you can invoke methods on it in the same way; and it even converts to a projected type. But the object destructs, as per normal C++ rules, when the scope exits. So, if you returned a projected type (a smart pointer) to that object, then that pointer is now dangling.
 >
-> This memory corruption type of bug is difficult to diagnose. So, for debug builds, a C++/WinRT assertion helps you catch this mistake, using a stack-detector. But coroutines are allocated on the heap, so you won't get help with this mistake if you make it inside a coroutine. For more info, see [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+> This memory corruption type of bug is difficult to diagnose. So, for debug builds, a C++/WinRT assertion helps you catch this mistake, using a stack-detector. But coroutines are allocated on the heap, so you won't get help with this mistake if you make it inside a coroutine. For more info, see [Diagnosing direct allocations](./diag-direct-alloc.md).
 
 ## Using projected types and implementation types with various C++/WinRT features
 
@@ -694,7 +694,7 @@ As you can see, the **winrt_make_MyProject_MyClass** function directly creates y
 
 ## Overriding base class virtual methods
 
-Your derived class can have issues with virtual methods if both the base and the derived class are app-defined classes, but the virtual method is defined in a grandparent Windows Runtime class. In practice, this happens if you derive from XAML classes. The rest of this section continues from the example in [Derived classes](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes).
+Your derived class can have issues with virtual methods if both the base and the derived class are app-defined classes, but the virtual method is defined in a grandparent Windows Runtime class. In practice, this happens if you derive from XAML classes. The rest of this section continues from the example in [Derived classes](./move-to-winrt-from-cx.md#derived-classes).
 
 ```cppwinrt
 namespace winrt::MyNamespace::implementation
@@ -746,7 +746,7 @@ This requires that all members of the class hierarchy agree on the return value 
 * [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## Related topics
-* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
-* [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property)
+* [Author events in C++/WinRT](./author-events.md)
+* [Consume APIs with C++/WinRT](./consume-apis.md)
+* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [XAML controls; bind to a C++/WinRT property](./binding-property.md)

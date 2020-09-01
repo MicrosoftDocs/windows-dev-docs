@@ -40,8 +40,8 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 
 For device-specific setup instructions, see:
 
-- [Device Portal for HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Device Portal for IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
+- [Device Portal for HoloLens](./device-portal-hololens.md)
+- [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal)
 - [Device Portal for Mobile](device-portal-mobile.md)
 - [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
 - [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -164,7 +164,7 @@ For more details on using ETW logging, see the [Use Device Portal to view debug 
 
 ### Performance tracing
 
-The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
+The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
 
 ![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -173,7 +173,7 @@ The Performance tracing page allows you for view the [Windows Performance Record
 
 To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has finished downloading.
 
-Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
+Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### Device manager
 

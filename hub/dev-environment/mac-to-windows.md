@@ -69,14 +69,14 @@ Windows supports several command-line shells and terminals which sometimes work 
 
 Windows has two primary command-line shells:
 
-1. **[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7)** - PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language built on .NET. Using PowerShell, administrators, developers, and power-users can rapidly control and automate tasks that manage complex processes and various aspects of the environment and operating system upon which it is run. PowerShell is [fully open-source](https://github.com/powershell/powershell), and because it is cross-platform, also [available for Mac and Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7).
+1. **[PowerShell](/powershell/scripting/overview?view=powershell-7)** - PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language built on .NET. Using PowerShell, administrators, developers, and power-users can rapidly control and automate tasks that manage complex processes and various aspects of the environment and operating system upon which it is run. PowerShell is [fully open-source](https://github.com/powershell/powershell), and because it is cross-platform, also [available for Mac and Linux](/powershell/scripting/install/installing-powershell?view=powershell-7).
 
     **Mac and Linux BASH shell users**: PowerShell also supports many command-aliases that you are already familiar with. For example:
     - List the contents of the current directory, using: `ls`
     - Move files with: `mv`
     - Move to a new directory with: `cd <path>`
 
-    Some commands and arguments are different in PowerShell vs. BASH. Learn more by entering: [`get-help`](https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system?view=powershell-7) in PowerShell or checkout the [compatibility aliases](https://docs.microsoft.com/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7) in the docs.
+    Some commands and arguments are different in PowerShell vs. BASH. Learn more by entering: [`get-help`](/powershell/scripting/learn/ps101/02-help-system?view=powershell-7) in PowerShell or checkout the [compatibility aliases](/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7) in the docs.
 
     To run PowerShell as an Administrator, enter "PowerShell" in your Windows start menu, then select "Run as Administrator."
 
@@ -84,7 +84,7 @@ Windows has two primary command-line shells:
 
 ### Linux shells
 
-Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10). Linux distributions that can be installed on Windows with WSL include:
+Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](/windows/wsl/install-win10). Linux distributions that can be installed on Windows with WSL include:
 
 1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
 2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
@@ -92,17 +92,17 @@ Windows Subsystem for Linux (WSL) can now be installed to support running a Linu
 4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-Just to name a few. Find more in the [WSL install docs](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools).
+Just to name a few. Find more in the [WSL install docs](/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools).
 
 ## Windows Terminals
 
 In addition to many 3rd party offerings, Microsoft provides two “terminals” – GUI applications that provide access to command-line shells and applications.
 
-1. **[Windows Terminal](https://docs.microsoft.com/windows/terminal/)**: Windows Terminal is a new, modern, highly configurable command-line terminal application that provides very high performance, low-latency command-line user experience, multiple tabs, split window panes, custom themes and styles, multiple “profiles” for different shells or command-line apps, and considerable opportunities for you to configure and personalize many aspects of your command-line user experience.
+1. **[Windows Terminal](/windows/terminal/)**: Windows Terminal is a new, modern, highly configurable command-line terminal application that provides very high performance, low-latency command-line user experience, multiple tabs, split window panes, custom themes and styles, multiple “profiles” for different shells or command-line apps, and considerable opportunities for you to configure and personalize many aspects of your command-line user experience.
 
     You can use Windows Terminal to open tabs connected to PowerShell, WSL shells (like Ubuntu or Debian), the traditional Windows Command Prompt, or any other command-line app (e.g. SSH, Azure CLI, Git Bash).
 
-2. **[Console](https://docs.microsoft.com/windows/console/)**: On Mac and Linux, users usually start their preferred terminal application which then creates and connects to the user’s default shell (e.g. BASH).
+2. **[Console](/windows/console/)**: On Mac and Linux, users usually start their preferred terminal application which then creates and connects to the user’s default shell (e.g. BASH).
 
     However, due to a quirk of history, Windows users traditionally start their shell, and Windows automatically starts and connects a GUI Console app.
 

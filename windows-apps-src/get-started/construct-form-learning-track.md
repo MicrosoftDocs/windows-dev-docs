@@ -45,7 +45,7 @@ You'll need to fill your form with an assortment of [XAML Controls](../design/co
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) lets a user choose between two options.
 * [DatePicker](../design/controls-and-patterns/date-picker.md) lets a user select a date value.
 * [TimePicker](../design/controls-and-patterns/time-picker.md) lets a user select a time value.
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) expand to display a list of selectable items. You can learn more about them [here](../design/controls-and-patterns/combo-box.md)
+* [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) expand to display a list of selectable items. You can learn more about them [here](../design/controls-and-patterns/combo-box.md)
 
 You also might want to add [buttons](../design/controls-and-patterns/buttons.md), so the user can save or cancel.
 
@@ -149,10 +149,10 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 | API | Description |
 |------|---------------|
 | [Controls useful for forms](../design/controls-and-patterns/forms.md#input-controls) | A list of useful input controls for creating forms, and basic guidance of where to use them. |
-| [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | A panel for arranging elements in multi-row and multi-column layouts. |
-| [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arraging items in relation to other elements and to the panel's boundaries. |
-| [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | A panel for arranging elements into a single horizontal or vertical line. |
-| [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | Allows you to set the appearance of UI elements when they're in particular states. |
+| [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) | A panel for arranging elements in multi-row and multi-column layouts. |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arraging items in relation to other elements and to the panel's boundaries. |
+| [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | A panel for arranging elements into a single horizontal or vertical line. |
+| [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | Allows you to set the appearance of UI elements when they're in particular states. |
 
 ### Useful docs
 

@@ -1,6 +1,6 @@
 ---
 title: Bringing existing games to Xbox
-description: Bringing existing games to Xbox with UWP.
+description: See articles about how to bring existing custom C++, Unity, and HTML and JavaScript games to Xbox with UWP.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

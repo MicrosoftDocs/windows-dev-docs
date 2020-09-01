@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 
 If you [configure your app as a free trial in Partner Center](../publish/set-app-pricing-and-availability.md#free-trial) so that customers can use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
-This article shows how to use members of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to determine if the user has a trial license for your app and be notified if the state of the license changes while your app is running. 
+This article shows how to use members of the [StoreContext](/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace to determine if the user has a trial license for your app and be notified if the state of the license changes while your app is running. 
 
 > [!NOTE]
-> The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace instead of the **Windows.Services.Store** namespace. For more information, see [this article](exclude-or-limit-features-in-a-trial-version-of-your-app.md).
+> The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) namespace instead of the **Windows.Services.Store** namespace. For more information, see [this article](exclude-or-limit-features-in-a-trial-version-of-your-app.md).
 
 ## Guidelines for implementing a trial version
 
-The current license state of your app is stored as properties of the [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
+The current license state of your app is stored as properties of the [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
 
 Also, decide how you want to handle changes to the app's license while the app is running. Your trial app can be full-featured, but have in-app ad banners where the paid-for version doesn't. Or, your trial app can disable certain features, or display regular messages asking the user to buy it.
 
@@ -51,25 +51,25 @@ For most non-gaming apps, setting an expiration date works well, because users c
     -   Thank them for buying or display a message.
     -   Silently enable the features that are available with a full-license (or disable the trial-only notices).
 
-Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior. For more info about describing your app, see [Create app descriptions](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).
+Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior. For more info about describing your app, see [Create app descriptions](../publish/create-app-store-listings.md).
 
 ## Prerequisites
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have created an app in Partner Center that is configured as a [free trial](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) with no time limit and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have created an app in Partner Center that is configured as a [free trial](../publish/set-app-pricing-and-availability.md) with no time limit and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
 
 The code in this example assumes:
-* The code runs in the context of a [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) that contains a [ProgressRing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring) named ```workingProgressRing``` and a [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
+* The code runs in the context of a [Page](/uwp/api/windows.ui.xaml.controls.page) that contains a [ProgressRing](/uwp/api/windows.ui.xaml.controls.progressring) named ```workingProgressRing``` and a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
 * The code file has a **using** statement for the **Windows.Services.Store** namespace.
 * The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
-> If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in this example to configure the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
+> If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in this example to configure the [StoreContext](/uwp/api/windows.services.store.storecontext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 ## Code example
 
-When your app is initializing, get the [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense) object for your app and handle the [OfflineLicensesChanged](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) event to receive notifications when the license changes while the app is running. For example, the app's license could change if the trial period expires or the customer buys the app through a Store. When the license changes, get the new license and enable or disable a feature of your app accordingly.
+When your app is initializing, get the [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense) object for your app and handle the [OfflineLicensesChanged](/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) event to receive notifications when the license changes while the app is running. For example, the app's license could change if the trial period expires or the customer buys the app through a Store. When the license changes, get the new license and enable or disable a feature of your app accordingly.
 
 At this point, if a user bought the app, it is a good practice to provide feedback to the user that the licensing status has changed. You might need to ask the user to restart the app if that's how you've coded it. But make this transition as seamless and painless as possible.
 

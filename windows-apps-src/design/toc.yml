@@ -490,19 +490,19 @@
       href: input/cortana-interactions.md
       items:
         - name: Design guidelines
-          href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
+          href: /cortana/voice-commands/voicecommand-design-guidelines
         - name: Activate a foreground app
-          href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
         - name: Modify VCD phrase lists
-          href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
         - name: Launch a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
         - name: Interact with a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
         - name: Deep link from a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
         - name: Support natural-language voice commands
-          href: https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
     - name: Multiple inputs
       href: input/multiple-input-design-guidelines.md
     - name: Input injection

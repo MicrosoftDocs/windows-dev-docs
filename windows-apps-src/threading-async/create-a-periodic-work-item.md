@@ -12,20 +12,20 @@ ms.localizationpriority: medium
 
 <b>Important APIs</b>
 
--   [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
--   [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)
+-   [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
+-   [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer)
 
 Learn how to create a work item that repeats periodically.
 
 ## Create the periodic work item
 
-Use the [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
+Use the [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
 
-[**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) returns a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) object. Store this object in case the timer needs to be canceled.
+[**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) returns a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) object. Store this object in case the timer needs to be canceled.
 
 > **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
 
 The following example creates a work item that runs once every 60 seconds:
 
@@ -81,7 +81,7 @@ The following example creates a work item that runs once every 60 seconds:
 
 ## Handle cancellation of the periodic work item (optional)
 
-If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler). Use the [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) overload to supply an additional lambda that handles cancellation of the periodic work item.
+If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler). Use the [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) overload to supply an additional lambda that handles cancellation of the periodic work item.
 
 The following example creates a periodic work item that repeats every 60 seconds and it also supplies a cancellation handler:
 
@@ -180,7 +180,7 @@ The following example creates a periodic work item that repeats every 60 seconds
 
 ## Cancel the timer
 
-When necessary, call the [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler) (if provided) is called when all instances of the periodic work item have completed.
+When necessary, call the [**Cancel**](/uwp/api/windows.system.threading.threadpooltimer.cancel) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler) (if provided) is called when all instances of the periodic work item have completed.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp

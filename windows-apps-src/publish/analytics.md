@@ -31,7 +31,7 @@ In this section you'll find details about the info presented in each of the foll
 -   [Xbox analytics report](xbox-analytics-report.md)
 -   [Insights report](insights-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
--   [Ad campaign report](promote-your-app-report.md)
+-   [Ad campaign report](/windows/uwp/publish/ad-campaign-report)
 
 
 > [!NOTE]
@@ -58,4 +58,4 @@ Use the following resources to get started using Power BI to access your analyti
 * [Learn how to use the Windows Dev Center content pack for Power BI to connect to your analytics data](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Partner Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Microsoft 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](https://account.azure.com/organization). For more information about setting up the association, see [Associate Azure Active Directory with your Partner Center account](associate-azure-ad-with-dev-center.md).
+> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Partner Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Microsoft 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](https://account.azure.com/organization). For more information about setting up the association, see [Associate Azure Active Directory with your Partner Center account](./associate-azure-ad-with-partner-center.md).

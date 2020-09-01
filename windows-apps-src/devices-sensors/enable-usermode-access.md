@@ -36,7 +36,7 @@ Device(RHPX)
 - _CID – Compatible Id. Must be “MSFT8000”.
 - _UID – Unique Id. Set to 1.
 
-Next we declare each of the GPIO and SPB resources that should be exposed to user mode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) and [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
+Next we declare each of the GPIO and SPB resources that should be exposed to user mode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](/uwp/api/windows.devices.i2c.i2ccontroller) and [Windows.Devices.Spi.SpiController](/uwp/api/windows.devices.spi.spicontroller).
 
 ### SPI
 
@@ -151,7 +151,7 @@ This creates a bus named “SPI1” and associates it with resource index 2.
 #### SPI Driver Requirements
 
 - Must use `SpbCx` or be SpbCx-compatible
-- Must have passed the [MITT SPI Tests](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
+- Must have passed the [MITT SPI Tests](/windows-hardware/drivers/spb/spi-tests-in-mitt)
 - Must support 4Mhz clock speed
 - Must support 8-bit data length
 - Must support all SPI Modes: 0, 1, 2, 3
@@ -196,7 +196,7 @@ The following fields are placeholders for values specified by the user at runtim
 #### I2C Driver Requirements
 
 - Must use SpbCx or be SpbCx-compatible
-- Must have passed the [MITT I2C Tests](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
+- Must have passed the [MITT I2C Tests](/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 - Must support 7-bit addressing
 - Must support 100kHz clock speed
 - Must support 400kHz clock speed
@@ -223,7 +223,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 The following requirements must be observed when declaring GPIO pins:
 
-- Only memory mapped GPIO controllers are supported. GPIO controllers interfaced over I2C/SPI are not supported. The controller driver is a memory mapped controller if it sets the [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) flag in the [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) structure in response to the [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) callback.
+- Only memory mapped GPIO controllers are supported. GPIO controllers interfaced over I2C/SPI are not supported. The controller driver is a memory mapped controller if it sets the [MemoryMappedController](/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) flag in the [CLIENT_CONTROLLER_BASIC_INFORMATION](/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) structure in response to the [CLIENT_QueryControllerBasicInformation](/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) callback.
 - Each pin requires both a GpioIO and a GpioInt resource. The GpioInt resource must immediately follow the GpioIO resource and must refer to the same pin number.
 - GPIO resources must be ordered by increasing pin number.
 - Each GpioIO and GpioInt resource must contain exactly one pin number in the pin list.
@@ -277,7 +277,7 @@ If native pin numbering is used, you must also specify the **PinCount** property
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-The **PinCount** property should match the value returned through the **TotalPins** property in the [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) callback of the `GpioClx` driver.
+The **PinCount** property should match the value returned through the **TotalPins** property in the [CLIENT_QueryControllerBasicInformation](/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) callback of the `GpioClx` driver.
 
 Choose the numbering scheme that is most compatible with existing published documentation for your board. For example, Raspberry Pi uses native pin numbering because many existing pinout diagrams use the BCM2835 pin numbers. MinnowBoardMax uses sequential pin numbering because there are few existing pinout diagrams, and sequential pin numbering simplifies the developer experience because only 10 pins are exposed out of more than 200 pins. The decision to use sequential or native pin numbering should aim to reduce developer confusion.
 
@@ -326,9 +326,9 @@ This assigns the friendly name “UART2” to the controller, which is the ident
 
 Pin muxing is the ability to use the same physical pin for different functions. Several different on-chip peripherals, such as an I2C controller, SPI controller, and GPIO controller, might be routed to the same physical pin on a SOC. The mux block controls which function is active on the pin at any given time. Traditionally, firmware is responsible for establishing function assignments at boot, and this assignment remains static through the boot session. Runtime pin muxing adds the ability to reconfigure pin function assignments at runtime. Enabling users to choose a pin’s function at runtime speeds development by enabling users to quickly reconfigure a board’s pins, and enables hardware to support a broader range of applications than would a static configuration.
 
-Users consume muxing support for GPIO, I2C, SPI, and UART without writing any additional code. When a user opens a GPIO or bus using [OpenPin()](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) or [FromIdAsync()](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync), the underlying physical pins are automatically muxed to the requested function. If the pins are already in use by a different function, the OpenPin() or FromIdAsync() call will fail. When the user closes the device by disposing the [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin), [I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice), [SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice), or [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice) object, the pins are released, allowing them to later be opened for a different function.
+Users consume muxing support for GPIO, I2C, SPI, and UART without writing any additional code. When a user opens a GPIO or bus using [OpenPin()](/uwp/api/windows.devices.gpio.gpiocontroller.openpin) or [FromIdAsync()](/uwp/api/windows.devices.i2c.i2cdevice.fromidasync), the underlying physical pins are automatically muxed to the requested function. If the pins are already in use by a different function, the OpenPin() or FromIdAsync() call will fail. When the user closes the device by disposing the [GpioPin](/uwp/api/windows.devices.gpio.gpiopin), [I2cDevice](/uwp/api/windows.devices.i2c.i2cdevice), [SpiDevice](/uwp/api/windows.devices.spi.spidevice), or [SerialDevice](/uwp/api/windows.devices.serialcommunication.serialdevice) object, the pins are released, allowing them to later be opened for a different function.
 
-Windows contains built-in support for pin muxing in the [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index), [SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension), and [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) frameworks. These frameworks work together to automatically switch a pin to the correct function when a GPIO pin or bus is accessed. Access to the pins is arbitrated to prevent conflicts among multiple clients. In addition to this built-in support, the interfaces and protocols for pin muxing are general purpose and can be extended to support additional devices and scenarios.
+Windows contains built-in support for pin muxing in the [GpioClx](/windows-hardware/drivers/ddi/content/index), [SpbCx](/windows-hardware/drivers/spb/spb-framework-extension), and [SerCx](/windows-hardware/drivers/ddi/content/index) frameworks. These frameworks work together to automatically switch a pin to the correct function when a GPIO pin or bus is accessed. Access to the pins is arbitrated to prevent conflicts among multiple clients. In addition to this built-in support, the interfaces and protocols for pin muxing are general purpose and can be extended to support additional devices and scenarios.
 
 This document first describes the underlying interfaces and protocols involved in pin muxing, and then describes how to add support for pin muxing to GpioClx, SpbCx, and SerCx controller drivers.
 
@@ -348,8 +348,8 @@ The sequence of operations involved in pin muxing is shown below.
 
 ![Pin muxing client server interaction](images/usermode-access-diagram-1.png)
 
-1. The client receives MsftFunctionConfig resources from ACPI firmware in its [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) callback.
-2. The client uses the resource hub helper function `RESOURCE_HUB_CREATE_PATH_FROM_ID()` to create a path from the resource ID, then opens a handle to the path (using [ZwCreateFile()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile), [IoGetDeviceObjectPointer()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer), or [WdfIoTargetOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)).
+1. The client receives MsftFunctionConfig resources from ACPI firmware in its [EvtDevicePrepareHardware()](/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) callback.
+2. The client uses the resource hub helper function `RESOURCE_HUB_CREATE_PATH_FROM_ID()` to create a path from the resource ID, then opens a handle to the path (using [ZwCreateFile()](/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile), [IoGetDeviceObjectPointer()](/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer), or [WdfIoTargetOpen()](/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)).
 3. The server extracts the resource hub ID from the file path using resource hub helper functions `RESOURCE_HUB_ID_FROM_FILE_NAME()`, then queries the resource hub to get the resource descriptor.
 4. The server performs sharing arbitration for each pin in the descriptor and completes the IRP_MJ_CREATE request.
 5. The client issues an *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* request on the received handle.
@@ -364,7 +364,7 @@ This section describes how a client consumes pin muxing functionality. This does
 
 #### Parsing resources
 
-A WDF driver receives `MsftFunctionConfig()` resources in its [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) routine. MsftFunctionConfig resources can be identified by the following fields:
+A WDF driver receives `MsftFunctionConfig()` resources in its [EvtDevicePrepareHardware()](/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) routine. MsftFunctionConfig resources can be identified by the following fields:
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -499,7 +499,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-The driver should store the WDFIOTARGET in one of its context areas so that it can be closed later. When the driver is ready to release the muxing configuration, it should close the resource handle by calling [WdfObjectDelete()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete), or [WdfIoTargetClose()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose) if you intend to reuse the WDFIOTARGET.
+The driver should store the WDFIOTARGET in one of its context areas so that it can be closed later. When the driver is ready to release the muxing configuration, it should close the resource handle by calling [WdfObjectDelete()](/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete), or [WdfIoTargetClose()](/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose) if you intend to reuse the WDFIOTARGET.
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -527,7 +527,7 @@ Sharing arbitration succeeds overall if sharing arbitration succeeds for each pi
 
 If sharing arbitration fails, the request should be completed with *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. If sharing arbitration succeeds, the request should completed with *STATUS_SUCCESS*.
 
-Note that the sharing mode of the incoming request should be taken from the MsftFunctionConfig descriptor, not [IrpSp->Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create).
+Note that the sharing mode of the incoming request should be taken from the MsftFunctionConfig descriptor, not [IrpSp->Parameters.Create.ShareAccess](/windows-hardware/drivers/ifs/irp-mj-create).
 
 #### Handling IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS requests
 
@@ -630,7 +630,7 @@ At device initialization time, the `SpbCx` and `SerCx` frameworks parse all `Msf
 
 `SpbCx` applies pin muxing configuration in its *IRP_MJ_CREATE* handler, just before calling the client driver’s [EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) callback. If muxing configuration could not be applied, the controller driver’s `EvtSpbTargetConnect()` callback will not be called. Therefore, an SPB controller driver may assume that pins are muxed to the SPB function by the time `EvtSpbTargetConnect()` is called.
 
-`SpbCx` reverts pin muxing configuration in its *IRP_MJ_CLOSE* handler, just after invoking the controller driver’s [EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) callback. The result is that pins are muxed to the SPB function whenever a peripheral driver opens a handle to the SPB controller driver, and are muxed away when the peripheral driver closes their handle.
+`SpbCx` reverts pin muxing configuration in its *IRP_MJ_CLOSE* handler, just after invoking the controller driver’s [EvtSpbTargetDisconnect()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) callback. The result is that pins are muxed to the SPB function whenever a peripheral driver opens a handle to the SPB controller driver, and are muxed away when the peripheral driver closes their handle.
 
 `SerCx` behaves similarly. `SerCx` acquires all `MsftFunctionConfig()` resources in its *IRP_MJ_CREATE* handler just before invoking the controller driver’s [EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) callback, and releases all resources in its IRP_MJ_CLOSE handler, just after invoking the controller driver’s [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) callback.
 
@@ -696,7 +696,7 @@ Now that you've authored an rhproxy ASL node, it's time to compile and load it. 
     }
     ```
 
-2. Download the [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) and find `asl.exe` at `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
+2. Download the [WDK](/windows-hardware/drivers/download-the-wdk) and find `asl.exe` at `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3. Run the following command to generate ACPITABL.dat:
 
     ```ps
@@ -802,17 +802,17 @@ Use the following samples to validate that devices work from UWP.
 
 ### Run the HLK Tests
 
-Download the [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
+Download the [Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
 
-- [GPIO WinRT Functional and Stress Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
-- [I2C WinRT Write Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
-- [I2C WinRT Read Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
-- [I2C WinRT Nonexistent Slave Address Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
-- [I2C WinRT Advanced Functional Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
-- [SPI WinRT Clock Frequency Verification Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
-- [SPI WinRT IO Transfer Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
-- [SPI WinRT Stride Verification Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
-- [SPI WinRT Transfer Gap Detection Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
+- [GPIO WinRT Functional and Stress Tests](/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
+- [I2C WinRT Write Tests (EEPROM Required)](/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
+- [I2C WinRT Read Tests (EEPROM Required)](/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
+- [I2C WinRT Nonexistent Slave Address Tests](/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+- [I2C WinRT Advanced Functional Tests (mbed LPC1768 Required)](/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
+- [SPI WinRT Clock Frequency Verification Tests (mbed LPC1768 Required)](/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+- [SPI WinRT IO Transfer Tests (mbed LPC1768 Required)](/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+- [SPI WinRT Stride Verification Tests](/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
+- [SPI WinRT Transfer Gap Detection Tests (mbed LPC1768 Required)](/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 When you select the rhproxy device node in HLK manager, the applicable tests will automatically be selected.
 
@@ -829,21 +829,21 @@ Click Run Selected. Further documentation on each test is available by right cli
 ## Resources
 
 - [ACPI 5.0 specification](http://acpi.info/spec.htm)
-- [Asl.exe (Microsoft ASL Compiler)](https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx)
-- [Windows.Devices.Gpio](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx)
-- [Windows.Devices.I2c](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx)
-- [Windows.Devices.Spi](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx)
-- [Windows.Devices.SerialCommunication](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.aspx)
-- [Test Authoring and Execution Framework (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx)
+- [Asl.exe (Microsoft ASL Compiler)](/windows-hardware/drivers/bringup/microsoft-asl-compiler)
+- [Windows.Devices.Gpio](/uwp/api/Windows.Devices.Gpio)
+- [Windows.Devices.I2c](/uwp/api/Windows.Devices.I2c)
+- [Windows.Devices.Spi](/uwp/api/Windows.Devices.Spi)
+- [Windows.Devices.SerialCommunication](/uwp/api/Windows.Devices.SerialCommunication)
+- [Test Authoring and Execution Framework (TAEF)](/windows-hardware/drivers/taef/)
 - [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx)
 - [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx)
-- [SerCx](https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx)
-- [MITT I2C Tests](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)
+- [SerCx](/previous-versions//ff546939(v=vs.85))
+- [MITT I2C Tests](/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 - [GpioTestTool](https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/GpioTestTool)
 - [I2cTestTool](https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/I2cTestTool)
 - [SpiTestTool](https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/SpiTestTool)
 - [MinComm (Serial)](https://github.com/microsoft/Windows-iotcore-samples/tree/6e473075bbe616e4d9ce90e67c6412fba661c337/BusTools/MinComm)
-- [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx)
+- [Hardware Lab Kit (HLK)](/windows-hardware/drivers/)
 
 ## Appendix
 

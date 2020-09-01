@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 
 This section describes the different kinds of input devices that can be used in Universal Windows Platform (UWP) games on Windows 10 and Xbox One, demonstrates their basic usage, and recommends patterns and techniques for effective input programming in games.
 
-> **Note**    Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom) namespace.
+> **Note**    Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom](/uwp/api/windows.gaming.input.custom) namespace.
 
 ## Gaming input devices
 
-Game input devices are supported in UWP games and apps for Windows 10 and Xbox One by the [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) namespace.
+Game input devices are supported in UWP games and apps for Windows 10 and Xbox One by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
 
 ### Gamepads
 
@@ -68,5 +68,5 @@ For information on how to manage users and their input devices, see [Tracking us
 ## See Also
 
 * [Input practices for games](input-practices-for-games.md)
-* [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input namespace](/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom namespace](/uwp/api/windows.gaming.input.custom)

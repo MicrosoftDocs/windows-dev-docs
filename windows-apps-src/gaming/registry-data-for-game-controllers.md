@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This topic is meant for manufacturers of Windows 10-compatible game controllers, and doesn't apply to the majority of developers.
 
-The [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
+The [Windows.Gaming.Input namespace](/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](/uwp/api/windows.gaming.input.gamepad), [RacingWheels](/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
 
 ## Mapping scheme
 
@@ -1343,6 +1343,6 @@ Windows Registry Editor Version 5.00
 
 ## See also
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [INF Files](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [Windows.Gaming.Input Namespace](/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](/uwp/api/windows.gaming.input.custom)
+* [INF Files](/windows-hardware/drivers/install/inf-files)

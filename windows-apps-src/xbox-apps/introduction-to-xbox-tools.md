@@ -1,6 +1,6 @@
 ---
 title: Introduction to Xbox One tools
-description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
+description: Learn how to access the Xbox One Device Portal using the Dev Home app in the Xbox One Development Kit.
 ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox one, tools

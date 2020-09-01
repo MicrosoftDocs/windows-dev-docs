@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**LightSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.LightSensor)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**LightSensor**](/uwp/api/Windows.Devices.Sensors.LightSensor)
 
 **Sample**
 

@@ -12,14 +12,14 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Windows.Devices.Sensors.Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
 
-Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [**MagnetometerAccuracy**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration can help determine a course of action when your device is in need of calibration.
+Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [**MagnetometerAccuracy**](/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration can help determine a course of action when your device is in need of calibration.
 
 ## When to calibrate the magnetometer
 
-The [**MagnetometerAccuracy**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration has four values that help you determine if the device your app is running on needs to be calibrated. If a device needs to be calibrated, you should let the user know that calibration is needed. However, you should not prompt the user to calibrate too frequently. We recommend no more than once every 10 minutes.
+The [**MagnetometerAccuracy**](/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration has four values that help you determine if the device your app is running on needs to be calibrated. If a device needs to be calibrated, you should let the user know that calibration is needed. However, you should not prompt the user to calibrate too frequently. We recommend no more than once every 10 minutes.
 
 | Value           | Description    |
 | ----------------- | ------------------- |

@@ -49,7 +49,7 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
 
 - [Context menu](../controls-and-patterns/menus.md), [Command bar](../controls-and-patterns/app-bars.md), [Command bar flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Dialogs and flyouts](../controls-and-patterns/dialogs.md) (Dialog at 64px)
+- [Dialogs and flyouts](../controls-and-patterns/dialogs-and-flyouts/index.md) (Dialog at 64px)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
@@ -91,9 +91,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### Disabling default ThemeShadow on custom Flyout controls
 
-Controls based on [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
+Controls based on [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
 
-If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
+If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
 
 ```xaml
 <Flyout>
@@ -149,7 +149,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## Drop shadow
 
-DropShadow is not automatically responsive to its environment and does not use light sources. For example implementations, see the [DropShadow Class](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow is not automatically responsive to its environment and does not use light sources. For example implementations, see the [DropShadow Class](/uwp/api/windows.ui.composition.dropshadow).
 
 ## Which shadow should I use?
 

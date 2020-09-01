@@ -13,9 +13,9 @@ You can use Azure Pipelines to create automated builds for UWP projects. In this
 
 ## Create a new Azure Pipeline
 
-Begin by [signing up for Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) if you haven't done so already.
+Begin by [signing up for Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) if you haven't done so already.
 
-Next, create a pipeline that you can use to build your source code. For a tutorial about building a pipeline to build a GitHub repository, see [Create your first pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure Pipelines supports the repository types listed [in this article](https://docs.microsoft.com/azure/devops/pipelines/repos).
+Next, create a pipeline that you can use to build your source code. For a tutorial about building a pipeline to build a GitHub repository, see [Create your first pipeline](/azure/devops/pipelines/get-started-yaml). Azure Pipelines supports the repository types listed [in this article](/azure/devops/pipelines/repos).
 
 ## Set up an automated build
 
@@ -60,7 +60,7 @@ The default template tries to sign the package with the certificate specified in
 
 ## Add your project certificate to the Secure files library
 
-You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) feature.
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](/azure/devops/pipelines/library/secure-files?view=azure-devops) feature.
 
 To upload a certificate for your automated build:
 
@@ -74,7 +74,7 @@ To upload a certificate for your automated build:
 
     ![how to upload a secure file](images/secure-file2.png)
 
-5. If the private key in the certificate has a password, we recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline. Note that a password is only supported for the private key; using a certificate file that is itself password-protected is not currently supported.
+5. If the private key in the certificate has a password, we recommend that you store your password in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline. Note that a password is only supported for the private key; using a certificate file that is itself password-protected is not currently supported.
 
 > [!NOTE]
 > Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](/windows/msix/package/create-certificate-package-signing).
@@ -94,7 +94,7 @@ This task compiles any solution that’s in the working folder to binaries and p
 | AppxPackageSigningEnabled | true | Enables package signing. |
 | PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
 | PackageCertificateKeyFile | Path | The path to the certificate to use. This is retrieved from the secure file metadata. |
-| PackageCertificatePassword | Password | The password for the private key in the certificate. We recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can pass the variable to this argument. |
+| PackageCertificatePassword | Password | The password for the private key in the certificate. We recommend that you store your password in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](/azure/devops/pipelines/library/variable-groups). You can pass the variable to this argument. |
 
 ### Configure the build
 
@@ -146,7 +146,7 @@ The parameters defined with the `$()` syntax are variables defined in the build 
 
 ![default variables](images/building-screen5.png)
 
-To view all predefined variables, see [Predefined build variables](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+To view all predefined variables, see [Predefined build variables](/azure/devops/pipelines/build/variables).
 
 ## Configure the Publish Build Artifacts task
 
@@ -189,7 +189,7 @@ Then, remove the `AppxBundle` MSBuild argument from the build step.
 
 ## Related topics
 
-- [Build your .NET app for Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [Build your .NET app for Windows](/vsts/build-release/get-started/dot-net)
 - [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps)
-- [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [Sideload LOB apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10)
 - [Create a certificate for package signing](/windows/msix/package/create-certificate-package-signing)

@@ -22,6 +22,6 @@ A Bluetooth connected scanner must be configured in **Serial Port Protocol - Sim
 
 Before you can use your Bluetooth barcode scanner you must pair it using **Settings > Devices > Bluetooth & other devices > Add Bluetooth or other device**.
 
-You can initiate and control the pairing process using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) namespace.  See [Pair Devices](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices) for more information.
+You can initiate and control the pairing process using the [Windows.Devices.Enumeration](/uwp/api/windows.devices.enumeration) namespace.  See [Pair Devices](./pair-devices.md) for more information.
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

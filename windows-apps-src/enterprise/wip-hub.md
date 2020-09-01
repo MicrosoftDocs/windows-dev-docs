@@ -37,7 +37,7 @@ If users unenroll their device from the organization's MDM system, or uninstall 
 
 > **Read more about WIP** <br>
 * [Introducing Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Protect your enterprise data using Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+* [Protect your enterprise data using Windows Information Protection (WIP)](/windows/whats-new/edp-whats-new-overview)
 
 If your app is on the allowed list, all data produced by your app is subject to policy restrictions. That means that if administrators revoke the user's access to enterprise data, those users lose access to all of the data that your app produced.
 
@@ -61,7 +61,7 @@ If you're ready to enlighten your app, see one of these guides:
 
 **For Desktop apps that you build by using C++**
 
-[Windows Information Protection (WIP) developer guide (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN).
+[Windows Information Protection (WIP) developer guide (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide).
 
 
 ## Create non-enlightened enterprise app

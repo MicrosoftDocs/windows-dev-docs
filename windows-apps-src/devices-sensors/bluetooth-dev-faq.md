@@ -16,7 +16,7 @@ There are various discussions online around this general topic so let's keep thi
 
 ### Bluetooth LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
-Use the GATT APIs when you are communicating with a device that supports Bluetooth Low Energy. If your use case is infrequent, low bandwidth, or requires low power, Bluetooth Low Energy is the answer. The main namespace that includes this functionality is [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
+Use the GATT APIs when you are communicating with a device that supports Bluetooth Low Energy. If your use case is infrequent, low bandwidth, or requires low power, Bluetooth Low Energy is the answer. The main namespace that includes this functionality is [Windows.Devices.Bluetooth.GenericAttributeProfile](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
 
 **When not to use Bluetooth LE**
 - High bandwidth, high frequency scenarios. If you need to constantly keep sync with large amounts of data, consider using Bluetooth classic or maybe even WiFi. 
@@ -27,7 +27,7 @@ The RFCOMM APIs give developers a socket to perform bidirectional serial port-st
 
 **When not to use Bluetooth Rfcomm** 
 - Notifications. The Bluetooth GATT protocol has a specific command for this and will result in significantly less power draw and faster response times. 
-- Checking for proximity or presence detection. Better to use the [Advertisement APIs](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) and connect over Bluetooth LE. 
+- Checking for proximity or presence detection. Better to use the [Advertisement APIs](/uwp/api/windows.devices.bluetooth.advertisement) and connect over Bluetooth LE. 
 
 
 ## Why does my Bluetooth LE Device stop responding after a disconnect?
@@ -57,7 +57,7 @@ In this example, we initiate pairing with a device using no encryption. Note, th
 
 You don't have to pair devices before using them if leveraging Bluetooth RFCOMM (classic). Starting with Windows 10 release 1607, you can simply query for nearby devices and connect to them. The updated [RFCOMM Chat Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) shows this functionality. 
 
-**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) APIs in order to access these devices.
+**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](/uwp/api/windows.devices.enumeration) APIs in order to access these devices.
 
 **(15030 and above)** Pairing Bluetooth devices is no longer needed. Use the new Async APIs like GetGattServicesAsync and GetCharacteristicsAsync in order to query the current state of the remote device. See the [Client docs](gatt-client.md) for more details. 
 

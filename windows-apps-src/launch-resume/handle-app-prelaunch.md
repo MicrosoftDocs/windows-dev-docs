@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 ---
 # Handle app prelaunch
 
-Learn how to handle app prelaunch by overriding the [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method.
+Learn how to handle app prelaunch by overriding the [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method.
 
 ## Introduction
 
 When available system resources allow, the startup performance of UWP apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
 
-Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
+Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
 
 Whether an app is prelaunched depends on system resources. If the system is experiencing resource pressure, apps are not prelaunched.
 
@@ -29,7 +29,7 @@ After an app is prelaunched, it will enter the suspended state. (see [Handle app
 
 ## Detect and handle prelaunch
 
-Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following modification to [**Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched).
+Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following modification to [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched).
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,7 +110,7 @@ There is also code in the example above that you can uncomment if your app needs
 
 ## Use the VisibilityChanged event
 
-Apps activated by prelaunch are not visible to the user. They become visible when the user switches to them. You may want to delay certain operations until your app's main window becomes visible. For example, if your app displays a list of what's new items from a feed, you could update the list during the [**VisibilityChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.visibilitychanged) event rather than use the list that was built when the app was prelaunched because it may become stale by the time the user activates the app. The following code handles the **VisibilityChanged** event for **MainPage**:
+Apps activated by prelaunch are not visible to the user. They become visible when the user switches to them. You may want to delay certain operations until your app's main window becomes visible. For example, if your app displays a list of what's new items from a feed, you could update the list during the [**VisibilityChanged**](/uwp/api/windows.ui.xaml.window.visibilitychanged) event rather than use the list that was built when the app was prelaunched because it may become stale by the time the user activates the app. The following code handles the **VisibilityChanged** event for **MainPage**:
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -132,7 +132,7 @@ public sealed partial class MainPage : Page
 
 ## DirectX games guidance
 
-DirectX games should generally not enable prelaunch because many DirectX games do their initialization before prelaunch can be detected. Starting with Windows 1607, Anniversary edition, your game will not be prelaunched by default.  If you do want your game to take advantage of prelaunch, call [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch).
+DirectX games should generally not enable prelaunch because many DirectX games do their initialization before prelaunch can be detected. Starting with Windows 1607, Anniversary edition, your game will not be prelaunched by default.  If you do want your game to take advantage of prelaunch, call [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch).
 
 If your game targets an earlier version of Windows 10, you can handle the prelaunch condition to exit the application:
 
@@ -174,7 +174,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 ## WinJS app guidance
 
-If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10)) handler:
+If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](/previous-versions/windows/apps/br212679(v=win.10)) handler:
 
 ```javascript
     app.onactivated = function (args) {
@@ -190,7 +190,7 @@ If your WinJS app targets an earlier version of Windows 10, you can handle the p
 ## General Guidance
 
 -   Apps should not perform long running operations during prelaunch because the app will terminate if it can't be suspended quickly.
--   Apps should not initiate audio playback from [**Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) when the app is prelaunched because the app won't be visible and it won't be apparent why there is audio playing.
+-   Apps should not initiate audio playback from [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) when the app is prelaunched because the app won't be visible and it won't be apparent why there is audio playing.
 -   Apps should not perform any operations during launch which assume that the app is visible to the user, or assume that the app was explicitly launched by the user. Because an app can now be launched in the background without explicit user action, developers should consider the privacy, user experience and performance implications.
     -   An example privacy consideration is when a social app should change the user state to online. It should wait until the user switches to the app instead of changing the status when the app is prelaunched.
     -   An example user experience consideration is that if you have an app, such as a game, that displays an introductory sequence when it is launched, you might delay the introductory sequence until the user switches to the app.
@@ -202,4 +202,4 @@ If your WinJS app targets an earlier version of Windows 10, you can handle the p
 ## Related topics
 
 * [App lifecycle](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)
+* [CoreApplication.EnablePrelaunch](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)

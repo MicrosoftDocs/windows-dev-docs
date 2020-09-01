@@ -29,7 +29,7 @@ The Microsoft Store showcases different apps grouped by category or theme. There
 
 -   **List your app in all relevant markets and languages**
 
-    Submitting your app to all relevant [markets](define-pricing-and-market-selection.md) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content and Store listing info into additional [languages](supported-languages.md) can also help.
+    Submitting your app to all relevant [markets](./define-market-selection.md) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content and Store listing info into additional [languages](supported-languages.md) can also help.
 
 -   **Enable filters for apps containing 16+ and 18+ content**
 
@@ -38,7 +38,3 @@ The Microsoft Store showcases different apps grouped by category or theme. There
 
 
  
-
-
-
-

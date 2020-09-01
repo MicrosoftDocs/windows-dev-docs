@@ -32,7 +32,7 @@ The primary functions of the Visual layer are:
 
 ### Content
 
-Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) to allow for children to create trees of visuals and [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
+Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](/uwp/api/Windows.UI.Composition.Visual) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) to allow for children to create trees of visuals and [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
 
 For more information, see the [Composition Visual](composition-visual-tree.md) overview.
 
@@ -52,7 +52,7 @@ For more information, see the [Composition animations](composition-animation.md)
 
 ### Working with your XAML UWP app
 
-You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) class in [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
+You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) class in [**Windows.UI.Xaml.Hosting**](/uwp/api/Windows.UI.Xaml.Hosting). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
 
 For more information, see the [Using the Visual layer with XAML](using-the-visual-layer-with-xaml.md) overview.
 
@@ -64,8 +64,8 @@ For more information, see [Modernize your desktop app using the Visual layer](/w
 
 ## Additional resources
 
-* [**Full reference documentation for the API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
+* [**Full reference documentation for the API**](/uwp/api/Windows.UI.Composition)
 * Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 * [Windows.UI.Composition Sample Gallery](https://www.microsoft.com/store/apps/9pp1sb5wgnww)
 * [@windowsui Twitter feed ](https://twitter.com/windowsui)
-* Read Kenny Kerr's MSDN Article on this API: [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968)
+* Read Kenny Kerr's MSDN Article on this API: [Graphics and Animation - Windows Composition Turns 10](/archive/msdn-magazine/2015/windows-10-special-issue/graphics-and-animation-windows-composition-turns-10)

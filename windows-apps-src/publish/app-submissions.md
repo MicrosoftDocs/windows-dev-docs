@@ -36,7 +36,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 ### Pricing and availability page
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Markets**                   | Default: All possible markets  | [Define pricing and market selection](define-pricing-and-market-selection.md)         |
+| **Markets**                   | Default: All possible markets  | [Define pricing and market selection](./define-market-selection.md)         |
 | **Audience**                | Default: Public audience | [Audience](choose-visibility-options.md#audience) |
 | **Discoverability**                | Default: Make this app available and discoverable in the Store | [Discoverability](choose-visibility-options.md#discoverability) |
 | **Schedule**                  | Default: Release as soon as possible        | [Configure precise release scheduling](configure-precise-release-scheduling.md) |
@@ -52,12 +52,12 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Category and subcategory**  | Required                                    | [Category and subcategory table](category-and-subcategory-table.md)       |
-| **Privacy policy URL**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](store-policies.md#105-personal-information) | [Privacy policy URL](enter-app-properties.md#privacy-policy-url)        |
+| **Privacy policy URL**            | Required for many apps. See the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](store-policies.md#105-personal-information) | [Privacy policy URL](enter-app-properties.md#privacy-policy-url)        |
 | **Website**                   | Optional                                    | [Website](enter-app-properties.md#website)                   |
 | **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](enter-app-properties.md#support-contact-info)              |
 | **Game settings**             | Optional (only applicable to games)         | [Game settings](enter-app-properties.md#game-settings) |
 | **Display mode**             | Optional                   | [Display mode](enter-app-properties.md#display-mode) |
-| **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](app-declarations.md) |
+| **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](./product-declarations.md) |
 | **System requirements**      | Optional                                    | [System requirements](enter-app-properties.md#system-requirements)      |
 
 <span/>

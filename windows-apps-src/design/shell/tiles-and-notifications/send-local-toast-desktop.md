@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Send a local toast notification from desktop C# apps
 
-Desktop apps (including packaged [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
+Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -54,7 +54,7 @@ Then, you must register with the notification platform. There are different step
 
 #### [MSIX/sparse packages](#tab/msix-sparse)
 
-If you're using an [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) or [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
+If you're using an [MSIX](/windows/msix/desktop/source-code-overview) or [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
@@ -332,7 +332,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## Step 8: Deploying and debugging
 
-To deploy and debug your MSIX app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
+To deploy and debug your MSIX app, see [Run, debug, and test a packaged desktop app](/windows/msix/desktop/desktop-to-uwp-debug).
 
 To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
@@ -353,4 +353,3 @@ If you've installed both your MSIX/sparse package and classic Win32 app, note th
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
 * [Toast notifications from desktop apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)
-

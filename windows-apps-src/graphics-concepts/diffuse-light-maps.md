@@ -1,6 +1,6 @@
 ---
 title: Diffuse light maps
-description: Matte surfaces have diffuse light reflection.
+description: Learn how to use texture light maps to simulate complex diffuse light reflection for matte surfaces.
 ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
 keywords:
 - Diffuse light maps

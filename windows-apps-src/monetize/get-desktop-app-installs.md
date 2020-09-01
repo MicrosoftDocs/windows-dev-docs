@@ -9,7 +9,7 @@ localizationpriority: medium
 # Get desktop application installs
 
 
-Use this REST URI to get aggregate install data in JSON format for a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This URI enables you to get install data during a given date range and other optional filters. This information is also available in the [Installs report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
+Use this REST URI to get aggregate install data in JSON format for a desktop application that you have added to the [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program). This URI enables you to get install data during a given date range and other optional filters. This information is also available in the [Installs report](/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to retrieve install data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Installs report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to retrieve install data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Installs report**) and retrieve the product ID from the URL. |  Yes  |
 | startDate | date | The start date in the date range of install data to retrieve. The default is 90 days prior to the current date. |  No  |
 | endDate | date | The end date in the date range of install data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
@@ -115,4 +115,4 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
+* [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program)

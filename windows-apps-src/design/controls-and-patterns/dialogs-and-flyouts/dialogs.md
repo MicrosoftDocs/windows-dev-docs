@@ -23,7 +23,7 @@ Dialog controls are modal UI overlays that provide contextual app information. T
 
 |  |  |
 | - | - |
-| ![WinUI logo](../images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](../images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 > **Platform APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 

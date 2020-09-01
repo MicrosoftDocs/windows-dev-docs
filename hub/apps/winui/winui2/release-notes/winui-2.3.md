@@ -35,9 +35,9 @@ Shows how much progress has been made on a known amount of work.
 
 ![Determinate Progress Bar](../images/DeterminateProgressBar.gif)
 
-[Doc link](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls)
+[Doc link](/windows/uwp/design/controls-and-patterns/progress-controls)
 
-[Sample link](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls#examples)
+[Sample link](/windows/uwp/design/controls-and-patterns/progress-controls#examples)
 
 ### NumberBox
 
@@ -45,7 +45,7 @@ A **NumberBox** represents a control that can be used to display and edit number
 
 ![NumberBox](../images/NumberBoxGif.gif)
 
-[Doc and sample link](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/number-box)
+[Doc and sample link](/windows/uwp/design/controls-and-patterns/number-box)
 
 ### RadioButtons
 

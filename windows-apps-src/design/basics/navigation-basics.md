@@ -162,7 +162,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
         ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
 	:::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::

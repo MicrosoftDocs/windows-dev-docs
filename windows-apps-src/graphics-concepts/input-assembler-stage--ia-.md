@@ -18,7 +18,7 @@ The Input Assembler (IA) stage supplies primitive and adjacency data to the pipe
 ## <span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Purpose and uses
 
 
-The purpose of the Input Assembler (IA) stage is to read primitive data (points, lines and triangles) from user-filled buffers and assemble the data into primitives that will be used by the other pipeline stages, and to attach [system-generated values](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) to help make shaders more efficient. System-generated values are text strings that are also called semantics. The programmable shader stages are constructed from a common shader core, which uses system-generated values (such as a primitive ID, an instance ID, or a vertex ID), so that the shader stage can reduce processing to only those primitives, instances, or vertices that have not already been processed.
+The purpose of the Input Assembler (IA) stage is to read primitive data (points, lines and triangles) from user-filled buffers and assemble the data into primitives that will be used by the other pipeline stages, and to attach [system-generated values](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) to help make shaders more efficient. System-generated values are text strings that are also called semantics. The programmable shader stages are constructed from a common shader core, which uses system-generated values (such as a primitive ID, an instance ID, or a vertex ID), so that the shader stage can reduce processing to only those primitives, instances, or vertices that have not already been processed.
 
 The IA stage can assemble vertices into several different [primitive types](primitive-topologies.md) (such as line lists, triangle strips, or primitives with adjacency). Primitive types such as a triangle list with adjacency, and a line list with adjacency, support the [Geometry Shader (GS) stage](geometry-shader-stage--gs-.md).
 
@@ -72,7 +72,3 @@ The IA stage assembles the data into primitives and attaches system-generated va
  
 
  
-
-
-
-

@@ -1,6 +1,6 @@
 ---
 title: Get Windows app samples
-description: Learn how to download Windows code samples from GitHub.
+description: Learn how to browse, download, and open GitHub code samples that demonstrate most Windows features and their API use patterns.
 ms.date: 06/30/2020
 ms.topic: article
 keywords: windows 10, sample code, code samples
@@ -14,7 +14,7 @@ Many official Windows code samples are available in various GitHub repositories,
 
 :::image type="content" source="images/github-windows-samples-page.png" alt-text="GitHub Windows universal samples repository":::
 
-To make finding specific samples a little bit easier, you can browse and search a categorized collection of code samples for various Microsoft developer tools and technologies through the [sample browser](https://docs.microsoft.com/samples/browse/).
+To make finding specific samples a little bit easier, you can browse and search a categorized collection of code samples for various Microsoft developer tools and technologies through the [sample browser](/samples/browse/).
 
 :::image type="content" source="images/samples-browser-windows.png" alt-text="Microsoft samples browser":::
 

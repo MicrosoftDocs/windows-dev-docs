@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 
 ### Technologies
 
--   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
+-   [Direct3D](/windows/desktop/getting-started-with-direct3d)
 
 ### Prerequisites
 
@@ -71,7 +71,7 @@ Therefore, you have 8 vertices, each with a specific color. Each vertex/color pa
 
 ### Step 2: Set up the input layout
 
-Now, you have the vertices in memory. But, your graphics device has its own memory, and you use Direct3D to access it. To get your vertex data into the graphics device for processing, you need to clear the way, as it were: you must declare how the vertex data is laid out so that the graphics device can interpret it when it gets it from your game. To do that, you use [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout).
+Now, you have the vertices in memory. But, your graphics device has its own memory, and you use Direct3D to access it. To get your vertex data into the graphics device for processing, you need to clear the way, as it were: you must declare how the vertex data is laid out so that the graphics device can interpret it when it gets it from your game. To do that, you use [**ID3D11InputLayout**](/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout).
 
 Declare and set the input layout for the vertex buffer.
 
@@ -104,17 +104,17 @@ In this code, you specify a layout for the vertices, specifically, what data eac
 
     **COLOR** values are typically returned as a 4-component RGBA value at the end of the shader pipeline. For this example, you will be setting the "A" alpha value to 1.0 (maximum opacity) in the shader pipeline for all pixels.
 
-For a complete list of formats, see [**DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format). For a complete list of HLSL semantics, see [Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
+For a complete list of formats, see [**DXGI\_FORMAT**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format). For a complete list of HLSL semantics, see [Semantics](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
-Call [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) and create the input layout on the Direct3D device. Now, you need to create a buffer that can actually hold the data!
+Call [**ID3D11Device::CreateInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) and create the input layout on the Direct3D device. Now, you need to create a buffer that can actually hold the data!
 
 ### Step 3: Populate the vertex buffers
 
 Vertex buffers contain the list of vertices for each triangle in the mesh. Every vertex must be unique in this list. In our example, you have 8 vertices for the cube. The vertex shader runs on the graphics device and reads from the vertex buffer, and it interprets the data based on the input layout you specified in the previous step.
 
-In the next example, you provide a description and a subresource for the buffer, which tell Direct3D a number of things about the physical mapping of the vertex data and how to treat it in memory on the graphics device. This is necessary because you use a generic [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer), which could contain anything! The [**D3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) and [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structures are supplied to ensure that Direct3D understands the physical memory layout of the buffer, including the size of each vertex element in the buffer as well as the maximum size of the vertex list. You can also control access to the buffer memory here and how it is traversed, but that's a bit beyond the scope of this tutorial.
+In the next example, you provide a description and a subresource for the buffer, which tell Direct3D a number of things about the physical mapping of the vertex data and how to treat it in memory on the graphics device. This is necessary because you use a generic [**ID3D11Buffer**](/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer), which could contain anything! The [**D3D11\_BUFFER\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) and [**D3D11\_SUBRESOURCE\_DATA**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structures are supplied to ensure that Direct3D understands the physical memory layout of the buffer, including the size of each vertex element in the buffer as well as the maximum size of the vertex list. You can also control access to the buffer memory here and how it is traversed, but that's a bit beyond the scope of this tutorial.
 
-After you configure the buffer, you call [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) to actually create it. Obviously, if you have more than one object, create buffers for each unique model.
+After you configure the buffer, you call [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) to actually create it. Obviously, if you have more than one object, create buffers for each unique model.
 
 Declare and create the vertex buffer.
 
@@ -181,9 +181,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-Thirty six index elements in the buffer is very redundant when you only have 8 vertices! If you choose to eliminate some of the redundancies and use a different vertex list type, such as a strip or a fan, you must specify that type when you provide a specific [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) value to the [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) method.
+Thirty six index elements in the buffer is very redundant when you only have 8 vertices! If you choose to eliminate some of the redundancies and use a different vertex list type, such as a strip or a fan, you must specify that type when you provide a specific [**D3D11\_PRIMITIVE\_TOPOLOGY**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) value to the [**ID3D11DeviceContext::IASetPrimitiveTopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) method.
 
-For more information about different index list techniques, see [Primitive Topologies](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies).
+For more information about different index list techniques, see [Primitive Topologies](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies).
 
 ### Step 5: Create a constant buffer for your transformation matrices
 
@@ -283,7 +283,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-While you're here, set the vertex and index buffers on the[ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context), plus the topology you're using.
+While you're here, set the vertex and index buffers on the[ID3D11DeviceContext](/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context), plus the topology you're using.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -406,7 +406,7 @@ Put this code in an HLSL file separate from the vertex shader HLSL (such as Simp
 
 ### Step 8: Rasterizing and displaying the mesh
 
-Let's run the pipeline. This is easy: call [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed).
+Let's run the pipeline. This is easy: call [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed).
 
 Draw that cube!
 
@@ -446,7 +446,3 @@ This topic covers creating and displaying simple geometry that you create yourse
  
 
  
-
-
-
-

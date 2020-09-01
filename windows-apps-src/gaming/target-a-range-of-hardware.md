@@ -102,7 +102,7 @@ return float4(input.color * (light + shadow), 1.f);
 ## Shadow buffer size
 
 
-Larger shadow maps won't look as blocky but they take up more space in graphics memory. Experiment with different shadow map sizes in your game and observe the results in different types of devices and different display sizes. Consider an optimization like cascaded shadow maps to get better results with less graphics memory. See [Common Techniques to Improve Shadow Depth Maps](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
+Larger shadow maps won't look as blocky but they take up more space in graphics memory. Experiment with different shadow map sizes in your game and observe the results in different types of devices and different display sizes. Consider an optimization like cascaded shadow maps to get better results with less graphics memory. See [Common Techniques to Improve Shadow Depth Maps](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
 
 ## Shadow buffer depth
 
@@ -169,7 +169,3 @@ The project file entry for the linear filtered version of the shader does not in
  
 
  
-
-
-
-

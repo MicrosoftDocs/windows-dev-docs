@@ -57,7 +57,7 @@ GLSL and HLSL generally differ in these ways:
 </tr>
 <tr class="even">
 <td align="left">Shader compilation integrated into the graphics API</td>
-<td align="left">The HLSL compiler <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">compiles the shader</a> to an intermediate binary representation before Direct3D passes it to the driver.
+<td align="left">The HLSL compiler <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">compiles the shader</a> to an intermediate binary representation before Direct3D passes it to the driver.
 <div class="alert">
 <strong>Note</strong>  This binary representation is hardware independent. It's typically compiled at app build time, rather than at app run time.
 </div>
@@ -78,11 +78,11 @@ GLSL and HLSL generally differ in these ways:
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [datatype.Function]</td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [datatype]</td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">Row-major matrices (default)</td>
@@ -107,7 +107,7 @@ GLSL and HLSL generally differ in these ways:
 
  
 
-In GLSL, you present much of the OpenGL state as pre-defined global variables. For example, with GLSL, you use the **gl\_Position** variable to specify vertex position and the **gl\_FragColor** variable to specify fragment color. In HLSL, you pass Direct3D state explicitly from the app code to the shader. For example, with Direct3D and HLSL, the input to the vertex shader must match the data format in the vertex buffer, and the structure of a constant buffer in the app code must match the structure of a constant buffer ([cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) in shader code.
+In GLSL, you present much of the OpenGL state as pre-defined global variables. For example, with GLSL, you use the **gl\_Position** variable to specify vertex position and the **gl\_FragColor** variable to specify fragment color. In HLSL, you pass Direct3D state explicitly from the app code to the shader. For example, with Direct3D and HLSL, the input to the vertex shader must match the data format in the vertex buffer, and the structure of a constant buffer in the app code must match the structure of a constant buffer ([cbuffer](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) in shader code.
 
 ## Porting GLSL variables to HLSL
 
@@ -156,7 +156,7 @@ In GLSL, you apply modifiers (qualifiers) to a global shader variable declaratio
 
 In GLSL, variables without modifiers are just ordinary global variables that are private to each shader.
 
-When you pass data to textures ([Texture2D](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) in HLSL) and their associated samplers ([SamplerState](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler) in HLSL), you typically declare them as global variables in the pixel shader.
+When you pass data to textures ([Texture2D](/windows/desktop/direct3dhlsl/sm5-object-texture2d) in HLSL) and their associated samplers ([SamplerState](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler) in HLSL), you typically declare them as global variables in the pixel shader.
 
 ## Porting GLSL types to HLSL
 
@@ -225,7 +225,7 @@ Use this table to port your GLSL types to HLSL.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>You can also use the <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">matrix type</a> to define a matrix.</p>
+<p>You can also use the <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">matrix type</a> to define a matrix.</p>
 <p>For example: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
 <p>matrix is also type defined as float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). For more info, see <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">User-Defined Type</a>.</p></td>
 </tr>
@@ -251,7 +251,7 @@ Use this table to port your GLSL types to HLSL.
 <p>This type is for 10Level9 (<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x feature levels</a>) in which integers are represented by floating point numbers. This is the precision you can get when you emulate an integer with a 16-bit floating point number.</p></li>
 <li>min16uint: minimum 16-bit unsigned integer</li>
 </ul>
-<p>For more info, see <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Scalar Types</a> and <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Using HLSL minimum precision</a>.</p></td>
+<p>For more info, see <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Scalar Types</a> and <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Using HLSL minimum precision</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -374,7 +374,7 @@ Use this table to port GLSL pre-defined global variables to HLSL.
 
  
 
-You use semantics to specify position, color, and so on for vertex shader input and pixel shader input. You must match the semantics values in the input layout with the vertex shader input. For examples, see [Examples of porting GLSL variables to HLSL](#examples-of-porting-glsl-variables-to-hlsl). For more info about the HLSL semantics, see [Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
+You use semantics to specify position, color, and so on for vertex shader input and pixel shader input. You must match the semantics values in the input layout with the vertex shader input. For examples, see [Examples of porting GLSL variables to HLSL](#examples-of-porting-glsl-variables-to-hlsl). For more info about the HLSL semantics, see [Semantics](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
 ## Examples of porting GLSL variables to HLSL
 
@@ -427,7 +427,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 
 ### Constant buffers and data transfers in HLSL
 
-Here is an example of how you pass data to the HLSL vertex shader that then flows through to the pixel shader. In your app code, define a vertex and a constant buffer. Then, in your vertex shader code, define the constant buffer as a [cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) and store the per-vertex data and the pixel shader input data. Here we use structures called **VertexShaderInput** and **PixelShaderInput**.
+Here is an example of how you pass data to the HLSL vertex shader that then flows through to the pixel shader. In your app code, define a vertex and a constant buffer. Then, in your vertex shader code, define the constant buffer as a [cbuffer](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) and store the per-vertex data and the pixel shader input data. Here we use structures called **VertexShaderInput** and **PixelShaderInput**.
 
 Direct3D app code
 
@@ -561,7 +561,3 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
  
 
  
-
-
-
-

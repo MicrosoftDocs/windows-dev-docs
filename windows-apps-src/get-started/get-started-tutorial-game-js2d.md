@@ -46,7 +46,7 @@ The simplest way to get started it to visit GitHub, click on the green **Clone o
 
 ![Cloning the repo](images/JS2D_2.png)
 
-You can also download the project as a zip file, or use any other standard ways to work with [GitHub projects](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+You can also download the project as a zip file, or use any other standard ways to work with [GitHub projects](./get-app-samples.md).
 
 Once the solution has been loaded into Visual Studio, you'll see several files, including:
 
@@ -257,10 +257,10 @@ Now you have a UWP app, it is possible to publish it to the Microsoft Store (ass
 There are a few steps to the process.
 
 1. You must be [registered](https://developer.microsoft.com/store/register) as a Windows Developer.
-2. You must use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
-3. The app must be submitted for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+2. You must use the app submission [checklist](../publish/app-submissions.md).
+3. The app must be submitted for [certification](../publish/the-app-certification-process.md).
 
-For more details, see [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
+For more details, see [Publishing your UWP app](../publish/index.md).
 
 ## Suggestions for other features.
 

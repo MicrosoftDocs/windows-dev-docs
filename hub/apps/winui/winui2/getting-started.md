@@ -62,7 +62,7 @@ You can optionally check "Include prerelease" to see the latest prerelease versi
     ```
 
     > [!IMPORTANT]
-    > The order of resources added to a ResourceDictionary affects the order in which they are applied. The `XamlControlsResources` dictionary overrides many default resource keys and should therefore be added to `Application.Resources` first so that it doesn't override any other custom styles or resources in your app. For more information on resource loading, see [ResourceDictionary and XAML resource references](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
+    > The order of resources added to a ResourceDictionary affects the order in which they are applied. The `XamlControlsResources` dictionary overrides many default resource keys and should therefore be added to `Application.Resources` first so that it doesn't override any other custom styles or resources in your app. For more information on resource loading, see [ResourceDictionary and XAML resource references](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
 5. Add a reference to the toolkit to XAML pages and your code-behind pages.
 

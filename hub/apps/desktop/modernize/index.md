@@ -15,7 +15,7 @@ Windows 10 and the Universal Windows Platform (UWP) offer many features you can 
 This article describes the Windows 10 and UWP features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this article, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
 
 > [!NOTE]
-> Do you need assistance migrating desktop apps to Windows 10? The [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
+> Do you need assistance migrating desktop apps to Windows 10? The [Desktop App Assure](/FastTrack/win-10-desktop-app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
 
 ## Windows UI Library
 
@@ -40,7 +40,7 @@ For more information, see [Package desktop applications](/windows/msix/desktop/d
 
 .NET Core 3 is the latest major release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. UWP controls that are hosted in [XAML Islands](xaml-islands.md) can also be used in Windows Forms and WPF apps that target .NET Core 3.
 
-For more information, see [What's new in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
 
 ## Windows Runtime APIs
 
@@ -62,11 +62,11 @@ For more information, see [Modernize your desktop app using the Visual layer](vi
 
 ## Additional features available to apps with package identity
 
-Some modern Windows 10 experiences are available only in desktop apps that have [package identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
+Some modern Windows 10 experiences are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
 
 There are several ways to grant identity to a desktop app:
 
-* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
 * If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"></a>
@@ -77,14 +77,14 @@ Whether you're building a UWP app that exclusively targets the desktop device fa
 
 | Control |  Description |
 |------ |--------------|
-| [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping then a **CommandBar** allows. |
-| [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Shows a chevron as a visual indicator that it has an attached flyout that contains more options.  |
-| [SplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.|
-| [ToggleSplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from. |
-| [CommandBarFlyout](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  Lets you show common user tasks in the context of an item on your UI canvas. |
-| [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | You can now make a combo box editable so the user can enter values that aren't listed in the control.  |
-| [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | You can now configure a tree view to enable data binding, item templates, and drag and drop.  |
-| [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   Provides a flexible way to display a collection of data in rows and columns. This control is available in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/).  |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping then a **CommandBar** allows. |
+| [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Shows a chevron as a visual indicator that it has an attached flyout that contains more options.  |
+| [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.|
+| [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from. |
+| [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  Lets you show common user tasks in the context of an item on your UI canvas. |
+| [ComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | You can now make a combo box editable so the user can enter values that aren't listed in the control.  |
+| [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) | You can now configure a tree view to enable data binding, item templates, and drag and drop.  |
+| [DataGridView](/windows/communitytoolkit/controls/datagrid) |   Provides a flexible way to display a collection of data in rows and columns. This control is available in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/).  |
 
 ## Other technologies for modern desktop apps
 
@@ -96,10 +96,10 @@ Microsoft Graph is a collection of APIs you can use to build apps for organizati
 * Enterprise Mobility and Security services: Identity Manager, Intune, Advanced Threat Analytics, and Advanced Threat Protection.
 * Windows 10 services: activities and devices
 
-For more information, see the [Microsoft Graph docs](https://developer.microsoft.com/graph/docs/concepts/overview).
+For more information, see the [Microsoft Graph docs](/graph/overview).
 
 ### Adaptive Cards
 
 Adaptive Cards is an open, cross-platform framework that you can use to exchange card-based UI content in a common and consistent way across devices and platforms.
 
-For more information, see the [Adaptive Cards docs](https://docs.microsoft.com/adaptive-cards/).
+For more information, see the [Adaptive Cards docs](/adaptive-cards/).

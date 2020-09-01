@@ -28,7 +28,7 @@ Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft
 
 We test the app resilience and stability throughout the certification testing.
 
-The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
+The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
 
 ### Corrective actions
 
@@ -36,7 +36,7 @@ Make sure UAC is enabled on the test computer.
 
 Make sure you are running the test on a computer with large enough screen.
 
-If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
+If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
 
 1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
 2.  Filter the view to show Event Ids: 5900-6000.
@@ -58,7 +58,7 @@ The Windows App Certification Kit uses the HighVersionLie to detect how the app 
 
 ### Corrective action
 
-Apps should use Version API helper functions to check this. See [Operating System Version](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version) for more information.
+Apps should use Version API helper functions to check this. See [Operating System Version](/windows/desktop/SysInfo/operating-system-version) for more information.
 
 ## Background tasks cancellation handler validation
 
@@ -74,7 +74,7 @@ The app is launched, suspended and the non-background portion of the app is term
 
 ### Corrective action
 
-Add the cancellation handler to your app. For more information see [Support your app with background tasks](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Add the cancellation handler to your app. For more information see [Support your app with background tasks](../launch-resume/support-your-app-with-background-tasks.md).
 
 ## App count
 
@@ -104,7 +104,7 @@ Apps must have a correctly formatted app manifest.
 
 ### Test details
 
-Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+Examines the app manifest to verify the contents are correct as described in the [App package requirements](../publish/app-package-requirements.md).
 
 -   **File extensions and protocols**
 
@@ -118,11 +118,11 @@ Examines the app manifest to verify the contents are correct as described in the
 
 -   **Inter-process Communication (IPC) verification**
 
-    This test enforces the requirement that UWP apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) with name equal to "DesktopApplicationPath" will fail this test.
+    This test enforces the requirement that UWP apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) with name equal to "DesktopApplicationPath" will fail this test.
 
 ### Corrective action
 
-Review the app's manifest against the requirements described in the [App package requirements](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+Review the app's manifest against the requirements described in the [App package requirements](../publish/app-package-requirements.md).
 
 ## Windows Security features test
 
@@ -218,11 +218,11 @@ This test is performed only on apps written in unmanaged languages, such as by u
 
 **Windows App Certification Kit error message:** SharedSectionsCheck Test failed.
 
-Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) or [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) to create a properly secured shared memory object.
+Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) or [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) to create a properly secured shared memory object.
 
 **What to do if your app fails this test**
 
-Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) or [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) with the proper security attributes and then rebuild your app.
+Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) or [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) with the proper security attributes and then rebuild your app.
 
 **Remarks**
 
@@ -309,11 +309,11 @@ Apps must use the APIs for UWP apps (Windows Runtime or supported Win32 APIs) to
 
 Make sure that the app was compiled as a release build and not a debug build.
 
-> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://docs.microsoft.com/uwp/).
+> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](/uwp/).
 
-Review the error messages to identify the API the app uses that is not an [API for UWP apps](https://docs.microsoft.com/uwp/).
+Review the error messages to identify the API the app uses that is not an [API for UWP apps](/uwp/).
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) for more info.
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) for more info.
 
 ## Performance tests
 
@@ -537,7 +537,7 @@ The test will validate if the apps render accurately on feature level 9\-1.
 
 ### Corrective Action
 
-Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx) for more info.
+Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](/previous-versions/windows/apps/hh994923(v=win.10)) for more info.
 
 ### Direct3D Trim after suspend
 
@@ -545,15 +545,15 @@ Ensure that your app renders correctly on Direct3D feature level 9\-1, even if y
 
 ### Background
 
-If the app does not call [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
+If the app does not call [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
 
 ### Test Details
 
-Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API upon their Suspend callback.
+Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API upon their Suspend callback.
 
 ### Corrective Action
 
-The app should call the [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API on its [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) interface anytime it is about to be suspended.
+The app should call the [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API on its [**IDXGIDevice3**](/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) interface anytime it is about to be suspended.
 
 ## App Capabilities test
 
@@ -662,5 +662,5 @@ Update the background JavaScript code to call Close() correctly.
 ## Related topics
 
 * [Windows Desktop Bridge app tests](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Microsoft Store Policies](/legal/windows/agreements/store-policies)
  

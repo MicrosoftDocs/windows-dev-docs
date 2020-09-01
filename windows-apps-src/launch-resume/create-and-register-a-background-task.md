@@ -16,20 +16,20 @@ dev_langs:
 
 **Important APIs**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
--   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 Create a background task class and register it to run when your app is not in the foreground. This topic demonstrates how to create and register a background task that runs in a separate process than your app's process. To do background work directly in the foreground application, see [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
 
 > [!NOTE]
-> If you use a background task to play media in the background, see [Play media in the background](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio) for information about improvements in Windows 10, version 1607, that make it much easier.
+> If you use a background task to play media in the background, see [Play media in the background](../audio-video-camera/background-audio.md) for information about improvements in Windows 10, version 1607, that make it much easier.
 
 ## Create the Background Task class
 
-You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
+You can run code in the background by writing classes that implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
 
-The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface.
+The following steps show you how to write a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface.
 
 1.  Create a new project for background tasks and add it to your solution. To do this, right-click on your solution node in the **Solution Explorer** and select **Add** \> **New Project**. Then select the **Windows Runtime Component** project type, name the project, and click OK.
 2.  Reference the background tasks project from your Universal Windows Platform (UWP) app project. For a C# or C++ app, in your app project, right-click on **References** and select **Add New Reference**. Under **Solution**, select **Projects** and then select the name of your background task project and click **Ok**.
@@ -197,7 +197,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 > [!NOTE]
 > In C#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++/CX, a similar result can be achieved by using a task chain.
 
-For more information about asynchronous patterns, see [Asynchronous programming](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
+For more information about asynchronous patterns, see [Asynchronous programming](../threading-async/asynchronous-programming-universal-windows-platform-apps.md). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
 The following steps are completed in one of your app classes (for example, MainPage.xaml.cs).
 
@@ -206,7 +206,7 @@ The following steps are completed in one of your app classes (for example, MainP
 
 ## Register the background task to run
 
-1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. This step is important; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete.
+1.  Find out whether the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) property. This step is important; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete.
 
 The following example iterates on the **AllTasks** property and sets a flag variable to true if the task is already registered.
 
@@ -263,9 +263,9 @@ while (hascur)
 }
 ```
 
-2.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
+2.  If the background task is not already registered, use [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
 
-The background task trigger controls when the background task will run. For a list of possible triggers, see [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType).
+The background task trigger controls when the background task will run. For a list of possible triggers, see [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType).
 
 For example, this code creates a new background task and sets it to run when the **TimeZoneChanged** trigger occurs:
 
@@ -297,7 +297,7 @@ builder->TaskEntryPoint = "Tasks.ExampleBackgroundTask";
 builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
 ```
 
-3.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+3.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 The following sample code assigns a condition requiring the user to be present:
 
@@ -314,7 +314,7 @@ builder.AddCondition(Windows::ApplicationModel::Background::SystemCondition{ Win
 builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
 ```
 
-4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object. Store the [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) result so it can be used in the next step.
+4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object. Store the [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) result so it can be used in the next step.
 
 The following code registers the background task and stores the result:
 
@@ -331,15 +331,15 @@ BackgroundTaskRegistration^ task = builder->Register();
 ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any of the background trigger types.
+> Universal Windows apps must call [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any of the background trigger types.
 
-To ensure that your Universal Windows app continues to run properly after you release an update, use the **ServicingComplete** (see [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) trigger to perform any post-update configuration changes such as migrating the app's database and registering background tasks. It is best practice to unregister background tasks associated with the previous version of the app (see [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)) and register background tasks for the new version of the app (see [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)) at this time.
+To ensure that your Universal Windows app continues to run properly after you release an update, use the **ServicingComplete** (see [SystemTriggerType](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) trigger to perform any post-update configuration changes such as migrating the app's database and registering background tasks. It is best practice to unregister background tasks associated with the previous version of the app (see [**RemoveAccess**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)) and register background tasks for the new version of the app (see [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)) at this time.
 
 For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
 ## Handle background task completion using event handlers
 
-You should register a method with the [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler), so that your app can get results from the background task. When the app is launched or resumed, the marked method will be called if the background task has completed since the last time the app was in the foreground. (The OnCompleted method will be called immediately if the background task completes while your app is currently in the foreground.)
+You should register a method with the [**BackgroundTaskCompletedEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler), so that your app can get results from the background task. When the app is launched or resumed, the marked method will be called if the background task has completed since the last time the app was in the foreground. (The OnCompleted method will be called immediately if the background task completes while your app is currently in the foreground.)
 
 1.  Write an OnCompleted method to handle the completion of background tasks. For example, the background task result might cause a UI update. The method footprint shown here is required for the OnCompleted event handler method, even though this example does not use the *args* parameter.
 
@@ -390,9 +390,9 @@ void MainPage::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompl
 > [!NOTE]
 > UI updates should be performed asynchronously, to avoid holding up the UI thread. For an example, see the UpdateUI method in the [background task sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
-2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
+2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
 
-The following sample code adds a [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) to the [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration):
+The following sample code adds a [**BackgroundTaskCompletedEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler) to the [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration):
 
 ```csharp
 task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
@@ -456,8 +456,8 @@ See the following related topics for API reference, background task conceptual g
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](/previous-versions/hh974425(v=vs.110))
 
 **Background Task API Reference**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

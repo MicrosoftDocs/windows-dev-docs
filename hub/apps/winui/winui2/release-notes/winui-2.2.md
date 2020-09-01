@@ -153,7 +153,7 @@ July 2019
 
 ### Experimental Feature
 
-* [TabView](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
 
 ### Microsoft.UI.Xaml 2.2.20190416001-prerelease
 
@@ -165,10 +165,10 @@ April 2019
 
 #### Experimental features
 
-* [FlowLayout](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.flowlayout)
+* [FlowLayout](/uwp/api/microsoft.ui.xaml.controls.flowlayout)
 
-* [LayoutPanel](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layoutpanel)
+* [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)
 
-* [RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [ScrollViewer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.scrollviewer)
+* [ScrollViewer](/uwp/api/microsoft.ui.xaml.controls.scrollviewer)

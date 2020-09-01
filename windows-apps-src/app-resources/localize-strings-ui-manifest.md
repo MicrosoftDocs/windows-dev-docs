@@ -296,11 +296,11 @@ Just create your UWP user controls/libraries and [store any strings in a resourc
 
 To use resources in non-packaged applications, you should do a few things:
 
-1. Use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
-1. Use [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) to manually generate your app's resources.pri file.
+1. Use [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
+1. Use [MakePri.exe](./compile-resources-manually-with-makepri.md) to manually generate your app's resources.pri file.
     - Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
-    - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), you need to delete the "&lt;packaging&gt;" section manually after it is created.
-    - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes all indexers.
+    - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](./makepri-exe-configuration.md) created by [createconfig](./makepri-exe-command-options.md#createconfig-command), you need to delete the "&lt;packaging&gt;" section manually after it is created.
+    - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](./makepri-exe-configuration.md) created by [createconfig](./makepri-exe-command-options.md#createconfig-command) includes all indexers.
     - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
         > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for non-packaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
@@ -310,10 +310,10 @@ To use resources in non-packaged applications, you should do a few things:
     > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
 
 > [!Important]
-> You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) command and copies the resources.pri output to the .exe directory.
+> You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](./compile-resources-manually-with-makepri.md) command and copies the resources.pri output to the .exe directory.
 
 ## Important APIs
-* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+* [ApplicationModel.Resources.ResourceLoader](/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
@@ -324,4 +324,4 @@ To use resources in non-packaged applications, you should do a few things:
 * [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [How to load string resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))
+* [How to load string resources](/previous-versions/windows/apps/hh965323(v=win.10))

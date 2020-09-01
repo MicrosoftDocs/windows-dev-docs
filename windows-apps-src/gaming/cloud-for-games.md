@@ -185,7 +185,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 | Cloud storage for game data       | Latest game data is stored in the cloud and sent to client devices | [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)| No restriction on the kinds of file that can be stored; object storage for large amounts of unstructured data like images, audio, video, and more.  |
 | Temporary data storage tables| Game transactions (changes in game states) are stored in tables temporarily | [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)| Game data can be stored in a flexible schema according to the needs of the game |
 | Queue game transactions/requests| Game transactions are processed in the form of a queue | [Azure Queue Storage](https://azure.microsoft.com/services/storage/queues/)| Queues absorb unexpected traffic bursts and can prevent servers from being overwhelmed by a sudden flood of requests during the game   |
-| Scalable relational game database| Structured storage of relational data like in-game transactions to database | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL database as a service ([Compare with SQL on a VM](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
+| Scalable relational game database| Structured storage of relational data like in-game transactions to database | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL database as a service ([Compare with SQL on a VM](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview))  |
 | Scalable distributed low-latency game database| Fast read, write, and query of game and player data with schema flexibility | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| Low latency NoSQL document database as a service   |
 | Use own datacenter with Azure services | Game is retrieved from your own datacenter and sent to the client devices | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Enables your organization to deliver Azure services from your own datacenter to help you achieve more  |
 | Large data chunks transfer| Large files such as game images, audio, and videos can be sent to users from the nearest Content Delivery Network (CDN) pop location with Azure CDN	 | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Built on a modern network topology of large centralized nodes, Azure CDN handles sudden traffic spikes and heavy loads to dramatically increase speed and availability, resulting in significant user experience improvements  |
@@ -236,7 +236,7 @@ We are constantly innovating and adding new features. For more information, see 
 
 ## Related links
 
-* [Windows 10 game development guide](https://docs.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 game development guide](./e2e.md)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

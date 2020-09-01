@@ -27,11 +27,11 @@ The Direct3D device is now used to create resources in video memory, while the d
 ##  Do I have to update my game timer for UWP?
 
 
-[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), along with [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), is still the best way to implement a game timer for UWP apps.
+[**QueryPerformanceCounter**](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), along with [**QueryPerformanceFrequency**](/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), is still the best way to implement a game timer for UWP apps.
 
 You should be aware of a nuance with timers and the UWP app lifecycle. Suspend/resume is different from a player re-launching a desktop game because your game will resume a snapshot in time from when the game was last played. If a large amount of time has passed - for example, a few weeks - some game timer implementations might not behave gracefully. You can use app lifecycle events to reset your timer when the game resumes.
 
-Games that still use the RDTSC instruction need to upgrade. See [Game Timing and Multicore Processors](https://docs.microsoft.com/windows/desktop/DxTechArts/game-timing-and-multicore-processors).
+Games that still use the RDTSC instruction need to upgrade. See [Game Timing and Multicore Processors](/windows/desktop/DxTechArts/game-timing-and-multicore-processors).
 
 ## My game code is based on D3DX and DXUT. Is there anything available that can help me migrate my code?
 
@@ -48,8 +48,8 @@ Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](ht
 
 There are two API paths for loading images:
 
--   The content pipeline converts images into DDS files used as Direct3D texture resources. See [Using 3-D Assets in Your Game or App](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
--   The [Windows Imaging Component](https://docs.microsoft.com/windows/desktop/wic/-wic-lh) can be used to load images from a variety of formats, and can be used for Direct2D bitmaps as well as Direct3D texture resources.
+-   The content pipeline converts images into DDS files used as Direct3D texture resources. See [Using 3-D Assets in Your Game or App](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+-   The [Windows Imaging Component](/windows/desktop/wic/-wic-lh) can be used to load images from a variety of formats, and can be used for Direct2D bitmaps as well as Direct3D texture resources.
 
 You can also use the DDSTextureLoader, and the WICTextureLoader, from the [DirectXTK](https://github.com/Microsoft/DirectXTK) or [DirectXTex](https://github.com/Microsoft/DirectXTex).
 
@@ -63,7 +63,7 @@ The DirectX SDK is included as part of the Windows SDK. The most recent DirectX 
 
 The vast majority of components in the Windows SDK are already included in supported versions of the OS, or have no DLL component (such as DirectXMath). All Direct3D API components that UWP apps can use will already available to your game; you don't need to be redistribute them.
 
-Win32 desktop applications still use DirectSetup, so if you are also upgrading the desktop version of your game see [Direct3D 11 Deployment for Game Developers](https://docs.microsoft.com/windows/desktop/direct3darticles/direct3d11-deployment).
+Win32 desktop applications still use DirectSetup, so if you are also upgrading the desktop version of your game see [Direct3D 11 Deployment for Game Developers](/windows/desktop/direct3darticles/direct3d11-deployment).
 
 ## Is there any way I can update my desktop code to DirectX 11 before moving away from Effects?
 
@@ -75,47 +75,47 @@ See the [Effects for Direct3D 11 Update](https://github.com/Microsoft/FX11). Eff
 
 Yes:
 
--   Read [Converting to Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3d9/converting-to-directx-9).
--   Make sure your game has no remnants of the fixed pipeline - see [Deprecated Features](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
+-   Read [Converting to Direct3D 9](/windows/desktop/direct3d9/converting-to-directx-9).
+-   Make sure your game has no remnants of the fixed pipeline - see [Deprecated Features](/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
 -   Then take the DirectX 9 porting path: [Port from D3D 9 to UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ##  Can I port my DirectX 10 or 11 game to UWP?
 
 
-DirectX 10.x and 11 desktop games are easy to port to UWP. See [Migrating to Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-programming-guide-migrating).
+DirectX 10.x and 11 desktop games are easy to port to UWP. See [Migrating to Direct3D 11](/windows/desktop/direct3d11/d3d11-programming-guide-migrating).
 
 ## How do I choose the right display device in a multi-monitor system?
 
 
-The user selects which monitor your app is displayed on. Let Windows provide the correct adapter by calling [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) with the first parameter set to **nullptr**. Then get the device's [**IDXGIDevice interface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgidevice), call [**GetAdapter**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-getadapter) and use the DXGI adapter to create the swap chain.
+The user selects which monitor your app is displayed on. Let Windows provide the correct adapter by calling [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) with the first parameter set to **nullptr**. Then get the device's [**IDXGIDevice interface**](/windows/desktop/api/dxgi/nn-dxgi-idxgidevice), call [**GetAdapter**](/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-getadapter) and use the DXGI adapter to create the swap chain.
 
 ## How do I turn on antialiasing?
 
 
-Antialiasing (multisampling) is enabled when you create the Direct3D device. Enumerate multisampling support by calling [**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), then set multisample options in the [**DXGI\_SAMPLE\_DESC structure**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) when you call [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
+Antialiasing (multisampling) is enabled when you create the Direct3D device. Enumerate multisampling support by calling [**CheckMultisampleQualityLevels**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), then set multisample options in the [**DXGI\_SAMPLE\_DESC structure**](/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) when you call [**CreateSurface**](/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
 
 ## My game renders using multithreading and/or deferred rendering. What do I need to know for Direct3D 11?
 
 
-Visit [Introduction to Multithreading in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro) to get started. For a list of key differences, see [Threading Differences between Direct3D Versions](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences). Note that deferred rendering uses a device *deferred context* instead of an *immediate context*.
+Visit [Introduction to Multithreading in Direct3D 11](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro) to get started. For a list of key differences, see [Threading Differences between Direct3D Versions](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences). Note that deferred rendering uses a device *deferred context* instead of an *immediate context*.
 
 ## Where can I read more about the programmable pipeline since Direct3D 9?
 
 
 Visit the following topics:
 
--   [Programming Guide for HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
--   [Direct3D 10 Frequently Asked Questions](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
+-   [Programming Guide for HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10 Frequently Asked Questions](/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## What should I use instead of the .x file format for my models?
 
 
-While we don’t have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://github.com/Microsoft/DirectXTK).
+While we don’t have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://github.com/Microsoft/DirectXTK).
 
 ## How do I debug my shaders?
 
 
-Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. See [Debugging DirectX Graphics](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. See [Debugging DirectX Graphics](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 ##  What is the Direct3D 11 equivalent for *x* function?
 
@@ -130,7 +130,3 @@ See the [surface format mapping](feature-mapping.md#surface-format-mapping) prov
  
 
  
-
-
-
-

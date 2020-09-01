@@ -40,7 +40,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
         ![App Project](images/WinUI-csharp-appproject.png)
 
-    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](https://docs.microsoft.com/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. This project contains the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
+    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. This project contains the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
 
         ![App Project](images/WinUI-csharp-packageproject.png)
 
@@ -72,7 +72,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
         ![App Project](images/WinUI-cpp-appproject.png)
 
-    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](https://docs.microsoft.com/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. This project contains the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
+    * ***Project name* (Package)**: This is a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. This project contains the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
 
         ![Package Project](images/WinUI-cpp-packageproject.png)
 

@@ -20,13 +20,13 @@ highlightedContent:
      url: https://developer.microsoft.com/windows/downloads
    - title: What's new for developers in the latest release
      itemType: overview
-     url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041
+     url: /windows/uwp/whats-new/windows-10-build-19041
    - title: Join the Insider Program
      itemType: overview
-     url: https://docs.microsoft.com/windows-insider
+     url: /windows-insider
    - title: Online training for Windows app developers
      itemType: learn
-     url: https://docs.microsoft.com/learn/browse/?products=windows
+     url: /learn/browse/?products=windows
 
 productDirectory:
   title: Develop for Windows
@@ -34,17 +34,17 @@ productDirectory:
   - title: Desktop apps for Windows
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     links:
-      - url: /windows/apps/desktop/
+      - url: ./desktop/index.md
         text: Get started
   - title: Windows UI Library (WinUI)
     imageSrc: images/logo-winui.svg
     links:
-      - url: /windows/apps/winui/
+      - url: ./winui/index.md
         text: Get started
   - title: Windows Subsystem for Linux, Windows Terminal, Python, and other tools
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
-      - url: /windows/dev-environment/
+      - url: ../dev-environment/index.yml
         text: Get started
 
 conceptualContent:
@@ -59,10 +59,10 @@ conceptualContent:
           url: /windows/uwp/get-started/
           itemType: get-started
         - text: Reference for APIs, schemas, and more
-          url: https://docs.microsoft.com/uwp/
+          url: /uwp/
           itemType: reference
         - text: API namespaces
-          url: https://docs.microsoft.com/uwp/api/
+          url: /uwp/api/
           itemType: reference 
         - text: Samples
           url: https://github.com/Microsoft/Windows-universal-samples
@@ -70,16 +70,16 @@ conceptualContent:
     - title: Win32
       links:
         - text: Overview
-          url: https://docs.microsoft.com/windows/win32/
+          url: /windows/win32/
           itemType: overview 
         - text: Get started
-          url: https://docs.microsoft.com/windows/win32/desktop-programming/
+          url: /windows/win32/desktop-programming/
           itemType: get-started
         - text: API reference (by header)
-          url: https://docs.microsoft.com/windows/win32/api/
+          url: /windows/win32/api/
           itemType: reference
         - text: API reference (by feature)
-          url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
+          url: /windows/win32/apiindex/windows-api-list
           itemType: reference
         - text: Samples
           url: https://github.com/Microsoft/Windows-classic-samples
@@ -87,16 +87,16 @@ conceptualContent:
     - title: WPF
       links:
         - text: Overview
-          url: https://docs.microsoft.com/dotnet/desktop-wpf/overview/?view=vs-2019
+          url: /dotnet/desktop-wpf/overview/?view=vs-2019
           itemType: overview 
         - text: Get started
-          url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
+          url: /visualstudio/get-started/csharp/tutorial-wpf?bc=%252fdotnet%252fbreadcrumb%252ftoc.json&toc=%252fdotnet%252fdesktop-wpf%252ftoc.json&view=vs-2019
           itemType: get-started
         - text: API reference (.NET Core)
-          url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.1
+          url: /dotnet/api/index?view=netcore-3.1
           itemType: reference 
         - text: API reference (.NET Framework)
-          url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+          url: /dotnet/api/index?view=netframework-4.8
           itemType: reference 
         - text: Samples
           url: https://github.com/Microsoft/WPF-Samples
@@ -104,16 +104,16 @@ conceptualContent:
     - title: Windows Forms
       links:
         - text: Overview
-          url: https://docs.microsoft.com/dotnet/framework/winforms/
+          url: /dotnet/framework/winforms/
           itemType: overview 
         - text: Get started
-          url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms
+          url: /dotnet/framework/winforms/getting-started-with-windows-forms
           itemType: get-started
         - text: API reference (.NET Core)
-          url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.1
+          url: /dotnet/api/index?view=netcore-3.1
           itemType: reference 
         - text: API reference (.NET Framework)
-          url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+          url: /dotnet/api/index?view=netframework-4.8
           itemType: reference 
 
 tools:
@@ -121,13 +121,13 @@ tools:
   items:
     - title: Windows PCs
       imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: /windows/apps/desktop/
+      url: ./desktop/index.md
     - title: Mixed Reality and HoloLens
       imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: https://docs.microsoft.com/windows/mixed-reality/
+      url: /windows/mixed-reality/
     - title: Windows for IoT
       imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
+      url: /windows/iot-core/windows-iot-core
     - title: Xbox One
       imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
       url: https://www.xbox.com/developers
@@ -139,26 +139,26 @@ additionalContent:
       items:
         - title: Windows features for developers
           summary: Learn how Windows features are supported in different app platforms.
-          url: /windows/apps/features-and-technologies/
+          url: ./features-and-technologies.md
         - title: Add Windows 10 features to your desktop app
           summary: Enhance and modernize your existing desktop app to use the latest features in Windows 10.
-          url: /windows/apps/desktop/modernize
+          url: ./desktop/modernize/index.md
         - title: MSIX
           summary: Package and deploy any Windows app in a modern and universal packaging format.
-          url: https://docs.microsoft.com/windows/msix/
+          url: /windows/msix/
         - title: Develop for mobile
           summary: Explore Microsoft services that enable you to build secure and reliable cloud-based mobile applications.
-          url: https://docs.microsoft.com/azure/mobile-apps/
+          url: /azure/mobile-apps/
         - title: Publish to the Microsoft Store
           summary: Use Partner Center to publish Windows apps and games to the Microsoft Store.
           url: /windows/uwp/publish/
         - title: Make your app accessible
           summary: Build accessibility into your applications to empower people of all abilities.
-          url: /windows/apps/accessibility/
+          url: ./accessibility.md
         - title: Windows AI
           summary: Use Windows AI to build intelligent solutions for complex problems in your apps.
-          url: https://docs.microsoft.com/windows/ai/
+          url: /windows/ai/
         - title: Containers on Windows
           summary: Package your applications with their dependencies in fast, fully isolated Windows environments. 
-          url: https://docs.microsoft.com/virtualization/windowscontainers/
+          url: /virtualization/windowscontainers/
   footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](https://aka.ms/OneDevMinute) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

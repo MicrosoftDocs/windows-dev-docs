@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
+This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method.
 
 This example shows how to open the Store to the Games page:
 

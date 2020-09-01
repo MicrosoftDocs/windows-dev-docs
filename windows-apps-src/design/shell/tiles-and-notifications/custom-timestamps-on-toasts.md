@@ -1,6 +1,6 @@
 ---
-Description: Learn how to use custom timestamps on your toast notifications.
 title: Custom timestamps on toasts
+description: Learn how to override the default timestamp on a toast notification with a custom timestamp that indicates when the message/information/content was generated.
 label: Custom timestamps on toasts
 template: detail.hbs
 ms.date: 12/15/2017

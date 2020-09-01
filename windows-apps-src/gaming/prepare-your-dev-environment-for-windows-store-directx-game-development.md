@@ -16,7 +16,7 @@ This topic discusses what you need to start programming DirectX games for the Un
 
 [Download and install Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
-For info about setting up Visual Studio for [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) development, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For info about setting up Visual Studio for [C++/WinRT](../cpp-and-winrt-apis/index.md) development, see [Visual Studio support for C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Topics in this section
 

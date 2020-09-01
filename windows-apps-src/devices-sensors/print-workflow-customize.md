@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 ## Overview
 
-Developers can customize the printing workflow experience through the use of a print workflow app. Print workflow apps are UWP apps that expand on the functionality of [Microsoft Store devices apps (WSDAs)](https://docs.microsoft.com/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further.
+Developers can customize the printing workflow experience through the use of a print workflow app. Print workflow apps are UWP apps that expand on the functionality of [Microsoft Store devices apps (WSDAs)](/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further.
 
 Just as in the case of WSDAs, when the user of a source application elects to print something and navigates through the print dialog, the system checks whether a workflow app is associated with that printer. If it is, the print workflow app launches (primarily as a background task; more on this below). A workflow app is able to alter both the print ticket (the XML document that configures the printer device settings for the current print task) and the actual XPS content to be printed. It can optionally expose this functionality to the user by launching a UI midway through the process. After doing its work, it passes the print content and print ticket on to the driver.
 
@@ -34,7 +34,7 @@ If a workflow app is associated with the source application that started the pri
 
 ## Do background work on the print ticket
 
-The first thing the print system does with the workflow app is activate its background task (In this case, the `WfBackgroundTask` class in the `WFBackgroundTasks` namespace). In the background task's `Run` method, you should cast the task's trigger details as a **[PrintWorkflowTriggerDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** instance. This will provide the special functionality for a print workflow background task. It exposes the **[PrintWorkflowSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** property, which is an instance of **[PrintWorkFlowBackgroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)**. Print workflow session classes - both the background and foreground varieties - will control the sequential steps of the print workflow app.
+The first thing the print system does with the workflow app is activate its background task (In this case, the `WfBackgroundTask` class in the `WFBackgroundTasks` namespace). In the background task's `Run` method, you should cast the task's trigger details as a **[PrintWorkflowTriggerDetails](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** instance. This will provide the special functionality for a print workflow background task. It exposes the **[PrintWorkflowSession](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** property, which is an instance of **[PrintWorkFlowBackgroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)**. Print workflow session classes - both the background and foreground varieties - will control the sequential steps of the print workflow app.
 
 Then register handler methods for the two events that this session class will raise. You will define these methods later on.
 
@@ -62,7 +62,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-When the `Start` method is called, the session manager will raise the **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** event first. This event exposes general information about the print task, as well as the print ticket. At this stage, the print ticket can be edited in the background.
+When the `Start` method is called, the session manager will raise the **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** event first. This event exposes general information about the print task, as well as the print ticket. At this stage, the print ticket can be edited in the background.
 
 ```csharp
 private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, PrintWorkflowBackgroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -99,14 +99,14 @@ setupRequestedDeferral.Complete();
 
 ## Do foreground work on the print job (optional)
 
-If the **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** method was called, then the print system will examine the manifest file for the entry point to the foreground application. The `Application/Extensions` element of your *package.appxmanifest* file must have the following lines. Replace the value of `EntryPoint` with name of the foreground app.
+If the **[SetRequiresUI](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** method was called, then the print system will examine the manifest file for the entry point to the foreground application. The `Application/Extensions` element of your *package.appxmanifest* file must have the following lines. Replace the value of `EntryPoint` with name of the foreground app.
 
 ```xml
 <uap:Extension Category="windows.printWorkflowForegroundTask"  
     EntryPoint="MyWorkFlowForegroundApp.App" />
 ```
 
-Next, the print system calls the **OnActivated** method for the given app entry point. In the **OnActivated** method of its _App.xaml.cs_ file, the workflow app should check the activation kind to verify that it is a workflow activation. If so, the workflow app can cast the activation arguments to a **[PrintWorkflowUIActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** object, which exposes a **[PrintWorkflowForegroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** object as a property. This object, like its background counterpart in the previous section, contains events that are raised by the print system, and you can assign handlers to these. In this case, the event-handling functionality will be implemented in a separate class called `WorkflowPage`.
+Next, the print system calls the **OnActivated** method for the given app entry point. In the **OnActivated** method of its _App.xaml.cs_ file, the workflow app should check the activation kind to verify that it is a workflow activation. If so, the workflow app can cast the activation arguments to a **[PrintWorkflowUIActivatedEventArgs](/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** object, which exposes a **[PrintWorkflowForegroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** object as a property. This object, like its background counterpart in the previous section, contains events that are raised by the print system, and you can assign handlers to these. In this case, the event-handling functionality will be implemented in a separate class called `WorkflowPage`.
 
 First, in the _App.xaml.cs_ file:
 
@@ -146,7 +146,7 @@ protected override void OnActivated(IActivatedEventArgs args){
 }
 ```
 
-Once the UI has attached event handlers and the **OnActivated** method has exited, the print system will fire the **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** event for the UI to handle. This event provides the same data that the background task setup event provided, including the print job info and print ticket document, but without the ability to request the launch of additional UI. In the _WorkflowPage.xaml.cs_ file:
+Once the UI has attached event handlers and the **OnActivated** method has exited, the print system will fire the **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** event for the UI to handle. This event provides the same data that the background task setup event provided, including the print job info and print ticket document, but without the ability to request the launch of additional UI. In the _WorkflowPage.xaml.cs_ file:
 
 ```csharp
 internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, PrintWorkflowForegroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -180,7 +180,7 @@ internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, Pr
 }
 ```
 
-Next, the print system will raise the **[XpsDataAvailable](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** event for the UI. In the handler for this event, the workflow app can access all of the data available to the setup event and can additionally read the XPS data directly, either as a stream of raw bytes or as an object model. Access to the XPS data allows the UI to provide print preview services and to provide additional information to the user about the operations that the workflow app will execute on the data.
+Next, the print system will raise the **[XpsDataAvailable](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** event for the UI. In the handler for this event, the workflow app can access all of the data available to the setup event and can additionally read the XPS data directly, either as a stream of raw bytes or as an object model. Access to the XPS data allows the UI to provide print preview services and to provide additional information to the user about the operations that the workflow app will execute on the data.
 
 As part of this event handler, the workflow app must acquire a deferral object if it will continue to interact with the user. Without a deferral, the print system will consider the UI task complete when the **XpsDataAvailable** event handler exits or when it calls an async method. When the app has gathered all required information from the user's interaction with the UI, it should complete the deferral so that the print system can then advance.
 
@@ -211,14 +211,14 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-Additionally, the **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** instance exposed by the event args provides the option to cancel the print job or to indicate that the job is successful but that no output print job will be needed. This is done by calling the **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** method with a **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** value.
+Additionally, the **[PrintWorkflowSubmittedOperation](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** instance exposed by the event args provides the option to cancel the print job or to indicate that the job is successful but that no output print job will be needed. This is done by calling the **[Complete](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** method with a **[PrintWorkflowSubmittedStatus](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** value.
 
 > [!NOTE]
 > If the workflow app cancels the print job, it is highly recommended that it provide a toast notification indicating why the job was cancelled.
 
 ## Do final background work on the print content
 
-Once the UI has completed the deferral in the **PrintTaskXpsDataAvailable** event (or if the UI step was bypassed), the print system will fire the **[Submitted](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** event for the background task. In the handler for this event, the workflow app can get access to all of the same data provided by the **XpsDataAvailable** event. However, unlike any of the previous events, **Submitted** also provides *write* access to the final print job content through a **[PrintWorkflowTarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** instance.
+Once the UI has completed the deferral in the **PrintTaskXpsDataAvailable** event (or if the UI step was bypassed), the print system will fire the **[Submitted](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** event for the background task. In the handler for this event, the workflow app can get access to all of the same data provided by the **XpsDataAvailable** event. However, unlike any of the previous events, **Submitted** also provides *write* access to the final print job content through a **[PrintWorkflowTarget](/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** instance.
 
 The object that is used to spool the data for final printing depends on whether the source data is accessed as a raw byte stream or as the XPS object model. When the workflow app accesses the source data through a byte stream, an output byte stream is provided to write the final job data to. When the workflow app accesses the source data through the object model, a document writer is provided to write objects to the output job. In either case, the workflow app should read all of the source data, modify any data required, and write the modified data to the output target.
 
@@ -228,7 +228,7 @@ When the background task finishes writing the data, it should call **Complete** 
 
 ### Register the print workflow app to the printer
 
-Your workflow app is associated with a printer using the same type of metadata file submission as for WSDAs. In fact, a single UWP application can act as both a workflow app and a WSDA that provides print task settings functionality. Follow the corresponding [WSDA steps for creating the metadata association](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-2--create-device-metadata).
+Your workflow app is associated with a printer using the same type of metadata file submission as for WSDAs. In fact, a single UWP application can act as both a workflow app and a WSDA that provides print task settings functionality. Follow the corresponding [WSDA steps for creating the metadata association](/windows-hardware/drivers/devapps/step-2--create-device-metadata).
 
 The difference is that while WSDAs are automatically activated for the user (the app will always launch when that user prints on the associated device), workflow apps are not. They have a separate policy that must be set.
 
@@ -252,4 +252,4 @@ A local user can run this policy on a local printer, or, for enterprise implemen
 
 [Workflow app sample](https://github.com/Microsoft/print-oem-samples)
 
-[Windows.Graphics.Printing.Workflow namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
+[Windows.Graphics.Printing.Workflow namespace](/uwp/api/windows.graphics.printing.workflow)

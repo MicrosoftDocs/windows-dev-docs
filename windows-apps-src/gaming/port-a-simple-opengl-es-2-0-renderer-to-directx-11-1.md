@@ -21,7 +21,7 @@ For this porting exercise, we'll start with the basics: bringing a simple render
 
 This topic starts after you have created a new DirectX 11 project. To learn how to create a new DirectX 11 project, read [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).
 
-The project created from either of these links has all the code for the [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews) infrastructure prepared, and you can immediately start into the process of porting your renderer from Open GL ES 2.0 to Direct3D 11.
+The project created from either of these links has all the code for the [Direct3D](/windows/desktop/direct3d11/dx-graphics-overviews) infrastructure prepared, and you can immediately start into the process of porting your renderer from Open GL ES 2.0 to Direct3D 11.
 
 This topic walks two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube in a window. In both cases, the code covers the following process:
 
@@ -83,7 +83,7 @@ This structure has one instance and contains all the necessary components for re
 
 ### Technologies
 
--   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
+-   [Microsoft Visual C++](/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
 ### Prerequisites
@@ -136,7 +136,3 @@ This structure has one instance and contains all the necessary components for re
  
 
  
-
-
-
-

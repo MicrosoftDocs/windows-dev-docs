@@ -115,5 +115,5 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Installs report](../publish/installs-report.md)
+* [Installs report](../publish/acquisitions-report.md)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

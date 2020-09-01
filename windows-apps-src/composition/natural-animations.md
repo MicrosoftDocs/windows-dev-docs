@@ -24,13 +24,13 @@ The net result is higher user engagement and retention with the app.
 
 ## Balancing Control and Dynamism
 
-In traditional UI, [KeyFrameAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.keyframeanimation)s are the predominant way to describe motion. KeyFrames provided the utmost control to designers and developers to define the start, end, and interpolation. Although this is very useful in many cases, KeyFrame Animations are not very dynamic; the motion is not adaptive and looks the same under any condition.
+In traditional UI, [KeyFrameAnimation](/uwp/api/windows.ui.composition.keyframeanimation)s are the predominant way to describe motion. KeyFrames provided the utmost control to designers and developers to define the start, end, and interpolation. Although this is very useful in many cases, KeyFrame Animations are not very dynamic; the motion is not adaptive and looks the same under any condition.
 
 On the other end of the spectrum, there are simulations often seen in gaming and physics engines. These experiences often are the most life-like and dynamic that users interact with – creating that sense of ambiance and randomness that users see every day. Although this makes motion feel more alive and dynamic, designers and developers have less control, therefore making it more difficult to integrate into traditional UI.
 
 ![Control spectrum diagram](images/animation/natural-motion-diagram.png)
 
-[NaturalMotionAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.naturalmotionanimation)s exist to help bridge this divide – enabling a balance of control for the important elements of an animation like start/finish, but maintaining motion that looks and feels natural and dynamic.
+[NaturalMotionAnimation](/uwp/api/windows.ui.composition.naturalmotionanimation)s exist to help bridge this divide – enabling a balance of control for the important elements of an animation like start/finish, but maintaining motion that looks and feels natural and dynamic.
 
 > [!NOTE]
 > NaturalMotionAnimations are not meant as a replacement for KeyFrame Animations – there are still places in the Fluent design language where KeyFrames are recommended. NaturalMotionAnimations are meant to be used in places where motion is required but KeyFrame Animations are not dynamic enough.

@@ -36,7 +36,7 @@ A third-party IME must meet these requirements:
 
 - Must be digitally signed
 - Must be [Text Services Framework (TSF)](/windows/win32/tsf/text-services-framework) aware, with appropriate IME flags set correctly
-- Must follow the guidelines described in [Input Method Editor (IME) requirements](input-method-editor-requirements.md) and [Design and code Windows apps](/windows/uwp/design/)
+- Must follow the guidelines described in [Input Method Editor (IME) requirements](input-method-editor-requirements.md) and [Design and code Windows apps](../index.md)
 
 A third-party IME that doesn't meet these requirements is blocked from running.
 

@@ -199,7 +199,7 @@ if (claimedBarcodeScanner != null)
 ```
 
 > [!NOTE]
-> Both the claimed and unclaimed Point of Service device classes implement the [IClosable interface](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). If a device is connected to an app via network or Bluetooth, both the claimed and unclaimed objects must be disposed of before another app can connect.
+> Both the claimed and unclaimed Point of Service device classes implement the [IClosable interface](/uwp/api/windows.foundation.iclosable). If a device is connected to an app via network or Bluetooth, both the claimed and unclaimed objects must be disposed of before another app can connect.
 
 ## See also
 + [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
@@ -207,4 +207,3 @@ if (claimedBarcodeScanner != null)
 + [Line display sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [POSPrinter sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
-

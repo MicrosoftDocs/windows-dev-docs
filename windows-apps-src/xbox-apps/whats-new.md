@@ -1,6 +1,6 @@
 ---
 title: What's new for UWP on Xbox One
-description: Highlights new features for UWP apps on Xbox One.
+description: See new features, updates to existing features, and bug fixes for developers in the latest update of UWP on Xbox One.
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -17,7 +17,7 @@ Xbox no longer supports x86 app development or x86 app submissions to the store.
 
 ## Apps can now support navigating back to the previous app 
 UWP on Xbox One apps can now support navigating back to the previous app. To do this, subscribe to the 
-[**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)
+[**Windows.UI.Core.SystemNavigationManager.BackRequested**](/uwp/api/Windows.UI.Core.SystemNavigationManager)
 event and set the **Handled** property to **false** in your event handler.
 
 > [!NOTE]

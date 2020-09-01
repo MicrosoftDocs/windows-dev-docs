@@ -106,7 +106,7 @@ Use "Header" or "Subheader" if text needs to wrap.
 
 ## Alignment
 
-The default [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) is Left, and in most instances, flush-left and ragged right provides consistent anchoring of the content and a uniform layout. For RTL languages, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+The default [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) is Left, and in most instances, flush-left and ragged right provides consistent anchoring of the content and a uniform layout. For RTL languages, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ![Shows flush-left text.](images/type/alignment.svg)
 
@@ -156,7 +156,7 @@ Segoe UI is our font for English, European languages, Greek, Hebrew, Armenian, G
 
 ### Globalizing/localizing fonts
 
-Use the [LanguageFont font-mapping APIs](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) for programmatic access to the recommended font family, size, weight, and style for a particular language. The LanguageFont object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts. For more info, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+Use the [LanguageFont font-mapping APIs](/uwp/api/Windows.Globalization.Fonts.LanguageFont) for programmatic access to the recommended font family, size, weight, and style for a particular language. The LanguageFont object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts. For more info, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ### Fonts for non-Latin languages
 
@@ -344,4 +344,4 @@ Serif fonts are good for presenting large amounts of text.
 * [Text controls](../controls-and-patterns/text-controls.md)
 * [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML styles](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typography](https://docs.microsoft.com/typography/)
+* [Microsoft Typography](/typography/)

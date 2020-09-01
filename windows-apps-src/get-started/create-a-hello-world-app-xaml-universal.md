@@ -68,7 +68,7 @@ Although the **Blank App (Universal Window)** is a minimal template, it still co
 
 To view and edit a file in your project, double-click the file in the **Solution Explorer**. Expand a XAML file just like a folder to see its associated code file. XAML files open in a split view that shows both the design surface and the XAML editor.
 > [!NOTE]
-> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
+> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](../xaml-platform/xaml-overview.md).
 
 *App.xaml and App.xaml.cs*
 
@@ -81,7 +81,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 
 -   MainPage.xaml is where you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio.
 -   MainPage.xaml.cs is the code-behind page for MainPage.xaml. It's where you add your app logic and event handlers.
--   Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), in the `HelloWorld` namespace.
+-   Together these two files define a new class called `MainPage`, which inherits from [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page), in the `HelloWorld` namespace.
 
 *Package.appxmanifest*
 -   A manifest file that describes your app: its name, description, tile, start page, etc.
@@ -218,7 +218,7 @@ Make sure the method signature now includes the **async** keyword, or you'll get
 
 ### What did we just do?
 
-This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis) docs.)
+This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](/uwp/api/windows.media.speechsynthesis) docs.)
 
 When you run the app and click on the button, your computer (or phone) will literally say "Hello, World!".
 
@@ -227,13 +227,13 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 Congratulations, you've created your first app for Windows 10 and the UWP!
 
-To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../design/layout/grid-tutorial.md), or jump straight to [next steps](learn-more.md)?
+To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../design/layout/grid-tutorial.md), or jump straight to [next steps](./create-uwp-apps.md)?
 
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
-* [How-to articles on developing UWP apps](https://docs.microsoft.com/windows/uwp/develop/)
+* [Publishing your UWP app](../publish/index.md).
+* [How-to articles on developing UWP apps](../develop/index.md)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

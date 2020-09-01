@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 
 This topic walks you through creating a Windows 10 Universal Windows Platform (UWP) "Hello, World!" app using C++/WinRT. The app's user interface (UI) is defined using Extensible Application Markup Language (XAML).
 
-C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more info, and more walkthroughs and code examples, see the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) documentation. A good topic to begin with is [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started).
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more info, and more walkthroughs and code examples, see the [C++/WinRT](../cpp-and-winrt-apis/index.md) documentation. A good topic to begin with is [Get started with C++/WinRT](../cpp-and-winrt-apis/get-started.md).
 
 ## Set up Visual Studio for C++/WinRT
 
-For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 To download Visual Studio, see [Downloads](https://visualstudio.microsoft.com/downloads/).
 
-For an introduction to XAML, see [XAML overview](/windows/uwp/xaml-platform/xaml-overview)
+For an introduction to XAML, see [XAML overview](../xaml-platform/xaml-overview.md)
 
 ## Create a Blank App (HelloWorldCppWinRT)
 
@@ -33,7 +33,7 @@ In a later section of this topic, you'll be directed to build your project (but 
 
 Typically, in the project folder, each `.xaml` (XAML markup) file has a corresponding `.idl`, `.h`, and `.cpp` file. Together, those files compile into a XAML page type.
 
-You can modify a XAML markup file to create UI elements, and you can bind those elements to data sources (a task known as [data binding](/windows/uwp/data-binding/)). You modify the `.h`, and `.cpp` files (and sometimes the `.idl` file) to add custom logic for your XAML page&mdash;event handlers, for example.
+You can modify a XAML markup file to create UI elements, and you can bind those elements to data sources (a task known as [data binding](../data-binding/index.md)). You modify the `.h`, and `.cpp` files (and sometimes the `.idl` file) to add custom logic for your XAML page&mdash;event handlers, for example.
 
 Let's look at some of the project files.
 
@@ -47,7 +47,7 @@ Let's look at some of the project files.
 
 As you may know, all of the classes in a Universal Windows Platform (UWP) app written in C# are Windows Runtime types. But when you author a type in a C++/WinRT application, you can choose whether that type is a Windows Runtime type, or a regular C++ class/struct/enumeration.
 
-Any XAML page type in your project needs to be a Windows Runtime type. So **MainPage** is a Windows Runtime type. Specifically, it's a *runtime class*. Any type that's consumed by a XAML page also needs to be a Windows Runtime type. When you're writing a [Windows Runtime component](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt), and you want to author a type that can be consumed from another app, then you'll author a Windows Runtime type. In other cases, your type can be a regular C++ type. Generally speaking, a Windows Runtime type can be consumed using any Windows Runtime language.
+Any XAML page type in your project needs to be a Windows Runtime type. So **MainPage** is a Windows Runtime type. Specifically, it's a *runtime class*. Any type that's consumed by a XAML page also needs to be a Windows Runtime type. When you're writing a [Windows Runtime component](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md), and you want to author a type that can be consumed from another app, then you'll author a Windows Runtime type. In other cases, your type can be a regular C++ type. Generally speaking, a Windows Runtime type can be consumed using any Windows Runtime language.
 
 One good indication that a type is a Windows Runtime type is that it's defined in [Microsoft Interface Definition Language (MIDL)](/uwp/midl-3/) inside an Interface Definition Language (`.idl`) file. Let's take **MainPage** as an example.
 
@@ -89,7 +89,7 @@ namespace winrt::HelloWorldCppWinRT::factory_implementation
 }
 ```    
 
-For more details about whether or not you should author a runtime class for a given type, see the topic [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis). And for more info about the connection between runtime classes and IDL (`.idl` files), you can read and follow along with the topic [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
+For more details about whether or not you should author a runtime class for a given type, see the topic [Author APIs with C++/WinRT](../cpp-and-winrt-apis/author-apis.md). And for more info about the connection between runtime classes and IDL (`.idl` files), you can read and follow along with the topic [XAML controls; bind to a C++/WinRT property](../cpp-and-winrt-apis/binding-property.md). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
 
 Now let's add some functionality to the **HelloWorldCppWinRT** project.
 
@@ -154,7 +154,7 @@ namespace winrt::HelloWorldCppWinRT::implementation
 }
 ```
 
-For more info, see [Handle events by using delegates](/windows/uwp/cpp-and-winrt-apis/handle-events).
+For more info, see [Handle events by using delegates](../cpp-and-winrt-apis/handle-events.md).
 
 The implementation retrieves the user's name from the text box, uses it to create a greeting, and displays that in the *greetingOutput* text block.
 
