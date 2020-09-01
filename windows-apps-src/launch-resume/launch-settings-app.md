@@ -163,7 +163,7 @@ Use the following URIs to open various pages of the Settings app.
 | Game DVR | ms-settings:gaming-gamedvr |
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay (**Deprecated in Windows 10, version 1809 and later**) |
+| TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 | Xbox Networking | ms-settings:gaming-xboxnetworking |
 
 ## Home page

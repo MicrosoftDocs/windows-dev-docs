@@ -4,10 +4,9 @@ description: Windows 10 build 16299 and new developer tools provide the tools, f
 keywords: Windows 10, 1709, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # What's New in Windows 10 for developers, build 16299
 
 Windows 10 build 16299 (also known as the Fall Creators Update or version 1709), in combination with Visual Studio 2019 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
@@ -38,7 +37,7 @@ Game Chat Overlay | The [GameChatOverlay class](/uwp/api/windows.gaming.ui.gamec
 Gaming Device Information | Due to differing console capabilities, Universal Windows Platform (UWP) game developers need a way to determine the type of console the game is running on, in order to make run-time choices on how to best use the hardware. The [Gaming Device Information](/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal) APIs in **&lt;gamingdeviceinformation.h&gt;** provide this functionality.
 Game Mode | The [Game Mode](/previous-versions/windows/desktop/gamemode/game-mode-portal) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
 Game Monitor | The [GameMonitor class](/uwp/api/windows.gaming.ui.gamemonitor) allows an app to get the game monitor permission state of the device and potentially prompt the user to enable game monitoring.
-TruePlay | [TruePlay](/previous-versions//mt808781(v=vs.85)) provides developers with a new set of tools to combat cheating within their PC games. A game enrolled in TruePlay will run in a protected process, which mitigates a class of common attacks. The TruePlay APIs for the Universal Windows Platform (UWP) allow limited interaction between games and the game monitoring system on Windows 10 PCs. These APIs are located in the **&lt;gamemonitor.h&gt;** header.
+TruePlay | TruePlay provides developers with a new set of tools to combat cheating within their PC games. A game enrolled in TruePlay will run in a protected process, which mitigates a class of common attacks. The TruePlay APIs for the Universal Windows Platform (UWP) allow limited interaction between games and the game monitoring system on Windows 10 PCs. These APIs are located in the **&lt;gamemonitor.h&gt;** header. As of Windows 10, version 1809 (10.0; Build 17763), Truplay is removed from Windows. TruePlay documentation is not published.
 Xbox Live | We've added docs for Xbox Live developers, for both UWP and Xbox Developer Kit (XDK) games. </br>* See the [Xbox Live developer guide](/gaming/xbox-live/index.md) to learn how to use the Xbox Live APIs to connect your game to the Xbox Live social gaming network. </br>* With the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One. </br>* See the [Xbox Live developer program overview](/gaming/xbox-live/developer-program-overview.md) for information about the programs and features available to Xbox Live developers.
 
 ## Develop Windows apps
