@@ -21,7 +21,7 @@ You can either create a new vertical or horizontal pane in Windows Terminal. Spl
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
 
-If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file. If you just want a pane with the maximum amount of surface area, you can set `split` to `auto`. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
+If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
 
 ```json
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
