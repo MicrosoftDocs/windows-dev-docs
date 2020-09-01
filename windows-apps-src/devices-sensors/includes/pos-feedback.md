@@ -1,11 +1,12 @@
 ---
 title: Support and feedback
 description: Learn how to find support, ask questions, and provide feedback about the Universal Windows Platform (UWP) PointOfService (POS) interfaces.
-ms.date: 06/12/2018
+ms.date: 08/31/2020
 ms.topic: include
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
+
 ## Support and feedback
 
 ### Find answers to your questions
