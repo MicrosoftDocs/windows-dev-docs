@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -21,7 +21,7 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 
 **Necessity:** Required
 
-**Accepts:** GUID as a string
+**Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
 
@@ -73,6 +73,32 @@ ___
 
 ## Tab settings
 
+### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
+
+:::row:::
+:::column span="":::
+When this is set to `true`, the `nextTab` and `prevTab` commands will use the tab switcher UI. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
+
+The tab switcher will open on the initial press of the keybindings for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` keybindings can be used to cycle through the switcher UI.
+
+**Property name:** `useTabSwitcher`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab switcher](./../images/tab-switcher.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Always show tabs
 
 :::row:::
@@ -98,13 +124,13 @@ When this is set to `true`, tabs are always displayed. When it's set to `false` 
 
 :::row:::
 :::column span="":::
-This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title.
+This sets the width of the tabs. `"equal"` makes each tab the same width. `"titleLength"` sizes each tab to the length of its title. `"compact"` will shrink every inactive tab to the width of the icon, leaving the active tab more space to display its full title.
 
 **Property name:** `tabWidthMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"equal"`, `"titleLength"`
+**Accepts:** `"equal"`, `"titleLength"`, `"compact"`
 
 **Default value:** `"equal"`
 
@@ -142,15 +168,27 @@ ___
 
 ## Launch settings
 
-### Launch maximized
+### Launch on startup
 
-This defines whether the terminal will launch as maximized to fill the entire screen or in a window.
+When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
+
+**Property name:** `startOnUserLogin`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+### Launch size
+
+This defines whether the terminal will launch as maximized, full screen, or in a window.
 
 **Property name:** `launchMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"default"`, `"maximized"`
+**Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
 
 **Default value:** `"default"`
 
@@ -189,6 +227,18 @@ This is the number of rows displayed in the window upon first load. If `launchMo
 **Accepts:** Integer
 
 **Default value:** `30`
+
+### Always on top mode
+
+When set to true, Windows Terminal windows will launch on top of all other windows on the desktop. This state can also be toggled with the `toggleAlwaysOnTop` key binding.
+
+**Property name:** `alwaysOnTop`
+
+**Necessity:** Optional
+
+**Accepts:** `true, false`
+
+**Default value:** `false`
 
 <br />
 
@@ -249,15 +299,18 @@ When this is set to `true`, a selection is immediately copied to your clipboard 
 
 ### Copy formatting
 
-When this is set to `true`, the color and font formatting of selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard.
+When this is set to `true`, the color and font formatting of the selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy.
 
 **Property name:** `copyFormatting`
 
 **Necessity:** Optional
 
-**Accepts:** `true`, `false`
+**Accepts:** `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"`
 
 **Default value:** `false`
+
+> [!IMPORTANT]
+> `"all"`, `"none"`, `"html"`, and `"rtf"` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Word delimiters
 
@@ -275,6 +328,36 @@ This determines the word delimiters used in a double-click selection. Word delim
 
 ___
 
+## Paste warnings
+
+### Warn when the text to paste is very large
+
+When this is set to `true`, trying to paste text with more than 5 KiB of characters will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. If you often right-click on the terminal by accident after having selected a lot of text, this might be useful to prevent the terminal from becoming unresponsive while the program connected to the terminal receives the clipboard's content.
+
+**Property name:** `largePasteWarning`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+### Warn when the text to paste contains multiple lines
+
+When this is set to `true`, trying to paste text with multiple lines will display a dialog asking you whether to continue or not with the paste. When it's set to `false`, the dialog is not shown and instead the text is pasted right away. In most shells, one line corresponds to one command so if you paste text that contains the "new line" character into a shell, one or more command(s) might be executed automatically upon paste, without you having time to validate the commands. This can be useful if you often copy and paste commands from untrusted websites.
+
+**Property name:** `multiLinePasteWarning`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+<br />
+
+___
+
 ## Scroll speed
 
 This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
@@ -286,6 +369,9 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 **Accepts:** Integer
 
 **Default value:** `"system"`
+
+> [!CAUTION]
+> The `rowsToScroll` setting is no longer available versions 1.2 and later. Windows Terminal will use the value configured in the system Mouse settings panel.
 
 <br />
 

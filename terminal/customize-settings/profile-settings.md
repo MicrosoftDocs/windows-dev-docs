@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
@@ -76,6 +76,15 @@ This is the directory the shell starts in when it is loaded.
 
 <br />
 
+> [!NOTE]
+> When setting the starting directory that your installed WSL distributions open to, you should use this format: "startingDirectory": "//wsl$/<distro name>", replacing with the name of your distribution. For example, "startingDirectory": "//wsl$/Ubuntu-20.04".
+
+> [!NOTE]
+> Omitting the startingDirectory value in a profile results in...
+> ..if you run Windows Terminal from the Start menu: C:\windows\system32
+> ..if you run wt.exe from the Start menu: C:\windows\system32
+> ..if you run wt.exe from Win+R: %USERPROFILE%
+> ..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
 ___
 
 ## Dropdown settings
@@ -171,17 +180,29 @@ This sets the profile's font size in points.
 
 **Default value:** `12`
 
+### Font weight
+
+This sets the weight (lightness or heaviness of the strokes) for the profile's font.
+
+**Property name:** `fontWeight`
+
+**Necessity:** Optional
+
+**Accepts:** `"normal"`, `"thin"`, `"extra-light"`, `"light"`, `"semi-light"`, `"medium"`, `"semi-bold"`, `"bold"`, `"extra-bold"`, `"black"`, `"extra-black"`, or an integer corresponding to the numeric representation of the OpenType font weight
+
+**Default value:** `"normal"`
+
 ### Padding
 
 :::row:::
 :::column span="":::
-This sets the padding around the text within the window. This will accept three different formats: `"#"` sets the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
+This sets the padding around the text within the window. This will accept three different formats: `"#"` and `#` set the same padding for all sides, `"#, #"` sets the same padding for left-right and top-bottom, and `"#, #, #, #"` sets the padding individually for left, top, right, and bottom.
 
 **Property name:** `padding`
 
 **Necessity:** Optional
 
-**Accepts:** Values as a string in the following formats: `"#"`, `"#, #"`, `"#, #, #, #"`
+**Accepts:** Values as a string in the following formats: `"#"`, `"#, #"`, `"#, #, #, #"` or value as an integer: `#`
 
 **Default value:** `"8, 8, 8, 8"`
 
@@ -191,6 +212,9 @@ This sets the padding around the text within the window. This will accept three 
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> `padding` as an integer is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Antialiasing text
 
@@ -248,6 +272,24 @@ This sets the percentage height of the cursor starting from the bottom. This wil
 
 ___
 
+## Keyboard settings
+
+### AltGr aliasing
+
+This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
+
+**Property name:** `altGrAliasing`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+<br />
+
+___
+
 ## Color settings
 
 ### Color scheme
@@ -261,6 +303,19 @@ This is the name of the color scheme used in the profile. Color schemes are defi
 **Accepts:** Name of color scheme as a string
 
 **Default value:** `"Campbell"`
+
+### Tab color ([Preview](https://aka.ms/terminal-preview))
+
+This sets the color of the profile's tab. Using the tab color picker will override this color.
+
+**Property name:** `tabColor`
+
+**Necessity:** Optional
+
+**Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Foreground color
 

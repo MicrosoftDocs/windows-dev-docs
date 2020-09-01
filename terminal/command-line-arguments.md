@@ -3,7 +3,7 @@ title: Windows Terminal command-line arguments
 description: Learn how to create command-line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -34,12 +34,17 @@ Below is the full list of supported commands and options for the `wt` command li
 | Option | Description |
 | ------ | ----------- |
 | `--help`, `-h`, `-?`, `/?` | Displays the help message. |
+| `--maximized`, `-M` | Launches the terminal maximized. |
+| `--fullscreen`, `-F` | Launches the terminal as full screen. |
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
-| `new-tab` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Creates a new tab. |
-| `split-pane` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline` | Splits a new pane. |
-| `focus-tab` | `--target, -t tab-index` | Focuses on a specific tab. |
+| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Creates a new tab. |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Splits a new pane. |
+| `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
+
+> [!NOTE]
+> When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
 
 ## Command line argument examples
 
@@ -153,10 +158,10 @@ PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; 
 #### [Linux](#tab/linux)
 
 ```bash
-cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows Powershell"
+cmd.exe /c "wt.exe" -p "Command Prompt" \; new-tab -p "Windows PowerShell"
 ```
 
-Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
 
 ---
 <!-- End tab selectors.  -->
@@ -186,12 +191,70 @@ PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; 
 cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -p "Windows PowerShell" \; split-pane -H wsl.exe
 ```
 
-Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
 
 ---
 <!-- End tab selectors.  -->
 
 The `-H` flag (or `--horizontal`) indicates that you would like the panes to be split horizontally. The `-V` flag (or `--vertical`) indicates that you would like the panes split vertically.
+
+### Multiple tabs and panes
+
+The `new-tab` and `split-pane` commands can be sequenced to get multiple tabs, each with split panes. To open a new terminal instance with two tabs, each with two panes running a Command Prompt and a WSL command line, with each tab in a different directory, enter:
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```bash
+wt -p "Command Prompt" ; split-pane -V wsl.exe ; new-tab -d c:\ ; split-pane -H -d c:\ wsl.exe
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt -p "Command Prompt" `; split-pane -V wsl.exe `; new-tab -d c:\ `; split-pane -H -d c:\ wsl.exe
+```
+
+PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" -p "Command Prompt" \; split-pane -V wsl.exe \; new-tab -d c:\\ \; split-pane -H -d c:\\ wsl.exe
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.  Note to specify a Windows directory as the starting directory for `wsl.exe` that two backslashes `\\` are required.
+
+---
+<!-- End tab selectors.  -->
+
+### Tab title
+
+To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```bash
+wt --title tabname1 ; new-tab -p "Ubuntu-18.04" --title tabname2
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt --title tabname1 `; new-tab -p "Ubuntu-18.04" --title tabname2
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" --title tabname1 \; new-tab -p "Ubuntu-18.04" --title tabname2
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+
+---
+<!-- End tab selectors.  -->
 
 ### Tab focus
 
@@ -216,7 +279,7 @@ wt `; new-tab -p "Ubuntu-18.04" `; focus-tab -t 1
 cmd.exe /c "wt.exe" \; new-tab -p "Ubuntu-18.04" \; focus-tab -t 1
 ```
 
-Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
 
 ---
 <!-- End tab selectors.  -->
