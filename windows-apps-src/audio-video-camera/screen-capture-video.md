@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Screen capture to video
 
-This article describes how to use the Windows.Graphics.Capture APIs to capture video of the screen or an app window. For information on screen capturing still images, see [Screeen capture](screen-capture-video). To download a working sample that captures the screen to a video file that you can use to learn or as a starting point for your own app, see TBD.
+This article describes how to use the Windows.Graphics.Capture APIs to capture video of the screen or an app window. For information on screen capturing still images, see [Screeen capture](screen-capture-video). 
 
 ## Overview of the video capture process
 This article provides a walkthrough of an example app that records the contents of a window to a video file. While it may seem like there is a lot of code required to implement this scenario, the high-level structure of a screen recorder app is fairly simple. The screen capture process uses three primary UWP features:
@@ -22,8 +22,8 @@ This article provides a walkthrough of an example app that records the contents 
 The example code shown in this article can be categorized into a few different tasks:
 
 - **Initialization** - This includes configuring the UWP classes described above, initializing the graphics device interfaces, picking a window to capture, and setting up the encoding parameters such as resolution and frame rate.
-- **Event handlers and threading** - The primary driver of the main capture loop is the **MediaStreamSource** which requests frames periodically through the [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) event. This example uses events to coordinate the requests for new frames between the different components of the example. Synchronization is important for allowing frames to be captured and encoded simultaneously without resources being overwritten while they are being used.
-- **Copying frames** - Frames are copied from the capture frame buffer into a separate Direct3D surface that can be passed to the **MediaStreamSource**. Direct3D APIs are used to perform this copy operation quickly. 
+- **Event handlers and threading** - The primary driver of the main capture loop is the **MediaStreamSource** which requests frames periodically through the [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) event. This example uses events to coordinate the requests for new frames between the different components of the example. Synchronization is important to allow frames to be captured and encoded simultaneously.
+- **Copying frames** - Frames are copied from the capture frame buffer into a separate Direct3D surface that can be passed to the **MediaStreamSource** so that the resource isn't overwritten while being encoded. Direct3D APIs are used to perform this copy operation quickly. 
 
 ### About the Direct3D APIs
 As stated above, the copying of each captured frame is probably the most complex part of the implementation shown in this article. At a low level, this operation is done using Direct3D. For this example, we are using the [SharpDX](http://sharpdx.org/) library to perform the Direct3D operations from C#. This library is no longer officially supported, but it was chosen because it's performance at low-level copy operations is well-suited for this scenario. We have tried to keep the Direct3D operations as discrete as possible to make it easier for you to substitute your own code or other libraries for these tasks.
