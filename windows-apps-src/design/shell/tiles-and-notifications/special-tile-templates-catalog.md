@@ -54,7 +54,7 @@ You can use the iconic template on both primary and secondary tiles. If you're u
 
 **Step 3: Send a notification to your tile**
 
-Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](create-adaptive-tiles.md).
+Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](/uwp/api/Windows.UI.Notifications.TileUpdater) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](create-adaptive-tiles.md).
 
 Here's sample code for the XML payload:
 
@@ -78,7 +78,7 @@ This iconic tile template XML payload uses an image element that points to the i
 
 **Step 4: Send a badge notification to your tile**
 
-As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
+As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](/uwp/api/Windows.UI.Notifications.BadgeUpdater) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
 
 Here's sample code for the XML payload:
 
@@ -90,7 +90,7 @@ The tile's badge will update accordingly.
 
 **Step 5: Putting it all together**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10)) specifies the numerical value; tile properties control your tile's display name, color, and more.
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](/previous-versions/windows/apps/hh779724(v=win.10)) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](/previous-versions/windows/apps/hh779719(v=win.10)) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
 ![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 
@@ -274,7 +274,3 @@ To send the notification, see [Choose a notification delivery method](choosing-a
  
 
  
-
-
-
-

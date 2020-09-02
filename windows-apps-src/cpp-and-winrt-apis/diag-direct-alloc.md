@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Diagnosing direct allocations
 
-As explained in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis), when you create an object of implementation type, you should use the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers to do so. This topic goes in-depth on a C++/WinRT 2.0 feature that helps you to diagnose the mistake of directly allocating an object of implementation type on the stack.
+As explained in [Author APIs with C++/WinRT](./author-apis.md), when you create an object of implementation type, you should use the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers to do so. This topic goes in-depth on a C++/WinRT 2.0 feature that helps you to diagnose the mistake of directly allocating an object of implementation type on the stack.
 
 Such mistakes can turn into mysterious crashes or corruptions that are difficult and time-consuming to debug. So this is an important feature, and it's worth understanding the background.
 
@@ -133,4 +133,4 @@ So, C++/WinRT challenges our preconceived notions of what it means to write clas
 
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)
-* [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Author APIs with C++/WinRT](./author-apis.md)

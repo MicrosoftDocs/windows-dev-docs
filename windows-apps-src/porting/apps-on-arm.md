@@ -36,11 +36,11 @@ Visual Studio 2019 provides several tools downloads for Windows 10 on ARM. Users
 
 ### Visual C++ Redistributable
 
-The Visual C++ Redist package is available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Other tools and Frameworks**, then navigate to the **Microsoft Visual C++ Redistributable for Visual Studio 2019** entry. Select the **ARM64** radio button, then **Download**.
+The Visual C++ Redist package is available for ARM apps. Visit the [Visual Studio downloads page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Other tools and Frameworks**, then navigate to the **Microsoft Visual C++ Redistributable for Visual Studio 2019** entry. Select the **ARM64** radio button, then **Download**.
 
 ### Remote Tools
 
-Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Studio downlaods page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Tools for Visual Studio 2019**, then navigate to the **Remote Tools for Visual Studio 2019** entry. Select the **ARM64* radio button, then **Download**.
+Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Studio downloads page](https://visualstudio.microsoft.com/downloads/) scroll down to **All downloads**, open **Tools for Visual Studio 2019**, then navigate to the **Remote Tools for Visual Studio 2019** entry. Select the **ARM64* radio button, then **Download**.
 
 
 ## In this section
@@ -54,5 +54,5 @@ Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Stu
 ## Related topics
 |Topic | Description |
 |-----|-----|
-|[Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions for building an ARM64 driver. |
-| [Debugging x86 apps on ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM. |
+|[Building ARM64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions for building an ARM64 driver. |
+| [Debugging x86 apps on ARM](/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM. |

@@ -29,7 +29,7 @@ landingContent:
           - text: Set up for automation scripts
             url: ../python/scripting.md
           - text: Connect databases with WSL
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
+            url: /windows/wsl/tutorials/wsl-database
       - linkListType: tutorial
         links:
           - text: Try some Python basics
@@ -61,7 +61,7 @@ landingContent:
           - text: Develop web apps
             url: ../nodejs/web-frameworks.md
           - text: Connect databases with WSL
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
+            url: /windows/wsl/tutorials/wsl-database
           - text: Use Docker containers
             url: ../nodejs/containers.md
       - linkListType: tutorial
@@ -129,47 +129,47 @@ landingContent:
       - linkListType: overview
         links:
           - text: About WSL
-            url: https://docs.microsoft.com/windows/wsl/about
+            url: /windows/wsl/about
           - text: About WSL 2
-            url: https://docs.microsoft.com/windows/wsl/wsl2-index
+            url: /windows/wsl/wsl2-index
           - text: Comparing WSL 1 and WSL 2
-            url: https://docs.microsoft.com/windows/wsl/wsl2-index
+            url: /windows/wsl/wsl2-index
       - linkListType: get-started
         links:
           - text: Install WSL and update to WSL 2
-            url: https://docs.microsoft.com/windows/wsl/install-win10
+            url: /windows/wsl/install-win10
           - text: Install on Windows Server
-            url: https://docs.microsoft.com/windows/wsl/install-on-server
+            url: /windows/wsl/install-on-server
           - text: Create a user account and password
-            url: https://docs.microsoft.com/windows/wsl/user-support
+            url: /windows/wsl/user-support
       - linkListType: tutorial
         links:
           - text: Get started with VS Code
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-vscode
+            url: /windows/wsl/tutorials/wsl-vscode
           - text: Get started with Git
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-git
+            url: /windows/wsl/tutorials/wsl-git
       - linkListType: concept
         links:
           - text: Interoperability commands
-            url: https://docs.microsoft.com/windows/wsl/interop
+            url: /windows/wsl/interop
           - text: Launch commands and configuration
-            url: https://docs.microsoft.com/windows/wsl/wsl-config
+            url: /windows/wsl/wsl-config
           - text: File permissions
-            url: https://docs.microsoft.com/windows/wsl/file-permissions
+            url: /windows/wsl/file-permissions
           - text: Set up WSL for enterprise
-            url: https://docs.microsoft.com/windows/wsl/enterprise
+            url: /windows/wsl/enterprise
           - text: Build a custom distributions
-            url: https://docs.microsoft.com/windows/wsl/build-custom-distro
+            url: /windows/wsl/build-custom-distro
       - linkListType: reference
         links:
           - text: FAQs
             url: https://docs.microsoft.com/windows/wsl/faqaq
           - text: FAQs for WSL 2
-            url: https://docs.microsoft.com/windows/wsl/wsl2-faq
+            url: /windows/wsl/wsl2-faq
           - text: Troubleshooting
-            url: https://docs.microsoft.com/windows/wsl/troubleshooting
+            url: /windows/wsl/troubleshooting
           - text: Release notes
-            url: https://docs.microsoft.com/windows/wsl/release-notes
+            url: /windows/wsl/release-notes
 
   # Card
   - title: Windows Terminal
@@ -177,41 +177,41 @@ landingContent:
       - linkListType: overview
         links:
           - text: Windows Terminal overview
-            url: https://docs.microsoft.com/windows/terminal/
+            url: /windows/terminal/
       - linkListType: get-started
         links:
           - text: Install and set up
-            url: https://docs.microsoft.com/windows/terminal/get-started
+            url: /windows/terminal/get-started
           - text: Customize your terminal (Global settings)
-            url: https://docs.microsoft.com/windows/terminal/customize-settings/global-settings
+            url: /windows/terminal/customize-settings/global-settings
           - text: Customize your terminal (Profile settings)
-            url: https://docs.microsoft.com/windows/terminal/customize-settings/profile-settings
+            url: /windows/terminal/customize-settings/profile-settings
           - text: Customize your terminal (Color Schemes)
-            url: https://docs.microsoft.com/windows/terminal/customize-settings/color-schemes
+            url: /windows/terminal/customize-settings/color-schemes
           - text: Customize your terminal (Key bindings)
-            url: https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings
+            url: /windows/terminal/customize-settings/key-bindings
       - linkListType: tutorial
         links:
           - text: Use command line arguments
-            url: https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell
+            url: /windows/terminal/command-line-arguments?tabs=powershell
           - text: How search in terminal
-            url: https://docs.microsoft.com/windows/terminal/search
+            url: /windows/terminal/search
           - text: How to use panes in terminal
-            url: https://docs.microsoft.com/windows/terminal/panes
+            url: /windows/terminal/panes
           - text: Set up Powerline
-            url: https://docs.microsoft.com/windows/terminal/tutorials/powerline-setup
+            url: /windows/terminal/tutorials/powerline-setup
           - text: Set up SSH
-            url: https://docs.microsoft.com/windows/terminal/tutorials/ssh
+            url: /windows/terminal/tutorials/ssh
           - text: Set the tab title
-            url: https://docs.microsoft.com/windows/terminal/tutorials/tab-title
+            url: /windows/terminal/tutorials/tab-title
       - linkListType: reference
         links:
           - text: Troubleshooting
-            url: https://docs.microsoft.com/windows/terminal/troubleshooting
+            url: /windows/terminal/troubleshooting
           - text: Learn about the Cascadia Code font
-            url: https://docs.microsoft.com/windows/terminal/cascadia-code
+            url: /windows/terminal/cascadia-code
           - text: Custom terminal gallery
-            url: https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt
+            url: /windows/terminal/custom-terminal-gallery/retro-command-prompt
 
   # Card
   - title: Mac to Windows guide

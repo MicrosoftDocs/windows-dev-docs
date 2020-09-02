@@ -1,6 +1,6 @@
 ---
 title: C++ game development on Xbox using UWP
-description: C++ UWP game development on Xbox.
+description: Learn about C++ game development on the Universal Windows Platform (UWP) for Xbox One including how to turn your console into a development kit.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 
 If you are writing a custom C++ engine, Xbox One has full support for C++. 
 
-C++ games on the Universal Windows Platform (UWP) use DirectX for rendering. Learn more at [DirectX Graphics and Gaming](https://docs.microsoft.com/windows/desktop/directx).
+C++ games on the Universal Windows Platform (UWP) use DirectX for rendering. Learn more at [DirectX Graphics and Gaming](/windows/desktop/directx).
 
-You can write [C++ with component extensions](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX) or [standard C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) (Win32 and COM).
+You can write [C++ with component extensions](/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX) or [standard C++](/uwp/win32-and-com/win32-and-com-for-uwp-apps) (Win32 and COM).
 
 To learn how to turn your console into a development kit and how to deploy from Visual Studio, see [Games and DirectX](../gaming/index.md) and the [getting started](getting-started.md) guide.
 
@@ -24,4 +24,3 @@ To learn how to turn your console into a development kit and how to deploy from 
 ## See also
 - [Bringing existing games to Xbox](development-lanes-landing.md)
 - [UWP on Xbox One](index.md)
-

@@ -104,7 +104,7 @@ Log: string # Specifies log redirection switches and path.
 InstallLocation: string # Specifies alternate location to install package.
 Installers: # Nested map of keys for specific installer.
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
   - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
   - Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
@@ -164,7 +164,7 @@ You can often figure out what silent `Switches` are available for an installer b
 
 | Installer | Command  | Documentation |  
 | :--- | :-- | :--- |  
-| MSI | `/q` | [MSI Command-Line Options](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| MSI | `/q` | [MSI Command-Line Options](/windows/win32/msi/command-line-options) |
 | InstallShield | `/s`  | [InstallShield Command-Line Parameters](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
 | Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup documentation](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Nullsoft Silent Installers/Uninstallers](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |

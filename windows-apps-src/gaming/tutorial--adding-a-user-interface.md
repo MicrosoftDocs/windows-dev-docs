@@ -1,6 +1,6 @@
 ---
 title: Add a user interface
-description: Learn how to add a 2D user interface overlay to a DirectX UWP game.
+description: Learn how to use Direct2D APIs to add a 2D user interface overlay with a heads up display and game state menus to a DirectX UWP game.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 Now that our game has its 3D visuals in place, it's time to focus on adding some 2D elements so that the game can provide feedback about game state to the player. This can be accomplished by adding simple menu options and heads-up display components on top of the 3-D graphics pipeline output.
 
 >[!Note]
->If you haven't downloaded the latest game code for this sample, go to [Direct3D sample game](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). This sample is part of a large collection of UWP feature samples. For instructions on how to download the sample, see [Get the UWP samples from GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>If you haven't downloaded the latest game code for this sample, go to [Direct3D sample game](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). This sample is part of a large collection of UWP feature samples. For instructions on how to download the sample, see [Get the UWP samples from GitHub](../get-started/get-app-samples.md).
 
 ## Objective
 

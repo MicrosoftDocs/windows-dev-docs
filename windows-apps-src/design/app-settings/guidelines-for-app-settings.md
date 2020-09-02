@@ -4,7 +4,7 @@ title: Guidelines for app settings
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -22,7 +22,7 @@ Here are examples of app options that belong in an app settings page:
 - Options that depend on the user's preferences, like music, sound effects, or color themes.
 - App information that isn't accessed very often, such as privacy policy, help, app version, or copyright info.
 
-Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be in a settings page. To learn more about command placement, see [Command design basics](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
+Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be in a settings page. To learn more about command placement, see [Command design basics](../basics/commanding-basics.md).
 
 ## General recommendations
 
@@ -41,13 +41,13 @@ The way that users get to your app settings page should be based on your app's l
 
 For a nav pane layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom:
 
-![app settings entry point for nav pane](images/appsettings-entrypoint-navpane.png)
+![app settings entry point for nav pane](images/appsettings-nav-settings.png)
 
 **App bar**
 
-If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as the last item in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
+If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
 
-![app settings entry point for app bar](images/appsettings-entrypoint-tabs.png)
+![app settings entry point for app bar](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **Hub**
 
@@ -64,15 +64,10 @@ Instead of burying the app settings entry point deeply within a master-details p
 ## Layout
 
 
-On both desktop and mobile, the app settings window should open full-screen and fill the whole window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
-
-Desktop:
+The app settings window should open full-screen and fill the whole window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
 
 ![layout for app settings page on desktop](images/appsettings-layout-navpane-desktop.png)
 
-Mobile:
-
-![layout for app settings page on phone](images/appsettings-layout-navpane-mobile.png)
 
 ## "Color mode" settings
 
@@ -125,17 +120,17 @@ Once you have a list of items that you want to include in your app settings page
     - [Hyperlinks](../controls-and-patterns/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
     - [Buttons](../controls-and-patterns/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
 - Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
-- Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
+- Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
 - Use section headers, paragraphs, and labels to aid organize and clarify content, if necessary.
 - If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
-- If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
+- If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](../controls-and-patterns/progress-controls.md).
 - Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
 
 
 
 ## Related articles
 
-* [Command design basics](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [Store and retrieve app data](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [Command design basics](../basics/commanding-basics.md)
+* [Guidelines for progress controls](../controls-and-patterns/progress-controls.md)
+* [Store and retrieve app data](./store-and-retrieve-app-data.md)
+* [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

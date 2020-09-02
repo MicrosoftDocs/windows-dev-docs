@@ -1,6 +1,6 @@
 ---
 title: Obtain and understand magnetic stripe data
-description: Learn how to obtain and interpret the data from a magnetic stripe.
+description: Learn how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
@@ -14,11 +14,11 @@ Once you've set up your magnetic stripe reader in your application using the ste
 
 Whenever the reader recognizes a swiped card, it will raise one of three events:
 
-* [AamvaCardDataReceived Event](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Occurs when a motor vehicle card is swiped.
-* [BankCardDataReceived Event](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Occurs when a bank card is swiped.
-* [VendorSpecificDataReceived Event](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): Occurs when a vendor-specific card is swiped.
+* [AamvaCardDataReceived Event](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Occurs when a motor vehicle card is swiped.
+* [BankCardDataReceived Event](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Occurs when a bank card is swiped.
+* [VendorSpecificDataReceived Event](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): Occurs when a vendor-specific card is swiped.
 
-Your application only needs to subscribe to the events that are supported by the magnetic stripe reader. You can see what types of cards are supported with [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes).
+Your application only needs to subscribe to the events that are supported by the magnetic stripe reader. You can see what types of cards are supported with [MagneticStripeReader.SupportedCardTypes](/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes).
 
 The following code demonstrates subscribing to the three ***DataReceived** events:
 
@@ -43,11 +43,11 @@ private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, Magnet
 }
 ```
 
-The event handler will be passed the [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader) and an *args* object, whose type will vary depending on the event:
+The event handler will be passed the [ClaimedMagneticStripeReader](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader) and an *args* object, whose type will vary depending on the event:
 
-* **AamvaCardDataReceived** event: [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* **BankCardDataReceived** event: [MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* **VendorSpecificDataReceived** event: [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* **AamvaCardDataReceived** event: [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* **BankCardDataReceived** event: [MagneticStripeReaderBankCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* **VendorSpecificDataReceived** event: [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 
 ## Get the data
 
@@ -69,15 +69,15 @@ private void Reader_BankCardDataReceived(
 }
 ```
 
-However, some data, including all data from the **VendorSpecificDataReceived** event, must be retrieved through the **Report** object, which is a property of the *args* parameter. This is of type [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
+However, some data, including all data from the **VendorSpecificDataReceived** event, must be retrieved through the **Report** object, which is a property of the *args* parameter. This is of type [MagneticStripeReaderReport](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
 
-You can use the [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) property to figure out what type of card has been swiped, and then use that to inform how you interpret the data from [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3), and [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
+You can use the [CardType](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) property to figure out what type of card has been swiped, and then use that to inform how you interpret the data from [Track1](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3), and [Track4](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
 
-The data from each of the tracks are represented as [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) objects. From this class, you can get the following types of data:
+The data from each of the tracks are represented as [MagneticStripeReaderTrackData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) objects. From this class, you can get the following types of data:
 
-* [Data](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data): The raw or decoded data.
-* [DiscretionaryData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata): The discretionary data. 
-* [EncryptedData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata): The encrypted data.
+* [Data](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data): The raw or decoded data.
+* [DiscretionaryData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata): The discretionary data. 
+* [EncryptedData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata): The encrypted data.
 
 The following code snippet gets the report and the track data, and then checks the card type:
 
@@ -114,9 +114,9 @@ private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args
 ## See also
 
 * [Magnetic stripe reader](pos-magnetic-stripe-reader.md)
-* [ClaimedMagneticStripeReader Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
-* [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* [MagneticStripeReaderBankCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
-* [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)
-* [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)
+* [ClaimedMagneticStripeReader Class](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
+* [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* [MagneticStripeReaderBankCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* [MagneticStripeReaderReport](/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)
+* [MagneticStripeReaderTrackData](/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)

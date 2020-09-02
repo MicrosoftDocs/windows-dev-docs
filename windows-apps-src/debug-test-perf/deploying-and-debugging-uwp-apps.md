@@ -87,13 +87,13 @@ To deploy to a pre-Creators Update remote PC, the target PC must have the Visual
 
 To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
-To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
+To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](../get-started/enable-your-device-for-development.md). After that, you can deploy from your development machine.
 
 For more information, see the [Visual studio Download Center](https://visualstudio.microsoft.com/downloads/) page.
 
 ## Passing command line debug arguments
 
-In Visual Studio 2019, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
+In Visual Studio 2019, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
 
 > [!NOTE]
 > This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions. Command line debug arguments are available for all deployment types except for the Simulator.
@@ -106,7 +106,7 @@ For C++ and JS UWP projects, you will see **Command Line Arguments** as a field 
 
 ![Command line arguments C++ and JS](images/command-line-arguments-cpp.png)
 
-Once you specify the command line arguments, you can access the value of the argument in the App's **OnLaunched** method. The [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object *args* will have an **Arguments** property with the value set to the text in the **Command Line Arguments** field.
+Once you specify the command line arguments, you can access the value of the argument in the App's **OnLaunched** method. The [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object *args* will have an **Arguments** property with the value set to the text in the **Command Line Arguments** field.
 
 ![Command line arguments C++ and JS](images/command-line-arguments-debugging.png)
 
@@ -187,7 +187,7 @@ On the remote device, the layout gets registered to the following default locati
 
 ## Debugging options
 
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
+On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](../launch-resume/handle-app-prelaunch.md). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
 
 Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package** by selecting the **Activate app with Prelaunch** check box). For more information, see [Debug UWP Prelaunch](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx).
 
@@ -211,7 +211,7 @@ You can set the following deployment options on the **Debug** property page of t
 
 ## Symbols
 
-Symbol files contain a variety of very useful data when debugging code, such as variables, function names, and entry point addresses, allowing you to better understand exceptions and callstack execution order. Symbols for most variants of Windows are available through the [Microsoft Symbol Server](https://msdl.microsoft.com/download/symbols) or can be downloaded for faster, offline lookups at [Download Windows Symbol Packages](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols).
+Symbol files contain a variety of very useful data when debugging code, such as variables, function names, and entry point addresses, allowing you to better understand exceptions and callstack execution order. Symbols for most variants of Windows are available through the [Microsoft Symbol Server](https://msdl.microsoft.com/download/symbols) or can be downloaded for faster, offline lookups at [Download Windows Symbol Packages](/windows-hardware/drivers/debugger/debugger-download-symbols).
 
 To set symbol options for Visual Studio, select **Tools > Options**, and then go to **Debugging > Symbols** in the dialog window.
 
@@ -224,7 +224,7 @@ To load symbols in a debugging session with [WinDbg](#windbg), set the **sympath
 .reload
 ```
 
-You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
+You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## WinDbg
 
@@ -244,7 +244,7 @@ One of the most popular commands in WinDbg is `!analyze -v`, which is used to re
 - EXCEPTION_RECORD: address, code, and flags of the current exception
 - STACK_TEXT: stack trace prior to exception
 
-For a complete list of all WinDbg commands, see [Debugger Commands](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
+For a complete list of all WinDbg commands, see [Debugger Commands](/windows-hardware/drivers/debugger/debugger-commands).
 
 ## Related topics
 

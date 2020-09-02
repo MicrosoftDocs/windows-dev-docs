@@ -106,9 +106,9 @@ Microsoft offers several developer programs to help you develop and publish Wind
 
 #### Xbox Live Creators' Program
 
-The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. There is a simplified certification process and no concept approval is required outside of the standard [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. There is a simplified certification process and no concept approval is required outside of the standard [Microsoft Store Policies](/legal/windows/agreements/store-policies).
 
-You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) on your Xbox One.
+You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](../xbox-apps/devkit-activation.md) on your Xbox One.
 
 If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](https://www.xbox.com/Developers/id) program.
 
@@ -1336,7 +1336,7 @@ An add-on (in-app product) is a supplementary item that players can purchase in-
 
 To optimize performance, take advantage of Game Mode in Windows 10 to provide your gamers with the best possible gaming experience by fully utilizing the capacity of their current hardware.
 
-The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). ProcDump, which is part of [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), is a command-line utility that monitors CPU spikes and generates dump files during game crashes. 
+The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). ProcDump, which is part of [Windows Sysinternals](/sysinternals/), is a command-line utility that monitors CPU spikes and generates dump files during game crashes. 
 
 <table>
     <colgroup>
@@ -1681,7 +1681,7 @@ To update your published game, submit a new app package with a higher version nu
 Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game’s audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
 
 > [!Note]
-> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
+> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>

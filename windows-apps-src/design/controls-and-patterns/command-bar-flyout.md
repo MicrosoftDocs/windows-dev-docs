@@ -30,13 +30,13 @@ The command bar flyout has two display modes: *collapsed* and *expanded*.
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 >**Windows UI Library APIs**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
 >**Platform APIs**: [CommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
-> CommandBarFlyout requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> CommandBarFlyout requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
 
 ## Is this the right control?
 
@@ -154,7 +154,7 @@ You can also add commands to the **SecondaryCommands** collection. Secondary com
 
 ### App bar buttons
 
-You can populate the PrimaryCommands and SecondaryCommands directly with [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) controls.
+You can populate the PrimaryCommands and SecondaryCommands directly with [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) controls.
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.
 
@@ -175,7 +175,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > [!TIP]
 > By default, elements designed for the app canvas might not look right in a command bar. When you add an element using AppBarElementContainer, there are some steps you should take to make the element match other command bar elements:
 >
-> - Override the default brushes with [lightweight styling](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) to make the element's background and border match the app bar buttons.
+> - Override the default brushes with [lightweight styling](./xaml-styles.md#lightweight-styling) to make the element's background and border match the app bar buttons.
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
 
@@ -412,4 +412,4 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 ## Related articles
 
 - [Command design basics for Windows apps](../basics/commanding-basics.md)
-- [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

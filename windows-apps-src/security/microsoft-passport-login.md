@@ -413,7 +413,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     }
     ```
 
--   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Windows Hello API in the [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager). Calling [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
+-   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Windows Hello API in the [**KeyCredentialManager**](/uwp/api/Windows.Security.Credentials.KeyCredentialManager). Calling [**RequestCreateAsync**](/previous-versions/windows/dn973048(v=win.10)) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
 
     ```cs
     /// <summary>
@@ -622,7 +622,7 @@ In this exercise, you will continue from the previous exercise. When a person su
 
     ![Windows Hello welcome screen](images/passport-login-9.png)
 
--   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
+-   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

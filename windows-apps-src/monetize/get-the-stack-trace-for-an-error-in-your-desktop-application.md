@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Get the stack trace for an error in your desktop application
 
-Use this method in the Microsoft Store analytics API to get the stack trace for an error in a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This method can only download the stack trace for an error that occurred in the last 30 days. Stack traces are also available in the [Health report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
+Use this method in the Microsoft Store analytics API to get the stack trace for an error in a desktop application that you have added to the [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program). This method can only download the stack trace for an error that occurred in the last 30 days. Stack traces are also available in the [Health report](/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
 
 Before you can use this method, you must first use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve the ID hash of the CAB file that is associated with the error for which you want to retrieve the stack trace.
 
@@ -42,7 +42,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to get a stack trace. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to get a stack trace. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | cabIdHash | string | The unique ID hash of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this value, use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve details for a specific error in your application, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
  

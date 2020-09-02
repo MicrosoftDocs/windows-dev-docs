@@ -59,12 +59,12 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 The [Headset][] class is made up of two strings that represent XAudio endpoint IDs--one for audio capture (recording from the headset microphone) and one for audio rendering (playback through the headset earpiece).
 
-The details of working with XAudio are not discussed here, for more information see the [XAudio2 programming guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) and [XAudio2 API reference](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
+The details of working with XAudio are not discussed here, for more information see the [XAudio2 programming guide](/windows/desktop/xaudio2/programming-guide) and [XAudio2 API reference](/windows/desktop/xaudio2/programming-reference).
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[igamecontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
-[igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
-[igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[igamecontroller]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headset]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetdisconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[headset]: /uwp/api/Windows.Gaming.Input.Headset

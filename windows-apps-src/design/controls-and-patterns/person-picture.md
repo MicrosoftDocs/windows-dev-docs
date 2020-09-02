@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 ---
 # Person picture control
 
-The person picture control displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph. You can use the control to display a [Contact object](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact),  an object that manages a person's contact info, or you can manually provide contact information, such as a display name and profile picture.
+The person picture control displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph. You can use the control to display a [Contact object](/uwp/api/Windows.ApplicationModel.Contacts.Contact),  an object that manages a person's contact info, or you can manually provide contact information, such as a display name and profile picture.
 
 ![The person picture control](images/person-picture/person-picture_hero.png)
 
@@ -24,9 +24,9 @@ The person picture control displays the avatar image for a person, if one is ava
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
-> **Platform APIs**: [PersonPicture class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Platform APIs**: [PersonPicture class](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## Is this the right control?
 
@@ -81,7 +81,7 @@ To create a person picture, you use the PersonPicture class. This example create
 
 ## Using the person picture control to display a Contact object
 
-You can use the person picker control to display a [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) object:
+You can use the person picker control to display a [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) object:
 
 ```xaml
 <Page
@@ -169,11 +169,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> To keep the code simple, this example creates a new Contact object. In a real app, you'd let the user select a contact or you'd use a [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) to query for a list of contacts. For info on retrieving and managing contacts, see the [Contacts and calendar articles](../../contacts-and-calendar/index.md).
+> To keep the code simple, this example creates a new Contact object. In a real app, you'd let the user select a contact or you'd use a [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) to query for a list of contacts. For info on retrieving and managing contacts, see the [Contacts and calendar articles](../../contacts-and-calendar/index.md).
 
 ## Determining which info to display
 
-When you provide a [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) object, the person picture control evaluates it to determine which info it can display.
+When you provide a [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) object, the person picture control evaluates it to determine which info it can display.
 
 If an image is available, the control displays the first image it finds, in this order:
 

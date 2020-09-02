@@ -2,14 +2,21 @@
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 05/07/2018
+ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
 # What's a Universal Windows Platform (UWP) app?
 
-![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, partner center, and cloud services](images/universalapps-overview.png)
+
+## Where does UWP fit in the Microsoft development story?
+
+UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
+
+The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+
+## Features of a UWP app
 
 A UWP app is:
 
@@ -37,9 +44,9 @@ A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are
 
 If you target the universal APIs, your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs, you can.
 
-Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks).
+Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Device families overview](/uwp/extension-sdks/device-families-overview#extension-sdks).
 
-You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing Code** section in [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code).<br>
+You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing Code** section in [Device families overview](/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
 The following video provides a brief overview of device families and adaptive coding:
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
@@ -71,7 +78,7 @@ You can choose how you'll monetize your app. There are a number of ways to make 
 - A paid download is the simplest option. Just name the price.
 - Trials let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
 - Sale prices to incentivize users.
-- In-app purchases and ads are also available.
+- In-app purchases.
 
 ### Apps from the Microsoft Store provide a seamless install, uninstall, and upgrade experience
 
@@ -107,44 +114,44 @@ Check out [Get set up](get-set-up.md) to download the tools you need to start cr
 
 ### Design your app
 
-The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
+The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
 
-Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](../design/basics/design-and-ui-intro.md) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
 
-In addition to interaction on different devices, [plan your app](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) to embrace the benefits of working across multiple devices. For example:
+In addition to interaction on different devices, [plan your app](./plan-your-app.md) to embrace the benefits of working across multiple devices. For example:
 
-- Design your workflow using [Navigation design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
+- Design your workflow using [Navigation design basics for UWP apps](../design/basics/navigation-basics.md) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](https://docs.microsoft.com/windows/uwp/design/layout/index) to learn how users can interact with your app by using [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Speech](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Touch interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), the [Touch keyboard](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](../design/layout/index.md) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](../design/input/speech-interactions.md), [Touch interactions](../design/input/touch-interactions.md), the [Touch keyboard](../design/input/keyboard-interactions.md) and more.  Or, see the [Guidelines for text and text input](../design/controls-and-patterns/text-controls.md) for more traditional interaction experiences.
 
 ### Add services
 
 - Use [cloud services](https://azure.microsoft.com/documentation/services/cloud-services) to sync across devices.
-- Learn how to [connect to web services](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
-- Include [Push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) and [in-app purchases](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) in your planning. These features should work across devices.
+- Learn how to [connect to web services](/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
+- Include [Push notifications](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md) and [in-app purchases](../monetize/enable-in-app-product-purchases.md) in your planning. These features should work across devices.
 
 ### Submit your app to the Store
 
 [Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](../publish/index.md) to learn how to submit your apps for publication in the Microsoft Store.
 
-New features simplify processes while giving you more control. You'll also find detailed [analytic reports](https://docs.microsoft.com/windows/uwp/publish/analytics) combined [payout details](https://docs.microsoft.com/windows/uwp/publish/payout-summary), ways to [promote your app and engage with your customers](https://docs.microsoft.com/windows/uwp/publish/app-promotion-and-customer-engagement), and much more.
+New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](../publish/payout-summary.md), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
 
-For more introductory material, see [An Introduction to Building Windows Apps for Windows 10 Devices](https://msdn.microsoft.com/magazine/dn973012.aspx)
+For more introductory material, see [An Introduction to Building Windows Apps for Windows 10 Devices](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 
 ### More advanced topics
 
 - Learn how to use [User Activities](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) so that user activity in your app appear in Windows Timeline and Cortana's Pick Up Where I Left Off feature.
-- Learn how to use [Tiles, badges, and notifications for UWP apps](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/).
-- For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
+- Learn how to use [Tiles, badges, and notifications for UWP apps](../design/shell/tiles-and-notifications/index.md).
+- For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)).
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
-- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-- [Compiling apps with .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)
+- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+- [Compiling apps with .NET Native](/dotnet/framework/net-native/)
 - Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 
 ## How the Universal Windows Platform relates to Windows Runtime APIs
 If you're building a Universal Windows Platform (UWP) app, then you can get a lot of mileage and convenience out of treating the terms "Universal Windows Platform (UWP)" and "Windows Runtime (WinRT)" as more or less synonymous. But it *is* possible to look under the covers of the technology, and determine just what the difference is between those ideas. If you're curious about that, then this last section is for you.
 
-The Windows Runtime, and WinRT APIs, are an evolution of Windows APIs. Originally, Windows was programmed via flat, C-style Win32 APIs. To those were added COM APIs ([DirectX](https://docs.microsoft.com/windows/desktop/directx) being a prominent example). Windows Forms, WPF, .NET, and managed languages brought their own way of writing Windows apps, and their own flavor of API technology. The Windows Runtime is, under the covers, the next stage of COM. At the actual application binary interface (ABI) layer, its roots in COM become visible. But the Windows Runtime was designed to be callable from a great range of different programming languages. And callable in a way that's very natural to each of those languages. To this end, access to the Windows Runtime is made available via what are known as language projections. There is a Windows Runtime language projection into C#, into Visual Basic, into standard C++, into JavaScript, and so on. Furthermore, once packaged appropriately (see [Desktop Bridge](/windows/uwp/porting/desktop-to-uwp-root)), you can call WinRT APIs from an app built in one of a great range of application models: Win32, .NET, WinForms, and WPF.
+The Windows Runtime, and WinRT APIs, are an evolution of Windows APIs. Originally, Windows was programmed via flat, C-style Win32 APIs. To those were added COM APIs ([DirectX](/windows/desktop/directx) being a prominent example). Windows Forms, WPF, .NET, and managed languages brought their own way of writing Windows apps, and their own flavor of API technology. The Windows Runtime is, under the covers, the next stage of COM. At the actual application binary interface (ABI) layer, its roots in COM become visible. But the Windows Runtime was designed to be callable from a great range of different programming languages. And callable in a way that's very natural to each of those languages. To this end, access to the Windows Runtime is made available via what are known as language projections. There is a Windows Runtime language projection into C#, into Visual Basic, into standard C++, into JavaScript, and so on. Furthermore, once packaged appropriately (see [Desktop Bridge](/windows/msix/desktop/source-code-overview)), you can call WinRT APIs from an app built in one of a great range of application models: Win32, .NET, WinForms, and WPF.
 
 And, of course, you can call WinRT APIs from your UWP app. UWP is an application model built on top of the Windows Runtime. Technically, the UWP application model is based on [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication), although that detail may be hidden from you, depending on your choice of programming language. As this topic has explained, from a value proposition point of view, the UWP lends itself to writing a single binary that can, should you choose, be published to the Microsoft Store and run on any one of a great range of device form factors. The device reach of your UWP app depends on the subset of Windows Runtime APIs that you limit your app to calling, or that you call conditionally.
 

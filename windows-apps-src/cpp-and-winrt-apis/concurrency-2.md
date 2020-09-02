@@ -19,7 +19,7 @@ A coroutine is a function like any other in that a caller is blocked until a fun
 
 So, before you do compute-bound work in a coroutine, you need to return execution to the caller (in other words, introduce a suspension point) so that the caller isn't blocked. If you're not already doing that by `co_await`-ing some other operation, then you can `co_await` the [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) function. That returns control to the caller, and then immediately resumes execution on a thread pool thread.
 
-The thread pool being used in the implementation is the low-level [Windows thread pool](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api), so it's optimially efficient.
+The thread pool being used in the implementation is the low-level [Windows thread pool](/windows/desktop/ProcThread/thread-pool-api), so it's optimially efficient.
 
 ```cppwinrt
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
@@ -76,11 +76,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+The **winrt::resume_foreground** function takes an optional priority parameter. If you're using that parameter, then the pattern shown above is appropriate. If not, then you can choose to simplify `co_await winrt::resume_foreground(someDispatcherObject);` into just `co_await someDispatcherObject;`.
 
 ## Execution contexts, resuming, and switching in a coroutine
 
@@ -631,7 +634,7 @@ int main()
 }
 ```
 
-**winrt::fire_and_forget** is also useful as the return type of your event handler when you need to perform asynchronous operations in it. Here's an example (also see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+**winrt::fire_and_forget** is also useful as the return type of your event handler when you need to perform asynchronous operations in it. Here's an example (also see [Strong and weak references in C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
 
 ```cppwinrt
 winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)

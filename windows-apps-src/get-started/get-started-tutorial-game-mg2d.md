@@ -1,6 +1,6 @@
 ---
 title: Create a UWP game in MonoGame 2D
-description: A simple UWP game for the Microsoft Store, written in C# and MonoGame
+description: Follow this tutorial to create a basic UWP game for the Microsoft Store, written in C# and MonoGame.
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -19,9 +19,9 @@ ms.localizationpriority: medium
 MonoGame is a lightweight game development framework. This tutorial will teach you the basics of game development in MonoGame, including how to load content, draw sprites, animate them, and handle user input. Some more advanced concepts like collision detection and scaling up for high-DPI screens are also discussed. This tutorial takes 30-60 minutes.
 
 ## Prerequisites
-+	Windows 10 and Microsoft Visual Studio 2019.  [Click here to learn how to get set up with Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++	Windows 10 and Microsoft Visual Studio 2019.  [Click here to learn how to get set up with Visual Studio](./get-set-up.md).
 + The .NET desktop development framework. If you don't already have this installed, you can get it by re-running the Visual Studio installer and modifying your installation of Visual Studio 2019.
-+	Basic knowledge of C# or a similar object-oriented programming language. [Click here to learn how to get started with C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++	Basic knowledge of C# or a similar object-oriented programming language. [Click here to learn how to get started with C#](./create-a-hello-world-app-xaml-universal.md).
 +	Familiarity with basic computer science concepts like classes, methods, and variables is a plus.
 
 ## Why MonoGame?
@@ -688,8 +688,8 @@ Because we built this game as a UWP app, it is possible to publish this project 
 
 You must be [registered](https://developer.microsoft.com/store/register) as a Windows Developer.
 
-You must use the [app submission checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+You must use the [app submission checklist](../publish/app-submissions.md).
 
-The app must be submitted for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+The app must be submitted for [certification](../publish/the-app-certification-process.md).
 
-For more details, see [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
+For more details, see [Publishing your UWP app](../publish/index.md).

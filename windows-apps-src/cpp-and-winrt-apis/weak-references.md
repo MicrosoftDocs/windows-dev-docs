@@ -10,11 +10,11 @@ ms.custom: RS5
 
 # Strong and weak references in C++/WinRT
 
-The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) meets you halfway in your work of building more complex systems simply and correctly.
+The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) meets you halfway in your work of building more complex systems simply and correctly.
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
-For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 
@@ -100,10 +100,10 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
+A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
 
 This resolves the problem that we previously had when we got to step 4. Even if all other references to the class instance disappear, the coroutine has taken the precaution of guaranteeing that its dependencies are stable.
 
@@ -248,10 +248,10 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 
 ### The solution
 
-The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
+The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

@@ -35,7 +35,7 @@ Operating system
 -   64-bit
 -   Pro edition or higher
 
-To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
+To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 To check requirements for RAM and operating system, in Control Panel, select **System and Security**, and then select **System**.
 
@@ -209,7 +209,7 @@ Using the proximity mode you can inject messages as if they came from a tag or a
 -   NDEF:URI
 -   NDEF:wkt.U
 
-You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) reference page.
+You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) reference page.
 
 The Windows 8 Driver Kit (WDK) includes a driver sample that exposes the same protocol as the Windows Phone 8 emulator. You'll need to download the DDK, build that sample driver, install it on a Windows 8 device, then add the Windows 8 device's IP address or hostname to the devices list and tap it either with another Windows 8 device or with a Windows Phone 8 emulator.
 
@@ -262,7 +262,7 @@ Below is a reference on what functionality is available:
 
 ### Smart Card Reader Mode
 
-The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
+The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
 
 Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
 
@@ -313,7 +313,7 @@ Test apps that use navigation or geofencing by using the **Location** tab of the
 
 You can test your app while you simulate moving from one location to another at different speeds and with different accuracy profiles. The location simulator can help you to identify changes in your usage of the location APIs usage that improve the user experience. For example, the tool can help you identify that you have to tune geofence parameters, such as size or dwell time, to detect the geofences successfully in different scenarios.
 
-The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) event or to respond to a [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) call in your location-aware app.
+The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) event or to respond to a [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) call in your location-aware app.
 
 -   In **Pin** mode, you place pushpins on the map. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval specified in the **Seconds per pin** text box.
 
@@ -655,7 +655,6 @@ To find answers and solve problems as you start working with the Windows 10 tool
 
 ## Related topics
 
-* [Run Windows Phone apps in the emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Run Windows Phone apps in the emulator](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows and Windows Phone SDK archive](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
-

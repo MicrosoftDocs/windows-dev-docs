@@ -15,15 +15,15 @@ ms.localizationpriority: medium
 
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
 
-> **Important APIs**:  [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **Important APIs**:  [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
 
 ## Recommendations
 
 - Try to limit modifcations of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
-    - See [XAML styles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) for more info on customizing the properties of a control, including visual state properties.
-    - See the [UserControl Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
+    - See [XAML styles](../controls-and-patterns/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
+    - See the [UserControl Class](/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
     - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
+- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
 - Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
 - Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
 
@@ -40,7 +40,7 @@ Using the default XAML platform controls available ensures that your app works c
 
 Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.
 
-Use [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) to set feedback behavior for the platform gestures.
+Use [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) to set feedback behavior for the platform gestures.
 
 If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.
 
@@ -54,7 +54,7 @@ Here are some examples of built-in contact visualizations in Windows.
 
 All Windows apps sport a more defined focus visual around interactable controls within the application. These new focus visuals are fully customizable as well as disableable when needed.
 
-For the **10-foot experience** typical of Xbox and TV usage, Windows supports **Reveal focus**, a lighting effect that animates the border of focusable elements, such as a button, when they get focus through gamepad or keyboard input. For more info, see [Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus).
+For the **10-foot experience** typical of Xbox and TV usage, Windows supports **Reveal focus**, a lighting effect that animates the border of focusable elements, such as a button, when they get focus through gamepad or keyboard input. For more info, see [Designing for Xbox and TV](../devices/designing-for-tv.md#reveal-focus).
 
 ## Color Branding & Customizing
 
@@ -69,7 +69,7 @@ To change the thickness of either border type (primary or secondary) use the **F
 ```
 ![High visibility focus visual margin thicknesses](images/FocusMargin.png)
 
-The margin is a property of type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
+The margin is a property of type [**Thickness**](/dotnet/api/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
 ![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
 
 The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
@@ -111,7 +111,7 @@ To change the colors on a per-control basis, just edit the focus visual properti
 
 ### For developers
 
-- [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [Custom user interactions](../layout/index.md)
 
 ### Samples
 
@@ -127,7 +127,7 @@ To change the colors on a per-control basis, just edit the focus visual properti
 - [Input: Touch hit testing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML scrolling, panning, and zooming sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Input: Simplified ink sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Input: Windows 8 gestures sample](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Input: Manipulations and gestures sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX touch input sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  

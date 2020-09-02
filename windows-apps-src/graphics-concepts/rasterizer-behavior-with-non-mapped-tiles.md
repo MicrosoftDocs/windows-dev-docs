@@ -1,6 +1,6 @@
 ---
 title: Rasterizer behavior with non-mapped tiles
-description: This section describes rasterizer behavior with non-mapped tiles.
+description: Learn about DepthStencilView (DSV) and RenderTargetView (RTV) rasterizer behaviors with non-mapped tiles.
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - Rasterizer behavior with non-mapped tiles

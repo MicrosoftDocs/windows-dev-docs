@@ -18,12 +18,12 @@ The TabView control is a way to display a set of tabs and their respective conte
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TabView** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs**: [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -39,7 +39,7 @@ In general, tabbed UIs come in one of two distinct styles which differ in functi
 - Users will be able to open documents or web pages directly into tabs.
 - Users will be able to drag and drop tabs between windows.
 
-If a TabView is not appropriate for your app, consider using controls such as [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) or [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview).
+If a TabView is not appropriate for your app, consider using controls such as [Pivot](./pivot.md) or [NavigationView](./navigationview.md).
 
 ## Anatomy
 
@@ -99,7 +99,7 @@ Instead of having tabs occupy their own row below a Window's titlebar, you can m
 
 Because a user can drag a window by its titlebar to reposition the Window, it is important that the titlebar is not completely filled with Tabs. Therefore, when displaying tabs in a titlebar, you must specify a portion of the titlebar to be reserved as a draggable area. If you do not specify a draggable region, the entire titlebar will be draggable, which will prevent your tabs from receiving input events. If your TabView will display in a window's titlebar, you should always include a [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) in your [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) and mark it as a draggable region.
 
-For more information, see [Title bar customization](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
+For more information, see [Title bar customization](../shell/title-bar.md)
 
 ![Tabs in titlebar](images/tabview/tab-extend-to-title.png)
 
@@ -324,6 +324,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## Related articles
 
-- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](./master-details.md)
+- [NavigationView](./navigationview.md)
+- [Pivot](./pivot.md)

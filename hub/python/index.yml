@@ -5,7 +5,7 @@ summary: Get started developing with Python using Windows, including set up for 
 
 metadata: 
   author: mattwojo
-  description: Get started developing with Python on Windows.
+  description: Get started developing with Python on Windows. See resources to set up your development environment, build web apps, and connect to a database.
   manager: jken
   ms.author: mattwoj
   ms.date: 09/15/2019
@@ -65,7 +65,7 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Install and run MySQL, PostgreSQL, SQLite, Microsoft SQL Server, MongoDB, or Redis
-            url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
+            url: /windows/wsl/tutorials/wsl-database
 
   # Card
   # - title: Get started with machine learning (Coming soon)
@@ -80,7 +80,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Try Python (without installing anything) in this intro course
-            url: https://docs.microsoft.com/learn/modules/intro-to-python/
+            url: /learn/modules/intro-to-python/
           - text: Recommended links
             url: resources.md
           - text: Recommended online courses

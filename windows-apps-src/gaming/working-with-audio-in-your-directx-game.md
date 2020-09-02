@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 Learn how to develop and incorporate music and sounds into your DirectX game, and how to process the audio signals to create dynamic and positional sounds.
 
-For audio programming, we recommend using either the [XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal) library in DirectX, or the Windows Runtime [Audio graphs](/windows/uwp/audio-video-camera/audio-graphs) APIs. We use XAudio2 here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
+For audio programming, we recommend using either the [XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal) library in DirectX, or the Windows Runtime [Audio graphs](../audio-video-camera/audio-graphs.md) APIs. We use XAudio2 here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
 
-You can also implement simple sounds and music playback with [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
+You can also implement simple sounds and music playback with [Microsoft Media Foundation](/windows/desktop/medfound/microsoft-media-foundation-sdk). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
 
 ## Concepts at a glance
 
@@ -241,7 +241,7 @@ Media Foundation (MF) is a media platform for streaming audio and video playback
 
 ### Windows Runtime XAML media types
 
-If you are using [DirectX-XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
+If you are using [DirectX-XAML interop](/previous-versions/windows/apps/hh825871(v=win.10)), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
 
 <table>
 <colgroup>
@@ -280,10 +280,10 @@ If you are using [DirectX-XAML interop](https://docs.microsoft.com/previous-vers
 
 ## Reference
 
--   [XAudio2 Introduction](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction)
--   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
--   [Microsoft Media Foundation overview](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)
+-   [XAudio2 Introduction](/windows/desktop/xaudio2/xaudio2-introduction)
+-   [XAudio2 Programming Guide](/windows/desktop/xaudio2/programming-guide)
+-   [Microsoft Media Foundation overview](/windows/desktop/medfound/microsoft-media-foundation-sdk)
 
 ## Related topics
 
--   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
+-   [XAudio2 Programming Guide](/windows/desktop/xaudio2/programming-guide)

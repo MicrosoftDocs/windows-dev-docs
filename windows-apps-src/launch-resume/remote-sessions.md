@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Connect devices through remote sessions
 
-The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.
+The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.
 
 Remote sessions can be created by any Windows device, and any Windows device can request to join (although sessions can have invite-only visibility), including devices signed in by other users. This guide provides basic sample code for all of the major scenarios that make use of remote sessions. This code can be incorporated into an existing app project and modified as necessary. For an end-to-end implementation, see the [Quiz Game sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).
 
@@ -51,7 +51,7 @@ using Windows.System.RemoteSystems;
 
 ## Create a remote session
 
-To create a remote session instance, you must start with a **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** object. Use the following framework to create a new session and handle join requests from other devices.
+To create a remote session instance, you must start with a **[RemoteSystemSessionController](/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** object. Use the following framework to create a new session and handle join requests from other devices.
 
 ```csharp
 public async void CreateSession() {
@@ -101,7 +101,7 @@ public async void CreateSession() {
 
 If you wish to keep your remote session from being publicly discoverable, you can make it invite-only. Only the devices that receive an invitation will be able to send join requests. 
 
-The procedure is mostly the same as above, but when constructing the **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** instance, you will pass in a configured **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** object.
+The procedure is mostly the same as above, but when constructing the **[RemoteSystemSessionController](/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** instance, you will pass in a configured **[RemoteSystemSessionOptions](/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** object.
 
 ```csharp
 // define the session options with the invite-only designation
@@ -114,7 +114,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
+To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.
@@ -124,7 +124,7 @@ currentSession.SendInvitationAsync(guestSystem);
 
 ## Discover and join a remote session
 
-The process of discovering remote sessions is handled by the **[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** class and is similar to discovering individual remote systems.
+The process of discovering remote sessions is handled by the **[RemoteSystemSessionWatcher](/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** class and is similar to discovering individual remote systems.
 
 ```csharp
 public void DiscoverSessions() {
@@ -150,7 +150,7 @@ public void DiscoverSessions() {
 }
 ```
 
-When a **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** instance is obtained, it can be used to issue a join request to the device that controls the corresponding session. An accepted join request will asynchronously return a **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** object that contains a reference to the joined session.
+When a **[RemoteSystemSessionInfo](/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** instance is obtained, it can be used to issue a join request to the device that controls the corresponding session. An accepted join request will asynchronously return a **[RemoteSystemSessionJoinResult](/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** object that contains a reference to the joined session.
 
 ```csharp
 public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
@@ -183,13 +183,13 @@ public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
 }
 ```
 
-A device can be joined to multiple sessions at the same time. For this reason, it may be desirable to separate the joining functionality from the actual interaction with each session. As long as a reference to the **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** instance is maintained in the app, communication can be attempted over that session.
+A device can be joined to multiple sessions at the same time. For this reason, it may be desirable to separate the joining functionality from the actual interaction with each session. As long as a reference to the **[RemoteSystemSession](/uwp/api/windows.system.remotesystems.remotesystemsession)** instance is maintained in the app, communication can be attempted over that session.
 
 ## Share messages and data through a remote session
 
 ### Receive messages
 
-You can exchange messages and data with other participant devices in the session by using a **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** instance, which represents a single session-wide communication channel. As soon as it's initialized, it begins listening for incoming messages.
+You can exchange messages and data with other participant devices in the session by using a **[RemoteSystemSessionMessageChannel](/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** instance, which represents a single session-wide communication channel. As soon as it's initialized, it begins listening for incoming messages.
 
 >[!NOTE]
 >Messages must be serialized and deserialized from byte arrays upon sending and receiving. This functionality is included in the following examples, but it can be implemented separately for better code modularity. See the [sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)) for an example of this.
@@ -246,7 +246,7 @@ public async void SendMessageToAllParticipantsAsync(RemoteSystemSessionMessageCh
 }
 ```
 
-In order to send a message to only certain participant(s), you must first initiate a discovery process to acquire references to the remote systems participating in the session. This is similar to the process of discovering remote systems outside of a session. Use a **[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** instance to find a session's participant devices.
+In order to send a message to only certain participant(s), you must first initiate a discovery process to acquire references to the remote systems participating in the session. This is similar to the process of discovering remote systems outside of a session. Use a **[RemoteSystemSessionParticipantWatcher](/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** instance to find a session's participant devices.
 
 ```csharp
 public void WatchForParticipants() {
@@ -316,4 +316,4 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 
 ## Related topics
 * [Connected apps and devices (Project Rome)](connected-apps-and-devices.md)
-* [Remote Systems API reference](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)
+* [Remote Systems API reference](/uwp/api/Windows.System.RemoteSystems)

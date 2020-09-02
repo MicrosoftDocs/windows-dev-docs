@@ -14,12 +14,12 @@ ms.custom: 19H1
 
 Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ Win32 applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ Win32 applications.
 
-You can host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including:
+You can host any UWP control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
 
 * Any first-party UWP control provided by the Windows SDK.
 * Any custom UWP control (for example, a user control that consists of several UWP controls that work together). You must have the source code for the custom control so you can compile it with your application.
 
-Fundamentally, XAML Islands are created by using the *UWP XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) that use the UWP XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
+Fundamentally, XAML Islands are created by using the *UWP XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) that use the UWP XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
 
 The way you use XAML Islands depends on your application type and the types of UWP controls you want to host.
 
@@ -31,7 +31,7 @@ The way you use XAML Islands depends on your application type and the types of U
 XAML Islands have these run time requirements:
 
 * Windows 10, version 1903, or a later release.
-* If your application is not packaged in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
+* If your application is not packaged in an [MSIX package](/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 ## WPF and Windows Forms applications
 
@@ -47,19 +47,19 @@ The following wrapped UWP controls are currently available in the Windows Commun
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, version 1903 | Provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application. |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
-| [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
+| [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, version 1903 | Provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application. |
+| [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
+| [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
 
 For a walkthrough that demonstrates how to use the wrapped UWP controls, see [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md).
 
 ### Host controls
 
-For custom controls and other scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control that is available in the Windows Community Toolkit.
+For custom controls and other scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control that is available in the Windows Community Toolkit.
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
-| [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, version 1903 | Can host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any first-party UWP control provided by the Windows SDK as well as custom controls. |
+| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, version 1903 | Can host any UWP control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including any first-party UWP control provided by the Windows SDK as well as custom controls. |
 
 For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Host a standard UWP control in a WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom UWP control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
@@ -89,8 +89,8 @@ The Windows Community Toolkit also provides the following .NET controls for host
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
-| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, version 1803 | Uses the Microsoft Edge rendering engine to show web content. |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Provides a version of **WebView** that is compatible with more OS versions. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 version 1803 and later, and the Internet Explorer rendering engine to show web content on earlier versions of Windows 10, Windows 8.x, and Windows 7. |
+| [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, version 1803 | Uses the Microsoft Edge rendering engine to show web content. |
+| [WebViewCompatible](/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Provides a version of **WebView** that is compatible with more OS versions. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 version 1803 and later, and the Internet Explorer rendering engine to show web content on earlier versions of Windows 10, Windows 8.x, and Windows 7. |
 
 To use these controls, install one of these NuGet packages:
 
@@ -101,7 +101,7 @@ To use these controls, install one of these NuGet packages:
 
 The XAML Island .NET controls are not supported in C++ Win32 applications. These applications must instead use the *UWP XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
 
-The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ Win32 application can use to host any UWP control that derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement). You can host UWP controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
+The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ Win32 application can use to host any UWP control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). You can host UWP controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
 
 * [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
 * [Host a standard UWP control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
@@ -124,50 +124,50 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI 2.x Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI 2.x Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
 
-:heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
+:heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 
-:heavy_check_mark: To support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+:heavy_check_mark: To support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
 
 :heavy_check_mark: Using `x:Bind` with hosted controls in XAML Islands is not supported. You'll have to declare the data model in a .NET Standard library.
 
 ### Not supported
 
-:no_entry_sign: Using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host C#-based third-party UWP controls in WPF and Windows Forms apps that target the .NET Framework. This scenario is only supported in apps that target .NET Core 3.
+:no_entry_sign: Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host C#-based third-party UWP controls in WPF and Windows Forms apps that target the .NET Framework. This scenario is only supported in apps that target .NET Core 3.
 
 :no_entry_sign: UWP XAML content in XAML Islands doesn't respond to Windows theme changes from dark to light or vice versa at run time. Content does respond to high contrast changes at run time.
 
 :no_entry_sign: Adding a **WebView** control to a custom user control (either on-thread, off-thread, or out of process).
 
-:no_entry_sign: The [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) control and [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) host control are not supported in full screen mode.
+:no_entry_sign: The [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) control and [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) host control are not supported in full screen mode.
 
-:no_entry_sign: Text input with the handwriting view. For more information about this feature, see [this article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
+:no_entry_sign: Text input with the handwriting view. For more information about this feature, see [this article](/windows/uwp/design/controls-and-patterns/text-handwriting-view).
 
-:no_entry_sign: Text controls that use `@Places` and `@People` content links. For more information about this feature, see [this article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
+:no_entry_sign: Text controls that use `@Places` and `@People` content links. For more information about this feature, see [this article](/windows/uwp/design/controls-and-patterns/content-links).
 
-:no_entry_sign: XAML Islands do not support hosting a [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) that contains a control that accepts text input, such as a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), or [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you do this, the input control will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) that contains the input control.
+:no_entry_sign: XAML Islands do not support hosting a [ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) that contains a control that accepts text input, such as a [TextBox](/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox), or [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you do this, the input control will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a [Popup](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) that contains the input control.
 
-:no_entry_sign: XAML Islands do not currently support displaying SVG files in a hosted [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) control or by using an [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) object. As a workaround, convert the image files you want to display to raster-based formats such as JPG or PNG.
+:no_entry_sign: XAML Islands do not currently support displaying SVG files in a hosted [Windows.UI.Xaml.Controls.Image](/uwp/api/Windows.UI.Xaml.Controls.Image) control or by using an [Windows.UI.Xaml.Media.Imaging.SvgImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) object. As a workaround, convert the image files you want to display to raster-based formats such as JPG or PNG.
 
 ### Window host context for XAML Islands
 
-When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) classes won't provide the correct information for XAML Islands. [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) and [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) objects do exist on the thread and are accessible to your app, but they won't return meaningful bounds or visibility (they are always invisible and have a size of 1x1). For more information, see [Windowing hosts](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
+When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes won't provide the correct information for XAML Islands. [CoreWindow](/uwp/api/windows.ui.core.corewindow) and [Window](/uwp/api/windows.ui.xaml.window) objects do exist on the thread and are accessible to your app, but they won't return meaningful bounds or visibility (they are always invisible and have a size of 1x1). For more information, see [Windowing hosts](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
 
-For example, to get the bounding rectangle of the window that contains a UWP control that is hosted in a XAML Island, use the [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) property of the control. Because every UWP control that can be hosted in a XAML Island derives from [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), you can use the [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) property of the control to access the **XamlRoot** object.
+For example, to get the bounding rectangle of the window that contains a UWP control that is hosted in a XAML Island, use the [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) property of the control. Because every UWP control that can be hosted in a XAML Island derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), you can use the [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) property of the control to access the **XamlRoot** object.
 
 ```csharp
 Size windowSize = myUWPControl.XamlRoot.Size;
 ```
 
-Do not use the [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) property to get the bounding rectangle.
+Do not use the [CoreWindows.Bounds](/uwp/api/windows.ui.core.corewindow.bounds) property to get the bounding rectangle.
 
 ```csharp
 // This will return incorrect information for a UWP control that is hosted in a XAML Island.
 Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 ```
 
-For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) replacements, see the table in [this section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
+For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) replacements, see the table in [this section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
 
 For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) sample.
 

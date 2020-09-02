@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions about using Python on Windows
-description: Frequently Asked Questions about using Python on Windows
+description: Get help by reviewing answers to frequently asked questions (FAQs) about using Python on Windows for development.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -61,7 +61,7 @@ Setting this variable globally through the **Environment Variables** settings is
 
 [Docker](https://code.visualstudio.com/docs/azure/docker): [VSCode extension](https://code.visualstudio.com/docs/azure/docker) helps you quickly package and deploy with Dockerfile and docker-compose.yml templates (generate the proper Docker files for your project).
 
-[Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/) enables you to deploy and manage containerized applications while scaling resources on demand.
+[Azure Kubernetes Service (AKS)](/azure/aks/) enables you to deploy and manage containerized applications while scaling resources on demand.
 
 ## What if I need to work across different machines?
 

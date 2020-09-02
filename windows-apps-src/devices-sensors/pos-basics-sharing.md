@@ -1,6 +1,6 @@
 ---
 title: PointOfService device sharing 
-description: Sharing PointOfService peripherals with others
+description: Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals.
 ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
@@ -48,11 +48,11 @@ if (printer != null)
 
 ## API methods used 
 
-+ [BarcodeScanner.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
++ [BarcodeScanner.Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
++ [CashDrawer.Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
++ [LineDisplay.Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
++ [MagneticStripeReader.Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
++ [PosPrinter.Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

@@ -1,5 +1,4 @@
 ---
-author: mijacobs
 Description: Many enterprises use firewalls to block unwanted traffic. This doc describes how to allow WNS traffic to pass through firewalls.
 title: Adding WNS Traffic to the Firewall Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
@@ -80,10 +79,10 @@ If you are using the legacy notification service, MPNS, the IP address ranges th
 
 ## Related topics
 
-* [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [How to intercept notifications for running applications](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Quickstart: Sending a push notification](/previous-versions/windows/apps/hh868252(v=win.10))
+* [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh465412(v=win.10))
+* [How to intercept notifications for running applications](/previous-versions/windows/apps/jj709907(v=win.10))
+* [How to authenticate with the Windows Push Notification Service (WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push notification service request and response headers](/previous-versions/windows/apps/hh465435(v=win.10))
+* [Guidelines and checklist for push notifications](./windows-push-notification-services--wns--overview.md)
  

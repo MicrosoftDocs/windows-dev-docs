@@ -40,7 +40,6 @@ This chart has separate tabs that you can view, showing usage by day or week (de
 - **Duration**: Shows the total engagement hours (hours where a user is actively using your app).
 - **Engagement**: Shows the average engagement minutes per user (average duration of all user sessions). 
 - **Retention**: Shows the total number of **DAU/MAU** (Daily Active Users/Monthly Active Users) over the selected period of time.
-- **Churn prediction**: Shows how many users we predict are likely to stop using your app soon, based on their recent usage.
 
 When the **30D** time period is selected, you may see circle markers when viewing the **Users**, **Devices**, or **Duration** tabs. These represent a significant increase or decrease in a given value that we think you'll want to know about. The date on which the circle appears represents the end of the week in which we detected a significant increase or decrease compared to the week before that. To see more details about what's changed, hover over the circle.  
 
@@ -68,7 +67,7 @@ As with the **User sessions** chart, a user session represents one distinct peri
 
 The **Custom events** chart shows the total occurrences for custom events that you have defined for your app. This may include multiple occurrences for the same customer. You can use the filters to select the specific custom events for which you want to see this data.
 
-Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+Custom events are implemented using the [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 For more info, see [Log custom events for Dev Center](../monetize/log-custom-events-for-dev-center.md).
 

@@ -9,7 +9,7 @@ ms.topic: overview
 
 # Extend TraceProcessor
 
-Many kinds of trace data have built-in support in [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), but if you have your other providers that you would like to analyze (including your own custom providers), that data is also available from the trace live while processing occurs.
+Many kinds of trace data have built-in support in [TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor), but if you have your other providers that you would like to analyze (including your own custom providers), that data is also available from the trace live while processing occurs.
 
 > [!NOTE]
 > This part of the API is in preview and under active development. It may change in future releases.

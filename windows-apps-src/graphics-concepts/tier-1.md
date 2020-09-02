@@ -1,6 +1,6 @@
 ---
 title: Tier 1
-description: This section describes tier 1 support.
+description: Learn the general and specific limitations affecting Tier 1 support for streaming resources features in Direct3D.
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Tier 1
@@ -48,7 +48,7 @@ Streaming resources with any mipmaps not a multiple of standard tile size in all
 
 In order to switch between referencing tiles in a tile pool via a [Buffer](introduction-to-buffers.md) resource to referencing the same tiles via a [Texture](introduction-to-textures.md) resource, or vice-versa, the most recent updating of tile mappings or copying of tile mappings that defines mappings to those tile pool tiles must be for the same resource dimension (Buffer versus Texture\*) as the resource dimension that will be used to access the tiles. Otherwise, behavior is undefined, including the chance of device reset.
 
-So, for example, it is invalid to update the tile mappings to define tile mappings for a Buffer, then update the tile mappings to the same tiles in the tile pool via a [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) resource, then access the tiles via the Buffer. Work-around operations are to either redefine tile mappings for a resource when switching between Buffer and Texture (or vice versa) sharing tiles or just never sharing tiles in a tile pool between Buffer resources and Texture resources.
+So, for example, it is invalid to update the tile mappings to define tile mappings for a Buffer, then update the tile mappings to the same tiles in the tile pool via a [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) resource, then access the tiles via the Buffer. Work-around operations are to either redefine tile mappings for a resource when switching between Buffer and Texture (or vice versa) sharing tiles or just never sharing tiles in a tile pool between Buffer resources and Texture resources.
 
 ### <span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Min/Max reduction filtering
 
@@ -62,7 +62,3 @@ Min/Max reduction filtering is not supported. See [Streaming resources texture s
  
 
  
-
-
-
-

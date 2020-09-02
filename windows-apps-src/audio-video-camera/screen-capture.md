@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 # Screen capture
 
-Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
+Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](/uwp/api/windows.graphics.capture) namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 
 With screen capture, developers invoke secure system UI for end users to pick the display or application window to be captured, and a yellow notification border is drawn by the system around the actively captured item. In the case of multiple simultaneous capture sessions, a yellow border is drawn around each item being captured.
 
@@ -33,9 +33,9 @@ The APIs found in the **Windows.Graphics.Capture** namespace require a general c
 
 ## Launch the system UI to start screen capture
 
-Before launching the system UI, you can check to see if your application is currently able to take screen captures. There are several reasons why your application might not be able to use screen capture, including if the device does not meet hardware requirements or if the application targeted for capture blocks screen capture. Use the **IsSupported** method in the [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) class to determine if UWP screen capture is supported:
+Before launching the system UI, you can check to see if your application is currently able to take screen captures. There are several reasons why your application might not be able to use screen capture, including if the device does not meet hardware requirements or if the application targeted for capture blocks screen capture. Use the **IsSupported** method in the [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession) class to determine if UWP screen capture is supported:
 
-```cs
+```csharp
 // This runs when the application starts.
 public void OnInitialization()
 {
@@ -55,9 +55,9 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-Once you've verified that screen capture is supported, use the [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) class to invoke the system picker UI. The end user uses this UI to select the display or application window of which to take screen captures. The picker will return a [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem) that will be used to create a **GraphicsCaptureSession**:
+Once you've verified that screen capture is supported, use the [GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) class to invoke the system picker UI. The end user uses this UI to select the display or application window of which to take screen captures. The picker will return a [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem) that will be used to create a **GraphicsCaptureSession**:
 
-```cs
+```csharp
 public async Task StartCaptureAsync()
 {
     // The GraphicsCapturePicker follows the same pattern the
@@ -92,7 +92,7 @@ End Function
 
 Because this is UI code, it needs to be called on the UI thread. If you're calling it from the code-behind for a page of your application (like **MainPage.xaml.cs**) this is done for you automatically, but if not, you can force it to run on the UI thread with the following code:
 
-```cs
+```csharp
 CoreWindow window = CoreApplication.MainView.CoreWindow;
 
 await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
@@ -109,9 +109,9 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## Create a capture frame pool and capture session
 
-Using the **GraphicsCaptureItem**, you will create a [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) with your D3D device, supported pixel format (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**), number of desired frames (which can be any integer), and frame size. The **ContentSize** property of the **GraphicsCaptureItem** class can be used as the size of your frame:
+Using the **GraphicsCaptureItem**, you will create a [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) with your D3D device, supported pixel format (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**), number of desired frames (which can be any integer), and frame size. The **ContentSize** property of the **GraphicsCaptureItem** class can be used as the size of your frame:
 
-```cs
+```csharp
 private GraphicsCaptureItem _item;
 private Direct3D11CaptureFramePool _framePool;
 private CanvasDevice _canvasDevice;
@@ -148,7 +148,7 @@ End Sub
 
 Next, get an instance of the **GraphicsCaptureSession** class for your **Direct3D11CaptureFramePool** by passing the **GraphicsCaptureItem** to the **CreateCaptureSession** method:
 
-```cs
+```csharp
 _session = _framePool.CreateCaptureSession(_item);
 ```
 
@@ -164,7 +164,7 @@ To capture multiple items at the same time, your application must create a captu
 
 With your frame pool and capture session created, call the **StartCapture** method on your **GraphicsCaptureSession** instance to notify the system to start sending capture frames to your app:
 
-```cs
+```csharp
 _session.StartCapture();
 ```
 
@@ -172,9 +172,9 @@ _session.StartCapture();
 _session.StartCapture()
 ```
 
-To acquire these capture frames, which are [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe) objects, you can use the **Direct3D11CaptureFramePool.FrameArrived** event:
+To acquire these capture frames, which are [Direct3D11CaptureFrame](/uwp/api/windows.graphics.capture.direct3d11captureframe) objects, you can use the **Direct3D11CaptureFramePool.FrameArrived** event:
 
-```cs
+```csharp
 _framePool.FrameArrived += (s, a) =>
 {
     // The FrameArrived event fires for every frame on the thread that
@@ -212,15 +212,15 @@ It is recommended to avoid using the UI thread if possible for **FrameArrived**,
 
 Alternatively, you can manually pull frames with the **Direct3D11CaptureFramePool.TryGetNextFrame** method until you get all of the frames that you need.
 
-The **Direct3D11CaptureFrame** object contains the properties **ContentSize**, **Surface**, and **SystemRelativeTime**. The **SystemRelativeTime** is QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) time that can be used to synchronize other media elements.
+The **Direct3D11CaptureFrame** object contains the properties **ContentSize**, **Surface**, and **SystemRelativeTime**. The **SystemRelativeTime** is QPC ([QueryPerformanceCounter](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) time that can be used to synchronize other media elements.
 
 ## Process capture frames
 
-Each frame from the **Direct3D11CaptureFramePool** is checked out when calling **TryGetNextFrame**, and checked back in according to the lifetime of the **Direct3D11CaptureFrame** object. For native applications, releasing the **Direct3D11CaptureFrame** object is enough to check the frame back in to the frame pool. For managed applications, it is recommended to use the **Direct3D11CaptureFrame.Dispose** (**Close** in C++) method. **Direct3D11CaptureFrame** implements the [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable) interface, which is projected as [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable) for C# callers.
+Each frame from the **Direct3D11CaptureFramePool** is checked out when calling **TryGetNextFrame**, and checked back in according to the lifetime of the **Direct3D11CaptureFrame** object. For native applications, releasing the **Direct3D11CaptureFrame** object is enough to check the frame back in to the frame pool. For managed applications, it is recommended to use the **Direct3D11CaptureFrame.Dispose** (**Close** in C++) method. **Direct3D11CaptureFrame** implements the [IClosable](/uwp/api/Windows.Foundation.IClosable) interface, which is projected as [IDisposable](/dotnet/api/system.idisposable) for C# callers.
 
 Applications should not save references to **Direct3D11CaptureFrame** objects, nor should they save references to the underlying Direct3D surface after the frame has been checked back in.
 
-While processing a frame, it is recommended that applications take the [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) lock on the same device that is associated with the **Direct3D11CaptureFramePool** object.
+While processing a frame, it is recommended that applications take the [ID3D11Multithread](/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) lock on the same device that is associated with the **Direct3D11CaptureFramePool** object.
 
 The underlying Direct3D surface will always be the size specified when creating (or recreating) the **Direct3D11CaptureFramePool**. If content is larger than the frame, the contents are clipped to the size of the frame. If the content is smaller than the frame, then the rest of the frame contains undefined data. It is recommended that applications copy out a sub-rect using the **ContentSize** property for that **Direct3D11CaptureFrame** to avoid showing undefined content.
 
@@ -228,7 +228,7 @@ The underlying Direct3D surface will always be the size specified when creating 
 
 In our example, we convert each **Direct3D11CaptureFrame** into a [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), which is part of the [Win2D APIs](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
-```cs
+```csharp
 // Convert our D3D11 surface into a Win2D object.
 CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     _canvasDevice,
@@ -237,7 +237,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
 
 Once we have the **CanvasBitmap**, we can save it as an image file. In the following example, we save it as a PNG file in the user's **Saved Pictures** folder.
 
-```cs
+```csharp
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
 StorageFile file = await pictureFolder.CreateFileAsync("test.png", CreationCollisionOption.ReplaceExisting);
 
@@ -260,7 +260,7 @@ The following code snippet is an end-to-end example of how to implement screen c
 > [!NOTE]
 > This snippet uses [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), a library for 2D graphics rendering. See their documentation for information about how to set it up for your project.
 
-```cs
+```csharp
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.UI.Composition;
 using System;
@@ -682,7 +682,7 @@ End Class
 
 ## Record a video
 
-If you want to record a video of your application, you can do so more easily with the [Windows.Media.AppRecording namespace](https://docs.microsoft.com/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) for more information.
+If you want to record a video of your application, you can do so more easily with the [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](/uwp/extension-sdks/device-families-overview) for more information.
 
 ## See also
 

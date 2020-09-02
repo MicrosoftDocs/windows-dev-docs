@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Navigation history and backwards navigation for Windows apps
 
-> **Important APIs**: [BackRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager class](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **Important APIs**: [BackRequested event](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager class](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 The Windows app provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
@@ -68,7 +68,7 @@ In order to minimize UI elements moving around in your app, show a disabled back
 
 ## Code example
 
-The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button visibility in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
+The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button visibility in [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -188,7 +188,7 @@ namespace winrt::PageNavTest::implementation
 
 Above, we handle backwards navigation for a single page. You can handle navigation in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
 
-To handle backwards navigation for an entire app, you'll register a global listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event in the `App.xaml` code-behind file.
+To handle backwards navigation for an entire app, you'll register a global listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event in the `App.xaml` code-behind file.
 
 App.xaml code-behind:
 
@@ -301,9 +301,9 @@ The code examples provided above demonstrate how to handle all of these inputs.
 
 ## System back behavior for backward compatibilities
 
-Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
+Previously, UWP apps used [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
 
-If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
+If your app continues using [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 
 ![Title bar back button](images/nav-back-pc.png)
 

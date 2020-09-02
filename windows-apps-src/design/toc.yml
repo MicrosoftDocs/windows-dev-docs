@@ -450,6 +450,18 @@
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: Use input scope to change the touch keyboard
           href: input/use-input-scope-to-change-the-touch-keyboard.md
+    - name: Text input
+      items:
+        - name: Custom text input
+          href: input/custom-text-input.md
+        - name: Text scaling
+          href: input/text-scaling.md
+        - name: Selecting text and images
+          href: input/guidelines-for-textselection.md
+        - name: Input Method Editors
+          href: input/input-method-editors.md
+        - name: Input Method Editor requirements
+          href: input/input-method-editor-requirements.md
     - name: Gamepad and remote control
       href: input/gamepad-and-remote-interactions.md
     - name: Touchpad
@@ -478,29 +490,25 @@
       href: input/cortana-interactions.md
       items:
         - name: Design guidelines
-          href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
+          href: /cortana/voice-commands/voicecommand-design-guidelines
         - name: Activate a foreground app
-          href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
         - name: Modify VCD phrase lists
-          href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
         - name: Launch a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
         - name: Interact with a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
         - name: Deep link from a background app
-          href: https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
         - name: Support natural-language voice commands
-          href: https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
     - name: Multiple inputs
       href: input/multiple-input-design-guidelines.md
     - name: Input injection
       href: input/input-injection.md
     - name: Identify input devices
       href: input/identify-input-devices.md
-    - name: Custom text input
-      href: input/custom-text-input.md
-    - name: Text scaling
-      href: input/text-scaling.md
     - name: Drag and drop
       href: input/drag-and-drop.md
     - name: Optical zoom and resizing
@@ -509,8 +517,6 @@
       href: input/guidelines-for-panning.md
     - name: Rotation
       href: input/guidelines-for-rotation.md
-    - name: Selecting text and images
-      href: input/guidelines-for-textselection.md
     - name: Targeting
       href: input/guidelines-for-targeting.md
     - name: Visual feedback

@@ -1,6 +1,6 @@
 ---
 title: Use a SQLite database in a UWP app
-description: Use a SQLite database in a UWP app.
+description: Learn how to use a SQLite database in a UWP app to store and retrieve data in a light-weight database on the user's device.
 ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQLite, database
@@ -30,11 +30,11 @@ We recommend that you use either the Entity Framework Core or the open-source [S
 
 Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can migrate that code to a UWP app and it will work with appropriate changes to the connection string.
 
-To try it out, see [Getting started with EF Core on Universal Windows Platform (UWP) with a New Database](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
+To try it out, see [Getting started with EF Core on Universal Windows Platform (UWP) with a New Database](/ef/core/get-started/uwp/getting-started).
 
 ### SQLite library
 
-The [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) library implements the interfaces in the [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
+The [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) library implements the interfaces in the [System.Data.Common](/dotnet/api/system.data.common) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
 
 The rest of this guide helps you to use this library.
 
@@ -70,7 +70,7 @@ Choose the **Browse** tab, and search for the **Microsoft.Data.SQLite** package.
 
 ![SQLite package](images/sqlite-package.png)
 
-Move onto the [Add and retrieve data in a SQLite database](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database) section of this guide.
+Move onto the [Add and retrieve data in a SQLite database](#add-and-retrieve-data-in-a-sqlite-database) section of this guide.
 
 ### The minimum version of your project targets the Fall Creators Update
 
@@ -195,7 +195,7 @@ public async static void InitializeDatabase()
 
 This code creates the SQLite database and stores it in the application's local data store.
 
-In this example, we name the database ``sqlliteSample.db`` but you can use whatever name you want as long as you use that name in all [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) objects that you instantiate.
+In this example, we name the database ``sqlliteSample.db`` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) objects that you instantiate.
 
 In the constructor of the **App.xaml.cs** file of your UWP project, call the ``InitializeDatabase`` method of the **DataAccess** class.
 
@@ -272,9 +272,9 @@ public static List<String> GetData()
 }
 ```
 
-The [Read](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns **true** if there are rows left, otherwise it returns **false**.
+The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns **true** if there are rows left, otherwise it returns **false**.
 
-The [GetString](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDataTime](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
+The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
 
 The ordinal parameter isn't as important in this example because we are selecting all of the entries in a single column. However, if multiple columns are part of your query, use the ordinal value to obtain the column you want to pull data from.
 
@@ -311,7 +311,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-That's it. Explore the [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your UWP app.
+That's it. Explore the [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your UWP app.
 
 ## Next steps
 
@@ -321,7 +321,7 @@ See [Use a SQL Server database in a UWP app](sql-server-databases.md).
 
 **Share code between different apps across different platforms**
 
-See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+See [Share code between desktop and UWP](../porting/desktop-to-uwp-migrate.md).
 
 **Add master detail pages with Azure SQL back ends**
 

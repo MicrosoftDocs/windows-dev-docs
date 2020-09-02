@@ -31,7 +31,7 @@ There are two options for .NET projects:
 
 #### To use the NuGet option
 
-1. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
+1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
     1. In Visual Studio, click **Tools -> NuGet Package Manager -> Package Manager Settings**.
     2. Make sure **PackageReference** is selected for **Default package management format**.
@@ -71,7 +71,7 @@ There are two options for .NET projects:
 
 ### Modify a C++ Win32 project to use Windows Runtime APIs
 
-Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
+Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 To configure your project for C++/WinRT:
 
@@ -181,7 +181,7 @@ void UWP::ShowToast()
 }
 ```
 
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
@@ -238,7 +238,7 @@ The compiler builds that code only if that constant is defined in your active bu
 
 You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## Related Samples
 

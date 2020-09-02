@@ -1,6 +1,6 @@
 ---
 title: Resources for developing with Python on Windows
-description: A list of resources for developing with Python on Windows.
+description: Learn about helpful resources for developing with Python on Windows, such as online courses and web development.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -22,7 +22,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Using Python on Windows](https://docs.python.org/3/using/windows.html): This Python.org documentation provides an overview of Windows-specific behavior you should know about when using Python on Microsoft Windows.
 
-- [Azure for Python cloud developers](https://docs.microsoft.com/azure/python/): Documentation covering everything from building and deploying a Python web app on Azure to running Python code as a serverless function.
+- [Azure for Python cloud developers](/azure/python/): Documentation covering everything from building and deploying a Python web app on Azure to running Python code as a serverless function.
 
 - [StackOverflow posts containing "python" and "windows"](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379): The StackOverflow community is extremely helpful with addressing questions. We aim to actively monitor and support this community.
 
@@ -34,7 +34,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Python doc languages](https://wiki.python.org/moin/Languages): Links to the Python docs in languages other than English.
 
-- [Python API Browser](https://docs.microsoft.com/python/api/?view=azure-python): Your one-stop shop for all Python-based APIs from Microsoft.
+- [Python API Browser](/python/api/?view=azure-python): Your one-stop shop for all Python-based APIs from Microsoft.
 
 - [Azure Code Samples using Python](https://azure.microsoft.com/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
 
@@ -42,7 +42,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 ## Online courses
 
-- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python on Microsoft Learn](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 
@@ -62,14 +62,14 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Other Python web frameworks](https://wiki.python.org/moin/WebFrameworks): A list of Python web frameworks with brief descriptions from Python.org.
 
-- [Tutorial: Build a Flask app with Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Build a Flask web app that uses Azure Cognitive Services to translate text, analyze sentiment, and synthesize translated text into speech.
+- [Tutorial: Build a Flask app with Azure Cognitive Services](/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Build a Flask web app that uses Azure Cognitive Services to translate text, analyze sentiment, and synthesize translated text into speech.
 
-- [Deploy a Python web app to a VM in Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-vm-python): Create a VM to host your Python web app in Azure Stack.
+- [Deploy a Python web app to a VM in Azure Stack](/azure-stack/user/azure-stack-dev-start-howto-vm-python): Create a VM to host your Python web app in Azure Stack.
 
-- [Build a Python app using Azure Cosmos DB's API for MongoDB](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask): Build a simple To-Do Flask app with the Azure Cosmos DB Emulator and the Azure Cosmos DB's API for MongoDB.
+- [Build a Python app using Azure Cosmos DB's API for MongoDB](/azure/cosmos-db/create-mongodb-flask): Build a simple To-Do Flask app with the Azure Cosmos DB Emulator and the Azure Cosmos DB's API for MongoDB.
 
-- [Build a Python and PostgreSQL app in Azure App Service](https://docs.microsoft.com/azure/app-service/containers/tutorial-python-postgresql-app): Create a data-driven Django application, using PostgreSQL as the database back end, running in App Service on Linux.
+- [Build a Python and PostgreSQL app in Azure App Service](/azure/app-service/containers/tutorial-python-postgresql-app): Create a data-driven Django application, using PostgreSQL as the database back end, running in App Service on Linux.
 
-- [Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Build a Python Django web app that uses the Microsoft Graph API to retrieve calendar information for a user.
+- [Build Python Django apps with Microsoft Graph](/graph/tutorials/python): Build a Python Django web app that uses the Microsoft Graph API to retrieve calendar information for a user.
 
-- [Walkthrough: Bing Ads API Web Application in Python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.
+- [Walkthrough: Bing Ads API Web Application in Python](/advertising/guides/walkthrough-web-application-python?view=bingads-13): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.

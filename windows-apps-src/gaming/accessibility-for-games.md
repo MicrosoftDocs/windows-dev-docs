@@ -30,7 +30,7 @@ Number of users who can play your game x Awesomeness of game = Game sales
 
 If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.aao.org/eye-health/diseases/color-blindness-risk), this can potentially have a large impact on your title’s revenue. 
 
-For more business justifications, see [Making Video Games Accessible](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices).
+For more business justifications, see [Making Video Games Accessible](/windows/desktop/DxTechArts/accessibility-best-practices).
 
 ### Better games
 
@@ -180,7 +180,7 @@ Here are some basic guidelines to consider when designing closed captions and su
 
 *	Select simple readable font.
 *	Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
+*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](../design/accessibility/accessible-text-requirements.md).)
 * Display short sentences on screen, maximum 38 characters per line and maximum 2-3 lines at any one time. (Remember not to give the game away by displaying the text before event occurs.)
 *	Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
 *	Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
@@ -191,7 +191,7 @@ If your title allows gamers to communicate using voice and send text messages to
 
 People who do not have microphones attached to their gaming device can still have a voice conversation with someone who is speaking. They are able to type text into the chat window and have those messages converted into voice. It also allows someone who can't hear very well to read the transcribed text messages from the person they're having a voice chat with.
 
-For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
+For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### Sound feedback
 
@@ -264,5 +264,5 @@ Here are some external sites that provide additional information about game acce
 ### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Developing accessible UWP apps](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
+* [Developing accessible UWP apps](../design/accessibility/accessibility.md)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

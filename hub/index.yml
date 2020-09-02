@@ -16,16 +16,16 @@ productDirectory:
   - title: Application developers
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Design, develop, and deploy applications and other solutions for Windows PCs and other devices.
-    url: /windows/apps/
+    url: ./apps/index.yml
   - title: Hardware developers
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Design, develop, and deploy hardware and device drivers for Windows PCs and other devices.
-    url: https://docs.microsoft.com/windows-hardware/drivers/
+    url: /windows-hardware/drivers/
   - title: Windows 10 for IT pros
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Evaluate, plan, deploy, secure, and manage devices running Windows 10.
-    url: https://docs.microsoft.com/windows/windows-10/
+    url: /windows/windows-10/
   - title: Windows Server for IT pros
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Build and deploy connected applications, networks, and web services on Windows Server.
-    url: https://docs.microsoft.com/windows-server/
+    url: /windows-server/

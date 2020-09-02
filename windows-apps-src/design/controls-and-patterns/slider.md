@@ -1,6 +1,6 @@
 ---
-Description: Lets the user set a value in a given range.
 title: Sliders
+description: Learn how to implement a Windows UI Library slider control that lets the user select from a range of values by moving a thumb control along a track.
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
@@ -23,9 +23,9 @@ A slider is a control that lets the user select from a range of values by moving
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
-> **Platform APIs**: [Slider class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [Value property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **Platform APIs**: [Slider class](/uwp/api/windows.ui.xaml.controls.slider), [Value property](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## Is this the right control?
 
@@ -93,7 +93,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-You get and set the value of the slider from the [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event.
+You get and set the value of the slider from the [Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -185,4 +185,4 @@ When you're designing a custom slider, consider ways to present all the necessar
 
 ## Related topics
 - [Toggle switches](toggles.md)
-- [Slider class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider class](/uwp/api/Windows.UI.Xaml.Controls.Slider)

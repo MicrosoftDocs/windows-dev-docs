@@ -16,7 +16,7 @@ Sample data on the design surface, and for prototyping
 
 
 
-**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) or the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). The techniques described in this topic are based on the use of a [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
+**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](../xaml-platform/binding-markup-extension.md) or the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md). The techniques described in this topic are based on the use of a [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
 
 It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio. In order to have your controls populated with data (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data. Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app. You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.
 
@@ -32,7 +32,7 @@ It may be impossible or undesirable (perhaps for reasons of privacy or performan
 Setting DataContext in markup
 -----------------------------
 
-It's a fairly common developer practice to use imperative code (in code-behind) to set a page or user control's [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) to a view model instance.
+It's a fairly common developer practice to use imperative code (in code-behind) to set a page or user control's [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) to a view model instance.
 
 ``` csharp
 public MainPage()
@@ -97,11 +97,11 @@ All you need to do is to specify a class for the command to use. The command the
 </Page>
 ```
 
-The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
+The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
 
-The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx) topic, which is still valid for Universal Windows Platform (UWP) apps.
+The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)) topic, which is still valid for Universal Windows Platform (UWP) apps.
 
-[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
+[**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
 
 ``` xaml
     <Page.Resources>
@@ -150,6 +150,6 @@ For prototyping, you want sample data at both design-time and at run-time. For t
 
 Instead of specifying a class, you can actually design the schema of your sample data source right in the **Data** panel. You can also edit sample data values in the **Data** panel: there's no need to open and edit a file (although, you can still do that if you prefer).
 
-The **New Sample Data** feature uses [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), and not **d:DataContext**, so that the sample data is available when you run your sketch or prototype as well as while you're designing it. And the **Data** panel really speeds up your designing and binding tasks. For example, simply dragging a collection property from the **Data** panel onto the design surface generates a data-bound items control and the necessary templates, all ready to build and run.
+The **New Sample Data** feature uses [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext), and not **d:DataContext**, so that the sample data is available when you run your sketch or prototype as well as while you're designing it. And the **Data** panel really speeds up your designing and binding tasks. For example, simply dragging a collection property from the **Data** panel onto the design surface generates a data-bound items control and the necessary templates, all ready to build and run.
 
 ![Sample data for prototyping.](images/displaying-data-in-the-designer-04.png)

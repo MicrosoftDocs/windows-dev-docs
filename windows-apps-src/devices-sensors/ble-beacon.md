@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](/uwp/api/windows.devices.bluetooth.advertisement)
 
 This article provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.  
 
@@ -25,8 +25,8 @@ This article provides an overview of Bluetooth Low Energy (LE) Advertisement bea
 
 There are two main functions that a developer can perform using the LE Advertisement APIs:
 
--   [Advertisement Watcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): listen for nearby beacons and filter them out based on payload or proximity.  
--   [Advertisement Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): define a payload for Windows to advertise on a developers behalf.  
+-   [Advertisement Watcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): listen for nearby beacons and filter them out based on payload or proximity.  
+-   [Advertisement Publisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): define a payload for Windows to advertise on a developers behalf.  
 
 Full sample code is found in the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement) on Github
 
@@ -42,7 +42,7 @@ To use basic Bluetooth LE functionality in a Universal Windows Platform app, you
 
 Bluetooth LE Advertisements allow your device to constantly beacon out a specific payload, called an advertisement. This advertisement can be seen by any nearby Bluetooth LE capable device, if they are set up to listen for this specific advertisment.
 
-> **Note**: For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](https://docs.microsoft.com/windows/uwp/launch-resume/index).
+> **Note**: For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](../launch-resume/index.md).
 
 ### Basic Publishing
 

@@ -12,21 +12,21 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [SplashScreen class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
--   [Window.SizeChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged)
--   [Application.OnLaunched method](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)
+-   [SplashScreen class](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
+-   [Window.SizeChanged event](/uwp/api/windows.ui.xaml.window.sizechanged)
+-   [Application.OnLaunched method](/uwp/api/windows.ui.xaml.application.onlaunched)
 
 Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized. Whether you want to show real-time loading information or simply give your app extra time to prepare its initial UI, an extended splash screen lets you define the launch experience.
 
 > [!NOTE]
-> The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class.
+> The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class.
 
 Make sure your extended splash screen accurately imitates the default splash screen by following these recommendations:
 
 -   Your extended splash screen page should use a 620 x 300 pixel image that is consistent with the image specified for your splash screen in your app manifest (your app's splash screen image). In Microsoft Visual Studio 2015, splash screen settings are stored in the **Splash Screen** section of the **Visual Assets** tab in your app manifest (Package.appxmanifest file).
 -   Your extended splash screen should use a background color that is consistent with the background color specified for your splash screen in your app manifest (your app's splash screen background).
--   Your code should use the [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class to position your app's splash screen image at the same screen coordinates as the default splash screen.
--   Your code should respond to window resize events (such as when the screen is rotated or your app is moved next to another app onscreen) by using the [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class to reposition items on your extended splash screen.
+-   Your code should use the [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class to position your app's splash screen image at the same screen coordinates as the default splash screen.
+-   Your code should respond to window resize events (such as when the screen is rotated or your app is moved next to another app onscreen) by using the [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class to reposition items on your extended splash screen.
 
 Use the following steps to create an extended splash screen that effectively imitates the default splash screen.
 
@@ -48,12 +48,12 @@ Follow these steps to add an image and progress control to your extended splash 
 
 In your ExtendedSplash.xaml file:
 
--   Change the [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty) property of the default [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) element to match the background color you set for your app's splash screen in your app manifest (in the **Visual Assets** section of your Package.appxmanifest file). The default splash screen color is a light gray (hex value \#464646). Note that this **Grid** element is provided by default when you create a new **Blank Page**. You don't have to use a **Grid**; it's just a convenient base for building an extended splash screen.
--   Add a [Canvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) element to the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). You'll use this **Canvas** to position your extended splash screen image.
--   Add an [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) element to the [Canvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
--   (Optional) Add a progress control to show users that your app is loading. This topic adds a [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), instead of a determinate or indeterminate [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar).
+-   Change the [Background](/uwp/api/windows.ui.xaml.controls.control.backgroundproperty) property of the default [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) element to match the background color you set for your app's splash screen in your app manifest (in the **Visual Assets** section of your Package.appxmanifest file). The default splash screen color is a light gray (hex value \#464646). Note that this **Grid** element is provided by default when you create a new **Blank Page**. You don't have to use a **Grid**; it's just a convenient base for building an extended splash screen.
+-   Add a [Canvas](/uwp/api/Windows.UI.Xaml.Controls.Canvas) element to the [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid). You'll use this **Canvas** to position your extended splash screen image.
+-   Add an [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) element to the [Canvas](/uwp/api/Windows.UI.Xaml.Controls.Canvas). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
+-   (Optional) Add a progress control to show users that your app is loading. This topic adds a [ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), instead of a determinate or indeterminate [ProgressBar](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar).
 
-The following example demonstrates a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) with these additions and changes.
+The following example demonstrates a [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) with these additions and changes.
 
 ```xaml
     <Grid Background="#464646">
@@ -65,7 +65,7 @@ The following example demonstrates a [Grid](https://docs.microsoft.com/uwp/api/W
 ```
 
 > [!NOTE]
-> This example sets the width of the [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
+> This example sets the width of the [ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
 
 ## Essential code for an extended splash screen class
 
@@ -76,7 +76,7 @@ Use these steps to define methods to correctly display your extended splash scre
 
 1.  **Add required namespaces**
 
-    You'll need to add the following namespaces to **ExtendedSplash.xaml.cs** to access the [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class, the [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) struct, and the [Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) events.
+    You'll need to add the following namespaces to **ExtendedSplash.xaml.cs** to access the [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) class, the [Rect](/uwp/api/windows.foundation.rect) struct, and the [Window.SizeChanged](/uwp/api/windows.ui.xaml.window.sizechanged) events.
 
     ```cs
     using Windows.ApplicationModel.Activation;
@@ -100,7 +100,7 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    These class variables are used by several methods. The `splashImageRect` variable stores the coordinates where the system displayed the splash screen image for the app. The `splash` variable stores a [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) object, and the `dismissed` variable tracks whether or not the splash screen that is displayed by the system has been dismissed.
+    These class variables are used by several methods. The `splashImageRect` variable stores the coordinates where the system displayed the splash screen image for the app. The `splash` variable stores a [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) object, and the `dismissed` variable tracks whether or not the splash screen that is displayed by the system has been dismissed.
 
 3.  **Define a constructor for your class that correctly positions the image**
 
@@ -134,7 +134,7 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    Make sure to register your [Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) handler (`ExtendedSplash_OnResize` in the example) in your class constructor so that your app positions the image correctly in your extended splash screen.
+    Make sure to register your [Window.SizeChanged](/uwp/api/windows.ui.xaml.window.sizechanged) handler (`ExtendedSplash_OnResize` in the example) in your class constructor so that your app positions the image correctly in your extended splash screen.
 
 4.  **Define a class method to position the image in your extended splash screen**
 
@@ -152,7 +152,7 @@ Use these steps to define methods to correctly display your extended splash scre
 
 5.  **(Optional) Define a class method to position a progress control in your extended splash screen**
 
-    If you chose to add a [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) to your extended splash screen, position it relative to the splash screen image. Add the following code to ExtendedSplash.xaml.cs to center the **ProgressRing** 32 pixels below the image.
+    If you chose to add a [ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) to your extended splash screen, position it relative to the splash screen image. Add the following code to ExtendedSplash.xaml.cs to center the **ProgressRing** 32 pixels below the image.
 
     ```cs
     void PositionRing()
@@ -164,7 +164,7 @@ Use these steps to define methods to correctly display your extended splash scre
 
 6.  **Inside the class, define a handler for the Dismissed event**
 
-    In ExtendedSplash.xaml.cs, respond when the [SplashScreen.Dismissed](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.splashscreen.dismissed) event occurs by setting the `dismissed` class variable to true. If your app has setup operations, add them to this event handler.
+    In ExtendedSplash.xaml.cs, respond when the [SplashScreen.Dismissed](/uwp/api/windows.applicationmodel.activation.splashscreen.dismissed) event occurs by setting the `dismissed` class variable to true. If your app has setup operations, add them to this event handler.
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
@@ -190,7 +190,7 @@ Use these steps to define methods to correctly display your extended splash scre
 
 7.  **Inside the class, define a handler for Window.SizeChanged events**
 
-    Prepare your extended splash screen to reposition its elements if a user resizes the window. This code responds when a [Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) event occurs by capturing the new coordinates and repositioning the image. If you added a progress control to your extended splash screen, reposition it inside this event handler as well.
+    Prepare your extended splash screen to reposition its elements if a user resizes the window. This code responds when a [Window.SizeChanged](/uwp/api/windows.ui.xaml.window.sizechanged) event occurs by capturing the new coordinates and repositioning the image. If you added a progress control to your extended splash screen, reposition it inside this event handler as well.
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -209,13 +209,13 @@ Use these steps to define methods to correctly display your extended splash scre
     ```
 
     > [!NOTE]
-    > Before you try to get the image location make sure the class variable (`splash`) contains a valid [SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) object, as shown in the example.
+    > Before you try to get the image location make sure the class variable (`splash`) contains a valid [SplashScreen](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) object, as shown in the example.
 
      
 
 8.  **(Optional) Add a class method to restore a saved session state**
 
-    The code you added to the [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding a method to your ExtendedSplash.xaml.cs file to restore the app's state.
+    The code you added to the [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding a method to your ExtendedSplash.xaml.cs file to restore the app's state.
 
     ```cs
     void RestoreState(bool loadState)
@@ -227,14 +227,14 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [ApplicationExecutionState](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) of your app was **Terminated**. If so, the `RestoreState` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
+    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [ApplicationExecutionState](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) of your app was **Terminated**. If so, the `RestoreState` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
 
 ## Modify the launch activation handler
 
 
-When your app is launched, the system passes splash screen information to the app's launch activation event handler. You can use this information to correctly position the image on your extended splash screen page. You can get this splash screen information from the activation event arguments that are passed to your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) handler (see the `args` variable in the following code).
+When your app is launched, the system passes splash screen information to the app's launch activation event handler. You can use this information to correctly position the image on your extended splash screen page. You can get this splash screen information from the activation event arguments that are passed to your app's [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) handler (see the `args` variable in the following code).
 
-If you have not already overridden the [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) handler for your app, see [App lifecycle](app-lifecycle.md) to learn how to handle activation events.
+If you have not already overridden the [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) handler for your app, see [App lifecycle](app-lifecycle.md) to learn how to handle activation events.
 
 In App.xaml.cs, add the following code to create and display an extended splash screen.
 
@@ -256,7 +256,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 The following code slightly differs from the snippets shown in the previous steps.
 -   ExtendedSplash.xaml includes a `DismissSplash` button. When this button is clicked, an event handler, `DismissSplashButton_Click`, calls the `DismissExtendedSplash` method. In your app, call `DismissExtendedSplash` when your app is done loading resources or initializing its UI.
--   This app also uses a UWP app project template, which uses [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) navigation. As a result, in App.xaml.cs, the launch activation handler ([OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)) defines a `rootFrame` and uses it to set the content of the app window.
+-   This app also uses a UWP app project template, which uses [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) navigation. As a result, in App.xaml.cs, the launch activation handler ([OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched)) defines a `rootFrame` and uses it to set the content of the app window.
 
 ### ExtendedSplash.xaml
 
@@ -416,7 +416,7 @@ namespace SplashScreenExample
 
 This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
 
-If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) for an example of a modified `OnLaunched` that doesn't use [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) navigation.
+If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) for an example of a modified `OnLaunched` that doesn't use [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) navigation.
 
 ```cs
 using System;
@@ -540,10 +540,10 @@ namespace SplashScreenExample
 
 **Reference**
 
-* [Windows.ApplicationModel.Activation namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
-* [Windows.ApplicationModel.Activation.SplashScreen class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
-* [Windows.ApplicationModel.Activation.SplashScreen.ImageLocation property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.splashscreen.imagelocation)
-* [Windows.ApplicationModel.Core.CoreApplicationView.Activated event](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)
+* [Windows.ApplicationModel.Activation namespace](/uwp/api/Windows.ApplicationModel.Activation)
+* [Windows.ApplicationModel.Activation.SplashScreen class](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
+* [Windows.ApplicationModel.Activation.SplashScreen.ImageLocation property](/uwp/api/windows.applicationmodel.activation.splashscreen.imagelocation)
+* [Windows.ApplicationModel.Core.CoreApplicationView.Activated event](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)
 
  
 

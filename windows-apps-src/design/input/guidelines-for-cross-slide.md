@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
--   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**CrossSliding**](/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
 
 Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 
@@ -48,7 +48,7 @@ This image shows how a user touches an element in the UI, but moves their finger
 
 Here are some guidelines to consider when including cross-slide functionality in your app.
 
-Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
+Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](/previous-versions/windows/apps/hh465382(v=win.10)).
 
 **Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
 
@@ -139,13 +139,9 @@ If more than one object needs to be moved, let users select multiple items and t
 - [Input: Touch hit testing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML scrolling, panning, and zooming sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Input: Simplified ink sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Input: Windows 8 gestures sample](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Input: Manipulations and gestures sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX touch input sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  
 
  
-
-
-
-

@@ -16,13 +16,13 @@ dev_langs:
 
 **Important APIs**
 
--   [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
--   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
--   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
+-   [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+-   [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+-   [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Learn how to launch the Windows Settings app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 
-Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](https://docs.microsoft.com/windows/uwp/security/index).
+Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](../security/index.md).
 
 ## How to launch the Settings app
 
@@ -42,7 +42,7 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
+Alternatively, your app can call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -163,7 +163,7 @@ Use the following URIs to open various pages of the Settings app.
 | Game DVR | ms-settings:gaming-gamedvr |
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay (**Deprecated in Windows 10, version 1809 and later**) |
+| TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 | Xbox Networking | ms-settings:gaming-xboxnetworking |
 
 ## Home page

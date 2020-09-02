@@ -30,7 +30,7 @@ Here, we look at some other ways you can reduce the number of elements your app 
 
 If your XAML markup contains elements that you don't show right away, you can defer loading those elements until they are shown. For example, you can delay the creation of non-visible content such as a secondary tab in a tab-like UI. Or, you might show items in a grid view by default, but provide an option for the user to view the data in a list instead. You can delay loading the list until it's needed.
 
-Use the [x:Load attribute](../xaml-platform/x-load-attribute.md) instead of the [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is you pay a small memory overhead (approx 600 bytes) when the UI is not loaded.
+Use the [x:Load attribute](../xaml-platform/x-load-attribute.md) instead of the [Visibility](/uwp/api/windows.ui.xaml.uielement.Visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is you pay a small memory overhead (approx 600 bytes) when the UI is not loaded.
 
 > [!NOTE]
 > You can delay loading elements using the [x:Load](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) attribute. The x:Load attribute is available starting in Windows 10 Creators Update (version 1703, SDK build 15063). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load. To target earlier versions, use x:DeferLoadStrategy.
@@ -118,7 +118,7 @@ ListView and its children are not loaded into memory.
 
 ### Use layout panel properties
 
-Layout panels have a [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background) property so there's no need to put a [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) in front of a Panel just to color it.
+Layout panels have a [Background](/uwp/api/windows.ui.xaml.controls.panel.background) property so there's no need to put a [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) in front of a Panel just to color it.
 
 **Inefficient**
 
@@ -135,17 +135,17 @@ Layout panels have a [Background](https://docs.microsoft.com/uwp/api/windows.ui.
 <Grid Background="Black"/>
 ```
 
-Layout panels also have built-in border properties, so you don't need to put a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) element around a layout panel. See [Optimize your XAML layout](optimize-your-xaml-layout.md) for more info and examples.
+Layout panels also have built-in border properties, so you don't need to put a [Border](/uwp/api/windows.ui.xaml.controls.border) element around a layout panel. See [Optimize your XAML layout](optimize-your-xaml-layout.md) for more info and examples.
 
 ### Use images in place of vector-based elements
 
-If you reuse the same vector-based element enough times, it becomes more efficient to use an [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) element instead. Vector-based elements can be more expensive because the CPU must create each individual element separately. The image file needs to be decoded only once.
+If you reuse the same vector-based element enough times, it becomes more efficient to use an [Image](/uwp/api/windows.ui.xaml.controls.image) element instead. Vector-based elements can be more expensive because the CPU must create each individual element separately. The image file needs to be decoded only once.
 
 ## Optimize resources and resource dictionaries
 
 You typically use [resource dictionaries](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) to store, at a somewhat global level, resources that you want to reference in multiple places in your app. For example, styles, brushes, templates, and so on.
 
-In general, we have optimized [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) to not instantiate resources unless they're asked for. But there are situations you should avoid so that resources aren’t instantiated unnecessarily.
+In general, we have optimized [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) to not instantiate resources unless they're asked for. But there are situations you should avoid so that resources aren’t instantiated unnecessarily.
 
 ### Resources with x:Name
 
@@ -153,7 +153,7 @@ Use the [x:Key attribute](../xaml-platform/x-key-attribute.md) to reference your
 
 ### ResourceDictionary in a UserControl
 
-A ResourceDictionary defined inside of a [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it at the page level.
+A ResourceDictionary defined inside of a [UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it at the page level.
 
 ### Resource and ResourceDictionary scope
 
@@ -232,7 +232,7 @@ To make this example more efficient, move `SecondPageTextBrush` into _SecondPage
 
 ### Consolidate multiple brushes that look the same into one resource
 
-The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) to demonstrate, but the case is more likely and more important with [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush). Also check for brushes that use predefined colors; for example, `"Orange"` and `"#FFFFA500"` are the same color.
+The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) to demonstrate, but the case is more likely and more important with [GradientBrush](/uwp/api/Windows.UI.Xaml.Media.GradientBrush). Also check for brushes that use predefined colors; for example, `"Orange"` and `"#FFFFA500"` are the same color.
 
 **Inefficient.**
 
@@ -275,15 +275,15 @@ To fix the duplication, define the brush as a resource. If controls in other pag
 
 Overdrawing occurs where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
 
-Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
+Use [**DebugSettings.IsOverdrawHeatMapEnabled**](/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
 
 ### Transparent or hidden elements
 
-If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states, then use x:Load to control its state or set [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the majority of visual states is best set locally on the element.
+If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states, then use x:Load to control its state or set [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the majority of visual states is best set locally on the element.
 
 ### Composite elements
 
-Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) and the bottom half is gray (from the semi-transparent white [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
+Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)) and the bottom half is gray (from the semi-transparent white [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
 
 **Inefficient.**
 
@@ -340,11 +340,11 @@ A layout panel can have two purposes: to color an area, and to lay out child ele
 </GridView>
 ```
 
-If the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) has to be hit-testable then set a background value of transparent on it.
+If the [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) has to be hit-testable then set a background value of transparent on it.
 
 ### Borders
 
-Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
+Use a [Border](/uwp/api/windows.ui.xaml.controls.border) element to draw a border around an object. In this example, a [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
 
 **Inefficient.**
 
@@ -379,7 +379,7 @@ Be aware of margins. Two neighboring elements will overlap (possibly accidentall
 
 ### Cache static content
 
-Another source of overdrawing is a shape made from many overlapping elements. If you set [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) to **BitmapCache** on the [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
+Another source of overdrawing is a shape made from many overlapping elements. If you set [CacheMode](/uwp/api/Windows.UI.Xaml.Media.CacheMode) to **BitmapCache** on the [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
 
 **Inefficient.**
 
@@ -407,7 +407,7 @@ The image above is the result, but here's a map of the overdrawn regions. Darker
 </Canvas>
 ```
 
-Note the use of [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
+Note the use of [CacheMode](/uwp/api/Windows.UI.Xaml.Media.CacheMode). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
 
 ## Use XBF2
 

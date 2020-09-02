@@ -20,7 +20,7 @@ When adding users, you will need to specify their access to your Partner Center 
 Keep in mind that all Partner Center users (including groups and Azure AD applications) must have an active account in [an Azure AD tenant that is associated with your Partner Center account](associate-azure-ad-with-partner-center.md). User management is done in one tenant at a time; you must sign in with a Manager account for the tenant in which you want to add or edit users. Creating a new user in Partner Center will also create an account for that user in the Azure AD tenant to which you are signed in, and making changes to a user's name in Partner Center will make the same changes in your organization's Azure AD tenant.
 
 > [!NOTE]
-> If your organization uses [directory integration](https://docs.microsoft.com/previous-versions/azure/azure-services/jj573653(v=azure.100)?redirectedfrom=MSDN) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Partner Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Partner Center.
+> If your organization uses [directory integration](/previous-versions/azure/azure-services/jj573653(v=azure.100)) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Partner Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Partner Center.
 
 
 <span id="users" />
@@ -46,11 +46,11 @@ You can select users who already exist in your organization's tenant and give th
 
 ### Additional methods for adding users
 
-If you are signed in with a Manager account which also has [global administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permissions for the Azure AD tenant you're working in, you will have additional options to add users to your Partner Center account. You'll need to select one of the following:
+If you are signed in with a Manager account which also has [global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permissions for the Azure AD tenant you're working in, you will have additional options to add users to your Partner Center account. You'll need to select one of the following:
 
 -   **Add existing users**: Choose users who already exist in your organization's directory and give them access to your Partner Center account, using the method described above.
 -   **Create new users**: Create brand new user accounts to add to both your organization's directory and your Partner Center account
--   **Invite outside users**: Send email invites to users who are not currently in your organization's directory. They will be invited to access your Partner Center account, and a new [guest user](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant.
+-   **Invite outside users**: Send email invites to users who are not currently in your organization's directory. They will be invited to access your Partner Center account, and a new [guest user](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant.
 
 <span id="new-user" />
 
@@ -61,7 +61,7 @@ If you are signed in with a Manager account which also has [global administrator
 
 1.  From the **Users** page (under **Account settings**), select **Add users**, then choose **Create new users**.
 2.  Enter the first name, last name, and username for the new user.
-3.  If you want the new user to have a [global administrator account](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) in your organization's directory, check the box labeled **Make this user a Global administrator in your Azure AD, with full control over all directory resources**. This will give the user full access to all administrative features in your company's Azure AD. They'll be able to add and manage users in your organization's directory (though not in Partner Center, unless you grant the account the appropriate [role/permissions](set-custom-permissions-for-account-users.md)). If you check this box, you'll need to provide a **Password recovery email** for the user.
+3.  If you want the new user to have a [global administrator account](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) in your organization's directory, check the box labeled **Make this user a Global administrator in your Azure AD, with full control over all directory resources**. This will give the user full access to all administrative features in your company's Azure AD. They'll be able to add and manage users in your organization's directory (though not in Partner Center, unless you grant the account the appropriate [role/permissions](set-custom-permissions-for-account-users.md)). If you check this box, you'll need to provide a **Password recovery email** for the user.
 4.  If you checked the box to **Make this user a Global administrator in your Azure AD**, enter an email that the user can use if they need to recover their password.
 5.  In the **Group membership** section, select any groups to which you want the new user to belong.
 6.  In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the user.
@@ -81,7 +81,7 @@ If you are signed in with a Manager account which also has [global administrator
 2.  In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the user.
 3.  Click **Save**.
 
-The users you invited will get an email invitation to join your account, and a new [guest user](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant. Each user will need to accept their invitation before they can access your account.
+The users you invited will get an email invitation to join your account, and a new [guest user](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant. Each user will need to accept their invitation before they can access your account.
 
 If you need to resend an invitation, find the user on your **Users** page and select their email address (or the text that says **Invitation pending**). Then, at the bottom of the page, click **Resend invitation**.
 
@@ -162,7 +162,7 @@ If you want to grant Partner Center access to a brand new Azure AD application a
 1.  From the **Users** page (under **Account settings**), select **Add Azure AD applications**.
 2.  On the next page, select **New Azure AD application**.
 3.  Enter the **Reply URL** for the new Azure AD application. This is the URL where users can sign in and use your Azure AD application (sometimes also known as the App URL or Sign-On URL). The **Reply URL** can't be longer than 256 characters and must be unique within your directory.
-4.  Enter the **App ID URI** for the new Azure AD application. This is a logical identifier for the Azure AD application that is presented when it sends a single sign-on request to Azure AD. Note that the **App ID URI** must be unique for each Azure AD application in your directory, and it can't be longer than 256 characters. For more info about the **App ID URI**, see [Integrating applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
+4.  Enter the **App ID URI** for the new Azure AD application. This is a logical identifier for the Azure AD application that is presented when it sends a single sign-on request to Azure AD. Note that the **App ID URI** must be unique for each Azure AD application in your directory, and it can't be longer than 256 characters. For more info about the **App ID URI**, see [Integrating applications with Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
 5.  In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the Azure AD application.
 6.  Click **Save**.
 
@@ -223,4 +223,3 @@ To remove a user, group, or Azure AD application from your Partner Center accoun
 > Removing a user, group, or Azure AD application means that it will no longer have access to your Partner Center account. It does **not** delete the user, group, or Azure AD application from your organization's directory.
 
  
-

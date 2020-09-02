@@ -57,12 +57,12 @@ When navigating between pages, it’s important for the user to understand what 
 
 ## When to use connected animation
 
-Connected animations are generally used when changing pages, though they can be applied to any experience where you are changing content in a UI and want the user to maintain context. You should consider using a connected animation instead of a [drill in navigation transition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) whenever there is an image or other piece of UI shared between the source and destination views.
+Connected animations are generally used when changing pages, though they can be applied to any experience where you are changing content in a UI and want the user to maintain context. You should consider using a connected animation instead of a [drill in navigation transition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) whenever there is an image or other piece of UI shared between the source and destination views.
 
 ## Configure connected animation
 
 > [!IMPORTANT]
-> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
 
 Starting in Windows 10, version 1809, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.
 

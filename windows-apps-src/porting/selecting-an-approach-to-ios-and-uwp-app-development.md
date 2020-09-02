@@ -1,5 +1,5 @@
 ---
-description: What are the choices when developing cross-platform apps?.
+description: Learn about tools and techniques that can help you write apps that support Windows, iOS, and Android.
 title: Selecting an approach to iOS and UWP app development
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017

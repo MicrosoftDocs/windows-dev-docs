@@ -1,5 +1,5 @@
 ---
-description: Learn how to use accent colors and themes in your Windows apps.
+description: Learn how to use color effectively in your Universal Windows Platform (UWP) app by manipulating accent colors and theme resources.
 title: Color in Windows apps
 ms.date: 04/07/2019
 ms.topic: article
@@ -184,7 +184,7 @@ These shades can be accessed as [theme resources](../controls-and-patterns/xaml-
 - `SystemAccentColorDark3`
 
 <!-- check this is true -->
-You can also access the accent color palette programmatically with the [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) method and [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) enum.
+You can also access the accent color palette programmatically with the [**UISettings.GetColorValue**](/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) method and [**UIColorType**](/uwp/api/Windows.UI.ViewManagement.UIColorType) enum.
 
 You can use the accent color palette for color theming in your app. Below is an example of how you can use the accent color palette on a button.
 
@@ -216,13 +216,13 @@ For more information about styling controls, see [XAML styles](../controls-and-p
 
 ## Color API
 
-There are several APIs that can be used to add color to your application. First, the [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the **Colors** class.
+There are several APIs that can be used to add color to your application. First, the [**Colors**](/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the **Colors** class.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-You can create your own colors from RGB or hex values using the [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) struct in XAML.
+You can create your own colors from RGB or hex values using the [**Color**](/uwp/api/windows.ui.color) struct in XAML.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -240,9 +240,9 @@ Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255
 The letters "Argb" stands for Alpha (opacity), Red, Green, and Blue, which are the four components of a color. Each argument can range from 0 to 255. You can choose to omit the first value, which will give you a default opacity of 255, or 100% opaque.
 
 > [!Note]
-> If you're using C++, you must create colors by using the [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper) class.
+> If you're using C++, you must create colors by using the [**ColorHelper**](/uwp/api/windows.ui.colorhelper) class.
 
-The most common use for a **Color** is as an argument for a [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush), which can be used to paint UI elements a single solid color. These brushes are generally defined in a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary), so they can be reused for multiple elements.
+The most common use for a **Color** is as an argument for a [**SolidColorBrush**](/uwp/api/windows.ui.xaml.media.solidcolorbrush), which can be used to paint UI elements a single solid color. These brushes are generally defined in a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), so they can be reused for multiple elements.
 
 ```xaml
 <ResourceDictionary>
@@ -266,19 +266,19 @@ In addition to defining your own colors in your app, you can also scope our syst
 
 ### How to use ColorPaletteResources
 
-ColorPaletteResources is an API that tells the system what resources are being scoped where. ColorPaletteResources must take an [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), that can be one of three choices:
+ColorPaletteResources is an API that tells the system what resources are being scoped where. ColorPaletteResources must take an [x:Key](../../xaml-platform/x-key-attribute.md), that can be one of three choices:
 - Default
-  * Will show your color changes in both [Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) and [Dark](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme) theme
+  * Will show your color changes in both [Light](#light-theme) and [Dark](#dark-theme) theme
 - Light
-  * Will show your color changes only in [Light theme](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)
+  * Will show your color changes only in [Light theme](#light-theme)
 - Dark
-  * Will show your color changes only in [Dark theme](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
+  * Will show your color changes only in [Dark theme](#dark-theme)
 
 Setting that x:Key will ensure that your colors change appropriately to the system or app theme, should you want a different custom appearance when in either theme.
 
 ### How to apply scoped colors
 
-Scoping resources through the **ColorPaletteResources** API in XAML allows you to take any system color or brush that's in our [theme resources](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) library and redefine them within the scope of a page or container.
+Scoping resources through the **ColorPaletteResources** API in XAML allows you to take any system color or brush that's in our [theme resources](../controls-and-patterns/xaml-theme-resources.md) library and redefine them within the scope of a page or container.
 
 For example, if you defined two system colors - **BaseLow** and **BaseMediumLow** inside a grid, and then placed two buttons on your page: one inside that grid, and one outside:
 

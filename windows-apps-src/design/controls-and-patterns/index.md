@@ -39,7 +39,7 @@ General instructions and code examples for adding and styling controls in XAML a
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](/windows/uwp/design/style/rounded-corner). |
+| ![WinUI logo](images/winui-logo-64x64.png) | Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). |
 
 ## Alphabetical index
 
@@ -74,7 +74,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Images and image brushes](images-imagebrushes.md)
 - [Inking controls](inking-controls.md)
 - [List view](listview-and-gridview.md)
-- [Map control](../../maps-and-location/controls-map.md)
+- [Map control](../../maps-and-location/display-maps.md)
 - [Master/details](master-details.md) (pattern)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) ![WinUI logo](images/winui-logo-16x16.png)

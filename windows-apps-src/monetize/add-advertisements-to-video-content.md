@@ -1,6 +1,6 @@
 ---
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: Learn how to use the AdScheduler class to show ads in video content.
+description: Learn how to use the AdScheduler class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 title: Show ads in video content
 ms.date: 02/18/2020
 ms.topic: article
@@ -67,7 +67,7 @@ Advertising for video content differs based upon whether the program is under te
     > [!NOTE]
     > This line must be placed in the `<head>` section after the include of main.js; otherwise, you will encounter an error when   you build your project.
 
-6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975).
+6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975).
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
@@ -75,7 +75,7 @@ Advertising for video content differs based upon whether the program is under te
 
     * If you are a Microsoft partner who has received permission to request an ad schedule from the Microsoft ad server, use **requestSchedule** and specify the application ID and ad unit ID that were provided to you by your Microsoft representative.
 
-        This method takes the form of a [Promise](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript), which is an asynchronous construct where two function pointers are passed: a pointer for the **onComplete** function to call when the promise completes successfully and a pointer for the **onError** function to call if an error is encountered. In the **onComplete** function, start playback of your video content. The ad will start playing at the scheduled time. In your **onError** function, handle the error and then start playback of your video. Your video content will play without an ad. The argument of the **onError** function is an object that contains the following members.
+        This method takes the form of a [Promise](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript), which is an asynchronous construct where two function pointers are passed: a pointer for the **onComplete** function to call when the promise completes successfully and a pointer for the **onError** function to call if an error is encountered. In the **onComplete** function, start playback of your video content. The ad will start playing at the scheduled time. In your **onError** function, handle the error and then start playback of your video. Your video content will play without an ad. The argument of the **onError** function is an object that contains the following members.
 
         [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
@@ -159,7 +159,7 @@ This event is raised when the main content reaches the end and any scheduled pos
 
 ### onErrorOccurred  
 
-This event is raised when the **AdScheduler** encounters an error. For more information about the error code values, see [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
+This event is raised when the **AdScheduler** encounters an error. For more information about the error code values, see [ErrorCode](/uwp/api/microsoft.advertising.errorcode).
 
 ### onPodCountdown
 

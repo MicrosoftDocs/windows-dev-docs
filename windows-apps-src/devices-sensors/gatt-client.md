@@ -23,12 +23,12 @@ This article demonstrates usage of the Bluetooth Generic Attribute (GATT) Client
 
 > **Important APIs**
 >
-> - [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-> - [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+> - [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+> - [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 ## Overview
 
-Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
+Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
 
 - Services
 - Characteristics
@@ -53,9 +53,9 @@ There are two main methods to query for nearby devices:
 - DeviceWatcher in Windows.Devices.Enumeration
 - AdvertisementWatcher in Windows.Devices.Bluetooth.Advertisement
 
-The 2nd method is discussed at length in the [Advertisement](ble-beacon.md) documentation so it won't be discussed much here but the basic idea is to find the Bluetooth address of nearby devices that satisfy the particular [Advertisement Filter](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter). Once you have the address, you can call [BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) to get a reference to the device.
+The 2nd method is discussed at length in the [Advertisement](ble-beacon.md) documentation so it won't be discussed much here but the basic idea is to find the Bluetooth address of nearby devices that satisfy the particular [Advertisement Filter](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter). Once you have the address, you can call [BluetoothLEDevice.FromBluetoothAddressAsync](/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) to get a reference to the device.
 
-Now, back to the DeviceWatcher method. A Bluetooth LE device is just like any other device in Windows and can be queried using the [Enumeration APIs](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration). Use the [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) class and pass a query string specifying the devices to look for:
+Now, back to the DeviceWatcher method. A Bluetooth LE device is just like any other device in Windows and can be queried using the [Enumeration APIs](/uwp/api/Windows.Devices.Enumeration). Use the [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) class and pass a query string specifying the devices to look for:
 
 ```csharp
 // Query for extra properties you want returned
@@ -81,11 +81,11 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 deviceWatcher.Start();
 ```
 
-Once you've started the DeviceWatcher, you will receive [DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
+Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
 ## Connecting to the device
 
-Once a desired device is discovered, use the [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question:
+Once a desired device is discovered, use the [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question:
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -182,7 +182,7 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **Tip**: [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) and [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) are indispensible when working with the raw buffers you get from many of the Bluetooth APIs.
+> **Tip**: [DataReader](/uwp/api/windows.storage.streams.datareader) and [DataWriter](/uwp/api/windows.storage.streams.datawriter) are indispensible when working with the raw buffers you get from many of the Bluetooth APIs.
 
 ## Subscribing for notifications
 

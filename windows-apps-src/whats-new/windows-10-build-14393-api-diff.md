@@ -16,7 +16,7 @@ New and updated API namespaces have been made available to developers in Windows
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedChildItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedchilditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedChildItem](/uwp/api/windows.applicationmodel.socialinfo.socialfeedchilditem)
 
 **Properties**
 
@@ -26,7 +26,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedChildItem <br /> Windows.Applicati
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedContent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedcontent)
+[Windows.ApplicationModel.SocialInfo.SocialFeedContent](/uwp/api/windows.applicationmodel.socialinfo.socialfeedcontent)
 
 **Properties**
 
@@ -36,7 +36,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedContent <br /> Windows.Application
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeeditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedItem](/uwp/api/windows.applicationmodel.socialinfo.socialfeeditem)
 
 **Properties**
 
@@ -46,7 +46,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedItem <br /> Windows.ApplicationMod
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeeditemstyle)
+[Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle](/uwp/api/windows.applicationmodel.socialinfo.socialfeeditemstyle)
 
 **Properties**
 
@@ -56,7 +56,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedItemStyle <br /> Windows.Applicati
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedkind)
+[Windows.ApplicationModel.SocialInfo.SocialFeedKind](/uwp/api/windows.applicationmodel.socialinfo.socialfeedkind)
 
 **Properties**
 
@@ -66,7 +66,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedKind <br /> Windows.ApplicationMod
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedshareditem)
+[Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem](/uwp/api/windows.applicationmodel.socialinfo.socialfeedshareditem)
 
 **Properties**
 
@@ -76,7 +76,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem <br /> Windows.Applicat
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialfeedupdatemode)
+[Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode](/uwp/api/windows.applicationmodel.socialinfo.socialfeedupdatemode)
 
 **Properties**
 
@@ -86,7 +86,7 @@ Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode <br /> Windows.Applicat
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialitembadgestyle)
+[Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle](/uwp/api/windows.applicationmodel.socialinfo.socialitembadgestyle)
 
 **Properties**
 
@@ -96,7 +96,7 @@ Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle <br /> Windows.Applicat
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialItemThumbnail](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialitemthumbnail)
+[Windows.ApplicationModel.SocialInfo.SocialItemThumbnail](/uwp/api/windows.applicationmodel.socialinfo.socialitemthumbnail)
 
 **Properties**
 
@@ -106,7 +106,7 @@ Windows.ApplicationModel.SocialInfo.SocialItemThumbnail <br /> Windows.Applicati
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.SocialUserInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.socialuserinfo)
+[Windows.ApplicationModel.SocialInfo.SocialUserInfo](/uwp/api/windows.applicationmodel.socialinfo.socialuserinfo)
 
 **Properties**
 
@@ -116,7 +116,7 @@ Windows.ApplicationModel.SocialInfo.SocialUserInfo <br /> Windows.ApplicationMod
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialdashboarditemupdater)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater](/uwp/api/windows.applicationmodel.socialinfo.provider.socialdashboarditemupdater)
 
 **Properties**
 
@@ -126,7 +126,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater <br /> W
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialfeedupdater)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater](/uwp/api/windows.applicationmodel.socialinfo.provider.socialfeedupdater)
 
 **Properties**
 
@@ -136,7 +136,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater <br /> Windows.Ap
 
 **Item**
 
-[Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.socialinfo.provider.socialinfoprovidermanager)
+[Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager](/uwp/api/windows.applicationmodel.socialinfo.provider.socialinfoprovidermanager)
 
 **Properties**
 
@@ -146,7 +146,7 @@ Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager <br /> Wi
 
 **Item**
 
-[Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptask)
+[Windows.ApplicationModel.StartupTask](/uwp/api/windows.applicationmodel.startuptask)
 
 **Properties**
 
@@ -156,7 +156,7 @@ Windows.ApplicationModel.StartupTask <br /> Windows.ApplicationModel.StartupTask
 
 **Item**
 
-[Windows.ApplicationModel.StartupTaskState](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptaskstate)
+[Windows.ApplicationModel.StartupTaskState](/uwp/api/windows.applicationmodel.startuptaskstate)
 
 **Properties**
 
@@ -166,7 +166,7 @@ Windows.ApplicationModel.StartupTaskState <br /> Windows.ApplicationModel.Startu
 
 **Item**
 
-[Windows.ApplicationModel.EnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.enteredbackgroundeventargs)
+[Windows.ApplicationModel.EnteredBackgroundEventArgs](/uwp/api/windows.applicationmodel.enteredbackgroundeventargs)
 
 **Properties**
 
@@ -176,7 +176,7 @@ Windows.ApplicationModel.EnteredBackgroundEventArgs <br /> Windows.ApplicationMo
 
 **Item**
 
-[Windows.ApplicationModel.IEnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.ienteredbackgroundeventargs)
+[Windows.ApplicationModel.IEnteredBackgroundEventArgs](/uwp/api/windows.applicationmodel.ienteredbackgroundeventargs)
 
 **Properties**
 
@@ -186,7 +186,7 @@ Windows.ApplicationModel.IEnteredBackgroundEventArgs <br /> Windows.ApplicationM
 
 **Item**
 
-[Windows.ApplicationModel.ILeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.ileavingbackgroundeventargs)
+[Windows.ApplicationModel.ILeavingBackgroundEventArgs](/uwp/api/windows.applicationmodel.ileavingbackgroundeventargs)
 
 **Properties**
 
@@ -196,7 +196,7 @@ Windows.ApplicationModel.ILeavingBackgroundEventArgs <br /> Windows.ApplicationM
 
 **Item**
 
-[Windows.ApplicationModel.LeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.leavingbackgroundeventargs)
+[Windows.ApplicationModel.LeavingBackgroundEventArgs](/uwp/api/windows.applicationmodel.leavingbackgroundeventargs)
 
 **Properties**
 
@@ -206,7 +206,7 @@ Windows.ApplicationModel.LeavingBackgroundEventArgs <br /> Windows.ApplicationMo
 
 **Item**
 
-[Windows.ApplicationModel.PackageCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagecatalog)
+[Windows.ApplicationModel.PackageCatalog](/uwp/api/windows.applicationmodel.packagecatalog)
 
 **Properties**
 
@@ -216,7 +216,7 @@ Windows.ApplicationModel.PackageCatalog <br /> Windows.ApplicationModel.PackageC
 
 **Item**
 
-[Windows.ApplicationModel.ackageInstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageinstallingeventargs)
+[Windows.ApplicationModel.ackageInstallingEventArgs](/uwp/api/windows.applicationmodel.packageinstallingeventargs)
 
 **Properties**
 
@@ -226,7 +226,7 @@ Windows.ApplicationModel.PackageInstallingEventArgs <br /> Windows.ApplicationMo
 
 **Item**
 
-[Windows.ApplicationModel.PackageSignatureKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagesignaturekind)
+[Windows.ApplicationModel.PackageSignatureKind](/uwp/api/windows.applicationmodel.packagesignaturekind)
 
 **Properties**
 
@@ -236,7 +236,7 @@ Windows.ApplicationModel.PackageSignatureKind <br /> Windows.ApplicationModel.Pa
 
 **Item**
 
-[Windows.ApplicationModel.PackageStagingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagestagingeventargs)
+[Windows.ApplicationModel.PackageStagingEventArgs](/uwp/api/windows.applicationmodel.packagestagingeventargs)
 
 **Properties**
 
@@ -246,7 +246,7 @@ Windows.ApplicationModel.PackageStagingEventArgs <br /> Windows.ApplicationModel
 
 **Item**
 
-[Windows.ApplicationModel.PackageStatusChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packagestatuschangedeventargs)
+[Windows.ApplicationModel.PackageStatusChangedEventArgs](/uwp/api/windows.applicationmodel.packagestatuschangedeventargs)
 
 **Properties**
 
@@ -256,7 +256,7 @@ Windows.ApplicationModel.PackageStatusChangedEventArgs <br /> Windows.Applicatio
 
 **Item**
 
-[Windows.ApplicationModel.PackageUninstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageuninstallingeventargs)
+[Windows.ApplicationModel.PackageUninstallingEventArgs](/uwp/api/windows.applicationmodel.packageuninstallingeventargs)
 
 **Properties**
 
@@ -266,7 +266,7 @@ Windows.ApplicationModel.PackageUninstallingEventArgs <br /> Windows.Application
 
 **Item**
 
-[Windows.ApplicationModel.PackageUpdatingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdatingeventargs)
+[Windows.ApplicationModel.PackageUpdatingEventArgs](/uwp/api/windows.applicationmodel.packageupdatingeventargs)
 
 **Properties**
 
@@ -276,7 +276,7 @@ Windows.ApplicationModel.PackageUpdatingEventArgs <br /> Windows.ApplicationMode
 
 **Item**
 
-[Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs)
+[Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs)
 
 **Properties**
 
@@ -286,7 +286,7 @@ Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs <br /> Windows.
 
 **Item**
 
-[Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargswithuser)
+[Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser](/uwp/api/windows.applicationmodel.activation.iactivatedeventargswithuser)
 
 **Properties**
 
@@ -296,7 +296,7 @@ Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser <br /> Windows.A
 
 **Item**
 
-[Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.ibackgroundactivatedeventargs)
+[Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.ibackgroundactivatedeventargs)
 
 **Properties**
 
@@ -306,7 +306,7 @@ Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs <br /> Windows
 
 **Item**
 
-[Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.ilaunchactivatedeventargs2)
+[Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2](/uwp/api/windows.applicationmodel.activation.ilaunchactivatedeventargs2)
 
 **Properties**
 
@@ -316,7 +316,7 @@ Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2 <br /> Windows.Ap
 
 **Item**
 
-[Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iuserdataaccountprovideractivatedeventargs)
+[Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.iuserdataaccountprovideractivatedeventargs)
 
 **Properties**
 
@@ -326,7 +326,7 @@ Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs <
 
 **Item**
 
-[Windows.ApplicationModel.Activation.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+[Windows.ApplicationModel.Activation.TileActivatedInfo](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 **Properties**
 
@@ -336,7 +336,7 @@ Windows.ApplicationModel.Activation.TileActivatedInfo <br /> Windows.Application
 
 **Item**
 
-[Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.userdataaccountprovideractivatedeventargs)
+[Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.userdataaccountprovideractivatedeventargs)
 
 **Properties**
 
@@ -346,7 +346,7 @@ Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs <b
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtension](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextension)
+[Windows.ApplicationModel.AppExtensions.AppExtension](/uwp/api/windows.applicationmodel.appextensions.appextension)
 
 **Properties**
 
@@ -356,7 +356,7 @@ Windows.ApplicationModel.AppExtensions.AppExtension <br /> Windows.ApplicationMo
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog)
+[Windows.ApplicationModel.AppExtensions.AppExtensionCatalog](/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog)
 
 **Properties**
 
@@ -366,7 +366,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionCatalog <br /> Windows.Applic
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageinstalledeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs](/uwp/api/windows.applicationmodel.appextensions.appextensionpackageinstalledeventargs)
 
 **Properties**
 
@@ -376,7 +376,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs <br
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackagestatuschangedeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs](/uwp/api/windows.applicationmodel.appextensions.appextensionpackagestatuschangedeventargs)
 
 **Properties**
 
@@ -386,7 +386,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageuninstallingeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs](/uwp/api/windows.applicationmodel.appextensions.appextensionpackageuninstallingeventargs)
 
 **Properties**
 
@@ -396,7 +396,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs 
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatedeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs](/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatedeventargs)
 
 **Properties**
 
@@ -406,7 +406,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs <br /
 
 **Item**
 
-[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatingeventargs)
+[Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs](/uwp/api/windows.applicationmodel.appextensions.appextensionpackageupdatingeventargs)
 
 **Properties**
 
@@ -416,7 +416,7 @@ Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs <br 
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.AppointmentManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanagerforuser)
+[Windows.ApplicationModel.Appointments.AppointmentManagerForUser](/uwp/api/windows.applicationmodel.appointments.appointmentmanagerforuser)
 
 **Properties**
 
@@ -426,7 +426,7 @@ Windows.ApplicationModel.Appointments.AppointmentManagerForUser <br /> Windows.A
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequest)
 
 **Properties**
 
@@ -436,7 +436,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeet
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcancelmeetingrequesteventargs)
 
 **Properties**
 
@@ -446,7 +446,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeet
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequest)
 
 **Properties**
 
@@ -456,7 +456,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUp
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarcreateorupdateappointmentrequesteventargs)
 
 **Properties**
 
@@ -466,7 +466,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUp
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequest)
 
 **Properties**
 
@@ -476,7 +476,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMee
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarforwardmeetingrequesteventargs)
 
 **Properties**
 
@@ -486,7 +486,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMee
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequest)
 
 **Properties**
 
@@ -496,7 +496,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNew
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarproposenewtimeformeetingrequesteventargs)
 
 **Properties**
 
@@ -506,7 +506,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNew
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequest)
 
 **Properties**
 
@@ -516,7 +516,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManage
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarsyncmanagersyncrequesteventargs)
 
 **Properties**
 
@@ -526,7 +526,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManage
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequest)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequest)
 
 **Properties**
 
@@ -536,7 +536,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
 
 **Properties**
 
@@ -546,7 +546,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataproviderconnection)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataproviderconnection)
 
 **Properties**
 
@@ -556,7 +556,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnec
 
 **Item**
 
-[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataprovidertriggerdetails)
+[Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails](/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentdataprovidertriggerdetails)
 
 **Properties**
 
@@ -566,7 +566,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTrigge
 
 **Item**
 
-[Windows.ApplicationModel.Background.IBackgroundTaskInstance4](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance4)
+[Windows.ApplicationModel.Background.IBackgroundTaskInstance4](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance4)
 
 **Properties**
 
@@ -576,7 +576,7 @@ Windows.ApplicationModel.Background.IBackgroundTaskInstance4 <br /> Windows.Appl
 
 **Item**
 
-[Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.secondaryauthenticationfactorauthenticationtrigger)
+[Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger](/uwp/api/windows.applicationmodel.background.secondaryauthenticationfactorauthenticationtrigger)
 
 **Properties**
 
@@ -586,7 +586,7 @@ Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationT
 
 **Item**
 
-[Windows.ApplicationModel.Background.UserNotificationChangedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger)
+[Windows.ApplicationModel.Background.UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger)
 
 **Properties**
 
@@ -596,7 +596,7 @@ Windows.ApplicationModel.Background.UserNotificationChangedTrigger <br /> Window
 
 **Item**
 
-[Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallhistorymanagerforuser)
+[Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser](/uwp/api/windows.applicationmodel.calls.phonecallhistorymanagerforuser)
 
 **Properties**
 
@@ -606,7 +606,7 @@ Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser <br /> Windows.App
 
 **Item**
 
-[Windows.ApplicationModel.Chat.ChatRestoreHistorySpan](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatrestorehistoryspan)
+[Windows.ApplicationModel.Chat.ChatRestoreHistorySpan](/uwp/api/windows.applicationmodel.chat.chatrestorehistoryspan)
 
 **Properties**
 
@@ -616,7 +616,7 @@ Windows.ApplicationModel.Chat.ChatRestoreHistorySpan <br /> Windows.ApplicationM
 
 **Item**
 
-[Windows.ApplicationModel.Chat.ChatSyncConfiguration](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatsyncconfiguration)
+[Windows.ApplicationModel.Chat.ChatSyncConfiguration](/uwp/api/windows.applicationmodel.chat.chatsyncconfiguration)
 
 **Properties**
 
@@ -626,7 +626,7 @@ Windows.ApplicationModel.Chat.ChatSyncConfiguration <br /> Windows.ApplicationMo
 
 **Item**
 
-[Windows.ApplicationModel.Chat.ChatSyncManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatsyncmanager)
+[Windows.ApplicationModel.Chat.ChatSyncManager](/uwp/api/windows.applicationmodel.chat.chatsyncmanager)
 
 **Properties**
 
@@ -636,7 +636,7 @@ Windows.ApplicationModel.Chat.ChatSyncManager <br /> Windows.ApplicationModel.Ch
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.ContactListSyncConstraints](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlistsyncconstraints)
+[Windows.ApplicationModel.Contacts.ContactListSyncConstraints](/uwp/api/windows.applicationmodel.contacts.contactlistsyncconstraints)
 
 **Properties**
 
@@ -646,7 +646,7 @@ Windows.ApplicationModel.Contacts.ContactListSyncConstraints <br /> Windows.Appl
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.ContactManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactmanagerforuser)
+[Windows.ApplicationModel.Contacts.ContactManagerForUser](/uwp/api/windows.applicationmodel.contacts.contactmanagerforuser)
 
 **Properties**
 
@@ -656,7 +656,7 @@ Windows.ApplicationModel.Contacts.ContactManagerForUser <br /> Windows.Applicati
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataproviderconnection)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataproviderconnection)
 
 **Properties**
 
@@ -666,7 +666,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection <br
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataprovidertriggerdetails)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataprovidertriggerdetails)
 
 **Properties**
 
@@ -676,7 +676,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequest)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequest)
 
 **Properties**
 
@@ -686,7 +686,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchR
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequesteventargs)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistserversearchreadbatchrequesteventargs)
 
 **Properties**
 
@@ -696,7 +696,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchR
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequest)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequest)
 
 **Properties**
 
@@ -706,7 +706,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest
 
 **Item**
 
-[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs](/uwp/api/windows.applicationmodel.contacts.dataprovider.contactlistsyncmanagersyncrequesteventargs)
 
 **Properties**
 
@@ -716,7 +716,7 @@ Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest
 
 **Item**
 
-[Windows.ApplicationModel.Email.EmailManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanagerforuser)
+[Windows.ApplicationModel.Email.EmailManagerForUser](/uwp/api/windows.applicationmodel.email.emailmanagerforuser)
 
 **Properties**
 
@@ -726,7 +726,7 @@ Windows.ApplicationModel.Email.EmailManagerForUser <br /> Windows.ApplicationMod
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emaildataproviderconnection)
+[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection](/uwp/api/windows.applicationmodel.email.dataprovider.emaildataproviderconnection)
 
 **Properties**
 
@@ -736,7 +736,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection <br /> W
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emaildataprovidertriggerdetails)
+[Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails](/uwp/api/windows.applicationmodel.email.dataprovider.emaildataprovidertriggerdetails)
 
 **Properties**
 
@@ -746,7 +746,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails <br 
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequest)
 
 **Properties**
 
@@ -756,7 +756,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest <br 
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxcreatefolderrequesteventargs)
 
 **Properties**
 
@@ -766,7 +766,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEvent
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequest)
 
 **Properties**
 
@@ -776,7 +776,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest <br 
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdeletefolderrequesteventargs)
 
 **Properties**
 
@@ -786,7 +786,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEvent
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequest)
 
 **Properties**
 
@@ -796,7 +796,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentReques
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadattachmentrequesteventargs)
 
 **Properties**
 
@@ -806,7 +806,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentReques
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequest)
 
 **Properties**
 
@@ -816,7 +816,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest <
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxdownloadmessagerequesteventargs)
 
 **Properties**
 
@@ -826,7 +826,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEv
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequest)
 
 **Properties**
 
@@ -836,7 +836,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest <br /
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxemptyfolderrequesteventargs)
 
 **Properties**
 
@@ -846,7 +846,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventA
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequest)
 
 **Properties**
 
@@ -856,7 +856,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest <b
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxforwardmeetingrequesteventargs)
 
 **Properties**
 
@@ -866,7 +866,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEve
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequest)
 
 **Properties**
 
@@ -876,7 +876,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequ
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxgetautoreplysettingsrequesteventargs)
 
 **Properties**
 
@@ -886,7 +886,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequ
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequest)
 
 **Properties**
 
@@ -896,7 +896,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest <br />
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxmovefolderrequesteventargs)
 
 **Properties**
 
@@ -906,7 +906,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventAr
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequest)
 
 **Properties**
 
@@ -916,7 +916,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeeting
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxproposenewtimeformeetingrequesteventargs)
 
 **Properties**
 
@@ -926,7 +926,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeeting
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequest)
 
 **Properties**
 
@@ -936,7 +936,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxresolverecipientsrequesteventargs)
 
 **Properties**
 
@@ -946,7 +946,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequest)
 
 **Properties**
 
@@ -956,7 +956,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchReq
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxserversearchreadbatchrequesteventargs)
 
 **Properties**
 
@@ -966,7 +966,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchReq
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequest)
 
 **Properties**
 
@@ -976,7 +976,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequ
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsetautoreplysettingsrequesteventargs)
 
 **Properties**
 
@@ -986,7 +986,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequ
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequest)
 
 **Properties**
 
@@ -996,7 +996,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest <
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxsyncmanagersyncrequesteventargs)
 
 **Properties**
 
@@ -1006,7 +1006,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEv
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequest)
 
 **Properties**
 
@@ -1016,7 +1016,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseReq
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxupdatemeetingresponserequesteventargs)
 
 **Properties**
 
@@ -1026,7 +1026,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseReq
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequest)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequest)
 
 **Properties**
 
@@ -1036,7 +1036,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequ
 
 **Item**
 
-[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequesteventargs)
+[Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs](/uwp/api/windows.applicationmodel.email.dataprovider.emailmailboxvalidatecertificatesrequesteventargs)
 
 **Properties**
 
@@ -1046,7 +1046,7 @@ Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequ
 
 **Item**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensemanager)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseManager](/uwp/api/windows.applicationmodel.store.licensemanagement.licensemanager)
 
 **Properties**
 
@@ -1056,7 +1056,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseManager <br /> Windows.A
 
 **Item**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactioninfo)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo](/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactioninfo)
 
 **Properties**
 
@@ -1066,7 +1066,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo <br /> 
 
 **Item**
 
-[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactionresult)
+[Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult](/uwp/api/windows.applicationmodel.store.licensemanagement.licensesatisfactionresult)
 
 **Properties**
 
@@ -1076,7 +1076,7 @@ Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult <br /
 
 **Item**
 
-[Windows.ApplicationModel.Store.Preview.StoreLogOptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.storelogoptions)
+[Windows.ApplicationModel.Store.Preview.StoreLogOptions](/uwp/api/windows.applicationmodel.store.preview.storelogoptions)
 
 **Properties**
 
@@ -1086,7 +1086,7 @@ Windows.ApplicationModel.Store.Preview.StoreLogOptions <br /> Windows.Applicatio
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountmanagerforuser)
+[Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser](/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountmanagerforuser)
 
 **Properties**
 
@@ -1096,7 +1096,7 @@ Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser <br /> W
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountstorechangedeventargs)
+[Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs](/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccountstorechangedeventargs)
 
 **Properties**
 
@@ -1106,7 +1106,7 @@ Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs <
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.iuserdataaccountprovideroperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation](/uwp/api/windows.applicationmodel.userdataaccounts.provider.iuserdataaccountprovideroperation)
 
 **Properties**
 
@@ -1116,7 +1116,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOpera
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountpartneraccountinfo)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountpartneraccountinfo)
 
 **Properties**
 
@@ -1126,7 +1126,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccount
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideraddaccountoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideraddaccountoperation)
 
 **Properties**
 
@@ -1136,7 +1136,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAcc
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideroperationkind)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovideroperationkind)
 
 **Properties**
 
@@ -1146,7 +1146,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperat
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderpartneraccountkind)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderpartneraccountkind)
 
 **Properties**
 
@@ -1156,7 +1156,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartne
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderresolveerrorsoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountproviderresolveerrorsoperation)
 
 **Properties**
 
@@ -1166,7 +1166,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolv
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovidersettingsoperation)
+[Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation](/uwp/api/windows.applicationmodel.userdataaccounts.provider.userdataaccountprovidersettingsoperation)
 
 **Properties**
 
@@ -1176,7 +1176,7 @@ Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettin
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticationType](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountauthenticationtype)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticationType](/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountauthenticationtype)
 
 **Properties**
 
@@ -1186,7 +1186,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountAuthenticati
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccounticonid)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId](/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccounticonid)
 
 **Properties**
 
@@ -1196,7 +1196,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountIconId <br /
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilter](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountmailagefilter)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilter](/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountmailagefilter)
 
 **Properties**
 
@@ -1206,7 +1206,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilte
 
 **Item**
 
-[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind](https://docs.microsoft.com/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountsyncschedulekind)
+[Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind](/uwp/api/windows.applicationmodel.userdataaccounts.systemaccess.deviceaccountsyncschedulekind)
 
 **Properties**
 
@@ -1216,7 +1216,7 @@ Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncSchedule
 
 **Item**
 
-[Windows.Data.Text.TextPhoneme](https://docs.microsoft.com/uwp/api/windows.data.text.textphoneme)
+[Windows.Data.Text.TextPhoneme](/uwp/api/windows.data.text.textphoneme)
 
 **Properties**
 
@@ -1226,7 +1226,7 @@ Windows.Data.Text.TextPhoneme <br /> Windows.Data.Text.TextPhoneme.DisplayText <
 
 **Item**
 
-[Windows.Devices.AllJoyn.AllJoynBusObject](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynbusobject)
+[Windows.Devices.AllJoyn.AllJoynBusObject](/uwp/api/windows.devices.alljoyn.alljoynbusobject)
 
 **Properties**
 
@@ -1236,7 +1236,7 @@ Windows.Devices.AllJoyn.AllJoynBusObject <br /> Windows.Devices.AllJoyn.AllJoynB
 
 **Item**
 
-[Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynbusobjectstoppedeventargs)
+[Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs](/uwp/api/windows.devices.alljoyn.alljoynbusobjectstoppedeventargs)
 
 **Properties**
 
@@ -1246,7 +1246,7 @@ Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs <br /> Windows.Devices.
 
 **Item**
 
-[Windows.Devices.AllJoyn.AllJoynSession](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynsession)
+[Windows.Devices.AllJoyn.AllJoynSession](/uwp/api/windows.devices.alljoyn.alljoynsession)
 
 **Properties**
 
@@ -1256,7 +1256,7 @@ Windows.Devices.AllJoyn.AllJoynSession <br /> Windows.Devices.AllJoyn.AllJoynSes
 
 **Item**
 
-[Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynsessionjoinedeventargs)
+[Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs](/uwp/api/windows.devices.alljoyn.alljoynsessionjoinedeventargs)
 
 **Properties**
 
@@ -1266,7 +1266,7 @@ Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs <br /> Windows.Devices.All
 
 **Item**
 
-[Windows.Devices.AllJoyn.IAllJoynProducer](https://docs.microsoft.com/uwp/api/windows.devices.alljoyn.ialljoynproducer)
+[Windows.Devices.AllJoyn.IAllJoynProducer](/uwp/api/windows.devices.alljoyn.ialljoynproducer)
 
 **Properties**
 
@@ -1276,7 +1276,7 @@ Windows.Devices.AllJoyn.IAllJoynProducer <br /> Windows.Devices.AllJoyn.IAllJoyn
 
 **Item**
 
-[Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservicesresult)
+[Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult](/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservicesresult)
 
 **Properties**
 
@@ -1286,7 +1286,7 @@ Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult <br /> Windows.Devic
 
 **Item**
 
-[Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.printers.extensions.print3dworkflowprinterchangedeventargs)
+[Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs](/uwp/api/windows.devices.printers.extensions.print3dworkflowprinterchangedeventargs)
 
 **Properties**
 
@@ -1296,7 +1296,7 @@ Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs <br /
 
 **Item**
 
-[Windows.Devices.Sensors.AccelerometerReadingType](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometerreadingtype)
+[Windows.Devices.Sensors.AccelerometerReadingType](/uwp/api/windows.devices.sensors.accelerometerreadingtype)
 
 **Properties**
 
@@ -1306,7 +1306,7 @@ Windows.Devices.Sensors.AccelerometerReadingType <br /> Windows.Devices.Sensors.
 
 **Item**
 
-[Windows.Devices.Sensors.SensorOptimizationGoal](https://docs.microsoft.com/uwp/api/windows.devices.sensors.sensoroptimizationgoal)
+[Windows.Devices.Sensors.SensorOptimizationGoal](/uwp/api/windows.devices.sensors.sensoroptimizationgoal)
 
 **Properties**
 
@@ -1316,7 +1316,7 @@ Windows.Devices.Sensors.SensorOptimizationGoal <br /> Windows.Devices.Sensors.Se
 
 **Item**
 
-[Windows.Foundation.Metadata.CreateFromStringAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.createfromstringattribute)
+[Windows.Foundation.Metadata.CreateFromStringAttribute](/uwp/api/windows.foundation.metadata.createfromstringattribute)
 
 **Properties**
 
@@ -1326,7 +1326,7 @@ Windows.Foundation.Metadata.CreateFromStringAttribute <br /> Windows.Foundation.
 
 **Item**
 
-[Windows.Gaming.Input.ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)
+[Windows.Gaming.Input.ArcadeStick](/uwp/api/windows.gaming.input.arcadestick)
 
 **Properties**
 
@@ -1336,7 +1336,7 @@ Windows.Gaming.Input.ArcadeStick <br /> Windows.Gaming.Input.ArcadeStick.ArcadeS
 
 **Item**
 
-[Windows.Gaming.Input.ArcadeStickButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestickbuttons)
+[Windows.Gaming.Input.ArcadeStickButtons](/uwp/api/windows.gaming.input.arcadestickbuttons)
 
 **Properties**
 
@@ -1346,7 +1346,7 @@ Windows.Gaming.Input.ArcadeStickButtons <br /> Windows.Gaming.Input.ArcadeStickB
 
 **Item**
 
-[Windows.Gaming.Input.ArcadeStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestickreading)
+[Windows.Gaming.Input.ArcadeStickReading](/uwp/api/windows.gaming.input.arcadestickreading)
 
 **Properties**
 
@@ -1356,7 +1356,7 @@ Windows.Gaming.Input.ArcadeStickReading <br /> Windows.Gaming.Input.ArcadeStickR
 
 **Item**
 
-[Windows.Gaming.Input.GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)
+[Windows.Gaming.Input.GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)
 
 **Properties**
 
@@ -1366,7 +1366,7 @@ Windows.Gaming.Input.GameControllerButtonLabel <br /> Windows.Gaming.Input.GameC
 
 **Item**
 
-[Windows.Gaming.Input.OptionalUINavigationButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.optionaluinavigationbuttons)
+[Windows.Gaming.Input.OptionalUINavigationButtons](/uwp/api/windows.gaming.input.optionaluinavigationbuttons)
 
 **Properties**
 
@@ -1376,7 +1376,7 @@ Windows.Gaming.Input.OptionalUINavigationButtons <br /> Windows.Gaming.Input.Opt
 
 **Item**
 
-[Windows.Gaming.Input.RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel)
+[Windows.Gaming.Input.RacingWheel](/uwp/api/windows.gaming.input.racingwheel)
 
 **Properties**
 
@@ -1386,7 +1386,7 @@ Windows.Gaming.Input.RacingWheel <br /> Windows.Gaming.Input.RacingWheel.HasClut
 
 **Item**
 
-[Windows.Gaming.Input.RacingWheelButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelbuttons)
+[Windows.Gaming.Input.RacingWheelButtons](/uwp/api/windows.gaming.input.racingwheelbuttons)
 
 **Properties**
 
@@ -1396,7 +1396,7 @@ Windows.Gaming.Input.RacingWheelButtons <br /> Windows.Gaming.Input.RacingWheelB
 
 **Item**
 
-[Windows.Gaming.Input.RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading)
+[Windows.Gaming.Input.RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading)
 
 **Properties**
 
@@ -1406,7 +1406,7 @@ Windows.Gaming.Input.RacingWheelReading <br /> Windows.Gaming.Input.RacingWheelR
 
 **Item**
 
-[Windows.Gaming.Input.RequiredUINavigationButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.requireduinavigationbuttons)
+[Windows.Gaming.Input.RequiredUINavigationButtons](/uwp/api/windows.gaming.input.requireduinavigationbuttons)
 
 **Properties**
 
@@ -1416,7 +1416,7 @@ Windows.Gaming.Input.RequiredUINavigationButtons <br /> Windows.Gaming.Input.Req
 
 **Item**
 
-[Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
+[Windows.Gaming.Input.UINavigationController](/uwp/api/windows.gaming.input.uinavigationcontroller)
 
 **Properties**
 
@@ -1426,7 +1426,7 @@ Windows.Gaming.Input.UINavigationController <br /> Windows.Gaming.Input.UINaviga
 
 **Item**
 
-[Windows.Gaming.Input.UINavigationReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationreading)
+[Windows.Gaming.Input.UINavigationReading](/uwp/api/windows.gaming.input.uinavigationreading)
 
 **Properties**
 
@@ -1436,7 +1436,7 @@ Windows.Gaming.Input.UINavigationReading <br /> Windows.Gaming.Input.UINavigatio
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GameControllerFactoryManager](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gamecontrollerfactorymanager)
+[Windows.Gaming.Input.Custom.GameControllerFactoryManager](/uwp/api/windows.gaming.input.custom.gamecontrollerfactorymanager)
 
 **Properties**
 
@@ -1446,7 +1446,7 @@ Windows.Gaming.Input.Custom.GameControllerFactoryManager <br /> Windows.Gaming.I
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GameControllerVersionInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gamecontrollerversioninfo)
+[Windows.Gaming.Input.Custom.GameControllerVersionInfo](/uwp/api/windows.gaming.input.custom.gamecontrollerversioninfo)
 
 **Properties**
 
@@ -1456,7 +1456,7 @@ Windows.Gaming.Input.Custom.GameControllerVersionInfo <br /> Windows.Gaming.Inpu
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdateprogress)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress](/uwp/api/windows.gaming.input.custom.gipfirmwareupdateprogress)
 
 **Properties**
 
@@ -1466,7 +1466,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress <br /> Windows.Gaming.Inpu
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateResult](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdateresult)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateResult](/uwp/api/windows.gaming.input.custom.gipfirmwareupdateresult)
 
 **Properties**
 
@@ -1476,7 +1476,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateResult <br /> Windows.Gaming.Input.
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipfirmwareupdatestatus)
+[Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus](/uwp/api/windows.gaming.input.custom.gipfirmwareupdatestatus)
 
 **Properties**
 
@@ -1486,7 +1486,7 @@ Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus <br /> Windows.Gaming.Input.
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GipGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipgamecontrollerprovider)
+[Windows.Gaming.Input.Custom.GipGameControllerProvider](/uwp/api/windows.gaming.input.custom.gipgamecontrollerprovider)
 
 **Properties**
 
@@ -1496,7 +1496,7 @@ Windows.Gaming.Input.Custom.GipGameControllerProvider <br /> Windows.Gaming.Inpu
 
 **Item**
 
-[Windows.Gaming.Input.Custom.GipMessageClass](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.gipmessageclass)
+[Windows.Gaming.Input.Custom.GipMessageClass](/uwp/api/windows.gaming.input.custom.gipmessageclass)
 
 **Properties**
 
@@ -1506,7 +1506,7 @@ Windows.Gaming.Input.Custom.GipMessageClass <br /> Windows.Gaming.Input.Custom.G
 
 **Item**
 
-[Windows.Gaming.Input.Custom.ICustomGameControllerFactory](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.icustomgamecontrollerfactory)
+[Windows.Gaming.Input.Custom.ICustomGameControllerFactory](/uwp/api/windows.gaming.input.custom.icustomgamecontrollerfactory)
 
 **Properties**
 
@@ -1516,7 +1516,7 @@ Windows.Gaming.Input.Custom.ICustomGameControllerFactory <br /> Windows.Gaming.I
 
 **Item**
 
-[Windows.Gaming.Input.Custom.IGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IGameControllerInputSink](/uwp/api/windows.gaming.input.custom.igamecontrollerinputsink)
 
 **Properties**
 
@@ -1526,7 +1526,7 @@ Windows.Gaming.Input.Custom.IGameControllerInputSink <br /> Windows.Gaming.Input
 
 **Item**
 
-[Windows.Gaming.Input.Custom.IGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igamecontrollerprovider)
+[Windows.Gaming.Input.Custom.IGameControllerProvider](/uwp/api/windows.gaming.input.custom.igamecontrollerprovider)
 
 **Properties**
 
@@ -1536,7 +1536,7 @@ Windows.Gaming.Input.Custom.IGameControllerProvider <br /> Windows.Gaming.Input.
 
 **Item**
 
-[Windows.Gaming.Input.Custom.IGipGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.igipgamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IGipGameControllerInputSink](/uwp/api/windows.gaming.input.custom.igipgamecontrollerinputsink)
 
 **Properties**
 
@@ -1546,7 +1546,7 @@ Windows.Gaming.Input.Custom.IGipGameControllerInputSink <br /> Windows.Gaming.In
 
 **Item**
 
-[Windows.Gaming.Input.Custom.IXusbGameControllerInputSink](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.ixusbgamecontrollerinputsink)
+[Windows.Gaming.Input.Custom.IXusbGameControllerInputSink](/uwp/api/windows.gaming.input.custom.ixusbgamecontrollerinputsink)
 
 **Properties**
 
@@ -1556,7 +1556,7 @@ Windows.Gaming.Input.Custom.IXusbGameControllerInputSink <br /> Windows.Gaming.I
 
 **Item**
 
-[Windows.Gaming.Input.Custom.XusbDeviceSubtype](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbdevicesubtype)
+[Windows.Gaming.Input.Custom.XusbDeviceSubtype](/uwp/api/windows.gaming.input.custom.xusbdevicesubtype)
 
 **Properties**
 
@@ -1566,7 +1566,7 @@ Windows.Gaming.Input.Custom.XusbDeviceSubtype <br /> Windows.Gaming.Input.Custom
 
 **Item**
 
-[Windows.Gaming.Input.Custom.XusbDeviceType](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbdevicetype)
+[Windows.Gaming.Input.Custom.XusbDeviceType](/uwp/api/windows.gaming.input.custom.xusbdevicetype)
 
 **Properties**
 
@@ -1576,7 +1576,7 @@ Windows.Gaming.Input.Custom.XusbDeviceType <br /> Windows.Gaming.Input.Custom.Xu
 
 **Item**
 
-[Windows.Gaming.Input.Custom.XusbGameControllerProvider](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom.xusbgamecontrollerprovider)
+[Windows.Gaming.Input.Custom.XusbGameControllerProvider](/uwp/api/windows.gaming.input.custom.xusbgamecontrollerprovider)
 
 **Properties**
 
@@ -1586,7 +1586,7 @@ Windows.Gaming.Input.Custom.XusbGameControllerProvider <br /> Windows.Gaming.Inp
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ConditionForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffect)
+[Windows.Gaming.Input.ForceFeedback.ConditionForceEffect](/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffect)
 
 **Properties**
 
@@ -1596,7 +1596,7 @@ Windows.Gaming.Input.ForceFeedback.ConditionForceEffect <br /> Windows.Gaming.In
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffectkind)
+[Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind](/uwp/api/windows.gaming.input.forcefeedback.conditionforceeffectkind)
 
 **Properties**
 
@@ -1606,7 +1606,7 @@ Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind <br /> Windows.Gamin
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ConstantForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.constantforceeffect)
+[Windows.Gaming.Input.ForceFeedback.ConstantForceEffect](/uwp/api/windows.gaming.input.forcefeedback.constantforceeffect)
 
 **Properties**
 
@@ -1616,7 +1616,7 @@ Windows.Gaming.Input.ForceFeedback.ConstantForceEffect <br /> Windows.Gaming.Inp
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectaxes)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes](/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectaxes)
 
 **Properties**
 
@@ -1626,7 +1626,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectAxes <br /> Windows.Gaming
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectstate)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState](/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackeffectstate)
 
 **Properties**
 
@@ -1636,7 +1636,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState <br /> Windows.Gamin
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackloadeffectresult)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult](/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackloadeffectresult)
 
 **Properties**
 
@@ -1646,7 +1646,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult <br /> Windows.
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackmotor)
+[Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor](/uwp/api/windows.gaming.input.forcefeedback.forcefeedbackmotor)
 
 **Properties**
 
@@ -1656,7 +1656,7 @@ Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor <br /> Windows.Gaming.Inpu
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)
+[Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect](/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)
 
 **Properties**
 
@@ -1666,7 +1666,7 @@ Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect <br /> Windows.Gaming.In
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffect)
+[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect](/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffect)
 
 **Properties**
 
@@ -1676,7 +1676,7 @@ Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect <br /> Windows.Gaming.Inp
 
 **Item**
 
-[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffectkind)
+[Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind](/uwp/api/windows.gaming.input.forcefeedback.periodicforceeffectkind)
 
 **Properties**
 
@@ -1686,7 +1686,7 @@ Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind <br /> Windows.Gaming
 
 **Item**
 
-[Windows.Gaming.Input<br />ForceFeedback.RampForceEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.rampforceeffect)
+[Windows.Gaming.Input<br />ForceFeedback.RampForceEffect](/uwp/api/windows.gaming.input.forcefeedback.rampforceeffect)
 
 **Properties**
 
@@ -1696,7 +1696,7 @@ Windows.Gaming.Input.ForceFeedback.RampForceEffect <br /> Windows.Gaming.Input.F
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberformat)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformat)
 
 **Properties**
 
@@ -1706,7 +1706,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat <br /> Windows.Glo
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter)
 
 **Properties**
 
@@ -1716,7 +1716,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter <br /> Windows.
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo)
 
 **Properties**
 
@@ -1726,7 +1726,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo <br /> Windows.Globa
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumbermatchresult)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult](/uwp/api/windows.globalization.phonenumberformatting.phonenumbermatchresult)
 
 **Properties**
 
@@ -1736,7 +1736,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult <br /> Window
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.phonenumberparseresult)
+[Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult](/uwp/api/windows.globalization.phonenumberformatting.phonenumberparseresult)
 
 **Properties**
 
@@ -1746,7 +1746,7 @@ Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult <br /> Window
 
 **Item**
 
-[Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind](https://docs.microsoft.com/uwp/api/windows.globalization.phonenumberformatting.predictedphonenumberkind)
+[Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind](/uwp/api/windows.globalization.phonenumberformatting.predictedphonenumberkind)
 
 **Properties**
 
@@ -1756,7 +1756,7 @@ Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind <br /> Wind
 
 **Item**
 
-[Windows.Graphics.Printing.PrintBordering](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printbordering)
+[Windows.Graphics.Printing.PrintBordering](/uwp/api/windows.graphics.printing.printbordering)
 
 **Properties**
 
@@ -1766,7 +1766,7 @@ Windows.Graphics.Printing.PrintBordering <br /> Windows.Graphics.Printing.PrintB
 
 **Item**
 
-[Windows.Graphics.Printing.PrintPageInfo](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printpageinfo)
+[Windows.Graphics.Printing.PrintPageInfo](/uwp/api/windows.graphics.printing.printpageinfo)
 
 **Properties**
 
@@ -1776,7 +1776,7 @@ Windows.Graphics.Printing.PrintPageInfo <br /> Windows.Graphics.Printing.PrintPa
 
 **Item**
 
-[Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails)
+[Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails](/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails)
 
 **Properties**
 
@@ -1786,7 +1786,7 @@ Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails <br /> Windo
 
 **Item**
 
-[Windows.Management.Workplace.MessagingSyncPolicy](https://docs.microsoft.com/uwp/api/windows.management.workplace.messagingsyncpolicy)
+[Windows.Management.Workplace.MessagingSyncPolicy](/uwp/api/windows.management.workplace.messagingsyncpolicy)
 
 **Properties**
 
@@ -1796,7 +1796,7 @@ Windows.Management.Workplace.MessagingSyncPolicy <br /> Windows.Management.Workp
 
 **Item**
 
-[Windows.Media.MediaTimelineController](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller)
+[Windows.Media.MediaTimelineController](/uwp/api/windows.media.mediatimelinecontroller)
 
 **Properties**
 
@@ -1806,7 +1806,7 @@ Windows.Media.MediaTimelineController <br /> Windows.Media.MediaTimelineControll
 
 **Item**
 
-[Windows.Media.MediaTimelineControllerState](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontrollerstate)
+[Windows.Media.MediaTimelineControllerState](/uwp/api/windows.media.mediatimelinecontrollerstate)
 
 **Properties**
 
@@ -1816,7 +1816,7 @@ Windows.Media.MediaTimelineControllerState <br /> Windows.Media.MediaTimelineCon
 
 **Item**
 
-[Windows.Media.Audio.AudioGraphBatchUpdater](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographbatchupdater)
+[Windows.Media.Audio.AudioGraphBatchUpdater](/uwp/api/windows.media.audio.audiographbatchupdater)
 
 **Properties**
 
@@ -1826,7 +1826,7 @@ Windows.Media.Audio.AudioGraphBatchUpdater <br /> Windows.Media.Audio.AudioGraph
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitter](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter)
+[Windows.Media.Audio.AudioNodeEmitter](/uwp/api/windows.media.audio.audionodeemitter)
 
 **Properties**
 
@@ -1836,7 +1836,7 @@ Windows.Media.Audio.AudioNodeEmitter <br /> Windows.Media.Audio.AudioNodeEmitter
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterConeProperties](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterconeproperties)
+[Windows.Media.Audio.AudioNodeEmitterConeProperties](/uwp/api/windows.media.audio.audionodeemitterconeproperties)
 
 **Properties**
 
@@ -1846,7 +1846,7 @@ Windows.Media.Audio.AudioNodeEmitterConeProperties <br /> Windows.Media.Audio.Au
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterDecayKind](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaykind)
+[Windows.Media.Audio.AudioNodeEmitterDecayKind](/uwp/api/windows.media.audio.audionodeemitterdecaykind)
 
 **Properties**
 
@@ -1856,7 +1856,7 @@ Windows.Media.Audio.AudioNodeEmitterDecayKind <br /> Windows.Media.Audio.AudioNo
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterDecayModel](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel)
+[Windows.Media.Audio.AudioNodeEmitterDecayModel](/uwp/api/windows.media.audio.audionodeemitterdecaymodel)
 
 **Properties**
 
@@ -1866,7 +1866,7 @@ Windows.Media.Audio.AudioNodeEmitterDecayModel <br /> Windows.Media.Audio.AudioN
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitternaturaldecaymodelproperties)
+[Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties](/uwp/api/windows.media.audio.audionodeemitternaturaldecaymodelproperties)
 
 **Properties**
 
@@ -1876,7 +1876,7 @@ Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties <br /> Windows.M
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterSettings](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittersettings)
+[Windows.Media.Audio.AudioNodeEmitterSettings](/uwp/api/windows.media.audio.audionodeemittersettings)
 
 **Properties**
 
@@ -1886,7 +1886,7 @@ Windows.Media.Audio.AudioNodeEmitterSettings <br /> Windows.Media.Audio.AudioNod
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterShape](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittershape)
+[Windows.Media.Audio.AudioNodeEmitterShape](/uwp/api/windows.media.audio.audionodeemittershape)
 
 **Properties**
 
@@ -1896,7 +1896,7 @@ Windows.Media.Audio.AudioNodeEmitterShape <br /> Windows.Media.Audio.AudioNodeEm
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeEmitterShapeKind](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemittershapekind)
+[Windows.Media.Audio.AudioNodeEmitterShapeKind](/uwp/api/windows.media.audio.audionodeemittershapekind)
 
 **Properties**
 
@@ -1906,7 +1906,7 @@ Windows.Media.Audio.AudioNodeEmitterShapeKind <br /> Windows.Media.Audio.AudioNo
 
 **Item**
 
-[Windows.Media.Audio.AudioNodeListener](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodelistener)
+[Windows.Media.Audio.AudioNodeListener](/uwp/api/windows.media.audio.audionodelistener)
 
 **Properties**
 
@@ -1916,7 +1916,7 @@ Windows.Media.Audio.AudioNodeListener <br /> Windows.Media.Audio.AudioNodeListen
 
 **Item**
 
-[Windows.Media.Audio.IAudioInputNode2](https://docs.microsoft.com/uwp/api/windows.media.audio.iaudioinputnode2)
+[Windows.Media.Audio.IAudioInputNode2](/uwp/api/windows.media.audio.iaudioinputnode2)
 
 **Properties**
 
@@ -1926,7 +1926,7 @@ Windows.Media.Audio.IAudioInputNode2 <br /> Windows.Media.Audio.IAudioInputNode2
 
 **Item**
 
-[Windows.Media.Audio.IAudioNodeWithListener](https://docs.microsoft.com/uwp/api/windows.media.audio.iaudionodewithlistener)
+[Windows.Media.Audio.IAudioNodeWithListener](/uwp/api/windows.media.audio.iaudionodewithlistener)
 
 **Properties**
 
@@ -1936,7 +1936,7 @@ Windows.Media.Audio.IAudioNodeWithListener <br /> Windows.Media.Audio.IAudioNode
 
 **Item**
 
-[Windows.Media.Capture.MediaCaptureMemoryPreference](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturememorypreference)
+[Windows.Media.Capture.MediaCaptureMemoryPreference](/uwp/api/windows.media.capture.mediacapturememorypreference)
 
 **Properties**
 
@@ -1946,7 +1946,7 @@ Windows.Media.Capture.MediaCaptureMemoryPreference <br /> Windows.Media.Capture.
 
 **Item**
 
-[Windows.Media.Capture.MediaCapturePauseResult](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult)
+[Windows.Media.Capture.MediaCapturePauseResult](/uwp/api/windows.media.capture.mediacapturepauseresult)
 
 **Properties**
 
@@ -1956,7 +1956,7 @@ Windows.Media.Capture.MediaCapturePauseResult <br /> Windows.Media.Capture.Media
 
 **Item**
 
-[Windows.Media.Capture.MediaCaptureSharingMode](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturesharingmode)
+[Windows.Media.Capture.MediaCaptureSharingMode](/uwp/api/windows.media.capture.mediacapturesharingmode)
 
 **Properties**
 
@@ -1966,7 +1966,7 @@ Windows.Media.Capture.MediaCaptureSharingMode <br /> Windows.Media.Capture.Media
 
 **Item**
 
-[Windows.Media.Capture.MediaCaptureStopResult](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturestopresult)
+[Windows.Media.Capture.MediaCaptureStopResult](/uwp/api/windows.media.capture.mediacapturestopresult)
 
 **Properties**
 
@@ -1976,7 +1976,7 @@ Windows.Media.Capture.MediaCaptureStopResult <br /> Windows.Media.Capture.MediaC
 
 **Item**
 
-[Windows.Media.Capture.Frames.BufferMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.buffermediaframe)
+[Windows.Media.Capture.Frames.BufferMediaFrame](/uwp/api/windows.media.capture.frames.buffermediaframe)
 
 **Properties**
 
@@ -1986,7 +1986,7 @@ Windows.Media.Capture.Frames.BufferMediaFrame <br /> Windows.Media.Capture.Frame
 
 **Item**
 
-[Windows.Media.Capture.Frames.DepthMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.depthmediaframe)
+[Windows.Media.Capture.Frames.DepthMediaFrame](/uwp/api/windows.media.capture.frames.depthmediaframe)
 
 **Properties**
 
@@ -1996,7 +1996,7 @@ Windows.Media.Capture.Frames.DepthMediaFrame <br /> Windows.Media.Capture.Frames
 
 **Item**
 
-[Windows.Media.Capture.Frames.DepthMediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.depthmediaframeformat)
+[Windows.Media.Capture.Frames.DepthMediaFrameFormat](/uwp/api/windows.media.capture.frames.depthmediaframeformat)
 
 **Properties**
 
@@ -2006,7 +2006,7 @@ Windows.Media.Capture.Frames.DepthMediaFrameFormat <br /> Windows.Media.Capture.
 
 **Item**
 
-[Windows.Media.Capture.Frames.InfraredMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.infraredmediaframe)
+[Windows.Media.Capture.Frames.InfraredMediaFrame](/uwp/api/windows.media.capture.frames.infraredmediaframe)
 
 **Properties**
 
@@ -2016,7 +2016,7 @@ Windows.Media.Capture.Frames.InfraredMediaFrame <br /> Windows.Media.Capture.Fra
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframearrivedeventargs)
+[Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs](/uwp/api/windows.media.capture.frames.mediaframearrivedeventargs)
 
 **Properties**
 
@@ -2026,7 +2026,7 @@ Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframeformat)
+[Windows.Media.Capture.Frames.MediaFrameFormat](/uwp/api/windows.media.capture.frames.mediaframeformat)
 
 **Properties**
 
@@ -2036,7 +2036,7 @@ Windows.Media.Capture.Frames.MediaFrameFormat <br /> Windows.Media.Capture.Frame
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)
+[Windows.Media.Capture.Frames.MediaFrameReader](/uwp/api/windows.media.capture.frames.mediaframereader)
 
 **Properties**
 
@@ -2046,7 +2046,7 @@ Windows.Media.Capture.Frames.MediaFrameReader <br /> Windows.Media.Capture.Frame
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameReaderStartStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus)
+[Windows.Media.Capture.Frames.MediaFrameReaderStartStatus](/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus)
 
 **Properties**
 
@@ -2056,7 +2056,7 @@ Windows.Media.Capture.Frames.MediaFrameReaderStartStatus <br /> Windows.Media.Ca
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)
+[Windows.Media.Capture.Frames.MediaFrameReference](/uwp/api/windows.media.capture.frames.mediaframereference)
 
 **Properties**
 
@@ -2066,7 +2066,7 @@ Windows.Media.Capture.Frames.MediaFrameReference <br /> Windows.Media.Capture.Fr
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource)
+[Windows.Media.Capture.Frames.MediaFrameSource](/uwp/api/windows.media.capture.frames.mediaframesource)
 
 **Properties**
 
@@ -2076,7 +2076,7 @@ Windows.Media.Capture.Frames.MediaFrameSource <br /> Windows.Media.Capture.Frame
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceController](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcecontroller)
+[Windows.Media.Capture.Frames.MediaFrameSourceController](/uwp/api/windows.media.capture.frames.mediaframesourcecontroller)
 
 **Properties**
 
@@ -2086,7 +2086,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceController <br /> Windows.Media.Cap
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertyresult)
+[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult](/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertyresult)
 
 **Properties**
 
@@ -2096,7 +2096,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult <br /> Windows.Me
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus)
+[Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus](/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus)
 
 **Properties**
 
@@ -2106,7 +2106,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus <br /> Windows.Me
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceGroup](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup)
+[Windows.Media.Capture.Frames.MediaFrameSourceGroup](/uwp/api/windows.media.capture.frames.mediaframesourcegroup)
 
 **Properties**
 
@@ -2116,7 +2116,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceGroup <br /> Windows.Media.Capture.
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)
+[Windows.Media.Capture.Frames.MediaFrameSourceInfo](/uwp/api/windows.media.capture.frames.mediaframesourceinfo)
 
 **Properties**
 
@@ -2126,7 +2126,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceInfo <br /> Windows.Media.Capture.F
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceKind](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcekind)
+[Windows.Media.Capture.Frames.MediaFrameSourceKind](/uwp/api/windows.media.capture.frames.mediaframesourcekind)
 
 **Properties**
 
@@ -2136,7 +2136,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceKind <br /> Windows.Media.Capture.F
 
 **Item**
 
-[Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcesetpropertystatus)
+[Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus](/uwp/api/windows.media.capture.frames.mediaframesourcesetpropertystatus)
 
 **Properties**
 
@@ -2146,7 +2146,7 @@ Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus <br /> Windows.Me
 
 **Item**
 
-[Windows.Media.Capture.Frames.VideoMediaFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe)
+[Windows.Media.Capture.Frames.VideoMediaFrame](/uwp/api/windows.media.capture.frames.videomediaframe)
 
 **Properties**
 
@@ -2156,7 +2156,7 @@ Windows.Media.Capture.Frames.VideoMediaFrame <br /> Windows.Media.Capture.Frames
 
 **Item**
 
-[Windows.Media.Capture.Frames.VideoMediaFrameFormat](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframeformat)
+[Windows.Media.Capture.Frames.VideoMediaFrameFormat](/uwp/api/windows.media.capture.frames.videomediaframeformat)
 
 **Properties**
 
@@ -2166,7 +2166,7 @@ Windows.Media.Capture.Frames.VideoMediaFrameFormat <br /> Windows.Media.Capture.
 
 **Item**
 
-[Windows.Media.Core.AudioDecoderDegradation](https://docs.microsoft.com/uwp/api/windows.media.core.audiodecoderdegradation)
+[Windows.Media.Core.AudioDecoderDegradation](/uwp/api/windows.media.core.audiodecoderdegradation)
 
 **Properties**
 
@@ -2176,7 +2176,7 @@ Windows.Media.Core.AudioDecoderDegradation <br /> Windows.Media.Core.AudioDecode
 
 **Item**
 
-[Windows.Media.Core.AudioDecoderDegradationReason](https://docs.microsoft.com/uwp/api/windows.media.core.audiodecoderdegradationreason)
+[Windows.Media.Core.AudioDecoderDegradationReason](/uwp/api/windows.media.core.audiodecoderdegradationreason)
 
 **Properties**
 
@@ -2186,7 +2186,7 @@ Windows.Media.Core.AudioDecoderDegradationReason <br /> Windows.Media.Core.Audio
 
 **Item**
 
-[Windows.Media.Core.AudioTrackOpenFailedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.audiotrackopenfailedeventargs)
+[Windows.Media.Core.AudioTrackOpenFailedEventArgs](/uwp/api/windows.media.core.audiotrackopenfailedeventargs)
 
 **Properties**
 
@@ -2196,7 +2196,7 @@ Windows.Media.Core.AudioTrackOpenFailedEventArgs <br /> Windows.Media.Core.Audio
 
 **Item**
 
-[Windows.Media.Core.AudioTrackSupportInfo](https://docs.microsoft.com/uwp/api/windows.media.core.audiotracksupportinfo)
+[Windows.Media.Core.AudioTrackSupportInfo](/uwp/api/windows.media.core.audiotracksupportinfo)
 
 **Properties**
 
@@ -2206,7 +2206,7 @@ Windows.Media.Core.AudioTrackSupportInfo <br /> Windows.Media.Core.AudioTrackSup
 
 **Item**
 
-[Windows.Media.Core.MediaDecoderStatus](https://docs.microsoft.com/uwp/api/windows.media.core.mediadecoderstatus)
+[Windows.Media.Core.MediaDecoderStatus](/uwp/api/windows.media.core.mediadecoderstatus)
 
 **Properties**
 
@@ -2216,7 +2216,7 @@ Windows.Media.Core.MediaDecoderStatus <br /> Windows.Media.Core.MediaDecoderStat
 
 **Item**
 
-[Windows.Media.Core.MediaSourceStatus](https://docs.microsoft.com/uwp/api/windows.media.core.mediasourcestatus)
+[Windows.Media.Core.MediaSourceStatus](/uwp/api/windows.media.core.mediasourcestatus)
 
 **Properties**
 
@@ -2226,7 +2226,7 @@ Windows.Media.Core.MediaSourceStatus <br /> Windows.Media.Core.MediaSourceStatus
 
 **Item**
 
-[Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsourcesamplerenderedeventargs)
+[Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerenderedeventargs)
 
 **Properties**
 
@@ -2236,7 +2236,7 @@ Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs <br /> Windows.Media
 
 **Item**
 
-[Windows.Media.Core.VideoTrackOpenFailedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.core.videotrackopenfailedeventargs)
+[Windows.Media.Core.VideoTrackOpenFailedEventArgs](/uwp/api/windows.media.core.videotrackopenfailedeventargs)
 
 **Properties**
 
@@ -2246,7 +2246,7 @@ Windows.Media.Core.VideoTrackOpenFailedEventArgs <br /> Windows.Media.Core.Video
 
 **Item**
 
-[Windows.Media.Core.VideoTrackSupportInfo](https://docs.microsoft.com/uwp/api/windows.media.core.videotracksupportinfo)
+[Windows.Media.Core.VideoTrackSupportInfo](/uwp/api/windows.media.core.videotracksupportinfo)
 
 **Properties**
 
@@ -2256,7 +2256,7 @@ Windows.Media.Core.VideoTrackSupportInfo <br /> Windows.Media.Core.VideoTrackSup
 
 **Item**
 
-[Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper)
+[Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper](/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper)
 
 **Properties**
 
@@ -2266,7 +2266,7 @@ Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper <br /> Windows.Media.
 
 **Item**
 
-[Windows.Media.Import.PhotoImportSubfolderDateFormat](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsubfolderdateformat)
+[Windows.Media.Import.PhotoImportSubfolderDateFormat](/uwp/api/windows.media.import.photoimportsubfolderdateformat)
 
 **Properties**
 
@@ -2276,7 +2276,7 @@ Windows.Media.Import.PhotoImportSubfolderDateFormat <br /> Windows.Media.Import.
 
 **Item**
 
-[Windows.Media.MediaProperties.StereoscopicVideoPackingMode](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.stereoscopicvideopackingmode)
+[Windows.Media.MediaProperties.StereoscopicVideoPackingMode](/uwp/api/windows.media.mediaproperties.stereoscopicvideopackingmode)
 
 **Properties**
 
@@ -2286,7 +2286,7 @@ Windows.Media.MediaProperties.StereoscopicVideoPackingMode <br /> Windows.Media.
 
 **Item**
 
-[Windows.Media.Playback.MediaBreak](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreak)
+[Windows.Media.Playback.MediaBreak](/uwp/api/windows.media.playback.mediabreak)
 
 **Properties**
 
@@ -2296,7 +2296,7 @@ Windows.Media.Playback.MediaBreak <br /> Windows.Media.Playback.MediaBreak.#ctor
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakEndedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakendedeventargs)
+[Windows.Media.Playback.MediaBreakEndedEventArgs](/uwp/api/windows.media.playback.mediabreakendedeventargs)
 
 **Properties**
 
@@ -2306,7 +2306,7 @@ Windows.Media.Playback.MediaBreakEndedEventArgs <br /> Windows.Media.Playback.Me
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakInsertionMethod](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakinsertionmethod)
+[Windows.Media.Playback.MediaBreakInsertionMethod](/uwp/api/windows.media.playback.mediabreakinsertionmethod)
 
 **Properties**
 
@@ -2316,7 +2316,7 @@ Windows.Media.Playback.MediaBreakInsertionMethod <br /> Windows.Media.Playback.M
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakManager](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager)
+[Windows.Media.Playback.MediaBreakManager](/uwp/api/windows.media.playback.mediabreakmanager)
 
 **Properties**
 
@@ -2326,7 +2326,7 @@ Windows.Media.Playback.MediaBreakManager <br /> Windows.Media.Playback.MediaBrea
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakSchedule](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule)
+[Windows.Media.Playback.MediaBreakSchedule](/uwp/api/windows.media.playback.mediabreakschedule)
 
 **Properties**
 
@@ -2336,7 +2336,7 @@ Windows.Media.Playback.MediaBreakSchedule <br /> Windows.Media.Playback.MediaBre
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakSeekedOverEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakseekedovereventargs)
+[Windows.Media.Playback.MediaBreakSeekedOverEventArgs](/uwp/api/windows.media.playback.mediabreakseekedovereventargs)
 
 **Properties**
 
@@ -2346,7 +2346,7 @@ Windows.Media.Playback.MediaBreakSeekedOverEventArgs <br /> Windows.Media.Playba
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakSkippedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakskippedeventargs)
+[Windows.Media.Playback.MediaBreakSkippedEventArgs](/uwp/api/windows.media.playback.mediabreakskippedeventargs)
 
 **Properties**
 
@@ -2356,7 +2356,7 @@ Windows.Media.Playback.MediaBreakSkippedEventArgs <br /> Windows.Media.Playback.
 
 **Item**
 
-[Windows.Media.Playback.MediaBreakStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakstartedeventargs)
+[Windows.Media.Playback.MediaBreakStartedEventArgs](/uwp/api/windows.media.playback.mediabreakstartedeventargs)
 
 **Properties**
 
@@ -2366,7 +2366,7 @@ Windows.Media.Playback.MediaBreakStartedEventArgs <br /> Windows.Media.Playback.
 
 **Item**
 
-[Windows.Media.Playback.MediaCommandEnablingRule](https://docs.microsoft.com/uwp/api/windows.media.playback.mediacommandenablingrule)
+[Windows.Media.Playback.MediaCommandEnablingRule](/uwp/api/windows.media.playback.mediacommandenablingrule)
 
 **Properties**
 
@@ -2376,7 +2376,7 @@ Windows.Media.Playback.MediaCommandEnablingRule <br /> Windows.Media.Playback.Me
 
 **Item**
 
-[Windows.Media.Playback.MediaItemDisplayProperties](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties)
+[Windows.Media.Playback.MediaItemDisplayProperties](/uwp/api/windows.media.playback.mediaitemdisplayproperties)
 
 **Properties**
 
@@ -2386,7 +2386,7 @@ Windows.Media.Playback.MediaItemDisplayProperties <br /> Windows.Media.Playback.
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManager](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager)
+[Windows.Media.Playback.MediaPlaybackCommandManager](/uwp/api/windows.media.playback.mediaplaybackcommandmanager)
 
 **Properties**
 
@@ -2396,7 +2396,7 @@ Windows.Media.Playback.MediaPlaybackCommandManager <br /> Windows.Media.Playback
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerautorepeatmodereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerautorepeatmodereceivedeventargs)
 
 **Properties**
 
@@ -2406,7 +2406,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArg
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior)
+[Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior)
 
 **Properties**
 
@@ -2416,7 +2416,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior <br /> Windows
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerfastforwardreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerfastforwardreceivedeventargs)
 
 **Properties**
 
@@ -2426,7 +2426,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs <
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagernextreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagernextreceivedeventargs)
 
 **Properties**
 
@@ -2436,7 +2436,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs <br /> W
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpausereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpausereceivedeventargs)
 
 **Properties**
 
@@ -2446,7 +2446,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs <br /> 
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerplayreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerplayreceivedeventargs)
 
 **Properties**
 
@@ -2456,7 +2456,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs <br /> W
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpositionreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpositionreceivedeventargs)
 
 **Properties**
 
@@ -2466,7 +2466,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs <br 
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs)
 
 **Properties**
 
@@ -2476,7 +2476,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs <br 
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerratereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerratereceivedeventargs)
 
 **Properties**
 
@@ -2486,7 +2486,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs <br /> W
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagerrewindreceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerrewindreceivedeventargs)
 
 **Properties**
 
@@ -2496,7 +2496,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs <br />
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanagershufflereceivedeventargs)
+[Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs](/uwp/api/windows.media.playback.mediaplaybackcommandmanagershufflereceivedeventargs)
 
 **Properties**
 
@@ -2506,7 +2506,7 @@ Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs <br /
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession)
+[Windows.Media.Playback.MediaPlaybackSession](/uwp/api/windows.media.playback.mediaplaybacksession)
 
 **Properties**
 
@@ -2516,7 +2516,7 @@ Windows.Media.Playback.MediaPlaybackSession <br /> Windows.Media.Playback.MediaP
 
 **Item**
 
-[Windows.Media.Playback.MediaPlaybackState](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackstate)
+[Windows.Media.Playback.MediaPlaybackState](/uwp/api/windows.media.playback.mediaplaybackstate)
 
 **Properties**
 
@@ -2526,7 +2526,7 @@ Windows.Media.Playback.MediaPlaybackState <br /> Windows.Media.Playback.MediaPla
 
 **Item**
 
-[Windows.Media.Playback.MediaPlayerSurface](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayersurface)
+[Windows.Media.Playback.MediaPlayerSurface](/uwp/api/windows.media.playback.mediaplayersurface)
 
 **Properties**
 
@@ -2536,7 +2536,7 @@ Windows.Media.Playback.MediaPlayerSurface <br /> Windows.Media.Playback.MediaPla
 
 **Item**
 
-[Windows.Media.Playback.StereoscopicVideoRenderMode](https://docs.microsoft.com/uwp/api/windows.media.playback.stereoscopicvideorendermode)
+[Windows.Media.Playback.StereoscopicVideoRenderMode](/uwp/api/windows.media.playback.stereoscopicvideorendermode)
 
 **Properties**
 
@@ -2546,7 +2546,7 @@ Windows.Media.Playback.StereoscopicVideoRenderMode <br /> Windows.Media.Playback
 
 **Item**
 
-[Windows.Media.Protection.HdcpProtection](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpprotection)
+[Windows.Media.Protection.HdcpProtection](/uwp/api/windows.media.protection.hdcpprotection)
 
 **Properties**
 
@@ -2556,7 +2556,7 @@ Windows.Media.Protection.HdcpProtection <br /> Windows.Media.Protection.HdcpProt
 
 **Item**
 
-[Windows.Media.Protection.HdcpSession](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpsession)
+[Windows.Media.Protection.HdcpSession](/uwp/api/windows.media.protection.hdcpsession)
 
 **Properties**
 
@@ -2566,7 +2566,7 @@ Windows.Media.Protection.HdcpSession <br /> Windows.Media.Protection.HdcpSession
 
 **Item**
 
-[Windows.Media.Protection.HdcpSetProtectionResult](https://docs.microsoft.com/uwp/api/windows.media.protection.hdcpsetprotectionresult)
+[Windows.Media.Protection.HdcpSetProtectionResult](/uwp/api/windows.media.protection.hdcpsetprotectionresult)
 
 **Properties**
 
@@ -2576,7 +2576,7 @@ Windows.Media.Protection.HdcpSetProtectionResult <br /> Windows.Media.Protection
 
 **Item**
 
-[Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser)
+[Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser)
 
 **Properties**
 
@@ -2586,7 +2586,7 @@ Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser <br /
 
 **Item**
 
-[Windows.Networking.Sockets.IWebSocketControl2](https://docs.microsoft.com/uwp/api/windows.networking.sockets.iwebsocketcontrol2)
+[Windows.Networking.Sockets.IWebSocketControl2](/uwp/api/windows.networking.sockets.iwebsocketcontrol2)
 
 **Properties**
 
@@ -2596,7 +2596,7 @@ Windows.Networking.Sockets.IWebSocketControl2 <br /> Windows.Networking.Sockets.
 
 **Item**
 
-[Windows.Networking.Sockets.IWebSocketInformation2](https://docs.microsoft.com/uwp/api/windows.networking.sockets.iwebsocketinformation2)
+[Windows.Networking.Sockets.IWebSocketInformation2](/uwp/api/windows.networking.sockets.iwebsocketinformation2)
 
 **Properties**
 
@@ -2606,7 +2606,7 @@ Windows.Networking.Sockets.IWebSocketInformation2 <br /> Windows.Networking.Sock
 
 **Item**
 
-[Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.networking.sockets.websocketservercustomvalidationrequestedeventargs)
+[Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs](/uwp/api/windows.networking.sockets.websocketservercustomvalidationrequestedeventargs)
 
 **Properties**
 
@@ -2616,7 +2616,7 @@ Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs <br
 
 **Item**
 
-[Windows.Networking.Vpn.VpnManagementConnectionStatus](https://docs.microsoft.com/uwp/api/windows.networking.vpn.vpnmanagementconnectionstatus)
+[Windows.Networking.Vpn.VpnManagementConnectionStatus](/uwp/api/windows.networking.vpn.vpnmanagementconnectionstatus)
 
 **Properties**
 
@@ -2626,7 +2626,7 @@ Windows.Networking.Vpn.VpnManagementConnectionStatus <br /> Windows.Networking.V
 
 **Item**
 
-[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationinfo)
+[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo](/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationinfo)
 
 **Properties**
 
@@ -2636,7 +2636,7 @@ Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo
 
 **Item**
 
-[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationmanager)
+[Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager](/uwp/api/windows.security.authentication.identity.enterprisekeycredentialregistrationmanager)
 
 **Properties**
 
@@ -2646,7 +2646,7 @@ Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationMana
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationmanager)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationmanager)
 
 **Properties**
 
@@ -2656,7 +2656,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthent
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationtype)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorauthenticationtype)
 
 **Properties**
 
@@ -2666,7 +2666,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthent
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorgetsessionsresult)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorgetsessionsresult)
 
 **Properties**
 
@@ -2676,7 +2676,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSess
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactoronetimecodedinfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactoronetimecodedinfo)
 
 **Properties**
 
@@ -2686,7 +2686,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTime
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorserviceresponse)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorserviceresponse)
 
 **Properties**
 
@@ -2696,7 +2696,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorService
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionapprovalstatus)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionapprovalstatus)
 
 **Properties**
 
@@ -2706,7 +2706,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionauthenticationstatus)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessionauthenticationstatus)
 
 **Properties**
 
@@ -2716,7 +2716,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessioninfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorsessioninfo)
 
 **Properties**
 
@@ -2726,7 +2726,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSession
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorunregisteredaccountsandsessioninfo)
+[Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo](/uwp/api/windows.security.authentication.identity.core.microsoftaccountmultifactorunregisteredaccountsandsessioninfo)
 
 **Properties**
 
@@ -2736,7 +2736,7 @@ Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregis
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthentication)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthentication)
 
 **Properties**
 
@@ -2746,7 +2746,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationmessage)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationmessage)
 
 **Properties**
 
@@ -2756,7 +2756,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationresult)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationresult)
 
 **Properties**
 
@@ -2766,7 +2766,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationscenario)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationscenario)
 
 **Properties**
 
@@ -2776,7 +2776,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstage)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstage)
 
 **Properties**
 
@@ -2786,7 +2786,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstagechangedeventargs)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstagechangedeventargs)
 
 **Properties**
 
@@ -2796,7 +2796,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstageinfo)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstageinfo)
 
 **Properties**
 
@@ -2806,7 +2806,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorauthenticationstatus)
 
 **Properties**
 
@@ -2816,7 +2816,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorA
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceCapabilities](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicecapabilities)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceCapabilities](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicecapabilities)
 
 **Properties**
 
@@ -2826,7 +2826,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorD
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceFindScope](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicefindscope)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceFindScope](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactordevicefindscope)
 
 **Properties**
 
@@ -2836,7 +2836,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorD
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorfinishauthenticationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorfinishauthenticationstatus)
 
 **Properties**
 
@@ -2846,7 +2846,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorF
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorinfo)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorinfo)
 
 **Properties**
 
@@ -2856,7 +2856,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorI
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistration)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistration)
 
 **Properties**
 
@@ -2866,7 +2866,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationresult)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationresult)
 
 **Properties**
 
@@ -2876,7 +2876,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **Item**
 
-[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus](https://docs.microsoft.com/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationstatus)
+[Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus](/uwp/api/windows.security.authentication.identity.provider.secondaryauthenticationfactorregistrationstatus)
 
 **Properties**
 
@@ -2886,7 +2886,7 @@ Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorR
 
 **Item**
 
-[Windows.Security.Authentication.Web.Core.WebAccountEventArgs](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webaccounteventargs)
+[Windows.Security.Authentication.Web.Core.WebAccountEventArgs](/uwp/api/windows.security.authentication.web.core.webaccounteventargs)
 
 **Properties**
 
@@ -2896,7 +2896,7 @@ Windows.Security.Authentication.Web.Core.WebAccountEventArgs <br /> Windows.Secu
 
 **Item**
 
-[Windows.Security.Authentication.Web.Core.WebAccountMonitor](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webaccountmonitor)
+[Windows.Security.Authentication.Web.Core.WebAccountMonitor](/uwp/api/windows.security.authentication.web.core.webaccountmonitor)
 
 **Properties**
 
@@ -2906,7 +2906,7 @@ Windows.Security.Authentication.Web.Core.WebAccountMonitor <br /> Windows.Securi
 
 **Item**
 
-[Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames](https://docs.microsoft.com/uwp/api/windows.security.cryptography.certificates.standardcertificatestorenames)
+[Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames](/uwp/api/windows.security.cryptography.certificates.standardcertificatestorenames)
 
 **Properties**
 
@@ -2916,7 +2916,7 @@ Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames <br /> 
 
 **Item**
 
-[Windows.Security.Cryptography.Certificates.UserCertificateStore](https://docs.microsoft.com/uwp/api/windows.security.cryptography.certificates.usercertificatestore)
+[Windows.Security.Cryptography.Certificates.UserCertificateStore](/uwp/api/windows.security.cryptography.certificates.usercertificatestore)
 
 **Properties**
 
@@ -2926,7 +2926,7 @@ Windows.Security.Cryptography.Certificates.UserCertificateStore <br /> Windows.S
 
 **Item**
 
-[Windows.Services.Maps.MapLocationDesiredAccuracy](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationdesiredaccuracy)
+[Windows.Services.Maps.MapLocationDesiredAccuracy](/uwp/api/windows.services.maps.maplocationdesiredaccuracy)
 
 **Properties**
 
@@ -2936,7 +2936,7 @@ Windows.Services.Maps.MapLocationDesiredAccuracy <br /> Windows.Services.Maps.Ma
 
 **Item**
 
-[Windows.Storage.StorageLibraryChange](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychange)
+[Windows.Storage.StorageLibraryChange](/uwp/api/windows.storage.storagelibrarychange)
 
 **Properties**
 
@@ -2946,7 +2946,7 @@ Windows.Storage.StorageLibraryChange <br /> Windows.Storage.StorageLibraryChange
 
 **Item**
 
-[Windows.Storage.StorageLibraryChangeReader](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader)
+[Windows.Storage.StorageLibraryChangeReader](/uwp/api/windows.storage.storagelibrarychangereader)
 
 **Properties**
 
@@ -2956,7 +2956,7 @@ Windows.Storage.StorageLibraryChangeReader <br /> Windows.Storage.StorageLibrary
 
 **Item**
 
-[Windows.Storage.StorageLibraryChangeTracker](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker)
+[Windows.Storage.StorageLibraryChangeTracker](/uwp/api/windows.storage.storagelibrarychangetracker)
 
 **Properties**
 
@@ -2966,7 +2966,7 @@ Windows.Storage.StorageLibraryChangeTracker <br /> Windows.Storage.StorageLibrar
 
 **Item**
 
-[Windows.Storage.StorageLibraryChangeType](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype)
+[Windows.Storage.StorageLibraryChangeType](/uwp/api/windows.storage.storagelibrarychangetype)
 
 **Properties**
 
@@ -2976,7 +2976,7 @@ Windows.Storage.StorageLibraryChangeType <br /> Windows.Storage.StorageLibraryCh
 
 **Item**
 
-[Windows.System.LaunchFileStatus](https://docs.microsoft.com/uwp/api/windows.system.launchfilestatus)
+[Windows.System.LaunchFileStatus](/uwp/api/windows.system.launchfilestatus)
 
 **Properties**
 
@@ -2986,7 +2986,7 @@ Windows.System.LaunchFileStatus <br /> Windows.System.LaunchFileStatus.AppUnavai
 
 **Item**
 
-[Windows.System.RemoteLauncher](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher)
+[Windows.System.RemoteLauncher](/uwp/api/windows.system.remotelauncher)
 
 **Properties**
 
@@ -2996,7 +2996,7 @@ Windows.System.RemoteLauncher <br /> Windows.System.RemoteLauncher.LaunchUriAsyn
 
 **Item**
 
-[Windows.System.RemoteLauncherOptions](https://docs.microsoft.com/uwp/api/windows.system.remotelauncheroptions)
+[Windows.System.RemoteLauncherOptions](/uwp/api/windows.system.remotelauncheroptions)
 
 **Properties**
 
@@ -3006,7 +3006,7 @@ Windows.System.RemoteLauncherOptions <br /> Windows.System.RemoteLauncherOptions
 
 **Item**
 
-[Windows.System.RemoteLaunchUriStatus](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus)
+[Windows.System.RemoteLaunchUriStatus](/uwp/api/windows.system.remotelaunchuristatus)
 
 **Properties**
 
@@ -3016,7 +3016,7 @@ Windows.System.RemoteLaunchUriStatus <br /> Windows.System.RemoteLaunchUriStatus
 
 **Item**
 
-[Windows.System.UserDeviceAssociation](https://docs.microsoft.com/uwp/api/windows.system.userdeviceassociation)
+[Windows.System.UserDeviceAssociation](/uwp/api/windows.system.userdeviceassociation)
 
 **Properties**
 
@@ -3026,7 +3026,7 @@ Windows.System.UserDeviceAssociation <br /> Windows.System.UserDeviceAssociation
 
 **Item**
 
-[Windows.System.UserDeviceAssociationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.userdeviceassociationchangedeventargs)
+[Windows.System.UserDeviceAssociationChangedEventArgs](/uwp/api/windows.system.userdeviceassociationchangedeventargs)
 
 **Properties**
 
@@ -3036,7 +3036,7 @@ Windows.System.UserDeviceAssociationChangedEventArgs <br /> Windows.System.UserD
 
 **Item**
 
-[Windows.System.UserPicker](https://docs.microsoft.com/uwp/api/windows.system.userpicker)
+[Windows.System.UserPicker](/uwp/api/windows.system.userpicker)
 
 **Properties**
 
@@ -3046,7 +3046,7 @@ Windows.System.UserPicker <br /> Windows.System.UserPicker.#ctor <br /> Windows.
 
 **Item**
 
-[Windows.System.Profile.SystemIdentification](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentification)
+[Windows.System.Profile.SystemIdentification](/uwp/api/windows.system.profile.systemidentification)
 
 **Properties**
 
@@ -3056,7 +3056,7 @@ Windows.System.Profile.SystemIdentification <br /> Windows.System.Profile.System
 
 **Item**
 
-[Windows.System.Profile.SystemIdentificationInfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentificationinfo)
+[Windows.System.Profile.SystemIdentificationInfo](/uwp/api/windows.system.profile.systemidentificationinfo)
 
 **Properties**
 
@@ -3066,7 +3066,7 @@ Windows.System.Profile.SystemIdentificationInfo <br /> Windows.System.Profile.Sy
 
 **Item**
 
-[Windows.System.Profile.SystemIdentificationSource](https://docs.microsoft.com/uwp/api/windows.system.profile.systemidentificationsource)
+[Windows.System.Profile.SystemIdentificationSource](/uwp/api/windows.system.profile.systemidentificationsource)
 
 **Properties**
 
@@ -3076,7 +3076,7 @@ Windows.System.Profile.SystemIdentificationSource <br /> Windows.System.Profile.
 
 **Item**
 
-[Windows.System.RemoteSystems.IRemoteSystemFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.iremotesystemfilter)
+[Windows.System.RemoteSystems.IRemoteSystemFilter](/uwp/api/windows.system.remotesystems.iremotesystemfilter)
 
 **Properties**
 
@@ -3086,7 +3086,7 @@ Windows.System.RemoteSystems.IRemoteSystemFilter
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
+[Windows.System.RemoteSystems.RemoteSystem](/uwp/api/windows.system.remotesystems.remotesystem)
 
 **Properties**
 
@@ -3096,7 +3096,7 @@ Windows.System.RemoteSystems.RemoteSystem <br /> Windows.System.RemoteSystems.Re
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemAccessStatus](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemaccessstatus)
+[Windows.System.RemoteSystems.RemoteSystemAccessStatus](/uwp/api/windows.system.remotesystems.remotesystemaccessstatus)
 
 **Properties**
 
@@ -3106,7 +3106,7 @@ Windows.System.RemoteSystems.RemoteSystemAccessStatus <br /> Windows.System.Remo
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemAddedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemaddedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemAddedEventArgs](/uwp/api/windows.system.remotesystems.remotesystemaddedeventargs)
 
 **Properties**
 
@@ -3116,7 +3116,7 @@ Windows.System.RemoteSystems.RemoteSystemAddedEventArgs <br /> Windows.System.Re
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemConnectionRequest](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectionrequest)
+[Windows.System.RemoteSystems.RemoteSystemConnectionRequest](/uwp/api/windows.system.remotesystems.remotesystemconnectionrequest)
 
 **Properties**
 
@@ -3126,7 +3126,7 @@ Windows.System.RemoteSystems.RemoteSystemConnectionRequest <br /> Windows.System
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemDiscoveryType](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype)
+[Windows.System.RemoteSystems.RemoteSystemDiscoveryType](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype)
 
 **Properties**
 
@@ -3136,7 +3136,7 @@ Windows.System.RemoteSystems.RemoteSystemDiscoveryType <br /> Windows.System.Rem
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytypefilter)
+[Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytypefilter)
 
 **Properties**
 
@@ -3146,7 +3146,7 @@ Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter <br /> Windows.Syst
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemKindFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemkindfilter)
+[Windows.System.RemoteSystems.RemoteSystemKindFilter](/uwp/api/windows.system.remotesystems.remotesystemkindfilter)
 
 **Properties**
 
@@ -3156,7 +3156,7 @@ Windows.System.RemoteSystems.RemoteSystemKindFilter <br /> Windows.System.Remote
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemKinds](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemkinds)
+[Windows.System.RemoteSystems.RemoteSystemKinds](/uwp/api/windows.system.remotesystems.remotesystemkinds)
 
 **Properties**
 
@@ -3166,7 +3166,7 @@ Windows.System.RemoteSystems.RemoteSystemKinds <br /> Windows.System.RemoteSyste
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemremovedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs](/uwp/api/windows.system.remotesystems.remotesystemremovedeventargs)
 
 **Properties**
 
@@ -3176,7 +3176,7 @@ Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs <br /> Windows.System.
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemStatus](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatus)
+[Windows.System.RemoteSystems.RemoteSystemStatus](/uwp/api/windows.system.remotesystems.remotesystemstatus)
 
 **Properties**
 
@@ -3186,7 +3186,7 @@ Windows.System.RemoteSystems.RemoteSystemStatus <br /> Windows.System.RemoteSyst
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemStatusType](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatustype)
+[Windows.System.RemoteSystems.RemoteSystemStatusType](/uwp/api/windows.system.remotesystems.remotesystemstatustype)
 
 **Properties**
 
@@ -3196,7 +3196,7 @@ Windows.System.RemoteSystems.RemoteSystemStatusType <br /> Windows.System.Remote
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemstatustypefilter)
+[Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter](/uwp/api/windows.system.remotesystems.remotesystemstatustypefilter)
 
 **Properties**
 
@@ -3206,7 +3206,7 @@ Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter <br /> Windows.System.
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemupdatedeventargs)
+[Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs](/uwp/api/windows.system.remotesystems.remotesystemupdatedeventargs)
 
 **Properties**
 
@@ -3216,7 +3216,7 @@ Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs <br /> Windows.System.
 
 **Item**
 
-[Windows.System.RemoteSystems.RemoteSystemWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher)
+[Windows.System.RemoteSystems.RemoteSystemWatcher](/uwp/api/windows.system.remotesystems.remotesystemwatcher)
 
 **Properties**
 
@@ -3226,7 +3226,7 @@ Windows.System.RemoteSystems.RemoteSystemWatcher <br /> Windows.System.RemoteSys
 
 **Item**
 
-[Windows.System.UserProfile.AdvertisingManagerForUser](https://docs.microsoft.com/uwp/api/windows.system.userprofile.advertisingmanagerforuser)
+[Windows.System.UserProfile.AdvertisingManagerForUser](/uwp/api/windows.system.userprofile.advertisingmanagerforuser)
 
 **Properties**
 
@@ -3236,7 +3236,7 @@ Windows.System.UserProfile.AdvertisingManagerForUser <br /> Windows.System.UserP
 
 **Item**
 
-[Windows.UI.Composition.AmbientLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
+[Windows.UI.Composition.AmbientLight](/uwp/api/windows.ui.composition.ambientlight)
 
 **Properties**
 
@@ -3246,7 +3246,7 @@ Windows.UI.Composition.AmbientLight <br /> Windows.UI.Composition.AmbientLight.C
 
 **Item**
 
-[Windows.UI.Composition.AnimationDirection](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationdirection)
+[Windows.UI.Composition.AnimationDirection](/uwp/api/windows.ui.composition.animationdirection)
 
 **Properties**
 
@@ -3256,7 +3256,7 @@ Windows.UI.Composition.AnimationDirection <br /> Windows.UI.Composition.Animatio
 
 **Item**
 
-[Windows.UI.Composition.CompositionAnimationGroup](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimationgroup)
+[Windows.UI.Composition.CompositionAnimationGroup](/uwp/api/windows.ui.composition.compositionanimationgroup)
 
 **Properties**
 
@@ -3266,7 +3266,7 @@ Windows.UI.Composition.CompositionAnimationGroup <br /> Windows.UI.Composition.C
 
 **Item**
 
-[Windows.UI.Composition.CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionbackdropbrush)
+[Windows.UI.Composition.CompositionBackdropBrush](/uwp/api/windows.ui.composition.compositionbackdropbrush)
 
 **Properties**
 
@@ -3276,7 +3276,7 @@ Windows.UI.Composition.CompositionBackdropBrush
 
 **Item**
 
-[Windows.UI.Composition.CompositionLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlight)
+[Windows.UI.Composition.CompositionLight](/uwp/api/windows.ui.composition.compositionlight)
 
 **Properties**
 
@@ -3286,7 +3286,7 @@ Windows.UI.Composition.CompositionLight <br /> Windows.UI.Composition.Compositio
 
 **Item**
 
-[Windows.UI.Composition.CompositionMaskBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionmaskbrush)
+[Windows.UI.Composition.CompositionMaskBrush](/uwp/api/windows.ui.composition.compositionmaskbrush)
 
 **Properties**
 
@@ -3296,7 +3296,7 @@ Windows.UI.Composition.CompositionMaskBrush <br /> Windows.UI.Composition.Compos
 
 **Item**
 
-[Windows.UI.Composition.CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionninegridbrush)
+[Windows.UI.Composition.CompositionNineGridBrush](/uwp/api/windows.ui.composition.compositionninegridbrush)
 
 **Properties**
 
@@ -3306,7 +3306,7 @@ Windows.UI.Composition.CompositionNineGridBrush <br /> Windows.UI.Composition.Co
 
 **Item**
 
-[Windows.UI.Composition.CompositionShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionshadow)
+[Windows.UI.Composition.CompositionShadow](/uwp/api/windows.ui.composition.compositionshadow)
 
 **Properties**
 
@@ -3316,7 +3316,7 @@ Windows.UI.Composition.CompositionShadow
 
 **Item**
 
-[Windows.UI.Composition.DistantLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.distantlight)
+[Windows.UI.Composition.DistantLight](/uwp/api/windows.ui.composition.distantlight)
 
 **Properties**
 
@@ -3326,7 +3326,7 @@ Windows.UI.Composition.DistantLight <br /> Windows.UI.Composition.DistantLight.C
 
 **Item**
 
-[Windows.UI.Composition.DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)
+[Windows.UI.Composition.DropShadow](/uwp/api/windows.ui.composition.dropshadow)
 
 **Properties**
 
@@ -3336,7 +3336,7 @@ Windows.UI.Composition.DropShadow <br /> Windows.UI.Composition.DropShadow.BlurR
 
 **Item**
 
-[Windows.UI.Composition.ICompositionAnimationBase](https://docs.microsoft.com/uwp/api/windows.ui.composition.icompositionanimationbase)
+[Windows.UI.Composition.ICompositionAnimationBase](/uwp/api/windows.ui.composition.icompositionanimationbase)
 
 **Properties**
 
@@ -3346,7 +3346,7 @@ Windows.UI.Composition.ICompositionAnimationBase
 
 **Item**
 
-[Windows.UI.Composition.ImplicitAnimationCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.implicitanimationcollection)
+[Windows.UI.Composition.ImplicitAnimationCollection](/uwp/api/windows.ui.composition.implicitanimationcollection)
 
 **Properties**
 
@@ -3356,7 +3356,7 @@ Windows.UI.Composition.ImplicitAnimationCollection <br /> Windows.UI.Composition
 
 **Item**
 
-[Windows.UI.Composition.LayerVisual](https://docs.microsoft.com/uwp/api/windows.ui.composition.layervisual)
+[Windows.UI.Composition.LayerVisual](/uwp/api/windows.ui.composition.layervisual)
 
 **Properties**
 
@@ -3366,7 +3366,7 @@ Windows.UI.Composition.LayerVisual <br /> Windows.UI.Composition.LayerVisual.Eff
 
 **Item**
 
-[Windows.UI.Composition.PointLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.pointlight)
+[Windows.UI.Composition.PointLight](/uwp/api/windows.ui.composition.pointlight)
 
 **Properties**
 
@@ -3376,7 +3376,7 @@ Windows.UI.Composition.PointLight <br /> Windows.UI.Composition.PointLight.Color
 
 **Item**
 
-[Windows.UI.Composition.SpotLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
+[Windows.UI.Composition.SpotLight](/uwp/api/windows.ui.composition.spotlight)
 
 **Properties**
 
@@ -3386,7 +3386,7 @@ Windows.UI.Composition.SpotLight <br /> Windows.UI.Composition.SpotLight.Constan
 
 **Item**
 
-[Windows.UI.Composition.StepEasingFunction](https://docs.microsoft.com/uwp/api/windows.ui.composition.stepeasingfunction)
+[Windows.UI.Composition.StepEasingFunction](/uwp/api/windows.ui.composition.stepeasingfunction)
 
 **Properties**
 
@@ -3396,7 +3396,7 @@ Windows.UI.Composition.StepEasingFunction <br /> Windows.UI.Composition.StepEasi
 
 **Item**
 
-[Windows.UI.Composition.VisualUnorderedCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualunorderedcollection)
+[Windows.UI.Composition.VisualUnorderedCollection](/uwp/api/windows.ui.composition.visualunorderedcollection)
 
 **Properties**
 
@@ -3406,7 +3406,7 @@ Windows.UI.Composition.VisualUnorderedCollection <br /> Windows.UI.Composition.V
 
 **Item**
 
-[Windows.UI.Composition.Effects.SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
+[Windows.UI.Composition.Effects.SceneLightingEffect](/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 
 **Properties**
 
@@ -3416,7 +3416,7 @@ Windows.UI.Composition.Effects.SceneLightingEffect <br /> Windows.UI.Composition
 
 **Item**
 
-[Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.compositioninteractionsourcecollection)
+[Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection](/uwp/api/windows.ui.composition.interactions.compositioninteractionsourcecollection)
 
 **Properties**
 
@@ -3426,7 +3426,7 @@ Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection <br /
 
 **Item**
 
-[Windows.UI.Composition.Interactions.ICompositionInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.icompositioninteractionsource)
+[Windows.UI.Composition.Interactions.ICompositionInteractionSource](/uwp/api/windows.ui.composition.interactions.icompositioninteractionsource)
 
 **Properties**
 
@@ -3436,7 +3436,7 @@ Windows.UI.Composition.Interactions.ICompositionInteractionSource
 
 **Item**
 
-[Windows.UI.Composition.Interactions.IInteractionTrackerOwner](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner)
+[Windows.UI.Composition.Interactions.IInteractionTrackerOwner](/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner)
 
 **Properties**
 
@@ -3446,7 +3446,7 @@ Windows.UI.Composition.Interactions.IInteractionTrackerOwner <br /> Windows.UI.C
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionChainingMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionchainingmode)
+[Windows.UI.Composition.Interactions.InteractionChainingMode](/uwp/api/windows.ui.composition.interactions.interactionchainingmode)
 
 **Properties**
 
@@ -3456,7 +3456,7 @@ Windows.UI.Composition.Interactions.InteractionChainingMode <br /> Windows.UI.Co
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionSourceMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourcemode)
+[Windows.UI.Composition.Interactions.InteractionSourceMode](/uwp/api/windows.ui.composition.interactions.interactionsourcemode)
 
 **Properties**
 
@@ -3466,7 +3466,7 @@ Windows.UI.Composition.Interactions.InteractionSourceMode <br /> Windows.UI.Comp
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
+[Windows.UI.Composition.Interactions.InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker)
 
 **Properties**
 
@@ -3476,7 +3476,7 @@ Windows.UI.Composition.Interactions.InteractionTracker <br /> Windows.UI.Composi
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackercustomanimationstateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackercustomanimationstateenteredargs)
 
 **Properties**
 
@@ -3486,7 +3486,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEntere
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackeridlestateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackeridlestateenteredargs)
 
 **Properties**
 
@@ -3496,7 +3496,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs <br /
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamodifier)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier](/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamodifier)
 
 **Properties**
 
@@ -3506,7 +3506,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamotion)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion](/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiamotion)
 
 **Properties**
 
@@ -3516,7 +3516,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion <br /> Windo
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiarestingvalue)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue](/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiarestingvalue)
 
 **Properties**
 
@@ -3526,7 +3526,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue <br />
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
 
 **Properties**
 
@@ -3536,7 +3536,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs <b
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinteractingstateenteredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackerinteractingstateenteredargs)
 
 **Properties**
 
@@ -3546,7 +3546,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArg
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerrequestignoredargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackerrequestignoredargs)
 
 **Properties**
 
@@ -3556,7 +3556,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs <br /> 
 
 **Item**
 
-[Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackervalueschangedargs)
+[Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs](/uwp/api/windows.ui.composition.interactions.interactiontrackervalueschangedargs)
 
 **Properties**
 
@@ -3566,7 +3566,7 @@ Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs <br /> W
 
 **Item**
 
-[Windows.UI.Composition.Interactions.VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource)
+[Windows.UI.Composition.Interactions.VisualInteractionSource](/uwp/api/windows.ui.composition.interactions.visualinteractionsource)
 
 **Properties**
 
@@ -3576,7 +3576,7 @@ Windows.UI.Composition.Interactions.VisualInteractionSource <br /> Windows.UI.Co
 
 **Item**
 
-[Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsourceredirectionmode)
+[Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode](/uwp/api/windows.ui.composition.interactions.visualinteractionsourceredirectionmode)
 
 **Properties**
 
@@ -3586,7 +3586,7 @@ Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode <br /
 
 **Item**
 
-[Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.core.closestinteractiveboundsrequestedeventargs)
+[Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs](/uwp/api/windows.ui.core.closestinteractiveboundsrequestedeventargs)
 
 **Properties**
 
@@ -3596,7 +3596,7 @@ Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs <br /> Windows.UI.Cor
 
 **Item**
 
-[Windows.UI.Input.RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)
+[Windows.UI.Input.RadialController](/uwp/api/windows.ui.input.radialcontroller)
 
 **Properties**
 
@@ -3606,7 +3606,7 @@ Windows.UI.Input.RadialController <br /> Windows.UI.Input.RadialController.Menu 
 
 **Item**
 
-[Windows.UI.Input.RadialControllerButtonClickedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs)
+[Windows.UI.Input.RadialControllerButtonClickedEventArgs](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs)
 
 **Properties**
 
@@ -3616,7 +3616,7 @@ Windows.UI.Input.RadialControllerButtonClickedEventArgs <br /> Windows.UI.Input.
 
 **Item**
 
-[Windows.UI.Input.RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)
+[Windows.UI.Input.RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration)
 
 **Properties**
 
@@ -3626,7 +3626,7 @@ Windows.UI.Input.RadialControllerConfiguration <br /> Windows.UI.Input.RadialCon
 
 **Item**
 
-[Windows.UI.Input.RadialControllerControlAcquiredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollercontrolacquiredeventargs)
+[Windows.UI.Input.RadialControllerControlAcquiredEventArgs](/uwp/api/windows.ui.input.radialcontrollercontrolacquiredeventargs)
 
 **Properties**
 
@@ -3636,7 +3636,7 @@ Windows.UI.Input.RadialControllerControlAcquiredEventArgs <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.RadialControllerMenu](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenu)
+[Windows.UI.Input.RadialControllerMenu](/uwp/api/windows.ui.input.radialcontrollermenu)
 
 **Properties**
 
@@ -3646,7 +3646,7 @@ Windows.UI.Input.RadialControllerMenu <br /> Windows.UI.Input.RadialControllerMe
 
 **Item**
 
-[Windows.UI.Input.RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)
+[Windows.UI.Input.RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem)
 
 **Properties**
 
@@ -3656,7 +3656,7 @@ Windows.UI.Input.RadialControllerMenuItem <br /> Windows.UI.Input.RadialControll
 
 **Item**
 
-[Windows.UI.Input.RadialControllerMenuKnownIcon](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuknownicon)
+[Windows.UI.Input.RadialControllerMenuKnownIcon](/uwp/api/windows.ui.input.radialcontrollermenuknownicon)
 
 **Properties**
 
@@ -3666,7 +3666,7 @@ Windows.UI.Input.RadialControllerMenuKnownIcon <br /> Windows.UI.Input.RadialCon
 
 **Item**
 
-[Windows.UI.Input.RadialControllerRotationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs)
+[Windows.UI.Input.RadialControllerRotationChangedEventArgs](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs)
 
 **Properties**
 
@@ -3676,7 +3676,7 @@ Windows.UI.Input.RadialControllerRotationChangedEventArgs <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.RadialControllerScreenContact](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact)
+[Windows.UI.Input.RadialControllerScreenContact](/uwp/api/windows.ui.input.radialcontrollerscreencontact)
 
 **Properties**
 
@@ -3686,7 +3686,7 @@ Windows.UI.Input.RadialControllerScreenContact <br /> Windows.UI.Input.RadialCon
 
 **Item**
 
-[Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactcontinuedeventargs)
+[Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs](/uwp/api/windows.ui.input.radialcontrollerscreencontactcontinuedeventargs)
 
 **Properties**
 
@@ -3696,7 +3696,7 @@ Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs <br /> Windows.
 
 **Item**
 
-[Windows.UI.Input.RadialControllerScreenContactStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs)
+[Windows.UI.Input.RadialControllerScreenContactStartedEventArgs](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs)
 
 **Properties**
 
@@ -3706,7 +3706,7 @@ Windows.UI.Input.RadialControllerScreenContactStartedEventArgs <br /> Windows.UI
 
 **Item**
 
-[Windows.UI.Input.RadialControllerSystemMenuItemKind](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollersystemmenuitemkind)
+[Windows.UI.Input.RadialControllerSystemMenuItemKind](/uwp/api/windows.ui.input.radialcontrollersystemmenuitemkind)
 
 **Properties**
 
@@ -3716,7 +3716,7 @@ Windows.UI.Input.RadialControllerSystemMenuItemKind <br /> Windows.UI.Input.Radi
 
 **Item**
 
-[Windows.UI.Input.Inking.IInkPresenterRulerFactory](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkpresenterrulerfactory)
+[Windows.UI.Input.Inking.IInkPresenterRulerFactory](/uwp/api/windows.ui.input.inking.iinkpresenterrulerfactory)
 
 **Properties**
 
@@ -3726,7 +3726,7 @@ Windows.UI.Input.Inking.IInkPresenterRulerFactory <br /> Windows.UI.Input.Inking
 
 **Item**
 
-[Windows.UI.Input.Inking.IInkPresenterStencil](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkpresenterstencil)
+[Windows.UI.Input.Inking.IInkPresenterStencil](/uwp/api/windows.ui.input.inking.iinkpresenterstencil)
 
 **Properties**
 
@@ -3736,7 +3736,7 @@ Windows.UI.Input.Inking.IInkPresenterStencil <br /> Windows.UI.Input.Inking.IInk
 
 **Item**
 
-[Windows.UI.Input.Inking.InkDrawingAttributesKind](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributeskind)
+[Windows.UI.Input.Inking.InkDrawingAttributesKind](/uwp/api/windows.ui.input.inking.inkdrawingattributeskind)
 
 **Properties**
 
@@ -3746,7 +3746,7 @@ Windows.UI.Input.Inking.InkDrawingAttributesKind <br /> Windows.UI.Input.Inking.
 
 **Item**
 
-[Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributespencilproperties)
+[Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](/uwp/api/windows.ui.input.inking.inkdrawingattributespencilproperties)
 
 **Properties**
 
@@ -3756,7 +3756,7 @@ Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties <br /> Windows.UI.I
 
 **Item**
 
-[Windows.UI.Input.Inking.InkPresenterRuler](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenterruler)
+[Windows.UI.Input.Inking.InkPresenterRuler](/uwp/api/windows.ui.input.inking.inkpresenterruler)
 
 **Properties**
 
@@ -3766,7 +3766,7 @@ Windows.UI.Input.Inking.InkPresenterRuler <br /> Windows.UI.Input.Inking.InkPres
 
 **Item**
 
-[Windows.UI.Input.Inking.InkPresenterStencilKind](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenterstencilkind)
+[Windows.UI.Input.Inking.InkPresenterStencilKind](/uwp/api/windows.ui.input.inking.inkpresenterstencilkind)
 
 **Properties**
 
@@ -3776,7 +3776,7 @@ Windows.UI.Input.Inking.InkPresenterStencilKind <br /> Windows.UI.Input.Inking.I
 
 **Item**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokedisposition)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition](/uwp/api/windows.ui.input.inking.core.corewetstrokedisposition)
 
 **Properties**
 
@@ -3786,7 +3786,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition <br /> Windows.UI.Input.In
 
 **Item**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokeupdateeventargs)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs](/uwp/api/windows.ui.input.inking.core.corewetstrokeupdateeventargs)
 
 **Properties**
 
@@ -3796,7 +3796,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.corewetstrokeupdatesource)
+[Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource](/uwp/api/windows.ui.input.inking.core.corewetstrokeupdatesource)
 
 **Properties**
 
@@ -3806,7 +3806,7 @@ Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource <br /> Windows.UI.Input.I
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputbuttonchangekind)
+[Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind](/uwp/api/windows.ui.input.preview.injection.injectedinputbuttonchangekind)
 
 **Properties**
 
@@ -3816,7 +3816,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputButtonChangeKind <br /> Windows.
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputkeyboardinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputkeyboardinfo)
 
 **Properties**
 
@@ -3826,7 +3826,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo <br /> Windows.UI.I
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputkeyoptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions](/uwp/api/windows.ui.input.preview.injection.injectedinputkeyoptions)
 
 **Properties**
 
@@ -3836,7 +3836,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions <br /> Windows.UI.Inp
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputmouseinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputmouseinfo)
 
 **Properties**
 
@@ -3846,7 +3846,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputmouseoptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions](/uwp/api/windows.ui.input.preview.injection.injectedinputmouseoptions)
 
 **Properties**
 
@@ -3856,7 +3856,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions <br /> Windows.UI.I
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenButtons](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpenbuttons)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenButtons](/uwp/api/windows.ui.input.preview.injection.injectedinputpenbuttons)
 
 **Properties**
 
@@ -3866,7 +3866,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenButtons <br /> Windows.UI.Inp
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpeninfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputpeninfo)
 
 **Properties**
 
@@ -3876,7 +3876,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenInfo <br /> Windows.UI.Input.
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPenParameters](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpenparameters)
+[Windows.UI.Input.Preview.Injection.InjectedInputPenParameters](/uwp/api/windows.ui.input.preview.injection.injectedinputpenparameters)
 
 **Properties**
 
@@ -3886,7 +3886,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPenParameters <br /> Windows.UI.
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPoint](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpoint)
+[Windows.UI.Input.Preview.Injection.InjectedInputPoint](/uwp/api/windows.ui.input.preview.injection.injectedinputpoint)
 
 **Properties**
 
@@ -3896,7 +3896,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPoint <br /> Windows.UI.Input.Pr
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpointerinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputpointerinfo)
 
 **Properties**
 
@@ -3906,7 +3906,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo <br /> Windows.UI.In
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputpointeroptions)
+[Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions](/uwp/api/windows.ui.input.preview.injection.injectedinputpointeroptions)
 
 **Properties**
 
@@ -3916,7 +3916,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions <br /> Windows.UI
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputRectangle](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputrectangle)
+[Windows.UI.Input.Preview.Injection.InjectedInputRectangle](/uwp/api/windows.ui.input.preview.injection.injectedinputrectangle)
 
 **Properties**
 
@@ -3926,7 +3926,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputRectangle <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputShortcut](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputshortcut)
+[Windows.UI.Input.Preview.Injection.InjectedInputShortcut](/uwp/api/windows.ui.input.preview.injection.injectedinputshortcut)
 
 **Properties**
 
@@ -3936,7 +3936,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputShortcut <br /> Windows.UI.Input
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo)
+[Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo)
 
 **Properties**
 
@@ -3946,7 +3946,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo <br /> Windows.UI.Inpu
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchparameters)
+[Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters](/uwp/api/windows.ui.input.preview.injection.injectedinputtouchparameters)
 
 **Properties**
 
@@ -3956,7 +3956,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters <br /> Windows.U
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode)
+[Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode](/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode)
 
 **Properties**
 
@@ -3966,7 +3966,7 @@ Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode <br /> Windows
 
 **Item**
 
-[Windows.UI.Input.Preview.Injection.InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector)
+[Windows.UI.Input.Preview.Injection.InputInjector](/uwp/api/windows.ui.input.preview.injection.inputinjector)
 
 **Properties**
 
@@ -3976,7 +3976,7 @@ Windows.UI.Input.Preview.Injection.InputInjector <br /> Windows.UI.Input.Preview
 
 **Item**
 
-[Windows.UI.Notifications.AdaptiveNotificationContentKind](https://docs.microsoft.com/uwp/api/windows.ui.notifications.adaptivenotificationcontentkind)
+[Windows.UI.Notifications.AdaptiveNotificationContentKind](/uwp/api/windows.ui.notifications.adaptivenotificationcontentkind)
 
 **Properties**
 
@@ -3986,7 +3986,7 @@ Windows.UI.Notifications.AdaptiveNotificationContentKind <br /> Windows.UI.Notif
 
 **Item**
 
-[Windows.UI.Notifications.AdaptiveNotificationText](https://docs.microsoft.com/uwp/api/windows.ui.notifications.adaptivenotificationtext)
+[Windows.UI.Notifications.AdaptiveNotificationText](/uwp/api/windows.ui.notifications.adaptivenotificationtext)
 
 **Properties**
 
@@ -3996,7 +3996,7 @@ Windows.UI.Notifications.AdaptiveNotificationText <br /> Windows.UI.Notification
 
 **Item**
 
-[Windows.UI.Notifications.BadgeUpdateManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.badgeupdatemanagerforuser)
+[Windows.UI.Notifications.BadgeUpdateManagerForUser](/uwp/api/windows.ui.notifications.badgeupdatemanagerforuser)
 
 **Properties**
 
@@ -4006,7 +4006,7 @@ Windows.UI.Notifications.BadgeUpdateManagerForUser <br /> Windows.UI.Notificatio
 
 **Item**
 
-[Windows.UI.Notifications.IAdaptiveNotificationContent](https://docs.microsoft.com/uwp/api/windows.ui.notifications.iadaptivenotificationcontent)
+[Windows.UI.Notifications.IAdaptiveNotificationContent](/uwp/api/windows.ui.notifications.iadaptivenotificationcontent)
 
 **Properties**
 
@@ -4016,7 +4016,7 @@ Windows.UI.Notifications.IAdaptiveNotificationContent <br /> Windows.UI.Notifica
 
 **Item**
 
-[Windows.UI.Notifications.KnownAdaptiveNotificationHints](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownadaptivenotificationhints)
+[Windows.UI.Notifications.KnownAdaptiveNotificationHints](/uwp/api/windows.ui.notifications.knownadaptivenotificationhints)
 
 **Properties**
 
@@ -4026,7 +4026,7 @@ Windows.UI.Notifications.KnownAdaptiveNotificationHints <br /> Windows.UI.Notifi
 
 **Item**
 
-[Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownadaptivenotificationtextstyles)
+[Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles](/uwp/api/windows.ui.notifications.knownadaptivenotificationtextstyles)
 
 **Properties**
 
@@ -4036,7 +4036,7 @@ Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles <br /> Windows.UI.N
 
 **Item**
 
-[Windows.UI.Notifications.KnownNotificationBindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.knownnotificationbindings)
+[Windows.UI.Notifications.KnownNotificationBindings](/uwp/api/windows.ui.notifications.knownnotificationbindings)
 
 **Properties**
 
@@ -4046,7 +4046,7 @@ Windows.UI.Notifications.KnownNotificationBindings <br /> Windows.UI.Notificatio
 
 **Item**
 
-[Windows.UI.Notifications.Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification)
+[Windows.UI.Notifications.Notification](/uwp/api/windows.ui.notifications.notification)
 
 **Properties**
 
@@ -4056,7 +4056,7 @@ Windows.UI.Notifications.Notification <br /> Windows.UI.Notifications.Notificati
 
 **Item**
 
-[Windows.UI.Notifications.NotificationBinding](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationbinding)
+[Windows.UI.Notifications.NotificationBinding](/uwp/api/windows.ui.notifications.notificationbinding)
 
 **Properties**
 
@@ -4066,7 +4066,7 @@ Windows.UI.Notifications.NotificationBinding <br /> Windows.UI.Notifications.Not
 
 **Item**
 
-[Windows.UI.Notifications.NotificationKinds](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationkinds)
+[Windows.UI.Notifications.NotificationKinds](/uwp/api/windows.ui.notifications.notificationkinds)
 
 **Properties**
 
@@ -4076,7 +4076,7 @@ Windows.UI.Notifications.NotificationKinds <br /> Windows.UI.Notifications.Notif
 
 **Item**
 
-[Windows.UI.Notifications.NotificationMirroring](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationmirroring)
+[Windows.UI.Notifications.NotificationMirroring](/uwp/api/windows.ui.notifications.notificationmirroring)
 
 **Properties**
 
@@ -4086,7 +4086,7 @@ Windows.UI.Notifications.NotificationMirroring <br /> Windows.UI.Notifications.N
 
 **Item**
 
-[Windows.UI.Notifications.NotificationVisual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual)
+[Windows.UI.Notifications.NotificationVisual](/uwp/api/windows.ui.notifications.notificationvisual)
 
 **Properties**
 
@@ -4096,7 +4096,7 @@ Windows.UI.Notifications.NotificationVisual <br /> Windows.UI.Notifications.Noti
 
 **Item**
 
-[Windows.UI.Notifications.ShownTileNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.showntilenotification)
+[Windows.UI.Notifications.ShownTileNotification](/uwp/api/windows.ui.notifications.showntilenotification)
 
 **Properties**
 
@@ -4106,7 +4106,7 @@ Windows.UI.Notifications.ShownTileNotification <br /> Windows.UI.Notifications.S
 
 **Item**
 
-[Windows.UI.Notifications.TileUpdateManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.tileupdatemanagerforuser)
+[Windows.UI.Notifications.TileUpdateManagerForUser](/uwp/api/windows.ui.notifications.tileupdatemanagerforuser)
 
 **Properties**
 
@@ -4116,7 +4116,7 @@ Windows.UI.Notifications.TileUpdateManagerForUser <br /> Windows.UI.Notification
 
 **Item**
 
-[Windows.UI.Notifications.ToastNotificationManagerForUser](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotificationmanagerforuser)
+[Windows.UI.Notifications.ToastNotificationManagerForUser](/uwp/api/windows.ui.notifications.toastnotificationmanagerforuser)
 
 **Properties**
 
@@ -4126,7 +4126,7 @@ Windows.UI.Notifications.ToastNotificationManagerForUser <br /> Windows.UI.Notif
 
 **Item**
 
-[Windows.UI.Notifications.UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification)
+[Windows.UI.Notifications.UserNotification](/uwp/api/windows.ui.notifications.usernotification)
 
 **Properties**
 
@@ -4136,7 +4136,7 @@ Windows.UI.Notifications.UserNotification <br /> Windows.UI.Notifications.UserNo
 
 **Item**
 
-[Windows.UI.Notifications.UserNotificationChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotificationchangedeventargs)
+[Windows.UI.Notifications.UserNotificationChangedEventArgs](/uwp/api/windows.ui.notifications.usernotificationchangedeventargs)
 
 **Properties**
 
@@ -4146,7 +4146,7 @@ Windows.UI.Notifications.UserNotificationChangedEventArgs <br /> Windows.UI.Noti
 
 **Item**
 
-[Windows.UI.Notifications.UserNotificationChangedKind](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotificationchangedkind)
+[Windows.UI.Notifications.UserNotificationChangedKind](/uwp/api/windows.ui.notifications.usernotificationchangedkind)
 
 **Properties**
 
@@ -4156,7 +4156,7 @@ Windows.UI.Notifications.UserNotificationChangedKind <br /> Windows.UI.Notificat
 
 **Item**
 
-[Windows.UI.Notifications.Management.UserNotificationListener](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener)
+[Windows.UI.Notifications.Management.UserNotificationListener](/uwp/api/windows.ui.notifications.management.usernotificationlistener)
 
 **Properties**
 
@@ -4166,7 +4166,7 @@ Windows.UI.Notifications.Management.UserNotificationListener <br /> Windows.UI.N
 
 **Item**
 
-[Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlisteneraccessstatus)
+[Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus](/uwp/api/windows.ui.notifications.management.usernotificationlisteneraccessstatus)
 
 **Properties**
 
@@ -4176,7 +4176,7 @@ Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus <br /> 
 
 **Item**
 
-[Windows.UI.WebUI.EnteredBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.enteredbackgroundeventargs)
+[Windows.UI.WebUI.EnteredBackgroundEventArgs](/uwp/api/windows.ui.webui.enteredbackgroundeventargs)
 
 **Properties**
 
@@ -4186,7 +4186,7 @@ Windows.UI.WebUI.EnteredBackgroundEventArgs <br /> Windows.UI.WebUI.EnteredBackg
 
 **Item**
 
-[Windows.UI.WebUI.EnteredBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.enteredbackgroundeventhandler)
+[Windows.UI.WebUI.EnteredBackgroundEventHandler](/uwp/api/windows.ui.webui.enteredbackgroundeventhandler)
 
 **Properties**
 
@@ -4196,7 +4196,7 @@ Windows.UI.WebUI.EnteredBackgroundEventHandler <br /> Windows.UI.WebUI.EnteredBa
 
 **Item**
 
-[Windows.UI.WebUI.LeavingBackgroundEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.leavingbackgroundeventargs)
+[Windows.UI.WebUI.LeavingBackgroundEventArgs](/uwp/api/windows.ui.webui.leavingbackgroundeventargs)
 
 **Properties**
 
@@ -4206,7 +4206,7 @@ Windows.UI.WebUI.LeavingBackgroundEventArgs <br /> Windows.UI.WebUI.LeavingBackg
 
 **Item**
 
-[Windows.UI.WebUI.LeavingBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.leavingbackgroundeventhandler)
+[Windows.UI.WebUI.LeavingBackgroundEventHandler](/uwp/api/windows.ui.webui.leavingbackgroundeventhandler)
 
 **Properties**
 
@@ -4216,7 +4216,7 @@ Windows.UI.WebUI.LeavingBackgroundEventHandler <br /> Windows.UI.WebUI.LeavingBa
 
 **Item**
 
-[Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiuserdataaccountprovideractivatedeventargs)
+[Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs](/uwp/api/windows.ui.webui.webuiuserdataaccountprovideractivatedeventargs)
 
 **Properties**
 
@@ -4226,7 +4226,7 @@ Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs <br /> Windows.U
 
 **Item**
 
-[Windows.UI.Xaml.ApplicationRequiresPointerMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.applicationrequirespointermode)
+[Windows.UI.Xaml.ApplicationRequiresPointerMode](/uwp/api/windows.ui.xaml.applicationrequirespointermode)
 
 **Properties**
 
@@ -4236,7 +4236,7 @@ Windows.UI.Xaml.ApplicationRequiresPointerMode <br /> Windows.UI.Xaml.Applicatio
 
 **Item**
 
-[Windows.UI.Xaml.ElementSoundKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundkind)
+[Windows.UI.Xaml.ElementSoundKind](/uwp/api/windows.ui.xaml.elementsoundkind)
 
 **Properties**
 
@@ -4246,7 +4246,7 @@ Windows.UI.Xaml.ElementSoundKind <br /> Windows.UI.Xaml.ElementSoundKind.Focus <
 
 **Item**
 
-[Windows.UI.Xaml.ElementSoundMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundmode)
+[Windows.UI.Xaml.ElementSoundMode](/uwp/api/windows.ui.xaml.elementsoundmode)
 
 **Properties**
 
@@ -4256,7 +4256,7 @@ Windows.UI.Xaml.ElementSoundMode <br /> Windows.UI.Xaml.ElementSoundMode.Default
 
 **Item**
 
-[Windows.UI.Xaml.ElementSoundPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer)
+[Windows.UI.Xaml.ElementSoundPlayer](/uwp/api/windows.ui.xaml.elementsoundplayer)
 
 **Properties**
 
@@ -4266,7 +4266,7 @@ Windows.UI.Xaml.ElementSoundPlayer <br /> Windows.UI.Xaml.ElementSoundPlayer.Sta
 
 **Item**
 
-[Windows.UI.Xaml.ElementSoundPlayerState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayerstate)
+[Windows.UI.Xaml.ElementSoundPlayerState](/uwp/api/windows.ui.xaml.elementsoundplayerstate)
 
 **Properties**
 
@@ -4276,7 +4276,7 @@ Windows.UI.Xaml.ElementSoundPlayerState <br /> Windows.UI.Xaml.ElementSoundPlaye
 
 **Item**
 
-[Windows.UI.Xaml.EnteredBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.enteredbackgroundeventhandler)
+[Windows.UI.Xaml.EnteredBackgroundEventHandler](/uwp/api/windows.ui.xaml.enteredbackgroundeventhandler)
 
 **Properties**
 
@@ -4286,7 +4286,7 @@ Windows.UI.Xaml.EnteredBackgroundEventHandler <br /> Windows.UI.Xaml.EnteredBack
 
 **Item**
 
-[Windows.UI.Xaml.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)
+[Windows.UI.Xaml.FocusVisualKind](/uwp/api/windows.ui.xaml.focusvisualkind)
 
 **Properties**
 
@@ -4296,7 +4296,7 @@ Windows.UI.Xaml.FocusVisualKind <br /> Windows.UI.Xaml.FocusVisualKind.DottedLin
 
 **Item**
 
-[Windows.UI.Xaml.LeavingBackgroundEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.leavingbackgroundeventhandler)
+[Windows.UI.Xaml.LeavingBackgroundEventHandler](/uwp/api/windows.ui.xaml.leavingbackgroundeventhandler)
 
 **Properties**
 
@@ -4306,7 +4306,7 @@ Windows.UI.Xaml.LeavingBackgroundEventHandler <br /> Windows.UI.Xaml.LeavingBack
 
 **Item**
 
-[Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.inktoolbarautomationpeer)
+[Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer](/uwp/api/windows.ui.xaml.automation.peers.inktoolbarautomationpeer)
 
 **Properties**
 
@@ -4316,7 +4316,7 @@ Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer
 
 **Item**
 
-[Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.mediaplayerelementautomationpeer)
+[Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer](/uwp/api/windows.ui.xaml.automation.peers.mediaplayerelementautomationpeer)
 
 **Properties**
 
@@ -4326,7 +4326,7 @@ Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer <br /> Windows
 
 **Item**
 
-[Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbardefaultlabelposition)
+[Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbardefaultlabelposition)
 
 **Properties**
 
@@ -4336,7 +4336,7 @@ Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition <br /> Windows.UI.Xaml.C
 
 **Item**
 
-[Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbardynamicoverflowaction)
+[Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction](/uwp/api/windows.ui.xaml.controls.commandbardynamicoverflowaction)
 
 **Properties**
 
@@ -4346,7 +4346,7 @@ Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction <br /> Windows.UI.Xaml.
 
 **Item**
 
-[Windows.UI.Xaml.Controls.CommandBarLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbarlabelposition)
+[Windows.UI.Xaml.Controls.CommandBarLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbarlabelposition)
 
 **Properties**
 
@@ -4356,7 +4356,7 @@ Windows.UI.Xaml.Controls.CommandBarLabelPosition <br /> Windows.UI.Xaml.Controls
 
 **Item**
 
-[Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbaroverflowbuttonvisibility)
+[Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility](/uwp/api/windows.ui.xaml.controls.commandbaroverflowbuttonvisibility)
 
 **Properties**
 
@@ -4366,7 +4366,7 @@ Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility <br /> Windows.UI.Xa
 
 **Item**
 
-[Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dynamicoverflowitemschangingeventargs)
+[Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs](/uwp/api/windows.ui.xaml.controls.dynamicoverflowitemschangingeventargs)
 
 **Properties**
 
@@ -4376,7 +4376,7 @@ Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs <br /> Windows.UI
 
 **Item**
 
-[Windows.UI.Xaml.Controls.FocusDisengagedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.focusdisengagedeventargs)
+[Windows.UI.Xaml.Controls.FocusDisengagedEventArgs](/uwp/api/windows.ui.xaml.controls.focusdisengagedeventargs)
 
 **Properties**
 
@@ -4386,7 +4386,7 @@ Windows.UI.Xaml.Controls.FocusDisengagedEventArgs
 
 **Item**
 
-[Windows.UI.Xaml.Controls.FocusEngagedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.focusengagedeventargs)
+[Windows.UI.Xaml.Controls.FocusEngagedEventArgs](/uwp/api/windows.ui.xaml.controls.focusengagedeventargs)
 
 **Properties**
 
@@ -4396,7 +4396,7 @@ Windows.UI.Xaml.Controls.FocusEngagedEventArgs
 
 **Item**
 
-[Windows.UI.Xaml.Controls.ICommandBarElement2](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.icommandbarelement2)
+[Windows.UI.Xaml.Controls.ICommandBarElement2](/uwp/api/windows.ui.xaml.controls.icommandbarelement2)
 
 **Properties**
 
@@ -4406,7 +4406,7 @@ Windows.UI.Xaml.Controls.ICommandBarElement2 <br /> Windows.UI.Xaml.Controls.ICo
 
 **Item**
 
-[Windows.UI.Xaml.Controls.IInsertionPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iinsertionpanel)
+[Windows.UI.Xaml.Controls.IInsertionPanel](/uwp/api/windows.ui.xaml.controls.iinsertionpanel)
 
 **Properties**
 
@@ -4416,7 +4416,7 @@ Windows.UI.Xaml.Controls.IInsertionPanel <br /> Windows.UI.Xaml.Controls.IInsert
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)
+[Windows.UI.Xaml.Controls.InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)
 
 **Properties**
 
@@ -4426,7 +4426,7 @@ Windows.UI.Xaml.Controls.InkToolbar <br /> Windows.UI.Xaml.Controls.InkToolbar.#
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton](/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
 
 **Properties**
 
@@ -4436,7 +4436,7 @@ Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton <br /> Windows.UI.Xaml.Con
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomPen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustompen)
+[Windows.UI.Xaml.Controls.InkToolbarCustomPen](/uwp/api/windows.ui.xaml.controls.inktoolbarcustompen)
 
 **Properties**
 
@@ -4446,7 +4446,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomPen <br /> Windows.UI.Xaml.Controls.Ink
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustompenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomPenButton](/uwp/api/windows.ui.xaml.controls.inktoolbarcustompenbutton)
 
 **Properties**
 
@@ -4456,7 +4456,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomPenButton <br /> Windows.UI.Xaml.Contro
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtogglebutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton](/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtogglebutton)
 
 **Properties**
 
@@ -4466,7 +4466,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton <br /> Windows.UI.Xaml.Con
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarCustomToolButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtoolbutton)
+[Windows.UI.Xaml.Controls.InkToolbarCustomToolButton](/uwp/api/windows.ui.xaml.controls.inktoolbarcustomtoolbutton)
 
 **Properties**
 
@@ -4476,7 +4476,7 @@ Windows.UI.Xaml.Controls.InkToolbarCustomToolButton <br /> Windows.UI.Xaml.Contr
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarEraserButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton)
+[Windows.UI.Xaml.Controls.InkToolbarEraserButton](/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton)
 
 **Properties**
 
@@ -4486,7 +4486,7 @@ Windows.UI.Xaml.Controls.InkToolbarEraserButton <br /> Windows.UI.Xaml.Controls.
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarHighlighterButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
+[Windows.UI.Xaml.Controls.InkToolbarHighlighterButton](/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
 
 **Properties**
 
@@ -4496,7 +4496,7 @@ Windows.UI.Xaml.Controls.InkToolbarHighlighterButton <br /> Windows.UI.Xaml.Cont
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarInitialControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarinitialcontrols)
+[Windows.UI.Xaml.Controls.InkToolbarInitialControls](/uwp/api/windows.ui.xaml.controls.inktoolbarinitialcontrols)
 
 **Properties**
 
@@ -4506,7 +4506,7 @@ Windows.UI.Xaml.Controls.InkToolbarInitialControls <br /> Windows.UI.Xaml.Contro
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton)
+[Windows.UI.Xaml.Controls.InkToolbarPenButton](/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton)
 
 **Properties**
 
@@ -4516,7 +4516,7 @@ Windows.UI.Xaml.Controls.InkToolbarPenButton <br /> Windows.UI.Xaml.Controls.Ink
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarPencilButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton)
+[Windows.UI.Xaml.Controls.InkToolbarPencilButton](/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton)
 
 **Properties**
 
@@ -4526,7 +4526,7 @@ Windows.UI.Xaml.Controls.InkToolbarPencilButton <br /> Windows.UI.Xaml.Controls.
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpenconfigurationcontrol)
+[Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl](/uwp/api/windows.ui.xaml.controls.inktoolbarpenconfigurationcontrol)
 
 **Properties**
 
@@ -4536,7 +4536,7 @@ Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl <br /> Windows.UI.Xam
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarRulerButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton)
+[Windows.UI.Xaml.Controls.InkToolbarRulerButton](/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton)
 
 **Properties**
 
@@ -4546,7 +4546,7 @@ Windows.UI.Xaml.Controls.InkToolbarRulerButton <br /> Windows.UI.Xaml.Controls.I
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarToggle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartoggle)
+[Windows.UI.Xaml.Controls.InkToolbarToggle](/uwp/api/windows.ui.xaml.controls.inktoolbartoggle)
 
 **Properties**
 
@@ -4556,7 +4556,7 @@ Windows.UI.Xaml.Controls.InkToolbarToggle <br /> Windows.UI.Xaml.Controls.InkToo
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartogglebutton)
+[Windows.UI.Xaml.Controls.InkToolbarToggleButton](/uwp/api/windows.ui.xaml.controls.inktoolbartogglebutton)
 
 **Properties**
 
@@ -4566,7 +4566,7 @@ Windows.UI.Xaml.Controls.InkToolbarToggleButton <br /> Windows.UI.Xaml.Controls.
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarTool](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartool)
+[Windows.UI.Xaml.Controls.InkToolbarTool](/uwp/api/windows.ui.xaml.controls.inktoolbartool)
 
 **Properties**
 
@@ -4576,7 +4576,7 @@ Windows.UI.Xaml.Controls.InkToolbarTool <br /> Windows.UI.Xaml.Controls.InkToolb
 
 **Item**
 
-[Windows.UI.Xaml.Controls.InkToolbarToolButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbartoolbutton)
+[Windows.UI.Xaml.Controls.InkToolbarToolButton](/uwp/api/windows.ui.xaml.controls.inktoolbartoolbutton)
 
 **Properties**
 
@@ -4586,7 +4586,7 @@ Windows.UI.Xaml.Controls.InkToolbarToolButton <br /> Windows.UI.Xaml.Controls.In
 
 **Item**
 
-[Windows.UI.Xaml.Controls.LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.lightdismissoverlaymode)
+[Windows.UI.Xaml.Controls.LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.lightdismissoverlaymode)
 
 **Properties**
 
@@ -4596,7 +4596,7 @@ Windows.UI.Xaml.Controls.LightDismissOverlayMode <br /> Windows.UI.Xaml.Controls
 
 **Item**
 
-[Windows.UI.Xaml.Controls.MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)
+[Windows.UI.Xaml.Controls.MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)
 
 **Properties**
 
@@ -4606,7 +4606,7 @@ Windows.UI.Xaml.Controls.MediaPlayerElement <br /> Windows.UI.Xaml.Controls.Medi
 
 **Item**
 
-[Windows.UI.Xaml.Controls.MediaPlayerPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerpresenter)
+[Windows.UI.Xaml.Controls.MediaPlayerPresenter](/uwp/api/windows.ui.xaml.controls.mediaplayerpresenter)
 
 **Properties**
 
@@ -4616,7 +4616,7 @@ Windows.UI.Xaml.Controls.MediaPlayerPresenter <br /> Windows.UI.Xaml.Controls.Me
 
 **Item**
 
-[Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivotheaderfocusvisualplacement)
+[Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement](/uwp/api/windows.ui.xaml.controls.pivotheaderfocusvisualplacement)
 
 **Properties**
 
@@ -4626,7 +4626,7 @@ Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement <br /> Windows.UI.Xaml.
 
 **Item**
 
-[Windows.UI.Xaml.Controls.RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer)
+[Windows.UI.Xaml.Controls.RequiresPointer](/uwp/api/windows.ui.xaml.controls.requirespointer)
 
 **Properties**
 
@@ -4636,7 +4636,7 @@ Windows.UI.Xaml.Controls.RequiresPointer <br /> Windows.UI.Xaml.Controls.Require
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapvisibleregionkind)
+[Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind](/uwp/api/windows.ui.xaml.controls.maps.mapvisibleregionkind)
 
 **Properties**
 
@@ -4646,7 +4646,7 @@ Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind <br /> Windows.UI.Xaml.Contro
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbaseclosingeventargs)
+[Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbaseclosingeventargs)
 
 **Properties**
 
@@ -4656,7 +4656,7 @@ Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs <br /> Windows.UI
 
 **Item**
 
-[Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeydisplaydismissedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs](/uwp/api/windows.ui.xaml.input.accesskeydisplaydismissedeventargs)
 
 **Properties**
 
@@ -4666,7 +4666,7 @@ Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs <br /> Windows.UI.Xaml.
 
 **Item**
 
-[Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeydisplayrequestedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs](/uwp/api/windows.ui.xaml.input.accesskeydisplayrequestedeventargs)
 
 **Properties**
 
@@ -4676,7 +4676,7 @@ Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs <br /> Windows.UI.Xaml.
 
 **Item**
 
-[Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeyinvokedeventargs)
+[Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs](/uwp/api/windows.ui.xaml.input.accesskeyinvokedeventargs)
 
 **Properties**
 
@@ -4686,7 +4686,7 @@ Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs <br /> Windows.UI.Xaml.Input.Acc
 
 **Item**
 
-[Windows.UI.Xaml.Input.AccessKeyManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeymanager)
+[Windows.UI.Xaml.Input.AccessKeyManager](/uwp/api/windows.ui.xaml.input.accesskeymanager)
 
 **Properties**
 
@@ -4696,7 +4696,7 @@ Windows.UI.Xaml.Input.AccessKeyManager <br /> Windows.UI.Xaml.Input.AccessKeyMan
 
 **Item**
 
-[Windows.UI.Xaml.Input.ContextRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.contextrequestedeventargs)
+[Windows.UI.Xaml.Input.ContextRequestedEventArgs](/uwp/api/windows.ui.xaml.input.contextrequestedeventargs)
 
 **Properties**
 
@@ -4706,7 +4706,7 @@ Windows.UI.Xaml.Input.ContextRequestedEventArgs <br /> Windows.UI.Xaml.Input.Con
 
 **Item**
 
-[Windows.UI.Xaml.Media.BrushCollection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brushcollection)
+[Windows.UI.Xaml.Media.BrushCollection](/uwp/api/windows.ui.xaml.media.brushcollection)
 
 **Properties**
 
@@ -4716,7 +4716,7 @@ Windows.UI.Xaml.Media.BrushCollection <br /> Windows.UI.Xaml.Media.BrushCollecti
 
 **Item**
 
-[Windows.UI.Xaml.Media.FastPlayFallbackBehaviour](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.fastplayfallbackbehaviour)
+[Windows.UI.Xaml.Media.FastPlayFallbackBehaviour](/uwp/api/windows.ui.xaml.media.fastplayfallbackbehaviour)
 
 **Properties**
 
@@ -4726,7 +4726,7 @@ Windows.UI.Xaml.Media.FastPlayFallbackBehaviour <br /> Windows.UI.Xaml.Media.Fas
 
 **Item**
 
-[Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs)
+[Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs](/uwp/api/windows.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs)
 
 **Properties**
 
@@ -4736,7 +4736,7 @@ Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs <br /> W
 
 **Item**
 
-[Windows.UI.Xaml.Media.Animation.ConnectedAnimation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
+[Windows.UI.Xaml.Media.Animation.ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
 **Properties**
 
@@ -4746,7 +4746,7 @@ Windows.UI.Xaml.Media.Animation.ConnectedAnimation <br /> Windows.UI.Xaml.Media.
 
 **Item**
 
-[Windows.UI.Xaml.Media.Animation.ConnectedAnimationService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+[Windows.UI.Xaml.Media.Animation.ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 **Properties**
 
@@ -4756,7 +4756,7 @@ Windows.UI.Xaml.Media.Animation.ConnectedAnimationService <br /> Windows.UI.Xaml
 
 **Item**
 
-[Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.web.http.filters.httpservercustomvalidationrequestedeventargs)
+[Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs](/uwp/api/windows.web.http.filters.httpservercustomvalidationrequestedeventargs)
 
 **Properties**
 
@@ -4766,7 +4766,7 @@ Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs <br /> Win
 
 **Item**
 
-[Windows.Graphics.Printing3D.Printing3DFaceReductionOptions](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dfacereductionoptions)
+[Windows.Graphics.Printing3D.Printing3DFaceReductionOptions](/uwp/api/windows.graphics.printing3d.printing3dfacereductionoptions)
 
 **Properties**
 
@@ -4776,7 +4776,7 @@ Windows.Graphics.Printing3D.Printing3DFaceReductionOptions <br /> Windows.Graphi
 
 **Item**
 
-[Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturevideoencodingframeratemode)
+[Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode](/uwp/api/windows.media.capture.appcapturevideoencodingframeratemode)
 
 **Properties**
 
@@ -4786,7 +4786,7 @@ Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode <br /> Windows.Media.
 
 **Item**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyAuditAction](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyauditaction)
+[Windows.Security.EnterpriseData.ProtectionPolicyAuditAction](/uwp/api/windows.security.enterprisedata.protectionpolicyauditaction)
 
 **Properties**
 
@@ -4796,7 +4796,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyAuditAction <br /> Windows.Secur
 
 **Item**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyauditinfo)
+[Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo](/uwp/api/windows.security.enterprisedata.protectionpolicyauditinfo)
 
 **Properties**
 
@@ -4806,7 +4806,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo <br /> Windows.Securit
 
 **Item**
 
-[Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyrequestaccessbehavior)
+[Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior](/uwp/api/windows.security.enterprisedata.protectionpolicyrequestaccessbehavior)
 
 **Properties**
 
@@ -4816,7 +4816,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior <br /> Win
 
 **Item**
 
-[Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch.locallocationhoursofoperationitem)
+[Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem](/uwp/api/windows.services.maps.localsearch.locallocationhoursofoperationitem)
 
 **Properties**
 
@@ -4826,7 +4826,7 @@ Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem <br /> Windo
 
 **Item**
 
-[Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch.locallocationratinginfo)
+[Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo](/uwp/api/windows.services.maps.localsearch.locallocationratinginfo)
 
 **Properties**
 
@@ -4836,7 +4836,7 @@ Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo <br /> Windows.Service
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerenteredeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs](/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerenteredeventargs)
 
 **Properties**
 
@@ -4846,7 +4846,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs 
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerexitedeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs](/uwp/api/windows.ui.xaml.controls.maps.mapcontrolbusinesslandmarkpointerexitedeventargs)
 
 **Properties**
 
@@ -4856,7 +4856,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs <
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerenteredeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs](/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerenteredeventargs)
 
 **Properties**
 
@@ -4866,7 +4866,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs <b
 
 **Item**
 
-[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerexitedeventargs)
+[Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs](/uwp/api/windows.ui.xaml.controls.maps.mapcontroltransitfeaturepointerexitedeventargs)
 
 **Properties**
 
@@ -4876,7 +4876,7 @@ Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs <br
 
 **Item**
 
-[Windows.Services.Store.StoreAcquireLicenseResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeacquirelicenseresult)
+[Windows.Services.Store.StoreAcquireLicenseResult](/uwp/api/windows.services.store.storeacquirelicenseresult)
 
 **Properties**
 
@@ -4886,7 +4886,7 @@ Windows.Services.Store.StoreAcquireLicenseResult <br /> Windows.Services.Store.S
 
 **Item**
 
-[Windows.Services.Store.StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)
+[Windows.Services.Store.StoreAppLicense](/uwp/api/windows.services.store.storeapplicense)
 
 **Properties**
 
@@ -4896,7 +4896,7 @@ Windows.Services.Store.StoreAppLicense <br /> Windows.Services.Store.StoreAppLic
 
 **Item**
 
-[Windows.Services.Store.StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability)
+[Windows.Services.Store.StoreAvailability](/uwp/api/windows.services.store.storeavailability)
 
 **Properties**
 
@@ -4906,7 +4906,7 @@ Windows.Services.Store.StoreAvailability <br /> Windows.Services.Store.StoreAvai
 
 **Item**
 
-[Windows.Services.Store.StoreCollectionData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata)
+[Windows.Services.Store.StoreCollectionData](/uwp/api/windows.services.store.storecollectiondata)
 
 **Properties**
 
@@ -4916,7 +4916,7 @@ Windows.Services.Store.StoreCollectionData <br /> Windows.Services.Store.StoreCo
 
 **Item**
 
-[Windows.Services.Store.StoreConsumableResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeconsumableresult)
+[Windows.Services.Store.StoreConsumableResult](/uwp/api/windows.services.store.storeconsumableresult)
 
 **Properties**
 
@@ -4926,7 +4926,7 @@ Windows.Services.Store.StoreConsumableResult <br /> Windows.Services.Store.Store
 
 **Item**
 
-[Windows.Services.Store.StoreConsumableStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storeconsumablestatus)
+[Windows.Services.Store.StoreConsumableStatus](/uwp/api/windows.services.store.storeconsumablestatus)
 
 **Properties**
 
@@ -4936,7 +4936,7 @@ Windows.Services.Store.StoreConsumableStatus <br /> Windows.Services.Store.Store
 
 **Item**
 
-[Windows.Services.Store.StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)
+[Windows.Services.Store.StoreContext](/uwp/api/windows.services.store.storecontext)
 
 **Properties**
 
@@ -4946,7 +4946,7 @@ Windows.Services.Store.StoreContext <br /> Windows.Services.Store.StoreContext.U
 
 **Item**
 
-[Windows.Services.Store.StoreDurationUnit](https://docs.microsoft.com/uwp/api/windows.services.store.storedurationunit)
+[Windows.Services.Store.StoreDurationUnit](/uwp/api/windows.services.store.storedurationunit)
 
 **Properties**
 
@@ -4956,7 +4956,7 @@ Windows.Services.Store.StoreDurationUnit <br /> Windows.Services.Store.StoreDura
 
 **Item**
 
-[Windows.Services.Store.StoreImage](https://docs.microsoft.com/uwp/api/windows.services.store.storeimage)
+[Windows.Services.Store.StoreImage](/uwp/api/windows.services.store.storeimage)
 
 **Properties**
 
@@ -4966,7 +4966,7 @@ Windows.Services.Store.StoreImage <br /> Windows.Services.Store.StoreImage.Capti
 
 **Item**
 
-[Windows.Services.Store.StoreLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense)
+[Windows.Services.Store.StoreLicense](/uwp/api/windows.services.store.storelicense)
 
 **Properties**
 
@@ -4976,7 +4976,7 @@ Windows.Services.Store.StoreLicense <br /> Windows.Services.Store.StoreLicense.E
 
 **Item**
 
-[Windows.Services.Store.StorePackageLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storepackagelicense)
+[Windows.Services.Store.StorePackageLicense](/uwp/api/windows.services.store.storepackagelicense)
 
 **Properties**
 
@@ -4986,7 +4986,7 @@ Windows.Services.Store.StorePackageLicense <br /> Windows.Services.Store.StorePa
 
 **Item**
 
-[Windows.Services.Store.StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate)
+[Windows.Services.Store.StorePackageUpdate](/uwp/api/windows.services.store.storepackageupdate)
 
 **Properties**
 
@@ -4996,7 +4996,7 @@ Windows.Services.Store.StorePackageUpdate <br /> Windows.Services.Store.StorePac
 
 **Item**
 
-[Windows.Services.Store.StorePackageUpdateResult](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdateresult)
+[Windows.Services.Store.StorePackageUpdateResult](/uwp/api/windows.services.store.storepackageupdateresult)
 
 **Properties**
 
@@ -5006,7 +5006,7 @@ Windows.Services.Store.StorePackageUpdateResult <br /> Windows.Services.Store.St
 
 **Item**
 
-[Windows.Services.Store.StorePackageUpdateState](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestate)
+[Windows.Services.Store.StorePackageUpdateState](/uwp/api/windows.services.store.storepackageupdatestate)
 
 **Properties**
 
@@ -5016,7 +5016,7 @@ Windows.Services.Store.StorePackageUpdateState <br /> Windows.Services.Store.Sto
 
 **Item**
 
-[Windows.Services.Store.StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus)
+[Windows.Services.Store.StorePackageUpdateStatus](/uwp/api/windows.services.store.storepackageupdatestatus)
 
 **Properties**
 
@@ -5026,7 +5026,7 @@ Windows.Services.Store.StorePackageUpdateStatus <br /> Windows.Services.Store.St
 
 **Item**
 
-[Windows.Services.Store.StorePrice](https://docs.microsoft.com/uwp/api/windows.services.store.storeprice)
+[Windows.Services.Store.StorePrice](/uwp/api/windows.services.store.storeprice)
 
 **Properties**
 
@@ -5036,7 +5036,7 @@ Windows.Services.Store.StorePrice <br /> Windows.Services.Store.StorePrice.Curre
 
 **Item**
 
-[Windows.Services.Store.StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct)
+[Windows.Services.Store.StoreProduct](/uwp/api/windows.services.store.storeproduct)
 
 **Properties**
 
@@ -5046,7 +5046,7 @@ Windows.Services.Store.StoreProduct <br /> Windows.Services.Store.StoreProduct.D
 
 **Item**
 
-[Windows.Services.Store.StoreProductPagedQueryResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductpagedqueryresult)
+[Windows.Services.Store.StoreProductPagedQueryResult](/uwp/api/windows.services.store.storeproductpagedqueryresult)
 
 **Properties**
 
@@ -5056,7 +5056,7 @@ Windows.Services.Store.StoreProductPagedQueryResult <br /> Windows.Services.Stor
 
 **Item**
 
-[Windows.Services.Store.StoreProductQueryResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductqueryresult)
+[Windows.Services.Store.StoreProductQueryResult](/uwp/api/windows.services.store.storeproductqueryresult)
 
 **Properties**
 
@@ -5066,7 +5066,7 @@ Windows.Services.Store.StoreProductQueryResult <br /> Windows.Services.Store.Sto
 
 **Item**
 
-[Windows.Services.Store.StoreProductResult](https://docs.microsoft.com/uwp/api/windows.services.store.storeproductresult)
+[Windows.Services.Store.StoreProductResult](/uwp/api/windows.services.store.storeproductresult)
 
 **Properties**
 
@@ -5076,7 +5076,7 @@ Windows.Services.Store.StoreProductResult <br /> Windows.Services.Store.StorePro
 
 **Item**
 
-[Windows.Services.Store.StorePurchaseProperties](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties)
+[Windows.Services.Store.StorePurchaseProperties](/uwp/api/windows.services.store.storepurchaseproperties)
 
 **Properties**
 
@@ -5086,7 +5086,7 @@ Windows.Services.Store.StorePurchaseProperties <br /> Windows.Services.Store.Sto
 
 **Item**
 
-[Windows.Services.Store.StorePurchaseResult](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseresult)
+[Windows.Services.Store.StorePurchaseResult](/uwp/api/windows.services.store.storepurchaseresult)
 
 **Properties**
 
@@ -5096,7 +5096,7 @@ Windows.Services.Store.StorePurchaseResult <br /> Windows.Services.Store.StorePu
 
 **Item**
 
-[Windows.Services.Store.StorePurchaseStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchasestatus)
+[Windows.Services.Store.StorePurchaseStatus](/uwp/api/windows.services.store.storepurchasestatus)
 
 **Properties**
 
@@ -5106,7 +5106,7 @@ Windows.Services.Store.StorePurchaseStatus <br /> Windows.Services.Store.StorePu
 
 **Item**
 
-[Windows.Services.Store.StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper)
+[Windows.Services.Store.StoreRequestHelper](/uwp/api/windows.services.store.storerequesthelper)
 
 **Properties**
 
@@ -5116,7 +5116,7 @@ Windows.Services.Store.StoreRequestHelper <br /> Windows.Services.Store.StoreReq
 
 **Item**
 
-[Windows.Services.Store.StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult)
+[Windows.Services.Store.StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult)
 
 **Properties**
 
@@ -5126,7 +5126,7 @@ Windows.Services.Store.StoreSendRequestResult <br /> Windows.Services.Store.Stor
 
 **Item**
 
-[Windows.Services.Store.StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku)
+[Windows.Services.Store.StoreSku](/uwp/api/windows.services.store.storesku)
 
 **Properties**
 
@@ -5136,7 +5136,7 @@ Windows.Services.Store.StoreSku <br /> Windows.Services.Store.StoreSku.Availabil
 
 **Item**
 
-[Windows.Services.Store.StoreSubscriptionInfo](https://docs.microsoft.com/uwp/api/windows.services.store.storesubscriptioninfo)
+[Windows.Services.Store.StoreSubscriptionInfo](/uwp/api/windows.services.store.storesubscriptioninfo)
 
 **Properties**
 
@@ -5146,11 +5146,10 @@ Windows.Services.Store.StoreSubscriptionInfo <br /> Windows.Services.Store.Store
 
 **Item**
 
-[Windows.Services.Store.StoreVideo](https://docs.microsoft.com/uwp/api/windows.services.store.storevideo)
+[Windows.Services.Store.StoreVideo](/uwp/api/windows.services.store.storevideo)
 
 **Properties**
 
 
 Windows.Services.Store.StoreVideo <br /> Windows.Services.Store.StoreVideo.Caption <br /> Windows.Services.Store.StoreVideo.Height <br /> Windows.Services.Store.StoreVideo.PreviewImage <br /> Windows.Services.Store.StoreVideo.Uri <br /> Windows.Services.Store.StoreVideo.VideoPurposeTag <br /> Windows.Services.Store.StoreVideo.Width
 <hr>
-

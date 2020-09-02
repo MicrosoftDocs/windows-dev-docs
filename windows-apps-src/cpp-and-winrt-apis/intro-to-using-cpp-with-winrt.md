@@ -25,10 +25,10 @@ C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/vis
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
 
 ### The C++/WinRT language projection in the Windows Runtime API reference content
-When you're browsing [Windows Runtime APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
+When you're browsing [Windows Runtime APIs](/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
-For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, install the **Universal Windows Platform Development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
+For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, install the **Universal Windows Platform development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
 
 While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using a version of C++/WinRT that shipped with the Windows SDK prior to 10.0.17763.0 (Windows 10, version 1809), then, to use the the Windows namespaces headers mentioned above, you'll need a minimum Windows SDK target version in your project of 10.0.17134.0 (Windows 10, version 1803).
 
@@ -66,7 +66,7 @@ Here are the Visual Studio project templates provided by the VSIX extension.
 ### Blank App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface.
 
-Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 The XAML design surface support in Visual Studio 2019 for C++/WinRT is close to parity with C#. In Visual Studio 2019, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
 
@@ -86,7 +86,7 @@ A project template for a component; typically for consumption from a Universal W
 
 This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Windows Runtime metadata (`.winmd`) is generated from IDL, and then implementation and header stubs are generated from the Windows Runtime metadata.
 
-In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 Bundle the built Windows Runtime component binary and its `.winmd` with the UWP app consuming them.
 
@@ -134,7 +134,7 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 > [!WARNING]
 > There are also types that you might see if you closely study the C++/WinRT Windows namespace headers. An example is **winrt::param::hstring**, but there are collection examples too. These exist solely to optimize the binding of input parameters, and they yield big performance improvements and make most calling patterns "just work" for related standard C++ types and containers. These types are only ever used by the projection in cases where they add most value. They're highly optimized and they're not for general use; don't be tempted to use them yourself. Nor should you use anything from the `winrt::impl` namespace, since those are implementation types, and therefore subject to change. You should continue to use standard types, or types from the [winrt namespace](/uwp/cpp-ref-for-winrt/winrt).
 >
-> Also see [Passing parameters into the ABI boundary](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
+> Also see [Passing parameters into the ABI boundary](./pass-parms-to-abi.md).
 
 ## Important APIs
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
@@ -146,4 +146,4 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 * [Get started with C++/WinRT](get-started.md)
 * [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)
 * [String handling in C++/WinRT](strings.md)
-* [Windows Runtime APIs](https://docs.microsoft.com/uwp/api/)
+* [Windows Runtime APIs](/uwp/api/)

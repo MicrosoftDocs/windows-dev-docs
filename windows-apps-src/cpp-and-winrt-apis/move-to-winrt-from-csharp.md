@@ -1,5 +1,5 @@
 ---
-description: This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+description: This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 title: Move to C++/WinRT from C#
 ms.date: 07/15/2019
 ms.topic: article
@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 
 # Move to C++/WinRT from C#
 
-This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
-For a case study of porting one of the Universal Windows Platform (UWP) app samples, see the companion topic [Porting the Clipboard sample to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp). You can gain porting practice and experience by following along with that walkthrough, and porting the sample for yourself as you go.
+For a case study of porting one of the Universal Windows Platform (UWP) app samples, see the companion topic [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md). You can gain porting practice and experience by following along with that walkthrough, and porting the sample for yourself as you go.
 
 ## How to prepare, and what to expect
 
-The case study [Porting the Clipboard sample to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp) illustrates examples of the kinds of software design decisions that you'll make while porting a project to C++/WinRT. So, it's a good idea to prepare for porting by gaining a solid understanding of how the existing code works. That way, you'll get a good overview of the app's functionality, and the code's structure, and then the decisions that you make will always take you forward, and in the right direction.
+The case study [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md) illustrates examples of the kinds of software design decisions that you'll make while porting a project to C++/WinRT. So, it's a good idea to prepare for porting by gaining a solid understanding of how the existing code works. That way, you'll get a good overview of the app's functionality, and the code's structure, and then the decisions that you make will always take you forward, and in the right direction.
 
 In terms of what kinds of porting changes to expect, you could group them into four categories.
 
@@ -30,22 +30,22 @@ The rest of this topic is structured according to that taxonomy.
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
-|Untyped object|`object`, or [**System.Object**](/dotnet/api/system.object)|[**Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)|[Porting the **EnableClipboardContentChangedNotifications** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications)|
+|Untyped object|`object`, or [**System.Object**](/dotnet/api/system.object)|[**Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
 |Projection namespaces|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
-|Size of a collection|`collection.Count`|`collection.Size()`|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
+|Size of a collection|`collection.Count`|`collection.Size()`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Typical collection type|[**IList\<T\>**](/dotnet/api/system.collections.generic.ilist-1), and **Add** to add an element.|[**IVector\<T\>**](/uwp/api/windows.foundation.collections.ivector-1), and **Append** to add an element. If you use a **std::vector** anywhere, then **push_back** to add an element.||
-|Read-only collection type|[**IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
-|Event handler delegate as class member|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[Porting the **EnableClipboardContentChangedNotifications** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications)|
-|Revoke event handler delegate|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[Porting the **EnableClipboardContentChangedNotifications** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications)|
+|Read-only collection type|[**IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
+|Event handler delegate as class member|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|Revoke event handler delegate|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
 |Associative container|[**IDictionary\<K, V\>**](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>**](/uwp/api/windows.foundation.collections.imap-2)||
 |Vector member access|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
 
 ### Register/revoke an event handler
 
-In C++/WinRT, you have several syntactic options to register/revoke an event handler delegate, as described in [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). Also see [Porting the **EnableClipboardContentChangedNotifications** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications).
+In C++/WinRT, you have several syntactic options to register/revoke an event handler delegate, as described in [Handle events by using delegates in C++/WinRT](./handle-events.md). Also see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
 
-Sometimes, for example when an event recipient (an object handling an event) is about to be destroyed, you'll want to revoke an event handler so that the event source (the object raising the event) doesn't call into a destroyed object. See [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate). In cases like that, create an **event_token** member variable for your event handlers. For an example, see [Porting the **EnableClipboardContentChangedNotifications** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications).
+Sometimes, for example when an event recipient (an object handling an event) is about to be destroyed, you'll want to revoke an event handler so that the event source (the object raising the event) doesn't call into a destroyed object. See [Revoke a registered delegate](./handle-events.md#revoke-a-registered-delegate). In cases like that, create an **event_token** member variable for your event handlers. For an example, see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
 
 You can also register an event handler in XAML markup.
 
@@ -55,7 +55,7 @@ You can also register an event handler in XAML markup.
 
 In C#, your **OpenButton_Click** method can be private, and XAML will still be able to connect it to the [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event raised by *OpenButton*.
 
-In C++/WinRT, your **OpenButton_Click** method must be public in your [implementation type](/windows/uwp/cpp-and-winrt-apis/author-apis) *if you want to register it in XAML markup*. If you register an event handler only in imperative code, then the event handler doesn't need to be public.
+In C++/WinRT, your **OpenButton_Click** method must be public in your [implementation type](./author-apis.md) *if you want to register it in XAML markup*. If you register an event handler only in imperative code, then the event handler doesn't need to be public.
 
 ```cppwinrt
 namespace winrt::MyProject::implementation
@@ -85,7 +85,7 @@ namespace winrt::MyProject::implementation
 };
 ```
 
-One final scenario is where the C# project that you're porting *binds* to the event handler from markup (for more background on that scenario, see [Functions in x:Bind](/windows/uwp/data-binding/function-bindings)).
+One final scenario is where the C# project that you're porting *binds* to the event handler from markup (for more background on that scenario, see [Functions in x:Bind](../data-binding/function-bindings.md)).
 
 ```xaml
 <Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
@@ -98,81 +98,81 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 ```
 
 > [!NOTE]
-> Declare the function as `void` even if you *implement* it as [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
+> Declare the function as `void` even if you *implement* it as [Fire and forget](./concurrency-2.md#fire-and-forget).
 
 ## Changes that involve the language syntax
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
-|Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#button_click)|
+|Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
 |Access a data member|`this.variable`|`this->variable`||
 |Async action|`async Task ...`|`IAsyncAction ...`||
 |Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`||
-|Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
-|Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)|
-|Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
+|Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
+|Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |Collection of projected types as a private field|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
 |GUID construction|`private static readonly Guid myGuid = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");`|`winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };`||
 |Namespace separator|`A.B.T`|`A::B::T`||
-|Null|`null`|`nullptr`|[Porting the **UpdateStatus** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#updatestatus)|
-|Obtain a type object|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[Porting the **Scenarios** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)|
-|Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
-|Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
+|Null|`null`|`nullptr`|[Porting the **UpdateStatus** method](./clipboard-to-winrt-from-csharp.md#updatestatus)|
+|Obtain a type object|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios)|
+|Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](./concurrency.md#parameter-passing)|
+|Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](./concurrency.md#parameter-passing)|
 |Call a static method|`T.Method()`|`T::Method()`||
-|Strings|`string`, or **System.String**|[**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)|
-|String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
-|Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
+|Strings|`string`, or **System.String**|[**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](./strings.md)|
+|String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
+|Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
+|Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
+|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md##displaytoast)|
 
 > [!NOTE]
-> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast).
+> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md##displaytoast).
 
 ### Porting classes and members
 
-You'll need to decide, for each C# type, whether to port it to a Windows Runtime type, or to a regular C++ class/struct/enumeration. For more info, and detailed examples illustrating how to make those decisions, see [Porting the Clipboard sample to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp).
+You'll need to decide, for each C# type, whether to port it to a Windows Runtime type, or to a regular C++ class/struct/enumeration. For more info, and detailed examples illustrating how to make those decisions, see [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md).
 
-A C# property typically becomes an accessor function, a mutator function, and a backing data member. For more info, and an example, see [Porting the **IsClipboardContentChangedEnabled** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#isclipboardcontentchangedenabled).
+A C# property typically becomes an accessor function, a mutator function, and a backing data member. For more info, and an example, see [Porting the **IsClipboardContentChangedEnabled** property](./clipboard-to-winrt-from-csharp.md#isclipboardcontentchangedenabled).
 
-For non-static fields, make them data members of your [implementation type](/windows/uwp/cpp-and-winrt-apis/author-apis).
+For non-static fields, make them data members of your [implementation type](./author-apis.md).
 
-A C# static field becomes a C++/WinRT static accessor and/or mutator function. For more info, and an example, see [Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name).
+A C# static field becomes a C++/WinRT static accessor and/or mutator function. For more info, and an example, see [Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name).
 
-For member functions, again, you'll need to decide for each one whether or not it belongs in the IDL, or whether it's a public or private member function of your implementation type. For more info, and examples of how to decide, see [IDL for the **MainPage** type](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#idl-for-the-mainpage-type).
+For member functions, again, you'll need to decide for each one whether or not it belongs in the IDL, or whether it's a public or private member function of your implementation type. For more info, and examples of how to decide, see [IDL for the **MainPage** type](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type).
 
 ### Porting XAML markup, and asset files
 
-In the case of [Porting the Clipboard sample to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp), we were able to use *the same* XAML markup (including resources) and asset files across the C# and the C++/WinRT project. In some cases, edits to markup will be necessary to achieve that. See [Copy the XAML and styles necessary to finish up porting **MainPage**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage).
+In the case of [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md), we were able to use *the same* XAML markup (including resources) and asset files across the C# and the C++/WinRT project. In some cases, edits to markup will be necessary to achieve that. See [Copy the XAML and styles necessary to finish up porting **MainPage**](./clipboard-to-winrt-from-csharp.md#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage).
 
 ## Changes that involve procedures within the language
 
 ||C#|C++/WinRT|See also|
 |-|-|-|-|
-|Lifetime management in an async method|N/A|`auto lifetime{ get_strong() };` or<br>`auto lifetime = get_strong();`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
-|Disposal|`using (var t = v)`|`auto t{ v };`<br>`t.Close(); // or let wrapper destructor do the work`|[Porting the **CopyImage** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copyimage)|
-|Construct object|`new MyType(args)`|`MyType{ args }` or<br>`MyType(args)`|[Porting the **Scenarios** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)|
-|Create uninitialized reference|`MyType myObject;`|`MyType myObject{ nullptr };` or<br>`MyType myObject = nullptr;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Construct object into variable with args|`var myObject = new MyType(args);`|`auto myObject{ MyType{ args } };` or <br>`auto myObject{ MyType(args) };` or <br>`auto myObject = MyType{ args };` or <br>`auto myObject = MyType(args);` or <br>`MyType myObject{ args };` or <br>`MyType myObject(args);`|[Porting the **Footer_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click)|
-|Construct object into variable without args|`var myObject = new T();`|`MyType myObject;`|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
+|Lifetime management in an async method|N/A|`auto lifetime{ get_strong() };` or<br>`auto lifetime = get_strong();`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|Disposal|`using (var t = v)`|`auto t{ v };`<br>`t.Close(); // or let wrapper destructor do the work`|[Porting the **CopyImage** method](./clipboard-to-winrt-from-csharp.md#copyimage)|
+|Construct object|`new MyType(args)`|`MyType{ args }` or<br>`MyType(args)`|[Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios)|
+|Create uninitialized reference|`MyType myObject;`|`MyType myObject{ nullptr };` or<br>`MyType myObject = nullptr;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
+|Construct object into variable with args|`var myObject = new MyType(args);`|`auto myObject{ MyType{ args } };` or <br>`auto myObject{ MyType(args) };` or <br>`auto myObject = MyType{ args };` or <br>`auto myObject = MyType(args);` or <br>`MyType myObject{ args };` or <br>`MyType myObject(args);`|[Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.md#footer_click)|
+|Construct object into variable without args|`var myObject = new T();`|`MyType myObject;`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Object initialization shorthand|`var p = new FileOpenPicker{`<br>&nbsp;&nbsp;&nbsp;&nbsp;`ViewMode = PickerViewMode.List`<br>`};`|`FileOpenPicker p;`<br>`p.ViewMode(PickerViewMode::List);`||
-|Bulk vector operation|`var p = new FileOpenPicker{`<br>&nbsp;&nbsp;&nbsp;&nbsp;`FileTypeFilter = { ".png", ".jpg", ".gif" }`<br>`};`|`FileOpenPicker p;`<br>`p.FileTypeFilter().ReplaceAll({ L".png", L".jpg", L".gif" });`|[Porting the **CopyButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
-|Iterate over collection|`foreach (var v in c)`|`for (auto&& v : c)`|[Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
-|Catch an exception|`catch (Exception ex)`|`catch (winrt::hresult_error const& ex)`|[Porting the **PasteButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
-|Exception details|`ex.Message`|`ex.message()`|[Porting the **PasteButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
-|Get a property value|`myObject.MyProperty`|`myObject.MyProperty()`|[Porting the **NotifyUser** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser)|
+|Bulk vector operation|`var p = new FileOpenPicker{`<br>&nbsp;&nbsp;&nbsp;&nbsp;`FileTypeFilter = { ".png", ".jpg", ".gif" }`<br>`};`|`FileOpenPicker p;`<br>`p.FileTypeFilter().ReplaceAll({ L".png", L".jpg", L".gif" });`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|Iterate over collection|`foreach (var v in c)`|`for (auto&& v : c)`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
+|Catch an exception|`catch (Exception ex)`|`catch (winrt::hresult_error const& ex)`|[Porting the **PasteButton_Click** method](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
+|Exception details|`ex.Message`|`ex.message()`|[Porting the **PasteButton_Click** method](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
+|Get a property value|`myObject.MyProperty`|`myObject.MyProperty()`|[Porting the **NotifyUser** method](./clipboard-to-winrt-from-csharp.md#notifyuser)|
 |Set a property value|`myObject.MyProperty = value;`|`myObject.MyProperty(value);`||
 |Increment a property value|`myObject.MyProperty += v;`|`myObject.MyProperty(thing.Property() + v);`<br>For strings, switch to a builder||
 |ToString()|`myObject.ToString()`|`winrt::to_hstring(myObject)`|[ToString()](#tostring)|
 |Language string to Windows Runtime string|N/A|`winrt::hstring{ s }`||
 |String-building|`StringBuilder builder;`<br>`builder.Append(...);`|`std::wostringstream builder;`<br>`builder << ...;`|[String-building](#string-building)|
-|String interpolation|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), and/or [**winrt::hstring::operator+**](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[Porting the **OnNavigatedTo** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#onnavigatedto)|
-|Empty string for comparison|**System.String.Empty**|[**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function)|[Porting the **UpdateStatus** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#updatestatus)|
+|String interpolation|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), and/or [**winrt::hstring::operator+**](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[Porting the **OnNavigatedTo** method](./clipboard-to-winrt-from-csharp.md#onnavigatedto)|
+|Empty string for comparison|**System.String.Empty**|[**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function)|[Porting the **UpdateStatus** method](./clipboard-to-winrt-from-csharp.md#updatestatus)|
 |Create empty string|`var myEmptyString = String.Empty;`|`winrt::hstring myEmptyString{ L"" };`||
 |Dictionary operations|`map[k] = v; // replaces any existing`<br>`v = map[k]; // throws if not present`<br>`map.ContainsKey(k)`|`map.Insert(k, v); // replaces any existing`<br>`v = map.Lookup(k); // throws if not present`<br>`map.HasKey(k)`||
-|Type conversion (throw on failure)|`(MyType)v`|`v.as<MyType>()`|[Porting the **Footer_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click)|
-|Type conversion (null on failure)|`v as MyType`|`v.try_as<MyType>()`|[Porting the **PasteButton_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
-|XAML elements with x:Name are properties|`MyNamedElement`|`MyNamedElement()`|[Porting the constructor, **Current**, and **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Switch to the UI thread|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync**, or [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Porting the **NotifyUser** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser), and [Porting the **HistoryAndRoaming** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#historyandroaming)|
+|Type conversion (throw on failure)|`(MyType)v`|`v.as<MyType>()`|[Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.md#footer_click)|
+|Type conversion (null on failure)|`v as MyType`|`v.try_as<MyType>()`|[Porting the **PasteButton_Click** method](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
+|XAML elements with x:Name are properties|`MyNamedElement`|`MyNamedElement()`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
+|Switch to the UI thread|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync**, or [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Porting the **NotifyUser** method](./clipboard-to-winrt-from-csharp.md#notifyuser), and [Porting the **HistoryAndRoaming** method](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
 |UI element construction in imperative code in a XAML page|See [UI element construction](#ui-element-construction)|See [UI element construction](#ui-element-construction)||
 
 The following sections go into more detail regarding some of the items in the table.
@@ -255,7 +255,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 These bindings will perform **winrt::to_hstring** of the bound property. In the case of the second example (the **StatusEnum**), you must provide your own overload of **winrt::to_hstring**, otherwise you'll get a compiler error.
 
-Also see [Porting the **Footer_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click).
+Also see [Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.md#footer_click).
 
 ### String-building
 
@@ -268,21 +268,49 @@ For string building, C# has a built-in [**StringBuilder**](/dotnet/api/system.te
 | Add a newline |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |
 | Access the result | `s = builder.ToString();` | `ws = builder.str();` |
 
-Also see [Porting the **BuildClipboardFormatsOutputString** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring), and [Porting the **DisplayChangedFormats** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
+Also see [Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring), and [Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats).
+
+### Running code on the main UI thread 
+
+This example is taken from the [Barcode scanner sample](/samples/microsoft/windows-universal-samples/barcodescanner/).
+
+When you want to do work on the main UI thread in a C# project, you typically use the [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) method, like this.
+
+```csharp
+private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        // Do work on the main UI thread here.
+    });
+}
+```
+
+It's much simpler to express that in C++/WinRT. Notice that we're accepting parameters by value on the assumption we'll want to access them after the first suspension point (the `co_await`, in this case). For more info, see [Parameter-passing](./concurrency.md#parameter-passing).
+
+```cppwinrt
+winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
+{
+    co_await Dispatcher();
+    // Do work on the main UI thread here.
+}
+```
+
+If you need to do the work at a priority other than the default, then see the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function, which has an overload that takes a priority. For code examples showing how to await a call to **winrt::resume_foreground**, see [Programming with thread affinity in mind](./concurrency-2.md#programming-with-thread-affinity-in-mind).
 
 ## Porting-related tasks that are specific to C++/WinRT
 
 ### Define your runtime classes in IDL
 
-See [IDL for the **MainPage** type](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#idl-for-the-mainpage-type), and [Consolidate your `.idl` files](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#consolidate-your-idl-files).
+See [IDL for the **MainPage** type](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type), and [Consolidate your `.idl` files](./clipboard-to-winrt-from-csharp.md#consolidate-your-idl-files).
 
 ### Include the C++/WinRT Windows namespace header files that you need
 
-In C++/WinRT, whenever you want to use a type from a Windows namespaces, you need to include the corresponding C++/WinRT Windows namespace header file. For an example, see [Porting the **NotifyUser** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser).
+In C++/WinRT, whenever you want to use a type from a Windows namespaces, you need to include the corresponding C++/WinRT Windows namespace header file. For an example, see [Porting the **NotifyUser** method](./clipboard-to-winrt-from-csharp.md#notifyuser).
 
 ### Boxing and unboxing
 
-C# automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+C# automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](./boxing.md).
 
 In the tables that follows, we'll use these definitions.
 
@@ -307,7 +335,7 @@ C++/CX and C# raise exceptions if you try to unbox a null pointer to a value typ
 | Unbox int, use fallback if null; crash if anything else | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
 | Unbox int if possible; use fallback for anything else | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
-For an example, see [Porting the **OnNavigatedTo** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#onnavigatedto), and [Porting the **Footer_Click** method](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click).
+For an example, see [Porting the **OnNavigatedTo** method](./clipboard-to-winrt-from-csharp.md#onnavigatedto), and [Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.md#footer_click).
 
 #### Boxing and unboxing a string
 
@@ -337,21 +365,21 @@ Basic boxing and unboxing.
 
 ### Making a class available to the {Binding} markup extension
 
-If you intend to use the {Binding} markup extension to data bind to your data type, then see [Binding object declared using {Binding}](/windows/uwp/data-binding/data-binding-in-depth#binding-object-declared-using-binding).
+If you intend to use the {Binding} markup extension to data bind to your data type, then see [Binding object declared using {Binding}](../data-binding/data-binding-in-depth.md#binding-object-declared-using-binding).
 
 ### Consuming objects from XAML markup
 
-In a C# project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL.
+In a C# project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md) must be exposed publicly in IDL.
 
 Also, binding to a Boolean displays `true` or `false` in C#, but it shows **Windows.Foundation.IReference`1\<Boolean\>** in C++/WinRT.
 
-For more info, and code examples, see [Consuming objects from markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+For more info, and code examples, see [Consuming objects from markup](./binding-property.md#consuming-objects-from-xaml-markup).
 
 ### Making a data source available to XAML markup
 
-In C++/WinRT version 2.0.190530.8 and higher, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) creates an observable vector that supports both **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** and **IObservableVector\<IInspectable\>**. For an example, see [Porting the **Scenarios** property](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios).
+In C++/WinRT version 2.0.190530.8 and higher, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) creates an observable vector that supports both **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** and **IObservableVector\<IInspectable\>**. For an example, see [Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios).
 
-You can author your **Midl file (.idl)** like this (also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)).
+You can author your **Midl file (.idl)** like this (also see [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)).
 
 ```idl
 namespace Bookstore
@@ -395,7 +423,7 @@ private:
 ...
 ```
 
-For more info, see [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Collections with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/collections).
+For more info, see [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md), and [Collections with C++/WinRT](./collections.md).
 
 ### Making a data source available to XAML markup (prior to C++/WinRT 2.0.190530.8)
 
@@ -477,7 +505,7 @@ runtimeclass DerivedPage : BasePage
 }
 ```
 
-In the header file for your [implementation type](/windows/uwp/cpp-and-winrt-apis/author-apis), you must include the base class header file before you include the autogenerated header for the derived class. Otherwise you'll get errors such as "Illegal use of this type as an expression".
+In the header file for your [implementation type](./author-apis.md), you must include the base class header file before you include the autogenerated header for the derived class. Otherwise you'll get errors such as "Illegal use of this type as an expression".
 
 ```cppwinrt
 // DerivedPage.h
@@ -498,5 +526,5 @@ namespace winrt::MyNamespace::implementation
 
 ## Related topics
 * [C# tutorials](/visualstudio/get-started/csharp)
-* [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
-* [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth)
+* [C++/WinRT](./index.md)
+* [Data binding in depth](../data-binding/data-binding-in-depth.md)

@@ -15,7 +15,7 @@ dev_langs:
 
 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
 
-You can apply lights to [**Visuals**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
+You can apply lights to [**Visuals**](/uwp/api/Windows.UI.Composition.Visual) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## Applying lights to XAML UIElements
 
@@ -454,7 +454,7 @@ Platform::String^ OrangeSpotLight::GetId()
 You can then apply this light to any XAML UIElement or Brush to light them. This example shows different potential usages.
 
 > [!Important]
-> For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
+> For [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
 
 ```xaml
 <StackPanel Width="100">

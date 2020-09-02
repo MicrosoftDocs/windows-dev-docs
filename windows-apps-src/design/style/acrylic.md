@@ -1,5 +1,5 @@
 ---
-description: A type of brush that creates a translucent texture.
+description: Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.
 title: Acrylic material
 template: detail.hbs
 ms.date: 08/09/2017
@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-acrylic.svg)
 
-Acrylic is a type of [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **Important APIs**: [AcrylicBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Important APIs**: [AcrylicBrush class](/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -83,7 +83,7 @@ For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is reco
 
 ![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
-Many of our controls will use acrylic by default. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dismiss popups will all use the transient acrylic when they are invoked.
+Many of our controls will use acrylic by default. [MenuFlyouts](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dismiss popups will all use the transient acrylic when they are invoked.
 
 > [!Note]
 > Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter Battery Saver mode, and users can disable acrylic effects for all apps, if they choose.
@@ -242,7 +242,7 @@ else
 
 ## Extend acrylic into the title bar
 
-To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) properties to [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent).
+To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) properties to [Colors.Transparent](/uwp/api/Windows.UI.Colors.Transparent).
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -254,7 +254,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), as shown here, or in your app's first page.
+This code can be placed in your app's [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate), as shown here, or in your app's first page.
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after

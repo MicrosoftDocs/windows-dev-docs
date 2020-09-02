@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: Game development learning guide
+description: Learn how to get started right away developing games for Windows or Xbox by following this quick start guide.
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.date: 01/25/2018
 ms.topic: article
@@ -48,7 +48,7 @@ For more samples, see [Game samples](e2e.md#game-samples).
 
 If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or [ID@Xbox](https://www.xbox.com/Developers/id) program. 
 
-To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table). For more information, see [Developer programs](e2e.md#developer-programs).
+To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](/gaming/xbox-live/developer-program-overview.md#feature-table). For more information, see [Developer programs](e2e.md#developer-programs).
 
 > [!Note]
 > Xbox Live Creators Program is available to all developers. **Anyone** can publish an Xbox game. To make your title part of the Xbox Live Creators Program, you simply have to enable this option from Partner Center. For more information about signing up for a Partner Center account, see [Step 5](#step-5-sign-up-for-a-partner-center-account) below.

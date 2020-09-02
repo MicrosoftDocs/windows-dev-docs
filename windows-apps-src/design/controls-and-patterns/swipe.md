@@ -3,7 +3,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Swipe commanding is a touch accelerator for context menus.
+description: Learn how to use Swipe commanding as a touch accelerator for context menus so that users can perform the same operation on multiple items in quick succession.
 title: Swipe
 label: Swipe
 template: detail.hbs

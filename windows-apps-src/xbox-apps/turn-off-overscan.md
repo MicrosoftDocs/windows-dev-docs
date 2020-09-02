@@ -1,6 +1,6 @@
 ---
 title: How to draw UI to the edge of the screen
-description: How to turn off automatic scaling for title-safe area.
+description: Learn how to turn off the default borders placed at the edges of the viewport and draw your UI to the edges of the screen.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

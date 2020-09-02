@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Interop between C++/WinRT and the ABI
 
-This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
+This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](./intro-to-using-cpp-with-winrt.md) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
 In general, C++/WinRT exposes ABI types as **void\***, so that you don't need to include platform header files.
 
@@ -101,7 +101,7 @@ int main()
 }
 ```
 
-The implementations of the **as** functions call [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
+The implementations of the **as** functions call [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
 
 > [!IMPORTANT]
 > When interoperating with ABI types it's critical that the ABI type used corresponds to the default interface of the C++/WinRT object. Otherwise, invocations of methods on the ABI type will actually end up calling methods in the same vtable slot on the default interface with very unexpected results. Note that [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) does not protect against this at compile time since it uses **void\*** for all ABI types and assumes that the caller has been careful not to mis-match the types. This is to avoid requiring C++/WinRT headers to reference ABI headers when ABI types may never be used.
@@ -175,7 +175,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-The function simply calls [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) to query for the default interface of the requested C++/WinRT type.
+The function simply calls [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) to query for the default interface of the requested C++/WinRT type.
 
 As we've seen, a helper function is not required to convert from a C++/WinRT object to the equivalent ABI interface pointer. Simply use the [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) member function to query for the requested interface. The **as** and **try_as** functions return a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
 
@@ -281,7 +281,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-Also see [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+Also see [Consume COM components with C++/WinRT](./consume-com.md).
 
 ### Unsafe interop with ABI COM interface pointers
 
@@ -329,6 +329,14 @@ GUID abiguid;
 | From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
 
+You can construct a **winrt::guid** like this.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+For a gist showing how to construct a **winrt::guid** from a string, see [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
+
 ## Interoperating with the ABI's HSTRING
 
 The table that follows shows conversions between **winrt::hstring** and [**HSTRING**](/windows/win32/winrt/hstring), and other operations. For the code in the table, assume these declarations.
@@ -351,8 +359,8 @@ void GetString(_Out_ HSTRING* value);
 | Copy **hstring** to **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* receives a copy of the string. Any string previously owned by *h* is leaked. |
 
 ## Important APIs
-* [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
-* [QueryInterface function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [AddRef function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)

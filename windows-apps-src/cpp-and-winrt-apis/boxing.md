@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 
 # Boxing and unboxing scalar values to IInspectable with C++/WinRT
  
-The [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) is the root interface of every runtime class in the Windows Runtime (WinRT). This is an analogous idea to [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) being at the root of every COM interface and class; and **System.Object** being at the root of every [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) class.
+The [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) is the root interface of every runtime class in the Windows Runtime (WinRT). This is an analogous idea to [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) being at the root of every COM interface and class; and **System.Object** being at the root of every [Common Type System](/dotnet/standard/base-types/common-type-system) class.
 
 In other words, a function that expects **IInspectable** can be passed an instance of any runtime class. But you can't directly pass a scalar value, such as a numeric or text value, to such a function. Instead, a scalar value needs to be wrapped inside a reference class object. That wrapping process is known as *boxing* the value.
 
 > [!IMPORTANT]
 > You can box and unbox any type that you can pass to a Windows Runtime API. In other words, a Windows Runtime type. Numeric and text values (strings) are the examples given above. Another example is a `struct` that you define in IDL. If you try to box a regular C++ `struct` (one that's not defined in IDL), then the compiler will remind you that you can box only a Windows Runtime type. A runtime class is a Windows Runtime type, but you can of course pass runtime classes to Windows Runtime APIs without boxing them.
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)  provides the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function, which takes a scalar value and returns the value boxed into an **IInspectable**. For unboxing an **IInspectable** back into a scalar value, there are the [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) and  [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) functions.
+[C++/WinRT](./intro-to-using-cpp-with-winrt.md)  provides the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function, which takes a scalar value and returns the value boxed into an **IInspectable**. For unboxing an **IInspectable** back into a scalar value, there are the [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) and  [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) functions.
 
 ## Examples of boxing a value
 The [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) accessor function returns a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), which is a scalar value. We can box that **hstring** value and pass it to a function that expects **IInspectable** like this.

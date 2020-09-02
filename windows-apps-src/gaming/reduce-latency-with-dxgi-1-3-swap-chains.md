@@ -136,7 +136,7 @@ For more information about multithreaded programming in Windows, see the followi
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
-* [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 * [Processes and Threads](/windows/win32/procthread/processes-and-threads)
 * [Synchronization](/windows/win32/sync/synchronization)
 * [Using Event Objects (Windows)](/windows/win32/sync/using-event-objects)

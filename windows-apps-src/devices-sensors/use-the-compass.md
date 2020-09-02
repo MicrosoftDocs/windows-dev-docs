@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Use the compass
-description: Learn how to use the compass to determine the current heading.
+description: Learn how to use the Universal Windows Platform (UWP) Compass API to determine the current heading in a navigation app.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Sample**
 

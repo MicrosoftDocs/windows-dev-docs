@@ -1,6 +1,6 @@
 ---
-Description: Use the ParallaxView control to add depth and movement to your app.
 title: Use parallax to add depth and movement to your app.
+description: Learn how to use the ParallaxView control in a UWP app to create a visual effect where items closer to the viewer move faster than items in the background.
 ms.assetid: 
 label: Parallax View
 template: detail.hbs
@@ -50,14 +50,14 @@ In a UI, you can create a parallax effect by moving different objects at differe
  
 ## Using the ParallaxView control to create a parallax effect
 
-To create a parallax effect, you use the [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) control. This control ties the scroll position of a foreground element, such as a list, to a background element, such as an image. As you scroll through the foreground element, it animates the background element to create a parallax effect. 
+To create a parallax effect, you use the [ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) control. This control ties the scroll position of a foreground element, such as a list, to a background element, such as an image. As you scroll through the foreground element, it animates the background element to create a parallax effect. 
 
-To use the ParallaxView control, you provide a Source element, a background element, and set the [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (for vertical scrolling) and/or [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (for horizontal scrolling) properties to a value greater than zero. 
-* The Source property takes a reference to the foreground element. For the parallax effect to occur, the foreground should be a [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) or an element that contains a ScrollViewer, such as a [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) or a [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
+To use the ParallaxView control, you provide a Source element, a background element, and set the [VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (for vertical scrolling) and/or [HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (for horizontal scrolling) properties to a value greater than zero. 
+* The Source property takes a reference to the foreground element. For the parallax effect to occur, the foreground should be a [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) or an element that contains a ScrollViewer, such as a [ListView](/uwp/api/windows.ui.xaml.controls.listview) or a [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
 
-* To set the background element, you add that element as a child of the ParallaxView control. The background element can be any [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), such as an [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) or a panel that contains additional UI elements. 
+* To set the background element, you add that element as a child of the ParallaxView control. The background element can be any [UIElement](/uwp/api/windows.ui.xaml.uielement), such as an [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) or a panel that contains additional UI elements. 
 
-To create a parallax effect, the ParallaxView must be behind the foreground element. The [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) and [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) panels let you layer items on top of each other, so they work well with the ParallaxView control.  
+To create a parallax effect, the ParallaxView must be behind the foreground element. The [Grid](/uwp/api/windows.ui.xaml.controls.grid) and [Canvas](/uwp/api/windows.ui.xaml.controls.canvas) panels let you layer items on top of each other, so they work well with the ParallaxView control.  
 
 This example creates a parallax effect for a list:
  
@@ -117,6 +117,6 @@ For the complete list of ways to customize parallax, see the ParallaxView class.
 
 ## Related articles
 
-- [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [ParallaxView class](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design for UWP](/windows/apps/fluent-design-system)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
