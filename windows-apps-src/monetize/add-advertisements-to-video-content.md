@@ -38,7 +38,7 @@ Advertising for video content differs based upon whether the program is under te
 
   The following example shows how to establish a [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) in JavaScript code.
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
+  :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet1":::
 
 ## How to use the AdScheduler class in your code
 
@@ -69,7 +69,7 @@ Advertising for video content differs based upon whether the program is under te
 
 6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975).
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet2":::
 
 7.  Use the **requestSchedule** or **requestScheduleByUrl** methods of the **AdScheduler** object to request an ad schedule from the server and insert it into the **MediaPlayer** timeline, and then play the video media.
 
@@ -77,18 +77,18 @@ Advertising for video content differs based upon whether the program is under te
 
         This method takes the form of a [Promise](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript), which is an asynchronous construct where two function pointers are passed: a pointer for the **onComplete** function to call when the promise completes successfully and a pointer for the **onError** function to call if an error is encountered. In the **onComplete** function, start playback of your video content. The ad will start playing at the scheduled time. In your **onError** function, handle the error and then start playback of your video. Your video content will play without an ad. The argument of the **onError** function is an object that contains the following members.
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet3":::
 
     * To request an ad schedule from a non-Microsoft ad server, use **requestScheduleByUrl**, and pass in the server URI. This method also takes the form of a **Promise** that accepts pointers for the **onComplete** and **onError** functions. The ad payload that is returned from the server must conform to the Video Ad Serving Template (VAST) or Video Multiple Ad Playlist (VMAP) payload formats.
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet4":::
 
     > [!NOTE]
     > You should wait for **requestSchedule** or **requestScheduleByUrl** to return before starting to play the primary video content in the **MediaPlayer**. Starting to play media before **requestSchedule** returns (in the case of a pre-roll advertisement) will result in the pre-roll interrupting the primary video content. You must call **play** even if the function fails, because the **AdScheduler** will tell the **MediaPlayer** to skip the ad(s) and move straight to the content. You may have a different business requirement, such as inserting a built-in ad if an ad can't be successfully fetched remotely.
 
 8.  During playback, you can handle additional events that let your app track progress and/or errors which may occur after the initial ad matching process. The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet5":::
 
 ## AdScheduler members
 

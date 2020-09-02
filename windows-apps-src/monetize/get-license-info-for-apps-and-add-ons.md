@@ -36,7 +36,7 @@ To get license info for the current app, use the [GetAppLicenseAsync](/uwp/api/w
 To access the licenses for durable add-ons of the current app for which the user has an entitlement to use, use the [AddOnLicenses](/uwp/api/windows.services.store.storeapplicense.addonlicenses) property of the [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense) object. This property returns a collection of [StoreLicense](/uwp/api/windows.services.store.storelicense) objects that represent the add-on licenses.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs" id="GetLicenseInfo":::
 
 For a complete sample application, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 

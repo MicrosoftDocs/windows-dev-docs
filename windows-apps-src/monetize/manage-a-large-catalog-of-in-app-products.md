@@ -29,7 +29,7 @@ The Store will only use the *offerId* from the purchase request in the resulting
 The purchase request for a specific product within a large catalog is handled in much the same way as any other purchase request within an app. When your app calls the new [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) method overload, your app provides both an *OfferId* and a [ProductPurchaseDisplayProperties](/uwp/api/windows.applicationmodel.store.productpurchasedisplayproperties) object populated with the name of the in-app product.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="MakePurchaseRequest":::
 
 ## Report fulfillment of the in-app offer
 
@@ -40,7 +40,7 @@ As mentioned earlier, the Store only uses provided offer info to populate the [P
 The following code demonstrates the fulfillment call, and a UI messaging pattern in which the specific offer info is inserted. In the absence of that specific product info, the example uses info from the product [ListingInformation](/uwp/api/Windows.ApplicationModel.Store.ListingInformation).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="ReportFulfillment":::
 
 ## Related topics
 

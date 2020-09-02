@@ -28,17 +28,17 @@ Replace the values of the ```applicationId``` and ```adUnitId``` variables with 
 ### index.html
 
 > [!div class="tabbedCodeSnippets"]
-[!code-html[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/index.html#L1-L21)]
+:::code language="html" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/index.html" range="1-21":::
 
 ### script.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#script)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="script":::
 
 ### main.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/main.js#main)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/main.js" id="main":::
 
 ## Related topics
 

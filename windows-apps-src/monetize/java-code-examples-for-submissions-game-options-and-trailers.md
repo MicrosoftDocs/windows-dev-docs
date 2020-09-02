@@ -26,7 +26,7 @@ The `CreateAndSubmitSubmissionExample` class implements a `main` program that ca
 * Assign the `applicationId` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java" range="1-313":::
 
 <span id="token" />
 
@@ -35,7 +35,8 @@ The `CreateAndSubmitSubmissionExample` class implements a `main` program that ca
 The `DevCenterAccessTokenClient` class defines a helper method that uses the your `tenantId`, `clientId` and `clientSecret` values to create an Azure AD access token to use with the Microsoft Store submission API.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java#L1-L69)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java" range="1-69":::
+
 
 <span id="utilities" />
 
@@ -44,7 +45,7 @@ The `DevCenterAccessTokenClient` class defines a helper method that uses the you
 The `DevCenterClient` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java" range="1-224":::
 
 ## Related topics
 

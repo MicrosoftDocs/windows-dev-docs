@@ -37,7 +37,7 @@ Be specific about what's draggable. Users won't want to drag everything in your 
 
 Here's how to set [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag).
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDragArea":::
 
 You don't need to do any other work to allow dragging, unless you want to customize the UI (which is covered later in this article). Dropping requires a few more steps.
 
@@ -53,14 +53,14 @@ For other content, you'll need to handle the **DragStarted** and **DragCompleted
 
 The following markup shows how to set a specific area of the app as valid for dropping by using the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
 
 
 ## Handle the DragOver event
 
 The [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover) event fires when a user has dragged an item over your app, but not yet dropped it. In this handler, you need to specify what kind of operations your app supports by using the [**AcceptedOperation**](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation) property. Copy is the most common.
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOver":::
 
 ## Process the Drop event
 
@@ -68,13 +68,13 @@ The [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) event occurs when the us
 
 For simplicity in the example below, we'll assume the user dropped a single photo and access it directly. In reality, users can drop multiple items of varying formats simultaneously. Your app should handle this possibility by checking what types of files were dropped and how many there are, and process each accordingly. You should also consider notifying the user if they're trying to do something your app doesn't support.
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_Drop":::
 
 ## Customize the UI
 
 The system provides a default UI for dragging and dropping. However, you can also choose to customize various parts of the UI by setting custom captions and glyphs, or by opting not to show a UI at all. To customize the UI, use the [**DragEventArgs.DragUIOverride**](/uwp/api/windows.ui.xaml.drageventargs.draguioverride) property.
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOverCustom":::
 
 ## Open a context menu on an item you can drag with touch
 

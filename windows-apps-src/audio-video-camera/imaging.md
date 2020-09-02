@@ -23,23 +23,23 @@ The **SoftwareBitmap** class is a versatile API that can be created from multipl
 
 The sample code in this article uses APIs from the following namespaces.
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetNamespaces":::
 
 ## Create a SoftwareBitmap from an image file with BitmapDecoder
 
 To create a [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) from a file, get an instance of [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) containing the image data. This example uses a [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to allow the user to select an image file.
 
-[!code-cs[PickInputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickInputFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetPickInputFile":::
 
 Call the [**OpenAsync**](/uwp/api/windows.storage.istoragefile.openasync) method of the **StorageFile** object to get a random access stream containing the image data. Call the static method [**BitmapDecoder.CreateAsync**](/uwp/api/windows.graphics.imaging.bitmapdecoder.createasync) to get an instance of the [**BitmapDecoder**](/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) class for the specified stream. Call [**GetSoftwareBitmapAsync**](/uwp/api/windows.graphics.imaging.bitmapdecoder.getsoftwarebitmapasync) to get a [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) object containing the image.
 
-[!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetCreateSoftwareBitmapFromFile":::
 
 ## Save a SoftwareBitmap to a file with BitmapEncoder
 
 To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved. This example uses a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to allow the user to select an output file.
 
-[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetPickOutputFile":::
 
 Call the [**OpenAsync**](/uwp/api/windows.storage.istoragefile.openasync) method of the **StorageFile** object to get a random access stream to which the image will be written. Call the static method [**BitmapEncoder.CreateAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.createasync) to get an instance of the [**BitmapEncoder**](/uwp/api/Windows.Graphics.Imaging.BitmapEncoder) class for the specified stream. The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image. **BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](/uwp/api/windows.graphics.imaging.bitmapencoder.jpegencoderid).
 
@@ -47,23 +47,23 @@ Use the [**SetSoftwareBitmap**](/uwp/api/windows.graphics.imaging.bitmapencoder.
 
 Call [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) to cause the encoder to write the image data to the specified file.
 
-[!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSaveSoftwareBitmapToFile":::
 
 You can specify additional encoding options when you create the **BitmapEncoder** by creating a new [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) object and populating it with one or more [**BitmapTypedValue**](/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) objects representing the encoder settings. For a list of supported encoder options, see [BitmapEncoder options reference](bitmapencoder-options-reference.md).
 
-[!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetUseEncodingOptions":::
 
 ## Use SoftwareBitmap with a XAML Image control
 
 To display an image within a XAML page using the [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) control, first define an **Image** control in your XAML page.
 
-[!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml" id="SnippetImageControl":::
 
 Currently, the **Image** control only supports images that use BGRA8 encoding and pre-multiplied or no alpha channel. Before attempting to display an image, test to make sure it has the correct format, and if not, use the **SoftwareBitmap** static [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) method to convert the image to the supported format.
 
 Create a new [**SoftwareBitmapSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) object. Set the contents of the source object by calling [**SetBitmapAsync**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), passing in a **SoftwareBitmap**. Then you can set the [**Source**](/uwp/api/windows.ui.xaml.controls.image.source) property of the **Image** control to the newly created **SoftwareBitmapSource**.
 
-[!code-cs[SoftwareBitmapToWriteableBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSoftwareBitmapToWriteableBitmap":::
 
 You can also use **SoftwareBitmapSource** to set a **SoftwareBitmap** as the [**ImageSource**](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource) for an [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush).
 
@@ -71,7 +71,7 @@ You can also use **SoftwareBitmapSource** to set a **SoftwareBitmap** as the [**
 
 You can create a **SoftwareBitmap** from an existing **WriteableBitmap** by calling [**SoftwareBitmap.CreateCopyFromBuffer**](/uwp/api/windows.graphics.imaging.softwarebitmap.createcopyfrombuffer) and supplying the **PixelBuffer** property of the **WriteableBitmap** to set the pixel data. The second argument allows you to request a pixel format for the newly created **WriteableBitmap**. You can use the [**PixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.pixelwidth) and [**PixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.pixelheight) properties of the **WriteableBitmap** to specify the dimensions of the new image.
 
-[!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetWriteableBitmapToSoftwareBitmap":::
 
 ## Create or edit a SoftwareBitmap programmatically
 
@@ -81,15 +81,15 @@ So far this topic has addressed working with image files. You can also create a 
 
 To use COM interop, you must include a reference to the **System.Runtime.InteropServices** namespace in your project.
 
-[!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetInteropNamespace":::
 
 Initialize the [**IMemoryBufferByteAccess**](/previous-versions/mt297505(v=vs.85)) COM interface by adding the following code within your namespace.
 
-[!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetCOMImport":::
 
 Create a new **SoftwareBitmap** with pixel format and size you want. Or, use an existing **SoftwareBitmap** for which you want to edit the pixel data. Call [**SoftwareBitmap.LockBuffer**](/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer) to obtain an instance of the [**BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) class representing the pixel data buffer. Cast the **BitmapBuffer** to the **IMemoryBufferByteAccess** COM interface and then call [**IMemoryBufferByteAccess.GetBuffer**](/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer) to populate a byte array with data. Use the [**BitmapBuffer.GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) method to get a [**BitmapPlaneDescription**](/uwp/api/Windows.Graphics.Imaging.BitmapPlaneDescription) object that will help you calculate the offset into the buffer for each pixel.
 
-[!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetCreateNewSoftwareBitmap":::
 
 Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
 
@@ -97,23 +97,23 @@ Because this method accesses the raw buffer underlying the Windows Runtime types
 
 To create a **SoftwareBitmap** object from a Direct3D surface, you must include the [**Windows.Graphics.DirectX.Direct3D11**](/uwp/api/Windows.Graphics.DirectX.Direct3D11) namespace in your project.
 
-[!code-cs[Direct3DNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetDirect3DNamespace":::
 
 Call [**CreateCopyFromSurfaceAsync**](/uwp/api/windows.graphics.imaging.softwarebitmap.createcopyfromsurfaceasync) to create a new **SoftwareBitmap** from the surface. As the name indicates, the new **SoftwareBitmap** has a separate copy of the image data. Modifications to the **SoftwareBitmap** will not have any effect on the Direct3D surface.
 
-[!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetCreateSoftwareBitmapFromSurface":::
 
 ## Convert a SoftwareBitmap to a different pixel format
 
 The **SoftwareBitmap** class provides the static method, [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert), that allows you to easily create a new **SoftwareBitmap** that uses the pixel format and alpha mode you specify from an existing **SoftwareBitmap**. Note that the newly created bitmap has a separate copy of the image data. Modifications to the new bitmap will not affect the source bitmap.
 
-[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetConvert":::
 
 ## Transcode an image file
 
 You can transcode an image file directly from a [**BitmapDecoder**](/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) to a [**BitmapEncoder**](/uwp/api/Windows.Graphics.Imaging.BitmapEncoder). Create a [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) from the file to be transcoded. Create a new **BitmapDecoder** from the input stream. Create a new [**InMemoryRandomAccessStream**](/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream) for the encoder to write to and call [**BitmapEncoder.CreateForTranscodingAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync), passing in the in-memory stream and the decoder object. Encode options are not supported when transcoding; instead you should use [**CreateAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.createasync). Any properties in the input image file that you do not specifically set on the encoder, will be written to the output file unchanged. Call [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) to cause the encoder to encode to the in-memory stream. Finally, seek the file stream and the in-memory stream to the beginning and call [**CopyAsync**](/uwp/api/windows.storage.streams.randomaccessstream.copyasync) to write the in-memory stream out to the file stream.
 
-[!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeImageFile":::
 
 ## Related topics
 

@@ -17,11 +17,11 @@ This article shows how to read and write image metadata properties and how to ge
 
 The [**StorageFile.Properties**](/uwp/api/windows.storage.storagefile.properties) property returns a [**StorageItemContentProperties**](/uwp/api/Windows.Storage.FileProperties.StorageItemContentProperties) object that provides access to content-related information about the file. Get the image-specific properties by calling [**GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync). The returned [**ImageProperties**](/uwp/api/Windows.Storage.FileProperties.ImageProperties) object exposes members that contain basic image metadata fields, like the title of the image and the capture date.
 
-[!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetImageProperties":::
 
 To access a larger set of file metadata, use the Windows Property System, a set of file metadata properties that can be retrieved with a unique string identifier. Create a list of strings and add the identifier for each property you want to retrieve. The [**ImageProperties.RetrievePropertiesAsync**](/uwp/api/windows.storage.fileproperties.imageproperties.retrievepropertiesasync) method takes this list of strings and returns a dictionary of key/value pairs where the key is the property identifier and the value is the property value.
 
-[!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetWindowsProperties":::
 
 -   For a complete list of Windows Properties, including the identifiers and type for each property, see [Windows Properties](/windows/desktop/properties/props).
 
@@ -35,11 +35,11 @@ GeotagHelper is a utility class that makes it easy to tag images with geographic
 
 If you already have a [**Geopoint**](/uwp/api/Windows.Devices.Geolocation.Geopoint) object representing the location you want to tag in the image, either from a previous use of the geolocation APIs or some other source, you can set the geotag data by calling [**GeotagHelper.SetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagasync) and passing in a [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) and the **Geopoint**.
 
-[!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromPoint":::
 
 To set the geotag data using the device's current location, create a new [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object and call [**GeotagHelper.SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync) passing in the **Geolocator** and the file to be tagged.
 
-[!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromGeolocator":::
 
 -   You must include the **location** device capability in your app manifest in order to use the [**SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync) API.
 
@@ -49,7 +49,7 @@ To set the geotag data using the device's current location, create a new [**Geol
 
 To get a GeoPoint representing the geotagged location of an image file, call [**GetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.getgeotagasync).
 
-[!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetGeoData":::
 
 ## Decode and encode image metadata
 
@@ -59,7 +59,7 @@ Reading image metadata using this technique requires you to have a [**BitmapDeco
 
 Once you have the decoder, create a list of strings and add a new entry for each metadata property you want to retrieve, using either the Windows Property identifier string or a WIC metadata query. Call the [**BitmapPropertiesView.GetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmappropertiesview.getpropertiesasync) method on the decoder's [**BitmapProperties**](/uwp/api/Windows.Graphics.Imaging.BitmapProperties) member to request the specified properties. The properties are returned in a dictionary of key/value pairs containing the property name or path and the property value.
 
-[!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetReadImageMetadata":::
 
 -   For information on the WIC metadata query language and the properties supported, see [WIC image format native metadata queries](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 
@@ -70,7 +70,7 @@ Writing image metadata to the stream requires a **BitmapEncoder** associated wit
 
 Create a [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) object to contain the property values you want set. Create a [**BitmapTypedValue**](/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) object to represent the property value. This object uses an **object** as the value and member of the [**PropertyType**](/uwp/api/Windows.Foundation.PropertyType) enumeration that defines the type of the value. Add the **BitmapTypedValue** to the **BitmapPropertySet** and then call [**BitmapProperties.SetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync) to cause the encoder to write the properties to the stream.
 
-[!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetWriteImageMetadata":::
 
 -   For details on which properties are supported for which image file types, see [Windows Properties](/windows/desktop/properties/props), [Photo Metadata Policies](/windows/desktop/wic/photo-metadata-policies), and [WIC image format native metadata queries](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 

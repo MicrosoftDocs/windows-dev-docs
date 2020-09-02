@@ -18,17 +18,17 @@ To simplify the process of handling orientation, we recommend using a helper cla
 ## Namespaces used in this article
 The example code in this article uses APIs from the following namespaces that you should include in your code. 
 
-[!code-cs[OrientationUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOrientationUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetOrientationUsing":::
 
 The first step in adding orientation support to your app is to lock the display so that it doesn't automatically rotate when the device is rotated. Automatic UI rotation works well for most types of apps, but it is unintuitive for users when the camera preview rotates. Lock the display orientation by setting the [**DisplayInformation.AutoRotationPreferences**](/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) property to [**DisplayOrientations.Landscape**](/uwp/api/Windows.Graphics.Display.DisplayOrientations). 
 
-[!code-cs[AutoRotationPreference](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAutoRotationPreference)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetAutoRotationPreference":::
 
 ## Tracking the camera device location
 To calculate the correct orientation for captured media, you app must determine the location of the camera device on the chassis. Add a boolean member variable to track whether the camera is external to the device, such as a USB web cam. Add another boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used. Also, add a variable for storing a **DeviceInformation** object that represents the selected camera.
 
-[!code-cs[CameraDeviceLocationBools](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCameraDeviceLocationBools)]
-[!code-cs[DeclareCameraDevice](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareCameraDevice)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCameraDeviceLocationBools":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareCameraDevice":::
 
 ## Select a camera device and initialize the MediaCapture object
 The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to initialize the **MediaCapture** object with just a couple of lines of code. To support camera orientation, we will add a few more steps to the initialization process.
@@ -39,21 +39,21 @@ If a camera device is found, a new [**MediaCaptureInitializationSettings**](/uwp
 
 Finally, check to see if the selected device panel is null or unknown. If so, the camera is external, which means that its rotation is unrelated to the rotation of the device. If the panel is known and is on the front of the device chassis, we know the preview should be mirrored, so the variable tracking this is set.
 
-[!code-cs[InitMediaCaptureWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCaptureWithOrientation)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetInitMediaCaptureWithOrientation":::
 ## Initialize the CameraRotationHelper class
 
 Now we begin using the **CameraRotationHelper** class. Declare a class member variable to store the object. Call the constructor, passing in the enclosure location of the selected camera. The helper class uses this information to calculate the correct orientation for captured media, the preview stream, and the UI. Register a handler for the helper class's **OrientationChanged** event, which will be raised when we need to update the orientation of the UI or the preview stream.
 
-[!code-cs[DeclareRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareRotationHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareRotationHelper":::
 
-[!code-cs[InitRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitRotationHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetInitRotationHelper":::
 
 ## Add orientation data to the camera preview stream
 Adding the correct orientation to the metadata of the preview stream does not affect how the preview appears to the user, but it helps the system encode any frames captured from the preview stream correctly.
 
 You start the camera preview by calling [**MediaCapture.StartPreviewAsync**](/uwp/api/windows.media.capture.mediacapture.startpreviewasync). Before you do this, check the member variable to see if the preview should be mirrored (for a front-facing camera). If so, set the [**FlowDirection**](/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) property of the [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement), named *PreviewControl* in this example, to [**FlowDirection.RightToLeft**](/uwp/api/Windows.UI.Xaml.FlowDirection). After starting the preview, call the helper method **SetPreviewRotationAsync** to set the preview rotation. Following is the implementation of this method.
 
-[!code-cs[StartPreviewWithRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewWithRotationAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartPreviewWithRotationAsync":::
 
 We set the preview rotation in a separate method so that it can be updated when the phone orientation changes without reinitializing the preview stream. If the camera is external to the device, no action is taken. Otherwise, the **CameraRotationHelper** method **GetCameraPreviewOrientation** is called and returns the proper orientation for the preview stream. 
 
@@ -61,13 +61,13 @@ To set the metadata, the preview stream properties are retrieved by calling [**V
 
 Add a property value to the stream properties object, specifying the GUID as the key and the preview rotation as the value. This property expects values to be in units of counterclockwise degrees, so the **CameraRotationHelper** method **ConvertSimpleOrientationToClockwiseDegrees** is used to convert the simple orientation value. Finally, call [**SetEncodingPropertiesAsync**](/uwp/api/Windows.Media.Capture.MediaCapture#Windows_Media_Capture_MediaCapture_SetEncodingPropertiesAsync_Windows_Media_Capture_MediaStreamType_Windows_Media_MediaProperties_IMediaEncodingProperties_Windows_Media_MediaProperties_MediaPropertySet_) to apply the new rotation property to the stream.
 
-[!code-cs[SetPreviewRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSetPreviewRotationAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSetPreviewRotationAsync":::
 
 Next, add the handler for the **CameraRotationHelper.OrientationChanged** event. This event passes in an argument that lets you know whether the preview stream needs to be rotated. If the orientation of the device was changed to face up or face down, this value will be false. If the preview does need to be rotated, call **SetPreviewRotationAsync** which was defined previously.
 
 Next, in the **OrientationChanged** event handler, update your UI if needed. Get the current recommended UI orientation from the helper class by calling **GetUIOrientation** and convert the value to clockwise degrees, which is used for XAML transforms. Create a [**RotateTransform**](/uwp/api/Windows.UI.Xaml.Media.RotateTransform) from the orientation value and set the [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) property of your XAML controls. Depending on your UI layout, you may need to make additional adjustments here in addition to simply rotating the controls. Also, remember that all updates to your UI must be made on the UI thread, so you should place this code inside a call to [**RunAsync**](/uwp/api/Windows.UI.Core.CoreDispatcher#Windows_UI_Core_CoreDispatcher_RunAsync_Windows_UI_Core_CoreDispatcherPriority_Windows_UI_Core_DispatchedHandler_).  
 
-[!code-cs[HelperOrientationChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetHelperOrientationChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetHelperOrientationChanged":::
 
 ## Capture a photo with orientation data
 The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to capture a photo to a file by capturing first to an in-memory stream and then using a decoder to read the image data from the stream and an encoder to transcode the image data to a file. Orientation data, obtained from the **CameraRotationHelper** class, can be added to the image file during the transcoding operation.
@@ -78,14 +78,14 @@ Before transcoding the file, the photo's orientation is retrieved from the helpe
 
 Finally, the property set which includes the orientation data is set for the encoder by with a call to [**SetPropertiesAsync**](../develop/index.md) and the image is transcoded with a call to [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync).
 
-[!code-cs[CapturePhotoWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCapturePhotoWithOrientation)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCapturePhotoWithOrientation":::
 
 ## Capture a video with orientation data
 Basic video capture is described in the article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md). Adding orientation data to the encoding of the captured video is done using the same technique as described earlier in the section about adding orientation data to the preview stream.
 
 In the following example, a file is created to which the captured video will be written. An MP4 encoding profile is create using the static method [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4). The proper orientation for the video is obtained from the **CameraRotationHelper** class with a call to **GetCameraCaptureOrientation** Because the rotation property requires the orientation to be expressed in counterclockwise degrees, the **ConvertSimpleOrientationToClockwiseDegrees** helper method is called to convert the orientation value. Next, create the GUID representing the Media Foundation Transform (MFT) attribute for video stream rotation. In C++ you can use the constant [**MF_MT_VIDEO_ROTATION**](/windows/desktop/medfound/mf-mt-video-rotation), but in C# you must manually specify the GUID value. Add a property value to the stream properties object, specifying the GUID as the key and the rotation as the value. Finally call [**StartRecordToStorageFileAsync**](/uwp/api/Windows.Media.Capture.MediaCapture#Windows_Media_Capture_MediaCapture_StartRecordToStorageFileAsync_Windows_Media_MediaProperties_MediaEncodingProfile_Windows_Storage_IStorageFile_) to begin recording video encoded with orientation data.
 
-[!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartRecordingWithOrientationAsync":::
 
 ## CameraRotationHelper full code listing
 The following code snippet lists the full code for the **CameraRotationHelper** class that manages the hardware orientation sensors, calculates the proper orientation values for photos and videos, and provides helper methods to convert between the different representations of orientation that are used by different Windows features. If you follow the guidance shown in the article above, you can add this class to your project as-is without having to make any changes. Of course, you can feel free to customize the following code to meet the needs of your particular scenario.
@@ -98,7 +98,7 @@ The following methods can be used to get recommended orientation values for the 
 * **GetCameraCaptureOrientation** - Returns the suggested orientation for encoding into image metadata.
 * **GetCameraPreviewOrientation** - Returns the suggested orientation for the preview stream to provide a natural user experience.
 
-[!code-cs[CameraRotationHelperFull](./code/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs#SnippetCameraRotationHelperFull)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs" id="SnippetCameraRotationHelperFull":::
 
 
 
