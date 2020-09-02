@@ -19,6 +19,8 @@ With screen capture, developers invoke secure system UI for end users to pick th
 > [!NOTE]
 > The screen capture APIs are only supported on desktop and Windows Mixed Reality immersive headsets.
 
+This article describes capturing a single image of the display or application window. For information on encoding frames captured from the screen to a video file, see [Screen capture to video](screen-capture-video.md)
+
 ## Add the screen capture capability
 
 The APIs found in the **Windows.Graphics.Capture** namespace require a general capability to be declared in your application's manifest:
@@ -680,8 +682,9 @@ End Class
 
 ## Record a video
 
-If you want to record a video of your application, you can do so more easily with the [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](/uwp/extension-sdks/device-families-overview) for more information.
+If you want to record a video of your application, you can follow the walkthrough presented in the article [Screen capture to video](screen-capture-video.md). Or, you can use [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](/uwp/extension-sdks/device-families-overview) for more information.
 
 ## See also
 
-* [Windows.Graphics.Capture Namespace](/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Screen capture to video](screen-capture-video.md)
