@@ -2,11 +2,13 @@
     "build": {
         "content": [ {
             "files": ["**/*.md", "**/**.yml"],
-            "exclude": ["**/obj/**", "whats-new/whats-new-future.md"]
+            "exclude": ["**/obj/**", "whats-new/whats-new-future.md"],
+            "exclude": ["**/includes/**"]
         } ],
         "resource": [ {
             "files": ["**/images/**"],
-            "exclude": ["**/obj/**"]
+            "exclude": ["**/obj/**"],
+            "exclude": ["**/includes/**"]
         } ],
         "globalMetadata": {
             "ROBOTS": "INDEX, FOLLOW",
