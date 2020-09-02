@@ -7,8 +7,7 @@
         } ],
         "resource": [ {
             "files": ["**/images/**"],
-            "exclude": ["**/obj/**"],
-            "exclude": ["**/includes/**"]
+            "exclude": ["**/obj/**"]
         } ],
         "globalMetadata": {
             "ROBOTS": "INDEX, FOLLOW",
