@@ -19,6 +19,8 @@ With screen capture, developers invoke secure system UI for end users to pick th
 > [!NOTE]
 > The screen capture APIs are only supported on desktop and Windows Mixed Reality immersive headsets.
 
+This article describes capturing a single image of the display or application window. For information on encoding frames captured from the screen to a video file, see [Screen capture to video](screen-capture-video.md)
+
 ## Add the screen capture capability
 
 The APIs found in the **Windows.Graphics.Capture** namespace require a general capability to be declared in your application's manifest:
