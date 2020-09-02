@@ -1,6 +1,6 @@
 ---
 title: Screen capture to video
-description: This article describes how to use the Windows.Graphics.Capture APIs to capture video of the display or an app window.
+description: This article describes how to encode frames captured from the screen with the Windows.Graphics.Capture APIs to a video file.
 ms.date: 07/28/2020
 ms.topic: article
 dev_langs:
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Screen capture to video
 
-This article describes how to use the Windows.Graphics.Capture APIs to capture video of the screen or an app window. For information on screen capturing still images, see [Screeen capture](screen-capture-video). 
+This article describes how to encode frames captured from the screen with the Windows.Graphics.Capture APIs to a video file. For information on screen capturing still images, see [Screeen capture](screen-capture-video). 
 
 ## Overview of the video capture process
 This article provides a walkthrough of an example app that records the contents of a window to a video file. While it may seem like there is a lot of code required to implement this scenario, the high-level structure of a screen recorder app is fairly simple. The screen capture process uses three primary UWP features:
@@ -31,9 +31,9 @@ As stated above, the copying of each captured frame is probably the most complex
 ## Setting up your project
 The example code in this walkthrough was created using the **Blank App (Universal Windows)** C# project template in Visual Studio 2019. In order to use the **Windows.Graphics.Capture** APIs in your app, you must include the **Graphics Capture** capability in the Package.appxmanifest file for your project. This example saves generated video files to the Videos Library on the device. To access this folder you must include the **Videos Library** capability.
 
-To install the SharpDX Nuget package, in Visual Studio select **Manage Nuget Packages**. In the Browse tab search for the SharpDX.Direct3D11 package and click **Install**.
+To install the SharpDX Nuget package, in Visual Studio select **Manage Nuget Packages**. In the Browse tab search for the "SharpDX.Direct3D11" package and click **Install**.
 
-Note that in order to minimize the size of the code listings, the code in the walkthrough below omits explicit namespace references and the declaration of MainPage class member variables which are named with a leading underscore, "_".
+Note that in order to reduce the size of the code listings in this article, the code in the walkthrough below omits explicit namespace references and the declaration of MainPage class member variables which are named with a leading underscore, "_".
 
 ## Setup for encoding
 
@@ -64,7 +64,7 @@ Now that the main objects have been initialized the **EncodeAsync** method is im
 ## Handle MediaStreamSource events
 The **MediaStreamSource** object takes frames that we capture from the screen and transforms them into a video stream that can be saved to a file using the **MediaTranscoder**. We pass the frames to the **MediaStreamSource** via handlers for the object's events.
 
-The [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) event is raised when the **MediaStreamSource** is ready for a new video frame. After making sure we are currently recording, the helper method **WaitForNewFrame** is called to get a new frame captured from the screen. This method, shown later in this article, returns a [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) object containing the captured frame. This wraps the **IDirect3DSurface** interface in a helper class that also stores the system time at which the frame was captured. Both the frame and the system time are passed into the [MediaStreamSample.CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) factory method and the resulting [MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample) is set to the [MediaStreamSourceSampleRequest.Sample](MediaStreamSourceSampleRequest.Sample) property of the [MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs). This is how the captured frame is provided to the **MediaStreamSource**.
+The [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) event is raised when the **MediaStreamSource** is ready for a new video frame. After making sure we are currently recording, the helper method **WaitForNewFrame** is called to get a new frame captured from the screen. This method, shown later in this article, returns a [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) object containing the captured frame. For this example, we wrap the **IDirect3DSurface** interface in a helper class that also stores the system time at which the frame was captured. Both the frame and the system time are passed into the [MediaStreamSample.CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) factory method and the resulting [MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample) is set to the [MediaStreamSourceSampleRequest.Sample](MediaStreamSourceSampleRequest.Sample) property of the [MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs). This is how the captured frame is provided to the **MediaStreamSource**.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_OnMediaStreamSourceSampleRequested":::
 
@@ -141,6 +141,11 @@ The **MultithreadLock** helper class wraps the SharpDX **Multithread** class tha
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_SurfaceWithInfo":::
 
 ## Direct3D and SharpDX helper APIs
-The following helper APIs are defined to abstract out the creation of Direct3D and SharpDX resources. Detailed explanations of these technologies is outside the scope of this article but the code is provided here to allow you to implement the example code shown in the walkthrough above
+The following helper APIs are defined to abstract out the creation of Direct3D and SharpDX resources. A detailed explanation of these technologies is outside the scope of this article but the code is provided here to allow you to implement the example code shown in the walkthrough.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/Direct3D11Helpers.cs" id="snippet_Direct3D11Helpers":::
+
+## See also
+
+* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Screen capture](screen-capture.md)

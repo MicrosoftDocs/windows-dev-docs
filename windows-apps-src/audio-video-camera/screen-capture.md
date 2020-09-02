@@ -687,3 +687,4 @@ If you want to record a video of your application, you can do so more easily wit
 ## See also
 
 * [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Screen capture to video](screen-capture-video.md)
