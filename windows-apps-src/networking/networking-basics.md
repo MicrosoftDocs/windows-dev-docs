@@ -1,5 +1,5 @@
 ---
-description: Things you must do for any network-enabled app.
+description: Learn how to enable your app for networking by adding network capability elements, providing authentication, and providing a secured connection.
 title: Networking basics
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.date: 06/01/2018

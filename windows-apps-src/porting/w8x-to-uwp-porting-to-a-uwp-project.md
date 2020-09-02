@@ -1,5 +1,5 @@
 ---
-description: You have two options when you begin the porting process.
+description: Learn how to port a Windows Runtime 8.x project to a Universal Windows Platform (UWP) project on Windows 10.
 title: Porting a Windows Runtime 8.x project to a UWP project'
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ms.date: 02/08/2017

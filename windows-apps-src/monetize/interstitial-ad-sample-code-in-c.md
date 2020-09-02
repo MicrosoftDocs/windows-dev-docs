@@ -1,6 +1,6 @@
 ---
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
-description: Learn how to launch an interstitial ad using C#.
+description: Learn how to display and launch an interstitial ad in a Universal Windows Platform (UWP) app using C# and XAML.
 title: Interstitial ad sample code in C#
 ms.date: 02/18/2020
 ms.topic: article

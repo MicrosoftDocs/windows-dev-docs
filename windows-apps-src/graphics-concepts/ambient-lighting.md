@@ -1,6 +1,6 @@
 ---
 title: Ambient lighting
-description: Ambient lighting provides constant lighting for a scene.
+description: Learn how ambient lighting provides constant lighting for a scene and learn how to set ambient lighting in Direct3D using C++.
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - Ambient lighting

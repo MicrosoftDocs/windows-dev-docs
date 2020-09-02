@@ -1,6 +1,6 @@
 ---
 title: Tier 1
-description: This section describes tier 1 support.
+description: Learn the general and specific limitations affecting Tier 1 support for streaming resources features in Direct3D.
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Tier 1
