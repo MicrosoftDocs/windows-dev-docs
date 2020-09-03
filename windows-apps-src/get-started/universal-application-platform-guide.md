@@ -10,11 +10,14 @@ ms.localizationpriority: medium
 
 # What's a Universal Windows Platform (UWP) app?
 
+
+
 ## Where does UWP fit in the Microsoft development story?
 
-The Universal Windows Platform (UWP) is just one of many ways to create client applications for Windows. UWP apps use Windows Runtime (WinRT) APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
 
-The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+
 
 ## Features of a UWP app
 
