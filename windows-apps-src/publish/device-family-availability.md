@@ -1,11 +1,12 @@
 ---
-Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
+description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, packages, upload, device family availability
 ms.localizationpriority: medium
 ---
+
 # Device family availability
 
 After your packages have been successfully uploaded on the **Packages** page, the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 device families.
@@ -49,7 +50,7 @@ If your submission for a previously published app includes packages that can run
 
 It's important to be aware that selections you make in the **Device family availability** section apply only to new acquisitions. Anyone who already has your app can continue to use it, and will get any updates you submit, even if you remove their device family here. This applies even to customers who acquired your app before upgrading to Windows 10. For example, if you have a published app with Windows Phone 8.1 packages, and you add a Windows 10 (UWP) package targeting the Windows.Universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Windows 10 Mobile**.
 
-For more info about device families, see [**Device families overview**](/uwp/extension-sdks/device-families-overview).
+For more info about device families, see [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview).
 
 
 ## Understanding ranking

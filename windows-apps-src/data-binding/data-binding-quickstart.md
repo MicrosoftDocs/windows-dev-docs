@@ -11,6 +11,7 @@ dev_langs:
   - cppwinrt
   - cppcx
 ---
+
 # Data binding overview
 
 This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
@@ -446,7 +447,7 @@ And then bind a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) to th
 
 We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString) for each item in the [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView). The default implementation of **ToString** is to return the type name.
 
-![Binding a list view](images/xaml-databinding1.png)
+![Binding a list view 1](images/xaml-databinding1.png)
 
 To remedy this, we can either override [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the [**ContentTemplate**](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
 
@@ -461,7 +462,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![Binding a list view](images/xaml-databinding2.png)
+![Binding a list view 2](images/xaml-databinding2.png)
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -480,7 +481,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![Binding a list view](images/xaml-databinding3.png)
+![Binding a list view 3](images/xaml-databinding3.png)
 
 For more information about XAML syntax, see [Create a UI with XAML](../design/basics/xaml-basics-ui.md). For more information about control layout, see [Define layouts with XAML](../design/layout/layouts-with-xaml.md).
 
@@ -573,7 +574,7 @@ And here's the identical result in each case.
 > [!NOTE]
 > If you're using C++, then your UI won't look exactly like the illustration below: the rendering of the **ReleaseDateTime** property is different. See the following section for more discussion of this.
 
-![Binding a list view](images/xaml-databinding4.png)
+![Binding a list view 4](images/xaml-databinding4.png)
 
 ## Formatting or converting data values for display
 

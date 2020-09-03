@@ -7,6 +7,7 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ---
+
 # Version adaptive code
 
 You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](../design/layout/layouts-with-xaml.md). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
@@ -17,7 +18,7 @@ For important background info about ApiInformation, API contracts, and configuri
 
 You use the [Windows.Foundation.Metadata.ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
 
-Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Device families overview](/uwp/extension-sdks/device-families-overview#writing-code) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
@@ -440,5 +441,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## Related articles
 
-- [Device families overview](/uwp/extension-sdks/device-families-overview)
+- [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

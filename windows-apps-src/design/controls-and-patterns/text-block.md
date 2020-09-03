@@ -1,6 +1,6 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-Description: Text block is the primary control for displaying read-only text in apps.
+description: Text block is the primary control for displaying read-only text in apps.
 title: Text block
 label: Text block
 template: detail.hbs
@@ -12,11 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Text block
 
- 
-
- Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
+Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
  
  > **Platform APIs**: [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
@@ -57,11 +56,6 @@ TextBlock textBlock1 = new TextBlock();
 textBlock1.Text = "Hello, world!";
 ```
 
-    <TextBlock Text="Hello, world!" />
-
-    TextBlock textBlock1 = new TextBlock();
-    textBlock1.Text = "Hello, world!";
-
 ### Content model
 
 There are two properties you can use to add content to a TextBlock: [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) and [Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines).
@@ -86,7 +80,7 @@ Certain conditions require TextBlock to fall back to a more feature-rich and CPU
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
 
-> **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see Version adaptive code.
+> **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various Typography properties are fast path.
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only **false** is fast path. Setting this property to **true** disables the fast path.

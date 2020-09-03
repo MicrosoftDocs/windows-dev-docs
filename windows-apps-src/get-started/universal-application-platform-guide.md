@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
-# What's a Universal Windows Platform (UWP) app?
 
+# What's a Universal Windows Platform (UWP) app?
 
 ## Where does UWP fit in the Microsoft development story?
 
-UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
+The Universal Windows Platform (UWP) is just one of many ways to create client applications for Windows. UWP apps use Windows Runtime (WinRT) APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices. UWP apps can still make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
 
 The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
 
@@ -42,11 +42,11 @@ A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are
 
 ## Extension SDKs expose the unique capabilities of specific device types
 
-If you target the universal APIs, your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs, you can.
+If you target the universal APIs, then your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
 
-Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Device families overview](/uwp/extension-sdks/device-families-overview#extension-sdks).
+Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overvieww#extension-sdks).
 
-You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing Code** section in [Device families overview](/uwp/extension-sdks/device-families-overview#writing-code).<br>
+You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing code** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
 The following video provides a brief overview of device families and adaptive coding:
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>

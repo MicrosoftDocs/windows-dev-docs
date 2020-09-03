@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Conditional XAML
 
 *Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
@@ -241,4 +242,4 @@ When the app runs on the Fall Creators Update, you use a ColorPicker to let the 
 - [Guide to UWP apps](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)
-- [Universal device family API contracts](/uwp/extension-sdks/windows-universal-sdk)
+- [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)

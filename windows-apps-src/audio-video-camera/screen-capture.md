@@ -682,7 +682,7 @@ End Class
 
 ## Record a video
 
-If you want to record a video of your application, you can follow the walkthrough presented in the article [Screen capture to video](screen-capture-video.md). Or, you can use [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](/uwp/extension-sdks/device-families-overview) for more information.
+If you want to record a video of your application, you can follow the walkthrough presented in the article [Screen capture to video](screen-capture-video.md). Or, you can use [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview) for more information.
 
 ## See also
 
