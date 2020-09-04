@@ -36,7 +36,7 @@
           href: tutorials/tab-title.md
     - name: Custom Terminal gallery
       items:
-        - name: Custom Terminal Gallery
+        - name: Custom Terminal guide
           href: custom-terminal-gallery/custom-schemes.md
         - name: Powerline in PowerShell
           href: custom-terminal-gallery/powerline-in-powershell.md
