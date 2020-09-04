@@ -1,5 +1,5 @@
 ---
-title: Custom Color Schemes Gallery
+title: Custom Color Schemes guide
 description: Some sample configurations for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
@@ -8,7 +8,7 @@ ms.topic: sample
 ms.service: terminal
 ---
 
-# Custom Terminal Gallery
+# Custom Terminal guide
 
 Here are some color schemes for you to try or use as the basis of your own designs.
 
