@@ -15,7 +15,7 @@ Windows Terminal lets you define your own color schemes, either by using the bui
 
 ## Switching to a different color scheme
 
-Launch the Windows Terminal, and then select the small downward-facing arrow in the title bar. This will open a pull-down menu that lists the available profiles on your system (for example, Windows PowerShell and Command Prompt) and some other options. Select **Settings**, and the settings.json file will open in your default text editor.
+Launch Windows Terminal and then select the small downward-facing arrow in the title bar. This will open a pull-down menu that lists the available profiles on your system (for example, Windows PowerShell and Command Prompt) and some other options. Select **Settings**, and the settings.json file will open in your default text editor.
 
 This file is where you can define various options per window or per profile. To demonstrate, let's change the color scheme for the Command Prompt profile.
 
