@@ -53,7 +53,7 @@ Because teaching tip is transient, it would not be the recommended control for p
 </tr>
 </table>
 
-A teaching tip can have several configurations, including these notable ones.
+A teaching tip can have several configurations, including these notable ones:
 
 A teaching tip can target a specific UI element with its tail to enhance contextual clarity of the information it is presenting.
 
@@ -101,9 +101,11 @@ Here's the result when the Page containing the button and teaching tip is shown:
 
 ![A sample app with a teaching tip targeting the save button. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-targeted.png)
 
+In the example above the [Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) and [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) properties are used to set the teaching tip's title and subtitle. The [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) property is set to the "SaveButton" to establish the visual connection between itself and the button. To show the teaching tip, its [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) property is set to "true".
+
 ### Non-targeted tips
 
-Not all tips relate to an element onscreen. For these scenarios, do not set the Target property and the teaching tip will instead display relative to the edges of the xaml root. However, a teaching tip can have the tail removed while retaining placement relative to a UI element by setting the TailVisibility property to "Collapsed". The following example is of a non-targeted teaching tip.
+Not all tips relate to an element onscreen. For these scenarios, do not set a target and the teaching tip will instead display relative to the edges of the xaml root. However, a teaching tip can have the tail removed while retaining placement relative to a UI element by setting the [TailVisibility](/uwp/api/microsoft.ui.xaml.controls.teachingtip.tailvisibility) property to "Collapsed". The following example is of a non-targeted teaching tip.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save" />
@@ -120,7 +122,7 @@ Note that in this example the TeachingTip is in the element tree rather than in 
 
 ### Preferred placement
 
-Teaching tip replicates Flyout's [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) placement behavior with the TeachingTipPlacementMode property. The default placement mode will try to place a targeted teaching tip above its target and a non-targeted teaching tip centered at the bottom of the xaml root. As with Flyout, if the preferred placement mode would not leave room for the teaching tip to show, another placement mode will be automatically chosen.
+Teaching tip replicates Flyout's [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) placement behavior with the [PreferredPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.preferredplacement) property. The default placement mode will try to place a targeted teaching tip above its target and a non-targeted teaching tip centered at the bottom of the xaml root. As with Flyout, if the preferred placement mode would not leave room for the teaching tip to show, another placement mode will be automatically chosen.
 
 For applications that predict gamepad input, please see [gamepad and remote control interactions]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). It is encouraged to test gamepad accessibility of each teaching tip using all possible configurations of an app's UI.
 
@@ -163,7 +165,7 @@ The diagram below depicts the result of all 13 PreferredPlacement modes that can
 
 ### Add a placement margin
 
-You can control how far a targeted teaching tip is set apart from its target and how far a non-targeted teaching tip is set apart from the edges of the xaml root by using the PlacementMargin property. Like [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin), PlacementMargin has four values – left, right, top, and bottom – so only the relevant values are used. For example, PlacementMargin.Left applies when the tip is left of the target or on the left edge of the xaml root.
+You can control how far a targeted teaching tip is set apart from its target and how far a non-targeted teaching tip is set apart from the edges of the xaml root by using the [PlacementMargin](/uwp/api/microsoft.ui.xaml.controls.teachingtip.placementmargin) property. Like [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin), PlacementMargin has four values – left, right, top, and bottom – so only the relevant values are used. For example, PlacementMargin.Left applies when the tip is left of the target or on the left edge of the xaml root.
 
 The following example shows a non-targeted tip with the PlacementMargin's Left/Top/Right/Bottom all set to 80.
 
@@ -183,7 +185,7 @@ The following example shows a non-targeted tip with the PlacementMargin's Left/T
 
 ### Add content
 
-Content can be added to a teaching tip using the Content property. If there is more content to show than what the size of a teaching tip will allow, a scrollbar will be automatically enabled to allow a user to scroll the content area.
+Content can be added to a teaching tip using the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property. If there is more content to show than what the size of a teaching tip will allow, a scrollbar will be automatically enabled to allow a user to scroll the content area.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -205,11 +207,11 @@ Content can be added to a teaching tip using the Content property. If there is m
 
 ### Add buttons
 
-By default, a standard "X" close button is shown next to the title of a teaching tip. The Close button can be customized with the CloseButtonContent property, in which case the button is moved to the bottom of the teaching tip.
+By default, a standard "X" close button is shown next to the title of a teaching tip. The Close button can be customized with the [CloseButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closebuttoncontent) property, in which case the button is moved to the bottom of the teaching tip.
 
 **Note: No close button will appear on light-dismiss enabled tips**
 
-A custom action button can be added by setting ActionButtonContent property (and optionally the ActionButtonCommand and the ActionButtonCommandParameter properties).
+A custom action button can be added by setting [ActionButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncontent) property (and optionally the [ActionButtonCommand](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommand) and the [ActionButtonCommandParameter](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommandparameter) properties).
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -234,7 +236,7 @@ A custom action button can be added by setting ActionButtonContent property (and
 
 ### Hero content
 
-Edge to edge content can be added to a teaching tip by setting the HeroContent property. The location of hero content can be set to the top or bottom of a teaching tip by setting the HeroContentPlacement property.
+Edge to edge content can be added to a teaching tip by setting the [HeroContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontent) property. The location of hero content can be set to the top or bottom of a teaching tip by setting the [HeroContentPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontentplacement) property.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -255,7 +257,7 @@ Edge to edge content can be added to a teaching tip by setting the HeroContent p
 
 ### Add an icon
 
-An icon can be added beside the title and subtitle using the IconSource property. Recommended icon sizes include 16px, 24px, and 32px.
+An icon can be added beside the title and subtitle using the [IconSource](/uwp/api/microsoft.ui.xaml.controls.teachingtip.iconsource) property. Recommended icon sizes include 16px, 24px, and 32px.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -276,7 +278,7 @@ An icon can be added beside the title and subtitle using the IconSource property
 
 ### Enable light-dismiss
 
-Light-dismiss functionality is disabled by default but it can enabled so that a teaching tip will dismiss, for example, when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.
+Light-dismiss functionality is disabled by default but it can enabled by setting the [IsLightDismissEnabled](/uwp/api/microsoft.ui.xaml.controls.teachingtip.islightdismissenabled) property so that a teaching tip will dismiss, for example, when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.
 
 The close button will be automatically removed from a light-dismiss enabled teaching tip to identify its light-dismiss behavior to users.
 
@@ -294,7 +296,7 @@ The close button will be automatically removed from a light-dismiss enabled teac
 
 ### Escaping the XAML root bounds
 
-Starting with Windows 10, version 1903 (Build 18362), a teaching tip can escape the bounds of the XAML root and the screen by setting the `ShouldConstrainToRootBounds` property. When this property is enabled, a teaching tip will not attempt to stay in the bounds of the XAML root nor the screen and will always position at the set `PreferredPlacement` mode. It is encouraged to enable the `IsLightDismissEnabled` property and set the `PreferredPlacement` mode nearest to the center of the XAML root to ensure the best experience for users.
+Starting with Windows 10, version 1903 (Build 18362), a teaching tip can escape the bounds of the XAML root and the screen by setting the [ShouldConstrainToRootBounds](/uwp/api/microsoft.ui.xaml.controls.teachingtip.shouldconstraintorootbounds) property. When this property is enabled, a teaching tip will not attempt to stay in the bounds of the XAML root nor the screen and will always position at the set `PreferredPlacement` mode. It is encouraged to enable the `IsLightDismissEnabled` property and set the `PreferredPlacement` mode nearest to the center of the XAML root to ensure the best experience for users.
 
 On earlier versions of Windows, this property is ignored and the teaching tip always stays within the bounds of the XAML root.
 
@@ -314,7 +316,7 @@ On earlier versions of Windows, this property is ignored and the teaching tip al
 
 ### Canceling and deferring close
 
-The Closing event can be used to cancel and/or defer the close of a teaching tip. This can be used to keep the teaching tip open or allow time for an action or custom animation to occur. When the closing of a teaching tip is canceled, IsOpen will go back to true, however, it will stay false during the deferral. A programmatic close can also be canceled.
+The [Closing](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closing) event can be used to cancel and/or defer the close of a teaching tip. This can be used to keep the teaching tip open or allow time for an action or custom animation to occur. When the closing of a teaching tip is canceled, IsOpen will go back to true, however, it will stay false during the deferral. A programmatic close can also be canceled.
 
 > [!NOTE]
 > If no placement option would allow a teaching tip to fully show, teaching tip will iterate through its event lifecycle to force a close rather than display without an accessible close button. If the app cancels the Closing event, the teaching tip may remain open without an accessible Close button.
