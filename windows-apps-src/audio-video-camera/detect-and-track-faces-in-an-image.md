@@ -11,8 +11,6 @@ ms.localizationpriority: medium
 
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
 This topic shows how to use the [**FaceDetector**](/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) to detect faces in an image. The [**FaceTracker**](/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) is optimized for tracking faces over time in a sequence of video frames.
 
 For an alternative method of tracking faces using the [**FaceDetectionEffect**](/uwp/api/Windows.Media.Core.FaceDetectionEffect), see [Scene analysis for media capture](scene-analysis-for-media-capture.md).
