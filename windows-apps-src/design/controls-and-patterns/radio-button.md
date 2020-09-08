@@ -22,7 +22,7 @@ In the default state, no radio button in a RadioButtons group is selected. That 
 
 The singular behavior of a RadioButtons group distinguishes it from [check boxes](checkbox.md), which support multi-selection and deselection, or clearing.
 
-![Example of a RadioButtons group, with one radio button selected](images/controls/radio-button.png)
+:::image type="content" source="images/controls/radio-button.png" alt-text="Example of a RadioButtons group, with one radio button selected":::
 
 **Get the Windows UI Library**
 
@@ -46,35 +46,35 @@ The singular behavior of a RadioButtons group distinguishes it from [check boxes
 
 Use radio buttons to let users select from two or more mutually exclusive options.
 
-![A RadioButtons group, with one radio button selected](images/radiobutton_basic.png)
+:::image type="content" source="images/radiobutton_basic.png" alt-text="A RadioButtons group, with one radio button selected":::
 
 Use radio buttons when users need to see all options before they make a selection. Radio buttons emphasize all options equally, which means that some options might draw more attention than is necessary or desired.
 
 Unless all options deserve equal attention, consider using other controls. For example, to recommend a single best option for most users and in most situations, use a [combo box](combo-box.md) to display that best option as the default option.
 
-![A combo box, displaying a default option](images/combo_box_collapsed.png)
+:::image type="content" source="images/combo_box_collapsed.png" alt-text="A combo box, displaying a default option":::
 
 If there are only two possible options that can be expressed clearly as a single binary choice, such as on/off or yes/no, combine them into a single [check box](checkbox.md) or [toggle switch](toggles.md) control. For example, use a single check box for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
 
 Don't use two radio buttons for a single binary choice:
 
-![Two radio buttons presenting a binary choice](images/radiobutton_vs_checkbox_rb.png)
+:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="Two radio buttons presenting a binary choice":::
 
 Use a check box instead:
 
-![A check box is a good alternative for presenting a binary choice](images/radiobutton_vs_checkbox_cb.png)
+:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="A check box is a good alternative for presenting a binary choice":::
 
 When users can select multiple options, use [check boxes](checkbox.md).
 
-![Check boxes support multiselection](images/checkbox2.png)
+:::image type="content" source="images/checkbox2.png" alt-text="Check boxes support multiselection":::
 
 When users' options lie within a range of values (for example, *10, 20, 30, ... 100*), use a [slider](slider.md) control.
 
-![A slider control, displaying one value in a range of values](images/controls/slider.png)
+:::image type="content" source="images/controls/slider.png" alt-text="A slider control, displaying one value in a range of values":::
 
 If there are more than eight options, use a [combo box](combo-box.md).
 
-![A list box, displaying multiple options](images/combo_box_scroll.png)
+:::image type="content" source="images/combo_box_scroll.png" alt-text="A list box, displaying multiple options":::
 
 If the available options are based on an app's current context, or they can otherwise vary dynamically, use a list control.
 
@@ -122,7 +122,7 @@ When no radio button is selected, the first radio button in the list gets focus.
 
 |List without tab focus | List with initial tab focus|
 |:--:|:--:|
-| ![List without tab focus](images/radiobutton-no-selected-item-no-tab-focus.png) | ![List with initial tab focus](images/radiobutton-no-selected-item-tab-focus.png)|
+| ![List without tab focus and no selected item](images/radiobutton-no-selected-item-no-tab-focus.png) | ![List with initial tab focus and no selected item](images/radiobutton-no-selected-item-tab-focus.png)|
 
 ##### One radio button is selected
 
@@ -130,7 +130,7 @@ When a user tabs into the list where a radio button is already selected, the sel
 
 |List without tab focus | List with initial tab focus |
 |:--:|:--:|
-| ![List without tab focus](images/radiobutton-selected-item-no-tab-focus.png) | ![List with initial tab focus](images/radiobutton-selected-item-tab-focus.png)|
+| ![List without tab focus and a selected item](images/radiobutton-selected-item-no-tab-focus.png) | ![List with initial tab focus and a selected item](images/radiobutton-selected-item-tab-focus.png)|
 
 #### Keyboard navigation
 
@@ -144,7 +144,7 @@ In a single-column or single-row layout, keyboard navigation results in the foll
 
 |Single column | Single row|
 |:--|:--|
-| ![Example of keyboard navigation in a single-column or single-row RadioButtons group](images/radiobutton-keyboard-navigation-single-column.png)</br>The Up arrow and Down arrow keys move between items.</br>The Left arrow and Right arrow keys do nothing. | ![Example of keyboard navigation in a single-column or single-row RadioButtons group](images/radiobutton-keyboard-navigation-single-row.png)<br/>The Left and Up arrow keys move to the previous item, and the Right and Down arrow keys move to the next item. |
+| ![Example of keyboard navigation in a single-column RadioButtons group](images/radiobutton-keyboard-navigation-single-column.png)</br>The Up arrow and Down arrow keys move between items.</br>The Left arrow and Right arrow keys do nothing. | ![Example of keyboard navigation in a single-row RadioButtons group](images/radiobutton-keyboard-navigation-single-row.png)<br/>The Left and Up arrow keys move to the previous item, and the Right and Down arrow keys move to the next item. |
 
 ##### Navigation within multi-column, multi-row layouts
 
@@ -152,8 +152,8 @@ In a multi-column, multi-row grid layout, keyboard navigation results in this be
 
 |Left/Right arrow keys| Up/Down arrow keys |
 |:--|:--|
-| ![Example of keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)</br>The Left and Right arrow keys move focus horizontally between items in a row. | ![Example of keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-2.png)<br/>The Up and Down arrow keys move focus vertically between items in a column. |
-| ![Example of keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-3.png)</br> When focus is on the last item in a column and the Right or Left arrow key is pressed, focus moves to the last item in the next or previous column (if any). | ![Example of keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-4.png)<br/>When focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column (if any). When focus is on the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column (if any). |
+| ![Example of horizontal keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)</br>The Left and Right arrow keys move focus horizontally between items in a row. | ![Example of vertical keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-2.png)<br/>The Up and Down arrow keys move focus vertically between items in a column. |
+| ![Example of horizontal keyboard navigation with focus on last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-3.png)</br> When focus is on the last item in a column and the Right or Left arrow key is pressed, focus moves to the last item in the next or previous column (if any). | ![Example of vertical keyboard navigation with focus on the last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-4.png)<br/>When focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column (if any). When focus is on the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column (if any). |
 
 For more information, see [Keyboard interactions](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
@@ -213,7 +213,7 @@ Here, you declare a simple `RadioButtons` control with three options. The [Heade
 
 The result looks like this:
 
-![A group of three radio buttons](images/radiobuttons-default-group.png)
+:::image type="content" source="images/radiobuttons-default-group.png" alt-text="A group of three radio buttons":::
 
 To take an action when the user selects an option, handle the [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event. Here, you change the background color of a [Border](/uwp/api/windows.ui.xaml.controls.border) element named "ExampleBorder" (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`).
 
@@ -263,7 +263,7 @@ Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are us
 </muxc:RadioButtons>
 ```
 
-![A group radio buttons with symbol icons](images/radiobuttons-symbolicon.png)
+:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="A group radio buttons with symbol icons":::
 
 You can also use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls to populate the `RadioButtons` items. This is a special case that we discuss later. See [RadioButton controls in a RadioButtons group]().
 
@@ -362,7 +362,7 @@ By default, the `RadioButtons` control arranges its radio buttons vertically in 
 </muxc:RadioButtons>
 ```
 
-![Radio buttons in two three-column groups](images/radiobuttons-multi-column.png)
+:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="Radio buttons in two three-column groups":::
 
 > [!TIP]
 > To have items arranged in a single horizontal row, set `MaxColumns` equal to the number of items in the group.
@@ -471,7 +471,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 These two groups of `RadioButton` controls look like this:
 
-![Radio buttons in two groups](images/radio-button-groups.png)
+:::image type="content" source="images/radio-button-groups.png" alt-text="Radio buttons in two groups":::
 
 ### Radio button states
 
@@ -497,9 +497,9 @@ The default spacing of individual `RadioButton` controls is different than the s
 
 The following images show the preferred spacing of radio buttons in a group.
 
-![Image showing a set of radio buttons, arranged vertically](images/radiobutton-layout.png)
+:::image type="content" source="images/radiobutton-layout.png" alt-text="Image showing a set of radio buttons, arranged vertically":::
 
-![Image showing spacing guidelines for radio buttons](images/radiobutton-redline.png)
+:::image type="content" source="images/radiobutton-redline.png" alt-text="Image showing spacing guidelines for radio buttons":::
 
 > [!NOTE]
 > If you're using a WinUI RadioButtons control, the spacing, margins, and orientation are already optimized.
