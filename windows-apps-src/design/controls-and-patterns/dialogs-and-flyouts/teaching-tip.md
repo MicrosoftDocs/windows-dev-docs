@@ -101,7 +101,7 @@ Here's the result when the Page containing the button and teaching tip is shown:
 
 ![A sample app with a teaching tip targeting the save button. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-targeted.png)
 
-In the example above the [Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) and [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) properties are used to set the teaching tip's title and subtitle. The [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) property is set to the "SaveButton" to establish the visual connection between itself and the button. To show the teaching tip, its [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) property is set to "true".
+In the example above, the [Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) and [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) properties are used to set the teaching tip's title and subtitle. The [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) property is set to the "SaveButton" to establish the visual connection between itself and the button. To show the teaching tip, its [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) property is set to `true`.
 
 ### Non-targeted tips
 
