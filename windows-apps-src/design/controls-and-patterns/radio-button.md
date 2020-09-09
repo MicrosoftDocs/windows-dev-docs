@@ -199,6 +199,11 @@ The `RadioButtons` control uses a content model similar to an [ItemsControl](/uw
 - Use the [SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) or [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) properties to get and set which option is selected.
 - Handle the [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event to take action when an option is chosen.
 
+> [!TIP]
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+
 Here, you declare a simple `RadioButtons` control with three options. The [Header](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.header) property is set to give the group a label, and the `SelectedIndex` property is set to provide a default option.
 
 ```xaml
