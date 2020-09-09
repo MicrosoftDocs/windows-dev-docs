@@ -16,6 +16,9 @@ Answers to questions that you're likely to have about authoring and consuming Wi
 > [!NOTE]
 > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
 
+## Where can I find C++/WinRT sample apps?
+See [C++/WinRT sample apps](/samples/browse/?languages=cppwinrt).
+
 ## How do I retarget my C++/WinRT project to a later version of the Windows SDK?
 See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
