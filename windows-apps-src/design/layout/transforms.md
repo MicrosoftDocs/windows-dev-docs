@@ -103,8 +103,8 @@ The mathematical description of a transform might be useful to you if you have a
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
-| [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | 0   |
-| [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |
+| [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | 0   |
+| [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |
 | [**OffsetX**](/uwp/api/windows.ui.xaml.media.matrix.offsetx) | [**OffsetY**](/uwp/api/windows.ui.xaml.media.matrix.offsety) | 1   |
 
  
