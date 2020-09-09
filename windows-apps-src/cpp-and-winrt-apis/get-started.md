@@ -176,6 +176,10 @@ This scenario is about building applications and controls on the XAML UI framewo
 
 Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](./binding-property.md) and [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md).
 
+## Sample apps written in C++/WinRT
+
+See [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
+
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items property](/uwp/api/windows.web.syndication.syndicationfeed.items)

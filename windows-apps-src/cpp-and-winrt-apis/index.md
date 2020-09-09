@@ -35,6 +35,8 @@ For info about porting to C++/WinRT, see these resources.
 - [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
 - [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)
 
+Also see [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
+
 ### Topics about C++/WinRT
 
 | Topic | Description |
