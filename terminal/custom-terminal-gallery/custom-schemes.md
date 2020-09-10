@@ -72,7 +72,6 @@ After:
     "commandline": "cmd.exe",
     "hidden": false,
     "colorScheme" : "Retro",
-    "colorScheme" : "Retro",
     "cursorColor" : "#FFFFFF",
     "cursorShape": "filledBox",
     "fontSize" : 16,
