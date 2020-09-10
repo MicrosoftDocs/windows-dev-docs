@@ -3,7 +3,7 @@ title: Windows Terminal Panes
 description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/21/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -16,28 +16,31 @@ Panes give you the ability to run multiple command-line applications next to eac
 
 ### Using the keyboard
 
-You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can type <kbd>alt+shift+plus</kbd>. For a horizontal pane of your default profile, you can type <kbd>alt+shift+-</kbd>.
+You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can press the <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> key combination. For a horizontal pane of your default profile, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
 
-If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical` or `horizontal` values for the `split` property in your profiles.json file. If you just want a pane with the maximum amount of surface area, you can set `split` to `auto`. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
+If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
 
 ```json
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+=" },
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+|" }
+{ "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+d" }
 ```
 
-### Using the dropdown menu
+### Using the new tab button and dropdown menu
 
-If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. This will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
+If you'd like to open a new pane of your default profile, you can hold the <kbd>alt</kbd> key and click the new tab button. If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. Both of these options will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 
 ![Windows Terminal dropdown pane](./images/alt-click-pane.gif)
 
+> [!IMPORTANT]
+> Opening a new pane using the new tab button is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Switching between panes
 
-The terminal allows you to navigate between panes by using the keyboard. If you hold the <kbd>alt</kbd> key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
+The terminal allows you to navigate between panes by using the keyboard. If you hold the <kbd>Alt</kbd> key, you can use your arrow keys to move your focus between panes. You can identify which pane is in focus by the accent color border surrounding it. Note that this accent color is set in your Windows color settings.
 
 ![Windows Terminal switch panes](./images/navigate-panes.gif)
 
@@ -52,9 +55,9 @@ You can customize this by adding key bindings for the `moveFocus` command and se
 
 ## Resizing a pane
 
-You can adjust the size of your panes by holding <kbd>alt+shift</kbd> and using your arrow keys to resize the focused pane.
+You can adjust the size of your panes by holding <kbd>Alt</kbd>+<kbd>Shift</kbd> and using your arrow keys to resize the focused pane.
 
-![Windows Terminal create pane](./images/resize-panes.gif)
+![Windows Terminal resize pane](./images/resize-panes.gif)
 
 To customize this key binding, you can add new ones using the `resizePane` action and setting the `direction` to either `down`, `left`, `right`, or `up`.
 
@@ -67,7 +70,7 @@ To customize this key binding, you can add new ones using the `resizePane` actio
 
 ## Closing a pane
 
-You can close the focused pane by typing <kbd>ctrl+shift+w</kbd>. If you only have one pane, <kbd>ctrl+shift+w</kbd> will close the tab. As always, closing the last tab will close the window.
+You can close the focused pane by typing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd>. If you only have one pane, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd> will close the tab. As always, closing the last tab will close the window.
 
 ![Windows Terminal close panes](./images/close-panes.gif)
 
@@ -92,7 +95,5 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 ```json
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
 ```
-
-### New terminal arguments
 
 [!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]

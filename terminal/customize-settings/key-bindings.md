@@ -3,13 +3,16 @@ title: Windows Terminal Key Bindings
 description: Learn how to create custom key bindings for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/21/2020
+ms.date: 08/26/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
 ---
 
 # Custom key bindings in Windows Terminal
+
+> [!NOTE]
+> If you are using [Windows Terminal Preview](https://aka.ms/terminal-preview) and want to customize commands in the command palette, additional information can be found on the [Command palette page](./../command-palette.md).
 
 You can create custom key bindings (keyboard shortcuts) inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
@@ -89,18 +92,23 @@ ___
 
 `ctrl+`, `shift+`, `alt+`
 
+> [!NOTE]
+> The `Windows` key is not supported as a modifier. 
+
 ### Modifier keys
 
 | Type | Keys |
 | ---- | ---- |
 | Function and alphanumeric keys | `f1-f24`, `a-z`, `0-9` |
-| Symbols | ``` ` ```, `-`, `=`, `[`, `]`, `\`, `;`, `'`, `,`, `.`, `/` |
-| Arrow keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home`, `plus` |
+| Symbols | ``` ` ```, `-`, `=`, `[`, `]`, `\`, `;`, `'`, `,`, `.`, `/`, `plus` |
+| Arrow keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home` |
 | Action keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert` |
 | Numpad keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
 
-<br />
+**Note:** `=` and `plus` are equivalents. The latter must not be confused with `numpad_plus`.
 
+> [!IMPORTANT]
+> `app` and `menu` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 ___
 
 ## Application-level commands
@@ -182,7 +190,7 @@ This allows you to switch between full screen and default window sizes.
 { "command": "toggleFullscreen", "keys": "f11" }
 ```
 
-### Toggle focus mode ([Preview](https://aka.ms/terminal-preview/))
+### Toggle focus mode
 
 This allows you to enter "focus mode", which hides the tabs and title bar.
 
@@ -196,10 +204,7 @@ _This command is not currently bound in the default settings_.
 { "command": "toggleFocusMode", "keys": "" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Toggle always on top mode ([Preview](https://aka.ms/terminal-preview/))
+### Toggle always on top mode
 
 This allows you toggle the "always on top" state of the window. When in "always on top" mode, the window will appear on top of all other non-topmost windows.
 
@@ -212,6 +217,30 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "toggleAlwaysOnTop", "keys": "" }
 ```
+
+### Send input ([Preview](https://aka.ms/terminal-preview/))
+
+Send arbitrary text input to the shell.
+As an example the input `"text\n"` will write "text" followed by a newline to the shell.
+
+ANSI escape sequences may be used, but escape codes like `\x1b` must be written as `\u001b`.
+For instance `"\u001b[A"` will behave as if the up arrow button had been pressed.
+
+**Command name:** `sendInput`
+
+**Default bindings:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "sendInput", "input": "\u001b[A" }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `input` | Required | String | The text input to feed into the shell. |
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
@@ -227,6 +256,56 @@ ___
 This closes the current tab.
 
 **Command name:** `closeTab`
+
+### Close all other tabs ([Preview](https://aka.ms/terminal-preview/))
+
+This closes all tabs except for the one at an index. If no index is provided, use the focused tab's index.
+
+**Command name:** `closeOtherTabs`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "closeOtherTabs", "index": 1 }, "keys": "" }
+{ "command": { "action": "closeOtherTabs", "index": null }, "keys": "" }
+{ "command": "closeOtherTabs", "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Optional | Integer | Position of the tab to be kept open. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+### Close tabs after index ([Preview](https://aka.ms/terminal-preview/))
+
+This closes the tabs following the tab at an index. If no index is provided, use the focused tab's index.
+
+**Command name:** `closeTabsAfter`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": { "action": "closeTabsAfter", "index": 1 }, "keys": "" }
+{ "command": { "action": "closeTabsAfter", "index": null }, "keys": "" }
+{ "command": "closeTabsAfter", "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Optional | Integer | Position of the last tab to be kept open. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Duplicate tab
 
@@ -295,6 +374,32 @@ This opens the tab to the left of the current one.
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
 
+### Tab search ([Preview](https://aka.ms/terminal-preview/))
+
+:::row:::
+:::column span="":::
+This opens the tab search box.
+
+**Command name:** `tabSearch`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "tabSearch", "keys": ""}
+```
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab search](./../images/tab-search.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Open a specific tab
 
 This opens a specific tab depending on the index.
@@ -321,7 +426,7 @@ This opens a specific tab depending on the index.
 | ---- | --------- | ------- | ----------- |
 | `index` | Required | Integer | Tab that will open based on its position in the tab bar (starting at 0). |
 
-### Rename tab ([Preview](https://aka.ms/terminal-preview/))
+### Rename tab
 
 This command can be used to rename a tab to a specific string.
 
@@ -345,10 +450,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Change tab color ([Preview](https://aka.ms/terminal-preview/))
+### Change tab color
 
 This command can be used to change the color of a tab to a specific value.
 
@@ -372,10 +474,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The new color to use for this tab. If omitted, this command will revert the tab's color back to its original value. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Open tab color picker ([Preview](https://aka.ms/terminal-preview/))
+### Open tab color picker
 
 This command can be used to open the color picker for the active tab. The color picker can be used to set a color for the tab at runtime.
 
@@ -388,9 +487,6 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "openTabColorPicker", "keys": "" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
@@ -430,6 +526,32 @@ This changes focus to a different pane depending on the direction.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
+
+### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
+
+:::row:::
+:::column span="":::
+This expands the focused pane to fill the entire contents of the window.
+
+**Command name:** `togglePaneZoom`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "togglePaneZoom", "keys": "" }
+```
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal toggle pane zoom](./../images/toggle-pane-zoom.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Resize a pane
 
@@ -509,6 +631,10 @@ This copies the selected terminal content to your clipboard.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
+| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `copyFormatting` behavior is inherited. |
+
+> [!IMPORTANT]
+> `copyFormatting` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Paste
 
@@ -618,7 +744,7 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
 
-### Toggle retro terminal effects ([Preview](https://aka.ms/terminal-preview/))
+### Toggle retro terminal effects
 
 This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
@@ -632,8 +758,31 @@ _This command is not currently bound in the default settings_.
 { "command": "toggleRetroEffect", "keys": "" }
 ```
 
+### Set the color scheme ([Preview](https://aka.ms/terminal-preview/))
+
+Changes the active color scheme.
+
+**Command name:** `setColorScheme`
+
+#### Arguments
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `colorScheme` | Required | String | The `name` of the color scheme to apply. |
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+**Example binding:**
+
+```json
+{ "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
+```
+
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 
 <br />
 
