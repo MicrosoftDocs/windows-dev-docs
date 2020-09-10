@@ -89,7 +89,8 @@ ___
 
 `ctrl+`, `shift+`, `alt+`
 
-> Note: the `Windows` key is not yet supported as a modifier. 
+> [!NOTE]
+> The `Windows` key is not supported as a modifier. 
 
 ### Modifier keys
 
