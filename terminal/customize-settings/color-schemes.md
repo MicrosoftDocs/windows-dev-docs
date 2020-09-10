@@ -36,7 +36,6 @@ Change it to read:
 
 Notice the extra comma in the **hidden** line. Once you save this file, Windows Terminal will update any open window. Open a Command Prompt tab if you haven't already, and you'll immediately see that the colors have changed.
 
-
 ## Creating your own color scheme
 
 The "Tango Light" scheme is included as a default option, but you can create your own scheme from scratch or by copying an existing scheme.
