@@ -81,10 +81,14 @@ This is the directory the shell starts in when it is loaded.
 
 > [!NOTE]
 > Omitting the startingDirectory value in a profile results in...
-> ..if you run Windows Terminal from the Start menu: C:\windows\system32
-> ..if you run wt.exe from the Start menu: C:\windows\system32
-> ..if you run wt.exe from Win+R: %USERPROFILE%
-> ..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
+</br>
+..if you run Windows Terminal from the Start menu: C:\windows\system32
+</br>
+..if you run wt.exe from the Start menu: C:\windows\system32
+</br>
+..if you run wt.exe from Win+R: %USERPROFILE%
+</br>
+..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
 ___
 
 ## Dropdown settings
