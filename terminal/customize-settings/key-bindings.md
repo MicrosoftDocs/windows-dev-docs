@@ -92,6 +92,9 @@ ___
 
 `ctrl+`, `shift+`, `alt+`
 
+> [!NOTE]
+> The `Windows` key is not supported as a modifier. 
+
 ### Modifier keys
 
 | Type | Keys |
@@ -102,11 +105,10 @@ ___
 | Action keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert`, `app`, `menu`  |
 | Numpad keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
 
+**Note:** `=` and `plus` are equivalents. The latter must not be confused with `numpad_plus`.
+
 > [!IMPORTANT]
 > `app` and `menu` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-<br />
-
 ___
 
 ## Application-level commands
@@ -342,7 +344,7 @@ This creates a new tab. Without any arguments, this will open the default profil
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `commandLine` | Optional | Executable file name as a string | Executable run within the tab. |
+| `commandline` | Optional | Executable file name as a string | Executable run within the tab. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the tab will open. |
 | `tabTitle` | Optional | String | Title of the new tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
@@ -594,7 +596,7 @@ This halves the size of the active pane and opens another. Without any arguments
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `split` | Required | `"vertical"`, `"horizontal"`, `"auto"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
-| `commandLine` | Optional | Executable file name as a string | Executable run within the pane. |
+| `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
 | `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
