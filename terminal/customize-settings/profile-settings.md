@@ -77,7 +77,7 @@ This is the directory the shell starts in when it is loaded.
 <br />
 
 > [!NOTE]
-> When setting the starting directory that your installed WSL distributions open to, you should use this format: "startingDirectory": "\\\\\\\\wsl$\\DISTRO NAME\\home\\USERNAME", replacing with the name of your distribution. For example, "startingDirectory": "\\\\\\\\wsl$\\\\Ubuntu-20.04\\\\home\\\\user1".
+> When setting the starting directory that your installed WSL distributions open to, you should use this format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the name of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
 
 > [!NOTE]
 > Omitting the startingDirectory value in a profile results in...
