@@ -1,5 +1,5 @@
 ---
-Description: A progress control provides feedback to the user that a long-running operation is underway.
+description: A progress control provides feedback to the user that a long-running operation is underway.
 title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -55,13 +55,12 @@ There are two controls to show the user that an operation is underway – either
 
 Additionally, a progress control is read only and not interactive. Meaning that the user cannot invoke or use these controls directly.
 
-![ProgressBar states](images/progress-bar-two-states.png)
+|Control|Display|
+|---|---|
+| Indeterminate ProgressBar | ![ProgressBar indeterminate](images/progressbar-indeterminate.gif) |
+| Determinate ProgressBar | ![ProgressBar determinate](images/progressbar-determinate.png)|
+| Indeterminate ProgressRing | ![ProgressRing state](images/progressring-indeterminate.gif)|
 
-*Top to bottom - Indeterminate ProgressBar and a determinate ProgressBar*
-
-![ProgressRing state](images/ProgressRing_SingleState.png)
-
-*An indeterminate ProgressRing*
 
 ## Examples
 
