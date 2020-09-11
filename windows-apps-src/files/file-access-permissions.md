@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
-ms.date: 12/19/2018
+ms.date: 09/10/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ dev_langs:
 
 Universal Windows Platform (UWP) apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 
-## The locations that all apps can access
+## Locations that all apps can access
 
 When you create a new app, you can access the following file system locations by default:
 
@@ -248,7 +248,7 @@ By default, your app can only access files and folders in the user's Downloads f
 
 In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by [calling a file picker](quickstart-using-file-and-folder-pickers.md) to let the user pick files and folders for the app to access.
 
-Apps that that declare the [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension have file-system permissions from the directory that they are launched from in the console window, and downwards.
+Apps that declare the [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension have file-system permissions from the directory that they are launched from in the console window, and downwards.
 
 ### Retaining access to files and folders
 
