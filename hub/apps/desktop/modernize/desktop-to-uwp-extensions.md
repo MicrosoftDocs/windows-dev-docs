@@ -1,7 +1,7 @@
 ---
 description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 title: Modernize existing desktop apps using Desktop Bridge
-ms.date: 08/25/2020
+ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
@@ -1159,8 +1159,8 @@ AutoPlay can present your application as an option when a user connects a device
 |ProviderDisplayName | A string that represents your application or service (For example: "Contoso video player"). |
 |ContentEvent |The name of a content event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events [here](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |The Verb setting identifies a value that is passed to your application for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved. |
-|DropTargetHandler |The class ID of the application that implements the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
-|Parameters |You don't have to implement the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
+|DropTargetHandler |The class ID of the application that implements the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface. Files from the removable media are passed to the [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) implementation.  |
+|Parameters |You don't have to implement the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
 |DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
 |HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
 |InitCmdLine |The string parameter that you want to pass into the [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) method of the [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
@@ -1272,6 +1272,9 @@ Find a sample that uses this extension [Here](https://github.com/Microsoft/Deskt
 ### Share fonts with other Windows applications
 
 Share your custom fonts with other Windows applications.
+
+> [!NOTE]
+> Before you can submit an app that uses this extension to the Store, you must first obtain approval from the Store team. To obtain approval, go to [https://aka.ms/storesupport](https://aka.ms/storesupport), click **Contact us**, and choose options relevant to submitting apps to the dashboard. This approval process helps to ensure that there are no conflicts between fonts installed by your app and fonts that are installed with the OS. If you do not obtain approval, you will receive an error similar to the following when you submit your app: "Package acceptance validation error: You can't use extension windows.sharedFonts with this account. Contact our support team if you'd like to request permissions to use this extension."
 
 #### XML namespaces
 
