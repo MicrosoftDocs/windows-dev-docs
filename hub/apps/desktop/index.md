@@ -1,8 +1,8 @@
 ---
-Description: Learn how to get started building desktop apps for Windows PCs, including how to choose the right app platform for new apps and how to modernize existing apps for Windows 10.
+description: Learn how to get started building desktop apps for Windows PCs, including how to choose the right app platform for new apps and how to modernize existing apps for Windows 10.
 title: Build desktop apps for Windows PCs
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 9/10/2020
 keywords: windows win32, desktop development
 ms.author: mcleans
 author: mcleanbyron
@@ -95,8 +95,9 @@ If you are creating a new desktop app for Windows, here are some resources to he
 
 | Resource | Description |
 |---------|-------------|
-| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | Learn about the latest features of .NET Core 3.0, including enhancements for WPF and Windows Forms apps. |
-| [Desktop guide for WPF and .NET Core 3.0](/dotnet/desktop-wpf/overview/index) | Develop WPF apps that target .NET Core 3.0 instead of the full .NET Framework.  |
+| [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1) | Learn about the latest features of .NET Core 3.1, including enhancements for WPF and Windows Forms apps. |
+| [.NET 5](/dotnet/core/dotnet-five) | This article details what's included in .NET 5, which is the next release of .NET Core following 3.1. |
+| [Desktop guide for WPF and .NET Core](/dotnet/desktop-wpf/overview/index) | Develop WPF apps that target .NET Core instead of the full .NET Framework.  |
 | [Azure](/azure/) | Extend the reach of your apps with Azure cloud services. |
 | [Visual Studio](/visualstudio/) | Learn how to use Visual Studio to develop apps and services. |
 | [MSIX](/windows/msix/) | Package and deploy any Windows app in a modern and universal packaging format. |
