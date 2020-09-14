@@ -120,17 +120,35 @@ When no radio button is selected, the first radio button in the list gets focus.
 > [!NOTE]
 > The item that receives tab focus from the initial tab navigation is not selected.
 
-|List without tab focus | List with initial tab focus|
-|:--:|:--:|
-| ![List without tab focus and no selected item](images/radiobutton-no-selected-item-no-tab-focus.png) | ![List with initial tab focus and no selected item](images/radiobutton-no-selected-item-tab-focus.png)|
+:::row:::
+   :::column span="":::
+     **_List without tab focus, no selection_**
+
+     ![List without tab focus and no selected item](images/radiobutton-no-selected-item-no-tab-focus.png)
+   :::column-end:::
+   :::column span="":::
+      **_List with initial tab focus, no selection_**
+
+      ![List with initial tab focus and no selected item](images/radiobutton-no-selected-item-tab-focus.png)
+   :::column-end:::
+:::row-end:::
 
 ##### One radio button is selected
 
 When a user tabs into the list where a radio button is already selected, the selected radio button gets focus.
 
-|List without tab focus | List with initial tab focus |
-|:--:|:--:|
-| ![List without tab focus and a selected item](images/radiobutton-selected-item-no-tab-focus.png) | ![List with initial tab focus and a selected item](images/radiobutton-selected-item-tab-focus.png)|
+:::row:::
+   :::column span="":::
+     **_List without tab focus_**
+
+     ![List without tab focus and a selected item](images/radiobutton-selected-item-no-tab-focus.png)
+   :::column-end:::
+   :::column span="":::
+      **_List with initial tab focus_**
+
+      ![List with initial tab focus and a selected item](images/radiobutton-selected-item-tab-focus.png)
+   :::column-end:::
+:::row-end:::
 
 #### Keyboard navigation
 
@@ -142,18 +160,58 @@ When an item in a `RadioButtons` group already has focus, the user can use arrow
 
 In a single-column or single-row layout, keyboard navigation results in the following behavior:
 
-|Single column | Single row|
-|:--|:--|
-| ![Example of keyboard navigation in a single-column RadioButtons group](images/radiobutton-keyboard-navigation-single-column.png)</br>The Up arrow and Down arrow keys move between items.</br>The Left arrow and Right arrow keys do nothing. | ![Example of keyboard navigation in a single-row RadioButtons group](images/radiobutton-keyboard-navigation-single-row.png)<br/>The Left and Up arrow keys move to the previous item, and the Right and Down arrow keys move to the next item. |
+:::row:::
+   :::column span="":::
+     **_Single column_**
+
+     ![Example of keyboard navigation in a single-column RadioButtons group](images/radiobutton-keyboard-navigation-single-column.png)
+
+     The Up arrow and Down arrow keys move between items.</br>The Left arrow and Right arrow keys do nothing.
+   :::column-end:::
+   :::column span="":::
+      **_Single row_**
+
+      ![Example of keyboard navigation in a single-row RadioButtons group](images/radiobutton-keyboard-navigation-single-row.png)
+
+      The Left and Up arrow keys move to the previous item, and the Right and Down arrow keys move to the next item.
+   :::column-end:::
+:::row-end:::
 
 ##### Navigation within multi-column, multi-row layouts
 
 In a multi-column, multi-row grid layout, keyboard navigation results in this behavior:
 
-|Left/Right arrow keys| Up/Down arrow keys |
-|:--|:--|
-| ![Example of horizontal keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)</br>The Left and Right arrow keys move focus horizontally between items in a row. | ![Example of vertical keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-2.png)<br/>The Up and Down arrow keys move focus vertically between items in a column. |
-| ![Example of horizontal keyboard navigation with focus on last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-3.png)</br> When focus is on the last item in a column and the Right or Left arrow key is pressed, focus moves to the last item in the next or previous column (if any). | ![Example of vertical keyboard navigation with focus on the last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-4.png)<br/>When focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column (if any). When focus is on the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column (if any). |
+**_Left/Right arrow keys_**
+
+:::row:::
+   :::column span="":::
+      ![Example of horizontal keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)
+
+      
+
+      The Left and Right arrow keys move focus horizontally between items in a row.
+   :::column-end:::
+   :::column span="":::
+     ![Example of horizontal keyboard navigation with focus on last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-3.png)
+
+      When focus is on the last item in a column and the Right or Left arrow key is pressed, focus moves to the last item in the next or previous column (if any).
+   :::column-end:::
+:::row-end:::
+
+**_Up/Down arrow keys_**
+
+:::row:::
+   :::column span="":::
+      ![Example of vertical keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-2.png)
+
+      The Up and Down arrow keys move focus vertically between items in a column.
+   :::column-end:::
+   :::column span="":::
+     ![Example of vertical keyboard navigation with focus on the last item in a column](images/radiobutton-keyboard-navigation-multi-column-row-4.png)
+
+      When focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column (if any). When focus is on the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column (if any)
+   :::column-end:::
+:::row-end:::
 
 For more information, see [Keyboard interactions](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
@@ -167,9 +225,22 @@ The `RadioButtons` control also doesn't support enumeration, because the control
 
 When you use the keyboard to navigate between items in a `RadioButtons` group, as focus moves from one item to the next, the newly focused item gets selected and the previously focused item is cleared.
 
-|Before keyboard navigation | After keyboard navigation|
-|:--|:--|
-| ![Example of focus and selection before keyboard navigation](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Example of focus and selection before keyboard navigation* | ![Example of focus and selection after keyboard navigation](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Example of focus and selection after keyboard navigation, where the Down arrow key moves focus to radio button 3, selects it, and clears radio button 2* |
+:::row:::
+   :::column span="":::
+      **_Before keyboard navigation_**
+
+      ![Example of focus and selection before keyboard navigation](images/radiobutton-two-selected-before-keyboard-navigation.png)
+
+      Focus and selection before keyboard navigation.
+   :::column-end:::
+   :::column span="":::
+     **_After keyboard navigation_**
+
+      ![Example of focus and selection after keyboard navigation](images/radiobutton-three-selected-after-keyboard-navigation.png)
+
+      Focus and selection after keyboard navigation, where the Down arrow key moves focus to radio button 3, selects it, and clears radio button 2.
+   :::column-end:::
+:::row-end:::
 
 You can move focus without changing selection by using Ctrl+arrow keys to navigate. After focus is moved, you can use the Spacebar to select the item that currently has focus.
 
