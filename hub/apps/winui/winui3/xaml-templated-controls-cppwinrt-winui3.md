@@ -14,15 +14,15 @@ ms.custom: 19H1
 
 This article walks you through creating a templated XAML control for WinUI 3 with C++/WinRT. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates. This article describes the same scenario as the article [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) but has been adapted to use WinUI 3.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./get-started-winui3-for-desktop.md).
+Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./get-started-winui3-for-desktop.md). You will also need to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com).
 
 ## Create a Blank App (BgLabelControlApp)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (WinUI in UWP)** project, set its name to BgLabelControlApp. Set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the **Blank App, Packaged (WinUI in Desktop)** project template, just make sure to perform all of the steps in the **BgLabelControlApp (Desktop)** project.
+Begin by creating a new project in Microsoft Visual Studio. In the `Create a new project` dialog, select the **Blank App (WinUI in UWP)** project template, making sure to select the C++ language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. Set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the **Blank App, Packaged (WinUI in Desktop)** project template, just make sure to perform all of the steps in the **BgLabelControlApp (Desktop)** project.
 
 ![Blank App Project Template](images/WinUI-cpp-newproject-UWP.png)
 
-Because the class will be instantiated from XAML markup, and for that reason it's going to be a runtime class. The first step in authoring a new runtime class is to add a new Midl File (.idl) item to the project. From the **Project** menu, select **Add New Item...** and type "MIDL" in the search box to find the .idl file item. Name the new file `BgLabelControl.idl` so that the name will be consistent with the steps in this article. Delete the default contents of `BgLabelControl.idl`, and paste in this runtime class declaration.
+The templated control class will be instantiated from XAML markup, and for that reason it's going to be a runtime class. The first step in authoring a new runtime class is to add a new Midl File (.idl) item to the project. From the **Project** menu, select **Add New Item...** and type "MIDL" in the search box to find the .idl file item. Name the new file `BgLabelControl.idl` so that the name will be consistent with the steps in this article. Delete the default contents of `BgLabelControl.idl`, and paste in this runtime class declaration.
 
 ```cppwinrt
 // BgLabelControl.idl
@@ -138,7 +138,7 @@ The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided b
 
 
 
-## Design the default style for BgLabelControl
+## Define the default style for BgLabelControl
 
 In its constructor, **BgLabelControl** sets a default style key for itself. A templated control needs to have a default style — containing a default control template — which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.
 
@@ -186,6 +186,7 @@ Also, add the following include directive to `MainPage.h` so that the **MainPage
 
 Now build and run the project. You'll see that the default control template is binding to the background brush, and to the label, of the **BgLabelControl** instance in the markup.
 
+![Templated control result](images/WinUI-templated-control-result.png)
 
 ## Implementing overridable functions, such as **MeasureOverride** and **OnApplyTemplate**
 
