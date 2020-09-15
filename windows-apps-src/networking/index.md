@@ -14,7 +14,7 @@ The following networking and web services technologies are available for Univers
 | Topic | Description |
 | - | - |
 | [Networking basics](networking-basics.md) | Things you must do for any network-enabled app. |
-| [Which networking technology?](which-networking-technology.md) | A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app. |
+| [Which networking technology?](which-networking-technology.md) | An overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app. |
 | [Network communications in the background](network-communications-in-the-background.md) | To continue network communication while it's not in the background, an app can use background tasks and either socket broker or control channel triggers. |
 | [Sockets](sockets.md) | Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required. |
 | [WebSockets](websockets.md) | WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages. |

@@ -1,16 +1,16 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
+description: An overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
 title: Which networking technology?'
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Which networking technology?
 
-
-A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
+An overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
 
 ## Sockets
 
@@ -81,7 +81,7 @@ A new background transfer feature in Windows 10 is the ability to trigger post-
 
 ### Connection quality
 
-The [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) API enables you to access network connectivity, cost, and usage information. For more information about using this API, see [Accessing network connection state and managing network costs](/previous-versions/windows/apps/hh452983(v=win.10))
+The APIs in the [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) namespace enable you to access network connectivity, cost, and usage information. For more information about using this API, see [Accessing network connection state and managing network costs](/previous-versions/windows/apps/hh452985(v=win.10)).
 
 ### DNS Service Discovery
 
@@ -97,7 +97,7 @@ The [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.PushN
 
 ### Near field communications
 
-The [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API enables you to use near-field communications for apps that use proximity or tap with devices to enable easy data transfer. For more information about using this API, see [Supporting proximity and tapping](/previous-versions/windows/apps/hh465229(v=win.10)).
+The [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API enables you to use near-field communications for apps that use proximity or tap with devices to enable easy data transfer. For more information about using this API, see [Proximity and tapping](/previous-versions/windows/apps/hh465221(v=win.10)).
 
 ### RSS/Atom feeds
 
