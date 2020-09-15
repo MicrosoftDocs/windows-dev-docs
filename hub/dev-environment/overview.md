@@ -19,22 +19,22 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![JavaScrip / NodeJS](../images/nodejs-logo.png)](../nodejs/index.yml)<br>
+       [![JavaScrip NodeJS icon](../images/nodejs-logo.png)](../nodejs/index.yml)<br>
         **[Get started with NodeJS](../nodejs/index.yml)**<br>
         Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Python](../images/python-logo.png)](../python/index.yml)<br>
+       [![Python icon](../images/python-logo.png)](../python/index.yml)<br>
         **[Get started with Python](../python/index.yml)**<br>
         Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Android](../images/android-logo.png)](/windows/android)<br>
+       [![Android icon](../images/android-logo.png)](/windows/android)<br>
         **[Get started with Android](/windows/android)**<br>
         Install Android Studio, or choose a cross-platform solution like Xamarin, React, or Cordova, and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
-       [![Windows Desktop](../images/windows-logo.png)](../apps/index.yml)<br>
+       [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
         **[Get started with Windows Desktop](../apps/index.yml)**<br>
         Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
@@ -47,17 +47,17 @@ This guide will help you get started with installing and setting up the language
         Get started with C++, C, and assembly to develop apps, services, and tools.
     :::column-end:::
     :::column:::
-       [![C#](../images/csharp-logo.png)](/dotnet/csharp/)<br>
+       [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Azure for Java](../images/java-logo.png)](/azure/developer/java/)<br>
+       [![Azure for Java icon](../images/java-logo.png)](/azure/developer/java/)<br>
         **[Get started with Java on Azure](/azure/developer/java/)**<br>
         Get started building apps for the cloud with these tutorials and tools for Java developers.
     :::column-end:::
     :::column:::
-       [![PowerShell](../images/powershell.png)](/powershell/)<br>
+       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
         **[Get started with PowerShell](/powershell/)**<br>
         Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
     :::column-end:::
@@ -67,26 +67,26 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![WSL](../images/windows-linux-dev-env.png)](/windows/wsl/)<br>
+       [![WSL icon](../images/windows-linux-dev-env.png)](/windows/wsl/)<br>
         **[Windows Subsystem for Linux](/windows/wsl/)**<br>
         Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
         [Install WSL](/windows/wsl/install-win10)
     :::column-end:::
     :::column:::
-       [![Windows Terminal](../images/terminal.png)](/windows/terminal/)<br>
+       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
         **[Windows Terminal](/windows/terminal/)**<br>
         Customize your terminal environment to work with multiple command line shells.
         <br>
         [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
     :::column-end:::
     :::column:::
-       [![Windows Package Manager](../images/winget.png)](../package-manager/index.md)<br>
+       [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows 10.<br>
         [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
-       [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
+       [![PowerToys icon](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
         **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
         Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
         [Install PowerToys (public preview)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
@@ -94,25 +94,25 @@ This guide will help you get started with installing and setting up the language
 :::row-end:::
 :::row:::
     :::column:::
-       [![VS Code](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
+       [![VS Code icon](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
         **[VS Code](https://code.visualstudio.com/docs)**<br>
         A lightweight source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
         [Install VS Code](https://code.visualstudio.com/download)
     :::column-end:::
     :::column:::
-       [![Visual Studio](../images/visualstudio.png)](/visualstudio/windows/)<br>
+       [![Visual Studio icon](../images/visualstudio.png)](/visualstudio/windows/)<br>
         **[Visual Studio](/visualstudio/windows/)**<br>
         An integrated development environment that you can use to edit, debug, build code, and publish apps, including compilers, intellisense code completion, and many more features.<br>
         [Install Visual Studio](/visualstudio/install/install-visual-studio)
     :::column-end:::
     :::column:::
-       [![Azure](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
+       [![Azure icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
         [Set up an Azure account](https://azure.microsoft.com/free/)
     :::column-end:::
     :::column:::
-       [![.NET](../images/net.png)](https://dotnet.microsoft.com/)<br>
+       [![.NET icon](../images/net.png)](https://dotnet.microsoft.com/)<br>
         **[.NET](/dotnet/standard/get-started/)**<br>
         An open source development platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.<br>
         [Install .NET](https://dotnet.microsoft.com/download)
