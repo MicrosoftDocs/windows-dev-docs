@@ -26,7 +26,7 @@ Begin by creating a new project in Microsoft Visual Studio. In the **Create a ne
 
 To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->XAML** select the **TemplatedControl** template. Name the new control "BgLabelControl" and click *Add*. This will add two new files to your project. `BgLabelControl.cs` contains the code-behind for the control. The `themes/generic.xaml` file contains XAML that will define the template for the control.
 
-## Updte the code behind file
+## Update the code behind file
 
 Since we created the templated control using the XAML template, the first thing we need to do in the generated code file, `BgLabelControl.cs`, is update the UI-related namespaces from Windows.UI.Xaml.* to Microsoft.UI.Xaml.*.
 
