@@ -130,7 +130,7 @@ Windows Subsystem for Linux (WSL) allows developers to run a Linux operating sys
 
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
-- Learn more in the [Windows Terminal docs](/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+Learn more in the [Windows Terminal docs](/windows/terminal) or via [Windows Terminal videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
@@ -138,16 +138,16 @@ You can also use Windows Terminal to open all of your favorite command line tool
 
 Check out our [guide to transitioning between between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
 
-* [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
-* [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)
-* [Terminal and shell tools](./mac-to-windows.md#terminal-and-shell)
-* [Apps and utilities](./mac-to-windows.md#apps-and-utilities)
+- [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
+- [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)
+- [Terminal and shell tools](./mac-to-windows.md#command-line-shells-and-terminals)
+- [Apps and utilities](./mac-to-windows.md#apps-and-utilities)
 
 ![Office image](../images/flashy-office3.png)
 
 ## Additional resources
 
-* [Tips for improving your workflow](./tips.md)
-* [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
-* [Popular tutorials, courses, and code samples](./tutorials.md)
-* [Microsoft's Game Stack documentation](/gaming/)
+- [Tips for improving your workflow](./tips.md)
+- [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
+- [Popular tutorials, courses, and code samples](./tutorials.md)
+- [Microsoft's Game Stack documentation](/gaming/)
