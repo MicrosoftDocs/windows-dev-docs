@@ -17,17 +17,21 @@ Composition Visuals make up the visual tree structure which all other features o
 
 ## Visuals
 
-There are three visual types that make up the visual tree structure plus a base brush class with multiple subclasses that affect the content of a visual:
+There are several visual types that make up the visual tree structure plus a base brush class with multiple subclasses that affect the content of a visual:
 
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – base object, the majority of the properties are here, and inherited by the other Visual objects.
 - [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) – derives from [**Visual**](/uwp/api/Windows.UI.Composition.Visual), and adds the ability to create children.
-- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
+  - [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). Has the ability to associate a brush so that the Visual can render pixels including images, effects, or a solid color.
+  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). Children of the visual are flattened into a single layer.<br/>(_Introduced in Windows 10, version 1607, SDK 14393._)
+  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). A visual tree node that is the root of a CompositionShape.<br/>(_Introduced in Windows 10, version 1803, SDK 17134._)
+  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). The visual gets its content from another visual.<br/>(_Introduced in Windows 10, version 1809, SDK 17763._)
+  - [**SceneVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). A container visual for the nodes of a 3D scene.<br/>(_Introduced in Windows 10, version 1903, SDK 18362._)
 
-You can apply content and effects to SpriteVisuals using the [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) and its subclasses including the [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) and [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush). To learn more about brushes see our [**CompositionBrush Overview**](./composition-brushes.md).
+You can apply content and effects to SpriteVisuals using the [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) and its subclasses including the [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) and [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush). To learn more about brushes see [**CompositionBrush Overview**](./composition-brushes.md).
 
 ## The CompositionVisual Sample
 
-Here, we'll look at some sample code that demonstrates the three different visual types listed previously. While this sample doesn’t cover concepts like Animations or more complex effects, it contains the building blocks that all of those systems use. (The full sample code is listed at the end of this article.)
+Here, we'll look at some sample code that demonstrates the three different visual types listed previously. While this sample doesn't cover concepts like Animations or more complex effects, it contains the building blocks that all of those systems use. (The full sample code is listed at the end of this article.)
 
 In the sample are a number of solid color squares that can be clicked on and dragged about the screen. When a square is clicked on, it will come to the front, rotate 45 degrees, and become opaque when dragged about.
 
@@ -38,7 +42,7 @@ This shows a number of basic concepts for working with the API including:
 - Clipping the Visual
 - Rotating the Visual
 - Setting Opacity
-- Changing the Visual’s position in the collection.
+- Changing the Visual's position in the collection.
 
 ## Creating a Compositor
 
@@ -76,7 +80,7 @@ Like other objects in the API, [**InsetClip**](/uwp/api/Windows.UI.Composition.I
 
 ## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Rotating a Clip
 
-A [**Visual**](/uwp/api/Windows.UI.Composition.Visual) can be transformed with a rotation. Note that [**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) supports both radians and degrees. It defaults to radians, but it’s easy to specify degrees as shown in the following snippet:
+A [**Visual**](/uwp/api/Windows.UI.Composition.Visual) can be transformed with a rotation. Note that [**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) supports both radians and degrees. It defaults to radians, but it's easy to specify degrees as shown in the following snippet:
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
