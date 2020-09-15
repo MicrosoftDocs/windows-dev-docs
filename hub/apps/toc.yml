@@ -87,9 +87,9 @@
             href: winui/winui3/get-started-winui3-for-desktop.md
           - name: "Get started with WinUI 3 for UWP apps"
             href: winui/winui3/get-started-winui3-for-uwp.md
-          - name: "Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT"
+          - name: "Templated XAML controls for WinUI 3 apps with C++/WinRT"
             href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
-          - name: "Templated XAML controls for UWP and WinUI 3 apps with C#"
+          - name: "Templated XAML controls for WinUI 3 apps with C#"
             href: winui/winui3/xaml-templated-controls-cs-winui3.md
       - name: "Windows UI 2.x Library"
         items: 
