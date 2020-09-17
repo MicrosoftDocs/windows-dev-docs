@@ -105,7 +105,5 @@ If you wish to use another form of encryption, the key is the use the raw.Header
 ## Related topics
 - [Notification channel types](channel-types.md)
 - [Windows Push Notification Services (WNS)](windows-push-notification-services--wns--overview.md)
-- [PushNotificationChannel class](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
-- [PushNotificationChannelManager class](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
-
-
+- [PushNotificationChannel class](/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
+- [PushNotificationChannelManager class](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

@@ -1,6 +1,6 @@
 ---
 title: Launch an app on a remote device
-description: Learn how to launch an app on a remote device using Project Rome.
+description: Learn how to launch a UWP app or Windows desktop application remotely on another device, letting a user start a task on one device and finish it on another.
 ms.date: 02/12/2018
 ms.topic: article
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
@@ -39,36 +39,36 @@ You must first find the device that you want to connect with. [Discover remote d
 
 The code in these examples requires that you have a `using Windows.System.RemoteSystems` statement in your class file(s).
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetBuildDeviceList":::
 
 The first thing you must do before making a remote launch is call `RemoteSystem.RequestAccessAsync()`. Check the return value to make sure your app is allowed to access remote devices. One reason this check could fail is if you haven't added the `remoteSystem` capability to your app.
 
 The system watcher event handlers are called when a device that we can connect with is discovered or is no longer available. We will use these event handlers to keep an updated list of devices that we can connect to.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetEventHandlers":::
 
 
 We will track the devices by remote system ID using a **Dictionary**. An **ObservableCollection** is used to hold the list of devices that we can enumerate. An **ObservableCollection** also makes it easy to bind the list of devices to UI, though we won't do that in this example.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetMembers":::
 
 Add a call to `BuildDeviceList()` in your app startup code before you attempt to launch a remote app.
 
 ## Launch an app on a remote device
 
-Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
+Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](/uwp/api/windows.system.remotelauncher.launchuriasync) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
 
 Other **RemoteLauncher.LaunchUriAsync** overloads allow you to specify options such as the URI of the web site to view if no appropriate app can be launched on the remote device, and an optional list of package family names that could be used to launch the URI on the remote device. You can also provide data in the form of key/value pairs. You might pass data to the app you are activating to provide context to the remote app, such as the name of the song to play and the current playback location when you hand off playback from one device to another.
 
 In practical scenarios, you might provide UI to select the device you want to target. But to simplify this example, we'll just use the first remote device on the list.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetRemoteUriLaunch":::
 
-The [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
+The [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
 
 ## Related topics
 
-[Remote Systems API reference](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
+[Remote Systems API reference](/uwp/api/Windows.System.RemoteSystems)  
 [Connected apps and devices (Project Rome) overview](connected-apps-and-devices.md)  
 [Discover remote devices](discover-remote-devices.md)  
 [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.

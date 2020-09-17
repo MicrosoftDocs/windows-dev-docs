@@ -151,6 +151,8 @@
       href: ../audio-video-camera/codec-query.md
     - name: Screen capture
       href: ../audio-video-camera/screen-capture.md
+    - name: Screen capture to video
+      href: ../audio-video-camera/screen-capture-video.md
 - name: Communication
   items:
     - name: App-to-app communication
@@ -285,7 +287,7 @@
         - name: Fast access to file properties in UWP
           href: ../files/fast-file-properties.md
     - name: Machine Learning
-      href: https://docs.microsoft.com/windows/ai/
+      href: /windows/ai/
 - name: Deployment
   items:
     - name: Choose a UWP version
@@ -727,7 +729,7 @@
         - name: Add retail demo (RDX) features
           href: ../monetize/retail-demo-experience.md
         - name: Simplify payments with the Payment Request API
-          href: ../monetize/payment-request.md
+          href: ../monetize/index.md
     - name: Packaging apps
       items:
         - name: Overview
@@ -1276,7 +1278,7 @@
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows 10
-      href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
+      href: /microsoft-edge/progressive-web-apps
       items:
         - name: Package Windows 7 app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
@@ -1379,6 +1381,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: Create and register an out-of-process background task
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: Create and register a winmain COM background task
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: Port an out-of-process background task to an in-process background task
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: Debug a background task

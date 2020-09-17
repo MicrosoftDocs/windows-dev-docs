@@ -8,13 +8,16 @@ ms.localizationpriority: medium
 ---
 
 # Frequently-asked questions about C++/WinRT
-Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 > [!IMPORTANT]
 > For release notes about C++/WinRT, see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
 
 > [!NOTE]
 > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
+
+## Where can I find C++/WinRT sample apps?
+See [C++/WinRT sample apps](/samples/browse/?languages=cppwinrt).
 
 ## How do I retarget my C++/WinRT project to a later version of the Windows SDK?
 See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
@@ -49,7 +52,7 @@ Only if the runtime class is designed to be consumed from outside its implementi
 ## Why is the linker giving me a "LNK2019: Unresolved external symbol" error?
 If the unresolved symbol is an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), then the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
 
-If the unresolved symbol is a Windows Runtime free function, such as [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), then you'll need to explicitly link the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library in your project. The C++/WinRT projection depends on some of these free (non-member) functions and entry points. If you use one of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) project templates for your application, then `WindowsApp.lib` is linked for you automatically. Otherwise, you can use project link settings to include it, or do it in source code.
+If the unresolved symbol is a Windows Runtime free function, such as [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize), then you'll need to explicitly link the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library in your project. The C++/WinRT projection depends on some of these free (non-member) functions and entry points. If you use one of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) project templates for your application, then `WindowsApp.lib` is linked for you automatically. Otherwise, you can use project link settings to include it, or do it in source code.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -65,7 +68,7 @@ One cause can be that your Windows Runtime component can't be loaded. Make sure 
 
 ### Uniform construction
 
-This error can also happen if you try to instantiate a locally-implemented runtime class via any of the projected type's constructors (other than its **std::nullptr_t** constructor). To do that, you'll need the C++/WinRT 2.0 feature that's often called uniform construction. If you want to opt in to that feature, then for more info, and code examples, see [Opt in to uniform construction, and direct implementation access](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
+This error can also happen if you try to instantiate a locally-implemented runtime class via any of the projected type's constructors (other than its **std::nullptr_t** constructor). To do that, you'll need the C++/WinRT 2.0 feature that's often called uniform construction. If you want to opt in to that feature, then for more info, and code examples, see [Opt in to uniform construction, and direct implementation access](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 For a way of instantiating your locally-implemented runtime classes that *doesn't* require uniform construction, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
@@ -172,7 +175,7 @@ a.f();
 The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
 
 ## How do I turn a string into a type&mdash;for navigation, for example?
-At the end of the [Navigation view code example](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
+At the end of the [Navigation view code example](../design/controls-and-patterns/navigationview.md#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
 
 ## How do I resolve ambiguities with GetCurrentTime and/or TRY?
 

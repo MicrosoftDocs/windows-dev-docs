@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 >[!WARNING]
 > As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol),  [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs. Your app code can handle this event and examine the [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) and [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) properties of the event args object to help determine the cause of the error.
+The [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol),  [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs. Your app code can handle this event and examine the [ErrorCode](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) and [ErrorMessage](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) properties of the event args object to help determine the cause of the error.
 
 <span id="bkmk-dotnet"/>
 
@@ -22,7 +22,7 @@ To handle ad-related errors in a XAML app:
 
 1. Assign the **ErrorOccurred** event of your **AdControl**, **InterstitialAd**, or **NativeAdsManagerV2** object to the name of an event handler delegate.
 
-2. Code the error event handling delegate so that it takes two parameters: an **Object** for the sender and an [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) object.
+2. Code the error event handling delegate so that it takes two parameters: an **Object** for the sender and an [AdErrorEventArgs](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) object.
 
 Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.
 
@@ -64,9 +64,9 @@ Here is an example that assigns an event handler named **errorLogger** to the **
 </div>
 ```
 
-The error handling function is declarative and must be enclosed in the [markSupportedForProcessing](https://docs.microsoft.com/previous-versions/windows/apps/hh967819(v=win.10)) function.
+The error handling function is declarative and must be enclosed in the [markSupportedForProcessing](/previous-versions/windows/apps/hh967819(v=win.10)) function.
 
-The error handler catches the JavaScript error object when an error occurs. The error object provides two arguments to the error handler. For more information, see [Special Error Properties from Asynchronous Windows Runtime Methods](https://docs.microsoft.com/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
+The error handler catches the JavaScript error object when an error occurs. The error object provides two arguments to the error handler. For more information, see [Special Error Properties from Asynchronous Windows Runtime Methods](/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
 
 Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
 

@@ -27,7 +27,7 @@ The [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) class al
 
 The [DeviceWatcher.Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event is raised for each device that is connected when the device watcher is started as well as for any device that is connected while the device watcher is running. The [DeviceWatcher.Removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed) event is raised if a previously connected device disconnects. 
 
-Call [DeviceWatcher.Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) to begin watching for connected devices that support audio playback connections. In this example we will start the device manager when the main **Grid** control in the UI is loaded. For more information on using **DeviceWatcher**, see [Enumerate Devices](/windows/uwp/devices-sensors/enumerate-devices).
+Call [DeviceWatcher.Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) to begin watching for connected devices that support audio playback connections. In this example we will start the device manager when the main **Grid** control in the UI is loaded. For more information on using **DeviceWatcher**, see [Enumerate Devices](../devices-sensors/enumerate-devices.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
 
@@ -82,7 +82,3 @@ You should handle the case where a device is removed while a connection is enabl
 
 
  
-
-
-
-

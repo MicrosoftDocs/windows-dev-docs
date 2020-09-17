@@ -51,7 +51,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-4.  Check the element position. The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.
+4.  Check the element position. The [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.
 
 5.  Check the **Visibility** property. The optional **Visibility** property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
 
@@ -110,7 +110,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
     The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
 
-3.  The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) is behaving normally.
+3.  The [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) is behaving normally.
 
     By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
 
@@ -118,7 +118,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 ### Ads not refreshing
 
-1.  Check the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) property. By default, this optional property is set to **True**. When set to **False**, the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) method must be used to retrieve another ad.
+1.  Check the [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) property. By default, this optional property is set to **True**. When set to **False**, the [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) method must be used to retrieve another ad.
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -168,7 +168,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated it will not be available.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet1":::
 
 3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -233,7 +233,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     This C# code retrieves the error message and displays it in the **TextBlock**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet2":::
 
     The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
 
@@ -243,14 +243,14 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 ### Ads not refreshing
 
-1.  Check whether the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
+1.  Check whether the [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
 
-2.  Check calls to the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Check calls to the [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
 
     The following example demonstrates how to call the **Refresh** method.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet3":::
 
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 

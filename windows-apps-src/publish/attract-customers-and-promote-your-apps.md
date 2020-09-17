@@ -1,6 +1,6 @@
 ---
-Description: Attract customers and promote your apps
 title: Attract customers and promote your apps
+description: Learn about features in Partner Center like ad campaigns, promo codes, and sale pricing that help you promote your apps and attract customers.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -99,21 +99,21 @@ Native ads enable you to send all the individual components of your ad (such as 
 
 [Create an ad campaign in the dashboard](create-an-ad-campaign-for-your-app.md)
 
-[Create an ad campaign using our REST API](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[Create an ad campaign using our REST API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[Review campaign performance data in the dashboard](promote-your-app-report.md)
+[Review campaign performance data in the dashboard](/windows/uwp/publish/ad-campaign-report)
 
-[Get campaign performance data using our REST API](https://docs.microsoft.com/windows/uwp/monetize/)
+[Get campaign performance data using our REST API](../monetize/index.md)
 
 ## Promotion analytics
 
 ![Promotion analytics](images/ads-promotion-analytics.png)
 
-[Ad campaign report](promote-your-app-report.md)
+[Ad campaign report](/windows/uwp/publish/ad-campaign-report)
 
 [Acquisitions report](acquisitions-report.md)
 
-[Get analytics data using our REST API](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[Get analytics data using our REST API](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## Other ways to promote your app
 

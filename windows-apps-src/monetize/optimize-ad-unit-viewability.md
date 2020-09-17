@@ -1,5 +1,5 @@
 ---
-description: Learn about ways to improve the viewability of your ad units.
+description: Learn about the guidelines for optimizing the viewability of your ad units and how to measure your viewability metrics with the Advertising performance report. 
 title: Optimize the viewability of your ad units
 ms.date: 02/18/2020
 ms.topic: article

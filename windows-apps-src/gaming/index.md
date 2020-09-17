@@ -23,7 +23,7 @@ To learn about developing UWP games using DirectX, go to [DirectX programming](d
 
 To make the best use of the game development overviews and tutorials, we recommend that you're familiar with these subjects.
 
-- [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) is the language projection that we recommend for developing UWP games with DirectX. C++/WinRT is a standard modern C++17 language projection for Windows Runtime (WinRT) APIs. It supersedes Microsoft C++ with Component Extensions (C++/CX). For a code example, using C++/WinRT to call DirectX APIs, see [Full source code listing of a minimal Direct2D application](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application).
+- [C++/WinRT](../cpp-and-winrt-apis/index.md) is the language projection that we recommend for developing UWP games with DirectX. C++/WinRT is a standard modern C++17 language projection for Windows Runtime (WinRT) APIs. It supersedes Microsoft C++ with Component Extensions (C++/CX). For a code example, using C++/WinRT to call DirectX APIs, see [Full source code listing of a minimal Direct2D application](../cpp-and-winrt-apis/consume-com.md#full-source-code-listing-of-a-minimal-direct2d-application).
 - Basic graphics programming terminology.
 - Basic Windows programming concepts.
 - Basic familiarity with the Direct3D 9 (or later) APIs.

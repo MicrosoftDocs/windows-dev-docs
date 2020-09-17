@@ -1,6 +1,6 @@
 ---
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-description: Use this method to renew a Microsoft Store key.
+description: Learn how to renew an expired Microsoft Store ID key using the renew method in the Microsoft Store collection and purchase APIs.
 title: Renew a Microsoft Store ID key
 ms.date: 03/19/2018
 ms.topic: article

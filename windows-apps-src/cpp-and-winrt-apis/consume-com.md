@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Consume COM components with C++/WinRT
 
-You can use the facilities of the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
+You can use the facilities of the [C++/WinRT](./intro-to-using-cpp-with-winrt.md) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
 
 At the end of this topic, you'll find a full source code listing of a minimal Direct2D application. We'll lift excerpts from that code and use them to illustrate how to consume COM components using C++/WinRT using various facilities of the C++/WinRT library.
 
@@ -126,9 +126,9 @@ You can use [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-functio
 
 You can use the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to return the address of (in other words, a pointer to) the underlying raw [IUnknown interface](/windows/win32/api/unknwn/nn-unknwn-iunknown) of an object of a projected type. You can then pass that address to a function that takes an **IUnknown** interface pointer.
 
-For info about *projected types*, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+For info about *projected types*, see [Consume APIs with C++/WinRT](./consume-apis.md).
 
-For a code example of **get_unknown**, see [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), or the [Full source code listing of a minimal Direct2D application](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) in this topic.
+For a code example of **get_unknown**, see [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), or the [Full source code listing of a minimal Direct2D application](#full-source-code-listing-of-a-minimal-direct2d-application) in this topic.
 
 ## Passing and returning COM smart pointers
 

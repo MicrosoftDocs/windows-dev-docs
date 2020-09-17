@@ -1,5 +1,5 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
 ms.date: 10/10/2017
@@ -108,7 +108,7 @@ Depending on the tools and workflow you use for asset-creation, or on what you f
 
 ## AlternateForm
 
-The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))).
+The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Either your target system or your app must provide a value against which `alternateform` qualifiers are matched. Do not use the `msft-` prefix for your own custom `alternateform` qualifier values.
 
@@ -148,7 +148,7 @@ In this scenario, you would then give your resources names that include the qual
 
 ## DeviceFamily
 
-It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Version adaptive code](../debug-test-perf/version-adaptive-code.md).
 
 But as a last resort it is possible to use devicefamily qualifiers to name folders that contain your XAML views (a XAML view is a XAML file that contains UI layout and controls).
 
@@ -244,7 +244,7 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 
 ## TargetSize
 
-The `targetsize` qualifier is primarily used to specify [file type association icons](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) or [protocol icons](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
+The `targetsize` qualifier is primarily used to specify [file type association icons](/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) or [protocol icons](/windows/desktop/search/-search-3x-wds-ph-ui-extensions) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
@@ -278,9 +278,9 @@ For backwards compatibility, Windows includes logic to detect a monochromatic ic
 
 * [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Resource Management System](resource-management-system.md)
-* [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)
 * [Localize your UI strings](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

@@ -1,5 +1,5 @@
 ---
-Description: A progress control provides feedback to the user that a long-running operation is underway.
+description: A progress control provides feedback to the user that a long-running operation is underway.
 title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -21,15 +21,15 @@ A progress control provides feedback to the user that a long-running operation i
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ProgressBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **ProgressBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
-> **Windows UI Library APIs:** [ProgressBar class](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
+> **Windows UI Library APIs:** [ProgressBar class](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
-> **Platform APIs:** [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+> **Platform APIs:** [ProgressBar class](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > There are two versions of the ProgressBar and ProgressRing controls: one in the platform, represented by the Windows.UI.Xaml namespace; the other in the Windows UI Library, the Microsoft.UI.Xaml namespace. Although the APIs for ProgressRing and ProgressBar are the same, the control's appearances differ between the two versions. This document will show images of the newer Windows UI Library version.
-Throughout this document, we will use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element:
+Throughout this document, we will use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element:
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -55,13 +55,12 @@ There are two controls to show the user that an operation is underway – either
 
 Additionally, a progress control is read only and not interactive. Meaning that the user cannot invoke or use these controls directly.
 
-![ProgressBar states](images/progress-bar-two-states.png)
+|Control|Display|
+|---|---|
+| Indeterminate ProgressBar | ![ProgressBar indeterminate](images/progressbar-indeterminate.gif) |
+| Determinate ProgressBar | ![ProgressBar determinate](images/progressbar-determinate.png)|
+| Indeterminate ProgressRing | ![ProgressRing state](images/progressring-indeterminate.gif)|
 
-*Top to bottom - Indeterminate ProgressBar and a determinate ProgressBar*
-
-![ProgressRing state](images/ProgressRing_SingleState.png)
-
-*An indeterminate ProgressRing*
 
 ## Examples
 
@@ -205,5 +204,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## Related articles
 
-- [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
-- [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
+- [ProgressBar class](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing class](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)

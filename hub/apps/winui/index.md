@@ -21,7 +21,7 @@ With support for both Desktop and UWP apps, you can build with WinUI from the gr
 
 ## Windows UI 2.x Library
 
-WinUI 2.x can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](/windows/apps/desktop/modernize/xaml-islands).
+WinUI 2.x can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
 > WinUI 2.4 is the latest WinUI 2.x release. See the [WinUI 2.5 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/10) for a list of work planned in the next release.
@@ -37,7 +37,7 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 ### Related links for WinUI 2.x
 
 - [WinUI 2.x Library overview](winui2/index.md)
-- [API docs](https://docs.microsoft.com/uwp/api/overview/winui/)
+- [API docs](/uwp/api/overview/winui/)
 - [Source code](https://aka.ms/winui)
 - [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
@@ -54,7 +54,7 @@ WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely
 
 By completely decoupling XAML, composition, and input APIs from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), the scope of WinUI 3 includes the full Windows 10 native UI platform.
 
-WinUI is the path forward for all Windows apps—you can use it as the UI layer on your native UWP or Win32 app, or you can gradually modernize your desktop app, piece by piece, with [XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
+WinUI is the path forward for all Windows apps—you can use it as the UI layer on your native UWP or Win32 app, or you can gradually modernize your desktop app, piece by piece, with [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 All new XAML features will eventually ship as part of WinUI. The existing UWP XAML APIs that ship as part of the OS will no longer receive new feature updates. However, they will continue to receive security updates and critical fixes according to the Windows 10 support lifecycle.
 

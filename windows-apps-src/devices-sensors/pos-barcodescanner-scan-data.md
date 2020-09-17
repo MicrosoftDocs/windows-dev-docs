@@ -1,6 +1,6 @@
 ---
 title: Obtain and understand barcode data
-description: Learn how to obtain and interpret the barcode data that you scan.
+description: Learn how to obtain data from a barcode scanner in a BarcodeScannerReport object and understand its format and contents.
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Obtain and understand barcode data
 
-Once you've set up your barcode scanner, you of course need a way of understanding the data that you scan. When you scan a barcode, the [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) event is raised. The [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) should subscribe to this event. The **DataReceived** event passes a [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) object, which you can use to access the barcode data.
+Once you've set up your barcode scanner, you of course need a way of understanding the data that you scan. When you scan a barcode, the [DataReceived](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) event is raised. The [ClaimedBarcodeScanner](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) should subscribe to this event. The **DataReceived** event passes a [BarcodeScannerDataReceivedEventArgs](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) object, which you can use to access the barcode data.
 
 ## Subscribe to the DataReceived event
 
@@ -19,7 +19,7 @@ Once you have a **ClaimedBarcodeScanner**, have it subscribe to the **DataReceiv
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-The event handler will be passed the **ClaimedBarcodeScanner** and a **BarcodeScannerDataReceivedEventArgs** object. You can access the barcode data through this object's [Report](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) property, which is of type [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+The event handler will be passed the **ClaimedBarcodeScanner** and a **BarcodeScannerDataReceivedEventArgs** object. You can access the barcode data through this object's [Report](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) property, which is of type [BarcodeScannerReport](/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -32,11 +32,11 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 Once you have the **BarcodeScannerReport**, you can access and parse the barcode data. **BarcodeScannerReport** has three properties:
 
-* [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): The full, raw barcode data.
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): The decoded barcode label, which does not include the header, checksum, and other miscellaneous information.
-* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): The decoded barcode label type. Possible values are defined in the [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) class.
+* [ScanData](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): The full, raw barcode data.
+* [ScanDataLabel](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): The decoded barcode label, which does not include the header, checksum, and other miscellaneous information.
+* [ScanDataType](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): The decoded barcode label type. Possible values are defined in the [BarcodeSymbologies](/uwp/api/windows.devices.pointofservice.barcodesymbologies) class.
 
-If you want to access either **ScanDataLabel** or **ScanDataType**, you must first set [IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) to **true**.
+If you want to access either **ScanDataLabel** or **ScanDataType**, you must first set [IsDecodeDataEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) to **true**.
 
 ```cs
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
@@ -44,7 +44,7 @@ claimedBarcodeScanner.IsDecodeDataEnabled = true;
 
 ### Get the scan data type
 
-Getting the decoded barcode label type is fairly trivial&mdash;we simply call [GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) on **ScanDataType**.
+Getting the decoded barcode label type is fairly trivial&mdash;we simply call [GetName](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) on **ScanDataType**.
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -130,7 +130,7 @@ This value is set prior to a **DataReceived** event being raised to the applicat
 
 ## See also
 * [Barcode scanner](pos-barcodescanner.md)
-* [ClaimedBarcodeScanner Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
-* [BarcodeScannerDataReceivedEventArgs Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
-* [BarcodeScannerReport Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
-* [BarcodeSymbologies Class](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+* [ClaimedBarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [BarcodeScannerDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
+* [BarcodeScannerReport Class](/uwp/api/windows.devices.pointofservice.barcodescannerreport)
+* [BarcodeSymbologies Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies)

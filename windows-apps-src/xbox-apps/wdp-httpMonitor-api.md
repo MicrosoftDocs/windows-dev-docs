@@ -1,6 +1,6 @@
 ---
 title: Device Portal HTTP monitor API reference
-description: Learn how to access HTTP traffic from the focused app on an Xbox.
+description: Learn how to access real-time HTTP traffic from the focused app on an Xbox using the /ext/httpmonitor/sessions Xbox Device Portal REST API.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017

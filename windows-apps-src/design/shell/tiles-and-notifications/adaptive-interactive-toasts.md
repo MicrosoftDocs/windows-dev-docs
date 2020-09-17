@@ -16,7 +16,7 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 > **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
+> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## Getting started
@@ -312,7 +312,7 @@ To learn more about using headers, please see [Toast headers](toast-headers.md).
 
 This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](create-adaptive-tiles.md).
 
-Note that any adaptive content must be contained within an [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup). Otherwise it will not be rendered using adaptive.
+Note that any adaptive content must be contained within an [**AdaptiveGroup**](./toast-schema.md#adaptivegroup). Otherwise it will not be rendered using adaptive.
 
 
 ### Columns and text elements

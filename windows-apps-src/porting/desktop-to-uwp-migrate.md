@@ -1,6 +1,6 @@
 ---
-Description: Share code between a desktop application and a UWP app
 title: Share code between a desktop application and a UWP app
+description: Learn how to move a desktop application from .NET Framework (with WPF and Windows Forms) or C++ Win32 APIs to Universal Windows Platform (UWP) and Windows 10.
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -65,7 +65,7 @@ Use these same tools to analyze your code. Download the tools here ([dotnet-apip
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
+If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
 
 ![dot net option](images/desktop-to-uwp/dot-net-option.png)
 
@@ -107,7 +107,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-We can use the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
+We can use the [.NET API Browser](/dotnet/api/?view=netstandard-2.0) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
 
 This revised version uses those classes to get a list of customers, but to create a ``DbConnection`` class, we'll need to pass in a factory object that we create in the client application.
 
@@ -211,7 +211,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+To get started with UWP, see [What's a UWP app](../get-started/universal-application-platform-guide.md).
 
 ### Reach iOS and Android devices
 
@@ -234,7 +234,7 @@ You can find these templates in the **Add New Project** dialog box under the **V
 ![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://docs.microsoft.com/xamarin/xamarin-forms/).
+>Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](/xamarin/xamarin-forms/).
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
@@ -273,7 +273,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://docs.microsoft.com/xamarin).
+To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](/xamarin).
 
 ## Next steps
 

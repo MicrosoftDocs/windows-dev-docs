@@ -18,13 +18,13 @@ ms.custom: RS5, 19H1
 
 # TreeView
 
-The XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview) control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
+The XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
 The **TreeView** APIs support the following features:
 
 - N-level nesting
 - Selection of single or multiple nodes
-- Data binding to the **ItemsSource** property on **TreeView** and [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem)
+- Data binding to the **ItemsSource** property on **TreeView** and [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)
 - **TreeViewItem** as the root of the **TreeView** item template
 - Arbitrary types of content in a **TreeViewItem**
 - Drag and drop between tree views
@@ -33,14 +33,14 @@ The **TreeView** APIs support the following features:
 
 |  |  |
 | - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
 
 > **Windows UI Library APIs:** [TreeView class](/uwp/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
 > **Platform APIs:** [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -80,12 +80,12 @@ You can include an icon in the tree view item data template to represent nodes. 
 
 You can create a tree view by binding the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
 
-To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control's [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
+To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control's [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
 
-You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) that renders the item.
+You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/uwp/api/windows.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) that renders the item.
 
 > [!IMPORTANT]
-> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763 or later](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763 or later](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), or the [Windows UI Library](/uwp/toolkits/winui/).
 >
 > **ItemsSource** is an alternative mechanism to **TreeView.RootNodes** for putting content into the **TreeView** control. You cannot set both **ItemsSource** and **RootNodes** at the same time. When you use **ItemsSource**, nodes are created for you, and you can access them from the **TreeView.RootNodes** property.
 
@@ -206,7 +206,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) for more information.
+> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](../../packaging/app-capability-declarations.md) for more information.
 
 You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
@@ -215,7 +215,7 @@ You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to speci
 
 ### Item container style
 
-Whether you use **ItemsSource** or **RootNodes**, the actual element used to display each node – called the "container" – is a [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) object. You can modify **TreeViewItem** properties to style the container using the **TreeView**'s [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) or [ItemContainerStyleSelector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector) properties.
+Whether you use **ItemsSource** or **RootNodes**, the actual element used to display each node – called the "container" – is a [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) object. You can modify **TreeViewItem** properties to style the container using the **TreeView**'s [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) or [ItemContainerStyleSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector) properties.
 
 This example shows how to change the expanded/collapsed glyphs to orange +/- signs. In the default **TreeViewItem** template, the glyphs are set to use the `Segoe MDL2 Assets` font. You can set the **Setter.Value** property by providing the Unicode character value in the format used by XAML, like this: `Value="&#xE948;"`.
 
@@ -1344,6 +1344,6 @@ namespace TreeViewTest
 
 ## Related articles
 
-- [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [ListView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview)
+- [ListView class](/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView and GridView](listview-and-gridview.md)

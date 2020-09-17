@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 **Important APIs**
--   [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [Windows.ApplicationModel.Background](/uwp/api/Windows.ApplicationModel.Background)
 
 Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
 
@@ -30,9 +30,9 @@ This topic assumes that you already have an existing app with a background task 
 
 Background tasks can be triggered manually through Microsoft Visual Studio. Then you can step through the code and debug it.
 
-1.  In C#, put a breakpoint in the Run method of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics).
+1.  In C#, put a breakpoint in the Run method of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**System.Diagnostics**](/dotnet/api/system.diagnostics).
 
-    In C++, put a breakpoint in the Run function of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw).
+    In C++, put a breakpoint in the Run function of the background class (for in-process background tasks put the breakpoint in App.OnBackgroundActivated()), and/or write debugging output by using [**OutputDebugString**](/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw).
 
 2.  Run your application in the debugger and then trigger the background task using the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
 
@@ -44,7 +44,7 @@ Background tasks can be triggered manually through Microsoft Visual Studio. Then
 
 > [!Note]
 > Background tasks using the following triggers cannot be activated in this manner:
-> [**Application trigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [**MediaProcessing trigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger),  [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger),  [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), and background tasks using a [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) with the [**SmsReceived**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) trigger type.  
+> [**Application trigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger), [**MediaProcessing trigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger),  [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger),  [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), and background tasks using a [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) with the [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) trigger type.  
 > **Application trigger** and **MediaProcessingTrigger** can be signaled manually in code with `trigger.RequestAsync()`.
 
 ![debugging background tasks](images/debugging-activation.png)
@@ -70,7 +70,7 @@ Background task activation depends on three things:
 
     -   In C# and C++, the entry point attribute must match the background task namespace followed by the class name. For example: RuntimeComponent1.MyBackgroundTask.
     -   All the trigger type(s) used with the task must also be specified.
-    -   The executable MUST NOT be specified unless you are using the [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) or [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger).
+    -   The executable MUST NOT be specified unless you are using the [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) or [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger).
 
 3.  Windows only. To see the entry point used by Windows to activate the background task, enable debug tracing and use the Windows event log.
 
@@ -100,7 +100,7 @@ If an app that uses background tasks is deployed using Visual Studio, and the ve
 -   If the background task requires lock screen access make sure to put the app on the lock screen before trying to debug the background task. For info on specifying manifest options for lock screen-capable apps, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 -   Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in UWP apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in UWP apps](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
 
 ## Related topics
 
@@ -109,8 +109,8 @@ For more info on using VS to debug a background task see [How to trigger suspend
 * [Register a background task](register-a-background-task.md)
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [How to trigger suspend, resume, and background events in UWP apps](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
-* [Analyzing the code quality of UWP apps with Visual Studio code analysis](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [How to trigger suspend, resume, and background events in UWP apps](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Analyzing the code quality of UWP apps with Visual Studio code analysis](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

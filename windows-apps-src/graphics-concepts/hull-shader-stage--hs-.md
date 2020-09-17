@@ -62,7 +62,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-See [How To: Create a Hull Shader](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-hull-shader-create).
+See [How To: Create a Hull Shader](/windows/desktop/direct3d11/direct3d-11-advanced-stages-hull-shader-create).
 
 ## <span id="related-topics"></span>Related topics
 
@@ -72,7 +72,3 @@ See [How To: Create a Hull Shader](https://docs.microsoft.com/windows/desktop/di
  
 
  
-
-
-
-

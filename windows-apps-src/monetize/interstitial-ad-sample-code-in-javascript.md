@@ -1,6 +1,6 @@
 ---
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
-description: Learn how to launch an interstitial ad using JavaScript/HTML.
+description: Learn how to launch an interstitial ad using a Universal Windows Platform (UWP) app written in JavaScript and HTML.
 title: Interstitial ad sample code in JavaScript
 ms.date: 02/18/2020
 ms.topic: article
@@ -23,22 +23,22 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
 Replace the values of the ```applicationId``` and ```adUnitId``` variables with live values from Partner Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
-> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
+> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
 
 ### index.html
 
 > [!div class="tabbedCodeSnippets"]
-[!code-html[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/index.html#L1-L21)]
+:::code language="html" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/index.html" range="1-21":::
 
 ### script.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#script)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="script":::
 
 ### main.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/main.js#main)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/main.js" id="main":::
 
 ## Related topics
 

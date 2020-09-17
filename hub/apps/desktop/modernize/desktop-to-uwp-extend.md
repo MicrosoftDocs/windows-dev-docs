@@ -1,6 +1,6 @@
 ---
-Description: Extend your desktop application with Windows UIs and components
 title: Extend your app with Windows UI and components
+description: Extend your desktop application with UWP projects and Windows Runtime components to add modern Windows 10 experiences.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -16,7 +16,7 @@ Some Windows 10 experiences (For example: a touch-enabled UI page) must run insi
 In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
+> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
 
 If you're ready, let's start.
 
@@ -32,7 +32,7 @@ This image shows an example solution.
 
 ![Extend start project](images/desktop-to-uwp/extend-start-project.png)
 
-If your solution doesn't contain a packaging project, see [Package your desktop application by using Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+If your solution doesn't contain a packaging project, see [Package your desktop application by using Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ### Configure the desktop application
 
@@ -170,7 +170,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 
 ### Start the UWP app
 
-First, from your desktop application, create a [Uri](https://docs.microsoft.com/dotnet/api/system.uri) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
+First, from your desktop application, create a [Uri](/dotnet/api/system.uri) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method.
 
 ```csharp
 
@@ -361,7 +361,7 @@ Modify your desktop application to find and process the shared file. In this exa
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
+For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
 
 ```csharp
 ...

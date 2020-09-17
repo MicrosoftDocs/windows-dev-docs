@@ -32,7 +32,7 @@ At a high level, to set up an app extension relationship, we need to:
 2. Declare an app to be an extension.
 3. Decide whether to implement the extension as an app service, background task, or some other way.
 4. Define how the hosts and its extensions will communicate.
-5. Use the [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) API in the host app to access the extensions.
+5. Use the [Windows.ApplicationModel.AppExtensions](/uwp/api/Windows.ApplicationModel.AppExtensions) API in the host app to access the extensions.
 
 Let's see how this is done by examining the [Math Extension code sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) which implements a hypothetical calculator that you can add new functions to by using extensions. In Microsoft Visual Studio 2019, load **MathExtensionSample.sln** from the code sample.
 
@@ -117,8 +117,8 @@ The meaning of the `<uap3:AppExtension>` attributes are as follows:
 |---------|-----------|:------:|
 |**Name**|This is the extension contract name. When it matches the **Name** declared in a host, that host will be able to find this extension.| :heavy_check_mark: |
 |**ID**| Uniquely identifies this extension. Because there can be multiple extensions that use the same extension contract name (imagine a paint app that supports several extensions), you can use the ID to tell them apart. App extension hosts can use the ID to infer something about the type of extension. For example, you could have one Extension designed for desktop and another for mobile, with the ID being the differentiator. You could also use the **Properties** element, discussed below, for that.| :heavy_check_mark: |
-|**DisplayName**| Can be used from your host app to identify the extension to the user. It is queryable from, and can use, the [new resource management system](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
-|**Description** | Can be used from your host app to describe the extension to the user. It is queryable from, and can use, the [new resource management system](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
+|**DisplayName**| Can be used from your host app to identify the extension to the user. It is queryable from, and can use, the [new resource management system](../app-resources/using-mrt-for-converted-desktop-apps-and-games.md) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
+|**Description** | Can be used from your host app to describe the extension to the user. It is queryable from, and can use, the [new resource management system](../app-resources/using-mrt-for-converted-desktop-apps-and-games.md) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
 |**PublicFolder**|The name of a folder, relative to the package root, where you can share content with the extension host. By convention the name is "Public", but you can use any name that matches a folder in your extension.| :heavy_check_mark: |
 
 `<uap3:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the <Service> element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
@@ -230,7 +230,7 @@ Calling an app service also requires the family name of the package that contain
 
 ### Define how the host and the extension will communicate
 
-App services use a [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) to exchange information. As the author of the host, you need to come up with a protocol for communicating with extensions that is flexible. In the code sample, that means accounting for extensions that may take 1, 2, or more arguments in the future.
+App services use a [ValueSet](/uwp/api/windows.foundation.collections.valueset) to exchange information. As the author of the host, you need to come up with a protocol for communicating with extensions that is flexible. In the code sample, that means accounting for extensions that may take 1, 2, or more arguments in the future.
 
 For this example, the protocol for the arguments is a **ValueSet** containing the key value pairs named 'Arg' + the argument number, for example, `Arg1` and `Arg2`. The host passes all of the arguments in the **ValueSet**, and the extension makes use of the ones that it needs. If the extension is able to calculate a result, then the host expects the **ValueSet** returned from the extension to have a key named `Result` that contains the value of the calculation. If that key is not present, the host assumes that the extension couldn't complete the calculation.
 
@@ -290,7 +290,7 @@ private async void OnAppServiceRequestReceived(AppServiceConnection sender, AppS
 
 Now that we've seen how to implement the relationship between a host and its extensions, let's see how a host finds  extensions installed on the system and reacts to the addition and removal of packages containing extensions.
 
-The Microsoft Store delivers extensions as packages. The [AppExtensionCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog) finds installed packages that contain extensions matching the host's extension contract name, and supplies events that fire when an app extension package relevant to the host is installed or removed.
+The Microsoft Store delivers extensions as packages. The [AppExtensionCatalog](/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog) finds installed packages that contain extensions matching the host's extension contract name, and supplies events that fire when an app extension package relevant to the host is installed or removed.
 
 In the code sample, the `ExtensionManager` class (defined in **ExtensionManager.cs** in the **MathExtensionHost** project) wraps the logic for loading extensions and responding to extension package installs and uninstalls.
 
@@ -408,14 +408,14 @@ If that same game had customizable UI add-ons or theming, then an app extension 
 
 ## Remarks
 
-This topic provides an introduction to app extensions. The key things to note are the creation of the host and marking it as such in its Package.appxmanifest file, creating the extension and marking it as such in its Package.appxmanifest file, determining how to implement the extension (such as an app service, background task, or other means), defining how the host will communicate with extensions, and using the [AppExtensions API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) to access and manage extensions.
+This topic provides an introduction to app extensions. The key things to note are the creation of the host and marking it as such in its Package.appxmanifest file, creating the extension and marking it as such in its Package.appxmanifest file, determining how to implement the extension (such as an app service, background task, or other means), defining how the host will communicate with extensions, and using the [AppExtensions API](/uwp/api/windows.applicationmodel.appextensions) to access and manage extensions.
 
 ## Related topics
 
-* [Introduction to App Extensions](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
+* [Introduction to App Extensions](/windows/msix/)
 * [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
 * [How to create and consume an app service](how-to-create-and-consume-an-app-service.md).
-* [AppExtensions namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)
-* [Extend your app with services, extensions, and packages](https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages)
+* [AppExtensions namespace](/uwp/api/windows.applicationmodel.appextensions)
+* [Extend your app with services, extensions, and packages](./extend-your-app-with-services-extensions-packages.md)

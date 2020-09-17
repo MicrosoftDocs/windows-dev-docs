@@ -22,7 +22,7 @@ Speech recognition converts words spoken by the user into text for form input, f
 TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
 
 **Other speech-related components:**
-**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See the [Cortana voice command (VCD) guidelines](https://docs.microsoft.com/cortana/voice-commands/vcd) if you are exposing app functionality in the **Cortana** UI.
+**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See the [Cortana voice command (VCD) guidelines](/cortana/voice-commands/vcd) if you are exposing app functionality in the **Cortana** UI.
 
 ## Speech interaction design
 
@@ -162,7 +162,7 @@ A custom grammar is designed and authored by you and is installed with your app.
     -   Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
     -   Let users know what to say for each app context and enable and disable grammars as needed.
     -   Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
-    -   Use the [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
+    -   Use the [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
     -   Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
     -   Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
 
@@ -173,9 +173,9 @@ A custom grammar is designed and authored by you and is installed with your app.
 
 If your app contains specialized vocabulary with unusual or fictional words, or words with uncommon pronunciations, you might be able to improve recognition performance for those words by defining custom pronunciations.
 
-For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See [token Element](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)) for more info.
+For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See [token Element](/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)) for more info.
 
-For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See [About Lexicons and Phonetic Alphabets](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)) for more info.
+For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See [About Lexicons and Phonetic Alphabets](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)) for more info.
 
 ## Testing
 
@@ -198,7 +198,7 @@ You should listen to all TTS strings to ensure they are intelligible and sound n
 -   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
 -   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
 
-Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) and [Speech Synthesis Markup Language Reference](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) and [Speech Synthesis Markup Language Reference](/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## Other articles in this section 
 
@@ -213,8 +213,8 @@ Both issues can be addressed by using SSML instead of plain text as input to the
 
 ## Related articles
 
-* [Speech interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
-* [Cortana interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
+* [Speech interactions]()
+* [Cortana interactions](./cortana-interactions.md)
 
  **Samples**
 
@@ -222,6 +222,3 @@ Both issues can be addressed by using SSML instead of plain text as input to the
  
 
  
-
-
-

@@ -17,7 +17,7 @@ The Compute Shader (CS) stage provides high-speed general-purpose computing and 
 
 A compute shader can run on many threads in parallel.
 
-A compute shader is a [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-programmable shader stage that expands Direct3D beyond graphics programming, using the [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) technology.
+A compute shader is a [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-programmable shader stage that expands Direct3D beyond graphics programming, using the [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) technology.
 
 ## <span id="related-topics"></span>Related topics
 
@@ -29,7 +29,3 @@ A compute shader is a [HLSL](https://docs.microsoft.com/windows/desktop/direct3d
  
 
  
-
-
-
-

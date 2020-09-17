@@ -1,6 +1,6 @@
 ---
 title: Vertex buffer view (VBV) and Index buffer view (IBV)
-description: A vertex buffer holds data for a list of vertices.
+description: Learn about Vertex buffer view (VBV) and Index buffer view (IBV), which hold data and integer indexes for vertices in Direct3D rendering.
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
 - Vertex buffer view (VBV)

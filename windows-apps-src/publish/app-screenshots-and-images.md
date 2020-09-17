@@ -26,7 +26,7 @@ You have the option to provide screenshots for the different device families tha
 Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.) Note that **Desktop** screenshots will also be shown to customers on Surface Hub devices.
 
 > [!NOTE]
-> Microsoft Visual Studio provides a [tool to help you capture screenshots](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
+> Microsoft Visual Studio provides a [tool to help you capture screenshots](/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
 
 Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 50 MB.
 
@@ -163,7 +163,7 @@ There are additional requirements depending on the type of file.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec: [H.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
+| <ul><li>Codec: [H.264](/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
 
 > [!WARNING]
 > Customers may not hear audio for MP4 files encoded with codecs other than AVC1.
@@ -225,7 +225,3 @@ If your previously-submitted app supports earlier OS versions (Windows 8.x and/o
 > Be sure to provide a 300 x 300 app tile icon image in the [Store logos](#store-logos) section for any submission that supports Windows Phone 8.1 or earlier. This will ensure that your app does not appear in the Store with a blank icon.  
 
 **For Windows 8.1 and earlier**, some promotional layouts may use an image in the **414 x 180** pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this size.
-
-
-
-

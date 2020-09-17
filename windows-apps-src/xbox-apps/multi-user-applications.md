@@ -1,6 +1,6 @@
 ---
 title: Introduction to multi-user applications
-description: A simple high-level introduction to the Xbox multi-user model.
+description: Get a high-level introduction to the Xbox One multi-user model that supports multiple users playing games cooperatively on a single device.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -48,7 +48,7 @@ To opt into the multi-user model:
 Developers can use KeyRoutedEventArgs.DeviceId, used by KeyUp and KeyDown routed events, to differentiate the events generated from different inputs.
 Using the Windows.System.UserDeviceAssociation.FindUserFromDeviceId method will help to identify the user associated to a specific input.
 
-See the [KeyRoutedEventArgs.DeviceId](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) topic for more information.
+See the [KeyRoutedEventArgs.DeviceId](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.deviceid) topic for more information.
 
 
 ## Guidance on which model to choose

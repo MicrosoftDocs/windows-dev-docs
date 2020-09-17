@@ -9,21 +9,21 @@ ms.localizationpriority: medium
 
 # Author events in C++/WinRT
 
-This topic builds on the Windows Runtime component, and the consuming application, that the [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) topic shows you how to build.
+This topic builds on the Windows Runtime component, and the consuming application, that the [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) topic shows you how to build.
 
 Here are the new features that this topic adds.
 - Update the bank account runtime class to raise an event when its balance goes into debit.
 - Update the Core App that consumes the bank account runtime class so that it handles that event.
 
 > [!NOTE]
-> For info about installing and using the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the [C++/WinRT](./intro-to-using-cpp-with-winrt.md) Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## Create **BankAccountWRC** and **BankAccountCoreApp**
 
-If you want to follow along with the updates shown in this topic, so that you can build and run the code, then the first step is to follow the walkthrough in the [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) topic. By doing so, you'll have the **BankAccountWRC** Windows Runtime component, and the **BankAccountCoreApp** Core App that consumes it.
+If you want to follow along with the updates shown in this topic, so that you can build and run the code, then the first step is to follow the walkthrough in the [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) topic. By doing so, you'll have the **BankAccountWRC** Windows Runtime component, and the **BankAccountCoreApp** Core App that consumes it.
 
 ## Update **BankAccountWRC** to raise an event
 
@@ -385,4 +385,4 @@ Note that these guidelines don't necessarily apply if you're designing an intern
 * [Author APIs with C++/WinRT](author-apis.md)
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

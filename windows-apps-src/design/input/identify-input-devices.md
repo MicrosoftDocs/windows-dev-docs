@@ -16,18 +16,18 @@ ms.localizationpriority: medium
 
 Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 
-> **Important APIs**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **Important APIs**: [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Input)
 
 ## Retrieve mouse properties
 
 
-The [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) namespace contains the [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) class used to retrieve the properties exposed by one or more connected mice. Just create a new **MouseCapabilities** object and get the properties you're interested in.
+The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contains the [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities) class used to retrieve the properties exposed by one or more connected mice. Just create a new **MouseCapabilities** object and get the properties you're interested in.
 
 **Note**  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.
 
  
 
-The following code uses a series of [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the individual mouse properties and values.
+The following code uses a series of [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the individual mouse properties and values.
 
 ```CSharp
 private void GetMouseProperties()
@@ -44,9 +44,9 @@ private void GetMouseProperties()
 ## Retrieve keyboard properties
 
 
-The [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) namespace contains the [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities) class used to retrieve whether a keyboard is connected. Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) property.
+The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contains the [**KeyboardCapabilities**](/uwp/api/Windows.Devices.Input.KeyboardCapabilities) class used to retrieve whether a keyboard is connected. Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) property.
 
-The following code uses a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element to display the keyboard property and value.
+The following code uses a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element to display the keyboard property and value.
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -59,13 +59,13 @@ private void GetKeyboardProperties()
 ## Retrieve touch properties
 
 
-The [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) namespace contains the [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) class used to retrieve whether any touch digitizers are connected. Just create a new **TouchCapabilities** object and get the properties you're interested in.
+The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contains the [**TouchCapabilities**](/uwp/api/Windows.Devices.Input.TouchCapabilities) class used to retrieve whether any touch digitizers are connected. Just create a new **TouchCapabilities** object and get the properties you're interested in.
 
 **Note**  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.
 
  
 
-The following code uses a series of [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the touch properties and values.
+The following code uses a series of [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the touch properties and values.
 
 ```CSharp
 private void GetTouchProperties()
@@ -79,7 +79,7 @@ private void GetTouchProperties()
 ## Retrieve pointer properties
 
 
-The [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) namespace contains the [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen). Just create a new **PointerDevice** object and get the properties you're interested in.
+The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contains the [**PointerDevice**](/uwp/api/Windows.Devices.Input.PointerDevice) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen). Just create a new **PointerDevice** object and get the properties you're interested in.
 
 **Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
 

@@ -1,5 +1,5 @@
 ﻿---
-Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
+description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
@@ -43,15 +43,13 @@ After making the app unavailable, you'll still see it in Partner Center. If you 
 > [!NOTE]
 > If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8.1 and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8.1, remove all of your Windows Phone 8.1 packages from the submission. After the update is published, no new customers on Windows Phone 8.1 will be able to acquire the app though customers who already have it can continue to use it). However, the app will still be available for new customers on Windows 10.
 
-
 ## Removing packages for a previously-supported device family
 
-If you remove all packages for a certain [device family](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.
+If you remove all packages for a certain device family (see [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)) that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.
 
 When you publish a submission that removes all of the packages that could run on a device family that your app previously supported, new customers will not be able to acquire the app on that device family. You can always publish another update later to provide packages for that device family again.
 
 Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.
-
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 

@@ -7,17 +7,18 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ---
+
 # Version adaptive code
 
-You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
+You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](../design/layout/layouts-with-xaml.md). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
 
 For important background info about ApiInformation, API contracts, and configuring Visual Studio, see [Version adaptive apps](version-adaptive-apps.md).
 
 ### Runtime API checks
 
-You use the [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
+You use the [Windows.Foundation.Metadata.ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
 
-Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
@@ -28,7 +29,7 @@ In most cases, you can keep your app's Minimum Version set to SDK version 10240 
 
 You must increase your app's Minimum Version if you use:
 - a new API that requires a capability that isn't available in an earlier version. You must increase the minimum supported version to one that includes that capability. For more info, see [App capability declarations](../packaging/app-capability-declarations.md).
-- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) will cause your app to crash at runtime.
+- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [XAMLParseException](/uwp/api/windows.ui.xaml.markup.xamlparseexception) will cause your app to crash at runtime.
 
 ### Adaptive code options
 
@@ -67,9 +68,9 @@ In this section, we show several examples of adaptive code that use APIs that ar
 
 ### Example 1: New enum value
 
-Windows 10, version 1607 adds a new value to the [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) enumeration: **ChatWithoutEmoji**. This new input scope has the same input behavior as the **Chat** input scope (spellchecking, auto-complete, auto-capitalization), but it maps to a touch keyboard without an emoji button. This is useful if you create your own emoji picker and want to disable the built-in emoji button in the touch keyboard. 
+Windows 10, version 1607 adds a new value to the [InputScopeNameValue](/uwp/api/windows.ui.xaml.input.inputscopenamevalue) enumeration: **ChatWithoutEmoji**. This new input scope has the same input behavior as the **Chat** input scope (spellchecking, auto-complete, auto-capitalization), but it maps to a touch keyboard without an emoji button. This is useful if you create your own emoji picker and want to disable the built-in emoji button in the touch keyboard. 
 
-This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page consructor or Page.Loaded event handler.
+This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page consructor or Page.Loaded event handler.
 
 > [!TIP]
 > When you check an API, use static strings instead of relying on .NET language features, otherwise your app might try to access a type that isn’t defined and crash at runtime.
@@ -150,21 +151,21 @@ If you use the ChatWithoutEmoji value in XAML, or in code without a check, it wi
 
 ### Example 2: New control
 
-A new version of Windows typically brings new controls to the UWP API surface that bring new functionality to the platform. To leverage the presence of a new control, use the  [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) method.
+A new version of Windows typically brings new controls to the UWP API surface that bring new functionality to the platform. To leverage the presence of a new control, use the  [ApiInformation.IsTypePresent](/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) method.
 
-Windows 10, version 1607 introduces a new media control called [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement). This control builds on the [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) class, so it brings features like the ability to easily tie into background audio, and it makes use of architectural improvements in the media stack.
+Windows 10, version 1607 introduces a new media control called [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement). This control builds on the [MediaPlayer](/uwp/api/windows.media.playback.mediaplayer) class, so it brings features like the ability to easily tie into background audio, and it makes use of architectural improvements in the media stack.
 
-However, if the app runs on a device that’s running a version of Windows 10 older than version 1607, you must use the [**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement) control instead of the new **MediaPlayerElement** control. You can use the [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) method to check for the presence of the MediaPlayerElement control at runtime, and load whichever control is suitable for the system where the app is running.
+However, if the app runs on a device that’s running a version of Windows 10 older than version 1607, you must use the [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) control instead of the new **MediaPlayerElement** control. You can use the [**ApiInformation.IsTypePresent**](/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) method to check for the presence of the MediaPlayerElement control at runtime, and load whichever control is suitable for the system where the app is running.
 
 This example shows how to create an app that uses either the new MediaPlayerElement or the old MediaElement depending on whether MediaPlayerElement type is present. 
-In this code, you use the [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) class to componentize the controls and their related UI and code so that you can switch them in and out based on the OS version. As an alternative, you can use a custom control, which provides more functionality and custom behavior than what’s needed for this simple example.
+In this code, you use the [UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol) class to componentize the controls and their related UI and code so that you can switch them in and out based on the OS version. As an alternative, you can use a custom control, which provides more functionality and custom behavior than what’s needed for this simple example.
  
 **MediaPlayerUserControl** 
 
 The `MediaPlayerUserControl` encapsulates a **MediaPlayerElement** and several buttons that are used to skip through the media frame by frame. The UserControl lets you treat these controls as a single entity and makes it easier to switch with a MediaElement on older systems. This user control should be used only on systems where MediaPlayerElement is present, so you don’t use ApiInformation checks in the code inside this user control.
 
 > [!NOTE]
-> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experiance, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) for more info. 
+> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experiance, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](../design/controls-and-patterns/custom-transport-controls.md) for more info. 
 
 **XAML**
 ```xaml
@@ -300,7 +301,7 @@ You should use state triggers for adaptive code only when you have small UI chan
 
 ### Example 1: New property
 
-The first step in setting up an extensible state trigger is subclassing the [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) class to create a custom trigger that will be active based on the presence of an API. This example shows a trigger that activates if the property presence matches the `_isPresent` variable set in XAML.
+The first step in setting up an extensible state trigger is subclassing the [StateTriggerBase](/uwp/api/windows.ui.xaml.statetriggerbase) class to create a custom trigger that will be active based on the presence of an API. This example shows a trigger that activates if the property presence matches the `_isPresent` variable set in XAML.
 
 **C#**
 ```csharp
@@ -334,7 +335,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 The next step is setting up the visual state trigger in XAML so that two different visual states result based on the presence of the API. 
 
-Windows 10, version 1607 introduces a new property on the [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement) class called [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction) that determines whether a control takes focus when  a user interacts with it. This is useful if you want to keep focus on a text box for data entry (and keep the touch keyboard showing) while the user clicks a button.
+Windows 10, version 1607 introduces a new property on the [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement) class called [AllowFocusOnInteraction](/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction) that determines whether a control takes focus when  a user interacts with it. This is useful if you want to keep focus on a text box for data entry (and keep the touch keyboard showing) while the user clicks a button.
 
 The trigger in this example checks if the property is present. If the property is present it sets the **AllowFocusOnInteraction** property on a Button to **false**; if the property isn’t present, the Button retains its original state. The TextBox is included to make it easier to see the effect of this property when you run the code.
 
@@ -440,5 +441,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## Related articles
 
-- [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+- [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

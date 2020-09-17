@@ -21,5 +21,7 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample applic
 - Creation and use of custom Windows Runtime class (runtime class) projected types and implementation types. For more info about these terms, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 - [Event handling](handle-events.md), including the use of auto-revoking event tokens.
 - Use of the external Win2D NuGet package, and [Windows::UI::Composition](/uwp/api/windows.ui.composition), for image effects.
-- XAML data binding, including the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+- XAML data binding, including the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md).
 - XAML styling and UI customization, including [connected animations](../design/motion/connected-animation.md).
+
+Also see [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).

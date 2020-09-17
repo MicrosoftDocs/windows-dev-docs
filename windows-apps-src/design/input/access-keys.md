@@ -21,7 +21,7 @@ Access keys are keyboard shortcuts that improve the usability and the accessibil
 See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
 
 > [!NOTE]
-> A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
+> A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
 The Windows app provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
 
@@ -238,7 +238,7 @@ Localized access keys are specified in your projects resources.resw file:
 
 _Specify the AccessKey property specified in the resources.resw file_
 
-For more info, see [Translating UI resources ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
+For more info, see [Translating UI resources ](/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## Key Tip positioning
 
@@ -350,7 +350,7 @@ This example demonstrates how to change these application resources:
 
 The XAML framework exposes Automation Properties that enable UI Automation clients to discover information about elements in the user interface.
 
-If you specify the AccessKey property on a UIElement or TextElement control, you can use the [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.
+If you specify the AccessKey property on a UIElement or TextElement control, you can use the [AutomationProperties.AccessKey](/dotnet/api/system.windows.automation.automationproperties.accesskey) property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.
 
 ## Related articles
 
@@ -359,5 +359,3 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 
 **Samples**
 * [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
-
-

@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Use a background task to update your app's live tile with fresh content.
 
@@ -33,7 +33,7 @@ To enable a live tile for your app, add a new Windows Runtime component project 
 ## Implement the background task
 
 
-Implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
+Implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
 
 1.  In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.
 2.  In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.
@@ -153,7 +153,7 @@ To set up the package manifest, open it and add a new background task declaratio
 ## Register the background task
 
 
-Create a [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to register your task.
+Create a [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to register your task.
 
 > **Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.
  
@@ -250,11 +250,11 @@ To debug the background task, set a breakpoint in the task’s Run method. In th
 ## Related topics
 
 
-* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
-* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
-* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
+* [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [Guidelines and checklist for tiles and badges](../design/shell/tiles-and-notifications/creating-tiles.md)
 
  
 

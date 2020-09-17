@@ -1,6 +1,6 @@
 ---
-Description: Learn how to use Universal Dismiss on your toast notifications.
 title: Universal Dismiss
+description: Learn how to use Universal Dismiss to dismiss a toast notification from one device and have the same notification dismissed on other devices.
 label: Universal Dismiss
 template: detail.hbs
 ms.date: 12/15/2017

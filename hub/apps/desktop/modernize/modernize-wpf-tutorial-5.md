@@ -14,7 +14,7 @@ ms.custom: RS5, 19H1
 
 This is the final part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 4](modernize-wpf-tutorial-4.md).
 
-In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](https://docs.microsoft.com/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:
+In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:
 
 - Optimized network usage and storage space.
 - Complete clean uninstall, thanks to a lightweight container where the app is executed. No registry keys and temporary files are left on the system.
@@ -39,7 +39,7 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 5. Select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version** and click **OK**.
 
-    The **ContosoExpenses.Package** project is added to the **ContosoExpenses** solution. This project includes a [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root), which describes the application, and some default assets that are used for items such as the icon in the Programs menu and the tile in the Start screen. However, unlike a UWP project, the packaging project doesn't contain code. Its purpose is to package an existing desktop app.
+    The **ContosoExpenses.Package** project is added to the **ContosoExpenses** solution. This project includes a [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root), which describes the application, and some default assets that are used for items such as the icon in the Programs menu and the tile in the Start screen. However, unlike a UWP project, the packaging project doesn't contain code. Its purpose is to package an existing desktop app.
 
 6. In the **ContosoExpenses.Package** project, right-click the **Applications** node and choose **Add reference**. This node specifies which applications in your solution will be included in the package.
 

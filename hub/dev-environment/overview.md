@@ -19,46 +19,46 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![JavaScrip / NodeJS](../images/nodejs-logo.png)](https://docs.microsoft.com/windows/nodejs)<br>
-        **[Get started with NodeJS](https://docs.microsoft.com/windows/nodejs)**<br>
+       [![JavaScrip / NodeJS](../images/nodejs-logo.png)](../nodejs/index.yml)<br>
+        **[Get started with NodeJS](../nodejs/index.yml)**<br>
         Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Python](../images/python-logo.png)](https://docs.microsoft.com/windows/python)<br>
-        **[Get started with Python](https://docs.microsoft.com/windows/python)**<br>
+       [![Python](../images/python-logo.png)](../python/index.yml)<br>
+        **[Get started with Python](../python/index.yml)**<br>
         Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Android](../images/android-logo.png)](https://docs.microsoft.com/windows/android)<br>
-        **[Get started with Android](https://docs.microsoft.com/windows/android)**<br>
+       [![Android](../images/android-logo.png)](/windows/android)<br>
+        **[Get started with Android](/windows/android)**<br>
         Install Android Studio, or choose a cross-platform solution like Xamarin, React, or Cordova, and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
-       [![Windows Desktop](../images/windows-logo.png)](https://docs.microsoft.com/windows/apps/)<br>
-        **[Get started with Windows Desktop](https://docs.microsoft.com/windows/apps/)**<br>
+       [![Windows Desktop](../images/windows-logo.png)](../apps/index.yml)<br>
+        **[Get started with Windows Desktop](../apps/index.yml)**<br>
         Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![C / C++](../images/c-logo.png)](https://docs.microsoft.com/cpp/)<br>
-        **[Get started with C++ and C](https://docs.microsoft.com/cpp/)**<br>
+       [![C / C++](../images/c-logo.png)](/cpp/)<br>
+        **[Get started with C++ and C](/cpp/)**<br>
         Get started with C++, C, and assembly to develop apps, services, and tools.
     :::column-end:::
     :::column:::
-       [![C#](../images/csharp-logo.png)](https://docs.microsoft.com/dotnet/csharp/)<br>
-        **[Get started with C#](https://docs.microsoft.com/dotnet/csharp/)**<br>
+       [![C#](../images/csharp-logo.png)](/dotnet/csharp/)<br>
+        **[Get started with C#](/dotnet/csharp/)**<br>
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Azure for Java](../images/java-logo.png)](https://docs.microsoft.com/azure/developer/java/)<br>
-        **[Get started with Java on Azure](https://docs.microsoft.com/azure/developer/java/)**<br>
+       [![Azure for Java](../images/java-logo.png)](/azure/developer/java/)<br>
+        **[Get started with Java on Azure](/azure/developer/java/)**<br>
         Get started building apps for the cloud with these tutorials and tools for Java developers.
     :::column-end:::
     :::column:::
-       [![PowerShell](../images/powershell.png)](https://docs.microsoft.com/powershell/)<br>
-        **[Get started with PowerShell](https://docs.microsoft.com/powershell/)**<br>
+       [![PowerShell](../images/powershell.png)](/powershell/)<br>
+        **[Get started with PowerShell](/powershell/)**<br>
         Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
     :::column-end:::
 :::row-end:::
@@ -67,23 +67,23 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![WSL](../images/windows-linux-dev-env.png)](https://docs.microsoft.com/windows/wsl/)<br>
-        **[Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/)**<br>
+       [![WSL](../images/windows-linux-dev-env.png)](/windows/wsl/)<br>
+        **[Windows Subsystem for Linux](/windows/wsl/)**<br>
         Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
-        [Install WSL](https://docs.microsoft.com/windows/wsl/install-win10)
+        [Install WSL](/windows/wsl/install-win10)
     :::column-end:::
     :::column:::
-       [![Windows Terminal](../images/terminal.png)](https://docs.microsoft.com/windows/terminal/)<br>
-        **[Windows Terminal](https://docs.microsoft.com/windows/terminal/)**<br>
+       [![Windows Terminal](../images/terminal.png)](/windows/terminal/)<br>
+        **[Windows Terminal](/windows/terminal/)**<br>
         Customize your terminal environment to work with multiple command line shells.
         <br>
         [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
     :::column-end:::
     :::column:::
-       [![Windows Package Manager](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
-        **[Windows Package Manager](https://docs.microsoft.com/windows/package-manager/)**<br>
+       [![Windows Package Manager](../images/winget.png)](../package-manager/index.md)<br>
+        **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows 10.<br>
-        [Install Windows Package Manager (public preview)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
@@ -100,20 +100,20 @@ This guide will help you get started with installing and setting up the language
         [Install VS Code](https://code.visualstudio.com/download)
     :::column-end:::
     :::column:::
-       [![Visual Studio](../images/visualstudio.png)](https://docs.microsoft.com/visualstudio/windows/)<br>
-        **[Visual Studio](https://docs.microsoft.com/visualstudio/windows/)**<br>
+       [![Visual Studio](../images/visualstudio.png)](/visualstudio/windows/)<br>
+        **[Visual Studio](/visualstudio/windows/)**<br>
         An integrated development environment that you can use to edit, debug, build code, and publish apps, including compilers, intellisense code completion, and many more features.<br>
-        [Install Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio)
+        [Install Visual Studio](/visualstudio/install/install-visual-studio)
     :::column-end:::
     :::column:::
-       [![Azure](../images/Azure.png)](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)<br>
-        **[Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide)**<br>
+       [![Azure](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
+        **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
         [Set up an Azure account](https://azure.microsoft.com/free/)
     :::column-end:::
     :::column:::
        [![.NET](../images/net.png)](https://dotnet.microsoft.com/)<br>
-        **[.NET](https://docs.microsoft.com/dotnet/standard/get-started/)**<br>
+        **[.NET](/dotnet/standard/get-started/)**<br>
         An open source development platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.<br>
         [Install .NET](https://dotnet.microsoft.com/download)
     :::column-end:::
@@ -124,24 +124,24 @@ This guide will help you get started with installing and setting up the language
 ## Run Windows and Linux
 
 Windows Subsystem for Linux (WSL) allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. WSL enables you to use BASH and will provide the kind of environment most familiar to Mac users.
-- Learn more in the [WSL docs](https://docs.microsoft.com/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
+- Learn more in the [WSL docs](/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
-- Learn more in the [Windows Terminal docs](https://docs.microsoft.com/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+- Learn more in the [Windows Terminal docs](/windows/terminal) or via [WT videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 
-Check out our [guide to transitioning between between a Mac and Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
+Check out our [guide to transitioning between between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
 
-* [Keyboard shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#keyboard-shortcuts)
-* [Trackpad shortcuts](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#trackpad-shortcuts)
-* [Terminal and shell tools](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#terminal-and-shell)
-* [Apps and utilities](https://docs.microsoft.com/windows/dev-environment/mac-to-windows#apps-and-utilities)
+* [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
+* [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)
+* [Terminal and shell tools](./mac-to-windows.md#terminal-and-shell)
+* [Apps and utilities](./mac-to-windows.md#apps-and-utilities)
 
 ![Office image](../images/flashy-office3.png)
 
@@ -150,4 +150,4 @@ Check out our [guide to transitioning between between a Mac and Windows](https:/
 * [Tips for improving your workflow](./tips.md)
 * [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
 * [Popular tutorials, courses, and code samples](./tutorials.md)
-* [Microsoft's Game Stack documentation](https://docs.microsoft.com/gaming/)
+* [Microsoft's Game Stack documentation](/gaming/)

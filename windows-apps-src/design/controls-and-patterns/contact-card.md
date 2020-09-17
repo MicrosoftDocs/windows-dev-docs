@@ -1,5 +1,5 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+description: Learn how to use contact cards to let users display and edit contact information, such as names, phone numbers, and addresses.
 title: Contact card
 ms.date: 03/07/2018
 ms.topic: article
@@ -168,12 +168,12 @@ private void onUserClickShowContactCard()
 
 ## Retrieving "real" contacts
 
-The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](/windows/uwp/contacts-and-calendar/).
+The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](../../contacts-and-calendar/index.md).
 
 
 
 
 ## Related articles
-- [Contacts and calendar](/windows/uwp/contacts-and-calendar/)
+- [Contacts and calendar](../../contacts-and-calendar/index.md)
 - [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [People picture control](/windows/uwp/controls-and-patterns/person-picture/)

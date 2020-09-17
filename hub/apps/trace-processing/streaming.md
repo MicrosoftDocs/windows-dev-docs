@@ -136,7 +136,7 @@ By default, all streaming data is provided during the first pass through the tra
 
 Some key differences in usage between buffering and streaming:
 
-1. Buffering returns an [IPendingResult&lt;T&gt;](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1), and the result it holds is available only before the trace has been processed. After the trace has been processed, the results can be enumerated using techniques such as foreach and LINQ.
+1. Buffering returns an [IPendingResult&lt;T&gt;](/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1), and the result it holds is available only before the trace has been processed. After the trace has been processed, the results can be enumerated using techniques such as foreach and LINQ.
 2. Streaming returns void and instead takes a callback argument. It calls the callback once as each item becomes available. Because the data is not buffered, there is never a list of results to enumerate with foreach or LINQ – the streaming callback needs to buffer whatever part of the data it wants to save for use after processing has completed.
 3. The code for processing buffered data appears after the call to trace.Process(), when the pending results are available.
 4. The code for processing streaming data appears before the call to trace.Process(), as a callback to the trace.UseStreaming.Use...() method.

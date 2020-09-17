@@ -21,7 +21,7 @@ Keep in mind that you can always create or update listings directly in Partner C
 
 On the submission overview page for an app, click **Export listing** (in the **Store listings** section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.
 
-You can use Microsoft Excel or another editor to edit this file. Note that Office 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+You can use Microsoft Excel or another editor to edit this file. Note that Microsoft 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
       
 If you haven’t created any listings for your product yet, the .csv file you exported will not contain any custom data. You’ll see columns for **Field**, **ID**, **Type**, and **default**, and rows which correspond to every item that can appear in a Store listing.
 

@@ -15,7 +15,7 @@ This guide covers how to set up exclusions in your Windows Defender security set
 
 ## Windows Defender Overview
 
-In Windows 10, version 1703 and later, the [Windows Defender Antivirus](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Windows Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
+In Windows 10, version 1703 and later, the [Windows Defender Antivirus](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Windows Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
 
 **However**, Windows Defender's real-time protection will also dramatically slow file system access and build speed when developing Android apps.
 
@@ -63,7 +63,7 @@ For more information on adding antivirus scanning exclusions, including how to c
 
 ## Additional resources
 
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 - [Add Windows Defender exclusions to improve performance](./defender-settings.md)
 

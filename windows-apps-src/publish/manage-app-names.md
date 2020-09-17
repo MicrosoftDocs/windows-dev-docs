@@ -40,7 +40,7 @@ If your app is already in the Store and you want to rename it, you can do so by 
 
 You must update your app's package(s) to replace the old name with the new one and upload the updated package(s) to your submission.
 - First, update the Package.StoreAssociation.xml file to use the new name, either manually or by using Visual Studio (**Project > Store > Associate App with the Store...**). For more info, see [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
-- You'll also need to update the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) element in your app manifest, and update any graphics or text that includes the app's name. 
+- You'll also need to update the [**Package/Properties/DisplayName**](/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) element in your app manifest, and update any graphics or text that includes the app's name. 
   > [!IMPORTANT]
   > Be sure to update the Package.StoreAssociation.xml file before you change the **Package/Properties/DisplayName** in the app manifest, or you may get an error.
 
@@ -57,7 +57,3 @@ Once your app has been published with the new name, you can delete any older nam
  
 
  
-
-
-
-

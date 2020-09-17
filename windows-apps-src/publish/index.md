@@ -1,5 +1,5 @@
 ---
-Description: See how to publish your Windows apps to the Microsoft Store.
+description: Learn how to sign up and use Partner Center to publish your Windows apps and games to the Microsoft Store.
 title: Publish Windows apps
 ms.date: 10/31/2018
 ms.topic: article

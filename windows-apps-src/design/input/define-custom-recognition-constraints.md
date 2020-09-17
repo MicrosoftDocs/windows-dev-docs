@@ -14,19 +14,19 @@ ms.localizationpriority: medium
 
 Learn how to define and use custom constraints for speech recognition.
 
-> **Important APIs**: [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **Important APIs**: [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
 
 ## Add constraints
 
-Use the [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) property to add constraints to a speech recognizer.
+Use the [**SpeechRecognizer.Constraints**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) property to add constraints to a speech recognizer.
 
-Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Launch a foreground app with voice commands in Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Launch a foreground app with voice commands in Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
-- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—A constraint based on a predefined grammar (dictation or web search).
-- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)—A constraint based on a list of words or phrases.
-- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
+- [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—A constraint based on a predefined grammar (dictation or web search).
+- [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)—A constraint based on a list of words or phrases.
+- [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
 
 Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
 
@@ -35,14 +35,14 @@ Each speech recognizer can have one constraint collection. Only these combinatio
 - A combination of list constraints and/or grammar-file constraints.
 
 > [!Important]
-> Call the **[SpeechRecognizer.CompileConstraintsAsync](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** method to compile the constraints before starting the recognition process.
+> Call the **[SpeechRecognizer.CompileConstraintsAsync](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** method to compile the constraints before starting the recognition process.
 
 ## Specify a web-search grammar (SpeechRecognitionTopicConstraint)
 
 Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
 
 > [!NOTE]
-> You can use a [SpeechRecognitionListConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) in conjunction with a [SpeechRecognitionTopicConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) to increase dictation accuracy by providing a set of domain-specific keywords that you think are likely to be used during dictation.
+> You can use a [SpeechRecognitionListConstraint](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) in conjunction with a [SpeechRecognitionTopicConstraint](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) to increase dictation accuracy by providing a set of domain-specific keywords that you think are likely to be used during dictation.
 
 Here, we add a web-search grammar to the constraints collection.
 
@@ -132,7 +132,7 @@ SRGS grammars provide a full set of features to help you architect complex voice
 - Use semantics to define what speech recognition means to your app.
 - Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
-For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](https://msdn.microsoft.com/library/hh361653) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](https://msdn.microsoft.com/library/hh361658).
+For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](/previous-versions/office/developer/speech-technologies/hh361653(v=office.14)) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](/previous-versions/office/developer/speech-technologies/hh361658(v=office.14)).
 
 Keep the following points in mind:
 
@@ -207,15 +207,15 @@ Here, we listen for variants of "yes" and "no".
 
 ## Manage constraints
 
-After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) property of a constraint to **true** or **false**. The default setting is **true**.
+After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) property of a constraint to **true** or **false**. The default setting is **true**.
 
-It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) property, as required.
+It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) property, as required.
 
 Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.
 
 Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.
 
-To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) and [**SpeechRecognizerUIOptions.ExampleText**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
+To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) and [**SpeechRecognizerUIOptions.ExampleText**](/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
 
 ## Related articles
 

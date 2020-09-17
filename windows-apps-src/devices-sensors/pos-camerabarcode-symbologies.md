@@ -1,6 +1,6 @@
 ---
 title: Camera Barcode Scanner Symbologies
-description: Camera Barcode Scanner Supported Symbologies
+description: View sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10.
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

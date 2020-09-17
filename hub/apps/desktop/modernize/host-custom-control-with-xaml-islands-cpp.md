@@ -24,7 +24,7 @@ To host a custom UWP XAML control, you'll create the following projects and comp
 
 * Visual Studio 2019 version 16.4.3 or later.
 * Windows 10, version 1903 SDK (version 10.0.18362) or later.
-* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) installed with Visual Studio. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. For more information, see  [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
+* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) installed with Visual Studio. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. For more information, see  [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 ## Create a desktop application project
 
@@ -171,7 +171,7 @@ You're now ready to add code to the **MyUWPApp** project to perform these tasks:
 
 ### Define a XamlApplication class
 
-Next, revise the default **App** class in the **MyUWPApp** project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadataProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread. Later in this walkthrough you'll update the desktop project to create an instance of this class.
+Next, revise the default **App** class in the **MyUWPApp** project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread. Later in this walkthrough you'll update the desktop project to create an instance of this class.
 
   > [!NOTE]
   > Each solution that uses XAML Islands can contain only one project that defines a `XamlApplication` object. All custom UWP XAML controls in your app share the same `XamlApplication` object. 
@@ -302,19 +302,19 @@ Before the **MyDesktopWin32App** app can host a custom UWP XAML control in a XAM
 
 ### Option 1: Package the app using MSIX
 
-You can package the app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
+You can package the app in an [MSIX package](/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
 
-1. Add a new [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, name it **MyDesktopWin32Project** and select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
+1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, name it **MyDesktopWin32Project** and select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the check box next to the **MyDesktopWin32App** project and click **OK**.
     ![Reference project](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
-> If you choose to not package your application in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
+> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 ### Option 2: Create an application manifest
 
-You can add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your app.
+You can add an [application manifest](/windows/desktop/SbsCs/application-manifests) to your app.
 
 1. Right-click the **MyDesktopWin32App** project and select **Add** -> **New Item**. 
 2. In the **Add New Item** dialog, click **Web** in the left pane and select **XML File (.xml)**. 
@@ -509,16 +509,16 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 
 ## Add a control from the WinUI library to the custom control
 
-Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](https://docs.microsoft.com/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
 This section demonstrates how to add a UWP control from the WinUI library to your user control.
 
 1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
     > [!NOTE]
-    > If your desktop app is packaged in an [MSIX package](https://docs.microsoft.com/windows/msix), you can use either a prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+    > If your desktop app is packaged in an [MSIX package](/windows/msix), you can use either a prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
-2. In the pch.h file in this project, add the following `#include` statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see [this article](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
+2. In the pch.h file in this project, add the following `#include` statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see [this article](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 
     ```cpp
     #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"

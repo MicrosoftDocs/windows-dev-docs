@@ -58,7 +58,7 @@ It's important to understand that this option has the same impact as selecting *
 
 ## Customize the schedule for specific markets
 
-By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](define-pricing-and-market-selection.md) section, those markets will not be shown.
+By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](./define-market-selection.md) section, those markets will not be shown.
 
 To add a schedule for one market, select it and click **Save**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market.
 

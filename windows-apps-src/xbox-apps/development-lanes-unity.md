@@ -1,6 +1,6 @@
 ---
 title: Bringing Unity games to UWP on Xbox
-description: Unity UWP development on Xbox.
+description: Learn how to build and deploy a Unity game from a Universal Windows Platform (UWP) Visual Studio solution to Xbox One.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

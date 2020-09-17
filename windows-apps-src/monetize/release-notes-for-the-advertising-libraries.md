@@ -1,6 +1,6 @@
 ---
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: Review the release notes for the Microsoft advertising libraries.
+description: View release notes for the Microsoft advertising libraries that support XAML and JavaScript/HTML apps for Windows 10, Windows 8.1, Windows Phone 8.1 and Windows Phone 8.
 title: Release notes for the advertising libraries
 ms.date: 02/18/2020
 ms.topic: article
@@ -29,7 +29,7 @@ When using the Microsoft advertising libraries, you cannot target **Any CPU** in
 
 ## C++ Support
 
-The Microsoft advertising libraries (which include the **AdControl** and **InterstitialAd** classes) support apps written in C++ and DirectX using Windows Runtime Interoperability (*interop*). For more information and examples about programming using XAML and C++, see [Type System](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+The Microsoft advertising libraries (which include the **AdControl** and **InterstitialAd** classes) support apps written in C++ and DirectX using Windows Runtime Interoperability (*interop*). For more information and examples about programming using XAML and C++, see [Type System](/cpp/cppcx/type-system-c-cx).
 
 ## No toolbox control
 

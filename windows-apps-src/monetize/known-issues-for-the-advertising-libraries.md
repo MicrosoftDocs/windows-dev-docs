@@ -19,7 +19,7 @@ This topic lists the known issues with the current release of the Microsoft Adve
 
 ## AdControl interface unknown in XAML
 
-The XAML markup for an [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) may incorrectly show a blue curvy line implying that the interface is unknown. This occurs only when targeting x86, and it may be ignored.
+The XAML markup for an [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) may incorrectly show a blue curvy line implying that the interface is unknown. This occurs only when targeting x86, and it may be ignored.
 
 ## lastError from previous ad request
 

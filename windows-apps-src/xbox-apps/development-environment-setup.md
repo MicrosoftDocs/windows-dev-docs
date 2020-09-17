@@ -1,6 +1,6 @@
 ---
 title: Set up your UWP on Xbox development environment
-description: Steps to set up and test your UWP on Xbox development environment.
+description: Learn how to set up and test a UWP on Xbox development environment consisting of a development PC connected to an Xbox One console through a local network.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

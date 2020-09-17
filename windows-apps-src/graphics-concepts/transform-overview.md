@@ -55,7 +55,7 @@ Matrices are written in row-column order. A matrix that evenly scales vertices a
 
 ![equation of a matrix for uniform scaling](images/matrix.png)
 
-In C++, Direct3D declares matrices as a two-dimensional array, using a matrix struct. The following example shows how to initialize a [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) structure to act as a uniform scaling matrix (scale factor "s").
+In C++, Direct3D declares matrices as a two-dimensional array, using a matrix struct. The following example shows how to initialize a [**D3DMATRIX**](/windows/desktop/direct3d9/d3dmatrix) structure to act as a uniform scaling matrix (scale factor "s").
 
 ```cpp
 D3DMATRIX scale = {
@@ -156,7 +156,3 @@ No matter what type of matrix you are creating, remember the left-to-right rule 
  
 
  
-
-
-
-

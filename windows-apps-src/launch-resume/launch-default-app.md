@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
-- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
-- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
+- [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. You can launch custom URIs too. For more info about registering a custom URI scheme and handling URI activation, see [Handle URI activation](handle-uri-activation.md).
 
@@ -48,9 +48,9 @@ In general, your app can't select the app that is launched. The user determines 
 
 ### Call LaunchUriAsync to launch a URI
 
-Use the [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch. If you attempt to launch a URI and your app isn't in the foreground, the launch will fail and your error callback will be invoked.
+Use the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch. If you attempt to launch a URI and your app isn't in the foreground, the launch will fail and your error callback will be invoked.
 
-First create a [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) object to represent the URI, then pass that to the [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method. Use the return result to see if the call succeeded, as shown in the following example.
+First create a [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) object to represent the URI, then pass that to the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method. Use the return result to see if the call succeeded, as shown in the following example.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -111,9 +111,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### Set remaining view preference
 
-Source apps that call [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) can request that they remain on screen after a URI launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the URI. Source apps can use the [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app doesn't need to remain on screen after the URI launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
+Source apps that call [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) can request that they remain on screen after a URI launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the URI. Source apps can use the [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app doesn't need to remain on screen after the URI launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
 
-**Note**  Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), you aren't guaranteed a specific windowing behavior for the source app.
+**Note**  Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview), you aren't guaranteed a specific windowing behavior for the source app.
 
 ```cs
 // Set the desired remaining view.
@@ -161,7 +161,7 @@ Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [lau
 
 ![an example of the windows maps app.](images/mapnyc.png)
 
-For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your own app, see [Display maps with 2D, 3D, and Streetside views](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
+For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your own app, see [Display maps with 2D, 3D, and Streetside views](../maps-and-location/display-maps.md).
 
 ### Messaging app URI scheme
 
@@ -183,7 +183,7 @@ Use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system to
 |------------|---------|
 | ms-tonepicker: | Pick ringtones, alarms, and system tones. |
 
-Parameters are passed via a [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) to the LaunchURI API. See [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) for details.
+Parameters are passed via a [ValueSet](/uwp/api/windows.foundation.collections.valueset) to the LaunchURI API. See [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) for details.
 
 ### Nearby Numbers app URI scheme
 
@@ -210,7 +210,7 @@ Or to edit a video: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime
 | URI scheme |Results |
 |------------|--------|
 | ms-photos:viewer?fileName={filename} | Launches the Photos app to view the specified image where {filename} is a fully-qualified path name. For example: `c:\users\userName\Pictures\ImageToView.jpg` |
-| ms-photos:videoedit?InputToken={input token} | Launches the Photos app in video editing mode for the file represented by the file token. **InputToken** is required. Use the  [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) to get a token for a file. |
+| ms-photos:videoedit?InputToken={input token} | Launches the Photos app in video editing mode for the file represented by the file token. **InputToken** is required. Use the  [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) to get a token for a file. |
 | ms-photos:videoedit?Action={action} | A parameter that indicates which video editing mode to open the Photos app in, where {action} is one of: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** is required. |
 | ms-photos:videoedit?StartTime={timespan} | An optional parameter that specifies where to start playing the video. `{timespan}` must be in the format `"hh:mm:ss.ffff"`. If not specified, defaults to `00:00:00.0000` |
 

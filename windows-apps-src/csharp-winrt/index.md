@@ -18,9 +18,9 @@ C#/WinRT currently provides support for consuming WinRT types, and the current p
 
 ## Motivation for C#/WinRT
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) is the focus for the .NET platform, and .NET 5 is the next major release. It is an open-source, cross-platform runtime that can be used to build device, cloud, and IoT applications.
+[.NET Core](/dotnet/core/) is the focus for the .NET platform, and .NET 5 is the next major release. It is an open-source, cross-platform runtime that can be used to build device, cloud, and IoT applications.
 
-Previous versions of .NET Framework and .NET Core had built-in knowledge of WinRT, a Windows-specific technology. To support the portability and efficiency goals of .NET 5, we lifted the WinRT projection support out of the .NET compiler and runtime and moved it into the C#/WinRT toolkit. The goal of C#/WinRT is to provide parity with the built-in WinRT support provided by earlier versions of the C# compiler and .NET runtime. For details, see [.NET mappings of Windows Runtime types](https://docs.microsoft.com/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types).
+Previous versions of .NET Framework and .NET Core had built-in knowledge of WinRT, a Windows-specific technology. To support the portability and efficiency goals of .NET 5, we lifted the WinRT projection support out of the .NET compiler and runtime and moved it into the C#/WinRT toolkit. The goal of C#/WinRT is to provide parity with the built-in WinRT support provided by earlier versions of the C# compiler and .NET runtime. For details, see [.NET mappings of Windows Runtime types](../winrt-components/net-framework-mappings-of-windows-runtime-types.md).
 
 C#/WinRT also supports WinUI 3.0. This release of WinUI lifts native Microsoft UI controls and features out of the operating system. This enables app developers to use the latest controls and visuals on Windows 10, version 1803, and later releases.
 
@@ -119,7 +119,7 @@ C#/WinRT also provides an activation fallback path if Windows fails to activate 
 2. Contoso.Controls.dll
 3. Contoso.dll
 
-C#/WinRT uses the [LoadLibrary alternate search order](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order?#alternate-search-order-for-desktop-applications) to locate an implementation DLL. An app relying on this fallback behavior should package the implementation DLL alongside the app module.
+C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications) to locate an implementation DLL. An app relying on this fallback behavior should package the implementation DLL alongside the app module.
 
 ## Known issues
 

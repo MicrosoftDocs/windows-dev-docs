@@ -181,7 +181,7 @@ This is not optimal because it gives the app a "boxed-in" effect, with parts of 
 
 ### Drawing UI to the edge
 
-We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [nav panes](../controls-and-patterns/navigationview.md), and [CommandBars](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
+We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [nav panes](../controls-and-patterns/navigationview.md), and [CommandBars](/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
 
 On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in [UI element sizing](#ui-element-sizing), a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:
 
@@ -201,7 +201,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-With this line of code, the app window will extend to the edges of the screen, so you will need to move all interactive and essential UI into the TV-safe area described earlier. Transient UI, such as context menus and opened [ComboBoxes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), will automatically remain inside the TV-safe area.
+With this line of code, the app window will extend to the edges of the screen, so you will need to move all interactive and essential UI into the TV-safe area described earlier. Transient UI, such as context menus and opened [ComboBoxes](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), will automatically remain inside the TV-safe area.
 
 ![Core window bounds](images/designing-for-tv/core-window-bounds.png)
 
@@ -209,7 +209,7 @@ With this line of code, the app window will extend to the edges of the screen, s
 
 Navigation panes are typically drawn near the edge of the screen, so the background should extend into the TV-unsafe area so as not to introduce awkward gaps. You can do this by simply changing the color of the nav pane's background to the color of the app's background.
 
-Using the core window bounds as previously described will allow you to draw your UI to the edges of the screen, but you should then use positive margins on the [SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)'s content to keep it within the TV-safe area.
+Using the core window bounds as previously described will allow you to draw your UI to the edges of the screen, but you should then use positive margins on the [SplitView](/uwp/api/Windows.UI.Xaml.Controls.SplitView)'s content to keep it within the TV-safe area.
 
 ![Nav pane extended to edges of screen](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -235,7 +235,7 @@ The following code snippet achieves this effect:
 </SplitView>
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) is another example of a pane that is commonly positioned near one or more edges of the app, and as such on TV its background should extend to the edges of the screen. It also usually contains a **More** button, represented by "..." on the right side, which should remain in the TV-safe area. The following are a few different strategies to achieve the desired interactions and visual effects.
+[CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) is another example of a pane that is commonly positioned near one or more edges of the app, and as such on TV its background should extend to the edges of the screen. It also usually contains a **More** button, represented by "..." on the right side, which should remain in the TV-safe area. The following are a few different strategies to achieve the desired interactions and visual effects.
 
 **Option 1**: Change the `CommandBar` background color to either transparent or the same color as the page background:
 
@@ -276,7 +276,7 @@ While a list or grid is extended like this, it's important to keep the focus vis
 
 ![Scrolling grid focus should be kept in TV-safe area](images/designing-for-tv/scrolling-grid-focus.png)
 
-The UWP has functionality that will keep the focus visual inside the [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) or [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)'s [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter), as in the following code snippet:
+The UWP has functionality that will keep the focus visual inside the [VisibleBounds](/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) or [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView)'s [ItemsPresenter](/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter), as in the following code snippet:
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle"
@@ -327,9 +327,9 @@ You would put the previous code snippet in either the page or app resources, and
 ```
 
 > [!NOTE]
-> This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) attribute for both the [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) and the [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) to `GridView`.
+> This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) attribute for both the [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) and the [Style](/uwp/api/Windows.UI.Xaml.Style) to `GridView`.
 
-For more fine-grained control over how items are brought into view, if your application targets version 1803 or later, you can use the [UIElement.BringIntoViewRequested event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). You can put it on the [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) for the **ListView**/**GridView** to catch it before the internal **ScrollViewer** does, as in the following code snippets:
+For more fine-grained control over how items are brought into view, if your application targets version 1803 or later, you can use the [UIElement.BringIntoViewRequested event](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). You can put it on the [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) for the **ListView**/**GridView** to catch it before the internal **ScrollViewer** does, as in the following code snippets:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -399,7 +399,7 @@ As long as your app calls these accent colors through brushes or color resources
 
 Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices.
 
-As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) API, those colors are replaced with accent colors available on Xbox One. High contrast brush colors are also pulled in from the system the same way as on a PC and phone.
+As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API, those colors are replaced with accent colors available on Xbox One. High contrast brush colors are also pulled in from the system the same way as on a PC and phone.
 
 To learn more about accent color in general, see [Accent color](../style/color.md#accent-color).
 
@@ -416,9 +416,9 @@ A color's RGB values represent intensities for red, green, and blue. TVs don't h
 Historically, apps on Xbox had to tailor their colors to fall within this "TV-safe" color range; however, starting with the Fall Creators Update, Xbox One automatically scales full range content into the TV-safe range. This means that most app developers no longer have to worry about TV-safe colors.
 
 > [!IMPORTANT]
-> Video content that's already in the TV-safe color range doesn't have this color scaling effect applied when played back using [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk).
+> Video content that's already in the TV-safe color range doesn't have this color scaling effect applied when played back using [Media Foundation](/windows/desktop/medfound/microsoft-media-foundation-sdk).
 
-If you're developing an app using DirectX 11 or DirectX 12 and creating your own swap chain to render UI or video, you can specify the color space you use by calling [IDXGISwapChain3::SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), which will let the system know if it needs to scale colors or not.
+If you're developing an app using DirectX 11 or DirectX 12 and creating your own swap chain to render UI or video, you can specify the color space you use by calling [IDXGISwapChain3::SetColorSpace1](/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), which will let the system know if it needs to scale colors or not.
 
 ## Guidelines for UI controls
 
@@ -426,11 +426,11 @@ There are several UI controls that work well across multiple devices, but have c
 
 ### Pivot control
 
-A [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote.
+A [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote.
 
 ![Pivot underline](images/designing-for-tv/pivot-underline.png)
 
-You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](/windows/uwp/design/controls-and-patterns/pivot).
+You can set the [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](../controls-and-patterns/pivot.md).
 
 ### Navigation pane <a name="navigation-pane" />
 
@@ -440,7 +440,7 @@ While nav panes are very accessible with mouse and touch, gamepad/remote makes t
 
 ### CommandBar labels
 
-It is a good idea to have the labels placed to the right of the icons on a [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) so that its height is minimized and stays consistent. You can do this by setting the [CommandBar.DefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) property to `CommandBarDefaultLabelPosition.Right`.
+It is a good idea to have the labels placed to the right of the icons on a [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) so that its height is minimized and stays consistent. You can do this by setting the [CommandBar.DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) property to `CommandBarDefaultLabelPosition.Right`.
 
 ![CommandBar with labels to the right of icons](images/designing-for-tv/commandbar.png)
 
@@ -448,7 +448,7 @@ Setting this property will also cause the labels to always be displayed, which w
 
 ### Tooltip
 
-The [Tooltip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) control was introduced as a way to provide more information in the UI when the user hovers the mouse over, or taps and holds their figure on, an element. For gamepad and remote, `Tooltip` appears after a brief moment when the element gets focus, stays onscreen for a short time, and then disappears. This behavior could be distracting if too many `Tooltip`s are used. Try to avoid using `Tooltip` when designing for TV.
+The [Tooltip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) control was introduced as a way to provide more information in the UI when the user hovers the mouse over, or taps and holds their figure on, an element. For gamepad and remote, `Tooltip` appears after a brief moment when the element gets focus, stays onscreen for a short time, and then disappears. This behavior could be distracting if too many `Tooltip`s are used. Try to avoid using `Tooltip` when designing for TV.
 
 ### Button styles
 
@@ -464,7 +464,7 @@ For more information on nested UI, see [Nested UI in list items](../controls-and
 
 ### MediaTransportControls
 
-The [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) element lets users interact with their media by providing a default playback experience that allows them to play, pause, turn on closed captions, and more. This control is a property of [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) and supports two layout options: *single-row* and *double-row*. In the single-row layout, the slider and playback buttons are all located in one row, with the play/pause button located to the left of the slider. In the double-row layout, the slider occupies its own row, with the playback buttons on a separate lower row. When designing for the 10-foot experience, the double-row layout should be used, as it provides better navigation for gamepad. To enable the double-row layout, set `IsCompact="False"` on the `MediaTransportControls` element in the [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) property of the `MediaPlayerElement`.
+The [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) element lets users interact with their media by providing a default playback experience that allows them to play, pause, turn on closed captions, and more. This control is a property of [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) and supports two layout options: *single-row* and *double-row*. In the single-row layout, the slider and playback buttons are all located in one row, with the play/pause button located to the left of the slider. In the double-row layout, the slider occupies its own row, with the playback buttons on a separate lower row. When designing for the 10-foot experience, the double-row layout should be used, as it provides better navigation for gamepad. To enable the double-row layout, set `IsCompact="False"` on the `MediaTransportControls` element in the [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) property of the `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -479,7 +479,7 @@ The [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.
 Visit [Media playback](../controls-and-patterns/media-playback.md) to learn more about adding media to your app.
 
 > ![NOTE]
-> `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.
+> `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.
 
 ### Search experience
 

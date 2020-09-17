@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Convert an app service to run in the same process as its host app
 
-An [AppServiceConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection) enables another application to wake up your app in the background and start a direct line of communication with it.
+An [AppServiceConnection](/uwp/api/windows.applicationmodel.appservice.appserviceconnection) enables another application to wake up your app in the background and start a direct line of communication with it.
 
 With the introduction of in-process App Services, two running foreground applications can have a direct line of communication via an app service connection. App Services can now run in the same process as the foreground application which makes communication between apps much easier and removes the need to separate the service code into a separate project.
 
@@ -32,7 +32,7 @@ Turning an out-of-process model App Service into an in-process model requires tw
 >   </Applications>
 > ```
 
-Remove the `EntryPoint` attribute from the `<Extension>` element because now [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) is the entry point that will be used when the app service is invoked.
+Remove the `EntryPoint` attribute from the `<Extension>` element because now [OnBackgroundActivated()](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) is the entry point that will be used when the app service is invoked.
 
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
@@ -91,8 +91,8 @@ sealed partial class App : Application
 }
 ```
 
-In the code above the `OnBackgroundActivated` method handles the app service activation. All of the events required for communication through an [AppServiceConnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection) are registered, and the task deferral object is stored so that it can be marked as complete when the communication between the applications is done.
+In the code above the `OnBackgroundActivated` method handles the app service activation. All of the events required for communication through an [AppServiceConnection](/uwp/api/windows.applicationmodel.appservice.appserviceconnection) are registered, and the task deferral object is stored so that it can be marked as complete when the communication between the applications is done.
 
-When the app receives a request and reads the [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) provided to see if the `Key` and `Value` strings are present. If they are present then the app service returns a pair of `Response` and `True` string values back to the app on the other side of the **AppServiceConnection**.
+When the app receives a request and reads the [ValueSet](/uwp/api/windows.foundation.collections.valueset) provided to see if the `Key` and `Value` strings are present. If they are present then the app service returns a pair of `Response` and `True` string values back to the app on the other side of the **AppServiceConnection**.
 
-Learn more about connecting and communicating with other apps at [Create and Consume an App Service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
+Learn more about connecting and communicating with other apps at [Create and Consume an App Service](./how-to-create-and-consume-an-app-service.md?f=255&MSPPError=-2147217396).

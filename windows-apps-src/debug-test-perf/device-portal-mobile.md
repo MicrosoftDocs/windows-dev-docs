@@ -78,4 +78,4 @@ Device Portal on mobile devices provides the standard set of pages. For detailed
 ## See also
 
 * [Windows Device Portal overview](device-portal.md)
-* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal core API reference](./device-portal-api-core.md)

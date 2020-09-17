@@ -1,5 +1,5 @@
 ﻿---
-Description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
+description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
 title: Call Windows Runtime APIs in desktop apps
 ms.date: 08/20/2019
 ms.topic: article
@@ -31,7 +31,7 @@ There are two options for .NET projects:
 
 #### To use the NuGet option
 
-1. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
+1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
     1. In Visual Studio, click **Tools -> NuGet Package Manager -> Package Manager Settings**.
     2. Make sure **PackageReference** is selected for **Default package management format**.
@@ -67,11 +67,11 @@ There are two options for .NET projects:
 
 3. In the **Properties** window, set the **Copy Local** field of each *.winmd* file to **False**.
 
-    ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
+    ![Copy Local field](images/desktop-to-uwp/copy-local-field.png)
 
 ### Modify a C++ Win32 project to use Windows Runtime APIs
 
-Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
+Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 To configure your project for C++/WinRT:
 
@@ -88,7 +88,7 @@ Now you're ready to add modern experiences that light up when users run your app
 
 There's lots to choose from. For example, you can simplify your purchase order flow by using [monetization APIs](/windows/uwp/monetize), or [direct attention to your application](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) when you have something interesting to share, such as a new picture that another user has posted.
 
-![Toast](images/desktop-to-uwp/toast.png)
+![Toast notification](images/desktop-to-uwp/toast.png)
 
 Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your application and has the added bonus of making your application appear deeply integrated with the operating system. We'll show you the code for that experience a bit later in this article.
 
@@ -151,7 +151,41 @@ private void ShowToast()
 }
 ```
 
-```C++
+```cppwinrt
+#include <sstream>
+#include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.UI.Notifications.h>
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L"featured picture of the day";
+    std::wstring const content = L"beautiful scenery";
+    std::wstring const image = L"https://picsum.photos/360/180?image=104";
+    std::wstring const logo = L"https://picsum.photos/64?image=883";
+
+    std::wostringstream xmlString;
+    xmlString << L"<toast><visual><binding template='ToastGeneric'>" <<
+        L"<text>" << title << L"</text>" <<
+        L"<text>" << content << L"</text>" <<
+        L"<image src='" << image << L"'/>" <<
+        L"<image src='" << logo << L"'" <<
+        L" placement='appLogoOverride' hint-crop='circle'/>" <<
+        L"</binding></visual></toast>";
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+```
+
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::System;
 using namespace Windows::UI::Notifications;
@@ -181,7 +215,7 @@ void UWP::ShowToast()
 }
 ```
 
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
@@ -203,33 +237,29 @@ For that build configuration, create a constant that to identify code that calls
 
 For .NET-based projects, the constant is called a **Conditional Compilation Constant**.
 
-![pre-processor](images/desktop-to-uwp/compilation-constants.png)
+![Conditional Compilation constant](images/desktop-to-uwp/compilation-constants.png)
 
 For C++-based projects, the constant is called a **Preprocessor Definition**.
 
-![pre-processor](images/desktop-to-uwp/pre-processor.png)
+![Preprocessor Definition constant](images/desktop-to-uwp/pre-processor.png)
 
 Add that constant before any block of UWP code.
 
 ```csharp
-
 [System.Diagnostics.Conditional("_UWP")]
 private void ShowToast()
 {
  ...
 }
-
 ```
 
 ```C++
-
 #if _UWP
 void UWP::ShowToast()
 {
  ...
 }
 #endif
-
 ```
 
 The compiler builds that code only if that constant is defined in your active build configuration.
@@ -238,7 +268,7 @@ The compiler builds that code only if that constant is defined in your active bu
 
 You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## Related Samples
 

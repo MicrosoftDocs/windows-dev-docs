@@ -14,12 +14,12 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-reveal-focus.svg)
 
-Reveal Focus is a lighting effect for [10-foot experiences](/windows/uwp/design/devices/designing-for-tv), such as Xbox One and television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
+Reveal Focus is a lighting effect for [10-foot experiences](../devices/designing-for-tv.md), such as Xbox One and television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
 
-(For the Reveal Highlight effect, a lighting affect that highlights interactive elements, see the [Reveal Highlight article](/windows/uwp/design/style/reveal).)
+(For the Reveal Highlight effect, a lighting affect that highlights interactive elements, see the [Reveal Highlight article](./reveal.md).)
 
 
-> **Important APIs**: [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **Important APIs**: [Application.FocusVisualKind property](/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## How it works
 Reveal Focus calls attention to focused elements by adding an animated glow around the element's border:
@@ -64,7 +64,7 @@ As you can see, it's fairly easy to turn on Reveal Focus when the app detects it
 
 ## Customizing Reveal Focus
 
-You can customize the Reveal Focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
+You can customize the Reveal Focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals).) 
 
 But before you start customzing it, it's helpful to know a little more about the components that make up Reveal Focus.
 
@@ -80,8 +80,8 @@ To change the thickness of the border types of a control, use these properties:
 
 | Border type | Property |
 | --- | --- |
-| Primary, Glow   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Changing the primary border changes the thickness of the glow proportionately.)   |
-| Secondary   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
+| Primary, Glow   | [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Changing the primary border changes the thickness of the glow proportionately.)   |
+| Secondary   | [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 This example changes the border thickness of a button's focus visual:
@@ -92,7 +92,7 @@ This example changes the border thickness of a button's focus visual:
 
 ## Customize the margin
 
-The margin is the space between the control's visual bounds and the start of the focus visuals secondary border. The default margin is 1px away from the control bounds. You can edit this margin on a per-control basis by changing the [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) property:
+The margin is the space between the control's visual bounds and the start of the focus visuals secondary border. The default margin is 1px away from the control bounds. You can edit this margin on a per-control basis by changing the [FocusVisualMargin](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) property:
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -102,12 +102,12 @@ A negative margin pushes the border away from the center of the control, and a p
 
 ## Customize the color
 
-To change color of the Reveal Focus visual, use the [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) and [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) properties.
+To change color of the Reveal Focus visual, use the [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) and [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) properties.
 
 | Property | Default resource | Default resource value |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 (The FocusPrimaryBrush property only defaults to the **SystemControlRevealFocusVisualBrush** resources when **FocusVisualKind** is set to **Reveal**. Otherwise, it uses **SystemControlFocusVisualPrimaryBrush**.)
 
@@ -139,12 +139,12 @@ To change the color of all focus visuals in your entire app, override the **Syst
 </Application.Resources>
 ```
 
-For more information on modifying the focus visual's color, see [Color Branding & Customizing](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing).
+For more information on modifying the focus visual's color, see [Color Branding & Customizing](../input/guidelines-for-visualfeedback.md#color-branding--customizing).
 
 
 ## Show just the glow
 
-If you'd like to use only the glow without the primary or secondary focus visual, simply set the control's [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) property to `Transparent` and the [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)  to `0`. In this case, the glow will adopt the color of the control background to provide a borderless feel. You can modify the thickness of the glow using [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
+If you'd like to use only the glow without the primary or secondary focus visual, simply set the control's [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) property to `Transparent` and the [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)  to `0`. In this case, the glow will adopt the color of the control background to provide a borderless feel. You can modify the thickness of the glow using [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
 
 ```xaml
 
@@ -166,10 +166,10 @@ Reveal Focus is a Fluent Design System component that adds light to your app. To
 
 ## Related articles
 
-- [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
-- [Designing for Xbox and TV](/windows/uwp/design/devices/designing-for-tv)
-- [Gamepad and remote control interactions](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
+- [Reveal Highlight](./reveal.md)
+- [Designing for Xbox and TV](../devices/designing-for-tv.md)
+- [Gamepad and remote control interactions](../input/gamepad-and-remote-interactions.md)
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-- [Composition Effects](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Composition Effects](../../composition/composition-effects.md)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

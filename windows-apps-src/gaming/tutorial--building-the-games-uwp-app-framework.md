@@ -119,7 +119,7 @@ The **GameMain** constructor (and the other member functions that it calls) begi
 
 Windows imposes a limit on the time your game can take before it begins processing input. So using asyc, as we do here, means that **Load** can return quickly while the work that it has begun continues in the background. If loading takes a long time, or if there are lots of resources, then providing your users with a frequently updated progress bar is a good idea. 
 
-If you're new to asynchronous programming, then see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+If you're new to asynchronous programming, then see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
 ```cppwinrt
 GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :

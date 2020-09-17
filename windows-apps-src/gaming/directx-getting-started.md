@@ -1,6 +1,6 @@
 ---
 title: DirectX getting started
-description: Getting started with DirectX programming.
+description: See articles about how to get started developing UWP games that use the DirectX core user interface framework. 
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
 ms.date: 06/23/2017
 ms.topic: article

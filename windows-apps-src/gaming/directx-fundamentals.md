@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of DirectX programming
-description: Basics of DirectX programming.
+description: See articles about the fundamentals of DirectX programming, including the Direct2D and Direct3D libraries and usage.
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
 ms.date: 02/08/2017
 ms.topic: article

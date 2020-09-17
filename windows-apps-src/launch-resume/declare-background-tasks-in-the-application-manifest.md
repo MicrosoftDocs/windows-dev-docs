@@ -14,8 +14,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**BackgroundTasks Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**BackgroundTasks Schema**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)
 
 Enable the use of background tasks by declaring them as extensions in the app manifest.
 
@@ -84,7 +84,7 @@ Copy this code into the Extensions element (you will add attributes in the follo
 
 2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
 
-    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) method will fail and throw an exception).
+    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) method will fail and throw an exception).
 
     This snippet example indicates the use of system event triggers and push notifications:
 
@@ -165,7 +165,7 @@ Here is example XML that declares a background task that runs in the same proces
 </Extensions>
 ```
 
-When you specify **EntryPoint**, your application receives a callback to the specified method when the trigger fires. If you do not specify an **EntryPoint**, your application receives the callback via  [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) for details.
+When you specify **EntryPoint**, your application receives a callback to the specified method when the trigger fires. If you do not specify an **EntryPoint**, your application receives the callback via  [OnBackgroundActivated()](/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) for details.
 
 ### Specify where your background task runs with the ResourceGroup attribute.
 

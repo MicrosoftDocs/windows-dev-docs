@@ -1,5 +1,5 @@
 ---
-Description: View different parts of your app in separate windows.
+description: Help users be more productive by letting them view independent parts of your app in separate windows.
 title: Show multiple views for an app
 ms.date: 05/19/2017
 ms.topic: article
@@ -80,6 +80,7 @@ This table shows code that does not work correctly across windowing hosts, and t
 | Window.Current.[Bounds](/uwp/api/windows.ui.xaml.window.bounds) | _uiElement_.XamlRoot.[Size](/uwp/api/windows.ui.xaml.xamlroot.size) |
 | Window.Current.[Content](/uwp/api/windows.ui.xaml.window.content) | UIElement root =  _uiElement_.XamlRoot.[Content](/uwp/api/windows.ui.xaml.xamlroot.content) |
 | Window.Current.[Compositor](/uwp/api/windows.ui.xaml.window.compositor) | Unchanged. This is supported in AppWindow and DesktopWindowXamlSource. |
+| VisualTreeHelper.[FindElementsInHostCoordinates](/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates)<br>Although the UIElement param is optional, the method raises an exception if a UIElement isn't supplied when hosted on an Island. | Specify the _uiElement_.XamlRoot as UIElement instead of leaving it blank. |
 | VisualTreeHelper.[GetOpenPopups](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopups)<br/>In XAML Islands apps this will throw an error. In AppWindow apps this will return open popups on the main window. | VisualTreeHelper.[GetOpenPopupsForXamlRoot](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopupsforxamlroot)(_uiElement_.XamlRoot) |
 | FocusManager.[GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) | FocusManager.[GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement#Windows_UI_Xaml_Input_FocusManager_GetFocusedElement_Windows_UI_Xaml_XamlRoot_)(_uiElement_.XamlRoot) |
 | contentDialog.ShowAsync() | contentDialog.[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) = _uiElement_.XamlRoot;<br/>contentDialog.ShowAsync(); |
@@ -102,5 +103,5 @@ This table shows code that does not work correctly across windowing hosts, and t
 
 - [Use AppWindow](app-window.md)
 - [Use ApplicationView](application-view.md)
-- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+- [ApplicationViewSwitcher](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [CreateNewView](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)

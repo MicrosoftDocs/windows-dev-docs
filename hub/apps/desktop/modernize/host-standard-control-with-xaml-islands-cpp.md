@@ -36,7 +36,7 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
     1. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
     2. Select the **Browse** tab, search for the **Microsoft.Toolkit.Win32.UI.SDK** package, and install version v6.0.0 (or later) of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
 
-5. Set the `maxVersionTested` value in your [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
+5. Set the `maxVersionTested` value in your [application manifest](/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
 
     1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
     2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
@@ -58,16 +58,16 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
 
 The basic process of using the XAML hosting API to host a UWP control follows these general steps:
 
-1. Initialize the UWP XAML framework for the current thread before your app creates any of the [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) objects that it will host. There are several ways to do this, depending on when you plan to create the [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) object that will host the controls.
+1. Initialize the UWP XAML framework for the current thread before your app creates any of the [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) objects that it will host. There are several ways to do this, depending on when you plan to create the [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) object that will host the controls.
 
     * If your application creates the **DesktopWindowXamlSource** object before it creates any of the **Windows.UI.Xaml.UIElement** objects that it will host, this framework will be initialized for you when you instantiate the **DesktopWindowXamlSource** object. In this scenario, you don't need to add any code of your own to initialize the framework.
 
-    * However, if your application creates the **Windows.UI.Xaml.UIElement** objects before it creates the **DesktopWindowXamlSource** object that will host them, your application must call the static [WindowsXamlManager.InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) method to explicitly initialize the UWP XAML framework before the **Windows.UI.Xaml.UIElement** objects are instantiated. Your application should typically call this method when the parent UI element that hosts the **DesktopWindowXamlSource** is instantiated.
+    * However, if your application creates the **Windows.UI.Xaml.UIElement** objects before it creates the **DesktopWindowXamlSource** object that will host them, your application must call the static [WindowsXamlManager.InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) method to explicitly initialize the UWP XAML framework before the **Windows.UI.Xaml.UIElement** objects are instantiated. Your application should typically call this method when the parent UI element that hosts the **DesktopWindowXamlSource** is instantiated.
 
     > [!NOTE]
-    > This method returns a [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) object that contains a reference to the UWP XAML framework. You can create as many **WindowsXamlManager** objects as you want on a given thread. However, because each object holds a reference to the UWP XAML framework, you should dispose the objects to ensure that XAML resources are eventually released.
+    > This method returns a [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) object that contains a reference to the UWP XAML framework. You can create as many **WindowsXamlManager** objects as you want on a given thread. However, because each object holds a reference to the UWP XAML framework, you should dispose the objects to ensure that XAML resources are eventually released.
 
-2. Create a [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) object and attach it to a parent UI element in your application that is associated with a window handle.
+2. Create a [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) object and attach it to a parent UI element in your application that is associated with a window handle.
 
     To do this, you'll need to follow these steps:
 
@@ -79,7 +79,7 @@ The basic process of using the XAML hosting API to host a UWP control follows th
 
     3. Set the initial size of the internal child window contained in the **DesktopWindowXamlSource**. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any UWP controls you add to the **DesktopWindowXamlSource** will not be visible. To access the internal child window in the **DesktopWindowXamlSource**, use the **WindowHandle** property of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface.
 
-3. Finally, assign the **Windows.UI.Xaml.UIElement** you want to host to the [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property of your **DesktopWindowXamlSource** object.
+3. Finally, assign the **Windows.UI.Xaml.UIElement** you want to host to the [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property of your **DesktopWindowXamlSource** object.
 
 The following steps and code examples demonstrate how to do implement the above process:
 
@@ -210,7 +210,7 @@ The following steps and code examples demonstrate how to do implement the above 
     }
     ```
 
-4. Copy the following code after the previous section. This code defines the [window procedure](https://docs.microsoft.com/windows/win32/learnwin32/writing-the-window-procedure) for the window.
+4. Copy the following code after the previous section. This code defines the [window procedure](/windows/win32/learnwin32/writing-the-window-procedure) for the window.
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
@@ -275,14 +275,14 @@ For complete examples that demonstrate these tasks, see the following code files
 
 ## Package the app
 
-You can optionally package the app in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
+You can optionally package the app in an [MSIX package](/windows/msix) for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.
 
-The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the app in an MSIX package.
+The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the app in an MSIX package.
 
 > [!NOTE]
-> If you choose to not package your application in an [MSIX package](https://docs.microsoft.com/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
+> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
-1. Add a new [Windows Application Packaging Project](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
+1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the C++/Win32 desktop application project in your solution and click **OK**.
 

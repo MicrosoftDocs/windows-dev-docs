@@ -36,7 +36,7 @@ An immersive app takes over the entire display visible to the user, placing her 
 
 If you are creating immersive apps, you should visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/mixed-reality) for more information.
 
-A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the [mixed reality home](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (sometimes called the *Cliff House*).
+A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the [mixed reality home](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (sometimes called the *Cliff House*).
 
 ![Multiple apps running in Mixed Reality](images/MR-multiple.png)
 
@@ -66,7 +66,7 @@ In a typical interaction, your user will look at a control in your app, causing 
 
 It's important to note that all these interactions will happen automatically with no extra coding on your part, as a consequence of running on the UWP platform. Input from the HoloLens and Mixed Reality headset will appear as touch input to the 2D app. This means that many UWP apps will run and be usable in Mixed Reality, by default. 
 
-That said, with some extra work, the experience can be improved greatly. For example, [voice control](https://developer.microsoft.com/windows/mixed-reality/voice_design) can be especially effective. Both HoloLens and Mixed Reality environments support voice commands for launching and interacting with apps, and including voice support will appear as a natural extension of this approach. See [Speech interactions]( https://docs.microsoft.com/windows/uwp/design/input/speech-interactions) for more information on adding voice support to your UWP app. 
+That said, with some extra work, the experience can be improved greatly. For example, [voice control](https://developer.microsoft.com/windows/mixed-reality/voice_design) can be especially effective. Both HoloLens and Mixed Reality environments support voice commands for launching and interacting with apps, and including voice support will appear as a natural extension of this approach. See [Speech interactions]( ../input/speech-interactions.md) for more information on adding voice support to your UWP app. 
 
 
 ### Selecting the right controller
@@ -78,7 +78,7 @@ Several novel input methods have been designed especially for use with Mixed Rea
 * [Hand gestures](https://developer.microsoft.com/windows/mixed-reality/gestures) (HoloLens only, but only used for launching 2D apps)
 * [Gamepad support](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (both environments)
 * [Clicker device](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens only)
-* [Motion Controllers](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (Mixed Reality devices only, shown above.)
+* [Motion Controllers](/windows/mixed-reality/motion-controllers) (Mixed Reality devices only, shown above.)
 
 These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input response you would expect, again, with no coding on your part.
 
@@ -94,7 +94,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * Drag and drop may not work well when used with Motion Controllers, gamepads or gestures. If your application depends heavily on drag and drop, you will need to provide an alternative method of supporting this action, such as presenting a dialog confirming if objects to be moved to a new location.
 
-* Be aware how sound changes. If your app generates sound effects, the source of the sound will appear to be your app's pinned location in the virtual world. As the user moves away from the app, sound will diminish. See [Spatial sound](https://docs.microsoft.com/windows/mixed-reality/spatial-sound) for more information.
+* Be aware how sound changes. If your app generates sound effects, the source of the sound will appear to be your app's pinned location in the virtual world. As the user moves away from the app, sound will diminish. See [Spatial sound](/windows/mixed-reality/spatial-sound) for more information.
 
 * Consider the field of view and provide affordances. Not every device will provide as large a field of view as a computer monitor. See [Holographic frame](https://developer.microsoft.com/windows/mixed-reality/holographic_frame) for complete details. Furthermore, the user may be some distance away from a running app. That is, the app may appear pinned to the wall at a different location in the world (real or virtual). Your app may need to get the users attention, or take into account that the entire view is not visible at all times. Toast notifications are available, but another way to get the user's attention might be to generate a sound or [speech](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs) alert.
 
@@ -103,7 +103,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ## 2D app design considerations: UI/UX
 
-* XAML controls which implement the [Fluent Design System](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) such as the [Navigation view](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview), and effects such as [Acrylic](https://docs.microsoft.com/windows/uwp/design/style/acrylic) all work especially well in 2D Mixed Reality apps.
+* XAML controls which implement the [Fluent Design System](/windows/uwp/design/fluent-design-system/) such as the [Navigation view](../controls-and-patterns/navigationview.md), and effects such as [Acrylic](../style/acrylic.md) all work especially well in 2D Mixed Reality apps.
 
 * Test your app's text and windows size in a Mixed Reality device, or at the very least in the Mixed Reality Simulator. Your app will have a default windows size of 853x480 effective pixels. Use larger font sizes (a point size of approximately 32 is recommended), and read [Updating your existing universal app for Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens). The article [Typography](https://developer.microsoft.com/windows/mixed-reality/typography) covers this topic in detail. When working in Visual Studio, there is a XAML design editor setting for a 57" HoloLens 2D App which provides a view with the correct scale and dimensions. 
 
@@ -111,7 +111,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * [Your gaze is your mouse](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). When the user looks at something, it acts as a **touch hover** event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See **Runtime support**, below. 
 
-* When a user gazes towards something or points with a motion controller, a **touch hover** event will occur. This consists of a **PointerPoint** where **PointerType** is **Touch**, but **IsInContact** is **false**. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads "Select"), a **touch press** occurs, with the **PointerPoint** having **IsInContact** become **true**. See [Touch interactions](https://docs.microsoft.com/windows/uwp/design/input/touch-interactions) for more information on these input events.
+* When a user gazes towards something or points with a motion controller, a **touch hover** event will occur. This consists of a **PointerPoint** where **PointerType** is **Touch**, but **IsInContact** is **false**. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads "Select"), a **touch press** occurs, with the **PointerPoint** having **IsInContact** become **true**. See [Touch interactions](../input/touch-interactions.md) for more information on these input events.
 
 * Remember, gaze is not as accurate as mouse pointing. Smaller mouse targets or buttons may cause frustration for your users, so resize controls accordingly. If they are designed for touch, they will work in Mixed Reality, but you may decide to enlarge some buttons at runtime. See [Updating your existing universal app for Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
 
@@ -122,7 +122,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ## Other points to consider
 
-* Although the [Desktop Bridge](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) can help bring existing (Win32) desktop apps to Windows 10 and the Microsoft Store, it cannot create apps that run on HoloLens or in Mixed Reality at this time.
+* Although the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can help bring existing (Win32) desktop apps to Windows 10 and the Microsoft Store, it cannot create apps that run on HoloLens or in Mixed Reality at this time.
 
 
 
@@ -162,6 +162,4 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Building 2D apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Building UWP 2D Apps for Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Conditional XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
-
-
+* [Conditional XAML](../../debug-test-perf/conditional-xaml.md)

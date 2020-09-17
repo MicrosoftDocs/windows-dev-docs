@@ -54,7 +54,7 @@ To improve your app's startup time, do only the work that absolutely needs to be
 
 Your app can be interactive even though there are parts of the app that aren't fully functional. For example, if your app displays data that takes a while to retrieve, you can make that code execute independently of the app's startup code by retrieving the data asynchronously. When the data is available, populate the app's user interface with the data.
 
-Many of the Universal Windows Platform (UWP) APIs that retrieve data are asynchronous, so you will probably be retrieving data asynchronously anyway. For more info about asynchronous APIs, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). If you do work that doesn't use asynchronous APIs, you can use the Task class to do long running work so that you don't block the user from interacting with the app. This will keep your app responsive to the user while the data loads.
+Many of the Universal Windows Platform (UWP) APIs that retrieve data are asynchronous, so you will probably be retrieving data asynchronously anyway. For more info about asynchronous APIs, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). If you do work that doesn't use asynchronous APIs, you can use the Task class to do long running work so that you don't block the user from interacting with the app. This will keep your app responsive to the user while the data loads.
 
 If your app takes an especially long time to load part of its UI, consider adding a string in that area that says something like, "Getting latest data," so that your users know that the app is still processing.
 
@@ -101,7 +101,7 @@ The [Visual Studio Live Visual Tree](https://devblogs.microsoft.com/visualstudio
 
 ![Live visual tree.](images/live-visual-tree.png)
 
-**Use deferral**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x:Load or x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:Load attribute](../xaml-platform/x-load-attribute.md) and [x:DeferLoadStrategy attribute](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute).
+**Use deferral**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x:Load or x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:Load attribute](../xaml-platform/x-load-attribute.md) and [x:DeferLoadStrategy attribute](../xaml-platform/x-deferloadstrategy-attribute.md).
 
 **Virtualization**. If you have list or repeater content in your UI then it’s highly advised that you use UI virtualization. If list UI is not virtualized then you are paying the cost of creating all the elements up front, and that can slow down your startup. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
 
@@ -140,13 +140,13 @@ Before an app starts, it needs to tell the system what it wants to display as th
 </Package>
 ```
 
-For more info, see [Add a splash screen](https://docs.microsoft.com/windows/uwp/launch-resume/add-a-splash-screen).
+For more info, see [Add a splash screen](../launch-resume/add-a-splash-screen.md).
 
 Use the app’s constructor only to initialize data structures that are critical to the app. The constructor is called only the first time the app is run and not necessarily each time the app is activated. For example, the constructor isn't called for an app that has been run, placed in the background, and then activated via the search contract.
 
 ### Phase 2
 
-There are a number of reasons for an app to be activated, each of which you may want to handle differently. You can override [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated), [**OnCachedFileUpdaterActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated), [**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated), [**OnFileOpenPickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated), [**OnFileSavePickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated), [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched), [**OnSearchActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsearchactivated), and [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated) methods to handle each reason of activation. One of the things that an app must do in these methods is create a UI, assign it to [**Window.Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content), and then call [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate). At this point the splash screen is replaced by the UI that the app created. This visual could either be loading screen or the app's actual UI if enough info is available at activation to create it.
+There are a number of reasons for an app to be activated, each of which you may want to handle differently. You can override [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated), [**OnCachedFileUpdaterActivated**](/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated), [**OnFileActivated**](/uwp/api/windows.ui.xaml.application.onfileactivated), [**OnFileOpenPickerActivated**](/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated), [**OnFileSavePickerActivated**](/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated), [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched), [**OnSearchActivated**](/uwp/api/windows.ui.xaml.application.onsearchactivated), and [**OnShareTargetActivated**](/uwp/api/windows.ui.xaml.application.onsharetargetactivated) methods to handle each reason of activation. One of the things that an app must do in these methods is create a UI, assign it to [**Window.Content**](/uwp/api/windows.ui.xaml.window.content), and then call [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate). At this point the splash screen is replaced by the UI that the app created. This visual could either be loading screen or the app's actual UI if enough info is available at activation to create it.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -261,9 +261,9 @@ There are a number of reasons for an app to be activated, each of which you may 
 > End Class 
 > ```
 
-Apps that display a loading page in the activation handler begin work to create the UI in the background. After that element has been created, its [**FrameworkElement.Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) event occurs. In the event handler you replace the window's content, which is currently the loading screen, with the newly created home page.
+Apps that display a loading page in the activation handler begin work to create the UI in the background. After that element has been created, its [**FrameworkElement.Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) event occurs. In the event handler you replace the window's content, which is currently the loading screen, with the newly created home page.
 
-It’s critical that an app with an extended initialization period show a loading page. Aside from providing the user feedback about the activation process, the process will be terminated if [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) is not called within 15 seconds of the start of the activation process.
+It’s critical that an app with an extended initialization period show a loading page. Aside from providing the user feedback about the activation process, the process will be terminated if [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate) is not called within 15 seconds of the start of the activation process.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -333,7 +333,7 @@ How exactly an app reacts to each phase of startup is completely up to you, but 
 
 Reusable code often comes in the form of modules (DLLs) included in a project. Loading these modules requires accessing the disk, and as you can imagine, the cost of doing so can add up. This has the greatest impact on cold startup, but it can have an impact on warm startup, too. In the case of C# and Visual Basic, the CLR tries to delay that cost as much as possible by loading assemblies on demand. That is, the CLR doesn’t load a module until an executed method references it. So, reference only assemblies that are necessary to the launch of your app in startup code so that the CLR doesn’t load unnecessary modules. If you have unused code paths in your startup path that have unnecessary references, you can move these code paths to other methods to avoid the unnecessary loads.
 
-Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) or the [Windows Performance Analyzer (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) to find out what modules are loaded on startup.
+Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) or the [Windows Performance Analyzer (WPA)](/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) to find out what modules are loaded on startup.
 
 ### Make smart web requests
 

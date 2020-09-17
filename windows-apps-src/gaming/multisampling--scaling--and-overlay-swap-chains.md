@@ -113,7 +113,7 @@ When your game is running on downlevel hardware - or hardware optimized for powe
 ## Create a hardware overlay swap chain for UI elements
 
 
-When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) swap chains - it cannot be used with XAML interop.
+When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) swap chains - it cannot be used with XAML interop.
 
 Use the following steps to create a foreground swap chain that uses hardware overlay capability. These steps are performed after first creating a swap chain for real-time game content as described above.
 
@@ -136,7 +136,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
         );
     ```
 
-    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays).
+    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays).
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
@@ -146,11 +146,11 @@ Use the following steps to create a foreground swap chain that uses hardware ove
 
      
 
-2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) supplied to the *pDesc* parameter:
+2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) supplied to the *pDesc* parameter:
 
-    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) swap chain flag to indicate a foreground swap chain.
-    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) alpha mode flag. Foreground swap chains are always premultiplied.
-    -   Set the [**DXGI\_SCALING\_NONE**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling) flag. Foreground swap chains always run at native resolution.
+    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) swap chain flag to indicate a foreground swap chain.
+    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) alpha mode flag. Foreground swap chains are always premultiplied.
+    -   Set the [**DXGI\_SCALING\_NONE**](/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling) flag. Foreground swap chains always run at native resolution.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -158,7 +158,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) again every time the swap chain is resized.
+    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) again every time the swap chain is resized.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -193,7 +193,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
 
 4.  Foreground swap chains always use premultiplied alpha. Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented. For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).
 
-    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
+    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
 
     If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.
 
@@ -319,7 +319,3 @@ Use the following steps to create a foreground swap chain that uses hardware ove
  
 
  
-
-
-
-

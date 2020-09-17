@@ -32,13 +32,13 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
-      [Designing inclusive software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
 
-      [Developing inclusive Windows apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [Developing inclusive Windows apps](/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-      [Accessibility testing](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [Accessibility testing](/windows/uwp/accessibility/accessibility-testing)
 
-      [Accessibility in the Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Accessibility in the Store](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -47,21 +47,21 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
-      [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [What's new in Windows accessibility and automation](/windows/desktop/accessibility-whatsnew)
 
-      [Developing accessible applications for Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [Developing accessible applications for Windows](/windows/desktop/accessibility-appdev)
 
-      [Developing accessible UI frameworks for Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Developing accessible UI frameworks for Windows](/windows/desktop/accessibility-uiframeworkdev)
 
-      [Developing assistive technology for Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [Developing assistive technology for Windows](/windows/desktop/accessibility-atdev)
 
-      [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Testing for accessibility](/windows/desktop/accessibility-testwithuia)
 
-      [Legacy accessibility and automation technology - MSAA to UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Legacy accessibility and automation technology - MSAA to UI Automation](/windows/desktop/accessibility-legacy)
 
-      [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows Accessibility features](/windows/desktop/winauto/about-windows-accessibility-features)
 
-      [Guidelines for designing accessible apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [Guidelines for designing accessible apps](/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -72,21 +72,21 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
-      [Accessibility Best Practices](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [Accessibility Best Practices](/dotnet/framework/ui-automation/accessibility-best-practices)
 
-      [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [UI Automation Fundamentals](/dotnet/framework/ui-automation/index)
 
-      [UI Automation Providers for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [UI Automation Providers for Managed Code](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-      [UI Automation Clients for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [UI Automation Clients for Managed Code](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [UI Automation Control Patterns](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [UI Automation Control Patterns](/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [UI Automation Text Pattern](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [UI Automation Text Pattern](/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [UI Automation Control Types](/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [UI Automation Specification and Community Promise](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Windows Forms platform apps](images/platform-winforms.png)
@@ -95,13 +95,13 @@ This page provides information on how the various Windows development frameworks
 
       Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 
-      [Windows Forms Accessibility](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows Forms Accessibility](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [Creating an Accessible Windows Application](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Creating an Accessible Windows Application](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Properties on Windows Forms Controls That Support Accessibility Guidelines](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Providing Accessibility Information for Controls on a Windows Form](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -113,14 +113,14 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Introduction to web accessibility](/microsoft-edge/accessibility)
 
-      [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [Designing accessible websites](/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [Building accessible websites](/microsoft-edge/accessibility/build)
 
-      [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [Testing accessible websites](/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
@@ -130,7 +130,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
 :::row:::
    :::column:::
-      [Code sample browser](https://docs.microsoft.com/samples/browse/)
+      [Code sample browser](/samples/browse/)
 
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::
@@ -248,7 +248,7 @@ Various videos covering how to build accessible Windows applications to general 
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Windows UI Automation blogs](/archive/blogs/winuiautomation/)
    :::column-end:::
 :::row-end:::
 :::row:::

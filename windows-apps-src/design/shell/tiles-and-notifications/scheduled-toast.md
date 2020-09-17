@@ -18,14 +18,14 @@ Note that scheduled toast notifications have a delivery window of 5 minutes. If 
 > [!IMPORTANT]
 > Desktop applications (both MSIX/sparse packages and classic Win32) have slightly different steps for sending notifications and handling activation. Follow along with the instructions below, however replace `ToastNotificationManager` with the `DesktopNotificationManagerCompat` class from the [Desktop apps](toast-desktop-apps.md) documentation.
 
-> **Important APIs**: [ScheduledToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **Important APIs**: [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
 ## Prerequisites
 
 To fully understand this topic, the following will be helpful...
 
-* A working knowledge of toast notification terms and concepts. For more information, see [Toast and action center overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* A working knowledge of toast notification terms and concepts. For more information, see [Toast and action center overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
 * A familiarity with Windows 10 toast notification content. For more information, see [toast content documentation](adaptive-interactive-toasts.md).
 * A Windows 10 UWP app project
 
@@ -96,7 +96,7 @@ ToastContent toastContent = new ToastContent()
 
 ## Create the scheduled toast
 
-Once you have initialized your toast content, create a new [ScheduledToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) and pass in the content's XML, and the time you want the notification to be delivered.
+Once you have initialized your toast content, create a new [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) and pass in the content's XML, and the time you want the notification to be delivered.
 
 ```csharp
 // Create the scheduled notification
@@ -108,9 +108,9 @@ var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.A
 
 If you want to programmatically cancel, remove, or replace the scheduled notification, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to cancel, remove, or replace the notification.
 
-To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -120,7 +120,7 @@ toast.Group = "ASTR 170B1";
 
 ## Schedule the notification
 
-Finally, create a [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) and call AddToSchedule(), passing in your scheduled toast notification.
+Finally, create a [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) and call AddToSchedule(), passing in your scheduled toast notification.
 
 ```csharp
 // And your scheduled toast to the schedule
@@ -164,4 +164,4 @@ See the [send a local toast](send-local-toast.md) docs to learn more about advan
 ## Resources
 
 * [Toast content documentation](adaptive-interactive-toasts.md)
-* [ScheduledToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+* [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
