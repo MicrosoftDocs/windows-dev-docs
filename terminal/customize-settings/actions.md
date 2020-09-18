@@ -11,8 +11,8 @@ ms.localizationpriority: high
 
 # Custom actions in Windows Terminal
 
-> [!NOTE]
-> If you are using [Windows Terminal Preview](https://aka.ms/terminal-preview) and want to customize commands in the command palette, additional information can be found on the [Command palette page](./../command-palette.md).
+> [!IMPORTANT]
+> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file.
 
 You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
