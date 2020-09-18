@@ -14,7 +14,7 @@ ms.localizationpriority: high
 > [!NOTE]
 > If you are using [Windows Terminal Preview](https://aka.ms/terminal-preview) and want to customize commands in the command palette, additional information can be found on the [Command palette page](./../command-palette.md).
 
-You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
+You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
 ## Action formats
 
@@ -81,6 +81,16 @@ This adds additional functionality to certain commands.
 **Property name:** `action`
 
 **Necessity:** Optional
+
+**Accepts:** String
+
+### Name
+
+This sets the name that will appear in the command palette. If one isn't provided, the terminal will attempt to automatically generate a name.
+
+**Property name:** `name`
+
+**Necessity**: Optional
 
 **Accepts:** String
 
