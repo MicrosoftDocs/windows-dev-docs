@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 09/22/2020
 ms.topic: overview
 ms.service: terminal
 ms.localizationpriority: high
@@ -65,7 +65,7 @@ If you would like to disable this feature in order for `Ctrl+=` to work properly
 
 Change the 'Switch Keyboard Layout' option to 'Not Assigned' (or off of <kbd>ctrl+shift</kbd>), then select **OK** and then **Apply**. <kbd>ctrl+shift+0</kbd> should now work as a key binding and is passed through to the terminal.
 
-On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./customize-settings/key-bindings.md) in your settings.json file.
+On the other hand, if you do use this hotkey feature for multiple input languages, you can [configure your own custom key binding](./customize-settings/actions.md) in your settings.json file.
 
 ## The text is blurry
 

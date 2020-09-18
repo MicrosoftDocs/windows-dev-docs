@@ -3,7 +3,7 @@ title: Windows Terminal Panes
 description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 09/22/2020
 ms.topic: how-to
 ms.service: terminal
 ---
@@ -21,7 +21,7 @@ You can either create a new vertical or horizontal pane in Windows Terminal. Spl
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
 
-If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
+If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [Actions page](./customize-settings/actions.md).
 
 ```json
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+=" },

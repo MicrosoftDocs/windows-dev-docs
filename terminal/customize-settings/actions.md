@@ -1,24 +1,24 @@
 ---
-title: Windows Terminal Key Bindings
-description: Learn how to create custom key bindings for Windows Terminal.
+title: Windows Terminal Actions
+description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 09/22/2020
 ms.topic: how-to
 ms.service: terminal
 ms.localizationpriority: high
 ---
 
-# Custom key bindings in Windows Terminal
+# Custom actions in Windows Terminal
 
 > [!NOTE]
 > If you are using [Windows Terminal Preview](https://aka.ms/terminal-preview) and want to customize commands in the command palette, additional information can be found on the [Command palette page](./../command-palette.md).
 
-You can create custom key bindings (keyboard shortcuts) inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
+You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal using your keyboard.
 
-## Key binding formats
+## Action formats
 
-Key bindings can be structured in the following formats:
+Actions can be structured in the following formats:
 
 ### Commands without arguments
 
@@ -48,9 +48,9 @@ For example, this default setting uses the shortcut key <kbd>ctrl+shift+1</kbd> 
 
 ___
 
-## Key binding properties
+## Action properties
 
-Key bindings can be constructed using the following properties.
+Actions can be constructed using the following properties.
 
 ### Command
 
@@ -66,9 +66,11 @@ This is the command executed when the associated keys are pressed.
 
 This defines the key combinations used to call the command. Keys can have any number of modifiers with one key. Accepted modifiers and keys are listed [below](#accepted-modifiers-and-keys).
 
+If the action does not have keys, it will appear in the command palette but cannot be invoked with the keyboard.
+
 **Property name:** `keys`
 
-**Necessity:** Required
+**Necessity:** Optional
 
 **Accepts:** String or array[string]
 
@@ -198,10 +200,8 @@ This allows you to enter "focus mode", which hides the tabs and title bar.
 
 **Default bindings:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "toggleFocusMode", "keys": "" }
+{ "command": "toggleFocusMode" }
 ```
 
 ### Toggle always on top mode
@@ -212,10 +212,8 @@ This allows you toggle the "always on top" state of the window. When in "always 
 
 **Default bindings:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "toggleAlwaysOnTop", "keys": "" }
+{ "command": "toggleAlwaysOnTop" }
 ```
 
 ### Send input ([Preview](https://aka.ms/terminal-preview/))
@@ -265,12 +263,8 @@ This closes all tabs except for the one at an index. If no index is provided, us
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": { "action": "closeOtherTabs", "index": 1 }, "keys": "" }
-{ "command": { "action": "closeOtherTabs", "index": null }, "keys": "" }
-{ "command": "closeOtherTabs", "keys": "" }
+{ "command": "closeOtherTabs" }
 ```
 
 #### Actions
@@ -290,12 +284,8 @@ This closes the tabs following the tab at an index. If no index is provided, use
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": { "action": "closeTabsAfter", "index": 1 }, "keys": "" }
-{ "command": { "action": "closeTabsAfter", "index": null }, "keys": "" }
-{ "command": "closeTabsAfter", "keys": "" }
+{ "command": "closeTabsAfter" }
 ```
 
 #### Actions
@@ -482,10 +472,8 @@ This command can be used to open the color picker for the active tab. The color 
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "openTabColorPicker", "keys": "" }
+{ "command": "openTabColorPicker" }
 ```
 
 <br />
@@ -537,10 +525,8 @@ This expands the focused pane to fill the entire contents of the window.
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "togglePaneZoom", "keys": "" }
+{ "command": "togglePaneZoom" }
 ```
 
 :::column-end:::
@@ -752,10 +738,8 @@ This toggles the "retro terminal effect", which is enabled with the profile sett
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "toggleRetroEffect", "keys": "" }
+{ "command": "toggleRetroEffect" }
 ```
 
 ### Set the color scheme ([Preview](https://aka.ms/terminal-preview/))
@@ -769,10 +753,6 @@ Changes the active color scheme.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `colorScheme` | Required | String | The `name` of the color scheme to apply. |
-
-**Default binding:**
-
-_This command is not currently bound in the default settings_.
 
 **Example binding:**
 

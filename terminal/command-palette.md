@@ -3,7 +3,7 @@ title: Windows Terminal Command Palette
 description: Learn how to use the command palette in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 09/22/2020
 ms.topic: how-to 
 ms.service: terminal
 ms.localizationpriority: high
@@ -36,7 +36,7 @@ Commands are automatically generated for each of the actions in your `keybinding
 
 #### With a value for `keys` without a `name`
 
-This is the behavior that is documented on the [Key bindings page](./customize-settings/key-bindings.md). These commands can be invoked with the defined key binding. The commands will appear in the command palette if Windows Terminal can autogenerate a reasonable name for it.
+This is the behavior that is documented on the [Actions page](./customize-settings/actions.md). These commands can be invoked with the defined key binding. The commands will appear in the command palette if Windows Terminal can autogenerate a reasonable name for it.
 
 ```json
 { "command": "newTab", "keys": "ctrl+shift+t" }
