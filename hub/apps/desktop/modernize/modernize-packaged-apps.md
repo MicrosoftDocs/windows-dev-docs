@@ -1,5 +1,5 @@
 ---
-Description: Learn how to add modern experiences for Windows 10 users in a desktop application that you have packaged in a Windows app package.
+description: Learn how to add modern experiences for Windows 10 users in a desktop application that you have packaged in a Windows app package.
 title: Modernize packaged desktop apps
 ms.date: 04/22/2019
 ms.topic: article
@@ -28,6 +28,12 @@ The following list of Windows Runtime APIs require package identity to be used i
 If your application needs to integrate with the system (For example: establish firewall rules), describe those things in the package manifest of your application and the system will do the rest. For most of these tasks, you won't have to write any code at all. With a bit of XML in the manifest, you can do things like start a process when the user logs on, integrate your application into File Explorer, and add your application a list of print targets that appear in other apps.
 
 For more information, see [Integrate your desktop app with package extensions](desktop-to-uwp-extensions.md).
+
+## Get activation info for packaged apps
+
+Starting in Windows 10, version 1809, packaged desktop apps can retrieve certain kinds of activation info during startup. For example, you can get info related to app activation from opening a file, clicking an interactive toast, or using a protocol.
+
+For more information, see [Get activation info for packaged apps](get-activation-info-for-packaged-apps.md).
 
 ## Extend with UWP components
 
