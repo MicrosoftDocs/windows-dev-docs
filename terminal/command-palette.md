@@ -14,11 +14,11 @@ ms.localizationpriority: high
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
-The command palette lets you see which actions you can run inside Windows Terminal.
+The command palette lets you see which actions you can run inside Windows Terminal. More information on how actions are defined can be found on the [Actions page](./customize-settings/actions.md).
 
 ## Invoking the command palette
 
-You can invoke the command palette by typing `ctrl+shift+p`. This can be customized by adding the `commandPalette` command to your key bindings.
+You can invoke the command palette by typing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>. This can be customized by adding the `commandPalette` command to your key bindings.
 
 ```json
 { "command": "commandPalette", "keys": "ctrl+shift+p" }
