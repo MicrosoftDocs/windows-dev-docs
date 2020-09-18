@@ -30,9 +30,9 @@ If you'd like to enter a `wt` command into the command palette, you can do so by
 
 ![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
-## Adding an icon to an action
+## Adding an icon to a command
 
-You can optionally add an icon to an action that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
+You can optionally add an icon to a command defined in your settings.json that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
 
 ```json
 { "icon": "C:\\Images\\my-icon.png", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" },
