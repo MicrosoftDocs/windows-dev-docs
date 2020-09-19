@@ -135,3 +135,9 @@ Each time you click the window, you increment the bank account object's balance.
 To add even more functionality, or new Windows Runtime types, to your C++/WinRT Windows Runtime component, you can follow the same patterns shown above. First, use IDL to define the functionality you want to expose. Then build the project in Visual Studio to generate a stub implementation. And then complete the implementation as appropriate. Any methods, properties, and events that you define in IDL are visible to the application that consumes your Windows Runtime Component. For more info about IDL, see [Introduction to Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro).
 
 For an example of how to add an event to your Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+
+## Troubleshooting
+
+| Symptom | Remedy |
+|---------|--------|
+|In a C++/WinRT app, when consuming a [C# Windows Runtime component](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) that uses XAML, the compiler produces an error of the form "*'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'*"&mdash;where *MyNamespace* is the name of the Windows Runtime component's namespace. | In `pch.h` in the consuming C++/WinRT app, add `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;replacing *MyNamespace* as appropriate. |

@@ -277,6 +277,13 @@ After you’ve created a Windows Runtime component for your own use, you may fin
 
 For more information about Visual Basic and C# language features, and .NET support for the Windows Runtime, see [Visual Basic and C# language reference](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
 
+
+## Troubleshooting
+
+| Symptom | Remedy |
+|---------|--------|
+|In a C++/WinRT app, when consuming a [C# Windows Runtime component](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) that uses XAML, the compiler produces an error of the form "*'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'*"&mdash;where *MyNamespace* is the name of the Windows Runtime component's namespace. | In `pch.h` in the consuming C++/WinRT app, add `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;replacing *MyNamespace* as appropriate. |
+
 ## Related topics
 * [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
 * [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
