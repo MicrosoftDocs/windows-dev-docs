@@ -556,7 +556,7 @@ This section demonstrates how to add a UWP control from the WinUI library to you
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. In the same file, add a `<winui:RatingControl />` element as a child of the `<StackPanel>` and save your changes. This element adds an instance of the [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol class from the WinUI library. After adding this element, the `<StackPanel>` should now look similar to this.
+5. In the same file, add a `<winui:RatingControl />` element as a child of the `<StackPanel>` and save your changes. This element adds an instance of the [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) class from the WinUI library. After adding this element, the `<StackPanel>` should now look similar to this.
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 
