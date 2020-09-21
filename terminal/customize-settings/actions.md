@@ -119,8 +119,6 @@ ___
 
 **Note:** `=` and `plus` are equivalents. The latter must not be confused with `numpad_plus`.
 
-> [!IMPORTANT]
-> `app` and `menu` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 ___
 
 ## Application-level commands
@@ -226,7 +224,7 @@ This allows you toggle the "always on top" state of the window. When in "always 
 { "command": "toggleAlwaysOnTop" }
 ```
 
-### Send input ([Preview](https://aka.ms/terminal-preview/))
+### Send input
 
 Send arbitrary text input to the shell.
 As an example the input `"text\n"` will write "text" followed by a newline to the shell.
@@ -250,9 +248,6 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `input` | Required | String | The text input to feed into the shell. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 <br />
 
 ___
@@ -265,7 +260,7 @@ This closes the current tab.
 
 **Command name:** `closeTab`
 
-### Close all other tabs ([Preview](https://aka.ms/terminal-preview/))
+### Close all other tabs
 
 This closes all tabs except for the one at an index. If no index is provided, use the focused tab's index.
 
@@ -283,10 +278,7 @@ This closes all tabs except for the one at an index. If no index is provided, us
 | ---- | --------- | ------- | ----------- |
 | `index` | Optional | Integer | Position of the tab to be kept open. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
-### Close tabs after index ([Preview](https://aka.ms/terminal-preview/))
+### Close tabs after index
 
 This closes the tabs following the tab at an index. If no index is provided, use the focused tab's index.
 
@@ -303,9 +295,6 @@ This closes the tabs following the tab at an index. If no index is provided, use
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `index` | Optional | Integer | Position of the last tab to be kept open. |
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Duplicate tab
 
@@ -374,7 +363,7 @@ This opens the tab to the left of the current one.
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
 
-### Tab search ([Preview](https://aka.ms/terminal-preview/))
+### Tab search
 
 :::row:::
 :::column span="":::
@@ -396,9 +385,6 @@ _This command is not currently bound in the default settings_.
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Open a specific tab
 
@@ -525,7 +511,7 @@ This changes focus to a different pane depending on the direction.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
 
-### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
+### Zoom a pane
 
 :::row:::
 :::column span="":::
@@ -545,9 +531,6 @@ This expands the focused pane to fill the entire contents of the window.
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Resize a pane
 
@@ -628,9 +611,6 @@ This copies the selected terminal content to your clipboard.
 | ---- | --------- | ------- | ----------- |
 | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
 | `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `copyFormatting` behavior is inherited. |
-
-> [!IMPORTANT]
-> `copyFormatting` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Paste
 
@@ -752,7 +732,7 @@ This toggles the "retro terminal effect", which is enabled with the profile sett
 { "command": "toggleRetroEffect" }
 ```
 
-### Set the color scheme ([Preview](https://aka.ms/terminal-preview/))
+### Set the color scheme
 
 Changes the active color scheme.
 
@@ -769,10 +749,6 @@ Changes the active color scheme.
 ```json
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 
 <br />
 

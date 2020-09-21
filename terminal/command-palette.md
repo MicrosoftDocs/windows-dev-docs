@@ -9,10 +9,7 @@ ms.service: terminal
 ms.localizationpriority: high
 ---
 
-# How to use the command palette in Windows Terminal ([Preview](https://aka.ms/terminal-preview/))
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+# How to use the command palette in Windows Terminal
 
 The command palette lets you see which actions you can run inside Windows Terminal. More information on how actions are defined can be found on the [Actions page](./customize-settings/actions.md).
 

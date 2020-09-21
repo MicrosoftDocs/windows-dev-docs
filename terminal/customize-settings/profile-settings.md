@@ -217,9 +217,6 @@ This sets the padding around the text within the window. This will accept three 
 :::column-end:::
 :::row-end:::
 
-> [!IMPORTANT]
-> `padding` as an integer is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Antialiasing text
 
 This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
@@ -308,7 +305,7 @@ This is the name of the color scheme used in the profile. Color schemes are defi
 
 **Default value:** `"Campbell"`
 
-### Tab color ([Preview](https://aka.ms/terminal-preview))
+### Tab color
 
 This sets the color of the profile's tab. Using the tab color picker will override this color.
 
@@ -317,9 +314,6 @@ This sets the color of the profile's tab. Using the tab color picker will overri
 **Necessity:** Optional
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Foreground color
 

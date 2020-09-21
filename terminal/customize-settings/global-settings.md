@@ -73,7 +73,7 @@ ___
 
 ## Tab settings
 
-### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
+### Use tab switcher experience
 
 :::row:::
 :::column span="":::
@@ -95,9 +95,6 @@ The tab switcher will open on the initial press of the actions for `nextTab` and
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Always show tabs
 
@@ -308,9 +305,6 @@ When this is set to `true`, the color and font formatting of the selected text i
 **Accepts:** `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> `"all"`, `"none"`, `"html"`, and `"rtf"` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Word delimiters
 
