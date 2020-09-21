@@ -46,6 +46,8 @@
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/terminal",
       "feedback_product_url": "https://github.com/Microsoft/terminal/issues",
+      "ms.prod": "dev-environment",
+      "ms.technology": "terminal",
       "searchScope": ["terminal"]
     },
     "fileMetadata": {},

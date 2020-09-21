@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: how-to 
-ms.service: terminal
 ---
 
 # How to search in Windows Terminal
