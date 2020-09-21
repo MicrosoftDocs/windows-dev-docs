@@ -47,7 +47,7 @@
       "feedback_github_repo": "MicrosoftDocs/terminal",
       "feedback_product_url": "https://github.com/Microsoft/terminal/issues",
       "ms.prod": "dev-environment",
-      "ms.technology": "terminal",
+      "ms.technology": "windows-terminal",
       "searchScope": ["terminal"],
       "ms.author": "cinnamon",
       "author": "cinnamon-msft"
