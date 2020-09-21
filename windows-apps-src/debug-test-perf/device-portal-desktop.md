@@ -4,6 +4,7 @@ title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
 ms.date: 08/20/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
