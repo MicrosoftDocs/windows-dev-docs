@@ -5,6 +5,7 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/26/2020
 ms.topic: how-to 
+ms.localizationpriority: high
 ---
 
 # How to use the command palette in Windows Terminal ([Preview](https://aka.ms/terminal-preview/))
