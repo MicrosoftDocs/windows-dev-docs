@@ -89,6 +89,8 @@ Your Windows PowerShell profile settings.json file should now look like this:
     "hidden": false
 },
 ```
+> [!TIP]
+> If you want to support Powerline glyphs in the VS Code terminal, you can add `"terminal.integrated.fontFamily": "Cascadia Code PL"` to your VS Code's settings.json
 
 ## Set up Powerline in WSL Ubuntu
 
