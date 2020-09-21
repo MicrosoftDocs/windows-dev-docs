@@ -38,7 +38,7 @@ If your solution doesn't contain a packaging project, see [Package your desktop 
 
 Make sure that your desktop application has references to the files that you need to call Windows Runtime APIs.
 
-To do this, see the [Set up your project](desktop-to-uwp-enhance.md#set-up-your-project) section.
+To do this, see [Call Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
 
 ### Add a UWP project
 
@@ -46,15 +46,15 @@ Add a **Blank App (Universal Windows)** to your solution.
 
 This is where you'll build a modern XAML UI or use APIs that run only within a UWP process.
 
-![UWP project](images/desktop-to-uwp/add-uwp-project-to-solution.png)
+![Add new project](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 In your packaging project, right-click the **Applications** node, and then click **Add Reference**.
 
-![Reference UWP Project](images/desktop-to-uwp/add-uwp-project-reference.png)
+![Add reference](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 Then, add a reference the UWP project.
 
-![Reference UWP Project](images/desktop-to-uwp/choose-uwp-project.png)
+![Select UWP project](images/desktop-to-uwp/choose-uwp-project.png)
 
 Your solution will look something like this:
 
@@ -466,7 +466,7 @@ Then, choose the desired properties. Our sample uses the **Timer** property.
 
 Provide the fully qualified name of the class in your Windows Runtime component that implements the background task.
 
-![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
+![Specify entry point](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task"></a>
 
