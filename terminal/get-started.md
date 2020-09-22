@@ -3,7 +3,7 @@ title: Windows Terminal installation
 description: In this quickstart, you will learn how to install and run Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 09/22/2020
 ms.topic: quickstart
 ms.localizationpriority: high
 ---
@@ -38,11 +38,11 @@ You can run multiple shells side-by-side using panes. To open a pane, you can us
 
 To customize the settings of your Windows Terminal, select **Settings** in the dropdown menu. This will open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
 
-The terminal supports customization of [global properties](./customize-settings/global-settings.md) that affect the whole application, [profile properties](./customize-settings/profile-settings.md) that affect the settings of each profile, and [key bindings](./customize-settings/key-bindings.md) that allow you to interact with the terminal using your keyboard.
+The terminal supports customization of [global properties](./customize-settings/global-settings.md) that affect the whole application, [profile properties](./customize-settings/profile-settings.md) that affect the settings of each profile, and [actions](./customize-settings/actions.md) that allow you to interact with the terminal using your keyboard or the command palette.
 
 ## Command line arguments
 
-You can launch the terminal in a specific configuration using command-line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command-line arguments on the [Command line arguments page](./command-line-arguments.md).
+You can launch the terminal in a specific configuration using command line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command line arguments on the [Command line arguments page](./command-line-arguments.md).
 
 ## Troubleshooting
 

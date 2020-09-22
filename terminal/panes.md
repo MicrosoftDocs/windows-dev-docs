@@ -3,7 +3,7 @@ title: Windows Terminal Panes
 description: Learn how to split panes in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 09/22/2020
 ms.topic: how-to
 ---
 
@@ -20,7 +20,7 @@ You can either create a new vertical or horizontal pane in Windows Terminal. Spl
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
 
-If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
+If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [Actions page](./customize-settings/actions.md).
 
 ```json
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+=" },
@@ -33,9 +33,6 @@ If you would like to change these key bindings, you can create new ones using th
 If you'd like to open a new pane of your default profile, you can hold the <kbd>alt</kbd> key and click the new tab button. If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. Both of these options will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 
 ![Windows Terminal dropdown pane](./images/alt-click-pane.gif)
-
-> [!IMPORTANT]
-> Opening a new pane using the new tab button is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Switching between panes
 

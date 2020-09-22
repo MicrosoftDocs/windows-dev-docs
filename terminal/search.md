@@ -3,7 +3,7 @@ title: Windows Terminal Search
 description: Learn how to search in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 09/22/2020
 ms.topic: how-to 
 ---
 
@@ -47,4 +47,4 @@ You can open the search dialog with any key binding (shortcut key combination) t
 
 For example, you can change "ctrl+shift+f" to "ctrl+f", so when typing `ctrl+f`, the search dialog will open.
 
-To learn more about key bindings, visit the [key bindings page](./customize-settings/key-bindings.md).
+To learn more about key bindings, visit the [Actions page](./customize-settings/actions.md).
