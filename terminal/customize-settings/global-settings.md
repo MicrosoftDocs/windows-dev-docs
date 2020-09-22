@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/26/2020
 ms.topic: how-to
-ms.service: terminal
 ms.localizationpriority: high
 ---
 
@@ -73,13 +72,13 @@ ___
 
 ## Tab settings
 
-### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
+### Use tab switcher experience
 
 :::row:::
 :::column span="":::
 When this is set to `true`, the `nextTab` and `prevTab` commands will use the tab switcher UI. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
 
-The tab switcher will open on the initial press of the keybindings for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` keybindings can be used to cycle through the switcher UI.
+The tab switcher will open on the initial press of the actions for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` actions can be used to cycle through the switcher UI.
 
 **Property name:** `useTabSwitcher`
 
@@ -95,9 +94,6 @@ The tab switcher will open on the initial press of the keybindings for `nextTab`
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Always show tabs
 
@@ -308,9 +304,6 @@ When this is set to `true`, the color and font formatting of the selected text i
 **Accepts:** `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> `"all"`, `"none"`, `"html"`, and `"rtf"` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Word delimiters
 

@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/26/2020
 ms.topic: how-to
-ms.service: terminal
 ms.localizationpriority: high
 ---
 
@@ -77,14 +76,18 @@ This is the directory the shell starts in when it is loaded.
 <br />
 
 > [!NOTE]
-> When setting the starting directory that your installed WSL distributions open to, you should use this format: "startingDirectory": "//wsl$/<distro name>", replacing with the name of your distribution. For example, "startingDirectory": "//wsl$/Ubuntu-20.04".
+> When setting the starting directory that your installed WSL distributions open to, you should use this format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the name of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
 
 > [!NOTE]
 > Omitting the startingDirectory value in a profile results in...
-> ..if you run Windows Terminal from the Start menu: C:\windows\system32
-> ..if you run wt.exe from the Start menu: C:\windows\system32
-> ..if you run wt.exe from Win+R: %USERPROFILE%
-> ..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
+</br>
+..if you run Windows Terminal from the Start menu: C:\windows\system32
+</br>
+..if you run wt.exe from the Start menu: C:\windows\system32
+</br>
+..if you run wt.exe from Win+R: %USERPROFILE%
+</br>
+..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
 ___
 
 ## Dropdown settings
@@ -213,9 +216,6 @@ This sets the padding around the text within the window. This will accept three 
 :::column-end:::
 :::row-end:::
 
-> [!IMPORTANT]
-> `padding` as an integer is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 ### Antialiasing text
 
 This controls how text is antialiased in the renderer. Note that changing this setting will require starting a new terminal instance.
@@ -304,7 +304,7 @@ This is the name of the color scheme used in the profile. Color schemes are defi
 
 **Default value:** `"Campbell"`
 
-### Tab color ([Preview](https://aka.ms/terminal-preview))
+### Tab color
 
 This sets the color of the profile's tab. Using the tab color picker will override this color.
 
@@ -313,9 +313,6 @@ This sets the color of the profile's tab. Using the tab color picker will overri
 **Necessity:** Optional
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Foreground color
 
