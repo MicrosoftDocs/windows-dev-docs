@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/26/2020
 ms.topic: how-to
-ms.service: terminal
 ---
 
 # Using command-line arguments for Windows Terminal

@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: concept
-ms.service: terminal
 ---
 
 # Dynamic profiles in Windows Terminal

@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 07/27/2020
 ms.topic: sample
-ms.service: terminal
 ---
 
 # Custom Terminal guide

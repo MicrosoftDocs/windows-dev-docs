@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.service: terminal
 ---
 
 # Panes in Windows Terminal
