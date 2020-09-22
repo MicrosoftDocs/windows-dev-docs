@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 7/28/2020
 ms.topic: how-to
-ms.service: terminal
 ms.localizationpriority: high
 ---
 
