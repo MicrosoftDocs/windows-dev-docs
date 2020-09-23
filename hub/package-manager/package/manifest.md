@@ -51,8 +51,8 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - Url: string # Path to download installation file.
-  - Sha256: string # SHA256 calculated from installer.
+    Url: string # Path to download installation file.
+    Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
 
@@ -95,21 +95,22 @@ FileExtensions: list # List of file extensions the package could support.
 Protocols: list # List of protocols the package provides a handler for.
 Commands: list # List of commands or aliases the user would use to run the package.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
-Custom: string # Custom switches passed to the installer.
-Silent: string # Switches passed to the installer for silent installation.
-SilentWithProgress: string # Switches passed to the installer for non-interactive install.
-Interactive: string # Experimental.
-Language: string # Experimental.
-Log: string # Specifies log redirection switches and path.
-InstallLocation: string # Specifies alternate location to install package.
+Switches: # These can be used to change the install behavior if supported by the InstallerType.
+  Custom: string # Custom switches passed to the installer.
+  Silent: string # Switches passed to the installer for silent installation.
+  SilentWithProgress: string # Switches passed to the installer for non-interactive install.
+  Interactive: string # Experimental.
+  Language: string # Experimental.
+  Log: string # Specifies log redirection switches and path.
+  InstallLocation: string # Specifies alternate location to install package.
 Installers: # Nested map of keys for specific installer.
   - Arch: string # Enumeration of supported architectures.
-  - Url: string # Path to download installation file.
-  - Sha256: string # SHA256 calculated from installer.
-  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
-  - Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
-  - Scope: string # Experimental.
-  - SystemAppId: string # Experimental.
+    Url: string # Path to download installation file.
+    Sha256: string # SHA256 calculated from installer.
+    SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
+    Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
+    Scope: string # Experimental.
+    SystemAppId: string # Experimental.
 Localization: # Nested map of keys for localization.
   - Language: string # Locale for display fields and localized URLs.
 ManifestVersion: string # Version number format for manifest version.
