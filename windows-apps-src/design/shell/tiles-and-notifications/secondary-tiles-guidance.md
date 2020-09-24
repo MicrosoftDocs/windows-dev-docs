@@ -3,7 +3,7 @@ Description: Learn about when and where you should use secondary tiles in your W
 title: Secondary tiles design guidance
 label: Secondary tiles
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, guidance, guidelines, best practices
 ms.localizationpriority: medium

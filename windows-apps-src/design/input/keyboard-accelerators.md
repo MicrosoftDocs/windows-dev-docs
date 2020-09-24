@@ -4,7 +4,7 @@ title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

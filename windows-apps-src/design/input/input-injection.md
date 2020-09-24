@@ -4,7 +4,7 @@ title: Simulate user input through input injection
 label: Input injection
 template: detail.hbs
 keywords: device, digitizer, input, interaction, injection
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ---

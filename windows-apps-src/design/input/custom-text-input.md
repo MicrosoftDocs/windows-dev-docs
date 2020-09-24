@@ -5,7 +5,7 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: keyboard, text, core text, custom text, Text Services Framework, input, user interactions
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

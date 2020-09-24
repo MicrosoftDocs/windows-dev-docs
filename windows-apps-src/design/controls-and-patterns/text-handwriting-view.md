@@ -3,7 +3,7 @@ Description: Customize the built-in handwriting view for ink to text input that 
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 10/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: sewen

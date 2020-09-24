@@ -2,7 +2,7 @@
 description: Get the latest downloads and tools for Windows apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
-ms.date: 03/23/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium

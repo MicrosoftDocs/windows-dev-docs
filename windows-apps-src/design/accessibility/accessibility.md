@@ -4,7 +4,7 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

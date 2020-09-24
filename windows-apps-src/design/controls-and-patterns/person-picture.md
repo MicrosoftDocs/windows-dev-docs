@@ -3,7 +3,7 @@ description: Displays the avatar image for a person, if one is available; if not
 title: Person picture control
 template: detail.hbs
 label: Parallax View
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: trestar

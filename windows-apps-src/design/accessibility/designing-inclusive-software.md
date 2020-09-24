@@ -4,7 +4,7 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Designing inclusive software in Windows 10
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

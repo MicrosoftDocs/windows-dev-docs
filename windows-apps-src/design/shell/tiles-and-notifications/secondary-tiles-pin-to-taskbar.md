@@ -3,7 +3,7 @@ description: Learn how to pin secondary tiles to the taskbar, giving your users 
 title: Pin secondary tiles to taskbar
 label: Pin secondary tiles to taskbar
 template: detail.hbs
-ms.date: 11/28/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, pin to taskbar, secondary tile, pin secondary tiles to taskbar, shortcut
 ms.localizationpriority: medium

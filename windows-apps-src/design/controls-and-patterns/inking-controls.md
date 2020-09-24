@@ -3,7 +3,7 @@ description: Learn about the InkCanvas and InkToolbar controls that facilitate
 title: Inking Controls
 label: Inking Controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead

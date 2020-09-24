@@ -4,7 +4,7 @@ title: Text scaling
 label: Text scaling
 template: detail.hbs
 keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make text bigger", user interaction, input
-ms.date: 08/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5

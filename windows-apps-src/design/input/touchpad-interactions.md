@@ -5,7 +5,7 @@ ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
 keywords: touchpad, PTP, touch, pointer, input, user interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

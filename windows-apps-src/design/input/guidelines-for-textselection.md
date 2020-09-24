@@ -5,7 +5,7 @@ ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
 keywords: keyboard, text, input, user interactions
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

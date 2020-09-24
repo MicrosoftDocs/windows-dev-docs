@@ -2,7 +2,7 @@
 description: Enables users to view and set ratings that reflect satisfaction with content and services. 
 title: Rating Control
 template: detail.hbs
-ms.date: 10/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow

@@ -3,7 +3,7 @@ description: Learn how to use list boxes and combo boxes, also called drop-down 
 title: Combo box and list box
 label: Combo box and list box
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy

@@ -1,7 +1,7 @@
 ---
 title: Page layout for Windows apps
 description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In Windows apps, each page generally has navigation, command, and content elements.
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium

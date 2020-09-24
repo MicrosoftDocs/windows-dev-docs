@@ -3,7 +3,7 @@ Description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 03/13/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

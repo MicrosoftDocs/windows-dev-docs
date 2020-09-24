@@ -5,7 +5,7 @@ ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: device, digitizer, input, interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

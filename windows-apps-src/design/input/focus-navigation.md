@@ -4,7 +4,7 @@ Description: Learn how to use focus navigation to provide comprehensive and cons
 label: 
 template: detail.hbs
 keywords: keyboard, game controller, remote control, navigation, directional inner navigation, directional area, navigation strategy, input, user interaction, accessibility, usability
-ms.date: 03/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea

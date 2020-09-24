@@ -5,7 +5,7 @@ ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 keywords: device, input, interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

@@ -4,7 +4,7 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Accessibility in the Store
 label: Accessibility in the Store
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

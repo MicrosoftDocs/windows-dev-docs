@@ -5,7 +5,7 @@ ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, Cortana canvas, Cortana design, user interface, voice commands, VCD
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

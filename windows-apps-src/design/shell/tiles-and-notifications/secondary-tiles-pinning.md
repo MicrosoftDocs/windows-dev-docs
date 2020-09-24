@@ -3,7 +3,7 @@ description: Learn how to create a secondary tile and pin it to the Start menu p
 title: Pin secondary tiles to Start
 label: Pin secondary tiles to Start
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile
 ms.localizationpriority: medium

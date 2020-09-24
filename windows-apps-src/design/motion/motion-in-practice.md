@@ -3,7 +3,7 @@ description: Learn how Fluent motion fundamentals like timing, easing, direction
 title: Motion in practice - animation in Windows apps
 label: Motion in practice
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy

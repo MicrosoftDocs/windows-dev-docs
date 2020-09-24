@@ -3,7 +3,7 @@ title: Directionality and gravity - animation in Windows apps
 description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.
 label: Directionality and gravity
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy

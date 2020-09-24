@@ -4,7 +4,7 @@ title: Surface Dial interactions
 label: Surface Dial interactions
 template: detail.hbs
 keywords: Surface Dial, Windows wheel, RadialController, Radial controller, user interaction, input
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

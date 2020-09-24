@@ -3,7 +3,7 @@ Description: This topic defines the terms user profile language list, app manife
 title: Understand user profile languages and app manifest languages
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.date: 11/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium

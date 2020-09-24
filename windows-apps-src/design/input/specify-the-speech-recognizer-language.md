@@ -5,7 +5,7 @@ ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

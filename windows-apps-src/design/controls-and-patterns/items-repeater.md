@@ -3,7 +3,7 @@ Description: ItemsRepeater is a light-weight control to generate and present a c
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
-ms.date: 02/01/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

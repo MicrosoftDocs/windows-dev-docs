@@ -3,7 +3,7 @@ description: Learn how to use a color picker to let users browse through and sel
 title: Color Picker
 label: Color Picker
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai

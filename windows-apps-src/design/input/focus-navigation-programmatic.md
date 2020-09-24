@@ -3,10 +3,8 @@ Description: Learn how to programmatically manage focus navigation with keyboard
 title: Programmatic focus navigation with keyboard, gamepad, and accessibility tools
 label: Programmatic focus navigation
 keywords: keyboard, game controller, remote control, navigation, navigation strategy, input, user interaction, accessibility, usability
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
-
-
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm

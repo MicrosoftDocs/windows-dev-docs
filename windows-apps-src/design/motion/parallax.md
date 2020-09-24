@@ -4,7 +4,7 @@ description: Learn how to use the ParallaxView control in a UWP app to create a 
 ms.assetid: 
 label: Parallax View
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow

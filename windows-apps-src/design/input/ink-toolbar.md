@@ -4,7 +4,7 @@ title: Add an InkToolbar to a Windows app
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

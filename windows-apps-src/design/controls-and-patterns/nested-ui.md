@@ -3,7 +3,7 @@ title: Nested UI in list items
 description: Learn how to create nested UI in ListView and GridView items to present a user with additional options for taking important actions.
 label: Nested UI in list items
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896

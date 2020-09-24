@@ -1,7 +1,7 @@
 ---
 title: Alternate push channels using VAPID in UWP
 description: Directions for using alternate push channels with the VAPID protocol from a Windows app
-ms.date: 01/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium

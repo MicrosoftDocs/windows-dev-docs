@@ -4,7 +4,7 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: Custom automation peers
 label: Custom automation peers
 template: detail.hbs
-ms.date: 07/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

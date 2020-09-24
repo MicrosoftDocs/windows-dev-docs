@@ -2,7 +2,7 @@
 Description: TwoPaneView is a layout control that helps you manage the display of apps that have 2 distinct areas of content.
 title: Two-pane view
 template: detail.hbs
-ms.date: 01/22/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

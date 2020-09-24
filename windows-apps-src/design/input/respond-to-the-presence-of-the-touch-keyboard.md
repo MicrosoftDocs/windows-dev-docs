@@ -5,7 +5,7 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.date: 07/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 
 
