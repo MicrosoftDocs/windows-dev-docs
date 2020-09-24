@@ -4,7 +4,7 @@ Description: The TextBox control lets a user enter text into an app.
 title: Text box
 label: Text box
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb

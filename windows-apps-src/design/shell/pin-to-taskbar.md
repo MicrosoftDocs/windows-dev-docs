@@ -2,7 +2,7 @@
 Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium

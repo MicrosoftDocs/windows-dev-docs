@@ -4,7 +4,7 @@ ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Developing inclusive Windows 10 apps
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

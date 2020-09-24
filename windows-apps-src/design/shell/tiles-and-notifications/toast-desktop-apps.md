@@ -3,7 +3,7 @@ Description: Discover the different options desktop Win32 apps have for sending 
 title: Toast notifications from desktop apps
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, sparse package, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium

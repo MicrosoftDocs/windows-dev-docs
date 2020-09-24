@@ -6,7 +6,7 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
-ms.date: 11/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn

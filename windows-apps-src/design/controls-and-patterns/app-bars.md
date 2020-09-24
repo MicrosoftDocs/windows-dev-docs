@@ -4,7 +4,7 @@ title: Command bar
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 07/23/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db

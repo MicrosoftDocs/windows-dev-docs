@@ -3,7 +3,7 @@ description: Describes the steps needed to ensure your Windows app is usable whe
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: High-contrast themes
 template: detail.hbs
-ms.date: 09/28/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

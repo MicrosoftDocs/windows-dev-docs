@@ -5,7 +5,7 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: visual feedback, focus feedback, touch feedback, contact visualization, input, interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

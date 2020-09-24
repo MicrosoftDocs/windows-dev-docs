@@ -5,7 +5,7 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, user interaction, input
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 
 

@@ -5,7 +5,7 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 03/29/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea

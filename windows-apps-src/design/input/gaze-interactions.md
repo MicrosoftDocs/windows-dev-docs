@@ -4,7 +4,7 @@ Description: Learn how to design and optimize your Windows apps to provide the b
 label: Gaze interactions
 template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 

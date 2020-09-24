@@ -1,13 +1,9 @@
 ---
 Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
 title: Take a Test JavaScript API.
-
-
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 08/08/2018
+ms.date: 09/24/2020
 ms.topic: article
-
-
 keywords: windows 10, uwp, education
 ms.localizationpriority: medium
 ---

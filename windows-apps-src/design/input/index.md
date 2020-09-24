@@ -4,7 +4,7 @@ title: Input and interactions
 keywords: app inputs, customize UWP application
 label: Input and interactions
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium

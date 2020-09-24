@@ -2,7 +2,7 @@
 Description: TabView is a flexible way to organize multiple documents in dynamic tabs
 title: Tab View
 template: detail.hbs
-ms.date: 09/12/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published

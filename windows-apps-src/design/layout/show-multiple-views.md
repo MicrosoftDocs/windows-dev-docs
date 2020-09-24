@@ -1,7 +1,7 @@
 ---
 description: Help users be more productive by letting them view independent parts of your app in separate windows.
 title: Show multiple views for an app
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

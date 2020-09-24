@@ -1,7 +1,7 @@
 ---
 description: Learn how to use color effectively in your Universal Windows Platform (UWP) app by manipulating accent colors and theme resources.
 title: Color in Windows apps
-ms.date: 04/07/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui

@@ -1,7 +1,7 @@
 ---
 title: Screen sizes and break points for responsive design
 description: Rather than optimizing your UI the many devices across the Windows 10 ecosystem, we recommended designing for a few key width categories called breakpoints.
-ms.date: 08/30/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

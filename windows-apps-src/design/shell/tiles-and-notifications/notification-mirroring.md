@@ -3,7 +3,7 @@ description: Learn how to use notification mirroring, powered by Action Center i
 title: Notification mirroring
 label: Notification mirroring
 template: detail.hbs
-ms.date: 12/15/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, toast, action center in the cloud, notification mirroring, notification, cross device
 ms.localizationpriority: medium

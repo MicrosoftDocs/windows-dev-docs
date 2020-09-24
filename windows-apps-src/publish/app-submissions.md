@@ -3,7 +3,7 @@ Description: Once you've created your app by reserving a name, you can start wor
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 
 

@@ -4,7 +4,7 @@ title: Toast content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
 template: detail.hbs
-ms.date: 11/20/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload
 ms.localizationpriority: medium

@@ -4,7 +4,7 @@ ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Accessibility practices to avoid
 label: Accessibility practices to avoid
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

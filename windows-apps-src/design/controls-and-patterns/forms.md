@@ -2,7 +2,7 @@
 title: Forms
 description: Learn the guidelines for designing and creating XAML layouts for forms in a Universal Windows Platform (UWP) app.
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ---

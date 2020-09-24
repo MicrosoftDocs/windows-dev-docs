@@ -1,7 +1,7 @@
 ---
 description: Learn how to use typography in your app to help users understand content easily.
 title: Typography in Windows apps
-ms.date: 04/06/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

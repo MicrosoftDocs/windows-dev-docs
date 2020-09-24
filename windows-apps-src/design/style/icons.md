@@ -4,7 +4,7 @@ title: Icons
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
-ms.date: 05/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: Judysa

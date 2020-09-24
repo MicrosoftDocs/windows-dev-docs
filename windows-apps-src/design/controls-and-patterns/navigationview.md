@@ -2,7 +2,7 @@
 Description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: Navigation view
 template: detail.hbs
-ms.date: 05/02/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl

@@ -4,7 +4,7 @@ title: Contextual commanding
 ms.assetid: 
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 10/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chigy

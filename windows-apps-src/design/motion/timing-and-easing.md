@@ -3,7 +3,7 @@ description: Learn the importance of timing and easing in making motion feel nat
 title: Timing and easing
 label: Timing and easing
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy

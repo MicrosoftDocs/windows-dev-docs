@@ -2,7 +2,7 @@
 title: Page transitions
 description: Learn how to use Universal Windows Platform (UWP) page transitions to give users feedback about the relationship between pages in your app.
 template: detail.hbs
-ms.date: 04/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
