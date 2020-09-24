@@ -54,7 +54,7 @@ Here are some examples of built-in contact visualizations in Windows.
 
 All Windows apps sport a more defined focus visual around interactable controls within the application. These new focus visuals are fully customizable as well as disableable when needed.
 
-For the **10-foot experience** typical of Xbox and TV usage, Windows supports **Reveal focus**, a lighting effect that animates the border of focusable elements, such as a button, when they get focus through gamepad or keyboard input. For more info, see [Designing for Xbox and TV](../devices/designing-for-tv.md#reveal-focus).
+For the **10-foot experience** typical of Xbox and TV usage, Windows supports **Reveal focus**, a lighting effect that animates the border of focusable elements, such as a button, when they get focus through gamepad or keyboard input.
 
 ## Color Branding & Customizing
 
