@@ -24,4 +24,4 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample applic
 - XAML data binding, including the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md).
 - XAML styling and UI customization, including [connected animations](../design/motion/connected-animation.md).
 
-Also see [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
+Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).

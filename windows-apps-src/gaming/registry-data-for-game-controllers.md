@@ -50,7 +50,7 @@ The table below explains the expected values under the device root location:
     </tr>
 </table>
 
-Your device installer should add this data to the registry (either via setup or an [INF file](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)).
+Your device installer should add this data to the registry (either via setup or an [INF file](/windows-hardware/drivers/install/inf-files)).
 
 Subkeys under the device root location are detailed in the following sections.
 
@@ -539,7 +539,7 @@ The table below lists the required and optional subkeys under **UINavigation** s
     </tr>
 </table>
 
-For more information about UI navigation controllers and the above commands, see [UI navigation controller](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
+For more information about UI navigation controllers and the above commands, see [UI navigation controller](./ui-navigation-controller.md).
 
 ## Keys
 
@@ -1047,7 +1047,7 @@ Labels should be present under the **Labels** key under the device root. **Label
 
 ### Button labels
 
-The **Buttons** key maps each of the button positions in the **RawGameController**'s buttons array to a string. Each string is mapped internally to the corresponding [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) enum value. For example, if a gamepad has ten buttons and the order in which the **RawGameController** parses out the buttons and presents them in the buttons report is like this:
+The **Buttons** key maps each of the button positions in the **RawGameController**'s buttons array to a string. Each string is mapped internally to the corresponding [GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) enum value. For example, if a gamepad has ten buttons and the order in which the **RawGameController** parses out the buttons and presents them in the buttons report is like this:
 
 ```cpp
 Menu,               // Index 0
@@ -1113,7 +1113,7 @@ The labels should appear in this order under the **Buttons** key:
 
 ### Axis labels
 
-The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
+The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
 
 ### Switch labels
 

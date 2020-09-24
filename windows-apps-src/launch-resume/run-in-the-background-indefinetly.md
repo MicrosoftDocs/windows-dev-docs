@@ -26,7 +26,7 @@ The `extendedExecutionUnconstrained` capability is added as a restricted capabil
 > [!NOTE]
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
 >
-> For more information, see the Restricted Capabilities section of [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> For more information, see the Restricted Capabilities section of [App capability declarations](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_
@@ -75,7 +75,7 @@ In the Universal Windows Platform, background tasks are processes that run in th
 > [!NOTE]
 > Add the *xmlns:rescap* XML namespace declaration, and use the *rescap* prefix to declare the capability.
 >
-> For more information, see the Restricted Capabilities section of [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> For more information, see the Restricted Capabilities section of [App capability declarations](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_

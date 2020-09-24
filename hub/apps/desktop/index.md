@@ -34,24 +34,24 @@ There are four main platforms for building desktop apps for Windows PCs. Each pl
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows/uwp/">Universal Windows Platform (UWP)</a></td>
+<td><a href="/windows/uwp/">Universal Windows Platform (UWP)</a></td>
 <td><p>The leading-edge platform for Windows 10 apps and games. You can build UWP apps that exclusively use UWP controls and APIs, or you can use UWP controls and APIs in desktop apps that are built using one of the other platforms.</p></td>
 <td><a href="/windows/uwp/get-started/">Get started</a><br/><a href="/uwp/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Samples</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><a href="/windows/win32/">C++/Win32</a></td>
 <td><p>The platform of choice for native Windows apps that require direct access to Windows and hardware.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Get started</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Samples</a></td>
 </tr>
 <tr class="odd">
 <td><a href="/dotnet/framework/wpf/">WPF</a></td>
-<td><p>The established .NET-based platform for graphically-rich managed Windows apps with a XAML UI model. These apps can target <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Samples</a></td>
+<td><p>The established .NET-based platform for graphically-rich managed Windows apps with a XAML UI model. These apps can target <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">Get started</a><br/><a href="/dotnet/api/index">API reference (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Samples</a></td>
 </tr>
 <tr class="even">
 <td><a href="/dotnet/framework/winforms/">Windows Forms</a></td>
-<td><p>A .NET-based platform that is designed for managed line-of-business apps with a lightweight UI model. These apps can target <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Get started</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API reference (.NET)</a></td>
+<td><p>A .NET-based platform that is designed for managed line-of-business apps with a lightweight UI model. These apps can target <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> or the full .NET Framework.</p></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Get started</a><br/><a href="/dotnet/api/index">API reference (.NET)</a></td>
 </tr>
 </tbody>
 </table>

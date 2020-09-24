@@ -44,7 +44,7 @@ productDirectory:
   - title: Windows Subsystem for Linux, Windows Terminal, Python, and other tools
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
-      - url: ../dev-environment/index.yml
+      - url: ../dev-environment/overview.md
         text: Get started
 
 conceptualContent:

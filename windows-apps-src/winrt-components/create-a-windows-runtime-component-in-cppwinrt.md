@@ -140,4 +140,4 @@ For an example of how to add an event to your Windows Runtime Component, see [Au
 
 | Symptom | Remedy |
 |---------|--------|
-|In a C++/WinRT app, when consuming a [C# Windows Runtime component](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) that uses XAML, the compiler produces an error of the form "*'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'*"&mdash;where *MyNamespace* is the name of the Windows Runtime component's namespace. | In `pch.h` in the consuming C++/WinRT app, add `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;replacing *MyNamespace* as appropriate. |
+|In a C++/WinRT app, when consuming a [C# Windows Runtime component](./creating-windows-runtime-components-in-csharp-and-visual-basic.md) that uses XAML, the compiler produces an error of the form "*'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'*"&mdash;where *MyNamespace* is the name of the Windows Runtime component's namespace. | In `pch.h` in the consuming C++/WinRT app, add `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;replacing *MyNamespace* as appropriate. |

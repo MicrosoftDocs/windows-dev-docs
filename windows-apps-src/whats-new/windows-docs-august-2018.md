@@ -54,7 +54,7 @@ The [Project Rome docs](/windows/project-rome/) site has been reorganized into a
 
 ### Xbox Live Unity plugin
 
-The Xbox Live plugin for Unity contains support for adding Xbox Live signing, stats, friends lists, cloud storage, and leaderboards to your title. [Watch the video](https://youtu.be/fVQZ-YgwNpY) to learn more, then [download the GitHub package](https://aka.ms/UnityPlugin) to get started.
+The Xbox Live plugin for Unity contains support for adding Xbox Live signing, stats, friends lists, cloud storage, and leaderboards to your title. [Watch the video](https://youtu.be/fVQZ-YgwNpY) to learn more, then [download the GitHub package](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi) to get started.
 
 ### One Dev Question
 

@@ -40,7 +40,7 @@ The singular behavior of a RadioButtons group distinguishes it from [check boxes
 >There are two ways to create radio button groups.
 >
 >- Starting with WinUI 2.3, we recommend the **[RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
->- You can use groups of individual **[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
+>- You can use groups of individual **[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
 
 ## Is this the right control?
 

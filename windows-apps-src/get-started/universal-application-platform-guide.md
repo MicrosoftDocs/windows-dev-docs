@@ -18,9 +18,9 @@ To download the tools you need to start creating UWP apps, see [Get set up](get-
 
 ## Where does UWP fit in the Microsoft development story?
 
-UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
 
-The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
 
 
 ## Features of a UWP app
@@ -78,7 +78,7 @@ A unified app store makes your app available on Windows 10 devices such as PC, 
 
 UWP apps integrate with [Application Insights](https://azure.microsoft.com/services/application-insights/) for detailed telemetry and analytics—a crucial tool for understanding your users and improving your apps.
 
-UWP apps can be packaged with [MSIX](https://docs.microsoft.com/windows/msix/) and distributed via the Microsoft Store, or in other ways. MSIX allows apps to be updated no matter how they are distributed, see [Update non-Store published app packages from your code](https://docs.microsoft.com/windows/msix/non-store-developer-updates).
+UWP apps can be packaged with [MSIX](/windows/msix/) and distributed via the Microsoft Store, or in other ways. MSIX allows apps to be updated no matter how they are distributed, see [Update non-Store published app packages from your code](/windows/msix/non-store-developer-updates).
 
 ### Monetize your app
 

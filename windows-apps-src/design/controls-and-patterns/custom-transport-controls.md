@@ -211,7 +211,7 @@ One reason you might want to customize MediaTransportControls is to add a custom
 
 You must add it to the CommandBar in the appropriate location. (For more information, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
 
-You can also customize the icon for the button. For more information, see the <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.
+You can also customize the icon for the button. For more information, see the <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.
 	
 
 2. In the [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) override, get the button from the template and register a handler for its [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. This code goes in the `CustomMediaTransportControls` class.

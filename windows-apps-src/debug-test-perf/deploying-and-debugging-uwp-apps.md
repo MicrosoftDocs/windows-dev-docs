@@ -174,7 +174,7 @@ For help with this, see the following examples:
   - **Layout folder path** = `\\NETWORK-SHARE\Layouts\App1`
   - **Package registration path** = `\\NETWORK-SHARE\Layouts\App1`
 
-When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command.
+When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) from the Windows 10 SDK with the **deletecreds** command.
 
 You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device.
 

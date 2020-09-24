@@ -124,7 +124,7 @@ PWAs let developers package their website code so it can be installed and run li
 
 ### Xamarin
 
-Use Xamarin to build cross-platform applications for Windows 10 that can also run on iOS and Android. For more information, see [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index).
+Use Xamarin to build cross-platform applications for Windows 10 that can also run on iOS and Android. For more information, see [Xamarin](/xamarin/xamarin-forms/get-started/index).
 
 ### Uno Platform
 

@@ -35,7 +35,7 @@ This porting exercise shows how to bring a simple rendering framework from Direc
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Port the game loop</a></p></td>
-<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> to control a full-screen <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>.</p></td>
+<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an <a href="/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> to control a full-screen <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>

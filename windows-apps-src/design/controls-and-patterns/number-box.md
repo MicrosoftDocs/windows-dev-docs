@@ -169,7 +169,7 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 ### Input Scope
 
-`Number` will be used for the [input scope](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). This input scope is intended for working with digits 0-9. This may be overwritten but alternative InputScope types will not be explicitly supported.
+`Number` will be used for the [input scope](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). This input scope is intended for working with digits 0-9. This may be overwritten but alternative InputScope types will not be explicitly supported.
 
 ### Not a Number
 

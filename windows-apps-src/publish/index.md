@@ -31,7 +31,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <h3 style="margin-top: 10px; margin-bottom: 0px">Pricing and availability</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Customize your app's availability with per-market pricing and scheduling, visibility options, sale pricing, and more.</p>
         <br>
-        <a href="define-pricing-and-market-selection.md">Choose your markets</a><br/>
+        <a href="/windows/uwp/publish/define-market-selection">Choose your markets</a><br/>
         <a href="set-and-schedule-app-pricing.md">Set and schedule pricing </a><br/>
         <a href="configure-precise-release-scheduling.md">Configure precise release dates</a><br/>
         <a href="set-app-pricing-and-availability.md">See all availability options</a><br/>
@@ -80,7 +80,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Managing account users</h3>
-        <a href="associate-azure-ad-with-dev-center.md">Set up Azure AD</a><br/>
+        <a href="/windows/uwp/publish/associate-azure-ad-with-partner-center">Set up Azure AD</a><br/>
         <a href="add-users-groups-and-azure-ad-applications.md">Add account users</a><br/>
         <a href="set-custom-permissions-for-account-users.md">Roles and permissions</a><br/>
     :::column-end:::

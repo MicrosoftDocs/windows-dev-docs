@@ -57,7 +57,7 @@ Locks down the device. Also used to unlock the device. The testing web applicati
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Parameters**  
-* `enable` - **true** to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.  
+* `enable` - **true** to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.  
 * `onSuccess` - [optional] The function to call after the lockdown has been successfully enabled or disabled. It must be of the form `Function(Boolean currentlockdownstate)`.  
 * `onError` - [optional] The function to call if the lockdown operation failed. It must be of the form `Function(Boolean currentlockdownstate)`.  
 

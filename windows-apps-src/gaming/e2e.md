@@ -58,7 +58,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>
     <tr>
         <td>DirectX reference and overviews</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
+        <td><a href="/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
     </tr>
     <tr>
         <td>Azure for gaming</td>
@@ -70,7 +70,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>
     <tr>
         <td>UWP on Xbox One</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Building UWP apps on Xbox One</a></td>
+        <td><a href="/windows/uwp/xbox-apps/index">Building UWP apps on Xbox One</a></td>
     </tr>
     <tr>
         <td>UWP on HoloLens</td>
@@ -78,7 +78,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>
     <tr>
         <td>Xbox Live documentation</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Xbox Live developer guide</a></td>
+        <td><a href="/gaming/xbox-live/">Xbox Live developer guide</a></td>
     </tr>
     <tr>
         <td>Xbox One development documentation (XGD)</td>
@@ -208,7 +208,7 @@ There are many Windows 10 game and app samples available to help you understand 
     </tr>
     <tr>
         <td>Windows game samples (MSDN Code Gallery)</td>
-        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Microsoft Store game samples</a></td>
+        <td><a href="/samples/browse/?term=games">Microsoft Store game samples</a></td>
     </tr>
     <tr>
         <td>JavaScript 2D game sample</td>
@@ -239,7 +239,7 @@ Developer forums are a great place to ask and answer game development questions,
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td><a href="https://docs.microsoft.com/answers/topics/uwp.html">Developing Universal Windows Platform apps</a></td>
+        <td><a href="/answers/topics/uwp.html">Developing Universal Windows Platform apps</a></td>
     </tr>
     <tr>
         <td>Desktop applications developer forums</td>
@@ -310,7 +310,7 @@ Developer blogs are another great resource for the latest information about game
     </tr>
     <tr>
         <td>Universal Windows App Deployment team blog</td>
-        <td><a href="https://blogs.msdn.microsoft.com/appinstaller/">Build and deploy UWP apps team blog</a></td>
+        <td><a href="/windows/msix/">Build and deploy UWP apps team blog</a></td>
     </tr>
 </table>
 
@@ -367,15 +367,15 @@ These are some high level concept and planning topics to consider when planning 
     </colgroup>
     <tr>
         <td>Make your game accessible</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/accessibility-for-games">Accessibility for games</a></td>
+        <td><a href="/windows/uwp/gaming/accessibility-for-games">Accessibility for games</a></td>
     </tr>
     <tr>
         <td>Build games using cloud</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/cloud-for-games">Cloud for games</a></td>
+        <td><a href="/windows/uwp/gaming/cloud-for-games">Cloud for games</a></td>
     </tr>
     <tr>
         <td>Monetize your game</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">Monetization for games</a></td>
+        <td><a href="/windows/uwp/gaming/monetization-for-games">Monetization for games</a></td>
     </tr>
 </table>
 
@@ -408,11 +408,11 @@ The extensive features and deep platform integration of DirectX provide the powe
     </tr>
     <tr>
         <td>DirectX overviews and reference</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
+        <td><a href="/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
     </tr>
     <tr>
         <td>Direct3D 12 programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Graphics</a></td>
+        <td><a href="/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Graphics</a></td>
     </tr>
     <tr>
         <td>Graphics and DirectX 12 development videos (YouTube channel)</td>
@@ -431,11 +431,11 @@ XAML is an easy-to-use declarative UI language with convenient features like ani
     </colgroup>
     <tr>
         <td>XAML platform overview</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">XAML platform</a></td>
+        <td><a href="/windows/uwp/xaml-platform/index">XAML platform</a></td>
     </tr>
     <tr>
         <td>XAML UI and controls</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/design/basics/">Controls, layouts, and text</a></td>
+        <td><a href="/windows/uwp/design/basics/">Controls, layouts, and text</a></td>
     </tr>
 </table>
 
@@ -469,7 +469,7 @@ The Microsoft DirectX Graphics Infrastructure (DXGI) provides interop and compat
     </colgroup>
     <tr>
         <td>DirectX Graphics Infrastructure programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi">DXGI</a></td>
+        <td><a href="/windows/desktop/direct3ddxgi/dx-graphics-dxgi">DXGI</a></td>
     </tr>
     <tr>
         <td>Combining DirectX and XAML</td>
@@ -488,11 +488,11 @@ C++/CX is a high-performance, low overhead language that provides the powerful c
     </colgroup>
     <tr>
         <td>C++/CX reference and overviews</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ Language Reference (C++/CX)</a></td>
+        <td><a href="/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ Language Reference (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
+        <td><a href="/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
     </tr>
 </table>
  
@@ -507,7 +507,7 @@ C# (pronounced "C sharp") is a modern, innovative language that is simple, power
     </colgroup>
     <tr>
         <td>C# programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">C# language reference</a></td>
+        <td><a href="/dotnet/articles/csharp/csharp">C# language reference</a></td>
     </tr>
 </table>
  
@@ -524,7 +524,7 @@ Windows JavaScript apps can access the powerful features of the Universal Window
     </colgroup>
     <tr>
         <td>JavaScript and Windows Runtime reference</td>
-        <td><a href="https://docs.microsoft.com/scripting/javascript/javascript-language-reference">JavaScript reference</a></td>
+        <td><a href="/scripting/javascript/javascript-language-reference">JavaScript reference</a></td>
     </tr>
 </table>
 
@@ -539,7 +539,7 @@ With the Universal Windows Platform, it’s easy to combine components written i
     </colgroup>
     <tr>
         <td>How to create Windows Runtime components</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Windows Runtime components with C++/CX</a></td>
+        <td><a href="/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Windows Runtime components with C++/CX</a></td>
     </tr>
 </table>
 
@@ -558,15 +558,15 @@ Direct3D 11.3 is a low level graphics API that uses the familiar Direct3D progra
     </colgroup>
     <tr>
         <td>Choosing Direct3D 12 or Direct3D 11</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">What is Direct3D 12?</a></td>
+        <td><a href="/windows/desktop/direct3d12/what-is-directx-12-">What is Direct3D 12?</a></td>
     </tr>
     <tr>
         <td>Overview of Direct3D 11</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11 Graphics</a></td>
+        <td><a href="/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11 Graphics</a></td>
     </tr>
     <tr>
         <td>Overview of Direct3D 11 on 12</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-11-on-12">Direct3D 11 on 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/direct3d-11-on-12">Direct3D 11 on 12</a></td>
     </tr>
 </table>
 
@@ -685,7 +685,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </tr>
     <tr>
         <td>Troubleshooting missing assembly references related to .NET APIs</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Missing .NET APIs in Unity and UWP</a></td>
+        <td><a href="/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Missing .NET APIs in Unity and UWP</a></td>
     </tr>
     <tr>
         <td>Publish your Unity game as a Universal Windows Platform app (video)</td>
@@ -835,7 +835,7 @@ If you have an existing game, there are many resources and guides available to h
     </colgroup>
     <tr>
         <td>Porting a Windows 8 app to a Universal Windows Platform app</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP</a></td>
+        <td><a href="/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP</a></td>
     </tr>
     <tr>
         <td>Porting a Windows 8 app to a Universal Windows Platform app (video)</td>
@@ -843,11 +843,11 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting an iOS app to a Universal Windows Platform app</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a></td>
+        <td><a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a></td>
     </tr>
     <tr>
         <td>Porting a Silverlight app to a Universal Windows Platform app</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-root">Move from Windows Phone Silverlight to UWP</a></td>
+        <td><a href="/windows/uwp/porting/wpsl-to-uwp-root">Move from Windows Phone Silverlight to UWP</a></td>
     </tr>
     <tr>
         <td>Porting from XAML or Silverlight to a Universal Windows Platform app (video)</td>
@@ -863,7 +863,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting from Direct3D 11 to Direct3D 12</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Porting from Direct3D 11 to Direct3D 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Porting from Direct3D 11 to Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Porting from OpenGL ES to Direct3D 11</td>
@@ -875,7 +875,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Classic Windows API equivalents in the UWP</td>
-        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
+        <td><a href="/uwp/win32-and-com/win32-and-com-for-uwp-apps">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
     </tr>
 </table>
 
@@ -896,11 +896,11 @@ The following are excellent guides that discuss the Universal Windows Platform a
     </colgroup>
     <tr>
         <td>Introduction to Universal Windows Platform apps</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">What's a Universal Windows Platform app?</a></td>
+        <td><a href="/windows/uwp/get-started/whats-a-uwp">What's a Universal Windows Platform app?</a></td>
     </tr>
     <tr>
         <td>Overview of the UWP</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Guide to UWP apps</a></td>
+        <td><a href="/windows/uwp/get-started/universal-application-platform-guide">Guide to UWP apps</a></td>
     </tr>
 </table>
  
@@ -919,7 +919,7 @@ Getting set up and ready to develop a Universal Windows Platform app is quick an
     </tr>
     <tr>
         <td>Getting set up for UWP development</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/get-set-up">Get set up</a></td>
+        <td><a href="/windows/uwp/get-started/get-set-up">Get set up</a></td>
     </tr>
 </table>
 
@@ -953,7 +953,7 @@ If you're an "absolute beginner" to UWP programming, and are considering using X
     </tr>
     <tr>
         <td>Overview of network programming in the UWP</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/networking/index">Networking and web services</a></td>
+        <td><a href="/windows/uwp/networking/index">Networking and web services</a></td>
     </tr>
     <tr>
         <td>Using Windows.Web.HTTP and Windows.Networking.Sockets in games</td>
@@ -961,7 +961,7 @@ If you're an "absolute beginner" to UWP programming, and are considering using X
     </tr>
     <tr>
         <td>Asynchronous programming concepts in the UWP</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchronous programming</a></td>
+        <td><a href="/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchronous programming</a></td>
     </tr>
 </table>
 
@@ -976,19 +976,19 @@ These are some links to help you move your Windows desktop game to UWP.
     </colgroup>
     <tr>
         <td>Use existing C++ code for UWP game development</td>
-        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">How to: Use existing C++ code in a UWP app</a></td>
+        <td><a href="/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">How to: Use existing C++ code in a UWP app</a></td>
     </tr>
     <tr>
         <td>Windows Runtime APIs for Win32 and COM APIs</td>
-        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Win32 and COM APIs for UWP apps</a></td>
+        <td><a href="/uwp/win32-and-com/win32-and-com-for-uwp-apps">Win32 and COM APIs for UWP apps</a></td>
     </tr>
     <tr>
         <td>Unsupported CRT functions in UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">CRT functions not supported in Universal Windows Platform apps</a></td>
+        <td><a href="/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">CRT functions not supported in Universal Windows Platform apps</a></td>
     </tr>
     <tr>
         <td>Alternatives for Windows APIs</td>
-        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/alternatives-to-windows-apis-uwp">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
+        <td><a href="/uwp/win32-and-com/alternatives-to-windows-apis-uwp">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
     </tr>
 </table>
  
@@ -1003,11 +1003,11 @@ Process lifetime management, or app lifecyle, describes the various activation s
     </colgroup>
     <tr>
         <td>Handling app lifecyle transitions</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">App lifecycle</a></td>
+        <td><a href="/windows/uwp/launch-resume/app-lifecycle">App lifecycle</a></td>
     </tr>
     <tr>
         <td>Using Microsoft Visual Studio to trigger app transitions</td>
-        <td><a href="https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">How to trigger suspend, resume, and background events for UWP apps in Visual Studio</a></td>
+        <td><a href="/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">How to trigger suspend, resume, and background events for UWP apps in Visual Studio</a></td>
     </tr>
 </table>
  
@@ -1030,11 +1030,11 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </tr>
     <tr>
         <td>Designing for app lifecycle states</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/index">UX guidelines for launch, suspend, and resume</a></td>
+        <td><a href="/windows/uwp/launch-resume/index">UX guidelines for launch, suspend, and resume</a></td>
     </tr>
     <tr>
         <td>Design your UWP app for Xbox One and television screens</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Designing for Xbox and TV</a></td>
+        <td><a href="/windows/uwp/design/devices/designing-for-tv">Designing for Xbox and TV</a></td>
     </tr>
     <tr>
         <td>Targeting multiple device form factors (video)</td>
@@ -1098,11 +1098,11 @@ Guides and references for implementing audio in games using XAudio2, XAPO, and W
     </colgroup>
     <tr>
         <td>XAudio2 APIs</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">Programming guide and API reference for XAudio2</a></td>
+        <td><a href="/windows/desktop/xaudio2/xaudio2-apis-portal">Programming guide and API reference for XAudio2</a></td>
     </tr>
     <tr>
         <td>Create cross-platform audio processing objects</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xapo-overview">XAPO Overview</a></td>
+        <td><a href="/windows/desktop/xaudio2/xapo-overview">XAPO Overview</a></td>
     </tr>
     <tr>
         <td>Intro to audio concepts</td>
@@ -1110,7 +1110,7 @@ Guides and references for implementing audio in games using XAudio2, XAPO, and W
     </tr>
     <tr>
         <td>Windows Sonic overview</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/CoreAudio/spatial-sound">Spatial sound</a></td>
+        <td><a href="/windows/desktop/CoreAudio/spatial-sound">Spatial sound</a></td>
     </tr>
     <tr>
         <td>Windows Sonic spatial sound samples</td>
@@ -1149,11 +1149,11 @@ Guides and references for DirectX game development.
     </tr>
     <tr>
         <td>DirectX overviews and reference</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
+        <td><a href="/windows/desktop/directx">DirectX Graphics and Gaming</a></td>
     </tr>
     <tr>
         <td>Direct3D 12 programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Graphics</a></td>
+        <td><a href="/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Graphics</a></td>
     </tr>
     <tr>
         <td>DirectX 12 fundamentals (video)</td>
@@ -1172,27 +1172,27 @@ Learn what changed in Direct3D 12 and how to start programming using Direct3D 12
     </colgroup>
     <tr>
         <td>Set up programming environment</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-environment-set-up">Direct3D 12 programming environment setup</a></td>
+        <td><a href="/windows/desktop/direct3d12/directx-12-programming-environment-set-up">Direct3D 12 programming environment setup</a></td>
     </tr>
     <tr>
         <td>How to create a basic component</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">Creating a basic Direct3D 12 component</a></td>
+        <td><a href="/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">Creating a basic Direct3D 12 component</a></td>
     </tr>
     <tr>
         <td>Changes in Direct3D 12</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/important-changes-from-directx-11-to-directx-12">Important changes migrating from Direct3D 11 to Direct3D 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/important-changes-from-directx-11-to-directx-12">Important changes migrating from Direct3D 11 to Direct3D 12</a></td>
     </tr>
     <tr>
         <td>How to port from Direct3D 11 to Direct3D 12</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Porting from Direct3D 11 to Direct3D 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Porting from Direct3D 11 to Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Resource binding concepts (covering descriptor, descriptor table, descriptor heap, and root signature) </td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">Resource binding in Direct3D 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/resource-binding">Resource binding in Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Managing memory</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">Memory management in Direct3D 12</a></td>
+        <td><a href="/windows/desktop/direct3d12/memory-management">Memory management in Direct3D 12</a></td>
     </tr>
 </table>
  
@@ -1277,7 +1277,7 @@ A tile is your game's representation on the Start Menu. Tiles and notifications 
     </colgroup>
     <tr>
         <td>Developing tiles and badges</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications">Tiles, badges, and notifications</a></td>
+        <td><a href="/windows/uwp/controls-and-patterns/tiles-badges-notifications">Tiles, badges, and notifications</a></td>
     </tr>
     <tr>
         <td>Sample illustrating live tiles and notifications</td>
@@ -1285,11 +1285,11 @@ A tile is your game's representation on the Start Menu. Tiles and notifications 
     </tr>
     <tr>
         <td>Adaptive tile templates (blog post)</td>
-        <td><a href="https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/06/30/adaptive-tile-templates-schema-and-documentation/">Adaptive Tile Templates - Schema and Documentation</a></td>
+        <td><a href="/archive/blogs/tiles_and_toasts/adaptive-tile-templates-schema-and-documentation">Adaptive Tile Templates - Schema and Documentation</a></td>
     </tr>
     <tr>
         <td>Designing tiles and badges</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles">Guidelines for tiles and badges</a></td>
+        <td><a href="/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles">Guidelines for tiles and badges</a></td>
     </tr>
     <tr>
         <td>Windows 10 app for interactively developing live tile templates</td>
@@ -1316,19 +1316,19 @@ An add-on (in-app product) is a supplementary item that players can purchase in-
     </colgroup>
     <tr>
         <td>Durable add-ons</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases">Enable in-app product purchases</a></td>
+        <td><a href="/windows/uwp/monetize/enable-in-app-product-purchases">Enable in-app product purchases</a></td>
     </tr>
     <tr>
         <td>Consumable add-ons</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-in-app-product-purchases">Enable consumable in-app product purchases</a></td>
+        <td><a href="/windows/uwp/monetize/enable-consumable-in-app-product-purchases">Enable consumable in-app product purchases</a></td>
     </tr>
     <tr>
         <td>Add-on details and submission</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-submissions">Add-on submissions</a></td>
+        <td><a href="/windows/uwp/publish/iap-submissions">Add-on submissions</a></td>
     </tr>
     <tr>
         <td>Monitor add-on sales and demographics for your game</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
+        <td><a href="/windows/uwp/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
     </tr>
 </table>
  
@@ -1349,11 +1349,11 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </tr>
     <tr>
         <td>Get Xbox console type using Gaming Device Information</td>
-        <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal">Gaming Device Information</a></td>
+        <td><a href="/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal">Gaming Device Information</a></td>
     </tr>
     <tr>
         <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
-        <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal">Game Mode</a></td>
+        <td><a href="/previous-versions/windows/desktop/gamemode/game-mode-portal">Game Mode</a></td>
     </tr>
     <tr>
         <td>Get Windows Performance Toolkit (WPT) from Windows 10 SDK</td>
@@ -1361,7 +1361,7 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </tr>
     <tr>
         <td>Get Windows Performance Toolkit (WPT) from Windows ADK</td>
-        <td><a href="https://msdn.microsoft.com/windows/hardware/dn913721.aspx">Windows ADK</a></td>
+        <td><a href="/windows-hardware/get-started/adk-install">Windows ADK</a></td>
     </tr>
     <tr>
         <td>Troubleshoot unresponsible UI using Windows Performance Analyzer (video)</td>
@@ -1373,7 +1373,7 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </tr>
     <tr>
         <td>Get ProcDump</td>
-        <td><a href="https://technet.microsoft.com/sysinternals/dd996900">ProcDump</a></td>
+        <td><a href="/sysinternals/downloads/procdump">ProcDump</a></td>
     </tr>
     <tr>
         <td>Learn to use ProcDump (video)</td>
@@ -1412,7 +1412,7 @@ Some portions of DirectX development can be nuanced and complex. When you get to
     </tr>
     <tr>
         <td>Direct3D 12 programming guide</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Programming Guide</a></td>
+        <td><a href="/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 Programming Guide</a></td>
     </tr>
     <tr>
         <td>Combining DirectX and XAML</td>
@@ -1454,7 +1454,7 @@ Develop world-ready games for the Windows platform and learn about the internati
     </colgroup>
     <tr>
         <td>Preparing your game for the global market</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal">Guidelines when developing for a global audience</a></td>
+        <td><a href="/windows/uwp/globalizing/globalizing-portal">Guidelines when developing for a global audience</a></td>
     </tr>
     <tr>
         <td>Bridging languages, cultures, and technology</td>
@@ -1485,7 +1485,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">Manage account users</a></td>
+        <td><a href="/windows/uwp/publish/manage-account-users">Manage account users</a></td>
     </tr>   
     <tr>
         <td>Rating your game (blog post)</td>
@@ -1506,11 +1506,11 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Divide and group content to enable streaming install</td>
-        <td><a href="https://docs.microsoft.com/windows/msix/package/streaming-install">UWP App Streaming install</a></td>
+        <td><a href="/windows/msix/package/streaming-install">UWP App Streaming install</a></td>
     </tr>
     <tr>
         <td>Create optional packages like DLC game content</td>
-        <td><a href="https://docs.microsoft.com/windows/msix/package/optional-packages">Optional packages and related set authoring</a></td>
+        <td><a href="/windows/msix/package/optional-packages">Optional packages and related set authoring</a></td>
     </tr>
     <tr>
         <td>Package your UWP game</td>
@@ -1526,15 +1526,15 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Creating app packages and app package bundles using MakeAppx</td>
-        <td><a href="https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
+        <td><a href="/windows/msix/package/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
     </tr>
     <tr>
         <td>Signing your files digitally using SignTool</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/signtool">Sign files and verify signatures in files using SignTool</a></td>
+        <td><a href="/windows/desktop/SecCrypto/signtool">Sign files and verify signatures in files using SignTool</a></td>
     </tr>    
     <tr>
         <td>Uploading and versioning your game</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Upload app packages</a></td>
+        <td><a href="/windows/uwp/publish/upload-app-packages">Upload app packages</a></td>
     </tr>
 </table>
 
@@ -1549,15 +1549,15 @@ Don't let certification issues delay your game's release. Here are policies and 
     </colgroup>
     <tr>
         <td>Microsoft Store App Developer Agreement</td>
-        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a></td>
+        <td><a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a></td>
     </tr>
     <tr>
         <td>Policies for publishing apps in the Microsoft Store</td>
-        <td><a href="https://docs.microsoft.com/legal/windows/agreements/store-policies">Microsoft Store Policies</a></td>
+        <td><a href="/legal/windows/agreements/store-policies">Microsoft Store Policies</a></td>
     </tr>
     <tr>
         <td>How to avoid some common app certification issues</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/avoid-common-certification-failures">Avoid common certification failures</a></td>
+        <td><a href="/windows/uwp/publish/avoid-common-certification-failures">Avoid common certification failures</a></td>
     </tr>
 </table>
 
@@ -1572,7 +1572,7 @@ The store manifest (StoreManifest.xml) is an optional configuration file that ca
     </colgroup>
     <tr>
         <td>Store manifest schema</td>
-        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">StoreManifest schema (Windows 10)</a></td>
+        <td><a href="/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">StoreManifest schema (Windows 10)</a></td>
     </tr>
 </table>
 
@@ -1589,7 +1589,7 @@ After you've finished development and shipped your game, it's not "game over". Y
     </colgroup>
     <tr>
         <td>Partner Center analytics</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyze app performance</a></td>
+        <td><a href="/windows/uwp/publish/analytics">Analyze app performance</a></td>
     </tr>
     <tr>
         <td>Learn how your customers are engaging with the Xbox features in your game</td>
@@ -1597,7 +1597,7 @@ After you've finished development and shipped your game, it's not "game over". Y
     </tr>
     <tr>
         <td>Responding to customer reviews</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/respond-to-customer-reviews">Respond to customer reviews</a></td>
+        <td><a href="/windows/uwp/publish/respond-to-customer-reviews">Respond to customer reviews</a></td>
     </tr>
     <tr>
         <td>Ways to promote your game</td>
@@ -1616,11 +1616,11 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </colgroup>
     <tr>
         <td>Application performance and usage analytics</td>
-        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-get-started/">Visual Studio Application Insights</a></td>
+        <td><a href="/azure/azure-monitor/app/app-insights-overview">Visual Studio Application Insights</a></td>
     </tr>
     <tr>
         <td>Enable Application Insights in Windows apps</td>
-        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/">Application Insights for Windows Phone and Store apps</a></td>
+        <td><a href="/azure/azure-monitor/overview">Application Insights for Windows Phone and Store apps</a></td>
     </tr>
 </table>
 
@@ -1668,11 +1668,11 @@ To update your published game, submit a new app package with a higher version nu
     </colgroup>
     <tr>
         <td>Updating and versioning your game</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Package version numbering</a></td>
+        <td><a href="/windows/uwp/publish/package-version-numbering">Package version numbering</a></td>
     </tr>
     <tr>
         <td>Game package management guidance</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Guidance for app package management</a></td>
+        <td><a href="/windows/uwp/publish/package-version-numbering">Guidance for app package management</a></td>
     </tr>
 </table>
 
@@ -1690,19 +1690,19 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Xbox Live overview</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Xbox Live developer guide</a></td>
+        <td><a href="/gaming/xbox-live/index.md">Xbox Live developer guide</a></td>
     </tr>
     <tr>
         <td>Understand which features are available depending on program</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Developer program overview: Feature table</a></td>
+        <td><a href="/gaming/xbox-live/developer-program-overview.md#feature-table">Developer program overview: Feature table</a></td>
     </tr>
     <tr>
         <td>Links to useful resources for developing Xbox Live games</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Xbox Live resources</a></td>
+        <td><a href="/gaming/xbox-live/xbox-live-resources.md">Xbox Live resources</a></td>
     </tr>
     <tr>
         <td>Learn how to get info from Xbox Live services</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Introduction to Xbox Live APIs</a></td>
+        <td><a href="/gaming/xbox-live/introduction-to-xbox-live-apis.md">Introduction to Xbox Live APIs</a></td>
     </tr>
 </table>
 
@@ -1715,23 +1715,23 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Overview</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Get started with the Xbox Live Creators Program</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Get started with the Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your game</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Step by step guide to integrate Xbox Live Creators Program</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Step by step guide to integrate Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your UWP game created using Unity</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Get started developing an Xbox Live Creators Program title with the Unity game engine</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Get started developing an Xbox Live Creators Program title with the Unity game engine</a></td>
     </tr>
     <tr>
         <td>Set up your development sandbox</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live sandboxes introduction</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live sandboxes introduction</a></td>
     </tr>
     <tr>
         <td>Set up accounts for testing</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Authorize Xbox Live accounts in your test environment</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Authorize Xbox Live accounts in your test environment</a></td>
     </tr>
     <tr>
         <td>Samples for Xbox Live Creators Program</td>
@@ -1752,19 +1752,19 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Overview</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Get started with Xbox Live as a managed partner or an ID developer</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Get started with Xbox Live as a managed partner or an ID developer</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your game</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Step by step guide to integrate Xbox Live for managed partners and ID members</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Step by step guide to integrate Xbox Live for managed partners and ID members</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your UWP game created using Unity</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners</a></td>
     </tr>
     <tr>
         <td>Set up your development sandbox</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Advanced Xbox Live sandboxes</a></td>
+        <td><a href="/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Advanced Xbox Live sandboxes</a></td>
     </tr>
     <tr>
         <td>Requirements for games that use Xbox Live (GDN)</td>
@@ -1801,7 +1801,7 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Game development videos</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/game-development-videos">Videos from major conferences like GDC and //build</a></td>
+        <td><a href="/windows/uwp/gaming/game-development-videos">Videos from major conferences like GDC and //build</a></td>
     </tr>
     <tr>
         <td>Indie game development (video)</td>

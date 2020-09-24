@@ -406,7 +406,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</p>
 </td><td>
-<p>For more info, see <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Responsive design 101 for UWP apps</a> and <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Guidelines for app resources</a>.</p>
+<p>For more info, see <a href="/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Responsive design 101 for UWP apps</a> and <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Guidelines for app resources</a>.</p>
 </td></tr>
 <tr><td>
 <p>The package is missing a "resources.pri" file.</p>
@@ -428,7 +428,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters.</p>
 </td><td>
-<p>Refer to the <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
+<p>Refer to the <a href="/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
 <p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
 </td></tr>
 <tr><td>
@@ -441,12 +441,12 @@ Use the following table as guidance.
 <tr><td>
 <p>The string must be non-empty (greater than zero in length)</p>
 </td><td>
-<p>For more info, see <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
+<p>For more info, see <a href="/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
 </td></tr>
 <tr><td>
 <p>There is no default resource specified in the "resources.pri" file.</p>
 </td><td>
-<p>For more info, see <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Guidelines for app resources</a>.</p>
+<p>For more info, see <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Guidelines for app resources</a>.</p>
 <p>In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</p>
 </td></tr>
 <tr><td>
