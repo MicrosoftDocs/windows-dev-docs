@@ -1,7 +1,7 @@
 ---
 title: Bluetooth developer FAQ
 description: This article contains answers to commonly asked questions related to the UWP bluetooth APIs.
-ms.date: 02/08/2017
+ms.date: 09/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
@@ -70,10 +70,12 @@ No. This is a hardware-dependent feature, but a method is provided, BluetoothAda
 
 ## Can I access these APIs from Win32?
 
-Yes, all these APIs should work. This blog details the way to call [Windows APIs from Desktop applications](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/). 
-## Is this functionality supposed to exist on *-Insert SKU here-*?
+Yes, all these APIs should work. This blog details the way to call [Windows APIs from Desktop applications](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
-**Bluetooth LE**: Yes, all functionality is in OneCore and should be available on most recent devices w/ a functioning Bluetooth LE stack. 
-> Caveat: Peripheral Role is hardware-dependent and some Windows Server Editions don't support Bluetooth. 
+## Is this functionality supposed to exist on a specific SKU?
+
+**Bluetooth LE**: Yes, all functionality is in OneCore and should be available on most recent devices w/ a functioning Bluetooth LE stack.
+
+> Caveat: Peripheral Role is hardware-dependent and some Windows Server Editions don't support Bluetooth.
 
 **Bluetooth BR/EDR (Classic)**: Some variations exist but mostly, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile documents for [PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)
