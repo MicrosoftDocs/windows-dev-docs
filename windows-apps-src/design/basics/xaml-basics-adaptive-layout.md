@@ -159,17 +159,17 @@ Add the following code to the root element of the page, `RelativePanel`.
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
         </VisualState>
 
@@ -179,7 +179,7 @@ Add the following code to the root element of the page, `RelativePanel`.
 
 ### Create StateTriggers to apply the visual state
 
-Next, create the `StateTriggers` that correspond to each snap point. In MainPage.xaml, add the following code to the `VisualStateManager` that you created in Part 2.
+Next, create the `StateTriggers` that correspond to each snap point. In MainPage.xaml, add the following code to each `VisualState`.
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -187,7 +187,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
@@ -197,7 +197,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
@@ -207,7 +207,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
