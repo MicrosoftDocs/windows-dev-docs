@@ -451,7 +451,7 @@ First, however, you need to attach the `DetailPage` so that the app navigates to
 
 ### Attach the DetailPage
 
-1. In MainPage.xaml, find the `GridView` named `ImageGridView` and add an `ItemClick` value.
+1. In MainPage.xaml, find the `GridView` named `ImageGridView`. To make the items clickable, set `IsItemClickEnabled` to `True` and add an `ItemClick` event handler.
 
     > [!TIP]
     > If you type in the change below instead of copy/pasting, you'll see an IntelliSense pop-up that says "\<New Event Handler\>". If you press the Tab key, it will fill in the value with a default method handler name, and automatically stub out the method shown in the next step. You can then press F12 to navigate to the method in the code-behind.
@@ -459,14 +459,15 @@ First, however, you need to attach the `DetailPage` so that the app navigates to
     **Before:**
 
     ```xaml
-    <GridView x:Name="ImageGridView"
+    <GridView x:Name="ImageGridView">
     ```
 
     **After:**
 
     ```xaml
     <GridView x:Name="ImageGridView"
-              ItemClick="ImageGridView_ItemClick"
+              IsItemClickEnabled="True"
+              ItemClick="ImageGridView_ItemClick">
     ```
 
     > [!NOTE]
