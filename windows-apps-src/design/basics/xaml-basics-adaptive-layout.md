@@ -159,17 +159,17 @@ Add the following code to the root element of the page, `RelativePanel`.
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
         </VisualState>
 
@@ -179,7 +179,7 @@ Add the following code to the root element of the page, `RelativePanel`.
 
 ### Create StateTriggers to apply the visual state
 
-Next, create the `StateTriggers` that correspond to each snap point. In MainPage.xaml, add the following code to the `VisualStateManager` that you created in Part 2.
+Next, create the `StateTriggers` that correspond to each snap point. In MainPage.xaml, add the following code to each `VisualState`.
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -187,7 +187,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
@@ -197,7 +197,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
@@ -207,7 +207,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
@@ -260,9 +260,9 @@ Run the app. When the app loads, try changing the size of the window. When you s
 
 Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md) if you'd like to test a Surface Hub layout.
 
-If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](../layout/layouts-with-xaml.md).
+If you get stuck, you can find more guidance in these sections of [Responsive layouts with XAML](../layout/layouts-with-xaml.md).
 
-+ [Visual states and state triggers](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [Visual states and state triggers](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
 + [Tailored layouts](../layout/layouts-with-xaml.md#tailored-layouts)
 
 Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
