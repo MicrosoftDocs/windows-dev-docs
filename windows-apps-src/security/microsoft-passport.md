@@ -79,8 +79,6 @@ Now that we have a basic understanding of how Windows Hello works, let us take a
 
 There are different scenarios we can implement using Windows Hello. For example, just logging on to your app on a device. The other common scenario would be to authenticate against a service. Instead of using a logon name and password, you will be using Windows Hello. In the following chapters, we will discuss implementing a couple of different scenarios, including how to authenticate against your services with Windows Hello, and how to convert from an existing username/password system to a Windows Hello system.
 
-Finally, be aware that the Windows Hello APIs require the use of the Windows 10 SDK that matches the operating system the app will be used on. In other words, the 10.0.10240 Windows SDK must be used for apps that will be deployed to Windows 10 and the 10.0.10586 must be used for apps that will be deployed to Windows 10, version 1511.
-
 ## 3 Implementing Windows Hello
 
 In this chapter, we begin with a greenfield scenario with no existing authentication system, and we explain how to implement Windows Hello.
