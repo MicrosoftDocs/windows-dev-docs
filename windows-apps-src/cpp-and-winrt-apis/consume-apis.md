@@ -181,7 +181,7 @@ runtimeclass Gift
 }
 ```
 
-Let's say that we want to construct a **Gift** that isn't inside a box (a **Gift** that's constructed with an uninitialized **GiftBox**). First, let's look at the *wrong* way to do that. We know that there'a **Gift** constructor that takes a **GiftBox**. But if we're tempted to pass a null **GiftBox** (invoking the **Gift** constructor via uniform initialization as we do below), then we *won't* get the result we want.
+Let's say that we want to construct a **Gift** that isn't inside a box (a **Gift** that's constructed with an uninitialized **GiftBox**). First, let's look at the *wrong* way to do that. We know that there'a **Gift** constructor that takes a **GiftBox**. But if we're tempted to pass a null **GiftBox** (invoking the **Gift** constructor via uniform initialization, as we do below), then we *won't* get the result we want.
 
 ```cppwinrt
 // These are *not* what you intended. Doing it in one of these two ways
@@ -278,13 +278,26 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) and [Author events in C++/WinRT](./author-events.md).
 
 ## If the API is implemented in the consuming project
-A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
+The code example in this section is taken from the topic [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). See that topic for more details, code, and a walkthrough of consuming a runtime class that's implemented in the same project that consumes it.
 
-For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its **std::nullptr_t** constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML. For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but then you have a choice between the C++/WinRT version 1.0 or version 2.0 ways of constructing the instance of the runtime class. The version 1.0 method uses [**winrt::make**](/uwp/cpp-ref-for-winrt/make); the version 2.0 method is known as *uniform construction*. Let's look at each in turn.
 
-You'll need a **Blank App (C++/WinRT)** project for this code example.
+### Constructing by using **winrt::make**
+Let's start with the default (C++/WinRT version 1.0) method, because it's a good idea to be at least familiar with that pattern. You construct the projected type via its **std::nullptr_t** constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+
+See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -292,10 +305,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -307,7 +319,45 @@ MainPage::MainPage()
 }
 ```
 
-For more details, code, and a walkthrough of consuming a runtime class implemented in the consuming project, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+### Uniform construction
+With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)).
+
+See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
+
+To use uniform construction instead of [**winrt::make**](/uwp/cpp-ref-for-winrt/make), you'll need an activation factory. A good way to generate one is to add a constructor to your IDL.
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+Then, in `MainPage.h` declare and initialize *m_mainViewModel* in just one step, as shown below.
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+And then, in the **MainPage** constructor in `MainPage.cpp`, there's no need for the code `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`.
+
+For more info about uniform construction, and code examples, see [Opt in to uniform construction, and direct implementation access](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ## Instantiating and returning projected types and interfaces
 Here's an example of what projected types and interfaces might look like in your consuming project. Remember that a projected type (such as the one in this example), is tool-generated, and is not something that you'd author yourself.

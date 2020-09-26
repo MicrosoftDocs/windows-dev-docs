@@ -1,7 +1,7 @@
 ---
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.date: 06/21/2019
+ms.date: 09/25/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
 ms.localizationpriority: medium
@@ -16,9 +16,9 @@ A property that can be effectively bound to a XAML control is known as an *obser
 
 ## What does *observable* mean for a property?
 
-Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** chooses to raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
+Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** raises the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then that means that **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
 
-A XAML text element, or control, can bind to, and handle, these events by retrieving the updated value(s) and then updating itself to show the new value.
+A XAML text element, or control, can bind to, and handle, these events. Such an element or control handles the event by retrieving the updated value(s), and then updating itself to show the new value.
 
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -29,7 +29,7 @@ Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App
 
 We're going to author a new class to represent a book that has an observable title property. We're authoring and consuming the class within the same compilation unit. But we want to be able to bind to this class from XAML, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
-The first step in authoring a new runtime class is to add a new **Midl File (.idl)** item to the project. Name it `BookSku.idl`. Delete the default contents of `BookSku.idl`, and paste in this runtime class declaration.
+The first step in authoring a new runtime class is to add a new **Midl File (.idl)** item to the project. Name the new item `BookSku.idl`. Delete the default contents of `BookSku.idl`, and paste in this runtime class declaration.
 
 ```idl
 // BookSku.idl
@@ -37,6 +37,7 @@ namespace Bookstore
 {
     runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
     {
+        BookSku(String title);
         String Title;
     }
 }
@@ -49,15 +50,17 @@ namespace Bookstore
 >
 > A view model is an abstraction of a view, and so it's bound directly to the view (the XAML markup). A data model is an abstraction of data, and it's consumed only from your view models, and not bound directly to XAML. So you can declare your data models not as runtime classes, but as C++ structs or classes. They don't need to be declared in MIDL, and you're free to use whatever inheritance hierarchy you like.
 
-Save the file and build the project. During the build process, the `midl.exe` tool is run to create a Windows Runtime metadata file (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) describing the runtime class. Then, the `cppwinrt.exe` tool is run to generate source code files to support you in authoring and consuming your runtime class. These files include stubs to get you started implementing the **BookSku** runtime class that you declared in your IDL. Those stubs are `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` and `BookSku.cpp`.
+Save the file, and build the project. The build won't entirely succeed yet, but it will do some necessary things for us. Specifically, during the build process the `midl.exe` tool is run to create a Windows Runtime metadata file (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) describing the runtime class. Then, the `cppwinrt.exe` tool is run to generate source code files to support you in authoring and consuming your runtime class. These files include stubs to get you started implementing the **BookSku** runtime class that you declared in your IDL. Those stubs are `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` and `BookSku.cpp`.
 
 Right-click the project node and click **Open Folder in File Explorer**. This opens the project folder in File Explorer. There, copy the stub files `BookSku.h` and `BookSku.cpp` from the `\Bookstore\Bookstore\Generated Files\sources\` folder and into the project folder, which is `\Bookstore\Bookstore\`. In **Solution Explorer**, with the project node selected, make sure **Show All Files** is toggled on. Right-click the stub files that you copied, and click **Include In Project**.
 
 ## Implement **BookSku**
-Now let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. In `BookSku.h`, make these changes.
+Now let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. First, you'll see a `static_assert` at the top of `BookSku.h` and `BookSku.cpp`, which you'll need to remove.
 
-- Add a constructor that takes a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) value. This value is the title string.
-- Add a private member to store the title string.
+Next, in `BookSku.h`, make these changes.
+
+- On the default constructor, change `= default` to `= delete`. That's because we don't want a default constructor.
+- Add a private member to store the title string. Note that we have a constructor that takes a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) value. That value is the title string.
 - Add another private member for the event that we'll raise when the title changes.
 
 After making these changes, your `BookSku.h` will look like this.
@@ -82,6 +85,12 @@ namespace winrt::Bookstore::implementation
     private:
         winrt::hstring m_title;
         winrt::event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+    };
+}
+namespace winrt::Bookstore::factory_implementation
+{
+    struct BookSku : BookSkuT<BookSku, implementation::BookSku>
+    {
     };
 }
 ```
@@ -128,6 +137,8 @@ namespace winrt::Bookstore::implementation
 
 In the **Title** mutator function, we check whether a value is being set that's different from the current value. And, if so, then we update the title and also raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event with an argument equal to the name of the property that has changed. This is so that the user-interface (UI) will know which property's value to re-query.
 
+The project will build again now, if you want to check that.
+
 ## Declare and implement **BookstoreViewModel**
 Our main XAML page is going to bind to a main view model. And that view model is going to have several properties, including one of type **BookSku**. In this step, we'll declare and implement our main view model runtime class.
 
@@ -141,12 +152,18 @@ namespace Bookstore
 {
     runtimeclass BookstoreViewModel
     {
+        BookstoreViewModel();
         BookSku BookSku{ get; };
     }
 }
 ```
 
-Save and build. Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files\sources` folder into the project folder, and include them in the project. Open those files and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type for **BookSku** (which is **winrt::Bookstore::implementation::BookSku**). And we're removing `= default` from the default constructor.
+Save and build (the build won't entirely succeed yet, but the reason we're building is to generate stub files again).
+
+Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files\sources` folder into the project folder, and include them in the project. Open those files (removing the `static_assert` again), and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type for **BookSku** (which is **winrt::Bookstore::implementation::BookSku**). And we're removing `= default` from the default constructor.
+
+> [!NOTE]
+> In the listings below for `BookstoreViewModel.h` and `BookstoreViewModel.cpp`, the code illustrates the default way of constructing the *m_bookSku* data member. That's the method that dates back to the first release of C++/WinRT, and it's a good idea to be at least familiar with the pattern. With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)). Later in this topic, we'll show an example of uniform construction.
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -164,6 +181,12 @@ namespace winrt::Bookstore::implementation
 
     private:
         Bookstore::BookSku m_bookSku{ nullptr };
+    };
+}
+namespace winrt::Bookstore::factory_implementation
+{
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel, implementation::BookstoreViewModel>
+    {
     };
 }
 ```
@@ -191,8 +214,14 @@ namespace winrt::Bookstore::implementation
 > [!NOTE]
 > The type of `m_bookSku` is the projected type (**winrt::Bookstore::BookSku**), and the template parameter that you use with [**winrt::make**](/uwp/cpp-ref-for-winrt/make) is the implementation type (**winrt::Bookstore::implementation::BookSku**). Even so, **make** returns an instance of the projected type.
 
+The project will build again now.
+
 ## Add a property of type **BookstoreViewModel** to **MainPage**
-Open `MainPage.idl`, which declares the runtime class that represents our main UI page. Add an import statement to import `BookstoreViewModel.idl`, and add a read-only property named MainViewModel of type **BookstoreViewModel**. Also remove the **MyProperty** property. Also note the `import` directive in the listing below.
+Open `MainPage.idl`, which declares the runtime class that represents our main UI page.
+
+- Add an `import` directive to import `BookstoreViewModel.idl`.
+- Add a read-only property named **MainViewModel**, of type **BookstoreViewModel**.
+- Remove the **MyProperty** property.
 
 ```idl
 // MainPage.idl
@@ -208,13 +237,21 @@ namespace Bookstore
 }
 ```
 
-Save the file. The project won't build to completion at the moment, but building now is a useful thing to do because it regenerates the source code files in which the **MainPage** runtime class is implemented (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`). So go ahead and build now. The build error you can expect to see at this stage is **'MainViewModel': is not a member of 'winrt::Bookstore::implementation::MainPage'**.
+Save the file. The project won't entirely succeed in building yet, but building now is a useful thing to do because it regenerates the source code files in which the **MainPage** runtime class is implemented (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`). So go ahead and build now. The build error you can expect to see at this stage is **'MainViewModel': is not a member of 'winrt::Bookstore::implementation::MainPage'**.
 
-If you omit the include of `BookstoreViewModel.idl` (see the listing of `MainPage.idl` above), then you'll see the error **expecting \< near "MainViewModel"**. Another tip is to make sure that you leave all types in the same namespace: the namespace that's shown in the code listings.
+If you omit the include of `BookstoreViewModel.idl` (see the listing of `MainPage.idl` above), then you'll see the error **expecting \< near "MainViewModel"**. Another tip is to make sure that you leave all types in the same namespace&mdash;the namespace that's shown in the code listings.
 
 To resolve the error that we expect to see, you'll now need to copy the accessor stubs for the **MainViewModel** property out of the generated files (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`) and into `\Bookstore\Bookstore\MainPage.h` and `MainPage.cpp`. The steps to do that are described next.
 
-In `\Bookstore\Bookstore\MainPage.h`, include `BookstoreViewModel.h`, which declares the implementation type for **BookstoreViewModel** (which is **winrt::Bookstore::implementation::BookstoreViewModel**). Add a private member to store the view model. Note that the property accessor function (and the member m_mainViewModel) is implemented in terms of the projected type for **BookstoreViewModel** (which is **Bookstore::BookstoreViewModel**). The implementation type is in the same project (compilation unit) as the application, so we construct m_mainViewModel via the constructor overload that takes **std::nullptr_t**. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.h`, perform these steps.
+
+- Include `BookstoreViewModel.h`, which declares the implementation type for **BookstoreViewModel** (which is **winrt::Bookstore::implementation::BookstoreViewModel**).
+- Add a private member to store the view model. Note that the property accessor function (and the member *m_mainViewModel*) is implemented in terms of the projected type for **BookstoreViewModel** (which is **Bookstore::BookstoreViewModel**).
+- The implementation type is in the same project (compilation unit) as the application, so we construct *m_mainViewModel* via the constructor overload that takes **std::nullptr_t**.
+- Remove the **MyProperty** property.
+
+> [!NOTE]
+> In the pair of listings below for `MainPage.h` and `MainPage.cpp`, the code illustrates the default way of constructing the *m_mainViewModel* data member. In the section that follows, we'll show a version that uses uniform construction instead.
 
 ```cppwinrt
 // MainPage.h
@@ -238,7 +275,12 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-In `\Bookstore\Bookstore\MainPage.cpp`, as shown in the listing below, make the following changes. Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the **BookstoreViewModel** implementation type) to assign a new instance of the projected **BookstoreViewModel** type to *m_mainViewModel*. As we saw above, the **BookstoreViewModel** constructor creates a new **BookSku** object as a private data member, setting its title initially to `L"Atticus"`. In the button's event handler (**ClickHandler**), update the book's title to its published title. And finally, implement the accessor for the **MainViewModel** property. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.cpp`, as shown in the listing below, make the following changes.
+
+- Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the **BookstoreViewModel** implementation type) to assign a new instance of the projected **BookstoreViewModel** type to *m_mainViewModel*. As we saw above, the **BookstoreViewModel** constructor creates a new **BookSku** object as a private data member, setting its title initially to `L"Atticus"`.
+- In the button's event handler (**ClickHandler**), update the book's title to its published title.
+- Implement the accessor for the **MainViewModel** property.
+- Remove the **MyProperty** property.
 
 ```cppwinrt
 // MainPage.cpp
@@ -268,6 +310,27 @@ namespace winrt::Bookstore::implementation
     }
 }
 ```
+
+### Uniform construction
+To use uniform construction instead of [**winrt::make**](/uwp/cpp-ref-for-winrt/make), in `MainPage.h` declare and initialize *m_mainViewModel* in just one step, as shown below.
+
+```cppwinrt
+// MainPage.h
+...
+#include "BookstoreViewModel.h"
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+private:
+    Bookstore::BookstoreViewModel m_mainViewModel;
+};
+...
+```
+
+And then, in the **MainPage** constructor in `MainPage.cpp`, there's no need for the code `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`.
+
+For more info about uniform construction, and code examples, see [Opt in to uniform construction, and direct implementation access](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ## Bind the button to the **Title** property
 Open `MainPage.xaml`, which contains the XAML markup for our main UI page. As shown in the listing below, remove the name from the button, and change its **Content** property value from a literal to a binding expression. Note the `Mode=OneWay` property on the binding expression (one-way from the view model to the UI). Without that property, the UI will not respond to property changed events.
