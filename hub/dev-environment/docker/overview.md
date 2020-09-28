@@ -18,7 +18,7 @@ ms.date: 09/24/2020
 
 :::row:::
     :::column:::
-       [![Docker Docs Icon](../images/docker-docs-icon.png)](https://docs.docker.com/docker-for-windows/install/)<br>
+       [![Docker Docs Icon](../../images/docker-docs-icon.png)](https://docs.docker.com/docker-for-windows/install/)<br>
         **[Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)**<br>
         Download Docker Desktop for Windows 10 and learn how to install, including system requirements, what's included in the installer, how to uninstall, differences between stable and edge versions, and  switching between Windows and Linux containers in these Docker for Windows docs.
     :::column-end:::
