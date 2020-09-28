@@ -28,12 +28,12 @@ ms.date: 09/24/2020
         Docker orientation and setup docs with step-by-step instructions on how to get started, including a video walk-through.
     :::column-end:::
     :::column:::
-       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)]../learn/modules/intro-to-docker-containers/)<br>
+       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/learn/modules/intro-to-docker-containers/)<br>
         **[MS Learn course: Introduction to Docker containers](/learn/modules/intro-to-docker-containers/)**<br>
         Microsoft Learn offers a free intro course on Docker containers, in addition to course covering how to [Build a containerized web application with Docker](/learn/modules/intro-to-containers/) and a [variety of courses on using Docker with Azure services](/learn/browse/?terms=docker).
     :::column-end:::
     :::column:::
-       [![Docker Desktop WSL2 menu screenshot](../../images/docker-wsl2.png)]((/wsl/tutorials/wsl-containers))<br>
+       [![Docker Desktop WSL2 menu screenshot](../../images/docker-wsl2.png)](/windows/wsl/tutorials/wsl-containers)<br>
         **[Get started with Docker remote containers on WSL 2](/windows/wsl/tutorials/wsl-containers)**<br>
         Learn how to set up Docker Desktop for Windows to use with a Linux command line (Ubuntu, Debian, SUSE, etc) using WSL 2 (Windows Subsystem for Linux, version 2).
     :::column-end:::
@@ -68,23 +68,23 @@ ms.date: 09/24/2020
 
 :::row:::
     :::column:::
-       [![.NET microservice guide cover](../../images/dotnet-microservice-guide.png)](../dotnet/architecture/microservices/)<br>
-        **[.NET Guide: Microservice apps and containers](../dotnet/architecture/microservices/)**<br>
-        An introductory guide to developing microservices-based apps and managing them using containers. Discusses architectural design and implementation approaches using .NET Core and Docker containers, including [Choosing between .NET Core and .NET Framework for Docker containers](../dotnet/architecture/microservices/net-core-net-framework-containers/).
+       [![.NET microservice guide cover](../../images/dotnet-microservice-guide.png)](/dotnet/architecture/microservices/)<br>
+        **[.NET Guide: Microservice apps and containers](/dotnet/architecture/microservices/)**<br>
+        An introductory guide to developing microservices-based apps and managing them using containers. Discusses architectural design and implementation approaches using .NET Core and Docker containers, including [Choosing between .NET Core and .NET Framework for Docker containers](/dotnet/architecture/microservices/net-core-net-framework-containers/).
     :::column-end:::
     :::column:::
-       [![Docker Infographic](../../images/dotnet-docker-infographic.png)](../dotnet/architecture/microservices/container-docker-introduction/docker-defined)<br>
-        **[What is Docker?](../python/index.yml)**<br>
-        Basic explanation of Docker containers, including [Comparing Docker containers with Virtual machines](../dotnet/architecture/microservices/container-docker-introduction/docker-defined#comparing-docker-containers-with-virtual-machines).
+       [![Docker Infographic](../../images/dotnet-docker-infographic.png)](/dotnet/architecture/microservices/container-docker-introduction/docker-defined)<br>
+        **[What is Docker?](/dotnet/architecture/microservices/container-docker-introduction/docker-defined)**<br>
+        Basic explanation of Docker containers, including [Comparing Docker containers with Virtual machines](/dotnet/architecture/microservices/container-docker-introduction/docker-defined#comparing-docker-containers-with-virtual-machines).
     :::column-end:::
     :::column:::
-       [![Docker Taxonomy infographic](../../images/taxonomy-of-docker-terms-and-concepts.png)](../dotnet/architecture/microservices/container-docker-introduction/docker-containers-images-registries)<br>
-        **[Docker containers, images, and registries](../dotnet/architecture/microservices/container-docker-introduction/docker-containers-images-registries)**<br>
+       [![Docker Taxonomy infographic](../../images/taxonomy-of-docker-terms-and-concepts.png)](/dotnet/architecture/microservices/container-docker-introduction/docker-containers-images-registries)<br>
+        **[Docker containers, images, and registries](/dotnet/architecture/microservices/container-docker-introduction/docker-containers-images-registries)**<br>
         A basic taxonomy of Docker terms and concepts explaining the difference between containers, images, and registries.
     :::column-end:::
     :::column:::
-       [![Inner-loop dev workflow with Docker infographic](../../images/dotnet-docker-workflow.png)](../dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow)<br>
-        **[Development workflow for Docker apps](../dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow)**<br>
+       [![Inner-loop dev workflow with Docker infographic](../../images/dotnet-docker-workflow.png)](/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow)<br>
+        **[Development workflow for Docker apps](/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow)**<br>
         Describes the inner-loop development workflow for Docker container-based applications.
     :::column-end:::
 :::row-end:::
