@@ -53,7 +53,7 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](/docker/overview)<br>
-        **[Get started with Docker Desktop for Windows](/docker/overview/)**<br>
+        **[Get started with Docker Desktop for Windows](./docker/overview/)**<br>
         Create remote development containers for work scenarios with Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or connecting to Azure services.
     :::column-end:::
     :::column:::
