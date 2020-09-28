@@ -52,8 +52,8 @@ This guide will help you get started with installing and setting up the language
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](..windows/dev-environment/docker/overview.md)<br>
-        **[Get started with Docker Desktop for Windows](..windows/dev-environment/docker/overview.md)**<br>
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
         Create remote development containers for work scenarios with Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or connecting to Azure services.
     :::column-end:::
     :::column:::
