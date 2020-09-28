@@ -1,5 +1,5 @@
 ---
-Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
+description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 icon guidelines
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -9,6 +9,7 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: contperfq1
 ---
 # Segoe MDL2 icons
 
@@ -60,9 +61,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe M
 * On a Mac, you need to download and install the font: <a href="https://aka.ms/SegoeFonts">Get the Segoe UI and MDL2 icon fonts</a>
 
 ## Icon list
-Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of the icons are intended for specialized purposed and are not typically used anywhere else.
-
-
+Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of the icons are intended for specialized purposes and are not typically used anywhere else.
 
 <table style="background-color: white; color: black">
 
