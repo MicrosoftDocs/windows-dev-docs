@@ -8,7 +8,7 @@ ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: conceptual
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
