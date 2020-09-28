@@ -406,7 +406,7 @@ Feel free to test things out in the CodePen like changing the colors of the cube
 
 Now it’s time to get in that maze and start looking around. To do this we’ll be using the **PointerLockControls.js** library and our camera.
 
-The **PoinerLockControls.js** library uses the mouse to rotate the camera in the direction that the mouse is moved, allowing the player to look around. 
+The **PointerLockControls.js** library uses the mouse to rotate the camera in the direction that the mouse is moved, allowing the player to look around. 
 
 First let's add some new elements to our **index.html** file:
 
@@ -433,7 +433,7 @@ var blocker = document.getElementById('blocker');
 ```
 
 
-Now in our `init()` function we can make a new `PoinerLockControls` object, pass it our `camera`, and add the `camera` (accessed with `controls.getObject()`).
+Now in our `init()` function we can make a new `PointerLockControls` object, pass it our `camera`, and add the `camera` (accessed with `controls.getObject()`).
 
 ```javascript
 controls = new THREE.PointerLockControls(camera);

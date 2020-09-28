@@ -20,7 +20,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         <p style="margin-top: 0px; margin-bottom: 50px">Windows 10 and the Universal Windows Platform let you build apps that work and look great across all Windows device types, or update existing apps with modern features.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">What's a Windows app?</a><br/>
-        <a href="//developer.microsoft.com/windows/apps/design">Design and UI</a><br/>
+        <a href="https://docs.microsoft.com/windows/uwp/design/">Design and UI</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
@@ -83,7 +83,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">New to development?</h3>
-        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a><br/>
+        <a href="//docs.microsoft.com/learn/browse/%3Fproducts=windows&resource_type=module">Windows on Microsoft Learn</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Explore related docs</h3>
