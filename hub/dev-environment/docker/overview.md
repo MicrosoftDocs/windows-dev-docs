@@ -12,7 +12,7 @@ ms.date: 09/24/2020
 
 # Overview of Docker remote development on Windows
 
-Learn about using containers for remote development and deploying applications with the Docker platform with support from a variety of Microsoft tools and services, including Windows 10, Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a variety of Azure services.
+Using containers for remote development and deploying applications with the Docker platform is a very popular solution with many benefits. Learn more about the variety of support offered by Microsoft tools and services, including Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.
 
 ## Docker on Windows 10
 
@@ -20,7 +20,7 @@ Learn about using containers for remote development and deploying applications w
     :::column:::
        [![Docker Docs Icon](../../images/docker-docs-icon.png)](https://docs.docker.com/docker-for-windows/install/)<br>
         **[Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)**<br>
-        Download Docker Desktop for Windows 10 and learn how to install, including system requirements, what's included in the installer, how to uninstall, differences between stable and edge versions, and  switching between Windows and Linux containers in these Docker for Windows docs.
+        Find installation steps, system requirements, what's included in the installer, how to uninstall, differences between stable and edge versions, and how to switch between Windows and Linux containers.
     :::column-end:::
     :::column:::
        [![Docker running screenshot](../../images/docker-running-screenshot.png)](https://docs.docker.com/get-started/)<br>
@@ -30,7 +30,7 @@ Learn about using containers for remote development and deploying applications w
     :::column:::
        [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/learn/modules/intro-to-docker-containers/)<br>
         **[MS Learn course: Introduction to Docker containers](/learn/modules/intro-to-docker-containers/)**<br>
-        Microsoft Learn offers a free intro course on Docker containers, in addition to course covering how to [Build a containerized web application with Docker](/learn/modules/intro-to-containers/) and a [variety of courses on using Docker with Azure services](/learn/browse/?terms=docker).
+        Microsoft Learn offers a free intro course on Docker containers, in addition to a [variety of courses](/learn/browse/?terms=docker) on get started with Docker and connecting with Azure services.
     :::column-end:::
     :::column:::
        [![Docker Desktop WSL2 menu screenshot](../../images/docker-wsl2.png)](/windows/wsl/tutorials/wsl-containers)<br>
