@@ -12,9 +12,9 @@ ms.date: 09/24/2020
 
 # Overview of Docker remote development on Windows
 
+Learn about using containers for remote development and deploying applications with the Docker platform with support from a variety of Microsoft tools and services, including Windows 10, Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a variety of Azure services.
 
-
-## Introduction to Docker on Windows
+## Docker on Windows 10
 
 :::row:::
     :::column:::
@@ -64,6 +64,32 @@ ms.date: 09/24/2020
     :::column-end:::
 :::row-end:::
 
+## Visual Studio and Docker
+
+:::row:::
+    :::column:::
+       [![Visual Studio icon](../../images/visualstudio.png)](/visualstudio/containers/overview#docker-support-in-visual-studio-1)<br>
+        **[Docker support in Visual Studio](/visualstudio/containers/overview#docker-support-in-visual-studio-1)**<br>
+        Learn about the Docker support available for ASP.NET projects, ASP.NET Core projects, and .NET Core and .NET Framework console projects in Visual Studio, in addition to support for container orchestration.
+    :::column-end:::
+    :::column:::
+       [![Visual Studio Docker menu](../../images/visualstudio-docker-menu.png)](/visualstudio/containers/container-tools)<br>
+        **[Quickstart: Docker in Visual Studio](/visualstudio/containers/container-tools)**<br>
+        Learn how to build, debug, and run containerized .NET, ASP.NET, and ASP.NET Core apps and publish them to Azure Container Registry (ACR), Docker Hub, Azure App Service, or your own container registry with Visual Studio.
+    :::column-end:::
+    :::column:::
+       [![VS tutorial screenshot](../../images/visualstudio-tutorial.png)](/visualstudio/containers/tutorial-multicontainer)<br>
+        **[Tutorial: Create a multi-container app with Docker Compose](/visualstudio/containers/tutorial-multicontainer)**<br>
+        Learn how to manage more than one container and communicate between them when using Container Tools in Visual Studio. You can also find links to tutorials like how to [Use Docker with a React Single-page App](/visualstudio/containers/container-tools-react).
+    :::column-end:::
+    :::column:::
+       [![VS Container links](../../images/visualstudio-container-links.png)](/visualstudio/containers)<br>
+        **[Container Tools in Visual Studio](/visualstudio/containers)**<br>
+        Find topics covering how to run build tools in a container, [debugging Docker apps](/visualstudio/containers/edit-and-refresh), troubleshoot development tools, deploy Docker containers, and bridge Kubernetes with Visual Studio.
+    :::column-end:::
+:::row-end:::
+
+![Basic Docker taxonomy infographic for containers, images, and registries](../../images/taxonomy-of-docker-terms-and-concepts.png)
 ## .NET Core and Docker
 
 :::row:::
@@ -89,13 +115,32 @@ ms.date: 09/24/2020
     :::column-end:::
 :::row-end:::
 
-![Basic Docker taxonomy infographic for containers, images, and registries](./images/taxonomy-of-docker-terms-and-concepts.png)
+## Azure Container Services
+
+:::row:::
+    :::column:::
+       [![Azure container instances screenshot](../../images/azure-container-instances.png)](/azure/container-instances/)<br>
+        **[Azure Container Instances](/azure/container-instances/)**<br>
+        Learn how to run Docker containers on-demand in a managed, serverless Azure environment, includes ways to deploy with Docker CLI, ARM, Azure Portal, create multi-container groups, share data between containers, connect to a virtual network, and more.
+    :::column-end:::
+    :::column:::
+       [![Azure Container Registry screenshot](../../images/azure-container-registry-icon.png)](/azure/container-registry)<br>
+        **[Azure Container Registry](/azure/container-registry)**<br>
+        Learn how to build, store, and manage container images and artifacts in a private registry for all types of container deployments. Create Azure container registries for your existing container development and deployment pipelines, set up automation tasks, and learn how to manage your registries, including geo-replication and best practices.
+    :::column-end:::
+    :::column:::
+       [![Azure Service Fabric screenshot](../../images/azure-service-fabric.png)](/azure/service-fabric)<br>
+        **[Azure Service Fabric](/azure/service-fabric)**<br>
+        Learn about Azure Service Fabric, a distributed systems platform for packaging, deploying, and managing scalable and reliable microservices and containers.
+    :::column-end:::
+    :::column:::
+       [![Azure App Service screenshot](../../images/azure-app-service.png)](/azure/app-service)<br>
+        **[Azure App Service](/azure/app-service)**<br>
+        Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the [Azure App Service course on MS Learn](/learn/modules/deploy-run-container-app-service) to deploy a web app based on a Docker image and configure continuous deployment.
+    :::column-end:::
+:::row-end:::
 
 [Tutorial: Containerize a .NET Core app](https://docs.microsoft.com/dotnet/core/docker/build-container?tabs=windows)
-
-[Docker support in Visual Studio](https://docs.microsoft.com/visualstudio/containers/overview#docker-support-in-visual-studio-1)
-
 [Docker docs: Overview](https://docs.docker.com/engine/docker-overview/)
 [Docker docs: Dockerfile commands](https://docs.docker.com/engine/reference/builder/)
-
 [Review the Azure services that support containers](https://azure.microsoft.com/overview/containers/)
