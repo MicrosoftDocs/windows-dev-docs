@@ -96,7 +96,7 @@ Using containers for remote development and deploying applications with the Dock
     :::column:::
        [![.NET microservice guide cover](../../images/dotnet-microservice-guide.png)](/dotnet/architecture/microservices/)<br>
         **[.NET Guide: Microservice apps and containers](/dotnet/architecture/microservices/)**<br>
-        An introductory guide to developing microservices-based apps and managing them using containers. Discusses architectural design and implementation approaches using .NET Core and Docker containers, including [Choosing between .NET Core and .NET Framework for Docker containers](/dotnet/architecture/microservices/net-core-net-framework-containers/).
+        Intro guide to microservices-based apps managed with containers.
     :::column-end:::
     :::column:::
        [![Docker Infographic](../../images/dotnet-docker-infographic.png)](/dotnet/architecture/microservices/container-docker-introduction/docker-defined)<br>
