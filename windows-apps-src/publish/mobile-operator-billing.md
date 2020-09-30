@@ -47,6 +47,5 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Switzerland          | Sunrise, Swisscom                                       |
 | Taiwan               | FarEasTone                                              |
 | Turkey               | Turkcell                                                |
-| United Arab Emirates | Etisalat                                                |
 | United States        | Sprint, Verizon                                         |
 | United Kingdom       | 3 UK, EE, O2, Vodaphone                                 |
