@@ -45,7 +45,7 @@ Using containers for remote development and deploying applications with the Dock
     :::column:::
        [![VS Code remote container graphic](../../images/vscode-remote-containers.png)](https://code.visualstudio.com/docs/remote/create-dev-container)<br>
         **[Create a Docker container with VS Code](https://code.visualstudio.com/docs/remote/containers-tutorial)**<br>
-        Learn how to create a full-featured development environment inside of a Docker container with Visual Studio Code and the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in this tutorial, or find a deeper dive in [this article](https://code.visualstudio.com/docs/remote/create-dev-container) or tutorials on how to set up a [NodeJS container](https://code.visualstudio.com/docs/containers/quickstart-node), a [Python container](https://code.visualstudio.com/docs/containers/quickstart-python), or a [ASP.NET Core container](https://code.visualstudio.com/docs/containers/quickstart-aspnet-core).
+        Set up a full-featured dev environment inside of a container with the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and find tutorials to set up a [NodeJS container](https://code.visualstudio.com/docs/containers/quickstart-node), a [Python container](https://code.visualstudio.com/docs/containers/quickstart-python), or a [ASP.NET Core container](https://code.visualstudio.com/docs/containers/quickstart-aspnet-core).
     :::column-end:::
     :::column:::
        [![VSCode attach Docker screenshot](../../images/vscode-attach-docker.png)](https://code.visualstudio.com/docs/remote/attach-container)<br>
@@ -90,6 +90,7 @@ Using containers for remote development and deploying applications with the Dock
 :::row-end:::
 
 ![Basic Docker taxonomy infographic for containers, images, and registries](../../images/taxonomy-of-docker-terms-and-concepts.png)
+
 ## .NET Core and Docker
 
 :::row:::
