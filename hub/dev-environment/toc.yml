@@ -64,7 +64,7 @@
         - name: Get started with C#
           href: /dotnet/csharp/
         - name: Get started with Docker
-          href: ../dev-environment/docker/overview
+          href: ../dev-environment/docker/overview.md
         - name: Get started with Powershell
           href: /powershell/
         - name: Get started with databases on WSL
