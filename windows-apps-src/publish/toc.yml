@@ -116,17 +116,6 @@
   items:
     - name: Generate promotional codes
       href: ../publish/generate-promotional-codes.md
-    - name: Create an ad campaign for your app
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: Manage your ad campaign
-          href: ../publish/managing-your-ad-campaign.md
-        - name: About house ads
-          href: ../publish/about-house-ads.md
-        - name: About community ads
-          href: ../publish/about-community-ads.md
-        - name: Common questions about ad campaigns
-          href: ../publish/common-questions.md
     - name: Create a custom app promotion campaign
       href: ../publish/create-a-custom-app-promotion-campaign.md
     - name: Put apps and add-ons on sale

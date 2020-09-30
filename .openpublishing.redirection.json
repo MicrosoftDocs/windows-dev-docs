@@ -4929,6 +4929,31 @@
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/toast-xml-schema.md",
       "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/toast-schema",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/create-an-ad-campaign-for-your-app.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-ad-campaign.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/about-house-ads.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/about-community-ads.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/common-questions.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
     }
   ]
 }
