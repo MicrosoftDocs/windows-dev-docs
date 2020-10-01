@@ -110,11 +110,11 @@ There are instances where the corner of a control should not be rounded, and we 
 
 - When a control is housed inside another container, like a ScrollBar's bar and buttons that are part of the ScrollBar container, which is also part of a ScrollViewer.
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![Screenshot of a vertical scrollbar without rounded corners.](images/rounded-corner/scrollbar.png)
 
 - When a flyout UI element is connected to a UI that invokes the flyout on one side.
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![Screenshot of an AutoSuggest flyout where some corners aren't rounded.](images/rounded-corner/autosuggest.png)
 
 ### Keyboard focus rectangle and shadow
 

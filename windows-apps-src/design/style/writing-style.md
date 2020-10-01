@@ -35,7 +35,7 @@ Users need to be able to read and understand your text at a glance. Don't pad yo
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![First screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Select **filters** to add effects to your image.
     :::column-end:::
     :::column:::
@@ -50,7 +50,7 @@ Apps are defined by actions. Users take action when they use the app, and the ap
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Second screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Restart the app to see your changes.
     :::column-end:::
     :::column:::
@@ -65,7 +65,7 @@ Users scan text, and will often skip over larger blocks of words entirely. Don't
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Third screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
     :::column-end:::
     :::column:::
@@ -87,7 +87,7 @@ Speak directly to the user.
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Fourth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 We couldn't save your file to that location.
     :::column-end:::
     :::column:::
@@ -104,7 +104,7 @@ We couldn't save your file to that location.
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Fifth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 The Windows app design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every Windows app, you can build user interfaces (UI) that scale across a range of devices.
     :::column-end:::
     :::column:::
@@ -119,7 +119,7 @@ People are used to contractions, and expect to see them. Avoiding them can make 
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Sixth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
     :::column-end:::
     :::column:::
@@ -134,7 +134,7 @@ When you're happy with your image, select **save** to add it to your gallery. Fr
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Seventh screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 <b>You’re not connected.</b>
 * Check that your network cables are plugged in.
 * Make sure you're not in airplane mode.
@@ -153,7 +153,7 @@ While capital letters are important, they're easy to overuse.
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Eighth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 <b>Which part is giving you trouble?</b>
 * I forgot your password.
 * It won't accept password.
@@ -177,7 +177,7 @@ More than anything else, it's important that your error message doesn't blame th
 
 :::row:::
     :::column:::
-![Do](images/do.svg)
+![Ninth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 <b>You’re not connected.</b>
 * Check that your network cables are plugged in.
 * Make sure you're not in airplane mode.
@@ -197,7 +197,7 @@ Many of the same advice for writing error messages also applies when creating th
 But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
     :::column-end:::
     :::column:::
-![Do](images/do.svg)
+![Tenth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 <b>Which part is giving you trouble?</b>
 1. I forgot my password
 2. It won't accept my password
@@ -213,7 +213,7 @@ Text on buttons needs to be concise enough that users can read it all at a glanc
 When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
     :::column-end:::
     :::column:::
-![Do](images/do.svg)
+![Eleventh screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 * Install now
 * Share
     :::column-end:::

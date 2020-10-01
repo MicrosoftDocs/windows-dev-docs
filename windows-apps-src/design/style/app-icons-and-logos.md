@@ -58,7 +58,7 @@ The  scale factor determines the size of UI elements, such as text. Scale factor
       (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
    :::column-end:::
    :::column:::
-      ![](images/icons/display-settings-screen.png)
+      ![Screenshot of the Display page in Settings.](images/icons/display-settings-screen.png)
    :::column-end:::
 :::row-end:::  
 

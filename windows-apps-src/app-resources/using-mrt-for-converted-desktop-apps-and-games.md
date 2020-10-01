@@ -62,7 +62,7 @@ Thus the primary purpose of any resource-management technology is to translate, 
 
 Here's a simple example of an application that has text labels on two buttons (`openButton` and `saveButton`) and a PNG file used for a logo (`logoImage`). The text labels are localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and high-resolution phones (300% scale factor). Note that this diagram presents a high-level, conceptual view of the model; it does not map exactly to implementation.
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="Screenshot of a Source code label, a Lookup table label, and a Files on disk label.":::
 
 In the graphic, the application code references the three logical resource names. At runtime, the `GetResource` pseudo-function uses MRT to look those resource names up in the resource table (known as PRI file) and find the most appropriate candidate based on the ambient conditions (the user's language and the display's scale-factor). In the case of the labels, the strings are used directly. In the case of the logo image, the strings are interpreted as filenames and the files are read off disk. 
 
@@ -201,7 +201,7 @@ If you want to use the designer in Visual Studio:
 1. Create the `Strings\en-us` folder (or other language as appropriate) in your project and add a **New Item** to the root folder of your project, using the default name of `resources.resw`. Be sure to choose **Resources File (.resw)** and not **Resource Dictionary** - a Resource Dictionary is a file used by XAML applications.
 2. Using the designer, enter the following strings (use the same `Names` but replace the `Values` with the appropriate text for your application):
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="Screenshot showing the Resources.resw file showing the Name and Value columns. for the resources." :::
 
 > [!NOTE]
 > If you start with the Visual Studio designer, you can always edit the XML directly by pressing `F7`. But if you start with a minimal XML file, *the designer will not recognize the file* because it's missing a lot of additional metadata; you can fix this by copying the boilerplate XSD information from a designer-generated file into your hand-edited XML file.
@@ -239,8 +239,9 @@ If you are editing XML directly, open the `AppxManifest.xml` file and make the f
 
 If you are using the Visual Studio manifest designer, open the .appxmanifest file and change the <span style="background-color: lightgreen">highlighted values</span> values in the **Application* tab and the *Packaging* tab:
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Application tab with the Display name and Description text boxes called out." :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Packaging tab with the Package display name and Publisher display name text boxes called out." :::
 
 ### Step 1.2: Build PRI file, make an MSIX package, and verify it's working
 
@@ -477,7 +478,7 @@ Other sections of the package manifest can be localized. For example, if your ap
 You can also add this information using the Visual Studio Manifest Designer, using the `Declarations` tab, taking note of the
 <span style="background-color: lightgreen">highlighted values</span>:
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Declarations tab with the Display name and Info tip text boxes called out." :::
 
 Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted text</span> with the appropriate text for your app (remember to do this for *each supported language!*):
 
@@ -493,7 +494,7 @@ Now add the corresponding resource names to each of your `.resw` files, replacin
 
 This will then show up in parts of the Windows shell, such as File Explorer:
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="Screenshot of File Explorer showing a tooltip that says Files used by Contoso Demo App.":::
 
 Build and test the package as before, exercising any new scenarios that should show the new UI strings.
 

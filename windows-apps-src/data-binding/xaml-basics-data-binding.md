@@ -16,11 +16,11 @@ You'll start with a simplified version of the PhotoLab sample. This starter vers
 
 The PhotoLab sample app has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
-![MainPage](../design/basics/images/xaml-basics/mainpage.png)
+![Screenshot of the Photo lab main page.](../design/basics/images/xaml-basics/mainpage.png)
 
 The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
-![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
+![Screenshot of the Photo lab detail page.](../design/basics/images/xaml-basics/detailpage.png)
 
 ## Prerequisites
 

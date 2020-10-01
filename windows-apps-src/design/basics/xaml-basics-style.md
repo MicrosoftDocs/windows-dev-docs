@@ -12,11 +12,11 @@ This tutorial shows you how to customize the UI of our XAML app. Warning: this t
 
 The PhotoLab sample app has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Screenshot of the Photo lab main page.](../basics/images/xaml-basics/mainpage.png)
 
 The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Screenshot of the Photo lab detail page.](../basics/images/xaml-basics/detailpage.png)
 
 ## Prerequisites
 

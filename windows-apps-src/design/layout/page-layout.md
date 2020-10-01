@@ -80,7 +80,7 @@ Collections allow users to browse groups of content or data. [Grid view](../cont
 The [master/details](../controls-and-patterns/master-details.md) model consists of a list view (master) and a content view (detail). Both panes are fixed and have vertical scrolling. When an item in the list view is selected, the content view is correspondingly updated. 
 
 ## Forms
-![form](images/form.svg)
+![Screenshot of a form that shows an empty text box and a button.](images/form.svg)
 
 A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
