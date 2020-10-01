@@ -39,8 +39,8 @@ To host a custom UWP XAML control, you'll create the following projects and comp
 
 4. In the **Manage NuGet Packages** window, install the following additional NuGet packages:
 
-    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v6.0.0 or later). This package provides several build and run time assets that enable XAML Islands to work in your app.
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (version v6.0.0 or later). This package defines the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class, which you will use later in this walkthrough.
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (latest stable version). This package provides several build and run time assets that enable XAML Islands to work in your app.
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (latest stable version). This package defines the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class, which you will use later in this walkthrough.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Build the solution and confirm that it builds successfully.
@@ -56,7 +56,7 @@ Next, add a **UWP (C++/WinRT)** app project to your solution and make some confi
 3. Install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package in the **MyUWPApp** project. This package defines the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class, which you will use later in this walkthrough.
 
     1. Right-click the **MyUWPApp** project and choose **Manage NuGet Packages**.
-    2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) package, and install v6.0.0 or a later version of this package.
+    2. Select the **Browse** tab, search for the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) package, and install the latest stable version of this package.
 
 4. Right-click the **MyUWPApp** node and select **Properties**. On the **Common Properties** -> **C++/WinRT** page, set the **Verbosity** property to **normal** and then click **Apply**. When you are done, the properties page should look like this.
 
@@ -127,7 +127,7 @@ In this section, you'll update the solution that contains both projects to confi
 4. In the **Property Manager** window, right-click **MyDesktopWin32App** and select **Add Existing Property Sheet**. Navigate to the **Solution.props** file you just added and click **Open**.
 5. Repeat the previous step to add the **Solution.props** file to the **MyUWPApp** project in the **Property Manager** window.
 6. Close the **Property Manager** window.
-7. Confirm that the property sheet changes were saved properly. In **Solution Explorer**, right-click the **MyDesktopWin32App** project and choose **Properties**. Click **Configuration Properties** -> **Genneral**, and confirm that the **Output Directory** and **Intermediate Directory** properties have the values you added to the **Solution.props** file. You can also confirm the same for the **MyUWPApp** project.
+7. Confirm that the property sheet changes were saved properly. In **Solution Explorer**, right-click the **MyDesktopWin32App** project and choose **Properties**. Click **Configuration Properties** -> **General**, and confirm that the **Output Directory** and **Intermediate Directory** properties have the values you added to the **Solution.props** file. You can also confirm the same for the **MyUWPApp** project.
     ![Project properties](images/xaml-islands/xaml-island-cpp-4.png)
 
 8. In **Solution Explorer**, right-click the solution node and choose **Project Dependencies**. In the **Projects** drop-down, make sure that **MyDesktopWin32App** is selected, and select **MyUWPApp** in the **Depends On** list.
@@ -368,15 +368,13 @@ Next, update the **MyDesktopWin32App** project to define a macro for additional 
       <!-- End Section-->
     ```
 
-4. In **Solution Explorer**, right-click **MyDesktopWin32App (Unloaded)** and select **Reload Project**.
+4. In **Solution Explorer**, right-click **MyDesktopWin32App (unloaded)** and select **Reload Project**.
 
-5. Right-click **MyDesktopWin32App**, select **Properties**, and click the **C/C++** node in the left pane. Confirm that the **Additional Include Directories** macro has been defined from the project file change you made in the previous step.
-
-    ![C/C++ project settings](images/xaml-islands/xaml-island-cpp-7.png)
-
-6. In the **Property Pages** dialog, expand **Manifest Tool** -> **Input and Output**. Set the **DPI Awareness** property to **Per Monitor High DPI Aware**. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.
+5. Right-click the **MyDesktopWin32App** project, select **Properties**, and expand **Manifest Tool** -> **Input and Output** in the left pane. Set the **DPI Awareness** property to **Per Monitor High DPI Aware**. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.
 
     ![C/C++ project settings](images/xaml-islands/xaml-island-cpp-8.png)
+
+6. Click **OK** to close the **Property Pages** dialog.
 
 ## Host the custom UWP XAML control in the desktop project
 
@@ -507,16 +505,19 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 9. Save the file.
 10. Build the solution and confirm that it builds successfully.
 
-## Add a control from the WinUI library to the custom control
+## Add a control from the WinUI 2.x library to the custom control
 
 Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a UWP control from the WinUI library to your user control.
+This section demonstrates how to add a UWP control from the WinUI 2.x library to your user control.
+
+> [!NOTE]
+> Currently, XAML Islands only supports hosting controls from the WinUI 2.x library. Support for hosting controls from the WinUI 3 library is coming in a later release.
 
 1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
-    > [!NOTE]
-    > If your desktop app is packaged in an [MSIX package](/windows/msix), you can use either a prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
+    * If you chose to [package the MyDesktopWin32App project using MSIX](#option-1-package-the-app-using-msix) earlier in this walkthrough, you can install either the prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. Packaged desktop apps can use either the prerelease or release version of this package.
+    * If you chose not package the MyDesktopWin32App project using MSIX earlier in this walkthrough, you must install the prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Unpackaged desktop apps must use the prerelease version of this package.
 
 2. In the pch.h file in this project, add the following `#include` statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see [this article](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 

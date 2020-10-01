@@ -34,12 +34,12 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
 4. Install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package:
 
     1. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
-    2. Select the **Browse** tab, search for the **Microsoft.Toolkit.Win32.UI.SDK** package, and install version v6.0.0 (or later) of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
+    2. Select the **Browse** tab, search for the **Microsoft.Toolkit.Win32.UI.SDK** package, and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
 
 5. Set the `maxVersionTested` value in your [application manifest](/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
 
     1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
-    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
+    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be 10.0.18362 or a later release).
 
         ```xml
         <?xml version="1.0" encoding="UTF-8"?>
@@ -265,7 +265,7 @@ The following steps and code examples demonstrate how to do implement the above 
     > [!NOTE]
     > You may see the several build warnings, including `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` and `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. These warnings are known issues with the current tools and NuGet packages, and they can be ignored.
 
-For complete examples that demonstrate these tasks, see the following code files:
+For complete examples that demonstrate using the XAML hosting API to host a standard UWP control, see the following code files:
 
 * **C++ Win32:**
   * See the [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) file.
