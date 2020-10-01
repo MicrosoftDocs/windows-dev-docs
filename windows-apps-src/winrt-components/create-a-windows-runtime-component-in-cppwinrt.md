@@ -36,9 +36,6 @@ Don't build the project yet.
 
 The newly-created project contains a file named `Class.idl`. In Solution Explorer, rename that file `Thermometer.idl` (renaming the `.idl` file automatically renames the dependent `.h` and `.cpp` files, too). Replace the contents of `Thermometer.idl` with the listing below.
 
-> [!NOTE]
-> Needless to say, you wouldn't implement production financial software this way; we use `Single` in this example solely for convenience.
-
 ```idl
 // Thermometer.idl
 namespace ThermometerWRC
