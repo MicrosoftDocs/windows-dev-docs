@@ -24,10 +24,10 @@ To launch Dev Home on the November 2015 or later recovery:
    1. Select **All settings**  
    1. From the default **Developer** page, select **Developer Home** (the home icon)   
 
- ![](images/dev_home_icons.png)   
+ ![Screenshot of the Developer page in Settings.](images/dev_home_icons.png)   
   
 On earlier recoveries select the Dev Home tile on the right side of the home screen in **featured content** or view the application list in Xbox One Manager and launch **Dev Home**.   
- ![](images/dev_home_1.png) 
+ ![Screenshot of the APPLICATIONS tab showing with the Launch option highlighted.](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
    
@@ -75,10 +75,10 @@ Several existing and upcoming tools in Dev Home, such as Networking and Multipla
    
   
 To access Snap mode, highlight the title of the appropriate tool, press the **view** button on your controller, and select **snap** from the context menu:  
- ![](images/dev_home_4.png)   
+ ![Screenshot of the DEV HOME page showing the Snap option highlighted.](images/dev_home_4.png)   
   
 Dev Home will snap right. You can switch context by double tapping the Nexus button as usual.  
- ![](images/dev_home_5.png)  
+ ![Screenshot showing the DEV HOME page snapped to the right showing that you have access to you tools while you're testing.](images/dev_home_5.png)  
 <a id="ID4EKF"></a>
 
    
@@ -96,7 +96,7 @@ Dev Home has been designed to be customizable and personal. You can configure th
    
   
 To change the size or position of a tool, use the context menu button (view button on your controller) while the title has focus. From the context menu select **Move** or **Resize**.   
- ![](images/dev_home_6.png)  
+ ![Screenshot of the DEV HOME page snapped to the right showing the Move option highlighted.](images/dev_home_6.png)  
 <a id="ID4EEG"></a>
 
    
@@ -105,7 +105,7 @@ To change the size or position of a tool, use the context menu button (view butt
    
   
 From the Main Menu, you can select **Workspace** and then **Change theme color**. Select a new color and select **Save** to update the theme color used for focus highlighting.   
- ![](images/dev_home_7.png)  
+ ![Screenshot of the DEV HOME page showing Workspace and Change theme color options selected.](images/dev_home_7.png)  
 <a id="ID4EVG"></a>
 
    
@@ -114,7 +114,7 @@ From the Main Menu, you can select **Workspace** and then **Change theme color**
    
   
 If a package contains multiple applications, Dev Home will allow you to set the default application to be launched. Highlight the package in the launcher and press the **A** button to open the list of available applications. Highlight the one you wish to set as the default and press the **view** button, and then choose **Set as Default** from the context menu.   
- ![](images/dev_home_setdefault.png)  
+ ![Screenshot of the DEV HOME page with the Set as default option highlighted.](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
@@ -123,13 +123,13 @@ If a package contains multiple applications, Dev Home will allow you to set the 
    
   
 From the launcher, at the bottom of the installed apps and games list, you can select the option **Register a game from a network share** to run a loose file version of a title remotely.   
- ![](images/dev_home_8.png)   
+ ![Screenshot of the DEV HOME page with the Register a game from a network share option highlighted.](images/dev_home_8.png)   
   
 You can then enter the network path to the appxmanifest.xml file for the title you wish to register. Dev Home will attempt to register the title using any existing credentials for that share, and if needed will prompt for new network credentials. If you need to access additional shares (for example to access symbolically linked resources on a separate server) then you will need to add those via the option below.   
    
   
 You can manage these stored credentials (and add additional ones) on the console via the main menu's **Manage network credentials** option.   
- ![](images/dev_home_9.png)   
+ ![Screenshot of the DEV HOME page with the Manage network credentials option highlighted.](images/dev_home_9.png)   
   
 You can view the credentials currently on the console, edit credentials by selecting the path of the credential and clicking **A** button and remove a credential by selecting the remove link and clicking **A** button.   
    

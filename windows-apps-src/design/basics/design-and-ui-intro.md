@@ -61,7 +61,7 @@ Since UWP apps automatically scale to all devices, designing a UWP app for any d
 When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
     :::column-end:::
     :::column:::
-![Frame](images/frame.svg)
+![Screenshot of the Window with a Frame.](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -128,7 +128,7 @@ UWP apps have four tile sizes (small, medium, wide, and large) that can be custo
 UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
     :::column-end:::
     :::column:::
-![inputs](images/inputs.svg)
+![Screenshot of icons that designate different input modes.](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -140,7 +140,7 @@ Similarly, while UWP automatically scales your app to different devices, you can
 
 ## Usability
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="A short video of stick figure cartoons depicting people of differing abilities.":::
 
 Last but not least, usability is about making your app's experience open to all users. Everyone can benefit from truly inclusive user experiences - see [usability for UWP apps](../usability/index.md) to see how to make your app easy to use for everyone.
 

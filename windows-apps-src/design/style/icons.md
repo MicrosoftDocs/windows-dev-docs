@@ -43,7 +43,7 @@ Icons can save space, but when should you use them?
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
+        ![Screenshot that shows the Cut, Copy, Paste, and Save icons.](images/do.svg)
         ![icons standard image](images/icons/icons-standard.svg)<br>
 
 Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
@@ -58,13 +58,13 @@ Use an icon if one already exists for the concept you want to represent. (To see
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
+        ![Screenshot of a simple and familiar Shopping cart icon.](images/do.svg)
         ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
 
 Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
     :::column-end:::
 	:::column:::
-		![dont](images/dont.svg)
+		![Screenshot of a complex and unfamiliar Shopping cart icon.](images/dont.svg)
         ![icons concept image](images/icons/icon-bad-example.png)<br>
 
 Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.

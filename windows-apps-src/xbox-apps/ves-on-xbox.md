@@ -77,7 +77,7 @@ The Narrator application is also a UI Automation client and uses the `Automation
 
 To resolve this, starting with Windows 10 Creators Update, Narrator was updated to also look at the `AutomationProperties.HelpText` property.  If this property is not empty, Narrator will speak its contents in addition to `AutomationProperties.Name`.  If `HelpText` is empty, Narrator will only read the contents of Name.  This will enable longer descriptive strings to be used where needed, but maintains a shorter, speech recognition friendly phrase in the `Name` property.
 
-![](images/ves_narrator.jpg)
+![A diagram showing the code behind the button that includes AutomationProperties.Name and AutomationProperties.HelpText showing that the Voice Enabled Shell listens for the Name Configure.](images/ves_narrator.jpg)
 
 For more info see [Automation Properties for Accessibility Support in UI](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automation Properties for Accessibility Support in UI").
 
@@ -95,7 +95,7 @@ Entering ALM will have the following effect:
 - The Cortana overlay will be shown in the top right corner, telling the user they can say what they see.  While the user is speaking, phrase fragments that are recognized by the speech recognizer will also be shown in this location.
 - VES parses the UIA tree, finds all actionable controls, registers their text in the speech recognition grammar and starts a continuous listening session.
 
-    ![](images/ves_overlay.png)
+    ![Screenshot with the To see label say Show labels option highlighted.](images/ves_overlay.png)
 
 ### Exiting ALM ###
 The system will remain in ALM while the user is interacting with the UI using voice.  There are two ways to exit ALM:
@@ -123,24 +123,24 @@ Once voice tip labels are shown there is no command to hide them, they will rema
 ## Location of voice tip labels ##
 Voice tip labels are horizontally and vertically centered within the control’s BoundingRectangle.  When controls are small and tightly grouped, the labels can overlap/become obscured by others and VES will try to push these labels apart to separate them and ensure they are visible.  However, this is not guaranteed to work 100% of the time.  If there is a very crowded UI, it will likely result in some labels being obscured by others. Please review your UI with “show labels” to ensure there is adequate room for voice tip visibility.
 
-![](images/ves_labels.png)
+![Screenshot of the voice tip labels horizontally and vertically centered within the control's bounding rectangle.](images/ves_labels.png)
 
 ## Combo boxes ##
 When a combo box is expanded each individual item in the combo box gets its own voice tip label and often these will be on top of existing controls behind drop down list.  To avoid presenting a cluttered and confusing muddle of labels (where combo box item labels are intermixed with the labels of controls behind the combo box) when a combo box is expanded only the labels for its child items will be shown;  all other voice tip labels will be hidden.  The user can then either select one of the drop-down items or “close” the combo box.
 
 - Labels on collapsed combo boxes:
 
-	![](images/ves_combo_closed.png)
+	![Screenshot of the Display and sound Video output window with labels on collapsed combo boxes.](images/ves_combo_closed.png)
 
 - Labels on expanded combo box:
 
-	![](images/ves_combo_open.png)
+	![Screenshot of the Display and sound Video output window with labels on an expanded combo box.](images/ves_combo_open.png)
 
 
 ## Scrollable controls ##
 For scrollable controls, the voice tips for the scroll commands will be centered on each of the edges of the control.  Voice tips will only be shown for the scroll directions that are actionable, so for example if vertical scrolling is not available, “scroll up” and “scroll down” will not be shown.  When multiple scrollable regions are present VES will use ordinals to differentiate between them (eg. “Scroll right 1”, “Scroll right 2”, etc.).
 
-![](images/ves_scroll.png) 
+![Screenshot of Scroll left and Scroll right voice tips on a horizontally scrolling U I.](images/ves_scroll.png) 
 
 ## Disambiguation ##
 When multiple UI elements have the same Name, or the speech recognizer matched multiple candidates, VES will enter disambiguation mode.  In this mode voice tip labels will be shown for the elements involved so that the user can select the right one. The user can cancel out of disambiguation mode by saying "cancel".
@@ -149,15 +149,15 @@ For example:
 
 - In Active Listening Mode, before disambiguation; user says, "Am I Ambiguous":
 
-	![](images/ves_disambig1.png) 
+	![Screenshot of Active listening mode with the Now you can say what you see option displayed and no labels on the buttons.](images/ves_disambig1.png) 
 
 - Both buttons matched; disambiguation started:
 
-	![](images/ves_disambig2.png) 
+	![Screenshot of Active listening mode with the Which one did you want option displayed and Item 1 and Item 2 labels on the buttons.](images/ves_disambig2.png) 
 
 - Showing click action when "Select 2" was chosen:
 
-	![](images/ves_disambig3.png) 
+	![Screenshot of Active listening mode with the Now you can say what you see option displayed and he Am I Ambiguous label on the first button.](images/ves_disambig3.png) 
  
 ## Sample UI ##
 Here’s an example of a XAML based UI, setting the AutomationProperties.Name in various ways:
@@ -197,11 +197,11 @@ Using the above sample here is what the UI will look like with and without voice
  
 - In Active Listening Mode, without labels shown:
 
-	![](images/ves_alm_nolabels.png) 
+	![Screenshot of Active Listening Mode with the To see labels, say Show labels option displayed and no labels shown.](images/ves_alm_nolabels.png) 
 
 - In Active Listening Mode, after user says "show labels":
 
-	![](images/ves_alm_labels.png) 
+	![Screenshot of Active Listening Mode with the If you're done, say Stop listening option displayed and labels shown on the U I controls.](images/ves_alm_labels.png) 
 
 In the case of `button1`, XAML auto populates the `AutomationProperties.Name` property using text from the control’s visible text content.  This is why there is a voice tip label even though there isn't an explicit `AutomationProperties.Name` set.
 

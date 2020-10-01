@@ -23,7 +23,7 @@ To display non-English languages or to select a different font for your app, ple
 
 :::row:::
     :::column:::
-![do](images/do.svg)
+![First screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Pick one font for your UI.
     :::column-end:::
     :::column:::
@@ -42,7 +42,7 @@ Because of how the scaling system works, you're designing in effective pixels, n
 
 :::row:::
     :::column:::
-![do](images/do.svg)
+![Second screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Follow the Windows [type ramp](#type-ramp) sizing.
     :::column-end:::
     :::column:::
@@ -91,7 +91,7 @@ You can access levels of the type ramp as XAML [static resources](../controls-an
 
 :::row:::
     :::column:::
-![do](images/do.svg)
+![Third screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Use "Body" for most text.
 
 Use "Base" for titles when space is constrained.
@@ -118,7 +118,7 @@ The default [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) is Left, and
 
 :::row:::
     :::column:::
-![do](images/do.svg)
+![[Fourth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Keep to 50–60 letters per line for ease of reading.
     :::column-end:::
     :::column:::
@@ -139,7 +139,7 @@ When the amount of text extends beyond the space available, we recommend clippin
 
 :::row:::
     :::column:::
-![do](images/do.svg)
+![[Fifth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Clip text, and wrap if multiple lines are enabled.
     :::column-end:::
     :::column:::

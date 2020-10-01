@@ -142,7 +142,7 @@ Now that you have configured your project to use UWP XAML Islands, you are now r
 
 13. Try now to draw something in the signature space with the mouse. This time, you'll see the ink appearing on the screen.
 
-    ![Signature](images/wpf-modernize-tutorial/Signature.png)
+    ![Screenshot of the Expense Detail showing the signature space.](images/wpf-modernize-tutorial/Signature.png)
 
 ## Next steps
 

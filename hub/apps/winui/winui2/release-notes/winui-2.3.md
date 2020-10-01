@@ -51,7 +51,7 @@ A **NumberBox** represents a control that can be used to display and edit number
 
 **RadioButtons** is a new container control that enables you to create related groups of RadioButton elements easily, while also correctly supporting keyboarding and narrator/screen reader functionality
 
-![RadioButtons](../images/RadioButtons.png)
+![Screenshot of three radio buttons with the third one selected.](../images/RadioButtons.png)
 
 [Doc and sample link](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -62,8 +62,7 @@ The Xaml Controls Gallery sample app includes interactive demos and sample code 
 * Install the XAML Controls Gallery app from the [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-* The Xaml Controls Gallery is also [open source on GitHub](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+* The Xaml Controls Gallery is also [open source on GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## Documentation
 
