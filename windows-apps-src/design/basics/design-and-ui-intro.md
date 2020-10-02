@@ -88,7 +88,7 @@ What should those pages look like? Well, most pages follow a common structure to
 
 To learn more about how to implement common UWP app patterns, see the [Page layout](../layout/page-layout.md) article.
 
-You can also use the [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) in Visual Studio to get started with a layout for your app.
+You can also use the [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) in Visual Studio to get started with a layout for your app.
 
 ## Controls
 
