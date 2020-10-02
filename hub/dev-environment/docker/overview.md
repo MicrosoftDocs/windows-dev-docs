@@ -142,5 +142,11 @@ Using containers for remote development and deploying applications with the Dock
 :::row-end:::
 
 Learn about more [Azure services that support containers](https://azure.microsoft.com/overview/containers/).
-<br><br><br>
+
+## Docker Containers Explainer Video
+
 > [!VIDEO https://www.youtube.com/embed/0oEsMwSxBsk]
+
+## Kubernetes and Container Orchestration Explainer Video
+
+> [!VIDEO https://www.youtube.com/embed/3RTvoI-A7UQ]
