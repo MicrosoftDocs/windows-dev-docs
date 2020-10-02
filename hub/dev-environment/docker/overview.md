@@ -143,4 +143,4 @@ Using containers for remote development and deploying applications with the Dock
 
 Learn about more [Azure services that support containers](https://azure.microsoft.com/overview/containers/).
 
-> [!VIDEO https://www.youtube.com/watch?v=0oEsMwSxBsk]
+> [!VIDEO https://www.youtube.com/embed/0oEsMwSxBsk]
