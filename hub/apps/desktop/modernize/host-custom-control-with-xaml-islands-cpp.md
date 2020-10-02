@@ -1,7 +1,7 @@
 ---
-description: This article demonstrates how to host a custom UWP control in a C++ Win32 app by using the XAML Hosting API.
-title: Host a custom UWP control in a C++ Win32 app using the XAML Hosting API
-ms.date: 04/07/2020
+description: This article demonstrates how to host a custom WinRT XAML control in a C++ Win32 app by using the XAML Hosting API.
+title: Host a custom WinRT XAML control in a C++ Win32 app using the XAML Hosting API
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
 ms.author: mcleans
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Host a custom UWP control in a C++ Win32 app
+# Host a custom WinRT XAML control in a C++ Win32 app
 
 This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a custom UWP XAML control in a new C++ Win32 app. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
 
@@ -507,9 +507,9 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 
 ## Add a control from the WinUI 2.x library to the custom control
 
-Traditionally, UWP controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+Traditionally, WinRT XAML controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a UWP control from the WinUI 2.x library to your user control.
+This section demonstrates how to add a WinRT XAML control from the WinUI 2.x library to your user control.
 
 > [!NOTE]
 > Currently, XAML Islands only supports hosting controls from the WinUI 2.x library. Support for hosting controls from the WinUI 3 library is coming in a later release.
@@ -517,7 +517,7 @@ This section demonstrates how to add a UWP control from the WinUI 2.x library to
 1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
     * If you chose to [package the MyDesktopWin32App project using MSIX](#option-1-package-the-app-using-msix) earlier in this walkthrough, you can install either the prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. Packaged desktop apps can use either the prerelease or release version of this package.
-    * If you chose not package the MyDesktopWin32App project using MSIX earlier in this walkthrough, you must install the prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Unpackaged desktop apps must use the prerelease version of this package.
+    * If you chose not to package the **MyDesktopWin32App** project, you must install the prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Unpackaged desktop apps must use the prerelease version of this package.
 
 2. In the pch.h file in this project, add the following `#include` statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see [this article](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 
@@ -590,6 +590,6 @@ For more information about handling these scenarios and pointers to related code
 
 * [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
 * [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a standard UWP control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
+* [Host a standard WinRT XAML control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
 * [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)

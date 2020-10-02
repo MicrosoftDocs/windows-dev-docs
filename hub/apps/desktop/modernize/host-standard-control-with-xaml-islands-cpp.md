@@ -1,7 +1,7 @@
 ---
-description: This article demonstrates how to host a standard UWP control in a C++ Win32 app by using the XAML Hosting API.
-title: Host a standard UWP control in a C++ Win32 app using XAML Islands
-ms.date: 03/23/2020
+description: This article demonstrates how to host a standard WinRT XAML control in a C++ Win32 app by using the XAML Hosting API.
+title: Host a standard WinRT XAML control in a C++ Win32 app using XAML Islands
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
 ms.author: mcleans
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Host a standard UWP control in a C++ Win32 app
+# Host a standard WinRT XAML control in a C++ Win32 app
 
-This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard UWP control (that is, a control provied by the Windows SDK) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
+This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard WinRT XAML control (that is, a control provied by the Windows SDK) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
 
 > [!NOTE]
-> The scenario demonstrated in this article doesn't support directly editing XAML markup for UWP controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted UWP controls via code. For instructions that enable you to directly edit XAML markup when hosting UWP controls, see [Host a custom UWP control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md).
+> The scenario demonstrated in this article doesn't support directly editing XAML markup for WinRT XAML controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted controls via code. For instructions that enable you to directly edit XAML markup when hosting WinRT XAML controls, see [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md).
 
 ## Create a desktop application project
 
@@ -54,9 +54,9 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
         </assembly>
         ```
 
-## Use the XAML hosting API to host a UWP control
+## Use the XAML hosting API to host a WinRT XAML control
 
-The basic process of using the XAML hosting API to host a UWP control follows these general steps:
+The basic process of using the XAML hosting API to host a WinRT XAML control follows these general steps:
 
 1. Initialize the UWP XAML framework for the current thread before your app creates any of the [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) objects that it will host. There are several ways to do this, depending on when you plan to create the [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) object that will host the controls.
 
@@ -77,7 +77,7 @@ The basic process of using the XAML hosting API to host a UWP control follows th
 
     2. Call the **AttachToWindow** method of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface, and pass in the window handle of the parent UI element in your application.
 
-    3. Set the initial size of the internal child window contained in the **DesktopWindowXamlSource**. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any UWP controls you add to the **DesktopWindowXamlSource** will not be visible. To access the internal child window in the **DesktopWindowXamlSource**, use the **WindowHandle** property of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface.
+    3. Set the initial size of the internal child window contained in the **DesktopWindowXamlSource**. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any WinRT XAML controls you add to the **DesktopWindowXamlSource** will not be visible. To access the internal child window in the **DesktopWindowXamlSource**, use the **WindowHandle** property of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface.
 
 3. Finally, assign the **Windows.UI.Xaml.UIElement** you want to host to the [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property of your **DesktopWindowXamlSource** object.
 
@@ -161,7 +161,7 @@ The following steps and code examples demonstrate how to do implement the above 
         WindowsXamlManager winxamlmanager = WindowsXamlManager::InitializeForCurrentThread();
 
         // This DesktopWindowXamlSource is the object that enables a non-UWP desktop application 
-        // to host UWP controls in any UI element that is associated with a window handle (HWND).
+        // to host WinRT XAML controls in any UI element that is associated with a window handle (HWND).
         DesktopWindowXamlSource desktopSource;
 
         // Get handle to the core window.
@@ -265,7 +265,7 @@ The following steps and code examples demonstrate how to do implement the above 
     > [!NOTE]
     > You may see the several build warnings, including `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` and `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. These warnings are known issues with the current tools and NuGet packages, and they can be ignored.
 
-For complete examples that demonstrate using the XAML hosting API to host a standard UWP control, see the following code files:
+For complete examples that demonstrate using the XAML hosting API to host a standard WinRT XAML control, see the following code files:
 
 * **C++ Win32:**
   * See the [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) file.
@@ -286,17 +286,17 @@ The following instructions show you how to package the all the components in the
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the C++/Win32 desktop application project in your solution and click **OK**.
 
-3. Build and run the packaging project. Confirm that the app runs and displays the UWP controls as expected.
+3. Build and run the packaging project. Confirm that the app runs and displays the WinRT XAML controls as expected.
 
 ## Next steps
 
-The code examples in this article get you started with the basic scenario of hosting a standard UWP control in a C++ Win32 app. The following sections introduce additional scenarios that your application may need to support.
+The code examples in this article get you started with the basic scenario of hosting a standard WinRT XAML control in a C++ Win32 app. The following sections introduce additional scenarios that your application may need to support.
 
-### Host a custom UWP control
+### Host a custom WinRT XAML control
 
-For many scenarios, you may need to host a custom UWP XAML control that contains several individual controls that work together. The process for hosting a custom UWP control (either a control you define yourself or a control provided by a 3rd party) in a C++ Win32 app is more complex than hosting a standard control, and requires additional code.
+For many scenarios, you may need to host a custom UWP XAML control that contains several individual controls that work together. The process for hosting a custom control (either a control you define yourself or a control provided by a 3rd party) in a C++ Win32 app is more complex than hosting a standard control, and requires additional code.
 
-For a complete walkthrough, see [Host a custom UWP control in a C++ Win32 app using the XAML Hosting API](host-custom-control-with-xaml-islands-cpp.md).
+For a complete walkthrough, see [Host a custom WinRT XAML control in a C++ Win32 app using the XAML Hosting API](host-custom-control-with-xaml-islands-cpp.md).
 
 ### Advanced scenarios
 
@@ -308,6 +308,6 @@ For more information about handling these scenarios and pointers to related code
 
 * [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
 * [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a custom UWP control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
+* [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
 * [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
