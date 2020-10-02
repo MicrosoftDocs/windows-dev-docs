@@ -123,10 +123,10 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
 |Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp#displaytoast)|
+|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp#displaytoast).
+> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md#displaytoast).
 
 ### Porting classes and members
 
