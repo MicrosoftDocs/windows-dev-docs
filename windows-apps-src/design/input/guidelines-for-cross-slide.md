@@ -52,14 +52,18 @@ Use cross-slide for lists or collections that scroll in a single direction. For 
 
 **Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
 
- 
+:::row:::
+   :::column:::
+     ![horizontal-panning, two-dimensional list](images/groupedlistview1.png)
 
-|                                                                                         |                                                                                         |
-|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![horizontal-panning, two-dimensional list](images/groupedlistview1.png)                | ![vertical-panning, one-dimensional list](images/listviewlistlayout.png)                |
-| A horizontally panning two-dimensional list. Drag vertically to select or move an item. | A vertically panning one-dimensional list. Drag horizontally to select or move an item. |
+     A horizontally panning two-dimensional list. Drag vertically to select or move an item. 
+   :::column-end:::
+   :::column:::
+      ![vertical-panning, one-dimensional list](images/listviewlistlayout.png)
 
- 
+      A vertically panning one-dimensional list. Drag horizontally to select or move an item.
+   :::column-end:::
+:::row-end:::
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 

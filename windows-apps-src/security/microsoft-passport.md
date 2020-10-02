@@ -406,8 +406,8 @@ Mission accomplished! You just made the Internet a safer place!
 
 ### 6.2 Terminology
 
-| | |
-|-|-|
+| Term | Definition |
+| ---- | ---------- |
 | AIK | An attestation identity key is used to provide such a cryptographic proof (TPM key attestation) by signing the properties of the non-migratable key and providing the properties and signature to the relying party for verification. The resulting signature is called an “attestation statement.” Since the signature is created using the AIK private key—which can only be used in the TPM that created it—the relying party can trust that the attested key is truly non-migratable and cannot be used outside that TPM. |
 | AIK Certificate | An AIK certificate is used to attest to the presence of an AIK within a TPM. It is also used to attest that other keys certified by the AIK originated from that particular TPM. |
 | IDP | An IDP is an identity provider. An example is the IDP build by Microsoft for Microsoft Accounts. Every time an application needs to authenticate with an MSA, it can call the MSA IDP. |

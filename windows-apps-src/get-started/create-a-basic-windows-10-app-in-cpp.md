@@ -273,24 +273,24 @@ It's easy to customize the look and feel of your app. By default, your app uses 
 1.  Open App.xaml.
 2.  In the opening [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag, edit the [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
-```xaml
-RequestedTheme="Dark"
-```
+    ```xaml
+    RequestedTheme="Dark"
+    ```
 
     Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
-```xaml
+    ```xaml
     <Application
     x:Class="HelloWorld.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelloWorld"
     RequestedTheme="Dark">
-```
+    ```
 
 3.  Press F5 to build and run it. Notice that it uses the dark theme.
 
-![App screen with dark theme](images/xaml-hw-app3.png)
+    ![App screen with dark theme](images/xaml-hw-app3.png)
 
 Which theme should you use? Whichever one you want. Here's our take: for apps that mostly display images or video, we recommend the dark theme; for apps that contain a lot of text, we recommend the light theme. If you're using a custom color scheme, use the theme that goes best with your app's look and feel. In the rest of this tutorial, we use the Light theme in screenshots.
 

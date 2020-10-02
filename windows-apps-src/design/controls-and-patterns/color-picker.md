@@ -20,9 +20,17 @@ A color picker is used to browse through and select colors. By default, it lets 
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ColorPicker** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **ColorPicker** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI Library APIs:** [ColorPicker class](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color property](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >

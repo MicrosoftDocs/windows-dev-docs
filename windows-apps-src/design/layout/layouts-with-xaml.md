@@ -41,8 +41,8 @@ Proportional sizing, also called *star sizing*, distributes available space amon
 
 This example combines fixed, auto, and proportional sizing in a [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) with 4 columns.
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| Column | Sizing | Description |
+| ------ | ------ | ----------- |
 Column_1 | **Auto** | The column will size to fit its content.
 Column_2 | * | After the Auto columns are calculated, the column gets part of the remaining width. Column_2 will be one-half as wide as Column_4.
 Column_3 | **44** | The column will be 44 pixels wide.
