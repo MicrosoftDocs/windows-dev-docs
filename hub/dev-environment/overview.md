@@ -52,9 +52,9 @@ This guide will help you get started with installing and setting up the language
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Azure for Java icon](../images/java-logo.png)](/azure/developer/java/)<br>
-        **[Get started with Java on Azure](/azure/developer/java/)**<br>
-        Get started building apps for the cloud with these tutorials and tools for Java developers.
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
     :::column-end:::
     :::column:::
        [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
