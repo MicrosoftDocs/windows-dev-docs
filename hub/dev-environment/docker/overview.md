@@ -142,5 +142,5 @@ Using containers for remote development and deploying applications with the Dock
 :::row-end:::
 
 Learn about more [Azure services that support containers](https://azure.microsoft.com/overview/containers/).
-
+<br><br><br>
 > [!VIDEO https://www.youtube.com/embed/0oEsMwSxBsk]
