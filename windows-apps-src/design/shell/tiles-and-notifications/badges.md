@@ -26,97 +26,29 @@ Notification badges appear on your app's taskbar icon and in the lower-right cor
 
 ## Numeric badges
 
-<table>
-    <tr>
-        <th>Value</th>
-        <th>Badge</th>
-        <th>XML</th>
-    </tr>
-    <tr>
-        <td>A number from 1 to 99. A value of 0 is equivalent to the glyph value "none" and will clear the badge.</td>
-        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
-        <td>`<badge value="1"/>`</td>
-    </tr>
-    <tr>
-        <td>Any number greater than 99.</td>
-        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
-        <td>`<badge value="100"/>`</td>
-    </tr>    
-</table>
+Value | Badge | XML
+--|--|--
+A number from 1 to 99. A value of 0 is equivalent to the glyph value "none" and will clear the badge. | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
+Any number greater than 99. | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
 
 ## Glyph badges
 Instead of a number, a badge can display one of a non-extensible set of status glyphs. 
 
-<table>
-<tr>
-    <th>Status</th>
-    <th>Glyph</th>
-    <th>XML</th>
-</tr>
-<tr>
-    <td>none</td>
-    <td>(No badge shown.)</td>
-    <td>`<badge value="none"/>`</td>
-</tr>
-<tr>
-    <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
-    <td>`<badge value="activity"/>`</td>
-</tr>
-<tr>
-    <td>alarm</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Glyph" /></td>
-    <td>`<badge value="alarm"/>`</td>
-</tr>
-<tr>
-    <td>alert</td>
-    <td><img src="images/badges/badge-alert.png" alt="Glyph" /></td>
-    <td>`<badge value="alert"/>`</td>
-</tr>
-<tr>
-    <td>attention</td>
-    <td><img src="images/badges/badge-attention.png" alt="Glyph" /></td>
-    <td>`<badge value="attention"/>`</td>
-</tr>
-<tr>
-    <td>available</td>
-    <td><img src="images/badges/badge-available.png" alt="Glyph" /></td>
-    <td>`<badge value="available"/>`</td>
-</tr>
-<tr>
-    <td>away</td>
-    <td><img src="images/badges/badge-away.png" alt="Glyph" /></td>
-    <td>`<badge value="away"/>`</td>
-</tr>
-<tr>
-    <td>busy</td>
-    <td><img src="images/badges/badge-busy.png" alt="Glyph" /></td>
-    <td>`<badge value="busy"/>`</td>
-</tr>
-<tr>
-    <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
-    <td>`<badge value="error"/>`</td>
-</tr>
-<tr>
-    <td>newMessage</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Glyph" /></td>
-    <td>`<badge value="newMessage"/>`</td>
-</tr>
-<tr>
-    <td>paused</td>
-    <td><img src="images/badges/badge-paused.png" alt="Glyph" /></td>
-    <td>`<badge value="paused"/>`</td>
-</tr>
-<tr>
-    <td>playing</td>
-    <td><img src="images/badges/badge-playing.png" alt="Glyph" /></td>
-    <td>`<badge value="playing"/>`</td>
-</tr>
-<tr>
-    <td>unavailable</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Glyph" /></td>
-    <td>`<badge value="unavailable"/>`</td>
+Status | Glyph | XML
+--|--|--
+none | (No badge shown.) | `<badge value="none"/>`
+activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
+alarm | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
+alert | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
+attention | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
+available | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
+away | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
+busy | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
+error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
+newMessage | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
+paused | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
+playing | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
+unavailable | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
 </tr>
 </table>
 
