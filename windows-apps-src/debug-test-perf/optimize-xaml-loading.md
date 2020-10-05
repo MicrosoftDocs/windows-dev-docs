@@ -75,11 +75,11 @@ Here, the ListView is loaded, but is not visible because it's Width is 0. The Li
 
 Live visual tree with the ListView loaded. Total element count for the page is 89.
 
-![Visual tree with list view](images/visual-tree-1.png)
+![Screenshot of the visual tree with list view.](images/visual-tree-1.png)
 
 ListView and its children are loaded into memory.
 
-![Visual tree with list view](images/memory-use-1.png)
+![Screenshot of the Managed Memory Test App 1 dot E X E table showing ListView and its children are loaded into memory.](images/memory-use-1.png)
 
 #### Option 2 - Better
 
@@ -91,11 +91,11 @@ Here, the ListView's Visibility is set to collapsed (the other XAML is identical
 
 Live visual tree with the ListView collapsed. Total element count for the page is 46.
 
-![Visual tree with collapsed list view](images/visual-tree-2.png)
+![Screenshot of the visual tree with collapsed list view.](images/visual-tree-2.png)
 
 ListView and its children are loaded into memory.
 
-![Visual tree with list view](images/memory-use-1.png)
+![An updated screenshot of the Managed Memory Test App 1 dot E X E table showing ListView and its children are loaded into memory.](images/memory-use-1.png)
 
 #### Option 3 - Most Efficient
 

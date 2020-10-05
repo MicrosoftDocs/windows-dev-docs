@@ -72,7 +72,7 @@ You can think of your app's UI as a collection of pages. It's up to you to decid
 To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
     :::column:::
-![Frame](images/collection-pages.svg)
+![Screenshot of the collection page.](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 

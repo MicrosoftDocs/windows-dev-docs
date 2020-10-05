@@ -30,9 +30,9 @@ The library is available as a NuGet package that can be added to any new or exis
 The **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps.  
 You can optionally check "Include prerelease" to see the latest prerelease versions that include experimental new features.
 
-    ![NuGet packages](images/ManageNugetPackages.png "Manage NuGet Packages Image")
+    ![Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.](images/ManageNugetPackages.png "Manage NuGet Packages Image")
 
-    ![NuGet packages](images/NugetPackages.png)
+    ![Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field.](images/NugetPackages.png)
 
 4. Add the Windows UI (WinUI) Theme Resources to your App.xaml resources. There are two ways to do this, depending on whether you have additional application resources.
 

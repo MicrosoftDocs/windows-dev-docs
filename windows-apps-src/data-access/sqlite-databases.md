@@ -54,11 +54,11 @@ If you're using Visual Studio 2015, click **Help**->**About Microsoft Visual Stu
 
 Next, add class library to your solution. You don't have to use a class library to contain your data access code, but we'll use one our example. We'll name the library **DataAccessLibrary** and we'll name the class in the library to **DataAccess**.
 
-![Class library](images/class-library.png)
+![Screenshot showing the Add New Project dialog box showing Installed > Visual C Sharp > Windows Universal selected and the Class library option highlighted.](images/class-library.png)
 
 Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
-![Manage NuGet packages](images/manage-nuget.png)
+![Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages for Solution option highlighted.](images/manage-nuget.png)
 
 If you're using Visual Studio 2015, Choose the **Installed** tab, and make sure that the version number of the **Microsoft.NETCore.UniversalWindowsPlatform** package is **5.2.2** or higher.
 
@@ -68,7 +68,7 @@ If it isn't, update the package to a newer version.
 
 Choose the **Browse** tab, and search for the **Microsoft.Data.SQLite** package. Install version **1.1.1** (or lower) of that package.
 
-![SQLite package](images/sqlite-package.png)
+![Screenshot of the Microsoft Data SQLite dialog box with the Version text field called out.](images/sqlite-package.png)
 
 Move onto the [Add and retrieve data in a SQLite database](#add-and-retrieve-data-in-a-sqlite-database) section of this guide.
 
@@ -88,11 +88,11 @@ Secondly, your app does not have to package SQLite libraries. Instead, your app 
 
 Lets start by adding a .NET Standard 2.0 class library to your solution. It's not necessary that you use a class library to contain your data access code, but we'll use one our example. We'll name the library **DataAccessLibrary** and we'll name the class in the library to **DataAccess**.
 
-![Class library](images/dot-net-standard.png)
+![Screenshot showing the Add New Project dialog box showing Installed > Visual C Sharp > dot NET Standard selected and the Class Library option highlighted.](images/dot-net-standard.png)
 
 Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
-![Manage NuGet packages](images/manage-nuget-2.png)
+![Another screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.](images/manage-nuget-2.png)
 
 > [!NOTE]
 > If you want your .NET Standard class library to be able to access app folders and image assets of your UWP app, you will need to mark it as **EmbeddedResource** and **CopyAlways** in its **properties**.
@@ -115,8 +115,7 @@ Search for the **SQLitePCLRaw.bundle_winsqlite3** package, and then install it o
 
 You don't have to do this. But if you have a reason to include a specific version of SQLite with your app, choose the **Browse** tab, and search for the **Microsoft.Data.SQLite** package. Install version **2.0** (or lower) of that package.
 
-![SQLite package](images/sqlite-package-v2.png)
-
+![Screenshot of the Microsoft Data SQLite dialog box Showing that Latest stable 2.0.0 version selected. the Version text field called out.](images/sqlite-package-v2.png)
 
 ## Add and retrieve data in a SQLite database
 

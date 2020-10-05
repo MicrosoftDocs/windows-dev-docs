@@ -27,7 +27,7 @@ AUGUST 2019
 
 #### TabView
 
-![Example](../images/tabview-gif.gif)
+![Short movie showing the behavior of the Tab View control.](../images/tabview-gif.gif)
 
 #### Description
 
@@ -41,7 +41,7 @@ https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui
 
 ##### a) NavigationView's Back Button update
 
-![Example](../images/navigationview-back-button.gif)
+![Short movie showing the updated behavior of the Navigation View control Back Button.](../images/navigationview-back-button.gif)
 
 ##### Description
 
@@ -49,7 +49,7 @@ In NavigationView's minimal mode, the back button no longer disappears. When ope
 
 ##### b) NavigationView - No Auto Padding
 
-![Example](../images/navigationview-no-auto-padding.png)
+![Screenshot showing the behavior of the Navigation View control with No Auto Padding.](../images/navigationview-no-auto-padding.png)
 
 ##### Description
 
@@ -63,7 +63,7 @@ https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationvi
 
 ##### a) Corner Radius Update
 
-![Example](../images/corner-radius.png)
+![Screenshot showing the updated style of the Corner Radius.](../images/corner-radius.png)
 
 ##### Description
 
@@ -75,7 +75,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/524
 
 ##### b) Border Thickness Update
 
-![Example](../images/border-thickness.png)
+![Screenshot showing the updated style of the Borer Thickness.](../images/border-thickness.png)
 
 ##### Description
 
@@ -87,7 +87,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/835
 
 ##### c) Button Visual Update
 
-![Example](../images/button-hover-visual-update.png)
+![Screenshot showing the updated style of the Button control.](../images/button-hover-visual-update.png)
 
 ##### Description: 
 Default Button's visual was updated to remove outline that appeared during hover to give it a cleaner look.
@@ -97,7 +97,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/953
 
 ##### d) SplitButton Visual Update
 
-![Example](../images/splitbutton-visual-update.png)
+![Screenshot showing the updated style of the Split Button control.](../images/splitbutton-visual-update.png)
 
 ##### Description: 
 Default SplitButton's visual was updated to make it more distinct from DropDownButton.
@@ -107,7 +107,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/986
 
 ##### e) ToggleSwitch Visual Update
 
-![Example](../images/toggleswitch-update.png)
+![Screenshot showing the updated style of the Toggle Switch control.](../images/toggleswitch-update.png)
 
 ##### Description: 
 Default ToggleSwitch's width was reduced from 44px to 40px so it is balanced visually while retaining usability.
@@ -117,7 +117,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/836
 
 ##### f) CheckBox and RadioButton Visual Update
 
-![Example](../images/checkbox-radiobutton.png)
+![Screenshot showing the updated style of the Check Box and Radio Button controls](../images/checkbox-radiobutton.png)
 
 ##### Description: 
 CheckBox and RadioButton visuals were updated to be consistent with the rest of the visual style change.
@@ -141,7 +141,7 @@ How-to articles for Windows UI Library controls are included with the [Universal
 
 API reference docs are located here: [Windows UI Library APIs](/uwp/api/overview/winui/).
 
-## Microsoft.UI.Xaml 2.2 Version History
+## Microsoft.UI.Xaml 2.2-prerelease Version History
 
 ### Microsoft.UI.Xaml 2.2.190702001-prerelease
 

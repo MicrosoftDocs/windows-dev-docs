@@ -639,8 +639,6 @@ When we run the app, we use the Surface Dial to interact with it. First, we plac
 
 This topic provides an overview of the Surface Dial input device with UX and developer guidance on how to customize the user experience for off-screen scenarios as well as on-screen scenarios when used with Surface Studio.
 
-## Feedback
-
 Please send your questions, suggestions, and feedback to [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com).
 
 ## Related articles
