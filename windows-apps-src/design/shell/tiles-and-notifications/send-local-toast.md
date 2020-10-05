@@ -47,7 +47,7 @@ We'll start with a simple text-based notification. Construct the notification co
 ```csharp
 // Construct the content
 var content = new ToastContentBuilder()
-    .SetLaunchArgs("picOfHappyCanyon", ToastActivationType.Foreground)
+    .AddToastActivationInfo("picOfHappyCanyon", ToastActivationType.Foreground)
     .AddText("Andrew sent you a picture")
     .AddText("Check this out, Happy Canyon in Utah!")
     .GetToastContent();
@@ -101,11 +101,11 @@ int conversationId = 384928;
 new NotificationBuilder()
 
     // Arguments returned when user taps body of notification
-    .SetLaunchArgs(new QueryString() // Using QueryString.NET
+    .AddToastActivationInfo(new QueryString() // Using QueryString.NET
     {
         { "action", "viewConversation" },
         { "conversationId", conversationId.ToString() }
-    }.ToString())
+    }.ToString(), ToastActivationType.Foreground)
 
     .AddText("Andrew sent you a picture")
     ...
@@ -199,7 +199,7 @@ var content = new ToastContentBuilder()
     .AddInlineImage(new Uri("https://picsum.photos/360/202?image=883"))
 
     // Profile (app logo override) image
-    .SetAppLogoOverride(new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop.Circle)
+    .AddAppLogoOverride(new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop.Circle)
     
     .GetToastContent();
     
@@ -325,7 +325,6 @@ However, if the message in your notification is only relevant for a period of ti
 // Create toast content
 var content = new ToastContentBuilder()
     .AddText("Expires in 2 days...")
-    .SetExpirationTime(DateTime.Now.AddDays(2))
     .GetToastContent();
 
 // Set expiration time
@@ -351,7 +350,6 @@ Tag and Group combined act as a composite primary key. Group is the more generic
 // Create toast content
 var content = new ToastContentBuilder()
     .AddText("New post on your wall!")
-    .SetExpirationTime(DateTime.Now.AddDays(2))
     .GetToastContent();
 
 // Set tag/group
