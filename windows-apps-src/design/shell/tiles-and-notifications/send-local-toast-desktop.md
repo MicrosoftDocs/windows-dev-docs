@@ -1,27 +1,27 @@
 ---
 Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
-title: Send a local toast notification from desktop C# apps
+title: Send a local toast notification from Win32 C# apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from desktop C# apps
+label: Send a local toast notification from Win32 C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, sparse packages, C#, c sharp, toast notification, wpf, send toast notification wpf, send toast notification winforms, send toast notification c#, send notification wpf, send notification c#, toast notification wpf, toast notification c#
 ms.localizationpriority: medium
 ---
-# Send a local toast notification from desktop C# apps
+# Send a local toast notification from Win32 C# apps
 
-Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
+Win32 apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for Win32 apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or sparse packages.
 
 > [!IMPORTANT]
-> If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
+> If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## Step 1: Install the Notifications library
 
 Install the `Microsoft.Toolkit.Uwp.Notifications` [NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) in your project.
 
-This [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) adds compat library code for working with toast notifications from desktop apps. It also references the UWP SDKs and allows you to construct notifications using C# instead of raw XML. The remainder of this quickstart depends on the Notifications library.
+This [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) adds compat library code for working with toast notifications from Win32 apps. It also references the UWP SDKs and allows you to construct notifications using C# instead of raw XML. The remainder of this quickstart depends on the Notifications library.
 
 
 ## Step 2: Implement the activator
@@ -314,7 +314,7 @@ If your app is not running:
 
 
 ### Foreground vs background activation
-For desktop apps, foreground and background activation is handled identically - your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **ActivationType** of **Background** in your toast content doesn't change the behavior.
+For Win32 apps, foreground and background activation is handled identically - your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **ActivationType** of **Background** in your toast content doesn't change the behavior.
 
 
 ## Step 7: Remove and manage notifications
@@ -351,5 +351,5 @@ If you've installed both your MSIX/sparse package and classic Win32 app, note th
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Toast notifications from desktop apps](toast-desktop-apps.md)
+* [Toast notifications from Win32 apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)

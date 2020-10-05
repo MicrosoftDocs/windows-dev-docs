@@ -1,24 +1,24 @@
 ---
-Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
-title: Pin secondary tiles from desktop application
-label: Pin secondary tiles from desktop application
+Description: Win32 applications can pin secondary tiles thanks to the Desktop Bridge!
+title: Pin secondary tiles from Win32 apps
+label: Pin secondary tiles from Win32 apps
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium
 ---
-# Pin secondary tiles from desktop application
+# Pin secondary tiles from Win32 apps
 
 
-Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!
+Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Win32 applications (like Windows Forms, and WPF) can pin secondary tiles!
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
 > [!IMPORTANT]
 > **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.
 
-Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.
+Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the Win32 application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.
 
 
 ## Package your app with Desktop Bridge
@@ -60,7 +60,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## Assign the window handle
 
-This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
+This is the key step for Win32 applications. Cast the object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
 
 ```csharp
 // Assign the window handle

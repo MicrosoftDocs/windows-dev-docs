@@ -27,7 +27,7 @@ By adding secondary tiles to your app, you help the user re-engage quickly and e
 | --- | --- |
 | [Guidance on secondary tiles](secondary-tiles-guidance.md) | Learn about when and where you should use secondary tiles. |
 | [Pin secondary tiles](secondary-tiles-pinning.md) | Learn how to pin a secondary tile. |
-| [Pin from desktop application](secondary-tiles-desktop-pinning.md) | Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge! |
+| [Pin from Win32 apps](secondary-tiles-desktop-pinning.md) | Win32 apps can pin secondary tiles thanks to the Desktop Bridge! |
 
 
 ## Secondary tiles in relation to primary tiles
@@ -73,5 +73,5 @@ To learn about when and where you should use secondary tiles, and other usage gu
 To learn how to pin secondary tiles, please see [Pin secondary tiles](secondary-tiles-pinning.md).
 
 
-## Desktop applications and secondary tiles
-To learn how to use secondary tiles from your desktop application via the Desktop Bridge, please see [Pin secondary tiles from desktop application](secondary-tiles-desktop-pinning.md).
+## Win32 applications and secondary tiles
+To learn how to use secondary tiles from your Win32 application via the Desktop Bridge, please see [Pin secondary tiles from Win32 apps](secondary-tiles-desktop-pinning.md).
