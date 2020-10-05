@@ -21,7 +21,7 @@ Once your app is in the Microsoft Store, it's time to get it in front of as many
 
 These campaigns will run ads in any other app that matches your app’s device and category. You can also choose a universal campaign, where the ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.
 
-[EXPLORE MORE >](create-an-ad-campaign-for-your-app.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -34,7 +34,7 @@ These campaigns will run ads in any other app that matches your app’s device a
 
 These campaigns will run ads only in your other apps, free of charge.
 
-[EXPLORE MORE >](about-house-ads.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -48,7 +48,7 @@ These campaigns will run ads only in your other apps, free of charge.
 
 These campaigns will run ads in apps published by other developers who also participate in community ad campaigns, free of charge.
 
-[EXPLORE MORE >](create-an-ad-campaign-for-your-app.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -97,7 +97,7 @@ Native ads enable you to send all the individual components of your ad (such as 
 
 ![Learn more about app promotion campaigns](images/app-promotion-campaigns.png)
 
-[Create an ad campaign in the dashboard](create-an-ad-campaign-for-your-app.md)
+[Create an ad campaign in the dashboard](../monetize/index.md)
 
 [Create an ad campaign using our REST API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 

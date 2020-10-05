@@ -209,15 +209,15 @@ For info about integrating the AdDuplex SDK into Windows 10 UWP games created us
 
 ## Maximize your game's potential through ad campaigns
 
-Take the next step in promoting your game using ads. When you [create an ad campaign](../publish/create-an-ad-campaign-for-your-app.md) for your game, other apps and games will display ads promoting your game.
+Take the next step in promoting your game using ads. When you [create an ad campaign](../monetize/index.md) for your game, other apps and games will display ads promoting your game.
 
 Choose from several types of campaigns that can help increase your gamer base.
 
 |Campaign type             | Ads for your game appear in...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Paid                      |Apps that match your game’s device or category.                                                                                                                                                   |
-|Free community	           |Apps published by other developers who have also opted in to community ad campaigns. For more info, see [About community ads](../publish/about-community-ads.md).|
-|Free house	               |Only apps that you've published. For more info, see [About house ads](../publish/about-house-ads.md).                                                            |
+|Free community	           |Apps published by other developers who have also opted in to community ad campaigns. For more info, see [About community ads](../monetize/index.md).|
+|Free house	               |Only apps that you've published. For more info, see [About house ads](../monetize/index.md).                                                            |
 
 ## Related links
 
