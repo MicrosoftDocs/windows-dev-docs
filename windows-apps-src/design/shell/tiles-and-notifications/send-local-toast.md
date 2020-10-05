@@ -98,7 +98,7 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 int conversationId = 384928;
 
 // Construct the content
-new NotificationBuilder()
+var content = new ToastContentBuilder()
 
     // Arguments returned when user taps body of notification
     .AddToastActivationInfo(new QueryString() // Using QueryString.NET
