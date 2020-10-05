@@ -43,7 +43,7 @@ The Surface Dial also supports both a *press and hold* action and a *click* acti
 
 | Surface Dial off-screen menu | | Surface Dial on-screen menu |
 | --- | --- | --- |
-| ![Surface Dial off-screen menu](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-onscreen.png) |
+| ![Screenshot of the Surface Dial off-screen menu.](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Screenshot of the Surface Dial on-screen menu.](images/windows-wheel/surface-dial-menu-onscreen.png) |
 
 ## System integration
 
@@ -112,7 +112,7 @@ Icons can convey professionalism and excellence, and inspire trust in users.
 
 |   |   |   |
 | --- | --- | --- |
-| ![Icon with alpha background](images/windows-wheel/surface-dial-menu-icon1.png) | ![Icon displayed on wheel menu with default theme Icon](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-icon3.png) |
+| ![Screenshot of an icon with alpha background.](images/windows-wheel/surface-dial-menu-icon1.png) | ![Screenshot of an icon displayed on wheel menu with default theme.](images/windows-wheel/surface-dial-menu-icon2.png) | ![Screenshot of an icon displayed on wheel menu with High Contrast White theme.](images/windows-wheel/surface-dial-menu-icon3.png) |
 | *Icon with alpha background* | *Icon displayed on wheel menu with default theme* | *Icon displayed on wheel menu with High Contrast White theme* |
 
 **Use concise and descriptive names**  
@@ -138,7 +138,7 @@ In this example, we add a basic custom tool that passes the input data from both
 
 1. First, we declare our UI (just a slider and toggle button) in XAML.
 
-   ![Image of the sample app UI](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![Screenshot of the Radial Controller Sample with the horizontal slider set to the left.](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *The sample app UI*
 
     ```Xaml
@@ -239,7 +239,7 @@ In this example, we add a basic custom tool that passes the input data from both
 
 When we run the app, we use the Surface Dial to interact with it. First, we press and hold to open the menu and select our custom tool. Once the custom tool is activated, the slider control can be adjusted by rotating the Dial and the switch can be toggled by clicking the Dial.
 
-![Image of the sample app UI activated using the Surface Dial custom tool](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![Screenshot of the Radial Controller Sample with the horizontal slider set to the middle.](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *The sample app UI activated using the Surface Dial custom tool*
 
 **Specify the built-in tools**
@@ -432,7 +432,7 @@ In the following example, we’ve created a basic app with four different sectio
 
 1. First, we declare our UI (four sections, each with a slider and toggle button) in XAML.
 
-   ![Image of the sample app UI](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *The sample app UI*
 
    ```xaml 
@@ -632,7 +632,7 @@ private void ActivateGridAtLocation(Point Location)
 
 When we run the app, we use the Surface Dial to interact with it. First, we place the device on the Surface Studio screen, which the app detects and associates with the lower right section (see image). We then press and hold the Surface Dial to open the menu and select our custom tool. Once the custom tool is activated, the slider control can be adjusted by rotating the Surface Dial and the switch can be toggled by clicking the Surface Dial.
 
-![Image of the sample app UI activated using the Surface Dial custom tool](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left and the fourth controller highlighted.](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *The sample app UI activated using the Surface Dial custom tool*
 
 ## Summary
