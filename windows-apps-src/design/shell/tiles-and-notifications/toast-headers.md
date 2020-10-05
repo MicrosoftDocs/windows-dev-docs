@@ -69,7 +69,7 @@ Headers are clickable by users, so that the user can click the header to find ou
 
 Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the toast itself.
 
-Activation is handled identical to [normal toast activation](send-local-toast.md#activation-handling), meaning you can retrieve these arguments in the **OnActivated** method of `App.xaml.cs` just like you do when the user clicks the body of your toast or a button on your toast.
+Activation is handled identical to [normal toast activation](send-local-toast.md#step-4-handling-activation), meaning you can retrieve these arguments in the **OnActivated** method of `App.xaml.cs` just like you do when the user clicks the body of your toast or a button on your toast.
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
