@@ -395,6 +395,25 @@ When this is set to `true`, the window will snap to the nearest character bounda
 
 ___
 
+## Bell settings
+
+Controls what happens when the application emits a BEL character. When set to `"audible"`, the Terminal will play a sound. When set to `"none"`, nothing will happen.
+
+**Property name:** `bellStyle`
+
+**Necessity:** Optional
+
+**Accepts:** `"audible"`, `"none"`
+
+**Default value:** `"audible"`
+
+> [!IMPORTANT]
+> The `"bellStyle"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
+
+<br />
+
+___
+
 ## Rendering settings
 
 If you are thinking about changing the rendering settings, additional information is provided on the [Troubleshooting page](./../troubleshooting.md#the-text-is-blurry) to help guide you.
