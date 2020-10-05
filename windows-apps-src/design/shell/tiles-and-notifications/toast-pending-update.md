@@ -43,25 +43,47 @@ To implement a toast that uses pending update as its after activation behavior..
 
 On your background activation buttons, set the **AfterActivationBehavior** to **PendingUpdate**. Note that this only works for buttons that have an **ActivationType** of **Background**.
 
-```csharp
-new ToastButton("Yes", "action=orderLunch")
-{
-    ActivationType = ToastActivationType.Background,
+#### [Builder syntax](#tab/builder-syntax)
 
-    ActivationOptions = new ToastActivationOptions()
+```csharp
+new ToastContentBuilder()
+
+    .AddText("Would you like to order lunch today?")
+
+    .AddButton(new ToastButton("Yes", "action=orderLunch")
     {
-        AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
-    }
-}
+        ActivationType = ToastActivationType.Background,
+
+        ActivationOptions = new ToastActivationOptions()
+        {
+            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
+        }
+    });
 ```
+
+#### [XML](#tab/xml)
 
 ```xml
-<action
-    content='Yes'
-    arguments='action=orderLunch'
-    activationType='background'
-    afterActivationBehavior='pendingUpdate' />
+<toast>
+  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Would you like to order lunch today?</text>
+    </binding>
+  </visual>
+
+  <actions>
+    <action
+      content="Yes"
+      arguments="action=orderLunch"
+      activationType="background"
+      afterActivationBehavior="pendingUpdate"/>
+  </actions>
+  
+</toast>
 ```
+
+---
 
 
 ## Use a Tag on the notification

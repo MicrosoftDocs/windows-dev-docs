@@ -28,19 +28,15 @@ Here's how you add a header to a toast notification.
 > [!NOTE]
 > Headers are only supported on Desktop. Devices that don't support headers will simply ignore the header.
 
-```csharp
-ToastContent toastContent = new ToastContent()
-{
-    Header = new ToastHeader()
-    {
-        Id = "6289",
-        Title = "Camping!!",
-        Arguments = "action=openConversation&id=6289",
-    },
+#### [Builder syntax](#tab/builder-syntax)
 
-    Visual = new ToastVisual() { ... }
-};
+```csharp
+new ToastContentBuilder()
+    .AddHeader("6289", "Camping!!", "action=openConversation&id=6289")
+    .AddText("Anyone have a sleeping bag I can borrow?");
 ```
+
+#### [XML](#tab/xml)
 
 ```xml
 <toast>
@@ -56,6 +52,8 @@ ToastContent toastContent = new ToastContent()
 
 </toast>
 ```
+
+---
 
 In summary...
 
