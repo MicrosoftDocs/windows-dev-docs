@@ -23,7 +23,7 @@ NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Micro
 
 A RadialGradientBrush is drawn within an ellipse defined by Center, RadiusX, and RadiusY properties. Colors for the gradient start at the center of the ellipse and end at the radius.
 
-![Short movie showing the behavior of the Radial gradient brush.](../images/radialgradientbrush.gif)<br>
+![Short video showing the behavior of the Radial gradient brush.](../images/radialgradientbrush.gif)<br>
 *Radial gradient brush*
 
 [Usage guidelines](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -34,7 +34,7 @@ A RadialGradientBrush is drawn within an ellipse defined by Center, RadiusX, and
 
 The ProgressRing control is used for modal interactions where the user is blocked until the ProgressRing disappears. Use this control if an operation requires that most interaction with the app be suspended until the operation is complete.
 
-![Short movie showing the behavior of the Progress Ring control.](../images/progressring.gif)<br>
+![Short video showing the behavior of the Progress Ring control.](../images/progressring.gif)<br>
 *ProgressRing control*
 
 [Usage guidelines](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -65,7 +65,7 @@ When dark theme is enabled, the background color of TextBox family controls rema
 
 | Before | After |
 | - | - |
-| ![Short movie showing the behavior of the TextBox dark theme before the updates.](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox dark theme updates (before)* | ![Short movie showing the behavior of the TextBox dark theme after the updates.](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox dark theme updates (after)* |
+| ![Short video showing the behavior of the TextBox dark theme before the updates.](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox dark theme updates (before)* | ![Short video showing the behavior of the TextBox dark theme after the updates.](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox dark theme updates (after)* |
 | ![Another short movie showing the behavior of the TextBox dark theme before the updates.](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox dark theme updates (before)* | ![Another short movie showing the behavior of the TextBox dark theme after the updates.](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox dark theme updates (after)* |
 
 The following are some of the controls included in the TextBox family of controls:

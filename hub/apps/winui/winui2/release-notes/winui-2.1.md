@@ -24,7 +24,7 @@ WinUI is an open source project hosted on GitHub. We welcome bug reports, featur
 Use an ItemsRepeater to create custom collection experiences using a flexible layout system, custom views, and virtualization.
 Unlike ListView, ItemsRepeater does not provide a comprehensive end-user experience – it has no default UI and provides no policy around focus, selection, or user interaction. Instead, it's a building block that you can use to create your own unique collection-based experiences and custom controls. It supports building of richer and more performant experiences.
 
-![Short movie showing the behavior of the Items Repeater control.](../images/ItemsRepeater%20-%20MSN%20News.gif)
+![Short video showing the behavior of the Items Repeater control.](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
 [Documentation](/windows/uwp/design/controls-and-patterns/items-repeater)
 
@@ -32,7 +32,7 @@ Unlike ListView, ItemsRepeater does not provide a comprehensive end-user experie
 
 The AnimatedVisualPlayer hosts and controls playback of animated visuals, enabling you to add high performance custom motion graphics to your app. For instance, the AnimatedVisualPlayer is used to display and control Lottie animations.
 
-![Short movie showing the behavior of the Animated Visual Player control.](../images/AnimatedVisualPlayerUpdated.gif)
+![Short video showing the behavior of the Animated Visual Player control.](../images/AnimatedVisualPlayerUpdated.gif)
 
 [Documentation](/windows/communitytoolkit/animations/lottie)
 
@@ -40,7 +40,7 @@ The AnimatedVisualPlayer hosts and controls playback of animated visuals, enabli
 
 TeachingTip provides an engaging and Fluent way for applications to guide and inform users with non-invasive and content-rich tips. TeachingTip can bring focus to new or important features, teach users how to perform tasks, and enhance workflow by providing contextually relevant information to your task at hand.
 
-![Short movie showing the behavior of the Teaching Tip control.](../images/TeachingTipUpdated.gif)
+![Short video showing the behavior of the Teaching Tip control.](../images/TeachingTipUpdated.gif)
 
 [Documentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 

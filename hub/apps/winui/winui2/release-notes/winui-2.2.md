@@ -27,7 +27,7 @@ AUGUST 2019
 
 #### TabView
 
-![Short movie showing the behavior of the Tab View control.](../images/tabview-gif.gif)
+![Short video showing the behavior of the Tab View control.](../images/tabview-gif.gif)
 
 #### Description
 
@@ -41,7 +41,7 @@ https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui
 
 ##### a) NavigationView's Back Button update
 
-![Short movie showing the updated behavior of the Navigation View control Back Button.](../images/navigationview-back-button.gif)
+![Short video showing the updated behavior of the Navigation View control Back Button.](../images/navigationview-back-button.gif)
 
 ##### Description
 
