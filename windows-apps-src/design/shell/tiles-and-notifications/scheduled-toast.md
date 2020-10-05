@@ -30,77 +30,40 @@ To fully understand this topic, the following will be helpful...
 * A Windows 10 UWP app project
 
 
-## Install NuGet packages
+## Step 1: Install NuGet package
 
-We recommend installing the two following NuGet packages to your project. Our code sample will use these packages.
-
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Generate toast payloads via objects instead of raw XML.
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): Generate and parse query strings with C#
+Install the [Microsoft.Toolkit.Uwp.Notifications NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). Our code sample will use this package. At the end of the article we'll provide the "plain" code snippets that don't use any NuGet packages. This package allows you to create toast notifications without using XML.
 
 
-## Add namespace declarations
+## Step 2: Add namespace declarations
 
 `Windows.UI.Notifications` includes the toast APIs.
 
 ```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-using Microsoft.QueryStringDotNET; // QueryString.NET
 ```
 
 
-## Construct the toast content
+## Step 3: Schedule the notification
 
-In Windows 10, your toast notification content is described using an adaptive language that allows great flexibility with how your notification looks. See the [toast content documentation](adaptive-interactive-toasts.md) for more information.
-
-Thanks to the Notifications library, generating the XML content is straightforward. If you don't install the Notifications library from NuGet, you have to construct the XML manually, which leaves room for errors.
-
-You should always set the **Launch** property, so when user taps the body of the toast and your app is launched, your app knows what content it should display.
+We'll use a simple text-based notification reminding a student about the homework they have due today. Construct the notification and schedule it!
 
 ```csharp
-// In a real app, these would be initialized with actual data
-string title = "ASTR 170B1";
-string content = "You have 3 items due today!";
+// Construct the content
+var content = new ToastContentBuilder()
+    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .GetToastContent();
 
-// Now we can construct the final toast content
-ToastContent toastContent = new ToastContent()
-{
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = title
-                },
-     
-                new AdaptiveText()
-                {
-                    Text = content
-                }
-            }
-        }
-    },
- 
-    // Arguments when the user taps body of toast
-    Launch = new QueryString()
-    {
-        { "action", "viewClass" },
-        { "classId", "3910938180" }
- 
-    }.ToString()
-};
-```
-
-## Create the scheduled toast
-
-Once you have initialized your toast content, create a new [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) and pass in the content's XML, and the time you want the notification to be delivered.
-
-```csharp
+    
 // Create the scheduled notification
-var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.AddSeconds(5));
+var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
+
+
+// Add your scheduled toast to the schedule
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
@@ -115,16 +78,6 @@ Tag and Group combined act as a composite primary key. Group is the more generic
 ```csharp
 toast.Tag = "18365";
 toast.Group = "ASTR 170B1";
-```
-
-
-## Schedule the notification
-
-Finally, create a [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) and call AddToSchedule(), passing in your scheduled toast notification.
-
-```csharp
-// And your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 

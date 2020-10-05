@@ -22,11 +22,9 @@ You can optionally override the timestamp with your own custom date and time, so
 To use a custom timestamp, simply assign the **DisplayTimestamp** property on your **ToastContent**.
 
 ```csharp
-ToastContent toastContent = new ToastContent()
-{
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
-};
+var content = new ToastContent()
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc))
+    ...
 ```
 
 ```xml
