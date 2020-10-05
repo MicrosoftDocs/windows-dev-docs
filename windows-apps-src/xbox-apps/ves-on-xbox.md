@@ -14,31 +14,31 @@ The following is an overview of what a user would experience when using VES on X
 
 - User turns on the Xbox console and wants to browse through their apps to find something of interest:
 
-		User: "Hey Cortana, open My Games and Apps"
+    > User: "Hey Cortana, open My Games and Apps"
 
 - User is left in Active Listening Mode (ALM), meaning the console is now listening for the user to invoke a control that’s visible on the screen, without needing to say, “Hey Cortana” each time.  User can now switch to view apps and scroll through the app list:
 
-		User: "applications"
+    > User: "applications"
 
 - To scroll the view, user can simply say:
 
-		User: "scroll down"
+    > User: "scroll down"
 
 - User sees the box art for the app they are interested in but forgot the name.  User asks for voice tip labels to be displayed:
 
-		User: "show labels"
+    > User: "show labels"
 
 - Now that it's clear what to say, the app can be launched:
 
-		User: "movies and TV"
+    > User: "movies and TV"
 
 - To exit active listening mode, user tells Xbox to stop listening:
 
-		User: "stop listening"
+    > User: "stop listening"
 
 - Later on, a new active listening session can be started with:
 
-		User: "Hey Cortana, make a selection" or "Hey Cortana, select"
+    > User: "Hey Cortana, make a selection" or "Hey Cortana, select"
 
 ## UI automation dependency ##
 VES is a UI Automation client and relies on information exposed by the app through its UI Automation providers. This is the same infrastructure already being used by the Narrator feature on Windows platforms.  UI Automation enables programmatic access to user interface elements, including the name of the control, its type and what control patterns it implements.  As the UI changes in the app, VES will react to UIA update events and re-parse the updated UI Automation tree to find all the actionable items, using this information to build a speech recognition grammar. 
@@ -162,36 +162,37 @@ For example:
 ## Sample UI ##
 Here’s an example of a XAML based UI, setting the AutomationProperties.Name in various ways:
 
-	<Page
-	    x:Class="VESSampleCSharp.MainPage"
-	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	    xmlns:local="using:VESSampleCSharp"
-	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	    mc:Ignorable="d">
-	    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
-	        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
-	        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
-	        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
-	            <ComboBoxItem Content="Monday" IsSelected="True"/>
-	            <ComboBoxItem Content="Tuesday"/>
-	            <ComboBoxItem Content="Wednesday"/>
-	            <ComboBoxItem Content="Thursday"/>
-	            <ComboBoxItem Content="Friday"/>
-	            <ComboBoxItem Content="Saturday"/>
-	            <ComboBoxItem Content="Sunday"/>
-	        </ComboBox>
-	        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
-	            <Grid>
-	                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
-	                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
-	            </Grid>
-	        </Button>
-	    </Grid>
-	</Page>
-
+```xaml
+<Page
+    x:Class="VESSampleCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VESSampleCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
+        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Monday" IsSelected="True"/>
+            <ComboBoxItem Content="Tuesday"/>
+            <ComboBoxItem Content="Wednesday"/>
+            <ComboBoxItem Content="Thursday"/>
+            <ComboBoxItem Content="Friday"/>
+            <ComboBoxItem Content="Saturday"/>
+            <ComboBoxItem Content="Sunday"/>
+        </ComboBox>
+        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
+            <Grid>
+                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
+                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>
+```
 
 Using the above sample here is what the UI will look like with and without voice tip labels.
  

@@ -39,12 +39,12 @@ Date and time controls give you standard, localized ways to let a user view and 
 
 There are four date and time controls to choose from; the control you use depends on your scenario. Use this info to pick the right control to use in your app.
 
-&nbsp;|&nbsp;|&nbsp;                                                                                                                      
---------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-Calendar view       |![Example of calendar view](images/controls_calendar_monthview_small.png)|Use to pick a single date or a range of dates from an always visible calendar.                   
-Calendar date picker|![Example of calendar date picker](images/calendar-date-picker-closed.png)|Use to pick a single date from a contextual calendar. 
-Date picker         |![Example of date picker](images/date-picker-closed.png)|Use to pick a single known date when contextual info isn't important.
-Time picker         |![Example of time picker](images/time-picker-closed.png)|Use to pick a single time value.                                        
+| Control | Example | Description |
+| ------- | :-----: | ----------- |
+| Calendar view | ![Example of calendar view](images/controls_calendar_monthview_small.png) | Use to pick a single date or a range of dates from an always visible calendar. |
+| Calendar date picker | ![Example of calendar date picker](images/calendar-date-picker-closed.png) | Use to pick a single date from a contextual calendar. |
+| Date picker | ![Example of date picker](images/date-picker-closed.png) | Use to pick a single known date when contextual info isn't important. |
+| Time picker | ![Example of time picker](images/time-picker-closed.png) | Use to pick a single time value. |
 
 <!-- This table seems redundant, not sure it's needed.-->
 

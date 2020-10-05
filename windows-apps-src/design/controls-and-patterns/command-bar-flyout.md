@@ -28,9 +28,17 @@ The command bar flyout has two display modes: *collapsed* and *expanded*.
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 >**Windows UI Library APIs**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >

@@ -22,9 +22,17 @@ The person picture control displays the avatar image for a person, if one is ava
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Platform APIs**: [PersonPicture class](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 

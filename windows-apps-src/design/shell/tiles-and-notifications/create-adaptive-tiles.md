@@ -407,9 +407,8 @@ new AdaptiveText()
 
 **Basic text styles**
 
-|                                |                           |             |
-|--------------------------------|---------------------------|-------------|
 | &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
+|--------------------------------|---------------------------|-------------|
 | caption                        | 12 effective pixels (epx) | Regular     |
 | body                           | 15 epx                    | Regular     |
 | base                           | 15 epx                    | Semibold    |
@@ -424,11 +423,11 @@ new AdaptiveText()
 
 These variations reduce the line height so that content above and below come much closer to the text.
 
-|                  |
-|------------------|
-| titleNumeral     |
-| subheaderNumeral |
-| headerNumeral    |
+- titleNumeral
+
+- subheaderNumeral
+
+- headerNumeral
 
  
 
@@ -436,18 +435,25 @@ These variations reduce the line height so that content above and below come muc
 
 Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
 
-|                        |
-|------------------------|
-| captionSubtle          |
-| bodySubtle             |
-| baseSubtle             |
-| subtitleSubtle         |
-| titleSubtle            |
-| titleNumeralSubtle     |
-| subheaderSubtle        |
-| subheaderNumeralSubtle |
-| headerSubtle           |
-| headerNumeralSubtle    |
+- captionSubtle
+
+- bodySubtle
+
+- baseSubtle
+
+- subtitleSubtle
+
+- titleSubtle
+
+- titleNumeralSubtle
+
+- subheaderSubtle
+
+- subheaderNumeralSubtle
+
+- headerSubtle
+
+- headerNumeralSubtle
 
  
 

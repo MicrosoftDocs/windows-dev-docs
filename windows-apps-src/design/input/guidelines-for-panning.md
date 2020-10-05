@@ -137,12 +137,23 @@ Panning snap-points are useful for applications such as web browsers and photo a
 
 The following diagrams show how panning to a certain point and releasing causes the content to automatically pan to a logical location.
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![image showing a pannable area.](images/ux-panning-snap1.png) | ![image showing a pannable area being panned to the left.](images/ux-panning-snap2.png) | ![image showing a pannable area that has stopped panning at a logical snap-point.](images/ux-panning-snap3.png) |
-| Swipe to pan.                                                  | Lift touch contact.                                                                     | Pannable region stops at the snap point, not where the touch contact was lifted.                                |
+:::row:::
+   :::column:::
+      ![image showing a pannable area.](images/ux-panning-snap1.png)
 
- 
+      Swipe to pan.
+   :::column-end:::
+   :::column:::
+      ![image showing a pannable area being panned to the left.](images/ux-panning-snap2.png)
+
+      Lift touch contact.
+   :::column-end:::
+   :::column:::
+      ![image showing a pannable area that has stopped panning at a logical snap-point.](images/ux-panning-snap3.png)
+
+      Pannable region stops at the snap point, not where the touch contact was lifted.
+   :::column-end:::
+:::row-end:::
 
 **Rails**
 Content can be wider and taller than the dimensions and resolution of a display device. For this reason, two-dimensional panning (horizontal and vertical) is often necessary. Rails improve the user experience in these cases by emphasizing panning along the axis of motion (vertical or horizontal).

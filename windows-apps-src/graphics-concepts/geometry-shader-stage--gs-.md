@@ -47,8 +47,8 @@ When a geometry shader is active, it is invoked once for every primitive passed 
 
 Common vertex abbreviations:
 
-|     |                 |
-|-----|-----------------|
+| Abbreviation | Term |
+| ------------ | ---- |
 | TV  | Triangle vertex |
 | LV  | Line vertex     |
 | AV  | Adjacent vertex |

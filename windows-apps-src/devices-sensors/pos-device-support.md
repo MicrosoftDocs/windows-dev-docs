@@ -117,7 +117,7 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 ## Receipt Printer (POSPrinter)
 | Connectivity | Support |
 | -------------|-------------|
-| Network and Bluetooth | <p>Windows supports network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language.  The printers listed below are discovered automatically using POSPrinter APIs. Additional receipt printers which provide an ESC/POS emulation may also work but would need to be associated using an [out of band pairing](./point-of-service.md#out-of-band-pairing) process.</p><p>Note: slip station and journal stations are not supported through this method.</p> |
+| Network and Bluetooth | <p>Windows supports network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language.  The printers listed below are discovered automatically using POSPrinter APIs. Additional receipt printers which provide an ESC/POS emulation may also work but would need to be associated using an [out of band pairing](./point-of-service.md) process.</p><p>Note: slip station and journal stations are not supported through this method.</p> |
 | OPOS    | <p> Supports any OPOS compatible receipt printers via OPOS service objects. Install the OPOS drivers as per the device manufacturers installation instructions. </p> |
 
 ### Stationary Receipt Printers (Network/Bluetooth)

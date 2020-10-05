@@ -466,30 +466,30 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
 ## Query for protection capabilities
 Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). The following code example illustrates the usage of this method.  
 
-    ```cs
-    using namespace Windows::Media::Protection;
+```cs
+using namespace Windows::Media::Protection;
 
-    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
 
-    ProtectionCapabilityResult result = sr->IsTypeSupported(
-	L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
-	L"com.microsoft.playready");
+ProtectionCapabilityResult result = sr->IsTypeSupported(
+L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+L"com.microsoft.playready");
 
-    switch (result)
-    {
-        case ProtectionCapabilityResult::Probably:
-	    // Queue up UHD HW DRM video
-	    break;
+switch (result)
+{
+    case ProtectionCapabilityResult::Probably:
+    // Queue up UHD HW DRM video
+    break;
 
-        case ProtectionCapabilityResult::Maybe:
-	    // Check again after UI or poll for more info.
-	    break;
+    case ProtectionCapabilityResult::Maybe:
+    // Check again after UI or poll for more info.
+    break;
 
-        case ProtectionCapabilityResult::NotSupported:
-	    // Do not queue up UHD HW DRM video.
-	    break;
-    }
-    ```
+    case ProtectionCapabilityResult::NotSupported:
+    // Do not queue up UHD HW DRM video.
+    break;
+}
+```
 ## Add secure stop
 
 This section describes how to add secure stop to your UWP app.

@@ -37,9 +37,17 @@ General instructions and code examples for adding and styling controls in XAML a
 
 ## Get the Windows UI Library
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 ## Alphabetical index
 

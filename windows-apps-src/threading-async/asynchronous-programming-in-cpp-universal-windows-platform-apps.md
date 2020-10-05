@@ -113,9 +113,8 @@ In a task continuation, the return type of the lambda function is wrapped in a *
 
 In the previous example, notice that the task returns a **task<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
 
-| | |
-|--------------------------------------------------------|---------------------|
-| lambda return type                                     | `.then` return type |
+| lambda return type | `.then` return type |
+| ------------------ | ------------------- |
 | TResult                                                | task<TResult> |
 | IAsyncOperation<TResult>^                        | task<TResult> |
 | IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |

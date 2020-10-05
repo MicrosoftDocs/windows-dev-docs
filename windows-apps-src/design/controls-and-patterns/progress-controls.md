@@ -19,9 +19,17 @@ A progress control provides feedback to the user that a long-running operation i
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **ProgressBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **ProgressBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI Library APIs:** [ProgressBar class](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
