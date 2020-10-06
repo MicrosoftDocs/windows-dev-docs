@@ -53,12 +53,12 @@ The Surface Dial also supports both a *press and hold* action and a *click* acti
    :::column:::
       **Surface Dial off-screen menu**
 
-      ![Surface Dial off-screen menu](images/windows-wheel/surface-dial-menu-offscreen.png)
+      ![Screenshot of the Surface Dial off-screen menu.](images/windows-wheel/surface-dial-menu-offscreen.png)
    :::column-end:::
    :::column:::
       **Surface Dial on-screen menu**
 
-      ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-onscreen.png)
+      ![Screenshot of the Surface Dial on-screen menu.](images/windows-wheel/surface-dial-menu-onscreen.png)
    :::column-end:::
 :::row-end:::
 
@@ -129,17 +129,17 @@ Icons can convey professionalism and excellence, and inspire trust in users.
 
 :::row:::
    :::column:::
-      ![Icon with alpha background](images/windows-wheel/surface-dial-menu-icon1.png)
+      ![Screenshot of an icon with alpha background.](images/windows-wheel/surface-dial-menu-icon1.png)
 
       *Icon with alpha background*
    :::column-end:::
    :::column:::
-      ![Icon displayed on wheel menu with default theme Icon](images/windows-wheel/surface-dial-menu-icon2.png)
+      ![Screenshot of an icon displayed on wheel menu with default theme.](images/windows-wheel/surface-dial-menu-icon2.png)
 
       *Icon displayed on wheel menu with default theme*
    :::column-end:::
    :::column:::
-      ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-icon3.png)
+      ![Screenshot of an icon displayed on wheel menu with High Contrast White theme.](images/windows-wheel/surface-dial-menu-icon3.png)
 
       *Icon displayed on wheel menu with High Contrast White theme*
    :::column-end:::
