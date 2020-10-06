@@ -61,7 +61,7 @@ Fewer navigation items simplify decision making for users. Providing easy access
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![First screenshot of a green bar that has a green check mark and the word Do in it.](images/nav/do.svg)
 
 		![navview good](images/nav/navview-good.svg)
 
@@ -80,7 +80,7 @@ Overwhelm users with many navigation options.
 
 Clear paths allow for logical navigation for users. Making navigation options obvious and clarifying relationships between pages should prevent users from getting lost.
 
-![do example](images/nav/clarity-image.svg)
+![Screenshot of a mock-up of an application showing clear paths fo navigation for a user.](images/nav/clarity-image.svg)
 
 > Destinations are clearly labeled so users know where they are.
 

@@ -324,9 +324,9 @@ If you choose to provide your own back stack navigation, the experience should b
 <td style="vertical-align:top;"><strong>Page to page, different peer groups</strong></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
 <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
-<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two and the back to group one." /></p>
 <p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
-<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two then on to group three and back to group two." /></p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>

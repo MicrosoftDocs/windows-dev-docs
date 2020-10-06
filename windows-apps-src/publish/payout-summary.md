@@ -33,7 +33,7 @@ This page displays all of your individual earnings, including the date, type, an
 
 To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
 
-To export any of the transaction data on this page, please use the **Export data** page.
+To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
 
 ## Payments page
 
@@ -48,14 +48,6 @@ The totals on this page represent all of the programs you participate in. You ca
 | Payments               | Select Paid or Pending and then sort as you like. For additional details of a specific payment select View. To download a copy of the payment remittance statement, select Download. Note that transaction history data may take up to 24 hours to appear, so you may not see associated earnings right away. |
 
 To export any of the data on this page, select Export and then follow directions on the Export data page.
-
-## Transaction history page
-
-This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
-
-To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
-
-To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
 
 ## Payment status
 

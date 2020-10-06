@@ -27,7 +27,7 @@ Use pull-to-refresh when you have a list or grid of data that the user might wan
 
 You can also use the [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.
 
-## Examples
+## XAML Controls Gallery examples
 
 <table>
 <th align="left">XAML Controls Gallery<th>

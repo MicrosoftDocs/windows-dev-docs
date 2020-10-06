@@ -507,11 +507,13 @@ We recommend that you emulate these same behaviors in your custom controls. Code
 Test your app with all supported input devices to ensure UI elements can be navigated to in a coherent and intuitive way and that no unexpected elements interfere with the desired tab order.
 
 ## Related articles
+
 * [Keyboard events](keyboard-events.md)
 * [Identify input devices](identify-input-devices.md)
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [NavigationView control keyboarding specifics](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
+* [NavigationView control keyboarding specifics](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [Keyboard accessibility](../accessibility/keyboard-accessibility.md)
 
 ## Appendix
 
@@ -576,7 +578,3 @@ The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; 
 ***On-Screen Keyboard***
 
 Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.
-
-## Related articles
-
-- [Keyboard accessibility](../accessibility/keyboard-accessibility.md)

@@ -166,6 +166,6 @@ The next sample animates [**GlobalOffsetX**](/uwp/api/windows.ui.xaml.media.plan
 
 Notice in this sample that the object does not change course as it rotates. That is because the object is being moved along the x-axis of the screen without regard to its rotation.
 
-## Positioning an object
+## More complex semi-3D scenarios
 
 You can use the [**Matrix3DProjection**](/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection) and [**Matrix3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D) types for more complex semi-3D scenarios than are possible with the [**PlaneProjection**](/uwp/api/Windows.UI.Xaml.Media.PlaneProjection). **Matrix3DProjection** provides you with a complete 3D transform matrix to apply to any [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement), so that you can apply arbitrary model transformation matrices and perspective matrices to elements. Keep in mind that these API are minimal and therefore if you use them, you will need to write the code that correctly creates the 3D transform matrices. Because of this, it is easier to use **PlaneProjection** for simple 3D scenarios.

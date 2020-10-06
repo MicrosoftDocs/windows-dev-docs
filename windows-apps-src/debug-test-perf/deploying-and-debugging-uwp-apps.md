@@ -104,11 +104,11 @@ For C# and VB UWP projects, you will see a **Command line arguments:** field und
 
 For C++ and JS UWP projects, you will see **Command Line Arguments** as a field in the **Debugging Properties**.
 
-![Command line arguments C++ and JS](images/command-line-arguments-cpp.png)
+![Screenshot of the App 4 Property Pages with Configuration Properties > Debugging option selected showing Command Line Arguments property isted in the table.](images/command-line-arguments-cpp.png)
 
 Once you specify the command line arguments, you can access the value of the argument in the App's **OnLaunched** method. The [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object *args* will have an **Arguments** property with the value set to the text in the **Command Line Arguments** field.
 
-![Command line arguments C++ and JS](images/command-line-arguments-debugging.png)
+![Screenshot of command line arguments for C++ and JS.](images/command-line-arguments-debugging.png)
 
 ## Authentication modes
 

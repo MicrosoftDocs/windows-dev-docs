@@ -48,7 +48,3 @@ type to "App" or "Game".
  - You can now capture a screenshot of the console. For more information about taking a screenshot, see the [/ext/screenshot](wdp-media-capture-api.md) reference topic.
  - The tool can deploy a loose file build of your app. For more information about loose file builds, see the [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) reference topic.
  - Developer files on your console can be accessed from File Explorer on your development PC. For more information about accessing files through File Explorer, see the [/ext/smb/developerfolder](wdp-smb-api.md) reference topic.
-
-## See also
-- [Known issues](known-issues.md)
-- [UWP on Xbox One](index.md)

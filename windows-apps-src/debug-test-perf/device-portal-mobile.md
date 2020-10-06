@@ -13,7 +13,7 @@ Starting in Windows 10, Version 1511, additional developer features are availabl
 
 For info about how to enable Developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-![Device Portal settings](images/device-portal/mob-dev-mode-options.png)
+![Screenshot of the Device discovery and Device Portal settings.](images/device-portal/mob-dev-mode-options.png)
 
 ## Set up Device Portal on Windows Phone
 
@@ -53,7 +53,7 @@ You can choose from 3 ways to connect to Device Portal: USB, local host, and ove
 
 Here's the Device Portal section of the developer settings page on Windows Phone.
 
-![Device Portal settings](images/device-portal/mob-dev-mode-portal.png)
+![Screenshot of the Device Portal settings page from a Windows Phone.](images/device-portal/mob-dev-mode-portal.png)
 
 If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your phone to control it.
 
