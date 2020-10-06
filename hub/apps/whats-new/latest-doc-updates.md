@@ -2,7 +2,7 @@
 Description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 10/5/2020
+ms.date: 10/6/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -17,15 +17,15 @@ Note: For a specific list of APIs added as part of Windows 10 build 19041 (also 
 
 ## News
 
-This month we translated another batch of absolute links to relative links in order to speed up navigation and improve the offline book experience. Please continue to let us know if you find broken links! You can provide feedback directly from most pages, or you can reach us on Twitter with our handle **WindowsDocs**.
+
+This month we translated another batch of absolute links to relative links in order to speed up navigation and improve the offline reading experience. Please continue to let us know if you find broken links: you can provide feedback directly from most pages, or you can reach us on Twitter with our handle [@WindowsDocs](https://www.twitter.com/windowsdocs).
 
 Highlights this month include:
 
-* [Surface Duo documentation](https://docs.microsoft.com/dual-screen/introduction) updatees.
+* [Surface Duo documentation](https://docs.microsoft.com/dual-screen/introduction) updates.
 
 * [Windows Terminal](/windows/terminal/) documenation updates.
 
-## Other updates
 
 The following topics are some of which have seen recent significant updates in the past month.
 
@@ -259,7 +259,7 @@ The following topics are some of which have seen recent significant updates in t
 <li><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP' </a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-namespace-and-class-mappings">WPSL to UWP namespace and class mappings </a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-root">Move from Windows Phone Silverlight to UWP </a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/about-house-ads"> </a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/about-house-ads"> About house ads</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications">Add users, groups, and Azure AD applications to your Partner Center account </a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/publish/create-a-custom-app-promotion-campaign">Create a custom app promotion campaign </a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises">Distribute LOB apps to enterprises </a></li>
