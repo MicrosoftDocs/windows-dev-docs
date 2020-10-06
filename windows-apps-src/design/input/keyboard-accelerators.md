@@ -346,14 +346,10 @@ This might not always be possible due to differences in functionality across app
 | Bold | Ctrl + B |
 | Underline | Ctrl + U |
 | Italic | Ctrl + I |
-
 | **Navigation** | |
-| ------------- | ----------------------------------- |
 | Find content in a focused control or Window | Ctrl + F |
 | Go to the next search result | F3 |
-
 | **Other Actions** | |
-| ------------- | ----------------------------------- |
 | Add favorites | Ctrl + D | 
 | Refresh | F5 or Ctrl + R | 
 | Zoom In | Ctrl + + | 

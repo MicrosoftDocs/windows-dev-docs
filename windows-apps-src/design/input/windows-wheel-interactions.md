@@ -23,10 +23,18 @@ Windows wheel devices, such as the Surface Dial, are a new category of input dev
 > [!IMPORTANT]
 > In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices. 
 
-| Videos |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface Dial app partners* | *Surface Dial for devs* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial app partners*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial for devs*
+   :::column-end:::
+:::row-end:::
 
 With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse). 
 
@@ -41,9 +49,18 @@ The Surface Dial also supports both a *press and hold* action and a *click* acti
 >
 >By detecting both the contact location and bounds of the Surface Dial, the system uses this info to handle occlusion by the device and display a larger version of the menu that wraps around the outside of the Dial. This same info can also be used by your app to adapt the UI for both the presence of the device and its anticipated usage, such as the placement of the user's hand and arm.
 
-| Surface Dial off-screen menu | | Surface Dial on-screen menu |
-| --- | --- | --- |
-| ![Screenshot of the Surface Dial off-screen menu.](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Screenshot of the Surface Dial on-screen menu.](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Surface Dial off-screen menu**
+
+      ![Surface Dial off-screen menu](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Surface Dial on-screen menu**
+
+      ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## System integration
 
@@ -110,10 +127,23 @@ Icons can convey professionalism and excellence, and inspire trust in users.
 - The icon should fill most of the image
 - A white icon should have a black outline to be visible in high contrast mode
 
-|   |   |   |
-| --- | --- | --- |
-| ![Screenshot of an icon with alpha background.](images/windows-wheel/surface-dial-menu-icon1.png) | ![Screenshot of an icon displayed on wheel menu with default theme.](images/windows-wheel/surface-dial-menu-icon2.png) | ![Screenshot of an icon displayed on wheel menu with High Contrast White theme.](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *Icon with alpha background* | *Icon displayed on wheel menu with default theme* | *Icon displayed on wheel menu with High Contrast White theme* |
+:::row:::
+   :::column:::
+      ![Icon with alpha background](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *Icon with alpha background*
+   :::column-end:::
+   :::column:::
+      ![Icon displayed on wheel menu with default theme Icon](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *Icon displayed on wheel menu with default theme*
+   :::column-end:::
+   :::column:::
+      ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *Icon displayed on wheel menu with High Contrast White theme*
+   :::column-end:::
+:::row-end:::
 
 **Use concise and descriptive names**  
 The tool name is displayed in the tool menu along with the tool icon and is also used by screen readers. 
@@ -313,10 +343,25 @@ Maximize customer satisfaction by accomodating and adapting your interactions to
 
 The built-in tools and commands on the Dial menu follow these guidelines for rotation-based interactions:
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>Up<br/>Out | ![Image of the Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>In |
-|   |   |   |
+:::row:::
+   :::column:::
+      Left
+
+      Up
+
+      Out 
+   :::column-end:::
+   :::column span="2":::
+      ![Image of the Surface Dial](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      Down
+
+      In
+   :::column-end:::
+:::row-end:::
 
 | Conceptual direction | Mapping to Surface Dial | Clockwise rotation | Counter-clockwise rotation |
 | --- | --- | --- | --- |
