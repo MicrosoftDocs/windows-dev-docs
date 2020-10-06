@@ -23,19 +23,19 @@ These toolkits provide controls and layout templates for designing Windows apps.
 
 :::row:::
     :::column:::
-![hero image](images/figma.png)
+:::image type="icon" source="images/figma.png":::
 <b>Figma toolkit</b><br>
 WinUI 2.4, May 2020<br>
 <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
-![hero image](images/sketch.png)
+:::image type="icon" source="images/sketch.png":::
 <b>Sketch toolkit</b><br>
 v1810, October 2018<br>
 <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::    
     :::column:::
-![hero image](images/adobe-xd.png)
+:::image type="icon" source="images/adobe-xd.png":::
 <b>Adobe XD toolkit</b><br>
 v1901, January 2019<br>
 <a href="https://aka.ms/adobexdtoolkit">Download</a>

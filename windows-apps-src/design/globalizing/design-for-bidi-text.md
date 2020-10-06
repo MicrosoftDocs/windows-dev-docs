@@ -59,11 +59,11 @@ Tiles have mixed text support. The notification region has built-in flexibility 
 
 Every element in the Windows UI fits into the RTL orientation. Charms and flyouts have been positioned on the left edge of the screen so that they don't overlap search results or degrade touch optimization. They can be easily reached with the thumbs.
 
-![BiDi screenshot](images/56286_BIDI_05_search_flyout_resized.png)
-![BiDi screenshot](images/56286_BIDI_06_print_flyout_resized.png)
+![Screenshot of BiDi showing the search flyout resized.](images/56286_BIDI_05_search_flyout_resized.png)
+![Screenshot of BiDi showing the print flyout resized.](images/56286_BIDI_06_print_flyout_resized.png)
 
-![BiDi screenshot](images/56286_BIDI_07_settings_flyout_resized.png)
-![BiDi screenshot](images/56286_BIDI_08_app_bars_resized.png)
+![Screenshot of BiDi showing the settings flyout resized.](images/56286_BIDI_07_settings_flyout_resized.png)
+![Screenshot of BiDi showing the app bars resized.](images/56286_BIDI_08_app_bars_resized.png)
 
 ### Text input in any direction
 
@@ -93,8 +93,8 @@ With the introduction of the BiDi Parenthesis Algorithm (BPA), paired parenthese
 
 Windows uses the Segoe UI font for all BiDi languages. This font is shaped and scaled for the Windows UI.
 
-![Segoe UI font for BiDi language](images/56290_BIDI_13_start_screen_segoe.png)
-![Segoe UI font for BiDi language](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![Screenshot showing the Segoe U I font on the start screen.](images/56290_BIDI_13_start_screen_segoe.png)
+![Screenshot showing the Segoe Arabic font on the start screen.](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
 ## Case study #1: A BiDi music app
 
