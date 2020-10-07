@@ -399,7 +399,7 @@ ___
 ## Background image settings
 ### Using the desktop background image
 
-This automatically sets the terminal's background image to match your desktop background image.
+This automatically sets the terminal's background image to match the desktop background image.
 
 **Property name:** `useDesktopBackgroundImage`
 
