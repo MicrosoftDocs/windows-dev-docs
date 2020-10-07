@@ -121,7 +121,7 @@ For example, this is the state of an edit control before the user pastes "World"
 
 The user performs the paste action and the edit control after the changes are applied:
 
-![Screenshot of a text stream diagram showing the insertion point at \[11, 11\]], after an insertion](images/coretext/stream-4.png)
+:::image type="content" source="images/coretext/stream-4.png" alt-text="Screenshot of a text stream diagram showing the insertion point at \[11, 11\], after an insertion":::
 
 When this happens, you should call [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) with these arguments:
 
