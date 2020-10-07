@@ -93,7 +93,7 @@ With the introduction of the BiDi Parenthesis Algorithm (BPA), paired parenthese
 
 Windows uses the Segoe UI font for all BiDi languages. This font is shaped and scaled for the Windows UI.
 
-![Screenshot showing the Segoe U I font on the start screen](images/56290_BIDI_13_start_screen_segoe.png)
+![Screenshot showing the Segoe UI font on the start screen](images/56290_BIDI_13_start_screen_segoe.png)
 ![Screenshot showing the Segoe Arabic font on the start screen](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
 ## Case study #1: A BiDi music app
