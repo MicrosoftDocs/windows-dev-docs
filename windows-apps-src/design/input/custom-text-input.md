@@ -103,7 +103,7 @@ When the user types "d", a [**TextUpdating**](/uwp/api/windows.ui.text.core.core
 
 In your edit control, apply the specified changes and set [**Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) to **Succeeded**. Here's the state of the control after the changes are applied.
 
-![Screenshot of a text stream diagram showing the insertion point at \[11, 11\], after an insertion](images/coretext/stream-4.png)
+:::image type="content" source="images/coretext/stream-4.png" alt-text="Screenshot of a text stream diagram showing the insertion point at \[11, 11\], after an insertion":::
 
 ### Rejecting text updates
 
