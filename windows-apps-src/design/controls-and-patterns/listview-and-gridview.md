@@ -1,5 +1,5 @@
 ---
-Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 title: List view and grid view
 label: List view and grid view
 template: detail.hbs
