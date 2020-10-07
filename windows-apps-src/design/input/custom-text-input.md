@@ -34,7 +34,7 @@ The following is a simple representation of the text input system.
 -   "Application" represents a Windows app hosting a custom edit control built using the core text APIs.
 -   The [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs facilitate the communication with text services through Windows. Communication between the text edit control and the text services is handled primarily through a [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) object that provides the methods and events to facilitate the communication.
 
-![core text architecture diagram](images/coretext/architecture.png)
+![CoreText architecture diagram](images/coretext/architecture.png)
 
 ## Text ranges and selection
 
@@ -45,7 +45,7 @@ Edit controls provide space for text entry and users expect to edit text anywher
 
 Text ranges used with the core text APIs are expressed in terms of caret positions. An "Application Caret Position (ACP)" is a zero-based number that indicates the count of characters from the start of the text stream immediately before the caret, as shown here.
 
-![Screenshot showing the A C P count of characters.](images/coretext/stream-1.png)
+![Screenshot showing the Application Caret Position (ACP) count of characters](images/coretext/stream-1.png)
 
 ### Text ranges and selection
 
@@ -66,12 +66,11 @@ The current caret position, frequently referred to as the insertion point, is re
 
 ### Noncontiguous selection
 
-Some edit controls support noncontiguous selections. For example, Microsoft Office apps support multiple arbitrary selections, and many source code editors support column selection. However, the core text APIs do not support noncontiguous selections. Edit controls must report only a single contiguous selection, most often the active sub-range of the noncontiguous selections.
+Some edit controls support noncontiguous selections. For example, Microsoft Office apps support multiple arbitrary selections, and many source code editors support column selection. However, the core text APIs do not support non-contiguous selections. Edit controls must report only a single contiguous selection, most often the active sub-range of the noncontiguous selections.
 
-For example, consider this text stream:
+For example, the following image shows a text stream with two non-contiguous selections: \[0, 1\] and \[6, 11\] for which the edit control must report only one (either \[0, 1\] or \[6, 11\]).
 
-![Screenshot showing a noncontiguous selection where the first character and the last five characters are selected.](images/coretext/stream-2.png)
-There are two selections: \[0, 1\] and \[6, 11\]. The edit control must report only one of them; either \[0, 1\] or \[6, 11\].
+![Screenshot showing a non-contiguous text selection, where the first character and the last five characters are selected.](images/coretext/stream-2.png)
 
 ## Working with text
 
@@ -94,7 +93,7 @@ Your edit control should typically accept text update requests because they repr
 
 For example, this is the state of an edit control before the user types "d". The insertion point is at \[10, 10\].
 
-![Screenshot of a text stream diagram showing the insertion point at 10 10.](images/coretext/stream-3.png)
+![Screenshot of a text stream diagram showing the insertion point at \[10, 10\], before an insertion](images/coretext/stream-3.png)
 
 When the user types "d", a [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) event is raised with the following [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) data:
 
@@ -104,7 +103,7 @@ When the user types "d", a [**TextUpdating**](/uwp/api/windows.ui.text.core.core
 
 In your edit control, apply the specified changes and set [**Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) to **Succeeded**. Here's the state of the control after the changes are applied.
 
-![Screenshot of a text stream diagram showing the insertion point at 11 11.](images/coretext/stream-4.png)
+![Screenshot of a text stream diagram showing the insertion point at \[11, 11\], after an insertion](images/coretext/stream-4.png)
 
 ### Rejecting text updates
 
@@ -118,11 +117,11 @@ Sometimes, your edit control makes changes to text such as when text is pasted o
 
 For example, this is the state of an edit control before the user pastes "World". The insertion point is at \[6, 6\].
 
-![Screenshot of a text stream diagram showing the insertion point at 6 6.](images/coretext/stream-5.png)
+![Screenshot of a text stream diagram showing the insertion point at \[6, 6\], before an insertion](images/coretext/stream-5.png)
 
-The user performs the paste action and the edit control ends up with the following text:
+The user performs the paste action and the edit control after the changes are applied:
 
-![Screenshot of a text stream diagram showing the insertion point again at 11 11.](images/coretext/stream-4.png)
+![Screenshot of a text stream diagram showing the insertion point at \[11, 11\]], after an insertion](images/coretext/stream-4.png)
 
 When this happens, you should call [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) with these arguments:
 
@@ -138,15 +137,16 @@ In your edit control, you might want to override a text update to provide auto-c
 
 For example, consider an edit control that provides a correction feature that formalizes contractions. This is the state of the edit control before the user types the space key to trigger the correction. The insertion point is at \[3, 3\].
 
-![Screenshot of a text stream diagram showing the insertion point at 3 3.](images/coretext/stream-6.png)
+![Screenshot of a text stream diagram showing the insertion point at \[3, 3\], before an insertion](images/coretext/stream-6.png)
 
 The user presses the space key and a corresponding [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) event is raised. The edit control accepts the text update. This is the state of the edit control for a brief moment before the correction is completed. The insertion point is at \[4, 4\].
 
-![Screenshot of a text stream diagram showing the insertion point at 4 4.](images/coretext/stream-7.png)
+![Screenshot of a text stream diagram showing the insertion point at \[4, 4\], after an insertion](images/coretext/stream-7.png)
 
 Outside of the [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) event handler, the edit control makes the following correction. This is the state of the edit control after the correction is complete. The insertion point is at \[5, 5\].
 
-![Screenshot of a text stream diagram showing the insertion point at 5 5.](images/coretext/stream-8.png)
+![Screenshot of a text stream diagram showing the insertion point at \[5, 5\]](images/coretext/stream-8.png)
+
 When this happens, you should call [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) with these arguments:
 
 -   *modifiedRange* = \[1, 2\]
