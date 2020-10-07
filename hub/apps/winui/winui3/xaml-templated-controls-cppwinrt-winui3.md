@@ -24,7 +24,7 @@ Begin by creating a new project in Microsoft Visual Studio. In the `Create a new
 
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C++->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.cpp` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRTmimplementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instatiated as a runtime class.
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C++->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.h` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRTmimplementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instatiated as a runtime class.
 
 ## Implement the BgLabelControl custom control class
 
@@ -91,7 +91,7 @@ namespace winrt::BgLabelControlApp::factory_implementation
 }
 ```
 
-The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI 3 framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
+The code shown above declares the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI 3 framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
 
 
 Next, replace the contents of BgLabelControl.cpp with the following code.
