@@ -141,7 +141,7 @@ You might use a list view because it provides virtualization and optimized scrol
 
 This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
 
-![Screenshot of a complex Nested U I showing a lot ofnested elements that the user can interact with.](images/nested-ui-grouping.png)
+![Screenshot of a complex Nested U I showing a lot of nested elements that the user can interact with.](images/nested-ui-grouping.png)
 
 
 To achieve this UI, set the following properties on your list:
