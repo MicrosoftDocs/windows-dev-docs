@@ -53,15 +53,15 @@ An expanded command bar.
 
 By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[•••\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
 
-![A screenshot showing a closed command bar.](images/command-bar-compact.png)
+![Screenshot showing a closed command bar.](images/command-bar-compact.png)
 
 The command bar can also be shown in a closed minimal state that looks like this. See the [Open and closed states](#open-and-closed-states) section for more info.
 
-![A screenshot of a command bar in a closed minimal state.](images/command-bar-minimal.png)
+![Screenshot showing a command bar in a closed minimal state.](images/command-bar-minimal.png)
 
 Here's the same command bar in its open state. The labels identify the main parts of the control.
 
-![A screenshot of a command bar in its open state.](images/commandbar_anatomy_open.png)
+![Screenshot showing a command bar in its open state.](images/commandbar_anatomy_open.png)
 
 The command bar is divided into 4 main areas:
 - The content area is aligned to the left side of the bar. It is shown if the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property is populated.

@@ -115,7 +115,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 Both of the above options will result in the same ListView, which is shown below:
 
-![A screenshot of a simple List View showing a list of fruits.](images/listview-basic-code-example2.png)
+![Screenshot of a simple List View showing a list of fruits.](images/listview-basic-code-example2.png)
 <br/>
 <u> Method 2: Add items by setting the ItemsSource</u>
 
@@ -284,7 +284,7 @@ For more info and examples of how to use data templates and item containers to d
 When you add items to a ListView or GridView, the control automatically wraps each item in an item container and then lays out all of the item containers. How these item containers are laid out depends on the [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) of the control.  
 - By default, **ListView** uses an [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), which produces a vertical list, like this.
 
-![A screenshot of a simple List View showing a list of items.](images/listview-simple.png)
+![Screenshot of a simple List View showing a list of items.](images/listview-simple.png)
 
 - **GridView** uses an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid), which adds items horizontally, and wraps and scrolls vertically, like this.
 

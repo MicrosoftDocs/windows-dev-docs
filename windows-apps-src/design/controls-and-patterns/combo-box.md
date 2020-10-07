@@ -62,7 +62,7 @@ When the combo box is closed, it either displays the current selection or is emp
 
 A combo box in its compact state can show a header.
 
-![A screenshot showing a drop-down list in its compact state.](images/combo_box_collapsed.png)
+![Screenshot showing a drop-down list in its compact state.](images/combo_box_collapsed.png)
 
 Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
 
