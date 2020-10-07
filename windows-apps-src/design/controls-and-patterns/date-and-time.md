@@ -1,5 +1,5 @@
 ---
-Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
+description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
 title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
