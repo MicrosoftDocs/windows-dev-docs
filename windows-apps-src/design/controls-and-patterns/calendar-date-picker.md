@@ -1,5 +1,5 @@
 ---
-Description: The calendar date picker is a drop down control that's optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important.
+description: The calendar date picker is a drop down control that's optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important.
 title: Calendar date picker
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -59,7 +59,7 @@ For more info about choosing the right control, see the [Date and time controls]
 
 The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
 
-![Example of calendar date picker](images/calendar-date-picker-2-views.png)
+![Screenshot of a Calendar Date Picker showing an empty select a date text box and then one populated with a calendar beneath it.](images/calendar-date-picker-2-views.png)
 
 ## Create a date picker
 
@@ -74,7 +74,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 The resulting calendar date picker looks like this:
 
-![Example of calendar date picker](images/calendar-date-picker-closed.png)
+![Screenshot of a populated Calendar Date Picker with a label that says Arrival date.](images/calendar-date-picker-closed.png)
 
 The calendar date picker has an internal [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) for picking a date. A subset of CalendarView properties, like [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) and [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it. 
 

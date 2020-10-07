@@ -23,7 +23,7 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) and [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
 
-![styled buttons](images/styles-rainbow-buttons.png)
+![Screenshot of three styled buttons arranged side by side.](images/styles-rainbow-buttons.png)
 
 You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, its scope is determined by where the resource dictionary is referenced.
 
@@ -143,7 +143,7 @@ A fast way to apply styles to your controls is to right-click on a control on th
 
 Overriding the system brushes is generally done at the App or Page level, and in either case the color override will affect all controls that reference that brush – and in XAML many controls can reference the same system brush.
 
-![styled buttons](images/LightweightStyling_ButtonStatesExample.png)
+![Screenshot of two buttons: one in its rest state and one with lightweight Styling applied.](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -167,7 +167,7 @@ Placing these brush overrides at the **App.Resources** level, will alter all the
 
 In other cases, changing a single control on one page only to look a certain way, without altering any other versions of that control, is desired:
 
-![styled buttons](images/LightweightStyling_CheckboxExample.png)
+![Screenshot of three styled buttons arranged stacked one on top of the other.](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>

@@ -1,5 +1,5 @@
 ---
-Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
+description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
 title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
@@ -42,7 +42,7 @@ There are four date and time controls to choose from; the control you use depend
 | Control | Example | Description |
 | ------- | :-----: | ----------- |
 | Calendar view | ![Example of calendar view](images/controls_calendar_monthview_small.png) | Use to pick a single date or a range of dates from an always visible calendar. |
-| Calendar date picker | ![Example of calendar date picker](images/calendar-date-picker-closed.png) | Use to pick a single date from a contextual calendar. |
+| Calendar date picker | ![Screenshot of a calendar date picker.](images/calendar-date-picker-closed.png) | Use to pick a single date from a contextual calendar. |
 | Date picker | ![Example of date picker](images/date-picker-closed.png) | Use to pick a single known date when contextual info isn't important. |
 | Time picker | ![Example of time picker](images/time-picker-closed.png) | Use to pick a single time value. |
 
@@ -54,7 +54,7 @@ There are four date and time controls to choose from; the control you use depend
 
 The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open, but you can specify any view as the startup view.
 
-![Example of calendar date picker](images/calendar-view-3-views.png)
+![Screenshot of three Calendar Views showing a Month View, a Year View, and a Decade View.](images/calendar-view-3-views.png)
 
 - If you need to let a user select multiple dates, you must use a **CalendarView**.
 - If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a **CalendarDatePicker** or **DatePicker** control.
@@ -65,7 +65,7 @@ The calendar view is made up of 3 separate views: the month view, year view, and
 
 The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
 
-![Example of calendar date picker](images/calendar-date-picker-2-views.png)
+![Screenshot of a Calendar Date Picker showing an empty select a date text box and then one populated with a calendar beneath it.](images/calendar-date-picker-2-views.png)
 
 - Use a calendar date picker for things like choosing an appointment or departure date. 
 

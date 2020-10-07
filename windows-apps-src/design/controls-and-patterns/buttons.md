@@ -27,16 +27,16 @@ Control | Description
 [Button](/uwp/api/windows.ui.xaml.controls.button) | A button that initiates an immediate action. Can be used with a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event or [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) binding.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event continuously while pressed.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI logo](images/winui-logo-16x16.png) A button with a chevron to open an attached flyout.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI logo](images/winui-logo-16x16.png) A button with two sides. One side initiates an action, and the other side opens a menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI logo](images/winui-logo-16x16.png) A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: A button with a chevron to open an attached flyout.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: A button with two sides. One side initiates an action, and the other side opens a menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | A button that can be on or off.
 
 **Get the Windows UI Library**
 
 :::row:::
    :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
+      :::image type="icon" source="images/winui-logo-64x64.png":::
    :::column-end:::
    :::column span="3":::
       **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).

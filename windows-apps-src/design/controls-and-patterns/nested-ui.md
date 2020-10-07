@@ -29,7 +29,7 @@ In this article, we use the terms *list*, *list item*, and *nested UI* as define
 - *List item* refers to an individual item that a user can take action on in a list.
 - *Nested UI* refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
 
-![Nested UI parts](images/nested-ui-example-1.png)
+![Screenshot showing the parts of a Nested U I.](images/nested-ui-example-1.png)
 
 > NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
 
@@ -101,7 +101,7 @@ When you have more than one action nested in the list item, we recommend this gu
 
 If your list UI with nested elements supports actions such as invoking, selection (single or multiple), or drag-and-drop operations, we recommend these arrowing techniques to navigate through your nested UI elements.
 
-![Nested UI parts](images/nested-ui-navigation.png)
+![Screenshot showing nested U I elements labeled with the letters A, B, C, and D.](images/nested-ui-navigation.png)
 
 **Gamepad**
 
@@ -141,7 +141,7 @@ You might use a list view because it provides virtualization and optimized scrol
 
 This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
 
-![Nested UI parts](images/nested-ui-grouping.png)
+![Screenshot of a complex Nested U I showing a lot of nested elements that the user can interact with.](images/nested-ui-grouping.png)
 
 
 To achieve this UI, set the following properties on your list:
