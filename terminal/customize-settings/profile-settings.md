@@ -397,18 +397,6 @@ When `useAcrylic` is set to `true`, this sets the transparency of the window for
 ___
 
 ## Background image settings
-### Using the desktop background image
-
-This automatically sets the terminal's background image to match the desktop background image.
-
-**Property name:** `useDesktopBackgroundImage`
-
-**Necessity:** Optional
-
-**Accepts:** `true`, `false`
-
-**Default value:** `false`
-
 ### Setting the background image
 
 This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file.
@@ -417,7 +405,7 @@ This sets the file location of the image to draw over the window background. The
 
 **Necessity:** Optional
 
-**Accepts:** File location as a string
+**Accepts:** File location as a string, 'DesktopWallpaper'
 
 ### Background image stretch mode
 
