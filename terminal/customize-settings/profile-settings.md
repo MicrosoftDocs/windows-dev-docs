@@ -405,7 +405,7 @@ This sets the file location of the image to draw over the window background. The
 
 **Necessity:** Optional
 
-**Accepts:** 'File location as a string', '"DesktopWallpaper"''
+**Accepts:** `File location as a string`, `"DesktopWallpaper"`
 
 ### Background image stretch mode
 
