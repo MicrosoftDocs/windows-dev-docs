@@ -361,7 +361,7 @@ To add a data template to a grid view:
 
 Run the app now to see the `GridView` control with the item template that you just created. Next, you'll change the background color and add some space between the grid items.
 
-![Screenshot ot the Collection app running showing the item template.](images/xaml-basics/layout-1.png)
+![Screenshot of the Collection app running showing the item template.](images/xaml-basics/layout-1.png)
 
 ## Part 4: Modify the item container style
 
@@ -449,7 +449,7 @@ To modify the item container:
 
 Run the app and see how it looks now. Resize the app window. The `GridView` control takes care of rearranging the images for you, but at some widths, there's a lot of space on the right side of the app window. It would look better if the images were centered. You'll take care of that next.
 
-![Screenshot ot the Collection app running showing the item template with extra space on the right side of the app window.](images/xaml-basics/layout-2.png)
+![Screenshot of the Collection app running showing the item template with extra space on the right side of the app window.](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > If you want to experiment, try setting the `Background` and `Margin` properties to different values and see what effect it has.
