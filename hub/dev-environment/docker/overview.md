@@ -150,3 +150,28 @@ Learn about more [Azure services that support containers](https://azure.microsof
 ## Kubernetes and Container Orchestration Explainer Video
 
 > [!VIDEO https://www.youtube.com/embed/3RTvoI-A7UQ]
+
+## Containers on Windows
+
+:::row:::
+    :::column:::
+       [![Windows server containers icon](../../images/windows-server-containers.png)](/virtualization/windowscontainers)<br>
+        **[Containers on Windows docs](/virtualization/windowscontainers)**<br>
+        Package apps with their dependencies and leverage operating system-level virtualization for fast, fully isolated environments on a single system. Learn [about Windows containers](/virtualization/windowscontainers/about), including quick starts, deployment guides, and samples.
+    :::column-end:::
+    :::column:::
+       [![FAQ icon](../../images/faq.png)](/virtualization/windowscontainers/about/faq)<br>
+        **[FAQs about Windows containers](/virtualization/windowscontainers/about/faq)**<br>
+        Find frequently asked questions about containers. Also see this explanation in StackOverflow on "[What's the difference between Docker for Windows and Docker on Windows?](https://stackoverflow.com/questions/38464724/whats-the-difference-between-docker-for-windows-and-docker-on-windows/40320748)"
+    :::column-end:::
+    :::column:::
+       [![windows container icon](../../images/windows-container.png)](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)<br>
+        **[Set up your environment](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)**<br>
+        Learn how to set up Windows 10 or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with [Windows Container Base Images](/virtualization/windowscontainers/manage-containers/container-base-images).
+    :::column-end:::
+    :::column:::
+       [![AKS icon](../../images/kubernettes.png)](/azure/aks/windows-container-cli)<br>
+        **[Create a Windows Server container on an Azure Kubernetes Service (AKS)](/azure/aks/windows-container-cli)**<br>
+        Learn how to deploy an ASP.NET sample app in a Windows Server container to an AKS cluster using the Azure CLI.
+    :::column-end:::
+:::row-end:::
