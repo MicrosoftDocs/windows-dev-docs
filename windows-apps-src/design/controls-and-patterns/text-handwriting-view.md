@@ -1,5 +1,5 @@
 ---
-Description: Customize the built-in handwriting view for ink to text input that is supported by Windows text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
+description: Customize the built-in handwriting view for ink to text input that is supported by Windows text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
