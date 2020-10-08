@@ -48,11 +48,11 @@ In this article you'll learn how to:
 
 5.  The target version/minimum version dialog appears. The default settings are fine for this tutorial, so select **OK** to create the project.
 
-    ![The solution explorer window](images/win10-cs-02.png)
+    ![Screenshot of the New Universal Windows Project dialog box.](images/win10-cs-02.png)
 
 6.  When your new project opens, its files are displayed in the **Solution Explorer** pane on the right. You may need to choose the **Solution Explorer** tab instead of the **Properties** tab to see your files.
 
-    ![The solution explorer window](images/win10-js-02.png)
+    ![Screenshot of the Solution Explorer pane with Hello World (Universal Windows) highlighted.](images/win10-js-02.png)
 
 Although the **Blank App (Universal Window)** is a minimal template, it still contains a lot of files. These files are essential to all UWP apps using JavaScript. Every project that you create in Visual Studio contains them.
 

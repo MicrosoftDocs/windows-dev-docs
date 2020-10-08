@@ -43,7 +43,7 @@ Timing is an important element to making motion feel natural for objects enterin
 
 The timing of motion in Fluent uses 500ms (or one-half second) as a baseline because this is the maximum amount of time that a user perceives as instant.
 
-![hero image](images/time.gif)
+![Short video that shows three circles, stacked vertically, moving left and and right at different speeds: 150 milliseconds, 300 milliseconds, and 500 milliseconds.](images/time.gif)
 
 ### **150ms** (Exit)
 
@@ -84,7 +84,7 @@ Use for objects which are translating across a single scene or multiple scenes. 
 
 Easing is a way to manipulate the velocity of an object as it travels. It's the glue that ties together all the Fluent motion experiences.​ While extreme, the easing used in the system helps unify the physical feel of objects moving throughout the system. This is one way to mimic the real world, and make objects in motion feel like they belong in their environment.
 
-![hero image](images/easing.gif)
+![A short video showing a circle appear from the lower-right corner of the frame and stopping near the upper-left corner of the frame.](images/easing.gif)
 
 ## Apply easing to motion
 

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 title: Badge notifications for Windows apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -60,62 +60,62 @@ Instead of a number, a badge can display one of a non-extensible set of status g
 </tr>
 <tr>
     <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-activity.png" alt="Screenshot of the activity glyph." /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
 <tr>
     <td>alarm</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-alarm.png" alt="Screenshot of the alarm glyph." /></td>
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
     <td>alert</td>
-    <td><img src="images/badges/badge-alert.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-alert.png" alt="Screenshot of the alert glyph." /></td>
     <td>`<badge value="alert"/>`</td>
 </tr>
 <tr>
     <td>attention</td>
-    <td><img src="images/badges/badge-attention.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-attention.png" alt="Screenshot of the attention glyph." /></td>
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
     <td>available</td>
-    <td><img src="images/badges/badge-available.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-available.png" alt="Screenshot of the available glyph." /></td>
     <td>`<badge value="available"/>`</td>
 </tr>
 <tr>
     <td>away</td>
-    <td><img src="images/badges/badge-away.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-away.png" alt="Screenshot of the away glyph." /></td>
     <td>`<badge value="away"/>`</td>
 </tr>
 <tr>
     <td>busy</td>
-    <td><img src="images/badges/badge-busy.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-busy.png" alt="Screenshot of the busy glyph." /></td>
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
     <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-error.png" alt="Screenshot of the error glyph." /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
     <td>newMessage</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-newMessage.png" alt="Screenshot of the new message glyph." /></td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
 <tr>
     <td>paused</td>
-    <td><img src="images/badges/badge-paused.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-paused.png" alt="Screenshot of the paused glyph." /></td>
     <td>`<badge value="paused"/>`</td>
 </tr>
 <tr>
     <td>playing</td>
-    <td><img src="images/badges/badge-playing.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-playing.png" alt="Screenshot of the playing glyph." /></td>
     <td>`<badge value="playing"/>`</td>
 </tr>
 <tr>
     <td>unavailable</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Glyph" /></td>
+    <td><img src="images/badges/badge-unavailable.png" alt="Screenshot of the unavailable glyph" /></td>
     <td>`<badge value="unavailable"/>`</td>
 </tr>
 </table>

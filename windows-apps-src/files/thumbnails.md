@@ -145,11 +145,11 @@ Otherwise, no thumbnail is retrieved.</td>
 <tr>
 <td>File group</td>
 <td>If there is a picture file in the folder, then the picture thumbnail is used.<br />
-<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br /> Otherwise, no thumbnail is retrieved. </td>
+<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode."/> <br /> Otherwise, no thumbnail is retrieved. </td>
 <td>If there is a file that has album art among the files in the group, the thumbnail is the album art. <br />
 <img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />Otherwise, no thumbnail is retrieved. </td>
 <td>If there is a file that has album art among the files in the group, the thumbnail is the album art and uses the original aspect ratio of the file. <br />
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />Otherwise, the thumbnail is an icon that represents a group of files. <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in documents, music or list mode using the original aspect ratio of the file."/> <br />Otherwise, the thumbnail is an icon that represents a group of files. <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>
