@@ -22,14 +22,14 @@ Look down the JSON file until you find the section that includes:
 
 ```json
 "commandline": "cmd.exe",
-"hidden": false"
+"hidden": false
 ```
 
 Change it to read:
 
 ```json
 "commandline": "cmd.exe",
-"hidden": false",
+"hidden": false,
 "colorScheme": "Tango Light"
 ```
 
