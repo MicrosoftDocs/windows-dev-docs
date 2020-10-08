@@ -17,7 +17,7 @@ As the visual representation of language, typography’s main task is to communi
 
 You should use one font throughout your app's UI, and we recommend sticking with the default font for Windows apps, **Segoe UI**. It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.
 
-![Sample text of Segoe UI font](images/type/segoe-sample.svg)
+![Sample text of Segoe UI font.](images/type/segoe-sample.svg)
 
 To display non-English languages or to select a different font for your app, please see [Languages](#languages) and [Fonts](#fonts) for our recommended fonts for Windows apps.
 
@@ -36,7 +36,7 @@ Don't mix multiple fonts.
 
 Font sizes in UWP apps automatically scale on all devices. The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible as a 24 px font on 5" phone that's a few inches away.
 
-![viewing distances for different devices](images/type/scaling-chart.svg)
+![viewing distances for different devices.](images/type/scaling-chart.svg)
 
 Because of how the scaling system works, you're designing in effective pixels, not actual physical pixels, and you shouldn't have to alter font sizes for different screens sizes or resolutions.
 
@@ -66,18 +66,13 @@ Users rely on visual hierarchy when scanning a page: headers summarize content, 
 
 The Windows type ramp establishes crucial relationships between the type styles on a page, helping users read content easily. All sizes are in effective pixels and are optimized for UWP apps running on all devices.
 
-![Type ramp](images/type/type-ramp.png)
+![The Windows type ramp.](images/type/type-ramp.png)
 
 ### Using the type ramp
 
 :::row:::
     :::column:::
-You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
-    :::column-end:::
-    :::column:::
-![Screenshot of text that shows the way the following text block types will appear: Header, Subheader, Title, Subtitle, Base, Body, and Caption.](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention shown here.
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -88,6 +83,13 @@ You can access levels of the type ramp as XAML [static resources](../controls-an
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![Screenshot of Header, Subheader, Title, Subtitle, Base, Body, and Caption text styles.](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
@@ -131,7 +133,7 @@ Less than 20 characters or more than 60 characters per line is difficult to read
 
 When the amount of text extends beyond the space available, we recommend clipping text, which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
 
-![Shows a device frame with some text clipping](images/type/clipping.svg)
+![Shows a device frame with some text clipping.](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
