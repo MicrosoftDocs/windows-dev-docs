@@ -177,7 +177,7 @@ To add a default [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 
 
 Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) and try out some of the tools.
 
-![Screenshot of the Basic Ink Sample app and InkToolbar](images/ink/ink-inktoolbar-default-small.png)
+![Screenshot of the Basic Ink Sample app highlighted in this topic with the default InkToolbar](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
 <table class="wdg-noborder">
