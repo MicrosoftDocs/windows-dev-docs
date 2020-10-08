@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ---
 # Keyboard accelerators
 
-![Surface keyboard](images/accelerators/accelerators_hero2.png)
+![Hero image of the Surface keyboard](images/accelerators/accelerators_hero2.png)
 
 Accelerator keys (or keyboard accelerators) are keyboard shortcuts that improve the usability and accessibility of your Windows applications by providing an intuitive way for users to invoke common actions or commands without navigating the app UI.
 
@@ -33,7 +33,7 @@ Accelerators typically include the function keys F1 through F12 or some combinat
 
 Keyboard accelerators are not available for every action but are often associated with commands exposed in menus (and should be specified with the menu item content). Accelerators can also be associated with actions that do not have equivalent menu items. However, because users rely on an application's menus to discover and learn the available command set, you should try to make discovery of accelerators as easy as possible (using labels or established patterns can help with this).
 
-![Keyboard accelerators described in a menu item label](images/accelerators/accelerators_menuitemlabel.png)  
+![Screenshot of keyboard accelerators in a menu item label.](images/accelerators/accelerators_menuitemlabel.png)  
 *Keyboard accelerators described in a menu item label*
 
 ## When to use keyboard accelerators
@@ -122,7 +122,7 @@ We recommend that you set keyboard accelerators for the most common actions in y
 </CommandBar>
 ```
 
-![Keyboard accelerator described in a tooltip](images/accelerators/accelerators_tooltip.png)  
+![Screenshot of a keyboard accelerator in a tooltip.](images/accelerators/accelerators_tooltip.png)  
 ***Keyboard accelerator described in a tooltip***
 
 The [UIElement](/uwp/api/windows.ui.xaml.uielement) object has a [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) collection, [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), where you specify your custom KeyboardAccelerator objects and define the keystrokes for the keyboard accelerator:
@@ -374,7 +374,7 @@ By default, when keyboard accelerators are declared, all controls (except [MenuF
 > [!NOTE] 
 > If a control has more than one accelerator defined, only the first is presented.
 
-![Screenshot of a Save button with a tool tip above it that indicates support for the Ctrl+S accelerator](images/accelerators/accelerators_tooltip_savebutton_small.png)
+![Screenshot of a Save button with a tool tip above it that indicates support for the Ctrl+S accelerator.](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Accelerator key combo in tooltip*
 
@@ -410,7 +410,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </StackPanel>
 ```
 
-![Screenshot of three buttons labeled Button1, Button2, and Button3 with a tool tip above Button2 that indicates support for the Windows+B accelerator](images/accelerators/accelerators-button-small.png)
+![Screenshot of three buttons labeled Button1, Button2, and Button3 with a tool tip above Button2 that indicates support for the Windows+B accelerator.](images/accelerators/accelerators-button-small.png)
 
 *Accelerator key combo appended to Button's default tooltip*
 
@@ -422,7 +422,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </AppBarButton>
 ```
 
-![Screenshot of a button with a Disk icon and a tool tip that includes the default Save text appended with the Ctrl+S accelerator in parentheses](images/accelerators/accelerators-appbarbutton-small.png)
+![Screenshot of a button with a Disk icon and a tool tip that includes the default Save text appended with the Ctrl+S accelerator in parentheses.](images/accelerators/accelerators-appbarbutton-small.png)
 
 *Accelerator key combo appended to AppBarButton's default tooltip*
 
@@ -448,7 +448,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </AppBarButton>
 ```
 
-![Screenshot of a Menu with MenuFlyoutItems that include accelerator key combos](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+![Screenshot of a Menu with MenuFlyoutItems that include accelerator key combos.](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
 *Accelerator key combo appended to MenuFlyoutItem's text*
 
@@ -485,7 +485,7 @@ In some cases, we recommend using a control's label to identify whether the cont
 
 Some platform controls do this by default, specifically the [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) objects, while the [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) and the [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) do it when they appear in the overflow menu of the [CommandBar](/uwp/api/windows.ui.xaml.controls.commandbar).
 
-![Keyboard accelerators described in a menu item label](images/accelerators/accelerators_menuitemlabel.png)  
+![Keyboard accelerators described in a menu item label.](images/accelerators/accelerators_menuitemlabel.png)  
 *Keyboard accelerators described in a menu item label*
 
 You can override the default accelerator text for the label through the [KeyboardAcceleratorTextOverride](/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) property of the [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) controls (use a single space for no text). 
@@ -522,7 +522,7 @@ As the [CharacterReceived](/uwp/api/windows.ui.core.corewindow.CharacterReceived
 The preview input events are fired before any other events. If you don't handle these events, the accelerator for the element that has the focus is fired, followed by the KeyDown event. Both events bubble until handled.
 
 
-![Key event sequence](images/accelerators/accelerators_keyevents.png)
+![Diagram showing the key event sequence](images/accelerators/accelerators_keyevents.png)
 ***Key event sequence***
 
 Order of events:
@@ -578,7 +578,7 @@ protected override void OnProcessKeyboardAccelerators(
 
 We recommend localizing all keyboard accelerators. You can do this with the standard UWP resources (.resw) file and the x:Uid attribute in your XAML declarations. In this example, the Windows Runtime automatically loads the resources.
 
-![Keyboard accelerator localization with UWP resources file](images/accelerators/accelerators_localization.png)
+![Diagram of keyboard accelerator localization with UWP resources file](images/accelerators/accelerators_localization.png)
 ***Keyboard accelerator localization with UWP resources file***
 
 ``` xaml
