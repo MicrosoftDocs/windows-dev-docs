@@ -119,7 +119,7 @@ That's it!
 
 Now run the app again. Go ahead and scribble, write your name, or (if you're holding a mirror or have a very good memory) draw your self-portrait.
 
-![Basic inking](images/ink/ink-app-step1-name-small.png)
+![Screenshot of the Basic Ink Sample app highlighted in this topic](images/ink/ink-app-step1-name-small.png)
 
 ## Step 3: Support inking with touch and mouse
 
@@ -177,7 +177,7 @@ To add a default [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 
 
 Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) and try out some of the tools.
 
-![Screenshot of the Basic Ink Sample app with the Ink Toolbar.](images/ink/ink-inktoolbar-default-small.png)
+![Screenshot of the Basic Ink Sample app and InkToolbar](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
 <table class="wdg-noborder">
@@ -191,7 +191,7 @@ Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.contr
 
 Here's an example of a custom **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (from Sketchpad in the Windows Ink Workspace).
 
-![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace.](images/ink/ink-inktoolbar-sketchpad-small.png)
+![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
 
@@ -209,9 +209,9 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 > Handwriting recognition can be improved through the **Pen & Windows Ink** settings:
 > 1. Open the Start menu and select **Settings**.
 > 2. From the Settings screen select **Devices** > **Pen & Windows Ink**.
-> ![Screenshot of the Pen & Windows Ink settings page.](images/ink/ink-settings-small.png)
+> ![Screenshot of the Pen & Windows Ink settings page](images/ink/ink-settings-small.png)
 > 3. Select **Get to know my handwriting** to open the **Handwriting Personalization** dialog.
-> ![Screenshot of the Handwriting Personalization dialog box.](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Screenshot of the Handwriting Recognition Personalization dialog box](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### In the sample:
 1. Open the MainPage.xaml file.
@@ -381,11 +381,11 @@ For this example, we don't attempt to redraw ink strokes (although that's possib
 
 Here's an example of a rudimentary flowchart from a digital napkin.
 
-![Screenshot of a rudimentary flowchart from a digital napkin.](images/ink/ink-app-step6-shapereco1-small.png)
+![Screenshot of a rudimentary flowchart from a digital napkin](images/ink/ink-app-step6-shapereco1-small.png)
 
 Here's the same flowchart after shape recognition.
 
-![Screenshot of the flowchart after the user selects Recognize shape.](images/ink/ink-app-step6-shapereco2-small.png)
+![Screenshot of the flowchart after the user selects Recognize shape](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## Step 7: Save and load ink
