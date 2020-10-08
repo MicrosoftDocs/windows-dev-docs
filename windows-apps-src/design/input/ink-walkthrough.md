@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Tutorial: Support ink in your Windows app
 
-![Surface Pen](images/ink/ink-hero-small.png)  
+![Surface Pen hero image.](images/ink/ink-hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
 This tutorial steps through how to create a basic Windows app that supports writing and drawing with Windows Ink. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated Windows Ink APIs (see [Components of the Windows Ink platform](#components-of-the-windows-ink-platform)) discussed in each step.
@@ -49,7 +49,7 @@ Throughout this tutorial, we use a sample ink app to demonstrate the concepts an
 Download this Visual Studio sample and source code from [GitHub](https://github.com/) at [windows-appsample-get-started-ink sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink):
 
 1. Select the green **Clone or download** button  
-![Cloning the repo](images/ink/ink-clone.png)
+![Cloning the repo.](images/ink/ink-clone.png)
 2. If you have a GitHub account, you can clone the repo to your local machine by choosing **Open in Visual Studio** 
 3. If you don't have a GitHub account, or you just want a local copy of the project, choose **Download ZIP** (you'll have to check back regularly to download the latest updates)
 
@@ -76,11 +76,11 @@ After you've downloaded the RadialController sample app, verify that it runs:
 
    > [!NOTE]
    > Alternatively, you can select **Debug** > **Start debugging** menu item, or select the **Local Machine** Run button shown here.
-   > ![Visual Studio Build project button](images/ink/ink-vsrun-small.png)
+   > ![Visual Studio Build project button.](images/ink/ink-vsrun-small.png)
 
 The app window opens, and after a splash screen appears for a few seconds, you’ll see this initial screen.
 
-![Empty app](images/ink/ink-app-step1-empty-small.png)
+![Screenshot of the empty app.](images/ink/ink-app-step1-empty-small.png)
 
 Okay, we now have the basic Windows app that we’ll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
 
@@ -119,7 +119,7 @@ That's it!
 
 Now run the app again. Go ahead and scribble, write your name, or (if you're holding a mirror or have a very good memory) draw your self-portrait.
 
-![Screenshot of the Basic Ink Sample app highlighted in this topic](images/ink/ink-app-step1-name-small.png)
+![Screenshot of the Basic Ink Sample app highlighted in this topic.](images/ink/ink-app-step1-name-small.png)
 
 ## Step 3: Support inking with touch and mouse
 
@@ -177,7 +177,7 @@ To add a default [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 
 
 Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) and try out some of the tools.
 
-![Screenshot of the Basic Ink Sample app highlighted in this topic with the default InkToolbar](images/ink/ink-inktoolbar-default-small.png)
+![Screenshot of the Basic Ink Sample app highlighted in this topic with the default InkToolbar.](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
 <table class="wdg-noborder">
@@ -191,7 +191,7 @@ Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.contr
 
 Here's an example of a custom **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (from Sketchpad in the Windows Ink Workspace).
 
-![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
+![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace.](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
 
@@ -209,9 +209,9 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 > Handwriting recognition can be improved through the **Pen & Windows Ink** settings:
 > 1. Open the Start menu and select **Settings**.
 > 2. From the Settings screen select **Devices** > **Pen & Windows Ink**.
-> ![Screenshot of the Pen & Windows Ink settings page](images/ink/ink-settings-small.png)
+> ![Screenshot of the Pen & Windows Ink settings page.](images/ink/ink-settings-small.png)
 > 3. Select **Get to know my handwriting** to open the **Handwriting Personalization** dialog.
-> ![Screenshot of the Handwriting Recognition Personalization dialog box](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Screenshot of the Handwriting Recognition Personalization dialog box.](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### In the sample:
 1. Open the MainPage.xaml file.
@@ -381,11 +381,11 @@ For this example, we don't attempt to redraw ink strokes (although that's possib
 
 Here's an example of a rudimentary flowchart from a digital napkin.
 
-![Screenshot of a rudimentary flowchart from a digital napkin](images/ink/ink-app-step6-shapereco1-small.png)
+![Screenshot of a rudimentary flowchart from a digital napkin.](images/ink/ink-app-step6-shapereco1-small.png)
 
 Here's the same flowchart after shape recognition.
 
-![Screenshot of the flowchart after the user selects Recognize shape](images/ink/ink-app-step6-shapereco2-small.png)
+![Screenshot of the flowchart after the user selects Recognize shape.](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## Step 7: Save and load ink
