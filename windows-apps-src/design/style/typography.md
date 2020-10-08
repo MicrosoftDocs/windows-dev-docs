@@ -75,7 +75,7 @@ The Windows type ramp establishes crucial relationships between the type styles 
 You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
     :::column-end:::
     :::column:::
-![Screenshot of text that shows the way the following text block types will appear: Header, Subheader, Title, Subtitle, Base. Body. and Caption.](images/type/text-block-type-ramp.svg)
+![Screenshot of text that shows the way the following text block types will appear: Header, Subheader, Title, Subtitle, Base, Body, and Caption.](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 

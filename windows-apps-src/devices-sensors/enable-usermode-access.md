@@ -822,7 +822,7 @@ In the HLK manager, select “Resource Hub Proxy device”:
 
 Then click the Tests tab, and select I2C WinRT, Gpio WinRT, and Spi WinRT tests.
 
-![Screenshot of the Windows Hardware Lab Kit showing the Tests tab with the GPIO WinRT Functional and Stress Tests option selected.](images/usermode-hlk-2.png)
+![Screenshot of the Windows Hardware Lab Kit showing the Tests tab with the G P I O Win R T Functional and Stress Tests option selected.](images/usermode-hlk-2.png)
 
 Click Run Selected. Further documentation on each test is available by right clicking on the test and clicking “Test Description.”
 

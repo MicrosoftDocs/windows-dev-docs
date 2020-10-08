@@ -84,7 +84,7 @@ Use for objects which are translating across a single scene or multiple scenes. 
 
 Easing is a way to manipulate the velocity of an object as it travels. It's the glue that ties together all the Fluent motion experiences.​ While extreme, the easing used in the system helps unify the physical feel of objects moving throughout the system. This is one way to mimic the real world, and make objects in motion feel like they belong in their environment.
 
-![A short video showing a circle appead from the lower-right corner of the frame and stopping near the upper-left corner of the frame.](images/easing.gif)
+![A short video showing a circle appear from the lower-right corner of the frame and stopping near the upper-left corner of the frame.](images/easing.gif)
 
 ## Apply easing to motion
 

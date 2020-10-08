@@ -91,7 +91,7 @@ Content exits quickly. Objects accelerate off screen.
 Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
-        ![Short video showing a a circle entering from the right of the frame and stopping in the middle of the frame.](images/backwardIN.gif)
+        ![Short video showing a circle entering from the right of the frame and stopping in the middle of the frame.](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
