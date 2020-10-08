@@ -64,7 +64,7 @@ How do you make an app feel natural on a variety of devices? By making it feel a
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/thumbnail-size-classes.jpg)
+        ![Image depicting design for the right breakpoints.](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
 	:::column span="2":::
 **Design for the right breakpoints**
@@ -77,7 +77,7 @@ Instead of designing for every individual screen size, focusing on a few key wid
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/rspd-resize.gif)
+        ![Short movie depicting a responsive layout.](images/fluent/rspd-resize.gif)
     :::column-end:::
 	:::column span="2":::
 **Create a responsive layout**
@@ -90,7 +90,7 @@ For an app to feel natural, it should adapt its layout to different screen sizes
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/devices.jpg)
+        ![Image depicting design for a spectrum of devices.](images/fluent/devices.jpg)
     :::column-end:::
 	:::column span="2":::
 **Design for a spectrum of devices**
@@ -102,7 +102,7 @@ UWP apps can run on a wide variety of Windows-powered devices. It's helpful to u
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/keyboard-shortcuts.jpg)
+        ![Image depicting how to optimize for the ](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
 	:::column span="2":::
 **Optimize for the right input**
@@ -122,7 +122,7 @@ Fluent experiences use controls and patterns consistently, so they behave in way
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/thumbnail-navview.png)
+        ![Image depicting how to provide the right navigation.](images/fluent/thumbnail-navview.png)
     :::column-end:::
 	:::column span="2":::
 **Provide the right navigation**
@@ -134,7 +134,7 @@ Create an effortless experience by using the right app structure and navigation 
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/thumbnail-commanding.png)
+        ![Image depicting how to be interactive.](images/fluent/thumbnail-commanding.png)
     :::column-end:::
 	:::column span="2":::
 **Be interactive**
@@ -146,7 +146,7 @@ Buttons, command bars, keyboard shortcuts, and context menus enable users to int
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/thumbnail-controls-2.jpg)
+        ![Image depicting how to use the right control for the job.](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
 	:::column span="2":::
 **Use the right control for the job**
@@ -179,7 +179,7 @@ Add light to your UWP app:
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/Nav_Reveal_Animation.gif)
+        ![Short video depicting reveal highlighting.](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
 	:::column span="2":::
 **Reveal highlight**
@@ -189,7 +189,7 @@ Add light to your UWP app:
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![Short video depicting reveal focus.](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
 	:::column span="2":::
 **Reveal focus**
@@ -205,7 +205,7 @@ Add depth to your UWP app:
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/_parallax_v2.gif)
+        ![Short video depicting Parallax scrolling.](images/fluent/_parallax_v2.gif)
     :::column-end:::
 	:::column span="2":::
 **Parallax**
@@ -237,7 +237,7 @@ Add material to your UWP app:
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/acrylic_lighttheme_base.png)
+        ![Image depicting an Acrylic layer.](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
 	:::column span="2":::
 **Acrylic**
@@ -251,7 +251,7 @@ Want to get started creating your own apps with Fluent Design? Our toolkits for 
 
 :::row:::
     :::column:::
-        ![fpo image](images/fluent/thumbnail-toolkits.jpg)
+        ![Screenshot of the Design toolkits and samples page.](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
 	:::column span="2":::
 **Design toolkits and samples page**

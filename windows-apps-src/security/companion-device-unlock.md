@@ -96,7 +96,7 @@ Notes:
 
 The following diagram illustrates how the Windows Hello companion device interacts with Companion Authentication Service during registration.  
 
-![registration flow](images/companion-device-2.png)
+![Diagram of the registration flow.](images/companion-device-2.png)
 
 There are two keys used in our protocol:
 
@@ -139,7 +139,7 @@ Once the background task associated with a Windows Hello companion device app is
 
 The second computed value is used by the service to authenticate the device and also prevent replay attack in transport channel.
 
-![registration flow](images/companion-device-3.png)
+![Diagram of the updated registration flow.](images/companion-device-3.png)
 
 ## Lifecycle management
 

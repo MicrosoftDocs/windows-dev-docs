@@ -65,7 +65,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 If you run your app and click the "Log in" button, it should display an empty window. 
 
-![Account settings pane](images/tb-1.png)
+![Screenshot of the Choose an account window with no accounts listed.](images/tb-1.png)
 
 The pane is empty because the system only provides a UI shell - it's up to the developer to programatically populate the pane with the identity providers. 
 
@@ -150,7 +150,7 @@ The GetMsaToken method we passed to our new **WebAccountProviderCommand** doesn'
 
 Run the above code and your pane should look something like this: 
 
-![Account settings pane](images/tb-2.png)
+![Screenshot of the Choose an account window with accounts listed.](images/tb-2.png)
 
 ### Request a token
 
@@ -384,7 +384,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Account settings pane](images/tb-3.png)
+![Screenshot of the Choose an account window with no accounts listed and a message that says My Awesome App works best if you're signed in.](images/tb-3.png)
 
 Don't go overboard with header text; keep it short and sweet. If your login process is complicated and you need to display more information, link the user to a separate page using a custom link. 
 
@@ -410,7 +410,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Account settings pane](images/tb-4.png)
+![Screenshot of the Choose an account window with no accounts listed and a link to a Privacy policy.](images/tb-4.png)
 
 Theoretically, you can use settings commands for anything. However, we suggest limiting their use to intuitive, account-related scenarios like those described above. 
 

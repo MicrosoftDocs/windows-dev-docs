@@ -51,7 +51,7 @@ You can find this setting in the property pages of the class library project.
 
 From your desktop application project, add a reference to the class library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference.png)
+![Screenshot of the Solution Explorer pane that calls out the Class library reference for the dot NET project.](images/desktop-to-uwp/class-library-reference.png)
 
 Next, use tools to determine how much of your code conforms to the standard. That way, before you move code into the library, you can decide which parts you can reuse, which parts require minimal modification, and which parts will remain application-specific.
 
@@ -181,7 +181,7 @@ First, add a UWP project to your solution.
 
 Then, from your UWP project, add a reference the .NET Standard 2.0 library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference2.png)
+![Screenshot of the UWP Solution Explorer pane that calls out the reference to the Class library reference for the dot NET project.](images/desktop-to-uwp/class-library-reference2.png)
 
 #### Build your pages
 
@@ -217,7 +217,7 @@ To get started with UWP, see [What's a UWP app](../get-started/universal-applica
 
 You can reach Android and iOS devices by adding Xamarin projects.  
 
-![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
+![An image that shows an Android device and a i O S device displaying Xamarin apps.](images/desktop-to-uwp/xamarin-apps.png)
 
 These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
 
@@ -231,14 +231,14 @@ First, add an **Android**, **iOS**, or **Cross-Platform** project to your soluti
 
 You can find these templates in the **Add New Project** dialog box under the **Visual C#** group.
 
-![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
+![Screenshot of the Add New Project dialog box showing Installed > Visual C sharp selected and Android, Cross Platform, and iOS options called out.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
 >Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](/xamarin/xamarin-forms/).
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference3.png)
+![Screenshot of he Solution Explorer pane that calls out the reference to the Class library reference for the  Android, i O S, or cross-platform project.](images/desktop-to-uwp/class-library-reference3.png)
 
 #### Build your pages
 

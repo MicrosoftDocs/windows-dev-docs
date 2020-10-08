@@ -67,12 +67,12 @@ To upload a certificate for your automated build:
 1. In Azure Pipelines, expand **Pipelines** in the navigation pane and click **Library**.
 2. Click the **Secure files** tab and then click **+ Secure file**.
 
-    ![how to upload a secure file](images/secure-file1.png)
+    ![Screenshot of Azure with the Library option highlighted showing the Secure files page.](images/secure-file1.png)
 
 3. Browse to the certificate file and click **OK**.
 4. After you upload the certificate, select it to view its properties. Under **Pipeline permissions**, enable the **Authorize for use in all pipelines** toggle.
 
-    ![how to upload a secure file](images/secure-file2.png)
+    ![Screenshot of the Pipeline permissions section with the Authorize for use in all pipelines option selected.](images/secure-file2.png)
 
 5. If the private key in the certificate has a password, we recommend that you store your password in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline. Note that a password is only supported for the private key; using a certificate file that is itself password-protected is not currently supported.
 
