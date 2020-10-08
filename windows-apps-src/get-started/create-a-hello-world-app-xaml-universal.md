@@ -55,11 +55,11 @@ Here you'll learn how to:
 
 5.  The target version/minimum version dialog appears. The default settings are fine for this tutorial, so select **OK** to create the project.
 
-    ![The solution explorer window](images/win10-cs-02.png)
+    ![Screenshot of the New Universal Windows Project dialog box.](images/win10-cs-02.png)
 
 6.  When your new project opens, its files are displayed in the **Solution Explorer** pane on the right. You may need to choose the **Solution Explorer** tab instead of the **Properties** tab to see your files.
 
-    ![The solution explorer window](images/win10-cs-03.png)
+    ![Screenshot of the Solution Explorer pane with Hello World (Universal Windows) highlighted.](images/win10-cs-03.png)
 
 Although the **Blank App (Universal Window)** is a minimal template, it still contains a lot of files. These files are essential to all UWP apps using C#. Every project that you create in Visual Studio contains them.
 
@@ -104,15 +104,15 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
 
     You'll notice there is a graphical view on the top part of the screen, and the XAML code view underneath. You can make changes to either, but for now we'll use the graphical view.
 
-    ![The solution explorer window](images/win10-cs-04.png)
+    ![Screenshot of the Visual Studio showing the Main Page X A M L Design view.](images/win10-cs-04.png)
 
 2.  Click on the vertical **Toolbox** tab on the left to open the list of UI controls. (You can click the pin icon in its title bar to keep it visible.)
 
-    ![The solution explorer window](images/win10-cs-05.png)
+    ![Screenshot of the Toolbox pane with a red arrow pointing to the pin icon.](images/win10-cs-05.png)
 
 3.  Expand **Common XAML Controls**, and drag the **Button** out to the middle of the design canvas.
 
-    ![The solution explorer window](images/win10-cs-06.png)
+    ![Screenshot of the Toolbox pane and the Main Page X A M L Design view showing the Button option highlighted in the Toolbox pane and a Button in the Design view.](images/win10-cs-06.png)
 
     If you look at the XAML code window, you'll see that the Button has been added there too:
 
@@ -130,7 +130,7 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
 
 Notice how the button displayed in the design canvas updates to display the new text.
 
-![The solution explorer window](images/win10-cs-07.png)
+![Screenshot of the Hello, world button with a red box around it and the code behind the button.](images/win10-cs-07.png)
 
 ## Step 3: Start the app
 

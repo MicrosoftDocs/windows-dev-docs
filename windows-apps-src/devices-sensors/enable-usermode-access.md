@@ -818,11 +818,11 @@ When you select the rhproxy device node in HLK manager, the applicable tests wil
 
 In the HLK manager, select “Resource Hub Proxy device”:
 
-![HLK manager screenshot](images/usermode-hlk-1.png)
+![Screenshot of the Windows Hardware Lab Kit showing the Selection tab with the Resource Hub proxy device option selected.](images/usermode-hlk-1.png)
 
 Then click the Tests tab, and select I2C WinRT, Gpio WinRT, and Spi WinRT tests.
 
-![HLK manager screenshot](images/usermode-hlk-2.png)
+![Screenshot of the Windows Hardware Lab Kit showing the Tests tab with the GPIO WinRT Functional and Stress Tests option selected.](images/usermode-hlk-2.png)
 
 Click Run Selected. Further documentation on each test is available by right clicking on the test and clicking “Test Description.”
 

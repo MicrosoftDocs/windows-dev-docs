@@ -58,7 +58,7 @@ Use a font size smaller than 12 px.
 Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the Windows type ramp.
     :::column-end:::
     :::column:::
-![text block styles](images/type/type-hierarchy.svg)
+![Screenshot of three lines of text where the font size gets smaller from one line to the next.](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +75,7 @@ The Windows type ramp establishes crucial relationships between the type styles 
 You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
     :::column-end:::
     :::column:::
-![text block styles](images/type/text-block-type-ramp.svg)
+![Screenshot of text that shows the way the following text block types will appear: Header, Subheader, Title, Subtitle, Base. Body. and Caption.](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 

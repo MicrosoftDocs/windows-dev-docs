@@ -44,9 +44,9 @@ For square assets, automatic centering within the container occurs:
 
 For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
 
-![non-square asset sizing, with and without badge](images/assetguidance26a.png)
+![Screenshot showing automatically centered horizontal non-square asset sizing, with and without a badge.](images/assetguidance26a.png)
 
-![non-square asset sizing, with and without badge](images/assetguidance26b.png)
+![Screenshot showing automatically centered vertical non-square asset sizing, with and without a badge.](images/assetguidance26b.png)
 
 **Step 2: Create your base tile**
 

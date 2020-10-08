@@ -202,7 +202,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 These images shows how pen input is processed and customized by the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter).
 
-| ![the inkcanvas with default black ink strokes](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
+| ![Screenshot that shows the inkcanvas with default black ink strokes .](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with default black ink strokes. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with user selected red ink strokes. | 
 
@@ -267,7 +267,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     Finally, we assign listeners for the [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) and [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) events of the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
-    ![the inkcanvas with default black ink strokes](images/ink-unprocessed-2-small.png)
+    ![Screenshot of the Advances ink customization sample app showing the inkcanvas with default black ink strokes.](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()

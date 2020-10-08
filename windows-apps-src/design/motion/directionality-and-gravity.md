@@ -41,7 +41,7 @@ Direction of movement corresponds to physical motion. Just like in nature, objec
 When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
     :::column-end:::
     :::column:::
-        ![direction backward in](images/Direction.gif)
+        ![Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis.](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -91,7 +91,7 @@ Content exits quickly. Objects accelerate off screen.
 Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
-        ![direction backward in](images/backwardIN.gif)
+        ![Short video showing a a circle entering from the right of the frame and stopping in the middle of the frame.](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -112,7 +112,7 @@ Gravity typically manifests when an object must jump from one scene to another.�
 
 Here, an element in the top row of the grid is affected by gravity, causing it to drop slightly as it leaves its place and moves to the front.
 
-![direction backward in](images/continuity-photos.gif)
+![Short video showing a rectangle element leaving the top row of a grid, dropping lightly, and then zooming to the front of the window.](images/continuity-photos.gif)
 
 ## Related articles
 

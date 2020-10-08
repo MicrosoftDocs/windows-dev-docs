@@ -177,21 +177,21 @@ To add a default [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 
 
 Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) and try out some of the tools.
 
-![InkToolbar from Sketchpad ing the Ink Workspace](images/ink/ink-inktoolbar-default-small.png)
+![Screenshot of the Basic Ink Sample app with the Ink Toolbar.](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
 <table class="wdg-noborder">
 <tr>
 <td>
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
 
 Here's an example of a custom **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (from Sketchpad in the Windows Ink Workspace).
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
+![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace.](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
 
@@ -209,9 +209,9 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 > Handwriting recognition can be improved through the **Pen & Windows Ink** settings:
 > 1. Open the Start menu and select **Settings**.
 > 2. From the Settings screen select **Devices** > **Pen & Windows Ink**.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-small.png)
+> ![Screenshot of the Pen & Windows Ink settings page.](images/ink/ink-settings-small.png)
 > 3. Select **Get to know my handwriting** to open the **Handwriting Personalization** dialog.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Screenshot of the Handwriting Personalization dialog box.](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### In the sample:
 1. Open the MainPage.xaml file.
@@ -282,7 +282,7 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 <tr>
 <td>
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -302,7 +302,7 @@ For more details about international handwriting recognition, see [Recognize Win
 <tr>
 <td>
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -381,11 +381,11 @@ For this example, we don't attempt to redraw ink strokes (although that's possib
 
 Here's an example of a rudimentary flowchart from a digital napkin.
 
-![Original ink flowchart](images/ink/ink-app-step6-shapereco1-small.png)
+![Screenshot of a rudimentary flowchart from a digital napkin.](images/ink/ink-app-step6-shapereco1-small.png)
 
 Here's the same flowchart after shape recognition.
 
-![Original ink flowchart](images/ink/ink-app-step6-shapereco2-small.png)
+![Screenshot of the flowchart after the user selects Recognize shape.](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## Step 7: Save and load ink
@@ -440,7 +440,7 @@ In this step, we hook up the **Save** and **Load** buttons located beside the in
 <tr>
 <td>
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 

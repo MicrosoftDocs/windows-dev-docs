@@ -135,7 +135,7 @@ To launch the Manifest Designer:
             Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
+            ![Screenshot of the Manifest designer showing the Application tab.](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -143,7 +143,7 @@ To launch the Manifest Designer:
         3. Click the **Visual Assets** tab.
     :::column-end:::
     :::column:::
-        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![Screenshot of the Manifest designer showing the Visual Assets tab.](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
