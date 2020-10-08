@@ -231,7 +231,7 @@ First, add an **Android**, **iOS**, or **Cross-Platform** project to your soluti
 
 You can find these templates in the **Add New Project** dialog box under the **Visual C#** group.
 
-![Screenshot of the Add New Project dialog box showing Installed > Visual C sharp selected and Android, Cross Platform, and iOS options called out.](images/desktop-to-uwp/xamarin-projects.png)
+![Screenshot of the Add New Project dialog box showing Installed > Visual C sharp selected and Android, Cross Platform, and i O S options called out.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
 >Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](/xamarin/xamarin-forms/).

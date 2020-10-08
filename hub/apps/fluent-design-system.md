@@ -102,7 +102,7 @@ UWP apps can run on a wide variety of Windows-powered devices. It's helpful to u
 
 :::row:::
     :::column:::
-        ![Image depicting how to optimize for the ](images/fluent/keyboard-shortcuts.jpg)
+        ![Image depicting how to optimize for the right output.](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
 	:::column span="2":::
 **Optimize for the right input**
