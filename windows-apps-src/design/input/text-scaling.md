@@ -11,7 +11,7 @@ ms.custom: RS5
 ---
 # Text scaling
 
-![Screenshot showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)  
+![Screenshot showing an example of text scaling from 100% to 225%](images/coretext/text-scaling-news-hero-small.png)  
 *Example of text scaling in Windows 10 (100% to 225%)*
 
 ## Overview
@@ -34,7 +34,7 @@ DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling,
 
 Users can adjust text scale with the Make text bigger slider on the Settings -> Ease of Access -> Vision/Display screen.
 
-![Screenshot of the Display settings page showing the Make text bigger slider.](images/coretext/text-scaling-settings-100-small.png)  
+![Screenshot of the Ease of Access Vision/Display settings page showing the Make text bigger slider](images/coretext/text-scaling-settings-100-small.png)  
 *Text scale setting from Settings -> Ease of Access -> Vision/Display screen*
 
 ## UX guidance
