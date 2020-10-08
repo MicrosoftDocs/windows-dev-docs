@@ -1,5 +1,5 @@
 ---
-Description: Build Windows apps and custom/templated controls that support platform text scaling.
+description: Build Windows apps and custom/templated controls that support platform text scaling.
 title: Text scaling
 label: Text scaling
 template: detail.hbs

@@ -1,5 +1,5 @@
 ---
-Description: Build Windows apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
+description: Build Windows apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
 title: Pen interactions and Windows Ink in Windows apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps

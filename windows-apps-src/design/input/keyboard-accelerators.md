@@ -1,5 +1,5 @@
 ---
-Description: Learn how accelerator keys can improve the usability and accessibility of Windows apps.
+description: Learn how accelerator keys can improve the usability and accessibility of Windows apps.
 title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
