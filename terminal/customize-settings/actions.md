@@ -93,6 +93,16 @@ This sets the name that will appear in the command palette. If one isn't provide
 
 **Accepts:** String
 
+### Icon
+
+This sets the icon that displays within the command palette.
+
+**Property name:** `icon`
+
+**Necessity:** Optional
+
+**Accepts:** File location as a string, or an emoji
+
 <br />
 
 ___
