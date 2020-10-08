@@ -374,7 +374,7 @@ By default, when keyboard accelerators are declared, all controls (except [MenuF
 > [!NOTE] 
 > If a control has more than one accelerator defined, only the first is presented.
 
-![Screenshot of a Save button with a tool tip above it that says Ctrl plus S.](images/accelerators/accelerators_tooltip_savebutton_small.png)
+![Screenshot of a Save button with a tool tip above it that indicates support for the Ctrl+S accelerator](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Accelerator key combo in tooltip*
 
@@ -410,7 +410,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </StackPanel>
 ```
 
-![Screenshot of three buttons labeled Button 1 Button 2 and Button 3 with a tool tip in between Button 1 and Button 2 that says Windows plus B.](images/accelerators/accelerators-button-small.png)
+![Screenshot of three buttons labeled Button1, Button2, and Button3 with a tool tip above Button2 that indicates support for the Windows+B accelerator](images/accelerators/accelerators-button-small.png)
 
 *Accelerator key combo appended to Button's default tooltip*
 
@@ -422,7 +422,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </AppBarButton>
 ```
 
-![Screenshot of a button labeled with a Disk icon with a tool tip above it that says Save and parentheses Ctrl plus S.](images/accelerators/accelerators-appbarbutton-small.png)
+![Screenshot of a button with a Disk icon and a tool tip that includes the default Save text appended with the Ctrl+S accelerator in parentheses](images/accelerators/accelerators-appbarbutton-small.png)
 
 *Accelerator key combo appended to AppBarButton's default tooltip*
 
@@ -448,7 +448,7 @@ For [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/
 </AppBarButton>
 ```
 
-![Screenshot of a Menu Flyout Item control that includes Accelerator key combos.](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+![Screenshot of a Menu with MenuFlyoutItems that include accelerator key combos](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
 *Accelerator key combo appended to MenuFlyoutItem's text*
 
