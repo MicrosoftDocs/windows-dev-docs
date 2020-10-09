@@ -91,7 +91,7 @@ namespace winrt::BgLabelControlApp::factory_implementation
 }
 ```
 
-The code shown above declares the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI 3 framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
+The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI 3 framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
 
 
 Next, replace the contents of BgLabelControl.cpp with the following code.
