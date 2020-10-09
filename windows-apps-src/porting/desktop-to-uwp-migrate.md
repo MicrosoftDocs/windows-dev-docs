@@ -238,7 +238,7 @@ You can find these templates in the **Add New Project** dialog box under the **V
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
-![Screenshot of he Solution Explorer pane that calls out the reference to the Class library reference for the  Android, i O S, or cross-platform project.](images/desktop-to-uwp/class-library-reference3.png)
+![Screenshot of the Solution Explorer pane that calls out the reference to the Class library reference for the  Android, i O S, or cross-platform project.](images/desktop-to-uwp/class-library-reference3.png)
 
 #### Build your pages
 
