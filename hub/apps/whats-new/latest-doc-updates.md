@@ -2,7 +2,7 @@
 Description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 10/6/2020
+ms.date: 10/8/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -22,12 +22,46 @@ This month we translated another batch of absolute links to relative links in or
 
 Highlights this month include:
 
-* [Surface Duo documentation](https://docs.microsoft.com/dual-screen/introduction) updates.
+* Updated documentation:
 
-* [Windows Terminal](/windows/terminal/) documenation updates.
+    * [Surface Duo documentation](https://docs.microsoft.com/dual-screen/introduction) updates
 
+    * [Windows Terminal](/windows/terminal/) documentation updates, including information on [Docker](/windows/dev-environment/docker/overview).
 
-The following topics are some of which have seen recent significant updates in the past month.
+    * Updated all four [XAML Islands walkthroughs](/windows/apps/desktop/modernize/xaml-islands) with latest available NuGet packages and different versions of WinUI.
+
+    * [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance): Added guidance about using new Target Framework Moniker option for .NET 5, added guidance for multi-targeting different .NET versions, and removed old guidance about referencing the various libraries manually.
+
+    * [Radio buttons](/windows/uwp/design/controls-and-patterns/radio-button)
+
+    * [WinUI RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons?view=winui-2.4)
+
+    * [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar?view=winrt-19041)
+
+    * [Composition visual](/windows/uwp/composition/composition-visual-tree)
+
+    * [DirectML FAQ](/windows/win32/direct3d12/gpu-faq)
+
+    * [Programming with extension SDKs](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+
+    * [IIterator<T>.GetMany(T[]) Method](https://docs.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany?view=winrt-19041)
+
+    * [D3D12_HEAP_PROPERTIES structure (d3d12.h)](/windows/win32/api/d3d12/ns-d3d12-d3d12_heap_properties)
+
+* New topics 
+
+    * [Get activation info for packaged apps](/windows/apps/desktop/modernize/get-activation-info-for-packaged-apps)
+    * [ID3D12Device7 interface (d3d12.h)](/windows/win32/api/d3d12/nn-d3d12-id3d12device7)
+    * [ID3D12Device8 interface (d3d12.h)](/windows/win32/api/d3d12/nn-d3d12-id3d12device8)
+    
+
+* New samples
+
+    * C++/WinRT: [WNS overview](/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) 
+    * C++/WinRT: [Remote cameras](/windows/uwp/audio-video-camera/connect-to-remote-cameras) 
+
+The following API reference topics have seen significant updates in the past month.
+
 
 ## Windows UWP
 <ul>
