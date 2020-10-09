@@ -176,21 +176,21 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 **Default value:** `false`
 
-### Launch size
+### Launch mode
 
-This defines whether the terminal will launch as maximized, full screen, or in a window.
+This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with the focus mode enabled. Similar, setting this to `focusMaximized` will result in lauching the terminal in a maximized window with the focus mode enabled.
 
 **Property name:** `launchMode`
 
 **Necessity:** Optional
 
-**Accepts:** `"default"`, `"maximized"`, `"fullscreen"`
+**Accepts:** `"default"`, `"maximized"`, `"fullscreen"`, `"focus"`, `"maximizedFocus"`
 
 **Default value:** `"default"`
 
 ### Launch position
 
-This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"`, the window will be maximized on the monitor specified by those coordinates.
+This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -202,7 +202,7 @@ This sets the pixel position of the top left corner of the window upon first loa
 
 ### Columns on first launch
 
-This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
+This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
 
 **Property name:** `initialCols`
 
@@ -214,7 +214,7 @@ This is the number of character columns displayed in the window upon first load.
 
 ### Rows on first launch
 
-This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"`, this property is ignored.
+This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
 
 **Property name:** `initialRows`
 
