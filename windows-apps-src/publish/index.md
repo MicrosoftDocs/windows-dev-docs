@@ -61,7 +61,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Promote your apps</h3>
-        <a href="create-an-ad-campaign-for-your-app.md">Create ad campaigns</a><br/>
+        <a href="/windows/uwp/monetize/">Create ad campaigns</a><br/>
         <a href="generate-promotional-codes.md">Generate promotional codes</a><br/>
         <a href="put-apps-and-add-ons-on-sale.md">Offer sale pricing</a><br/>
     :::column-end:::

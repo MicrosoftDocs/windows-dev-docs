@@ -42,7 +42,7 @@ To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial
 6. Configure the following additional settings as desired:
 
     * If you select the **UWP (Windows 10)** device family for the ad unit, you can optionally configure [mediation settings](#mediation) for the ad unit.
-    * If you select the **PC/Tablet (Windows 8.1)** or **Mobile (Windows Phone 8.x)** device family for a banner ad unit, you can optionally select **Show community ads in your app** to opt in to [community ads](about-community-ads.md).
+    * If you select the **PC/Tablet (Windows 8.1)** or **Mobile (Windows Phone 8.x)** device family for a banner ad unit, you can optionally select **Show community ads in your app** to opt in to [community ads](../monetize/index.md).
 
 7.  If you haven't yet set the COPPA compliance for the selected app, choose an option in the [COPPA compliance](#coppa) section.
 8.  Click **Create ad unit**.
@@ -109,7 +109,7 @@ The following table lists the paid networks we currently support for each ad typ
 |--------------|---------------|---------------------|
 | Oath and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, Oath and AppNexus.<p/>**Note**: Oath and AppNexus is always ranked first in the **Paid ad networks** list for banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
 | AppNexus (direct) | Select this option to serve ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
-| Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md).  |  Banner, Banner interstitial, Native  |
+| Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](../monetize/index.md).  |  Banner, Banner interstitial, Native  |
 | MSN Content Recommendations |  Select this option to serve ads from MSN Content Recommendations. |  Banner, Banner interstitial  |
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |
 | Revcontent |  Select this option to serve ads from [Revcontent](https://www.revcontent.com/). |  Banner, Native  |
@@ -129,8 +129,8 @@ The following table lists the other networks we currently support for each ad ty
 
 |  Ad network  |  Description  |  Supported ad types  |
 |--------------|---------------|---------------------|
-| Microsoft Community ads |  If you [create a promotional ad campaign for one of your apps](create-an-ad-campaign-for-your-app.md) and configure this campaign as a [community ad campaign](about-community-ads.md), select this options to show ads from this campaign. | Banner, Banner interstitial |
-| Microsoft House ads | If you [create a promotional ad campaign for one of your apps](create-an-ad-campaign-for-your-app.md) and configure this campaign as a [house ad campaign](about-house-ads.md), select this options to show ads from this campaign. | Banner, Banner interstitial  |
+| Microsoft Community ads |  If you [create a promotional ad campaign for one of your apps](../monetize/index.md) and configure this campaign as a [community ad campaign](../monetize/index.md), select this options to show ads from this campaign. | Banner, Banner interstitial |
+| Microsoft House ads | If you [create a promotional ad campaign for one of your apps](../monetize/index.md) and configure this campaign as a [house ad campaign](../monetize/index.md), select this options to show ads from this campaign. | Banner, Banner interstitial  |
 
 
 <span id="network-markets" />
