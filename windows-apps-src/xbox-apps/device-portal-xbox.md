@@ -84,9 +84,9 @@ On the **Settings** page, you can view and edit several settings for your Xbox O
 
 There are several sections with different settings to view and/or edit, which are explained below.
 
-![Settings](images/device-portal-xbox-20.png)
+![Screenshot of the Settings page showing the Device Information and Display settings sections.](images/device-portal-xbox-20.png)
 
-![Settings](images/device-portal-xbox-21.png)
+![Screenshot of the Settings page showing the Localization Settings, Power Settings and User Settings sections. ](images/device-portal-xbox-21.png)
 
 #### Device Information
 

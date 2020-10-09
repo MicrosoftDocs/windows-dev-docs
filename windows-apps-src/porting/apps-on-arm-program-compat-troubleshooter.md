@@ -13,11 +13,11 @@ Emulation to support x86 apps is a new feature created for Windows 10 on ARM64. 
 ## Start the Program Compatibility Troubleshooter
 You start the [Program Compatibility Troubleshooter](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) manually in the same way on any Windows 10 PC: right-click an executable (.exe) file and select **Troubleshoot compatibility**. This screen appears.
 
-![Screenshot of Troubleshoot compatibility option](images/arm/Capture4.png)
+![Screenshot of the Troubleshoot compatibility options.](images/arm/Capture4.png)
 
 If you click on **Troubleshoot program** you will be presented with the following options.
 
-![Screenshot of Troubleshoot compatibility option](images/arm/Capture5.png)
+![Screenshot of the What problems do you notice options.](images/arm/Capture5.png)
 
 All options enable the settings that are applicable and applied on all Windows 10 Desktop PCs. In addition, the first, second, and fourth options apply the [Disable application cache](#disable-app-cache) and [Disable hybrid execution mode](#disable-hybrid-exec-mode) emulation settings.
 
