@@ -35,6 +35,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--help`, `-h`, `-?`, `/?` | Displays the help message. |
 | `--maximized`, `-M` | Launches the terminal maximized. |
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
+| `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
