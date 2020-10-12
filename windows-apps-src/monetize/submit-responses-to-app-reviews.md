@@ -81,14 +81,14 @@ Content-Type: application/json
       "ReviewId": "6be543ff-1c9c-4534-aced-af8b4fbe0316",
       "ResponseText": "Thank you for pointing out this bug. I fixed it and published an update, you should have the fix soon",
       "SupportEmail": "support@contoso.com",
-      "IsPublic": "true"
+      "IsPublic": true
     },
     {
       "ApplicationId": "9NBLGGH1RP08",
       "ReviewId": "80c9671a-96c2-4278-bcbc-be0ce5a32a7c",
       "ResponseText": "Thank you for submitting your review. Can you tell more about what you were doing in the app when it froze? Thanks very much for your help.",
       "SupportEmail": "support@contoso.com",
-      "IsPublic": "false"
+      "IsPublic": false
     }
   ]
 }
