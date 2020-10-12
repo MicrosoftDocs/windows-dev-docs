@@ -36,6 +36,7 @@ This topic describes the following URI schemes built into Windows:
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
 |[msnweather:](#weather-app-uri-scheme) | Weather app |
+|[microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
 
 <br>
 For example, the following URI opens the default browser and displays the Bing web site.
@@ -239,3 +240,11 @@ Use the **msnweather:** URI scheme to launch the Weather app.
 | URI Scheme | Results |
 |------------|---------|
 | msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Launches the Weather app in the Forecast page based on a location geographic coordinates.<br>`latitude` refers to the latitude of the location.<br> `longitude` refers to the longitude of the location.<br> |
+
+### Microsoft Edge URI scheme
+
+Use the **microsoft-edge:** URI scheme to launch the Microsoft Edge browser to a specified URL.
+
+| URI Scheme | Results |
+|------------|---------|
+| microsoft-edge:https://example.com/] | Opens the Microsoft Edge browser and navigates to https://example.com/<br> |
