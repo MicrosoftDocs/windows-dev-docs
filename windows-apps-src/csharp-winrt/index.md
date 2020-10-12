@@ -26,11 +26,13 @@ C#/WinRT also supports WinUI 3.0. This release of WinUI lifts native Microsoft U
 
 Finally, C#/WinRT is a general toolkit and is intended to support other scenarios where built-in support for WinRT is not available in the C# compiler or .NET runtime. C#/WinRT supports versions of the .NET runtime compatible down to .NET Standard 2.0, such as Mono 5.4.
 
-For additional information about C#/WinRT, see the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo)
+For additional information about C#/WinRT, see the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo).
 
 ## Create an interop assembly
 
-WinRT APIs are defined in Windows Metadata (*.winmd) files. The C#/WinRT NuGet package includes the C#/WinRT compiler, **cswinrt**, which you can use to process Windows Metadata files and generate .NET Standard 2.0 C# code. You can compile these source files to interop assemblies, similar to how [C++/WinRT](../cpp-and-winrt-apis/index.md) generates headers for C++ language projection. You can then distribute the C#/WinRT interop assemblies for applications to reference, along with the C#/WinRT runtime assembly.
+WinRT APIs are defined in Windows Metadata (*.winmd) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt**, which you can use to process Windows Metadata files and generate .NET 5.0 C# code. You can compile these source files to interop assemblies, similar to how [C++/WinRT](../cpp-and-winrt-apis/index.md) generates headers for C++ language projection. You can then distribute the C#/WinRT interop assemblies for applications to reference, along with the C#/WinRT runtime assembly.
+
+For a walkthrough that demonstrates how to create an interop assembly, see [Walkthrough: Generate a .NET 5 projection from a C++/WinRT component and update the NuGet](net-projection-from-cppwinrt-component.md).
 
 ### Invoke cswinrt.exe
 
