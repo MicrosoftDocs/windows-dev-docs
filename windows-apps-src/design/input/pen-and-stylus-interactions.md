@@ -1,5 +1,5 @@
 ---
-Description: Build Windows apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
+description: Build Windows apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
 title: Pen interactions and Windows Ink in Windows apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 # Pen interactions and Windows Ink in Windows apps
 
-![Surface Pen](images/ink/hero-small.png)  
+![Hero image of the Surface Pen.](images/ink/hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
 ## Overview
@@ -23,10 +23,18 @@ Optimize your Windows app for pen input to provide both standard [**pointer devi
 > [!NOTE]
 > This topic focuses on the Windows Ink platform. For general pointer input handling (similar to mouse, touch, and touchpad), see [Handle pointer input](handle-pointer-input.md).
 
-| Videos |   |
-| --- | --- |
-| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *Using ink in your Windows app* | *Use Windows Pen and Ink to build more engaging enterprise apps* |
+:::row:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Using ink in your Windows app*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Use Windows Pen and Ink to build more engaging enterprise apps*
+   :::column-end:::
+:::row-end:::
 
 The Windows Ink platform, together with a pen device, provides a natural way to create digital handwritten notes, drawings, and annotations. The platform supports capturing digitizer input as ink data, generating ink data, managing ink data, rendering ink data as ink strokes on the output device, and converting ink to text through handwriting recognition.
 
@@ -83,7 +91,7 @@ In this example, an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
 
 This series of images shows how pen input is rendered by this [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
 
-| ![The blank InkCanvas with a background image](images/ink_basic_1_small.png) | ![The InkCanvas with ink strokes](images/ink_basic_2_small.png) | ![The InkCanvas with one stroke erased](images/ink_basic_3_small.png) |
+| ![Screenshot of the blank InkCanvas with a background image.](images/ink_basic_1_small.png) | ![Screenshot of the InkCanvas with ink strokes.](images/ink_basic_2_small.png) | ![Screenshot of the InkCanvas with one stroke erased.](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | The blank [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with a background image. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with ink strokes. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with one stroke erased (note how erase operates on an entire stroke, not a portion). |
 
@@ -194,7 +202,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 These images shows how pen input is processed and customized by the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter).
 
-| ![the inkcanvas with default black ink strokes](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
+| ![Screenshot that shows the InkCanvas with default black ink strokes.](images/ink-basic-custom-1-small.png) | ![Screenshot of the InkCanvas with user selected red ink strokes.](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with default black ink strokes. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with user selected red ink strokes. | 
 
@@ -218,7 +226,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     Here, we add a canvas (below the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)) to draw the selection stroke. Using a separate layer to draw the selection stroke leaves the **InkCanvas** and its content untouched.
 
-    ![the blank inkcanvas with an underlying selection canvas](images/ink-unprocessed-1-small.png)
+    ![Screenshot of the blank InkCanvas with an underlying selection canvas.](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -259,7 +267,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     Finally, we assign listeners for the [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) and [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) events of the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
-    ![the inkcanvas with default black ink strokes](images/ink-unprocessed-2-small.png)
+    ![Screenshot of the Advances ink customization sample app showing the inkcanvas with default black ink strokes.](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -308,7 +316,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     All selection functionality is implemented in these handlers, including the lasso stroke and the bounding rectangle.
 
-    ![the selection lasso](images/ink-unprocessed-3-small.png)
+    ![Screenshot of the selection lasso.](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -356,7 +364,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
 5.  To conclude the PointerReleased event handler, we clear the selection layer of all content (the lasso stroke) and then draw a single bounding rectangle around the ink strokes encompassed by the lasso area.
 
-    ![the selection bounding rect](images/ink-unprocessed-4-small.png)
+    ![Screenshot of the selection bounding rect.](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing

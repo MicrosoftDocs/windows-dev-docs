@@ -225,7 +225,7 @@ The second segment begins with an absolute horizontal line command "H", which sp
 
 Here's the rendered [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
-![A rendered Path.](images/shapes-path.jpg)
+![Screenshot of a simple rendered path.](images/shapes-path.jpg)
 
 The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](/uwp/api/windows.ui.xaml.media.geometrygroup) with a [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) and the various elements that can be a segment in [**PathFigure.Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments).
 
@@ -310,6 +310,6 @@ layoutRoot.Children.Add(path1);
 
 Here's the rendered [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
-![A rendered Path.](images/shapes-path-2.png)
+![Screenshot of a complex rendered path.](images/shapes-path-2.png)
 
 Using [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) may be more readable than populating a [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) string. On the other hand, [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) uses a syntax compatible with Scalable Vector Graphics (SVG) image path definitions so it may be useful for porting graphics from SVG, or as output from a tool like Blend.

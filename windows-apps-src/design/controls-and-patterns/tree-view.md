@@ -31,9 +31,17 @@ The **TreeView** APIs support the following features:
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **TreeView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI Library APIs:** [TreeView class](/uwp/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
@@ -129,13 +137,13 @@ See [Tree view using data binding](#tree-view-using-data-binding) for the full c
 
 If you use **TreeView.ItemsSource**, these APIs are available to get the node or data item from the container, and vice versa.
 
-| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
-| - | - |
+| [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) | Description |
+| ------------------------------------------------------------------ | ----------- |
 | [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Gets the data item for the specified **TreeViewItem** container. |
 | [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Gets the **TreeViewItem** container for the specified data item. |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | Description |
+| -------------------------------------------------------------- | ----------- |
 | [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Gets the **TreeViewNode** for the specified **TreeViewItem** container. |
 | [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Gets the **TreeViewItem** container for the specified **TreeViewNode**. |
 
@@ -174,12 +182,12 @@ End Sub
 
 These APIs are available for managing the data hierarchy of your tree view.
 
-| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
-| - | - |
+| [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) | Description |
+| ------------------------------------------------------ | ----------- |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | A tree view can have one or more root nodes. Add a **TreeViewNode** object to the **RootNodes** collection to create a root node. The **Parent** of a root node is always **null**. The **Depth** of a root node is 0. |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | Description |
+| -------------------------------------------------------------- | ----------- |
 | [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Add **TreeViewNode** objects to the **Children** collection of a parent node to create your node hierarchy. A node is the **Parent** of all nodes in its **Children** collection. |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | **true** if the node has realized children. **false** indicates an empty folder or an item. |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Use this property if you're filling nodes as they're expanded. See [Fill a node when it's expanding](#fill-a-node-when-its-expanding) later in this article. |

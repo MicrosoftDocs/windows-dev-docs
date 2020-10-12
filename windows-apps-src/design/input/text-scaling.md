@@ -1,5 +1,5 @@
 ---
-Description: Build Windows apps and custom/templated controls that support platform text scaling.
+description: Build Windows apps and custom/templated controls that support platform text scaling.
 title: Text scaling
 label: Text scaling
 template: detail.hbs
@@ -11,7 +11,7 @@ ms.custom: RS5
 ---
 # Text scaling
 
-![Example of text scaling 100% to 225%](images/coretext/text-scaling-news-hero-small.png)  
+![Hero image showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)  
 *Example of text scaling in Windows 10 (100% to 225%)*
 
 ## Overview
@@ -34,7 +34,7 @@ DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling,
 
 Users can adjust text scale with the Make text bigger slider on the Settings -> Ease of Access -> Vision/Display screen.
 
-![Example of text scaling 100% to 225%](images/coretext/text-scaling-settings-100-small.png)  
+![Screenshot of the Ease of Access Vision/Display settings page showing the Make text bigger slider.](images/coretext/text-scaling-settings-100-small.png)  
 *Text scale setting from Settings -> Ease of Access -> Vision/Display screen*
 
 ## UX guidance
@@ -87,7 +87,7 @@ Here's a snippet from a basic UWP app that includes a couple of standard text co
 </Grid>
 ```
 
-![Animated text scaling 100% to 225%](images/coretext/text-scaling.gif)  
+![Animation of text scaling 100% to 225%.](images/coretext/text-scaling.gif)  
 *Animated text scaling*
 
 ### Use auto-sizing
@@ -117,7 +117,7 @@ Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![Animated text scaling 100% to 225% with text wrapping](images/coretext/text-scaling-textwrap.gif)  
+![Animation of text scaling 100% to 225% with text wrapping.](images/coretext/text-scaling-textwrap.gif)  
 *Animated text scaling with text wrapping*
 
 ### Specify text trimming behavior
@@ -135,7 +135,7 @@ In this example, we show how to clip text in a TextBlock using the [TextTrimming
 </TextBlock>
 ```
 
-![Text scaling 100% to 225% with text clipping](images/coretext/text-scaling-clipping-small.png)  
+![Screenshot of text scaling 100% to 225% with text clipping.](images/coretext/text-scaling-clipping-small.png)  
 *Text scaling with text clipping*
 
 ### Use a tooltip

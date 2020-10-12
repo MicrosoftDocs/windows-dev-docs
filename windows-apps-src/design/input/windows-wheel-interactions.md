@@ -23,10 +23,18 @@ Windows wheel devices, such as the Surface Dial, are a new category of input dev
 > [!IMPORTANT]
 > In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices. 
 
-| Videos |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface Dial app partners* | *Surface Dial for devs* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial app partners*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial for devs*
+   :::column-end:::
+:::row-end:::
 
 With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse). 
 
@@ -41,9 +49,18 @@ The Surface Dial also supports both a *press and hold* action and a *click* acti
 >
 >By detecting both the contact location and bounds of the Surface Dial, the system uses this info to handle occlusion by the device and display a larger version of the menu that wraps around the outside of the Dial. This same info can also be used by your app to adapt the UI for both the presence of the device and its anticipated usage, such as the placement of the user's hand and arm.
 
-| Surface Dial off-screen menu | | Surface Dial on-screen menu |
-| --- | --- | --- |
-| ![Surface Dial off-screen menu](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Surface Dial off-screen menu**
+
+      ![Screenshot of the Surface Dial off-screen menu.](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Surface Dial on-screen menu**
+
+      ![Screenshot of the Surface Dial on-screen menu.](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## System integration
 
@@ -110,10 +127,23 @@ Icons can convey professionalism and excellence, and inspire trust in users.
 - The icon should fill most of the image
 - A white icon should have a black outline to be visible in high contrast mode
 
-|   |   |   |
-| --- | --- | --- |
-| ![Icon with alpha background](images/windows-wheel/surface-dial-menu-icon1.png) | ![Icon displayed on wheel menu with default theme Icon](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial on-screen menu](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *Icon with alpha background* | *Icon displayed on wheel menu with default theme* | *Icon displayed on wheel menu with High Contrast White theme* |
+:::row:::
+   :::column:::
+      ![Screenshot of an icon with alpha background.](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *Icon with alpha background*
+   :::column-end:::
+   :::column:::
+      ![Screenshot of an icon displayed on wheel menu with default theme.](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *Icon displayed on wheel menu with default theme*
+   :::column-end:::
+   :::column:::
+      ![Screenshot of an icon displayed on wheel menu with High Contrast White theme.](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *Icon displayed on wheel menu with High Contrast White theme*
+   :::column-end:::
+:::row-end:::
 
 **Use concise and descriptive names**  
 The tool name is displayed in the tool menu along with the tool icon and is also used by screen readers. 
@@ -138,7 +168,7 @@ In this example, we add a basic custom tool that passes the input data from both
 
 1. First, we declare our UI (just a slider and toggle button) in XAML.
 
-   ![Image of the sample app UI](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![Screenshot of the Radial Controller Sample with the horizontal slider set to the left.](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *The sample app UI*
 
     ```Xaml
@@ -239,7 +269,7 @@ In this example, we add a basic custom tool that passes the input data from both
 
 When we run the app, we use the Surface Dial to interact with it. First, we press and hold to open the menu and select our custom tool. Once the custom tool is activated, the slider control can be adjusted by rotating the Dial and the switch can be toggled by clicking the Dial.
 
-![Image of the sample app UI activated using the Surface Dial custom tool](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![Screenshot of the Radial Controller Sample with the horizontal slider set to the middle.](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *The sample app UI activated using the Surface Dial custom tool*
 
 **Specify the built-in tools**
@@ -313,10 +343,25 @@ Maximize customer satisfaction by accomodating and adapting your interactions to
 
 The built-in tools and commands on the Dial menu follow these guidelines for rotation-based interactions:
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>Up<br/>Out | ![Image of the Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>In |
-|   |   |   |
+:::row:::
+   :::column:::
+      Left
+
+      Up
+
+      Out 
+   :::column-end:::
+   :::column span="2":::
+      ![Image of the Surface Dial](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      Down
+
+      In
+   :::column-end:::
+:::row-end:::
 
 | Conceptual direction | Mapping to Surface Dial | Clockwise rotation | Counter-clockwise rotation |
 | --- | --- | --- | --- |
@@ -432,7 +477,7 @@ In the following example, we’ve created a basic app with four different sectio
 
 1. First, we declare our UI (four sections, each with a slider and toggle button) in XAML.
 
-   ![Image of the sample app UI](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *The sample app UI*
 
    ```xaml 
@@ -632,14 +677,12 @@ private void ActivateGridAtLocation(Point Location)
 
 When we run the app, we use the Surface Dial to interact with it. First, we place the device on the Surface Studio screen, which the app detects and associates with the lower right section (see image). We then press and hold the Surface Dial to open the menu and select our custom tool. Once the custom tool is activated, the slider control can be adjusted by rotating the Surface Dial and the switch can be toggled by clicking the Surface Dial.
 
-![Image of the sample app UI activated using the Surface Dial custom tool](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left and the fourth controller highlighted.](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *The sample app UI activated using the Surface Dial custom tool*
 
 ## Summary
 
 This topic provides an overview of the Surface Dial input device with UX and developer guidance on how to customize the user experience for off-screen scenarios as well as on-screen scenarios when used with Surface Studio.
-
-## Feedback
 
 Please send your questions, suggestions, and feedback to [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com).
 

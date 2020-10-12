@@ -44,12 +44,12 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 
 3. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must also install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
 
-    - x64: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
-    - x86: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
+    - [x64 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
+    - [x86 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
 
 4. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
-    For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+    For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
 
 ## Create WinUI projects
@@ -106,10 +106,10 @@ This is a comprehensive list of bug fixes and other updates for Preview 2. See o
 > [!NOTE]
 > WinUI 3 Preview 2 uses version 2.4.2 of the WinUI 2 Library. 
 
-- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) and [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) now work as expected in C# Desktop apps
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) and [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) now work as expected in C# Desktop apps
   - This cleared up a couple of other issues that revolved around collections controls not updating in the UI while being updated in the backend.
   - *Thanks to @hshristov for filing a [similar issue](https://github.com/microsoft/microsoft-ui-xaml/issues/2490) on GitHub!*
-- Preview 2 is now compatible with [.NET 5 Preview 5](/dotnet/api/?view=net-5.0) for Desktop apps
+- Preview 2 is now compatible with [.NET 5 Preview 5](/dotnet/api/?view=net-5.0&preserve-view=true) for Desktop apps
 - WinUI 3 now has parity with [WinUI 2.4](../winui2/release-notes/winui-2.4.md), which includes new controls and features like [hierarchical NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) and [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring).
 - Crash fixed: Using [TabView](/windows/uwp/design/controls-and-patterns/tab-view) with touch
 - [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) in the [XAML Controls Gallery sample](#xaml-controls-gallery-winui-3-preview-2-branch) now uses Left mode instead of Left-compact mode

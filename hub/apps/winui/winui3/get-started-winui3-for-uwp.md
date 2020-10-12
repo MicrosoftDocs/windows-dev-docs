@@ -35,7 +35,7 @@ To use the WinUI 3 for UWP project templates described in this article, configur
 
 4. Enter a project name, choose any other options as desired, and click **Create**.
 
-:::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Visual Studio 2019 - Configure a new project dialog":::
+:::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Screenshot of the Configure your new project dialog box with the Location text box and the Create option highlighted.":::
 
 5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134) and then click **OK**.
 
@@ -45,7 +45,7 @@ To use the WinUI 3 for UWP project templates described in this article, configur
 
     - ***Project name* (Universal Windows)**: Contains your application code. This is the default startup project for your project solution.
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Visual Studio 2019 - Configure a new project dialog":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Screenshot of the Solution Explorer panel with the Universal Windows solution highlighted.":::
 
     - **Package.appxmanifest**: Contains info the system needs to deploy, display, or update your app. For more details, see [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)
 
@@ -71,11 +71,11 @@ To use the WinUI 3 for UWP project templates described in this article, configur
 
     1. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Select your target device from the drop down.
 
-        :::image type="content" source="images/WinUI-and-UWP/vs2019-menu-target-device.png" alt-text="Visual Studio 2019 - Target device menu":::
+        :::image type="content" source="images/WinUI-and-UWP/vs2019-menu-target-device.png" alt-text="Screenshot of the Local Machine dropdown list.":::
 
     1. Press F5, click the **Build** button, or select **Debug -> Start Debugging** to build and run your solution and confirm the app runs without errors.
 
-        :::image type="content" source="images/WinUI-and-UWP/vs2019-project-running.png" alt-text="Visual Studio 2019 - Target device menu":::
+        :::image type="content" source="images/WinUI-and-UWP/vs2019-project-running.png" alt-text="Screenshot of the app running showing the Click Me button.":::
 
 ## Known issues and limitations
 

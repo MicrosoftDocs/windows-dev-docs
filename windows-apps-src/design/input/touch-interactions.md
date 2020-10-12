@@ -146,10 +146,8 @@ In addition, the following are strongly recommended:
 -   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
 -   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
 
-   > [!NOTE]
-   > An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
-
-     
+    > [!NOTE]
+    > An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
 
 -   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
 

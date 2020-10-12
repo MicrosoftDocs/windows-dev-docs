@@ -372,7 +372,7 @@ Next, update the **MyDesktopWin32App** project to define a macro for additional 
 
 5. Right-click the **MyDesktopWin32App** project, select **Properties**, and expand **Manifest Tool** -> **Input and Output** in the left pane. Set the **DPI Awareness** property to **Per Monitor High DPI Aware**. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.
 
-    ![C/C++ project settings](images/xaml-islands/xaml-island-cpp-8.png)
+    ![Screenshot of the C/C++ project settings.](images/xaml-islands/xaml-island-cpp-8.png)
 
 6. Click **OK** to close the **Property Pages** dialog.
 

@@ -22,12 +22,12 @@ There are two ways to display the contact card:
 
 
 <figure>
-    <img src="images/contact-card/contact-card-standard.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
     <figcaption>The standard contact card</figcaption>
 </figure>
 
 <figure>
-    <img src="images/contact-card/contact-card-full.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
     <figcaption>The full contact card</figcaption>
 </figure>
 

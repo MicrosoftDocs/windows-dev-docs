@@ -1,5 +1,5 @@
 ---
-Description: Learn how to improve both the usability and the accessibility of your Windows app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
+description: Learn how to improve both the usability and the accessibility of your Windows app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 title: Access keys design guidelines
 label: Access keys design guidelines
 keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
@@ -273,7 +273,7 @@ Use the **KeyTipPlacementMode** property to customize the placement of the Key T
 
 The placement modes are: Top, Bottom, Right, Left, Hidden, Center, and Auto.
 
-![Key tip placement modes](images/accesskeys/keytip-postion-modes.png)
+![Screenshot showing the relative positions of the Key tip placement modes](images/accesskeys/keytip-postion-modes.png)
 
 _Key tip placement modes_
 
@@ -296,11 +296,11 @@ Use the KeyTipHorizontalOffset and KeyTipVerticalOffset properties of an element
 > [!NOTE]
 > Offsets cannot be set when KeyTipPlacementMode is set to Auto.
 
-The KeyTipHorizontalOffset property indicates how far to move the Key Tip left or right. example shows how to set the Key Tip offsets for a button.
+The KeyTipHorizontalOffset property indicates how far to move the Key Tip left or right.
 
-![Key tip placement modes](images/accesskeys/keytip-offsets.png)
+![Screenshot of vertical and horizontal Key Tip offsets for a button](images/accesskeys/keytip-offsets.png)
 
-_Set vertical and horizontal offsets for a Key Tip_
+_Set vertical and horizontal Key Tip offsets for a button_
 
 ``` xaml
 <Button
@@ -315,9 +315,9 @@ _Set vertical and horizontal offsets for a Key Tip_
 
 The location of a Key Tip is automatically adjusted based on the screen edge to ensure the Key Tip is fully visible. When this occurs, the distance between the control and Key Tip alignment point might differ from the values specified for the horizontal and vertical offsets .
 
-![Key tip placement modes](images/accesskeys/keytips-screen-edge.png)
+![Screenshot of Key Tip screen edge alignment](images/accesskeys/keytips-screen-edge.png)
 
-_The screen edge causes the Key Tip to automatically reposition itself_
+_Key Tips are automatically positioned based on the screen edge_
 
 ## Key Tip style
 
@@ -325,7 +325,7 @@ We recommend using the built-in Key Tip support for platform themes, including h
 
 If you need to specify your own Key Tip styles, use application resources such as KeyTipFontSize (font size), KeyTipFontFamily (font family), KeyTipBackground (background), KeyTipForeground (foreground), KeyTipPadding (padding), KeyTipBorderBrush(Border color), and KeyTipBorderThemeThickness (border thickness).
 
-![Key tip placement modes](images/accesskeys/keytip-customization.png)
+![Screenshot of Key tip customization options, including font, order, and color](images/accesskeys/keytip-customization.png)
 
 _Key tip customization options_
 

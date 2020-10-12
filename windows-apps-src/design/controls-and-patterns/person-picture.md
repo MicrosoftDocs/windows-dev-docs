@@ -16,15 +16,23 @@ ms.localizationpriority: medium
 
 The person picture control displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph. You can use the control to display a [Contact object](/uwp/api/Windows.ApplicationModel.Contacts.Contact),  an object that manages a person's contact info, or you can manually provide contact information, such as a display name and profile picture.
 
-![The person picture control](images/person-picture/person-picture_hero.png)
+![Screenshot of the person picture control.](images/person-picture/person-picture_hero.png)
 
  > Two person picture controls accompanied by two [text block](text-block.md) elements that display the users' names.
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **PersonPicture** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Platform APIs**: [PersonPicture class](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
@@ -38,7 +46,7 @@ Use the person picture when you want to represent a person and their contact inf
 * To display a social media contact
 
 The illustration shows person picture control in a list of contacts:
-![The person picture control](images/person-picture/person-picture-control.png)
+![Screenshot that shows the Person Picture control in a list of contacts.](images/person-picture/person-picture-control.png)
 
 ## Examples
 

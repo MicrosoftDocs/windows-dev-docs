@@ -37,9 +37,17 @@ General instructions and code examples for adding and styling controls in XAML a
 
 ## Get the Windows UI Library
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 ## Alphabetical index
 
@@ -48,23 +56,23 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
-- Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) ![WinUI logo](images/winui-logo-16x16.png)
+- Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
 - [Button](buttons.md)
 - [Calendar date picker](calendar-date-picker.md)
 - [Calendar view](calendar-view.md)
 - [Checkbox](checkbox.md)
-- [Color picker](color-picker.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Color picker](color-picker.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Combo box](combo-box.md)
 - [Command bar](app-bars.md)
-- [Command bar flyout](command-bar-flyout.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Command bar flyout](command-bar-flyout.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Contact card](contact-card.md)
 - [Content dialog](dialogs-and-flyouts/dialogs.md)
 - [Content link](content-links.md)
 - [Context menu](menus.md)
 - [Date picker](date-picker.md)
 - [Dialogs and flyouts](dialogs-and-flyouts/index.md)
-- [Drop down button](buttons.md#create-a-drop-down-button) ![WinUI logo](images/winui-logo-16x16.png)
+- [Drop down button](buttons.md#create-a-drop-down-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Flip view](flipview.md)
 - [Flyout](dialogs-and-flyouts/flyouts.md)
 - [Forms](forms.md) (pattern)
@@ -77,22 +85,22 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Map control](../../maps-and-location/display-maps.md)
 - [Master/details](master-details.md) (pattern)
 - [Media playback](media-playback.md)
-- [Menu bar](menus.md#create-a-menu-bar) ![WinUI logo](images/winui-logo-16x16.png)
+- [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menu flyout](menus.md)
-- [Navigation view](navigationview.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Navigation view](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 
     :::column-end:::
     :::column:::
 
-- [Number box](number-box.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Parallax view](..\motion\parallax.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Number box](number-box.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Parallax view](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Password box](password-box.md)
-- [Person picture](person-picture.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Person picture](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Pivot](pivot.md)
-- [Progress bar](progress-controls.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Progress ring](progress-controls.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Radio button](radio-button.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Rating control](rating.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Progress bar](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Progress ring](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Radio button](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Rating control](rating.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Repeat button](buttons.md#create-a-repeat-button)
 - [Rich edit box](rich-edit-box.md)
 - [Rich text block](rich-text-block.md)
@@ -101,11 +109,11 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Semantic zoom](semantic-zoom.md)
 - [Shapes](shapes.md)
 - [Slider](slider.md)
-- [Split button](buttons.md#create-a-split-button) ![WinUI logo](images/winui-logo-16x16.png)
+- [Split button](buttons.md#create-a-split-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Split view](split-view.md)
-- [Swipe control](swipe.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Tab view](tab-view.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Teaching tip](dialogs-and-flyouts/teaching-tip.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Swipe control](swipe.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Tab view](tab-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Teaching tip](dialogs-and-flyouts/teaching-tip.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Text block](text-block.md)
 - [Text box](text-box.md)
 - [Time picker](time-picker.md)
@@ -113,8 +121,8 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Toggle button](buttons.md)
 - [Toggle split button](buttons.md#create-a-toggle-split-button)
 - [Tooltips](tooltips.md)
-- [Tree view](tree-view.md) ![WinUI logo](images/winui-logo-16x16.png)
-- [Two-pane view](two-pane-view.md) ![WinUI logo](images/winui-logo-16x16.png)
+- [Tree view](tree-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Two-pane view](two-pane-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Web view](web-view.md)
 
     :::column-end:::

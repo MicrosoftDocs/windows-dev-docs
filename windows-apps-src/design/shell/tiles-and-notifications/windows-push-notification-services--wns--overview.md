@@ -29,7 +29,7 @@ The following diagram shows the complete data flow for sending a push notificati
 
 ## Registering your app and receiving the credentials for your cloud service
 
-Before you can send notifications using WNS, your app must be registered with the Store Dashboard, as described [here](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
+Before you can send notifications using WNS, your app must be registered with the Store Dashboard, as described [here](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 ## Requesting a notification channel
 

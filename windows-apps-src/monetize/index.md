@@ -65,7 +65,7 @@ Whether you charge a price for your app or offer it for free, you can use in-app
 
 We support a wide variety of ad experiences to suit most needs, including banner ads, interstitial ads (banner and video), linear video ads, playable ads, and native ads. Our platform is compliant with the OpenRTB, VAST 2.x, MRAID 2, and VPAID 3 standards and is compatible with MOAT and IAS.
 
-[Explore ad options](../publish/create-an-ad-campaign-for-your-app.md)
+[Explore ad options]()
 [Install ad SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::

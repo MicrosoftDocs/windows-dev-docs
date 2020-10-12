@@ -12,7 +12,7 @@ This topic provides a step-by-step guide to applying Profile Guided Optimization
 The following is a basic walkthrough of applying PGO to the default DirectX 11 app (UWP) template by using Visual Studio 2015 Update 3.
  
 The screenshots throughout this guide are based on the following new project:
-![New Project dialog](images/pgo-001.png)
+![Screenshot showing the New Project dialog box showing Installed > Templates > Visual C plus plus selected and the Direct 11 App option highlighted.](images/pgo-001.png)
 
 To apply PGO to the DirectX 11 app template:
 
@@ -30,7 +30,7 @@ To apply PGO to the DirectX 11 app template:
 
 4. Select **Build Solution**, and then select **Deploy Solution**. 
 
- ![New Project dialog](images/pgo-005.png)
+ ![Screenshot showing the Build dropdown list with red arrows pointing to the Build Solution and Deploy Solution options.](images/pgo-005.png)
  
  You can double check that everything has worked properly by looking at the build output location and verifying that a .pgd file has been generated. In this example case, this meant that the following file was generated alongside the build output:
  
@@ -44,11 +44,11 @@ To apply PGO to the DirectX 11 app template:
 
  This step is necessary because UWP apps can only load libraries that exist within their package.
 
- ![New Project dialog](images/pgo-006.png)
+ ![Screenshot of a File Explorer window showing the contents of the AppX folder.](images/pgo-006.png)
  
 6. Run the app either from the Start menu or from the Visual Studio **Debug** menu with the **Start Without Debugging** option. 
 
- ![New Project dialog](images/pgo-007.png)
+ ![Screenshot showing the Debug dropdown list with he Start Without Debugging option highlighted.](images/pgo-007.png)
  
 7. The build that is now running is instrumented and generating PGO data. At this point, you should run the application through some of the most common scenarios that you intend to optimize. After the program has run through the intended scenarios, find the pgosweep.exe tool located in the same folder where you found the appropriate version of `pgort140.dll`. Alternately, a Visual Studio (x86/x64) Native Tools command prompt will already have the appropriate version in its path. To gather the PGO data, run the following command while the application is still running to generate a .pgc file that will contain the profiling data:
  
@@ -72,7 +72,7 @@ To apply PGO to the DirectX 11 app template:
  
 9. After you have generated one or more .pgc files and either placed them alongside your .pgd or manually merged them (step 8), we can now use the linker to create the final optimized build. Go back into your linker properties (**Properties** > **Linker** > **Optimization**) and set **Link Time Code Generation** to **Profile Guided Optimization - Optimization (LTCG:PGOptimize)** and verify that **Profile Guided Database** is pointing at the .pgd that you intend to use (if you have not changed this, everything should be in order).
 
- ![New Project dialog](images/pgo-009.png)
+ ![Screenshot of the App 1 Property Pages dialog box showing Configuration Properties > Linker > Optimization selected with the Link Time Code Generation option and Profile Guided Optimization - Optimization L T C G : P G Optimize options highlighted.](images/pgo-009.png)
  
 10. Now when the project is built, the linker will call pgomgr.exe to merge any `<PGDName>!*.pgc` files into the .pgd with the default weight of 1, and the resulting application will be optimized based on the profiling data.
 

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 title: Badge notifications for Windows apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -49,8 +49,6 @@ newMessage | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<ba
 paused | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
 playing | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
 unavailable | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
-</tr>
-</table>
 
 ## Create a badge
 

@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to modernize a sample WPF desktop app named Contoso Expenses.
 title: Package and deploy with MSIX
 ms.topic: article
 ms.date: 01/23/2020

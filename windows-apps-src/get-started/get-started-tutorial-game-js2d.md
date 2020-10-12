@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ## A simple 2D UWP game for the Microsoft Store, written in JavaScript and CreateJS
 
 
-![Walking Dino sprite sheet](images/JS2D_1.png)
+![Screenshot of the Walking Dino UWP game.](images/JS2D_1.png)
 
 
 ## Introduction
@@ -85,7 +85,7 @@ Speaking of which, now is a good time to open **main.js**.
 
 EaselJS provides us with several different types of graphical objects. We can create simple shapes (such as the blue rectangle used for the sky), or bitmaps (such as the clouds we're about to add), text objects, and sprites. Sprites use a (SpriteSheet)[https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: a single bitmap containing multiple images. For example, we use this SpriteSheet to store the different frame of dinosaur animation:
 
-![Walking Dino sprite sheet](images/JS2D_4.png)
+![Screenshot of the Walking Dino sprite sheet with four frames of dinosaur animation.](images/JS2D_4.png)
 
 We make the dinosaur walk, by defining the different frames and how fast they should be animated in this code:
 

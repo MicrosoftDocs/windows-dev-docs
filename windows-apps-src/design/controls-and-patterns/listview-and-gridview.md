@@ -1,5 +1,5 @@
 ---
-Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 title: List view and grid view
 label: List view and grid view
 template: detail.hbs
@@ -47,7 +47,7 @@ ListView and GridView are controls that work out-of-the-box to display any colle
 -	ItemsRepeater should be used if you have a highly custom UI that you can’t create using ListView or GridView, or if you have a data source that requires highly different behavior for each item.
 
 
-Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) and [API Documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) pages.
+Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) and [API Documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) pages.
 
 ## Examples
 
@@ -115,7 +115,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 Both of the above options will result in the same ListView, which is shown below:
 
-![A simple list view](images/listview-basic-code-example2.png)
+![Screenshot of a simple List View showing a list of fruits.](images/listview-basic-code-example2.png)
 <br/>
 <u> Method 2: Add items by setting the ItemsSource</u>
 
@@ -284,7 +284,7 @@ For more info and examples of how to use data templates and item containers to d
 When you add items to a ListView or GridView, the control automatically wraps each item in an item container and then lays out all of the item containers. How these item containers are laid out depends on the [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) of the control.  
 - By default, **ListView** uses an [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), which produces a vertical list, like this.
 
-![A simple list view](images/listview-simple.png)
+![Screenshot of a simple List View showing a list of items.](images/listview-simple.png)
 
 - **GridView** uses an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid), which adds items horizontally, and wraps and scrolls vertically, like this.
 

@@ -20,9 +20,17 @@ A teaching tip may be light-dismiss or require explicit action to close. A teach
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](../images/winui-logo-64x64.png) | The **TeachingTip** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](../images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **TeachingTip** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI Library APIs:** [TeachingTip class](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 

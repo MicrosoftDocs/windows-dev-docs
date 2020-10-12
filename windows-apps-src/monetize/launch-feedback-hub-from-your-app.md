@@ -1,5 +1,5 @@
 ---
-Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
+description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: Launch Feedback Hub from your app
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 02/08/2017
@@ -54,16 +54,16 @@ To launch Feedback Hub from your app:
 
 To launch Feedback Hub, we recommend that you add a UI element in your app (such as a button) that displays the following standard feedback icon from the Segoe MDL2 Assets font and the character code E939.
 
-![Feedback icon](images/feedback_icon.PNG)
+:::image type="icon" source="images/feedback_icon.PNG":::
 
 We also recommend that you use one or more of the following placement options for linking to Feedback Hub in your app.
 * **Directly in the app bar**. Depending on your implementation, you may wish to use the icon only or add text (as shown below).
 
-  ![Feedback icon](images/feedback_appbar_placement.png)
+  ![Screenshot of an application that has the feedback icon in the upper-right corner with the label Feedback next to it.](images/feedback_appbar_placement.png)
 
 * **In your app's settings**. This is a more subtle way to provide access to Feedback Hub. In the example below, the Feedback link appears as one of the links under App.
 
-  ![Feedback icon](images/feedback_settings_placement.png)
+  ![Screenshot of a Settings page where the Feedback link appears under App.](images/feedback_settings_placement.png)
 
 * **In an event-driven flyout**. This is useful when you want to query your customers about a specific question before launching into the Windows Feedback Hub. For example, after your app uses a certain feature, you might prompt the customer with a specific question about their satisfaction with that feature. If the customer chooses to respond, your app launches Feedback Hub.
 

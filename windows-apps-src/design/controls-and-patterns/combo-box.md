@@ -17,15 +17,23 @@ Use a combo box (also known as a drop-down list) to present a list of items that
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
-![Example of a drop-down list in its compact state](images/combo-box-expand.gif)
+![Short video that shows a drop-down list in its compact state and its expanded state.](images/combo-box-expand.gif)
 
 > _A combo box in its compact state with a header._
 
 **Get the Windows UI Library**
 
-|  |  |
-| - | - |
-| ![WinUI logo](images/winui-logo-64x64.png) | Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Platform APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -54,7 +62,7 @@ When the combo box is closed, it either displays the current selection or is emp
 
 A combo box in its compact state can show a header.
 
-![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+![Screenshot showing a drop-down list in its compact state.](images/combo_box_collapsed.png)
 
 Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
 

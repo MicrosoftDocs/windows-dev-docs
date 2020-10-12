@@ -28,8 +28,8 @@ The rest of this topic is structured according to that taxonomy.
 
 ## Changes that involve the language projection
 
-||C#|C++/WinRT|See also|
-|-|-|-|-|
+| Category | C# | C++/WinRT | See also |
+| -------- | -- | --------- | -------- |
 |Untyped object|`object`, or [**System.Object**](/dotnet/api/system.object)|[**Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
 |Projection namespaces|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
@@ -102,8 +102,8 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 
 ## Changes that involve the language syntax
 
-||C#|C++/WinRT|See also|
-|-|-|-|-|
+| Category | C# | C++/WinRT | See also |
+| -------- | -- | --------- | -------- |
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
 |Access a data member|`this.variable`|`this->variable`||
 |Async action|`async Task ...`|`IAsyncAction ...`||
@@ -123,10 +123,10 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
 |Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md##displaytoast)|
+|Verbatim/raw string literal|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md##displaytoast).
+> If a header file doesn't contain a `using namespace` directive for a given namespace, then you'll have to fully-qualify all type names for that namespace; or at least qualify them sufficiently for the compiler to find them. For an example, see [Porting the **DisplayToast** method](./clipboard-to-winrt-from-csharp.md#displaytoast).
 
 ### Porting classes and members
 
@@ -146,8 +146,8 @@ In the case of [Porting the Clipboard sample to C++/WinRT from C#](./clipboar
 
 ## Changes that involve procedures within the language
 
-||C#|C++/WinRT|See also|
-|-|-|-|-|
+| Category | C# | C++/WinRT | See also |
+| -------- | -- | --------- | -------- |
 |Lifetime management in an async method|N/A|`auto lifetime{ get_strong() };` or<br>`auto lifetime = get_strong();`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |Disposal|`using (var t = v)`|`auto t{ v };`<br>`t.Close(); // or let wrapper destructor do the work`|[Porting the **CopyImage** method](./clipboard-to-winrt-from-csharp.md#copyimage)|
 |Construct object|`new MyType(args)`|`MyType{ args }` or<br>`MyType(args)`|[Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios)|
@@ -261,8 +261,8 @@ Also see [Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.
 
 For string building, C# has a built-in [**StringBuilder**](/dotnet/api/system.text.stringbuilder) type.
 
-| | C# | C++/WinRT |
-|-|-|-|
+| Category | C# | C++/WinRT |
+| -------- | -- | --------- |
 | String-building | `StringBuilder builder;`<br>`builder.Append(...);` | `std::wostringstream builder;`<br>`builder << ...;` |
 | Append a Windows Runtime string, preserving nulls | `builder.Append(s);` | `builder << std::wstring_view{ s };` |
 | Add a newline |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |

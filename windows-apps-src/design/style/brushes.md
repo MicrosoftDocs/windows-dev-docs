@@ -100,7 +100,7 @@ This example creates a linear gradient with four colors and uses it to paint a [
 
 The color of each point between gradient stops is linearly interpolated as a combination of the color specified by the two bounding gradient stops. The following image highlights the gradient stops in the previous example. The circles mark the position of the gradient stops, and the dashed line shows the gradient axis.
 
-![Gradient stops](images/linear-gradients-stops.png)
+![Diagram depicting Gradient Stops 1 through 4 starting in the upper-left corner of the diagram and sloping down and to the right until it reaches the lower-right corner of the diagram.](images/linear-gradients-stops.png)
 
 *Combination of colors specified by the two bounding gradient stops*
 
@@ -154,7 +154,7 @@ This example creates a linear gradient with four colors and uses it to paint a [
 
 The color of each point between gradient stops is radially interpolated as a combination of the color specified by the two bounding gradient stops. The following image highlights the gradient stops in the previous example. 
 
-![Gradient stops](images/radial-gradient.png)
+![Screenshot of a radial gradient.](images/radial-gradient.png)
 
 *Gradient stops*
 

@@ -15,15 +15,17 @@ ms.localizationpriority: medium
 
 The Direct3D compute pipeline is designed to handle calculations that can be done mostly in parallel with the graphics pipeline. There are only a few steps in the compute pipeline, with data flowing from input to output through the programmable compute shader stage.
 
-| | |
-|-|-|
-|Purpose|Like other programmable shaders, [Compute Shader (CS) stage](compute-shader-stage--cs-.md) is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.|
-|Input|Unlike other programmable shaders, the definition of input is abstract. The input can be one, two or three-dimensional in nature, determining the number of invocations of the compute shader to execute. It is possible to define shared data for one set of invocations to read.|
-|Output|Output data from the compute shader, which can be highly varied, can be synchronized with the graphics rendering pipeline when the computed data is required.|
-| | |
+## Purpose
 
+Like other programmable shaders, [Compute Shader (CS) stage](compute-shader-stage--cs-.md) is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.|
 
+## Input
 
+Unlike other programmable shaders, the definition of input is abstract. The input can be one, two or three-dimensional in nature, determining the number of invocations of the compute shader to execute. It is possible to define shared data for one set of invocations to read.|
+
+## Output
+
+Output data from the compute shader, which can be highly varied, can be synchronized with the graphics rendering pipeline when the computed data is required.
 
 <!---
 <table>

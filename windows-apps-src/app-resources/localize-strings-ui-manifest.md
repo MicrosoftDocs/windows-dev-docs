@@ -35,7 +35,7 @@ Unlike image resources, where only one image resource is contained in an image r
 
     `Strings/en-US/Resources.resw`
 
-    ![add resource, english](images/addresource-en-us.png)
+    ![Screenshot of the Add Resource table of the Strings > E N U S > Resources.resw file.](images/addresource-en-us.png)
 
     In this example, "Greeting" is a string resource identifier that you can refer to from your markup, as we'll show. For the identifier "Greeting", a string is provided for a Text property, and a string is provided for a Width property. "Greeting.Text" is an example of a property identifier because it corresponds to a property of a UI element. You could also, for example, add "Greeting.Foreground" in the Name column, and set its Value to "Red". The "Farewell" identifier is a simple string resource identifier; it has no sub-properties and it can be loaded from imperative code, as we'll show. The Comment column is a good place to provide any special instructions to translators.
 
@@ -103,13 +103,13 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 1. Open your app package manifest source file (the `Package.appxmanifest` file), in which by default your app's `Display name` is expressed as a string literal.
 
-   ![add resource, english](images/display-name-before.png)
+   ![Screenshot of the Package.appxmanifest file showing the Application tab with the Display name set to Adventure Works Cycles.](images/display-name-before.png)
 
 2. To make a localizable version of this string, open `Resources.resw` and add a new string resource with the name "AppDisplayName" and the value "Adventure Works Cycles".
 
 3. Replace the Display name string literal with a reference to the string resource identifier that you just created ("AppDisplayName"). You use the `ms-resource` URI (Uniform Resource Identifier) scheme to do this.
 
-   ![add resource, english](images/display-name-after.png)
+   ![Screenshot of the Package.appxmanifest file showing the Application tab with the Display name set to M S resource App Display Name.](images/display-name-after.png)
 
 4. Repeat this process for each string in your manifest that you want to localize. For example, your app's Short name (which you can configure to appear on your app's tile on Start). For a list of all items in the app package manifest that you can localize, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
@@ -142,7 +142,7 @@ Test the app for your default display language. You can then change the display 
 
 You can keep all of your strings in a single Resources File (resw), or you can factor them across multiple Resources Files. For example, you might want to keep your error messages in one Resources File, your app package manifest strings in another, and your UI strings in a third. This is what your folder structure would look like in that case.
 
-![add resource, english](images/manifest-resources.png)
+![Screenshot of the Solution panel showing the Adventure Works Cycles > Strings folder with German, U S English, and French locale folders and files.](images/manifest-resources.png)
 
 To scope a string resource identifier reference to a particular file, you just add `/<resources-file-name>/` before the identifier. The markup example below assumes that `ErrorMessages.resw` contains a resource whose name is "PasswordTooWeak.Text" and whose value describes the error.
 

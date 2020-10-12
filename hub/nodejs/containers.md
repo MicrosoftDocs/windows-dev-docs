@@ -42,7 +42,7 @@ To install and run Docker Desktop WSL 2 Tech Preview:
 
 2. Open the Docker installer that you just downloaded. The installation wizard will ask if you want to "Use Windows containers instead of Linux containers" - leave this unchecked as we will be using the Linux subsystem. Docker will be installed in a managed directory in your default WSL 2 distribution and will include the Docker daemon, CLI, and Compose CLI.
 
-    ![Docker Desktop start up](../images/install-docker-1.png)
+    ![Screenshot of the Configuration page of the Installing Docker Desktop wizard showing the Add shortcut to desktop option selected.](../images/install-docker-1.png)
 
 3. If you don't yet have a Docker ID, you will need to set one up by visiting: [https://hub.docker.com/signup](https://hub.docker.com/signup). Your ID must be all lowercase alphanumeric characters.
 
@@ -50,7 +50,7 @@ To install and run Docker Desktop WSL 2 Tech Preview:
 
 5. Once the tech preview windows opens, select **Start** to begin running the Docker daemon (background process) in WSL 2. When the WSL 2 docker daemon starts, a docker CLI context is automatically created for it.
 
-    ![Docker Desktop start up](../images/start-docker.gif)
+    ![Short video showing how to start the Docker tech preview.](../images/start-docker.gif)
 
 6. To confirm that Docker has been installed and display the version number, open a command line (WSL or PowerShell) and enter: `docker --version`
 

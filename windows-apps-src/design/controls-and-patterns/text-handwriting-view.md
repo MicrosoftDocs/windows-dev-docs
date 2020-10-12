@@ -1,5 +1,5 @@
 ---
-Description: Customize the built-in handwriting view for ink to text input that is supported by Windows text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
+description: Customize the built-in handwriting view for ink to text input that is supported by Windows text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
@@ -188,11 +188,11 @@ In some cases, you might need to ensure that the [HandwritingView](/uwp/api/wind
 
 Here, we create a TextBox that supports dictation (implemented by placing a TextBox and a dictation button into a StackPanel).
 
-![TextBox with dictation](images/handwritingview/textbox-with-dictation.png)
+![Screenshot of a Text Box that supports dictation](images/handwritingview/textbox-with-dictation.png)
 
 As the StackPanel is now larger than the TextBox, the [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) might not occlude all of the composite cotnrol.
 
-![TextBox with dictation](images/handwritingview/textbox-with-dictation-handwritingview.png)
+![Screenshot of a HandwritingView control that partially occludes a TextBox, and one that is repositioned to fully occlude the TextBox](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
 To address this, set the PlacementTarget property of the [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) to the UI element to which it should be aligned.
 
@@ -225,11 +225,11 @@ You can also set the size of the [HandwritingView](/uwp/api/windows.ui.xaml.cont
 
 Like the previous example, we create a TextBox that supports dictation (implemented by placing a TextBox and a dictation button into a StackPanel).
 
-![TextBox with dictation](images/handwritingview/textbox-with-dictation.png)
+![Screenshot of a TextBox that supports dictation](images/handwritingview/textbox-with-dictation.png)
 
-In this case, we want to ensure that the dictation button is always visible.
+In this case, we resize the HandwritingView to ensure that the dictation button is visible.
 
-![TextBox with dictation](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
+![Screenshot of a HandwritingView control that occludes the dictation button, and one that is resized to ensure the dictation button is visible](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
 To do this, we bind the MaxWidth property of the [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) to the width of the UI element that it should occlude.
 

@@ -65,7 +65,7 @@ These are static display ads that utilize a rectangular portion of a page in you
 
 For instructions and code examples, see [this article](adcontrol-in-xaml-and--net.md).
 
-![addreferences](images/banner-ad.png)
+![An image depicting a banner advertisement on a tablet.](images/banner-ad.png)
 
 ### Interstitial video and interstitial banner ads
 
@@ -73,7 +73,7 @@ These are full-screen ads that typically require the user to watch a video or cl
 
 For instructions and code examples, see [this article](interstitial-ads.md).
 
-![addreferences](images/interstitial-ad.png)
+![An image depicting an interstitial advertisement in a game that is being played on a tablet.](images/interstitial-ad.png)
 
 ### Native ads
 
@@ -81,7 +81,7 @@ These are component-based ads. Each piece of the ad creative (such as the title,
 
 For instructions and code examples, see [this article](native-ads.md).
 
-![addreferences](images/native-ad.png)
+![An image depicting a native advertisement that can be displayed on various devices.](images/native-ad.png)
 
 <span id="ad-mediation"/>
 
