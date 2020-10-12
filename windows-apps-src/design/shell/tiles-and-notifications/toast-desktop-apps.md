@@ -1,16 +1,16 @@
 ---
 Description: Discover the different options desktop Win32 apps have for sending toast notifications
-title: Toast notifications from desktop apps
-label: Toast notifications from desktop apps
+title: Toast notifications from Win32 apps
+label: Toast notifications from Win32 apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, sparse package, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---
-# Toast notifications from desktop apps
+# Toast notifications from Win32 apps
 
-Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
+Win32 apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for Win32 apps due to the different activation schemes.
 
 In this article, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
 
@@ -20,7 +20,7 @@ In this article, we list out the options you have for sending a toast notificati
 
 ## All options
 
-The table below illustrates your options for supporting toasts within your desktop app, and the corresponding supported features. You can use the table to select the best option for your scenario.<br/><br/>
+The table below illustrates your options for supporting toasts within your Win32 app, and the corresponding supported features. You can use the table to select the best option for your scenario.<br/><br/>
 
 | Option | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- | -- |
@@ -30,7 +30,7 @@ The table below illustrates your options for supporting toasts within your deskt
 
 ## Preferred option - COM activator
 
-This is the preferred option that works for desktop apps, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](send-local-toast-desktop.md) and [C++ apps](send-local-toast-desktop-cpp-wrl.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
+This is the preferred option that works for Win32 apps, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](send-local-toast-desktop.md) and [C++ apps](send-local-toast-desktop-cpp-wrl.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
@@ -48,7 +48,7 @@ With the COM activator option, you can use the following notification templates 
 > [!NOTE]
 > If you add the COM activator to your existing MSIX/sparse package app, Foreground/Background and Legacy notification activations will now activate your COM activator instead of your command line.
 
-To learn how to use this option, see [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md) or [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
+To learn how to use this option, see [Send a local toast notification from Win32 C# apps](send-local-toast-desktop.md) or [Send a local toast notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## Alternative option - No COM / Stub CLSID
@@ -75,6 +75,6 @@ For classic Win32 apps, set up the AUMID so that you can send toasts, and then a
 
 ## Resources
 
-* [Send a local toast notification from desktop C# apps](send-local-toast-desktop.md)
-* [Send a local toast notification from desktop C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
+* [Send a local toast notification from Win32 C# apps](send-local-toast-desktop.md)
+* [Send a local toast notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)

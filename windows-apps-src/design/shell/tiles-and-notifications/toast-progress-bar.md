@@ -36,32 +36,21 @@ The picture below shows a determinate progress bar with all of its corresponding
 
 Here's how you would generate the notification seen above...
 
+#### [Builder syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Visual = new ToastVisual()
+new ToastContentBuilder()
+    .AddText("Downloading your weekly playlist...")
+    .AddVisualChild(new AdaptiveProgressBar()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Downloading your weekly playlist..."
-                },
- 
-                new AdaptiveProgressBar()
-                {
-                    Title = "Weekly playlist",
-                    Value = 0.6,
-                    ValueStringOverride = "15/26 songs",
-                    Status = "Downloading..."
-                }
-            }
-        }
-    }
-};
+        Title = "Weekly playlist",
+        Value = 0.6,
+        ValueStringOverride = "15/26 songs",
+        Status = "Downloading..."
+    });
 ```
+
+#### [XML](#tab/xml)
 
 ```xml
 <toast>
@@ -77,6 +66,8 @@ ToastContent content = new ToastContent()
     </visual>
 </toast>
 ```
+
+---
 
 However, you'll need to dynamically update the values of the progress bar for it to actually be "live". This can be done by using data binding to update the toast.
 
@@ -104,30 +95,16 @@ public void SendUpdatableToastWithProgress()
     string group = "downloads";
  
     // Construct the toast content with data bound fields
-    var content = new ToastContent()
-    {
-        Visual = new ToastVisual()
+    var content = new ToastContentBuilder()
+        .AddText("Downloading your weekly playlist...")
+        .AddVisualChild(new AdaptiveProgressBar()
         {
-            BindingGeneric = new ToastBindingGeneric()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "Downloading your weekly playlist..."
-                    },
-    
-                    new AdaptiveProgressBar()
-                    {
-                        Title = "Weekly playlist",
-                        Value = new BindableProgressBarValue("progressValue"),
-                        ValueStringOverride = new BindableString("progressValueString"),
-                        Status = new BindableString("progressStatus")
-                    }
-                }
-            }
-        }
-    };
+            Title = "Weekly playlist",
+            Value = new BindableProgressBarValue("progressValue"),
+            ValueStringOverride = new BindableString("progressValueString"),
+            Status = new BindableString("progressStatus")
+        })
+        .GetToastContent();
  
     // Generate the toast notification
     var toast = new ToastNotification(content.GetXml());

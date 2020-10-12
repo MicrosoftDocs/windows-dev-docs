@@ -28,19 +28,15 @@ Here's how you add a header to a toast notification.
 > [!NOTE]
 > Headers are only supported on Desktop. Devices that don't support headers will simply ignore the header.
 
-```csharp
-ToastContent toastContent = new ToastContent()
-{
-    Header = new ToastHeader()
-    {
-        Id = "6289",
-        Title = "Camping!!",
-        Arguments = "action=openConversation&id=6289",
-    },
+#### [Builder syntax](#tab/builder-syntax)
 
-    Visual = new ToastVisual() { ... }
-};
+```csharp
+new ToastContentBuilder()
+    .AddHeader("6289", "Camping!!", "action=openConversation&id=6289")
+    .AddText("Anyone have a sleeping bag I can borrow?");
 ```
+
+#### [XML](#tab/xml)
 
 ```xml
 <toast>
@@ -57,6 +53,8 @@ ToastContent toastContent = new ToastContent()
 </toast>
 ```
 
+---
+
 In summary...
 
 1. Add the **Header** to your **ToastContent**
@@ -71,7 +69,7 @@ Headers are clickable by users, so that the user can click the header to find ou
 
 Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the toast itself.
 
-Activation is handled identical to [normal toast activation](send-local-toast.md#activation-handling), meaning you can retrieve these arguments in the **OnActivated** method of `App.xaml.cs` just like you do when the user clicks the body of your toast or a button on your toast.
+Activation is handled identical to [normal toast activation](send-local-toast.md#step-4-handling-activation), meaning you can retrieve these arguments in the **OnActivated** method of `App.xaml.cs` just like you do when the user clicks the body of your toast or a button on your toast.
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)

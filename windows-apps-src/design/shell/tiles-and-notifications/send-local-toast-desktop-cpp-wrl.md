@@ -1,19 +1,19 @@
 ---
 Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
-title: Send a local toast notification from desktop C++ WRL apps
-label: Send a local toast notification from desktop C++ WRL apps
+title: Send a local toast notification from Win32 C++ WRL apps
+label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, sparse package, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ---
-# Send a local toast notification from desktop C++ WRL apps
+# Send a local toast notification from Win32 C++ WRL apps
 
-Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
+Win32 apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for Win32 apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
 
 > [!IMPORTANT]
-> If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](send-local-toast-desktop.md).
+> If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other Win32 languages, please see [Win32 C#](send-local-toast-desktop.md).
 
 
 ## Step 1: Enable the Windows 10 SDK
@@ -366,7 +366,7 @@ If your app is not running:
 
 
 ### Foreground vs background activation
-For desktop apps, foreground and background activation is handled identically - your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **activationType** of **background** in your toast content doesn't change the behavior.
+For Win32 apps, foreground and background activation is handled identically - your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **activationType** of **background** in your toast content doesn't change the behavior.
 
 
 ## Step 9: Remove and manage notifications
@@ -438,5 +438,5 @@ if (IsWindows10OrGreater())
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Toast notifications from desktop apps](toast-desktop-apps.md)
+* [Toast notifications from Win32 apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)

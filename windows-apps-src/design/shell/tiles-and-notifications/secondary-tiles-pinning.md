@@ -105,7 +105,7 @@ You can enhance your secondary tile for Windows Mixed Reality by adding 3D asset
 Finally, request to pin the tile. Note that this must be called from a UI thread. On Desktop, a dialog will appear asking the user to confirm whether they would like to pin the tile.
 
 > [!IMPORTANT]
-> If you are a Windows desktop application using the Desktop Bridge, you must first perform an extra step as described in [Pin from desktop application](secondary-tiles-desktop-pinning.md)
+> If you are a Win32 application using the Desktop Bridge, you must first perform an extra step as described in [Pin from Win32 apps](secondary-tiles-desktop-pinning.md)
 
 ```csharp
 // Pin the tile

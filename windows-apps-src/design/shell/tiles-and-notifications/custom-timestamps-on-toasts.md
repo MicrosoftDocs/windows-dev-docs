@@ -21,19 +21,23 @@ You can optionally override the timestamp with your own custom date and time, so
 
 To use a custom timestamp, simply assign the **DisplayTimestamp** property on your **ToastContent**.
 
+#### [Builder syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent toastContent = new ToastContent()
-{
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
-};
+var content = new ToastContent()
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc))
+    ...
 ```
+
+#### [XML](#tab/xml)
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
   ...
 </toast>
 ```
+
+---
 
 If you are using XML, the date must be formatted in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 

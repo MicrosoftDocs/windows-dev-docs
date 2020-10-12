@@ -23,8 +23,6 @@ When creating each collection, you are required to provide a display name and an
 ### Create a collection
 
 ``` csharp 
-public const string toastCollectionId = "ToastCollection";
-
 // Create a toast collection
 public async void CreateToastCollection()
 {
@@ -33,7 +31,8 @@ public async void CreateToastCollection()
 	Uri icon = new Windows.Foundation.Uri("ms-appx:///Assets/workEmail.png");
 
 	// Constructor
-	ToastCollection workEmailToastCollection = new ToastCollection(MainPage.toastCollectionId, 
+	ToastCollection workEmailToastCollection = new ToastCollection(
+		"MyToastCollection", 
 		displayName,
  		launchArg, 
 		icon);
@@ -46,34 +45,23 @@ public async void CreateToastCollection()
 ## Sending notifications to a collection
 We will cover sending notifications from three different toast pipelines: local, scheduled, and push.  For each of these examples we will be creating a sample toast to send with the code immediately below, then we will focus on how to add the toast to a collection via each pipeline.
 
-Construct the notification payload:
+Construct the toast content:
 
 ``` csharp
-public const string toastCollectionId = "MyToastCollection";
-
-public async void SendToastToToastCollection()
-{
-	// Construct the notification Content
-	string toastXmlString = 
-		$@"<toast launch=’’>
-			<visual>
-				<binding template=’ToastGeneric’>
-					<text>Hello,</text>
-					<text>it’s me</text>
-				</binding>
-			</visual>
-		</toast>";
-	// Convert to XML
-	XmlDocument toastXml = new XmlDocment();
-	toastXml.LoadXml(toastXmlString);
-	ToastNotification toast = new ToastNotification(toastXml);
+// Construct the content
+var content = new ToastContentBuilder()
+	.AddText("Adam sent a message to the group")
+	.GetToastContent();
 ```
 
 ### Send a toast to a collection
 
 ```csharp
+// Create the toast
+ToastNotification toast = new ToastNotification(content.GetXml());
+
 // Get the collection notifier
-var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(MainPage.toastCollectionId);
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
 
 // And show the toast
 notifier.Show(toast);
@@ -83,10 +71,10 @@ notifier.Show(toast);
 
 ``` csharp
 // Create scheduled toast from XML above
-ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(10));
+ScheduledToastNotification scheduledToast = new ScheduledToastNotification(content.GetXml(), DateTimeOffset.Now.AddSeconds(10));
 
 // Get notifier
-var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(MainPage.toastCollectionId);
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
     
 // Add to schedule
 notifier.AddToSchedule(scheduledToast);
@@ -122,7 +110,7 @@ int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync
 #### Remove a collection
 
 ``` csharp
-await collectionManager.RemoveToastCollectionAsync(MainPage.toastCollectionId);
+await collectionManager.RemoveToastCollectionAsync("MyToastCollection");
 ```
 
 #### Update a collection
@@ -133,10 +121,11 @@ string launchArg = "UpdatedLaunchArgs";
 Uri icon = new Windows.Foundation.Uri("ms-appx:///Assets/updatedPicture.png");
 
 // Construct a new toast collection with the same collection id
-ToastCollection updatedToastCollection = new ToastCollection(MainPage.toastCollectionId, 
- 			displayName,
- 			launchArg, 
- 			icon);
+ToastCollection updatedToastCollection = new ToastCollection(
+	"MyToastCollection", 
+	displayName,
+	launchArg, 
+	icon);
 
 // Calls the platform to update the collection by saving the new instance
 await collectionManager.SaveToastCollectionAsync(updatedToastCollection);  								
@@ -149,7 +138,7 @@ The group and tag properties together uniquely identify a notification within a 
 You can remove individual toasts using the tag and group IDs, or clear all toasts in a collection.
 ``` csharp
 // Get the history
-var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync("MyToastCollection");
 
 // Remove toast
 collectionHistory.Remove(tag, group); 
@@ -158,7 +147,7 @@ collectionHistory.Remove(tag, group);
 #### Clear all toasts within a collection
 ``` csharp
 // Get the history
-var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync("MyToastCollection");
 
 // Remove toast
 collectionHistory.Clear();
