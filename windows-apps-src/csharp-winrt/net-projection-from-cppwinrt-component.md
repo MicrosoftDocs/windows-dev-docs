@@ -113,7 +113,6 @@ Before you can invoke **cswinrt.exe** and generate the projection assembly, you 
 
     ```xml
     <PropertyGroup>
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
       <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
     </PropertyGroup>
@@ -121,7 +120,6 @@ Before you can invoke **cswinrt.exe** and generate the projection assembly, you 
 
     Here are some details about the settings in this example:
 
-    - The `AllowUnsafeBlocks` element specifies whether to use interop code. 
     - The `CsWinRTIncludes` property specifies which namespaces to project.
     - The `CsWinRTGeneratedFilesDir` property sets the output directory where files from the projection are generated, which we set in the following section on building out of source.
 
