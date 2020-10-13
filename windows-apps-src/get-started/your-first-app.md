@@ -2,7 +2,7 @@
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
-ms.date: 01/25/2017
+ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, first app, c#, c++, JavaScript
 ms.localizationpriority: medium
@@ -30,7 +30,7 @@ If you want to learn the basics, or just refresh your memory, try reading these:
 
 Leverage your programming expertise in standard C++ to build apps using C++/WinRT with Extensible Application Markup Language (XAML).
 
-* [Create a "Hello, World!" app using C++/WinRT](./create-a-basic-windows-10-app-in-cppwinrt.md)
+* [Create a "Hello, World!" app using C++/WinRT](create-a-basic-windows-10-app-in-cppwinrt.md)
 
 Learn more about C++/WinRT.
 
@@ -47,32 +47,16 @@ Learn more about C++ here.
 * [C++ for UWP apps](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
 * [C++ for Desktop apps](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
-## JavaScript and HTML
-
-Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.
-
-* [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
-
-Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore Virtual reality on the web with WebVR
-
-* [Microsoft Edge developer documentation](/microsoft-edge/)
-* [Use WebVR with Microsoft Edge](/microsoft-edge/webvr/)
-
-Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
-
-* [Hosted Web Apps](https://developer.microsoft.com/windows/pwa)
-* [Convert your web application to a UWP app](/microsoft-edge/progressive-web-apps-chromium/)
-
 ## Next steps
 
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
 * [Tutorial: Create a user interface](../design/basics/xaml-basics-ui.md)
-* [A simple 2D UWP game for the Microsoft Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
+* [Windows apps on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows)
 
 ## See Also
 
 * [Start coding](create-uwp-apps.md)
 * [What's a UWP app?](universal-application-platform-guide.md)
-* [Get set up](get-set-up.md)
-* [Sign up for Windows account](sign-up.md)
+* [Get set up](/windows/apps/get-started/get-set-up.md)
+* [Sign up for Windows account](/windows/apps/get-started/sign-up.md)

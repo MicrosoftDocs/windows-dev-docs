@@ -116,8 +116,48 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/get-started/learn-more.md",
-      "redirect_url": "/windows/uwp/get-started/create-uwp-apps",
+      "source_path": "windows-apps-src/get-started/enable-your-device-for-development.md",
+      "redirect_url": "/windows/apps/get-started/enable-your-device-for-developments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/get-started/get-set-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/sign-up.md",
+      "redirect_url": "/windows/apps/get-started/sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/adding-webvr-to-a-babylonjs-game.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/create-a-hello-world-app-js-uwp.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-fullstack-web-app.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-js2d.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-js3d.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-mg2d.md",
+      "redirect_url": "/windows/uwp/get-started/",
       "redirect_document_id": false
     },
     {

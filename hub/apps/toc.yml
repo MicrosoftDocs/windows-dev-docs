@@ -7,6 +7,15 @@
           href: desktop/index.md
         - name: Choose your app platform
           href: desktop/choose-your-platform.md
+        - name: Get set up
+          href: get-started/get-set-up.md
+          items:
+              - name: Enable your device for development
+                href: get-started/enable-your-device-for-development.md
+              - name: Developer mode features and debugging
+                href: get-started/developer-mode-features-and-debugging.md
+              - name: Create a developer account
+                href: get-started/sign-up.md
         - name: Visual Studio templates for Windows apps
           href: desktop/visual-studio-templates.md
         - name: Modernize your desktop apps

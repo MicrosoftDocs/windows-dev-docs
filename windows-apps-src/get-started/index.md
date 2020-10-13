@@ -27,7 +27,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         <h3 style="margin-top: 10px; margin-bottom: 0px">Get set up</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Visual Studio Community and the Windows 10 SDK give you everything you need to build great apps – and they're free.</p>
         <br>
-        <a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Download the tools and SDK</a><br/>
+        <a href="//docs.microsoft.com/windows/apps/get-started/get-set-up">Download the tools and SDK</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" />
