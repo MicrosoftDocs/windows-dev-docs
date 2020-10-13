@@ -1,5 +1,5 @@
 ---
-description: We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs.
+description: Troubleshoot issues you might be having while porting Windows Phone Silverlight to UWP.
 title: Troubleshooting porting Windows Phone Silverlight to UWP
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
 ms.date: 02/08/2017

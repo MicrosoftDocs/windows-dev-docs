@@ -1,5 +1,5 @@
 ---
-description: Learn how to design and code a Windows app that's easy to navigate and looks great on a variety of devices and screen sizes.
+description: Learn how to create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.
 title: Layout overview for Windows apps
 keywords: uwp app layout, universal windows platform, app design, interface
 ms.date: 09/24/2020

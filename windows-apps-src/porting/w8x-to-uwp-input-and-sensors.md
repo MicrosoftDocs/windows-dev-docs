@@ -1,5 +1,5 @@
 ---
-description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+description: Learn how to port Windows Runtime 8.x to UWP for I/O, device, and app model.
 title: Porting Windows Runtime 8.x to UWP for I/O, device, and app model'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017

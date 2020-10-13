@@ -1,5 +1,5 @@
 ---
-description: We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs.
+description: Troubleshoot issues you might be having while porting Windows Runtime 8.x to UWP
 title: Troubleshooting porting Windows Runtime 8.x to UWP'
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ms.date: 02/08/2017

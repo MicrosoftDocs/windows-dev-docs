@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to add Activity and Notification features to the app.
 title: Add Windows 10 user activities and notifications
 ms.topic: article
 ms.date: 06/27/2019
