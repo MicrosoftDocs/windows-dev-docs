@@ -82,7 +82,7 @@ For more information on how dependency properties work, see [Dependency properti
 ## Define the default style for BgLabelControl
 A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will create a generic template file for our control.
 
-Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C# > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
+Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder and name it "Themes". Under `Themes`, add a new item of type **Visual C# > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
 
 
 

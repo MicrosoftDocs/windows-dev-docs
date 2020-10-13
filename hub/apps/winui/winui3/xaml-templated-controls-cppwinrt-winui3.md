@@ -210,7 +210,7 @@ Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() 
 
 ## Generating the control source files without using a template.
 
-This section shows how you can generate the necessary source files for creating your custom control without using the **User Control** item template. 
+This section shows how you can generate the necessary source files for creating your custom control without using the **Custom Control** item template. 
 
 First, add a new Midl File (.idl) item to the project. From the **Project** menu, select **Add New Item...** and type "MIDL" in the search box to find the .idl file item. Name the new file `BgLabelControl.idl` so that the name will be consistent with the steps in this article. Delete the default contents of `BgLabelControl.idl`, and paste in the runtime class declaration shown in the steps above.
 
