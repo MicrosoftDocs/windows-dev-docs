@@ -118,17 +118,17 @@
     {
       "source_path": "windows-apps-src/get-started/enable-your-device-for-development.md",
       "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
-      "redirect_document_id": false
+      "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/get-started/get-set-up.md",
       "redirect_url": "/windows/apps/get-started/get-set-up",
-      "redirect_document_id": false
+      "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/get-started/sign-up.md",
       "redirect_url": "/windows/apps/get-started/sign-up",
-      "redirect_document_id": false
+      "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/get-started/adding-webvr-to-a-babylonjs-game.md",
