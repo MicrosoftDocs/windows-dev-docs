@@ -20,7 +20,7 @@ Before following the steps in this article, you should make sure your developmen
 
 Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App (WinUI in UWP)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. Set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the **Blank App, Packaged (WinUI in Desktop)** project template, just make sure to perform all of the steps in the **BgLabelControlApp (Desktop)** project.
 
-![Blank App Project Template](images/WinUI-cs-newproject-UWP.png)
+![Blank App Project Template](images/winui-csharp-new-project-uwp.png)
 
 ## Add a templated control to your app
 
