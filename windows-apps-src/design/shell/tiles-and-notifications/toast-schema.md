@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 The following describes all of the properties and elements within toast content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema]().
+If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root).
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
