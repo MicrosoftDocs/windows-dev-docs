@@ -123,7 +123,7 @@ The **update** sub command combined with the **--name** option can direct and up
 
 The **remove** sub command removes a source. This sub command requires the **--name** option and **name argument** in order to identify the source.
 
-Usage: `winget source add [-n, --name] \<name>`
+Usage: `winget source remove [-n, --name] \<name>`
 
 For example: `winget source remove --name Contoso`
 
