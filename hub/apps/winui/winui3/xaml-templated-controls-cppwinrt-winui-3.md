@@ -186,7 +186,7 @@ Also, add the following include directive to `MainPage.h` so that the **MainPage
 
 Now build and run the project. You'll see that the default control template is binding to the background brush, and to the label, of the **BgLabelControl** instance in the markup.
 
-![Templated control result](images/WinUI-templated-control-result.png)
+![Templated control result](images/winui-templated-control-result.png)
 
 ## Implementing overridable functions, such as **MeasureOverride** and **OnApplyTemplate**
 
