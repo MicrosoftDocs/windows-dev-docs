@@ -1,21 +1,21 @@
 ---
-Description: Learn how to send a local toast notification and handle the user clicking the toast.
-title: Send a local toast notification
+Description: Learn how to send a local toast notification from UWP apps and handle the user clicking the toast.
+title: Send a local toast notification from UWP apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification
+label: Send a local toast notification from UWP apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 ---
-# Send a local toast notification
+# Send a local toast notification from UWP apps
 
 
 A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement.
 
 > [!IMPORTANT]
-> Win32 applications (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) have different steps for sending notifications and handling activation. Please see the [Win32 apps](toast-desktop-apps.md) documentation to learn how to implement toasts.
+> Desktop applications (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Desktop apps) have different steps for sending notifications and handling activation. Please see the [Desktop apps](toast-desktop-apps.md) documentation to learn how to implement toasts.
 
 > **Important APIs**: [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
@@ -186,7 +186,7 @@ You can add rich content to notifications. We'll add an inline image and a profi
 > Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.
 
 > [!IMPORTANT]
-> Http images are only supported in UWP/MSIX/sparse apps that have the internet capability in their manifest. Win32 non-MSIX/sparse apps do not support http images; you must download the image to your local app data and reference it locally.
+> Http images are only supported in UWP/MSIX/sparse apps that have the internet capability in their manifest. Desktop non-MSIX/sparse apps do not support http images; you must download the image to your local app data and reference it locally.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 

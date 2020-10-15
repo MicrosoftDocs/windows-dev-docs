@@ -318,7 +318,7 @@
           items:
             - name: UWP apps
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: Win32 apps
+            - name: Desktop apps
               items:
                 - name: Overview
                   href: shell/tiles-and-notifications/toast-desktop-apps.md
