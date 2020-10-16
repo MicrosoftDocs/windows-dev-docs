@@ -43,8 +43,8 @@ Icons can save space, but when should you use them?
 
 :::row:::
     :::column:::
-        ![First image of a green bar that has a green check mark and the word Do.](images/do.svg)
-        ![Screenshot that shows the Cut, Copy, Paste, and Save icons.](images/icons/icons-standard.svg)<br>
+        ![First image of a green bar that has a green check mark and the word Do](images/do.svg)
+        ![Screenshot that shows the Cut, Copy, Paste, and Save icons](images/icons/icons-standard.svg)<br>
 
 Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
     :::column-end:::
@@ -58,8 +58,8 @@ Use an icon if one already exists for the concept you want to represent. (To see
 
 :::row:::
     :::column:::
-        ![Second image of a green bar that has a green check mark and the word Do.](images/do.svg)
-        ![Screenshot of a simple and familiar Shopping cart icon.](images/icons/icon-shopping-cart.svg)<br>
+        ![Second image of a green bar that has a green check mark and the word Do](images/do.svg)
+        ![Screenshot of a simple and familiar Shopping cart icon](images/icons/icon-shopping-cart.svg)<br>
 
 Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
     :::column-end:::
