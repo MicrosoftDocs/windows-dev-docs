@@ -1,5 +1,5 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
 title: Icons
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
