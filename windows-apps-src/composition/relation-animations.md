@@ -1,7 +1,7 @@
 ---
 title: Relation based animations
 description: Learn how to use ExpressionAnimations to create relation-based animations when motion depends on a property of another object.
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
@@ -46,10 +46,10 @@ Expressions also support a set of keywords – special phrases that have distinc
 
 ### Creating Expressions with ExpressionBuilder
 
-There are two options for building Expressions in their UWP app:
+There are two options for building Expressions in your UWP app:
 
-1. Building the equation as a string via the official, public API.
-1. Building the equation in a type-safe object model via the open source ExpressionBuilder tool. See the [Github source and documentation](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Build the equation as a string via the official, public API.
+1. Build the equation in a type-safe object model via the ExpressionBuilder tool included with the [Windows Community Toolkit](/windows/communitytoolkit/animations/expressions).
 
 For the sake of this document, we will define our Expressions using ExpressionBuilder.
 
@@ -106,7 +106,9 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` is a shorthand “using” notation to define ExpressionBuilder.ExpressionFunctions.
+> `EF` is a shorthand "using" notation to define ExpressionFunctions.
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 Finally, combine these components together and reference the position of the Red Ball to define the mathematical relationship.
 
