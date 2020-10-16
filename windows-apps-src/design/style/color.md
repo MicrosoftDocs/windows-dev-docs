@@ -408,7 +408,7 @@ ColorPaletteResources also allows for system colors to be placed and defining di
 
 :::row:::
     :::column:::
-![contrast illustration](images/color/illo-contrast.svg)
+![Contrast illustration.](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
 **Contrast**
@@ -421,7 +421,7 @@ When considering what colors to use in your application, accessibility should be
 
 :::row:::
     :::column:::
-![contrast illustration](images/color/illo-lighting.svg)
+![Lighting illustration.](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
 **Lighting**
@@ -432,7 +432,7 @@ Be aware that variation in ambient lighting can affect the usability of your app
 
 :::row:::
     :::column:::
-![contrast illustration](images/color/illo-colorblindness.svg)
+![Colorblindness illustration.](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
 **Colorblindness**
