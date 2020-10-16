@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to make it easier to choose the date for an expense report on a touch-enabled device.
 title: Add a UWP CalendarView control using XAML Islands
 ms.topic: article
 ms.date: 06/27/2019

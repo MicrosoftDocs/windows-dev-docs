@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to modernize a sample WPF desktop app named Contoso Expenses.
+description: This tutorial demonstrates how to package and deploy the app using MSIX.
 title: Package and deploy with MSIX
 ms.topic: article
 ms.date: 01/23/2020

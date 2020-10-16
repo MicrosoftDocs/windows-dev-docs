@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to add support for digital signatures to the Contoso Expenses app.
 title: Add a UWP InkCanvas control using XAML Islands
 ms.topic: article
 ms.date: 01/24/2020
