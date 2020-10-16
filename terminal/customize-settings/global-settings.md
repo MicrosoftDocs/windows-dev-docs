@@ -178,7 +178,7 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 ### Launch mode
 
-This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with the focus mode enabled. Similar, setting this to `focusMaximized` will result in launching the terminal in a maximized window w ith the focus mode enabled.
+This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with the focus mode enabled. Similar, setting this to `maximizedFocus` will result in launching the terminal in a maximized window w ith the focus mode enabled.
 
 **Property name:** `launchMode`
 
@@ -187,6 +187,9 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 **Accepts:** `"default"`, `"maximized"`, `"fullscreen"`, `"focus"`, `"maximizedFocus"`
 
 **Default value:** `"default"`
+
+> [!IMPORTANT]
+> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
 
 ### Launch position
 
