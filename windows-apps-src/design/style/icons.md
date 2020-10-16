@@ -49,8 +49,8 @@ Icons can save space, but when should you use them?
 Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
     :::column-end:::
 	:::column:::
-		![First image of a red bar that has a red X and the word Don't.](images/dont.svg)
-        ![Screenshot that shows the Education, Touch, and Calendar icons.](images/icons/icons-concept.svg)<br>
+		![First image of a red bar that has a red X and the word Don't](images/dont.svg)
+        ![Screenshot that shows the Education, Touch, and Calendar icons](images/icons/icons-concept.svg)<br>
 
 Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
     :::column-end:::
@@ -64,8 +64,8 @@ Use an icon if one already exists for the concept you want to represent. (To see
 Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
     :::column-end:::
 	:::column:::
-		![Second image of a red bar that has a red X and the word Don't.](images/dont.svg)
-        ![Screenshot of a complex and unfamiliar Shopping cart icon.](images/icons/icon-bad-example.png)<br>
+		![Second image of a red bar that has a red X and the word Don't](images/dont.svg)
+        ![Screenshot of a complex and unfamiliar Shopping cart icon](images/icons/icon-bad-example.png)<br>
 
 Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
     :::column-end:::
