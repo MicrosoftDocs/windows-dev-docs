@@ -1024,14 +1024,14 @@ Users and other processes can use an alias to start your application without hav
 #### Elements and attributes of this extension
 
 ```XML
-<Extension
+<uap3:Extension
     Category="windows.appExecutionAlias"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-    <AppExecutionAlias>
+    <uap3:AppExecutionAlias>
         <desktop:ExecutionAlias Alias="[AliasName]" />
-    </AppExecutionAlias>
-</Extension>
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
 ```
 
 |Name |Description |
