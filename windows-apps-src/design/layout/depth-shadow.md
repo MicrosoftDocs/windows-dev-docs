@@ -1,5 +1,4 @@
 ---
-author: knicholasa
 description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
 title: Z-depth and shadow for Windows apps
 template: detail.hbs
