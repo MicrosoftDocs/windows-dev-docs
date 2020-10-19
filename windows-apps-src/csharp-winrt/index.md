@@ -16,6 +16,8 @@ C#/WinRT is a NuGet-packaged toolkit that provides Windows Runtime (WinRT) proje
 
 C#/WinRT currently provides support for consuming WinRT types, and the current preview enables you to [create](#create-an-interop-assembly) and [reference](#reference-an-interop-assembly) WinRT interop assemblies. Future releases of C#/WinRT will add support for authoring WinRT types in C#.
 
+For additional information about C#/WinRT, see the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo).
+
 ## Motivation for C#/WinRT
 
 [.NET Core](/dotnet/core/) is the focus for the .NET platform, and .NET 5 is the next major release. It is an open-source, cross-platform runtime that can be used to build device, cloud, and IoT applications.
@@ -26,74 +28,37 @@ C#/WinRT also supports WinUI 3.0. This release of WinUI lifts native Microsoft U
 
 Finally, C#/WinRT is a general toolkit and is intended to support other scenarios where built-in support for WinRT is not available in the C# compiler or .NET runtime. C#/WinRT supports versions of the .NET runtime compatible down to .NET Standard 2.0, such as Mono 5.4.
 
-For additional information about C#/WinRT, see the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo).
-
 ## Create an interop assembly
 
 WinRT APIs are defined in Windows Metadata (*.winmd) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt**, which you can use to process Windows Metadata files and generate .NET 5.0 C# code. You can compile these source files to interop assemblies, similar to how [C++/WinRT](../cpp-and-winrt-apis/index.md) generates headers for C++ language projection. You can then distribute the C#/WinRT interop assemblies for applications to reference, along with the C#/WinRT runtime assembly.
 
-For a walkthrough that demonstrates how to create an interop assembly, see [Walkthrough: Generate a .NET 5 projection from a C++/WinRT component and update the NuGet](net-projection-from-cppwinrt-component.md).
+For a walkthrough that demonstrates how to create and distribute an interop assembly as a NuGet package, see [Walkthrough: Generate a .NET 5 projection from a C++/WinRT component and update the NuGet](net-projection-from-cppwinrt-component.md).
 
 ### Invoke cswinrt.exe
 
-To display command line options, run `cswinrt -?`. To invoke cswinrt.exe from a project, we recommend using a Directory.Build.Targets file. The following project fragment demonstrates a simple invocation of **cswinrt** to generate projection sources for types in the Contoso namespace. These sources are then included in the project build.
+To invoke cswinrt.exe from a project, install the latest [C#/WinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/). You can then set C#/WinRT-specific project properties in a **C# Library** project to generate an interop assembly. The following project fragment demonstrates a simple invocation of **cswinrt** to generate projection sources for types in the Contoso namespace. These sources are then included in the project build.
 
 ```xml
-  <Target Name="GenerateProjection" BeforeTargets="Build">
-    <PropertyGroup>
-      <CsWinRTParams>
-# This sample demonstrates using a response file for cswinrt execution.
-# Run "cswinrt -h" to see all command line options.
--verbose
-# Include Windows SDK metadata to satisfy references to 
-# Windows types from project-specific metadata.
--in 10.0.18362.0
-# Don't project referenced Windows types, as these are 
-# provided by the Windows interop assembly.
--exclude Windows 
-# Reference project-specific winmd files, defined elsewhere,
-# such as from a NuGet package.
--in @(ContosoWinMDs->'"%(FullPath)"', ' ')
-# Include project-specific namespaces/types in the projection
--include Contoso 
-# Write projection sources to the "Generated Files" folder,
-# which should be excluded from checkin (e.g., .gitignored).
--out "$(ProjectDir)Generated Files"
-      </CsWinRTParams>
-    </PropertyGroup>
-    <WriteLinesToFile
-        File="$(CsWinRTResponseFile)" Lines="$(CsWinRTParams)"
-        Overwrite="true" WriteOnlyWhenDifferent="true" />
-    <Message Text="$(CsWinRTCommand)" Importance="$(CsWinRTVerbosity)" />
-    <Exec Command="$(CsWinRTCommand)" />
-  </Target>
-
-  <Target Name="IncludeProjection" BeforeTargets="CoreCompile" AfterTargets="GenerateProjection">
-    <ItemGroup>
-      <Compile Include="$(ProjectDir)Generated Files/*.cs" Exclude="@(Compile)" />
-    </ItemGroup>
-  </Target>
+<PropertyGroup>
+  <CsWinRTIncludes>Contoso</CsWinRTIncludes>
+</PropertyGroup>
 ```
+
+In this project you would also need to reference the CsWinRT NuGet package and the project-specific .winmd files you want to project, whether through a NuGet package, project reference or direct reference. By default, the **Windows** and **Microsoft** namespaces are not projected. For a full list of CsWinRT project properties, refer to the [CsWinRT NuGet documentation](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md).
 
 ### Distribute the interop assembly
 
-An interop assembly is typically distributed as a NuGet package, along with a dependency on the C#/WinRT NuGet package for the required C#/WinRT runtime assembly, **winrt.runtime.dll**. There are two versions of the C#/WinRT runtime assembly, one targeting .NET Standard 2.0 and one targeting .NET 5.0. Only one of these is deployed, depending on an application's target framework. 
+An interop assembly is typically distributed as a NuGet package, along with a dependency on the C#/WinRT NuGet package for the required C#/WinRT runtime assembly, **winrt.runtime.dll**.
 
-* Targeting .NET Standard 2.0 is suitable for down-level cross-platform applications that want to provide light-up functionality on Windows.
-* Targeting .NET 5.0 is recommended for modern Windows apps requiring correct garbage collection across native object references, such as XAML apps.
-
-An interop assembly can ensure that the correct version of the C#/WinRT runtime is deployed for an app by including a `targetFramework` condition in the nuspec file.
+To ensure that the correct version of the C#/WinRT runtime is deployed for .NET 5.0 applications, include a `targetFramework` condition in the .nuspec file with a dependency on the C#/WinRT NuGet package.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <dependencies>
-      <group targetFramework=".NETStandard2.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.1.0" />
-      </group>
-      <group targetFramework=".NET5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.1.0" />
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.Windows.CsWinRT" version="0.9.0" />
       </group>
     </dependencies>
   </metadata>
@@ -101,7 +66,7 @@ An interop assembly can ensure that the correct version of the C#/WinRT runtime 
 ```
 
 > [!NOTE]
-> The target framework moniker for .NET 5.0 is moving from ".NETCoreApp5.0" to ".NET5.0". C#/WinRT pre-releases will use one or the other.
+> The target framework moniker for .NET 5.0 is moving from ".NETCoreApp5.0" to "net5.0". 
 
 ## Reference an interop assembly
 
@@ -125,7 +90,7 @@ C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynam
 
 ## Known issues
 
-There are some known interop-related performance issues in the current preview of C#/WinRT. These will be addressed prior to the final release in late 2020.
+There are some known interop-related performance issues in the current preview of C#/WinRT. These will be addressed prior to the final release in late 2020. Other known issues and breaking changes will be noted in the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo).
 
 If you encounter any functional issues with the C#/WinRT NuGet package, the cswinrt.exe compiler, or the generated projection sources, submit issues to us via the [C#/WinRT issues page](https://github.com/microsoft/CsWinRT/issues).
 

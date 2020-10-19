@@ -123,7 +123,16 @@ Before you can invoke **cswinrt.exe** and generate the projection assembly, you 
     - The `CsWinRTIncludes` property specifies which namespaces to project.
     - The `CsWinRTGeneratedFilesDir` property sets the output directory where files from the projection are generated, which we set in the following section on building out of source.
 
-4. Save and close the **SimpleMathProjection.csproj** file.
+4. The latest C#/WinRT version as of this walkthrough may require specifying Windows Metadata. This will be fixed in a future release of C#/WinRT. This can be supplied with either:
+
+    - A package reference, such as to [Microsoft.Windows.SDK.Contracts]( https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts/), or
+    - An explicit value set the with the `CsWinRTWindowsMetadata` property:
+
+      ```xml
+      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+      ```
+
+5. Save and close the **SimpleMathProjection.csproj** file.
 
 ## Build projects out of source
 
