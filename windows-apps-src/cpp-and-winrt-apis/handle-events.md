@@ -29,7 +29,7 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 
 ```xaml
 // MainPage.xaml
-<Button x:Name="Button" Click="ClickHandler">Click Me</Button>
+<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
 ```
 
 ```cppwinrt
@@ -43,9 +43,14 @@ void MainPage::ClickHandler(
     IInspectable const& /* sender */,
     RoutedEventArgs const& /* args */)
 {
-    Button().Content(box_value(L"Clicked"));
+    myButton().Content(box_value(L"Clicked"));
 }
 ```
+
+The code above is taken from the **Blank App (C++/WinRT)** project in Visual Studio. The code `myButton()` calls a generated accessor function, which returns the **Button** that we named *myButton*. If you change the `x:Name` of that **Button** element, then the name of the generated accessor function changes, too.
+
+> [!NOTE]
+> In this case, the event source (the object that raises the event) is the **Button** named *myButton*. And the event recipient (the object handling the event) is an instance of **MainPage**. There's more info later in this topic about managing the lifetime of event sources and event recipients.
 
 Instead of doing it declaratively in markup, you can imperatively register a member function to handle an event. It may not be obvious from the code example below, but the argument to the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) call is an instance of the [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) delegate. In this case, we're using the **RoutedEventHandler** constructor overload that takes an object and a pointer-to-member-function.
 
@@ -55,7 +60,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click({ this, &MainPage::ClickHandler });
+    myButton().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -75,7 +80,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click( MainPage::ClickHandler );
+    myButton().Click( MainPage::ClickHandler );
 }
 void MainPage::ClickHandler(
     IInspectable const& /* sender */,
@@ -125,9 +130,9 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    myButton().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
-        Button().Content(box_value(L"Clicked"));
+        myButton().Content(box_value(L"Clicked"));
     });
 }
 ```
@@ -143,7 +148,7 @@ MainPage::MainPage()
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
-    Button().Click(click_handler);
+    myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
 }
 ```
