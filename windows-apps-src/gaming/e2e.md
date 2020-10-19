@@ -91,12 +91,12 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     <tr>
         <td>Mixer Interactive documentation</td>
         <td><a href="https://dev.mixer.com/reference/interactive/index.html">Add interactivity to your game</a></td>
-    </tr>        
+    </tr>
 </table>
 
 ### Partner Center
 
-[Registering a developer account in Partner Center](https://developer.microsoft.com/store/register) is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
+[Registering a developer account in Partner Center](https://developer.microsoft.com/store/register) is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world.
 
 Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing if any are right for you before registering for a Partner Center account. For more info, go to [Developer programs](#developer-programs)
 
@@ -174,10 +174,10 @@ There are many Windows 10 game and app samples available to help you understand 
         <td>Direct3D 12 graphics samples</td>
         <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples">DirectX-Graphics-Samples</a></td>
     </tr>
-	<tr>
-		<td>Direct3D 11 graphics samples</td>
-		<td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
-	</tr>
+    <tr>
+        <td>Direct3D 11 graphics samples</td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+    </tr>
     <tr>
         <td>Direct3D 11 first-person game sample</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Create a simple UWP game with DirectX</a></td>
@@ -195,9 +195,9 @@ There are many Windows 10 game and app samples available to help you understand 
         <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DPhotoAdjustment">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
-		<td>Xbox Advanced Technology Group public samples</td>
-		<td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
-	</tr>
+        <td>Xbox Advanced Technology Group public samples</td>
+        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
+    </tr>
     <tr>
         <td>Xbox Live samples</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
@@ -221,7 +221,7 @@ There are many Windows 10 game and app samples available to help you understand 
     <tr>
         <td>MonoGame 2D UWP game sample</td>
         <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Create a UWP game in MonoGame 2D</a></td>
-    </tr>      
+    </tr>
 </table>
 
 ### Developer forums
@@ -290,7 +290,7 @@ Developer blogs are another great resource for the latest information about game
     </tr>
     <tr>
         <td>Somasegar's developer tools blog</td>
-        <td><a href="https://devblogs.microsoft.com/somasegar/">Somasegar’s blog</a></td>
+        <td><a href="https://devblogs.microsoft.com/somasegar/">Somasegar's blog</a></td>
     </tr>
     <tr>
         <td>DirectX developer blog</td>
@@ -381,7 +381,7 @@ These are some high level concept and planning topics to consider when planning 
 
 ### Choosing your graphics technology and programming language
 
-There are several programming languages and graphics technologies available for use in Windows 10 games. The path you take depends on the type of game you’re developing, the experience and preferences of your development studio, and specific feature requirements of your game. Will you use C#, C++, or JavaScript? DirectX, XAML, or HTML5?
+There are several programming languages and graphics technologies available for use in Windows 10 games. The path you take depends on the type of game you're developing, the experience and preferences of your development studio, and specific feature requirements of your game. Will you use C#, C++, or JavaScript? DirectX, XAML, or HTML5?
 
 #### DirectX
 
@@ -389,7 +389,7 @@ Microsoft DirectX is the choice to make for the highest-performance 2D and 3D gr
 
 DirectX 12 is faster and more efficient than any previous version. Direct3D 12 enables richer scenes, more objects, more complex effects, and full utilization of modern GPU hardware on Windows 10 PCs and Xbox One.
 
-If you want to use the familiar graphics pipeline of Direct3D 11, you’ll still benefit from the new rendering and optimization features added to Direct3D 11.3. And, if you’re a tried-and-true desktop Windows API developer with roots in Win32, you’ll still have that option in Windows 10.
+If you want to use the familiar graphics pipeline of Direct3D 11, you'll still benefit from the new rendering and optimization features added to Direct3D 11.3. And, if you're a tried-and-true desktop Windows API developer with roots in Win32, you'll still have that option in Windows 10.
 
 The extensive features and deep platform integration of DirectX provide the power and performance needed by the most demanding games.
 
@@ -422,7 +422,7 @@ The extensive features and deep platform integration of DirectX provide the powe
 
 #### XAML
 
-XAML is an easy-to-use declarative UI language with convenient features like animations, storyboards, data binding, scalable vector-based graphics, dynamic resizing, and scene graphs. XAML works great for game UI, menus, sprites, and 2D graphics. To make UI layout easy, XAML is compatible with design and development tools like Expression Blend and Microsoft Visual Studio. XAML is commonly used with C#, but C++ is also a good choice if that’s your preferred language or if your game has high CPU demands.
+XAML is an easy-to-use declarative UI language with convenient features like animations, storyboards, data binding, scalable vector-based graphics, dynamic resizing, and scene graphs. XAML works great for game UI, menus, sprites, and 2D graphics. To make UI layout easy, XAML is compatible with design and development tools like Expression Blend and Microsoft Visual Studio. XAML is commonly used with C#, but C++ is also a good choice if that's your preferred language or if your game has high CPU demands.
 
 <table>
     <colgroup>
@@ -457,7 +457,7 @@ HyperText Markup Language (HTML) is a common UI markup language used for web pag
         <td><a href="https://www.w3.org/TR/html5/">HTML5</a></td>
     </tr>
 </table>
- 
+
 #### Combining presentation technologies
 
 The Microsoft DirectX Graphics Infrastructure (DXGI) provides interop and compatibility across multiple graphics technologies. For high-performance graphics, you can combine XAML and DirectX, using XAML for menus and other simple UI, and DirectX for rendering complex 2D and 3D scenes. DXGI also provides compatibility between Direct2D, Direct3D, DirectWrite, DirectCompute, and the Microsoft Media Foundation.
@@ -476,10 +476,10 @@ The Microsoft DirectX Graphics Infrastructure (DXGI) provides interop and compat
         <td><a href="directx-and-xaml-interop.md">DirectX and XAML interop</a></td>
     </tr>
 </table>
- 
+
 #### C++
 
-C++/CX is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/CX makes it easy to use all of the great gaming features in Windows 10, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/CX creates fast, native code that doesn’t incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/CX with DirectX or XAML, or create a game that uses a combination of both.
+C++/CX is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/CX makes it easy to use all of the great gaming features in Windows 10, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/CX creates fast, native code that doesn't incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/CX with DirectX or XAML, or create a game that uses a combination of both.
 
 <table>
     <colgroup>
@@ -495,7 +495,7 @@ C++/CX is a high-performance, low overhead language that provides the powerful c
         <td><a href="/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
     </tr>
 </table>
- 
+
 #### C#
 
 C# (pronounced "C sharp") is a modern, innovative language that is simple, powerful, type-safe, and object-oriented. C# enables rapid development while retaining the familiarity and expressiveness of C-style languages. Though easy to use, C# has numerous advanced language features like polymorphism, delegates, lambdas, closures, iterator methods, covariance, and Language-Integrated Query (LINQ) expressions. C# is an excellent choice if you are targeting XAML, want to get a quick start developing your game, or have previous C# experience. C# is used primarily with XAML, so if you want to use DirectX, choose C++ instead, or write part of your game as a C++ component that interacts with DirectX. Or, consider [Win2D](https://github.com/Microsoft/Win2D), an immediate mode Direct2D graphics libary for C# and C++.
@@ -510,12 +510,12 @@ C# (pronounced "C sharp") is a modern, innovative language that is simple, power
         <td><a href="/dotnet/articles/csharp/csharp">C# language reference</a></td>
     </tr>
 </table>
- 
+
 #### JavaScript
 
 JavaScript is a dynamic scripting language widely used for modern web and rich client applications.
 
-Windows JavaScript apps can access the powerful features of the Universal Windows Platform in an easy, intuitive way—as methods and properties of object-oriented JavaScript classes. JavaScript is a good choice for your game if you’re coming from a web development environment, are already familiar with JavaScript, or want to use HTML5, CSS, WinJS, or JavaScript libraries. If you’re targeting DirectX or XAML, choose C# or C++/CX instead.
+Windows JavaScript apps can access the powerful features of the Universal Windows Platform in an easy, intuitive way—as methods and properties of object-oriented JavaScript classes. JavaScript is a good choice for your game if you're coming from a web development environment, are already familiar with JavaScript, or want to use HTML5, CSS, WinJS, or JavaScript libraries. If you're targeting DirectX or XAML, choose C# or C++/CX instead.
 
 <table>
     <colgroup>
@@ -530,7 +530,7 @@ Windows JavaScript apps can access the powerful features of the Universal Window
 
 #### Use Windows Runtime components to combine languages
 
-With the Universal Windows Platform, it’s easy to combine components written in different languages. Create Windows Runtime components in C++, C#, or Visual Basic, and then call into them from JavaScript, C#, C++, or Visual Basic. This is a great way to program portions of your game in the language of your choice. Components also let you consume external libraries that are only available in a particular language, as well as use legacy code you’ve already written.
+With the Universal Windows Platform, it's easy to combine components written in different languages. Create Windows Runtime components in C++, C#, or Visual Basic, and then call into them from JavaScript, C#, C++, or Visual Basic. This is a great way to program portions of your game in the language of your choice. Components also let you consume external libraries that are only available in a particular language, as well as use legacy code you've already written.
 
 <table>
     <colgroup>
@@ -639,7 +639,7 @@ Now part of the Microsoft family, PlayFab is a complete back-end platform for li
         <td><a href="https://community.playfab.com/index.html">PlayFab forums</a></td>
     </tr>
 </table>
- 
+
 #### Unity
 
 Unity offers a platform for creating beautiful and engaging 2D, 3D, VR, and AR games and apps. It enables you to realize your creative vision fast and delivers your content to virtually any media or device.
@@ -700,10 +700,10 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
         <td><a href="https://www.youtube.com/playlist?list=PLReL099Y5nRfseAg0k1SJOlpqdcsDs8Em">Using Unity with Visual Studio 2015</a></td>
     </tr>
 </table>
- 
+
 #### Havok
 
-Havok’s modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 and higher officially supports UWP in Visual Studio 2015 on x86, 64-bit, and ARM.
+Havok's modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 and higher officially supports UWP in Visual Studio 2015 on x86, 64-bit, and ARM.
 
 <table>
     <colgroup>
@@ -723,7 +723,7 @@ Havok’s modular suite of tools and technologies help game creators reach new l
         <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
- 
+
 #### MonoGame
 
 MonoGame is an open source, cross-platform game development framework originally based on Microsoft's XNA Framework 4.0. Monogame currently supports Windows, Windows Phone, and Xbox, as well as Linux, macOS, iOS, Android, and several other platforms.
@@ -748,7 +748,7 @@ MonoGame is an open source, cross-platform game development framework originally
     <tr>
         <td>MonoGame 2D UWP game sample</td>
         <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Create a UWP game in MonoGame 2D</a></td>
-    </tr>    
+    </tr>
 </table>
 
 #### Cocos2d
@@ -821,7 +821,7 @@ BabylonJS is a complete JavaScript framework for building 3D games with HTML5, W
     <tr>
         <td>Building a cross-platform WebGL game with BabylonJS</td>
         <td><a href="https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/">Use BabylonJS to develop a cross-platform game</a></td>
-    </tr>    
+    </tr>
 </table>
 
 ### Porting your game
@@ -903,7 +903,7 @@ The following are excellent guides that discuss the Universal Windows Platform a
         <td><a href="/windows/uwp/get-started/universal-application-platform-guide">Guide to UWP apps</a></td>
     </tr>
 </table>
- 
+
 ### Getting started with UWP development
 
 Getting set up and ready to develop a Universal Windows Platform app is quick and easy. The following guides take you through the process step-by-step.
@@ -991,7 +991,7 @@ These are some links to help you move your Windows desktop game to UWP.
         <td><a href="/uwp/win32-and-com/alternatives-to-windows-apis-uwp">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
     </tr>
 </table>
- 
+
 ### Process lifetime management
 
 Process lifetime management, or app lifecyle, describes the various activation states that a Universal Windows Platform app can transition through. Your game can be activated, suspended, resumed, or terminated, and can transition through those states in a variety of ways.
@@ -1007,10 +1007,10 @@ Process lifetime management, or app lifecyle, describes the various activation s
     </tr>
     <tr>
         <td>Using Microsoft Visual Studio to trigger app transitions</td>
-        <td><a href="/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">How to trigger suspend, resume, and background events for UWP apps in Visual Studio</a></td>
+        <td><a href="/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio">How to trigger suspend, resume, and background events for UWP apps in Visual Studio</a></td>
     </tr>
 </table>
- 
+
 ### Designing game UX
 
 The genesis of a great game is inspired design.
@@ -1039,9 +1039,9 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     <tr>
         <td>Targeting multiple device form factors (video)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Designing Games for a Windows Core World</a></td>
-    </tr>   
+    </tr>
 </table>
- 
+
 #### Color guideline and palette
 
 Following a consistent color guideline in your game improves aesthetics, aids navigation, and is a powerful tool to inform the player of menu and HUD functionality. Consistent coloring of game elements like warnings, damage, XP, and achievements can lead to cleaner UI and reduce the need for explicit labels.
@@ -1074,7 +1074,7 @@ The appropriate use of typography enhances many aspects of your game, including 
 
 #### UI map
 
-A UI map is a layout of game navigation and menus expressed as a flowchart. The UI map helps all involved stakeholders understand the game’s interface and navigation paths, and can expose potential roadblocks and dead ends early in the development cycle.
+A UI map is a layout of game navigation and menus expressed as a flowchart. The UI map helps all involved stakeholders understand the game's interface and navigation paths, and can expose potential roadblocks and dead ends early in the development cycle.
 
 <table>
     <colgroup>
@@ -1163,7 +1163,7 @@ Guides and references for DirectX game development.
 
 #### Learning Direct3D 12
 
-Learn what changed in Direct3D 12 and how to start programming using Direct3D 12. 
+Learn what changed in Direct3D 12 and how to start programming using Direct3D 12.
 
 <table>
     <colgroup>
@@ -1195,7 +1195,7 @@ Learn what changed in Direct3D 12 and how to start programming using Direct3D 12
         <td><a href="/windows/desktop/direct3d12/memory-management">Memory management in Direct3D 12</a></td>
     </tr>
 </table>
- 
+
 #### DirectX Tool Kit and libraries
 
 The DirectX Tool Kit, DirectX texture processing library, DirectXMesh geometry processing library, UVAtlas library, and DirectXMath library provide texture, mesh, sprite, and other utility functionality and helper classes for DirectX development. These libraries can help you save development time and effort.
@@ -1331,12 +1331,12 @@ An add-on (in-app product) is a supplementary item that players can purchase in-
         <td><a href="/windows/uwp/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
     </tr>
 </table>
- 
+
 ### Debugging, performance optimization, and monitoring
 
 To optimize performance, take advantage of Game Mode in Windows 10 to provide your gamers with the best possible gaming experience by fully utilizing the capacity of their current hardware.
 
-The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). ProcDump, which is part of [Windows Sysinternals](/sysinternals/), is a command-line utility that monitors CPU spikes and generates dump files during game crashes. 
+The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). ProcDump, which is part of [Windows Sysinternals](/sysinternals/), is a command-line utility that monitors CPU spikes and generates dump files during game crashes.
 
 <table>
     <colgroup>
@@ -1440,12 +1440,12 @@ Build game content that uses the full color capabilities of HDR.
     <tr>
         <td>Create and configure an advanced color using DirectX</td>
         <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DAdvancedColorImages">Direct2D advanced color image rendering sample</a></td>
-    </tr>   
+    </tr>
 </table>
 
 ### Globalization and localization
 
-Develop world-ready games for the Windows platform and learn about the international features built into Microsoft’s top products.
+Develop world-ready games for the Windows platform and learn about the international features built into Microsoft's top products.
 
 <table>
     <colgroup>
@@ -1486,7 +1486,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
         <td><a href="/windows/uwp/publish/manage-account-users">Manage account users</a></td>
-    </tr>   
+    </tr>
     <tr>
         <td>Rating your game (blog post)</td>
         <td><a href="https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/">Single workflow to assign age ratings using IARC system</a></td>
@@ -1531,7 +1531,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     <tr>
         <td>Signing your files digitally using SignTool</td>
         <td><a href="/windows/desktop/SecCrypto/signtool">Sign files and verify signatures in files using SignTool</a></td>
-    </tr>    
+    </tr>
     <tr>
         <td>Uploading and versioning your game</td>
         <td><a href="/windows/uwp/publish/upload-app-packages">Upload app packages</a></td>
@@ -1604,7 +1604,7 @@ After you've finished development and shipped your game, it's not "game over". Y
         <td><a href="https://developer.microsoft.com/store/promote-your-apps">Promote your apps</a></td>
     </tr>
 </table>
- 
+
 ### Visual Studio Application Insights
 
 Visual Studio Application Insights provides performance, telemetry, and usage analytics for your published game. Application Insights helps you detect and solve issues after your game is released, continuously monitor and improve usage, and understand how players are continuing to interact with your game. Application Insights works by adding an SDK into your app, which sends telemetry to the [Azure portal](https://portal.azure.com/).
@@ -1642,7 +1642,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     <tr>
         <td>Learn how to use Windows SDK for Google Analytics (video)</td>
         <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics">Getting started with Windows SDK for Google Analytics</a></td>
-    </tr>    
+    </tr>
     <tr>
         <td>Use Facebook App Installs Ads to promote your game to Facebook users</td>
         <td><a href="https://github.com/Microsoft/winsdkfb">Get Windows SDK for Facebook</a></td>
@@ -1678,7 +1678,7 @@ To update your published game, submit a new app package with a higher version nu
 
 ## Adding Xbox Live to your game
 
-Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game’s audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
+Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game's audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
 
 > [!Note]
 > If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](/gaming/xbox-live/developer-program-overview).
@@ -1740,7 +1740,7 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     <tr>
         <td>Learn how to integrate cross-platform Xbox Live experiences in UWP games (video)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005">Xbox Live Creators Program</a></td>
-    </tr>  
+    </tr>
 </table>
 
 ### For managed partners and developers in the ID@Xbox program
@@ -1773,7 +1773,7 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     <tr>
         <td>Samples</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Code samples for ID@Xbox developers</a></td>
-    </tr>  
+    </tr>
     <tr>
         <td>Overview of Xbox Live game development (video)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Developing with Xbox Live for Windows 10</a></td>

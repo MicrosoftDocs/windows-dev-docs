@@ -19,7 +19,7 @@ There are several reasons for building a Windows Runtime component in C++.
 - To get the performance advantage of C++ in complex or computationally intensive operations.
 - To reuse code that's already written and tested.
 
-When you build a solution that contains a JavaScript or .NET project, and a Windows Runtime component project, the JavaScript project files and the compiled DLL are merged into one package, which you can debug locally in the simulator or remotely on a tethered device. You can also distribute just the component project as an Extension SDK. For more information, see [Creating a Software Development Kit](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
+When you build a solution that contains a JavaScript or .NET project, and a Windows Runtime component project, the JavaScript project files and the compiled DLL are merged into one package, which you can debug locally in the simulator or remotely on a tethered device. You can also distribute just the component project as an Extension SDK. For more information, see [Creating a Software Development Kit](/visualstudio/extensibility/creating-a-software-development-kit).
 
 In general, when you code your C++/CX component, use the regular C++ library and built-in types, except at the abstract binary interface (ABI) boundary where you are passing data to and from code in another .winmd package. There, use Windows Runtime types and the special syntax that C++/CX supports for creating and manipulating those types. In addition, in your C++/CX code, use types such as delegate and event to implement events that can be raised from your component and handled in JavaScript, Visual Basic, C++, or C#. For more information about the C++/CX syntax, see [Visual C++ Language Reference (C++/CX)](/cpp/cppcx/visual-c-language-reference-c-cx).
 
@@ -180,7 +180,7 @@ public:
 };
 ```
 
-But it can’t tell the difference between these:
+But it can't tell the difference between these:
 
 ```cpp
 int GetNumber(int i);

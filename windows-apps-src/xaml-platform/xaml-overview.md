@@ -250,4 +250,4 @@ Once the app actually runs, if any XAML parse errors have gone undetected at des
 > [!NOTE]
 > Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
-Fore more info on debugging a Windows Runtime app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015).
+For more info on debugging a Windows Runtime app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).
