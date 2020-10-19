@@ -48,7 +48,7 @@ Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](ht
 
 There are two API paths for loading images:
 
--   The content pipeline converts images into DDS files used as Direct3D texture resources. See [Using 3-D Assets in Your Game or App](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+-   The content pipeline converts images into DDS files used as Direct3D texture resources. See [Using 3-D Assets in Your Game or App](/visualstudio/designers/using-3-d-assets-in-your-game-or-app).
 -   The [Windows Imaging Component](/windows/desktop/wic/-wic-lh) can be used to load images from a variety of formats, and can be used for Direct2D bitmaps as well as Direct3D texture resources.
 
 You can also use the DDSTextureLoader, and the WICTextureLoader, from the [DirectXTK](https://github.com/Microsoft/DirectXTK) or [DirectXTex](https://github.com/Microsoft/DirectXTex).
@@ -110,12 +110,12 @@ Visit the following topics:
 ## What should I use instead of the .x file format for my models?
 
 
-While we don’t have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://github.com/Microsoft/DirectXTK).
+While we don't have an official replacement for the .x file format, many of the samples utilize the SDKMesh format. Visual Studio also has a [content pipeline](/visualstudio/designers/using-3-d-assets-in-your-game-or-app) that compiles several popular formats into CMO files that can be loaded with code from the Visual Studio 3D starter kit, or loaded using the [DirectXTK](https://github.com/Microsoft/DirectXTK).
 
 ## How do I debug my shaders?
 
 
-Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. See [Debugging DirectX Graphics](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Microsoft Visual Studio includes diagnostic tools for DirectX graphics. See [Debugging DirectX Graphics](/visualstudio/debugger/visual-studio-graphics-diagnostics).
 
 ##  What is the Direct3D 11 equivalent for *x* function?
 
