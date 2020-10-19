@@ -15,6 +15,14 @@ ms.date: 07/24/2020
 
 We've gathered a few tips that we hope will help to make your workflow more efficient and enjoyable. Do you have additional tips to share? File a pull request, using the "Edit" button above, or an issue, using the "Feedback" button below and we may add it to the list.
 
+> [!NOTE]
+> If you are experiencing any performance issues related to developing on Windows 10, such as:
+> - Dev tools (e.g. compilers, linkers, etc.) running slower on Windows than expected.
+> - Runtime platforms (e.g. node, .NET, Python) running slower on Windows than other platforms.
+> - Your apps experiencing file IO/networking/process-creation related perf issues. 
+> 
+> Please let us know by filing an issue in the [Windows Developer (WinDev) Issues repo](https://github.com/microsoft/WinDev)!
+
 ## Use shortcuts to open a project in VS Code or Windows File Explorer
 
 You can launch VS Code from your command line into the project that you have open by using the command: `code .` or open your project directory from the command line with Windows File Explorer using `explorer.exe .` from Windows or your WSL distribution. You may need to add the VS Code executable to your PATH environment variable if this doesn't work by default. Learn more about [Launching from the Command Line](https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line).
