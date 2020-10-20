@@ -31,10 +31,7 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
     > [!NOTE]
     > For new projects, you can alternatively install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension. For more details, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-4. Install the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package:
-
-    1. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
-    2. Select the **Browse** tab, search for the **Microsoft.Toolkit.Win32.UI.SDK** package, and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
+4. On the **Browse** tab of the **NuGet Package Manager** window, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
 
 5. Set the `maxVersionTested` value in your [application manifest](/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
 

@@ -47,13 +47,11 @@ Before getting started, follow these instructions to create a WPF project and co
 
 4. Right-click your WPF project in **Solution Explorer** and choose **Manage NuGet Packages**.
 
-5. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected.
-
-6. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package and install the latest stable version. This package provides everything you need to use the **WindowsXamlHost** control to host a WinRT XAML control, including other related NuGet packages.
+5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package and install the latest stable version. This package provides everything you need to use the **WindowsXamlHost** control to host a WinRT XAML control, including other related NuGet packages.
     > [!NOTE]
     > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) package.
 
-7. Configure your solution to target a specific platform such as x86 or x64. Custom WinRT XAML controls are not supported in projects that target **Any CPU**.
+6. Configure your solution to target a specific platform such as x86 or x64. Custom WinRT XAML controls are not supported in projects that target **Any CPU**.
 
     1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**.
     2. Under **Active solution platform**, select **New**. 
