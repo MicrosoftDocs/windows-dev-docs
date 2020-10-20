@@ -2,15 +2,15 @@
 description: See guidelines and best practices for using geofencing to provide geographically contextual experiences in your app.
 title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, map, location, geofencing
 ms.localizationpriority: medium
 ---
 # Guidelines for geofencing apps
 
-
-
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 **Important APIs**
 
