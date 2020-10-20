@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
 title: Guidelines for using Visits tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 10/20/2020
