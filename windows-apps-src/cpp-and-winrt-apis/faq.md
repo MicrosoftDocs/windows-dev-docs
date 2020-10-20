@@ -181,7 +181,7 @@ At the end of the [Navigation view code example](../design/controls-and-patterns
 
 The header file `winrt/Windows.UI.Xaml.Media.Animation.h` declares a method named **GetCurrentTime**, while `windows.h` (via `winbase.h`) defines a macro named **GetCurrentTime**. When the two collide, the C++ compiler produces "*error C4002: Too many arguments for function-like macro invocation GetCurrentTime*".
 
-Similarly, `winrt/Windows.Globalization.h` declares a method named **TRY**, while `afx.h` defines a macro named **GetCurrentTime**. When these collide, the C++ compiler produces "*error C2334: unexpected token(s) preceding '{'; skipping apparent function body*".
+Similarly, `winrt/Windows.Globalization.h` declares a method named **TRY**, while `afx.h` defines a macro named **TRY**. When these collide, the C++ compiler produces "*error C2334: unexpected token(s) preceding '{'; skipping apparent function body*".
 
 To remedy one or both issues, you can do this.
 
