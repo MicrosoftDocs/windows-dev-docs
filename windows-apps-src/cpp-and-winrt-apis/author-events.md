@@ -142,7 +142,7 @@ from the thermometer's temperature. And now, the app is handling the event that'
 
 If your event must be accessible across an application binary interface (ABI)&mdash;such as between a component and its consuming application&mdash;then your event must use a Windows Runtime delegate type. The example above uses the [**Windows::Foundation::EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler) Windows Runtime delegate type. [**TypedEventHandler\<TSender, TResult\>**](/uwp/api/windows.foundation.eventhandler) is another example of a Windows Runtime delegate type.
 
-The type parameters for those two delegate types have to cross the ABI, so the type parameters must be Windows Runtime types, too. That includes Windows runtime classes, third-party runtime classes, and primitive types such as numbers and strings. The compiler helps you with a "*must be WinRT type*" error if you forget that constraint.
+The type parameters for those two delegate types have to cross the ABI, so the type parameters must be Windows Runtime types, too. That includes Windows runtime classes, third-party runtime classes, and primitive types such as numbers and strings. The compiler helps you with a "*T must be WinRT type*" error if you forget that constraint.
 
 Below is an example in the form of code listings. Begin with the **ThermometerWRC** and **ThermometerCoreApp** projects that you created earlier in this topic, and edit the code in those projects to look like the code in these listings.
 
