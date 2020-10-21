@@ -37,18 +37,18 @@ Instead of a number, a badge can display one of a non-extensible set of status g
 Status | Glyph | XML
 --|--|--
 none | (No badge shown.) | `<badge value="none"/>`
-activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
-alarm | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
-alert | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
-attention | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
-available | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
-away | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
-busy | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
-error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
-newMessage | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
-paused | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
-playing | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
-unavailable | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
+activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `<badge value="activity"/>`
+alarm | :::image type="icon" source="images/badges/badge-alarm.png"::: | `<badge value="alarm"/>`
+alert | :::image type="icon" source="images/badges/badge-alert.png"::: | `<badge value="alert"/>`
+attention | :::image type="icon" source="images/badges/badge-attention.png"::: | `<badge value="attention"/>`
+available | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
+away | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
+busy | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
+error | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
+newMessage | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
+paused | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
+playing | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`
+unavailable | :::image type="icon" source="images/badges/badge-unavailable.png"::: | `<badge value="unavailable"/>`</td>
 
 ## Create a badge
 

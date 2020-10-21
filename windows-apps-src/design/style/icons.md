@@ -1,5 +1,5 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
 title: Icons
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -43,14 +43,14 @@ Icons can save space, but when should you use them?
 
 :::row:::
     :::column:::
-        ![Screenshot that shows the Cut, Copy, Paste, and Save icons.](images/do.svg)
-        ![icons standard image](images/icons/icons-standard.svg)<br>
+        ![First image of a green bar that has a green check mark and the word Do](images/do.svg)
+        ![Screenshot that shows the Cut, Copy, Paste, and Save icons](images/icons/icons-standard.svg)<br>
 
 Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
     :::column-end:::
 	:::column:::
-		![don't](images/dont.svg)
-        ![icons concept image](images/icons/icons-concept.svg)<br>
+		![First image of a red bar that has a red X and the word Don't](images/dont.svg)
+        ![Screenshot that shows the Education, Touch, and Calendar icons](images/icons/icons-concept.svg)<br>
 
 Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
     :::column-end:::
@@ -58,14 +58,14 @@ Use an icon if one already exists for the concept you want to represent. (To see
 
 :::row:::
     :::column:::
-        ![Screenshot of a simple and familiar Shopping cart icon.](images/do.svg)
-        ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
+        ![Second image of a green bar that has a green check mark and the word Do](images/do.svg)
+        ![Screenshot of a simple and familiar Shopping cart icon](images/icons/icon-shopping-cart.svg)<br>
 
 Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
     :::column-end:::
 	:::column:::
-		![Screenshot of a complex and unfamiliar Shopping cart icon.](images/dont.svg)
-        ![icons concept image](images/icons/icon-bad-example.png)<br>
+		![Second image of a red bar that has a red X and the word Don't](images/dont.svg)
+        ![Screenshot of a complex and unfamiliar Shopping cart icon](images/icons/icon-bad-example.png)<br>
 
 Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
     :::column-end:::
