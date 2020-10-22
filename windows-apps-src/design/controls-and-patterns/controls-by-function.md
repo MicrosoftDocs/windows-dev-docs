@@ -713,7 +713,7 @@ Reference: [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [RichTextBl
 
 Design and how-to: [Text controls](text-controls.md), [Text block control guide](text-block.md), [Rich text block control guide](rich-text-block.md)
 
-Sample code: [XAML text sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+Sample code: [XAML text sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### Text box
 A single-line or multi-line plain text field.
@@ -729,7 +729,7 @@ Reference: [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 
 Design and how-to: [Text controls](text-controls.md), [Text box control guide](text-box.md) 
 
-Sample code: [XAML text sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+Sample code: [XAML text sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ## Selection controls
 
