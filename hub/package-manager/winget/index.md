@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers.
-ms.date: 04/28/2020
+ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -101,6 +101,10 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ## Missing tools
 
 If the [community repository](../package/repository.md) does not include your tool or application. Please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
+
+## Customize winget settings
+
+You can configure the **winget** command line experience by modifying the **settings.json** file. For more information, see [https://aka.ms/winget-settings](https://aka.ms/winget-settings). Note that the settings are still in an experimental state and not yet finalized for the preview version of the tool.
 
 ## Open source details
 
