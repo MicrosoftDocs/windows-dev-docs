@@ -201,7 +201,7 @@ The threading aspects of [**DependencyObject**](/uwp/api/Windows.UI.Xaml.Depende
 - [Data binding in depth](../data-binding/data-binding-in-depth.md)
 - [Storyboarded animations](../design/motion/storyboarded-animations.md)
 - [Creating Windows Runtime components](/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML user and custom controls sample](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML user and custom controls sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 
 ## APIs related to dependency properties
 
