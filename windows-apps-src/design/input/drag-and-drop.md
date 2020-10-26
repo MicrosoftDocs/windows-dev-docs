@@ -31,7 +31,7 @@ Here's an overview of what you need to do to enable drag and drop in your app:
 
 ## Enable dragging
 
-To enable dragging on an element, set its [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) property to **true**. This make the element--and the elements it contains, in the case of collections like ListView--draggable.
+To enable dragging on an element, set its [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) property to **true**. This make the element—and the elements it contains, in the case of collections like ListView—draggable.
 
 Be specific about what's draggable. Users won't want to drag everything in your app, only certain items, such as images or text. 
 
@@ -89,6 +89,12 @@ When using touch, dragging a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)
 You can specify a [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) or [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) as a folder. This is particularly useful for TreeView and File Explorer scenarios. To do so, explicitly set the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) property to **True** on that item. 
 
 The system will automatically show the appropriate animations for dropping into a folder versus a non-folder item. Your app code must continue to handle the [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) event on the folder item (as well as on the non-folder item) in order to update the data source and add the dropped item to the target folder.
+
+## Enable drag and drop reordering within ListViews
+
+[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)s support drag-based reordering out of the box, using an API very similar to the **CanDrop** API described in this article. At minimum, you add the **AllowDrop** and **CanReorderItems** properties.
+
+See [**ListViewBase.CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) for more information.
 
 ## Implementing custom drag and drop
 
