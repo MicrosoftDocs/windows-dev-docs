@@ -22,7 +22,9 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for both
 
 ## Install WinUI 3 Preview 2
 
-WinUI 3 Preview 2 includes Visual Studio project templates to help get started building apps with a WinUI-based user interface, and a NuGet package that contains the WinUI libraries. To install WinUI 3 Preview 2, follow these steps.
+WinUI 3 Preview 2 includes Visual Studio project templates to help get started building apps with a WinUI-based user interface, and a NuGet package that contains the WinUI libraries. Ensure your system has a NuGet Package Source enabled for **nuget.org**. For more information, see https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior.
+
+To install WinUI 3 Preview 2, follow these steps.
 
 > [!NOTE]
 > You can also clone and build the WinUI 3 Preview 2 version of the [XAML Controls Gallery](#xaml-controls-gallery-winui-3-preview-2-branch).
