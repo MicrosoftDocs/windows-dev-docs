@@ -77,7 +77,7 @@ If your app allows users to choose the app's color mode, present these options u
 - Dark
 - Windows default
 
-We also recommend adding a hyperlink to the Colors page of the Windows Settings app where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text.
+We also recommend adding a hyperlink to the Colors page of the Windows Settings app where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text and `ms-settings:colors` for the URI.
 
 !["Choose a mode" section](images/appsettings_mode.png)
 
