@@ -42,7 +42,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
     After you install Visual Studio, make sure you enable .NET previews within the program: 
     - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
     
-3. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior.
+3. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
 4. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
 
