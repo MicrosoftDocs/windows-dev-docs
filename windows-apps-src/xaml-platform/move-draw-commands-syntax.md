@@ -178,7 +178,7 @@ Creates an elliptical arc between the current point and the specified end point.
 
 | Syntax |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - or - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - or - <br/>`a ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* |
 
 | Term | Description |
 |------|-------------|
@@ -186,8 +186,8 @@ Creates an elliptical arc between the current point and the specified end point.
 | *rotationAngle* | [**Double**](/dotnet/api/system.double) <br/> The rotation of the ellipse, in degrees. |
 | *isLargeArcFlag* | Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0. |
 | *sweepDirectionFlag* | Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0. |
-| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the arc is drawn.|
- 
+| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the arc is drawn. |
+
 **Close command**
 
 Ends the current figure and creates a line that connects the current point to the starting point of the figure. This command creates a line-join (corner) between the last segment and the first segment of the figure.
