@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
 
-> **Important APIs**: [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **Important APIs**: [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 The controls covered in this article include:
 
@@ -277,7 +277,7 @@ Use an ItemsRepeater if:
 
 ### Examples
 
-The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) and a different custom [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2).
+The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) and a different custom [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate).
 
 ![ItemsRepeater with horizontal bars](images/itemsrepeater-1.png)
 ![ItemsRepeater with vertical bars](images/itemsrepeater-2.png)
