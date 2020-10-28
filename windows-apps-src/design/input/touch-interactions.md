@@ -27,15 +27,15 @@ The Windows app includes a number of different mechanisms for handling touch inp
 
 Touch interactions require three things:
 
--   A touch-sensitive display.
--   The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
--   Movement of the touch contacts (or lack thereof, based on a time threshold).
+- A touch-sensitive display.
+- The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
+- Movement of the touch contacts (or lack thereof, based on a time threshold).
 
 The input data provided by the touch sensor can be:
 
--   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
--   Recognized as an alternative input method, such as mouse or pen.
--   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
+- Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
+- Recognized as an alternative input method, such as mouse or pen.
+- Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
 Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.
 
@@ -84,19 +84,19 @@ Visual feedback is critical when the user relies on touch input for activities t
 
 Targeting is optimized through:
 
--   Touch target sizes
+- Touch target sizes
 
     Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
 
--   Contact geometry
+- Contact geometry
 
     The entire contact area of the finger determines the most likely target object.
 
--   Scrubbing
+- Scrubbing
 
     Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
 
--   Rocking
+- Rocking
 
     Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
 
@@ -104,26 +104,26 @@ Targeting is optimized through:
 
 Design for sloppy interactions by using:
 
--   Snap-points that can make it easier to stop at desired locations when users interact with content.
--   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
+- Snap-points that can make it easier to stop at desired locations when users interact with content.
+- Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
 
 ## Occlusion
 
 Finger and hand occlusion is avoided through:
 
--   Size and positioning of UI
+- Size and positioning of UI
 
     Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
 
     Position menus and pop-ups above the contact area whenever possible.
 
--   Tooltips
+- Tooltips
 
     Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
 
     For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
 
--   Handles for precision
+- Handles for precision
 
     Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
 
@@ -135,23 +135,23 @@ A timed interaction, on the other hand, occurs after a touch interaction. Timed 
 
 Direct manipulation provides a number of benefits over timed interactions:
 
--   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
--   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
--   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
--   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
+- Instant visual feedback during interactions make users feel more engaged, confident, and in control.
+- Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
+- Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
+- Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
 
 In addition, the following are strongly recommended:
 
--   Manipulations should not be distinguished by the number of fingers used.
--   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
--   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+- Manipulations should not be distinguished by the number of fingers used.
+- Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
+- Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
 
    > [!NOTE]
    > An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
 
      
 
--   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
+- Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
 
 
 ## App views
@@ -174,15 +174,15 @@ If you implement your own interaction support, keep in mind that users expect an
 
 To provide customized touch support, you can handle various [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) events. These events are grouped into three levels of abstraction.
 
--   Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped), [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped), [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped), and [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding).
+- Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped), [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped), [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped), and [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding).
 
     You can disable gesture events on specific elements by setting [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled), and [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) to **false**.
 
--   Pointer events such as [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+- Pointer events such as [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
 
     A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
 
--   Manipulation gesture events, such as [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
+- Manipulation gesture events, such as [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
 
     Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
 
@@ -569,19 +569,20 @@ End Sub
 
 ## Routed events
 
-
 All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) or the root [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](/previous-versions/windows/apps/hh758286(v=win.10)).
 
-## Dos and don'ts
+> [!Important]
+> If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
+## Dos and dont's
 
--   Design applications with touch interaction as the primary expected input method.
--   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
--   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
--   Optimize accuracy through the use of snap points and directional "rails".
--   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
--   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
--   Don't use the number of fingers used to distinguish the manipulation whenever possible.
+- Design applications with touch interaction as the primary expected input method.
+- Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
+- Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
+- Optimize accuracy through the use of snap points and directional "rails".
+- Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
+- Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
+- Don't use the number of fingers used to distinguish the manipulation whenever possible.
 
 ## Related articles
 

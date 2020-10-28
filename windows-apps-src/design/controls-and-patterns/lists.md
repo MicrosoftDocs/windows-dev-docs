@@ -69,7 +69,9 @@ Use a list view to:
     - Create a list of messages or message log.
     - Create a contacts list.
     - Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
-    
+
+> [!NOTE]
+> If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### Examples
 
@@ -135,6 +137,9 @@ Use a grid view to:
 - Accommodate a variety of use cases, including the following common ones:
     - Storefront-type user interface (i.e. browsing apps, songs, products)
     - Interactive photo libraries
+
+> [!NOTE]
+> If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### Examples
 
