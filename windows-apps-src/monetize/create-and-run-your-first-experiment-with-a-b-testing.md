@@ -1,5 +1,5 @@
 ---
-Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
+description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
 title: Create and run your first experiment
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.date: 02/08/2017

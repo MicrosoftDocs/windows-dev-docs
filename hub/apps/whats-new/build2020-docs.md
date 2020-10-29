@@ -1,5 +1,5 @@
 ---
-Description: Links to the Windows Developer Docs mentioned during the Build 2020 online event.
+description: Links to the Windows Developer Docs mentioned during the Build 2020 online event.
 title: Documentation related to topics discussed during Build
 ms.topic: article
 ms.date: 05/11/2020

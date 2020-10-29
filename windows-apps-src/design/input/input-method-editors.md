@@ -1,5 +1,5 @@
 ---
-Description: An Input Method Editor (IME) is a software component that enables a user to input text in a language that can't be represented easily on a standard QWERTY keyboard.
+description: An Input Method Editor (IME) is a software component that enables a user to input text in a language that can't be represented easily on a standard QWERTY keyboard.
 title: Input Method Editors (IME)
 label: Input Method Editors (IME)
 template: detail.hbs

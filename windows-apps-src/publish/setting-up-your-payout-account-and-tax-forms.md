@@ -1,5 +1,5 @@
 ---
-Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
+description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020

@@ -1,5 +1,5 @@
 ---
-Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
+description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Accessible text requirements
 label: Accessible text requirements

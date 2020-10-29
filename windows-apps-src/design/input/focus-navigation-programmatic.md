@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a Windows app.
+description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a Windows app.
 title: Programmatic focus navigation with keyboard, gamepad, and accessibility tools
 label: Programmatic focus navigation
 keywords: keyboard, game controller, remote control, navigation, navigation strategy, input, user interaction, accessibility, usability

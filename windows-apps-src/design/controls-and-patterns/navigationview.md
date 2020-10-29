@@ -1,5 +1,5 @@
 ---
-Description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
+description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: Navigation view
 template: detail.hbs
 ms.date: 09/24/2020

@@ -1,5 +1,5 @@
 ---
-Description: This section helps you understand how certain key Windows features are supported in different app platforms and how to get started using the features in your code.
+description: This section helps you understand how certain key Windows features are supported in different app platforms and how to get started using the features in your code.
 title: Features and technologies
 ms.topic: article
 ms.date: 05/08/2019

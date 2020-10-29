@@ -1,5 +1,5 @@
 ---
-Description: Learn how to send a local toast notification from UWP apps and handle the user clicking the toast.
+description: Learn how to send a local toast notification from UWP apps and handle the user clicking the toast.
 title: Send a local toast notification from UWP apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from UWP apps

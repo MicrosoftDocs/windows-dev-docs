@@ -1,5 +1,5 @@
 ---
-Description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
+description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
 Search.Refinement.TopicID: 180
 title: Guidelines for globalization
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+description: Learn how to capture and recognize long-form, continuous dictation speech input.
 title: Enable continuous dictation
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation

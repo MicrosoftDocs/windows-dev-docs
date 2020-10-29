@@ -1,5 +1,5 @@
 ---
-Description: You can help customers discover your app by linking to your app's listing in the Microsoft Store.
+description: You can help customers discover your app by linking to your app's listing in the Microsoft Store.
 title: Link to your app
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ms.date: 10/31/2018

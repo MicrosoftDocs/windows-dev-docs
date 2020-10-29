@@ -1,5 +1,5 @@
 ---
-Description: Selection mode lets users select and take action on a single item or multiple items.
+description: Selection mode lets users select and take action on a single item or multiple items.
 title: Selection mode
 label: Selection mode
 template: detail.hbs

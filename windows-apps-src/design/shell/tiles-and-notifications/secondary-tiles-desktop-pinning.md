@@ -1,5 +1,5 @@
 ---
-Description: Desktop applications can pin secondary tiles thanks to the Desktop Bridge!
+description: Desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Pin secondary tiles from desktop apps
 label: Pin secondary tiles from desktop apps
 template: detail.hbs

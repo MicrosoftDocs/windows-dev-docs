@@ -1,5 +1,5 @@
 ---
-Description: Learn how to define and use custom constraints for speech recognition.
+description: Learn how to define and use custom constraints for speech recognition.
 title: Define custom recognition constraints
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints

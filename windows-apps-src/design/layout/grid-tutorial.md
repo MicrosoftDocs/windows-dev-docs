@@ -1,5 +1,5 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
 title: Use Grid and StackPanel to create a simple app.
 template: detail.hbs
 ms.date: 09/24/2020

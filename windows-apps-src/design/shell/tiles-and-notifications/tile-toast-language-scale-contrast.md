@@ -1,5 +1,5 @@
 ---
-Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
 title: Tile and toast notification support for language, scale, and high contrast
 template: detail.hbs
 ms.date: 10/12/2017

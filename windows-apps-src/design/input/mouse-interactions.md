@@ -1,5 +1,5 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
 title: Mouse interactions
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse

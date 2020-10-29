@@ -1,5 +1,5 @@
 ---
-Description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
+description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
 ms.date: 10/02/2020

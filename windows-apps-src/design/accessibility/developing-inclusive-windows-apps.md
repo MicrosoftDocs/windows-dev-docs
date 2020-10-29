@@ -1,5 +1,5 @@
 ---
-Description: Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+description: Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Developing inclusive Windows 10 apps
 label: Developing inclusive Windows 10 apps

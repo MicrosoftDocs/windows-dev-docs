@@ -1,5 +1,5 @@
-﻿---
-Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
+---
+description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 title: Make your app easier to promote
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018

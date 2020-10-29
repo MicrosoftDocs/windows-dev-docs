@@ -1,5 +1,5 @@
 ---
-Description: Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.
+description: Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.
 title: Engage with your customers
 ms.date: 10/31/2018
 ms.topic: article

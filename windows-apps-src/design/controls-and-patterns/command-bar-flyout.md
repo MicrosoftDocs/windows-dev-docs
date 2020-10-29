@@ -1,5 +1,5 @@
 ---
-Description: Command bar flyouts give users inline access to your app's most common tasks.
+description: Command bar flyouts give users inline access to your app's most common tasks.
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs

@@ -1,5 +1,5 @@
 ---
-Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 title: Drag animations
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop

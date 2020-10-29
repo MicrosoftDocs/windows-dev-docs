@@ -1,5 +1,5 @@
 ---
-Description: Learn how to implement backwards navigation for traversing the user's navigation history within a Windows app.
+description: Learn how to implement backwards navigation for traversing the user's navigation history within a Windows app.
 title: Navigation history and backwards navigation
 template: detail.hbs
 op-migration-status: ready

@@ -1,5 +1,5 @@
 ---
-Description: Discover the different options desktop apps have for sending toast notifications
+description: Discover the different options desktop apps have for sending toast notifications
 title: Toast notifications from desktop apps
 label: Toast notifications from desktop apps
 template: detail.hbs

@@ -1,5 +1,5 @@
 ---
-Description: You can add users, groups, and Azure AD applications to your Partner Center account.
+description: You can add users, groups, and Azure AD applications to your Partner Center account.
 title: Add users, groups, and Azure AD applications to your Partner Center account
 ms.date: 10/31/2018
 ms.topic: article

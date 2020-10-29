@@ -1,5 +1,5 @@
 ---
-Description: Use data template selectors to customize the styles of your items based on the item properties.
+description: Use data template selectors to customize the styles of your items based on the item properties.
 title: Data template selection
 label: Data template selection
 template: detail.hbs

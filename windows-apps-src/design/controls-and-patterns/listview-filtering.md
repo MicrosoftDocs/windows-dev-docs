@@ -1,5 +1,5 @@
 ---
-Description: Filter the items in your collection through user input.
+description: Filter the items in your collection through user input.
 title: Filtering collections
 label: Filtering collections
 template: detail.hbs

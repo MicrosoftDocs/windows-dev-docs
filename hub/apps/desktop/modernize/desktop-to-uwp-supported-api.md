@@ -1,5 +1,5 @@
 ---
-Description: Packaged desktop apps can use a wide range of Windows Runtime APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+description: Packaged desktop apps can use a wide range of Windows Runtime APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 title: Windows Runtime APIs available to a packaged desktop app (Desktop Bridge)
 ms.date: 04/19/2019
 ms.topic: article

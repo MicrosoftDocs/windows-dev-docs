@@ -1,5 +1,5 @@
 ---
-Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
+description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
 ms.date: 09/24/2020

@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows apps.
+description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows apps.
 title: Simulate user input through input injection
 label: Input injection
 template: detail.hbs

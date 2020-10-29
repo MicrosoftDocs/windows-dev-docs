@@ -1,5 +1,5 @@
-﻿---
-Description: The Insights report in Partner Center highlights significant changes about your apps.
+---
+description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Insights report
 ms.date: 10/31/2018
 ms.topic: article

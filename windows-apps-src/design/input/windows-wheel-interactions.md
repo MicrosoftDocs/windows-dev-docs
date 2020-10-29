@@ -1,5 +1,5 @@
 ---
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
 title: Surface Dial interactions
 label: Surface Dial interactions
 template: detail.hbs

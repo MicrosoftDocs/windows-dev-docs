@@ -1,5 +1,5 @@
 ---
-Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
+description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 title: Guidelines for cross-slide
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017

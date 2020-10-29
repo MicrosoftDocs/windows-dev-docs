@@ -1,5 +1,5 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
+description: This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview

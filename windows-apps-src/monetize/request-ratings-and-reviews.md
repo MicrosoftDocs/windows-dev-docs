@@ -1,5 +1,5 @@
 ---
-Description: Learn about several ways you can programmatically enable customers to rate and review your app.
+description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
 ms.date: 01/22/2019
 ms.topic: article

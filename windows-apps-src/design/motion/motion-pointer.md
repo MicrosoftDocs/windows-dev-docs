@@ -1,5 +1,5 @@
 ---
-Description: Use pointer animations to provide users with visual feedback when the user taps on an item.
+description: Use pointer animations to provide users with visual feedback when the user taps on an item.
 title: Pointer click animations
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 ms.date: 09/24/2020

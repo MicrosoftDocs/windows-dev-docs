@@ -1,5 +1,5 @@
 ---
-Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
+description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018

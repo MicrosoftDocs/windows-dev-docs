@@ -1,5 +1,5 @@
 ---
-Description: ItemsRepeater is a light-weight control to generate and present a collection of items.
+description: ItemsRepeater is a light-weight control to generate and present a collection of items.
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs

@@ -1,5 +1,5 @@
 ---
-Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
+description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
 title: Recognize Windows Ink strokes as text and shapes
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text

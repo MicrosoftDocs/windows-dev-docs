@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.
+description: This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.
 title: International fonts
 template: detail.hbs
 ms.date: 09/24/2020

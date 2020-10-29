@@ -1,5 +1,5 @@
 ---
-Description: Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
+description: Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 title: Identify input devices
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices

@@ -1,5 +1,5 @@
 ---
-Description: These guidelines describe how to design effective Help content for your app.
+description: These guidelines describe how to design effective Help content for your app.
 title: Guidelines for app help
 label: Guidelines for app help
 template: detail.hbs

@@ -1,5 +1,5 @@
 ---
-Description: Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
+description: Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
 title: Add an InkToolbar to a Windows app
 label: Add an InkToolbar to a Windows app
 template: detail.hbs

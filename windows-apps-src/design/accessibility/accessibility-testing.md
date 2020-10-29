@@ -1,5 +1,5 @@
 ---
-Description: Testing procedures to follow to ensure that your Windows app is accessible.
+description: Testing procedures to follow to ensure that your Windows app is accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing

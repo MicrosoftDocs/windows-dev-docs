@@ -1,5 +1,5 @@
 ---
-Description: The Pivot control enables touch-swiping between a small set of content sections.
+description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
 ms.date: 09/24/2020

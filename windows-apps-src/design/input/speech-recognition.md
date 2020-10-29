@@ -1,5 +1,5 @@
 ---
-Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 title: Speech recognition
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition

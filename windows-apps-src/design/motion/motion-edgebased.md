@@ -1,5 +1,5 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+description: Edge-based animations show or hide UI that originates from the edge of the screen.
 title: Edge-based UI animations
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI

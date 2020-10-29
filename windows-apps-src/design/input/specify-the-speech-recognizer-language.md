@@ -1,5 +1,5 @@
 ---
-Description: Learn how to select an installed language to use for speech recognition.
+description: Learn how to select an installed language to use for speech recognition.
 title: Specify the speech recognizer language
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language

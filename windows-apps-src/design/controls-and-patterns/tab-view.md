@@ -1,5 +1,5 @@
 ---
-Description: TabView is a flexible way to organize multiple documents in dynamic tabs
+description: TabView is a flexible way to organize multiple documents in dynamic tabs
 title: Tab View
 template: detail.hbs
 ms.date: 09/24/2020

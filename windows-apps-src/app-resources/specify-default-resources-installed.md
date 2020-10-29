@@ -1,5 +1,5 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
 title: Specify the default resources that your app uses
 template: detail.hbs
 ms.date: 11/14/2017

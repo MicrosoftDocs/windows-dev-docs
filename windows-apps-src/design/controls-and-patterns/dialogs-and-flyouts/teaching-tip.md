@@ -1,5 +1,5 @@
 ---
-Description: A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.
+description: A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.
 title: Teaching tips
 template: detail.hbs
 ms.date: 09/24/2020

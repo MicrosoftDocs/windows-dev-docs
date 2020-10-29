@@ -1,5 +1,5 @@
 ---
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 title: Category and subcategory table
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 03/21/2019

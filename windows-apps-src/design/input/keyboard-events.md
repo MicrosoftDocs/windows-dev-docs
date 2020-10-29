@@ -1,5 +1,5 @@
 ---
-Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
+description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: Keyboard events
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events

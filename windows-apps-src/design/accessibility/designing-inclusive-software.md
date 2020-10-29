@@ -1,5 +1,5 @@
 ---
-Description: Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind.
+description: Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Designing inclusive software in Windows 10
 label: Designing inclusive software

@@ -1,5 +1,5 @@
 ---
-Description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
+description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh

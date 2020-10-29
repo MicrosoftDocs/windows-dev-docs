@@ -1,5 +1,5 @@
 ---
-Description: Provides a checklist to help you ensure that your Windows app is accessible.
+description: Provides a checklist to help you ensure that your Windows app is accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Accessibility checklist
 label: Accessibility checklist

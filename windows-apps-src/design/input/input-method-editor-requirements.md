@@ -1,5 +1,5 @@
 ---
-Description: Develop a custom Input Method Editor (IME) to help a user input text in a language that can't be represented easily on a standard QWERTY keyboard.
+description: Develop a custom Input Method Editor (IME) to help a user input text in a language that can't be represented easily on a standard QWERTY keyboard.
 title: Input Method Editor (IME) requirements
 label: Input Method Editor (IME) requirements
 template: detail.hbs

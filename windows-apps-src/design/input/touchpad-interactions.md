@@ -1,5 +1,5 @@
 ---
-Description: Create Windows apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+description: Create Windows apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
 title: Touchpad interactions
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions

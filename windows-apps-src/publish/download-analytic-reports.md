@@ -1,5 +1,5 @@
 ---
-Description: You can download .tsv files that contain your analytics data so that you can review your stats and info offline.
+description: You can download .tsv files that contain your analytics data so that you can review your stats and info offline.
 title: Download analytics reports
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.date: 10/31/2018

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
+description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 title: Manage issues with audio input
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues

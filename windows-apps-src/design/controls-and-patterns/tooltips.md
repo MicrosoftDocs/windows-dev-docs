@@ -1,5 +1,5 @@
 ---
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
+description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
 title: Tooltips
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips

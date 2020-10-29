@@ -1,5 +1,5 @@
 ---
-Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
+description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
 label: Sound
 title: Sound
 template: detail.hbs

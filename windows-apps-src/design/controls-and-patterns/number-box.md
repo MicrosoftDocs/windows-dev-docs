@@ -1,5 +1,5 @@
 ---
-Description: Numberbox is a control that can be used to display and edit numbers.
+description: Numberbox is a control that can be used to display and edit numbers.
 title: Number box
 template: detail.hbs
 ms.date: 09/24/2020

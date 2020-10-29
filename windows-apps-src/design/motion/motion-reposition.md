@@ -1,5 +1,5 @@
 ---
-Description: Use the reposition animation to move an element or elements into a new position.
+description: Use the reposition animation to move an element or elements into a new position.
 title: Reposition animations
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition

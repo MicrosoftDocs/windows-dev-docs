@@ -1,5 +1,5 @@
 ---
-Description: Use the AppWindow class to view different parts of your app in separate windows.
+description: Use the AppWindow class to view different parts of your app in separate windows.
 title: Use the AppWindow class to show secondary windows for an app
 ms.date: 07/19/2019
 ms.topic: article

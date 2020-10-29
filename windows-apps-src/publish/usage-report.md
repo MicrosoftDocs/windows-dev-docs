@@ -1,5 +1,5 @@
-﻿---
-Description: The Usage report in Partner Center lets you see how customers are using your app.
+---
+description: The Usage report in Partner Center lets you see how customers are using your app.
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 09/24/2020

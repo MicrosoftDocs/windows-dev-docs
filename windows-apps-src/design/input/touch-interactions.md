@@ -1,5 +1,5 @@
 ---
-Description: Create Windows apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
+description: Create Windows apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
 title: Touch interactions
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions

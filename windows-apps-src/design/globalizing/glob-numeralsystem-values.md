@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
+description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
 title: NumeralSystem values
 template: detail.hbs
 ms.date: 11/02/2017

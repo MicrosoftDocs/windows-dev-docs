@@ -1,5 +1,5 @@
 ---
-Description: Offer consumable in-app products&\#8212;items that can be purchased, used, and purchased again&\#8212;through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable.
+description: Offer consumable in-app products&\#8212;items that can be purchased, used, and purchased again&\#8212;through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable.
 title: Enable consumable in-app product purchases
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 keywords: uwp, consumable, add-ons, in-app purchases, IAPs, Windows.ApplicationModel.Store

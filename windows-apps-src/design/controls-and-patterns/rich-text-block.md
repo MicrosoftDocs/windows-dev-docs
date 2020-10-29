@@ -1,5 +1,5 @@
 ---
-Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block

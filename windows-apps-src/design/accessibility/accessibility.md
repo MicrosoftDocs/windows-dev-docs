@@ -1,5 +1,5 @@
 ---
-Description: Introduces accessibility concepts that relate to Windows apps.
+description: Introduces accessibility concepts that relate to Windows apps.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility

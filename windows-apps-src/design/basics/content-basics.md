@@ -1,5 +1,5 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your Windows app.
+description: An overview of common page patterns and UI elements for displaying content in your Windows app.
 title: Content design basics for Windows apps
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to design and optimize your Windows apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
+description: Learn how to design and optimize your Windows apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
 title: Keyboard interactions
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions

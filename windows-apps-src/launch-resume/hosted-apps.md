@@ -1,5 +1,5 @@
 ---
-Description: Learn how to build a hosted app that inherits the executable, entry point and runtime attributes of a host app.
+description: Learn how to build a hosted app that inherits the executable, entry point and runtime attributes of a host app.
 title: Create hosted apps
 ms.date: 04/23/2020
 ms.topic: article

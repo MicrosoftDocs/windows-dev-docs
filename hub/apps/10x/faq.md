@@ -1,5 +1,5 @@
 ---
-Description: Learn the answers to some basic developer questions about Windows 10X.
+description: Learn the answers to some basic developer questions about Windows 10X.
 title: Windows 10X Developer FAQ
 ms.topic: article
 ms.date: 06/02/2020

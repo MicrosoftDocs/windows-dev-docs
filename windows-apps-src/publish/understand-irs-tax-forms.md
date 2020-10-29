@@ -1,5 +1,5 @@
 ---
-Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
+description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
 ms.date: 10/31/2018
 ms.topic: article

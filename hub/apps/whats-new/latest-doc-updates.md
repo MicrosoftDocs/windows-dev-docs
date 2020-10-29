@@ -1,5 +1,5 @@
 ---
-Description: Discover the latest additions to the Windows developer docs.
+description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
 ms.date: 10/8/2020

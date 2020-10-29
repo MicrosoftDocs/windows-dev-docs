@@ -1,5 +1,5 @@
-﻿---
-Description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
+---
+description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: Use targeted offers to maximize engagement and conversions
 ms.date: 10/31/2018
 ms.topic: article

@@ -1,5 +1,5 @@
 ---
-Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 title: Set speech recognition timeouts
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts

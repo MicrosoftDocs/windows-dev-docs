@@ -1,5 +1,5 @@
 ---
-Description: Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+description: Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
 title: Navigation basics for Windows apps
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics

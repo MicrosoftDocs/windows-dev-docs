@@ -1,6 +1,6 @@
 ---
 title: Gaze interactions
-Description: Learn how to design and optimize your Windows apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
+description: Learn how to design and optimize your Windows apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
 label: Gaze interactions
 template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability

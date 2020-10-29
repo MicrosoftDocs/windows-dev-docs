@@ -1,5 +1,5 @@
 ---
-Description: A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.
+description: A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.
 title: Calendar view
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view

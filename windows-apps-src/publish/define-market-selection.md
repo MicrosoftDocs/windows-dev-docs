@@ -1,5 +1,5 @@
-﻿---
-Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
+---
+description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018

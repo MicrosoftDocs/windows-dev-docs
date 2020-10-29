@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
+description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
 title: Targeting
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting

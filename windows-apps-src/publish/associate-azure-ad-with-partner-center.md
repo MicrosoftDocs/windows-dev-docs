@@ -1,5 +1,5 @@
-﻿---
-Description: In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
+---
+description: In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
 title: Associate Azure Active Directory with your Partner Center account
 ms.date: 10/31/2018
 ms.topic: article

@@ -1,5 +1,5 @@
 ---
-Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
+description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
 title: Semantic zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom

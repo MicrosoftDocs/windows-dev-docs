@@ -1,5 +1,5 @@
 ---
-Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
+description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
 title: Send a local toast notification from Win32 C++ WRL apps
 label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs

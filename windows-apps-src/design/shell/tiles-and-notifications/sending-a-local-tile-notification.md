@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: Send a local tile notification
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs

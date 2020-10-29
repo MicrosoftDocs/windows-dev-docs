@@ -1,5 +1,5 @@
 ---
-Description: You can define a attached layouts for use with containers such as the ItemsRepeater control.
+description: You can define a attached layouts for use with containers such as the ItemsRepeater control.
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs

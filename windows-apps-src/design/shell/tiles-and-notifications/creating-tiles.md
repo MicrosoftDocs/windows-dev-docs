@@ -1,5 +1,5 @@
 ---
-Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Windows app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
+description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Windows app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
 title: Tiles for Windows apps
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles

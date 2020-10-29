@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well in Mixed Reality.
+description: Design your app so that it looks good and functions well in Mixed Reality.
 title: Designing for Mixed Reality
 ms.assetid: 
 label: Designing for Mixed Reality

@@ -1,5 +1,5 @@
 ---
-Description: Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.
+description: Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Accessibility in the Store
 label: Accessibility in the Store

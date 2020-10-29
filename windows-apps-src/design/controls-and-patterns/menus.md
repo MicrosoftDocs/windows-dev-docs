@@ -1,5 +1,5 @@
 ---
-Description: Menus and context menus display a list of commands or options when the user requests them.
+description: Menus and context menus display a list of commands or options when the user requests them.
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs

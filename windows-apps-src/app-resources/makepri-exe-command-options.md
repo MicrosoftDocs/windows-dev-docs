@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
 title: MakePri.exe command-line options
 template: detail.hbs
 ms.date: 04/10/2018

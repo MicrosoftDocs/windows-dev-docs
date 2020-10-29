@@ -1,5 +1,5 @@
 ---
-Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
+description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Expose basic accessibility information
 label: Expose basic accessibility information

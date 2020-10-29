@@ -1,5 +1,5 @@
-﻿---
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
+---
+description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
 title: Create platform-specific Store listings
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.date: 09/24/2020

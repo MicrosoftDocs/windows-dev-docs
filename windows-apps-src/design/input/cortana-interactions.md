@@ -1,5 +1,5 @@
 ---
-Description: Extend the basic functionality of Cortana with voice commands that activate a Windows app and execute a single action.
+description: Extend the basic functionality of Cortana with voice commands that activate a Windows app and execute a single action.
 title: Cortana interactions
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana

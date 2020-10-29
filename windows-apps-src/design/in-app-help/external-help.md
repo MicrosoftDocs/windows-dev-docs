@@ -1,5 +1,5 @@
 ---
-Description: Design external help pages for detailed instructions and advice about your app.
+description: Design external help pages for detailed instructions and advice about your app.
 title: Guidelines for designing external help pages
 label: External help
 template: detail.hbs

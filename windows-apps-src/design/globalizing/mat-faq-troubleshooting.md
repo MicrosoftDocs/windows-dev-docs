@@ -1,5 +1,5 @@
 ---
-Description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
 title: Multilingual App Toolkit FAQ & troubleshooting
 template: detail.hbs
 ms.date: 11/13/2017

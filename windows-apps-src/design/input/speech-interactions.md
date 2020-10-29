@@ -1,5 +1,5 @@
 ---
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
 title: Speech interactions
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions

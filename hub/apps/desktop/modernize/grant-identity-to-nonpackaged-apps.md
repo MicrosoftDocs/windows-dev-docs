@@ -1,5 +1,5 @@
 ---
-Description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows 10 features in those apps.
+description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows 10 features in those apps.
 title: Grant identity to non-packaged desktop apps
 ms.date: 04/23/2020
 ms.topic: article

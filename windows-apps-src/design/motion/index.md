@@ -1,5 +1,5 @@
 ---
-Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
+description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
 title: Motion for Windows apps
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion

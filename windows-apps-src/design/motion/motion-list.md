@@ -1,5 +1,5 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
 title: Add and delete animations
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations

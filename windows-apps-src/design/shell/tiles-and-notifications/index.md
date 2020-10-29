@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 title: Tiles, badges, and notifications
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications

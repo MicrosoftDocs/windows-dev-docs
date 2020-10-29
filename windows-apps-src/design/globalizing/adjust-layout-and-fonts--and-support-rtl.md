@@ -1,5 +1,5 @@
 ---
-Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
+description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
 title: Adjust layout and fonts, and support RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL

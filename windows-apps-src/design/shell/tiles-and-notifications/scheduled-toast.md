@@ -1,5 +1,5 @@
 ---
-Description: Learn how to schedule a local toast notification to appear at a later time.
+description: Learn how to schedule a local toast notification to appear at a later time.
 title: Schedule a toast notification
 label: Schedule a toast notification
 template: detail.hbs

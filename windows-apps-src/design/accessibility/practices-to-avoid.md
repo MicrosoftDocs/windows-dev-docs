@@ -1,5 +1,5 @@
 ---
-Description: Lists the practices to avoid if you want to create an accessible Windows app.
+description: Lists the practices to avoid if you want to create an accessible Windows app.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Accessibility practices to avoid
 label: Accessibility practices to avoid

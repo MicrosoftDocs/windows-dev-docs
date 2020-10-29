@@ -1,5 +1,5 @@
 ---
-Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
+description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
 Search.SourceType: Video
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce

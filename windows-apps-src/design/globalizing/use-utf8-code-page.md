@@ -1,5 +1,5 @@
 ---
-Description: Use UTF-8 character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
+description: Use UTF-8 character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 title: Use the Windows UTF-8 code page
 template: detail.hbs
 ms.date: 06/12/2019

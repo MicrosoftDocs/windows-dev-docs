@@ -1,5 +1,5 @@
 ---
-Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
+description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh

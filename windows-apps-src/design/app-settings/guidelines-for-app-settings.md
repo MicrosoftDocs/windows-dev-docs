@@ -1,5 +1,5 @@
 ---
-Description: This article describes best practices for creating and displaying app settings.
+description: This article describes best practices for creating and displaying app settings.
 title: Guidelines for app settings
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines

@@ -1,5 +1,5 @@
-﻿---
-Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
+---
+description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
 ms.date: 10/31/2018
 ms.topic: article

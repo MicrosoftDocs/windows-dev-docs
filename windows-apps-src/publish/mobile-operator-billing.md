@@ -1,5 +1,5 @@
 ---
-Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
+description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 05/29/2020

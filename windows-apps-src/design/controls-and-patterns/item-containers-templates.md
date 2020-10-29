@@ -1,5 +1,5 @@
 ---
-Description: Use templates to modify the look of items in ListView or GridView controls.
+description: Use templates to modify the look of items in ListView or GridView controls.
 title: Item containers and templates
 label: Item containers and templates
 template: detail.hbs

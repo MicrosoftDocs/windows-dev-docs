@@ -1,5 +1,5 @@
 ---
-Description: 
+description: "Learn more about: Screen readers and hardware system buttons"
 title: Screen readers and hardware button events
 label: Screen readers and hardware button events
 template: detail.hbs

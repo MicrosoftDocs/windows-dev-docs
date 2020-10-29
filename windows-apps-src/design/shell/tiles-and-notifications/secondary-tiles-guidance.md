@@ -1,5 +1,5 @@
 ---
-Description: Learn about when and where you should use secondary tiles in your Windows app.
+description: Learn about when and where you should use secondary tiles in your Windows app.
 title: Secondary tiles design guidance
 label: Secondary tiles
 template: detail.hbs

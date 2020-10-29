@@ -1,5 +1,5 @@
-﻿---
-Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+---
+description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
 ms.date: 10/31/2018
 ms.topic: article

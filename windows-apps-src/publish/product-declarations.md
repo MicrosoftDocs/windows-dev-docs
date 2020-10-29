@@ -1,5 +1,5 @@
-﻿---
-Description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
+---
+description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
 title: Product declarations
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018

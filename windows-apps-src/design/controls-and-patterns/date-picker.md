@@ -1,5 +1,5 @@
 ---
-Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
+description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 title: Date picker
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true

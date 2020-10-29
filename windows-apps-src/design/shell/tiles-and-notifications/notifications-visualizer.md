@@ -1,5 +1,5 @@
 ---
-Description: Notifications Visualizer is a new Windows app in the Store that helps developers design adaptive live tiles for Windows 10.
+description: Notifications Visualizer is a new Windows app in the Store that helps developers design adaptive live tiles for Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs

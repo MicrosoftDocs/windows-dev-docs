@@ -1,5 +1,5 @@
 ---
-Description: You can create Store listings for your apps without using Partner Center by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
+description: You can create Store listings for your apps without using Partner Center by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
 title: Import and export Store listings
 ms.date: 10/31/2018
 ms.topic: article
