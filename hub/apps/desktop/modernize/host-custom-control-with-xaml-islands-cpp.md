@@ -43,7 +43,13 @@ To host a custom UWP XAML control, you'll create the following projects and comp
     * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (latest stable version). This package defines the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class, which you will use later in this walkthrough.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
-5. Build the solution and confirm that it builds successfully.
+5. Add a reference to the Windows Runtime metadata:
+   1. In **Solution Explorer**, right-click on your project **References** node and select **Add Reference**.
+   2. Click the **Browse** button at the bottom of the page and navigate to the UnionMetadata folder in your SDK install path. By default the SDK will be installed to `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`. 
+   3. Then, select the folder named after the Windows version you are targetting (e.g. 10.0.18362.0) and inside of that folder pick the `Windows.winmd` file.
+   4. Click **OK** to close the **Add Reference** dialog.
+
+6. Build the solution and confirm that it builds successfully.
 
 ## Create a UWP app project
 
