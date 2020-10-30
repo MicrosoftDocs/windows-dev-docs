@@ -46,7 +46,11 @@ To create a useful implementation a developer must have prior knowledge of the G
 
 For convenience the Bluetooth SIG maintains a [list of public profiles](https://www.bluetooth.com/specifications/adopted-specifications#gattspec) available.
 
-## Query for nearby devices
+## Examples
+
+For a complete sample, see [Bluetooth Low Energy sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE).
+
+### Query for nearby devices
 
 There are two main methods to query for nearby devices:
 
@@ -83,7 +87,7 @@ deviceWatcher.Start();
 
 Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
-## Connecting to the device
+### Connecting to the device
 
 Once a desired device is discovered, use the [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question:
 
@@ -112,7 +116,7 @@ If the app needs to access the device again, simply re-creating the device objec
 >
 > Currently, you can't cancel the connection process.
 
-## Enumerating supported services and characteristics
+### Enumerating supported services and characteristics
 
 Now that you have a BluetoothLEDevice object, the next step is to discover what data the device exposes. The first step to do this is to query for services:
 
@@ -140,7 +144,7 @@ if (result.Status == GattCommunicationStatus.Success)
 
 The OS returns a ReadOnly list of GattCharacteristic objects that you can then perform operations on.
 
-## Perform Read/Write operations on a characteristic
+### Perform Read/Write operations on a characteristic
 
 The characteristic is the fundamental unit of GATT based communication. It contains a value that represents a distinct piece of data on the device. For example, the battery level characteristic has a value that represents the battery level of the device.
 
@@ -192,7 +196,7 @@ if (result == GattCommunicationStatus.Success)
 
 > **Tip**: [DataReader](/uwp/api/windows.storage.streams.datareader) and [DataWriter](/uwp/api/windows.storage.streams.datawriter) are indispensible when working with the raw buffers you get from many of the Bluetooth APIs.
 
-## Subscribing for notifications
+### Subscribing for notifications
 
 Make sure the characteristic supports either Indicate or Notify (check the characteristic properties to make sure).
 
@@ -229,3 +233,4 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
     // Parse the data however required.
 }
 ```
+
