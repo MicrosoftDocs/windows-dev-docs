@@ -56,7 +56,7 @@ var content = new ToastContentBuilder()
 var notif = new ToastNotification(content.GetXml());
 
 // And show it!
-ToastNotificationManager.CreateToastNotifier().Show();
+ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 ## Step 4: Handling activation
