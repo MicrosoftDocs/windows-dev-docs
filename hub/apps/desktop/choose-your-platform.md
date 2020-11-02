@@ -128,4 +128,4 @@ Use Xamarin to build cross-platform applications for Windows 10 that can also ru
 
 ### Uno Platform
 
-The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).
+The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, macOS, Linux and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).
