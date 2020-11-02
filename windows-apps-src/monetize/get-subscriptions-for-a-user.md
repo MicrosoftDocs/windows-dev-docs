@@ -60,7 +60,7 @@ The following example demonstrates how to use this method to get the subscriptio
 POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
-Host: https://purchase.mp.microsoft.com
+Host: purchase.mp.microsoft.com
 
 {
   "b2bKey":  "eyJ0eXAiOiJ..."
