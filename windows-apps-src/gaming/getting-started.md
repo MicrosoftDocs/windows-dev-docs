@@ -31,7 +31,7 @@ If you plan to use a game engine and other middleware, see [Bridges, game engine
 
 ### Step 2: Prepare your hardware for development
 
-If you're doing development for the first time, you'll need to enable Developer Mode on your device. For more information, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+If you're doing development for the first time, you'll need to enable Developer Mode on your device. For more information, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
 For those who are planning to develop an Xbox game using your retail Xbox console, you'll also need to activate and enable Developer Mode on it. For more information, see [Xbox One Developer Mode activation](../xbox-apps/devkit-activation.md) and [Getting started with UWP app development on Xbox](../xbox-apps/getting-started.md). 
 

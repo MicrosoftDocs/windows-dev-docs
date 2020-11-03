@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Starting in Windows 10, Version 1511, additional developer features are available for the mobile device family. These features are available only when Developer mode is enabled on the device.
 
-For info about how to enable Developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+For info about how to enable Developer mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
 ![Screenshot of the Device discovery and Device Portal settings.](images/device-portal/mob-dev-mode-options.png)
 

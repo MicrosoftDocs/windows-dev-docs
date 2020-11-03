@@ -46,10 +46,10 @@ namespace winrt::SimpleMathComponent::implementation
 }
 ```
 
-For more detailed steps about creating a C++/WinRT component and generating a .winmd file, see [Windows Runtime components with C++/WinRT](https://docs.microsoft.com/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt).
+For more detailed steps about creating a C++/WinRT component and generating a .winmd file, see [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md).
 
 > [!NOTE]
-> If you are implementing [IInspectable::GetRuntimeClassName](https://docs.microsoft.com/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) in your component, it **must** return a valid WinRT class name. Because C#/WinRT uses the class name string for interop, an incorrect runtime class name will raise an **InvalidCastException**.
+> If you are implementing [IInspectable::GetRuntimeClassName](/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) in your component, it **must** return a valid WinRT class name. Because C#/WinRT uses the class name string for interop, an incorrect runtime class name will raise an **InvalidCastException**.
 
 ## Add a projection project to the component solution
 
