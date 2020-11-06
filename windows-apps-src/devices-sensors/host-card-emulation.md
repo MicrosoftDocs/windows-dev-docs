@@ -17,7 +17,7 @@ Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure ele
 
 ## What you need to develop an HCE app
 
-To develop an HCE-based card emulation app for Windows 10 Mobile, you will need to get your development environment setup. You can get set up by installing Microsoft Visual Studio 2015, which includes the Windows developer tools and the Windows 10 Mobile emulator with NFC emulation support. For more information about getting setup, see, [Get set up](../get-started/get-set-up.md)
+To develop an HCE-based card emulation app for Windows 10 Mobile, you will need to get your development environment setup. You can get set up by installing Microsoft Visual Studio 2015, which includes the Windows developer tools and the Windows 10 Mobile emulator with NFC emulation support. For more information about getting setup, see, [Get set up](/windows/apps/get-started/get-set-up)
 
 Optionally, if you want to test with a real Windows 10 Mobile device instead of the included Windows 10 Mobile emulator, you will also need the following items.
 

@@ -847,7 +847,7 @@ list of loaded modules.
 -   [App contracts and extensions (Windows
     Store apps)](/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [How to sideload apps on Windows 10](../get-started/enable-your-device-for-development.md)
+-   [How to sideload apps on Windows 10](/windows/apps/get-started/enable-your-device-for-development)
 
 -   [Deploying UWP apps to
     businesses](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)

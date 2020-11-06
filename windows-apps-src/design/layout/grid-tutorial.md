@@ -15,7 +15,7 @@ Use XAML to create the layout for a simple weather app using the **Grid** and **
 > **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## Prerequisites
-- Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Click here to learn how to get set up with Visual Studio](../../get-started/get-set-up.md).
+- Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Click here to learn how to get set up with Visual Studio](/windows/apps/get-started/get-set-up).
 - Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](../../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## Step 1: Create a blank app

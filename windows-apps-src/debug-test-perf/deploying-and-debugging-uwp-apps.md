@@ -87,7 +87,7 @@ To deploy to a pre-Creators Update remote PC, the target PC must have the Visual
 
 To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
-To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](../get-started/enable-your-device-for-development.md). After that, you can deploy from your development machine.
+To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](/windows/apps/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
 For more information, see the [Visual studio Download Center](https://visualstudio.microsoft.com/downloads/) page.
 

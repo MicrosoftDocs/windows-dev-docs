@@ -52,7 +52,7 @@ Learn more about C++ here.
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
 * [Tutorial: Create a user interface](../design/basics/xaml-basics-ui.md)
-* [Windows apps on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows)
+* [Windows apps on Microsoft Learn](/learn/browse/?products=windows)
 
 ## See Also
 
