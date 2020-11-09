@@ -48,6 +48,7 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
 
     - [x64 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
     - [x86 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
+    - You must also enable "Use previews of the .NET Core SDK (requires restart) option in Visual Studio. It's under Options -> Environment -> Preview Features.
 
 5. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
