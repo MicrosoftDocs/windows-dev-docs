@@ -1,8 +1,8 @@
 ﻿---
 title: Launch the Windows Settings app
-description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 04/19/2019
+ms.date: 11/02/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -10,6 +10,7 @@ ms.custom: 19H1
 dev_langs:
   - csharp
   - cppwinrt
+ms.custom: contperfq2
 ---
 
 # Launch the Windows Settings app
@@ -59,9 +60,31 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 ## ms-settings: URI scheme reference
 
-Use the following URIs to open various pages of the Settings app.
+Based on the following categories, use these URIs to open various pages of the Settings app:
 
-> Note that whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
+* [Accounts](###Accounts)
+* [Apps](###Apps)
+* [Cortana](###Cortana)
+* [Devices](###Devices)
+* [Ease of access](###Ease-of-access)
+* [Extras](###Extras)
+* [Gaming](###Gaming)
+* [Home page](###Home-page)
+* [Mixed reality](###Mixed-reality)
+* [Network and internet](###Network-and-internet)
+* [Personalization](###Personalization)
+* [Phone](###Phone)
+* [Privacy](###Privacy)
+* [Surface Hub](###Surface-Hub)
+* [System](###System)
+* [Time and language](###Time-and-language)
+* [Update and security](###Update-and-security)
+* [User accounts](###User-accounts)
+
+
+
+> [!NOTE]
+> Whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
 
 <!-- TODO: 
 * ms-settings:controlcenter
@@ -73,7 +96,7 @@ Use the following URIs to open various pages of the Settings app.
 * ms-settings:storagecleanup
 * ms-settings:update-security -->
 
-## Accounts
+### Accounts
 
 |Settings page| URI |
 |-------------|-----|
@@ -86,7 +109,7 @@ Use the following URIs to open various pages of the Settings app.
 | Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | Your info | ms-settings:yourinfo |
 
-## Apps
+### Apps
 
 |Settings page| URI |
 |-------------|-----|
@@ -99,7 +122,7 @@ Use the following URIs to open various pages of the Settings app.
 | Startup apps | ms-settings:startupapps |
 | Video playback | ms-settings:videoplayback |
 
-## Cortana
+### Cortana
 
 |Settings page| URI |
 |-------------|-----|
@@ -112,7 +135,7 @@ Use the following URIs to open various pages of the Settings app.
 > [!NOTE] 
 > This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
 
-## Devices
+### Devices
 
 |Settings page| URI |
 |-------------|-----|
@@ -129,7 +152,7 @@ Use the following URIs to open various pages of the Settings app.
 | Wheel | ms-settings:wheel (only available if Dial is paired) |
 | Your phone | ms-settings:mobile-devices  |
 
-## Ease of Access
+### Ease of access
 
 |Settings page| URI |
 |-------------|-----|
@@ -148,13 +171,13 @@ Use the following URIs to open various pages of the Settings app.
 | Other options | ms-settings:easeofaccess-otheroptions (**Deprecated in Windows 10, version 1809 and later**) |
 | Speech | ms-settings:easeofaccess-speechrecognition |
 
-## Extras
+### Extras
 
 |Settings page| URI |
 |-------------|-----|
 | Extras | ms-settings:extras (only available if "settings apps" are installed, for example, by a 3rd party) |
 
-## Gaming
+### Gaming
 
 |Settings page| URI |
 |-------------|-----|
@@ -166,13 +189,13 @@ Use the following URIs to open various pages of the Settings app.
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 | Xbox Networking | ms-settings:gaming-xboxnetworking |
 
-## Home page
+### Home page
 
 |Settings page| URI |
 |-------------|-----|
 | Settings home page | ms-settings: |
 
-## Mixed reality
+### Mixed reality
 
 > [!NOTE]
 > These settings are only available if the Mixed Reality Portal app is installed.
@@ -184,7 +207,7 @@ Use the following URIs to open various pages of the Settings app.
 | Headset display | ms-settings:holographic-headset |
 | Uninstall | ms-settings:holographic-management |
 
-## Network & internet
+### Network and internet
 
 |Settings page| URI |
 |-------------|-----|
@@ -203,7 +226,7 @@ Use the following URIs to open various pages of the Settings app.
 | Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
 | Wi-Fi Calling | ms-settings:network-wificalling (only available if Wi-Fi calling is enabled) |
 
-## Personalization
+### Personalization
 
 |Settings page| URI |
 |-------------|-----|
@@ -218,13 +241,13 @@ Use the following URIs to open various pages of the Settings app.
 | Taskbar | ms-settings:taskbar |
 | Themes | ms-settings:themes |
 
-## Phone
+### Phone
 
 |Settings page| URI |
 |-------------|-----|
 | Your phone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Your Phone** app) |
 
-## Privacy
+### Privacy
 
 |Settings page| URI |
 |-------------|-----|
@@ -260,7 +283,7 @@ Use the following URIs to open various pages of the Settings app.
 | Videos | ms-settings:privacy-videos |
 | Voice activation | ms-settings:privacy-voiceactivation |
 
-## Surface Hub
+### Surface Hub
 
 |Settings page| URI |
 |-------------|-----|
@@ -270,7 +293,7 @@ Use the following URIs to open various pages of the Settings app.
 | Team device management | ms-settings:surfacehub-devicemanagenent |
 | Welcome screen | ms-settings:surfacehub-welcome |
 
-## System
+### System
 
 |Settings page| URI |
 |-------------|-----|
@@ -305,7 +328,7 @@ Use the following URIs to open various pages of the Settings app.
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
 
-## Time and language
+### Time and language
 
 |Settings page| URI |
 |-------------|-----|
@@ -317,7 +340,7 @@ Use the following URIs to open various pages of the Settings app.
 | Speech | ms-settings:speech |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
 
-## Update & security
+### Update and security
 
 |Settings page| URI |
 |-------------|-----|
@@ -335,7 +358,7 @@ Use the following URIs to open various pages of the Settings app.
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
 | Windows Update-View update history | ms-settings:windowsupdate-history |
 
-## User Accounts
+### User accounts
 
 |Settings page| URI |
 |-------------|-----|
