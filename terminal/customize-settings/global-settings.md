@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -72,10 +72,36 @@ ___
 
 ## Tab settings
 
-### Use tab switcher experience
+### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
 
 :::row:::
 :::column span="":::
+When this is set to `true` or `"mru"`, the `nextTab` and `prevTab` commands will use the tab switcher UI, with most recently used ordering. When set to `"inOrder"`, these actions will switch tabs in their current order in the tab bar. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
+
+The tab switcher will open on the initial press of the actions for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` actions can be used to cycle through the switcher UI.
+
+To disable the tab switcher, you can set this to `false` or `"disabled"`.
+
+**Property name:** `tabSwitcherMode`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`, `"mru"`, `"inOrder"`, `"disabled"`
+
+**Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab switcher](./../images/tab-switcher.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Enable tab switcher
+
 When this is set to `true`, the `nextTab` and `prevTab` commands will use the tab switcher UI. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
 
 The tab switcher will open on the initial press of the actions for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` actions can be used to cycle through the switcher UI.
@@ -88,12 +114,8 @@ The tab switcher will open on the initial press of the actions for `nextTab` and
 
 **Default value:** `true`
 
-:::column-end:::
-:::column span="":::
-![Windows Terminal tab switcher](./../images/tab-switcher.gif)
-
-:::column-end:::
-:::row-end:::
+> [!CAUTION]
+> The `useTabSwitcher` setting is no longer available in versions 1.5 and later. It is recommended that you use the `tabSwitcherMode` setting instead.
 
 ### Always show tabs
 
@@ -364,7 +386,7 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 **Default value:** `"system"`
 
 > [!CAUTION]
-> The `rowsToScroll` setting is no longer available versions 1.2 and later. Windows Terminal will use the value configured in the system Mouse settings panel.
+> The `rowsToScroll` setting is no longer available in versions 1.2 and later. Windows Terminal will use the value configured in the system Mouse settings panel.
 
 <br />
 

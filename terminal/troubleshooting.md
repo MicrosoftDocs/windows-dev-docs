@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 09/22/2020
+ms.date: 11/11/2020
 ms.topic: overview
 ms.localizationpriority: high
 ---
