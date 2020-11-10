@@ -200,7 +200,7 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 ### Launch mode
 
-This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with the focus mode enabled. Similar, setting this to `maximizedFocus` will result in launching the terminal in a maximized window w ith the focus mode enabled.
+This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with [focus mode](./actions#toggle-focus-mode) enabled. Similarly, setting this to `maximizedFocus` will result in launching the terminal in a maximized window with focus mode enabled.
 
 **Property name:** `launchMode`
 
@@ -211,11 +211,11 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 **Default value:** `"default"`
 
 > [!IMPORTANT]
-> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
+> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 
-This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), the window will be maximized on the monitor specified by those coordinates.
+This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -227,7 +227,7 @@ This sets the pixel position of the top left corner of the window upon first loa
 
 ### Columns on first launch
 
-This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
+This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, this property is ignored.
 
 **Property name:** `initialCols`
 
@@ -239,7 +239,7 @@ This is the number of character columns displayed in the window upon first load.
 
 ### Rows on first launch
 
-This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
+This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, this property is ignored.
 
 **Property name:** `initialRows`
 

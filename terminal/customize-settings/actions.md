@@ -445,11 +445,9 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
-### Open tab renamer
+### Open tab rename text box ([Preview](https://aka.ms/terminal-preview))
 
-This command changes the tab title into a text field that lets you edit the title for the current tab.
-
-Clearing the text field will reset the tab title back to the default for the current shell instance.
+This command changes the tab title into a text field that lets you edit the title for the current tab. Clearing the text field will reset the tab title back to the default for the current shell instance.
 
 **Command name:** `openTabRenamer`
 
@@ -460,6 +458,9 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "openTabRenamer", "keys": "ctrl+alt+a" }
 ```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Change tab color
 
@@ -633,12 +634,12 @@ This copies the selected terminal content to your clipboard.
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
 
-#### Clipboard Actions
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
-| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `copyFormatting` behavior is inherited. |
+| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
 
 ### Paste
 
@@ -665,7 +666,7 @@ ___
 
 ### Scroll up
 
-This scrolls the screen up.
+This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll up the amount defined by the system default, which is the same amount as mouse scrolling.
 
 **Command name:** `scrollUp`
 
@@ -675,9 +676,17 @@ This scrolls the screen up.
 { "command": "scrollUp", "keys": "ctrl+shift+up" }
 ```
 
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
+
+> [!IMPORTANT]
+> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Scroll down
 
-This scrolls the screen down.
+This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll down the amount defined by the system default, which is the same amount as mouse scrolling.
 
 **Command name:** `scrollDown`
 
@@ -686,6 +695,14 @@ This scrolls the screen down.
 ```json
 { "command": "scrollDown", "keys": "ctrl+shift+down" }
 ```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
+
+> [!IMPORTANT]
+> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Scroll up a whole page
 
