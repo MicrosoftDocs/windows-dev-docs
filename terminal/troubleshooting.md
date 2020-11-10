@@ -44,10 +44,6 @@ Visit the [Command line arguments page](./command-line-arguments.md) to learn ho
 
 Visit the [Command line arguments page](./command-line-arguments.md) to learn how command-line arguments operate in WSL.
 
-## Hyperlinks don't work
-
-As of Windows Terminal 1.4, [embedded hyperlinks](https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) inside the text buffer are clickable and will open in your default browser. If a link is not a hyperlink, this means it is not an embedded hyperlink and it is simply plain text. Support for automatically detecting plain text links will arrive in a future release.
-
 ## Problem setting `startingDirectory`
 
 If the `startingDirectory` is being ignored in your profile, first check to make sure your settings.json's syntax is correct. To help you check this syntax, `"$schema": "https://aka.ms/terminal-profiles-schema"` is automatically injected. Some applications, like [Visual Studio Code](https://code.visualstudio.com/download), can use that injected schema to validate your json file as you make edits.
