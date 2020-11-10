@@ -395,6 +395,25 @@ This is the number of rows to scroll at a time with the mouse wheel. This will o
 
 ___
 
+## Disable animations ([Preview](https://aka.ms/terminal-preview))
+
+This disables visual animations across the application when set to `true`.
+
+**Property name:** `disableAnimations`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+<br />
+
+___
+
 ## Window resize behavior
 
 :::row:::

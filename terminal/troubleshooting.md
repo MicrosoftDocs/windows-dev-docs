@@ -91,7 +91,11 @@ To update to the newest version of PSReadline, please run the following command:
 Update-Module PSReadline
 ```
 
-### Technical Notes
+## Why are my emoji not appearing in the jumplist?
+
+Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
+
+## Technical Notes
 
 Applications that use the [`GetConsoleScreenBufferInfo` family of APIs](https://docs.microsoft.com/windows/console/getconsolescreenbufferinfoex) to retrieve the active console colors in Win32 format and then attempt to transform them into cross-platform VT sequences (for example, by transforming `BACKGROUND_RED` to `\x1b[41m`) may interfere with Terminal's ability to detect what background color the application is attempting to use.
 
@@ -119,7 +123,3 @@ Starting in Windows Terminal 1.5, the Terminal will display a warning if the "To
 5. Hit "Ok", and restart the PC.
 
 After restarting the machine, the service should auto-start, and the dialog should no longer appear.
-
-## Why are my emoji not appearing in the jumplist?
-
-Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
