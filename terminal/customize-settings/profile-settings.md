@@ -529,6 +529,25 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 
 ___
 
+## Bell settings
+
+Controls what happens when the application emits a BEL character. When set to `"audible"`, the Terminal will play a sound. When set to `"none"`, nothing will happen.
+
+**Property name:** `bellStyle`
+
+**Necessity:** Optional
+
+**Accepts:** `"audible"`, `"none"`
+
+**Default value:** `"audible"`
+
+> [!IMPORTANT]
+> The `"bellStyle"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
+
+<br />
+
+___
+
 ## Retro terminal effects
 
 :::row:::
