@@ -107,13 +107,13 @@ This is the name of the profile that will be displayed in the dropdown menu. Thi
 
 ### Icon
 
-This sets the icon that displays within the tab and the dropdown menu.
+This sets the icon that displays within the tab, dropdown menu, jumplist, and tab switcher.
 
 **Property name:** `icon`
 
 **Necessity:** Optional
 
-**Accepts:** File location as a string
+**Accepts:** File location as a string, or an emoji
 
 ### Hide a profile from the dropdown
 
@@ -397,16 +397,15 @@ When `useAcrylic` is set to `true`, this sets the transparency of the window for
 ___
 
 ## Background image settings
-
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file.
+This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file. Use keyword "DesktopWallpaper" to set the path to the desktop's wallpaper.
 
 **Property name:** `backgroundImage`
 
 **Necessity:** Optional
 
-**Accepts:** File location as a string
+**Accepts:** `File location as a string`, `"DesktopWallpaper"`
 
 ### Background image stretch mode
 
