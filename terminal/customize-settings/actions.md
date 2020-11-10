@@ -435,6 +435,22 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
+### Open tab renamer
+
+This command changes the tab title into a text field that lets you edit the title for the current tab.
+
+Clearing the text field will reset the tab title back to the default for the current shell instance.
+
+**Command name:** `openTabRenamer`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "openTabRenamer", "keys": "ctrl+alt+a" }
+```
+
 ### Change tab color
 
 This command can be used to change the color of a tab to a specific value.
