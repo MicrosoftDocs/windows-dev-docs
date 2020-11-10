@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 09/22/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -510,7 +510,7 @@ This changes focus to a different pane depending on the direction.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
 
-### Zoom a pane
+### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
 
 :::row:::
 :::column span="":::
@@ -530,6 +530,9 @@ This expands the focused pane to fill the entire contents of the window.
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Resize a pane
 
