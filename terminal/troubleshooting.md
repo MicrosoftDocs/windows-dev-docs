@@ -123,3 +123,7 @@ Starting in Windows Terminal 1.5, the Terminal will display a warning if the "To
 5. Hit "Ok", and restart the PC.
 
 After restarting the machine, the service should auto-start, and the dialog should no longer appear.
+
+## Why are my emoji not appearing in the jumplist?
+
+Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
