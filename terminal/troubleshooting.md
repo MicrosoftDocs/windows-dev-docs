@@ -91,9 +91,9 @@ To update to the newest version of PSReadline, please run the following command:
 Update-Module PSReadline
 ```
 
-## Why are my emoji not appearing in the jumplist?
+## Why are my emojis not appearing as icons in the jumplist?
 
-Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
+Only images linked from a file location can be rendered as profile icons in the jumplist. Emojis are not supported for jumplist icons.
 
 ## Technical Notes
 

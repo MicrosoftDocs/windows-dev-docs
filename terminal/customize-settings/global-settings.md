@@ -115,7 +115,7 @@ The tab switcher will open on the initial press of the actions for `nextTab` and
 **Default value:** `true`
 
 > [!CAUTION]
-> The `useTabSwitcher` setting is no longer available in versions 1.5 and later. It is recommended that you use the `tabSwitcherMode` setting instead.
+> The `"useTabSwitcher"` setting is no longer available in versions 1.5 and later. It is recommended that you use the `"tabSwitcherMode"` setting instead.
 
 ### Always show tabs
 
