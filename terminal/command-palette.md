@@ -22,7 +22,7 @@ You can invoke the command palette by typing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<k
 
 ## Command line mode
 
-If you'd like to enter a `wt` command into the command palette, you can do so by starting with the `>` character. This will run the `wt` command in the current window. More information on `wt` commands can be found on the [Command line arguments page](./command-line-arguments.md).
+If you'd like to enter a `wt` command into the command palette, you can do so by deleting the `>` character in the text box. This will run the `wt` command in the current window. More information on `wt` commands can be found on the [Command line arguments page](./command-line-arguments.md).
 
 ![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
