@@ -100,3 +100,7 @@ Update-Module PSReadline
 Applications that use the [`GetConsoleScreenBufferInfo` family of APIs](https://docs.microsoft.com/windows/console/getconsolescreenbufferinfoex) to retrieve the active console colors in Win32 format and then attempt to transform them into cross-platform VT sequences (for example, by transforming `BACKGROUND_RED` to `\x1b[41m`) may interfere with Terminal's ability to detect what background color the application is attempting to use.
 
 Application developers are encouraged to choose either Windows API functions _or_ VT sequences for adjusting colors and not attempt to mix them.
+
+## Why are my emoji not appearing in the jumplist?
+
+Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
