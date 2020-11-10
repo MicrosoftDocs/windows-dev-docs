@@ -101,6 +101,29 @@ Applications that use the [`GetConsoleScreenBufferInfo` family of APIs](https://
 
 Application developers are encouraged to choose either Windows API functions _or_ VT sequences for adjusting colors and not attempt to mix them.
 
+### Keyboard service warning
+
+Starting in Windows Terminal 1.5, the Terminal will display a warning if the "Touch Keyboard and Handwriting Panel Service" is disabled. This service is needed by the operating system to properly route input events to the Terminal application (as well as many other applications on Windows). If you see this warning, you can follow these steps to re-enable the service:
+1. In the run dialog, run `services.msc`
+
+  ![services.msc in the run dialog](https://user-images.githubusercontent.com/18356694/97891741-c81eed00-1cf4-11eb-9d48-7b94fede5294.png)
+
+2. Find the "Touch Keyboard and Handwriting Panel Service"
+
+  ![Touch Keyboard and Handwriting Panel Service in Services.msc](https://user-images.githubusercontent.com/18356694/97891813-e1279e00-1cf4-11eb-91c8-69a5c6da6c3d.png)
+
+3. Open the "Properties" for this service
+
+  ![service properties](https://user-images.githubusercontent.com/18356694/97891923-03212080-1cf5-11eb-90cc-821a4fbf16ba.png)
+
+4. Change the "startup type" to "Automatic"
+
+  ![service startup type](https://user-images.githubusercontent.com/18356694/97892043-25b33980-1cf5-11eb-8833-a2e65a306a79.png)
+
+5. Hit "Ok", and restart the PC.
+
+After restarting the machine, the service should auto-start, and the dialog should no longer appear.
+
 ## Why are my emoji not appearing in the jumplist?
 
 Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.
