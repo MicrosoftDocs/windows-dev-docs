@@ -39,20 +39,19 @@ WinUI 3 Preview 2 includes Visual Studio project templates to help get started b
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
 
-    After you install Visual Studio, make sure you enable .NET previews within the program: 
-    - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
-    
 3. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-4. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
+4. After you install Visual Studio, make sure you enable .NET previews within the program: 
+    - Go to Tools > Options > Preview Features > Select "Use previews of the .NET Core SDK (requires restart)". 
+
+5. If you want to create desktop WinUI projects for C#/.NET 5 and C++/Win32 apps, you must install both x64 and x86 versions of .NET 5 Preview 5. **Note that .NET 5 Preview 5 is currently the only supported .NET 5 preview for WinUI 3**:
 
     - [x64 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
     - [x86 installer for .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
 
-5. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
+6. Download and install the [WinUI 3 Preview 2 VSIX package](https://aka.ms/winui3/previewdownload). This VSIX package adds the WinUI 3 project templates and NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
     For directions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
-
 
 ## Create WinUI projects
 
