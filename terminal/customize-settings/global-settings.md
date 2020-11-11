@@ -376,25 +376,6 @@ When this is set to `true`, trying to paste text with multiple lines will displa
 
 ___
 
-## Scroll speed
-
-This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
-
-**Property name:** `rowsToScroll`
-
-**Necessity:** Optional
-
-**Accepts:** Integer
-
-**Default value:** `"system"`
-
-> [!CAUTION]
-> The `rowsToScroll` setting is no longer available in versions 1.2 and later. Windows Terminal will use the value configured in the system Mouse settings panel.
-
-<br />
-
-___
-
 ## Disable animations ([Preview](https://aka.ms/terminal-preview))
 
 This disables visual animations across the application when set to `true`.
