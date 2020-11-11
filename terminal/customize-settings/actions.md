@@ -480,7 +480,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "setTabColor", "color": null }, "keys": "" }
 ```
 
-#### Arguments
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -783,7 +783,7 @@ Changes the active color scheme.
 
 **Command name:** `setColorScheme`
 
-#### Arguments
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
