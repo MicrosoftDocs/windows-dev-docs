@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 09/22/2020
+ms.date: 11/11/2020
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -43,10 +43,6 @@ Visit the [Command line arguments page](./command-line-arguments.md) to learn ho
 ## Command line arguments in WSL
 
 Visit the [Command line arguments page](./command-line-arguments.md) to learn how command-line arguments operate in WSL.
-
-## Hyperlinks don't work
-
-As of Windows Terminal 1.4, [embedded hyperlinks](https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) inside the text buffer are clickable and will open in your default browser. If a link is not a hyperlink, this means it is not an embedded hyperlink and it is simply plain text. Support for automatically detecting plain text links will arrive in a future release.
 
 ## Problem setting `startingDirectory`
 
@@ -95,7 +91,11 @@ To update to the newest version of PSReadline, please run the following command:
 Update-Module PSReadline
 ```
 
-### Technical Notes
+## Why are my emojis not appearing as icons in the jumplist?
+
+Only images linked from a file location can be rendered as profile icons in the jumplist. Emojis are not supported for jumplist icons.
+
+## Technical Notes
 
 Applications that use the [`GetConsoleScreenBufferInfo` family of APIs](https://docs.microsoft.com/windows/console/getconsolescreenbufferinfoex) to retrieve the active console colors in Win32 format and then attempt to transform them into cross-platform VT sequences (for example, by transforming `BACKGROUND_RED` to `\x1b[41m`) may interfere with Terminal's ability to detect what background color the application is attempting to use.
 
@@ -123,7 +123,3 @@ Starting in Windows Terminal 1.5, the Terminal will display a warning if the "To
 5. Hit "Ok", and restart the PC.
 
 After restarting the machine, the service should auto-start, and the dialog should no longer appear.
-
-## Why are my emoji not appearing in the jumplist?
-
-Only images linked from a file location can be rendered in the jumplist. Emoji are not supported for jumplist.

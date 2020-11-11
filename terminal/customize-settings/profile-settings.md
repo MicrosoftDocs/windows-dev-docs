@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -397,15 +397,19 @@ When `useAcrylic` is set to `true`, this sets the transparency of the window for
 ___
 
 ## Background image settings
+
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file. Use keyword "DesktopWallpaper" to set the path to the desktop's wallpaper.
+This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file. `"desktopWallpaper"` will set the background image to the desktop's wallpaper.
 
 **Property name:** `backgroundImage`
 
 **Necessity:** Optional
 
-**Accepts:** `File location as a string`, `"DesktopWallpaper"`
+**Accepts:** File location as a string or `"desktopWallpaper"`
+
+> [!IMPORTANT]
+> The `"desktopWallpaper"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Background image stretch mode
 
@@ -528,9 +532,9 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 
 ___
 
-## Bell settings
+## Bell settings ([Preview](https://aka.ms/terminal-preview))
 
-Controls what happens when the application emits a BEL character. When set to `"audible"`, the Terminal will play a sound. When set to `"none"`, nothing will happen.
+Controls what happens when the application emits a BEL character. When set to `"audible"`, the terminal will play a sound. When set to `"none"`, nothing will happen.
 
 **Property name:** `bellStyle`
 
@@ -541,7 +545,7 @@ Controls what happens when the application emits a BEL character. When set to `"
 **Default value:** `"audible"`
 
 > [!IMPORTANT]
-> The `"bellStyle"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 

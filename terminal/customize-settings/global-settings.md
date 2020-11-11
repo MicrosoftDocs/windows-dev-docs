@@ -3,7 +3,7 @@ title: Windows Terminal Global Settings
 description: Learn how to customize the global settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -72,10 +72,36 @@ ___
 
 ## Tab settings
 
-### Use tab switcher experience
+### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
 
 :::row:::
 :::column span="":::
+When this is set to `true` or `"mru"`, the `nextTab` and `prevTab` commands will use the tab switcher UI, with most recently used ordering. When set to `"inOrder"`, these actions will switch tabs in their current order in the tab bar. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
+
+The tab switcher will open on the initial press of the actions for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` actions can be used to cycle through the switcher UI.
+
+To disable the tab switcher, you can set this to `false` or `"disabled"`.
+
+**Property name:** `tabSwitcherMode`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`, `"mru"`, `"inOrder"`, `"disabled"`
+
+**Default value:** `true`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal tab switcher](./../images/tab-switcher.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Enable tab switcher
+
 When this is set to `true`, the `nextTab` and `prevTab` commands will use the tab switcher UI. The UI will show all the currently open tabs in a vertical list, navigable with the keyboard or mouse.
 
 The tab switcher will open on the initial press of the actions for `nextTab` and `prevTab`, and will stay open as long as a modifier key is held down. When all modifier keys are released, the switcher will close and the highlighted tab will be focused. <kbd>tab</kbd>/<kbd>shift+tab</kbd>, the <kbd>up</kbd> and <kbd>down</kbd> arrow keys, and the `nextTab`/`prevTab` actions can be used to cycle through the switcher UI.
@@ -88,12 +114,8 @@ The tab switcher will open on the initial press of the actions for `nextTab` and
 
 **Default value:** `true`
 
-:::column-end:::
-:::column span="":::
-![Windows Terminal tab switcher](./../images/tab-switcher.gif)
-
-:::column-end:::
-:::row-end:::
+> [!CAUTION]
+> The `"useTabSwitcher"` setting is no longer available in versions 1.5 and later. It is recommended that you use the `"tabSwitcherMode"` setting instead.
 
 ### Always show tabs
 
@@ -178,7 +200,7 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 ### Launch mode
 
-This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with the focus mode enabled. Similar, setting this to `maximizedFocus` will result in launching the terminal in a maximized window w ith the focus mode enabled.
+This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with [focus mode](./actions.md#toggle-focus-mode) enabled. Similarly, setting this to `maximizedFocus` will result in launching the terminal in a maximized window with focus mode enabled.
 
 **Property name:** `launchMode`
 
@@ -189,11 +211,11 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 **Default value:** `"default"`
 
 > [!IMPORTANT]
-> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), version 1.5+.
+> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Launch position
 
-This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), the window will be maximized on the monitor specified by those coordinates.
+This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, the window will be maximized on the monitor specified by those coordinates.
 
 **Property name:** `initialPosition`
 
@@ -205,7 +227,7 @@ This sets the pixel position of the top left corner of the window upon first loa
 
 ### Columns on first launch
 
-This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
+This is the number of character columns displayed in the window upon first load. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, this property is ignored.
 
 **Property name:** `initialCols`
 
@@ -217,7 +239,7 @@ This is the number of character columns displayed in the window upon first load.
 
 ### Rows on first launch
 
-This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"` (or `"maximizedFocus"`), this property is ignored.
+This is the number of rows displayed in the window upon first load. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, this property is ignored.
 
 **Property name:** `initialRows`
 
@@ -354,20 +376,20 @@ When this is set to `true`, trying to paste text with multiple lines will displa
 
 ___
 
-## Scroll speed
+## Disable animations ([Preview](https://aka.ms/terminal-preview))
 
-This is the number of rows to scroll at a time with the mouse wheel. This will override the system setting if the value is not zero or `"system"`.
+This disables visual animations across the application when set to `true`.
 
-**Property name:** `rowsToScroll`
+**Property name:** `disableAnimations`
 
 **Necessity:** Optional
 
-**Accepts:** Integer
+**Accepts:** `true`, `false`
 
-**Default value:** `"system"`
+**Default value:** `false`
 
-> [!CAUTION]
-> The `rowsToScroll` setting is no longer available versions 1.2 and later. Windows Terminal will use the value configured in the system Mouse settings panel.
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
