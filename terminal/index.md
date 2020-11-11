@@ -51,7 +51,7 @@ You can set Windows Terminal to launch in a specific configuration using command
 
 For example, to open Windows Terminal from PowerShell with three panes, with the left pane running a Command Prompt profile and the right pane split between your PowerShell and your default profile running WSL, enter:
 
-```bash
+```powershell
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 

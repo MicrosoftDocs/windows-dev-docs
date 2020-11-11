@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 09/22/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -92,6 +92,16 @@ This sets the name that will appear in the command palette. If one isn't provide
 **Necessity**: Optional
 
 **Accepts:** String
+
+### Icon
+
+This sets the icon that displays within the command palette.
+
+**Property name:** `icon`
+
+**Necessity:** Optional
+
+**Accepts:** File location as a string, or an emoji
 
 <br />
 
@@ -435,6 +445,23 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
+### Open tab rename text box ([Preview](https://aka.ms/terminal-preview))
+
+This command changes the tab title into a text field that lets you edit the title for the current tab. Clearing the text field will reset the tab title back to the default for the current shell instance.
+
+**Command name:** `openTabRenamer`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "command": "openTabRenamer", "keys": "ctrl+alt+a" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Change tab color
 
 This command can be used to change the color of a tab to a specific value.
@@ -453,7 +480,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "setTabColor", "color": null }, "keys": "" }
 ```
 
-#### Arguments
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -510,7 +537,7 @@ This changes focus to a different pane depending on the direction.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
 
-### Zoom a pane
+### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
 
 :::row:::
 :::column span="":::
@@ -530,6 +557,9 @@ This expands the focused pane to fill the entire contents of the window.
 
 :::column-end:::
 :::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Resize a pane
 
@@ -604,12 +634,12 @@ This copies the selected terminal content to your clipboard.
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
 
-#### Clipboard Actions
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
-| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `copyFormatting` behavior is inherited. |
+| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
 
 ### Paste
 
@@ -636,7 +666,7 @@ ___
 
 ### Scroll up
 
-This scrolls the screen up.
+This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll up the amount defined by the system default, which is the same amount as mouse scrolling.
 
 **Command name:** `scrollUp`
 
@@ -646,9 +676,18 @@ This scrolls the screen up.
 { "command": "scrollUp", "keys": "ctrl+shift+up" }
 ```
 
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
+
+> [!IMPORTANT]
+> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Scroll down
 
-This scrolls the screen down.
+This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll down the amount defined by the system default, which is the same amount as mouse scrolling.
 
 **Command name:** `scrollDown`
 
@@ -657,6 +696,15 @@ This scrolls the screen down.
 ```json
 { "command": "scrollDown", "keys": "ctrl+shift+down" }
 ```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
+
+> [!IMPORTANT]
+> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Scroll up a whole page
 
@@ -737,7 +785,7 @@ Changes the active color scheme.
 
 **Command name:** `setColorScheme`
 
-#### Arguments
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |

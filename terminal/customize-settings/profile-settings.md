@@ -3,7 +3,7 @@ title: Windows Terminal Profile Settings
 description: Learn how to customize the individual profiles within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/26/2020
+ms.date: 11/11/2020
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -107,13 +107,13 @@ This is the name of the profile that will be displayed in the dropdown menu. Thi
 
 ### Icon
 
-This sets the icon that displays within the tab and the dropdown menu.
+This sets the icon that displays within the tab, dropdown menu, jumplist, and tab switcher.
 
 **Property name:** `icon`
 
 **Necessity:** Optional
 
-**Accepts:** File location as a string
+**Accepts:** File location as a string, or an emoji
 
 ### Hide a profile from the dropdown
 
@@ -400,13 +400,16 @@ ___
 
 ### Setting the background image
 
-This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file.
+This sets the file location of the image to draw over the window background. The background image can be a .jpg, .png, or .gif file. `"desktopWallpaper"` will set the background image to the desktop's wallpaper.
 
 **Property name:** `backgroundImage`
 
 **Necessity:** Optional
 
-**Accepts:** File location as a string
+**Accepts:** File location as a string or `"desktopWallpaper"`
+
+> [!IMPORTANT]
+> The `"desktopWallpaper"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Background image stretch mode
 
@@ -524,6 +527,25 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 **Accepts:** `"graceful"`, `"always"`, `"never"`, `true`, `false`
 
 **Default value:** `"graceful"`
+
+<br />
+
+___
+
+## Bell settings ([Preview](https://aka.ms/terminal-preview))
+
+Controls what happens when the application emits a BEL character. When set to `"audible"`, the terminal will play a sound. When set to `"none"`, nothing will happen.
+
+**Property name:** `bellStyle`
+
+**Necessity:** Optional
+
+**Accepts:** `"audible"`, `"none"`
+
+**Default value:** `"audible"`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 
