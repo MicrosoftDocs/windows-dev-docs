@@ -679,6 +679,7 @@ This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If
 #### Actions
 
 | Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
 
 > [!IMPORTANT]
@@ -699,6 +700,7 @@ This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
 
 > [!IMPORTANT]
