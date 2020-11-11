@@ -38,7 +38,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 
 > [!IMPORTANT]
-> The `--focus` and `--f` flags are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+> The `--focus` and `-f` flags are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
