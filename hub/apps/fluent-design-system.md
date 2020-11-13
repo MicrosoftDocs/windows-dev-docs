@@ -247,7 +247,7 @@ Add material to your UWP app:
 
 ## Design toolkits and code samples
 
-Want to get started creating your own apps with Fluent Design? Our toolkits for Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer, and Sketch will help jumpstart your designs, and our samples will help get you coding faster.
+Want to get started creating your own apps with Fluent Design? Our toolkits for Figma, Adobe XD and Sketch will help jumpstart your designs, and our samples will help get you coding faster.
 
 :::row:::
     :::column:::
