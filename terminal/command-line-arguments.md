@@ -42,8 +42,8 @@ Below is the full list of supported commands and options for the `wt` command li
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
-| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Creates a new tab. |
-| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title` | Splits a new pane. |
+| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Creates a new tab. |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Splits a new pane. |
 | `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
 
 > [!NOTE]
@@ -258,6 +258,40 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
+
+### Tab color
+
+To open a new terminal instance with custom tab color, use the `--tabColor` argument. This argument overrides value defined in profile, but can be overridden as well using the tab color picker. In the following example, a new terminal is created with two tabs of different colors:
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```bash
+wt --tabColor #009999 ; new-tab --tabColor #f59218
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt --tabColor #009999 ; new-tab --tabColor #f59218
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" --tabColor #009999 \; new-tab --tabColor #f59218
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
+
+---
+<!-- End tab selectors.  -->
+
+When `--tabColor` is set for a tab it is associated with the first pane of this tab. Hence in a tab with multiple panes the color will be applied only if the first pane is active. To set color for additional panes you need to add `--tabColor` argument to the `split-pane` command as well. In the example below we create a tab with two panes; the color of the tab will  depend on which one of the panes is active:
+
+```powershell
+wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
+```
 
 ### Tab focus
 
