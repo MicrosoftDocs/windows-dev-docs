@@ -98,7 +98,7 @@ The following item templates are available for use in a WinUI project. To access
 | Resources File (WinUI) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
 | User Control (WinUI) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 
-## New features, capabilities in Preview 3
+## New features and capabilities in Preview 3
 
 - ARM64 Support
 - Drag and drop inside and outside of apps

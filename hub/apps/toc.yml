@@ -90,7 +90,7 @@
     items:
       - name: "Overview"
         href: winui/index.md
-      - name: "Windows UI Library 3.0 Preview 2"
+      - name: "Windows UI Library 3 Preview 3"
         items:
           - name: "Overview and release notes"
             href: winui/winui3/index.md
