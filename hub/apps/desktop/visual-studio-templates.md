@@ -1,7 +1,7 @@
 ---
 description: This article provides an overview of Visual Studio project and item templates for Windows apps.
 title: Visual Studio project and item templates for Windows apps
-ms.date: 07/02/2020
+ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -20,7 +20,7 @@ Visual Studio 2019 provides many project and item templates that help you build 
 
 The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/winui3/index.md) (currently available as a developer preview) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
-WinUI 3 includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface. For more information about the WinUI 3 VSIX package and the project templates that it provides, see [this section](../winui/winui3/index.md#install-winui-3-preview-2).
+WinUI 3 includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface. For more information about the WinUI 3 VSIX package and the project templates that it provides, see [this section](../winui/winui3/index.md#install-winui-3-preview-3).
 
 > [!IMPORTANT]
 > WinUI 3, including the related Visual Studio templates, are currently available as a developer preview that is intended for early evaluation and to gather feedback from the developer community. It should NOT be used for production apps at this time.
