@@ -38,15 +38,19 @@ WinUI 3 Preview 3 includes Visual Studio project templates to help get started b
     To build C++ apps, you must also include the following workloads:
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
-3. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
+3. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).[Windows Community Toolkit](#windows-community-toolkit)
 
 4. Download and install the [WinUI 3 Preview 3 VSIX package](https://aka.ms/winui3/preview3-download). This adds both the WinUI 3 project templates and the NuGet package containing the WinUI 3 libraries to Visual Studio 2019.
 
     For instructions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
-5. If you're using the WebView2 control in your app, please install the **Dev Channel version of the Microsoft Edge Browser** from [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Make sure to uninstall any existing instances of Microsoft Edge Beta, Microsoft Edge Dev, and Microsoft Edge WebView2 Runtime.
+#### WebView2
 
-6. If you're using the Windows Community Toolkit, [download the latest version](https://aka.ms/wct-winui3).
+If you're using the WebView2 control in your app, please install the **Dev Channel version of the Microsoft Edge Browser** from [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Make sure to uninstall any existing instances of Microsoft Edge Beta, Microsoft Edge Dev, and Microsoft Edge WebView2 Runtime.
+
+#### Windows Community Toolkit
+
+If you're using the Windows Community Toolkit, [download the latest version](https://aka.ms/wct-winui3).
 
 ## Create WinUI projects
 
