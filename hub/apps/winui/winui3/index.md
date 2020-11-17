@@ -44,7 +44,7 @@ WinUI 3 Preview 3 includes Visual Studio project templates to help get started b
 
     For instructions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
-5. If you're using the WebView2 control in your app, please install the Dev Channel version of the Microsoft Edge browser from [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Make sure to uninstall any existing instances of Microsoft Edge Beta, Microsoft Edge Dev, and Microsoft Edge WebView2 Runtime.
+5. If you're using the WebView2 control in your app, please install the **Dev Channel version of the Microsoft Edge Browser** from [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Make sure to uninstall any existing instances of Microsoft Edge Beta, Microsoft Edge Dev, and Microsoft Edge WebView2 Runtime.
 
 6. If you're using the Windows Community Toolkit, [download the latest version](https://aka.ms/wct-winui3).
 
