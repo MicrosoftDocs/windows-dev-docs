@@ -98,6 +98,18 @@ The following item templates are available for use in a WinUI project. To access
 | Resources File (WinUI) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
 | User Control (WinUI) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 
+### Visual Studio Support
+
+In order to take advantage of the latest tooling features added into WinUI 3 Preview 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use the latest preview version of Visual Studio with the latest WinUI 3 preview. The table below shows the compatibility of future versions with WinUI 3 Preview 3:
+
+| VS Version  | WinUI 3 Preview 3  |
+|---|---|
+| 16.8 RTM  | No   |
+| 16.9 Previews  | Yes  | 
+| 16.9 RTM  | No   |
+| 16.10 Previews  | Yes   |
+
+
 ## New features and capabilities in Preview 3
 
 - ARM64 Support
