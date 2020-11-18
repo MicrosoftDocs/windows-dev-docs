@@ -36,7 +36,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
 6. At this point, Visual Studio generates two projects:
 
-    * ***Project name* (Desktop)**: This project contains your app's code. The **App.xaml.cs** code file defines an `Application` class that represents your app instance, and the **MainWindow.xaml.cs** code file defines a `MainWindow` class that represents the main window displayed by your app. These classes derive from types in the **Microsoft.UI.Xaml** namespace provided by WinUI.
+    * ***Project name* (Desktop)**: This project contains your app's code. The **App.xaml** file and its codebehind file **App.xaml.cs** define an `Application` class that represents your app instance. The **MainWindow.xaml** file and its codebehind file **MainWindow.xaml.cs** define a `MainWindow` class that represents the main window displayed by your app. These classes derive from types in the **Microsoft.UI.Xaml** namespace provided by WinUI.
 
         ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file.](images/WinUI-csharp-appproject.png)
 
