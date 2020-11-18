@@ -161,7 +161,7 @@ ManifestVersion: 0.1.0
 
 ## Installer switches
 
-You can often figure out what silent `Switches` are available for an installer by passing in a `-?` to the installer from the command line. Here are some common silent `Swtiches` that can be used for different installer types.
+You can often figure out what silent `Switches` are available for an installer by passing in a `-?` to the installer from the command line. Here are some common silent `Switches` that can be used for different installer types.
 
 | Installer | Command  | Documentation |  
 | :--- | :-- | :--- |  

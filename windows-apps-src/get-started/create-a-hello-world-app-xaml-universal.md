@@ -22,7 +22,7 @@ Here you'll learn how to:
 ## Before you start...
 
 -   [What's a Universal Windows app?](universal-application-platform-guide.md)
--   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](get-set-up.md).
+-   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](/windows/apps/get-started/get-set-up).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 > [!NOTE]
@@ -40,7 +40,7 @@ Here you'll learn how to:
 
 3.  From the list of templates on the left, choose **Installed > Visual C# > Windows Universal** to see the list of UWP project templates.
 
-    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](get-set-up.md).)
+    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](/windows/apps/get-started/get-set-up).)
 
     ![How to repeat the installation process](images/win10-cs-install.png)
 
@@ -49,7 +49,7 @@ Here you'll learn how to:
     ![The new project window](images/win10-cs-01.png)
 
 > [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
 
  ![Activate Developer mode dialog](images/win10-cs-00.png)
 
@@ -236,4 +236,4 @@ To learn how to use XAML for laying out the controls your app will use, try the 
 * [How-to articles on developing UWP apps](../develop/index.md)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](universal-application-platform-guide.md)
-* [Sign up for Windows account](sign-up.md)
+* [Sign up for Windows account](/windows/apps/get-started/sign-up)

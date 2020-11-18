@@ -212,15 +212,15 @@ There are many Windows 10 game and app samples available to help you understand 
     </tr>
     <tr>
         <td>JavaScript 2D game sample</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">Create a UWP game in JavaScript</a></td>
+        <td><a href="/windows/uwp/get-started/">Create a UWP game in JavaScript</a></td>
     </tr>
     <tr>
         <td>JavaScript 3D game sample</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">Creating a 3D JavaScript game using three.js</a></td>
+        <td><a href="/windows/uwp/get-started/">Creating a 3D JavaScript game using three.js</a></td>
     </tr>
     <tr>
         <td>MonoGame 2D UWP game sample</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Create a UWP game in MonoGame 2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Create a UWP game in MonoGame 2D</a></td>
     </tr>
 </table>
 
@@ -747,7 +747,7 @@ MonoGame is an open source, cross-platform game development framework originally
     </tr>
     <tr>
         <td>MonoGame 2D UWP game sample</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Create a UWP game in MonoGame 2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Create a UWP game in MonoGame 2D</a></td>
     </tr>
 </table>
 

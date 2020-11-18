@@ -69,7 +69,7 @@ We'll start with the basics:
 
 1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project...**.
 
-2.  In the **Create a new project** dialog box, select **Blank App (Universal Windows - C++/CX)**.  If you don't see this option, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more information.
+2.  In the **Create a new project** dialog box, select **Blank App (Universal Windows - C++/CX)**.  If you don't see this option, make sure you have the Universal Windows App Development Tools installed. See [Get set up](/windows/apps/get-started/get-set-up) for more information.
 
 ![C++/CX project templates in the Create a new project dialog box ](images/vs2019-uwp-01.png)
 
@@ -78,7 +78,7 @@ We'll start with the basics:
 4.  Choose the **Create** button.
 
 > [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
 
    Your project files are created.
 

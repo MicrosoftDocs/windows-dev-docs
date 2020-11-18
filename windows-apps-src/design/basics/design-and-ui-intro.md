@@ -156,7 +156,7 @@ We provide a variety of tools to help your design process:
 
 - See our [Design toolkits page](../downloads/index.md) for XD, Illustrator, Photoshop, Framer, and Sketch toolkits, as well as additional design tools and font downloads.
 
-- To get your machine set up to write code for UWP apps, see our [Get started &gt; Get set up](../../get-started/get-set-up.md) article.
+- To get your machine set up to write code for UWP apps, see our [Get started &gt; Get set up](/windows/apps/get-started/get-set-up) article.
 
 - For inspiration on how to implement UI for UWP, take a look at our end-to-end [sample UWP apps](https://developer.microsoft.com/windows/samples).
 

@@ -21,7 +21,7 @@ Although we're focusing on C# in this article, the other languages offer unique 
 -   [Create a "Hello, World!" app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [Create a "Hello, World!" app using C++/WinRT](../get-started/create-a-basic-windows-10-app-in-cppwinrt.md)
 -   [Create a "Hello, World!" app using C++/CX](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [Create a "Hello, World!" app using JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [Create a "Hello, World!" app using JavaScript](/windows/apps/get-started/)
 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://bugs.chromium.org/p/angleproject/)

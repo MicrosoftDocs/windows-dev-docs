@@ -28,7 +28,7 @@ There are several options for .NET projects:
 
 ### .NET 5 Preview 8 and later: Use the Target Framework Moniker option 
 
-This option is only supported in projects that use .NET 5 Preview 8 (or an earlier release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is only supported in projects that use .NET 5 Preview 8 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
@@ -58,7 +58,7 @@ This option is only supported in projects that use .NET 5 Preview 8 (or an earli
 
 ### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
 
-Use this option if your app uses .NET Core 3.x, .NET 5 Preview 7 (or earlier), or the .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
+Use this option if your app uses .NET Core 3.x, .NET 5 Preview 7 (or earlier), or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
 
 1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -80,7 +80,7 @@ Use this option if your app uses .NET Core 3.x, .NET 5 Preview 7 (or earlier), o
 
 ### Configure projects that multi-target different versions of .NET
 
-If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (including .NET Core 3.x and the .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 Preview 8 (or later) and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
+If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
 
@@ -101,7 +101,7 @@ If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (
         * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
         * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
-    * For the .NET Framework, use **net46**.
+    * For .NET Framework, use **net46**.
 
     The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 Preview 8 (for Windows 10, version 2004).
 
@@ -109,7 +109,7 @@ If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
-3. After the **PropertyGroup** element, add a **PackageReference** element that includes a conditional statement that installs the `Microsoft.Windows.SDK.Contracts` NuGet package for any versions of .NET Core 3.x or the .NET Framework that your app targets. The **PackageReference** element must be a child of an **ItemGroup** element. The following example demonstrates how to do this for .NET Core 3.1.
+3. After the **PropertyGroup** element, add a **PackageReference** element that includes a conditional statement that installs the `Microsoft.Windows.SDK.Contracts` NuGet package for any versions of .NET Core 3.x or .NET Framework that your app targets. The **PackageReference** element must be a child of an **ItemGroup** element. The following example demonstrates how to do this for .NET Core 3.1.
 
     ```csharp
     <ItemGroup>
@@ -337,7 +337,7 @@ The compiler builds that code only if that constant is defined in your active bu
 
 You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. See this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## Related Samples
 

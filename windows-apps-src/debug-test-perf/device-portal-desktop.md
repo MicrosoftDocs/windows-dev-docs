@@ -27,10 +27,10 @@ You can use Device Portal to do the following:
 
 ### Turn on developer mode
 
-Starting in Windows 10, version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+Starting in Windows 10, version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
 > [!IMPORTANT]
-> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package) for help troubleshooting these issues.
+> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
 ### Turn on Device Portal
 

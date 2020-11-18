@@ -110,7 +110,6 @@ UWP apps use the Windows Runtime, the native API provided by the operating syste
 - DirectX UI and C++
 - JavaScript and HTML
 - WinUI
--
 
 ## Links to help you get going
 

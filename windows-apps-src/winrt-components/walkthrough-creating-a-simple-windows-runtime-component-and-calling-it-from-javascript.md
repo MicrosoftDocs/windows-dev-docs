@@ -156,7 +156,7 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello, World" app (JS)](../get-started/create-a-hello-world-app-js-uwp.md).
+This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello, World" app (JS)](/windows/apps/get-started/).
 
 ## Build and run the app
 

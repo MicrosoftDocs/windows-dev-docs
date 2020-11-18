@@ -17,7 +17,7 @@ Prerequisites for testing a Universal Windows app:
 
 - You must install and run Windows 10.
 - You must install the [Windows App Certification Kit](https://developer.microsoft.com/windows/downloads/app-certification-kit/), which is included in the Windows Software Development Kit (SDK) for Windows 10.
-- You must [enable your device for development](../get-started/enable-your-device-for-development.md).
+- You must [enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - You must deploy the Windows app that you want to test to your computer.
 
 > [!NOTE]

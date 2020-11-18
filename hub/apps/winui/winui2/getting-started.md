@@ -15,7 +15,7 @@ keywords: windows 10, uwp, toolkit sdk
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on trying out early previews of WinUI 3, see [Windows UI Library 3 Preview 2 (July 2020)](../winui3/index.md).
+> For more information on trying out early previews of WinUI 3, see [Windows UI Library 3 Preview 3 (November 2020)](../winui3/index.md).
 
 ## Download and install the Windows UI Library
 
