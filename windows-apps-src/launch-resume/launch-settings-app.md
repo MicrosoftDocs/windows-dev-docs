@@ -6,10 +6,10 @@ ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: contperfq2
 dev_langs:
   - csharp
   - cppwinrt
-ms.custom: contperfq2
 ---
 
 # Launch the Windows Settings app
