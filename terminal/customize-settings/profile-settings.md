@@ -62,7 +62,7 @@ This stores the name of the profile generator that originated the profile. _Ther
 **Accepts:** String
 
 > [!NOTE]
-> Thise field should be omitted when declaring custom profile.
+> This field should be omitted when declaring custom profile.
 
 ### Starting directory
 
