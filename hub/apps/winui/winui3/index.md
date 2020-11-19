@@ -65,7 +65,7 @@ For more information about getting started with the WinUI project templates, see
 
 Aside from the [limitations and known issues](#preview-3-limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
-With this release, we've also added [WinUI 3 API reference documentation](/uwp/api/overview/winui/) for all WinRT APIs ported to WinUI 3.
+With this release, we've also added [WinUI 3 API reference documentation](/windows/winui/api/) for all WinRT APIs ported to WinUI 3.
 
 If you created a project using WinUI 3 Preview 2, you can upgrade your project to use Preview 3. See the [WinUI GitHub repository](https://aka.ms/winui3/upgrade-instructions) for detailed instructions.
 

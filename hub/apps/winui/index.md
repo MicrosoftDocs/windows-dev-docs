@@ -37,7 +37,7 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 ### Related links for WinUI 2.x
 
 - [WinUI 2.x Library overview](winui2/index.md)
-- [API docs](/uwp/api/overview/winui/)
+- [API docs](/windows/winui/api/)
 - [Source code](https://aka.ms/winui)
 - [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 

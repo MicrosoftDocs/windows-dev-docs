@@ -30,7 +30,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 [The Windows UI Library](/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interface elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
-For more information on the Windows UI Library, see [this list of API namespaces included in the NuGet package.](/uwp/api/overview/winui/)
+For more information on the Windows UI Library, see [this list of API namespaces included in the NuGet package.](/windows/winui/api/)
 
 ## Developer Guidance
 

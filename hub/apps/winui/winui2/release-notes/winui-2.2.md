@@ -35,7 +35,7 @@ The TabView control is a collection of tabs that each represents a new page or d
 
 #### Documentation
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2
+https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### NavigationView Updates
 
@@ -139,7 +139,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/uwp/api/overview/winui/).
+API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
 
 ## Microsoft.UI.Xaml 2.2-prerelease Version History
 
@@ -153,7 +153,7 @@ July 2019
 
 ### Experimental Feature
 
-* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true)
 
 ### Microsoft.UI.Xaml 2.2.20190416001-prerelease
 
