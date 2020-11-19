@@ -2,11 +2,10 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 11/02/2020
+ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: 19H1
 dev_langs:
   - csharp
   - cppwinrt
@@ -29,6 +28,8 @@ Launching to the Settings app is an important part of writing a privacy-aware ap
 
 To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.
 
+### XAML hyperlink control
+
 In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.
 
 ```xml
@@ -43,24 +44,27 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 </TextBlock>
 ```
 
+### Calling LaunchUriAsync
+
 Alternatively, your app can call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
+
 ```cppwinrt
 bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:privacy-webcam"));
 ```
 
 The code above launches the privacy settings page for the camera:
 
-![camera privacy settings.](images/privacyawarenesssettingsapp.png)
+:::image type="content" source="images/privacyawarenesssettingsapp.png" alt-text="camera privacy settings.":::
 
 For more info about launching URIs, see [Launch the default app for a URI](launch-default-app.md).
 
 ## ms-settings: URI scheme reference
 
-Based on the following categories, use these URIs to open various pages of the Settings app:
+The following sections describe different categories of ms-settings URIs used to open various pages of the Settings app:
 
 * [Accounts](#accounts)
 * [Apps](#apps)
