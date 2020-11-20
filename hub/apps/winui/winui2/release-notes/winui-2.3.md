@@ -68,4 +68,4 @@ https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
 How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/uwp/api/overview/winui/).
+API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).

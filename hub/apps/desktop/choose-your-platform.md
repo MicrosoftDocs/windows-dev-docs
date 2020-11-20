@@ -1,7 +1,7 @@
 ---
-description: When you want to create a new desktop app, the first decision you make is whether to use the Win32 and COM API or .NET.
+description: When you want to create a new Windows desktop app, the first decision you make is whether to use the Win32 and COM API or .NET.
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
-title: Choose your app platform
+title: Choose your Windows app platform
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: mcleans
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 keywords: windows win32, desktop development
 ---
 
-# Choose your app platform
+# Choose your Windows app platform
 
 When you want to create a new desktop application for Windows PCs, the first decision you make is which application platform to use. Windows provides four main application platforms, each with different strengths:
 

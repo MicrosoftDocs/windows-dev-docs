@@ -82,7 +82,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/uwp/api/overview/winui/).
+API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
 
 ## Microsoft.UI.Xaml 2.1 Version History
 
