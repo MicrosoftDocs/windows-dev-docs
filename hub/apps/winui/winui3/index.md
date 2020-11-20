@@ -172,6 +172,7 @@ WinUI 3 Preview 3 is compatible with PCs running the Windows 10 April 2018 Updat
 - Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
 - UWP apps support .NET Native and C# 7.3
 - Developer tools and Intellisense may not work properly in Visual Studio version 16.8.
+- No XAML Designer support
 - New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)
 - Support for multiple windows in Desktop apps is in progress, but not yet complete and stable.
   - Please file a bug on our repo if you find new issues or regressions with multi-window behavior.
