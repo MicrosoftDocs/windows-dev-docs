@@ -89,7 +89,7 @@ For more information on user choice around background activity and Battery Saver
 *Things to avoid*
 - Minimize the use of inter-process communication via COM or RPC.
 -   The process you are trying to communicate with may not be in a running state which can result in a hang.
--   A significant amount of time could be spent facilitating cross process communication, and will count against the time allotted to run your background task
+-   A significant amount of time could be spent facilitating cross process communication, and will count against the time allotted to run your background task.
 - Do not rely on user interaction in background tasks.
 
 
