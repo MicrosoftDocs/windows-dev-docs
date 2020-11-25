@@ -61,6 +61,9 @@ This stores the name of the profile generator that originated the profile. _Ther
 
 **Accepts:** String
 
+> [!NOTE]
+> This field should be omitted when declaring a custom profile. It is used by Terminal to connect automatically generated profiles to your settings file.
+
 ### Starting directory
 
 This is the directory the shell starts in when it is loaded.
