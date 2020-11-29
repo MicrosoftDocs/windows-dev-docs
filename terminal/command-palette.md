@@ -26,6 +26,12 @@ If you'd like to enter a `wt` command into the command palette, you can do so by
 
 ![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
+You can add a custom key binding for invoking command palette in the command line mode directly.
+
+```json
+{ "command": "commandPalette", "launchMode": "commandLine", "keys": "..." }
+```
+
 ## Adding an icon to a command
 
 You can optionally add an icon to a command defined in your settings.json that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
