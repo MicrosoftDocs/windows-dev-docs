@@ -197,7 +197,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 14. Open your default web browser to the rendered page, **Ctrl+Click** the http://127.0.0.1:5000/ URL in the terminal. You should see the following message in your browser:
 
-    ![Hello, Flask!](../images/hello-flask.png)
+    ![Hello World! I'm using Flask.](../images/hello-flask.png)
 
 15. Observe that when you visit a URL like "/", a message appears in the debug terminal showing the HTTP request:
 
