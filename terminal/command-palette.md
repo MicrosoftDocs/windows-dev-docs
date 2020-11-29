@@ -32,6 +32,9 @@ You can add a custom key binding for invoking command palette in the command lin
 { "command": "commandPalette", "launchMode": "commandLine", "keys": "..." }
 ```
 
+> [!IMPORTANT]
+> The `"launchMode"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Adding an icon to a command
 
 You can optionally add an icon to a command defined in your settings.json that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
