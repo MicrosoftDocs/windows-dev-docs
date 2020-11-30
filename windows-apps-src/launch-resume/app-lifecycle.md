@@ -149,7 +149,7 @@ If you need more time, you may request an [ExtendedExecutionSession](/archive/ms
 
 ### App terminate
 
-The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, it will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is in your **OnSuspension** event handler, or asynchronously from your **EnteredBackground** handler.
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, it will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is in your **OnSuspending** event handler, or asynchronously from your **EnteredBackground** handler.
 
 When your app determines that it has been activated after being terminated, it should load the application data that it saved so that the app is in the same state it was in before it was terminated. When the user switches back to a suspended app that has been terminated, the app should restore its application data in its [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method. The system doesn't notify an app when it is terminated, so your app must save its application data and release exclusive resources and file handles before it is suspended, and restore them when the app is activated after termination.
 
