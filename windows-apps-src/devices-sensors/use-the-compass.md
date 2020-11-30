@@ -100,14 +100,14 @@ This section is divided into two subsections. The first subsection will take you
             }
         }
     }
-    ```
+```
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
 
 -   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
