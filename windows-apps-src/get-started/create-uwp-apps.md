@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you at the right information you need to start coding the Windows 10 apps you want to create.
 
-Before you begin development, you should be sure to [get set up.](/windows/apps/get-started/get-set-up.md)
+Before you begin development, you should be sure to [get set up.](/windows/apps/get-started/get-set-up)
 
 ## Learning tracks
 
