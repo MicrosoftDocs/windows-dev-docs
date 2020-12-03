@@ -10,15 +10,21 @@ ms.localizationpriority: medium
 # Xbox One Developer Mode activation
 
 ## How Developer Mode works
-Xbox One has two modes, *Retail* Mode (**1**) and *Developer* Mode (**2**). In Retail Mode, the console is in the state that any customer or user of an Xbox One console would use: you can play games and run apps as a user. In Developer Mode, you can develop software for the console, but you cannot play retail games or run retail apps.
+This article only applies to Xbox One and Xbox Series X | S consoles acquired through retail channels. For development kit HW acquired via a managed development program, see the note at the end of the article.
 
-Developer Mode can be enabled on any retail Xbox One console. After Developer Mode is enabled, you can switch back and forth between Retail (**2a**) and Developer Modes (**2b**).
+Xbox retail consoles can have two modes, Retail Mode (1) and Developer Mode (2). In Retail Mode, the console is in its normal state: you can play games and run apps acquired through the Xbox store. In Developer Mode, you can develop and test software for the console, but you cannot play retail games or run retail apps.
+
+Developer Mode can be enabled on any retail Xbox console, via the “Retail to Dev Kit conversion” app found in the Xbox store. After Developer Mode is enabled on your retail console, you can switch back and forth between Retail (2a) and Developer Modes (2b).
+
+> [!NOTE]
+> Do not run this conversion app on any Xbox development hardware acquired through an Xbox managed program\*\* (for example, ID@Xbox) or you may introduce errors and delays while developing your game. For information about activating development hardware, see https://developer.microsoft.com/en-us/games/xbox/docs/gdk/provisioning-role.
+<br></br>
 
 ![Xbox One modes](images/dev-mode-flow.png)
 
-## Activate Developer Mode on your retail Xbox One console
+## Activate Developer Mode on your retail Xbox console
 
-1.	Start your Xbox One console.
+1.	Start your Xbox console.
 
 2.	Search for and install the **Dev Mode Activation** app from the Xbox One store.
 
