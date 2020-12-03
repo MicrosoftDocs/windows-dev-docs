@@ -85,6 +85,18 @@ C#/WinRT also provides an activation fallback path if Windows fails to activate 
 
 C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications) to locate an implementation DLL. An app relying on this fallback behavior should package the implementation DLL alongside the app module.
 
+## Common errors with .NET 5+
+
+You may encounter the following errors or warnings in a project that is built with an earlier .NET SDK version than any of its dependencies.
+
+| Error or warning message | Reason |
+|--------------------------|--------|
+| System.IO.FileLoadException | This runtime error occurs when calling APIs in a library that does not expose Windows SDK types. |
+| Warning MSB3277: Found conflicts between different versions of Microsoft.Windows.SDK.NET that could not be resolved. | This build error occurs when referencing a library that exposes Windows SDK types on its API surface. |
+| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705): Assembly 'AssemblyName1' uses 'TypeName' which has a higher version than referenced assembly 'AssemblyName2' | This build compiler error occurs when referencing and consuming exposed Windows SDK types in a library. |
+
+To fix these errors, update your .NET SDK to the latest version. Doing so will ensure that the runtime and Windows SDK assembly versions used by your application are compatible with all dependencies. These errors may occur with early servicing/feature updates to the .NET 5 SDK, because runtime fixes may require updates to our assembly versions.
+
 ## Known issues
 
 Known issues and breaking changes are noted in the [C#/WinRT GitHub repo](https://aka.ms/cswinrt/repo).
