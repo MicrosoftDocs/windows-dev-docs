@@ -56,7 +56,7 @@ IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties
 You can call that API with an initializer list like this.
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
@@ -98,7 +98,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. This is because, having converted to the appropriate Windows Runtime collection of **std::wstring**, the C++ language won't then coerce that collection's type parameter(s). Consequently, the following code example won't compile (and the solution is to pass a **std::vector&lt;winrt::hstring&gt;** instead, as shown above).
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<std::wstring> vecW)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
