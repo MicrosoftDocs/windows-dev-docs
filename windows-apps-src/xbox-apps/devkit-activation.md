@@ -16,7 +16,8 @@ Xbox retail consoles can have two modes, Retail Mode (1) and Developer Mode (2).
 
 Developer Mode can be enabled on any retail Xbox console, via the “Retail to Dev Kit conversion” app found in the Xbox store. After Developer Mode is enabled on your retail console, you can switch back and forth between Retail (2a) and Developer Modes (2b).
 
-**NOTE: Do not run this conversion app on any Xbox development hardware acquired through an Xbox managed program** (e.g. ID@Xbox) or you may introduce errors and delays while developing your game. For information on activating development hardware see: https://developer.microsoft.com/en-us/games/xbox/docs/gdk/provisioning-role
+> [!NOTE]
+> Do not run this conversion app on any Xbox development hardware acquired through an Xbox managed program\*\* (for example, ID@Xbox) or you may introduce errors and delays while developing your game. For information about activating development hardware, see https://developer.microsoft.com/en-us/games/xbox/docs/gdk/provisioning-role.
 <br></br>
 
 ![Xbox One modes](images/dev-mode-flow.png)
