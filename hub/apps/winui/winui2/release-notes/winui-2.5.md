@@ -35,20 +35,18 @@ This animated example shows an InfoBar with various severity states and custom m
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
 
-### Determinate ProgressBar and ProgressRing
+### Determinate ProgressRing
 
-The determinate state for both [ProgressBar and ProgressRing](/uwp/design/controls-and-patterns/progress-controls) shows the percentage completed of a task. This should be used during an operation where the duration is known and where the operation's progress should not block user interaction with the app.
+The determinate state for [ProgressRing](/uwp/design/controls-and-patterns/progress-controls) shows the percentage completed of a task. This should be used during an operation where the duration is known and where the operation's progress should not block user interaction with the app.
 
-The following image demonstrates a determinate ProgressRing control.
+The following animated image demonstrates a determinate ProgressRing control.
 
-:::image type="content" source="../images/progressbar-and-progressring-determinate-mode-animated.gif" alt-text="Animated example of determinate ProgressBar and ProgressRing controls.":::<br>
+:::image type="content" source="../images/progressring-determinate-mode-animated.gif" alt-text="Animated example of a determinate ProgressRing control.":::<br>
 
 [Usage guidelines](/windows/uwp/design/controls-and-patterns/progress-controls#progress-controls-best-practices)
 
-#### API reference
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.progressring)
 
-- [ProgressBar](/windows/winui/api/microsoft.ui.xaml.controls.progressbar)
-- [ProgressRing](/windows/winui/api/microsoft.ui.xaml.controls.progressring)
 
 ### NavigationView FooterMenuItems
 
@@ -69,7 +67,7 @@ The **XAML Controls Gallery** sample app includes examples of each of these WinU
 If you have the **XAML Controls Gallery** app installed and updated to the latest version:
 
 - See the [InfoBar](xamlcontrolsgallery:/item/InfoBar) in action.
-- See the [ProgressBar](xamlcontrolsgallery:/item/ProgressBar) and [ProgressRing](xamlcontrolsgallery:/item/ProgressRing) in action.
+- See the [ProgressRing](xamlcontrolsgallery:/item/ProgressRing) in action.
 - See the [NavigationView](xamlcontrolsgallery:/item/NavigationView) in action.
 
 If you don't have the XAML Controls Gallery app installed, get it from the [Microsoft Store](https://aka.ms/xamlgalleryapp).
