@@ -55,11 +55,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## Types of progress
 
-There are two controls to show the user that an operation is underway – either through a ProgressBar or through a ProgressRing.
+There are two controls to show the user that an operation is underway – either through a ProgressBar or through a ProgressRing. Both ProgressBar and ProgressRing have two states that communicate if the user can interact with the application or not. 
 
--   The ProgressBar *determinate* state shows the percentage completed of a task. This should be used during an operation whose duration is known, but its progress should not block the user's interaction with the app.
--   The ProgressBar *indeterminate* state shows that an operation is underway, does not block user interaction with the app, and its completion time is unknown.
--   The ProgressRing only has an *indeterminate* state, and should be used when any further user interaction is blocked until the operation has completed.
+-   The *determinate* state for both ProgressBar and ProgressRing shows the percentage completed of a task. This should be used during an operation whose duration is known, but its progress should not block the user's interaction with the app.
+-   The *indeterminate* state for ProgressBar shows that an operation is underway, does not block user interaction with the app, and its completion time is unknown.
+-   The *indeterminate* state for ProgressRing shows that an operation is underway, blocks user interaction with the app, and its completion time is unknown.
+
 
 Additionally, a progress control is read only and not interactive. Meaning that the user cannot invoke or use these controls directly.
 
@@ -67,7 +68,8 @@ Additionally, a progress control is read only and not interactive. Meaning that 
 |---|---|
 | Indeterminate ProgressBar | ![ProgressBar indeterminate](images/progressbar-indeterminate.gif) |
 | Determinate ProgressBar | ![ProgressBar determinate](images/progressbar-determinate.png)|
-| Indeterminate ProgressRing | ![ProgressRing state](images/progressring-indeterminate.gif)|
+| Indeterminate ProgressRing | ![Indeterminate ProgressRing state](images/progressring-indeterminate.gif)|
+| Determinate ProgressRing | ![Determinate ProgressRing state](images/progress_ring.jpg)|
 
 
 ## Examples
@@ -111,11 +113,15 @@ It's not always obvious what control or what state (determinate vs indeterminate
 
 -   **Will the operation cause the user to wait to continue?**
 
-    If an operation requires all (or a large portion of) interaction with the app to wait until it has been completed, then the ProgressRing is the better choice. The ProgressRing control is used for modal interactions, meaning that the user is blocked until the ProgressRing disappears.
+    If an operation requires all (or a large portion of) interaction with the app to wait until it has been completed, then the indeterminate ProgressRing is the better choice.
+
+    -   **Does the control have a defined duration or predictable end?**
+
+    Use a determinate ProgressRing if you want the visual to be a ring instead of a bar, and update the percentage or value accordingly. 
 
 -   **Is the app waiting for the user to complete a task?**
 
-    If so, use a ProgressRing, as they're meant to indicate an unknown wait time for the user.
+    If so, use an indeterminate ProgressRing, as they're meant to indicate an unknown wait time for the user.
 
 -   **Keywords**
 
@@ -163,6 +169,12 @@ When it is not known how long the operation will take, use an indeterminate Prog
 ![ProgressRing indeterminate example](images/PR_IndeterminateExample.png)
 
 The indeterminate ProgressRing is used when any further user interaction with the app is halted, or the app is waiting for the user's input to continue. The "signing in…" example above is a perfect scenario for the ProgressRing, the user cannot continue using the app until the sign is has completed.
+
+**ProgressRing - Determinate**
+
+![ProgressRing determinate example](images/progress_ring_determinate_example.png)
+
+When the duration of the operation is known and the ring visual is desired, when installing, downloading, setting up, etc; a determinate ProgressRing is best.
 
 ## Customizing a progress control
 

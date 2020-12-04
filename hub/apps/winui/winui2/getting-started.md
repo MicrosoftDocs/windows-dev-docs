@@ -10,7 +10,7 @@ keywords: windows 10, uwp, toolkit sdk
 
 # Getting started with the Windows UI 2.x Library
 
-[WinUI 2.4](release-notes/winui-2.4.md) is the latest stable version of WinUI and should be used for apps in production.
+[WinUI 2.5](release-notes/winui-2.5.md) is the latest stable version of WinUI and should be used for apps in production.
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
@@ -24,7 +24,7 @@ The library is available as a NuGet package that can be added to any new or exis
 2. Open an existing project, or create a new project using the Blank App template under Visual C# -> Windows -> Universal, or the appropriate template for your language projection.  
 
     > [!IMPORTANT]
-    > To use WinUI 2.4, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
+    > To use WinUI 2.5, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
 
 3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. Select the **Browse** tab, and search for **Microsoft.UI.Xaml** or **WinUI**. Then choose which [Windows UI Library NuGet Packages](nuget-packages.md) you want to use.
 The **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps.  
