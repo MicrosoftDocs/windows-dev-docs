@@ -1,19 +1,19 @@
 ---
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 icons
+title: Segoe MDL2 Assets icons
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 icons
+label: Segoe MDL2 Assets icons
 template: detail.hbs
-ms.date: 12/10/2020
+ms.date: 12/05/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: contperfq2
 ---
-# Segoe MDL2 icons
+# Segoe MDL2 Assets icons
 
-This article teaches you how to use the Segoe MDL2 icons and provides a list of glyphs along with their unicode values and descriptive names as provided by the Segoe MDL2 Assets font. 
+This article provides developer guidelines for using the Segoe MDL2 Assets icons and lists the font glyphs along with their unicode values and descriptive names. 
 
 **Important APIs**: 
 
@@ -68,14 +68,14 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
 > [!NOTE]
 > Glyphs with prefixes ranging from **E0-** to **E5-** (e.g. E001, E5B1) are currently marked as legacy and are therefore deprecated.
 
-The following tables display all Segoe MDL2 icons and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
+The following tables display all Segoe MDL2 Assets icons and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
 
-* [PUA E700-E900](#PUA-E700-E900)
-* [PUA EA00-EC00](#PUA-EA00-EC00)
-* [PUA ED00-EF00](#PUA-ED00-EF00)
-* [PUA F000-F200](#PUA-F000-F200)
-* [PUA F300-F500](#PUA-F300-F500)
-* [PUA F600-F800](#PUA-F600-F800)
+* [PUA E700-E900](#pua-e700-e900)
+* [PUA EA00-EC00](#pua-ea00-ec00)
+* [PUA ED00-EF00](#pua-ed00-ef00)
+* [PUA F000-F200](#pua-f000-f200)
+* [PUA F300-F500](#pua-f300-f500)
+* [PUA F600-F800](#pua-f600-f800)
 
 ### PUA E700-E900
 
