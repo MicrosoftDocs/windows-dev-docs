@@ -1,7 +1,7 @@
 ---
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 icon guidelines
+title: Segoe MDL2 icons
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
@@ -13,7 +13,7 @@ ms.custom: contperfq2
 ---
 # Segoe MDL2 icons
 
-This article teaches you how to use the Segoe MDL2 icons and provides a list of the glyphs along with their unicode values and descriptive names as provided by the Segoe MDL2 Assets font. 
+This article teaches you how to use the Segoe MDL2 icons and provides a list of glyphs along with their unicode values and descriptive names as provided by the Segoe MDL2 Assets font. 
 
 **Important APIs**: 
 
@@ -65,13 +65,17 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe M
 ## Icon list
 Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of the icons are intended for specialized purposes and are not typically used anywhere else.
 
+> [!NOTE]
+> Glyphs with prefixes ranging from **E0-** to **E5-** (e.g. E001, E5B1) are currently marked as legacy and are therefore deprecated.
+
+The following tables display all Segoe MDL2 icons and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
+
 * [PUA E700-E900](#PUA-E700-E900)
 * [PUA EA00-EC00](#PUA-EA00-EC00)
 * [PUA ED00-EF00](#PUA-ED00-EF00)
 * [PUA F000-F200](#PUA-F000-F200)
 * [PUA F300-F500](#PUA-F300-F500)
 * [PUA F600-F800](#PUA-F600-F800)
-
 
 ### PUA E700-E900
 
@@ -82,7 +86,7 @@ The following table of glyphs displays unicode points prefixed from E7-  to E9-.
 </br>
 <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
@@ -2421,7 +2425,7 @@ The following table of glyphs displays unicode points prefixed from EA-  to EC-.
 </br>
  <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
@@ -3616,7 +3620,7 @@ The following table of glyphs displays unicode points prefixed from ED-  to EF-.
 </br>
 <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
@@ -4151,7 +4155,7 @@ The following table of glyphs displays unicode points prefixed from F0-  to F2-.
 </br>
 <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
@@ -4782,7 +4786,7 @@ The following table of glyphs displays unicode points prefixed from F3-  to F5-.
 </br>
 <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
@@ -5293,7 +5297,7 @@ The following table of glyphs displays unicode points prefixed from F6-  to F8-.
 </br>
 <table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyph</td>
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
