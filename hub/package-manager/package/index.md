@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
 
-If you're an Independent Software Vendors (ISV), you can use Windows Package Manager as a distribution channel for software packages containing your applications. Windows Package Manager currently supports installers in the following formats: MSIX, MSI, and EXE.
+If you're an Independent Software Vendor (ISV), you can use Windows Package Manager as a distribution channel for software packages containing your applications. Windows Package Manager currently supports installers in the following formats: MSIX, MSI, and EXE.
 
 To submit software packages to Windows Package Manager, follow these steps:
 
