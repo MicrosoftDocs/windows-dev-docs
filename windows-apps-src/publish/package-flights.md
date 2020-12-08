@@ -11,7 +11,9 @@ ms.localizationpriority: medium
 
 You can use package flights to distribute specific packages to a limited group of testers. The packages you've already published to the Store will be used for your other customers, so their experience won't be disrupted.
 
-With package flights, only the packages are different; the Store listing details will be the same for all of your customers. Anyone in your flight group will receive the packages that you include in the package flight, while customers who aren't in the flight group continue to receive your regular (non-flighted) packages.  If you later decide that you want to make packages from a package flight available to all your customers, you can easily use those same packages in a non-flighted submission. Note that package flights must pass the [certification process](the-app-certification-process.md), just the same as any submission.
+With package flights, only the packages are different; the Store listing details will be the same for all of your customers. Anyone in your flight group will receive the packages that you include in the package flight, while customers who aren't in the flight group continue to receive your regular (non-flighted) packages.  If you later decide that you want to make packages from a package flight available to all your customers, you can easily use those same packages in a non-flighted submission. 
+
+Note that the [certification process](the-app-certification-process.md) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.   
 
 When you set up package flights, you can specify the people who should get specific packages by adding them to a **known user group** (sometimes referred to as flight group). Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. (Your package flights can include packages targeting any OS version, including Windows 8.1/Windows Phone 8.1 or earlier if your previously-published app already supports them.) Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
 
@@ -69,7 +71,9 @@ By default, your package flight will be published and made available to your fli
 
 ## Submit your package flight to the Store
 
-When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). Note that packages included in your package flight must comply with the [Microsoft Store Policies](store-policies.md), as with all submissions.
+When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). 
+
+Note that the [certification process](the-app-certification-process.md) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.
 
 People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
 
