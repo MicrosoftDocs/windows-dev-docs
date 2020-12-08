@@ -15,10 +15,10 @@ Register now for a developer account so you can get your apps into the Microsoft
 
 ## Opening your developer account
 
-We offer [individual and company accounts in locations around the world](/windows/uwp/publish/account-types-locations-and-fees.md). Check out our [overview of the sign-up process](/windows/uwp/publish/opening-a-developer-account.md) to see how it works.
+
+We offer [individual and company accounts in locations around the world](/windows/uwp/publish/account-types-locations-and-fees). Check out our [overview of the sign-up process](/windows/uwp/publish/opening-a-developer-account) to see how it works.
 
 ## Have a name for your app?
 
-As soon as you open your developer account, you can [create your app by reserving a name](/windows/uwp/publish/create-your-app-by-reserving-a-name.md).
-
+As soon as you open your developer account, you can [create your app by reserving a name](/windows/uwp/publish/create-your-app-by-reserving-a-name).
 
