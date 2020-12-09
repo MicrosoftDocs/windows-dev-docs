@@ -12,6 +12,11 @@ ms.custom: RS5
 
 The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) meets you halfway in your work of building more complex systems simply and correctly.
 
+> [!NOTE]
+> With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). **Windows.UI.Composition** and **Windows.Devices.Input.PenDevice** are examples of exceptions&mdash;that is, namespaces where weak reference support is *not* on for those types. Also see [If your auto-revoke delegate fails to register](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register).
+> 
+> If you're authoring types, then see the [Weak references in C++/WinRT](#weak-references-in-cwinrt) section in this topic.
+
 ## Safely accessing the *this* pointer in a class-member coroutine
 
 For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
