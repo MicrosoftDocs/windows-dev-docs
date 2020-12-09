@@ -30,7 +30,8 @@ Highlights this month include:
 
 * [Agile objects in C#/WinRT](https://docs.microsoft.com/windows/uwp/csharp-winrt/agile-objects)
 
-* [PowerToys](https://review.docs.microsoft.com/windows/powertoys)
+
+
 
 
 ### Other content of interest
@@ -306,5 +307,4 @@ The following reference topics have seen significant updates in the past month:
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties">Windows.UI.Input.PointerPointProperties</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile">Windows.UI.StartScreen.SecondaryTile</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync">Windows.UI.StartScreen.SecondaryTile.RequestDeleteAsync</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.secondarytile">Windows.UI.StartScreen.SecondaryTile</a></li>
-</ul>
+
