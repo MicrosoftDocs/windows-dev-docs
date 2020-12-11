@@ -40,8 +40,6 @@ The *applicationId* or *addonProductId* parameter is required. To retrieve acqui
 | addonProductId | string | The *productId* of the add-on for which you want to retrieve acquisition data. | Yes |
 | startDate | date | The start date in the date range of add-on acquisition data to retrieve. The default is the current date. | No |
 | endDate | date | The end date in the date range of add-on acquisition data to retrieve. The default is the current date. | No |
-| top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. | No |
-| skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on. | No |
 | filter | string | One or more statements that filter the rows in the response. Each statement contains a field name from the response body and value that are associated with the eq or ne operators, and statements can be combined using and or or. String values must be surrounded by single quotes in the filter parameter. For example, filter=market eq 'US' and gender eq 'm'. <br/> You can specify the following fields from the response body: <ul><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | No |
 | aggregationLevel | string | Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: **day**, **week**, or **month**. If unspecified, the default is **day**. | No |
 | orderby | string | A statement that orders the result data values for each add-on acquisition. The syntax is *orderby=field [order],field [order],...* The *field* parameter can be one of the following strings: <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**orderName**</li></ul> The order parameter is optional, and can be **asc** or **desc** to specify ascending or descending order for each field. The default is **asc**. <br/> Here is an example *orderby* string: *orderby=date,market* | No |
@@ -69,7 +67,6 @@ Authorization: Bearer <your access token>
 | Value | Type | Description |
 | --- | --- | --- |
 | Value | array | An array of objects that contain aggregate add-on acquisition data. For more information about the data in each object, see the [add-on acquisition values](#add-on-acquisition-values) section below. |
-| @nextLink | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of add-on acquisition data for the query. |
 | TotalCount | int | The total number of rows in the data result for the query. |
 
 ### Add-on acquisition values
