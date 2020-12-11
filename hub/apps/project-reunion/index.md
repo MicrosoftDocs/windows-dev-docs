@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Project Reunion 0.1 Prerelease is a preview of a new set of developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion does not replace the existing Windows app platforms and frameworks such as UWP and native Win32, and .NET. Instead, it complements these existing platforms with a common set of APIs and tools that developers can rely on across these platforms.
 
 > [!NOTE]
-> Project Reunion 0.1 Prerelease is an early developer preview. You are encouraged to try this release in your development environment. However, be aware that Project Reunion will change in many ways between now and the final release. Project Reunion 0.1 Prerelease is not supported for apps that are used in production environments. **Project Reunion** is a temporary code name.
+> Project Reunion 0.1 Prerelease is an early developer preview. You are encouraged to try this release in your development environment. However, be aware that Project Reunion will change in many ways between now and the final release. Project Reunion 0.1 Prerelease is not supported for apps that are used in production environments. **Project Reunion** is a code name that may change in a future release.
 
 ## Goals of Project Reunion
 
