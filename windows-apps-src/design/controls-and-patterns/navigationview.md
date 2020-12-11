@@ -198,6 +198,7 @@ For an example of how to add FooterMenuItems to your NavigationView, see the [Fo
 The image below shows a NavigationView with Account, Your Cart, and Help navigation items in the footer menu. 
 
 ![A NavigationView with FooterMenuItems](images/footermenu-leftmode.png)
+<img src="images/footermenu-leftmode.png" width="389" height="593" alt="Wifi" />
 
 #### Pane footer
 
