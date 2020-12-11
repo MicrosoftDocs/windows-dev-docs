@@ -63,7 +63,7 @@ For more information about Windows Forms, see the following articles:
 * [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Project templates](visual-studio-templates.md#net-templates)
 * [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
-* [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
+* [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
 * [API reference (.NET)](/dotnet/api/index)
 * [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
@@ -98,6 +98,14 @@ You can use WinUI in the following ways in desktop apps:
 * You can update existing WPF, Windows Forms, and C++/Win32 apps to use [XAML Islands](modernize/xaml-islands.md) to host WinUI 2.x controls in the apps.
 * Starting with [WinUi 3.0](../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../winui/winui3/get-started-winui3-for-desktop.md).
 
+## Project Reunion (preview)
+
+Project Reunion is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms.
+
+Project Reunion is currently available an early developer preview. You are encouraged to try this release in your development environment. However, be aware that Project Reunion will change in many ways between now and the final release. Project Reunion is not supported for apps that are used in production environments.
+
+For more information, see [Project Reunion](../project-reunion/index.md) and our [GitHub repository](https://github.com/microsoft/ProjectReunion/).
+
 ## Platform comparison: UWP, WPF, and Windows Forms
 
 The following table compares various characteristics of Windows Forms, WPF, and UWP in detail.
@@ -128,4 +136,4 @@ Use Xamarin to build cross-platform applications for Windows 10 that can also ru
 
 ### Uno Platform
 
-The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, macOS, Linux and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).
+The Uno Platform enables Windows UWP-based code (C# and XAML) to run on iOS, Android, macOS, Linux and WebAssembly. It provides full API definitions for UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), and the implementation of parts of the UWP API, such as [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents), to enable UWP applications to run on these platforms. For more information, see the [Uno Platform docs](https://platform.uno/docs/articles/intro.html).
