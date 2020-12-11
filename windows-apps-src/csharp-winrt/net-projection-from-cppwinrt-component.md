@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This walkthrough shows how to use [C#/WinRT](index.md) to generate a .NET 5 projection for a C++/WinRT component, create the associated NuGet package, and reference the NuGet package from a .NET 5 C# console application.
 
-You can download the full sample for this walkthrough from GitHub [here](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample).
+You can download the full sample for this walkthrough from GitHub [here](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This walkthrough and the corresponding sample requires the following tools and c
 
 ## Create a simple C++/WinRT Runtime component
 
-To follow this walkthrough, you must first have a C++/WinRT component for which to create a .NET 5 projection. This walkthrough uses the **SimpleMathComponent** project in the related sample from GitHub [here](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample/SimpleMathComponent). This is a **Windows Runtime Component (C++/WinRT)** project that was created by using the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). After you copy the project to your development computer, open the solution in Visual Studio 2019 Preview.
+To follow this walkthrough, you must first have a C++/WinRT component for which to create a .NET 5 projection. This walkthrough uses the **SimpleMathComponent** project in the related sample from GitHub [here](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample/SimpleMathComponent). This is a **Windows Runtime Component (C++/WinRT)** project that was created by using the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). After you copy the project to your development computer, open the solution in Visual Studio 2019 Preview.
 
 The code in this project provides the functionality for basic math operations shown in the header file below. 
 
@@ -120,7 +120,7 @@ Before you can invoke **cswinrt.exe** and generate the projection assembly, you 
 
 ## Build projects out of source
 
-In the [related sample](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample), the build is configured with the **Directory.build.props** file. The generated files from building both the **SimpleMathComponent** and **SimpleMathProjection** projects appear in the *_build* folder at the solution level. To configure your projects to build out of source, copy the **Directory.build.props** file below to the directory containing your solution file.
+In the [related sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample), the build is configured with the **Directory.build.props** file. The generated files from building both the **SimpleMathComponent** and **SimpleMathProjection** projects appear in the *_build* folder at the solution level. To configure your projects to build out of source, copy the **Directory.build.props** file below to the directory containing your solution file.
 
 ```xml
 <Project>
@@ -243,4 +243,4 @@ To consume the projected **SimpleMathComponent**, you can simply add a reference
 
 ## Resources
 
-- [Full code sample for this walkthrough](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample)
+- [Full code sample for this walkthrough](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)
