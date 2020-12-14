@@ -29,9 +29,9 @@ To open one of the payout summary pages:
 
 ## Transaction history page
 
-This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
+This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, Estimated payment month, Adjustment, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
 
-To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
+To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, Estimated Payment month, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed. Adjustment Reason will not display unless there is an adjustment and the Adjustment filter is selected.
 
 To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
 
