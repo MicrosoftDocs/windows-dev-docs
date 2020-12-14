@@ -18,6 +18,9 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 > [!NOTE]
 > For a summary of recent changes to this agreement, see [Change history](store-policies-change-history.md).
 
+> [!NOTE]
+> **Dec 14, 2020 Policy Update Notice**: For game products targeting console developed through the [Xbox Live Creators program](https://www.xbox.com/developers/creators-program/), the requirement to integrate with XBL Services no longer applies. The specific policy ([Policy 10.13.1](https://docs.microsoft.com/en-us/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program. 
+
 Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, and any additional content sold or offered from within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
 
 A few principles to get you started:
