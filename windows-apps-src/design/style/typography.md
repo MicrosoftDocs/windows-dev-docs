@@ -120,7 +120,7 @@ The default [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) is Left, and
 
 :::row:::
     :::column:::
-![[Fourth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
+![Fourth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Keep to 50–60 letters per line for ease of reading.
     :::column-end:::
     :::column:::
@@ -141,7 +141,7 @@ When the amount of text extends beyond the space available, we recommend clippin
 
 :::row:::
     :::column:::
-![[Fifth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
+![Fifth screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
 Clip text, and wrap if multiple lines are enabled.
     :::column-end:::
     :::column:::
