@@ -114,7 +114,7 @@ ___
 `ctrl+`, `shift+`, `alt+`
 
 > [!NOTE]
-> The `Windows` key is not supported as a modifier. 
+> The `Windows` key is not supported as a modifier.
 
 ### Modifier keys
 
@@ -595,8 +595,8 @@ This halves the size of the active pane and opens another. Without any arguments
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
 
 // In defaults.json
-{ "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" }
+{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" }
 ```
 
 #### Actions
@@ -610,6 +610,11 @@ This halves the size of the active pane and opens another. Without any arguments
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
+| `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
+
+
+> [!IMPORTANT]
+> The `size` parameter was added in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.6.
 
 <br />
 
