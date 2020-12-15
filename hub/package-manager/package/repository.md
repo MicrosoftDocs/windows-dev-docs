@@ -91,7 +91,7 @@ You're now ready to push your new manifest to the remote repository.
 
 ### Step 5: Create a pull request
 
-After you push your changes, return to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and create a pull request to merge your fork or branch to the **master** branch.
+After you push your changes, return to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and create a pull request to merge your fork or branch to the main branch.
 
 ![picture of pull request tab](images\pull-request.png)
 

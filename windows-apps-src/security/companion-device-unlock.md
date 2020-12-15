@@ -160,7 +160,7 @@ Users can remove a Windows Hello companion device from a Windows 10 desktops by 
 Enterprises have two options for controlling the Windows Hello companion device framework:
 
 - Turn the feature on or off
-- Define the whitelist of Windows Hello companion devices allowed using Windows app locker
+- Define the allowlist of Windows Hello companion devices allowed using Windows app locker
 
 The Windows Hello companion device framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a Windows Hello companion device type is allowed (for example, only a companion device with a serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
 
