@@ -106,7 +106,33 @@
                 - name: Submit your manifest to the repository
                   href: ../package-manager/package/repository.md
         - name: PowerToys
-          href: https://github.com/microsoft/PowerToys
+          items:
+            - name: Overview
+              items:
+                - name: About PowerToys
+                  href: ../powertoys/index.md
+                - name: Install PowerToys
+                  href: ../powertoys/install.md
+                - name: Run in admin mode
+                  href: ../powertoys/administrator.md
+            - name: Color Picker
+              href: ../powertoys/color-picker.md
+            - name: FancyZones
+              href: ../powertoys/fancyzones.md
+            - name: File Explorer
+              href: ../powertoys/file-explorer.md
+            - name: Image Resizer
+              href: ../powertoys/image-resizer.md
+            - name: Keyboard Manager
+              href: ../powertoys/keyboard-manager.md
+            - name: PowerRename
+              href: ../powertoys/powerrename.md
+            - name: PowerToys Run
+              href: ../powertoys/run.md
+            - name: Shortcut Guide
+              href: ../powertoys/shortcut-guide.md
+            - name: Video Conference Mute
+              href: ../powertoys/video-conference-mute.md
         - name: VS Code
           href: https://code.visualstudio.com/docs
         - name: Visual Studio
