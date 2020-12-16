@@ -42,7 +42,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
     **If you are familiar with GitHub:**
 
-    a. Clone the master branch of the repo locally.
+    a. Clone the main branch of the repo locally.
 
     b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
 

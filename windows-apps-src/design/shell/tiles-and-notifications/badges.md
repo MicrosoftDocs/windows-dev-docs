@@ -1,5 +1,5 @@
 ---
-description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+description: Learn how to use badge notification to conveys summary or status information specific to your app.
 title: Badge notifications for Windows apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
