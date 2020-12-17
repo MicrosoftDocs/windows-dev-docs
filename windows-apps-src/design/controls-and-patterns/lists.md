@@ -328,7 +328,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 - [Master/details](master-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
-- [Drag and drop](/windows/uwp/design/input/drag-and-drop)
+- [Drag and drop](../input/drag-and-drop.md)
 - [Thumbnail images](../../files/thumbnails.md)
 
 **API reference**
