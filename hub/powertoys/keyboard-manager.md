@@ -144,7 +144,7 @@ To fix this, use + to create another remapped key that is mapped to result in A.
 
 ![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### I remapped the wrong keys, how can I stop it quickly?
 
@@ -160,7 +160,7 @@ No, remapping should occur immediately upon pressing **Apply**.
 
 ### Where are the Mac/Linux profiles?
 
-Currently Mac and Linux profiles are not included, we hope to include these features in a future release.
+Currently Mac and Linux profiles are not included.
 
 ### Will this work on video games?
 

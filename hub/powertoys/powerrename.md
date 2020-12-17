@@ -22,7 +22,7 @@ In this demo, all instances of the file name "Pampalona" are replaced with "Pamp
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
-## PowerRename Menu
+## PowerRename menu
 
 After selecting some files in Windows File Explorer, right-clicking and selecting *PowerRename* (which will appear only when enabled in PowerToys), the PowerRename menu will appear. The number of items (files) you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
 

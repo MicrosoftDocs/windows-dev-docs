@@ -1,5 +1,5 @@
 ---
-title: PowerToys Administrator mode for Windows 10
+title: PowerToys administrator mode for Windows 10
 description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be run in administrator mode as well.
 ms.date: 12/02/2020
 ms.topic: article
@@ -14,9 +14,9 @@ If you're running any application as an administrator (also referred to as eleva
 
 There are two options for PowerToys to support applications running as administrator (with elevated permissions):
 
-1. **[Recommended]**: PowerToys will display a prompt when an elevated process is detected. Open **PowerToys Settings**. Inside the **General** tab, select "Restart as administrator".
+- **[Recommended]**: PowerToys will display a prompt when an elevated process is detected. Open **PowerToys Settings**. Inside the **General** tab, select "Restart as administrator".
 
-2. Enable "Always run as administrator" in the **PowerToys Settings**.
+- Enable "Always run as administrator" in the **PowerToys Settings**.
 
 ## Run as administrator elevated processes explained
 

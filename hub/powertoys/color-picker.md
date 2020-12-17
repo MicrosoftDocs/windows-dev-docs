@@ -22,7 +22,7 @@ To start using Color Picker, you need to first make sure it is enabled in the Po
 
 Once enabled, you can choose one of the following three behaviors to be executed when launching Color Picker with the activation shortcut <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> (note that this shortcut can be changed in the settings dialog):
 
-![ColorPicker Behaviors](../images/pt-colorpicker-behaviors.png)
+:::image type="content" source="../images/pt-colorpicker-behaviors.png" alt-text="ColorPicker behaviors.":::
 
 - **Color Picker with editor mode enabled** - Opens Color Picker, after selecting a color, the editor is opened and the selected color is copied into the clipboard (in the default format - configurable in the settings dialog).
 - **Editor** - Opens Editor directly, from here you can choose a color from the history, fine tune a selected color, or capture a new color with by opening the color picker.
@@ -62,4 +62,4 @@ Color picker will let you change following settings:
 ## Limitations
 
 - Color picker can't be displayed on top of the start menu or action center (you can still pick a color).
-- If the currently focused application was started with an administrator elevation (Run as administator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.
+- If the currently focused application was started with an administrator elevation (Run as administrator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.

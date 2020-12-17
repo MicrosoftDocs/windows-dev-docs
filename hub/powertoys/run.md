@@ -47,7 +47,7 @@ The following Run options are available in the PowerToys settings menu.
   | Clear the previous query on launch | When launched, previous searches will not be highlighted |
   | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible |
 
-## Keyboard Shortcuts
+## Keyboard shortcuts
 
   | **Shortcuts** | **Action** |
   | --- | --- |
@@ -71,7 +71,7 @@ These will force PowerToys run into only targeted plug-ins.
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
 
-## Indexer Settings
+## Indexer settings
 
 If indexer settings are not set to cover all drives, you will receive the following warning:
 
@@ -89,7 +89,7 @@ In this "Searching Windows" menu, you can:
 
 ![Advanced Indexing Settings](../images/pt-run-indexing-advanced.png)
 
-## Known Issues
+## Known issues
 
 For a list of all known issues and suggestions, see the [PowerToys product repo issues on GitHub](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3AProduct-Launcher).
 
