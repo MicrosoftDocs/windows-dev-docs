@@ -21,7 +21,7 @@ NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Micro
 
 ### InfoBar
 
-The [InfoBar](/uwp/design/controls-and-patterns/infobar) control is used to display app-wide status messages that are highly visible to users, yet are also non-intrusive. The control includes a Severity property to indicate the type of message shown, and an option to specify your own call to action or hyperlink button. As the InfoBar is inline with other UI content, you can also specify whether the control is always visible or if it can be dismissed by the user.
+The [InfoBar](/windows/uwp/design/controls-and-patterns/infobar) control is used to display app-wide status messages that are highly visible to users, yet are also non-intrusive. The control includes a Severity property to indicate the type of message shown, and an option to specify your own call to action or hyperlink button. As the InfoBar is inline with other UI content, you can also specify whether the control is always visible or if it can be dismissed by the user.
 
 This example shows an InfoBar in the default state with a close button and message.
 
@@ -37,7 +37,7 @@ This animated example shows an InfoBar with various severity states and custom m
 
 ### Determinate ProgressRing
 
-The determinate state for [ProgressRing](/uwp/design/controls-and-patterns/progress-controls) shows the percentage completed of a task. This should be used during an operation where the duration is known and where the operation's progress should not block user interaction with the app.
+The determinate state for [ProgressRing](/windows/uwp/design/controls-and-patterns/progress-controls) shows the percentage completed of a task. This should be used during an operation where the duration is known and where the operation's progress should not block user interaction with the app.
 
 The following animated image demonstrates a determinate ProgressRing control.
 
