@@ -11,26 +11,26 @@ dev_langs:
 ---
 # Responsive layouts with XAML
 
-The XAML layout system provides automatic sizing, layout panels, visual states, and even separate UI definitions to create a responsive UI. With a responsive layout, you can make your app look great on screens with different app window sizes, resolutions, pixel densities, and orientations. You can also use XAML to reposition, resize, reflow, show/hide, replace, or re-architect your app's UI, as discussed in [Responsive design techniques](responsive-design.md). Here, we discuss how to implement responsive layouts with XAML.
+The XAML layout system provides automatic sizing of elements, layout panels, and visual states to help you create a responsive UI. With a responsive layout, you can make your app look great on screens with different app window sizes, resolutions, pixel densities, and orientations. You can also use XAML to reposition, resize, reflow, show/hide, replace, or re-architect your app's UI, as discussed in [Responsive design techniques](responsive-design.md). Here, we discuss how to implement responsive layouts with XAML.
 
 ## Fluid layouts with properties and panels
 
-The foundation of a responsive layout is the appropriate use of XAML layout properties and panels to reposition, resize, and reflow content in a fluid manner. 
+The foundation of a responsive layout is the appropriate use of XAML layout properties and panels to reposition, resize, and reflow content in a fluid manner.
 
-The XAML layout system supports both static and fluid layouts. In a static layout, you give controls explicit pixel sizes and positions. When the user changes the resolution or orientation of their device, the UI doesn't change. Static layouts can become clipped across different form factors and display sizes. On the other hand, fluid layouts shrink, grow, and reflow to respond to the visual space available on a device. 
+The XAML layout system supports both static and fluid layouts. In a static layout, you give controls explicit pixel sizes and positions. When the user changes the resolution or orientation of their device, the UI doesn't change. Static layouts can become clipped across different form factors and display sizes. On the other hand, fluid layouts shrink, grow, and reflow to respond to the visual space available on a device.
 
 In practice, you use a combination of static and fluid elements to create your UI. You still use static elements and values in some places, but make sure that the overall UI is responsive to different resolutions, screen sizes, and views.
 
 Here, we discuss how to use XAML properties and layout panels to create a fluid layout.
 
 ### Layout properties
-Layout properties control the size and position of an element. To create a fluid layout, use automatic or proportional sizing for elements, and allow layout panels to position their children as needed. 
+Layout properties control the size and position of an element. To create a fluid layout, use automatic or proportional sizing for elements, and allow layout panels to position their children as needed.
 
 Here are some common layout properties and how to use them to create fluid layouts.
 
 **Height and Width**
 
-The [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) properties specify the size of an element. You can use fixed values measured in effective pixels, or you can use auto or proportional sizing. 
+The [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) properties specify the size of an element. You can use fixed values measured in effective pixels, or you can use auto or proportional sizing.
 
 Auto sizing resizes UI elements to fit their content or parent container. You can also use auto sizing with the rows and columns of a grid. To use auto sizing, set the Height and/or Width of UI elements to **Auto**.
 
@@ -121,9 +121,9 @@ Layout panels let you organize your UI into logical groups of controls. When you
 ## Adaptive layouts with visual states and state triggers
 Use visual states to make significant alterations to your UI based on window size or other changes.
 
-When your app window grows or shrinks beyond a certain amount, you might want to alter layout properties to reposition, resize, reflow, reveal, or replace sections of your UI. You can define different visual states for your UI, and apply them when the window width or window height crosses a specified threshold. 
+When your app window grows or shrinks beyond a certain amount, you might want to alter layout properties to reposition, resize, reflow, reveal, or replace sections of your UI. You can define different visual states for your UI, and apply them when the window width or window height crosses a specified threshold.
 
-An [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) provides an easy way to set the threshold (also called 'breakpoint') where a state is applied. A [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) defines property values that are applied to an element when it’s in a particular state. You group visual states in a [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) that applies the appropriate VisualState when the specified conditions are met.
+A [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) defines property values that are applied to an element when it’s in a particular state. You group visual states in a [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) that applies the appropriate VisualState when the specified conditions are met. An [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) provides an easy way to set the threshold (also called 'breakpoint') where a state is applied in XAML. Or, you can call the [**VisualStateManager.GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) method in your code to apply the visual state. Examples of both ways are shown in the next sections.
 
 ### Set visual states in code
 
@@ -133,7 +133,6 @@ Here, a [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) contai
 
 > [!NOTE]
 > Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](screen-sizes-and-breakpoints-for-responsive-design.md).
-
 
 ```xaml
 <Page ...
@@ -339,82 +338,8 @@ In this simplified XAML from the State triggers sample, a Style resource is appl
 </Page>
 ```
 
-## Tailored layouts
-
-When you make significant changes to your UI layout on different devices, you might find it more convenient to define a separate UI file with a layout tailored to the device, rather than adapting a single UI. If the functionality is the same across devices, you can define separate XAML views that share the same code file. If both the view and the functionality differ significantly across devices, you can define separate Pages, and choose which Page to navigate to when the app is loaded.
-
-### Separate XAML views per device family
-
-Use XAML views to create different UI definitions that share the same code-behind. You can provide a unique UI definition for each device family. Follow these steps to add a XAML view to your app.
-
-**To add a XAML view to an app**
-1. Select Project > Add New Item. The Add New Item dialog box opens.
-    > **Tip**&nbsp;&nbsp;Make sure a folder or the project, and not the solution, is selected in Solution Explorer.
-2. Under Visual C# or Visual Basic in the left pane, pick the XAML template type.
-3. In the center pane, pick XAML View.
-4. Enter the name for the view. The view must be named correctly. For more info on naming, see the remainder of this section.
-5. Click Add. The file is added to the project.
-
-The previous steps create only a XAML file, but not an associated code-behind file. Instead, the XAML view is associated with an existing code-behind file using a "DeviceName" qualifier that's part of the file or folder name. This qualifier name can be mapped to a string value that represents the device family of the device that your app is currently running on, such as, "Desktop", "Tablet", and the names of the other device families (see [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues)).
-
-You can add the qualifier to the file name, or add the file to a folder that has the qualifier name.
-
-**Use file name**
-
-To use the qualifier name with the file, use this format: *[pageName]*.DeviceFamily-*[qualifierString]*.xaml.
-
-Let's look at an example for a file named MainPage.xaml. To create a view for tablet devices, name the XAML view MainPage.DeviceFamily-Tablet.xaml. To create a view for PC devices, name the view MainPage.DeviceFamily-Desktop.xaml. Here's what the solution looks like in Microsoft Visual Studio.
-
-![XAML views with qualified file names](images/xaml-layout-view-ex-1.png)
-
-**Use folder name**
-
-To organize the views in your Visual Studio project using folders, you can use the qualifier name with the folder. To do so, name your folder like this: DeviceFamily-*[qualifierString]*. In this case, each XAML view file has the same name. Don't include the qualifier in the file name.
-
-Here's an example, again for a file named MainPage.xaml. To create a view for tablet devices, create a folder named "DeviceFamily-Tablet", and place a XAML view named MainPage.xaml into it. To create a view for PC devices, create a folder named "DeviceFamily-Desktop", and place another XAML view named MainPage.xaml into it. Here's what the solution looks like in Visual Studio.
-
-![XAML views in folders](images/xaml-layout-view-ex-2.png)
-
-In both cases, a unique view is used for tablet and PC devices. The default MainPage.xaml file is used if the device it's running on doesn't match any of the device family specific views.
-
-### Separate XAML pages per device family
-
-To provide unique views and functionality, you can create separate Page files (XAML and code), and then navigate to the appropriate page when the page is needed.
-
-**To add a XAML page to an app**
-1. Select Project > Add New Item. The Add New Item dialog box opens.
-    > **Tip**&nbsp;&nbsp;Make sure the project, and not the solution, is selected in Solution Explorer.
-2. Under Visual C# or Visual Basic in the left pane, pick the XAML template type.
-3. In the center pane, pick Blank page.
-4. Enter the name for the page. For example, "MainPage_Tablet". Both a MainPage_Tablet.xaml and MainPage_Tablet.xaml.cs/vb/cpp code file are created.
-5. Click Add. The file is added to the project.
-
-At runtime, check the device family that the app is running on, and navigate to the correct page like this.
-
-```csharp
-if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Tablet")
-{
-    rootFrame.Navigate(typeof(MainPage_Tablet), e.Arguments);
-}
-else
-{
-    rootFrame.Navigate(typeof(MainPage), e.Arguments);
-}
-```
-```cppwinrt
-if (Windows::System::Profile::AnalyticsInfo::VersionInfo().DeviceFamily() == L"Windows.Tablet")
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage_Tablet>(), box_value(e.Arguments()));
-}
-else
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage>(), box_value(e.Arguments()));
-}
-```
-
-You can also use different criteria to determine which page to navigate to. For more examples, see the [Tailored multiple views sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews), which uses the [**GetIntegratedDisplaySize**](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) function to check the physical size of an integrated display.
-
 ## Related topics
+
 - [Tutorial: Create adaptive layouts](../basics/xaml-basics-adaptive-layout.md)
 - [Responsiveness techniques sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [State triggers sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
