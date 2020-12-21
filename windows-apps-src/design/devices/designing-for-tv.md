@@ -432,7 +432,7 @@ A [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) provides quick navigation of 
 
 You can set the [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](../controls-and-patterns/pivot.md).
 
-### Navigation pane <a name="navigation-pane" />
+### Navigation pane
 
 A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button.
 
@@ -478,7 +478,7 @@ The [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportCon
 
 Visit [Media playback](../controls-and-patterns/media-playback.md) to learn more about adding media to your app.
 
-> ![NOTE]
+> [!NOTE]
 > `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.
 
 ### Search experience
