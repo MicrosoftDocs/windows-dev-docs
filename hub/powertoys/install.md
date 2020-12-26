@@ -19,7 +19,7 @@ There are multiple ways to install PowerToys:
 - Windows 10 1803 (build 17134) or later.
 - [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
 
-To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the **⊞ Win** *(Windows key)* + **D**, then type **winver**, select **OK**. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Settings** menu.
+To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the **⊞ Win** *(Windows key)* + **R**, then type **winver**, select **OK**. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Settings** menu.
 
 ## Install with Windows executable file
 
