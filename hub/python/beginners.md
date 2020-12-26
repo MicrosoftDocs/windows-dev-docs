@@ -26,7 +26,7 @@ To install Python using the Microsoft Store:
 
 1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.7" from the results under Apps. Select **Get**.
+2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.9" from the results under Apps. Select **Get**.
 
 3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has installed on your machine.
 
