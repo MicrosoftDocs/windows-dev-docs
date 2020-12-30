@@ -268,7 +268,7 @@ The InfoBar will expand to fit the content defined.
     Message="Your documents are being saved to the cloud"
     IsClosable="False">
     <muxc:InfoBar.Content>
-        <ProgressBar IsIndeterminate="True" Margin="0,0,0,6"/>
+        <muxc:ProgressBar IsIndeterminate="True" Margin="0,0,0,6" MaxWidth="200"/>
     </muxc:InfoBar.Content>
 </muxc:InfoBar>
 ```
@@ -278,17 +278,18 @@ The InfoBar will expand to fit the content defined.
 ### Lightweight styling
 
 You can modify the default Style and ControlTemplate to give the control a unique appearance. 
+See the [Control Style and Template]((https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template)) section of the InfoBar API docs for a list of the available theme resources.
 For more info, see the 
 [Light-weight styling section](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)
 of the 
 [Styling controls](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)
-article.
+article. 
 
-For example, the following causes the title bar font size to be 22pt on a Page's InfoBars:
+For example, the following causes the background color for all informational InfoBars on a page to be blue:
 
 ```xaml
 <Page.Resources>
-    <x:Double x:Key="InfoBarTitleFontSize">22</x:Double>
+    <x:SolidColorBrush x:Key="InfoBarInformationalSeverityBackgroundBrush" Color="LightBlue"></x:SolidColorBrush>
 </Page.Resources>
 ```
 ### Canceling close
