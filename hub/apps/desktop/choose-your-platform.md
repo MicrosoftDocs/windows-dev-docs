@@ -128,7 +128,7 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 
 ### Progressive Web Apps (PWAs)
 
-PWAs let developers package their website code so it can be installed and run like an application on Windows 10 PCs. For more information, see [Progressive Web Apps](/microsoft-edge/progressive-web-apps/get-started).
+PWAs let developers package their website code so it can be installed and run like an application on Windows 10 PCs. For more information, see [Progressive Web Apps](/microsoft-edge/progressive-web-apps-chromium/get-started).
 
 ### Xamarin
 
