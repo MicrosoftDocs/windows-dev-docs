@@ -5650,8 +5650,8 @@ The following table of glyphs displays unicode points prefixed from F6-  to F8-.
   <td>SpellingKorean</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F87D.png" width="32" height="32" alt="SpellingSerbian" /></td>
+  <td>F87D</td>
   <td>SpellingSerbian</td>
-  <td>Eject</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F87E.png" width="32" height="32" alt="SpellingChinese" /></td>
   <td>F87E</td>
