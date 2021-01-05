@@ -98,4 +98,4 @@ This can be useful when you modify navigation behavior dynamically based on scre
 ## Related topics
 
 - [Navigate between two pages](../basics/navigate-between-two-pages.md)
-- [Motion in UWindowsWP apps](index.md)
+- [Motion in UWP apps](index.md)
