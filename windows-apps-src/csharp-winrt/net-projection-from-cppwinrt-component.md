@@ -136,7 +136,7 @@ Although this step is not required to generate a projection, it provides simplic
 
 ## Create a NuGet package from the projection
 
-To distribute and use the interop assembly, you can automatically create a NuGet package when building the solution by adding some additional project properties. This package will include the interop assembly and a dependency on the C#/WinRT NuGet package for the required C#/WinRT runtime assembly. This runtime assembly is named **winrt.runtime.dll** for .NET 5.0 targets.
+To distribute and use the interop assembly, you can automatically create a NuGet package when building the solution by adding some additional project properties. For .NET 5.0 targets, the package should include the interop assembly, implementation assembly, and a dependency on the C#/WinRT NuGet package for the required C#/WinRT runtime assembly, **WinRT.Runtime.dll**.
 
 1. Add a NuGet spec (.nuspec) file to the **SimpleMathProjection** project.
 
@@ -153,7 +153,7 @@ To distribute and use the interop assembly, you can automatically create a NuGet
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example of a C++/WinRT component NuGet spec. Notice the `dependency` on CsWinRT for the `net5.0` target framework moniker, as well as the target for `lib\net5.0\SimpleMathProjection.dll`, which points to the projection assembly **SimpleMathComponent.dll** instead of **SimpleMathComponent.winmd**. This behavior is new in .NET 5.0 and enabled by C#/WinRT.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example NuGet spec for distributing the interop assembly from the C++/WinRT component. Note that for .NET 5.0 targets, under the `dependencies` node there is a dependency on CsWinRT, and under the `files` node **SimpleMathProjection.dll** is specified instead of **SimpleMathComponent.winmd** for the target `lib\net5.0\SimpleMathProjection.dll`. This behavior is new in .NET 5.0 and enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be deployed for .NET 5.0 targets. 
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -173,7 +173,7 @@ To distribute and use the interop assembly, you can automatically create a NuGet
         </dependencies>
       </metadata>
       <files>
-        <!--Support net46+, netcore3, net5, uap, c++ -->
+        <!--Support netcore3, uap, net46+, net5, c++ -->
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
