@@ -2,7 +2,7 @@
 description: Learn about Project Reunion, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 title: Project Reunion
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 01/07/2021
 keywords: windows win32, desktop development, project reunion
 ms.author: mcleans
 author: mcleanbyron
@@ -56,11 +56,12 @@ If you want to try out Project Reunion 0.1 Prerelease, you must start with one o
 
 1. Ensure that your development computer has Windows 10, version 1809 (build 17763), or a later OS version installed.
 
-2. Install [Visual Studio 2019, version 16.9 Preview 2 (or later)](https://visualstudio.microsoft.com/vs/preview/). You must include the following workloads when installing Visual Studio:
-    - .NET Desktop Development
-    - Universal Windows Platform development
-    - Desktop development with C++
-    - The **C++ (v142) Universal Windows Platform tools** optional component for the Universal Windows Platform workload (see **Installation Details** under the **Universal Windows Platform development** section, on the right pane of the installer)
+2. Install [Visual Studio 2019, version 16.9 Preview 2 (or later)](https://visualstudio.microsoft.com/vs/preview/). Make sure the following items are selected in the Visual Studio Installer:
+    - On the **Workloads** tab, make sure the following workloads are selected.
+        - **.NET Desktop Development**
+        - **Desktop development with C++**
+        - **Universal Windows Platform development** (also make sure the **C++ (v142) Universal Windows Platform tools** optional component is selected for this workload in the **Installation details** pane)
+    - On the **Individual components** tab, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
 
 3. Install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the Visual Studio Marketplace.
 
