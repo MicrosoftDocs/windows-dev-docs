@@ -53,11 +53,13 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 5.  Add several required audience URIs to your [application manifest](/azure/active-directory/develop/active-directory-application-manifest). In the left pane, click **Manifest**. Click **Edit**, replace the `"identifierUris"` section with the following text, and then click **Save**.
 
     ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
+    "accessTokenAcceptedVersion": 1,
+    "identifierUris": [
+        "https://onestore.microsoft.com",
+        "https://onestore.microsoft.com/b2b/keys/create/collections",
+        "https://onestore.microsoft.com/b2b/keys/create/purchase"
         ],
+    "signInAudience": "AzureADMyOrg",
     ```
 
     These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values.
