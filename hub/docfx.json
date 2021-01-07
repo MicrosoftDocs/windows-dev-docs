@@ -54,7 +54,7 @@
         "nodejs/**.md": "windows-nodejs",
         "android/**.md": "windows-nodejs",
         "powertoys/**.md": "powertoys",
-        "package-manager/**.md": ""
+        "package-manager/**.md": "package-manager"
       },	 
       "feedback_product_url": 
       {
