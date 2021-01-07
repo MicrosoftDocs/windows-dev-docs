@@ -5,14 +5,15 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ---
+
 # Requests deployment information for one or more installed packages.
 
 **Request**
 
-Method      | Request URI
-:------     | :------
-POST | /ext/app/deployinfo
-<br />
+| Method | Request URI |
+|--------|-------------|
+| POST | /ext/app/deployinfo |
+
 **URI parameters**
 
  - None
@@ -29,7 +30,7 @@ A JSON array in the following format:
   * PackageFullName - Name of the package that we are requesting information about.
   * OverlayFolder - Optional path to an overlay folder path if using this feature.
 
-###Response
+### Response
 
 **Response body**
 
@@ -47,12 +48,11 @@ A JSON array in the following format (some fields are optional):
 
 This API has the following expected status codes.
 
-HTTP status code      | Description
-:------     | :-----
-200 | Success
-4XX | Error codes
-5XX | Error codes
-<br />
+| HTTP status code | Description |
+|------------------|-------------|
+| 200 | Success |
+| 4XX | Error codes |
+| 5XX | Error codes |
 
 **Available device families**
 
