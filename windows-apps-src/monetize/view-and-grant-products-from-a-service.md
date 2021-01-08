@@ -27,7 +27,6 @@ The following steps describe the end-to-end process for using the Microsoft Stor
 2.  [Associate your Azure AD application ID with your app in Partner Center](#step-2).
 3.  In your service, [create Azure AD access tokens](#step-3) that represent your publisher identity.
 4.  In your client Windows app, [create a Microsoft Store ID key](#step-4) that represents the identity of the current user, and pass this key back to your service.
-5.  After you have the required Azure AD access token and Microsoft Store ID key, [call the Microsoft Store collection API or purchase API from your service](#step-5).
 
 This end-to-end process involves two software components that perform different tasks:
 
@@ -176,29 +175,6 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 The following diagram illustrates the process of creating a Microsoft Store ID key.
 
   ![Create Windows Store ID key](images/b2b-1.png)
-
-<span id="step-5"/>
-
-## Step 5: Call the Microsoft Store collection API or purchase API from your service
-
-After your service has a Microsoft Store ID key that enables it to access a specific user's product ownership information, your service can call the Microsoft Store collection API or purchase API by following these instructions:
-
-* [Query for products](query-for-products.md)
-* [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
-* [Grant free products](grant-free-products.md)
-* [Get subscriptions for a user](get-subscriptions-for-a-user.md)
-* [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
-
-For each scenario, pass the following information to the API:
-
--   In the request header, pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com`. This is one of the tokens you created [earlier in step 3](#step-3). This token represents your publisher identity.
--   In the request body, pass the Microsoft Store ID key you retrieved [earlier in step 4](#step-4) from client-side code in your app. This key represents the identity of the user whose product ownership information you want to access.
-
-### Diagram
-
-The following diagram describes the process of calling a method in the Microsoft Store collection API or purchase API from your service.
-
-  ![Call collections or puchase API](images/b2b-2.png)
 
 ## Claims in a Microsoft Store ID key
 
