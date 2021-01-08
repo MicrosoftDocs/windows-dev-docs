@@ -1,8 +1,8 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Get set up
-description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
-ms.date: 10/13/2020
+description: Follow these instructions and start creating apps for Windows 10, using WinRT APIs (also known as the Universal Windows Platform or UWP).
+ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 ![Get ready to use Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
+Welcome to Windows 10 development! Follow these instructions and start creating apps for Windows 10, using WinRT APIs (also known as the Universal Windows Platform or UWP).
 
 ## 1. Download or update Visual Studio
 
