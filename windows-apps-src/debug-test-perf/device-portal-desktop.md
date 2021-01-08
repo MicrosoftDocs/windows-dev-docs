@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Device Portal for Windows Desktop
-description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
+title: Windows Device Portal for Desktop
+description: Learn how the Windows Device Portal opens up diagnostics and automation on your Desktop PC.
 ms.date: 08/20/2020
 ms.topic: article
 ms.custom: contperf-fy21q1
@@ -9,12 +9,12 @@ keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 
-# Device Portal for Windows Desktop
+# Windows Device Portal for Windows Desktop
 
-Windows Device Portal is a debugging tool that lets you view diagnostic information and interact with your desktop PC over HTTP from a web browser. To debug other devices, see  [Windows Device Portal overview](device-portal.md).
+Windows Device Portal (WDP) is a debugging tool that lets you view diagnostic information and interact with your desktop PC over HTTP from a web browser. To debug other devices, see [Windows Device Portal overview](device-portal.md).
 
+You can use the WDP for the following:
 
-You can use Device Portal to do the following:
 - See and manipulate a list of running processes
 - Install, delete, launch, and terminate apps
 - Change Wi-Fi profiles, view signal strength, and see ipconfig
@@ -23,7 +23,7 @@ You can use Device Portal to do the following:
 - Collect ETW traces 
 - Manipulate the isolated storage of sideloaded apps
 
-## Set up Device Portal on Windows Desktop
+## Set up Windows Device Portal on a Desktop device
 
 ### Turn on developer mode
 

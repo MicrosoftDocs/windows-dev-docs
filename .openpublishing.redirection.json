@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-api-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/device-portal-api-reference",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
       "redirect_url": "/windows/uwp/get-started/get-app-samples",
       "redirect_document_id": true

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: Write a custom plugin for device portal
+title: Write a custom plugin for Windows Device Portal
 description: Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
 ms.date: 07/06/2020
 ms.topic: article
@@ -8,9 +8,9 @@ keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 
-# Write a custom plugin for Device Portal
+# Write a custom plugin for Windows Device Portal
 
-Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
+Learn how to write a UWP app that uses the Windows Device Portal (WDP) to host a web page and provide diagnostic information.
 
 Starting with Windows 10 Creators Update (version 1703, build 15063), you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the [application package manifest](/uwp/schemas/appxpackage/appx-package-manifest) changes, setting up your app’s connection to the [Device Portal service](./device-portal.md), and handling an incoming request.
 
