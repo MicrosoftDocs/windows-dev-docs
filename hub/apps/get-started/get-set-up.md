@@ -52,7 +52,7 @@ You can start developing apps now, but before you can submit them to the store, 
 After you've installed the tools and enabled your device for development, check out our guidance on how to start creating Windows 10 apps.
 
 -   [Choose your platform](../desktop/choose-your-platform.md)
--   [Start coding UWP apps](/windows-apps-src/get-started/create-uwp-apps.md)
+-   [Start coding](../windows/uwp/get-started/create-uwp-apps.md)
 
 ## Windows development setup scripts
 
