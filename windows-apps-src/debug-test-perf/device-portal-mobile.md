@@ -2,7 +2,7 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows Device Portal for Mobile
 description: Learn how the Windows Device Portal lets you remotely configure and manage your mobile device.
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium

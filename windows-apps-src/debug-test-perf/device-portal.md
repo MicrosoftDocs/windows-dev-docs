@@ -2,7 +2,7 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 04/09/2019
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -43,7 +43,7 @@ HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10
 IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal) |
 Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080 | [Device Portal for Mobile](device-portal-mobile.md) |
 
-\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Port Settings](device-portal-desktop.md#registry-based-configuration-for-device-portal) section for desktop.  
+\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
 
 ## Features
 
