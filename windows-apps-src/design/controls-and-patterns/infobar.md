@@ -278,7 +278,7 @@ The InfoBar will expand to fit the content defined.
 ### Lightweight styling
 
 You can modify the default Style and ControlTemplate to give the control a unique appearance. 
-See the [Control Style and Template]((https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template)) section of the InfoBar API docs for a list of the available theme resources.
+See the [Control Style and Template](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 For more info, see the 
 [Light-weight styling section](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)
 of the 
