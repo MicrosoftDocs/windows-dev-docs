@@ -6,7 +6,7 @@ ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
-ms.custom: 19H1
+ms.custom: [19H1, contperf-fy21q3]
 ---
 
 # Provision Windows Device Portal with a custom SSL certificate
