@@ -38,7 +38,7 @@ The following table includes device-specific details for the WDP.
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
 Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Set up Windows Device Portal on a Desktop device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
-Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](/windows/uwp/xbox-apps/device-portal-xbox) |
+Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
 HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10080 | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
 IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal) |
 Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080 | [Device Portal for Mobile](device-portal-mobile.md) |

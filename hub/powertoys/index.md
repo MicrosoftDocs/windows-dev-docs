@@ -144,7 +144,7 @@ PowerToys welcomes your contributions! The PowerToys development team is excited
 
 - Write a [tech spec](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - Submit a [design concept or recommendation](https://www.microsoft.com/design/inclusive/)
-- [Contribute to documentation](https://docs.microsoft.com/contribute/)
+- [Contribute to documentation](/contribute/)
 - Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/master/src)
 - [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
 

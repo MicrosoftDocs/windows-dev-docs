@@ -139,7 +139,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 [Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](../publish/index.md) to learn how to submit your apps for publication in the Microsoft Store.
 
-New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](../publish/payout-summary.md), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
+New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](/partner-center/payout-statement), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
 
 For more introductory material, see [An Introduction to Building Windows Apps for Windows 10 Devices](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 

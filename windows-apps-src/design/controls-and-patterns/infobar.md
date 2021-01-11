@@ -201,10 +201,10 @@ For custom icons, the recommended icon size is 20px.
 ### Add an action button
 
 An additional action button can be added by defining your own button that inherits 
-[ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) 
+[ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) 
 and setting it in the ActionButton property. Custom styling will be applied to action buttons of type 
-[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
-and [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
+[Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 
+and [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
 for consistency and accessibility. Aside from the ActionButton property, 
 additional action buttons can be added via custom content and will appear below the message.
 
@@ -280,9 +280,9 @@ The InfoBar will expand to fit the content defined.
 You can modify the default Style and ControlTemplate to give the control a unique appearance. 
 See the [Control Style and Template](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 For more info, see the 
-[Light-weight styling section](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)
+[Light-weight styling section](./xaml-styles.md#lightweight-styling)
 of the 
-[Styling controls](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)
+[Styling controls](./xaml-styles.md)
 article. 
 
 For example, the following causes the background color for all informational InfoBars on a page to be blue:
