@@ -52,9 +52,10 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
         
         <CommandBar>
             <CommandBar.Content>
-                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" 
+                        VerticalAlignment="Top"/>
             </CommandBar.Content>
-	    
+        
             <AppBarButton Icon="Delete" Label="Delete"/>
             <AppBarButton Icon="Save" Label="Save"/>
         </CommandBar>
@@ -62,19 +63,43 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
 </Page>
 ```
 
-In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don’t need to display the back button at all.
+In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don't need to display the back button at all.
 
 ![Back button states](images/back-nav/BackDisabled.png)
 
+## Optimize for different inputs
+
+This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
+
+- **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
+- **Tablet Mode**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
+- **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
+
+If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox.
+
+We recommend supporting the following inputs for back navigation. (Note that some of these inputs are not supported by the system BackRequested and must be handled by separate events.)
+
+| Input | Event |
+| --- | --- |
+| Windows-Backspace key | BackRequested |
+| Hardware back button | BackRequested |
+| Shell tablet mode back button | BackRequested |
+| VirtualKey.XButton1 | PointerPressed |
+| VirtualKey.GoBack | KeyboardAccelerator.BackInvoked |
+| Alt+LeftArrow key | KeyboardAccelerator.BackInvoked |
+
+The code examples provided above demonstrate how to handle all of these inputs.
+
 ## Code example
 
-The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button visibility in [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
+The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button in [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 ```xaml
 <!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
-<Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Button x:Name="BackButton" Click="Back_Click" 
+        Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ...
 <Page/>
 ```
@@ -179,7 +204,7 @@ namespace winrt::PageNavTest::implementation
     }
 
     void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
-	    Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
     {
         args.Handled(On_BackRequested());
     }
@@ -206,7 +231,7 @@ private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEvent
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
     bool isXButton1Pressed =
-	    e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+        e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
 
     if (isXButton1Pressed)
     {
@@ -256,7 +281,7 @@ void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core:
 void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
 {
     bool isXButton1Pressed =
-	    e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
+        e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
 
     if (isXButton1Pressed)
     {
@@ -275,29 +300,6 @@ bool App::On_BackRequested()
     return false;
 }
 ```
-
-## Optimizing for different device and form factors
-
-This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
-
-- **Phone/Tablet**: A hardware or software back button is always present on mobile and tablet, but we recommend drawing an in-app back button for clarity.
-- **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
-- **Xbox/TV**: Do not draw a back button, for it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
-
-If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox. 
-
-We recommend supporting the following inputs for back navigation. (Note that some of these inputs are not supported by the system BackRequested and must be handled by separate events.)
-
-| Input | Event |
-| --- | --- |
-| Windows-Backspace key | BackRequested |
-| Hardware back button | BackRequested |
-| Shell tablet mode back button | BackRequested |
-| VirtualKey.XButton1 | PointerPressed |
-| VirtualKey.GoBack | KeyboardAccelerator.BackInvoked |
-| Alt+LeftArrow key | KeyboardAccelerator.BackInvoked |
-
-The code examples provided above demonstrate how to handle all of these inputs.
 
 ## System back behavior for backward compatibilities
 
