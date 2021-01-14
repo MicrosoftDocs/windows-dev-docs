@@ -33,7 +33,7 @@ For a walkthrough that demonstrates how to create and distribute an interop asse
 
 ### Invoke cswinrt.exe
 
-To invoke cswinrt.exe from a project, install the latest [C#/WinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/). You can then set C#/WinRT-specific project properties in a **C# Library** project to generate an interop assembly. The following project fragment demonstrates a simple invocation of **cswinrt** to generate projection sources for types in the Contoso namespace. These sources are then included in the project build.
+To invoke cswinrt.exe from a project, install the latest [C#/WinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/). You can then set C#/WinRT-specific project properties in a **C# Class Library (.NET Core)** project to generate an interop assembly. The following project fragment demonstrates a simple invocation of **cswinrt** to generate projection sources for types in the Contoso namespace. These sources are then included in the project build.
 
 ```xml
 <PropertyGroup>
@@ -85,7 +85,25 @@ C#/WinRT also provides an activation fallback path if Windows fails to activate 
 
 C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications) to locate an implementation DLL. An app relying on this fallback behavior should package the implementation DLL alongside the app module.
 
-## Common errors with .NET 5+
+## Common errors and troubleshooting
+
+- Error: "Windows Metadata not provided or detected."
+
+  You can specify Windows Metadata by using the `<CsWinRTWindowsMetadata>` project property, for example:
+  ```xml
+  <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+  ```
+  
+- Error	CS0246: The type or namespace name 'Windows' could not be found (are you missing a using directive or an assembly reference?)
+
+  To address this error, edit your `<TargetFramework>` property to target a specific Windows version, for example:
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+  ```
+  Refer to the docs on [Calling Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) for more details on specifying the `<TargetFramework>` property.
+
+
+### .NET SDK versioning errors
 
 You may encounter the following errors or warnings in a project that is built with an earlier .NET SDK version than any of its dependencies.
 
