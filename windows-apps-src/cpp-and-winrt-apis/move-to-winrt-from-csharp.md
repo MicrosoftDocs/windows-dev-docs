@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 
 # Move to C++/WinRT from C#
 
+> [!TIP]
+> If you've read this topic before, and you're returning to it with a particular task in mind, then you can jump to the [Find content based on the task you're performing](#find-content-based-on-the-task-youre-performing) section of this topic.
+
 This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 For a case study of porting one of the Universal Windows Platform (UWP) app samples, see the companion topic [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md). You can gain porting practice and experience by following along with that walkthrough, and porting the sample for yourself as you go.
@@ -24,7 +27,23 @@ In terms of what kinds of porting changes to expect, you could group them into f
 - [**Port language procedure**](#changes-that-involve-procedures-within-the-language). Some of these can be simple, repetitive changes (such as `myObject.MyProperty` to `myObject.MyProperty()`). Others need deeper changes (for example, porting a procedure that involves the use of **System.Text.StringBuilder** to one that involves the use of **std::wostringstream**).
 - [**Porting-related tasks that are specific to C++/WinRT**](#porting-related-tasks-that-are-specific-to-cwinrt). Certain details of the Windows Runtime are taken care of impliclicly by C#, behind the scenes. Those details are done explicitly in C++/WinRT. An example is that you use an `.idl` file to define your runtime classes.
 
-The rest of this topic is structured according to that taxonomy.
+After the task-based index that follows, the rest of the sections in this topic are structured according to the taxonomy above.
+
+## Find content based on the task you're performing
+
+| Task | Content |
+| - | - |
+|Author a Windows Runtime component (WRC)|Certain functionality can be achieved (or certain APIs called) only with C++. You can factor that functionality into a C++/WinRT WRC, and then consume the WRC from (for example) a C# app. See [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [If you're authoring a runtime class in a Windows Runtime component](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component).|
+|Port an async method|It's a good idea for the first line of an asynchronous method in a C++/WinRT runtime class to be `auto lifetime = get_strong();` (see [Safely accessing the *this* pointer in a class-member coroutine](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).<br><br>Porting from `Task`, see <a href="#id_async_action">Async action</a>.<br>Porting from `Task<T>`, see <a href="#id_async_operation">Async operation</a>.<br>Porting from `async void`, see <a href="#id_fire_and_forget">Fire-and-forget method</a>.|
+|Port a class|First, determine whether the class needs to be a runtime class, or whether it can be an ordinary class. To help you decide that, see the very beginning of [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis). Then, see the next three rows below.|
+|Port a runtime class|A class that shares functionality outside of the C++ app, or a class that's used in XAML data binding. See [If you're authoring a runtime class in a Windows Runtime component](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component), or [If you're authoring a runtime class to be referenced in your XAML UI](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui).<br><br>Those links describe this in more detail, but a runtime class must be declared in IDL. If your project already contains an an IDL file (for example, `Project.idl`), then we recommend that you declare any new runtime class in that file. In IDL, declare any methods and data members that will be used outside your app, or that will be used in XAML. After updating the IDL file, rebuild, and look at the generated stub files (`.h` and `.cpp`) in your project's `Generated Files` folder (In **Solution Explorer**, with the project node selected, make sure **Show All Files** is toggled on). Compare the stub files with the files already in your project, adding files or adding/updating function signatures as necessary. Stub file syntax is always correct, so we recommend that you use it in order to minimize build errors. Once the stubs in your project match those in the stub files, you can go ahead and implement them by porting the C# code over. |
+|Port an ordinary classs|See [If you're *not* authoring a runtime class](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class).|
+|Author IDL|[Introduction to Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro)<br>[If you're authoring a runtime class to be referenced in your XAML UI](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[Consuming objects from XAML markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)<br>[Define your runtime classes in IDL](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#define-your-runtime-classes-in-idl)|
+|Port a collection|[Collections with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/collections)<br>[Making a data source available to XAML markup](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">Associative container</a><br><a href="#id_vector_member_access">Vector member access</a>|
+|Port an event|<a href="#id_event_handler_delegate_as_class_member">Event handler delegate as class member</a><br><a href="#id_revoke_event_handler_delegate">Revoke event handler delegate</a>|
+|Port a method|From C#: `private async void SampleButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>To the C++/WinRT `.h` file: `fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>To the C++/WinRT `.cpp` file: `fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
+|Port strings|[String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)<br>[ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)<br>[String-building](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#string-building)<br>[Boxing and unboxing a string](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#boxing-and-unboxing-a-string)|
+|Type conversion (type casting)|C#: `o.ToString()`<br>C++/WinRT: `to_hstring(static_cast<int>(o))`<br>Also see [ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring).<br><br>C#: `(Value)o`<br>C++/WinRT: `unbox_value<Value>(o)`<br>Throws if unboxing fails. Also see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing).<br><br>C#: `o as Value? ?? fallback`<br>C++/WinRT: `unbox_value_or<Value>(o, fallback)`<br>Returns fallback if unboxing fails. Also see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing).<br><br>C#: `(Class)o`<br>C++/WinRT: `o.as<Class>()`<br>Throws if conversion fails.<br><br>C#: `o as Class`<br>C++/WinRT: `o.try_as<Class>()`<br>Returns null if conversion fails.|
 
 ## Changes that involve the language projection
 
@@ -36,10 +55,10 @@ The rest of this topic is structured according to that taxonomy.
 |Size of a collection|`collection.Count`|`collection.Size()`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Typical collection type|[**IList\<T\>**](/dotnet/api/system.collections.generic.ilist-1), and **Add** to add an element.|[**IVector\<T\>**](/uwp/api/windows.foundation.collections.ivector-1), and **Append** to add an element. If you use a **std::vector** anywhere, then **push_back** to add an element.||
 |Read-only collection type|[**IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
-|Event handler delegate as class member|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|Revoke event handler delegate|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|Associative container|[**IDictionary\<K, V\>**](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>**](/uwp/api/windows.foundation.collections.imap-2)||
-|Vector member access|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
+|<a name="id_event_handler_delegate_as_class_member"></a>Event handler delegate as class member|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_revoke_event_handler_delegate"></a>Revoke event handler delegate|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_associative_container"></a>Associative container|[**IDictionary\<K, V\>**](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>**](/uwp/api/windows.foundation.collections.imap-2)||
+|<a name="id_vector_member_access"></a>Vector member access|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
 
 ### Register/revoke an event handler
 
@@ -106,9 +125,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | -------- | -- | --------- | -------- |
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
 |Access a data member|`this.variable`|`this->variable`||
-|Async action|`async Task ...`|`IAsyncAction ...`||
-|Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`||
-|Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation), [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_fire_and_forget"></a>Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click), [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget)|
 |Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |Collection of projected types as a private field|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
