@@ -80,7 +80,7 @@ For this app, item \#3 is not a debt since the status bar (formerly called the s
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
- 
+
 To set those styles, you can just type them into the markup editor or you can use the Visual Studio XAML Tools and set them without typing a thing. To do that, you right-click a **TextBlock** and click **Edit Style** &gt; **Apply Resource**. To do that with the **TextBlock**s in the item template, right click the **ListBox** and click **Edit Additional Templates** &gt; **Edit Generated Items (ItemTemplate)**.
 
 There is an 80% opaque white background behind the items, because the default style of the **ListBox** control sets its background to the `ListBoxBackgroundThemeBrush` system resource. Set `Background="Transparent"` on the **ListBox** to clear that background. To left-align the **TextBlock**s in the item template, edit it again the same way as described above and set a **Margin** of `"9.6,0"` on both **TextBlock**s.
