@@ -70,6 +70,25 @@ _Configuration: [Powerline in PowerShell](./../custom-terminal-gallery/powerline
 
 ___
 
+## Startup Actions
+
+This sets the list of actions to execute on startup, allowing to run the Terminal with a custom set of tabs and panes by default. These actions will be applied only if no command line arguments were supplied. The list of actions is represented by a string with the same format as *commands* in the command line arguments. For more information about the *commands* format, visit the [Command line arguments page](./../command-line-arguments.md).
+
+**Property name:** `startupActions`
+
+**Necessity:** Optional
+
+**Accepts:** String representing a list of action to run.
+
+**Default value:** `""`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
 ## Tab settings
 
 ### Use tab switcher experience ([Preview](https://aka.ms/terminal-preview))
