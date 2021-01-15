@@ -7,6 +7,9 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs: 
+- csharp
+- cppwinrt
 ---
 # Navigation history and backwards navigation for Windows apps
 
@@ -14,9 +17,12 @@ ms.localizationpriority: medium
 
 The Windows app provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
-To implement backwards navigation in your app, place a [back button](#back-button) at the top left corner of your app's UI. If your app uses the [NavigationView](../controls-and-patterns/navigationview.md) control, then you can use [NavigationView's built-in back button](../controls-and-patterns/navigationview.md#backwards-navigation).
+To implement backwards navigation in your app, place a back button at the top left corner of your app's UI. The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
 
-The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
+For most apps that have multiple pages, we recommend that you use the [NavigationView](../controls-and-patterns/navigationview.md) control to provide the navigation framework for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles. If your app uses the `NavigationView` control, then you can use [NavigationView's built-in back button](../controls-and-patterns/navigationview.md#backwards-navigation).
+
+> [!NOTE]
+> The guidelines and examples in this article should be used when you implement navigation without using the `NavigationView` control. If you use `NavigationView`, this information provides useful background knowledge, but you should use the specific guidance and examples in the [NavigationView](../controls-and-patterns/navigationview.md) article
 
 ## Back button
 
@@ -32,7 +38,9 @@ To create a back button, use the [Button](../controls-and-patterns/buttons.md) c
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+        <Button x:Name="BackButton"
+                Style="{StaticResource NavigationBackButtonNormalStyle}" 
+                ToolTipService.ToolTip="Back"/>
 
     </Grid>
 </Page>
@@ -52,7 +60,9 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
         
         <CommandBar>
             <CommandBar.Content>
-                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" 
+                <Button x:Name="BackButton"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        ToolTipService.ToolTip="Back" 
                         VerticalAlignment="Top"/>
             </CommandBar.Content>
         
@@ -67,39 +77,45 @@ In order to minimize UI elements moving around in your app, show a disabled back
 
 ![Back button states](images/back-nav/BackDisabled.png)
 
-## Optimize for different inputs
+## Optimize for different devices and inputs
 
-This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
+This backwards navigation design guidance is applicable to all devices, but your users will benefit if you optimize for different form factors and methods of input.
+
+To optimize your UI:
 
 - **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
-- **Tablet Mode**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
+- **[Tablet Mode](https://support.microsoft.com/windows/use-your-pc-like-a-tablet-4fbfcca5-f058-814a-4f80-a12e703d7c34)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
 - **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
 
-If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox.
+If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls-and-patterns/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
 
-We recommend supporting the following inputs for back navigation. (Note that some of these inputs are not supported by the system BackRequested and must be handled by separate events.)
+We recommend handling the following events (in addition to the back button Click) to support the most common inputs for back navigation.
 
-| Input | Event |
+| Event | Input |
 | --- | --- |
-| Windows-Backspace key | BackRequested |
-| Hardware back button | BackRequested |
-| Shell tablet mode back button | BackRequested |
-| VirtualKey.XButton1 | PointerPressed |
-| VirtualKey.GoBack | KeyboardAccelerator.BackInvoked |
-| Alt+LeftArrow key | KeyboardAccelerator.BackInvoked |
+| [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) | Alt+Left arrow,<br/>VirtualKey.GoBack |
+| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | Gamepad B button,<br/>Windows-Backspace key,<br/>Tablet Mode back button,<br/>Hardware back button |
+| [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) | VirtualKey.XButton1<br/>(Such as the back button found on some mice.) |
 
-The code examples provided above demonstrate how to handle all of these inputs.
+## Code examples
 
-## Code example
+This section demonstrates how to handle back navigation using a variety of inputs.
 
-The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button in [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
+### Back button and back navigation
+
+At a minimum, you need to handle the back button `Click` event and provide the code to perform the back navigation. You should also disable the back button when the backstack is empty.
+
+This example code demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event to navigate. The back button is enabled or disabled in the [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) method, which is called when navigating to a new page.
+
+The code is shown for `MainPage`, but you add this code to each page that supports back navigation. To make this easier, this example creates a helper class called `NavigationHelper` to hold the navigation related code. An instance of `NavigationHelper` is created in each page.
 
 ```xaml
 <!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
-<Button x:Name="BackButton" Click="Back_Click" 
-        Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+        <Button x:Name="BackButton" Click="BackButton_Click"
+                Style="{StaticResource NavigationBackButtonNormalStyle}" 
+                ToolTipService.ToolTip="Back"/>
 ...
 <Page/>
 ```
@@ -108,45 +124,47 @@ Code-behind:
 
 ```csharp
 // MainPage.xaml.cs
-public MainPage()
-{
-    KeyboardAccelerator GoBack = new KeyboardAccelerator();
-    GoBack.Key = VirtualKey.GoBack;
-    GoBack.Invoked += BackInvoked;
-    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
-    AltLeft.Key = VirtualKey.Left;
-    AltLeft.Invoked += BackInvoked;
-    this.KeyboardAccelerators.Add(GoBack);
-    this.KeyboardAccelerators.Add(AltLeft);
-    // ALT routes here
-    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
-}
-
+NavigationHelper navigationHelper;
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    BackButton.IsEnabled = this.Frame.CanGoBack;
-}
-
-private void Back_Click(object sender, RoutedEventArgs e)
-{
-    On_BackRequested();
-}
-
-// Handles system-level BackRequested events and page-level back button Click events
-private bool On_BackRequested()
-{
-    if (this.Frame.CanGoBack)
+    if (navigationHelper is null)
     {
-        this.Frame.GoBack();
-        return true;
+        // Pass the root Frame (Page.Frame property) to NavigationHelper.
+        navigationHelper = new NavigationHelper(Frame);
     }
-    return false;
+    // Enable or disable the back button.
+    BackButton.IsEnabled = Frame.CanGoBack;
+    base.OnNavigatedTo(e);
 }
 
-private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+private void BackButton_Click(object sender, RoutedEventArgs e)
 {
-    On_BackRequested();
-    args.Handled = true;
+    navigationHelper.TryGoBack();
+}
+```
+
+Here's the code for the `NavigationHelper` class.
+
+```csharp
+class NavigationHelper
+{
+    private Frame Frame { get; set; }
+
+    public NavigationHelper(Frame rootFrame)
+    {
+        Frame = rootFrame;
+    }
+
+    // Perform back navigation if possible.
+    public bool TryGoBack()
+    {
+        if (Frame.CanGoBack)
+        {
+            Frame.GoBack();
+            return true;
+        }
+        return false;
+    }
 }
 ```
 
@@ -211,43 +229,101 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-Above, we handle backwards navigation for a single page. You can handle navigation in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
+### Support access keys
 
-To handle backwards navigation for an entire app, you'll register a global listener for the [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event in the `App.xaml` code-behind file.
+Keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you support accelerator keys for both forward and back navigation because users who rely on these will expect both. For more info, see [Keyboard interactions](..\input\keyboard-interactions.md) and [Keyboard accelerators](..\input\keyboard-accelerators.md).
 
-App.xaml code-behind:
+The common accelerator keys for forward and back navigation are Alt + Right arrow (forward) and Alt + Left arrow (back). To support these keys for navigation, handle the [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) event. You handle an event that's directly on the Window (rather than an element on the page) so the app responds to the accelerator keys regardless of which element has focus.
+
+Here's the code added to the `NavigationHelper` class to support accelerator keys and forward navigation. See the full `NavigationHelper` code at the end of the Code examples section for the complete class.
 
 ```csharp
-// App.xaml.cs
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
-Frame rootFrame = Window.Current.Content as Frame;
-rootFrame.PointerPressed += On_PointerPressed;
-
-private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+class NavigationHelper
 {
-    e.Handled = On_BackRequested();
-}
+    ...
 
-private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
-{
-    bool isXButton1Pressed =
-        e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
-
-    if (isXButton1Pressed)
+    public NavigationHelper(Frame rootFrame)
     {
-        e.Handled = On_BackRequested();
+        Frame = rootFrame;
+
+        // Add support for accelerator keys. 
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        Window.Current.CoreWindow.Dispatcher.AcceleratorKeyActivated +=
+            CoreDispatcher_AcceleratorKeyActivated;
+
+    }
+
+    ...
+
+    // Perform forward navigation if possible.
+    private bool TryGoForward()
+    {
+        if (Frame.CanGoForward)
+        {
+            Frame.GoForward();
+            return true;
+        }
+        return false;
+    }
+
+    // Invoked on every keystroke, including system keys such as Alt key combinations.
+    // Used to detect keyboard navigation between pages even when the page itself
+    // doesn't have focus.
+    private void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs e)
+    {
+        // When Alt+Left are pressed navigate back.
+        // When Alt+Right are pressed navigate forward.
+        if (e.EventType == CoreAcceleratorKeyEventType.SystemKeyDown
+        && (e.VirtualKey == VirtualKey.Left || e.VirtualKey == VirtualKey.Right)
+        && e.KeyStatus.IsMenuKeyDown == true
+        && !e.Handled)
+        {
+            if (e.VirtualKey == VirtualKey.Left)
+            {
+                e.Handled = TryGoBack();
+            }
+            else if (e.VirtualKey == VirtualKey.Right)
+            {
+                e.Handled = TryGoForward();
+            }
+        }
     }
 }
+```
 
-private bool On_BackRequested()
+### Handle system back requests
+
+Windows devices provide various ways that the system can pass a back navigation request to your app. Some common ways are the B button on a gamepad, the Windows key + Backspace key shortcut, or the system back button in Tablet Mode; the exact options available depend on the device.
+
+You can support system provided back requests from hardware and software system back keys by registering a listener for the [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.
+
+Here's the code added to the `NavigationHelper` class to support system provided back requests. See the full `NavigationHelper` code at the end of the Code examples section for the complete class.
+
+```csharp
+class NavigationHelper
 {
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame.CanGoBack)
+    ...
+
+    public NavigationHelper(Frame rootFrame)
     {
-        rootFrame.GoBack();
-        return true;
+        Frame = rootFrame;
+
+        // Add support for system back requests. 
+        SystemNavigationManager.GetForCurrentView().BackRequested 
+            += System_BackRequested;
+
     }
-    return false;
+
+    ...
+
+    private void System_BackRequested(object sender, BackRequestedEventArgs e)
+    {
+        if (!e.Handled)
+        {
+            e.Handled = TryGoBack();
+        }
+    }
 }
 ```
 
@@ -301,13 +377,150 @@ bool App::On_BackRequested()
 }
 ```
 
-## System back behavior for backward compatibilities
+#### System back behavior for backward compatibility
 
-Previously, UWP apps used [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
+Previously, UWP apps used [SystemNavigationManager.AppViewBackButtonVisibility](/uwp/api/windows.ui.core.systemnavigationmanager.appviewbackbuttonvisibility) to show or hide a system back button for backwards navigation. (This button raises a [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.) This API will continue to be supported to ensure backward compatibility, but we no longer recommend using the back button exposed by `AppViewBackButtonVisibility`. Instead, you should provide your own in-app back button as described in this article.
 
-If your app continues using [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
+If you continue to use [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI renders the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 
 ![Title bar back button](images/nav-back-pc.png)
+
+### Handle mouse navigation buttons
+
+Some mice provide hardware navigation buttons for forward and back navigation. You can support these mouse buttons by handling the [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) event and checking for [IsXButton1Pressed](/uwp/api/windows.ui.input.pointerpointproperties.isxbutton1pressed) (back) or [IsXButton2Pressed](/uwp/api/windows.ui.input.pointerpointproperties.isxbutton2pressed) (forward).
+
+Here's the code added to the `NavigationHelper` class to support mouse button navigation. See the full `NavigationHelper` code at the end of the Code examples section for the complete class.
+
+```csharp
+class NavigationHelper
+{
+    ...
+
+    public NavigationHelper(Frame rootFrame)
+    {
+        Frame = rootFrame;
+
+        // Add support for mouse navigation buttons. 
+        Window.Current.CoreWindow.PointerPressed += CoreWindow_PointerPressed;
+
+    }
+
+    ...
+
+    // Handle mouse forward and back buttons.
+    private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
+    {
+        // For this event, e.Handled arrives as 'true', so invert the values. 
+        if (e.CurrentPoint.Properties.IsXButton1Pressed
+            && e.Handled)
+        {
+            e.Handled = !TryGoBack();
+        }
+        else if (e.CurrentPoint.Properties.IsXButton2Pressed 
+                && e.Handled)
+        {
+            e.Handled = !TryGoForward();
+        }
+    }
+}
+```
+
+### NavigationHelper complete code
+
+```csharp
+class NavigationHelper
+{
+    private Frame Frame { get; set; }
+
+    public NavigationHelper(Frame rootFrame)
+    {
+        Frame = rootFrame;
+
+        // Add support for system back requests. 
+        SystemNavigationManager.GetForCurrentView().BackRequested 
+            += System_BackRequested;
+
+        // Add support for accelerator keys. 
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        Window.Current.CoreWindow.Dispatcher.AcceleratorKeyActivated +=
+            CoreDispatcher_AcceleratorKeyActivated;
+
+        // Add support for mouse navigation buttons. 
+        Window.Current.CoreWindow.PointerPressed += CoreWindow_PointerPressed;
+    }
+
+    // Perform back navigation if possible.
+    public bool TryGoBack()
+    {
+        if (Frame.CanGoBack)
+        {
+            Frame.GoBack();
+            return true;
+        }
+        return false;
+    }
+
+    // Perform forward navigation if possible.
+    private bool TryGoForward()
+    {
+        if (Frame.CanGoForward)
+        {
+            Frame.GoForward();
+            return true;
+        }
+        return false;
+    }
+
+    // Invoked on every keystroke, including system keys such as Alt key combinations.
+    // Used to detect keyboard navigation between pages even when the page itself
+    // doesn't have focus.
+    private void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs e)
+    {
+        // When Alt+Left are pressed navigate back.
+        // When Alt+Right are pressed navigate forward.
+        if (e.EventType == CoreAcceleratorKeyEventType.SystemKeyDown
+        && (e.VirtualKey == VirtualKey.Left || e.VirtualKey == VirtualKey.Right)
+        && e.KeyStatus.IsMenuKeyDown == true
+        && !e.Handled)
+        {
+            if (e.VirtualKey == VirtualKey.Left)
+            {
+                e.Handled = TryGoBack();
+            }
+            else if (e.VirtualKey == VirtualKey.Right)
+            {
+                e.Handled = TryGoForward();
+            }
+        }
+    }
+
+    // Handle system back requests.
+    private void System_BackRequested(object sender, BackRequestedEventArgs e)
+    {
+        if (!e.Handled)
+        {
+            e.Handled = TryGoBack();
+        }
+    }
+
+    // Handle mouse forward and back buttons.
+    private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
+    {
+        // For this event, e.Handled arrives as 'true', so invert the values. 
+        if (e.CurrentPoint.Properties.IsXButton1Pressed
+            && e.Handled)
+        {
+            e.Handled = !TryGoBack();
+        }
+        else if (e.CurrentPoint.Properties.IsXButton2Pressed 
+                && e.Handled)
+        {
+            e.Handled = !TryGoForward();
+        }
+    }
+}
+```
 
 ## Guidelines for custom back navigation behavior
 
