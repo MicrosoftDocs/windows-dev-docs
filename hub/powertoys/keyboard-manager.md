@@ -28,7 +28,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 ## Settings
 
-To create mappings with Keyboard Manager, you have the options to:
+To create mappings with Keyboard Manager, you will need to open the PowerToys Settings (search for the PowerToys app in your Windows Start menu, selecting it will open the PowerToys Settings window). Inside PowerToys Settings, on the Keyboard Manager tab, you will see the options to:
 
 - Launch the Remap Keyboard settings window by selecting <kbd>Remap a Key</kbd>
 - Launch the Remap Shortcuts settings window by selecting the <kbd>Remap a shortcut</kbd>
