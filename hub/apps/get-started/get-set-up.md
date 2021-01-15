@@ -54,6 +54,7 @@ After you've installed the tools and enabled your device for development, check 
 -   [Choose your platform](../desktop/choose-your-platform.md)
 -   [Start coding](/windows/uwp/get-started/create-uwp-apps)
 
+
 ## Windows development setup scripts
 
 If you want to customize your device and install other features or packages, check out this project for system setup scripts.
