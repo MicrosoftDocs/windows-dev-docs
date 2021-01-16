@@ -88,26 +88,26 @@ The creation date and time attributes of a file can be used in the *Replace with
 
 Variable pattern |Explanation
 |:---|:---|
-|$YYYY|Year represented by a full four or five digits, depending on the calendar used.
-|$YY|Year represented only by the last two digits. A leading zero is added for single-digit years.
-|$Y|Year represented only by the last digit.
-|$MMMM|Name of the month
-|$MMM|Abbreviated name of the month
-|$MM|Month as digits with leading zeros for single-digit months.
-|$M|Month as digits without leading zeros for single-digit months.
-|$DDDD|Name of the day of the week
-|$DDD|Abbreviated name of the day of the week
-|$DD|Day of the month as digits with leading zeros for single-digit days.
-|$D|Day of the month as digits without leading zeros for single-digit days.
-|$hh|Hours with leading zeros for single-digit hours
-|$h|Hours without leading zeros for single-digit hours
-|$mm|Minutes with leading zeros for single-digit minutes.
-|$m|Minutes without leading zeros for single-digit minutes.
-|$ss|Seconds with leading zeros for single-digit seconds.
-|$s|Seconds without leading zeros for single-digit seconds.
-|$fff|Milliseconds represented by full three digits.
-|$ff|Milliseconds represented only by the first two digits.
-|$f|Milliseconds represented only by the first digit.
+|`$YYYY`|Year represented by a full four or five digits, depending on the calendar used.
+|`$YY`|Year represented only by the last two digits. A leading zero is added for single-digit years.
+|`$Y`|Year represented only by the last digit.
+|`$MMMM`|Name of the month
+|`$MMM`|Abbreviated name of the month
+|`$MM`|Month as digits with leading zeros for single-digit months.
+|`$M`|Month as digits without leading zeros for single-digit months.
+|`$DDDD`|Name of the day of the week
+|`$DDD`|Abbreviated name of the day of the week
+|`$DD`|Day of the month as digits with leading zeros for single-digit days.
+|`$D`|Day of the month as digits without leading zeros for single-digit days.
+|`$hh`|Hours with leading zeros for single-digit hours
+|`$h`|Hours without leading zeros for single-digit hours
+|`$mm`|Minutes with leading zeros for single-digit minutes.
+|`$m`|Minutes without leading zeros for single-digit minutes.
+|`$ss`|Seconds with leading zeros for single-digit seconds.
+|`$s`|Seconds without leading zeros for single-digit seconds.
+|`$fff`|Milliseconds represented by full three digits.
+|`$ff`|Milliseconds represented only by the first two digits.
+|`$f`|Milliseconds represented only by the first digit.
 
 For example, given the file names:
 
@@ -138,27 +138,27 @@ To enable regular expressions, check the "Use Regular Expressions" checkbox.
 
 #### Simple matching examples
 
-| Search for     | Description                                           |
-| -------------- | ------------- |
-| ^              | Match the beginning of the filename                   |
-| $              | Match the end of the filename                         |
-| .*             | Match all the text in the name                        |
-| ^foo           | Match text that begins with "foo"                     |
-| bar$           | Match text that ends with "bar"                       |
-| ^foo.\*bar$    | Match text that begins with "foo" and ends with "bar" |
-| .+?(?=bar)     | Match everything up to "bar"                          |
-| foo[\s\S]\*bar | Match everything between "foo" and "bar"              |
+| Search for       | Description                                           |
+| ---------------- | ------------- |
+| `^`              | Match the beginning of the filename                   |
+| `$`              | Match the end of the filename                         |
+| `.*`             | Match all the text in the name                        |
+| `^foo`           | Match text that begins with "foo"                     |
+| `bar$`           | Match text that ends with "bar"                       |
+| `^foo.*bar$`     | Match text that begins with "foo" and ends with "bar" |
+| `.+?(?=bar)`     | Match everything up to "bar"                          |
+| `foo[\s\S]*bar`  | Match everything between "foo" and "bar"              |
 
 #### Matching and variable examples
 
 *When using the variables, the "Match All Occurrences" option must be enabled.*
 
-| Search for | Replace With  | Description                                |
-| ---------- | ------------- |--------------------------------------------|
-| (.\*).png  | foo\_$1.png   | Prepends "foo\_" to the existing file name |
-| (.\*).png  | $1\_foo.png   | Appends "\_foo" to the existing file name  |
-| (.\*)      | $1.txt        | Appends ".txt" extension to existing file name |
-| (^\w+\.$)\|(^\w+$) | $2.txt | Appends ".txt" extension to existing file name only if it does not have an extension |
+| Search for   | Replace With    | Description                                |
+| ------------ | --------------- |--------------------------------------------|
+| `(.*).png`   | `foo_$1.png`   | Prepends "foo\_" to the existing file name |
+| `(.*).png`   | `$1_foo.png`   | Appends "\_foo" to the existing file name  |
+| `(.*)`       | `$1.txt`        | Appends ".txt" extension to existing file name |
+| `(^\w+\.$)\|(^\w+$)` | `$2.txt` | Appends ".txt" extension to existing file name only if it does not have an extension |
 
 ### Additional resources for learning regular expressions
 
