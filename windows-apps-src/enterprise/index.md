@@ -14,8 +14,7 @@ This article provides an overview of key enterprise features provided by the Uni
 
 ## Feature highlights
 
-<a id="template-studio" />
-
+<a id="template-studio"></a>
 ### Windows Template Studio
 
 Windows Template Studio is a Visual Studio 2019 extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
@@ -24,8 +23,7 @@ Windows Template Studio is a Visual Studio 2019 extension that accelerates the c
 
 See [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
 
-<a id="desktop-style-UI" />
-
+<a id="desktop-style-UI"></a>
 ### Controls to create desktop-style UIs
 
 We've released new UWP XAML controls that fill the gap between a traditional desktop application UI and a UWP UI.
@@ -34,8 +32,7 @@ For example, the new [MenuBar](../design/controls-and-patterns/menus.md), [DropD
 
 ![MenuBar](images/menu-bar.png)
 
-<a id="enterprise" />
-
+<a id="enterprise"></a>
 ### Controls to support enterprise scenarios
 
 The [DataGridView](/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
@@ -53,16 +50,14 @@ The Windows UI Library is a set of NuGet packages that provide controls and othe
 
 See [Windows UI Library (Preview version)](/uwp/toolkits/winui/).
 
-<a id="xaml-islands" />
-
+<a id="xaml-islands"></a>
 ### UWP controls in desktop applications (XAML Islands)
 
 Windows 10 now enables you to use UWP controls in WPF, Windows Forms, and C++ Win32 desktop applications using a feature called *XAML Islands*. This means that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls, such as Windows Ink and controls that support the Fluent Design System. This feature is called XAML islands.
 
 See [UWP controls in desktop applications](/windows/apps/desktop/modernize/xaml-islands).
 
-<a id="standard" />
-
+<a id="standard"></a>
 ### .NET Standard 2.0
 
 The .NET Standard includes over 20,000 more APIs than .NET Standard 1.x. This makes it so much easier to migrate existing .NET Framework libraries and then use them across different .NET applications including your UWP application.
@@ -71,16 +66,14 @@ The .NET Standard includes over 20,000 more APIs than .NET Standard 1.x. This ma
 
 See [Share code between a desktop app and a UWP app](../porting/desktop-to-uwp-migrate.md).
 
-<a id="sql-server" />
-
+<a id="sql-server"></a>
 ### SQL Server connectivity
 
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace.
 
 See [Use a SQL Server database in a UWP app](../data-access/sql-server-databases.md).
 
-<a id="MSIX" />
-
+<a id="MSIX"></a>
 ### MSIX deployment
 
 MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and install files in addition to enabling modern packaging and deployment features to Win32, WPF, and Windows Forms apps. 
@@ -89,8 +82,7 @@ MSIX is a Windows app package format that combines the best features of MSI, .ap
 
 See [MSIX documentation](/windows/msix/).
 
-<a id="distribution" />
-
+<a id="distribution"></a>
 ## Security
 
 Windows 10 provides a suite of security features for app developers to protect the identity of their users, the security of corporate networks, and any business data stored on devices. New for Windows 10 is Microsoft Passport, an easy-to-deploy two-factor password alternative that is accessible by using a PIN or Windows Hello, which provides enterprise grade security and supports fingerprint, facial, and iris based recognition.

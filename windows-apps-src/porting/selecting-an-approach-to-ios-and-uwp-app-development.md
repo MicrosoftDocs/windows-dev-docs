@@ -42,7 +42,7 @@ With an existing iOS app, your options are a little more limited. However, all i
 
 -   [Windows Bridge for iOS](https://github.com/Microsoft/WinObjC)
 
-    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
+    This is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
 -   Repurpose your C++ code.
 

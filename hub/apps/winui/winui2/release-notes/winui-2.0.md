@@ -7,7 +7,7 @@ ms.topic: article
 
 # Windows UI Library 2.0
 
-WinUI 2.0 is the first public release of the Windows UI Library.
+WinUI 2.0 is the first public release of the Windows UI Library (released October 2018).
 
 WinUI is the easiest way to build great Fluent Design experiences for Windows.
 

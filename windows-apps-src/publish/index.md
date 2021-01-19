@@ -54,7 +54,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <img src="https://docs.microsoft.com/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Payments and reporting</h3>
         <a href="account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
-        <a href="getting-paid-apps.md">Getting paid</a><br/>
+        <a href="/partner-center/marketplace-get-paid">Getting paid</a><br/>
         <a href="in-app-ads.md">In-app ads</a><br/>
         <a href="analytics.md">Analytic reports</a><br/>
     :::column-end:::

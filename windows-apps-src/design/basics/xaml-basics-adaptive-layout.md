@@ -42,7 +42,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
     **If you are familiar with GitHub:**
 
-    a. Clone the master branch of the repo locally.
+    a. Clone the main branch of the repo locally.
 
     b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
 
@@ -191,7 +191,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -201,7 +201,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -211,7 +211,7 @@ Next, create the `StateTriggers` that correspond to each snap point. In MainPage
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -260,10 +260,7 @@ Run the app. When the app loads, try changing the size of the window. When you s
 
 Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md) if you'd like to test a Surface Hub layout.
 
-If you get stuck, you can find more guidance in these sections of [Responsive layouts with XAML](../layout/layouts-with-xaml.md).
-
-+ [Visual states and state triggers](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
-+ [Tailored layouts](../layout/layouts-with-xaml.md#tailored-layouts)
+If you get stuck, you can find more guidance in [Responsive layouts with XAML](../layout/layouts-with-xaml.md).
 
 Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
 

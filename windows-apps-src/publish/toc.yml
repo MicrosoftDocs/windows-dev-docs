@@ -6,7 +6,7 @@
     - name: Account types, locations, and fees
       href: ../publish/account-types-locations-and-fees.md
     - name: Manage account settings and profile info
-      href: ../publish/manage-account-settings-and-profile.md
+      href: /partner-center/partner-center-account-setup
     - name: Trademark and copyright protection
       href: ../publish/trademark-and-copyright-protection.md
 - name: Manage account users
@@ -169,23 +169,6 @@
       href: ../publish/advertising-performance-report.md
     - name: Download analytics reports
       href: ../publish/download-analytic-reports.md
-- name: Getting paid
-  href: ../publish/getting-paid-apps.md
-  items:
-    - name: Set up your payout account and tax forms
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: Payout thresholds, methods, and timeframes
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: Payout reports
-      href: ../publish/payout-summary.md
-    - name: Tax details
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: Understand IRS tax forms
-      href: ../publish/understand-irs-tax-forms.md
-    - name: Mobile operator billing
-      href: ../publish/mobile-operator-billing.md
-    - name: VAT info
-      href: ../publish/vat-info.md
 - name: Store Policies and Code of Conduct
   href: ../publish/store-policies-and-code-of-conduct.md
   items:

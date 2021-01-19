@@ -4,7 +4,7 @@ description: Learn about Universal Windows Platform (UWP) apps that can run acro
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 09/15/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
 
-To download the tools you need to start creating UWP apps, see [Get set up](/windows/apps/get-set-up.md), and then [write your first app](your-first-app.md).
+To download the tools you need to start creating UWP apps, see [Get set up](/windows/apps/get-set-up), and then [write your first app](your-first-app.md).
 
 
 ## Where does UWP fit in the Microsoft development story?
@@ -115,7 +115,7 @@ UWP apps use the Windows Runtime, the native API provided by the operating syste
 
 ### Get set up
 
-Check out [Get set up](/windows/apps/get-started/get-set-up.md) to download the tools you need to start creating apps, and then [write your first app](your-first-app.md).
+Check out [Get set up](/windows/apps/get-started/get-set-up) to download the tools you need to start creating apps, and then [write your first app](your-first-app.md).
 
 ### Design your app
 
@@ -139,7 +139,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 [Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](../publish/index.md) to learn how to submit your apps for publication in the Microsoft Store.
 
-New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](../publish/payout-summary.md), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
+New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](/partner-center/payout-statement), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
 
 For more introductory material, see [An Introduction to Building Windows Apps for Windows 10 Devices](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 

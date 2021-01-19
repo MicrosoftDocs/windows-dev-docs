@@ -43,7 +43,7 @@ To use this method, you need to first do the following:
 | applicationId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to retrieve insights data. If you do not specify this parameter, the response body will contain insights data for all apps registered to your account.  |  No  |
 | startDate | date | The start date in the date range of insights data to retrieve. The default is 30 days before the current date. |  No  |
 | endDate | date | The end date in the date range of insights data to retrieve. The default is the current date. |  No  |
-| filter | string  | One or more statements that filter the rows in the response. Each statement contains a field name from the response body and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. String values must be surrounded by single quotes in the *filter* parameter. For example, *filter=dataType eq 'acquisition'*. <p/><p/>You can specify the following filter fields:<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | No   |
+| filter | string  | One or more statements that filter the rows in the response. Each statement contains a field name from the response body and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. String values must be surrounded by single quotes in the *filter* parameter. For example, *filter=dataType eq 'acquisition'*. <p/><p/>You can specify the following filter fields:<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | Yes   |
 
 ### Request example
 

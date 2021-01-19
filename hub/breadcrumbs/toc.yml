@@ -97,6 +97,9 @@
         - name: Windows Package Manager
           tocHref: /windows/package-manager/
           topicHref: "/windows/package-manager"
+        - name: PowerToys
+          tocHref: /windows/powertoys/
+          topicHref: "/windows/powertoys"
         - name: Python
           tocHref: /windows/python/
           topicHref: "/windows/python"

@@ -44,8 +44,8 @@ Take advantage of your C++ programming expertise to build apps using Visual C++
 
 Learn more about C++ here.
 
-* [C++ for UWP apps](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
-* [C++ for Desktop apps](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
+* [C++ for UWP apps](/cpp/cppcx/universal-windows-apps-cpp)
+* [C++ for Desktop apps](/cpp/windows/desktop-applications-visual-cpp)
 
 ## Next steps
 

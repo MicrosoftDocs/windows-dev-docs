@@ -1,8 +1,8 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Get set up
-description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
-ms.date: 10/13/2020
+description: Follow these instructions and start creating apps for Windows 10, using WinRT APIs (also known as the Universal Windows Platform or UWP).
+ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 ![Get ready to use Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
+Welcome to Windows 10 development! Follow these instructions and start creating apps for Windows 10, using WinRT APIs (also known as the Universal Windows Platform or UWP).
 
 ## 1. Download or update Visual Studio
 
@@ -51,8 +51,9 @@ You can start developing apps now, but before you can submit them to the store, 
 
 After you've installed the tools and enabled your device for development, check out our guidance on how to start creating Windows 10 apps.
 
--   [Choose your platform](/windows/desktop/apps/choose-your-platform.md)
--   [Start coding UWP apps](/windows/uwp/get-started/create-uwp-apps.md)
+-   [Choose your platform](../desktop/choose-your-platform.md)
+-   [Start coding](/windows/uwp/get-started/create-uwp-apps)
+
 
 ## Windows development setup scripts
 
@@ -67,5 +68,5 @@ For the complete list of tools and downloads, see [Downloads](https://developer.
 ## See Also
 
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a UWP app?](/windows/uwp/get-started/universal-application-platform-guide.md)
+* [What's a UWP app?](/windows-apps-src/get-started/universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

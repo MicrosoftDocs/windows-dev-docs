@@ -22,7 +22,7 @@ To understand why some APIs might not be working, it's important to understand t
 
 Each version of the UWP SDK conforms to a different level of .NET Standard. For example, the 16299 SDK (the Fall Creators Update) supports .NET Standard 2.0.
 
-If you want to know if a certain .NET API is supported in the UWP version that you're targeting, you can check the [.NET Standard API Reference](/dotnet/api/index?view=netstandard-2.0) and select the version of the .NET Standard that's supported by that version of UWP.
+If you want to know if a certain .NET API is supported in the UWP version that you're targeting, you can check the [.NET Standard API Reference](/dotnet/api/index?view=netstandard-2.0&preserve-view=true) and select the version of the .NET Standard that's supported by that version of UWP.
 
 ## Scripting backend configuration
 
@@ -110,7 +110,7 @@ private void UsingThreads()
 
 ### Security
 
-Some of the **System.Security.*** namespaces, such as [System.Security.Cryptography.X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), are not available when you build a Unity game for UWP. In these cases, use the **Windows.Security.*** APIs, which cover much of the same functionality.
+Some of the **System.Security.*** namespaces, such as [System.Security.Cryptography.X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0&preserve-view=true), are not available when you build a Unity game for UWP. In these cases, use the **Windows.Security.*** APIs, which cover much of the same functionality.
 
 The following example simply gets the certificates from a certificate store with the given name:
 
@@ -133,7 +133,7 @@ See [Security](../security/index.md) for more information about using the WinRT 
 
 ### Networking
 
-Some of the **System&period;Net.*** namespaces, such as [System.Net.Mail](/dotnet/api/system.net.mail?view=netstandard-2.0), are also not available when building a Unity game for UWP. For most of these APIs, use the corresponding **Windows.Networking.*** and **Windows.Web.*** WinRT APIs to get similar functionality. See [Networking and web services](../networking/index.md) for more information.
+Some of the **System&period;Net.*** namespaces, such as [System.Net.Mail](/dotnet/api/system.net.mail?view=netstandard-2.0&preserve-view=true), are also not available when building a Unity game for UWP. For most of these APIs, use the corresponding **Windows.Networking.*** and **Windows.Web.*** WinRT APIs to get similar functionality. See [Networking and web services](../networking/index.md) for more information.
 
 In the case of **System.Net.Mail**, use the [Windows.ApplicationModel.Email](/uwp/api/windows.applicationmodel.email) namespace. See [Send email](../contacts-and-calendar/sending-email.md) for more information.
 

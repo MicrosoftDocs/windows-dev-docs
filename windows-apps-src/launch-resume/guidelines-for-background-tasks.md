@@ -57,7 +57,7 @@ Background tasks that run in the same process as the foreground app do not need 
 
 Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) and check that the app is not denied from running in the background. Ensure that **GetAccessStatus** does not return one of the denied [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enums. For example, this method will return **BackgroundAccessStatus.DeniedByUser** if the user has explicitly denied background task permissions for your app in the device's settings.
 
-If your app is denied from running in the background, your app should call [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) and ensure the response is not denied before registering background tasks.
+If your app is denied from running in the background, your app should call [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) and ensure the response is not denied before registering background tasks.
 
 For more information on user choice around background activity and Battery Saver, see [Optimize Background Activity](../debug-test-perf/optimize-background-activity.md). 
 ## Background task checklist
@@ -83,13 +83,21 @@ For more information on user choice around background activity and Battery Saver
 *Applies only to in-process background tasks*
 
 - When cancelling a task, ensure that the `BackgroundActivated` event handler exits before the cancellation occurs or the whole process will be terminated.
--   Write background tasks that are short-lived. Background tasks are limited to 30 seconds of wall-clock usage.
--   Do not rely on user interaction in background tasks.
+-   Write background tasks that are short-lived. Most background tasks are limited to 30 seconds of wall-clock usage.
+
+
+*Things to avoid*
+- Minimize the use of inter-process communication via COM or RPC.
+-   The process you are trying to communicate with may not be in a running state which can result in a hang.
+-   A significant amount of time could be spent facilitating cross process communication, and will count against the time allotted to run your background task.
+- Do not rely on user interaction in background tasks.
+
 
 ## Related topics
 
-* [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
+* [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
+* [Create and register a winmain COM background task](create-and-register-a-winmain-background-task.md)
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Play media in the background](../audio-video-camera/background-audio.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)

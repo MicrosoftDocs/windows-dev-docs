@@ -15,10 +15,11 @@ This article provides the info you need to get started building desktop apps for
 
 ## Platforms for desktop apps
 
-There are four main platforms for building desktop apps for Windows PCs. Each platform provides an app model that defines the lifecycle of the app, a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop, and access to a comprehensive set of managed or native APIs for using Windows features. For an in-depth comparison of these platforms along with additional resources for each platform, see [Choose your app platform](choose-your-platform.md).
+There are four main platforms for building desktop apps for Windows PCs. Each platform provides an app model that defines the lifecycle of the app, a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop, and access to a comprehensive set of managed or native APIs for using Windows features. 
+
+For an in-depth comparison of these platforms along with additional resources for each platform, see [Choose your app platform](choose-your-platform.md).
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -56,8 +57,17 @@ There are four main platforms for building desktop apps for Windows PCs. Each pl
 </tbody>
 </table>
 
-> [!NOTE]
-> On Windows 10, each these platforms also support using the Windows UI (WinUI) Library to create user interfaces. For more information about WinUI for desktop apps, see [this section](choose-your-platform.md#windows-ui-library).
+### Future roadmap
+
+Looking forward, we are evolving the Windows app development platforms with the Windows UI (WinUI) Library and Project Reunion.
+
+* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provided new and updated versions of UWP controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and as of WinUI 3 (currently in preview) it is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and Win32. 
+
+    For more information, see [Windows UI (WinUI) Library](../winui/index.md).
+
+* **Project Reunion** (currently in preview) is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
+
+    For more information, see [Project Reunion](../project-reunion/index.md).
 
 ## Update existing desktop apps for Windows 10
 

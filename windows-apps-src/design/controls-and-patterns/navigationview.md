@@ -186,9 +186,22 @@ Here is the detailed pane anatomy for the top and left pane positions.
 1. AutoSuggestBox (optional)
 1. Settings button (optional)
 
+#### Footer menu items
+You can use [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) to place navigation items at the end of the navigation pane, contrasted with the [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) property which places items at the start of the pane.
+
+FooterMenuItems will be displayed before the Settings item by default. The Settings item can still be toggled using the [`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) property.
+
+Only Navigation items should be placed in FooterMenuItems - any other content that needs to align to the footer of the pane should be placed in [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter).
+
+For an example of how to add FooterMenuItems to your NavigationView, see the [FooterMenuItems class](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). 
+
+The image below shows a NavigationView with Account, Your Cart, and Help navigation items in the footer menu. 
+
+![A NavigationView with FooterMenuItems](images/footermenu-leftmode.png)
+
 #### Pane footer
 
-You can place free-form content in the pane's footer by adding it to the [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property.
+You can place free-form content in the pane's footer by adding it to the [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) property.
 
 :::row:::
     :::column:::
@@ -374,6 +387,8 @@ You can handle either event to perform tasks related to the requested navigation
 **ItemInvoked** is raised any time the user taps a navigation item, even if it's already selected. (The item can also be invoked with an equivalent action using mouse, keyboard, or other input. For more info, see [Input and interactions](../input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack. If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded. (See code examples.)
 
 **SelectionChanged** can be raised by a user invoking an item that isn't currently selected, or by programmatically changing the selected item. If the selection change occurs because a user invoked an item, the ItemInvoked event occurs first. If the selection change is programmatic, ItemInvoked is not raised.
+
+All navigation items are part of the same selection model, whether they are a part of [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) or [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). Only one navigation item can be selected at a time. 
 
 ### Backwards navigation
 
@@ -972,7 +987,7 @@ void MainPage::NavView_ItemInvoked(
 ## Hierarchical navigation
 Some apps may have a more complex hierarchical structure that requires more than just a flat list of navigation items. You may want to use top-level navigation items to display categories of pages, with children items displaying specific pages. It is also useful if you have hub-style pages that only link to other pages. For these kinds of cases, you should create a hierarchical NavigationView.
 
-To show a hierarchical list of nested navigation items in the pane, use either the [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) property or the [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) property of **NavigationViewItem**.
+To show a hierarchical list of nested navigation items in the pane, use either the [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems) property or the [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource) property of **NavigationViewItem**.
 Each NavigationViewItem can contain other NavigationViewItems and organizing elements like item headers and separators. 
 To show a hierarchical list when using `MenuItemsSource`, set the `ItemTemplate` to be a NavigationViewItem, and bind its `MenuItemsSource` property to the next level of the hierarchy.
 
@@ -1007,7 +1022,7 @@ Add a hierarchy of menu items to the NavigationView by
 * binding the MenuItemsSource property to the hierarchical data
 * defining the item template to be a NavigationViewMenuItem, with its Content set to be the label of the menu item, and its MenuItemsSource property bound to the next level of the hierarchy
 
-This example also demonstrates the [Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4) and [Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4) events. These events are raised for a menu item with children.
+This example also demonstrates the [Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding) and [Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed) events. These events are raised for a menu item with children.
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1382,7 +1397,7 @@ The entire NavigationView will show no more than one selection indicator.
 In both Top and Left modes, clicking the arrows on NavigationViewItems will expand or collapse the subtree. Clicking or tapping 
 _elsewhere_ on the NavigationViewItem will trigger the `ItemInvoked` event, and it will also collapse or expand the subtree.
 
-To prevent an item from showing the selection indicator when invoked, set its [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) property to False, as shown below:
+To prevent an item from showing the selection indicator when invoked, set its [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked) property to False, as shown below:
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >

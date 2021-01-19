@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-api-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/device-portal-api-reference",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
       "redirect_url": "/windows/uwp/get-started/get-app-samples",
       "redirect_document_id": true
@@ -1777,7 +1787,7 @@
     },
     {
       "source_path": "windows-apps-src/publish/managing-your-profile.md",
-      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_url": "/partner-center/partner-center-account-setup",
       "redirect_document_id": false
     },
     {
@@ -4993,6 +5003,51 @@
     {
       "source_path": "windows-apps-src/publish/common-questions.md",
       "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/tax-details-for-paid-apps.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/tax-details-marketplace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/getting-paid-apps.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/marketplace-get-paid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/setting-up-your-payout-account-and-tax-forms.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/set-up-your-payout-account ",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/payout-summary.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/payout-statement",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/understand-irs-tax-forms.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/understand-irs-tax-forms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/payment-thresholds-methods-and-timeframes.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/payment-thresholds-methods-timeframes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/mobile-operator-billing.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/mobile-operator-billing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/vat-info.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/vat-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/manage-account-settings-and-profile.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/partner-center-account-setup",
       "redirect_document_id": false
     }
   ]

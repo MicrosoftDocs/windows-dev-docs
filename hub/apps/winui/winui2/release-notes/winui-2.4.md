@@ -7,7 +7,7 @@ ms.topic: reference
 
 # Windows UI Library 2.4
 
-WinUI 2.4 is the latest official release of the Windows UI Library (WinUI).
+WinUI 2.4 is the May 2020 release of the Windows UI Library (WinUI).
 
 WinUI is an open source project hosted on GitHub at [Windows UI Library repo](https://aka.ms/winui). Please register all bug reports, feature requests, and community code contributions in this repo.
 
@@ -78,13 +78,13 @@ The following are some of the controls included in the TextBox family of control
 
 ### Hierarchical navigation
 
-The [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4) control now supports hierarchical navigation and includes Left, Top, and LeftCompact display modes. A hierarchical NavigationView is useful for displaying categories of pages, identifying pages with related child-pages, or using within apps that have hub-style pages linking to many other pages.
+The [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) control now supports hierarchical navigation and includes Left, Top, and LeftCompact display modes. A hierarchical NavigationView is useful for displaying categories of pages, identifying pages with related child-pages, or using within apps that have hub-style pages linking to many other pages.
 
 ![Hierarchical NavigationView control](..\images\HierarchicalNavView.gif)<br>*Hierarchical NavigationView control*
 
 [Usage guidelines](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[API reference](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[API reference](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## Samples
 

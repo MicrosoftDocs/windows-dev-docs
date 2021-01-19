@@ -42,7 +42,8 @@
         "nodejs/**.md": "dev-environment",
         "android/**.md": "dev-environment",
         "dev-environment/**.md": "dev-environment",
-        "package-manager/**.md": "dev-environment"
+        "package-manager/**.md": "dev-environment",
+        "powertoys/**.md": "dev-environment"
       },
       "ms.technology":
       {
@@ -52,13 +53,15 @@
         "python/**.md": "windows-python",
         "nodejs/**.md": "windows-nodejs",
         "android/**.md": "windows-nodejs",
-        "package-manager/**.md": ""
+        "powertoys/**.md": "powertoys",
+        "package-manager/**.md": "package-manager"
       },	 
       "feedback_product_url": 
       {
         "apps/winui/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
         "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues",
-        "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues"
+        "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues",
+        "powertoys/**.md": "https://github.com/microsoft/PowerToys/issues"
       },
       "author":
       {

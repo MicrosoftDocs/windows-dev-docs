@@ -24,7 +24,7 @@ With support for both Desktop and UWP apps, you can build with WinUI from the gr
 WinUI 2.x can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
-> WinUI 2.4 is the latest WinUI 2.x release. See the [WinUI 2.5 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/10) for a list of work planned in the next release.
+> WinUI 2.5 is the latest WinUI 2.x release. See the [WinUI 2.6 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/11) for a list of work planned in the next release.
 
 The WinUI 2.x Library is closely coupled to the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
 

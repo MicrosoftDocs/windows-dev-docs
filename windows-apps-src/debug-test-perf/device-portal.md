@@ -2,7 +2,7 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 04/09/2019
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -10,17 +10,22 @@ ms.localizationpriority: medium
 
 # Windows Device Portal overview
 
-The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. It also provides advanced diagnostic tools to help you troubleshoot and view the real-time performance of your Windows device.
+The Windows Device Portal (WDP) is a web server included with Windows devices that lets you configure and manage the settings for the device over a network or USB connection (local connections are also supported on devices with a web browser).
 
-Windows Device Portal is a web server on your device that you can connect to from a web browser on a PC. If your device has a web browser, you can also connect locally with the browser on that device.
+WDP also provides advanced diagnostic tools for troubleshooting and viewing the real-time performance of your Windows device.
 
-Windows Device Portal is available on each device family, but features and setup vary based on each device's requirements. This article provides a general description of Device Portal and links to articles with more specific information for each device family.
+WDP functionality is programmatically exposed through a collection of [REST APIs](device-portal-api-core.md).
 
-The functionality of the Windows Device Portal is implemented with [REST APIs](device-portal-api-core.md) that you can use directly to access data and control your device programmatically.
+This article provides a general description of the Windows Device Portal and includes links to articles with more specific information on each Windows device family.
+
+> [!NOTE]
+> A device family identifies the APIs, system characteristics, and behaviors that you can expect across a class of devices.
 
 ## Setup
 
-Each device has specific instructions for connecting to Device Portal, but each requires these general steps:
+Each device family provides a version of the WDP, but features and setup vary based on the requirements of a device.
+
+These are the basic steps for all devices.
 
 1. Enable Developer Mode and Device Portal on your device (configured in the Settings app).
 
@@ -28,23 +33,17 @@ Each device has specific instructions for connecting to Device Portal, but each 
 
 3. Navigate to the Device Portal page in your browser. This table shows the ports and protocols used by each device family.
 
-Device family | On by default? | HTTP | HTTPS | USB
---------------|----------------|------|-------|----
-HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10080
-IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A
-Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A
-Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A
-Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
+The following table includes device-specific details for the WDP.
 
-\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Port Settings](device-portal-desktop.md#registry-based-configuration-for-device-portal) section for desktop.  
+Device family | On by default? | HTTP | HTTPS | USB | Instructions |
+--------------|----------------|------|-------|-----|--------------|
+Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Set up Windows Device Portal on a Desktop device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
+HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10080 | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
+IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal) |
+Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080 | [Device Portal for Mobile](device-portal-mobile.md) |
 
-For device-specific setup instructions, see:
-
-- [Device Portal for HoloLens](./device-portal-hololens.md)
-- [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Device Portal for Mobile](device-portal-mobile.md)
-- [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
-- [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
 
 ## Features
 
@@ -218,3 +217,7 @@ In order to protect against [CSRF attacks](https://en.wikipedia.org/wiki/Cross-s
 #### Cross-Site WebSocket Hijacking (CSWSH) protection
 
 To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header. This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application. Without the Origin header your request will be rejected.
+
+## See also
+
+[Device Portal core API reference](device-portal-api-core.md)

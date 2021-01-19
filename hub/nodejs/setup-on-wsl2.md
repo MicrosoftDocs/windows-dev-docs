@@ -58,7 +58,7 @@ Installing the newer version of NVM using cURL will replace the older one, leavi
     ![NVM list showing no Node versions](../images/nvm-no-node.png)
 
 6. Install the current release of Node.js (for testing the newest feature improvements, but more likely to have issues): `nvm install node`
-7. Install the latest stable LTS release of Node.js (recommended): `nvm install node --lts`
+7. Install the latest stable LTS release of Node.js (recommended): `nvm install --lts`
 8. List what versions of Node are installed: `nvm ls` ...now you should see the two versions that you just installed listed.
 
     ![NVM list showing LTS and Current Node versions](../images/nvm-node-installed.png)

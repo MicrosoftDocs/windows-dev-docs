@@ -310,17 +310,15 @@
         - name: Windows Device Portal
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: Device Portal for Desktop
+            - name: Windows Device Portal for Desktop
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: Device Portal for Mobile
+            - name: Windows Device Portal for Mobile
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: Device Portal for Hololens
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: Device Portal core APIs
+            - name: Windows Device Portal core REST APIs
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: Write a custom plugin for Device Portal
+            - name: Write a custom plugin for Windows Device Portal
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: Provision Device Portal with a custom SSL certificate
+            - name: Provision Windows Device Portal with a custom SSL certificate
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Windows App Certification Kit
           href: ../debug-test-perf/windows-app-certification-kit.md
@@ -827,6 +825,8 @@
           href: ../csharp-winrt/index.md
         - name: "Walkthrough: Generate a .NET 5.0 projection from a C++/WinRT component"
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
+        - name: "Agile objects"
+          href: ../csharp-winrt/agile-objects.md
     - name: Security
       href: ../security/index.md
       items:

@@ -119,7 +119,7 @@ The last step is to bind your `DataTemplateSelector` to the `ItemTemplateSelecto
 Once your code compiles, each collection item will run through the overridden `SelectTemplateCore` method in `MyDataTemplateSelector`, and will be rendered with the appropriate DataTemplate.
 
 > [!IMPORTANT]
-> When using `DataTemplateSelector` with an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2), you bind the `DataTemplateSelector` to the `ItemTemplate` property. `ItemsRepeater` doesn't have an `ItemTemplateSelector` property.
+> When using `DataTemplateSelector` with an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true), you bind the `DataTemplateSelector` to the `ItemTemplate` property. `ItemsRepeater` doesn't have an `ItemTemplateSelector` property.
 
 ## DataTemplateSelector performance considerations
 

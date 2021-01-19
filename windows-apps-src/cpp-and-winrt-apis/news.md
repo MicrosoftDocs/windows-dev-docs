@@ -29,7 +29,7 @@ A 20% reduction in size, and a 23% reduction in build time.
 
 ### Improved MSBuild support
 
-We've invested a lot of work into improving [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) support for a large selection of different scenarios.
+We've invested a lot of work into improving [MSBuild](/visualstudio/msbuild/msbuild) support for a large selection of different scenarios.
 
 ### Even faster factory caching
 

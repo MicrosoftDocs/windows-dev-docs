@@ -527,19 +527,19 @@ The preview input events are fired before any other events. If you don't handle 
 
 Order of events:
 
-Preview KeyDown events
-…
-App accelerator
-OnKeyDown method
-KeyDown event
-App accelerators on the parent
-OnKeyDown method on the parent
-KeyDown event on the parent
-(Bubbles to the root)
-…
-CharacterReceived event
-PreviewKeyUp events
-KeyUpEvents
+Preview KeyDown events<br>
+…<br>
+App accelerator<br>
+OnKeyDown method<br>
+KeyDown event<br>
+App accelerators on the parent<br>
+OnKeyDown method on the parent<br>
+KeyDown event on the parent<br>
+(Bubbles to the root)<br>
+…<br>
+CharacterReceived event<br>
+PreviewKeyUp events<br>
+KeyUpEvents<br>
 
 When the accelerator event is handled, the KeyDown event is also marked as handled. The KeyUp event remains unhandled.
 

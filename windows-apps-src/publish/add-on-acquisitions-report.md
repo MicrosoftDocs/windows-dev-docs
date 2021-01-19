@@ -17,7 +17,7 @@ You can view this data in Partner Center, or [download the report](download-anal
 In this report, an add-on acquisition means a customer has purchased an add-on from you (or acquired it without paying, if you offered it for free). Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
 
 > [!IMPORTANT]
-> The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](/partner-center/payout-statement). In the **Reserved** section, click the **Download reserved transactions** link.
 
 
 ## Apply filters
