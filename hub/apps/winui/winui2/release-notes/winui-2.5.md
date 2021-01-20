@@ -2,7 +2,7 @@
 title: WinUI 2.5 Release Notes
 description: Release notes for WinUI 2.5, including new features and bug fixes.
 ms.date: 12/01/2020
-ms.topic: reference
+ms.topic: article
 ---
 
 # Windows UI Library 2.5
