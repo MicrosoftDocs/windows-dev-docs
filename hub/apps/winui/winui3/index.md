@@ -31,10 +31,12 @@ WinUI 3 Preview 3 includes Visual Studio project templates to help get started b
 
 2. Install [Visual Studio 2019, version 16.9 Preview](https://visualstudio.microsoft.com/vs/preview/)
 
-    You must include the following workloads when installing Visual Studio:
-    - .NET Desktop Development (this also installs .NET 5)
+    You must include the following workload when installing Visual Studio:
     - Universal Windows Platform development
 
+    To build .NET apps, you must also include the following workloads:
+    - .NET Desktop Development (this also installs .NET 5)
+    
     To build C++ apps, you must also include the following workloads:
     - Desktop development with C++
     - The *C++ (v142) Universal Windows Platform tools* optional component for the Universal Windows Platform workload (see "Installation Details" under the "Universal Windows Platform development" section, on the right pane)
