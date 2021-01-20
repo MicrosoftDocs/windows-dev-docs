@@ -143,6 +143,64 @@ private void BackButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+```cppwinrt
+// MainPage.h
+ 
+#pragma once
+ 
+#include "MainPage.g.h"
+ 
+#include "winrt/Windows.UI.Core.h"
+#include "winrt/Windows.System.h"
+#include "winrt/Windows.UI.Input.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+ 
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Input;
+using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
+ 
+// The NavigationHelper struct (see the following code listing) goes here.
+ 
+namespace winrt::AppName::implementation
+{
+    struct MainPage : MainPageT<MainPage>
+    {
+        MainPage();
+ 
+        void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+        {
+            if (!m_navigationHelper)
+            {
+                // Pass the root Frame (Page.Frame property) to NavigationHelper.
+                m_navigationHelper = std::make_unique<NavigationHelper>(Frame());
+            }
+            // Enable or disable the back button.
+            BackButton().IsEnabled(Frame().CanGoBack());
+            __super::OnNavigatedTo(e);
+        }
+ 
+        void MainPage::BackButton_Click(IInspectable const&, RoutedEventArgs const&)
+        {
+            m_navigationHelper->TryGoBack();
+        }
+ 
+    private:
+        std::unique_ptr<NavigationHelper> m_navigationHelper;
+    };
+}
+ 
+namespace winrt::AppName::factory_implementation
+{
+    struct MainPage : MainPageT<MainPage, implementation::MainPage>
+    {
+    };
+}
+```
+
+
 Here's the code for the `NavigationHelper` class.
 
 ```csharp
@@ -169,64 +227,26 @@ class NavigationHelper
 ```
 
 ```cppwinrt
-// MainPage.cpp
-#include "pch.h"
-#include "MainPage.h"
-
-#include "winrt/Windows.System.h"
-#include "winrt/Windows.UI.Xaml.Controls.h"
-#include "winrt/Windows.UI.Xaml.Input.h"
-#include "winrt/Windows.UI.Xaml.Navigation.h"
-
-using namespace winrt;
-using namespace Windows::Foundation;
-using namespace Windows::UI::Xaml;
-
-namespace winrt::PageNavTest::implementation
+struct NavigationHelper
 {
-    MainPage::MainPage()
+    NavigationHelper(Frame const& rootFrame) : m_frame(rootFrame)
     {
-        InitializeComponent();
-
-        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
-        goBack.Key(Windows::System::VirtualKey::GoBack);
-        goBack.Invoked({ this, &MainPage::BackInvoked });
-        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
-        altLeft.Key(Windows::System::VirtualKey::Left);
-        altLeft.Invoked({ this, &MainPage::BackInvoked });
-        KeyboardAccelerators().Append(goBack);
-        KeyboardAccelerators().Append(altLeft);
-        // ALT routes here.
-        altLeft.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
     }
-
-    void MainPage::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+ 
+    // Perform back navigation if possible.
+    bool TryGoBack()
     {
-        BackButton().IsEnabled(Frame().CanGoBack());
-    }
-
-    void MainPage::Back_Click(IInspectable const&, RoutedEventArgs const&)
-    {
-        On_BackRequested();
-    }
-
-    // Handles system-level BackRequested events and page-level back button Click events.
-    bool MainPage::On_BackRequested()
-    {
-        if (Frame().CanGoBack())
+        if (m_frame.CanGoBack())
         {
-            Frame().GoBack();
+            m_frame.GoBack();
             return true;
         }
         return false;
     }
-
-    void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
-        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
-    {
-        args.Handled(On_BackRequested());
-    }
-}
+ 
+private:
+    Frame m_frame{ nullptr };
+};
 ```
 
 ### Support access keys
@@ -292,6 +312,59 @@ class NavigationHelper
 }
 ```
 
+```cppwinrt
+struct NavigationHelper
+{
+    NavigationHelper(Frame const& rootFrame) : m_frame(rootFrame)
+    {
+        // Add support for accelerator keys. 
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        Window::Current().CoreWindow().Dispatcher().
+            AcceleratorKeyActivated({ this, &NavigationHelper::CoreDispatcher_AcceleratorKeyActivated });
+    }
+ 
+    …
+ 
+    // Perform forward navigation if possible.
+    bool TryGoForward()
+    {
+        if (m_frame.CanGoForward())
+        {
+            m_frame.GoForward();
+            return true;
+        }
+        return false;
+    }
+ 
+private:
+    …
+ 
+    // Invoked on every keystroke, including system keys such as Alt key combinations.
+    // Used to detect keyboard navigation between pages even when the page itself
+    // doesn't have focus.
+    void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher const& /* sender */, AcceleratorKeyEventArgs const& e)
+    {
+        // When Alt+Left are pressed navigate back.
+        // When Alt+Right are pressed navigate forward.
+        if (e.EventType() == CoreAcceleratorKeyEventType::SystemKeyDown
+            && (e.VirtualKey() == Windows::System::VirtualKey::Left || e.VirtualKey() == Windows::System::VirtualKey::Right)
+            && e.KeyStatus().IsMenuKeyDown
+            && !e.Handled())
+        {
+            if (e.VirtualKey() == Windows::System::VirtualKey::Left)
+            {
+                e.Handled(TryGoBack());
+            }
+            else if (e.VirtualKey() == Windows::System::VirtualKey::Right)
+            {
+                e.Handled(TryGoForward());
+            }
+        }
+    }
+};
+```
+
 ### Handle system back requests
 
 Windows devices provide various ways that the system can pass a back navigation request to your app. Some common ways are the B button on a gamepad, the Windows key + Backspace key shortcut, or the system back button in Tablet Mode; the exact options available depend on the device.
@@ -328,53 +401,29 @@ class NavigationHelper
 ```
 
 ```cppwinrt
-// App.cpp
-#include <winrt/Windows.UI.Core.h>
-#include "winrt/Windows.UI.Input.h"
-#include "winrt/Windows.UI.Xaml.Input.h"
-
-#include "App.h"
-#include "MainPage.h"
-
-using namespace winrt;
-...
-
-    Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &App::App_BackRequested });
-    Frame rootFrame{ nullptr };
-    auto content = Window::Current().Content();
-    if (content)
-    {
-        rootFrame = content.try_as<Frame>();
-    }
-    rootFrame.PointerPressed({ this, &App::On_PointerPressed });
-...
-
-void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& e)
+struct NavigationHelper
 {
-    e.Handled(On_BackRequested());
-}
-
-void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
-{
-    bool isXButton1Pressed =
-        e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
-
-    if (isXButton1Pressed)
+    NavigationHelper(Frame const& rootFrame) : m_frame(rootFrame)
     {
-        e.Handled(On_BackRequested());
+        // Add support for system back requests. 
+        SystemNavigationManager::GetForCurrentView().
+            BackRequested({ this, &NavigationHelper::System_BackRequested });
     }
-}
-
-// Handles system-level BackRequested events.
-bool App::On_BackRequested()
-{
-    if (Frame().CanGoBack())
+ 
+    …
+ 
+private:
+    …
+ 
+    // Handle system back requests.
+    void System_BackRequested(IInspectable const& /* sender */, BackRequestedEventArgs const& e)
     {
-        Frame().GoBack();
-        return true;
+        if (!e.Handled())
+        {
+            e.Handled(TryGoBack());
+        }
     }
-    return false;
-}
+};
 ```
 
 #### System back behavior for backward compatibility
@@ -423,6 +472,39 @@ class NavigationHelper
         }
     }
 }
+```
+
+```cppwinrt
+struct NavigationHelper
+{
+    NavigationHelper(Frame const& rootFrame) : m_frame(rootFrame)
+    {
+        // Add support for mouse navigation buttons. 
+        Window::Current().CoreWindow().
+            PointerPressed({ this, &NavigationHelper::CoreWindow_PointerPressed });
+    }
+ 
+    …
+ 
+private:
+    …
+ 
+    // Handle mouse forward and back buttons.
+    void CoreWindow_PointerPressed(CoreWindow const& /* sender */, PointerEventArgs const& e)
+    {
+        // For this event, e.Handled arrives as 'true', so invert the values. 
+        if (e.CurrentPoint().Properties().IsXButton1Pressed()
+            && e.Handled())
+        {
+            e.Handled(!TryGoBack());
+        }
+        else if (e.CurrentPoint().Properties().IsXButton2Pressed()
+            && e.Handled())
+        {
+            e.Handled(!TryGoForward());
+        }
+    }
+};
 ```
 
 ### NavigationHelper complete code
@@ -520,6 +602,101 @@ class NavigationHelper
         }
     }
 }
+```
+
+```cppwinrt
+struct NavigationHelper
+{
+    NavigationHelper(Frame const& rootFrame) : m_frame(rootFrame)
+    {
+        // Add support for system back requests. 
+        SystemNavigationManager::GetForCurrentView().
+            BackRequested({ this, &NavigationHelper::System_BackRequested });
+ 
+        // Add support for accelerator keys. 
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        Window::Current().CoreWindow().Dispatcher().
+            AcceleratorKeyActivated({ this, &NavigationHelper::CoreDispatcher_AcceleratorKeyActivated });
+ 
+        // Add support for mouse navigation buttons. 
+        Window::Current().CoreWindow().
+            PointerPressed({ this, &NavigationHelper::CoreWindow_PointerPressed });
+    }
+ 
+    // Perform back navigation if possible.
+    bool TryGoBack()
+    {
+        if (m_frame.CanGoBack())
+        {
+            m_frame.GoBack();
+            return true;
+        }
+        return false;
+    }
+ 
+    // Perform forward navigation if possible.
+    bool TryGoForward()
+    {
+        if (m_frame.CanGoForward())
+        {
+            m_frame.GoForward();
+            return true;
+        }
+        return false;
+    }
+ 
+private:
+    Frame m_frame{ nullptr };
+ 
+    // Handle system back requests.
+    void System_BackRequested(IInspectable const& /* sender */, BackRequestedEventArgs const& e)
+    {
+        if (!e.Handled())
+        {
+            e.Handled(TryGoBack());
+        }
+    }
+ 
+    // Invoked on every keystroke, including system keys such as Alt key combinations.
+    // Used to detect keyboard navigation between pages even when the page itself
+    // doesn't have focus.
+    void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher const& /* sender */, AcceleratorKeyEventArgs const& e)
+    {
+        // When Alt+Left are pressed navigate back.
+        // When Alt+Right are pressed navigate forward.
+        if (e.EventType() == CoreAcceleratorKeyEventType::SystemKeyDown
+            && (e.VirtualKey() == Windows::System::VirtualKey::Left || e.VirtualKey() == Windows::System::VirtualKey::Right)
+            && e.KeyStatus().IsMenuKeyDown
+            && !e.Handled())
+        {
+            if (e.VirtualKey() == Windows::System::VirtualKey::Left)
+            {
+                e.Handled(TryGoBack());
+            }
+            else if (e.VirtualKey() == Windows::System::VirtualKey::Right)
+            {
+                e.Handled(TryGoForward());
+            }
+        }
+    }
+ 
+    // Handle mouse forward and back buttons.
+    void CoreWindow_PointerPressed(CoreWindow const& /* sender */, PointerEventArgs const& e)
+    {
+        // For this event, e.Handled arrives as 'true', so invert the values. 
+        if (e.CurrentPoint().Properties().IsXButton1Pressed()
+            && e.Handled())
+        {
+            e.Handled(!TryGoBack());
+        }
+        else if (e.CurrentPoint().Properties().IsXButton2Pressed()
+            && e.Handled())
+        {
+            e.Handled(!TryGoForward());
+        }
+    }
+};
 ```
 
 ## Guidelines for custom back navigation behavior

@@ -693,6 +693,9 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 #include "winrt/Windows.UI.Xaml.Media.Animation.h"
 #include "winrt/Microsoft.UI.Xaml.Controls.h"
 #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+
 
 // MainPage.h
 #pragma once
@@ -738,13 +741,19 @@ namespace winrt::NavigationViewCppWinRT::implementation
         void NavView_BackRequested(
             muxc::NavigationView const& /* sender */,
             muxc::NavigationViewBackRequestedEventArgs const& /* args */);
-        void BackInvoked(
-            Windows::UI::Xaml::Input::KeyboardAccelerator const& /* sender */,
-            Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args);
-        bool On_BackRequested();
         void On_Navigated(
             Windows::Foundation::IInspectable const& /* sender */,
             Windows::UI::Xaml::Navigation::NavigationEventArgs const& args);
+        void CoreDispatcher_AcceleratorKeyActivated(
+            Windows::UI::Core::CoreDispatcher const& /* sender */,
+            Windows::UI::Core::AcceleratorKeyEventArgs const& args);
+        void CoreWindow_PointerPressed(
+            Windows::UI::Core::CoreWindow const& /* sender */,
+            Windows::UI::Core::PointerEventArgs const& args);
+        void System_BackRequested(
+            Windows::Foundation::IInspectable const& /* sender */,
+            Windows::UI::Core::BackRequestedEventArgs const& args);
+        bool TryGoBack();
 
     private:
         // Vector of std::pair holding the Navigation Tag and the relative Navigation Page.
@@ -821,18 +830,17 @@ namespace winrt::NavigationViewCppWinRT::implementation
         NavView_Navigate(L"home",
             Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo());
 
-        // Add keyboard accelerators for backwards navigation.
-        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
-        goBack.Key(Windows::System::VirtualKey::GoBack);
-        goBack.Invoked({ this, &MainPage::BackInvoked });
-        KeyboardAccelerators().Append(goBack);
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        winrt::Windows::UI::Xaml::Window::Current().CoreWindow().Dispatcher().
+            AcceleratorKeyActivated({ this, &MainPage::CoreDispatcher_AcceleratorKeyActivated });
+ 
+        winrt::Windows::UI::Xaml::Window::Current().CoreWindow().
+            PointerPressed({ this, &MainPage::CoreWindow_PointerPressed });
+ 
+        SystemNavigationManager::GetForCurrentView().
+            BackRequested({ this, &MainPage::System_BackRequested });
 
-        // ALT routes here
-        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
-        goBack.Key(Windows::System::VirtualKey::Left);
-        goBack.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
-        goBack.Invoked({ this, &MainPage::BackInvoked });
-        KeyboardAccelerators().Append(altLeft);
     }
 
     void MainPage::NavView_ItemInvoked(
@@ -908,31 +916,56 @@ namespace winrt::NavigationViewCppWinRT::implementation
         muxc::NavigationView const& /* sender */,
         muxc::NavigationViewBackRequestedEventArgs const& /* args */)
     {
-        On_BackRequested();
+        TryGoBack();
     }
 
-    void MainPage::BackInvoked(
-        Windows::UI::Xaml::Input::KeyboardAccelerator const& /* sender */,
-        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    void MainPage::CoreDispatcher_AcceleratorKeyActivated(
+        Windows::UI::Core::CoreDispatcher const& /* sender */,
+        Windows::UI::Core::AcceleratorKeyEventArgs const& args)
     {
-        On_BackRequested();
-        args.Handled(true);
+        // When Alt+Left are pressed navigate back
+        if (args.EventType() == Windows::UI::Core::CoreAcceleratorKeyEventType::SystemKeyDown
+            && args.VirtualKey() == Windows::System::VirtualKey::Left
+            && args.KeyStatus().IsMenuKeyDown
+            && !args.Handled())
+        {
+            args.Handled(TryGoBack());
+        }
     }
-
-    bool MainPage::On_BackRequested()
+ 
+    void MainPage::CoreWindow_PointerPressed(
+        Windows::UI::Core::CoreWindow const& /* sender */,
+        Windows::UI::Core::PointerEventArgs const& args)
+    {
+        // Handle mouse back button.
+        if (args.CurrentPoint().Properties().IsXButton1Pressed())
+        {
+            args.Handled(TryGoBack());
+        }
+    }
+ 
+    void MainPage::System_BackRequested(
+        Windows::Foundation::IInspectable const& /* sender */,
+        Windows::UI::Core::BackRequestedEventArgs const& args)
+    {
+        if (!args.Handled())
+        {
+            args.Handled(TryGoBack());
+        }
+    }
+ 
+    bool MainPage::TryGoBack()
     {
         if (!ContentFrame().CanGoBack())
             return false;
-
-        // Don't go back if the nav pane is overlaid.
+        // Don't go back if the nav pane is overlayed.
         if (NavView().IsPaneOpen() &&
             (NavView().DisplayMode() == muxc::NavigationViewDisplayMode::Compact ||
                 NavView().DisplayMode() == muxc::NavigationViewDisplayMode::Minimal))
             return false;
-
         ContentFrame().GoBack();
         return true;
-    }
+    }  
 
     void MainPage::On_Navigated(
         Windows::Foundation::IInspectable const& /* sender */,
@@ -981,7 +1014,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 ### Alternative C++/WinRT implementation
 
-The C# and C++/WinRT code show above is designed so that you can use the same XAML markup for both versions. However, there is another way of implementing the C++/WinRT version described in this section, which you may prefer.
+The C# and C++/WinRT code shown above is designed so that you can use the same XAML markup for both versions. However, there is another way of implementing the C++/WinRT version described in this section, which you may prefer.
 
 Below is an alternative version of the **NavView_ItemInvoked** handler. The technique in this version of the handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in examples above; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing scalar values to IInspectable with C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
 
