@@ -52,7 +52,7 @@
         "apps/trace-processing/**.md": "",
         "python/**.md": "windows-python",
         "nodejs/**.md": "windows-nodejs",
-        "android/**.md": "windows-nodejs",
+        "android/**.md": "windows-android",
         "powertoys/**.md": "powertoys",
         "package-manager/**.md": "package-manager"
       },	 
