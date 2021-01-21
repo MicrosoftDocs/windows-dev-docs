@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Integrate your desktop app with Windows 10 and UWP
 
-If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined extensions in the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
 
 For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
