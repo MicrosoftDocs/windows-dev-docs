@@ -838,7 +838,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
         winrt::Windows::UI::Xaml::Window::Current().CoreWindow().
             PointerPressed({ this, &MainPage::CoreWindow_PointerPressed });
  
-        SystemNavigationManager::GetForCurrentView().
+        Windows::UI::Core::SystemNavigationManager::GetForCurrentView().
             BackRequested({ this, &MainPage::System_BackRequested });
 
     }
