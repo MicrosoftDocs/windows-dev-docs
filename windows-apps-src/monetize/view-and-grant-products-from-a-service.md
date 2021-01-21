@@ -39,9 +39,6 @@ This end-to-end process involves two software components that perform different 
 
 Before you can use the Microsoft Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and application ID for the application, and generate a key. The Azure AD Web application represents the service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, application ID and key to generate Azure AD access tokens that you need to call the API.
 
-> [!NOTE]
-> You only need to perform the tasks in this section one time. After you update your Azure AD application manifest and you have your tenant ID, application ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.
-
 1.  If you haven't done so already, follow the instructions in [Integrating Applications with Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) to register a **Web app / API** application with Azure AD.
     > [!NOTE]
     > When you register your application, you must choose **Web app / API** as the application type so that you can retrieve a key (also called a *client secret*) for your application. In order to call the Microsoft Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
@@ -49,19 +46,6 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 2.  In the [Azure Management Portal](https://portal.azure.com/), navigate to **Azure Active Directory**. Select your directory, click **App registrations** in the left navigation pane, and then select your application.
 3.  You are taken to the application's main registration page. On this page, copy the **Application ID** value for use later.
 4.  Create a key that you will need later (this is all called a *client secret*). In the left pane, click **Settings** and then **Keys**. On this page, complete the steps to [create a key](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copy this key for later use.
-5.  Add several required audience URIs to your [application manifest](/azure/active-directory/develop/active-directory-application-manifest). In the left pane, click **Manifest**. Click **Edit**, replace the `"identifierUris"` section with the following text, and then click **Save**.
-
-    ```json
-    "accessTokenAcceptedVersion": 1,
-    "identifierUris": [
-        "https://onestore.microsoft.com",
-        "https://onestore.microsoft.com/b2b/keys/create/collections",
-        "https://onestore.microsoft.com/b2b/keys/create/purchase"
-        ],
-    "signInAudience": "AzureADMyOrg",
-    ```
-
-    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values.
 
 <span id="step-2"/>
 
@@ -70,7 +54,7 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Azure AD application ID with the app (or the app that contains the add-on) in Partner Center.
 
 > [!NOTE]
-> You only need to perform this task one time.
+> You only need to perform this task one time. After you have your tenant ID, application ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.
 
 1.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and select your app.
 2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD application ID into one of the available **Client ID** fields.
@@ -88,7 +72,7 @@ Before you can retrieve a Microsoft Store ID key or call the Microsoft Store col
 
 ### Understanding the different tokens and audience URIs
 
-Depending on which methods you want to call in the Microsoft Store collection API or purchase API, you must create either two or three different tokens. Each access token is associated with a different audience URI (these are the same URIs that you previously added to the `"identifierUris"` section of the Azure AD application manifest).
+Depending on which methods you want to call in the Microsoft Store collection API or purchase API, you must create either two or three different tokens. Each access token is associated with a different audience URI.
 
   * In all cases, you must create a token with the `https://onestore.microsoft.com` audience URI. In a later step, you will pass this token to the **Authorization** header of methods in the Microsoft Store collection API or purchase API.
       > [!IMPORTANT]
