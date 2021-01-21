@@ -4,7 +4,7 @@ description: Index of WinUI release notes.
 
 
 ms.date: 07/15/2020
-ms.topic: reference
+ms.topic: article
 ---
 
 # Windows UI Library 2.x Release Notes

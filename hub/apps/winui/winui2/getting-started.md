@@ -1,7 +1,7 @@
 ---
 title: Getting started with the Windows UI library
 description: How to install and use the Windows UI Library. 
-ms.topic: reference
+ms.topic: article
 
 
 ms.date: 07/15/2020

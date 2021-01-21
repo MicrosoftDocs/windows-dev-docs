@@ -2,7 +2,7 @@
 title: WinUI 2.4 Release Notes
 description: Release notes for WinUI 2.4 including new features and bug fixes.
 ms.date: 07/15/2020
-ms.topic: reference
+ms.topic: article
 ---
 
 # Windows UI Library 2.4
