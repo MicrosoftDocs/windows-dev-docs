@@ -16,8 +16,12 @@
           href: customize-settings/color-schemes.md
         - name: Rendering
           href: customize-settings/rendering.md
-        - name: Profile settings
-          href: customize-settings/profile-settings.md
+        - name: General profile settings
+          href: customize-settings/general-profile-settings.md
+        - name: Appearance profile settings
+          href: customize-settings/appearance-profile-settings.md
+        - name: Advanced profile settings
+          href: customize-settings/advanced-profile-settings.md
         - name: Actions
           href: customize-settings/actions.md
     - name: Command line arguments
