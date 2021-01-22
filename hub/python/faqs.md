@@ -12,15 +12,36 @@ ms.date: 07/19/2019
 
 # Frequently Asked Questions about using Python on Windows
 
-## Why can’t I “pip install” a certain package?
+## Trouble installing a package with pip install
 
-There are a number of reasons why an installation will fail--in most cases the right solution is to contact the package developer.
+There are a number of reasons why an installation will fail--in many cases the right solution is to contact the package developer.
 
-The most common cause of problems is trying to install into a location that you do not have permission to modify. For example, the default install location might require Administrative privileges, but by default Python will not have them. The best solution is to create a virtual environment and install there.
+A common cause for trouble is trying to install into a location that you do not have permission to modify. For example, the default install location might require Administrative privileges, but by default Python will not have them. The best solution is to create a [virtual environment](./web-frameworks.md#create-a-virtual-environment) and install there.
 
 Some packages include native code that requires a C or C++ compiler to install. In general, package developers should publish pre-compiled versions, but often do not. Some of these packages might work if you [install Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) and select the C++ option, however in most cases you will need to contact the package developer.
 
-[Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
+[Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
+
+### Trouble installing pip with WSL
+
+When installing a package (like Flask) with pip on Windows Subsystem for Linux (WSL or WSL2), for example `python3 -m pip install flask`, you may specifically encounter an error like this:
+
+```bash
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))
+after connection broken by 'NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection
+object at 0x7f655471da30>: Failed to establish a new connection: [Errno -3]
+Temporary failure in name resolution')': /simple/flask/
+```
+
+When researching this problem you may be led down several rabbit holes, none of which are particularly productive with a WSL linux distribution. (Warning: on WSL do not try editing `resolv.conf`, that file is a symbolic link and modifying it is a can of worms). Unless you are running an aftermarket firewall, the likely solution is to simply re-install pip:
+
+```bash
+sudo apt -y purge python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt -y install python3-pip --fix-missing
+```
+
+**Further discussion in the [WSL product repo on GitHub](https://github.com/microsoft/WSL/issues/4020). Thanks to our user community for [contributing this issue](https://github.com/MicrosoftDocs/windows-uwp/issues/2679) to the docs.*
 
 ## What is py.exe?
 
