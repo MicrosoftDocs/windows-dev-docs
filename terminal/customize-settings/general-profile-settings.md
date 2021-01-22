@@ -37,9 +37,7 @@ This is the name of the profile that will be displayed in the dropdown menu. Thi
 
 ___
 
-## Executable settings
-
-### Command line
+## Command line
 
 This is the executable used in the profile.
 
@@ -51,7 +49,11 @@ This is the executable used in the profile.
 
 **Default value:** `"cmd.exe"`
 
-### Starting directory
+<br />
+
+___
+
+## Starting directory
 
 This is the directory the shell starts in when it is loaded.
 
@@ -108,7 +110,7 @@ If set, this will replace the `name` as the title to pass to the shell on startu
 
 ___
 
-### Hide profile from dropdown
+## Hide profile from dropdown
 
 If `hidden` is set to `true`, the profile will not appear in the list of profiles. This can be used to hide default profiles and dynamically generated profiles, while leaving them in your settings file. To learn more about dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
 
