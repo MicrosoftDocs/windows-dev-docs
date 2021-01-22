@@ -171,6 +171,9 @@ Let's begin with a simple script that walks a directory tree and displays the di
 
 Congratulations! You've just written an automated systems administration script that reads the directory and files you created and uses Python to display, and then print, the directory structure to it's own text file.
 
+> [!NOTE]
+> If you're unable to install Python 3 from the Microsoft Store, see this [issue](https://github.com/MicrosoftDocs/windows-uwp/issues/2901) for an example of how to handle the pathing for this sample script.
+
 ## Example script to modify all files in a directory
 
 This example uses the files and directories you just created, renaming each of the files by adding the file's last modified date to the beginning of the filename.
