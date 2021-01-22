@@ -3,7 +3,7 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/21/2021
+ms.date: 1/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -12,9 +12,7 @@ ms.localizationpriority: high
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
-## Selection settings
-
-### Automatically copy selection to clipboard
+## Automatically copy selection to clipboard
 
 When this is set to `true`, a selection is immediately copied to your clipboard upon creation. The right-click on your mouse will always paste in this case. When it's set to `false`, the selection persists and awaits further action. Using your mouse to right-click will copy the selection.
 
@@ -26,7 +24,11 @@ When this is set to `true`, a selection is immediately copied to your clipboard 
 
 **Default value:** `false`
 
-### Text format when copying
+<br />
+
+___
+
+## Text format when copying
 
 When this is set to `true`, the color and font formatting of the selected text is also copied to your clipboard. When it's set to `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy.
 
@@ -38,7 +40,11 @@ When this is set to `true`, the color and font formatting of the selected text i
 
 **Default value:** `false`
 
-### Word delimiters
+<br />
+
+___
+
+## Word delimiters
 
 This determines the word delimiters used in a double-click selection. Word delimiters are characters that specify where the boundary is between two words. The most common examples are spaces, semicolons, commas, and periods.
 

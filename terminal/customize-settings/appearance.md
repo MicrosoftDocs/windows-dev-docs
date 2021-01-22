@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/21/2021
+ms.date: 1/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -38,9 +38,7 @@ _Configuration: [Powerline in PowerShell](./../custom-terminal-gallery/powerline
 
 ___
 
-## Title bar settings
-
-### Always show tabs
+## Always show tabs
 
 :::row:::
 :::column span="":::
@@ -61,7 +59,11 @@ When this is set to `true`, tabs are always displayed. When it's set to `false` 
 :::column-end:::
 :::row-end:::
 
-### Hide the title bar
+<br />
+
+___
+
+## Hide the title bar
 
 :::row:::
 :::column span="":::
@@ -82,7 +84,11 @@ When this is set to `true`, the tabs are moved into the title bar and the title 
 :::column-end:::
 :::row-end:::
 
-### Use active terminal title as application title
+<br />
+
+___
+
+## Use active terminal title as application title
 
 When this is set to `true`, the title bar displays the title of the selected tab. When it's set to `false`, title bar displays "Windows Terminal". Note that changing this setting will require starting a new terminal instance.
 

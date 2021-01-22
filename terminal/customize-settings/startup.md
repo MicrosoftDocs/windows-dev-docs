@@ -3,7 +3,7 @@ title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/21/2021
+ms.date: 1/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -28,9 +28,7 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 
 ___
 
-## Launch settings
-
-### Launch on machine startup
+## Launch on machine startup
 
 When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
 
@@ -42,7 +40,11 @@ When set to `true`, this enables the launch of Windows Terminal at startup. Sett
 
 **Default value:** `false`
 
-### Launch mode
+<br />
+
+___
+
+## Launch mode
 
 This defines whether the terminal will launch as maximized, full screen, or in a window. Setting this to `focus` is equivalent to launching the terminal in the `default` mode, but with [focus mode](./actions.md#toggle-focus-mode) enabled. Similarly, setting this to `maximizedFocus` will result in launching the terminal in a maximized window with focus mode enabled.
 
@@ -56,6 +58,12 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 
 > [!IMPORTANT]
 > The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
+<br />
+
+___
+
+## Launch size
 
 ### Columns on first launch
 
@@ -81,7 +89,11 @@ This is the number of rows displayed in the window upon first load. If `launchMo
 
 **Default value:** `30`
 
-### Launch position
+<br />
+
+___
+
+## Launch position
 
 This sets the pixel position of the top left corner of the window upon first load. On a system with multiple displays, these coordinates are relative to the top left of the primary display. If an X or Y coordinate is not provided, the terminal will use the system default for that value. If `launchMode` is set to `"maximized"` or `"maximizedFocus"`, the window will be maximized on the monitor specified by those coordinates.
 
