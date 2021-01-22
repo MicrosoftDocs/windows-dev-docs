@@ -16,11 +16,11 @@
           href: customize-settings/color-schemes.md
         - name: Rendering
           href: customize-settings/rendering.md
-        - name: General profile settings
+        - name: Profile - General
           href: customize-settings/general-profile-settings.md
-        - name: Appearance profile settings
+        - name: Profile - Appearance
           href: customize-settings/appearance-profile-settings.md
-        - name: Advanced profile settings
+        - name: Profile - Advanced
           href: customize-settings/advanced-profile-settings.md
         - name: Actions
           href: customize-settings/actions.md
