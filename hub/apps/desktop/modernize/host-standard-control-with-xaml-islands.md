@@ -312,9 +312,12 @@ The following instructions show you how to package the all the components in the
 > [!NOTE]
 > If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
-1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
+1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select the same **Target version** and **Minimum version** as you selected for the UWP project.
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the WPF project in your solution and click **OK**.
+
+> [!NOTE]
+> If you want to publish your app in the Microsoft Store, you have to add reference to the UWP project in the packaging project.
 
 3. Configure your solution to target a specific platform such as x86 or x64. This is required to build the WPF app into an MSIX package using the Windows Application Packaging Project.
 
@@ -324,7 +327,7 @@ The following instructions show you how to package the all the components in the
     4. In the **New Solution Platform** dialog, select **x64** or **x86** (the same platform you selected for **Active solution platform**) and click **OK**.
     5. Close the open dialog boxes.
 
-5. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+5. Build and run the packaging project. Confirm that the WPF runs and the UWP control displays as expected.
 
 ## Related topics
 
