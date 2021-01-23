@@ -44,13 +44,13 @@ You don't need a framework to create a Hybrid app or PWA, but there are a few po
 
 There are two popular distributions of Cordova:
 
-- [PhoneGap](https://phonegap.com/)
+- [PhoneGap](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c): Support has been discontinued by Adobe.
 
 - [Ionic](https://ionicframework.com/)
 
 ## Adobe PhoneGap
 
-[PhoneGap](https://phonegap.com/): A framework supported by Adobe that supports Cordova with additional tools, like a [command line](http://docs.phonegap.com/getting-started/1-install-phonegap/cli/), a [desktop app](https://phonegap.com/products#desktop-app-section), and [PhoneGap Build](https://build.phonegap.com/), a service that enables you to upload your code to an Adobe server that will build native apps for you without the need to install native SDKs on your local machine. This enables you to do things like build an iOS app using your Windows machine.
+Support was recently discontinued. For more, see this [blog post from Adobe](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c).
 
 ### Install PhoneGap
 
