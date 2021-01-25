@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/21/2021
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -68,7 +68,7 @@ On the other hand, if you do use this hotkey feature for multiple input language
 
 ## The text is blurry
 
-Some display drivers and hardware combinations do not handle scroll and/or dirty regions without blurring the data from the previous frame. To mitigate this problem, you can add a combination of [these global rendering settings](./customize-settings/global-settings.md#rendering-settings) to reduce the strain placed on your hardware caused by the terminal text renderer.
+Some display drivers and hardware combinations do not handle scroll and/or dirty regions without blurring the data from the previous frame. To mitigate this problem, you can add a combination of [these global rendering settings](./customize-settings/rendering.md) to reduce the strain placed on your hardware caused by the terminal text renderer.
 
 ## My colors look strange! There are black bars on my screen!
 

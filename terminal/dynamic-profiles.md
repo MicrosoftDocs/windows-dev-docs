@@ -11,7 +11,7 @@ ms.topic: concept
 
 Windows Terminal will automatically create Windows Subsystem for Linux (WSL) and PowerShell profiles for you if you have these shells installed on your machine. This makes it easier for you to have all of your shells included in the terminal without having to locate their executable files. These profiles are generated with the `source` property, which tells the terminal where to locate the proper executable.
 
-Upon installing the terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Global settings page](./customize-settings/global-settings.md).
+Upon installing the terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Startup page](./customize-settings/startup.md).
 
 ![Windows Terminal dynamic profiles](./images/dynamic-profiles.png)
 _Configuration: [Light Theme](./custom-terminal-gallery/frosted-glass-theme.md)_
@@ -32,7 +32,7 @@ If you delete a dynamically-created profile, the terminal will automatically reg
 
 ## Prevent a profile from being generated
 
-To prevent a dynamic profile from being generated, you can add the profile generator to the `disabledProfileSources` array in your global settings. More information on this setting can be found on the [Global settings page](./customize-settings/global-settings.md#disable-dynamic-profiles).
+To prevent a dynamic profile from being generated, you can add the profile generator to the `disabledProfileSources` array in your global settings. More information on this setting can be found on the [Global settings page](./customize-settings/startup.md#disable-dynamic-profiles).
 
 ```json
 "disabledProfileSources": ["Windows.Terminal.Wsl", "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore"]
