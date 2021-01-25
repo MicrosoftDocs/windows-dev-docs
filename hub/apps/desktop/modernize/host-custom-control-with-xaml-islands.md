@@ -317,7 +317,18 @@ The following instructions show you how to package the all the components in the
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the WPF project in your solution and click **OK**.
 
-3. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+> [!NOTE]
+> If you want to publish your app in the Microsoft Store, you have to add reference to the UWP project in the packaging project.
+
+3. Configure your solution to target a specific platform such as x86 or x64. This is required to build the WPF app into an MSIX package using the Windows Application Packaging Project.
+
+    1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**.
+    2. Under **Active solution platform**, select **x64** or **x86**.
+    3. In the row for your WPF project, in the **Platform** column select **New**.
+    4. In the **New Solution Platform** dialog, select **x64** or **x86** (the same platform you selected for **Active solution platform**) and click **OK**.
+    5. Close the open dialog boxes.
+
+4. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
 ## Related topics
 
