@@ -136,7 +136,7 @@ ___
 
 :::row:::
 :::column span="":::
-This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Global settings page](./global-settings.md#hide-close-all-tabs-popup).
+This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Appearance settings page](./appearance.md#show-close-all-tabs-popup).
 
 **Command name:** `closeWindow`
 
