@@ -161,3 +161,6 @@ This stores the name of the profile generator that originated the profile. _Ther
 **Necessity:** Optional
 
 **Accepts:** String
+
+> [!NOTE]
+> This field should be omitted when declaring a custom profile. It is used by Terminal to connect automatically generated profiles to your settings file.
