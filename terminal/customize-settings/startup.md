@@ -120,3 +120,22 @@ This sets which dynamic profile generators are disabled, preventing them from ad
 **Accepts:** `"Windows.Terminal.Wsl"`, `"Windows.Terminal.Azure"`, and/or `"Windows.Terminal.PowershellCore"` inside an array
 
 **Default value:** `[]`
+
+<br />
+
+___
+
+## Startup Actions ([Preview](https://aka.ms/terminal-preview))
+
+This sets the list of actions to execute on startup, allowing the terminal to launch with a custom set of tabs and panes by default. These actions will be applied only if no command line arguments were supplied. The list of actions is represented by a string with the same format as *commands* in the command line arguments. For more information about the *commands* format, visit the [Command line arguments page](./../command-line-arguments.md).
+
+**Property name:** `startupActions`
+
+**Necessity:** Optional
+
+**Accepts:** String representing a list of actions to run
+
+**Default value:** `""`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
