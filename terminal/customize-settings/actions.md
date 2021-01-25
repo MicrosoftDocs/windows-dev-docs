@@ -498,6 +498,33 @@ This command can be used to open the color picker for the active tab. The color 
 { "command": "openTabColorPicker" }
 ```
 
+### Move tab ([Preview](https://aka.ms/terminal-preview))
+
+This command moves the tab "backward" and "forward", which is equivalent to "left" and "right" in left-to-right UI.
+
+**Command name:** `moveTab`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+// Move tab backward (left in LTR)
+{ "command": { "action": "moveTab", "direction": "backward" }, "keys": "" }
+
+// Move tab forward (right in LTR)
+{ "command": { "action": "moveTab", "direction": "forward" }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 <br />
 
 ___
