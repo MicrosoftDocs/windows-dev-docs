@@ -316,8 +316,8 @@ The following instructions show you how to package the all the components in the
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the WPF project in your solution and click **OK**.
 
-> [!NOTE]
-> If you want to publish your app in the Microsoft Store, you have to add reference to the UWP project in the packaging project.
+    > [!NOTE]
+    > If you want to publish your app in the Microsoft Store, you have to add reference to the UWP project in the packaging project.
 
 3. Configure your solution to target a specific platform such as x86 or x64. This is required to build the WPF app into an MSIX package using the Windows Application Packaging Project.
 
