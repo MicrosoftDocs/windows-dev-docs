@@ -79,6 +79,8 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 :::column span="":::
 When this is set to `true`, the terminal will emulate a classic CRT display with scan lines and blurry text edges. This is an experimental feature and its continued existence is not guaranteed.
 
+If `experimental.pixelShaderPath` is set, it will override this setting.
+
 **Property name:** `experimental.retroTerminalEffect`
 
 **Necessity:** Optional
@@ -343,3 +345,26 @@ This sets the cursor color of the profile. This will override the `cursorColor` 
 **Necessity:** Optional
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
+
+<br />
+
+___
+
+## Pixel Shader Effects
+
+:::row:::
+:::column span="":::
+This setting allows a user to specify the path to a custom pixel shader to use with the Terminal content. This is an experimental feature and its continued existence is not guaranteed. For more details on authoring custom pixel shaders for the Terminal, see [this documentation](https://github.com/microsoft/terminal/blob/main/samples/PixelShaders/README.md).
+
+If set, this will override the `experimental.retroTerminalEffect` setting.
+
+**Property name:** `experimental.pixelShaderPath`
+
+**Necessity:** Optional
+
+**Accepts:** A path to an `.hlsl` shader file, as a string.
+
+**Default value:** `(unset)`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), 1.6+.

@@ -114,7 +114,7 @@ ___
 `ctrl+`, `shift+`, `alt+`
 
 > [!NOTE]
-> The `Windows` key is not supported as a modifier. 
+> The `Windows` key is not supported as a modifier.
 
 ### Modifier keys
 
@@ -136,7 +136,7 @@ ___
 
 :::row:::
 :::column span="":::
-This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Global settings page](./global-settings.md#hide-close-all-tabs-popup).
+This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Appearance settings page](./appearance.md#show-close-all-tabs-popup).
 
 **Command name:** `closeWindow`
 
@@ -794,17 +794,20 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
 
-### Toggle retro terminal effects
+### Toggle pixel shader effects
 
-This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
+This toggles any pixel shader effects enabled on the Terminal. If the user specified a valid shader with `experimental.pixelShaderPath`, this action will toggle that shader on/off. This will also toggle the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
-**Command name:** `toggleRetroEffect`
+**Command name:** `toggleShaderEffects`
 
 **Default binding:**
 
 ```json
-{ "command": "toggleRetroEffect" }
+{ "command": "toggleShaderEffects" }
 ```
+
+> [!IMPORTANT]
+> This action was renamed in [Windows Terminal Preview](https://aka.ms/terminal-preview) version 1.6. In previous versions, this was `toggleRetroEffect`.
 
 ### Set the color scheme
 
