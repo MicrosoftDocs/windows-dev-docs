@@ -89,7 +89,7 @@ We’ll be focusing on the ExpressionAnimation defined in #3. We will also be us
 
 In this equation, there are two properties you need to reference from the PropertySet; one is a centerpoint offset and the other is the rotation.
 
-```
+```csharp
 var propSetCenterPoint =
 _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 
@@ -99,7 +99,7 @@ var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 
 Next, you need to define the Vector3 component that accounts for the actual orbiting rotation.
 
-```
+```csharp
 var orbitRotation = EF.Vector3(
     EF.Cos(EF.ToRadians(propSetRotation)) * 150,
     EF.Sin(EF.ToRadians(propSetRotation)) * 75, 0);
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 
 Finally, combine these components together and reference the position of the Red Ball to define the mathematical relationship.
 
-```
+```csharp
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
@@ -121,7 +121,7 @@ In a hypothetical situation, what if you wanted to use this same Expression but 
 
 In this case, you modify the Expression you built earlier. Rather than "getting" a reference to the CompositionObject, you create a reference with a name and then assign different values:
 
-```
+```csharp
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
 orbitExpression.SetReferenceParameter("orbitRoundVisual", redSprite);
 blueSprite.StartAnimation("Offset", orbitExpression);
@@ -132,7 +132,7 @@ greenSprite.StartAnimation("Offset", orbitExpression);
 
 Here is the code if you defined your Expression with Strings via the public API.
 
-```
+```csharp
 ExpressionAnimation expressionAnimation =
 compositor.CreateExpressionAnimation("visual.Offset + " +
 "propertySet.CenterPointOffset + " +
