@@ -128,15 +128,18 @@ ___
 
 ## Bell notification style
 
-Controls what happens when the application emits a BEL character. When set to `"audible"`, the terminal will play a sound. When set to `"none"`, nothing will happen.
+Controls what happens when the application emits a BEL character. When set to `"all"`, the terminal will play a sound and flash the taskbar icon.
 
 **Property name:** `bellStyle`
 
 **Necessity:** Optional
 
-**Accepts:** `"audible"`, `"none"`
+**Accepts:** `"all"`, `"audible"`, `"visual"`, `"none"`
 
 **Default value:** `"audible"`
+
+> [!IMPORTANT]
+> The `"all"` and `"visual"` bell notification styles are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
