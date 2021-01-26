@@ -119,7 +119,7 @@ This sets how the profile reacts to termination or failure to launch. `"graceful
 
 ___
 
-## Bell notification style ([Preview](https://aka.ms/terminal-preview))
+## Bell notification style
 
 Controls what happens when the application emits a BEL character. When set to `"audible"`, the terminal will play a sound. When set to `"none"`, nothing will happen.
 
@@ -130,9 +130,6 @@ Controls what happens when the application emits a BEL character. When set to `"
 **Accepts:** `"audible"`, `"none"`
 
 **Default value:** `"audible"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 

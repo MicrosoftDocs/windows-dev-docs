@@ -56,9 +56,6 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 
 **Default value:** `"default"`
 
-> [!IMPORTANT]
-> The `"focus"` and `"maximizedFocus"` modes are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 <br />
 
 ___

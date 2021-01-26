@@ -3,7 +3,7 @@ title: Windows Terminal command-line arguments
 description: Learn how to create command-line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/28/2021
 ms.topic: how-to
 ---
 
@@ -36,9 +36,6 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--maximized`, `-M` | Launches the terminal maximized. |
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
-
-> [!IMPORTANT]
-> The `--focus` and `-f` flags are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |

@@ -141,9 +141,6 @@ This sets the file location of the image to draw over the window background. The
 
 **Accepts:** File location as a string or `"desktopWallpaper"`
 
-> [!IMPORTANT]
-> The `"desktopWallpaper"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Background image stretch mode
 
 :::row:::

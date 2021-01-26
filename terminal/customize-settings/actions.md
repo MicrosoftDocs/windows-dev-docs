@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -445,7 +445,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
-### Open tab rename text box ([Preview](https://aka.ms/terminal-preview))
+### Open tab rename text box
 
 This command changes the tab title into a text field that lets you edit the title for the current tab. Clearing the text field will reset the tab title back to the default for the current shell instance.
 
@@ -458,9 +458,6 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "openTabRenamer", "keys": "ctrl+alt+a" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Change tab color
 
@@ -564,7 +561,7 @@ This changes focus to a different pane depending on the direction.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
 
-### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
+### Zoom a pane
 
 :::row:::
 :::column span="":::
@@ -584,9 +581,6 @@ This expands the focused pane to fill the entire contents of the window.
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Resize a pane
 
@@ -641,7 +635,7 @@ This halves the size of the active pane and opens another. Without any arguments
 
 
 > [!IMPORTANT]
-> The `size` parameter was added in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.6.
+> The `size` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -714,9 +708,6 @@ This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If
 | ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
 
-> [!IMPORTANT]
-> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Scroll down
 
 This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll down the amount defined by the system default, which is the same amount as mouse scrolling.
@@ -734,9 +725,6 @@ This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
-
-> [!IMPORTANT]
-> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Scroll up a whole page
 

@@ -145,7 +145,7 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 
 ___
 
-## Disable pane animations ([Preview](https://aka.ms/terminal-preview))
+## Disable pane animations
 
 This disables visual animations across the application when set to `true`.
 
@@ -156,9 +156,6 @@ This disables visual animations across the application when set to `true`.
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 <br />
 

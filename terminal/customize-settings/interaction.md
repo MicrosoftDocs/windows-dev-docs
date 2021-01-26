@@ -87,7 +87,7 @@ ___
 
 ## Tab settings
 
-### Tab switcher interface style ([Preview](https://aka.ms/terminal-preview))
+### Tab switcher interface style
 
 :::row:::
 :::column span="":::
@@ -111,9 +111,6 @@ To disable the tab switcher, you can set this to `false` or `"disabled"`.
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Enable tab switcher
 
