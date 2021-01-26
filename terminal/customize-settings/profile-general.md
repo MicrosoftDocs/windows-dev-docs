@@ -25,11 +25,11 @@ The settings listed below are specific to each unique profile. If you'd like a s
 
 > [!TIP]
 > If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
-</br>
+
 ```json
 { "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },
 ```
-</br>
+
 > [!IMPORTANT]
 > The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
