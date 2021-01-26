@@ -350,11 +350,9 @@ This sets the cursor color of the profile. This will override the `cursorColor` 
 
 ___
 
-## Pixel Shader Effects
+## Pixel shader effects ([Preview](https://aka.ms/terminal-preview))
 
-:::row:::
-:::column span="":::
-This setting allows a user to specify the path to a custom pixel shader to use with the Terminal content. This is an experimental feature and its continued existence is not guaranteed. For more details on authoring custom pixel shaders for the Terminal, see [this documentation](https://github.com/microsoft/terminal/blob/main/samples/PixelShaders/README.md).
+This setting allows a user to specify the path to a custom pixel shader to use with the terminal content. This is an experimental feature and its continued existence is not guaranteed. For more details on authoring custom pixel shaders for the terminal, see [this documentation](https://github.com/microsoft/terminal/blob/main/samples/PixelShaders/README.md).
 
 If set, this will override the `experimental.retroTerminalEffect` setting.
 
@@ -362,9 +360,7 @@ If set, this will override the `experimental.retroTerminalEffect` setting.
 
 **Necessity:** Optional
 
-**Accepts:** A path to an `.hlsl` shader file, as a string.
-
-**Default value:** `(unset)`
+**Accepts:** A path to an `.hlsl` shader file, as a string
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/), 1.6+.
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).

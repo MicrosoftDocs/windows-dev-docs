@@ -39,13 +39,13 @@ Below is the full list of supported commands and options for the `wt` command li
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
-| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `--title title`, `--size,-s size`, `--tabColor`, `commandline` | Creates a new tab. |
-| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Splits a new pane. |
+| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Creates a new tab. |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `--title`, `--tabColor`, `--size, -s size`, `commandline` | Splits a new pane. |
 | `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
-| `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Acccepts one of `up`, `down`, `left`, `right`.  |
+| `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Accepts one of `up`, `down`, `left`, `right`. |
 
 > [!IMPORTANT]
-> The `--size,-s size` parameter to the `split-pane` subcommand and `move-focus` subcommand are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+> The `--tabColor` parameter of the `new-tab` subcommand, `--tabColor` and `--size,-s size` parameters of the `split-pane` subcommand, and the `move-focus` subcommand are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
@@ -260,9 +260,9 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Tab color
+### Tab color ([Preview](https://aka.ms/terminal-preview))
 
-To open a new terminal instance with custom tab color, use the `--tabColor` argument. This argument overrides value defined in profile, but can be overridden as well using the tab color picker. In the following example, a new terminal is created with two tabs of different colors:
+To open a new terminal instance with custom tab colors, use the `--tabColor` argument. This argument overrides the value defined in the profile, but can be overridden as well using the tab color picker. In the following example, a new terminal is created with two tabs of different colors:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
@@ -283,16 +283,19 @@ wt --tabColor #009999 ; new-tab --tabColor #f59218
 cmd.exe /c "wt.exe" --tabColor #009999 \; new-tab --tabColor #f59218
 ```
 
-Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and `\;` separates commands.
 
 ---
 <!-- End tab selectors.  -->
 
-When `--tabColor` is set for a tab it is associated with the first pane of this tab. Hence in a tab with multiple panes the color will be applied only if the first pane is active. To set color for additional panes you need to add `--tabColor` argument to the `split-pane` command as well. In the example below we create a tab with two panes; the color of the tab will  depend on which one of the panes is active:
+When `--tabColor` is set for a tab, it is associated with the first pane of this tab. Hence in a tab with multiple panes, the color will be applied only if the first pane is in focus. To set the tab color for additional panes, you will need to add the `--tabColor` parameter to the `split-pane` subcommand as well. In the example below, a tab with two panes is created with tab colors specified for each pane:
 
 ```powershell
 wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
 ```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab focus
 

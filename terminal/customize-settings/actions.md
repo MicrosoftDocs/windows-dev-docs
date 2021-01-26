@@ -633,7 +633,6 @@ This halves the size of the active pane and opens another. Without any arguments
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
 
-
 > [!IMPORTANT]
 > The `size` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
@@ -789,7 +788,7 @@ This resets the text size to the default value.
 
 ### Toggle pixel shader effects
 
-This toggles any pixel shader effects enabled on the Terminal. If the user specified a valid shader with `experimental.pixelShaderPath`, this action will toggle that shader on/off. This will also toggle the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
+This toggles any pixel shader effects enabled in the terminal. If the user specified a valid shader with `experimental.pixelShaderPath`, this action will toggle that shader on/off. This will also toggle the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
 **Command name:** `toggleShaderEffects`
 
@@ -799,8 +798,8 @@ This toggles any pixel shader effects enabled on the Terminal. If the user speci
 { "command": "toggleShaderEffects" }
 ```
 
-> [!IMPORTANT]
-> This action was renamed in [Windows Terminal Preview](https://aka.ms/terminal-preview) version 1.6. In previous versions, this was `toggleRetroEffect`.
+> [!CAUTION]
+> The `toggleRetroEffect` action is no longer available in versions 1.6 and later. It is recommended that you use `toggleShaderEffects` instead.
 
 ### Set the color scheme
 

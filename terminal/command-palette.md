@@ -3,7 +3,7 @@ title: Windows Terminal Command Palette
 description: Learn how to use the command palette in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/28/2021
 ms.topic: how-to 
 ms.localizationpriority: high
 ---
@@ -26,7 +26,7 @@ If you'd like to enter a `wt` command into the command palette, you can do so by
 
 ![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
-You can add a custom key binding for invoking command palette in the command line mode directly.
+You can add a custom key binding for invoking the command palette in the command line mode directly.
 
 ```json
 { "command": "commandPalette", "launchMode": "commandLine", "keys": "..." }
