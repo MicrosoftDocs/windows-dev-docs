@@ -21,7 +21,8 @@ If you are thinking about changing the rendering settings, additional informatio
 { "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },
 ```
 </br>
-**Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> [!IMPORTANT]
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Redraw entire screen when display updates
 

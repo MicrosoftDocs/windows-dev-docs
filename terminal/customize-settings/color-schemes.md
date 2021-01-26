@@ -19,7 +19,8 @@ Windows Terminal lets you define your own color schemes, either by using the bui
 { "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },
 ```
 </br>
-**Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> [!IMPORTANT]
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Switching to a different color scheme
 
