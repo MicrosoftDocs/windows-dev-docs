@@ -15,9 +15,11 @@ The properties listed below affect the entire terminal window, regardless of the
 > [!TIP]
 > If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
 </br>
-**Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+```json
+{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },
+```
 </br>
-i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+**Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Default profile
 
