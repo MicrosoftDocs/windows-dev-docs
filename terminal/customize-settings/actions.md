@@ -545,7 +545,7 @@ This closes the active pane. If there aren't any split panes, this will close th
 
 ### Move pane focus
 
-This changes focus to a different pane depending on the direction.
+This changes focus to a different pane depending on the direction. Setting the `direction` to `"previous"` will move focus to the most recently used pane.
 
 **Command name:** `moveFocus`
 
@@ -555,14 +555,18 @@ This changes focus to a different pane depending on the direction.
 { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
 { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
 { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" }
+{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
+{ "command": { "action": "moveFocus", "direction": "previous" }, "keys": "ctrl+alt+left" }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
+| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"` | Direction in which the focus will move. |
+
+> [!IMPORTANT]
+> The `"previous"` direction is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Zoom a pane
 
@@ -751,6 +755,36 @@ This scrolls the screen down by a whole page, which is the height of the window.
 ```json
 { "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" }
 ```
+
+### Scroll to the earliest history
+
+This scrolls the screen up to the top of the input buffer.
+
+**Command name:** `scrollToTop`
+
+**Default binding:**
+
+```json
+{ "command": "scrollToTop", "keys": "ctrl+shift+home" }
+```
+
+> ![IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Scroll to the latest history
+
+This scrolls the screen down to the bottom of the input buffer.
+
+**Command name:** `scrollToBottom`
+
+**Default binding:**
+
+```json
+{ "command": "scrollToBottom", "keys": "ctrl+shift+end" }
+```
+
+> ![IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

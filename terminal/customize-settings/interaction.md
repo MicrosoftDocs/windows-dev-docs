@@ -110,7 +110,7 @@ To disable the tab switcher, you can set this to `false` or `"disabled"`.
 
 **Accepts:** `true`, `false`, `"mru"`, `"inOrder"`, `"disabled"`
 
-**Default value:** `true`
+**Default value:** `"inOrder"`
 
 :::column-end:::
 :::column span="":::
