@@ -124,7 +124,7 @@ Learn how other developers have implemented cloud solutions in their games.
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
-        <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
+        <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob Storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>
             <ul>
