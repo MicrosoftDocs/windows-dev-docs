@@ -17,11 +17,11 @@
         - name: Rendering
           href: customize-settings/rendering.md
         - name: Profile - General
-          href: customize-settings/general-profile-settings.md
+          href: customize-settings/profile-general.md
         - name: Profile - Appearance
-          href: customize-settings/appearance-profile-settings.md
+          href: customize-settings/profile-appearance.md
         - name: Profile - Advanced
-          href: customize-settings/advanced-profile-settings.md
+          href: customize-settings/profile-advanced.md
         - name: Actions
           href: customize-settings/actions.md
     - name: Command line arguments

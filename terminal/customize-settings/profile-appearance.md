@@ -115,6 +115,9 @@ This sets the cursor shape for the profile. The possible cursors are as follows:
 
 **Default value:** `"bar"`
 
+> [!IMPORTANT]
+> The `"doubleUnderscore"` cursor shape is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Cursor height
 
 This sets the percentage height of the cursor starting from the bottom. This will only work when `cursorShape` is set to `"vintage"`.
