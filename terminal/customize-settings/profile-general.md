@@ -23,6 +23,11 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ]
 ```
 
+> [!TIP]
+> If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
+> **Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+
 ## Name
 
 This is the name of the profile that will be displayed in the dropdown menu. This value is also used as the "title" to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`Command Prompt`, `PowerShell`) may use this value over the lifetime of the application. This "title" behavior can be overridden by using `tabTitle`.

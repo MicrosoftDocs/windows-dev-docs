@@ -12,6 +12,11 @@ ms.localizationpriority: high
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
+> [!TIP]
+> If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
+> **Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+
 ## Automatically copy selection to clipboard
 
 When this is set to `true`, a selection is immediately copied to your clipboard upon creation. The right-click on your mouse will always paste in this case. When it's set to `false`, the selection persists and awaits further action. Using your mouse to right-click will copy the selection.

@@ -23,6 +23,11 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ]
 ```
 
+> [!TIP]
+> If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
+> **Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+
 ## Suppress title changes
 
 When this is set to `true`, `tabTitle` overrides the default title of the tab and any title change messages from the application will be suppressed. If `tabTitle` isn't set, `name` will be used instead. When this is set to `false`, `tabTitle` behaves as normal.

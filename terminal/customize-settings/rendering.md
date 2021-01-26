@@ -14,6 +14,11 @@ The properties listed below affect the entire terminal window, regardless of the
 
 If you are thinking about changing the rendering settings, additional information is provided on the [Troubleshooting page](./../troubleshooting.md#the-text-is-blurry) to help guide you.
 
+> [!TIP]
+> If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
+> **Note:** This is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+
 ## Redraw entire screen when display updates
 
 When this set to `true`, the terminal will redraw the entire screen each frame. When set to `false`, it will render only the updates to the screen between frames.
