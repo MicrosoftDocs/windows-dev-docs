@@ -89,10 +89,10 @@ To create a submission for an app, follow this process.
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
     ```
 
-    The response body contains an [app submission](#app-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any related files for the submission to Azure Blob storage (such as app packages, listing images, and trailer files), and all of the data for the new submission (such as the listings and pricing information).
+    The response body contains an [app submission](#app-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any related files for the submission to Azure Blob Storage (such as app packages, listing images, and trailer files), and all of the data for the new submission (such as the listings and pricing information).
 
     > [!NOTE]
-    > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
+    > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob Storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
 
 4. If you are adding new packages, listing images, or trailer files for the submission, [prepare the app packages](../publish/app-package-requirements.md) and [prepare the app screenshots, images, and trailers](../publish/app-screenshots-and-images.md). Add all of these files to a ZIP archive.
 
@@ -104,13 +104,13 @@ To create a submission for an app, follow this process.
       > [!NOTE]
       > If you are adding new files for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
 
-4. If you are adding new packages, listing images, or trailer files for the submission, upload the ZIP archive to [Azure Blob storage](/azure/storage/storage-introduction#blob-storage) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
+4. If you are adding new packages, listing images, or trailer files for the submission, upload the ZIP archive to [Azure Blob Storage](/azure/storage/storage-introduction#blob-storage) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
 
     * [Azure Storage Client Library for .NET](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage SDK for Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob Storage using the [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
