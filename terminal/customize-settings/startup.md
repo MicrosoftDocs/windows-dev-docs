@@ -40,7 +40,9 @@ ___
 
 ## Launch on machine startup
 
-When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry. Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
+When set to `true`, this enables the launch of Windows Terminal at startup. Setting this to `false` will disable the startup task entry.
+
+Note: if the Windows Terminal startup task entry is disabled either by org policy or by user action this setting will have no effect.
 
 **Property name:** `startOnUserLogin`
 
