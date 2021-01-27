@@ -35,12 +35,12 @@ XAML Islands have these run time requirements:
 
 ## WPF and Windows Forms applications
 
+> [!NOTE]
+> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that any version of the .NET Framework.
+
 We recommend that WPF and Windows Forms applications use the XAML Island .NET controls that are available in the Windows Community Toolkit. These controls provide an object model that mimics (or provides access to) the properties, methods, and events of the corresponding WinRT XAML controls. They also handle behavior such as keyboard navigation and layout changes.
 
 There are two sets of XAML Island controls for WPF and Windows Forms applications: *wrapped controls* and *host controls*. 
-
-> [!NOTE]
-> Using XAML Islands to host WinRT XAML controls is supported only in WPF and Windows Forms apps that target .NET Core 3.x. XAML Islands are not supported in apps that target the .NET Framework.
 
 ### Wrapped controls
 

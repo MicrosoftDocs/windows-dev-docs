@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Host a standard WinRT XAML control in a WPF app using XAML Islands
 
-This article demonstrates two ways to host a standard WinRT XAML control (that is, a first-party WinRT XAML control provided by the Windows SDK) in a WPF app by using [XAML Islands](xaml-islands.md):
+This article demonstrates two ways to use [XAML Islands](xaml-islands.md) to host a standard WinRT XAML control (that is, a first-party WinRT XAML control provided by the Windows SDK) in a WPF app that targets .NET Core 3.1:
 
 * It shows how to host a UWP [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](xaml-islands.md#wrapped-controls) in the Windows Community Toolkit. These controls wrap the interface and functionality of a small set of useful WinRT XAML controls. You can add them directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in the designer.
 
@@ -20,11 +20,14 @@ This article demonstrates two ways to host a standard WinRT XAML control (that i
 
 Although this article demonstrates how to host WinRT XAML controls in a WPF app, the process is similar for a Windows Forms app.
 
+> [!NOTE]
+> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that any version of the .NET Framework.
+
 ## Required components
 
 To host a WinRT XAML control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.
 
-* **The project and source code for your app**. Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host WinRT XAML controls is supported in apps that target .NET Core 3.x.
+* **The project and source code for your app**. Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host WinRT XAML controls is currently supported only in apps that target .NET Core 3.x.
 
 * **A UWP app project that defines a root Application class that derives from XamlApplication**. Your WPF or Windows Forms project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit so that it can discover and load custom UWP XAML controls. The recommended way to do this is to define this object in a separate UWP app project that is part of the solution for your WPF or Windows Forms app. 
 

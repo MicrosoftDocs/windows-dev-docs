@@ -16,11 +16,14 @@ This article demonstrates how to use the [WindowsXamlHost](/windows/communitytoo
 
 Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting WinRT XAML controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
 
+> [!NOTE]
+> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that any version of the .NET Framework.
+
 ## Required components
 
 To host a custom WinRT XAML control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.
 
-* **The project and source code for your app**. Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host custom controls is supported only in apps that target .NET Core 3.x. This scenario is not supported in apps that target the .NET Framework.
+* **The project and source code for your app**. Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host custom controls is supported only in apps that target .NET Core 3.x.
 
 * **The custom WinRT XAML control**. You'll need the source code for the custom control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.
 
