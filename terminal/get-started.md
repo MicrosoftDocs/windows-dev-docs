@@ -40,6 +40,9 @@ To customize the settings of your Windows Terminal, select **Settings** in the d
 
 The terminal supports customization of global properties that affect the whole application, [profile properties](./customize-settings/profile-general.md) that affect the settings of each profile, and [actions](./customize-settings/actions.md) that allow you to interact with the terminal using your keyboard or the command palette.
 
+> [!TIP]
+> You can also use the settings UI to configure your settings if you are using [Windows Terminal Preview](https://aka.ms/terminal-preview). You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
+
 ## Command line arguments
 
 You can launch the terminal in a specific configuration using command line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command line arguments on the [Command line arguments page](./command-line-arguments.md).
