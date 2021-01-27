@@ -29,7 +29,7 @@ If you'd like to enter a `wt` command into the command palette, you can do so by
 You can add a custom key binding for invoking the command palette in the command line mode directly.
 
 ```json
-{ "command": "commandPalette", "launchMode": "commandLine", "keys": "..." }
+{ "command": "commandPalette", "launchMode": "commandLine", "keys": "" }
 ```
 
 > [!IMPORTANT]
