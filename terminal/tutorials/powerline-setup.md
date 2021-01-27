@@ -70,7 +70,7 @@ Set-Theme Paradox
 
 Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting the Paradox theme from Oh-My-Posh. Oh-My-Posh comes with several [built-in themes](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
 
-### Set Cascadia Code PL as fontFace in settings
+### Set Cascadia Code PL as your font
 
 To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal drop-down menu.
 
