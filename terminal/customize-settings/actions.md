@@ -768,7 +768,7 @@ This scrolls the screen up to the top of the input buffer.
 { "command": "scrollToTop", "keys": "ctrl+shift+home" }
 ```
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Scroll to the latest history
@@ -783,7 +783,7 @@ This scrolls the screen down to the bottom of the input buffer.
 { "command": "scrollToBottom", "keys": "ctrl+shift+end" }
 ```
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />

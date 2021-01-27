@@ -140,7 +140,7 @@ This sets the list of actions to execute on startup, allowing the terminal to la
 
 **Necessity:** Optional
 
-**Accepts:** String representing a list of actions to run
+**Accepts:** String representing a list of commands to run
 
 **Default value:** `""`
 
