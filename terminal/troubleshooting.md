@@ -16,7 +16,9 @@ This guide addresses some of the common errors and obstacles you may encounter w
 
 At the moment, the settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). In order to open the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
 
-i.e. `{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },`
+```
+{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+," },
+```
 
 ## Set your WSL distribution to start in the home `~` directory when launched
 
