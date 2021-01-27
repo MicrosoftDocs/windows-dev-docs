@@ -3,7 +3,7 @@ title: Windows Terminal Powerline Setup
 description: In this tutorial, you learn how to set up Powerline in the Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/28/2021
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up Powerline in my Windows Terminal so that I can have a customized command line experience.
 ---
@@ -72,7 +72,7 @@ Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting
 
 ### Set Cascadia Code PL as your font
 
-To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal drop-down menu.
+To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. This can also be done using the settings UI if you have it enabled.
 
 Once your settings.json file opens, find the Windows PowerShell profile and add: `"fontFace": "Cascadia Code PL"` to designate Cascadia Code PL as the font. This will provide those nice Cascadia Code Powerline glyphs. You should notice the change in your terminal as soon as you select **Save** in your editor.
 
