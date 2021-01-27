@@ -3,7 +3,7 @@ title: Windows Terminal Advanced Profile Settings
 description: Learn how to customize the advanced profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 01/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -23,15 +23,8 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ]
 ```
 
-> [!TIP]
-> If you'd like to edit these settings using the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
-
-```json
-{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+s" },
-```
-
 > [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). Detailed instructions on how to enable the settings UI can be found on the [Troubleshooting page](./../troubleshooting.md#open-the-settings-ui).
 
 ## Suppress title changes
 
