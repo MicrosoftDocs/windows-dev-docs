@@ -29,6 +29,9 @@ Externally, the members of your type can expose only Windows Runtime types for t
 - Windows 10
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
+> [!NOTE]
+> Universal Windows Platform (UWP) projects using JavaScript are not supported in Visual Studio 2019. See [JavaScript and TypeScript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). To follow along with this topic, we recommend that you use Visual Studio 2017. See [JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+
 ## Creating a simple Windows Runtime class
 
 This section creates a JavaScript UWP application, and adds to the solution a Visual Basic or C# Windows Runtime component project. It shows how to define a Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately low-key in order to keep the focus on the component.

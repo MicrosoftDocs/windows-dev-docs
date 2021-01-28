@@ -267,7 +267,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 If you want to create a C# client, then you can skip this section.
 
 > [!NOTE]
-> Universal Windows Platform (UWP) projects are not supported in Visual Studio 2019. See [JavaScript and TypeScript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). To follow along with this section, we recommend that you use Visual Studio 2017. See [JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+> Universal Windows Platform (UWP) projects using JavaScript are not supported in Visual Studio 2019. See [JavaScript and TypeScript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). To follow along with this section, we recommend that you use Visual Studio 2017. See [JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### To create a JavaScript project
 1. In Solution Explorer (in Visual Studio 2017; see **Note** above), open the shortcut menu for the Solution node and choose **Add, New Project**.
