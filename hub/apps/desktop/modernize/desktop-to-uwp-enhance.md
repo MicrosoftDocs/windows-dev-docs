@@ -1,7 +1,7 @@
 ﻿---
 description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
 title: Call Windows Runtime APIs in desktop apps
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
@@ -26,9 +26,9 @@ There are several options for .NET projects:
 * For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
 * If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
-### .NET 5 Preview 8 and later: Use the Target Framework Moniker option 
+### .NET 5: Use the Target Framework Moniker option
 
-This option is only supported in projects that use .NET 5 Preview 8 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is only supported in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
