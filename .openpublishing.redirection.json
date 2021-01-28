@@ -128,17 +128,17 @@
     {
       "source_path": "windows-apps-src/get-started/enable-your-device-for-development.md",
       "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/get-set-up.md",
       "redirect_url": "/windows/apps/get-started/get-set-up",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/sign-up.md",
       "redirect_url": "/windows/apps/get-started/sign-up",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/adding-webvr-to-a-babylonjs-game.md",
@@ -203,11 +203,6 @@
     {
       "source_path": "windows-apps-src/graphics/visual-layer.md",
       "redirect_url": "/windows/uwp/composition/visual-layer",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/cortana-design-guidelines.md",
-      "redirect_url": "/cortana/skills/#pivot=start&panel=designskill",
       "redirect_document_id": false
     },
     {
@@ -1223,11 +1218,6 @@
     {
       "source_path": "windows-apps-src/input-and-devices/convert-ink-to-text.md",
       "redirect_url": "/windows/uwp/design/input/convert-ink-to-text",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/cortana-interactions.md",
-      "redirect_url": "/windows/uwp/design/input/cortana-interactions",
       "redirect_document_id": true
     },
     {

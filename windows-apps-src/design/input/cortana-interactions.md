@@ -1,38 +1,51 @@
 ---
-description: Extend the basic functionality of Cortana with voice commands that activate a Windows app and execute a single action.
-title: Cortana interactions
+description: Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in a Windows application.
+title: Cortana interactions in Windows apps
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, Cortana canvas, Cortana design, user interface, voice commands, VCD
-ms.date: 09/24/2020
+ms.date: 01/27/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Cortana interactions in Windows apps
 
-Cortana offers a robust and comprehensive extensibility framework that enables you to seamlessly incorporate functionality from your app or service into the Cortana experience.
+>[!WARNING]
+> This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
 
-## We've moved
+Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in a Windows application.
 
-All developer documentation for Cortana features and services is now available through the [Cortana dev center](https://developer.microsoft.com/cortana).
+The target app can be launched in the foreground (the app takes focus and **Cortana** is dismissed) or activated in the background (**Cortana** retains focus but provides results from the app), depending on the complexity of the interaction. Generally, voice commands that require additional context or user input are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app. 
 
-To get started, see the [Cortana Skills Kit overview](/cortana/skills/overview).
+By integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, **Cortana** becomes a liaison between your app and the user. Providing this shortcut to app functionality and reducing the need to switch apps, can save the user significant time and effort.
 
-To learn how to extend Cortana with functionality from a Windows app using voice commands, see [Cortana voice commands](/cortana/voice-commands/vcd). 
+> [!NOTE]
+> A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app via **Cortana**.
+>
+> A VCD file defines one or more voice commands, each with a unique intent.
+>
+> Voice command definitions can vary in complexity. They can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.
+
+## Other speech and conversation components
+
+### Speech, voice, and conversation in Windows 10
+
+See [Speech, voice, and conversation in Windows 10](/windows/apps/speech) for information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
+
+### Cortana Skills Kit
+
+See the [Cortana Skills Kit](/cortana/skills/) if you want to extend Cortana by adding your own skills that enable users to interact with your **service** via Cortana. [**Deprecation notice:** As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into Microsoft 365, we are retiring the Cortana skills kit for Consumer (the developer platform) and all skills built on this platform.]
 
 ## Related articles
 
-* [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
-**Designers**
-* [Speech design guidelines](speech-interactions.md)
-* [Cortana design guidelines for voice commands](/cortana/voice-commands/voicecommand-design-guidelines)
+### Designers
 
-**Samples**
-* [Cortana voice command sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+* [Cortana design guidelines](cortana-design-guidelines.md)
 
- 
+### Samples
+
+* [Cortana voice command sample](https://go.microsoft.com/fwlink/p/?LinkID=619899)

@@ -67,13 +67,15 @@ This page provides information on how the various Windows development frameworks
 
       **Azure speech services**
 
-      Design, build, and test accessible web sites with Azure speech services.
+      Integrate speech processing into apps and services.
 
       [Speech to text](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [Speech translation](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [Speaker Recognition](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [Voice-first virtual assistants](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -82,16 +84,21 @@ This page provides information on how the various Windows development frameworks
    :::column span="2":::
       **Legacy features**
 
-      Legacy, deprecated, and/or unsupported versions of Microsoft Speech technology.
+      Legacy, deprecated, and/or unsupported versions of Microsoft speech and conversation technology.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana Skills Kit](/cortana/skills/)
+
+      As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into Microsoft 365, we are retiring the Cortana skills kit for Consumer (the developer platform) and all skills built on this platform.
+   :::column-end:::
+   :::column:::
+
       [Microsoft Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [Microsoft Speech API (SAPI) 5.3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5.4](/previous-versions/windows/desktop/ee125663(v=vs.85))
