@@ -43,7 +43,7 @@ Windows Terminal uses the GPU to render its text, thus providing improved perfor
 
 ## Background image support
 
-You can have background images and gifs inside your Windows Terminal window. Information on how to add background images to your profile can be found on the [Profile settings page](./customize-settings/profile-settings.md#background-image-settings).
+You can have background images and gifs inside your Windows Terminal window. Information on how to add background images to your profile can be found on the [Profile - Appearance page](./customize-settings/profile-appearance.md#background-image).
 
 ## Command line arguments
 
