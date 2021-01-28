@@ -27,8 +27,8 @@ You can right click on a tab and select Color... to color the tab for that termi
 
 ## Zoom with the mouse
 
-You can zoom the text window of Windows Terminal by holding <kbd>ctrl</kbd> and scrolling. The zoom will persist for that terminal session. If you want to change your font size, you can learn more about the font size feature on the [Profile settings page](./customize-settings/profile-settings.md#text-settings).
+You can zoom the text window of Windows Terminal by holding <kbd>ctrl</kbd> and scrolling. The zoom will persist for that terminal session. If you want to change your font size, you can learn more about the font size feature on the [Profile - Appearance page](./customize-settings/profile-appearance.md#text).
 
 ## Adjust background opacity with the mouse
 
-You can adjust the opacity of the background by holding <kbd>ctrl+shift</kbd> and scrolling. The opacity will persist for that terminal session. If you want to change your acrylic opacity for a profile, you can learn more about acrylic background effects on the [Profile settings page](./customize-settings/profile-settings.md#acrylic-settings).
+You can adjust the opacity of the background by holding <kbd>ctrl+shift</kbd> and scrolling. The opacity will persist for that terminal session. If you want to change your acrylic opacity for a profile, you can learn more about acrylic background effects on the [Profile - Appearance page](./customize-settings/profile-appearance.md#acrylic).

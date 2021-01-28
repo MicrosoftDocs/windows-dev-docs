@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 11/11/2020
+ms.date: 1/28/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -114,7 +114,7 @@ ___
 `ctrl+`, `shift+`, `alt+`
 
 > [!NOTE]
-> The `Windows` key is not supported as a modifier. 
+> The `Windows` key is not supported as a modifier.
 
 ### Modifier keys
 
@@ -136,7 +136,7 @@ ___
 
 :::row:::
 :::column span="":::
-This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Global settings page](./global-settings.md#hide-close-all-tabs-popup).
+This closes the current window and all tabs within it. If `confirmCloseAllTabs` is set to `true`, a confirmation dialog will appear to ensure you'd like to close all your tabs. More information on this setting can be found on the [Appearance page](./appearance.md#show-close-all-tabs-popup).
 
 **Command name:** `closeWindow`
 
@@ -194,7 +194,10 @@ This opens either the default or custom settings files. Without the `target` fie
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"allFiles"` | The settings file to open. |
+| `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"settingsUI"`, `"allFiles"` | The settings file to open. |
+
+> [!IMPORTANT]
+> The `"settingsUI"` value for `target` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Toggle full screen
 
@@ -445,7 +448,7 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `title` | Optional | String | The new title to use for this tab. If omitted, this command will revert the tab title back to its original value. |
 
-### Open tab rename text box ([Preview](https://aka.ms/terminal-preview))
+### Open tab rename text box
 
 This command changes the tab title into a text field that lets you edit the title for the current tab. Clearing the text field will reset the tab title back to the default for the current shell instance.
 
@@ -458,9 +461,6 @@ _This command is not currently bound in the default settings_.
 ```json
 { "command": "openTabRenamer", "keys": "ctrl+alt+a" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Change tab color
 
@@ -498,6 +498,33 @@ This command can be used to open the color picker for the active tab. The color 
 { "command": "openTabColorPicker" }
 ```
 
+### Move tab ([Preview](https://aka.ms/terminal-preview))
+
+This command moves the tab "backward" and "forward", which is equivalent to "left" and "right" in left-to-right UI.
+
+**Command name:** `moveTab`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+// Move tab backward (left in LTR)
+{ "command": { "action": "moveTab", "direction": "backward" }, "keys": "" }
+
+// Move tab forward (right in LTR)
+{ "command": { "action": "moveTab", "direction": "forward" }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 <br />
 
 ___
@@ -518,7 +545,7 @@ This closes the active pane. If there aren't any split panes, this will close th
 
 ### Move pane focus
 
-This changes focus to a different pane depending on the direction.
+This changes focus to a different pane depending on the direction. Setting the `direction` to `"previous"` will move focus to the most recently used pane.
 
 **Command name:** `moveFocus`
 
@@ -528,16 +555,20 @@ This changes focus to a different pane depending on the direction.
 { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
 { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
 { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" }
+{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
+{ "command": { "action": "moveFocus", "direction": "previous" }, "keys": "ctrl+alt+left" }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the focus will move. |
+| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"` | Direction in which the focus will move. |
 
-### Zoom a pane ([Preview](https://aka.ms/terminal-preview))
+> [!IMPORTANT]
+> The `"previous"` direction is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Zoom a pane
 
 :::row:::
 :::column span="":::
@@ -557,9 +588,6 @@ This expands the focused pane to fill the entire contents of the window.
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Resize a pane
 
@@ -595,8 +623,8 @@ This halves the size of the active pane and opens another. Without any arguments
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
 
 // In defaults.json
-{ "command": { "action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "vertical"}, "keys": "alt+shift+plus" }
+{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" }
 ```
 
 #### Actions
@@ -610,6 +638,10 @@ This halves the size of the active pane and opens another. Without any arguments
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
+| `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
+
+> [!IMPORTANT]
+> The `size` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -682,9 +714,6 @@ This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If
 | ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
 
-> [!IMPORTANT]
-> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Scroll down
 
 This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. If `"rowsToScroll"` is not provided, it will scroll down the amount defined by the system default, which is the same amount as mouse scrolling.
@@ -702,9 +731,6 @@ This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `rowsToScroll` | Optional | Integer | The number of rows to scroll. |
-
-> [!IMPORTANT]
-> The `"rowsToScroll"` action is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Scroll up a whole page
 
@@ -729,6 +755,36 @@ This scrolls the screen down by a whole page, which is the height of the window.
 ```json
 { "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" }
 ```
+
+### Scroll to the earliest history
+
+This scrolls the screen up to the top of the input buffer.
+
+**Command name:** `scrollToTop`
+
+**Default binding:**
+
+```json
+{ "command": "scrollToTop", "keys": "ctrl+shift+home" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Scroll to the latest history
+
+This scrolls the screen down to the bottom of the input buffer.
+
+**Command name:** `scrollToBottom`
+
+**Default binding:**
+
+```json
+{ "command": "scrollToBottom", "keys": "ctrl+shift+end" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -767,17 +823,20 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+0" }
 ```
 
-### Toggle retro terminal effects
+### Toggle pixel shader effects
 
-This toggles the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
+This toggles any pixel shader effects enabled in the terminal. If the user specified a valid shader with `experimental.pixelShaderPath`, this action will toggle that shader on/off. This will also toggle the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
 
-**Command name:** `toggleRetroEffect`
+**Command name:** `toggleShaderEffects`
 
 **Default binding:**
 
 ```json
-{ "command": "toggleRetroEffect" }
+{ "command": "toggleShaderEffects" }
 ```
+
+> [!CAUTION]
+> The `toggleRetroEffect` action is no longer available in versions 1.6 and later. It is recommended that you use `toggleShaderEffects` instead.
 
 ### Set the color scheme
 
