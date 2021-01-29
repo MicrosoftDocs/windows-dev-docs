@@ -146,6 +146,10 @@ async void ReadTimestamp()
 
 ## Roaming data
 
+> [!WARNING]
+> As of Windows 10, version 1909, it was [announced](/windows/deployment/planning/windows-10-deprecated-features) that Package State Roaming (PSR) will be removed in a future update. PSR allows non-Microsoft developers to access roaming data on devices, enabling developers of UWP applications to write data to Windows and synchronize it to other instantiations of Windows for that user.
+> 
+>The recommended replacement for PSR is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
 
 If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
 
@@ -154,6 +158,8 @@ The OS limits the size of the app data that each app may roam. See [**Applicatio
 Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
 
 ### Roaming data do's and don'ts
+
+> See important note about [roaming data](#roaming-data).
 
 - Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
 - Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
@@ -167,23 +173,33 @@ Roaming data for an app is available in the cloud as long as it is accessed by t
 
 ### Roaming pre-requisites
 
+> See important note about [roaming data](#roaming-data).
+
 Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data will be local to each device.
 
-Data stored in the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
+Data stored in the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) will only transition if a user has made a device "trusted". If a device isn't trusted, data secured in this vault will not roam.
 
 ### Conflict resolution
+
+> See important note about [roaming data](#roaming-data).
 
 Roaming app data is not intended for simultaneous use on more than one device at a time. If a conflict arises during synchronization because a particular data unit was changed on two devices, the system will always favor the value that was written last. This ensures that the app utilizes the most up-to-date information. If the data unit is a setting composite, conflict resolution will still occur on the level of the setting unit, which means that the composite with the latest change will be synchronized.
 
 ### When to write data
 
-Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the “current song” settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
+> See important note about [roaming data](#roaming-data).
+
+Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the "current song" settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
 
 ### Excessive usage protection
+
+> See important note about [roaming data](#roaming-data).
 
 The system has various protection mechanisms in place to avoid inappropriate use of resources. If app data does not transition as expected, it is likely that the device has been temporarily restricted. Waiting for some time will usually resolve this situation automatically and no action is required.
 
 ### Versioning
+
+> See important note about [roaming data](#roaming-data).
 
 App data can utilize versioning to upgrade from one data structure to another. The version number is different from the app version and can be set at will. Although not enforced, it is highly recommended that you use increasing version numbers, since undesirable complications (including data loss)could occur if you try to transition to a lower data version number that represents newer data.
 
@@ -191,14 +207,17 @@ App data only roams between installed apps with the same version number. For exa
 
 ### Testing and tools
 
+> See important note about [roaming data](#roaming-data).
+
 Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
 
 - Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota) for details).
 - Your files are closed and released properly.
 - There are at least two devices running the same version of the app.
 
-
 ### Register to receive notification when roaming data changes
+
+> See important note about [roaming data](#roaming-data).
 
 To use roaming app data, you need to register for roaming data changes and retrieve the roaming data containers so you can read and write settings.
 
@@ -231,6 +250,8 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 ```
 
 ### Create and retrieve roaming settings
+
+> See important note about [roaming data](#roaming-data).
 
 Use the [**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
 
@@ -276,6 +297,8 @@ else
 
 ### Create and retrieve roaming files
 
+> See important note about [roaming data](#roaming-data).
+
 To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) and [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) enumeration indicates to replace the file if it already exists.
 
 ```csharp
@@ -307,7 +330,6 @@ async void ReadTimestamp()
    }
 }
 ```
-
 
 ## Temporary app data
 
