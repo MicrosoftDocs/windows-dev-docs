@@ -91,3 +91,15 @@ Check out our [new video series on Visual Studio Code](https://www.youtube.com/p
 ### Mixed Reality services
 
 HoloLens 2 was recently announced. Check out this [video series on Mixed Reality](https://www.youtube.com/watch?v=pdB7Ukf3u0I&list=PLlrxD0HtieHjh2Nt2BhcluIZeQg0uBZST) for the latest information, and how you can get involved and start developing.
+
+### One Dev Question
+
+In the One Dev Question video series, longtime Microsoft developers cover a series of questions about Windows development, team culture, and history.
+
+* [Raymond Chen on Windows development and history](https://www.youtube.com/watch?v=teV0gjCacug&list=PLlrxD0HtieHge3_8Dm48C0Ns61I6bHThc)
+
+* [Larry Osterman on Windows development and history](https://www.youtube.com/watch?v=_34CokLwodE&list=PLlrxD0HtieHhDTjMijDOd0BSJcpSFabfE)
+
+* [Chris Heilmann on VS Code](https://www.youtube.com/watch?v=cYRn5ONWAqo&list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx)
+
+* [Aaron Gustafson on Progressive Web Apps](https://www.youtube.com/watch?v=ks3CYvPBO2k&ab_channel=MicrosoftDeveloper)
