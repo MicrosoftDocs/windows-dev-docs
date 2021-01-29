@@ -102,6 +102,7 @@ Next, replace the contents of BgLabelControl.cpp with the following code.
 #include "BgLabelControl.h"
 #if __has_include("BgLabelControl.g.cpp")
 #include "BgLabelControl.g.cpp"
+#endif
 
 namespace winrt::BgLabelControlApp::implementation
 {
