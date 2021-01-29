@@ -8,20 +8,12 @@ ms.localizationpriority: medium
 
 # Install PowerToys
 
-There are multiple ways to install PowerToys:
-
-- **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)*
-- [Windows Package Manager](#install-with-windows-package-manager-preview) *(Preview)*
-- [Community-driven install tools](#community-driven-install-tools) *(Not officially supported)*
-
-## Requirements
-
-- Windows 10 1803 (build 17134) or later.
-- [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
-
-To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the **⊞ Win** *(Windows key)* + **R**, then type **winver**, select **OK**. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Settings** menu.
+We recommend installing PowerToys using the Windows executable button linked below, but alternative install methods are also listed if you prefer using a package manager.
 
 ## Install with Windows executable file
+
+> [!div class="nextstepaction"]
+> [Install PowerToys](https://aka.ms/installpowertoys)
 
 To install PowerToys using a Windows executable file:
 
@@ -31,7 +23,19 @@ To install PowerToys using a Windows executable file:
 4. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
 5. Once downloaded, open the executable file and follow the installation prompts.
 
-**Currently this is the recommended installation method.**
+## Requirements
+
+- Windows 10 1803 (build 17134) or later.
+- [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
+- x64 architecture currently supported. ARM and x86 support to become available at a later date.
+
+To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the **⊞ Win** *(Windows key)* + **D**, then type **winver**, select **OK**. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Settings** menu.
+
+## Alternative Install Methods
+
+<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)* -->
+- [Windows Package Manager](#install-with-windows-package-manager-preview) *(Preview)*
+- [Community-driven install tools](#community-driven-install-tools) *(Not officially supported)*
 
 ## Install with Windows Package Manager (Preview)
 
