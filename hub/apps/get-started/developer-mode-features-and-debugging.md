@@ -23,12 +23,13 @@ This image shows developer features for Windows 10:
 
 To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal.md).
 
+
 For device specific setup instructions, see:
-- [Device Portal for Desktop](/windows/uwp/debug-test-perf/device-portal-desktop.md)
+- [Device Portal for Desktop](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Device Portal for HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
-- [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Device Portal for Mobile](/windows/uwp/debug-test-perf/device-portal-mobile.md)
-- [Device Portal for Xbox](/windows/xbox-apps/device-portal-xbox.md)
+- [Device Portal for IoT](/windows/iot-core/manage-your-device/deviceportal)
+- [Device Portal for Mobile](/windows/uwp/debug-test-perf/device-portal-mobile)
+- [Device Portal for Xbox](/windows/uwp/xbox-apps/device-portal-xbox)
 
 If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package.
 
