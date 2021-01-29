@@ -30,7 +30,7 @@ We recommend that you use either the Entity Framework Core or the open-source [S
 
 Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can migrate that code to a UWP app and it will work with appropriate changes to the connection string.
 
-To try it out, see [Getting started with EF Core on Universal Windows Platform (UWP) with a New Database](/ef/core/get-started/uwp/getting-started).
+To try it out, see [Getting Started with EF Core](/ef/core/get-started/overview/first-app).
 
 ### SQLite library
 
