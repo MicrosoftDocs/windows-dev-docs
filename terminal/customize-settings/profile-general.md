@@ -95,7 +95,12 @@ This sets the icon that displays within the tab, dropdown menu, jumplist, and ta
 
 **Accepts:** File location as a string, or an emoji
 
-<br />
+The icon image file will need to be placed in a location that the Terminal app can read. Place icon images in the Windows Terminal AppData folder, located at: <br>
+
+`%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`
+<br>
+<br>
+As an example, if you place the icon image `ubuntu.ico` in this folder, the property will be `"icon": "ms-appdata:///roaming/ubuntu.ico"`.
 
 ___
 
