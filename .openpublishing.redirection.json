@@ -206,38 +206,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/input-and-devices/deep-link-into-your-app-from-cortana.md",
-      "redirect_url": "/cortana/voice-commands/deep-link-into-your-app-from-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
-      "redirect_url": "/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/input-and-devices/guidelines-for-user-interaction.md",
       "redirect_url": "/windows/uwp/input-and-devices/touch-interactions",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/interact-with-a-background-app-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/interact-with-a-background-app-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-background-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-foreground-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/support-natural-language-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/support-natural-language-voice-commands-in-cortana",
       "redirect_document_id": false
     },
     {

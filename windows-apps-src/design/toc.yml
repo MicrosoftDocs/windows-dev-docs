@@ -499,19 +499,19 @@
       href: input/cortana-interactions.md
       items:
         - name: Design guidelines
-          href: /cortana/voice-commands/voicecommand-design-guidelines
+          href: input/cortana-design-guidelines.md
         - name: Activate a foreground app
-          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-foreground-app-with-voice-commands.md
         - name: Modify VCD phrase lists
-          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md
         - name: Launch a background app
-          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-background-app-with-voice-commands.md
         - name: Interact with a background app
-          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: input/cortana-interact-with-a-background-app.md
         - name: Deep link from a background app
-          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: input/cortana-deep-link-into-your-app.md
         - name: Support natural-language voice commands
-          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: input/cortana-support-natural-language-voice-commands.md
     - name: Multiple inputs
       href: input/multiple-input-design-guidelines.md
     - name: Input injection

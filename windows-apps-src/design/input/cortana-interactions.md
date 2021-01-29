@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in a Windows application.
 
-The target app can be launched in the foreground (the app takes focus and **Cortana** is dismissed) or activated in the background (**Cortana** retains focus but provides results from the app), depending on the complexity of the interaction. Generally, voice commands that require additional context or user input are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app. 
+The target app can be launched in the foreground (the app takes focus and **Cortana** is dismissed) or activated in the background (**Cortana** retains focus but provides results from the app), depending on the complexity of the interaction. Generally, voice commands that require additional context or user input are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
 
 By integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, **Cortana** becomes a liaison between your app and the user. Providing this shortcut to app functionality and reducing the need to switch apps, can save the user significant time and effort.
 
@@ -40,12 +40,6 @@ See the [Cortana Skills Kit](/cortana/skills/) if you want to extend Cortana by 
 
 ## Related articles
 
-* [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
-
-### Designers
-
-* [Cortana design guidelines](cortana-design-guidelines.md)
-
-### Samples
-
-* [Cortana voice command sample](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+- [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana design guidelines](cortana-design-guidelines.md)
+- [Cortana voice command sample](https://go.microsoft.com/fwlink/p/?LinkID=619899)

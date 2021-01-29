@@ -21,7 +21,7 @@ These guidelines and recommendations describe how your app can best use **Cortan
 
 While the user should feel that **Cortana** is helping to make the process as light and easy as possible, you probably want **Cortana** to also be explicit that it's your app accomplishing the task.
 
-We use a trip planning and management app named **Adventure Works** integrated into the **Cortana** UI, shown here, to demonstrate many of the concepts and features we discuss.
+We use a trip planning and management app named **Adventure Works** integrated into the **Cortana** UI, shown here, to demonstrate many of the concepts and features we discuss. For more info, see the [Cortana voice command sample](https://go.microsoft.com/fwlink/p/?LinkID=619899).
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Screenshot of the Cortana canvas":::
 
@@ -174,9 +174,9 @@ We explore these steps in more detail here.
 
 ### Handoff
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip with no handoff":::*AdventureWorks "Cancel trip" with no handoff screen*
+:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks upcoming trip with no handoff":::*AdventureWorks "Upcoming trip" with no handoff screen*
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip with handoff":::*AdventureWorks "Cancel trip" with handoff screen*
+:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks upcoming trip with handoff":::*AdventureWorks "Upcoming trip" with handoff screen*
 
 Tasks that take less than 500ms for your app to respond, and require no additional information from the user, can be completed without further participation from **Cortana**, other than displaying the completion screen.
 
@@ -345,4 +345,6 @@ When one of the following errors occur, **Cortana** displays the same generic er
 
 ## Related articles
 
-[Cortana interactions in Windows apps](cortana-interactions.md)
+- [Cortana interactions in Windows apps](cortana-interactions.md)
+- [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana voice command sample](https://go.microsoft.com/fwlink/p/?LinkID=619899)
