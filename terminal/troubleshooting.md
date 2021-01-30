@@ -62,6 +62,14 @@ Alternatively, if you are running a script using the `commandline` profile setti
 
 The purpose of `startingDirectory` is to launch a new Windows Terminal instance in the given directory. If the terminal runs any code that changes its directory, that may be a good place to take a look.
 
+## Deleting a profile
+
+By default, the Windows Terminal ships with a built-in PowerShell and a Command Prompt profile. Terminal will also autodetect if other command line applications are installed, such as Powershell Core, WSL distributions (Ubuntu, Debian, etc), or Azure Cloud Shell. We call these types of automatically generated profiles "Dynamic profiles".
+
+For both built-in and dynamic profiles, deleting the profile from your Terminal settings.json file will not remove it from your profiles. Built-in profiles are defined in `defaults.json`, so they're alwways available. Dynamic profiles will attempt to create a json stub for their profile in your `settings.json` file whenever a profile is not already present in the file.
+
+The only way to truly remove these profiles from the list is by "hiding" them. To hide a profile, add the property `"hidden": false` to the profile.
+
 ## Ctrl+= does not increase the font size
 
 If you are using a German keyboard layout, you may run into this problem. <kbd>ctrl+=</kbd> gets deserialized as <kbd>ctrl+shift+0</kbd> if your main keyboard layout is set to German. This is the correct mapping for German keyboards.
