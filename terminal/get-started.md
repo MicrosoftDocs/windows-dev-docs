@@ -1,6 +1,6 @@
 ---
 title: Windows Terminal installation
-description: In this quickstart, you will learn how to install and run Windows Terminal.
+description: In this quickstart, you will learn how to install and set up Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 01/28/2021
@@ -28,11 +28,17 @@ The terminal will automatically create profiles for you if you have WSL distros 
 
 ## Open a new tab
 
-You can open a new tab of the default profile by pressing <kbd>ctrl+shift+t</kbd> or by selecting the + (plus) button. To open a different profile, select the ˅ (arrow) next to the + button to open the dropdown menu. From there, you can select which profile to open.
+You can open a new tab of the default profile by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> or by selecting the + (plus) button. To open a different profile, select the ˅ (arrow) next to the + button to open the dropdown menu. From there, you can select which profile to open.
+
+## Invoke the command palette
+
+You can invoke most features of Windows Terminal through the [command palette](./command-palette.md). The default key combination to invoke it is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>. Without the command palette, you have to learn the keyboard shortcut for each feature.
+
+![Example of the command palette in use](./images/command-palette-iterable-commands.gif)
 
 ## Open a new pane
 
-You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>alt+shift+plus</kbd> for a vertical pane or <kbd>alt+shift+minus</kbd> for a horizontal one. You can also use <kbd>alt+shift+d</kbd> to open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
+You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> for a vertical pane or <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd> for a horizontal one. You can also use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
 
 ## Configuration
 
