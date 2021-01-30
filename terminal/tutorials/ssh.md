@@ -16,18 +16,27 @@ In this tutorial, you'll learn how to set up a profile in Windows Terminal that 
 
 ## Create a profile
 
-You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your settings.json file.
+You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your settings.json file inside the `list` of profile objects.
 
-```js
-"commandline": "ssh cinnamon@roll"
+```json
+{
+  "name": "user@machine ssh profile",
+  "commandline": "ssh user@machine",
+}
 ```
+
+For more information, see:
+
+* [Windows Terminal Profile Settings](https://docs.microsoft.com/windows/terminal/customize-settings/profile-settings)
 
 ## Specify starting directory
 
 To specify the starting directory for a ssh session invoked by Windows Terminal, you can use this command:
 
-```bash
-"commandline": "ssh -t bob@foo \"cd /data/bob && exec bash -l\""
+```json
+{
+  "commandline": "ssh -t bob@foo \"cd /data/bob && exec bash -l\""
+}
 ```
 
 The `-t` flag forces pseudo-terminal allocation. This can be used to execute arbitrary screen-based programs on a remote machine, e.g. when implementing menu services. You will need to use escaped double quotes as bourne shell derivatives don't do any additional parsing for a string in single quotes.
