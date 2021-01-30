@@ -43,7 +43,7 @@ A shell has full control over its own title. However, each shell sets its title 
 | Command Prompt | `TITLE "New Title"` |
 | bash* | `echo -ne "\033]0;New Title\a"` |
 
-Note that some Linux distributions (i.e. Ubuntu) set their title automatically as you interact with the shell. If the above command doesn't work, run the following command:
+Note that some Linux distributions (e.g. Ubuntu) set their title automatically as you interact with the shell. If the above command doesn't work, run the following command:
 
 ```bash
 PS1=$
