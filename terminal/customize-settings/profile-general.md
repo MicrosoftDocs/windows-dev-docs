@@ -70,19 +70,17 @@ This is the directory the shell starts in when it is loaded.
 
 <br />
 
-> [!NOTE]
-> When setting the starting directory that your installed WSL distributions open to, you should use this format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the name of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
+Backslashes need to be escaped. For example, `C:\Users\USERNAME\Documents` should be entered as `C:\\Users\\USERNAME\\Documents`.
 
-> [!NOTE]
-> Omitting the startingDirectory value in a profile results in...
-</br>
-..if you run Windows Terminal from the Start menu: C:\windows\system32
-</br>
-..if you run wt.exe from the Start menu: C:\windows\system32
-</br>
-..if you run wt.exe from Win+R: %USERPROFILE%
-</br>
-..if you run wt.exe from the explorer address bar: whatever folder you were looking at.
+When setting the starting directory that your installed WSL distributions open to, use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
+
+Omitting the startingDirectory value in a profile has different results depending on where it's run...
+
+- If you run Windows Terminal from the Start menu: C:\windows\system32
+- If you run wt.exe from the Start menu: C:\windows\system32
+- If you run wt.exe from Win+R: %USERPROFILE%
+- If you run wt.exe from the explorer address bar: whatever folder you were looking at.
+
 ___
 
 ## Icon
