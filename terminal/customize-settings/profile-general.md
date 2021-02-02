@@ -68,18 +68,18 @@ This is the directory the shell starts in when it is loaded.
 
 **Default value:** `"%USERPROFILE%"`
 
-<br />
+**Example:** Start the PowerShell profile in the *GitHubRepos* folder of your *Documents* directory by finding the powershell.exe profile and adding `"startingDirectory": "%USERPROFILE%/Documents/GitHubRepos",`
 
-Backslashes need to be escaped. For example, `C:\Users\USERNAME\Documents` should be entered as `C:\\Users\\USERNAME\\Documents`.
+**Example with WSL:** When setting the starting directory for a [Linux distribution installed via WSL](https://docs.microsoft.com/windows/wsl/install-win10), use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
 
-When setting the starting directory that your installed WSL distributions open to, use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
-
-Omitting the startingDirectory value in a profile has different results depending on where it's run...
-
+**Default behavior:** When the startingDirectory value is not specified, you will get different results depending on where you launch Terminal:
 - If you run Windows Terminal from the Start menu: C:\windows\system32
 - If you run wt.exe from the Start menu: C:\windows\system32
 - If you run wt.exe from Win+R: %USERPROFILE%
 - If you run wt.exe from the explorer address bar: whatever folder you were looking at.
+
+> [!NOTE]
+> Backslashes need to be escaped. For example, `C:\Users\USERNAME\Documents` should be entered as `C:\\Users\\USERNAME\\Documents`.
 
 ___
 
