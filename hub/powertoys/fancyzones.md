@@ -52,17 +52,17 @@ With the Zones Editor open, check and uncheck the **Show space around zones** bo
 
 The zones editor also supports creating and saving custom layouts. Select the **Custom** tab next to **Templates** in the top menu of the zones editor.
   
-There are two ways to create custom zone layouts: window layout and table layout. These can also be thought of as additive and subtractive models.  
+There are two ways to create custom zone layouts: **Grid** layout and **Canvas** layout. These can also be thought of as subtractive and additive models.  
 
-The additive window layout model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows.
-
-![FancyZones Window Editor Mode](../images/pt-fancyzones-windoweditor.png)
-
-The subtractive table layout model starts with a table layout and allows zones to be created by splitting and merging zones and then resizing the gutter between zones.
+The subtractive **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, resizing the gutter between zones as desired.
 
 To merge two zones, select and hold the left mouse button and drag the mouse until a second zone is selected, then release the button and a popup menu will show up.
 
-![FancyZones Table Editor Mode](../images/pt-fancyzones-tableeditor.png)
+![FancyZones Table Editor Mode](../images/pt-fancyzones-grideditor.png)
+
+The additive **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows.
+
+![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 
 ## Snapping a window to two or more zones
 
