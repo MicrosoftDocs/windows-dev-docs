@@ -66,7 +66,7 @@ The purpose of `startingDirectory` is to launch a new Windows Terminal instance 
 
 By default, the Windows Terminal ships with a built-in PowerShell and a Command Prompt profile. Terminal will also autodetect if other command line applications are installed, such as Powershell Core, WSL distributions (Ubuntu, Debian, etc), or Azure Cloud Shell. We call these types of automatically generated profiles "Dynamic profiles".
 
-For both built-in and dynamic profiles, deleting the profile from your Terminal settings.json file will not remove it from your profiles. Built-in profiles are defined in `defaults.json`, so they're alwways available. Dynamic profiles will attempt to create a json stub for their profile in your `settings.json` file whenever a profile is not already present in the file.
+For both built-in and dynamic profiles, deleting the profile from your settings.json file will not remove it from your profiles. Built-in profiles are defined in `defaults.json`, so they're always available. Dynamic profiles will attempt to create a JSON stub for their profile in your `settings.json` file whenever a profile is not already present in the file.
 
 The only way to truly remove these profiles from the list is by "hiding" them. To hide a profile, add the property `"hidden": true` to the profile.
 
