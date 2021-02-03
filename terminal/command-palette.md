@@ -121,7 +121,7 @@ The above command would behave like the following three commands:
             "command": { "action": "newTab", "profile": "Command Prompt" }
         },
         {
-            "icon": "C:\\path\\to\\icon.png",
+            "icon": "C:\\path\\to\\icon",
             "name": "PowerShell",
             "command": { "action": "newTab", "profile": "PowerShell" }
         },
