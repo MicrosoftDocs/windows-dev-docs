@@ -30,17 +30,17 @@ If you have applications that are elevated, run in administrator mode, read [Pow
 
 ## Choose your layout (Layout Editor)
 
-When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Choosing a layout shows a preview of that layout on the monitor. Selecting apply sets that layout to the monitor.  
+When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Choosing a layout shows a preview of that layout on the monitor. The selected layout is applied automatically.  
 
 ![FancyZones Picker screenshot](../images/pt-fancyzones-picker.png)
 
-If multiple displays are in use, the editor will detect the available monitors and display them for the user to choose between. The chosen monitor will then be the target of the selected layout when applied.
+If multiple displays are in use, the editor will detect the available monitors and display them for the user to choose between. The chosen monitor will then be the target of the selected layout.
 
 ![FancyZones Picker Multiple Monitors](../images/pt-fancyzones-multimon.png)
 
 ### Space around zones
 
-The **Show space around zones** checkbox enables you to determine sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
+The **Show space around zones** toggle enables you to determine sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between FancyZone windows until they snap together, or before both are highlighted enabling them to merge together.
 
@@ -50,7 +50,7 @@ With the Zones Editor open, check and uncheck the **Show space around zones** bo
 
 ### Creating a custom layout
 
-The zones editor also supports creating and saving custom layouts. Select the **Custom** tab next to **Templates** in the top menu of the zones editor.
+The zones editor also supports creating and saving custom layouts. Select the **+ Create new layout** button at the bottom-right.
   
 There are two ways to create custom zone layouts: **Grid** layout and **Canvas** layout. These can also be thought of as subtractive and additive models.  
 
