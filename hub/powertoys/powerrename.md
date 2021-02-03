@@ -40,6 +40,8 @@ Enter text to replace the *Search for* value entered previously that match you'r
 
 If checked, the Search value will be interpreted as a [regular expression](https://wikipedia.org/wiki/Regular_expression) (regex). The Replace value can also contain regex variables (see examples below).  If not checked, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.
 
+For more information regarding the `Use Boost library` option in the settings menu for extended regex functionalities, see the [regular expressions section](#regular-expressions).
+
 ### Options - Case Sensitive
 
 If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
@@ -134,6 +136,8 @@ To enable regular expressions, check the "Use Regular Expressions" checkbox.
 
 **Note:** You will likely want to check "Match All Occurrences" while using regular expressions.
 
+To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, check the `Use Boost library` option in the PowerToys settings. It enables extended features, like `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)`, which are not supported by the standard library.
+
 ### Examples of regular expressions
 
 #### Simple matching examples
@@ -159,6 +163,7 @@ To enable regular expressions, check the "Use Regular Expressions" checkbox.
 | `(.*).png`   | `$1_foo.png`   | Appends "\_foo" to the existing file name  |
 | `(.*)`       | `$1.txt`        | Appends ".txt" extension to existing file name |
 | `(^\w+\.$)|(^\w+$)` | `$2.txt` | Appends ".txt" extension to existing file name only if it does not have an extension |
+|  `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | Move numbers in the filename: "29-03-2020" becomes "2020-03-29" |
 
 ### Additional resources for learning regular expressions
 

@@ -70,6 +70,22 @@ These will force PowerToys run into only targeted plug-ins.
   | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
+  | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key |
+  | `!` | Windows services only. Example `!alu` to search for the Application Layer Gateway service to be started or stopped |
+
+## System commands
+
+With PowerToys v0.31 and on, there are system level actions you can now execute.
+
+  | **Action key**   |   **Action** |
+  | ------------------ | ---------------------------------------------------------------------------------|
+  | `Shutdown` | Shuts down the computer |
+  | `Restart` | Restarts the computer |
+  | `Sign Out` | Signs current user out |
+  | `Lock` | Locks the computer |
+  | `Sleep` | Sleeps the computer |
+  | `Hibernate` | Hibernates the computer |
+  | `Empty Recycle Bin` | Empties the recycle bin |
 
 ## Indexer settings
 
