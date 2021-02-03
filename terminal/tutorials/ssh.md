@@ -27,7 +27,7 @@ You can start an SSH session in your command prompt by executing `ssh user@machi
 
 For more information, see:
 
-* [Windows Terminal Profile Settings](https://docs.microsoft.com/windows/terminal/customize-settings/profile-settings)
+* [Windows Terminal Profile - General settings](./../customize-settings/profile-general.md)
 
 ## Specify starting directory
 
