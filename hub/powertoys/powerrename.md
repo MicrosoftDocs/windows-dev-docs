@@ -40,7 +40,7 @@ Enter text to replace the *Search for* value entered previously that match you'r
 
 If checked, the Search value will be interpreted as a [regular expression](https://wikipedia.org/wiki/Regular_expression) (regex). The Replace value can also contain regex variables (see examples below).  If not checked, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.
 
-For more information regarding the `Use Boost library` option in the settings menu for extended regex functionalities, see the regular expressions section [below](#regular-expressions).
+For more information regarding the `Use Boost library` option in the settings menu for extended regex functionalities, see the [regular expressions section](#regular-expressions).
 
 ### Options - Case Sensitive
 
@@ -136,7 +136,7 @@ To enable regular expressions, check the "Use Regular Expressions" checkbox.
 
 **Note:** You will likely want to check "Match All Occurrences" while using regular expressions.
 
-To use the Boost library instead of the standard library, check the `Use Boost library` option in the PowerToys settings. It enables extended features, like `lookbehind`, which are not supported by the standard library. Check the usage [here](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html).
+To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, check the `Use Boost library` option in the PowerToys settings. It enables extended features, like `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)`, which are not supported by the standard library.
 
 ### Examples of regular expressions
 
