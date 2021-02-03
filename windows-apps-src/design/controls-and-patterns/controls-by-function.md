@@ -35,7 +35,7 @@ Here's a list by function of the common XAML controls you can use in your app.
 ## Appbars and commands
 
 ### App bar
-A toolbar for displaying application-specific commands. See Command bar.
+A toolbar for displaying application-specific commands. See [Command bar](#command-bar).
 
 Reference: [AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
@@ -99,7 +99,7 @@ Reference: [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 Design and how-to: [Buttons control guide](buttons.md) 
 
 ### Hyperlink
-See Hyperlink button.
+See [Hyperlink button](#hyperlink-button).
 
 ### Hyperlink button
 A button that appears as marked up text and opens the specified URI in a browser.
@@ -242,7 +242,7 @@ Design and how-to: [Calendar, date, and time controls](date-and-time.md)
 ## Flyouts
 
 ### Context menu
-See Menu flyout and Popup menu.
+See [Menu flyout](#menu-flyout) and [Popup menu](#popup-menu).
 
 ### Flyout
 Displays a message that requires user interaction. (Unlike a dialog, a flyout does not create a separate window, and does not block other user interaction.)
@@ -410,7 +410,7 @@ A layout panel that supports the arranging of child elements in rows and columns
 Reference: [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### Panning scroll viewer
-See Scroll viewer.
+See [Scroll viewer](#scroll-viewer).
 
 ### RelativePanel
 A panel that lets you position and align child objects in relation to each other or the parent panel.
@@ -427,7 +427,7 @@ A panel that lets you position and align child objects in relation to each other
 Reference: [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### Scroll bar
-See scroll viewer. (ScrollBar is an element of ScrollViewer. You don't typically use it as a stand-alone control.)
+See [Scroll viewer](#scroll-viewer). (ScrollBar is an element of ScrollViewer. You don't typically use it as a stand-alone control.)
 
 Reference: [ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
@@ -505,23 +505,28 @@ A container control that scales its content to a specified size.
 Reference: [Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### Zooming scroll viewer
-See Scroll viewer.
+See [Scroll viewer](#scroll-viewer).
 
 ## Media controls
 
 ### Audio
-See Media element.
 
-### Media element
+See [Media player element](#media-player-element).
+
+### Media player element
+
 A control that plays audio and video content.
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-Reference: [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10, you need to use the [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) control instead.
 
-Design and how-to: [Media element control guide](media-playback.md)
+Reference: [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+Design and how-to: [Media playback](media-playback.md)
 
 ### MediaTransportControls
 A control that provides playback controls for a MediaElement.
@@ -534,12 +539,12 @@ A control that provides playback controls for a MediaElement.
 
 Reference: [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-Design and how-to: [Media element control guide](media-playback.md) 
+Design and how-to: [Media playback](media-playback.md)
 
 Sample code: [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### Video
-See Media element.
+See [Media player element](#media-player-element).
 
 ## Navigation
 
@@ -660,7 +665,7 @@ Design and how-to: [Text controls](text-controls.md), [Auto suggest box control 
 Sample code: [AutoSuggestBox migration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ### Multi-line text box
-See Text box.
+See [Text box](#text-box).
 
 ### Password box
 A control for entering passwords.
@@ -692,13 +697,13 @@ Design and how-to: [Text controls](text-controls.md), [Rich edit box control gui
 Sample code: [XAML text sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### Search box
-See Auto suggest box.
+See [Auto suggest box](#auto-suggest-box).
 
 ### Single-line text box
-See Text box.
+See [Text box](#text-box).
 
 ### Static text/paragraph
-See Text block.
+See [Text block](#text-block).
 
 ### Text block
 A control that displays text.

@@ -1,28 +1,28 @@
 ---
-Description: The media player is used to view and listen to video, audio, and images.
-title: Media player
+description: Media playback involves the viewing and listening of video and audio through inline or dedicated full-screen experiences.
+title: Media players
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media player
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Media player
 
+# Media players
 
+Media playback involves the viewing and listening of video and audio through inline (embedded in a page or with a group of other controls) or dedicated full-screen experiences.
 
-The media player is used to view and listen to video and audio. Media playback can be inline (embedded in a page or with a group of other controls) or in a dedicated full-screen view. You can modify the player's button set, change the background of the control bar, and arrange layouts as you see fit. Just keep in mind that users expect a basic control set (play/pause, skip back, skip forward).
+Users expect a basic control set, such as play/pause, skip back, skip forward, which you can modify as required (including the media player's buttons, the background of the control bar, and control arrangement or layout).
 
 ![Media player element with transport controls](images/controls/mtc_double_video_inprod.png)
 
 > **Important APIs**: [MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
-
-> [!NOTE]
-> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10 you will need to use [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. All of the recommendations on this page apply to MediaElement as well.
+> [!Important]
+> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10, you need to use the [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) control instead. All recommendations made here apply to MediaElement as well.
 
 ## Is this the right control?
 
