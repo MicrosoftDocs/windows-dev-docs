@@ -512,16 +512,19 @@ See Scroll viewer.
 ### Audio
 See Media element.
 
-### Media element
+### Media player element
 A control that plays audio and video content.
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-Reference: [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10, you need to use the [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) control instead.
 
-Design and how-to: [Media element control guide](media-playback.md)
+Reference: [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+Design and how-to: [Media playback](media-playback.md)
 
 ### MediaTransportControls
 A control that provides playback controls for a MediaElement.
@@ -534,12 +537,12 @@ A control that provides playback controls for a MediaElement.
 
 Reference: [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-Design and how-to: [Media element control guide](media-playback.md) 
+Design and how-to: [Media playback](media-playback.md)
 
 Sample code: [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### Video
-See Media element.
+See [Media player element](#media-player-element).
 
 ## Navigation
 
