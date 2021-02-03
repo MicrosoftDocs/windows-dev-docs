@@ -32,7 +32,7 @@ You can open a new tab of the default profile by pressing <kbd>Ctrl</kbd>+<kbd>S
 
 ## Invoke the command palette
 
-You can invoke most features of Windows Terminal through the [command palette](./command-palette.md). The default key combination to invoke it is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>. Without the command palette, you have to learn the keyboard shortcut for each feature.
+You can invoke most features of Windows Terminal through the [command palette](./command-palette.md). The default key combination to invoke it is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
 
 ![Example of the command palette in use](./images/command-palette-iterable-commands.gif)
 
