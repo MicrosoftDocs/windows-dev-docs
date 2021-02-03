@@ -38,7 +38,7 @@ You can invoke most features of Windows Terminal through the [command palette](.
 
 ## Open a new pane
 
-You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> for a vertical pane or <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd> for a horizontal one. You can also use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
+You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> for a vertical pane or <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd> for a horizontal one. You can also use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
 
 ## Configuration
 
