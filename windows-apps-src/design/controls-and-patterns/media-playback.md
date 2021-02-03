@@ -1,9 +1,9 @@
 ---
-Description: The media player is used to view and listen to video, audio, and images.
-title: Media playback
+description: Media playback involves the viewing and listening of video and audio through inline or dedicated full-screen experiences.
+title: Media players
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media playback
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Media playback
+# Media players
 
 Media playback involves the viewing and listening of video and audio through inline (embedded in a page or with a group of other controls) or dedicated full-screen experiences.
 
