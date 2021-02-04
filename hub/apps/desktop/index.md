@@ -2,7 +2,7 @@
 description: Learn how to get started building desktop apps for Windows PCs, including how to choose the right app platform for new apps and how to modernize existing apps for Windows 10.
 title: Build desktop apps for Windows PCs
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: windows win32, desktop development
 ms.author: mcleans
 author: mcleanbyron
@@ -59,11 +59,11 @@ For an in-depth comparison of these platforms along with additional resources fo
 
 ### Future roadmap
 
-Looking forward, we are evolving the Windows app development platforms with the Windows UI (WinUI) Library and Project Reunion.
+Looking forward, we are evolving the Windows app development platforms with the Windows UI Library (WinUI) and Project Reunion.
 
-* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provided new and updated versions of UWP controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and as of WinUI 3 (currently in preview) it is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and Win32. 
+* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
 
-    For more information, see [Windows UI (WinUI) Library](../winui/index.md).
+    For more information, see [Windows UI Library (WinUI)](../winui/index.md).
 
 * **Project Reunion** (currently in preview) is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
 
