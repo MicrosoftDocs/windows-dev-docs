@@ -3,7 +3,7 @@ description: When you want to create a new Windows desktop app, the first decisi
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: Choose your Windows app platform
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 02/03/2021
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
@@ -18,7 +18,7 @@ When you want to create a new desktop application for Windows PCs, the first dec
 * [WPF](#wpf) and [Windows Forms](#windows-forms): These .NET-based platforms provide a common type system, APIs, and application model for managed applications.
 * [Win32](#win32): This is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
 
-Each of these platforms include a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the [Windows UI (WinUI) Library](#windows-ui-library) to create their user interfaces.
+Each of these platforms include a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the [Windows UI Library (WinUI)](#use-the-windows-ui-library-with-windows-apps) to create their user interfaces.
 
 Some of these platforms share some traits and are better suited for certain types of applications. For example, both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
 
@@ -88,24 +88,6 @@ For more information, see the following articles:
 * [API reference](/windows/win32/apiindex/windows-api-list/)
 * [Samples](https://github.com/Microsoft/Windows-classic-samples)
 
-## Windows UI Library
-
-On Windows 10, each of the main desktop platforms also support using the [Windows UI (WinUI) Library](../winui/index.md) to create their user interfaces. WinUI started as a toolkit that provided new and updated versions of UWP controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and Win32.
-
-You can use WinUI in the following ways in desktop apps:
-
-* UWP apps can use WinUI controls in place of UWP controls provided by the Windows SDK.
-* You can update existing WPF, Windows Forms, and C++/Win32 apps to use [XAML Islands](modernize/xaml-islands.md) to host WinUI 2.x controls in the apps.
-* Starting with [WinUi 3.0](../winui/winui3/index.md), you can create [.NET and C++/Win32 apps that use an entirely WinUI-based UI](../winui/winui3/get-started-winui3-for-desktop.md).
-
-## Project Reunion (preview)
-
-Project Reunion is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms.
-
-Project Reunion is currently available an early developer preview. You are encouraged to try this release in your development environment. However, be aware that Project Reunion will change in many ways between now and the final release. Project Reunion is not supported for apps that are used in production environments.
-
-For more information, see [Project Reunion](../project-reunion/index.md) and our [GitHub repository](https://github.com/microsoft/ProjectReunion/).
-
 ## Platform comparison: UWP, WPF, and Windows Forms
 
 The following table compares various characteristics of Windows Forms, WPF, and UWP in detail.
@@ -123,6 +105,22 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 <sup>1</sup> We have publicly announced features that will address this scenario in a future release of Windows 10.
 
 <sup>2</sup> Although the platform lacks first-class API support for this scenario, developers can support this scenario with workarounds.
+
+## Use the Windows UI Library with Windows apps
+
+To supplement the main Windows app platforms, you can also use the [Windows UI Library (WinUI)](../winui/index.md) in your apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
+
+You can use WinUI in the following ways in Windows apps.
+
+* [WinUI 2.x](../winui/winui2/index.md):
+  * UWP apps can use WinUI 2.x controls in place of WinRT controls provided by the Windows SDK. These releases of WinUI include both all-new controls and updated versions of existing controls from the Windows SDK.
+  * You can update existing WPF, Windows Forms, and C++/Win32 apps to host WinUI 2.x controls by using [XAML Islands](modernize/xaml-islands.md).
+
+* [WinUI 3 (preview)](../winui/winui3/index.md):
+  * Starting with WinUI 3, you can create [.NET and C++/Win32 apps](../winui/winui3/get-started-winui3-for-desktop.md) and [UWP apps](../winui/winui3/get-started-winui3-for-uwp.md) that use an entirely WinUI-based UI. This release includes Visual Studio project templates that provide everything you need to create these apps.
+
+> [!NOTE]
+> WinUI 3 is still in preview, and should not be used for production apps.
 
 ## Other app platforms
 
