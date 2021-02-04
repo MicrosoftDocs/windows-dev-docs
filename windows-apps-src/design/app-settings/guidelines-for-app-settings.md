@@ -57,9 +57,9 @@ If you're using a hub layout, the entry point for app settings should be placed 
 
 For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of an app bar.
 
-**Master-details**
+**List-details**
 
-Instead of burying the app settings entry point deeply within a master-details pane, make it the last pinned item on the top level of the master pane.
+Instead of burying the app settings entry point deeply within a list-details pane, make it the last pinned item on the top level of the list pane.
 
 ## Layout
 

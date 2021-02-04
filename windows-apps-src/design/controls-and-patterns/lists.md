@@ -68,7 +68,7 @@ Use a list view to:
 - Accommodate a variety of use cases, including the following common ones:
     - Create a list of messages or message log.
     - Create a contacts list.
-    - Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
+    - Create the list pane in the [list/details pattern](list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
 
 > [!NOTE]
 > If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
@@ -325,7 +325,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 ## Related articles
 
 **Design and UX Guidelines**
-- [Master/details](master-details.md)
+- [List/details](list-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](../input/drag-and-drop.md)

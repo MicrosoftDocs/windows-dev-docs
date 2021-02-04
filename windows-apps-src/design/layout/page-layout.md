@@ -73,11 +73,11 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 
 Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
 
-## Master/detail
+## List/detail
 
-![master details](images/master-detail.svg)
+![list details](images/master-detail.svg)
 
-The [master/details](../controls-and-patterns/master-details.md) model consists of a list view (master) and a content view (detail). Both panes are fixed and have vertical scrolling. When an item in the list view is selected, the content view is correspondingly updated. 
+The [list/details](../controls-and-patterns/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. When an item in the list view is selected, the content view is correspondingly updated.
 
 ## Forms
 ![Screenshot of a form that shows an empty text box and a button.](images/form.svg)

@@ -81,9 +81,9 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
 - [Images and image brushes](images-imagebrushes.md)
 - [Inking controls](inking-controls.md)
+- [List/details](list-details.md) (pattern)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
-- [Master/details](master-details.md) (pattern)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menu flyout](menus.md)

@@ -332,6 +332,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## Related articles
 
-- [MasterDetails](./master-details.md)
+- [List/Details](./list-details.md)
 - [NavigationView](./navigationview.md)
 - [Pivot](./pivot.md)
