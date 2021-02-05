@@ -10,6 +10,8 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
+>
+> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Enable user interaction with a background app, through speech and text input in the **Cortana** canvas, while executing a voice command.
 

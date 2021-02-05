@@ -11,6 +11,8 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
+>
+> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Access and update the list of supported phrases (**PhraseList** elements) in a Voice Command Definition (VCD) file at run time using the speech recognition result.
 
