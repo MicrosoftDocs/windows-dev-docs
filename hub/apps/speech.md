@@ -38,7 +38,8 @@ This page provides information on how the various Windows development frameworks
 
       [Conversational agents](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana voice commands](/cortana/voice-commands/vcd)
+      [Cortana voice commands](/cortana/voice-commands/vcd)<br>
+      (not supported in Windows 10 May 2020 Update and newer)
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -91,7 +92,7 @@ This page provides information on how the various Windows development frameworks
    :::column:::
       [Cortana Skills Kit](/cortana/skills/)
 
-      As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into Microsoft 365, we are retiring the Cortana skills kit for Consumer (the developer platform) and all skills built on this platform.
+      As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into [Microsoft 365](/microsoft-365/admin/misc/cortana-integration), we are retiring the Cortana Skills Kit developer platform and all skills built on this platform.
    :::column-end:::
    :::column:::
 
