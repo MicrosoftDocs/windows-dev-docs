@@ -20,7 +20,7 @@ You can use `wt.exe` to open a new instance of Windows Terminal from the command
 
 The `wt` command line accepts two types of values: **options** and **commands**. **Options** are a list of flags and other parameters that can control the behavior of the `wt` command line as a whole. **Commands** provide the action, or list of actions separated by semicolons, that should be implemented. If no command is specified, then the command is assumed to be `new-tab` by default.
 
-```bash
+```cmd
 wt [options] [command ; ]
 ```
 
@@ -61,7 +61,7 @@ To open a new terminal instance, in this case the command will open the profile 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt -p "Ubuntu-18.04"
 ```
 
@@ -91,7 +91,7 @@ To specify the folder that should be used as the starting directory for the cons
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt -d d:\
 ```
 
@@ -119,7 +119,7 @@ To open a new terminal instance with multiple tabs, enter:
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt ; ;
 ```
 
@@ -147,7 +147,7 @@ To open a new terminal instance with multiple tabs, in this case a Command Promp
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 ```
 
@@ -177,7 +177,7 @@ To open a new terminal instance with one tab containing three panes running a Co
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 ```
 
@@ -209,7 +209,7 @@ The `new-tab` and `split-pane` commands can be sequenced to get multiple tabs, e
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt -p "Command Prompt" ; split-pane -V wsl.exe ; new-tab -d c:\ ; split-pane -H -d c:\ wsl.exe
 ```
 
@@ -239,7 +239,7 @@ To open a new terminal instance with custom tab titles, use the `--title` argume
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt --title tabname1 ; new-tab -p "Ubuntu-18.04" --title tabname2
 ```
 
@@ -267,7 +267,7 @@ To open a new terminal instance with custom tab colors, use the `--tabColor` arg
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt --tabColor #009999 ; new-tab --tabColor #f59218
 ```
 
@@ -304,7 +304,7 @@ To open a new terminal instance with a specific tab in focus, use the `-t` flag 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
 
-```bash
+```cmd
 wt ; new-tab -p "Ubuntu-18.04" ; focus-tab -t 1
 ```
 
