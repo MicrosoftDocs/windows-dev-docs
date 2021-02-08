@@ -14,6 +14,10 @@ ms.localizationpriority: medium
 
 See the [Take a Test app technical reference](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for more information about the app itself. For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
 
+> [!NOTE]
+> This article contains references to the term blacklist, a term that Microsoft no longer uses. When the term is removed from the software, we’ll remove it from this article.
+
+
 ## Reference documentation
 The Take a Test APIs exist in the following namespaces. Note that all of the APIs depend on a global `SecureBrowser` object.
 
