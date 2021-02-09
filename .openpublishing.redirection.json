@@ -762,7 +762,12 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/controls-by-function.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/controls-by-function",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/controls-by-function.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/index",
       "redirect_document_id": true
     },
     {
@@ -808,7 +813,7 @@
     {
       "source_path": "windows-apps-src/controls-and-patterns/index.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/index",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/inking-controls.md",
