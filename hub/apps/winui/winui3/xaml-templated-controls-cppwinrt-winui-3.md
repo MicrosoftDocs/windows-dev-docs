@@ -24,7 +24,7 @@ Begin by creating a new project in Microsoft Visual Studio. In the `Create a new
 
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C++->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.h` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRT implementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instatiated as a runtime class.
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C++->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.h` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRT implementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instantiated as a runtime class.
 
 ## Implement the BgLabelControl custom control class
 
@@ -143,7 +143,7 @@ The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided b
 
 In its constructor, **BgLabelControl** sets a default style key for itself. A templated control needs to have a default style — containing a default control template — which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.
 
-Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++ > WinUI > Resource Diectionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
+Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++ > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
