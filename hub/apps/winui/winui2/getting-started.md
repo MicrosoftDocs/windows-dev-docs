@@ -28,13 +28,13 @@ The library is available as a NuGet package that can be added to any new or exis
 
 3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. 
 
-    :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.":::*The Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.*
+    :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.":::<br/>*The Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.*
 
 4. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [Windows UI Library NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install. 
 
     Check the "Include prerelease" checkbox to see the latest prerelease versions that include experimental new features.
 
-    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.":::*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
+    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.":::<br/>*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
 
 5. Add the Windows UI (WinUI) Theme Resources to your App.xaml file.
 
