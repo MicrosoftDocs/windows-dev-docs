@@ -28,6 +28,8 @@ Highlights this month include:
 * [Porting to C# from C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)
 * [Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT](https://docs.microsoft.com/windows/uwp/csharp-winrt/create-windows-runtime-component-cswinrt)
 * [Diagnose C#/WinRT component errors](https://docs.microsoft.com/windows/uwp/csharp-winrt/authoring-diagnostics)
+* New episode of our video show [Tabs vs. Spaces](https://channel9.msdn.com/Shows/Tabs-vs-Spaces)
+
 
 
 
@@ -37,8 +39,8 @@ Highlights this month include:
 * [WinHttpQueryDataAvailable](https://docs.microsoft.com/windows/win32/api/winhttp/nf-winhttp-winhttpquerydataavailable)
 * [Tutorial for using feature flags in a .NET Core app | Microsoft Docs](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core)
 * Continuous updates to the [WinUI 2](https://docs.microsoft.com/windows/apps/winui/winui2/) and [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/) docs.
-* Regulare updates to [Set up your development environment on Windows 10](https://docs.microsoft.com/windows/dev-environment/overview)
-* Using the [Settings UI](https://docs.microsoft.com/windows/terminal/customize-settings/startup) in Windows Terminal.
+* Regular updates to [Set up your development environment on Windows 10](https://docs.microsoft.com/windows/dev-environment/overview) covering WSL and Windows Terminal.
+* Information on the new [Settings UI](https://docs.microsoft.com/windows/terminal/customize-settings/startup) in Windows Terminal.
 
 The following reference topics have seen significant updates in the past month:
 
