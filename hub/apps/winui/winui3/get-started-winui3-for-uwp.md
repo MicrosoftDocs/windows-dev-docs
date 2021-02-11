@@ -1,7 +1,7 @@
 ---
 description: This guide shows you how to get starting creating UWP apps with a WinUI 3 UI.
 title: Get started with WinUI 3 for UWP apps
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
@@ -10,11 +10,11 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for UWP apps
 
-WinUI 3 Preview 3 includes new project templates that let you create a Universal Windows Platform (UWP) app with a user interface built entirely on WinUI. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and styles provided by WinUI 3. For a complete list of supported WinUI 3 project templates, see [Project templates for WinUI 3](index.md#project-templates-for-winui-3).
+WinUI 3 Preview 4 includes new project templates that let you create a Universal Windows Platform (UWP) app with a user interface built entirely on WinUI. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and styles provided by WinUI 3. For a complete list of supported WinUI 3 project templates, see [Project templates for WinUI 3](index.md#project-templates-for-winui-3).
 
 ## Prerequisites
 
-To use the WinUI 3 for UWP project templates described in this article, configure your development computer and [install WinUI 3 Preview 3](index.md#install-winui-3-preview-3).
+To use the WinUI 3 for UWP project templates described in this article, configure your development computer and [install WinUI 3 Preview 4](index.md#install-winui-3-preview-4).
 
 ## Create a "WinUI 3 app in UWP" for C#
 
@@ -79,9 +79,9 @@ To use the WinUI 3 for UWP project templates described in this article, configur
 
 ## Known issues and limitations
 
-For a list of known issues and limitations, see [this section](index.md#preview-3-limitations-and-known-issues).
+See the [Limitations and known issues](index.md#limitations-and-known-issues) section of [Windows UI Library 3 Preview 4 (February 2021)](index.md).
 
 ## Related topics
 
-- [WinUI 3](index.md)
+- [Windows UI Library 3 Preview 4 (February 2021)](index.md)
 - [Create your first app](/windows/uwp/get-started/your-first-app)

@@ -1,7 +1,7 @@
 ---
 description: This guide shows you how to get starting creating .NET and C++/Win32 desktop apps with a WinUI 3 UI.
 title: Get started with WinUI 3 for desktop apps
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -12,11 +12,11 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for desktop apps
 
-WinUI 3 Preview 3 includes project templates that enable you to create managed desktop C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
+WinUI 3 Preview 4 includes project templates that enable you to create managed desktop C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
 
 ## Prerequisites
 
-To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install WinUI 3 Preview 3 by following the instructions [here](index.md#install-winui-3-preview-3).
+To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install WinUI 3 Preview 4 by following the instructions [here](index.md#install-winui-3-preview-4).
 
 ## Create a WinUI 3 desktop app for C# and .NET 5
 
@@ -108,8 +108,8 @@ To support multiple languages in a WinUI Desktop app, and ensure proper localiza
 
 ## Known issues and limitations
 
-For a list of known issues and limitations, see [this section](index.md#preview-3-limitations-and-known-issues).
+See the [Limitations and known issues](index.md#limitations-and-known-issues) section of [Windows UI Library 3 Preview 4 (February 2021)](index.md).
 
 ## Related topics
 
-* [Windows UI Library 3](index.md)
+* [Windows UI Library 3 Preview 4 (February 2021)](index.md)
