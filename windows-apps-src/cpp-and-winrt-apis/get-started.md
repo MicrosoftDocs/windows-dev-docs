@@ -124,7 +124,7 @@ You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https:
 
 Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Ensure that **Windows SDK Version** is set to 10.0.17134.0 (Windows 10, version 1803) or greater.
 
-Confirm that you're not affected by [Why won't my new project compile?](./faq.md).
+Confirm that you're not affected by [Why won't my new project compile?](./faq.yml).
 
 Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
 
@@ -178,7 +178,7 @@ Be aware that XAML works best with programming languages that offer reflection. 
 
 ## Sample apps written in C++/WinRT
 
-See [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).
+See [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-cwinrt-sample-apps).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

@@ -752,7 +752,7 @@
         - name: What's new
           href: ../cpp-and-winrt-apis/news.md
         - name: Frequently-asked questions
-          href: ../cpp-and-winrt-apis/faq.md
+          href: ../cpp-and-winrt-apis/faq.yml
         - name: Troubleshooting
           href: ../cpp-and-winrt-apis/troubleshooting.md
         - name: Photo Editor sample application

@@ -35,7 +35,7 @@ For info about porting to C++/WinRT, see these resources.
 - [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
 - [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)
 
-Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).
+Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-cwinrt-sample-apps).
 
 ### Topics about C++/WinRT
 
@@ -44,7 +44,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwi
 | [Introduction to C++/WinRT](./intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
 | [Get started with C++/WinRT](./get-started.md) | To get you up to speed with using C++/WinRT, this topic walks through a simple code example. |
 | [What's new in C++/WinRT](./news.md) | News and changes to C++/WinRT. |
-| [Frequently-asked questions](./faq.md) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
+| [Frequently-asked questions](./faq.yml) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
 | [Troubleshooting](./troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 | [Photo Editor C++/WinRT sample application](./photo-editor-sample.md) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. | 
 | [String handling](./strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
