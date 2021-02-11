@@ -16,7 +16,7 @@ The Windows UI Library provides official native Windows UI controls and other us
 It maintains down-level compatibility with earlier versions of Windows 10, so your app works even if users don't have the latest OS.
 
 > [!NOTE]
-> Check out the [Windows UI Library 3 Preview 3 (November 2020)](../winui3/index.md), a major update to the Windows 10 UI platform.
+> Check out the [Windows UI Library 3 Preview 4 (February 2021)](../winui3/index.md), a major update to the Windows 10 UI platform.
 
 ## Features
 

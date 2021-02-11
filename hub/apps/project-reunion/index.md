@@ -67,7 +67,7 @@ If you want to try out Project Reunion 0.1 Prerelease, you must start with one o
 
 4. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-5. Download and install the [WinUI 3 Preview 3 VSIX package](https://aka.ms/winui3/preview3-download). This step is only required for the Hello World and MRT Core samples, which are already configured to use WinUI 3. For instructions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
+5. Download and install the [WinUI 3 Preview 4 VSIX package](https://aka.ms/winui3/preview3-download). This step is only required for the Hello World and MRT Core samples, which are already configured to use WinUI 3. For instructions on how to add the VSIX package to Visual Studio, see [Finding and Using Visual Studio Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
 6. Clone and explore the following samples:
     - [DWriteCore gallery sample](https://github.com/microsoft/Project-Reunion-Samples/tree/main/DWriteCore/DWriteCoreGallery): This sample application demonstrates the [DWriteCore](dwritecore.md) API.

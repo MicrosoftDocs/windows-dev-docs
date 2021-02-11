@@ -41,7 +41,7 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 - [Source code](https://aka.ms/winui)
 - [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## Windows UI 3 Library (Preview 3)
+## Windows UI 3 Library (Preview 4)
 
 WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
@@ -64,8 +64,8 @@ Please note that the Universal Windows Platform contains more than just the XAML
 
 ### Related links for WinUI 3
 
-- [Windows UI Library 3 Preview 3 (November 2020)](winui3/index.md)
-- [XAML Controls Gallery (WinUI 3 Preview 3) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows UI Library 3 Preview 4 (February 2021)](winui3/index.md)
+- [XAML Controls Gallery (WinUI 3 Preview 4) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## WinUI resources
 
