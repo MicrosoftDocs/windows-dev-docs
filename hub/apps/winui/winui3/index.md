@@ -47,6 +47,8 @@ WinUI 3 Preview 4 includes Visual Studio project templates to help get started b
 
 5. To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
+#### WebView2
+To use WebView2 with WinUI 3 Preview 4, please download the Evergreen Bootstrapper or Evergreen Standalone Installer found on [this page](https://developer.microsoft.com/microsoft-edge/webview2/). 
 
 #### Windows Community Toolkit
 
@@ -265,7 +267,7 @@ WinUI 3 Preview 4 is compatible with PCs running the Windows 10 April 2018 Updat
   For more information on using WinRT APIs in your WinUI 3 Desktop app, see [Windows Runtime APIs available to desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api
 ).
 
-- [Windows.UI.ViewManagement.UISettings.ColorValuesChanged Event](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) is no longer supported in Desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
+- The [UISettings.ColorValuesChanged Event](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in Desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
 
 - This release includes some experimental APIs. These have not been thoroughly tested by the team and may have unknown issues. Please [file a bug](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) on our repo if you encounter any issues. 
 
