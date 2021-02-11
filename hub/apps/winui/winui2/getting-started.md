@@ -26,45 +26,61 @@ The library is available as a NuGet package that can be added to any new or exis
     > [!IMPORTANT]
     > To use WinUI 2.5, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
 
-3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. Select the **Browse** tab, and search for **Microsoft.UI.Xaml** or **WinUI**. Then choose which [Windows UI Library NuGet Packages](nuget-packages.md) you want to use.
-The **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps.  
-You can optionally check "Include prerelease" to see the latest prerelease versions that include experimental new features.
+3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. 
 
-    ![Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.](images/ManageNugetPackages.png "Manage NuGet Packages Image")
+    :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.":::*The Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.*
 
-    ![Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field.](images/NugetPackages.png)
+4. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [Windows UI Library NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install. 
 
-4. Add the Windows UI (WinUI) Theme Resources to your App.xaml resources. There are two ways to do this, depending on whether you have additional application resources.
+    Check the "Include prerelease" checkbox to see the latest prerelease versions that include experimental new features.
 
-    a. If you don't have other application resources,
-    add `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` to your Application.Resources:
+    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.":::*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
+
+5. Add the Windows UI (WinUI) Theme Resources to your App.xaml file.
+
+    There are two ways to do this, depending on whether you have additional application resources.
+
+    a. If you don't need other application resources, add the WinUI resources element `<XamlControlsResources` as shown in the following example:
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
+
     </Application>
     ```
 
-    b. Otherwise, if you have more than one set of application resources, add `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` to  Application.Resources.MergedDictionaries:
+    b. If you need more than one application resource, add the WinUI resources element `<XamlControlsResources` in a `<ResourceDictionary.MergedDictionaries>` as shown here:
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                    <ResourceDictionary Source="/Styles/Styles.xaml"/>
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
+
     </Application>
     ```
 
     > [!IMPORTANT]
     > The order of resources added to a ResourceDictionary affects the order in which they are applied. The `XamlControlsResources` dictionary overrides many default resource keys and should therefore be added to `Application.Resources` first so that it doesn't override any other custom styles or resources in your app. For more information on resource loading, see [ResourceDictionary and XAML resource references](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
-5. Add a reference to the toolkit to XAML pages and your code-behind pages.
+6. Add a reference to the WinUI package to both XAML pages and/or code-behind pages.
 
     * In your XAML page, add a reference at the top of your page
 
