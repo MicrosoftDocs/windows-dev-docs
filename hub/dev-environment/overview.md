@@ -86,7 +86,7 @@ This guide will help you get started with installing and setting up the language
         [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
-       [![PowerToys icon](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
+       :::image type="icon" source="../images/powertoys.png":::(https://github.com/microsoft/PowerToys)<br>
         **[Windows PowerToys](../PowerToys/index.md)**<br>
         Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
         [Install PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
