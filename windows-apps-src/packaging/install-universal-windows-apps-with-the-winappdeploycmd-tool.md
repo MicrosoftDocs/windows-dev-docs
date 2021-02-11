@@ -139,7 +139,7 @@ WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeployd
 Registers the app at the app1_F5 directory under the deployment path of the PC or Xbox at 192.168.0.1.
 
 ``` CMD
-WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
+WinAppDeployCmd registerfiles -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
 ## Using WinAppDeployCmd to set up Run from PC deployment on Xbox One
