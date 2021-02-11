@@ -152,7 +152,7 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 
 ### Associate your packaged application with a set of file types
 
-You can associated your packaged application with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your application appears in the list of suggestions.
+You can associate your packaged application with file type extensions. If a user right-clicks a file in File Explorer and then selects the **Open with** option, your application appears in the list of suggestions. For more information about using this extension, see [Integrate a packaged desktop app with File Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### XML namespaces
 
@@ -210,9 +210,7 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 
 ### Add options to the context menus of files that have a certain file type
 
-In most cases, users double-click files to open them. If users, right click a file, various options appear.
-
-You can add options to that menu. These options give users other ways to interact with your file such as print, edit, or preview the file.
+This extension enables you to add options to the context menu that displays when users right-click a file in File Explorer.These options give users other ways to interact with your file such as print, edit, or preview the file. For more information about using this extension, see [Integrate a packaged desktop app with File Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### XML namespaces
 
