@@ -35,6 +35,9 @@ Highlights this month include:
 
 ### Updated topics
 
+* A rewrite of the Navigation control topics, with C++/ WinRT sample code: 
+    * [Navigation history and backwards navigation for Windows apps](https://docs.microsoft.com/windows/uwp/design/basics/navigation-history-and-backwards-navigation)
+    * [Navigation view](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
 * [High-level shader language (HLSL)](https://docs.microsoft.com/windows/win32/direct3dhlsl/dx-graphics-hlsl)
 * [WinHttpQueryDataAvailable](https://docs.microsoft.com/windows/win32/api/winhttp/nf-winhttp-winhttpquerydataavailable)
 * [Tutorial for using feature flags in a .NET Core app | Microsoft Docs](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core)
