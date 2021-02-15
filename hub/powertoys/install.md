@@ -73,6 +73,7 @@ If you have issues when installing/upgrading, visit the [PowerToys package on Ch
 To install PowerToys using [Scoop](https://scoop.sh/), run the following command from the command line / PowerShell:
 
 ```powershell
+scoop bucket add extras
 scoop install powertoys
 ```
 
