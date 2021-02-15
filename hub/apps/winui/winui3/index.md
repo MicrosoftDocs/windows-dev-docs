@@ -253,6 +253,30 @@ WinUI 3 Preview 4 is compatible with PCs running the Windows 10 April 2018 Updat
 - XAML Islands is not supported in this release
 - 3rd party ecosystem libraries will not fully function
 - IMEs do not work
+- CoreWindow, ApplicationView, CoreApplicationView, CoreDispatcher and their dependencies are not supported in Desktop apps (see below)
+
+#### CoreWindow, ApplicationView, CoreApplicationView, and CoreDispatcher in Desktop apps
+
+New in Preview4,
+[CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow),
+[ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView),
+[CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+[CoreDispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher),
+and their dependencies are not available in Desktop apps.
+
+For example the
+[Window.Dispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher)
+property is always null, but the Window.DispatcherQueue property can be used as an alternative.
+
+These APIs only work in UWP apps.
+In past previews they've partially worked in Desktop apps as well, but in Preview4 they've been fully disabled.
+These APIs are designed for the UWP case where there is only one window per thread,
+and one of the features of WinUI3 is to enable multiple.
+
+There are APIs that internally depend on existance of these APIs, which consequently aren't supported
+in a Desktop app. These APIs generally have a static `GetForCurrentView` method. For example
+[UIViewSettings.GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
+
 
 ### Known issues
 
