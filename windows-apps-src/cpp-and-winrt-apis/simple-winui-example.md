@@ -1,5 +1,5 @@
 ---
-description: This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project.
+description: This topic walks you through the process of adding basic support for WinUI within a C++/WinRT project.
 title: A simple C++/WinRT Windows UI Library example
 ms.date: 07/12/2019
 ms.topic: article
@@ -7,9 +7,9 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
 ---
 
-# A simple C++/WinRT Windows UI Library example
+# A basic C++/WinRT Windows UI Library example
 
-This topic walks you through the process of adding simple support for the [Windows UI (WinUI) Library](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT project. Incidentally, the Windows UI Library is itself written in C++/WinRT.
+This topic walks you through the process of adding basic support for the [Windows UI (WinUI) Library](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT project. Incidentally, the Windows UI Library is itself written in C++/WinRT.
 
 > [!NOTE]
 > The Windows UI (WinUI) Library toolkit is available as NuGet packages that you can add to any existing or new project using Visual Studio, as we'll see in this topic. For more background, setup, and support info, see [Getting started with the Windows UI Library](/uwp/toolkits/winui/getting-started).

@@ -41,7 +41,7 @@ We've gathered together links to documentation that supports the talks given as 
 ## WinUI
 
 * [Overview of WinUI](../winui/index.md)
-* [WinUI 3.0 Preview release 1](../winui/winui3/index.md) 
+* [WinUI 3.0 Preview](../winui/winui3/index.md)
 * [WinUI 3.0 for desktop apps](../winui/winui3/get-started-winui3-for-desktop.md)
 
 ## Developing for Android on Windows

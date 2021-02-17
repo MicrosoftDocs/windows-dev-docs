@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for desktop apps
 
-WinUI 3 Preview 4 includes project templates that enable you to create managed desktop C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
+WinUI 3 Preview 4 includes project templates that enable you to create managed C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
 
 ## Prerequisites
 
