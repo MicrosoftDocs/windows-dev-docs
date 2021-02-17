@@ -258,14 +258,14 @@ WinUI 3 Preview 4 is compatible with PCs running the Windows 10 April 2018 Updat
 #### CoreWindow, ApplicationView, CoreApplicationView, and CoreDispatcher in Desktop apps
 
 New in Preview4,
-[CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow),
-[ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView),
-[CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
-[CoreDispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher),
+[CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow),
+[ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView),
+[CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+[CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher),
 and their dependencies are not available in Desktop apps.
 
 For example the
-[Window.Dispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher)
+[Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher)
 property is always null, but the Window.DispatcherQueue property can be used as an alternative.
 
 These APIs only work in UWP apps.
@@ -275,27 +275,27 @@ and one of the features of WinUI3 is to enable multiple.
 
 There are APIs that internally depend on existance of these APIs, which consequently aren't supported
 in a Desktop app. These APIs generally have a static `GetForCurrentView` method. For example
-[UIViewSettings.GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
+[UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
 
 ### Known issues
 
 - Alt+F4 does not close Desktop app windows.
 
-- Due to changes with [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), the following WinRT APIs may no longer work with **Desktop** apps as expected:
-  - [`ApplicationView`](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) and all related APIs will no longer work.
-  - [`CoreApplicationView`](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview) and all related APIs will no longer work.
-  - All `GetForCurrentView` APIs may not be supported, for example [`CoreInputView.GetForCurrentView`](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView).
-  - [`CoreWindow.GetForCurrentThread`](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) will now return null.
+- Due to changes with [CoreWindow](/uwp/api/windows.ui.core.corewindow), the following WinRT APIs may no longer work with **Desktop** apps as expected:
+  - [`ApplicationView`](/uwp/api/windows.ui.viewmanagement.applicationview) and all related APIs will no longer work.
+  - [`CoreApplicationView`](/uwp/api/windows.applicationmodel.core.coreapplicationview) and all related APIs will no longer work.
+  - All `GetForCurrentView` APIs may not be supported, for example [`CoreInputView.GetForCurrentView`](/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView).
+  - [`CoreWindow.GetForCurrentThread`](/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) will now return null.
 
-  For more information on using WinRT APIs in your WinUI 3 Desktop app, see [Windows Runtime APIs available to desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+  For more information on using WinRT APIs in your WinUI 3 Desktop app, see [Windows Runtime APIs available to desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md
 ).
 
-- The [UISettings.ColorValuesChanged Event](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in Desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
+- The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in Desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
 
 - This release includes some experimental APIs. These have not been thoroughly tested by the team and may have unknown issues. Please [file a bug](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) on our repo if you encounter any issues. 
 
-- Previously, to get a CompositionCapabilities instance you would call [CompositionCapabilites.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview). However, the capabilities returned from this call were *not* dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a [CompositionCapabilties](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities) object directly.
+- Previously, to get a CompositionCapabilities instance you would call [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview). However, the capabilities returned from this call were *not* dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) object directly.
 
 - For C# UWP apps:
 

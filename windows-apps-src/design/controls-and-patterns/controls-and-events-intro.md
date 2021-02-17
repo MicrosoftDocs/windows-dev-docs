@@ -162,7 +162,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 
 ## Related topics
 
-- 	[Index of controls by function](controls-by-function.md)
+- 	[Index of controls by function](./index.md)
 - 	[Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
 - 	[Layout](../layout/index.md)
 - 	[Style](../style/index.md)

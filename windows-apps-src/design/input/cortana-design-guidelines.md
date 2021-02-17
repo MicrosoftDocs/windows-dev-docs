@@ -113,17 +113,17 @@ You should localize the voice commands your app responds to and all TTS and GUI 
 
 You should avoid lengthy GUI strings. The **Cortana** canvas provides three lines for responses and will truncate strings longer than that.
 
-For more info, see the [Globalization and localization section](/windows/uwp/design/globalizing/guidelines-and-checklist-for-globalizing-your-app).
+For more info, see the [Globalization and localization section](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md).
 
 ## Image resources and scaling
 
 Universal Windows Platform (UWP) apps can automatically select the most appropriate app logo image based on specific settings and device capabilities (high contrast, effective pixels, locale, and so on). All you need to do is provide the images and ensure you use the appropriate naming convention and folder organization within the app project for the different resource versions. If you don't provide the recommended resource versions, accessibility, localization, and image quality can suffer, depending on the user's preferences, abilities, device type, and location.
 
-For more detail on image resources for high contrast and scale factors, see [Guidelines for tile and icon assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).
+For more detail on image resources for high contrast and scale factors, see [Guidelines for tile and icon assets](../../app-resources/images-tailored-for-scale-theme-contrast.md).
 
 You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.
 
-The standard naming convention is "foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext". For example: images/logo.scale-100\_contrast-white.png is simply referred to in code using the root folder and the filename: images/logo.png. See [Manage language and region](/windows/uwp/design/globalizing/manage-language-and-region) and [How to name resources using qualifiers](/previous-versions/windows/apps/hh965324(v=win.10)).
+The standard naming convention is "foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext". For example: images/logo.scale-100\_contrast-white.png is simply referred to in code using the root folder and the filename: images/logo.png. See [Manage language and region](../globalizing/manage-language-and-region.md) and [How to name resources using qualifiers](/previous-versions/windows/apps/hh965324(v=win.10)).
 
 We recommend that you mark the default language on string resource files (such as "en-US\\resources.resw") and the default scale factor on images (such as "logo.scale-100.png"), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, we recommend that you provide assets for 100, 200, and 400 scale factors.
 
