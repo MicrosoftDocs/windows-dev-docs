@@ -12,8 +12,6 @@ The **[CodecQuery](/uwp/api/windows.media.core.codecquery)** class allows you to
 
 The CodecQuery API is a member of the **[Windows.Media.Core](/uwp/api/windows.media.core)** namespace, so you will need to include this namespace in your app.
 
-The CodecQuery API is a member of the **[Windows.Media.Core](/uwp/api/windows.media.core)** namespace, so you will need to include this namespace in your app.
-
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetCodecQueryUsing":::
 
 Initialize a new instance of the **CodecQuery** class by calling the constructor.
@@ -22,7 +20,7 @@ Initialize a new instance of the **CodecQuery** class by calling the constructor
 
 The **[FindAllAsync](/uwp/api/windows.media.core.codecquery.findallasync)** method returns all installed codecs that match the supplied parameters. These parameters include a **[CodecKind](/uwp/api/windows.media.core.codeckind)** value specifying whether you are querying for audio or video codecs or both, a **[CodecCategory](/uwp/api/windows.media.core.codeccategory)** value specifying whether you are querying for encoders or decoders, and a string that represents the media encoding subtype for which you are querying, such as H.264 video or MP3 audio.
 
-Specify empty string or null for the subtype value to return codecs for all subtypes. The following example lists all of the video encoders installed on the device.
+Specify empty string for the subtype value to return codecs for all subtypes. The following example lists all of the video encoders installed on the device.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetFindAllEncoders":::
 
