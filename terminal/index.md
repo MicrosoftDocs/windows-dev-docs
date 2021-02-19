@@ -1,5 +1,5 @@
 ---
-title: Windows Terminal overview
+title: An overview on Windows Terminal
 description: Learn about Windows Terminal and how it can improve your command line workflow.
 author: cinnamon-msft
 ms.author: cinnamon

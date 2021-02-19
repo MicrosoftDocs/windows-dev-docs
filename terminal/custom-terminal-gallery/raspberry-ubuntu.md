@@ -1,5 +1,5 @@
 ---
-title: Windows Terminal Raspberry Ubuntu Configuration
+title: Windows Terminal Raspberry Ubuntu
 description: This is the theme for Raspberry Ubuntu.
 author: cinnamon-msft
 ms.author: cinnamon
