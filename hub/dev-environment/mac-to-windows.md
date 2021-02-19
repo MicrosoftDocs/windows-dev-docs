@@ -1,6 +1,6 @@
 ---
 title: Help moving from Mac (Unix) to Windows
-description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
+description: A complete guide to help you transition from a Mac (Unix) to a Windows development environment which also includes shortcut key mapping.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -1,6 +1,6 @@
 ---
 title: Set up your development environment on Windows 10
-description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. Whether you prefer using Python, NodeJS, VS Code, Git, Bash, Linux tools and commands, Android Studio, we've got your covered with great new tools like Windows Terminal and WSL.
+description: A complete guide to help you setup your  development environment on Windows and install your preferred tools and code languages.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -87,9 +87,9 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[Windows PowerToys](../PowerToys/index.md)**<br>
+        **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
         Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
-        [Install PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [Install PowerToys (public preview)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::

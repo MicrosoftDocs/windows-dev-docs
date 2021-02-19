@@ -1,6 +1,6 @@
 ---
 title: Tips for improving your development workflow on Windows 10
-description: Tips for improving your development workflow on Windows 10.
+description: Tips that will help improving your performance and make your development workflow more efficient and enjoyable on Windows 10.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

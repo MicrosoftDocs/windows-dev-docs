@@ -1,6 +1,6 @@
 ---
 title: Set up NodeJS on WSL 2
-description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
+description: A step-by-step guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL). 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -1,6 +1,6 @@
 ---
 title: React Native for Android development on Windows
-description: Get started developing Android apps using Xamarin Native on Windows.
+description: A step-by-step guide on how to get started using React Native on Windows to create a cross-platform app that will work on Android devices.
 author: mattwojo
 ms.author: mattwoj 
 manager: jken
