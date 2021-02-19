@@ -51,7 +51,7 @@ General instructions and code examples for adding and styling controls in XAML a
 
 ## Alphabetical index
 
-Detailed information about specific controls and patterns. (For a list sorted by function, see [Index of controls by function]().)
+Detailed information about specific controls and patterns. 
 
 :::row:::
     :::column:::
