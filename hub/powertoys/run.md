@@ -71,7 +71,7 @@ These will force PowerToys run into only targeted plug-ins.
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key |
-  | `!` | Windows services only. Example `!alu` to search for the Application Layer Gateway service to be started or stopped |
+  | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped |
 
 ## System commands
 
