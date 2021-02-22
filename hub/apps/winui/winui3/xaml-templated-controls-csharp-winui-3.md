@@ -24,11 +24,11 @@ Begin by creating a new project in Microsoft Visual Studio. In the **Create a ne
 
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add two new files to your project. `BgLabelControl.cs` contains the code-behind for the control. 
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. 
 
-## Update the code behind file
+## Update the custom control C# file
 
-In the code behind file, BgLabelControl.xaml.cs, note that the constructor defines the **DefaultStyleKey** property for our control. This key identifies the default template that will be used if the consumer of the control doesn't explicitly specify a template. The key value is the *type* of our control. We will see this key in use later when we implement our generic template file.
+In the C# file, BgLabelControl.cs, note that the constructor defines the **DefaultStyleKey** property for our control. This key identifies the default template that will be used if the consumer of the control doesn't explicitly specify a template. The key value is the *type* of our control. We will see this key in use later when we implement our generic template file.
 
 ```csharp
 public BgLabelControl()
@@ -80,9 +80,9 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 For more information on how dependency properties work, see [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview).
 
 ## Define the default style for BgLabelControl
-A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will create a generic template file for our control.
+A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will modify the generic template file for our control.
 
-Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder and name it "Themes". Under `Themes`, add a new item of type **Visual C# > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
+The generic template file is generated when you add the **Custom Control (WinUI)** to your app. The file is named "Generic.xaml" and is generated in the **Themes** folder in solution explorer. The folder and file names are required in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
 
 
 
