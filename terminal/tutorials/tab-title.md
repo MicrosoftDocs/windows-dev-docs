@@ -46,12 +46,26 @@ A shell has full control over its own title. However, each shell sets its title 
 Note that some Linux distributions (e.g. Ubuntu) set their title automatically as you interact with the shell. If the above command doesn't work, run the following command:
 
 ```bash
-PS1=$
-PROMPT_COMMAND=
-echo -ne "\033]0;New Title\a"
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+echo -ne '\033]0;New Title\a'
 ```
 
-This will change the title to 'New Title', and also set the prompt to '$'.
+This will change the title to 'New Title'.
+
+For easier access add this to the end of your `~/.bashrc`:
+
+```bash
+settitle () {
+  export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  echo -ne '\033]0;'"$1"'\a'
+}
+```
+
+After you reopen your shell, you now can change the shell's title at any time using the following command:
+
+```bash
+settitle 'New Title'
+```
 
 ## Use the `suppressApplicationTitle` setting
 
