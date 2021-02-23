@@ -529,6 +529,36 @@ _This command is not currently bound in the default settings_.
 
 ___
 
+## Window management commands
+
+### New window
+
+This creates a new window. Without any arguments, this will open the default profile in a new window (regardless of the setting of `windowingBehavior`). If an action is not specified, the default profile's equivalent setting will be used.
+
+**Command name:** `newWindow`
+
+**Default bindings:**
+
+```json
+{ "command": "newWindow", "keys": "ctrl+shift+n" },
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `commandline` | Optional | Executable file name as a string | Executable run within the tab. |
+| `startingDirectory` | Optional | Folder location as a string | Directory in which the window will open. |
+| `tabTitle` | Optional | String | Title of the window tab. |
+| `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
+| `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
+
+<br />
+___
+
 ## Pane management commands
 
 ### Close pane
