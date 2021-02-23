@@ -70,7 +70,7 @@ Supported audio file types include...
 
 ## Send the notification
 
-Sending a notificaiton with audio is the same as sending a regular notification. See [Send local toast](send-local-toast.md) to learn more.
+Sending a notification with audio is the same as sending a regular notification. See [Send local toast](send-local-toast.md) to learn more.
 
 
 ## Related topics
