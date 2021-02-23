@@ -195,7 +195,7 @@ Windows Phone Silverlight apps use controls defined in the **Microsoft.Phone.Co
 
 **Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps, but not in Windows Phone Silverlight apps. There are other reasons why your existing custom styles/templates may not be appropriate for Windows 10 apps, including system resource keys you are using, changes to the sets of visual states used, and performance improvements made to the Windows 10 default styles/templates. We recommend that you edit a fresh copy of a control's default template for Windows 10 and then re-apply your style and template customization to that.
 
-For more info on UWP controls, see [Controls by function](../design/controls-and-patterns/controls-by-function.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
+For more info on UWP controls, see [Controls by function](../design/controls-and-patterns/index.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
 
 ##  Design language in Windows 10
 
