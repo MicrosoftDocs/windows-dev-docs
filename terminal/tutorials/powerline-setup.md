@@ -71,6 +71,9 @@ Set-PoshPrompt -Theme paradox
 Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting the Paradox theme from Oh-My-Posh. Oh-My-Posh comes with several [built-in themes](https://ohmyposh.dev/docs/themes). If you decide to use Cascadia Code PL as a font, oh-my-posh themes that contain `minimal`
 function without the need for additional icons. You can also [create a custom theme](https://ohmyposh.dev/docs/installation#change-the-theme) to match the font of your choice.
 
+> [!IMPORTANT]
+> Script execution policy must be set to either **RemoteSigned** or **Unrestricted** in order for the profile script to run. Run this command to see your current execution policy `Get-ExecutionPolicy`. [Learn more about Execution Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies)
+
 ### Set Cascadia Code PL as your font
 
 To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. This can also be done using the settings UI if you have it enabled.
