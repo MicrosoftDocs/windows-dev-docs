@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -165,6 +165,28 @@ This opens the search dialog box. More information on search can be found on the
 { "command": "find", "keys": "ctrl+shift+f" }
 ```
 
+### Find next/previous search match ([Preview](https://aka.ms/terminal-preview))
+
+This lets you navigate through your search matches.
+
+**Command name:** `findMatch`
+
+**Default bindings:**
+
+```json
+{ "command": { "action": "findMatch", "direction": "next" } },
+{ "command": { "action": "findMatch", "direction": "prev" } }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `direction` | Required | `"next"`, `"prev"` | The direction to navigate through search results. |
+
+> [!IMPORTANT]
+> The `"settingsUI"` value for `target` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Open the dropdown
 
 This opens the dropdown menu.
@@ -183,7 +205,7 @@ This opens either the default or custom settings files. Without the `target` fie
 
 **Command name:** `openSettings`
 
-**Default binding:**
+**Default bindings:**
 
 ```json
 { "command": "openSettings", "keys": "ctrl+," },
@@ -218,7 +240,7 @@ This allows you to enter "focus mode", which hides the tabs and title bar.
 
 **Command name:** `toggleFocusMode`
 
-**Default bindings:**
+**Default binding:**
 
 ```json
 { "command": "toggleFocusMode" }
@@ -230,7 +252,7 @@ This allows you toggle the "always on top" state of the window. When in "always 
 
 **Command name:** `toggleAlwaysOnTop`
 
-**Default bindings:**
+**Default binding:**
 
 ```json
 { "command": "toggleAlwaysOnTop" }
@@ -246,7 +268,7 @@ For instance `"\u001b[A"` will behave as if the up arrow button had been pressed
 
 **Command name:** `sendInput`
 
-**Default bindings:**
+**Default binding:**
 
 _This command is not currently bound in the default settings_.
 
@@ -456,10 +478,8 @@ This command changes the tab title into a text field that lets you edit the titl
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
-{ "command": "openTabRenamer", "keys": "ctrl+alt+a" }
+{ "command": "openTabRenamer" }
 ```
 
 ### Change tab color
@@ -498,7 +518,7 @@ This command can be used to open the color picker for the active tab. The color 
 { "command": "openTabColorPicker" }
 ```
 
-### Move tab ([Preview](https://aka.ms/terminal-preview))
+### Move tab
 
 This command moves the tab "backward" and "forward", which is equivalent to "left" and "right" in left-to-right UI.
 
@@ -506,14 +526,12 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 
 **Default binding:**
 
-_This command is not currently bound in the default settings_.
-
 ```json
 // Move tab backward (left in LTR)
-{ "command": { "action": "moveTab", "direction": "backward" }, "keys": "" }
+{ "command": { "action": "moveTab", "direction": "backward" } }
 
 // Move tab forward (right in LTR)
-{ "command": { "action": "moveTab", "direction": "forward" }, "keys": "" }
+{ "command": { "action": "moveTab", "direction": "forward" } }
 ```
 
 #### Actions
@@ -521,9 +539,6 @@ _This command is not currently bound in the default settings_.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -595,9 +610,6 @@ This changes focus to a different pane depending on the direction. Setting the `
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"` | Direction in which the focus will move. |
 
-> [!IMPORTANT]
-> The `"previous"` direction is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Zoom a pane
 
 :::row:::
@@ -640,6 +652,21 @@ This changes the size of the active pane.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the pane will be resized. |
 
+### Mark a pane as read-only ([Preview](https://aka.ms/terminal-preview))
+
+You can mark a pane as read-only, which will prevent input from going into the text buffer. If you attempt to close or input text into a read-only pane, the terminal will display a popup warning instead.
+
+**Command name:** `toggleReadOnlyMode`
+
+**Default bindings:**
+
+```json
+{ "command": "toggleReadOnlyMode" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
+
 ### Split a pane
 
 This halves the size of the active pane and opens another. Without any arguments, this will open the default profile in the new pane. If an action is not specified, the default profile's equivalent setting will be used.
@@ -669,9 +696,6 @@ This halves the size of the active pane and opens another. Without any arguments
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
-
-> [!IMPORTANT]
-> The `size` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -798,9 +822,6 @@ This scrolls the screen up to the top of the input buffer.
 { "command": "scrollToTop", "keys": "ctrl+shift+home" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Scroll to the latest history
 
 This scrolls the screen down to the bottom of the input buffer.
@@ -812,9 +833,6 @@ This scrolls the screen down to the bottom of the input buffer.
 ```json
 { "command": "scrollToBottom", "keys": "ctrl+shift+end" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

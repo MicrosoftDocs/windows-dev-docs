@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Panes
-description: Learn how to split panes in the Windows Terminal.
+description: Learn how to split panes in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 09/22/2020
+ms.date: 02/25/2021
 ms.topic: how-to
 ---
 
@@ -91,5 +91,30 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 ```json
 { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
 ```
+
+### Zooming a pane
+
+You can zoom the focused pane to fill the entire contents of the window.
+
+![Windows Terminal toggle pane zoom](./../images/toggle-pane-zoom.gif)
+
+This can be done by using the `togglePaneZoom` command.
+
+```json
+{ "command": "togglePaneZoom" }
+```
+
+### Marking a pane as read-only ([Preview](https://aka.ms/terminal-preview))
+
+You can mark a pane as read-only, which will prevent input from going into the text buffer. If you attempt to close or input text into a read-only pane, the terminal will display a popup warning instead.
+
+You can toggle read-only mode on a pane with the `toggleReadOnlyMode` command.
+
+```
+{ "command": "toggleReadOnlyMode" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 [!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]

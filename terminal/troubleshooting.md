@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Troubleshooting
-description: Learn fixes to common obstacles in the Windows Terminal.
+description: Learn fixes to common obstacles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 02/25/2021
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -11,14 +11,6 @@ ms.localizationpriority: high
 # Troubleshooting in Windows Terminal
 
 This guide addresses some of the common errors and obstacles you may encounter when using Windows Terminal.
-
-## Open the settings UI
-
-At the moment, the settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). In order to open the settings UI, you will have to add the `"openSettings"` action to your `"actions"` array in order to open it with the command palette or keyboard.
-
-```
-{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+," },
-```
 
 ## Set your WSL distribution to start in the home `~` directory when launched
 

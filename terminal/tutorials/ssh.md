@@ -1,6 +1,6 @@
 ---
 title: Windows Terminal SSH
-description: In this tutorial, learn how to set up an SSH connection in the Windows Terminal.
+description: In this tutorial, learn how to set up an SSH connection in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 05/19/2020

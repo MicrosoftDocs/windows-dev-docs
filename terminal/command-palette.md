@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Command Palette
-description: Learn how to use the command palette in the Windows Terminal.
+description: Learn how to use the command palette in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to 
 ms.localizationpriority: high
 ---
@@ -31,9 +31,6 @@ You can add a custom key binding for invoking the command palette in the command
 ```json
 { "command": "commandPalette", "launchMode": "commandLine", "keys": "" }
 ```
-
-> [!IMPORTANT]
-> The `"launchMode"` setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Adding an icon to a command
 
