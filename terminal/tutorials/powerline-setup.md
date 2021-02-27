@@ -121,6 +121,13 @@ chmod u+rw ~/.poshthemes/*.json
 rm ~/.poshthemes/themes.zip
 ```
 
+> [!TIP]
+> If you're using Ubuntu 18.04 or 16.04, you'll need to first install the correct version of golang:
+> ```bash
+> sudo add-apt-repository ppa:longsleep/golang-backports
+> sudo apt update
+> ```
+
 ### Customize your Ubuntu prompt
 
 Open your `~/.bashrc` file with `nano ~/.bashrc` or the text editor of your choice. This is a bash script that runs every time bash starts. Add the following (change the theme to the one you like):
