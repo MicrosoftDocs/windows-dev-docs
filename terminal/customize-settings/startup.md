@@ -3,7 +3,7 @@ title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 01/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -13,7 +13,7 @@ ms.localizationpriority: high
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
 
 > [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). Detailed instructions on how to enable the settings UI can be found on the [Troubleshooting page](./../troubleshooting.md#open-the-settings-ui).
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Default profile
 
@@ -65,6 +65,29 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 
 ___
 
+## New instance behavior ([Preview](https://aka.ms/terminal-preview))
+
+This setting controls how new terminal instances attach to existing windows. This property is only used if the `--window,-w window` [command line argument](./../command-line-arguments.md) is not provided. This setting accepts the following possible values:
+
+* `useNew`: Create a new window, always. This is how the terminal always behaved prior to version 1.7.
+* `useExisting`: Create new tabs in the most recently used window on this desktop. If there's not an existing window on this virtual desktop, then create a new terminal window.
+* `useAnyExisting`: Create new tabs in the most recently used window, regardless of which virtual desktop the window is on.
+
+**Property name:** `windowingBehavior`
+
+**Necessity:** Optional
+
+**Accepts:** `"useNew"`, `"useExisting"`, `"useAnyExisting"`
+
+**Default value:** `"useNew"`
+
+> [!IMPORTANT]
+> This setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
 ## Launch size
 
 ### Columns on first launch
@@ -111,6 +134,34 @@ This sets the pixel position of the top left corner of the window upon first loa
 
 ___
 
+## Center on launch ([Preview](https://aka.ms/terminal-preview))
+
+When set to `true`, the terminal window will auto-center itself on the display it opens on. The terminal will use the `"initialPosition"` to determine which display to open on.
+
+This interacts with the other launch settings in the following ways:
+
+* `"initialPos": x,y`, `"centerOnLaunch": true`, `"launchMode": "default"`: center on the monitor that `x,y` is on.
+* `"initialPos": x,y`, `"centerOnLaunch": true`, `"launchMode": "maximized"`: maximized on the monitor that `x,y` is on (`centerOnLaunch` adds nothing).
+* `"initialPos": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "default"`: center on the default monitor.
+* `"initialPos": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "focus"`: center and enter focus mode on the default monitor.
+* `"initialPos": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "maximized"`: maximized on the default monitor (`centerOnLaunch` adds nothing).
+
+**Property name:** `centerOnLaunch`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
 ## Disable dynamic profiles
 
 This sets which dynamic profile generators are disabled, preventing them from adding their profiles to the list of profiles on startup. For information on dynamic profiles, visit the [Dynamic profiles page](./../dynamic-profiles.md).
@@ -127,7 +178,7 @@ This sets which dynamic profile generators are disabled, preventing them from ad
 
 ___
 
-## Startup actions ([Preview](https://aka.ms/terminal-preview))
+## Startup actions
 
 This sets the list of actions to execute on startup, allowing the terminal to launch with a custom set of tabs and panes by default. These actions will be applied only if no command line arguments were supplied. The list of actions is represented by a string with the same format as commands in the command line arguments. For more information about the commands format, visit the [Command line arguments page](./../command-line-arguments.md).
 
@@ -138,6 +189,3 @@ This sets the list of actions to execute on startup, allowing the terminal to la
 **Accepts:** String representing a list of commands to run
 
 **Default value:** `""`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).

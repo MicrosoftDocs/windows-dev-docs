@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Powerline Setup
-description: In this tutorial, you learn how to set up Powerline in the Windows Terminal.
+description: In this tutorial, you learn how to set up Powerline in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 02/25/2021
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up Powerline in my Windows Terminal so that I can have a customized command line experience.
 ---
@@ -65,10 +65,14 @@ In your PowerShell profile, add the following to the end of the file:
 ```powershell
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Paradox
+Set-PoshPrompt -Theme paradox
 ```
 
-Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting the Paradox theme from Oh-My-Posh. Oh-My-Posh comes with several [built-in themes](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
+Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting the Paradox theme from Oh-My-Posh. Oh-My-Posh comes with several [built-in themes](https://ohmyposh.dev/docs/themes). If you decide to use Cascadia Code PL as a font, oh-my-posh themes that contain `minimal`
+function without the need for additional icons. You can also [create a custom theme](https://ohmyposh.dev/docs/installation#change-the-theme) to match the font of your choice.
+
+> [!IMPORTANT]
+> Script execution policy must be set to either **RemoteSigned** or **Unrestricted** in order for the profile script to run. Run this command to see your current execution policy `Get-ExecutionPolicy`. [Learn more about Execution Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies)
 
 ### Set Cascadia Code PL as your font
 
@@ -88,6 +92,7 @@ Your Windows PowerShell profile settings.json file should now look like this:
     "hidden": false
 },
 ```
+
 > [!TIP]
 > If you also use the integrated terminal in Visual Studio Code, you should add `"terminal.integrated.fontFamily": "Cascadia Code PL"` to your Visual Studio Code settings to make sure Powerline works there as well.
 
@@ -95,11 +100,25 @@ Your Windows PowerShell profile settings.json file should now look like this:
 
 ### WSL Ubuntu prerequisites
 
-Ubuntu has several Powerline options to install from. This tutorial will be using Go and Powerline-Go:
+Ubuntu has several Powerline options to install from. This tutorial will be using oh-my-posh for Linux:
+
+First, install oh-my-posh:
 
 ```bash
-sudo apt install golang-go
-go get -u github.com/justjanne/powerline-go
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+chmod +x /usr/local/bin/oh-my-posh
+```
+
+The second step is optonal. Oh-my-posh can use the same theme config regardless of the shell or evironment, so if you're already using
+it on Windows Powershell for example, you can reuse that theme configuration rather than download the themes.
+If you plan to use it within Ubuntu WSL only, fetch the [themes](https://ohmyposh.dev/docs/themes) so you can get started right away:
+
+```bash
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.json
+rm ~/.poshthemes/themes.zip
 ```
 
 > [!TIP]
@@ -111,20 +130,13 @@ go get -u github.com/justjanne/powerline-go
 
 ### Customize your Ubuntu prompt
 
-Open your `~/.bashrc` file with `nano ~/.bashrc` or the text editor of your choice. This is a bash script that runs every time bash starts. Add the following, though beware that GOPATH may already exist:
+Open your `~/.bashrc` file with `nano ~/.bashrc` or the text editor of your choice. This is a bash script that runs every time bash starts. Add the following (change the theme to the one you like):
 
 ```bash
-GOPATH=$HOME/go
-function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -error $?)"
-}
-if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/jandedobbeleer.omp.json)"
 ```
 
 ## Additional resources
 
 * [Scott Hanselman's "How to make a pretty prompt in Windows Terminal"](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx)
-
-* [How to change/set up bash custom prompt (PS1) in Linux](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
+* [Oh my Posh documentation](https://ohmyposh.dev)

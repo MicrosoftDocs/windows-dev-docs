@@ -3,7 +3,7 @@ title: Windows Terminal Advanced Profile Settings
 description: Learn how to customize the advanced profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 01/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -24,7 +24,7 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ```
 
 > [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). Detailed instructions on how to enable the settings UI can be found on the [Troubleshooting page](./../troubleshooting.md#open-the-settings-ui).
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Suppress title changes
 
@@ -133,9 +133,6 @@ Controls what happens when the application emits a BEL character. When set to `"
 **Accepts:** `"all"`, `"audible"`, `"visual"`, `"none"`
 
 **Default value:** `"audible"`
-
-> [!IMPORTANT]
-> The `"all"` and `"visual"` bell notification styles are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 01/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -24,7 +24,7 @@ The settings listed below are specific to each unique profile. If you'd like a s
 ```
 
 > [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). Detailed instructions on how to enable the settings UI can be found on the [Troubleshooting page](./../troubleshooting.md#open-the-settings-ui).
+> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Text
 
@@ -117,9 +117,6 @@ This sets the cursor shape for the profile. The possible cursors are as follows:
 **Accepts:** `"bar"`, `"vintage"`, `"underscore"`, `"filledBox"`, `"emptyBox"`, `"doubleUnderscore"`
 
 **Default value:** `"bar"`
-
-> [!IMPORTANT]
-> The `"doubleUnderscore"` cursor shape is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Cursor height
 
@@ -353,7 +350,7 @@ This sets the cursor color of the profile. This will override the `cursorColor` 
 
 ___
 
-## Pixel shader effects ([Preview](https://aka.ms/terminal-preview))
+## Pixel shader effects
 
 This setting allows a user to specify the path to a custom pixel shader to use with the terminal content. This is an experimental feature and its continued existence is not guaranteed. For more details on authoring custom pixel shaders for the terminal, see [this documentation](https://github.com/microsoft/terminal/blob/main/samples/PixelShaders/README.md).
 
@@ -364,6 +361,3 @@ If set, this will override the `experimental.retroTerminalEffect` setting.
 **Necessity:** Optional
 
 **Accepts:** A path to an `.hlsl` shader file, as a string
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).

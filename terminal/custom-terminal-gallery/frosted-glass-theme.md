@@ -1,5 +1,5 @@
 ---
-title: Windows Terminal Frosted Glass Theme Configuration
+title: Windows Terminal Frosted Glass Theme
 description: This is a sample configuration for a frosted glass theme.
 author: cinnamon-msft
 ms.author: cinnamon

@@ -1,6 +1,6 @@
 ---
-title: New Terminal Arguments in the Windows Terminal
-description: New Terminal arguments in the Windows Terminal.
+title: New Terminal Arguments in Windows Terminal
+description: New Terminal arguments in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/26/2020

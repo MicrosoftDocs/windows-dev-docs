@@ -1,5 +1,5 @@
 ---
-title: Windows Terminal Powerline in PowerShell Configuration
+title: Windows Terminal Powerline in PowerShell
 description: This is the configuration and theme for Powerline in PowerShell.
 author: cinnamon-msft
 ms.author: cinnamon

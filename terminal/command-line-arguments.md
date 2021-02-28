@@ -1,20 +1,20 @@
 ---
-title: Windows Terminal command-line arguments
-description: Learn how to create command-line arguments for Windows Terminal.
+title: Windows Terminal command line arguments
+description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 1/28/2021
+ms.date: 02/25/2021
 ms.topic: how-to
 ---
 
-# Using command-line arguments for Windows Terminal
+# Using command line arguments for Windows Terminal
 
 You can use `wt.exe` to open a new instance of Windows Terminal from the command line. You can also use the execution alias `wt` instead.
 
 > [!NOTE]
 > If you built Windows Terminal from the source code on [GitHub](https://github.com/microsoft/terminal), you can open that build using `wtd.exe` or `wtd`.
 
-![Windows Terminal command-line argument for split panes](./images/terminal-command-args.gif)
+![Windows Terminal command line argument for split panes](./images/terminal-command-args.gif)
 
 ## Command line syntax
 
@@ -24,7 +24,7 @@ The `wt` command line accepts two types of values: **options** and **commands**.
 wt [options] [command ; ]
 ```
 
-To display a help message listing the available command-line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
+To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
 
 ## Options and commands
 
@@ -36,6 +36,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--maximized`, `-M` | Launches the terminal maximized. |
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
+| `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
 
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
@@ -44,15 +45,61 @@ Below is the full list of supported commands and options for the `wt` command li
 | `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
 | `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Accepts one of `up`, `down`, `left`, `right`. |
 
-> [!IMPORTANT]
-> The `--tabColor` parameter of the `new-tab` subcommand, `--tabColor` and `--size,-s size` parameters of the `split-pane` subcommand, and the `move-focus` subcommand are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
-
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
 
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
+
+### Target a specific window
+
+Below are examples of how to target specific windows using the `--window,-w` option.
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```cmd
+// Open a new tab with the default profile in the current window
+wt -w 0 nt
+
+// Open a new tab in a new window with the default profile
+wt -w -1 nt
+
+// Open a new tab in the first-created terminal window with the default profile
+wt -w 1 nt
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+// Open a new tab with the default profile in the current window
+wt -w 0 nt
+
+// Open a new tab in a new window with the default profile
+wt -w -1 nt
+
+// Open a new tab in the first-created terminal window with the default profile
+wt -w 1 nt
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+// Open a new tab with the default profile in the current window
+cmd.exe /c "wt.exe" -w 0 nt
+
+// Open a new tab in a new window with the default profile
+cmd.exe /c "wt.exe" -w -1 nt
+
+// Open a new tab in the first-created terminal window with the default profile
+cmd.exe /c "wt.exe" -w 1 nt
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
+
+---
+<!-- End tab selectors.  -->
 
 ### Open a new profile instance
 
@@ -82,7 +129,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
- The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
+The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
 
 ### Target a directory
 
@@ -260,7 +307,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Tab color ([Preview](https://aka.ms/terminal-preview))
+### Tab color
 
 To open a new terminal instance with custom tab colors, use the `--tabColor` argument. This argument overrides the value defined in the profile, but can be overridden as well using the tab color picker. In the following example, a new terminal is created with two tabs of different colors:
 
@@ -293,9 +340,6 @@ When `--tabColor` is set for a tab, it is associated with the first pane of this
 ```powershell
 wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab focus
 

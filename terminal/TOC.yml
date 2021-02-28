@@ -16,14 +16,14 @@
           href: customize-settings/color-schemes.md
         - name: Rendering
           href: customize-settings/rendering.md
+        - name: Actions
+          href: customize-settings/actions.md
         - name: Profile - General
           href: customize-settings/profile-general.md
         - name: Profile - Appearance
           href: customize-settings/profile-appearance.md
         - name: Profile - Advanced
           href: customize-settings/profile-advanced.md
-        - name: Actions
-          href: customize-settings/actions.md
     - name: Command line arguments
       href: command-line-arguments.md
     - name: Command palette
@@ -34,6 +34,8 @@
       href: panes.md
     - name: Dynamic profiles
       href: dynamic-profiles.md
+    - name: JSON fragment extensions
+      href: json-fragment-extensions.md
     - name: Cascadia Code
       href: cascadia-code.md
     - name: Tips and tricks
