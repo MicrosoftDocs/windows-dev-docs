@@ -141,7 +141,7 @@ Control | Use
 [TimePicker](time-picker.md) | Pick a single time value
 
 ### Additional Controls 
-For a complete list of UWP controls, see [index of controls by function](controls-by-function.md).
+For a complete list of UWP controls, see [index of controls by function](./index.md).
 
 For more complex and custom UI controls, look at resources available from companies such as [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
 [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), and [ActiPro](https://www.actiprosoftware.com/products/controls/universal).

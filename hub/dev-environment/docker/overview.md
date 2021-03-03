@@ -1,6 +1,6 @@
 ---
 title: Get started with Docker for remote development with containers
-description: Guide to get started with Docker Desktop on Windows or WSL.
+description: A complete guide to get started with Docker Desktop on Windows or WSL. Including support offered by Microsoft and variety of Azure services.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
