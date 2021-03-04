@@ -32,7 +32,7 @@ In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps unmo
 
 ## Downloads
 
-Visual Studio 2019 provides several tools downloads for Windows 10 on ARM. Users stil using Visual Studio 2017 can use the installer to find and install comparable tools and packages. Note that to follow these steps, you must be using Visual Studio 2019.
+Visual Studio 2019 provides several tools downloads for Windows 10 on ARM. Users still using Visual Studio 2017 can use the installer to find and install comparable tools and packages. Note that to follow these steps, you must be using Visual Studio 2019.
 
 ### Visual C++ Redistributable
 
