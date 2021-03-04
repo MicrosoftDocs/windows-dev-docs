@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 12/16/2020
+ms.date: 03/04/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -13,13 +13,26 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Document version: 7.12**
 
-**Document date: October 1, 2019**
+**Document date: March 4, 2021**
 
 > [!NOTE]
 > For a summary of recent changes to this agreement, see [Change history](store-policies-change-history.md).
 
 > [!NOTE]
-> **Dec 16, 2020 Policy Update Notice**: For game products targeting console developed through the [Xbox Live Creators program](https://www.xbox.com/developers/creators-program/), the requirement to integrate with XBL Services no longer applies. The specific policy ([Policy 10.13.1](#1013-gaming-and-xbox)) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program. 
+>**March 4, 2021 Policy Update Notice**
+>
+>Microsoft Store will be updating its Store policies this month, with a planned effective date targeting the end of April 2021.  Key policy changes include:
+>
+>- Update to policy 10.8.6: PC Gaming subscription products will be permitted to use Microsoft’s in-app purchase API or a secure third-party billing service for in-game purchases within games made available through the subscription service. Further, games included as part of such a subscription service may be delivered to subscribers outside of the Store.
+>- Update to policy 10.13 to reflect removal of XBL requirements for Creators products.
+>- Update to policy 11.12 to clarify policy requirements related to User Generated Content.
+>
+>Upon request, Microsoft will grant exceptions to any policies that are subject to an update per this notice, if the applicable product would be in compliance with the updates noted above.
+
+>[!NOTE]
+>**Dec 16, 2020 Policy Update Notice**
+>
+>For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
 Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, and any additional content sold or offered from within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
 
