@@ -24,7 +24,6 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 >Microsoft Store will be updating its Store policies this month, with a planned effective date targeting the end of April 2021.  Key policy changes include:
 >
 >- Update to policy 10.8.6: PC Gaming subscription products will be permitted to use Microsoft’s in-app purchase API or a secure third-party billing service for in-game purchases within games made available through the subscription service. Further, games included as part of such a subscription service may be delivered to subscribers outside of the Store.
->- Update to policy 10.13 to reflect removal of XBL requirements for Creators products.
 >- Update to policy 11.12 to clarify policy requirements related to User Generated Content.
 >
 >Upon request, Microsoft will grant exceptions to any policies that are subject to an update per this notice, if the applicable product would be in compliance with the updates noted above.
