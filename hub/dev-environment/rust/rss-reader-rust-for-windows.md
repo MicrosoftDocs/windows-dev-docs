@@ -51,7 +51,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
    ```toml
    # bindings\Cargo.toml
-   # ...
+   ...
 
    [dependencies]
    windows="0.3.1"
@@ -88,7 +88,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
    ```toml
    # Cargo.toml
-   # ...
+   ...
 
    [dependencies] 
    bindings = { path = "bindings" }
@@ -115,7 +115,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
    ```rust
    // src\main.rs
-   // ...
+   ...
 
    fn main() -> Result<()> {
        let uri = Uri::create_uri("https://blogs.windows.com/feed")?;
@@ -126,13 +126,13 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
    Notice that we're using the **windows::Result** as the return type of the **main** function. This will make things easier, as it's common to deal with errors from operating system (OS) APIs.
 
-   You can see the question-mark operator at the end of the line of code that creates a **Uri**. To save on typing, we do that to make use of Rust's error-propagation and short-circuiting logic. That means we don't have to do a bunch of manual error handling for this simple example. You can read more about this feature of Rust by reading the docs in [Related](#Related) section footnotes.
+   You can see the question-mark operator at the end of the line of code that creates a **Uri**. To save on typing, we do that to make use of Rust's error-propagation and short-circuiting logic. That means we don't have to do a bunch of manual error handling for this simple example. For more info about this feature of Rust, see [The ? operator for easier error handling](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html).
 
 11. To download this RSS feed, we'll create a new **SyndicationClient** object.
 
    ```rust
    // src\main.rs
-   // ...
+   ...
 
    fn main() -> Result<()> {
        let uri = Uri::create_uri("https://blogs.windows.com/feed")?;
@@ -148,7 +148,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
    ```rust
    // src\main.rs
-   // ...
+   ...
 
    fn main() -> Result<()> {
        let uri = Uri::create_uri("https://blogs.windows.com/feed")?;
@@ -165,7 +165,7 @@ Because [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclie
 
    ```rust
    // src\main.rs
-   // ...
+   ...
 
    fn main() -> Result<()> {
        let uri = Uri::create_uri("https://blogs.windows.com/feed")?;
@@ -180,7 +180,7 @@ Because [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclie
    }
    ```
 
-14. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). There are also **Debug** and **Run** commands embedded inside the text editor or you can run `cargo run` in the `rss_reader` directory from your command prompt.
+14. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). There are also **Debug** and **Run** commands embedded inside the text editor. Alternatively, you can submit the command `cargo run` from the command prompt (`cd` into the `rss_reader` folder first), which will build and then run.
 
    ![The Debug and Run commands embedded inside the text editor](../../images/rust-rss-reader-2.png)
 
@@ -194,4 +194,4 @@ That's as simple as it is to program Rust for Windows. Under the hood, however, 
 
 * [Rust for Windows, and the windows crate](rust-for-windows.md)
 * [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
-* [Rust ? operator](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html)
+* [The ? operator for easier error handling](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html)
