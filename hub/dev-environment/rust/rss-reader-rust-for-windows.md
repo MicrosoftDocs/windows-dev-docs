@@ -180,7 +180,7 @@ Because [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclie
    }
    ```
 
-14. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). There are also **Debug** and **Run** commands embedded inside the text editor.
+14. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). There are also **Debug** and **Run** commands embedded inside the text editor or you can run `cargo run` in the `rss_reader` directory from your command prompt.
 
    ![The Debug and Run commands embedded inside the text editor](../../images/rust-rss-reader-2.png)
 
