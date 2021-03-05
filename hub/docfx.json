@@ -60,6 +60,8 @@
       {
         "apps/winui/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
         "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues",
+        "dev-environment/**.md": "https://github.com/Microsoft/windev/issues",
+        "web/**.md": "https://github.com/Microsoft/windev",
         "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues",
         "powertoys/**.md": "https://github.com/microsoft/PowerToys/issues"
       },
