@@ -1,7 +1,7 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C#.
 title: Templated XAML controls for WinUI 3 apps with C#
-ms.date: 09/11/2020
+ms.date: 03/05/2021
 ms.topic: article
 keywords: windows 10, uwp, custom control, templated control, winui
 ms.author: drewbat
