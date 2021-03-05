@@ -1,6 +1,6 @@
 ---
-title: Get started using NodeJS on Windows for beginners
-description: A complete guide to help beginners get started with Node.js development on Windows.
+title: Node.js on Windows for beginners
+description: A guide to help beginners get started with Node.js development on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

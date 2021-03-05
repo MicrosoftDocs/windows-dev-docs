@@ -1,6 +1,6 @@
 ---
-title: Get started with Node.js web frameworks on Windows
-description: A step-by-step guide to help you get started using Node.js web frameworks on Windows, including Next.js, Nuxt.js, and Gatsby.
+title: Node.js web frameworks on Windows
+description: A guide to help you get started with Node.js web frameworks on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

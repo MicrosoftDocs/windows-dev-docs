@@ -1,6 +1,6 @@
 ---
-title: Frequently Asked Questions about using Python on Windows
-description: Get answers to most common frequently asked questions (FAQs) about using Python on Windows for development.
+title: FAQ's about using Python on Windows 10
+description: Get help by reviewing answers to frequently asked questions (FAQs) about using Python on Windows for development.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -1,5 +1,5 @@
 ---
-title: Get started using Docker containers with Node.js
+title: Docker containers with Node.js
 description: A step-by-step guide to help you get started using Docker containers with your Node.js apps.
 author: mattwojo 
 ms.author: mattwoj 

@@ -1,5 +1,5 @@
 ---
-title: Popular development tutorials
+title: Development tutorials and courses
 description: A list of popular tutorials, online courses, and code samples for common development tasks and scenarios.
 author: mattwojo 
 ms.author: mattwoj 
