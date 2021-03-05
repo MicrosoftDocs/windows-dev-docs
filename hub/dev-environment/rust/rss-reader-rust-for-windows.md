@@ -166,7 +166,7 @@ Because [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclie
    ```rust
    // src\main.rs
    // ...
-   
+
    fn main() -> Result<()> {
        let uri = Uri::create_uri("https://blogs.windows.com/feed")?;
        let client = SyndicationClient::new()?;
