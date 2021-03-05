@@ -1,0 +1,59 @@
+### YamlMime:Landing
+
+title: Developing with Rust on Windows
+summary: Get started developing with Rust using Windows, including setup for your development environment, Rust for Windows, and code examples.
+
+metadata: 
+  author: stevewhims
+  description: Get started developing with Rust using Windows, including setup for your development environment, Rust for Windows, and code examples.
+  manager: jken
+  ms.author: stwhi
+  ms.date: 03/04/2021
+  ms.prod: dev-environment
+  ms.technology: windows-rust
+  ms.topic: landing-page
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
+
+landingContent: 
+  # Card
+  - title: Overview
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Rust?
+            url: ./overview.md
+          - text: The pieces of the Rust development toolset/ecosystem
+            url: ./overview.md#the-pieces-of-the-rust-development-toolsetecosystem
+          - text: Rust for Windows, and the windows crate
+            url: ./rust-for-windows.md
+  
+  # Card
+  - title: Set up your development environment
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Set up your dev environment on Windows for Rust
+            url: ./setup.md
+
+  # Card
+  - title: Tutorials
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Hello, world! tutorial (Rust with VS Code)
+            url: ./setup.md#hello-world-tutorial-rust-with-vs-code
+          - text: RSS reader tutorial (Rust for Windows with VS Code)
+            url: ./rss-reader-rust-for-windows.md
+
+  # Card
+  - title: Additional resources
+    linkLists:
+      - linkListType: learn
+        links:
+          - text: The Rust website
+            url: https://www.rust-lang.org/
+          - text: Rust documentation for the Windows API
+            url: https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/
+          - text: Minesweeper sample app
+            url: https://github.com/robmikh/minesweeper-rs

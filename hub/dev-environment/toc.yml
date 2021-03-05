@@ -69,6 +69,18 @@
           href: /powershell/
         - name: Get started with databases on WSL
           href: /windows/wsl/tutorials/wsl-database
+        - name: Get started with Rust
+          items:
+              - name: Contents
+                href: ./rust/index.yml
+              - name: Overview of developing on Windows with Rust
+                href: ./rust/overview.md
+              - name: Set up your dev environment
+                href: ./rust/setup.md
+              - name: Rust for Windows
+                href: ./rust/rust-for-windows.md
+              - name: RSS reader tutorial (Rust for Windows)
+                href: ./rust/rss-reader-rust-for-windows.md
   - name: Tools and platforms
     items:
         - name: Windows Subsystem for Linux

@@ -63,6 +63,14 @@ This guide will help you get started with installing and setting up the language
     :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Get started with Rust](./rust/index.yml)**<br>
+        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
+    :::column-end:::
+:::row-end:::
+
 ## Tools and platforms
 
 :::row:::
