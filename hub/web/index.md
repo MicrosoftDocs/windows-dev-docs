@@ -44,7 +44,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
 :::row:::
     :::column:::
        [![Microsoft Edge icon](../images/microsoftedge.png)](https://www.microsoft.com/en-us/edge)<br>
-        **[Microsoft Edge](https://www.microsoft.com/en-us/edge)**<br>
+        **[Microsoft Edge for Developers](https://developer.microsoft.com/microsoft-edge/)**<br>
         The new Microsoft Edge  is based on Chromium to create better web compatibility and less fragmentation of underlying web platforms. Released January 15, 2020, it is supported on Windows, macOS, iOS, and Android. <br>
         [Install the new Microsoft Edge](https://www.microsoft.com/edge)
     :::column-end:::
