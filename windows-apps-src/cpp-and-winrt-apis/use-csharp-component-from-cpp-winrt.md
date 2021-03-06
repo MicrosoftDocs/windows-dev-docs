@@ -213,5 +213,5 @@ In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppT
 ```
 
 ## Related topics
-* [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Windows Runtime components with C++/WinRT](/windows-apps-src/winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
+* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
