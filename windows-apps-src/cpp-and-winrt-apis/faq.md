@@ -38,10 +38,10 @@ C++/WinRT build support (props/targets) is documented in the Microsoft.Windows.C
 ## What are the requirements for the C++/WinRT Visual Studio Extension (VSIX)?
 For version 1.0.190128.4 of the VSIX extension and later, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). For other versions, see [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
-## What's a *runtime class*?
+## What's a runtime class?
 A runtime class is a type that can be activated and consumed via modern COM interfaces, typically across executable boundaries. However, a runtime class can also be used within the compilation unit that implements it. You declare a runtime class in Interface Definition Language (IDL), and you can implement it in standard C++ using C++/WinRT.
 
-## What do *the projected type* and *the implementation type* mean?
+## What do the projected type and the implementation type mean?
 If you're only *consuming* a Windows Runtime class (runtime class), then you'll be dealing exclusively with *projected types*. C++/WinRT is a *language projection*, so projected types are part of the surface of the Windows Runtime that's *projected* into C++ with C++/WinRT. For more details, see [Consume APIs with C++/WinRT](consume-apis.md).
 
 The *implementation type* contains the implementation of a runtime class, so it's only available in the project that implements the runtime class. When you're working in a project that implements runtime classes (a Windows Runtime component project, or a project that uses XAML UI), it's important to be comfortable with the distinction between your implementation type for a runtime class, and the projected type that represents the runtime class projected into C++/WinRT. For more details, see [Author APIs with C++/WinRT](author-apis.md).
@@ -72,11 +72,11 @@ This error can also happen if you try to instantiate a locally-implemented runti
 
 For a way of instantiating your locally-implemented runtime classes that *doesn't* require uniform construction, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
-## Should I implement [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) and, if so, how?
-If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
+## Should I implement Windows::Foundation::IClosable and, if so, how?
+If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement [**IClosable**](/uwp/api/windows.foundation.iclosable) in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
 
-## Do I need to call [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) on runtime classes that I consume?
-**IClosable** exists to support languages that lack deterministic finalization. So, in general, you don't need to call **IClosable::Close** from C++/WinRT. But consider these exceptions to that general rule.
+## Do I need to call IClosable::Close on runtime classes that I consume?
+[**IClosable**](/uwp/api/windows.foundation.iclosable.close) exists to support languages that lack deterministic finalization. So, in general, you don't need to call **IClosable::Close** from C++/WinRT. But consider these exceptions to that general rule.
 - There are very rare cases involving shutdown races or semi-deadly embraces, where you do need to call **IClosable::Close**. If you're using **Windows.UI.Composition** types, as an example, then you may encounter cases where you want to dispose objects in a set sequence, as an alternative to allowing the destruction of the C++/WinRT wrapper do the work for you.
 - If you can't guarantee that you have the last remaining reference to an object (because you passed it to other APIs, which could be keeping a reference), then calling **IClosable::Close** is a good idea.
 - When in doubt, it's safe to call **IClosable::Close** manually, rather than waiting for the wrapper to call it on destruction.
@@ -117,7 +117,7 @@ Because C++/WinRT uses features from the C++17 standard, you'll need to use what
 
 Visual Studio is the development tool that we support and recommend for C++/WinRT. See [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-## Why doesn't the generated implementation function for a read-only property have the `const` qualifier?
+## Why doesn't the generated implementation function for a read-only property have the const qualifier?
 When you declare a read-only property in [MIDL 3.0](/uwp/midl-3/), you might expect the `cppwinrt.exe` tool to generate an implementation function for you that is `const`-qualified (a const function treats the *this* pointer as const).
 
 We certainly recommend using const wherever possible, but the `cppwinrt.exe` tool itself doesn't attempt to reason about which implementation functions might conceivably be const, and which might not. You can choose to make any of your implementation functions const, as in this example.
@@ -174,7 +174,7 @@ a.f();
 
 The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
 
-## How do I turn a string into a type&mdash;for navigation, for example?
+## How do I turn a string into a type (for navigation, for example)?
 At the end of the [Navigation view code example](../design/controls-and-patterns/navigationview.md#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
 
 ## How do I resolve ambiguities with GetCurrentTime and/or TRY?
