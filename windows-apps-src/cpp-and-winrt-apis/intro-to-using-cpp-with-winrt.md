@@ -21,7 +21,7 @@ C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/vis
 > [!IMPORTANT]
 > Some of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-cwinrt-sample-apps).
+Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
