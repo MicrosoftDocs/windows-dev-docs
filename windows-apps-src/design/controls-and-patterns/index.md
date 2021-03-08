@@ -83,7 +83,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Hyperlink](hyperlinks.md)
 - [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
 - [Images and image brushes](images-imagebrushes.md)
-- [Info bar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Info bar (New)](infobar.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Inking controls](inking-controls.md)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
