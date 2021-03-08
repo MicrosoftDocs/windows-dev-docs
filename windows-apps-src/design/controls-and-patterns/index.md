@@ -83,7 +83,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Hyperlink](hyperlinks.md)
 - [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
 - [Images and image brushes](images-imagebrushes.md)
-- [Info Bar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [InfoBar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Inking controls](inking-controls.md)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
@@ -100,7 +100,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Parallax view](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Password box](password-box.md)
 - [Person picture](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [Pips Pager (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [PipsPager (New)](pipspager.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress bar](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress ring](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Radio button](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
