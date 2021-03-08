@@ -56,9 +56,10 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
-- Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
+-  AnimatedIcon () :::image type="icon" source="images/winui-logo-16x16.png":::
+-  Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
-- [Breadcrumb (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [BreadcrumbBar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Button](buttons.md)
 - [Calendar date picker](calendar-date-picker.md)
 - [Calendar view](calendar-view.md)
