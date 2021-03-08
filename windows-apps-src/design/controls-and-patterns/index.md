@@ -56,10 +56,10 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
-- [AnimatedIcon (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Animated icon (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
-- [BreadcrumbBar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Breadcrumb bar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Button](buttons.md)
 - [Calendar date picker](calendar-date-picker.md)
 - [Calendar view](calendar-view.md)
@@ -83,7 +83,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Hyperlink](hyperlinks.md)
 - [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
 - [Images and image brushes](images-imagebrushes.md)
-- [InfoBar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Info bar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Inking controls](inking-controls.md)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
@@ -100,7 +100,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Parallax view](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Password box](password-box.md)
 - [Person picture](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [PipsPager (New)](pipspager.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Pips pager (New)](pipspager.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress bar](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress ring](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Radio button](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
