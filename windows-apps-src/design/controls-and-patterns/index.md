@@ -56,8 +56,8 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
--  [AnimatedIcon (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
--  Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [AnimatedIcon (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
 - [BreadcrumbBar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Button](buttons.md)
