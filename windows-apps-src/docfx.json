@@ -219,6 +219,18 @@
         "externalReference": [ ],
         "template": "op.html",
         "dest": "windows-apps-src",
+        "rules": {
+           "sensitive-language-sl": {
+               "exclude": [
+                 "devices-sensors/enable-usermode-access.md"
+               ]
+           },
+           "sensitive-language-bl": {
+               "exclude": [
+                 "apps-for-education/take-a-test-api.md"
+               ]
+            }   
+         },
         "markdownEngineName": "markdig"
     }
 }
