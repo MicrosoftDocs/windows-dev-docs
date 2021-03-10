@@ -2,7 +2,11 @@
     "build": {
         "content": [ {
             "files": ["**/*.md", "**/**.yml"],
-            "exclude": ["**/obj/**", "whats-new/whats-new-future.md","**/includes/**"]
+            "exclude": [
+                "**/obj/**", 
+                "whats-new/whats-new-future.md",
+                "**/includes/**"
+            ]
         } ],
         "resource": [ {
             "files": ["**/images/**"],
