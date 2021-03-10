@@ -1,7 +1,7 @@
 ---
 description: This guide shows you how to get starting creating .NET and C++/Win32 desktop apps with a WinUI 3 UI.
 title: Get started with WinUI 3 for desktop apps
-ms.date: 02/09/2021
+ms.date: 03/08/2021
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -12,11 +12,13 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for desktop apps
 
-WinUI 3 Preview 4 includes project templates that enable you to create managed C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
+WinUI 3 - Project Reunion 0.5 Preview includes project templates that enable you to create managed C#/.NET Core and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [this section](index.md#project-templates-for-winui-3).
+
+As of the WinUI 3 - Project Reunion 0.5 Preview, WinUI 3 now ships as a part of the Project Reunion package. This will slightly change your installation instructions and provide you with more opt-in functionality, but otherwise won't change your experience developing a WinUI 3 app. For more on Project Reunion, see [Build Windows apps with Project Reunion (0.5 Preview)](../../project-reunion/index.md)
 
 ## Prerequisites
 
-To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install WinUI 3 Preview 4 by following the instructions [here](index.md#install-winui-3-preview-4).
+To use the WinUI 3 for Desktop project templates described in this article, configure your development computer and [install the Project Reunion 0.5 Preview](../../project-reunion/index.md#set-up-your-development-environment).
 
 ## Create a WinUI 3 desktop app for C# and .NET 5
 
@@ -30,7 +32,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
 4. Enter a project name, choose any other options as desired, and click **Create**.
 
-5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134) and then click **OK**.
+5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1809 (build 17763) and then click **OK**.
 
     ![Target and Min Version](images/WinUI-min-target-version.png)
 
@@ -62,7 +64,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
 4. Enter a project name, choose any other options as desired, and click **Create**.
 
-5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134) and then click **OK**.
+5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1809 (build 17763) and then click **OK**.
 
     ![Target and Min Version](images/WinUI-min-target-version.png)
 
@@ -108,8 +110,8 @@ To support multiple languages in a WinUI Desktop app, and ensure proper localiza
 
 ## Known issues and limitations
 
-See the [Limitations and known issues](index.md#limitations-and-known-issues) section of [Windows UI Library 3 Preview 4 (February 2021)](index.md).
+See the [Limitations and known issues](index.md#limitations-and-known-issues) section of [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)](index.md).
 
 ## Related topics
 
-* [Windows UI Library 3 Preview 4 (February 2021)](index.md)
+- [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)](index.md)

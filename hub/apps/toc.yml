@@ -1,4 +1,4 @@
-- name: Build apps for Windows
+- name: Develop for Windows
   href: index.yml
   items:
   - name: Build desktop apps
@@ -88,11 +88,19 @@
                     href: desktop/modernize/modernize-wpf-tutorial-5.md
               - name: Grant identity to non-packaged desktop apps
                 href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+  - name: Project Reunion 0.5 Preview
+    items:
+      - name: "Overview"
+        href: project-reunion/index.md
+      - name: "Manage resources with MRT Core"
+        href: project-reunion/mrtcore/mrtcore-overview.md
+      - name: "Render text with DWriteCore"
+        href: project-reunion/dwritecore.md
   - name: Windows UI Library (WinUI)
     items:
       - name: "Overview"
         href: winui/index.md
-      - name: "Windows UI Library 3 Preview 4"
+      - name: "Windows UI Library 3 - Project Reunion 0.5 Preview"
         items:
           - name: "Overview and release notes"
             href: winui/winui3/index.md
@@ -132,14 +140,6 @@
                 href: winui/winui2/release-notes/winui-2.0.md
       - name: "WinUI API reference"
         href: /windows/winui/api/
-  - name: Build Windows apps with Project Reunion (Prerelease)
-    items:
-      - name: "Overview"
-        href: project-reunion/index.md
-      - name: "MRT Core"
-        href: project-reunion/mrtcore/mrtcore-overview.md
-      - name: "DWriteCore"
-        href: project-reunion/dwritecore.md
   - name: Developing for Windows 10X
     items:
       - name: Windows 10X Dev FAQ

@@ -41,20 +41,22 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 - [Source code](https://aka.ms/winui)
 - [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## Windows UI 3 Library (Preview 4)
+## Windows UI 3 Library (Project Reunion 0.5 Preview)
 
 WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
 > [!Important]
-> This WinUI 3 preview release is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
+> This WinUI 3 Preview is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
 >
-> We will continue shipping preview releases of WinUI 3 throughout 2020 and into early 2021, after which the first official release will be made available.
+> We will ship our first official, supported release in late March 2021. It will be a part of the Project Reunion 0.5 package.
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
 By completely decoupling XAML, composition, and input APIs from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), the scope of WinUI 3 includes the full Windows 10 native UI platform.
 
-WinUI is the path forward for all Windows apps—you can use it as the UI layer on your native UWP or Win32 app, or you can gradually modernize your desktop app, piece by piece, with [XAML Islands](../desktop/modernize/xaml-islands.md).
+WinUI 3 is a component of [Project Reunion](../project-reunion/index.md), which provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions. As a component of Project Reunion, WinUI 3 ships as a part of the Project Reunion package - see [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)](winui3/index.md) for more information.
+
+WinUI 3 is the path forward for all Windows apps—you can use it as the UI layer on your native UWP or Win32 app, or you can gradually modernize your desktop app, piece by piece, with [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 All new XAML features will eventually ship as part of WinUI. The existing UWP XAML APIs that ship as part of the OS will no longer receive new feature updates. However, they will continue to receive security updates and critical fixes according to the Windows 10 support lifecycle.
 
@@ -64,11 +66,11 @@ Please note that the Universal Windows Platform contains more than just the XAML
 
 ### Related links for WinUI 3
 
-- [Windows UI Library 3 Preview 4 (February 2021)](winui3/index.md)
-- [XAML Controls Gallery (WinUI 3 Preview 4) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)](winui3/index.md)
+- [XAML Controls Gallery (WinUI 3 Preview) app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## WinUI resources
 
 **Github**: WinUI is an open-source project hosted on Github. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml), to file feature requests or bugs, interact with the WinUI team, and view the team's plans for WinUI 3 and beyond on their [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
-**Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and helps stay engaged with the product and the product team.
+**Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.

@@ -1,15 +1,15 @@
 ---
 description: Overview of MRT Core components, and how they work to load application resources (Project Reunion)
-title: Introduction to MRT Core (Project Reunion)
+title: Manage resources MRT Core (Project Reunion)
 ms.topic: article
-ms.date: 12/11/2020
+ms.date: 03/09/2021
 keywords: MRT, MRTCore, pri, makepri, resources, resource loading
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
 ---
 
-# Introduction to MRT Core (Project Reunion)
+# Manage resources with MRT Core (Project Reunion)
 
 MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of [Project Reunion](../index.md).
 
