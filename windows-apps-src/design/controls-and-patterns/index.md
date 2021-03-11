@@ -109,7 +109,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Rich edit box](rich-edit-box.md)
 - [Rich text block](rich-text-block.md)
 - [Scroll viewer](scroll-controls.md)
-- [Search](search.md) (pattern)
 - [Semantic zoom](semantic-zoom.md)
 - [Shapes](shapes.md)
 - [Slider](slider.md)
