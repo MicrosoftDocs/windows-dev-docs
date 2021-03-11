@@ -56,10 +56,10 @@ Detailed information about specific controls and patterns. (For a list sorted by
 :::row:::
     :::column:::
 
-- [Animated icon (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Animated icon (New)](animated-icon.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
-- [Breadcrumb bar (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Breadcrumb bar (New)](breadcrumbbar.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Button](buttons.md)
 - [Calendar date picker](calendar-date-picker.md)
 - [Calendar view](calendar-view.md)
@@ -75,7 +75,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Date picker](date-picker.md)
 - [Dialogs and flyouts](dialogs-and-flyouts/index.md)
 - [Drop down button](buttons.md#create-a-drop-down-button) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [Expander (New)]() :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Expander (New)](expander.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Flip view](flipview.md)
 - [Flyout](dialogs-and-flyouts/flyouts.md)
 - [Forms](forms.md) (pattern)
