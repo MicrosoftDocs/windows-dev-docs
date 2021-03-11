@@ -75,7 +75,7 @@ These default activation phrases will force PowerToys run into only targeted plu
 
 ## System commands
 
-PowerToys Run also enables a set of system level actions you can now execute.
+PowerToys Run enables a set of system level actions that can be executed.
 
   | **Action key**   |   **Action** |
   | ------------------ | ---------------------------------------------------------------------------------|
@@ -89,15 +89,16 @@ PowerToys Run also enables a set of system level actions you can now execute.
 
 ## Plugin manager
 
-With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By clicking and expanding the various sections, you can customize the activation phrases used by each plugin. In addition you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
+With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
 
 ## Program parameters
 
-When starting a program with the PowerToys Run program plugin, you can specify parameters for the program to use by utilizing the following command formats:
+When starting a program with the PowerToys Run plugin, specify the program parameters using the command formats:
+
 - `program -param ...`
 - `program /param ...`
 - `program --parameter ...`
-- `program -- parameter ...` (Here `--` is used as delimiter by PT Run.)
+- `program -- parameter ...` (Here `--` is used as a delimiter by PT Run.)
 
 ## Windows Search settings
 
@@ -105,7 +106,7 @@ If the Windows Search plugin is not set to cover all drives, you will receive th
 
 ![PowerToys Run Indexer Warning](../images/pt-run-warning.png)
 
-You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options will open.
+You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options menu will open.
 
 ![Indexing Settings](../images/pt-run-indexing.png)
 
