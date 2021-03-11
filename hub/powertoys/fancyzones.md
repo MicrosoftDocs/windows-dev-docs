@@ -22,7 +22,7 @@ To get started using FancyZones, you need to enable the utility in PowerToys set
 
 Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>`</kbd> (note that this shortcut can be changed in the settings dialog).  
 
-![FancyZones Settings UI](../images/pt-fancyzones-settings1.png) 
+![FancyZones Settings UI](../images/pt-fancyzones-settings.png) 
 
 ### Elevated permission admin apps
 

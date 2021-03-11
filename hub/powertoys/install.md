@@ -84,3 +84,7 @@ scoop update powertoys
 ```
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
+
+## Post Install
+
+After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.
