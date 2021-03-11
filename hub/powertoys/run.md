@@ -104,7 +104,7 @@ For example, when launching Visual Studio Code, you can specify the folder to be
 
 `.Visual Studio Code -- C:\myFolder`
 
-Visual Studio Code also supports a set of [command line arguments](https://code.visualstudio.com/docs/editor/command-line), which can be utilized as parameters in PowerToys Run to, for instance, view the difference between files:
+Visual Studio Code also supports a set of [command line options](https://code.visualstudio.com/docs/editor/command-line), which can be utilized as parameters in PowerToys Run to, for instance, view the difference between files:
 
 `.Visual Studio Code -d C:\myFile_1.txt C:\myFile_2.txt` 
 
