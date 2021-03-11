@@ -93,12 +93,20 @@ With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin m
 
 ## Program parameters
 
-When starting a program with the PowerToys Run plugin, specify the program parameters using the command formats:
+When starting a program with the PowerToys Run program plugin, specify the program parameters using these command formats where applicable:
 
 - `program -param ...`
 - `program /param ...`
 - `program --parameter ...`
 - `program -- parameter ...` (Here `--` is used as a delimiter by PT Run.)
+
+For example, when launching Visual Studio Code, you can specify the folder to be opened with:
+
+`.Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code also supports a set of [command line arguments](https://code.visualstudio.com/docs/editor/command-line), which can be utilized as parameters in PowerToys Run to, for instance, view the difference between files:
+
+`.Visual Studio Code -d C:\myFile_1.txt C:\myFile_2.txt` 
 
 ## Windows Search settings
 
