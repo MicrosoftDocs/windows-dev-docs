@@ -462,7 +462,7 @@ Control the presentation behavior by using the [KeyboardAcceleratorPlacementMode
 </Button>
 ```
 
-In some cases, you might need to present a tooltip relative to another element (typically a container object). For example, a Pivot control that displays the tooltip for a PivotItem with the Pivot header. 
+In some cases, you might need to present a tooltip relative to another element (typically a container object). 
 
 Here, we show how to use the KeyboardAcceleratorPlacementTarget property to display the keyboard accelerator key combination for a Save button with the Grid container instead of the button.
 

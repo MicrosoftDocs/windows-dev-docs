@@ -1,6 +1,6 @@
 ---
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
-title: Navigation view
+title: NavigationView
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -16,12 +16,12 @@ dev_langs:
 - cppwinrt
 ---
 
-# Navigation view
+# NavigationView
 
 The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles.
 
 ![top navigation](images/nav-view-header.png)<br/>
-_Navigation view supports both top and left navigation pane or menu_
+_NavigationView supports both top and left navigation pane or menu_
 
 **Get the Windows UI Library**
 
@@ -133,19 +133,19 @@ We recommend _left_ navigation when:
 
 ### Auto
 
-By default, PaneDisplayMode is set to Auto. In Auto mode, the navigation view adapts between LeftMinimal when the window is narrow, to LeftCompact, and then Left as the window gets wider. For more info, see the [adaptive behavior](#adaptive-behavior) section.
+By default, PaneDisplayMode is set to Auto. In Auto mode, the NavigationView adapts between LeftMinimal when the window is narrow, to LeftCompact, and then Left as the window gets wider. For more info, see the [adaptive behavior](#adaptive-behavior) section.
 
 ![Left navigation default adaptive behavior](images/displaymode-auto.png)<br/>
-_Navigation view default adaptive behavior_
+_NavigationView default adaptive behavior_
 
 ## Anatomy
 
 These images show the layout of the pane, header, and content areas of the control when configured for _top_ or _left_ navigation.
 
-![Top navigation view layout](images/topnav-anatomy.png)<br/>
+![Top NavigationView layout](images/topnav-anatomy.png)<br/>
 _Top navigation layout_
 
-![Left navigation view layout](images/leftnav-anatomy.png)<br/>
+![Left NavigationView layout](images/leftnav-anatomy.png)<br/>
 _Left navigation layout_
 
 ### Pane
@@ -164,13 +164,13 @@ The left pane also contains:
 
 - A menu button to toggle the pane opened and closed. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.
 
-The navigation view has a back button that is placed in the top left-hand corner of the pane. However, it does not automatically handle backwards navigation and add content to the back stack. To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
+The NavigationView has a back button that is placed in the top left-hand corner of the pane. However, it does not automatically handle backwards navigation and add content to the back stack. To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
 
 Here is the detailed pane anatomy for the top and left pane positions.
 
 #### Top navigation pane
 
-![Navigation view top pane anatomy](images/navview-pane-anatomy-horizontal.png)
+![NavigationView top pane anatomy](images/navview-pane-anatomy-horizontal.png)
 
 1. Headers
 1. Navigation items
@@ -180,7 +180,7 @@ Here is the detailed pane anatomy for the top and left pane positions.
 
 #### Left navigation pane
 
-![Navigation view left pane anatomy](images/navview-pane-anatomy-vertical.png)
+![NavigationView left pane anatomy](images/navview-pane-anatomy-vertical.png)
 
 1. Menu button
 1. Navigation items
@@ -255,8 +255,8 @@ You can place free-form content in the pane by adding it to the [PaneCustomConte
 
 You can add a page title by setting the [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) property.
 
-![Example of navigation view header area](images/nav-header.png)<br/>
-_Navigation view header_
+![Example of NavigationView header area](images/nav-header.png)<br/>
+_NavigationView header_
 
 The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position. It has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
 
@@ -264,8 +264,8 @@ The header is visible any time the NavigationView is in Minimal display mode. Yo
 
 ### Content
 
-![Example of navigation view content area](images/nav-content.png)<br/>
-_Navigation view content_
+![Example of NavigationView content area](images/nav-content.png)<br/>
+_NavigationView content_
 
 The content area is where most of the information for the selected nav category is displayed.
 
@@ -273,7 +273,7 @@ We recommend 12px margins for your content area when NavigationView is in **Mini
 
 ## Adaptive behavior
 
-By default, the navigation view automatically changes its display mode based on the amount of screen space available to it. The [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes. You can modify these values to customize the adaptive display mode behavior.
+By default, the NavigationView automatically changes its display mode based on the amount of screen space available to it. The [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes. You can modify these values to customize the adaptive display mode behavior.
 
 ### Default
 
@@ -286,7 +286,7 @@ When PaneDisplayMode is set to its default value of **Auto**, the adaptive behav
 For more information about window sizes for adaptive behavior, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ![Left navigation default adaptive behavior](images/displaymode-auto.png)<br/>
-_Navigation view default adaptive behavior_
+_NavigationView default adaptive behavior_
 
 ### Minimal
 
@@ -298,7 +298,7 @@ We recommend this when:
 - Your navigation categories cannot be clearly represented with icons.
 
 ![Left navigation minimal adaptive behavior](images/adaptive-behavior-minimal.png)<br/>
-_Navigation view "minimal" adaptive behavior_
+_NavigationView "minimal" adaptive behavior_
 
 To configure this behavior, set CompactModeThresholdWidth to the width at which you want the pane to collapse. Here, it's changed from the default of 640 to 1007. You should also set ExpandedModeThresholdWidth to ensure the values don't conflict.
 
@@ -316,7 +316,7 @@ We recommend this when:
 - Your navigation categories can be clearly represented with icons.
 
 ![Left navigation compact adaptive behavior](images/adaptive-behavior-compact.png)<br/>
-_Navigation view "compact" adaptive behavior_
+_NavigationView "compact" adaptive behavior_
 
 To configure this behavior, set CompactModeThresholdWidth to 0.
 
@@ -329,7 +329,7 @@ To configure this behavior, set CompactModeThresholdWidth to 0.
 To disable the automatic adaptive behavior, set PaneDisplayMode to a value other than Auto. Here, it's set to LeftMinimal, so only the menu button is shown regardless of the window width.
 
 ![Left navigation no adaptive behavior](images/adaptive-behavior-none.png)<br/>
-_Navigation view with PaneDisplayMode set to LeftMinimal_
+_NavigationView with PaneDisplayMode set to LeftMinimal_
 
 ```xaml
 <NavigationView PaneDisplayMode="LeftMinimal" />
@@ -379,13 +379,13 @@ This example shows how to use a [VisualStateManager](/uwp/api/Windows.UI.Xaml.Vi
 ```
 
 > [!TIP]
-> When you use AdaptiveTrigger.MinWindowWidth, the visual state is triggered when the window is wider than the specified minimum width. This means the default XAML defines the narrow window, and the VisualState defines the modifications that are applied when the window gets wider. The default PaneDisplayMode for the navigation view is Auto, so when the window width is less than or equal to CompactModeThresholdWidth, LeftMinimal navigation is used. When the window gets wider, the VisualState overrides the default, and Top navigation is used.
+> When you use AdaptiveTrigger.MinWindowWidth, the visual state is triggered when the window is wider than the specified minimum width. This means the default XAML defines the narrow window, and the VisualState defines the modifications that are applied when the window gets wider. The default PaneDisplayMode for the NavigationView is Auto, so when the window width is less than or equal to CompactModeThresholdWidth, LeftMinimal navigation is used. When the window gets wider, the VisualState overrides the default, and Top navigation is used.
 
 ## Navigation
 
-The navigation view doesn't perform any navigation tasks automatically. When the user taps on a navigation item, the navigation view shows that item as selected and raises an [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, a [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.
+The NavigationView doesn't perform any navigation tasks automatically. When the user taps on a navigation item, the NavigationView shows that item as selected and raises an [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, a [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.
 
-You can handle either event to perform tasks related to the requested navigation. Which one you should handle depends on the behavior you want for your app. Typically, you navigate to the requested page and update the navigation view header in response to these events.
+You can handle either event to perform tasks related to the requested navigation. Which one you should handle depends on the behavior you want for your app. Typically, you navigate to the requested page and update the NavigationView header in response to these events.
 
 **ItemInvoked** is raised any time the user taps a navigation item, even if it's already selected. (The item can also be invoked with an equivalent action using mouse, keyboard, or other input. For more info, see [Input and interactions](../input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack. If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded. (See code examples.)
 
@@ -397,7 +397,7 @@ All navigation items are part of the same selection model, whether they are a pa
 
 NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically. When the user taps the back button, the [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) event is raised. You handle this event to perform backwards navigation. For more info and code examples, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).
 
-In Minimal or Compact mode, the navigation view Pane is open as a flyout. In this case, clicking the back button will close the Pane and raise the **PaneClosing** event instead.
+In Minimal or Compact mode, the NavigationView Pane is open as a flyout. In this case, clicking the back button will close the Pane and raise the **PaneClosing** event instead.
 
 You can hide or disable the back button by setting these properties:
 
@@ -406,11 +406,11 @@ You can hide or disable the back button by setting these properties:
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
+        ![NavigationView back button in the left navigation pane](images/leftnav-back.png)<br/>
         _The back button in the left navigation pane_
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
+        ![NavigationView back button in the top navigation pane](images/topnav-back.png)<br/>
         _The back button in the top navigation pane_
     :::column-end:::
 :::row-end:::
@@ -1649,7 +1649,7 @@ MainPage::MainPage()
 
 ### Keyboarding within hierarchical NavigationView
 
-Users can move focus around the navigation view using their [keyboard](../input/keyboard-interactions.md). 
+Users can move focus around the NavigationView using their [keyboard](../input/keyboard-interactions.md). 
 The arrow keys expose "inner navigation" within the pane and follow the interactions provided in [tree view](./tree-view.md). The key actions change when navigating through the NavigationView or its flyout menu, which is displayed in Top and Left-compact modes of HierarchicalNavigationView. Below are the specific actions that each key can take in a hierarchical NavigationView:
 
 | Key      |      In Left Mode      |  In Top Mode | In Flyout  |
@@ -1665,7 +1665,7 @@ The space or enter key always invokes/selects an item.
 
 *Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item. 
 
-## Navigation view customization
+## NavigationView customization
 
 ### Pane Backgrounds
 

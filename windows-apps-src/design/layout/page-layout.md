@@ -45,7 +45,7 @@ When the screen size is smaller than 640 px, the nav pane is fully collapsed.
 
 Top nav can also act as top-level navigation. While left nav is collapsible, top nav is always visible. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs pattern for UWP.
 
-![top navigation](images/pivot-large.svg)
+:::image type="content" source="../controls-and-patterns/images/displaymode-top.png" alt-text="top navigation":::
 
 ## Command bar
 

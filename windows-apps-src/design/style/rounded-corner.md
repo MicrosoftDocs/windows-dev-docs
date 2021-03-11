@@ -89,7 +89,6 @@ There are three areas of the controls where the rounded corner styles are used: 
 **Controls**
 
 - NavigationView selection indicator
-- Pivot selection indicator
 - ProgressBar
 - ScrollBar (when `IndicatorMode=TouchIndicator`)
 - Slider
