@@ -45,7 +45,7 @@ The following Run options are available in the PowerToys settings menu.
   | Ignore shortcuts in Fullscreen mode |  When in full-screen (F11), Run won't be engaged with the shortcut |
   | Maximum number of results |  Maximum number of results shown without scrolling |
   | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible. This setting is located in the Windows Search Plugin options. |
+  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible. |
 
 ## Keyboard shortcuts
 
