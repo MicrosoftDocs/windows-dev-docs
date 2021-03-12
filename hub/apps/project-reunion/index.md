@@ -54,7 +54,10 @@ You can learn more about the future plans to bring other components into Project
 
 1. Ensure that your development computer has Windows 10, version 1809 (build 17763), or a later OS version installed.
 
-2. Install [Visual Studio 2019, version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (or later) if you haven't done so already.
+2. Install [Visual Studio 2019, version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (or later) if you haven't done so already. 
+
+    > [!NOTE]
+    > Visual Studio 2019, version 16.9 also supports Project Reunion, but does not support WinUI 3 tooling features. For more information on WinUI 3 tooling support, see Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021).
 
     You must include the following components when installing Visual Studio:
     - On the **Workloads** tab, make sure **Universal Windows Platform development** is selected.

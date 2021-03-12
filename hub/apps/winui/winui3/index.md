@@ -89,14 +89,14 @@ The following item templates are available for use in a WinUI project. To access
 
 ### Visual Studio Support
 
-In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use the latest preview version of Visual Studio with the latest WinUI 3 preview and be sure to enable WinUI tooling in Visual Studio Preview Features, as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140). The table below shows the compatibility of future versions with WinUI 3 - Project Reunion 0.5 Preview:
+In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use the latest **preview** version of Visual Studio with the latest WinUI 3 preview and be sure to enable WinUI tooling in Visual Studio Preview Features, as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140). The table below shows the compatibility of future versions with WinUI 3 - Project Reunion 0.5 Preview:
 
 | VS Version  | WinUI 3 - Project Reunion 0.5 Preview  |
 |---|---|
 | 16.8 RTM  | No   |
-| 16.9 Previews  | Yes  | 
-| 16.9 RTM  | No   |
-| 16.10 Previews  | Yes   |
+| 16.9 Previews  | Yes, with tooling  | 
+| 16.9 RTM  | Yes, but no tooling   |
+| 16.10 Previews  | Yes, with tooling   |
 
 ## Major changes introduced in this release
 
