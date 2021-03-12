@@ -24,8 +24,8 @@ Highlights this month include:
 
 ### New Content
 
-* [WinUI 2.6 documentation](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/)
-* [Developing with Rust on Windows](https://docs.microsoft.com/windows/dev-environment/rust/)
+* [WinUI 2.6 documentation](../winui/winui2/index.md)
+* [Developing with Rust on Windows](/windows/dev-environment/rust/)
 * [Azure Object Anchors](https://techcommunity.microsoft.com/t5/mixed-reality-blog/azure-object-anchors-is-now-in-private-preview/ba-p/1696157)
 * New video: [Visual Studio Code: Remote dev with Containers & Codespaces](https://www.youtube.com/watch?v=ruIoLtqIdNc)
 

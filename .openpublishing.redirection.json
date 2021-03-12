@@ -5014,6 +5014,11 @@
       "source_path": "windows-apps-src/publish/manage-account-settings-and-profile.md",
       "redirect_url": "https://docs.microsoft.com/partner-center/partner-center-account-setup",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/send-local-toast-desktop.md",
+      "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/send-local-toast",
+      "redirect_document_id": false
     }
   ]
 }

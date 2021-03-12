@@ -21,11 +21,8 @@ Install [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Mic
 
 ## Add namespace declarations
 
-`Windows.UI.Notifications` includes the Tile and Toast API's. `Microsoft.Toolkit.Uwp.Notifications` includes the Notifications library.
-
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
 ```
 
 
@@ -55,7 +52,8 @@ if (supportsCustomAudio)
     contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
 }
 
-// TODO: Send the toast
+// Send the toast
+contentBuilder.Show();
 ```
 
 Supported audio file types include...
@@ -70,7 +68,7 @@ Supported audio file types include...
 
 ## Send the notification
 
-Sending a notification with audio is the same as sending a regular notification. See [Send local toast](send-local-toast.md) to learn more.
+Sending a notification with audio is the same as sending a regular notification (just call the Show method). See [Send local toast](send-local-toast.md) to learn more.
 
 
 ## Related topics

@@ -316,16 +316,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Send local toast
           items:
-            - name: UWP apps
+            - name: C# apps
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: Desktop apps
-              items:
-                - name: Overview
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C# apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C++ UWP apps
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL apps
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Other apps
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: Toast content
           items:
             - name: Content

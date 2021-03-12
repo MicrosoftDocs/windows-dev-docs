@@ -21,7 +21,7 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 
 ## Getting started
 
-**Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 1.0.0 of the NuGet package.
+**Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 7.0.0 of the NuGet package.
 
 **Install Notifications Visualizer.** This free Windows app helps you design interactive toast notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
@@ -47,9 +47,15 @@ The toast content is defined in raw XML, but you can use our [NuGet library](htt
 
 ```csharp
 new ToastContentBuilder()
-    .AddToastActivationInfo("app-defined-string", ToastActivationType.Foreground)
+    .AddArgument("conversationId", 9813)
+
     .AddText("Some text")
-    .AddButton("Archive", ToastActivationType.Background, "archive")
+
+    .AddButton(new ToastButton()
+        .SetContent("Archive")
+        .AddArgument("action", "archive")
+        .SetBackgroundActivation())
+
     .AddAudio(new Uri("ms-appx:///Sound.mp3"));
 ```
 
@@ -407,8 +413,14 @@ Buttons can perform the following different actions...
 new ToastContentBuilder()
     ...
     
-    .AddButton("See more details", ToastActivationType.Foreground, "action=viewdetails&contentId=351")
-    .AddButton("Remind me later", ToastActivationType.Background, "action=remindlater&contentId=351");
+    .AddButton(new ToastButton()
+        .SetContent("See more details")
+        .AddArgument("action", "viewDetails"))
+
+    .AddButton(new ToastButton()
+        .SetContent("Remind me later")
+        .AddArgument("action", "remindLater")
+        .SetBackgroundActivation());
 ```
 
 #### [XML](#tab/xml)
@@ -422,7 +434,7 @@ new ToastContentBuilder()
 
         <action
             content="See more details"
-            arguments="action=viewdetails&amp;contentId=351"
+            arguments="action=viewDetails&amp;contentId=351"
             activationType="foreground"/>
 
         <action
@@ -453,10 +465,11 @@ You can add icons to your buttons. These icons are white transparent 16x16 pixel
 new ToastContentBuilder()
     ...
     
-    .AddButton(
-        "Dismiss",
-        ToastActivationType.Foreground,
-        "dismiss", new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative));
+    .AddButton(new ToastButton()
+        .SetContent("Dismiss")
+        .AddArgument("action", "dismiss")
+        .SetImageUri(new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative))
+        .SetBackgroundActivation());
 ```
 
 #### [XML](#tab/xml)
@@ -557,12 +570,12 @@ new ToastContentBuilder()
     
     .AddInputTextBox("tbReply", "Type a reply")
 
-    .AddButton(
-        textBoxId: "tbReply", // To place button next to text box, reference text box's id
-        content: "Reply",
-        activationType: ToastActivationType.Background,
-        arguments: "action=reply&convId=9318",
-        imageUri: new Uri("Assets/Reply.png", UriKind.Relative));
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .SetTextBoxId("tbReply") // To place button next to text box, reference text box's id
+        .SetImageUri(new Uri("Assets/Reply.png", UriKind.Relative))
+        .AddArgument("action", "reply")
+        .SetBackgroundActivation());
 ```
 
 #### [XML](#tab/xml)
@@ -606,8 +619,14 @@ new ToastContentBuilder()
     
     .AddInputTextBox("tbReply", "Type a reply")
 
-    .AddButton("Reply", ToastActivationType.Background, "action=reply&threadId=9218")
-    .AddButton("Video call", ToastActivationType.Foreground, "action=videocall&threadId=9218");
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .AddArgument("action", "reply")
+        .SetBackgroundActivation())
+
+    .AddButton(new ToastButton()
+        .SetContent("Video call")
+        .AddArgument("action", "videoCall"));
 ```
 
 #### [XML](#tab/xml)
