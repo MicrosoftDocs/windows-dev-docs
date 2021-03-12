@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 3/11/2021
+ms.date: 3/12/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
