@@ -36,7 +36,6 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 
 The width and height of the specified size may be swapped to match the orientation (portrait/landscape) of the current image. To always use the width and height as specified, un-check: **Ignore the orientation of pictures**.
 
-![Image Resizer Settings](../images/powertoys-resize-settings.gif)
 
 ### Fallback encoding
 
