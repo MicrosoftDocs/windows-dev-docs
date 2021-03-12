@@ -93,7 +93,7 @@ With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin m
 
 ## Program parameters
 
-When starting a program with the PowerToys Run program plugin, specify the program arguments using the program's expected format.
+With PowerToys v0.33 and later, the PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 For example, when launching Visual Studio Code, you can specify the folder to be opened with:
 
