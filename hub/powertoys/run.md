@@ -45,7 +45,7 @@ The following Run options are available in the PowerToys settings menu.
   | Ignore shortcuts in Fullscreen mode |  When in full-screen (F11), Run won't be engaged with the shortcut |
   | Maximum number of results |  Maximum number of results shown without scrolling |
   | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible |
+  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible. This setting is located in the Windows Search Plugin options. |
 
 ## Keyboard shortcuts
 
@@ -93,20 +93,19 @@ With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin m
 
 ## Program parameters
 
-When starting a program with the PowerToys Run program plugin, specify the program parameters using these command formats where applicable:
-
-- `program -param ...`
-- `program /param ...`
-- `program --parameter ...`
-- `program -- parameter ...` (Here `--` is used as a delimiter by PT Run.)
+When starting a program with the PowerToys Run program plugin, specify the program arguments using the programs expected format.
 
 For example, when launching Visual Studio Code, you can specify the folder to be opened with:
 
+`Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/editor/command-line), which can be utilized with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
+
+`Visual Studio Code -d C:\foo.txt C:\bar.txt` 
+
+If the program plugin's option "Include in global result" is not selected, be sure to include the activation phrase, `.` by default, to invoke the plugin's behavior:
+
 `.Visual Studio Code -- C:\myFolder`
-
-Visual Studio Code also supports a set of [command line options](https://code.visualstudio.com/docs/editor/command-line), which can be utilized as parameters in PowerToys Run to, for instance, view the difference between files:
-
-`.Visual Studio Code -d C:\myFile_1.txt C:\myFile_2.txt` 
 
 ## Windows Search settings
 
