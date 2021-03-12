@@ -45,7 +45,7 @@ The following Run options are available in the PowerToys settings menu.
   | Ignore shortcuts in Fullscreen mode |  When in full-screen (F11), Run won't be engaged with the shortcut |
   | Maximum number of results |  Maximum number of results shown without scrolling |
   | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible |
+  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible. |
 
 ## Keyboard shortcuts
 
@@ -60,13 +60,13 @@ The following Run options are available in the PowerToys settings menu.
 
 ## Action key
 
-These will force PowerToys run into only targeted plug-ins.
+These default activation phrases will force PowerToys run into only targeted plugins.
 
   | **Action key** | **Action** |
   | --- | --- |
   | `=` | Calculator only. Example `=2+2` |
   | `?` | File searching only. Example `?road` to find `roadmap.txt` |
-  | `.` | Installed app searching only. Example `.code` to get Visual Studio Code |
+  | `.` | Installed programs only. Example `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup. |
   | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
@@ -75,7 +75,7 @@ These will force PowerToys run into only targeted plug-ins.
 
 ## System commands
 
-With PowerToys v0.31 and on, there are system level actions you can now execute.
+PowerToys Run enables a set of system level actions that can be executed.
 
   | **Action key**   |   **Action** |
   | ------------------ | ---------------------------------------------------------------------------------|
@@ -87,13 +87,33 @@ With PowerToys v0.31 and on, there are system level actions you can now execute.
   | `Hibernate` | Hibernates the computer |
   | `Empty Recycle Bin` | Empties the recycle bin |
 
-## Indexer settings
+## Plugin manager
 
-If indexer settings are not set to cover all drives, you will receive the following warning:
+With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
+
+## Program parameters
+
+With PowerToys v0.33 and later, the PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
+
+For example, when launching Visual Studio Code, you can specify the folder to be opened with:
+
+`Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/editor/command-line), which can be utilized with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
+
+`Visual Studio Code -d C:\foo.txt C:\bar.txt` 
+
+If the program plugin's option "Include in global result" is not selected, be sure to include the activation phrase, `.` by default, to invoke the plugin's behavior:
+
+`.Visual Studio Code -- C:\myFolder`
+
+## Windows Search settings
+
+If the Windows Search plugin is not set to cover all drives, you will receive the following warning:
 
 ![PowerToys Run Indexer Warning](../images/pt-run-warning.png)
 
-You can turn off the warning in the PowerToys settings or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options will open.
+You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options menu will open.
 
 ![Indexing Settings](../images/pt-run-indexing.png)
 
