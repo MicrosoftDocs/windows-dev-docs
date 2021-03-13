@@ -203,17 +203,18 @@ Use tabs when:
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-        :::column span="2":::
-	[**Pivot**](../controls-and-patterns/pivot.md)
-	
-Similar to [Navigation View](../controls-and-patterns/navigationview.md), but with additional support for touch and slightly different navigation behavior.
-	
-Use a pivot when:
-- You want your app to allow touch-swiping between categories
-- You want navigation options to carousel infintely
-- You do not need extensive control over navigation behavior between categories
+	:::column span="2":::
+        [**Breadcrumb**](../controls-and-patterns/breadcrumbbar.md)
+
+Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls-and-patterns/breadcrumbbar.md) control implements the top navigation pattern.
+        
+Use a breadcrumb when:
+
+- You want to show the path to the current location
+- You have many levels of navigation
+- You expect users to be able to return to any previous level
 
 :::row-end:::
 
