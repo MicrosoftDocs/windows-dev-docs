@@ -1,7 +1,7 @@
 ---
 description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
 title: Command bar
-label: App bars/command bars
+label: Ccommand bar and app bar
 template: detail.hbs
 op-migration-status: ready
 ms.date: 09/24/2020
@@ -17,6 +17,20 @@ ms.localizationpriority: medium
 # Command bar
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
+
+**Get the Windows UI Library**
+
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
@@ -150,7 +164,7 @@ When the label wraps at the hinted location, it looks like this.
 
 ![App bar button with wrapping label](images/app-bar-button-label-wrap.png)
 
-### Command bar flyouts
+### Menus and flyouts
 
 Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu. While typically an app bar button activates a single command, an app bar button can be used to show a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) or [Flyout](/uwp/api/windows.ui.xaml.controls.flyout) with custom content.
 
@@ -273,5 +287,8 @@ Command bars can be placed in the following screen regions on single-view screen
 
 ## Related articles
 
-* [Command design basics for Windows apps](../basics/commanding-basics.md)
-* [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [Command design basics for Windows apps](../basics/commanding-basics.md)
+- [Command bar flyout](command-bar-flyout.md)
+- [Menu flyout and menu bar](menus.md)
+- [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
