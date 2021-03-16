@@ -3,7 +3,7 @@ description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 03/16/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -48,9 +48,9 @@ The command bar flyout has two display modes: *collapsed* and *expanded*.
 
 Use the command bar flyout control to show a collection of commands to the user, such as buttons and menu items, in the context of an element on the app canvas.
 
-Command bar flyout is the recommended control for creating [context menus](menus-and-context-menus.md). This allows the common commands (such as Copy, Cut, Paste, Delete, Share or text selection commands) most contextually relevant for the context menu's scenario to be added as as primary commands so that they will be shown as a single, horizontal row in the command bar flyout. The TextCommandBarFlyout is already configured appropriately to automatically display text commands in TextBox, TextBlock, RichEditBox, RichTextBlock, and PasswordBox controls. A CommandBarFlyout can be used to replace the default text commands on text controls.
+Command bar flyout is the recommended control for creating [context menus](menus-and-context-menus.md). This allows the common commands (such as Copy, Cut, Paste, Delete, Share or text selection commands) that are most contextually relevant for the context menu's scenario to be added as primary commands so that they will be shown as a single, horizontal row in the command bar flyout. The TextCommandBarFlyout is already configured appropriately to automatically display text commands in TextBox, TextBlock, RichEditBox, RichTextBlock, and PasswordBox controls. A CommandBarFlyout can be used to replace the default text commands on text controls.
 
-To show contextual commands on list items follow the guidance in [contextual commanding for collections and lists](collection-commanding.md).
+To show contextual commands on list items follow the guidance in [Contextual commanding for collections and lists](collection-commanding.md).
 
 ## Examples
 
@@ -418,7 +418,7 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 
 ### Light dismiss
 
-Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
+Light dismiss controls–such as menus, context menus, and other flyouts–trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
 
 ```xaml
 <CommandBarFlyout LightDismissOverlayMode="Off" /> >
