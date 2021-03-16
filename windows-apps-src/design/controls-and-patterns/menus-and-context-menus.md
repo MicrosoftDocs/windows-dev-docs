@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Menus and context menus
 
-Menus and context menus are similar in how they look and what they can contain. They both display an organized list of commands or options and save space by hiding until the user needs them. However there are difference between them, such what you should use to create them and how they are accessed by a user.
+Menus and context menus are similar in how they look and what they can contain. They both display an organized list of commands or options and save space by hiding until the user needs them. However there are differences between them, such as what you should use to create them and how they are accessed by a user.
 
 ![Example of a typical context menu](images/contextmenu_rs2_icons.png)
 
@@ -40,7 +40,7 @@ Menus and context menus are similar in how they look and what they can contain. 
 
 ## Is this the right control?
 
-Menus and context menus are for organizing commands and save space by hiding those commands until the user needs them. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](./dialogs-and-flyouts/index.md).
+Menus and context menus are for organizing commands and saving space by hiding those commands until the user needs them. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](./dialogs-and-flyouts/index.md).
 
 If a particular command will be used frequently and you have the space available, consider placing it directly in its own element so that users don't have to go through a menu to get to it.
 
@@ -57,7 +57,7 @@ For example, use a menu on a button to provide filtering and sorting options for
 
 ![Example of menu in Mail](images/Mail_Menu.png)
 
-If you want to add commands (such as cut, copy, and paste) to a text element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as cut, copy, and paste) are secondary and belong in a context menu.
+If you want to add commands (such as Cut, Copy, and Paste) to a text or image element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as Cut, Copy, and Paste) are secondary and belong in a context menu.
 
 ![Example of context menu in photo gallery](images/ContextMenu_example.png)
 
@@ -69,7 +69,7 @@ Context menus have the following characteristics:
 - Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).
 - Are associated with an element via its [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) property.
 
-In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share or text selection commands), use CommandBarFlyout and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.
+In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share, or text selection commands), use CommandBarFlyout and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.
 
 In cases where your context menu will not include common commands, either CommandBarFlyout or MenuFlyout can be used to show a context menu. We recommend using CommandBarFlyout because it provides more functionality than MenuFlyout and, if desired, can achieve the same behavior and look of MenuFlyout by using only secondary commands.
 
