@@ -1,7 +1,7 @@
 ---
 description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
 title: Command bar
-label: Ccommand bar and app bar
+label: Command bar and app bar
 template: detail.hbs
 op-migration-status: ready
 ms.date: 09/24/2020
@@ -18,6 +18,8 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
+![Example of a command bar with icons](images/controls_appbar_icons.png)
+
 **Get the Windows UI Library**
 
 :::row:::
@@ -33,8 +35,6 @@ Command bars provide users with easy access to your app's most common tasks. Com
 :::row-end:::
 
 > **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-
-![Example of a command bar with icons](images/controls_appbar_icons.png)
 
 ## Is this the right control?
 
