@@ -80,7 +80,7 @@ The [NavigationView](../controls-and-patterns/navigationview.md) control support
 
 ## Re-architect
 
-You can collapse or fork the architecture of your app to better target specific devices. In this example, expanding the window shows the entire master/details pattern.
+You can collapse or fork the architecture of your app to better target specific devices. In this example, expanding the window shows the entire list/details pattern.
 
 ![an example of re-architecting a user interface](images/rsp-design/rspd-rearchitect.gif)
 

@@ -93,7 +93,7 @@ Suppressing the animation is useful if you are building your own transition usin
 
 You can use `Frame.GoBack(NavigationTransitionInfo)` to play a specific transition when navigating backwards.
 
-This can be useful when you modify navigation behavior dynamically based on screen size; for example, in a responsive master/detail scenario.
+This can be useful when you modify navigation behavior dynamically based on screen size; for example, in a responsive list/detail scenario.
 
 ## Related topics
 

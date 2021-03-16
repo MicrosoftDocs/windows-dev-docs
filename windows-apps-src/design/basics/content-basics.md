@@ -33,11 +33,11 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
 
 
-### Master/detail
+### List/detail
 
-![master details](images/content-basics/master-detail.png)
+![list details](images/content-basics/list-detail.png)
 
-The [master/details](../controls-and-patterns/master-details.md) model consists of a list view (master) and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the master view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the master view can be added and removed.
+The [list/details](../controls-and-patterns/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the list view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the list view can be added and removed.
 
 ### Details
 
@@ -73,25 +73,25 @@ To create these page patterns, you'll need to use a combination of individual co
 <tbody>
 <tr class="odd">
 <td align="left">Audio and video<br/><br/>
-	<img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
+    <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
 <td align="left"><a href="../controls-and-patterns/media-playback.md">Media playback and transport controls</a></td>
 <td align="left">Plays audio and video.</td>
 </tr>
 <tr class="even">
 <td align="left">Image viewers<br/><br/>
-	<img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
+    <img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
 <td align="left"><a href="../controls-and-patterns/flipview.md">Flip view</a>, <a href="../controls-and-patterns/images-imagebrushes.md">image</a></td>
 <td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
 </tr>
 <tr class="odd">
 <td align="left">Collections <br/><br/>
-	<img src="images/content-basics/listview.png" alt="list view" /></td>
+    <img src="images/content-basics/listview.png" alt="list view" /></td>
 <td align="left"><a href="../controls-and-patterns/lists.md">List view and grid view</a></td>
 <td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
 </tr>
 <tr class="even">
 <td align="left">Text and text input <br/><br/>
-	<img src="images/content-basics/textbox.png" alt="text box" /></td>
+    <img src="images/content-basics/textbox.png" alt="text box" /></td>
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">Text block</a>, <a href="../controls-and-patterns/text-box.md">text box</a>, <a href="../controls-and-patterns/rich-edit-box.md">rich edit box</a></p>
 </td>
 <td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls-and-patterns/text-controls.md">Text controls</a>.
@@ -100,7 +100,7 @@ To create these page patterns, you'll need to use a combination of individual co
 </tr>
 <tr class="odd">
 <td align="left">Maps<br/><br/>
-	<img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
+    <img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
 <td align="left"><a href="../../maps-and-location/display-maps.md">MapControl</a></td>
 <td align="left">Displays a symbolic or photorealistic map of the Earth.</td>
 </tr>
