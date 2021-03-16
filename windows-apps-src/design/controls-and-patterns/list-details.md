@@ -49,7 +49,7 @@ The user starts at the list pane and "drills down" to the details pane by select
 
 One way to create the stacked list/details pattern is to use separate pages for the list pane and the details pane. Place the list view on one page, and the details pane on a separate page.
 
-![Parts for the stacked-style list detail](images/patterns-md-stacked-parts.png)
+![Parts for the stacked-style list detail](images/patterns-ld-stacked-parts.png)
 
 For the list view page, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
@@ -69,7 +69,7 @@ The list in the list pane has a selection visual to indicate the currently selec
 
 One way to create a side-by-side list/details pattern is to use the [split view](split-view.md) control. Place the list view in the split view pane, and the details view in the split view content.
 
-![list detail split view parts](images/patterns_md_splitview_parts.png)
+![list detail split view parts](images/patterns_ld_splitview_parts.png)
 
 For the list pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
