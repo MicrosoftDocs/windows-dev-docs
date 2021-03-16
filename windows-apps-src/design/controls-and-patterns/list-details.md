@@ -18,7 +18,7 @@ The list/details pattern has a list pane (usually with a [list view](lists.md)) 
 ![Example of list-details pattern](images/list-detail-pattern.png)
 
 > [!TIP]
-> If you'd like to use a XAML control that implements this pattern for you, we recommend the [MasterDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
+> If you'd like to use a XAML control that implements this pattern for you, we recommend the [ListDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
 
 ## Is this the right pattern?
 
@@ -94,7 +94,7 @@ The following samples implement the list/details pattern with adaptive layouts a
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 > [!TIP]
-> If you'd like to use a XAML control that implements this pattern for you, we recommend the [MasterDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
+> If you'd like to use a XAML control that implements this pattern for you, we recommend the [ListDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
 
 ## Related articles
 
