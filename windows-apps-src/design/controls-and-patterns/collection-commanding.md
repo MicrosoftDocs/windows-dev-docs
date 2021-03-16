@@ -238,11 +238,11 @@ The user can invoke context menus using these "context actions":
 
 ### ContextFlyout
 
-The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a “context action” as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
+The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
 
 See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](menus.md) vs. [command bar flyout](command-bar-flyout.md).
 
-For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParamter bound to the PodcastObject.
+For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParameter bound to the PodcastObject.
 
 **PodcastUserControl.xaml**
 ```xaml
@@ -259,7 +259,7 @@ For this example, we will use MenuFlyout and will start by adding a ContextFlyou
 
 ```
 
-Note that you can also use the [ContextRequested event](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
+Note that you can also use the [ContextRequested](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) event to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
 
 ## Creating input accelerators
 
