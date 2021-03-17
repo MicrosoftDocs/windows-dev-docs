@@ -5016,9 +5016,9 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/design/controls-and-patterns/master-detail.md",
+      "source_path": "windows-apps-src/design/controls-and-patterns/master-details.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/list-detail",
-      "redirect_document_id": false
+      "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/send-local-toast-desktop.md",
