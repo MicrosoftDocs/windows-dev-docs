@@ -1,7 +1,7 @@
 ---
 title: Learning track - Construct and configure a form
 description: Learn how to construct and configure a robust form  in a Universal Windows Platform (UWP) app for handling the input of a significant amount of information.
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: get started, uwp, windows 10, learning track, layout, form
 ms.localizationpriority: medium
@@ -150,7 +150,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 |------|---------------|
 | [Controls useful for forms](../design/controls-and-patterns/forms.md#input-controls) | A list of useful input controls for creating forms, and basic guidance of where to use them. |
 | [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) | A panel for arranging elements in multi-row and multi-column layouts. |
-| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arraging items in relation to other elements and to the panel's boundaries. |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arranging items in relation to other elements and to the panel's boundaries. |
 | [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | A panel for arranging elements into a single horizontal or vertical line. |
 | [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | Allows you to set the appearance of UI elements when they're in particular states. |
 
