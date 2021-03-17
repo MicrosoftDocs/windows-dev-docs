@@ -5016,6 +5016,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/design/controls-and-patterns/master-details.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/list-details",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/send-local-toast-desktop.md",
       "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/send-local-toast",
       "redirect_document_id": false

@@ -363,8 +363,8 @@ You can apply several other theme animations to your UI elements to create anima
 | [**RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation) | The preconfigured animation for an object as it is repositioned. |
 | [**SplitCloseThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation) | The preconfigured animation that conceals a target UI using an animation in the style of a [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) opening and closing. |
 | [**SplitOpenThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation) | The preconfigured animation that reveals a target UI using an animation in the style of a [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) opening and closing. |
-| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | Represents a preconfigured animation that runs when a user navigates forward in a logical hierarchy, like from a master page to a detail page. |
-| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | Represents a preconfigured animation that runs when a user navigates backward in a logical hierarchy, like from a detail page to a master page. |
+| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | Represents a preconfigured animation that runs when a user navigates forward in a logical hierarchy, like from a list page to a detail page. |
+| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | Represents a preconfigured animation that runs when a user navigates backward in a logical hierarchy, like from a detail page to a list page. |
 
  
 

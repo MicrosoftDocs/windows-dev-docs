@@ -172,8 +172,8 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
-        - name: Master/details
-          href: controls-and-patterns/master-details.md
+        - name: List/details
+          href: controls-and-patterns/list-details.md
         - name: Navigation view
           href: controls-and-patterns/navigationview.md
         - name: Pivot
