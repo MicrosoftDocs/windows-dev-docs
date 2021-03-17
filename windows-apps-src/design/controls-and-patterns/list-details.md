@@ -69,7 +69,7 @@ The list in the list pane has a selection visual to indicate the currently selec
 
 One way to create a side-by-side list/details pattern is to use the [split view](split-view.md) control. Place the list view in the split view pane, and the details view in the split view content.
 
-![list detail split view parts](images/patterns_ld_splitview_parts.png)
+![list detail split view parts](images/patterns-ld-splitview-parts.png)
 
 For the list pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
