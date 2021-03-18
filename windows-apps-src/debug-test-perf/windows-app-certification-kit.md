@@ -25,7 +25,7 @@ Prerequisites for testing a Universal Windows app:
 
 ## What's new
 
-Tests for Windows [Desktop Bridge Apps](/windows/msix/desktop/source-code-overview) are now supported in the kit. [Windows Desktop Bridge app tests](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests) can give your app the best chance of being published on Microsoft Store or get certified.
+Tests for Windows [Desktop Bridge Apps](/windows/msix/desktop/source-code-overview) are now supported in the kit. [Windows Desktop Bridge app tests](./windows-desktop-bridge-app-tests.md) can give your app the best chance of being published on Microsoft Store or get certified.
 
 The kit can now be integrated into an automated testing where no interactive user session is available.
 

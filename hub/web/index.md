@@ -92,8 +92,8 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Install CLI](https://webhint.io/docs/user-guide/)
     :::column-end:::
     :::column:::
-       [![WebDriver icon](../images/webdriver.png)](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)<br>
-        **[WebDriver](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)**<br>
+       [![WebDriver icon](../images/webdriver.png)](/microsoft-edge/webdriver-chromium/)<br>
+        **[WebDriver](/microsoft-edge/webdriver-chromium/)**<br>
         Close the loop on your developer cycle by automating testing of your website in Microsoft Edge with Microsoft WebDriver.<br>
         [Install WebDriver](https://developer.microsoft.com/microsoft-edge/tools/webdriver/)
     :::column-end:::
@@ -200,11 +200,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [File a Performance Issue](https://github.com/microsoft/WinDev/issues)
     :::column-end:::
     :::column:::
-       [![docs icon](../images/docs.png)](https://docs.microsoft.com/contribute/)<br>
-        **[Contribute to the docs](https://docs.microsoft.com/contribute/)**<br>
+       [![docs icon](../images/docs.png)](/contribute/)<br>
+        **[Contribute to the docs](/contribute/)**<br>
         Most of the documentation sets at Microsoft are open source and hosted on GitHub. Contribute by filing issues or authoring pull requests.
         <br>
-        [Learn how](https://docs.microsoft.com/contribute/)
+        [Learn how](/contribute/)
     :::column-end:::
 :::row-end:::
 
@@ -250,11 +250,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Install React Native for macOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
-       [![Learn icon](../images/learn-icon.png)](https://docs.microsoft.com/learn/browse/?terms=web)<br>
-        **[Microsoft Learn courses related to web development](https://docs.microsoft.com/learn/browse/?terms=web)**<br>
+       [![Learn icon](../images/learn-icon.png)](/learn/browse/?terms=web)<br>
+        **[Microsoft Learn courses related to web development](/learn/browse/?terms=web)**<br>
         Microsoft Learn offers free online courses to learn a variety of new skills and discover Microsoft products and services with step-by-step guidance.
         <br>
-        [Start Learning](https://docs.microsoft.com/learn/browse/?terms=web)
+        [Start Learning](/learn/browse/?terms=web)
     :::column-end:::
 :::row-end:::
 
