@@ -16,23 +16,29 @@ ms.custom: RS5
 
 C++/WinRT's [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template is the base from which your runtime classes and activation factories directly or indirectly derive.
 
-By default, **winrt::implements** supports only [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces, and it silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**.
+By default, **winrt::implements** silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**. By default, **winrt::implements** supports only C++/WinRT interfaces.
 
-In a moment you'll see how to overcome that situation, but first here's a code example to illustrate what happens by default.
+* **winrt::IUnknown** is a C++/WinRT interface, so **winrt::implements** supports **winrt::IUnknown**-based interfaces.
+* **winrt::implements** doesn't support [**::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) itself, by default.
+
+In a moment you'll see how to overcome the cases that aren't supported by default. But first here's a code example to illustrate what happens by default.
 
 ```idl
 // Sample.idl
-runtimeclass Sample
+namespace MyProject 
 {
-    Sample();
-    void DoWork();
+    runtimeclass Sample
+    {
+        Sample();
+        void DoWork();
+    }
 }
 
 // Sample.h
 #include "pch.h"
 #include <shobjidl.h> // Needed only for this file.
 
-namespace winrt::MyProject
+namespace winrt::MyProject::implementation
 {
     struct Sample : implements<Sample, IInitializeWithWindow>
     {
@@ -48,13 +54,42 @@ And here's client code to consume the **Sample** class.
 // Client.cpp
 Sample sample; // Construct a Sample object via its projection.
 
-// This next line crashes, because the QI for IInitializeWithWindow fails.
+// This next line doesn't compile yet.
 sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
 ```
 
-The good news is that all it takes to cause **winrt::implements** to support classic COM interfaces is to include `unknwn.h` before you include any C++/WinRT headers.
+### Enabling classic COM support
+
+The good news is that all it takes to cause **winrt::implements** to support classic COM interfaces is to include the `unknwn.h` header file before you include any C++/WinRT headers.
 
 You could do that explicitly, or indirectly by including some other header file such as `ole2.h`. One recommended method is to include the `wil\cppwinrt.h` header file, which is part of the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil). The `wil\cppwinrt.h` header file not only makes sure that `unknwn.h` is included before `winrt/base.h`, it also sets things up so that C++/WinRT and WIL understand each other's exceptions and error codes.
+
+You can then **as<>** for classic COM interfaces, and the code in the example above will compile.
+
+> [!NOTE]
+> In the example above, even after enabling classic COM support in the client (the code consuming the class), if you haven't also enabled classic COM support in the server (the code implementing the class), then the call to **as<>** in the client will crash because the QI for **IInitializeWithWindow** will fail.
+
+### A local (non-projected) class
+
+A local class is one that is both implemented and consumed in the same compilation unit (app, or other binary); and so there is no projection for it.
+
+Here's an example of a local class that implements *only classic COM interfaces*.
+
+```cppwinrt
+struct LocalObject :
+    winrt::implements<LocalObject, IInitializeWithWindow>
+{
+    ...
+};
+```
+
+If you implement that example, but you don't enable classic COM support, then the following code fails.
+
+```cppwinrt
+winrt::make<LocalObject>(); // error: ‘first_interface’: is not a member of ‘winrt::impl::interface_list<>’
+```
+
+Again, **IInitializeWithWindow** isn't recognized as a COM interface, so C++/WinRT ignores it. In the case of the **LocalObject** example, the result of ignoring COM interfaces means that **LocalObject** has no interfaces at all. But every COM class must implement at least one interface.
 
 ## A simple example of a COM component
 
