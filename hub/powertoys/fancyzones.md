@@ -64,6 +64,10 @@ The additive **Canvas** model starts with a blank layout and supports adding zon
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 
+As of PowerToys v0.35, once a custom layout has been created, the layout can use a user-defined hotkey to quickly apply it to the desired desktop. The hotkey can be set by opening the custom layout's edit menu.
+
+![FancyZones Edit Custom Layout](../images/pt-fancyzones-customeditor.png) 
+
 ## Snapping a window to two or more zones
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.  
