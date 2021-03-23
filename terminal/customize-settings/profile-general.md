@@ -26,6 +26,9 @@ The settings listed below are specific to each unique profile. If you'd like a s
 > [!IMPORTANT]
 > The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
+> [!NOTE]
+> To view the `defaults.json` auto-generated settings file, select "Settings" from the Windows Terminal dropdown menu while holding the <kbd>Alt</kbd> key. Changes to this file will be ignored.
+
 ## Name
 
 This is the name of the profile that will be displayed in the dropdown menu. This value is also used as the "title" to pass to the shell on startup. Some shells (like `bash`) may choose to ignore this initial value, while others (`Command Prompt`, `PowerShell`) may use this value over the lifetime of the application. This "title" behavior can be overridden by using `tabTitle`.
