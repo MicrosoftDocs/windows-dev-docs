@@ -149,7 +149,7 @@ Profiles can use a GUID as a unique identifier. To make a profile your default p
 **Accepts:** GUID as a string in registry format: `"{00000000-0000-0000-0000-000000000000}"`
 
 > [!TIP]
-> You can run `[guid]::NewGuid()` in PowerShell to generate a GUID for your custom profile or for other command lines, use the [UUID generator](https://github.com/uuidjs/uuid).
+> You can run `[guid]::NewGuid()` in PowerShell to generate a GUID for your custom profile. You can also use the [online GUID generator](https://www.guidgenerator.com/) or for other command lines, use the [UUID generator](https://github.com/uuidjs/uuid).
 
 ___
 
