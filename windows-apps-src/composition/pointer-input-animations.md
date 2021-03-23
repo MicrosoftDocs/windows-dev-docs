@@ -1,7 +1,7 @@
 ---
 title: Pointer-based animations
 description: Learn how to use the position of a pointer to create dynamic "stick to the cursor" experiences.
-ms.date: 02/08/2017
+ms.date: 03/23/2021
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
@@ -37,7 +37,7 @@ Some examples include:
 
 You can create these experiences by using the PointerPositionPropertySet. This PropertySet gets created for a UIElement to maintain the position of the pointer while the UIElement is positively hit-tested. The position value is relative to the coordinate space of the UIElement (a position of <0,0> is the top left corner of the UIElement). You can then leverage this property set in an Animation to drive the motion of another property.
 
-For each of the different Pointer Input Modalities, there are a number of input states the input could be in where the position changes: Hover, Pressed, Pressed & Moved. The PointerPositionPropertySet only maintains the position of the pointer in the Hover, Pressed and Pressed and Moved states for Moues and Pen.
+For each of the different Pointer Input Modalities, there are a number of input states the input could be in where the position changes: Hover, Pressed, Pressed & Moved. The PointerPositionPropertySet only maintains the position of the pointer in the Hover, Pressed and Pressed and Moved states for Mouse and Pen.
 
 General steps to get started:
 
