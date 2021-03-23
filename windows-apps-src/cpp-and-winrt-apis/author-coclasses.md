@@ -19,7 +19,7 @@ C++/WinRT's [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template 
 By default, **winrt::implements** silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**. By default, **winrt::implements** supports only C++/WinRT interfaces.
 
 * **winrt::IUnknown** is a C++/WinRT interface, so **winrt::implements** supports **winrt::IUnknown**-based interfaces.
-* **winrt::implements** doesn't support [**::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) itself, by default.
+* **winrt::implements** doesn't support [**::IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) itself, by default.
 
 In a moment you'll see how to overcome the cases that aren't supported by default. But first here's a code example to illustrate what happens by default.
 
@@ -250,7 +250,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
