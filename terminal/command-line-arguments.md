@@ -54,6 +54,9 @@ Commands may vary slightly depending on which command line you're using.
 
 ### Target a specific window
 
+> [!IMPORTANT]
+> The `--window,-w` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
+
 Below are examples of how to target specific windows using the `--window,-w` option.
 
 <!-- Start tab selectors. -->
