@@ -89,11 +89,11 @@ And here's the skeleton of the **App** class (in `App.cpp`), showing the signatu
 struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 {
     ...
-    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const& applicationView) { ... }
     void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
     void Load(winrt::hstring const& entryPoint) { ... }
     void OnActivated(
-        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Core::CoreApplicationView const& applicationView,
         Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
     void Run() { ... }
     void Uninitialize() { ... }
