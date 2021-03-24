@@ -96,7 +96,7 @@ This can be done by adding the `splitMode` property with `duplicate` as the valu
 
 You can zoom the focused pane to fill the entire contents of the window.
 
-![Windows Terminal toggle pane zoom](./../images/toggle-pane-zoom.gif)
+![Windows Terminal toggle pane zoom](./images/toggle-pane-zoom.gif)
 
 This can be done by using the `togglePaneZoom` command.
 
