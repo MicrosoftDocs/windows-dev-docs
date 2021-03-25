@@ -26,7 +26,7 @@
               - name: Get started with automation
                 href: ../python/scripting.md
               - name: FAQs
-                href: ../python/faqs.md
+                href: ../python/faqs.yml
         - name: Get started with Node.js
           items: 
               - name: Overview
