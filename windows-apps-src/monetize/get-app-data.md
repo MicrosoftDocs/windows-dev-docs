@@ -66,8 +66,7 @@ This resource has the following values.
 | firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.   |
 | lastPublishedApplicationSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the app.    |
 | pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
-| hasAdvancedListingPermission        | boolean  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app. This value is true for submissions created after May 2017. |  |
-
+| hasAdvancedListingPermission        | boolean  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app. This value is true for submissions created after May 2017. |
 
 <span id="add-on-object" />
 

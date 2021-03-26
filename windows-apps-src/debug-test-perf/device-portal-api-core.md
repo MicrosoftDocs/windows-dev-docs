@@ -4348,7 +4348,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is renamed
+| 200 | OK. The file is renamed|
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4399,7 +4399,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is deleted |
+| 200 | OK. The file is deleted |
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4447,7 +4447,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is uploaded |
+| 200 | OK. The file is uploaded |
 | 4XX | Error codes |
 | 5XX | Error codes |
 

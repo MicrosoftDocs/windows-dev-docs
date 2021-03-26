@@ -56,7 +56,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 |----------------|--------|---------------|----------|
 | b2bKey         | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscription you want to change.     | Yes      |
 | changeType     | string |  One of the following strings that identifies the type of change you want to make:<ul><li>**Cancel**: Cancels the subscription.</li><li>**Extend**: Extends the subscription. If you specify this value, you must also include the *extensionTimeInDays* parameter.</li><li>**Refund**: Refunds the subscription to the customer.</li><li>**ToggleAutoRenew**: Disables automatic renewal for the subscription. If automatic renewal is currently disabled for the subscription, this value does nothing.</li></ul>   | Yes      |
-| extensionTimeInDays  | string  | If the *changeType* parameter has the value **Extend**, this parameter specifies the number of days to extend the subscription. |  Yes, if *changeType* has the value **Extend**; otherwise, no.  ||
+| extensionTimeInDays  | string  | If the *changeType* parameter has the value **Extend**, this parameter specifies the number of days to extend the subscription. |  Yes, if *changeType* has the value **Extend**; otherwise, no.  |
 
 
 ### Request example
