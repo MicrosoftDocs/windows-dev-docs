@@ -54,7 +54,7 @@ Add media to your app by creating a [MediaPlayerElement](/uwp/api/windows.ui.xam
 This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) and sets its [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to the URI of a video file that's local to the app. The **MediaPlayerElement** begins playing when the page loads. To suppress media from starting right away, you can set the [AutoPlay](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) property to **false**.
 
 ```xaml
-<MediaPlayerElement x:Name="mediaSimple"
+<MediaPlayerElement x:Name="mediaPlayerElement"
                     Source="ms-appx:///Videos/video1.mp4"
                     Width="400" AutoPlay="True"/>
 ```
@@ -63,7 +63,7 @@ This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.media
 
 
 ```xaml
-<MediaPlayerElement x:Name="mediaPlayer"
+<MediaPlayerElement x:Name="mediaPlayerElement"
                     Source="ms-appx:///Videos/video1.mp4"
                     Width="400"
                     AutoPlay="False"
@@ -92,8 +92,6 @@ The double-row controls layout (below) is recommended for most usage scenarios, 
 To play files on the network or files embedded with the app, set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to a [MediaSource](/uwp/api/windows.media.core.mediasource) with the path of the file.
 
 **Tip**  To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](../../packaging/app-capability-declarations.md).
-
- 
 
 This code attempts to set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property of the [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) defined in XAML to the path of a file entered into a [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox).
 
@@ -124,7 +122,7 @@ private void LoadMediaFromString(string path)
     try
     {
         Uri pathUri = new Uri(path);
-        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
@@ -147,7 +145,7 @@ private void LoadEmbeddedAppFile()
     try
     {
         Uri pathUri = new Uri("ms-appx:///Videos/video1.mp4");
-        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
@@ -181,7 +179,7 @@ The [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) does not r
 This example shows how to use the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to choose a file and set the file as the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) of a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
 
 ```xaml
-<MediaPlayerElement x:Name="mediaPlayer"/>
+<MediaPlayerElement x:Name="mediaPlayerElement"/>
 ...
 <Button Content="Choose file" Click="Button_Click"/>
 ```
@@ -203,12 +201,12 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
     var file = await openPicker.PickSingleFileAsync();
 
-    // mediaPlayer is a MediaPlayerElement defined in XAML
+    // mediaPlayerElement is a MediaPlayerElement control defined in XAML
     if (file != null)
     {
-        mediaPlayer.Source = MediaSource.CreateFromStorageFile(file);
+        mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(file);
 
-        mediaPlayer.MediaPlayer.Play();
+        mediaPlayerElement.MediaPlayer.Play();
     }
 }
 ```
@@ -255,13 +253,13 @@ private DisplayRequest appDisplayRequest = null;
     Each [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) has a [PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession) of type [MediaPlaybackSession](/uwp/api/windows.media.playback.mediaplaybacksession) that controls various aspects of media playback such as [PlaybackRate](/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate), [PlaybackState](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate) and [Position](/uwp/api/windows.media.playback.mediaplaybacksession.position). Here, you use the [PlaybackStateChanged](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged) event on  [MediaPlayer.PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession) to detect situations when you should release the display request. Then, use the [NaturalVideoHeight](/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight) property to determine whether an audio or video file is playing, and keep the screen active only if video is playing.
 
     ```xaml
-    <MediaPlayerElement x:Name="mpe" Source="ms-appx:///Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mediaPlayerElement" Source="ms-appx:///Media/video1.mp4"/>
     ```
 
     ```csharp
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
-        mpe.MediaPlayer.PlaybackSession.PlaybackStateChanged += MediaPlayerElement_CurrentStateChanged;
+        mediaPlayerElement.MediaPlayer.PlaybackSession.PlaybackStateChanged += MediaPlayerElement_CurrentStateChanged;
         base.OnNavigatedTo(e);
     }
 
@@ -283,7 +281,7 @@ private DisplayRequest appDisplayRequest = null;
             {
                 if(appDisplayRequest != null)
                 {
-                      // Deactivate the displayr request and set the var to null
+                      // Deactivate the display request and set the var to null
                       appDisplayRequest.RequestRelease();
                       appDisplayRequest = null;
                 }
@@ -314,7 +312,7 @@ Here is some code that creates an [AppBarButton](/uwp/api/Windows.UI.Xaml.Contro
 ```csharp
 private void FullWindow_Click(object sender, object e)
 {
-    mediaPlayer.IsFullWindow = !media.IsFullWindow;
+    mediaPlayerElement.IsFullWindow = !media.IsFullWindow;
 }
 ```
 
@@ -340,19 +338,19 @@ Here, an [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) is used 
 ```csharp
 private void PictureSize_Click(object sender, RoutedEventArgs e)
 {
-    switch (mediaPlayer.Stretch)
+    switch (mediaPlayerElement.Stretch)
     {
         case Stretch.Fill:
-            mediaPlayer.Stretch = Stretch.None;
+            mediaPlayerElement.Stretch = Stretch.None;
             break;
         case Stretch.None:
-            mediaPlayer.Stretch = Stretch.Uniform;
+            mediaPlayerElement.Stretch = Stretch.Uniform;
             break;
         case Stretch.Uniform:
-            mediaPlayer.Stretch = Stretch.UniformToFill;
+            mediaPlayerElement.Stretch = Stretch.UniformToFill;
             break;
         case Stretch.UniformToFill:
-            mediaPlayer.Stretch = Stretch.Fill;
+            mediaPlayerElement.Stretch = Stretch.Fill;
             break;
         default:
             break;
@@ -368,8 +366,8 @@ This example creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.me
 
 
 ```csharp
-MediaPlayerElement mp = new MediaPlayerElement();
-mp.MediaPlayer.RealTimePlayback = true;
+MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();
+mediaPlayerElement.MediaPlayer.RealTimePlayback = true;
 ```
 
 ## Recommendations
