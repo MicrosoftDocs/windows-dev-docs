@@ -44,11 +44,8 @@ Menus and context menus are for organizing commands and saving space by hiding t
 
 If a particular command will be used frequently and you have the space available, consider placing it directly in its own element so that users don't have to go through a menu to get to it.
 
-## Menus vs. context menus
 
-Menus and context menus are similar in how they look and what they can contain. The difference is how you let the user access it.
-
-### When should you use a menu or a context menu?
+## When should you use a menu or a context menu?
 
 - If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.
 - If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu.
@@ -61,7 +58,7 @@ If you want to add commands (such as Cut, Copy, and Paste) to a text or image el
 
 ![Example of context menu in photo gallery](images/ContextMenu_example.png)
 
-### Context menus
+## Context menus
 
 Context menus have the following characteristics:
 
@@ -73,7 +70,7 @@ In cases where your context menu will include common commands (such as Copy, Cut
 
 In cases where your context menu will not include common commands, either CommandBarFlyout or MenuFlyout can be used to show a context menu. We recommend using CommandBarFlyout because it provides more functionality than MenuFlyout and, if desired, can achieve the same behavior and look of MenuFlyout by using only secondary commands.
 
-### Menus
+## Menus
 
 Menus have the following characteristics:
 
