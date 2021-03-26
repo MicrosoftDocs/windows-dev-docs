@@ -66,9 +66,9 @@ Context menus have the following characteristics:
 - Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).
 - Are associated with an element via its [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) property.
 
-In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share, or text selection commands), use CommandBarFlyout and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.
+In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share, or text selection commands), use [command bar flyout](command-bar-flyout.md) and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.
 
-In cases where your context menu will not include common commands, either CommandBarFlyout or MenuFlyout can be used to show a context menu. We recommend using CommandBarFlyout because it provides more functionality than MenuFlyout and, if desired, can achieve the same behavior and look of MenuFlyout by using only secondary commands.
+In cases where your context menu will not include common commands, either [command bar flyout](command-bar-flyout.md) or [menu flyout](menus.md) can be used to show a context menu. We recommend using CommandBarFlyout because it provides more functionality than MenuFlyout and, if desired, can achieve the same behavior and look of MenuFlyout by using only secondary commands.
 
 ## Menus
 
@@ -79,7 +79,7 @@ Menus have the following characteristics:
 - Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
 - Are associated with an element via its [Flyout](/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
 
-When the user invokes a command element (such as a button) whose primary role is to present additional commands, use MenuFlyout to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus.
+When the user invokes a command element (such as a button) whose primary role is to present additional commands, use [menu flyout](menus.md) to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus.
 
 To show a set of multiple top-level menus in a horizontal row, use MenuBar. You can also use a MenuBar in conjunction with a CommandBar. MenuBar and CommandBar both represent surfaces that you can use to expose commands to your users. The MenuBar provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a CommandBar allows. Use the MenuBar (which you typically position at the top of the app window) to provide the bulk of the commands, and then use CommandBar to highlight the most used commands.
 
