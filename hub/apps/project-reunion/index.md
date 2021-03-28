@@ -60,15 +60,15 @@ You can learn more about the future plans to bring other components into Project
     > Visual Studio 2019, version 16.9 also supports Project Reunion, but does not support WinUI 3 tooling features. For more information on WinUI 3 tooling support, see Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021).
 
     You must include the following components when installing Visual Studio:
-    - On the **Workloads** tab, make sure **Universal Windows Platform development** is selected.
-    - On the **Individual components** tab, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
+    - On the **Workloads** tab of the installation dialog, make sure **Universal Windows Platform development** is selected.
+    - On the **Individual components** tab of the installation dialog, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
 
     To build .NET apps, you must also include the following components:
-    - **.NET Desktop Development** workload.
+    - On the **Workloads** tab of the installation dialog, make sure **.NET Desktop Development** is selected.
 
     To build C++ apps, you must also include the following components:
-    - **Desktop development with C++** workload.
-    - The **C++ (v142) Universal Windows Platform tools** optional component for the **Universal Windows Platform development** workload.
+    - On the **Workloads** tab of the installation dialog, make sure **Desktop development with C++** is selected.
+    - In the **Installation details** pane on the right side of the installation dialog, make sure the **C++ (v142) Universal Windows Platform tools** optional component is selected in the **Universal Windows Platform development** section.
 
 3. If you previously installed the [WinUI 3 Preview extension](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates) from an earlier WinUI 3 preview release, uninstall the extension. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 

@@ -76,7 +76,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Frequently Asked Questions
-            url: faqs.md
+            url: faqs.yml
       - linkListType: learn
         links:
           - text: Try Python (without installing anything) in this intro course
