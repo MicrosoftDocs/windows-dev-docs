@@ -72,7 +72,7 @@ These default activation phrases will force PowerToys run into only targeted plu
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key |
   | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped |
-  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{............` to launch ........
+  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in it's path
 
 ## System commands
 
@@ -110,11 +110,11 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 ## Monitor Positioning
 
-With PowerToys v0.35 and later, if multiple monitors are in use, PowerToys Run can be set to open the dialog on a specific monitor in the PowerToys settings menu. Options include opening in:
+If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options include opening in:
 
-- Monitor with mouse cursor
 - Primary monitor
-- Specified monitor
+- Monitor with mouse cursor
+- Monitor with focused window
 
 ![PowerToys Run Monitor Selection](../images/pt-run-monitor.png)
 
