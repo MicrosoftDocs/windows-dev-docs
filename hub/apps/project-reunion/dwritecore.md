@@ -9,8 +9,8 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Render text with DWriteCore (Project Reunion)
+# Render text with DWriteCore 
 
-DWriteCore is the [Project Reunion](index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). DWriteCore is a form of DirectWrite that runs on versions of Windows down to Windows 8, and opens the door for you to use it cross-platform.
+DWriteCore is the [Project Reunion](index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). DWriteCore provides access to all current DirectWrite features for text rendering, including a device-independent text layout system, hardware-accelerated text, multi-format text, and wide language support.
 
 For more details about DWriteCore, including guidance and code examples for programming with it, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview) in the DirectWrite documentation.

@@ -9,7 +9,7 @@ author: hickeys
 ms.localizationpriority: medium
 ---
 
-# Manage resources with MRT Core (Project Reunion)
+# Manage resources with MRT Core 
 
 MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of [Project Reunion](../index.md).
 
@@ -17,22 +17,21 @@ MRT Core has both build-time and run-time features. At build time, the system cr
 
 ## Package Resource Index (PRI) file
 
-Every app package should contain a binary index of the resources in the app. This index is created at build time and it is contained in one or more Resource (.resw) files.
+Every app package should contain a binary index of the resources in the app. This index is created at build time and it is contained in one or more PRI files. Each PRI file contains a named collection of resources, referred to as a resource map.
 
-A resw file contains actual string resources, and an indexed set of file paths that refer to various files in the package.
-A package typically contains a single resw file per language, named resources.resw. The resources.resw file at the root of each package is automatically loaded when the ResourceManager is instantiated.
+A PRI file contains actual string resources. Embedded binary and file path resources are indexed directly from the project files. A package typically contains a single PRI file per language, named **resources.pri**. The **resources.pri** file at the root of each package is automatically loaded when the [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager) object is instantiated.
 
-Each resw file contains a named collection of resources, referred to as a resource map. When a resw file from a package is loaded, the resource map name is verified to match the package identity name.
+PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
 
-Resw files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
+## Access app resources
 
-## Using MRT Core to access app resources
+MRT Core provides several different ways to access your app resources.
 
-### Resource Loader (basic functionality)
+### Basic functionality with ResourceLoader
 
-The simplest way to access your app resources programmatically is by using the [Microsoft.ApplicationModel.Resources](/windows/winui/api/microsoft.applicationmodel.resources) namespace and the ResourceLoader class. ResourceLoader provides you basic access to string resources from the set of resource files, referenced libraries, or other packages.
+The simplest way to access your app resources programmatically is by using the [ResourceLoader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader) class. **ResourceLoader** provides you basic access to string resources from the set of resource files, referenced libraries, or other packages.
 
-### Resource Manager (advanced functionality)
+### Advanced functionality with ResourceManager
 
 The [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager) class provides additional info about resources, such as enumeration and inspection. This goes beyond what the **ResourceLoader** class provides.
 
@@ -42,15 +41,18 @@ Resources available to an app are stored in hierarchical collections, which you 
 
 The **ResourceManager** not only supports access to an app's string resources, it also maintains the ability to enumerate and inspect the various file resources as well. In order to avoid collisions between files and other resources that originate from within a file, indexed file paths all reside within a reserved "Files" **ResourceMap** subtree. For example, the file '\Images\logo.png' corresponds to the resource name 'Files/images/logo.png'.
 
-### ResourceContext
+### Qualify resource selection with ResourceContext
 
 Resource candidates are chosen based on a particular [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext), which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. Whenever you retrieve a resource candidate, you should pass in a **ResourceContext** instance to obtain the most appropriate value for a given view.
 
-### Important APIs
+### Load images
 
-- [ResourceLoader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader)
-- [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)
-- [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)
+If you want to use MRT Core to retrieve images that you added to your project, you must configure the image to be built as content. If you do not do this, the image will not be indexed in the resources.pri file and cannot be retrieved by MRT Core.
+
+To configure an image to be built as content:
+
+* In a C#/.NET 5 project, set the **Build Action** property for the image to **Content**.
+* In a C++/WinRT project, set the **Content** property for the image to **True**.
 
 ## Sample
 

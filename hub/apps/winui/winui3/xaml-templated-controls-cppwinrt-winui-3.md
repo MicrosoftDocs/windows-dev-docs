@@ -30,7 +30,6 @@ To add a templated control, click the **Project** menu in the toolbar or right-c
 
 In the following steps you will update the code in the `BgLabelControl.idl`, `BgLabelControl.h`, and `BgLabelControl.cpp` files in the project directory to implement the runtime class. 
 
-
 The templated control class will be instantiated from XAML markup, and for that reason it's going to be a runtime class. When you build the finished project, the MIDL compiler (midl.exe) will use the `BgLabelControl.idl` file to a generate the Windows Runtime metadata file (.winmd) for your control, which consumers of your component will reference. For more information on creating runtime classes, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 The templated control we are creating will expose a single property which is a string that will be used as a label for the control. Replace the contents of `BgLabelControl.idl` with the following code..

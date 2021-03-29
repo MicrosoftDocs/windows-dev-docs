@@ -24,7 +24,7 @@ The Windows UI Library is a set of NuGet packages that provide controls and othe
 You can use WinUI in the following ways in desktop apps:
 
 * You can update existing WPF, Windows Forms, and C++/Win32 apps with [XAML Islands](xaml-islands.md) and host WinUI 2.x controls.
-* Use [WinUi 3.0](../../winui/winui3/index.md) (in preview) to create managed [C#/.NET Core and native C++/Win32 desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
+* Use [WinUI 3](../../winui/winui3/index.md) to create managed [C#/.NET 5 and native C++/Win32 desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
 
 See [Windows UI (WinUI) Library](../../winui/index.md).
 
