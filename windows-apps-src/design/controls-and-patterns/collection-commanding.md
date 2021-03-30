@@ -15,8 +15,6 @@ ms.localizationpriority: medium
 ---
 # Contextual commanding for collections and lists
 
-
-
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.  
 
 > **Important APIs**: [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged interface](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
@@ -37,7 +35,7 @@ This table shows some typical collection commands and ways to expose those comma
 | Favorite an item | Context menu   | Hover button      | F, Ctrl+S            | Swipe to favorite |
 
 
-* **In general, you should make all commands for an item available in the item's [context menu](menus.md).** Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.
+* **In general, you should make all commands for an item available in the item's [context menu](menus-and-context-menus.md).** Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.
 
 * **For frequently accessed commands, consider using input accelerators.** Input accelerators let the user perform actions quickly, based on their input device. Input accelerators include:
 	- Swipe-to-action (touch accelerator)
@@ -240,9 +238,11 @@ The user can invoke context menus using these "context actions":
 
 ### ContextFlyout
 
-The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout, and when the user performs a “context action” as defined above, the MenuFlyout corresponding to the item will be displayed.
+The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
 
-We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParamter bound to the PodcastObject.
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](menus.md) vs. [command bar flyout](command-bar-flyout.md).
+
+For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParameter bound to the PodcastObject.
 
 **PodcastUserControl.xaml**
 ```xaml
@@ -259,7 +259,7 @@ We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified 
 
 ```
 
-Note that you can also use the [ContextRequested event](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
+Note that you can also use the [ContextRequested](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) event to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
 
 ## Creating input accelerators
 
@@ -445,9 +445,12 @@ To optimize your app for pen input, see the [pen and stylus interaction](../inpu
 * Do use the [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands. 
 
 ## Related topics
+
+* [Command design basics for Windows apps](../basics/commanding-basics.md)
 * [ICommand Interface](/uwp/api/Windows.UI.Xaml.Input.ICommand)
-* [Menus and Context Menus](menus.md)
+* [Menus and context menus](menus-and-context-menus.md)
 * [Swipe](swipe.md)
 * [Pull to refresh](pull-to-refresh.md)
 * [Pen and stylus interaction](../input/pen-and-stylus-interactions.md)
 * [Tailor your app for gamepad and Xbox](../devices/designing-for-tv.md)
+
