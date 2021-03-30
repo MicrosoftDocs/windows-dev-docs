@@ -80,7 +80,7 @@ The Source property can be set in code, but rather than doing so, you typically 
 To load web content, use the [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) method with a **Uri** that uses the http or https scheme. 
 
 ```csharp
-webView1.Navigate("http://www.contoso.com");
+webView1.Navigate(new Uri("http://www.contoso.com"));
 ```
 
 To navigate to a URI with a POST request and HTTP headers, use the [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) method. This method supports only [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) and [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get) for the [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method) property value. 
@@ -90,13 +90,13 @@ To load uncompressed and unencrypted content from your app's [LocalFolder](/uwp/
 Each of these first-level subfolders is isolated from the content in other first-level subfolders. For example, you can navigate to ms-appdata:///temp/folder1/file.html, but you can't have a link in this file to ms-appdata:///temp/folder2/file.html. However, you can still link to HTML content in the app package using the **ms-appx-web scheme**, and to web content using the **http** and **https** URI schemes.
 
 ```csharp
-webView1.Navigate("ms-appdata:///local/intro/welcome.html");
+webView1.Navigate(new Uri("ms-appdata:///local/intro/welcome.html"));
 ```
 
 To load content from the your app package, use the **Navigate** method with a **Uri** that uses the [ms-appx-web scheme](/previous-versions/windows/apps/jj655406(v=win.10)). 
 
 ```csharp
-webView1.Navigate("ms-appx-web:///help/about.html");
+webView1.Navigate(new Uri("ms-appx-web:///help/about.html"));
 ```
 
 You can load local content through a custom resolver using the [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri) method. This enables advanced scenarios such as downloading and caching web-based content for offline use, or extracting content from a compressed file.
@@ -294,7 +294,7 @@ In addition, trusted JavaScript content in a web view can be allowed to directly
 
 This example shows a section of the app manifest. Here, a local URI is given access to the Windows Runtime. 
 
-```csharp
+```xml
   <Applications>
     <Application Id="App"
       ...
