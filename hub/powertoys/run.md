@@ -110,7 +110,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 ## Monitor Positioning
 
-If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options include opening in:
+If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options include opening on:
 
 - Primary monitor
 - Monitor with mouse cursor
