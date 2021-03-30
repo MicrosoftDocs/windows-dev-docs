@@ -26,7 +26,7 @@ Configures XAML compilation to join partial classes between markup and code-behi
 | Term | Description |
 |------|-------------|
 | namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
-| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
+| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. |
 
 ## Remarks
 

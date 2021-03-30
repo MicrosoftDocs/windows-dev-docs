@@ -33,7 +33,7 @@ Provides a means to specify the source of a binding in terms of a relative relat
 | Term | Description |
 |------|-------------|
 | {RelativeSource Self} | Produces a [<strong>Mode</strong>](/uwp/api/windows.ui.xaml.data.relativesource.mode) value of <strong>Self</strong>. The target element should be used as the source for this binding. This is useful for binding one property of an element to another property on the same element. |
-| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) that is applied as the source for this binding. This is useful for applying runtime information to bindings at the template level. | 
+| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) that is applied as the source for this binding. This is useful for applying runtime information to bindings at the template level. |
 
 ## Remarks
 

@@ -129,7 +129,7 @@ Creates a cubic Bézier curve between the current point and the specified end po
 |------|-------------|
 | *controlPoint1* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The first control point of the curve, which determines the starting tangent of the curve. |
 | *controlPoint2* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The second control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the curve is drawn. | 
+| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the curve is drawn. |
 
 **Quadratic Bézier curve command**
 
