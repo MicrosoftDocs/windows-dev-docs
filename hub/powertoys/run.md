@@ -58,7 +58,7 @@ The following Run options are available in the PowerToys settings menu.
   | Ctrl+C | (Only applicable to folders and files) Copy path location |
   | Tab | Navigate through the search result and context menu buttons |
 
-## Action key
+## Action keys
 
 These default activation phrases will force PowerToys run into only targeted plugins.
 
