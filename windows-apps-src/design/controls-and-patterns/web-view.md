@@ -7,6 +7,7 @@ template: detail.hbs
 ms.date: 03/30/2021
 ms.topic: article
 keywords: windows 10, uwp
+ms.custom: contperf-fy21q3
 ms.localizationpriority: medium
 ---
 # Web view
