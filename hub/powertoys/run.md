@@ -72,7 +72,7 @@ These default activation phrases will force PowerToys run into only targeted plu
   | `>` | Shell command only. Example `>ping localhost` to do a ping query |
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key |
   | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped |
-  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in it's path
+  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in their paths
 
 ## System commands
 
@@ -90,11 +90,11 @@ PowerToys Run enables a set of system level actions that can be executed.
 
 ## Plugin manager
 
-With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
+The PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
 
 ## Program parameters
 
-With PowerToys v0.33 and later, the PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
+The PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 For example, when launching Visual Studio Code, you can specify the folder to be opened with:
 
