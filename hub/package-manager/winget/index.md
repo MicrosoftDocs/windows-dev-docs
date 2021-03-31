@@ -14,18 +14,24 @@ The **winget** command line tool enables developers to discover, install, upgrad
 
 The **winget** tool is currently a preview, so not all planned functionality is available at this time.
 
-## Install winget
+## Installing the client
 
-There are several ways to install the **winget** tool:
+> The client requires Windows 10 1709 (build 16299) or later at this time.
 
-* The **winget** tool is included in the flight or preview version of [Windows App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). You must install the preview version of **App Installer** to use **winget**. To gain early access, submit your request to the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Participating in the flight ring will guarantee you see the latest preview updates.
+### Microsoft Store [Recommended]
 
-* Participate in the [Windows Insider flight ring](https://insider.windows.com).
+The client is distributed within the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) package. While this package is pre-installed on Windows, the client will not be made generally available during the Preview period. In order to get automatic updates from the Microsoft Store that contain the client, one must do one of the following:
 
-* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
+* Install a [Windows 10 Insider](https://insider.windows.com/) build
+* Join the Preview flight ring by [signing up](http://aka.ms/winget-InsiderProgram)
 
-> [!NOTE]
-> The **winget** tool requires Windows 10, version 1709 (10.0.16299), or a later version of Windows 10.
+Once you have received the updated App Installer you should be able to execute `winget`. Some users have reported [issues](https://github.com/microsoft/winget-cli/issues/210) with the client not being on their PATH.
+
+### Manually Update
+
+The same Microsoft Store package will be made available via our [Releases](https://github.com/microsoft/winget-cli/releases). Note that installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
+
+> You may need to install the [VC++ v14 Desktop Framework Package](https://docs.microsoft.com/en-us/troubleshoot/cpp/c-runtime-packages-desktop-bridge#how-to-install-and-update-desktop-framework-packages).
 
 ## Administrator considerations
 
@@ -47,6 +53,8 @@ One of the most common usage scenarios is to search for and install a favorite t
 
 3. In addition to install and search, **winget** provides a number of other commands that enable you to [show details](show.md) on applications, [change sources](source.md), and [validate packages](validate.md). To get a complete list of commands, type: `winget --help`.
     ![winget help](images\help.png)
+
+Once you have received the updated App Installer you should be able to execute `winget`. Some users have reported [issues](https://github.com/microsoft/winget-cli/issues/210) with the client not being on their PATH.
 
 ### Commands
 
