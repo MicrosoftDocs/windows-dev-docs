@@ -48,6 +48,8 @@ One of the most common usage scenarios is to search for and install a favorite t
 3. In addition to install and search, **winget** provides a number of other commands that enable you to [show details](show.md) on applications, [change sources](source.md), and [validate packages](validate.md). To get a complete list of commands, type: `winget --help`.
     ![winget help](images\help.png)
 
+Once you have received the updated App Installer you should be able to execute `winget`. Some users have reported [issues](https://github.com/microsoft/winget-cli/issues/210) with the client not being on their PATH.
+
 ### Commands
 
 The current preview of the **winget** tool supports the following commands.
