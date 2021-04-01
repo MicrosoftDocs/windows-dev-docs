@@ -16,7 +16,7 @@ After installing the Project Reunion 0.5 VSIX package, you're ready to create a 
 
 There are two Visual Studio Extensions available as a part of the Project Reunion 0.5 release: the **Project Reunion VSIX**, and the **Project Reunion Preview VSIX**. The Project Reunion VSIX includes project templates that can be used for building MSIX-packaged desktop production apps. The Project Reunion Preview VSIX includes experimental project templates that can be used for building MSIX-packaged desktop or UWP apps. 
 
-### Project templates for WinUI 3
+## Project templates for WinUI 3
 
 You can use these WinUI project templates to create apps.
 
@@ -34,7 +34,7 @@ You can use these WinUI project templates to build components that can be loaded
 | Windows Runtime Component (WinUI 3) | C++ | Creates a [Windows Runtime component](/windows/uwp/winrt-components/) written in C++/WinRT that can be consumed by any UWP or desktop app with a WinUI-based user interface, regardless of the programming language in which the app is written. |
 | Windows Runtime Component (WinUI 3 in UWP), Experimental | C# | Creates a [Windows Runtime component](/windows/uwp/winrt-components/) written in C# that can be consumed by any UWP app with a WinUI-based user interface, regardless of the programming language in which the app is written. |
 
-### Item templates for WinUI 3
+## Item templates for WinUI 3
 
 The following item templates are available for use in a WinUI project. To access these WinUI item templates, right-click the project node in **Solution Explorer**, select **Add** -> **New item**, and click **WinUI** in the **Add New Item** dialog.
 
