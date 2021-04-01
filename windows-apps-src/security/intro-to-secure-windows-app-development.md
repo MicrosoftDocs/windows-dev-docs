@@ -334,7 +334,17 @@ private PasswordCredential GetCredentialFromLocker()
     PasswordCredential credential = null;
 
     var vault = new PasswordVault();
-    var credentialList = vault.FindAllByResource(resourceName);
+
+    IReadOnlyList<PasswordCredential> credentialList = null;
+
+    try
+    {
+        credentialList = vault.FindAllByResource("bunq");
+    }
+    catch(Exception ex)
+    {
+        return null;
+    }
 
     if (credentialList.Count == 1)
     {
