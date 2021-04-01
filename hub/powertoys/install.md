@@ -8,6 +8,9 @@ ms.localizationpriority: medium
 
 # Install PowerToys
 
+> [!WARNING]
+> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, will be removed in v0.37.
+
 We recommend installing PowerToys using the Windows executable button linked below, but alternative install methods are also listed if you prefer using a package manager.
 
 ## Install with Windows executable file
