@@ -341,7 +341,7 @@ private PasswordCredential GetCredentialFromLocker()
     {
         credentialList = vault.FindAllByResource("bunq");
     }
-    catch(Exception ex)
+    catch(Exception)
     {
         return null;
     }
