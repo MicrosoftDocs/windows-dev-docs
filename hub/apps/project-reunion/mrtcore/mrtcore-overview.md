@@ -2,7 +2,7 @@
 description: Overview of MRT Core components, and how they work to load application resources (Project Reunion)
 title: Manage resources MRT Core (Project Reunion)
 ms.topic: article
-ms.date: 03/09/2021
+ms.date: 03/31/2021
 keywords: MRT, MRTCore, pri, makepri, resources, resource loading
 ms.author: hickeys
 author: hickeys
@@ -23,7 +23,13 @@ A PRI file contains actual string resources. Embedded binary and file path resou
 
 PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
 
-## Access app resources
+> [!NOTE]
+> Before you can use MRT Core to retrieve strings and images in a WinUI 3 project that uses C#/.NET 5, you must ensure that these resources are configured so that they can be indexed in the resources.pri file. Otherwise, these resources cannot be retrieved by MRT Core.
+>
+> * For a string resources file (.resw), make sure the **Build Action** property for the file is set to **PRIResource**.
+> * For an image file, make sure the **Build Action** property for the file is set to **Content**.
+
+## Access app resources with MRT Core
 
 MRT Core provides several different ways to access your app resources.
 
@@ -44,15 +50,6 @@ The **ResourceManager** not only supports access to an app's string resources, i
 ### Qualify resource selection with ResourceContext
 
 Resource candidates are chosen based on a particular [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext), which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. Whenever you retrieve a resource candidate, you should pass in a **ResourceContext** instance to obtain the most appropriate value for a given view.
-
-### Load images
-
-If you want to use MRT Core to retrieve images that you added to your project, you must configure the image to be built as content. If you do not do this, the image will not be indexed in the resources.pri file and cannot be retrieved by MRT Core.
-
-To configure an image to be built as content:
-
-* In a C#/.NET 5 project, set the **Build Action** property for the image to **Content**.
-* In a C++/WinRT project, set the **Content** property for the image to **True**.
 
 ## Sample
 

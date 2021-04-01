@@ -33,7 +33,7 @@ Uniquely identifies elements that are created and referenced as resources, and w
 | Term | Description |
 |------|-------------|
 | object | Any object that is shareable. See [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). |
-| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. | 
+| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. |
 
 ##  XamlName grammar
 

@@ -184,7 +184,7 @@ Here's a brief survey of some of the files in **Simple3DGameDX** that you'll fin
 |VertexShader.hlsl and VertexShaderFlat.hlsl|Shaders|Contains the high-level shader language (HLSL) code for basic vertex shaders.|
 |PixelShader.hlsl and PixelShaderFlat.hlsl|Shaders|Contains the high-level shader language (HLSL) code for basic pixel shaders.|
 |ConstantBuffers.hlsli|Shaders|Contains data structure definitions for constant buffers and shader structures used to pass model-view-projection (MVP) matrices and per-vertex data to the vertex shader.|
-|pch.h/.cpp|N/A|Contains common C++/WinRT, Windows, and DirectX includes.| 
+|pch.h/.cpp|N/A|Contains common C++/WinRT, Windows, and DirectX includes.|
 
 ### Next steps
 
