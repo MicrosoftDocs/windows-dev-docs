@@ -1,7 +1,7 @@
 ﻿---
 description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
 title: Call Windows Runtime APIs in desktop apps
-ms.date: 01/28/2021
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
@@ -22,9 +22,9 @@ Some Windows Runtime APIs are supported only in desktop apps that have [package 
 
 There are several options for .NET projects:
 
-* Starting in .NET 5 Preview 8, you can add a Target Framework Moniker (TFM) to your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
+* Starting in .NET 5, you can add a Target Framework Moniker (TFM) to your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
 * For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
-* If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions of .NET, you can configure the project file to use both options.
+* If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
 ### .NET 5: Use the Target Framework Moniker option
 
@@ -58,7 +58,7 @@ This option is only supported in projects that use .NET 5 (or a later release) a
 
 ### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
 
-Use this option if your app uses .NET Core 3.x, .NET 5 Preview 7 (or earlier), or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
+Use this option if your app uses .NET Core 3.x or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
 
 1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -80,7 +80,7 @@ Use this option if your app uses .NET Core 3.x, .NET 5 Preview 7 (or earlier), o
 
 ### Configure projects that multi-target different versions of .NET
 
-If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
+If your project multi-targets .NET 5 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
 
@@ -96,14 +96,14 @@ If your project multi-targets .NET 5 Preview 8 (or later) and earlier versions (
 
 2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers for all the versions of .NET you want to target, separated by semi-colons. 
 
-    * For .NET 5 Preview 8 or later, use one of the following Target Framework Monikers:
+    * For .NET 5 or later, use one of the following Target Framework Monikers:
         * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
         * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
         * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
     * For .NET Framework, use **net46**.
 
-    The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 Preview 8 (for Windows 10, version 2004).
+    The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 (for Windows 10, version 2004).
 
     ```csharp
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>

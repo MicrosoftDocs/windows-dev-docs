@@ -26,8 +26,8 @@ PRI files contain only data, so they don't use the portable executable (PE) form
 > [!NOTE]
 > Before you can use MRT Core to retrieve strings and images in a WinUI 3 project that uses C#/.NET 5, you must ensure that these resources are configured so that they can be indexed in the resources.pri file. Otherwise, these resources cannot be retrieved by MRT Core.
 >
-> * Strings: If you add an existing resources file (.resw) to your project, make sure the **Build Action** property for the file is set to **PRIResource**. This property is set automatically if you add a new resources file (.resw) to your project.
-> * Images: Make sure the **Build Action** property for image files are set to **Content**.
+> * Strings: Make sure the **Build Action** property for resources files (.resw) is set to **PRIResource**. This property is set automatically if you add a new **Resources File (.resw)** item to your project.
+> * Images: Make sure the **Build Action** property for image files are set to **Content**. This property is set automatically if you add an existing image to the **Assets** folder in your project.
 
 ## Access app resources with MRT Core
 

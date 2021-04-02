@@ -61,11 +61,11 @@ For an in-depth comparison of these platforms along with additional resources fo
 
 Looking forward, we are evolving the Windows app development platforms with the Windows UI Library (WinUI) and Project Reunion.
 
-* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
+* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3, WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
 
     For more information, see [Windows UI Library (WinUI)](../winui/index.md).
 
-* **Project Reunion** (currently in preview) is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
+* **Project Reunion** is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
 
     For more information, see [Project Reunion](../project-reunion/index.md).
 

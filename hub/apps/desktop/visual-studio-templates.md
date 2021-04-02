@@ -18,14 +18,11 @@ Visual Studio 2019 provides many project and item templates that help you build 
 
 ## WinUI templates
 
-The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/winui3/index.md) (currently available as a developer preview) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
+The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/winui3/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
-The current developer preview of WinUI 3 is available as part of the [Project Reunion 0.5 Preview](../project-reunion/index.md). This preview includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
+WinUI 3 is available as part of [Project Reunion](../project-reunion/index.md). It includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
-For instructions to install the Project Reunion 0.5 Preview VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
-
-> [!IMPORTANT]
-> WinUI 3, including the related Visual Studio templates, are currently available as a developer preview that is intended for early evaluation and to gather feedback from the developer community. It should NOT be used for production apps at this time.
+For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 

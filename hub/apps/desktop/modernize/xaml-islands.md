@@ -24,7 +24,7 @@ Fundamentally, XAML Islands are created by using the *UWP XAML hosting API*. Thi
 The way you use XAML Islands depends on your application type and the types of WinRT XAML controls you want to host.
 
 > [!NOTE]
-> If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
+> If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there.
 
 ## Requirements
 

@@ -108,7 +108,7 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 
 ## Use the Windows UI Library with Windows apps
 
-To supplement the main Windows app platforms, you can also use the [Windows UI Library (WinUI)](../winui/index.md) in your apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
+To supplement the main Windows app platforms, you can also use the [Windows UI Library (WinUI)](../winui/index.md) in your apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3, WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
 
 You can use WinUI in the following ways in Windows apps.
 
@@ -116,11 +116,8 @@ You can use WinUI in the following ways in Windows apps.
   * UWP apps can use WinUI 2.x controls in place of WinRT controls provided by the Windows SDK. These releases of WinUI include both all-new controls and updated versions of existing controls from the Windows SDK.
   * You can update existing WPF, Windows Forms, and C++/Win32 apps to host WinUI 2.x controls by using [XAML Islands](modernize/xaml-islands.md).
 
-* [WinUI 3 (preview)](../winui/winui3/index.md):
+* [WinUI 3](../winui/winui3/index.md):
   * Starting with WinUI 3, you can create [.NET and C++/Win32 apps](../winui/winui3/get-started-winui3-for-desktop.md) and [UWP apps](../winui/winui3/get-started-winui3-for-uwp.md) that use an entirely WinUI-based UI. This release includes Visual Studio project templates that provide everything you need to create these apps.
-
-> [!NOTE]
-> WinUI 3 is still in preview, and should not be used for production apps.
 
 ## Other app platforms
 
