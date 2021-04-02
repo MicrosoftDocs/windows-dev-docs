@@ -4,7 +4,7 @@ title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -97,6 +97,72 @@ See these articles for info and examples specific to each date and time control.
 - [Calendar date picker](calendar-date-picker.md)
 - [Date picker](date-picker.md)
 - [Time Picker](time-picker.md)
+
+### Use a date picker and time picker together
+
+This example shows how to use a `DatePicker` and `TimePicker` together to let a user select their arrival date and time. You handle the `SelectedDateChanged` and `SelectedTimeChanged` events to update a single [DateTime](/uwp/api/windows.foundation.datetime) instance named `arrivalDateTime`. The user can also clear the date and time pickers after they have been set.
+
+:::image type="content" source="images/date-time/date-and-time-picker.png" alt-text="A date picker, time picker, button, and text label.":::
+
+```xaml
+<StackPanel>
+    <DatePicker x:Name="arrivalDatePicker" Header="Arrival date"
+                DayFormat="{}{day.integer} ({dayofweek.abbreviated})"
+                SelectedDateChanged="ArrivalDatePicker_SelectedDateChanged"/>
+    <StackPanel Orientation="Horizontal">
+        <TimePicker x:Name="arrivalTimePicker" Header="Arrival time"
+                MinuteIncrement="15"
+                SelectedTimeChanged="ArrivalTimePicker_SelectedTimeChanged"/>
+        <Button Content="Clear" Click="ClearDateButton_Click"
+                VerticalAlignment="Bottom" Height="30" Width="54"/>
+    </StackPanel>
+    <TextBlock x:Name="arrivalText" Margin="0,12"/>
+</StackPanel>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    DateTime arrivalDateTime;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set minimum to the current year and maximum to five years from now.
+        arrivalDatePicker.MinYear = DateTimeOffset.Now;
+        arrivalDatePicker.MaxYear = new DateTimeOffset(DateTime.Now.AddYears(5));
+    }
+
+    private void ArrivalTimePicker_SelectedTimeChanged(TimePicker sender, TimePickerSelectedValueChangedEventArgs args)
+    {
+        if (arrivalTimePicker.SelectedTime != null)
+        {
+            arrivalDateTime = new DateTime(arrivalDateTime.Year, arrivalDateTime.Month, arrivalDateTime.Day,
+                                           args.NewTime.Value.Hours, args.NewTime.Value.Minutes, args.NewTime.Value.Seconds);
+        }
+        arrivalText.Text = arrivalDateTime.ToString();
+    }
+
+    private void ArrivalDatePicker_SelectedDateChanged(DatePicker sender, DatePickerSelectedValueChangedEventArgs args)
+    {
+        if (arrivalDatePicker.SelectedDate != null)
+        {
+            arrivalDateTime = new DateTime(args.NewDate.Value.Year, args.NewDate.Value.Month, args.NewDate.Value.Day,
+                                       arrivalDateTime.Hour, arrivalDateTime.Minute, arrivalDateTime.Second);
+        }
+        arrivalText.Text = arrivalDateTime.ToString();
+    }
+
+    private void ClearDateButton_Click(object sender, RoutedEventArgs e)
+    {
+        arrivalDateTime = new DateTime();
+        arrivalDatePicker.SelectedDate = null;
+        arrivalTimePicker.SelectedTime = null;
+        arrivalText.Text = string.Empty;
+    }
+}
+```
 
 ### Globalization
 
