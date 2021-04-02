@@ -32,7 +32,7 @@ This option is only supported in projects that use .NET 5 (or a later release) a
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -50,7 +50,7 @@ This option is only supported in projects that use .NET 5 (or a later release) a
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 
-    ```csharp
+    ```xml
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     ```
 
@@ -84,7 +84,7 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -105,13 +105,13 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
     The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 (for Windows 10, version 2004).
 
-    ```csharp
+    ```xml
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
 3. After the **PropertyGroup** element, add a **PackageReference** element that includes a conditional statement that installs the `Microsoft.Windows.SDK.Contracts` NuGet package for any versions of .NET Core 3.x or .NET Framework that your app targets. The **PackageReference** element must be a child of an **ItemGroup** element. The following example demonstrates how to do this for .NET Core 3.1.
 
-    ```csharp
+    ```xml
     <ItemGroup>
       <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
                         Include="Microsoft.Windows.SDK.Contracts"
@@ -121,7 +121,7 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
     When you're done, your project file should look similar to this.
 
-    ```csharp
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
