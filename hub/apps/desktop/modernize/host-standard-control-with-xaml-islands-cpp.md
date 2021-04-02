@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Host a standard WinRT XAML control in a C++ Win32 app
 
-This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard WinRT XAML control (that is, a control provied by the Windows SDK) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
+This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard WinRT XAML control (that is, a control provided by the Windows SDK) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
 
 > [!NOTE]
 > The scenario demonstrated in this article doesn't support directly editing XAML markup for WinRT XAML controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted controls via code. For instructions that enable you to directly edit XAML markup when hosting WinRT XAML controls, see [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md).
