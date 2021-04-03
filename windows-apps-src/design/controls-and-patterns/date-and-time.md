@@ -131,7 +131,7 @@ public sealed partial class MainPage : Page
 
         // Set minimum to the current year and maximum to five years from now.
         arrivalDatePicker.MinYear = DateTimeOffset.Now;
-        arrivalDatePicker.MaxYear = new DateTimeOffset(DateTime.Now.AddYears(5));
+        arrivalDatePicker.MaxYear = DateTimeOffset.Now.AddYears(5);
     }
 
     private void ArrivalTimePicker_SelectedTimeChanged(TimePicker sender, TimePickerSelectedValueChangedEventArgs args)
@@ -148,10 +148,27 @@ public sealed partial class MainPage : Page
     {
         if (arrivalDatePicker.SelectedDate != null)
         {
-            arrivalDateTime = new DateTime(args.NewDate.Value.Year, args.NewDate.Value.Month, args.NewDate.Value.Day,
-                                       arrivalDateTime.Hour, arrivalDateTime.Minute, arrivalDateTime.Second);
+            if (VerifyDateIsFuture((DateTimeOffset)arrivalDatePicker.SelectedDate) == true)
+            {
+                arrivalDateTime = new DateTime(args.NewDate.Value.Year, args.NewDate.Value.Month, args.NewDate.Value.Day,
+                                               arrivalDateTime.Hour, arrivalDateTime.Minute, arrivalDateTime.Second);
+                arrivalText.Text = arrivalDateTime.ToString();
+            }
+            else
+            {
+                arrivalDatePicker.SelectedDate = null;
+                arrivalText.Text = "Arrival date must be later than today.";
+            }
         }
-        arrivalText.Text = arrivalDateTime.ToString();
+    }
+
+    private bool VerifyDateIsFuture(DateTimeOffset date)
+    {
+        if (date > DateTimeOffset.Now)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void ClearDateButton_Click(object sender, RoutedEventArgs e)
