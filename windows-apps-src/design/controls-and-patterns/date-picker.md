@@ -148,7 +148,7 @@ public MainPage()
 
     // Set minimum to the current year and maximum to five years from now.
     arrivalDatePicker.MinYear = DateTimeOffset.Now;
-    arrivalDatePicker.MaxYear = new DateTimeOffset(DateTime.Now.AddYears(5));
+    arrivalDatePicker.MaxYear = DateTimeOffset.Now.AddYears(5);
 }
 ```
 
