@@ -64,6 +64,14 @@ The additive **Canvas** model starts with a blank layout and supports adding zon
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 
+### Quickly changing between layouts
+
+With a custom layout, this layout can be configured to a user-defined hotkey to quickly apply it to the desired desktop. The hotkey can be set by opening the custom layout's edit menu. Once set, the custom layout can be applied by pressing the `Win ⊞ + Ctrl + Alt + [hotkey]` binding. The layout can also be applied by pressing the hotkey when dragging a window.
+
+In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the `Win ⊞ + Ctrl + Alt + [hotkey]` binding to apply the first custom layout and bind a window to it. Finally, we apply the second custom layout while dragging a window and bind the window to it.
+
+![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
+
 ## Snapping a window to two or more zones
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.  
