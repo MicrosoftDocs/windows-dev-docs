@@ -637,7 +637,7 @@ private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
     }
 }
 
-private bool TryGoBack();
+private bool TryGoBack()
 {
     if (!ContentFrame.CanGoBack)
         return false;

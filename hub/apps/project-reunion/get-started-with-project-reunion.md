@@ -84,7 +84,7 @@ To confirm that your new project uses Project Reunion, expand the **Dependencies
 
 ## Use Project Reunion in an existing project
 
-If you have an existing project in which you want to use Project Reunion, you can install the Project Reunion 0.5 NuGet package in your project. This scenario has [some limitations](#limitations-for-using-project-reunion-in-existing-projects).
+If you have an existing project in which you want to use Project Reunion, you can install the Project Reunion 0.5 NuGet package in your project. This scenario has [some limitations](index.md#using-the-project-reunion-nuget-package-in-existing-projects).
 
 1. Open an existing desktop project (either C#/.NET 5 or C++/WinRT) or UWP project in Visual Studio 2019.
 
@@ -108,15 +108,6 @@ If you have an existing project in which you want to use Project Reunion, you ca
 
     - [Manage resources MRT Core](mrtcore/mrtcore-overview.md)
     - [Render text with DWriteCore](dwritecore.md)
-
-### Limitations for using Project Reunion in existing projects
-
-If you want to use Project Reunion 0.5 in existing projects, be aware of the following limitations:
-
-- If you install the Project Reunion 0.5 NuGet package to an existing project, you can only use non-WinUI 3 components that are part of Project Reunion in your project. To use WinUI 3, you must create a new project using one of the WinUI 3 project templates as described in the previous section.
-- The Project Reunion 0.5 NuGet package (named **Microsoft.ProjectReunion**) contains other sub-packages (including **Microsoft.ProjectReunion.Foundation** and **Microsoft.ProjectReunion.WinUI**) that contain the implementations for components including WinUI, MRT Core, and DWriteCore. In the current release, you cannot install these sub-packages individually to reference only certain components in your project. You must install the **Microsoft.ProjectReunion** package, which includes all of the components.  
-- Installing the Project Reunion 0.5 NuGet package is currently not supported in WPF projects.
-- The Project Reunion 0.5 NuGet package is supported for use with desktop (C#/.NET 5 and C++/WinRT) projects in production environments. It is available as a developer preview for UWP projects, and is not supported for use with UWP projects in production environments.
 
 ## Samples
 

@@ -133,36 +133,33 @@ Now, make some changes to your project:
     Add this section:
 
     ```xml
+      <ItemGroup>
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
+          <IncludeAssets>build</IncludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    ```
+    Then remove the following lines:
+    ```xml
+      <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
+    ```
+    and
+
+    ```xml
+      <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
+      <Import Project="$(Microsoft_WinUI_AppX_targets)" />
+    ```
+    and this item group:
+    ```xml
     <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
-        <IncludeAssets>build</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-    Then remove the following lines (if they exist):
-    ```xml
-    <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
-    ```
-
-    ```xml
-    <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
-    <Import Project="$(Microsoft_WinUI_AppX_targets)" />
-    ```
-
-    And remove this item group:
-
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-
-5. Delete the existing `Microsoft.WinUI.AppX.targets` file under the {YourProject}(package)/build/ folder of your project.
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      ```
 
 ## Major changes introduced in this release
 

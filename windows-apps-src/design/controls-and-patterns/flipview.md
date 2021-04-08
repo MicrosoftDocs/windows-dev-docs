@@ -4,7 +4,7 @@ title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/07/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -124,7 +124,8 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Note**&nbsp;&nbsp;You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+> [!CAUTION]
+> You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
 
 ### Specify the look of the items
 
@@ -140,7 +141,7 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
             <Grid>
                 <Image Width="480" Height="270" Stretch="UniformToFill"
                        Source="{Binding Image}"/>
-                <Border Background="#A5000000" Height="80" VerticalAlignment="Bottom">
+                <Border Background="#75000000" Height="80" VerticalAlignment="Bottom">
                     <TextBlock Text="{Binding Name}" 
                                FontFamily="Segoe UI" FontSize="26.667" 
                                Foreground="#CCFFFFFF" Padding="15,20"/>
@@ -153,7 +154,7 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
 
 Here's what the layout defined by the data template looks like.
 
-Flip view data template.
+![Example of a flip view with a data template](images/flip-view-template.png)
 
 ### Set the orientation of the flip view
 
