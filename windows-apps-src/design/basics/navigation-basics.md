@@ -148,7 +148,7 @@ You don't have to choose one structure or the other; many well-design apps use b
 
 If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-- At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
+- At level 1, the peer-to-peer navigation element should provide access to pages A, B, and C.
 - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
     :::column-end:::
 :::row-end:::
