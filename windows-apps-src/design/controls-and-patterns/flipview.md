@@ -125,7 +125,7 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.
 ```
 
 > [!CAUTION]
-You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+> You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
 
 ### Specify the look of the items
 
