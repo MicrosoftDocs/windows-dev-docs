@@ -58,20 +58,21 @@ The following Run options are available in the PowerToys settings menu.
   | Ctrl+C | (Only applicable to folders and files) Copy path location |
   | Tab | Navigate through the search result and context menu buttons |
 
-## Action key
+## Action keys
 
 These default activation phrases will force PowerToys run into only targeted plugins.
 
   | **Action key** | **Action** |
   | --- | --- |
-  | `=` | Calculator only. Example `=2+2` |
-  | `?` | File searching only. Example `?road` to find `roadmap.txt` |
+  | `=` | Calculator only. Example `=2+2`. |
+  | `?` | File searching only. Example `?road` to find `roadmap.txt`. |
   | `.` | Installed programs only. Example `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup. |
-  | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
-  | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook |
-  | `>` | Shell command only. Example `>ping localhost` to do a ping query |
-  | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key |
-  | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped |
+  | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. |
+  | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook. |
+  | `>` | Shell command only. Example `>ping localhost` to do a ping query. |
+  | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key. |
+  | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped. |
+  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in their paths. This plugin is off by default.
 
 ## System commands
 
@@ -89,11 +90,11 @@ PowerToys Run enables a set of system level actions that can be executed.
 
 ## Plugin manager
 
-With PowerToys v0.33 and on, the PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
+The PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various plugins currently available. By selecting and expanding the sections, you can customize the activation phrases used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available. 
 
 ## Program parameters
 
-With PowerToys v0.33 and later, the PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
+The PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 For example, when launching Visual Studio Code, you can specify the folder to be opened with:
 
@@ -106,6 +107,16 @@ Visual Studio Code also supports a set of [command line parameters](https://code
 If the program plugin's option "Include in global result" is not selected, be sure to include the activation phrase, `.` by default, to invoke the plugin's behavior:
 
 `.Visual Studio Code -- C:\myFolder`
+
+## Monitor Positioning
+
+If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options include opening on:
+
+- Primary monitor
+- Monitor with mouse cursor
+- Monitor with focused window
+
+![PowerToys Run Monitor Selection](../images/pt-run-monitor.png)
 
 ## Windows Search settings
 
