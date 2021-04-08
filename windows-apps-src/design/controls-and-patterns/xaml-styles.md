@@ -196,9 +196,54 @@ In other cases, changing a single control on one page only to look a certain way
 
 This would only effect that one “Special CheckBox” on the page where that control existed.
 
-## Modify the default system styles
+### Custom controls
+When you are building your own custom controls that may be visually and/or functionally aligned with our built-in controls, consider using implicit styling and Lightweight styling resources to define your custom content.
 
-You should use the styles that come from the Windows Runtime default XAML resources when you can. When you have to define your own styles, try to base your styles on the default ones when possible (using based-on styles as explained earlier, or start by editing a copy of the original default style).
+#### Using control resources directly
+For example, if you are writing a control that looks like a Button, then have your control either reference the button resources directly:
+
+```XAML
+<Style TargetType="local:MyCustomControl">
+  <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+  <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+</Style>
+```
+
+#### Aliasing control resources to new names
+Alternatively, if you prefer to make your own resources, you should alias those custom names to our default Lightweight styling resources.
+
+For example, your custom control's style might have special resource definitions:
+
+```XAML
+<Style TargetType="local:MyCustomControl">
+  <Setter Property="Background" Value="{ThemeResource MyCustomControlBackground}" />
+  <Setter Property="BorderBrush" Value="{ThemeResource MyCustomControlBorderBrush}"/>
+</Style>
+```
+
+But in your Resource Dictionary or main definition, you would hook up the Lightweight styling resources to those custom ones:
+
+```XAML
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+    </ResourceDictionary>        
+    <ResourceDictionary x:Key="Light">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="HighContrast">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+```
+
+> Note: It is required that you use a ThemeDictionary that is duplicated three times in order to handle the three different theme changes properly.
+
+## Avoid restyling controls
+
+The best way to stay current with our latest visual styles is to avoid custom styles and templates (also known as re-templating).
+
+Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles by setting `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control (e.g. `DefaultTextBoxStyle`).
 
 ## The template property
 
