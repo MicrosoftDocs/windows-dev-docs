@@ -141,7 +141,7 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
             <Grid>
                 <Image Width="480" Height="270" Stretch="UniformToFill"
                        Source="{Binding Image}"/>
-                <Border Background="#A5000000" Height="80" VerticalAlignment="Bottom">
+                <Border Background="#75000000" Height="80" VerticalAlignment="Bottom">
                     <TextBlock Text="{Binding Name}" 
                                FontFamily="Segoe UI" FontSize="26.667" 
                                Foreground="#CCFFFFFF" Padding="15,20"/>
