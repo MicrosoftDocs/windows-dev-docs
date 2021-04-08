@@ -69,7 +69,7 @@ Next, add a UWP app project to your solution and revise the default `App` class 
 > Although this step isn't required for hosting a first-party WinRT XAML control, your app needs the `XamlApplication` object to support the full range of XAML Island scenarios, including hosting custom WinRT XAML controls. Therefore, we recommend that you always define a `XamlApplication` object in any solution in which you are using XAML Islands.
 
 1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
-2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903 (Build 18362)** or a later release.
+2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903 (Build 18362)** or a later release. Also, make sure the UWP project is not in a subfolder of the WPF app, otherwise the WPF app will later try to build the UWP XAML markup as if it were WPF.
 3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (latest stable version).
 4. Open the **App.xaml** file and replace the contents of this file with the following XAML. Replace `MyUWPApp` with the namespace of your UWP app project.
 
