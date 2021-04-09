@@ -666,10 +666,6 @@ The following table of glyphs displays unicode points prefixed from E7-  to E9-.
   <td>E7AD</td>
   <td>Rotate</td>
  </tr>
-<tr><td><img src="images/segoe-mdl/E7B3.png" width="32" height="32" alt="RedEye" /></td>
-  <td>E7B3</td>
-  <td>RedEye</td>
- </tr>
 <tr><td><img src="images/segoe-mdl/E7B5.png" width="32" height="32" alt="SetlockScreen" /></td>
   <td>E7B5</td>
   <td>SetlockScreen</td>
