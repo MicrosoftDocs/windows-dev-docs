@@ -53,7 +53,7 @@ DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
-    new PropertyMetadata(default(string)));
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
 ```
 
 These two steps are all that's required to implement a dependency property, but for this example, we'll add an optional handler for the **OnLabelChanged** event. This event is raised by the system whenever the property value is updated. In this case we check to see if the new label text is an empty string or not and update a class variable accordingly.
@@ -63,17 +63,15 @@ public bool HasLabelValue { get; set; }
 
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 {
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
     {
-        BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
-        String s = e.NewValue as String; //null checks omitted
-        if (s == String.Empty)
-        {
-            labelControl.HasLabelValue = false;
-        }
-        else
-        {
-            labelControl.HasLabelValue = true;
-        }
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
     }
 }
 ```
