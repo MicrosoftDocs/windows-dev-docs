@@ -63,7 +63,7 @@ In the following example, we start with the initial **WinUI in Desktop C#/.NET 5
 1. First we add the following using directives:
 
     - [System.Runtime.InteropServices](/dotnet/api/system.runtime.interopservices): Provides support for COM interop and platform invoke services. In this example, required for the PInvoke functionality.
-    - [WinRT](/uwp/cpp-ref-for-winrt/winrt): Provides custom data types belonging to C++/WinRT. In this example, required for the IWindowNative COM interface.
+    - [WinRT](/uwp/cpp-ref-for-winrt/winrt): Provides custom data types belonging to C#/WinRT. In this example, required for the IWindowNative COM interface.
 
     ```csharp
     using System.Runtime.InteropServices;
