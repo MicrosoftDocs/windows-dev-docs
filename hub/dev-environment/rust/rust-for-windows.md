@@ -39,7 +39,7 @@ The Rust for Windows repo also has [some simple examples](https://github.com/mic
 
 ## Rust documentation for the Windows API
 
-Rust for Windows benefits from the polished toolchain that Rust developers enjoy. But if having the entire Windows API at your fingertips seems a little daunting, there's also [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/).
+Rust for Windows benefits from the polished toolchain that Rust developers enjoy. But if having the entire Windows API at your fingertips seems a little daunting, there's also [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/).
 
 This resource essentially documents how the Windows APIs and types are projected into idiomatic Rust. Use it to browse or search for the APIs you need to know about, and that you need to know how to call.
 
