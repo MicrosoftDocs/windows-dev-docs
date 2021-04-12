@@ -118,7 +118,7 @@ appWindow.Closed += delegate
 ```
 
 > [!TIP]
-> You should the amount of code in your `Closed` event handler the minimum amount possible to avoid unexpected issues.
+> You should keep the amount of code in your `Closed` event handler to the minimum amount possible to avoid unexpected issues.
 
 ## Track instances of AppWindow
 
