@@ -761,7 +761,7 @@
           href: ../cpp-and-winrt-apis/strings.md
         - name: Standard C++ data types
           href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-        - name: Boxing and unboxing scalar values to IInspectable
+        - name: Boxing and unboxing values to IInspectable
           href: ../cpp-and-winrt-apis/boxing.md
         - name: Consume APIs
           href: ../cpp-and-winrt-apis/consume-apis.md
