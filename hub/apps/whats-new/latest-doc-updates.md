@@ -10,7 +10,7 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of Apeil 9th, 2021.
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of April 9th, 2021.
 
 Note: For a specific list of APIs added as part of Windows 10 build 19041 (also known as 2004), please see [this list](/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
@@ -18,13 +18,19 @@ For the latest Windows Developer Documentation news, or to reach out to us with 
 
 We have continued to search for and remove usage of insensitive language across our entire documentation set.
 
-For information on contributing to Microsoft docs, please see the [contributor guide](/contribute/).
+Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome. For information on contributing to Microsoft docs, please see the [contributor guide](/contribute/).
 
 Highlights this month include:
 
 ### New Content
 
+
+* [Project Reunion](https://docs.microsoft.com/windows/apps/project-reunion/)
+* [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/)
 * [Developing with Rust on Windows](https://docs.microsoft.com/windows/dev-environment/rust/)
+* [Redirect your existing desktop app to your packaged app](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#redirect)
+
+
 
 ### Related content 
 
@@ -40,8 +46,9 @@ Highlights this month include:
 
 The following reference topics have seen significant updates in the past month:
 
-<h2>Updated in the last month ending 2021-04-09</h2>
+
 ## Windows conceptual content
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">Get started with C++/WinRT</a></li>
@@ -62,7 +69,9 @@ The following reference topics have seen significant updates in the past month:
 <li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-remoteinput-api">Device Portal remote input API reference</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-sshpins-api">Device Portal SSH pins API reference</a></li>
 </ul>
+
 ## Win32 conceptual content
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/desktop/Controls/property-sheets">About Property Sheets</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/Controls/pss-propsheetheader">PROPSHEETHEADER structure (Prsht.h)</a></li>
@@ -74,7 +83,9 @@ The following reference topics have seen significant updates in the past month:
 <li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-animated-gif">WIC Animated Gif Sample</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-d2d-viewer">WIC image viewer using Direct2D sample</a></li>
 </ul>
+
 ## Win32 API reference
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazrole">IAzRole (azroles.h) </a></li>
 <li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazscope">IAzScope (azroles.h) </a></li>
@@ -184,8 +195,11 @@ The following reference topics have seen significant updates in the past month:
 <li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll2">IEnroll2 (xenroll.h) </a></li>
 <li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll4">IEnroll4 (xenroll.h) </a></li>
 </ul>
+
 ## WinRT API reference
+
 <ul>
+
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid.itemwidth">Windows.UI.Xaml.Controls.ItemsWrapGrid.ItemWidth</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemheight">Windows.UI.Xaml.Controls.WrapGrid.ItemHeight</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemwidth">Windows.UI.Xaml.Controls.WrapGrid.ItemWidth</a></li>
