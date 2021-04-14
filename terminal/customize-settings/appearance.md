@@ -149,32 +149,6 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 
 ___
 
-## Unfocused appearance settings ([Preview](https://aka.ms/terminal-preview))
-
-An object you can add to a profile that applies settings to the profile when it is unfocused. This setting only accepts appearance settings.
-
-**Property name:** `unfocusedAppearance`
-
-**Necessity:** Optional
-
-**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `selectionBackground`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
-
-**Example:**
-```json
-// Sets the profile's background image opacity to 0.3 when it is unfocused
-"unfocusedAppearance": 
-{
-    "backgroundImageOpacity": 0.3
-},
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-<br />
-
-___
-
 ## Disable pane animations
 
 This disables visual animations across the application when set to `true`.

@@ -347,6 +347,34 @@ This sets the cursor color of the profile. This will override the `cursorColor` 
 
 ___
 
+## Unfocused appearance settings
+
+### Unfocused appearance settings ([Preview](https://aka.ms/terminal-preview))
+
+An object you can add to a profile that applies settings to the profile when it is unfocused. This setting only accepts appearance settings.
+
+**Property name:** `unfocusedAppearance`
+
+**Necessity:** Optional
+
+**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `selectionBackground`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
+
+**Example:**
+```json
+// Sets the profile's background image opacity to 0.3 when it is unfocused
+"unfocusedAppearance": 
+{
+    "backgroundImageOpacity": 0.3
+},
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
 ## Pixel shader effects
 
 This setting allows a user to specify the path to a custom pixel shader to use with the terminal content. This is an experimental feature and its continued existence is not guaranteed. For more details on authoring custom pixel shaders for the terminal, see [this documentation](https://github.com/microsoft/terminal/blob/main/samples/PixelShaders/README.md).
