@@ -3,7 +3,7 @@ title: Windows Terminal Panes
 description: Learn how to split panes in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ---
 
@@ -104,7 +104,7 @@ This can be done by using the `togglePaneZoom` command.
 { "command": "togglePaneZoom" }
 ```
 
-### Marking a pane as read-only ([Preview](https://aka.ms/terminal-preview))
+### Marking a pane as read-only
 
 You can mark a pane as read-only, which will prevent input from going into the text buffer. If you attempt to close or input text into a read-only pane, the terminal will display a popup warning instead.
 
@@ -113,8 +113,5 @@ You can toggle read-only mode on a pane with the `toggleReadOnlyMode` command.
 ```
 { "command": "toggleReadOnlyMode" },
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 [!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]

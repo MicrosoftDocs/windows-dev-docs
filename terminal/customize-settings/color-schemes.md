@@ -3,7 +3,7 @@ title: Windows Terminal Color Schemes
 description: Learn how to create color schemes for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -11,9 +11,6 @@ ms.localizationpriority: high
 # Color schemes in Windows Terminal
 
 Windows Terminal lets you define your own color schemes, either by using the built-in preset schemes, or by creating your own scheme from scratch. To change schemes, you'll need to edit the settings.json file in an editor such as [Visual Studio Code](https://code.visualstudio.com/).
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Switching to a different color scheme
 

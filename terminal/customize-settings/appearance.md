@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -11,9 +11,6 @@ ms.localizationpriority: high
 # Appearance settings in Windows Terminal
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Theme
 
@@ -147,6 +144,32 @@ This sets the width of the tabs. `"equal"` makes each tab the same width. `"titl
 
 :::column-end:::
 :::row-end:::
+
+<br />
+
+___
+
+## Unfocused appearance settings ([Preview](https://aka.ms/terminal-preview))
+
+An object you can add to a profile that applies settings to the profile when it is unfocused. This setting only accepts appearance settings.
+
+**Property name:** `unfocusedAppearance`
+
+**Necessity:** Optional
+
+**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `selectionBackground`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
+
+**Example:**
+```json
+// Sets the profile's background image opacity to 0.3 when it is unfocused
+"unfocusedAppearance": 
+{
+    "backgroundImageOpacity": 0.3
+},
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

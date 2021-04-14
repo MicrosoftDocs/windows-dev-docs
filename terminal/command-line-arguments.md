@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ---
 
@@ -41,12 +41,15 @@ Below is the full list of supported commands and options for the `wt` command li
 | Command | Parameters | Description |
 | ------- | ---------- | ----------- |
 | `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Creates a new tab. |
-| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `--title`, `--tabColor`, `--size, -s size`, `commandline` | Splits a new pane. |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `--title`, `--tabColor`, `--size, -s size`, `commandline`, `-D` | Splits a new pane. |
 | `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
 | `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Accepts one of `up`, `down`, `left`, `right`. |
 
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
+
+> [!IMPORTANT]
+> The `-D` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Command line argument examples
 
@@ -55,7 +58,7 @@ Commands may vary slightly depending on which command line you're using.
 ### Target a specific window
 
 > [!IMPORTANT]
-> The `--window,-w` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
+> The ability for the `--window,-w` parameter to accept window names is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 Below are examples of how to target specific windows using the `--window,-w` option.
 
@@ -71,6 +74,9 @@ wt -w -1 nt
 
 // Open a new tab in the first-created terminal window with the default profile
 wt -w 1 nt
+
+// Open a new tab in the terminal window named foo with the default profile. If foo does not exist, create a new window named foo.
+wt -w foo nt
 ```
 
 #### [PowerShell](#tab/powershell)
@@ -84,6 +90,9 @@ wt -w -1 nt
 
 // Open a new tab in the first-created terminal window with the default profile
 wt -w 1 nt
+
+// Open a new tab in the terminal window named foo with the default profile. If foo does not exist then, create a new window named foo.
+wt -w foo nt
 ```
 
 #### [Linux](#tab/linux)
@@ -97,6 +106,9 @@ cmd.exe /c "wt.exe" -w -1 nt
 
 // Open a new tab in the first-created terminal window with the default profile
 cmd.exe /c "wt.exe" -w 1 nt
+
+// Open a new tab in the terminal window named foo with the default profile. If foo does not exist then, create a new window named foo.
+cmd.exe /c "wt.exe" -w foo nt
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running.
@@ -310,6 +322,37 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
+### Using application title ([Preview](https://aka.ms/terminal-preview))
+
+To open a new terminal instance allowing applications within it to set the tab title by sending title change messages, use the `--useApplicationTitle` flag. To suppress these messages, use the `--suppressApplicationTitle` flag. If none of these flags are provided, the behavior is inherited from the profile's settings. To open a tab with title `tabname` that will not be overridden by the application, enter:
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```cmd
+wt --title tabname --suppressApplicationTitle
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt --title tabname --suppressApplicationTitle
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" --title tabname --suppressApplicationTitle
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` backslash + semicolon separates commands.
+
+---
+<!-- End tab selectors.  -->
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Tab color
 
 To open a new terminal instance with custom tab colors, use the `--tabColor` argument. This argument overrides the value defined in the profile, but can be overridden as well using the tab color picker. In the following example, a new terminal is created with two tabs of different colors:
@@ -343,6 +386,37 @@ When `--tabColor` is set for a tab, it is associated with the first pane of this
 ```powershell
 wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
 ```
+
+### Color scheme ([Preview](https://aka.ms/terminal-preview))
+
+To open a new terminal instance with a specific color scheme (instead of the `colorScheme` set in the profile), use the `--colorScheme` argument. This argument overrides the value defined in the profile.
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```cmd
+wt --colorScheme Vintage ; split-pane --colorScheme "Tango Light"
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt --colorScheme Vintage ; split-pane --colorScheme "Tango Light"
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" --colorScheme Vintage \; split-pane --colorScheme "Tango Light"
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and `\;` separates commands.
+
+---
+<!-- End tab selectors.  -->
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab focus
 

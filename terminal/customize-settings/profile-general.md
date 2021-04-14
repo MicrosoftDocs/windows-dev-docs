@@ -3,7 +3,7 @@ title: Windows Terminal General Profile Settings
 description: Learn how to customize the general profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -22,12 +22,6 @@ The settings listed below are specific to each unique profile. If you'd like a s
     // PROFILE OBJECTS
 ]
 ```
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-> [!NOTE]
-> To view the `defaults.json` auto-generated settings file, select "Settings" from the Windows Terminal dropdown menu while holding the <kbd>Alt</kbd> key. Changes to this file will be ignored.
 
 ## Name
 

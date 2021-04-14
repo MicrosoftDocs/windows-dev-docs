@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -22,9 +22,6 @@ The settings listed below are specific to each unique profile. If you'd like a s
     // PROFILE OBJECTS
 ]
 ```
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Text
 
