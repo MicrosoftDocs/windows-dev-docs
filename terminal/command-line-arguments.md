@@ -49,7 +49,7 @@ Below is the full list of supported commands and options for the `wt` command li
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
 
 > [!IMPORTANT]
-> The `-D` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> The `-D, --duplicate` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Command line argument examples
 
