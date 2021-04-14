@@ -618,7 +618,7 @@ _This command is not currently bound in the default settings_.
 | `name` | Optional | String | The new name to use for this window. If omitted, this command will revert the window name back to its original value. |
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
 
 ### Open window rename dialog ([Preview](https://aka.ms/terminal-preview))
 
