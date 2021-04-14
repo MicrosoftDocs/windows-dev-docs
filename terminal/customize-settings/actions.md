@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -165,7 +165,7 @@ This opens the search dialog box. More information on search can be found on the
 { "command": "find", "keys": "ctrl+shift+f" }
 ```
 
-### Find next/previous search match ([Preview](https://aka.ms/terminal-preview))
+### Find next/previous search match
 
 This lets you navigate through your search matches.
 
@@ -183,9 +183,6 @@ This lets you navigate through your search matches.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"next"`, `"prev"` | The direction to navigate through search results. |
-
-> [!IMPORTANT]
-> The `"settingsUI"` value for `target` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Open the dropdown
 
@@ -372,6 +369,12 @@ This creates a new tab. Without any arguments, this will open the default profil
 | `tabTitle` | Optional | String | Title of the new tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+| `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
+
+> [!IMPORTANT]
+> The `"colorScheme"` and `"suppressApplicationTitle"` parameters are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 
 ### Open next tab
 
@@ -385,6 +388,15 @@ This opens the tab to the right of the current one.
 { "command": "nextTab", "keys": "ctrl+tab" }
 ```
 
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `tabSwitcherMode` | Optional | `"mru"`, `"inOrder"`, `"disabled"` | Move to the next tab using `"tabSwitcherMode"`. If no mode is provided, use the globally defined one. |
+
+> [!IMPORTANT]
+> The `"tabSwitcherMode"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Open previous tab
 
 This opens the tab to the left of the current one.
@@ -396,6 +408,15 @@ This opens the tab to the left of the current one.
 ```json
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `tabSwitcherMode` | Optional | `"mru"`, `"inOrder"`, `"disabled"` | Move to the previous tab using `"tabSwitcherMode"`. If no mode is provided, use the globally defined one. |
+
+> [!IMPORTANT]
+> The `"tabSwitcherMode"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab search
 
@@ -567,9 +588,84 @@ This creates a new window. Without any arguments, this will open the default pro
 | `tabTitle` | Optional | String | Title of the window tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to true `true` suppresses these messages. If not provided, the behavior is inheritted from profile settings. |
+
+> [!IMPORTANT]
+> The `"suppressApplicationTitle"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Rename window ([Preview](https://aka.ms/terminal-preview))
+
+This command can be used to rename a window to a specific string.
+
+**Command name:** `renameWindow`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+// Rename a window to "Foo"
+{ "command": { "action": "renameWindow", "name": "Foo" }, "keys": "" }
+
+// Reset the window's name
+{ "command": { "action": "renameWindow", "name": null }, "keys": "" }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `name` | Optional | String | The new name to use for this window. If omitted, this command will revert the window name back to its original value. |
 
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
+
+### Open window rename dialog ([Preview](https://aka.ms/terminal-preview))
+
+This command changes displays a popup window that lets you edit the name for the current window. Clearing the text field will reset the window name.
+
+**Command name:** `openWindowRenamer`
+
+**Default binding:**
+
+```json
+{ "command": "openWindowRenamer" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Identify window ([Preview](https://aka.ms/terminal-preview))
+
+This pops up an overlay on the focused window that displays the window's name and index.
+
+**Command name:** `identifyWindow`
+
+**Default binding:**
+
+```json
+{"command": "identifyWindow", "keys": "" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Identify windows ([Preview](https://aka.ms/terminal-preview))
+
+This pops up an overlay on all windows that displays each window's name and index.
+
+**Command name:** `identifyWindows`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "identifyWindows" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 ___
@@ -652,7 +748,7 @@ This changes the size of the active pane.
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the pane will be resized. |
 
-### Mark a pane as read-only ([Preview](https://aka.ms/terminal-preview))
+### Mark a pane as read-only
 
 You can mark a pane as read-only, which will prevent input from going into the text buffer. If you attempt to close or input text into a read-only pane, the terminal will display a popup warning instead.
 
@@ -663,9 +759,6 @@ You can mark a pane as read-only, which will prevent input from going into the t
 ```json
 { "command": "toggleReadOnlyMode" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview/).
 
 ### Split a pane
 
@@ -694,8 +787,13 @@ This halves the size of the active pane and opens another. Without any arguments
 | `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+| `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
+
+> [!IMPORTANT]
+> The `"colorScheme"` and `"suppressApplicationTitle"` parameters are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -850,7 +948,9 @@ This changes the text size by a specified point amount.
 
 ```json
 { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
-{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" }
+{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
+{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+numpad_plus" },
+{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+numpad_minus" },
 ```
 
 #### Actions

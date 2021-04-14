@@ -3,7 +3,7 @@ title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -11,9 +11,6 @@ ms.localizationpriority: high
 # Startup settings in Windows Terminal
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Default profile
 
@@ -65,7 +62,7 @@ This defines whether the terminal will launch as maximized, full screen, or in a
 
 ___
 
-## New instance behavior ([Preview](https://aka.ms/terminal-preview))
+## New instance behavior
 
 This setting controls how new terminal instances attach to existing windows. This property is only used if the `--window,-w window` [command line argument](./../command-line-arguments.md) is not provided. This setting accepts the following possible values:
 
@@ -80,9 +77,6 @@ This setting controls how new terminal instances attach to existing windows. Thi
 **Accepts:** `"useNew"`, `"useExisting"`, `"useAnyExisting"`
 
 **Default value:** `"useNew"`
-
-> [!IMPORTANT]
-> This setting is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -134,7 +128,7 @@ This sets the pixel position of the top left corner of the window upon first loa
 
 ___
 
-## Center on launch ([Preview](https://aka.ms/terminal-preview))
+## Center on launch
 
 When set to `true`, the terminal window will auto-center itself on the display it opens on. The terminal will use the `"initialPosition"` to determine which display to open on.
 
@@ -153,10 +147,6 @@ This interacts with the other launch settings in the following ways:
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

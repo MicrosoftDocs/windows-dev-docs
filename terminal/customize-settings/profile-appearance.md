@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -22,9 +22,6 @@ The settings listed below are specific to each unique profile. If you'd like a s
     // PROFILE OBJECTS
 ]
 ```
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Text
 
@@ -345,6 +342,34 @@ This sets the cursor color of the profile. This will override the `cursorColor` 
 **Necessity:** Optional
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
+
+<br />
+
+___
+
+## Unfocused appearance settings
+
+### Unfocused appearance settings ([Preview](https://aka.ms/terminal-preview))
+
+An object you can add to a profile that applies settings to the profile when it is unfocused. This setting only accepts appearance settings.
+
+**Property name:** `unfocusedAppearance`
+
+**Necessity:** Optional
+
+**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `selectionBackground`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
+
+**Example:**
+```json
+// Sets the profile's background image opacity to 0.3 when it is unfocused
+"unfocusedAppearance": 
+{
+    "backgroundImageOpacity": 0.3
+},
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

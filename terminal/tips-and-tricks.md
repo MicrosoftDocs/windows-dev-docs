@@ -25,6 +25,9 @@ You can right click on a tab and select Color... to color the tab for that termi
 > [!TIP]
 > Use the hex field to set your tab to the same color as your background color for a seamless look.
 
+> [!NOTE]
+> While it is possible to [set the tab title from the commandline](./tutorials/tab-title.md) with escape sequences, it currently isn't possible to set the tab color in this way.
+
 ## Zoom with the mouse
 
 You can zoom the text window of Windows Terminal by holding <kbd>ctrl</kbd> and scrolling. The zoom will persist for that terminal session. If you want to change your font size, you can learn more about the font size feature on the [Profile - Appearance page](./customize-settings/profile-appearance.md#text).

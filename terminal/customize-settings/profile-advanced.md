@@ -3,7 +3,7 @@ title: Windows Terminal Advanced Profile Settings
 description: Learn how to customize the advanced profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 04/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -22,9 +22,6 @@ The settings listed below are specific to each unique profile. If you'd like a s
     // PROFILE OBJECTS
 ]
 ```
-
-> [!IMPORTANT]
-> The settings UI is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Suppress title changes
 
@@ -149,7 +146,7 @@ Profiles can use a GUID as a unique identifier. To make a profile your default p
 **Accepts:** GUID as a string in registry format: `"{00000000-0000-0000-0000-000000000000}"`
 
 > [!TIP]
-> You can run `[guid]::NewGuid()` in PowerShell to generate a GUID for your custom profile.
+> You can run `[guid]::NewGuid()` in PowerShell to generate a GUID for your custom profile. You can also use the [online GUID generator](https://www.guidgenerator.com/) or for other command lines, use the [UUID generator](https://github.com/uuidjs/uuid).
 
 ___
 

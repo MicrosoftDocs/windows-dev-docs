@@ -12,6 +12,13 @@ ms.localizationpriority: high
 
 This guide addresses some of the common errors and obstacles you may encounter when using Windows Terminal.
 
+## Opening the settings does nothing (or opens an unexpected application)
+
+If you click on the "settings" button in the dropdown, the Terminal will attempt to open the settings file, `settings.json`. This will cause the OS to try and launch your configured `.json` file editor. This might be Visual Studio, or Notepad, or some other completely unexpected application. If there isn't a configured `.json` editor on your machine, then the OS will eventually show you the "How do you want to open this file" dialog.
+
+> [!TIP]
+> You can also use the settings UI to configure your settings if you are using [Windows Terminal Preview](https://aka.ms/terminal-preview). You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
+
 ## Set your WSL distribution to start in the home `~` directory when launched
 
 By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL, however, you may want to use the WSL home path instead. `startingDirectory` only accepts a Windows-style path, so setting it to start within a WSL distribution requires a prefix.
