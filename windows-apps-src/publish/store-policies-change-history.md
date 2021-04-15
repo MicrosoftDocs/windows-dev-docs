@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 10/01/2019
+ms.date: 04/15/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -9,7 +9,6 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ---
 
 # Change history for Microsoft Store Policies
-
 
 <table>
 <colgroup>
@@ -25,9 +24,17 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td>April 15, 2021</td>
+<td>[7.13](store-policies.md)</td>
+<td><p>Update to policy 10.1 to include examples of metadata, which is inclusive of product category, and provide guidance on products that are considered games. </p>
+<p>Update to policy 10.8.6 with specific policies that apply to PC Gaming subscription products.</p>
+<p>Update to policy 10.13 to remove XBL requirements for Creators products; also removes any XBL specific policies from Store policies as XBL requirements can be found at https://aka.ms/xboxlivepolicy.</p>
+<p>Update to policy 11.12 to clarify policy requirements related to User Generated Content.</p></td>
+</tr>
 <tr class="odd">
 <td>October 1, 2019</td>
-<td>7.12</td>
+<td>[7.12](store-policy-archive/store-policy-7-12.md)</td>
 <td><p>Added new policy 10.2.6 banning apps that mine cryptocurrency on device.</p>
 <p>Updated 10.8.4 to add odds disclosure requirement for products offering “loot boxes’ or other randomized virtual items.</p>
 <p>Updated 10.8.7 to add requirements regarding pricing regulations.</p>
