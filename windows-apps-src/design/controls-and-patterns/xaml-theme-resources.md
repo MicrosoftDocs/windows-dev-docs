@@ -206,129 +206,30 @@ These styles are for text attributes that you want applied to the whole text con
 
 The styles look like this when applied to a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock):
 
-![text block styles](../style/images/type/text-block-type-ramp.svg)
+![text block styles](../style/images/type/type-ramp.png)
 
 ```XAML
-<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
-<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
-<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
-<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
-<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
-<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body Strong" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+<TextBlock Text="Body Large" Style="{StaticResource BodyLargeTextBlockStyle}"/>
+<TextBlock Text="Subtitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
+<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
+<TextBlock Text="Title Large" Style="{StaticResource TitleLargeTextBlockStyle}"/>
+<TextBlock Text="Display" Style="{StaticResource DisplayTextBlockStyle}"/>
 ```
 
 For guidance on how to use the Windows type ramp in your app, see [Typography in Windows apps](../style/typography.md).
 
-### BaseTextBlockStyle
-
-**TargetType**: [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
-
-Supplies the common properties for all the other [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) container styles.
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
-    <Setter Property="FontFamily" Value="Segoe UI"/>
-    <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="14"/>
-    <Setter Property="TextTrimming" Value="None"/>
-    <Setter Property="TextWrapping" Value="Wrap"/>
-    <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
-    <Setter Property="TextLineBounds" Value="Full"/>
-</Style>
-```
-
-### HeaderTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="46"/>
-    <Setter Property="FontWeight" Value="Light"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### SubheaderTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="34"/>
-    <Setter Property="FontWeight" Value="Light"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### TitleTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="TitleTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="SemiLight"/>
-    <Setter Property="FontSize" Value="24"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### SubtitleTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="SubtitleTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="20"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### BodyTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="14"/>
-</Style>
-```
-
-### CaptionTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="12"/>
-    <Setter Property="FontWeight" Value="Normal"/>
-</Style>
-```
+For details of the XAML styles, see WinUI on GitHub:
+ - [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L21)
+ - [Body TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L27)
+ - [Body Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L33)
+ <!--- [Body Large TextBlockStyle]()-->
+ - [Subtitle TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L37)
+ - [Title TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L42)
+ - [Title Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L47)
+ - [Display TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L52)
 
 ### BaseRichTextBlockStyle
 
