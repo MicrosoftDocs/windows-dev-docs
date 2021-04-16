@@ -71,12 +71,7 @@ If you want to [use the Project Reunion 0.5 NuGet package in existing projects](
 - The Project Reunion 0.5 NuGet package is supported for use with desktop (C#/.NET 5 and C++/WinRT) projects in production environments. It is available as a developer preview for UWP projects, and is not supported for use with UWP projects in production environments.
 - The Project Reunion 0.5 NuGet package (named **Microsoft.ProjectReunion**) contains other sub-packages (including **Microsoft.ProjectReunion.Foundation** and **Microsoft.ProjectReunion.WinUI**) that contain the implementations for components including WinUI, MRT Core, and DWriteCore. You cannot install these sub-packages individually to reference only certain components in your project. You must install the **Microsoft.ProjectReunion** package, which includes all of the components.  
 - If you install the Project Reunion 0.5 NuGet package to an existing project, you can only use non-WinUI 3 components that are part of Project Reunion in your project. To use WinUI 3, you must create a new project using one of the WinUI 3 project templates as described in the previous section.
-- Installing the Project Reunion 0.5 NuGet package is currently not supported in WPF projects.
-- Installing the Project Reunion 0.5 NuGet package results in build failures in projects that target **AnyCPU**. To fix the error, add the following **ProjectReunionCopyXamlToolingLibs** element to a **PropertyGroup** element in your project file.
 
-    ```xml
-    <ProjectReunionCopyXamlToolingLibs>false</ProjectReunionCopyXamlToolingLibs>
-    ```
 
 #### ASTA to STA threading model
 
