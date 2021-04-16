@@ -211,15 +211,28 @@ We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft
 
 For more information on when specific features are planned, see the [feature roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md#winui-30-feature-roadmap) on GitHub.
 
-## Limitations and known issues
-
-The following items are some of the known issues with WinUI 3 - Project Reunion 0.5. If you find an issue that isn't listed below, please let us know by contributing to an existing issue or filing a new issue through the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
-
 ### Platform and OS support
 
 WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 October 2018 Update (version 1809 - build 17763) and newer.
 
-### Developer tools
+## Known issues
+
+The following items are some of the known issues with WinUI 3 - Project Reunion 0.5. If you find an issue that isn't listed below, please let us know by contributing to an existing issue or filing a new issue through the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
+
+- Alt+F4 does not close desktop app windows.
+
+- The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
+
+- Previously, to get a CompositionCapabilities instance you would call [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview). However, the capabilities returned from this call were *not* dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) object directly.
+
+- Acrylic brush renders transparent. 
+
+- Due to a C#/WinRT issue, subscribing to some framework element events and page navigation can cause memory leaks. 
+
+- There are other C#/WinRT issues that you may encounter in this release, such as GC/ObjectDisposedExceptions, marshaling value and nullable types (TimeSpan, IReference<Vector3>, etc). 
+  - These will be fixed in the upcoming  .NET 5 SDK servicing release that ships in mid-April. You can pick up this update by downloading and installing it explicitly (e.g., in build pipelines) or implicitly via Visual Studio update.
+
+### Developer tools limitations
 
 - Only C# and C++/WinRT apps are supported
 - Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
@@ -259,21 +272,6 @@ These APIs only work in UWP apps. In past previews they've partially worked in d
 There are APIs that internally depend on existence of these APIs, which consequently aren't supported in a desktop app. These APIs generally have a static `GetForCurrentView` method. For example [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
 For more information on affected APIs as well as workarounds and replacements for these APIs, please see [WinRT API changes for desktop apps](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/winrt-apis-for-desktop.md)
-
-### Known issues
-
-- Alt+F4 does not close desktop app windows.
-
-- The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
-
-- Previously, to get a CompositionCapabilities instance you would call [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview). However, the capabilities returned from this call were *not* dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) object directly.
-
-- Acrylic brush renders transparent. 
-
-- Due to a C#/WinRT issue, subscribing to some framework element events and page navigation can cause memory leaks. 
-
-- There are other C#/WinRT issues that you may encounter in this release, such as GC/ObjectDisposedExceptions, marshaling value and nullable types (TimeSpan, IReference<Vector3>, etc). 
-  - These will be fixed in the upcoming  .NET 5 SDK servicing release that ships in mid-April. You can pick up this update by downloading and installing it explicitly (e.g., in build pipelines) or implicitly via Visual Studio update.
 
 ## WinUI 3 Controls Gallery
 
