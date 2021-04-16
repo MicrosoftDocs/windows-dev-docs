@@ -155,17 +155,13 @@ The NavigationViewItem automatically sets the following states on the AnimatedIc
 - PressedSelected
 - PointerOverSelected
 
-If `GameSettingsIcon` has a marker defined for "NormalToPointerOver", the icon will be animated until the pointer moves over the NavigationViewItem.
-See the following section for more information on creating markers.
+If `GameSettingsIcon` has a marker defined for "NormalToPointerOver", the icon will be animated until the pointer moves over the NavigationViewItem. See the following section for more information on creating markers.
 
 ## Define AnimatedIcon markers
 
-To create the custom `GameSettingsIcon` in the previous example, run a Lottie JSON file (with markers) through the Windows
-[LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool to generate the animation code as a C# class.
+To create the custom `GameSettingsIcon` in the previous example, run a Lottie JSON file (with markers) through the Windows [LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool to generate the animation code as a C# class.
 
-Once you run your Lottie file through LottieGen you can add the CodeGen output class to your project. See the
-[LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen)
-tutorial for more information.
+Once you run your Lottie file through LottieGen you can add the CodeGen output class to your project. See the [LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tutorial for more information.
 
 Setting the AnimatedIcon state to a new value also sets a playback position in the Lottie animation for the transition from the old state to the new state. These playback positions are also identified with markers in the Lottie file. Specific markers for the start of the transition or the end of the transition can also be defined.
 
