@@ -84,9 +84,9 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 
     try
     {
-        credentialList = vault.FindAllByResource("bunq");
+        credentialList = vault.FindAllByResource(resourceName);
     }
-    catch(Exception)
+    catch(Exception) when (ex.Message.EndsWith("Cannot find credential in Vault"))
     {
         return null;
     }
