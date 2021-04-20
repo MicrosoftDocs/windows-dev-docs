@@ -13,6 +13,9 @@ ms.localizationpriority: medium
 
 This article provides instructions for installing the Project Reunion extension for Visual Studio 2019 on your development computer and using Project Reunion in new or existing projects. Before you install and use Project Reunion, see the [limitations and known issues](index.md#limitations-and-known-issues).
 
+> [!NOTE]
+> If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can [update the project to use the latest release](update-existing-projects-to-the-latest-release.md).
+
 ## Set up your development environment
 
 1. Ensure that your development computer has Windows 10, version 1809 (build 17763), or a later OS version installed.
@@ -57,6 +60,17 @@ This article provides instructions for installing the Project Reunion extension 
 
 6. To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer in Visual Studio 2019 16.10 Preview, you must enable WinUI 3 tooling with Visual Studio Preview Features. For instructions, see [How to Enable UI Tooling for WinUI 3 in VS 16.9 Preview 4](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
+7. In order to recieve all of the fixes from the latest stable release of Project Reunion 0.5, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
+
+    ```xml
+    <ItemGroup>            
+        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
+        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
+    </ItemGroup>
+    ```
+
+    Note that once .NET 5.0.6 is available in May, these lines can be removed. 
+    
 ## Create a new project that uses Project Reunion
 
 The Project Reunion 0.5 extensions for Visual Studio 2019 (including the extension for desktop apps and the preview extension for UWP apps) provide project templates that generate projects with a WinUI 3-based UI layer and provide access to all other Project Reunion APIs. For more information about the available project templates, see [WinUI 3 project templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md).
