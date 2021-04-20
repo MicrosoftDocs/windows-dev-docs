@@ -819,8 +819,10 @@
           items:
             - name: Value categories, and references
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-        - name: Authoring a C# Windows Runtime component for use from a C++/WinRT app
+        - name: Use a C# component in a C++/WinRT app
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
+        - name: Native debug visualization
+          href: ../cpp-and-winrt-apis/natvis.md
     - name: C#/WinRT
       items:
         - name: Overview
