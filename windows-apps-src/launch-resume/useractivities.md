@@ -12,6 +12,13 @@ ms.localizationpriority: medium
 
 This topic describes how to help users resume what they were doing in your app on their PC, and across devices.
 
+> [!NOTE]
+> Starting in June 2021, users who have activity history synced across their Windows devices
+> through their Microsoft Account (MSA) will no longer have the option to upload new activity
+> in Timeline. They'll still be able to use Timeline and see their activity history (information
+> about recent apps, websites and files) on their local PC. AAD-connected accounts won't be 
+> impacted. 
+
 ## User Activities and Timeline
 
 Our time each day is spread across multiple devices. We might use our phone while on the bus, a PC during the day, then a phone or tablet in the evening. Starting in Windows 10 Build 1803 or higher, creating a [User Activity](/uwp/api/windows.applicationmodel.useractivities.useractivity) makes that activity appear in Windows Timeline and in Cortana's Pick up where I left off feature. Timeline is a rich task view that takes advantage of User Activities to show a chronological view of what you’ve been working on. It can also include what you were working on across devices.
