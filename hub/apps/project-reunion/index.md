@@ -64,14 +64,24 @@ The following limitations and known issues apply generally to Project Reunion 0.
 
 The following limitations and known issues apply to specific developer scenarios.
 
-### Using the Project Reunion NuGet package in existing projects
+#### .NET SDK references
+
+In order to receive all of the fixes from the latest stable release of Project Reunion 0.5 in C#/.NET 5 projects, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project. These lines can be removed from your project file after .NET 5.0.6 is available in May 2021.
+
+```xml
+<ItemGroup>            
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
+</ItemGroup>
+```
+
+#### Using the Project Reunion NuGet package in existing projects
 
 If you want to [use the Project Reunion 0.5 NuGet package in existing projects](get-started-with-project-reunion.md#use-project-reunion-in-an-existing-project), be aware of the following limitations:
 
 - The Project Reunion 0.5 NuGet package is supported for use with desktop (C#/.NET 5 and C++/WinRT) projects in production environments. It is available as a developer preview for UWP projects, and is not supported for use with UWP projects in production environments.
 - The Project Reunion 0.5 NuGet package (named **Microsoft.ProjectReunion**) contains other sub-packages (including **Microsoft.ProjectReunion.Foundation** and **Microsoft.ProjectReunion.WinUI**) that contain the implementations for components including WinUI, MRT Core, and DWriteCore. You cannot install these sub-packages individually to reference only certain components in your project. You must install the **Microsoft.ProjectReunion** package, which includes all of the components.  
 - If you install the Project Reunion 0.5 NuGet package to an existing project, you can only use non-WinUI 3 components that are part of Project Reunion in your project. To use WinUI 3, you must create a new project using one of the WinUI 3 project templates as described in the previous section.
-
 
 #### ASTA to STA threading model
 

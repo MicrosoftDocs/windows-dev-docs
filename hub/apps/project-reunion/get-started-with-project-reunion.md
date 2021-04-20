@@ -60,17 +60,6 @@ This article provides instructions for installing the Project Reunion extension 
 
 6. To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer in Visual Studio 2019 16.10 Preview, you must enable WinUI 3 tooling with Visual Studio Preview Features. For instructions, see [How to Enable UI Tooling for WinUI 3 in VS 16.9 Preview 4](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
-7. In order to recieve all of the fixes from the latest stable release of Project Reunion 0.5, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
-
-    ```xml
-    <ItemGroup>            
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-    </ItemGroup>
-    ```
-
-    Note that once .NET 5.0.6 is available in May, these lines can be removed. 
-    
 ## Create a new project that uses Project Reunion
 
 The Project Reunion 0.5 extensions for Visual Studio 2019 (including the extension for desktop apps and the preview extension for UWP apps) provide project templates that generate projects with a WinUI 3-based UI layer and provide access to all other Project Reunion APIs. For more information about the available project templates, see [WinUI 3 project templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md).
@@ -118,7 +107,9 @@ If you have an existing project in which you want to use Project Reunion, you ca
 
     ![Screenshot of Project Reunion NuGet package being installed](images/reunion-nuget-install.png)
 
-6. After you install the package, you can use the following Project Reunion APIs and components in your project:
+6. **For C#/.NET 5 projects only**: In order to receive all of the fixes from the latest stable release of Project Reunion 0.5, you'll need to update your project file to explicitly set your .NET SDK to the latest version. For more information, see [.NET SDK references](index.md#net-sdk-references).
+
+7. After you install the **Microsoft.ProjectReunion** package, you can use the following Project Reunion APIs and components in your project:
 
     - [Manage resources MRT Core](mrtcore/mrtcore-overview.md)
     - [Render text with DWriteCore](dwritecore.md)
