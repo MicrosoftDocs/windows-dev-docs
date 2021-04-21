@@ -19,9 +19,9 @@ This guide will help you get started with installing and setting up the language
 
 :::row:::
     :::column:::
-       [![JavaScrip NodeJS icon](../images/nodejs-logo.png)](../nodejs/index.yml)<br>
-        **[Get started with NodeJS](../nodejs/index.yml)**<br>
-        Install NodeJS and get your development environment setup on Windows or Windows Subsystem for Linux.
+       [![JavaScrip icon](../images/javascript-logo.png)](./javascript/index.md)<br>
+        **[Get started with JavaScript](./javascript/index.md)**<br>
+        Get started with JavaScript by setting up your development environment on Windows or Windows Subsystem for Linux and install [Node.js](./javascript/nodejs-overview.md), [React](./javascript/react-overview.md), [Vue](./javascript/vue-overview.md), [Express](./javascript/nodejs-beginners-tutorial.md), [Gatsby](./javascript/gatsby-on-wsl.md), [Next.js](./javascript/nextjs-on-wsl.md), or [Nuxt.js](./javascript/nuxtjs-on-wsl.md).
     :::column-end:::
     :::column:::
        [![Python icon](../images/python-logo.png)](../python/index.yml)<br>

@@ -45,7 +45,9 @@
         "android/**.md": "dev-environment",
         "dev-environment/**.md": "dev-environment",
         "package-manager/**.md": "dev-environment",
-        "powertoys/**.md": "dev-environment"
+        "powertoys/**.md": "dev-environment",
+        "javascript/**.md": "dev-environment",
+        "rust/**.md": "dev-environment"
       },
       "ms.technology":
       {
@@ -56,10 +58,11 @@
         "apps/winui/**.md": "winui-conceptual", 
         "apps/trace-processing/**.md": "",
         "python/**.md": "windows-python",
-        "nodejs/**.md": "windows-nodejs",
         "android/**.md": "windows-android",
         "powertoys/**.md": "powertoys",
-        "package-manager/**.md": "package-manager"
+        "package-manager/**.md": "package-manager",
+        "javascript/**.md": "windows-javascript",
+        "rust/**.md": "windows-rust"
       },	 
       "feedback_product_url": 
       {

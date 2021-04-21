@@ -1,5 +1,5 @@
 ---
-title: Set up Node.js on WSL 2
+title: Set up NodeJS on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
 author: mattwojo 
 ms.author: mattwoj 
@@ -7,21 +7,21 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
-ms.date: 07/28/2020
+ms.date: 03/30/2021
 ---
 
-# Set up your Node.js development environment with WSL 2
+# Install NodeJS on Windows Subsystem for Linux (WSL2)
 
-The following is a step-by-step guide to help you get your Node.js development environment set up using Windows Subsystem for Linux (WSL).
+If you are using Node.js professionally, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
 
-We recommend that you install and run the updated WSL 2, as you will benefit from significant improvements in performance speed and system call compatibility, including the ability to run [Docker Desktop](https://docs.docker.com/docker-for-windows/wsl-tech-preview/#download). Many npm modules and tutorials for Node.js web development are written for Linux users and use Linux-based packaging and installation tools. Most web apps are also deployed on Linux, so using WSL 2 will ensure you have consistency between your development and production environments.
+Using Windows Subsystem for Linux (WSL), enables you to install your preferred Linux distribution (Ubuntu is our default) so that you can have consistency between your development environment (where you write code) and production environment (the server where your code is deployed).
 
 > [!NOTE]
-> If you are committed to using Node.js directly on Windows, or plan to use a Windows Server production environment, see our guide to [set up your Node.js development environment directly on Windows](./setup-on-windows.md).
+> If you are new to developing with Node.js and want to get up and running quickly so that you can learn, [install Node.js on Windows](./nodejs-on-windows.md). This recommendation also applies if you plan to use a Windows Server production environment.
 
 ## Install WSL 2
 
-To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+WSL 2 is the most recent version available on Windows 10 and we recommend it for professional Node.js development workflows. To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
 Once you have installed WSL 2 and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
@@ -29,17 +29,13 @@ We recommend updating your Linux distribution regularly, including immediately a
 
 ## Install Windows Terminal (optional)
 
-The new Windows Terminal enables multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](/windows/terminal).
+Windows Terminal is an improved command line shell that allows you to run multiple tabs so that you can quickly switch between Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, or whatever you prefer to use. You can also create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, customize your terminal with themes (color schemes, font styles and sizes, background image/blur/transparency), and more. [Learn more in the Windows Terminal docs](/windows/terminal).
 
-1. Get [Windows Terminal in the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
-
-2. Once installed, open Windows Terminal and select **Settings** to customize your terminal using the `settings.json` file.
-
-    ![Windows Terminal Settings](../images/windows-terminal-settings.png)
+[Install Windows Terminal using the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
 
 ## Install nvm, node.js, and npm
 
-There are multiple ways to install Node.js. We recommend using a version manager as versions change very quickly. You will likely need to switch between multiple versions based on the needs of different projects you're working on. Node Version Manager, more commonly called nvm, is the most popular way to install multiple versions of Node.js. We will walk through the steps to install nvm and then use it to install Node.js and Node Package Manager (npm). There are [alternative version managers](#alternative-version-managers) to consider as well covered in the next section.
+Besides choosing whether to install on Windows or WSL, there are additional choices to make when installing Node.js. We recommend using a version manager as versions change very quickly. You will likely need to switch between multiple versions of Node.js based on the needs of different projects you're working on. Node Version Manager, more commonly called nvm, is the most popular way to install multiple versions of Node.js. We will walk through the steps to install nvm and then use it to install Node.js and Node Package Manager (npm). There are [alternative version managers](#alternative-version-managers) to consider as well covered in the next section.
 
 > [!IMPORTANT]
 > It is always recommended to remove any existing installations of Node.js or npm from your operating system before installing a version manager as the different types of installation can lead to strange and confusing conflicts. For example, the version of Node that can be installed with Ubuntu's `apt-get` command is currently outdated. For help with removing previous installations, see [How to remove nodejs from ubuntu](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04).)
@@ -48,20 +44,20 @@ There are multiple ways to install Node.js. We recommend using a version manager
 2. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
 3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
 
-> [!NOTE]
-> At the time of publication, NVM v0.35.3 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
-Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+    > [!NOTE]
+    > At the time of publication, NVM v0.35.3 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+    Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 4. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 5. List which versions of Node are currently installed (should be none at this point): `nvm ls`
 
-    ![NVM list showing no Node versions](../images/nvm-no-node.png)
+    ![NVM list showing no Node versions](../../images/nvm-no-node.png)
 
 6. Install the current release of Node.js (for testing the newest feature improvements, but more likely to have issues): `nvm install node`
 7. Install the latest stable LTS release of Node.js (recommended): `nvm install --lts`
 8. List what versions of Node are installed: `nvm ls` ...now you should see the two versions that you just installed listed.
 
-    ![NVM list showing LTS and Current Node versions](../images/nvm-node-installed.png)
+    ![NVM list showing LTS and Current Node versions](../../images/nvm-node-installed.png)
 
 9. Verify that Node.js is installed and the currently default version with: `node --version`. Then verify that you have npm as well, with: `npm --version` (You can also use `which node` or `which npm` to see the path used for the default versions).
 10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use node` to switch to the Current version, or `nvm use --lts` to switch to the LTS version. You can also use the specific number for any additional versions you've installed, like `nvm use v8.2.1`. (To list all of the versions of Node.js available, use the command: `nvm ls-remote`).
@@ -73,26 +69,25 @@ If you are using NVM to install Node.js and NPM, you should not need to use the 
 While nvm is currently the most popular version manager for node, there are a few alternatives to consider:
 
 - [n](https://www.npmjs.com/package/n#installation) is a long-standing `nvm` alternative that accomplishes the same thing with slightly different commands and is installed via `npm` rather than a bash script.
-- [fnm](https://github.com/Schniz/fnm#using-a-script) is a newer version manager, claiming to be much faster than `nvm`. (It also uses [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops).)
+- [fnm](https://github.com/Schniz/fnm#using-a-script) is a newer version manager, claiming to be much faster than `nvm`. (It also uses [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines).)
 - [Volta](https://github.com/volta-cli/volta#installing-volta) is a new version manager from the LinkedIn team that claims improved speed and cross-platform support.
 - [asdf-vm](https://asdf-vm.com/#/core-manage-asdf-vm) is a single CLI for multiple languages, like ike gvm, nvm, rbenv & pyenv (and more) all in one.
 - [nvs](https://github.com/jasongin/nvs) (Node Version Switcher) is a cross-platform `nvm` alternative with the ability to [integrate with VS Code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
 
-## Install your favorite code editor
+## Install Visual Studio Code
 
-We recommend using Visual Studio Code with the Remote-WSL Extension for Node.js projects. This splits VS Code into a “client-server” architecture, with the client (the VS Code user interface) running on your Windows operating system and the server (your code, Git, plugins, etc) running "remotely" on your WSL Linux distribution. 
+We recommend using Visual Studio Code with the [Remote-development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) for Node.js projects. This splits VS Code into a “client-server” architecture, with the client (the VS Code user interface) running on your Windows operating system and the server (your code, Git, plugins, etc) running "remotely" on your WSL Linux distribution.
 
 > [!NOTE]
-> This “remote” scenario is a bit different than you may be accustomed to. WSL supports an actual Linux distribution where your project code is running, separately from your Windows operating system, but still on your local machine. The Remote-WSL extension connects with your Linux subsystem as if it were a remote server, though it’s not running in the cloud… it’s still running on your local machine in the WSL environment that you enabled to run alongside Windows. 
+> This “remote” scenario is a bit different than you may be accustomed to. WSL supports an actual Linux distribution where your project code is running, separately from your Windows operating system, but still on your local machine. The Remote-WSL extension connects with your Linux subsystem as if it were a remote server, though it’s not running in the cloud… it’s still running on your local machine in the WSL environment that you enabled to run alongside Windows.
 
 - Linux-based Intellisense and linting is supported.
 - Your project will automatically build in Linux.
 - You can use all your extensions running on Linux ([ES Lint, NPM Intellisense, ES6 snippets, etc.](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)).
 
-Terminal-based text editors (vim, emacs, nano) are also helpful for making quick changes from right inside your console. ([This article](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) does a nice job explaining the difference and a bit about how to use each.)
+Other code editors, like IntelliJ, Sublime Text, Brackets, etc. will also work with a WSL 2 Node.js development environment, but may not have the same sort of remote  features that VS Code offers. These code editors may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which likely not what you want. The Remote-WSL Extension in VS Code handles this compatibility for you, with other IDEs you may need to set up an X server. [Support for running GUI apps in WSL](https://twitter.com/craigaloewen/status/1308452901266751488?lang=en) (like a code editor IDE) is coming soon.
 
-> [!NOTE]
-> Some GUI editors (Atom, Sublime Text, Eclipse) may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which may not be what you want. The Remote-WSL Extension in VS Code will handle this compatibility for you.
+Terminal-based text editors (vim, emacs, nano) are also helpful for making quick changes from right inside your console. The article, [Emacs, Nano, or Vim: Choose your Terminal-Based Text Editor Wisely](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) does a nice job explaining some differences and a bit about how to use each.
 
 To install VS Code and the Remote-WSL Extension:
 
@@ -116,11 +111,11 @@ To install the Node.js extension pack:
     - "WSL:Ubuntu-18.04-Installed": The extensions installed for use with your Ubuntu operating system (WSL).
     - "Recommended": Extensions recommended by VS Code based on the file types in your current project.
 
-    ![VS Code Extensions Local vs Remote](../images/vscode-extensions-local-remote.png)
+    ![VS Code Extensions Local vs Remote](../../images/vscode-extensions-local-remote.png)
 
 2. In the search box at the top of the Extensions window, enter: **Node Extension Pack** (or the name of whatever extension you are looking for). The extension will be installed for either your Local or WSL instances of VS Code depending on where you have the current project opened. You can tell by selecting the remote link in the bottom-left corner of your VS Code window (in green). It will either give you the option to open or close a remote connection. Install your Node.js extensions in the "WSL:Ubuntu-18.04" environment.
 
-    ![VS Code remote link](../images/wsl-remote-extension.png)
+    ![VS Code remote link](../../images/wsl-remote-extension.png)
 
 A few additional extensions you may want to consider include:
 
@@ -131,12 +126,3 @@ A few additional extensions you may want to consider include:
 ## Set up Git (optional)
 
 To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.
-
-## Next steps
-
-You now have a Node.js development environment set up. To get started using your Node.js environment, consider trying one of these tutorials:
-
-- [Get started with Node.js for beginners](./beginners.md)
-- [Get started with Node.js web frameworks on Windows](./web-frameworks.md)
-- [Get started connecting Node.js apps to a database](/windows/wsl/tutorials/wsl-database)
-- [Get started using Docker containers with Node.js](./containers.md)

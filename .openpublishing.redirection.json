@@ -4931,8 +4931,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/dev-environment/index.yml",
-      "redirect_url": "/windows/dev-environment/overview",
+      "source_path": "hub/dev-environment/overview.md",
+      "redirect_url": "/windows/dev-environment/",
       "redirect_document_id": false
     },
     {
@@ -5023,6 +5023,41 @@
     {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/send-local-toast-desktop.md",
       "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/send-local-toast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/index.yml",
+      "redirect_url": "/windows/dev-environment/javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/beginners.md",
+      "redirect_url": "/windows/dev-environment/javascript/nodejs-beginners-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/setup-on-wsl2.md",
+      "redirect_url": "/windows/dev-environment/javascript/nodejs-on-wsl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/setup-on-windows.md",
+      "redirect_url": "/windows/dev-environment/javascript/nodejs-on-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/containers.md",
+      "redirect_url": "/windows/wsl/tutorials/wsl-containers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/nodejs/web-frameworks.md",
+      "redirect_url": "/windows/dev-environment/javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/react-native.md",
+      "redirect_url": "/windows/dev-environment/javascript/react-native-for-android",
       "redirect_document_id": false
     }
   ]
