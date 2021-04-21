@@ -103,9 +103,6 @@
         - name: Python
           tocHref: /windows/python/
           topicHref: "/windows/python"
-        - name: Node.js
-          tocHref: /windows/nodejs/
-          topicHref: "/windows/nodejs"
         - name: Android
           tocHref: /windows/android/
           topicHref: "/windows/android/overview"
@@ -120,3 +117,6 @@
         - name: Windows Subsystem for Linux
           tocHref: /windows/dev-environment/wsl
           topicHref: "/windows/wsl/about"
+        - name: JavaScript
+          tocHref: /windows/dev-environment/javascript/
+          topicHref: "/windows/dev-environment/javascript"

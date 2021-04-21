@@ -17,6 +17,8 @@
     items:
         - name: Get started with JavaScript
           items:
+              - name: Overview
+                href: ./javascript/index.md
               - name: Get started with NodeJS
                 items:
                   - name: Overview
