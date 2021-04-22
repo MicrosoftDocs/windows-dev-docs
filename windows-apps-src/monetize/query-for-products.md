@@ -2,7 +2,7 @@
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
-ms.date: 03/26/2021
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, view products
 ms.localizationpriority: medium
@@ -13,6 +13,8 @@ ms.localizationpriority: medium
 Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 
 This method is designed to be called by your service in response to a message from your app. Your service should not regularly poll for all users on a schedule.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the StoreServicesClient.CollectionsQueryAsync API.
 
 ## Prerequisites
 
@@ -202,3 +204,4 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 
