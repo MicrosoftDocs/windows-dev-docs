@@ -55,6 +55,6 @@ The next topic is the [RSS reader tutorial](rss-reader-rust-for-windows.md), whe
 * [Documentation for the *windows* crate](https://docs.rs/windows/0.3.1/windows/)
 * [Win32 metadata](https://github.com/microsoft/win32metadata)
 * [Making Win32 APIs more accessible to more languages](https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/)
-* [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/)
+* [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/)
 * [Rust for Windows](https://github.com/microsoft/windows-rs)
 * [Minesweeper sample app](https://github.com/robmikh/minesweeper-rs)
