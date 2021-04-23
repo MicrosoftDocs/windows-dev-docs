@@ -24,7 +24,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - `⊞ Win`+`L` and `Ctrl` + `Alt` + `Del` cannot be remapped as they are reserved by the Windows OS.
 > - The `Fn` (function) key cannot be remapped (in most cases). The `F1`-`F12` (and `F13`-`F24`) keys can be mapped.
-> - `Pause` will only send a sngle keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
+> - `Pause` will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
 
 ## Settings
 
