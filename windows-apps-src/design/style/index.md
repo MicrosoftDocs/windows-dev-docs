@@ -43,19 +43,6 @@ Create a sense of depth with acrylic, a brush that creates stunning, translucent
 :::row:::
     :::column:::
 ![Image depicting reveal focus.](images/header-reveal-focus.svg)
-### [Reveal focus](reveal-focus.md)
-Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
-    :::column-end:::
-    :::column:::
-![Image depicting rounded corners.](images/header-round-corners.jpg)
-### [Corner radius](rounded-corner.md)
-Evoke warmth and trust, and make the UI easier for users to visually process, with rounded corners.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-![Image depicting reveal focus.](images/header-reveal-focus.svg)
     :::column-end:::
     :::column:::
 ![Image depicting rounded corners.](images/header-round-corners.jpg)
