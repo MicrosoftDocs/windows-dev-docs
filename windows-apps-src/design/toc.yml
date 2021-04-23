@@ -266,14 +266,14 @@
       href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
-    - name: Spacing
-      href: style/spacing.md
     - name: Writing style
       href: style/writing-style.md
     - name: XAML brushes
       href: style/brushes.md
     - name: XAML styles
       href: controls-and-patterns/xaml-styles.md
+    - name: Spacing
+      href: style/spacing.md
       items:
         - name: XAML Control templates
           href: controls-and-patterns/control-templates.md
