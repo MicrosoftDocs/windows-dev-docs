@@ -1543,7 +1543,7 @@
     {
       "source_path": "windows-apps-src/style/reveal.md",
       "redirect_url": "/windows/uwp/design/style/index",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/design/style/reveal.md",
