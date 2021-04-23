@@ -68,7 +68,7 @@ Writing style can make a big difference between an awful user experience and a b
 
 :::row:::
     :::column:::
-### [XAML brushes](../controls-and-patterns/brushes.md)
+### [XAML brushes](brushes.md)
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
     :::column-end:::
     :::column:::
