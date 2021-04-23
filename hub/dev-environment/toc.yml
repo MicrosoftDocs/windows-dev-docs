@@ -55,6 +55,8 @@
                     href: ./javascript/vue-on-wsl.md
                   - name: Install on Windows
                     href: ./javascript/vue-on-windows.md
+                  - name: Install NuxtJS
+                    href: ./javascript/nuxtjs-on-wsl.md
                   - name: Tutorial for beginners
                     href: ./javascript/vue-beginners-tutorial.md
         - name: Get started with Python
