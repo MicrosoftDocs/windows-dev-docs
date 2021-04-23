@@ -55,6 +55,25 @@ Evoke warmth and trust, and make the UI easier for users to visually process, wi
 
 :::row:::
     :::column:::
+![Image depicting reveal focus.](images/header-reveal-focus.svg)
+    :::column-end:::
+    :::column:::
+![Image depicting rounded corners.](images/header-round-corners.jpg)
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+### [Reveal focus](reveal-focus.md)
+Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
+    :::column-end:::
+    :::column:::
+### [Corner radius](rounded-corner.md)
+Evoke warmth and trust, and make the UI easier for users to visually process, with rounded corners.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
 ![Image depicting sound.](images/header-sound.svg)
 ### [Sound](sound.md)
 Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
