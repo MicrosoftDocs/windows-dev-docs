@@ -16,12 +16,12 @@ Style is what makes your app stand out. The style guidelines in this section hel
 
 :::row:::
     :::column:::
-![Screenshot of an image depicting a color gradient.](images/header-color.svg)
+![Image depicting a color gradient.](images/header-color.svg)
 ### [Color](color.md)
 Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
     :::column-end:::
     :::column:::
-![Screenshot of an image depicting typography.](images/header-typography.svg)
+![Image depicting typography.](images/header-typography.svg)
 ### [Typography](typography.md)
 As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. The following guidelines focus on how to use typography to help users understand content easily. 
     :::column-end:::
@@ -29,12 +29,12 @@ As the visual representation of language, typography’s main task is to be clea
 
 :::row:::
     :::column:::
-![Screenshot of an image depicting icons.](images/header-icons.svg)
+![Image depicting icons.](images/header-icons.svg)
 ### [Icons](icons.md)
 Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
     :::column-end:::
     :::column:::
-![Screenshot of an image depicting acrylic.](images/header-acrylic.svg)
+![Image depicting acrylic.](images/header-acrylic.svg)
 ### [Acrylic](acrylic.md)
 Create a sense of depth with acrylic, a brush that creates stunning, translucent surfaces.
     :::column-end:::
@@ -42,20 +42,20 @@ Create a sense of depth with acrylic, a brush that creates stunning, translucent
 
 :::row:::
     :::column:::
-![Screenshot of an image depicting reveal highlight.](images/header-reveal-highlight.svg)
-### [Reveal highlight](reveal.md)
-Use light to illuminate important elements.
-    :::column-end:::
-    :::column:::
-![Screenshot of an image depicting reveal focus.](images/header-reveal-focus.svg)
+![Image depicting reveal focus.](images/header-reveal-focus.svg)
 ### [Reveal focus](reveal-focus.md)
 Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
+    :::column-end:::
+    :::column:::
+![Image depicting rounded corners.](images/header-round-corners.jpg)
+### [Corner radius](rounded-corner.md)
+Evoke warmth and trust, and make the UI easier for users to visually process, with rounded corners.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-![Screenshot of an image depicting sound.](images/header-sound.svg)
+![Image depicting sound.](images/header-sound.svg)
 ### [Sound](sound.md)
 Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
     :::column-end:::
@@ -68,8 +68,19 @@ Writing style can make a big difference between an awful user experience and a b
 
 :::row:::
     :::column:::
+### [XAML brushes](../controls-and-patterns/brushes.md)
+You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+    :::column-end:::
+    :::column:::
 ### [XAML styles](../controls-and-patterns/xaml-styles.md)
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+### [Spacing](spacing.md)
+Optimize your Windows application and provide a user experience that is most appropriate for your app's functionality and interaction requirements.
     :::column-end:::
     :::column:::
     :::column-end:::

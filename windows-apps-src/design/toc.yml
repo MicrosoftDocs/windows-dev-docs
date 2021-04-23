@@ -260,8 +260,6 @@
           href: style/segoe-ui-symbol-font.md
     - name: Acrylic
       href: style/acrylic.md
-    - name: Reveal highlight
-      href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
     - name: Corner radius
