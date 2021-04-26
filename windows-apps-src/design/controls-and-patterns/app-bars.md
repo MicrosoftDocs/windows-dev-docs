@@ -27,7 +27,7 @@ Command bars provide users with easy access to your app's most common tasks. Com
       ![WinUI logo](images/winui-logo-64x64.png)
    :::column-end:::
    :::column span="3":::
-      The **CommandBarFlyout** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
+      The **CommandBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
    :::column-end:::
    :::column:::
 

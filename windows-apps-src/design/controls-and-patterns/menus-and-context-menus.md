@@ -1,5 +1,5 @@
 ---
-description: Menus and context menus display a list of commands or options when the user requests them.
+description: Menus and context menus organize commands and save space by hiding those commands until the user needs them.
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
@@ -79,9 +79,7 @@ Menus have the following characteristics:
 - Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
 - Are associated with an element via its [Flyout](/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
 
-When the user invokes a command element (such as a button) whose primary role is to present additional commands, use [menu flyout](menus.md) to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus.
-
-To show a set of multiple top-level menus in a horizontal row, use MenuBar. You can also use a MenuBar in conjunction with a CommandBar. MenuBar and CommandBar both represent surfaces that you can use to expose commands to your users. The MenuBar provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a CommandBar allows. Use the MenuBar (which you typically position at the top of the app window) to provide the bulk of the commands, and then use CommandBar to highlight the most used commands.
+When the user invokes a command element (such as a button) whose primary role is to present additional commands, use [menu flyout](menus.md) to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus. For apps that might need more organization or grouping, use a [menu bar](menus.md) as a quick and simple way to show a set of multiple top-level menus in a horizontal row. 
 
 ## Examples
 
