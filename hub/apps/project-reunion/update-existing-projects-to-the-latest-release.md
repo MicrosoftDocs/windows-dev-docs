@@ -11,14 +11,14 @@ ms.localizationpriority: medium
 
 # Update existing projects to the latest release of Project Reunion
 
-If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.5).
+If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.6).
 
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
-## Update from Project Reunion 0.5.0
+## Update from Project Reunion 0.5.0 or above
 
-If you created a project using Project Reunion version 0.5.0, you can follow these instructions to update your project to Project Reunion version 0.5.5 (the latest stable release). This version includes several important bug fixes.
+If you created a project using Project Reunion version 0.5.0 or above, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release). This version includes several important bug fixes.
 
 > [!NOTE]
 > If you created a project using the Project Reunion 0.5 VSIX, you may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**. 
@@ -48,7 +48,7 @@ Next, make these changes to your project:
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.5 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
     ```
 
 5. Make the following changes in your Application (package).wapproj:
@@ -57,7 +57,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.5]">
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
                 <IncludeAssets>build</IncludeAssets>
             </PackageReference>
         </ItemGroup>
@@ -76,7 +76,7 @@ Next, make these changes to your project:
         <Import Project="$(Microsoft_WinUI_AppX_targets)" />
         ```
 
-        And this item group:
+        And this item group (if you're updating from a newer version than 0.5.0, replace 0.5.0 with your version number):
 
         ```xml
         <ItemGroup>
@@ -91,7 +91,7 @@ Next, make these changes to your project:
 
 ## Update from Project Reunion 0.5 Preview
 
-If you created a project using Project Reunion 0.5 Preview, you can follow these instructions to update your project to Project Reunion version 0.5.5 (the latest stable release).
+If you created a project using Project Reunion 0.5 Preview, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release).
 
 Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](get-started-with-project-reunion.md#set-up-your-development-environment).
 
@@ -128,7 +128,7 @@ Next, make these changes to your project:
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.5 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
     ```
 
 4. Make the following changes in your Application (package).wapproj:
@@ -137,7 +137,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.5]">
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
                 <IncludeAssets>build</IncludeAssets>
             </PackageReference>
         </ItemGroup>
@@ -171,7 +171,7 @@ Next, make these changes to your project:
 
 ## Update from WinUI 3 Preview 4
 
-If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion version 0.5.5 (the latest stable release).
+If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release).
 
 Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](get-started-with-project-reunion.md#set-up-your-development-environment).
 

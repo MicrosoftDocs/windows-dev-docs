@@ -75,6 +75,9 @@ To create a new project that uses Project Reunion 0.5:
     - [Get started with WinUI 3 for UWP apps (Preview)](..\winui\winui3\get-started-winui3-for-uwp.md)
     - [Build a basic WinUI 3 desktop app](..\winui\winui3\desktop-build-basic-winui3-app.md)
 
+    > [!NOTE]
+    > If you create a C#/.NET 5 project, make sure that your project's .NET SDK references are up to date using [these instructions](index.md#net-sdk-references).
+
 2. After you create your project, you have access to the following Project Reunion APIs and components in addition to all other Windows and .NET APIs that are typically available to desktop and UWP apps.
 
     - [Windows UI Library 3](../winui/winui3/index.md)
