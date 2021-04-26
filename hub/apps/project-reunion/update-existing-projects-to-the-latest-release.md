@@ -205,7 +205,7 @@ Next, make these changes to your project:
 
     ```Console
     uninstall-package Microsoft.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.2 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
     ```
 
 4. Make the following changes in your Application (package).wapproj:
@@ -214,7 +214,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.2]">
+          <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
             <IncludeAssets>build</IncludeAssets>
           </PackageReference>
         </ItemGroup>
