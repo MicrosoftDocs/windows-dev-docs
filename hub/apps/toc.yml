@@ -26,7 +26,7 @@
                 items:
                     - name: Overview
                       href: desktop/modernize/desktop-to-uwp-enhance.md
-                    - name: Available Windows Runtime APIs
+                    - name: APIs not supported in desktop apps
                       href: desktop/modernize/desktop-to-uwp-supported-api.md
               - name: Host WinRT XAML controls (XAML Islands)
                 items:
@@ -38,7 +38,7 @@
                             href: desktop/modernize/host-standard-control-with-xaml-islands.md
                           - name: Host a custom WinRT XAML control
                             href: desktop/modernize/host-custom-control-with-xaml-islands.md
-                    - name: XAML Islands in C++ Win32 apps
+                    - name: XAML Islands in C++ desktop apps
                       items:
                           - name: Using the WinRT XAML hosting API
                             href: desktop/modernize/using-the-xaml-hosting-api.md
@@ -56,7 +56,7 @@
                       href: desktop/modernize/using-the-visual-layer-with-wpf.md
                     - name: Windows Forms
                       href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
-                    - name: Win32
+                    - name: C++ desktop (Win32)
                       href: desktop/modernize/using-the-visual-layer-with-win32.md
               - name: Features that require package identity
                 items:

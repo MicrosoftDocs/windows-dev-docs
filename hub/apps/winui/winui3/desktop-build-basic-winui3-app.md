@@ -1,5 +1,5 @@
 ---
-description: Build .NET and C++/Win32 desktop apps with a WinUI 3 UI.
+description: Build .NET and C++ desktop (Win32) apps with a WinUI 3 UI.
 title: Build a basic WinUI 3 app for desktop
 ms.date: 03/19/2021
 ms.topic: article
@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Build a basic WinUI 3 - Project Reunion 0.5 desktop app
 
-In this article, we step through how to build basic managed C#/.NET 5 and native C++/Win32 WinUI 3 - Project Reunion 0.5 desktop applications with user interfaces composed entirely of WinUI 3 controls and features.
+In this article, we step through how to build basic C# .NET 5 and C++ desktop (Win32) applications with user interfaces composed entirely of WinUI 3 - Project Reunion 0.5 controls and features.
 
 ## Prerequisites
 
@@ -134,7 +134,7 @@ For this first example, let's use the [ShowWindow](/windows/win32/api/winuser/nf
 
 WinUI 3 provides the ability for applications to run with "full trust permission", outside of the security sandbox of an [AppContainer](/windows/win32/secauthz/appcontainer-for-legacy-applications-).
 
-Managed C#/.NET 5 and native C++/Win32 WinUI 3 - Project Reunion 0.5 desktop applications can call .NET 5 APIs without restriction. In the following example (derived from the initial template app used in the previous example) we show how you can query the current process and get a list of all loaded modules (not possible with UWP apps).
+WinUI 3 - Project Reunion 0.5 desktop applications can call .NET 5 APIs without restriction. In the following example (derived from the initial template app used in the previous example) we show how you can query the current process and get a list of all loaded modules (not possible with UWP apps).
 
 1. In the MainWindow.xaml file, add a [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) element.
 

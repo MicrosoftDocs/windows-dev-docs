@@ -1,5 +1,5 @@
 ---
-description: This guide shows you how to get starting creating .NET and C++/Win32 desktop apps with a WinUI 3 UI.
+description: This guide shows you how to get starting creating .NET and C++ desktop (Win32) apps with a WinUI 3 UI.
 title: Get started with WinUI 3 for desktop apps
 ms.date: 03/19/2021
 ms.topic: article
@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for desktop apps
 
-WinUI 3 - Project Reunion 0.5 includes project templates that enable you to create managed C#/.NET 5 and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+WinUI 3 - Project Reunion 0.5 includes project templates that enable you to create managed C# .NET 5 apps and native C++ desktop (Win32) apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
 
 WinUI 3 ships as a part of the Project Reunion package. For more on Project Reunion, see [Build desktop Windows apps with Project Reunion 0.5 (March 2021)](../../project-reunion/index.md).
 
@@ -20,7 +20,7 @@ WinUI 3 ships as a part of the Project Reunion package. For more on Project Reun
 
 To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install the Project Reunion 0.5 Visual Studio extension. For details, see [Set up your development environment](../../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment).
 
-## Create a WinUI 3 desktop app for C# and .NET 5
+## Create a WinUI 3 desktop app with C# and .NET 5
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 
@@ -54,7 +54,7 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
 9. Build and run your solution to confirm that the app runs without errors.
 
-## Create a WinUI 3 desktop app for C++/Win32
+## Create a WinUI 3 desktop app with C++
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 

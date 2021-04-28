@@ -18,7 +18,7 @@ By default, when you create a project using one of the [WinUI project templates]
 After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
 > [!NOTE]
-> Project Reunion 0.5 is supported for use in MSIX-packaged desktop apps (C#/.NET 5 or C++/Win32) in production environments. Packaged desktop apps that use Project Reunion 0.5 can be published to the Microsoft Store.
+> Project Reunion 0.5 is supported for use in MSIX-packaged desktop apps (C# .NET 5 or C++ desktop) in production environments. Packaged desktop apps that use Project Reunion 0.5 can be published to the Microsoft Store.
 
 ## Dependencies on the Project Reunion framework package
 

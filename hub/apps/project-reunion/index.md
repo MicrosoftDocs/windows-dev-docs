@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 
 Project Reunion is a set of new developer components and tools that represent the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions.
 
-Project Reunion does not replace the existing desktop Windows app platforms and frameworks such as .NET (including Windows Forms and WPF) and C++/Win32. Instead, it complements these existing platforms with a common set of APIs and tools that developers can rely on across these platforms. For more details, see [Benefits of Project Reunion](#benefits-of-project-reunion-for-windows-developers).
+Project Reunion does not replace the existing desktop Windows app platforms and frameworks such as .NET (including Windows Forms and WPF) and C++ desktop (Win32). Instead, it complements these existing platforms with a common set of APIs and tools that developers can rely on across these platforms. For more details, see [Benefits of Project Reunion](#benefits-of-project-reunion-for-windows-developers).
 
 > [!NOTE]
-> Project Reunion 0.5 is supported for use in MSIX-packaged desktop apps (C#/.NET 5 or C++/Win32) in production environments. Packaged desktop apps that use Project Reunion 0.5 can be published to the Microsoft Store. For UWP apps, Project Reunion 0.5 is available only as a preview. This release is not supported for UWP apps that are used in production environments.
+> Project Reunion 0.5 is supported for use in MSIX-packaged desktop apps (C# .NET 5 or C++ desktop) in production environments. Packaged desktop apps that use Project Reunion 0.5 can be published to the Microsoft Store. For UWP apps, Project Reunion 0.5 is available only as a preview. This release is not supported for UWP apps that are used in production environments.
 >
 >**Project Reunion** is a code name that may change in a future release.
 
@@ -58,7 +58,7 @@ New Windows APIs and features have typically been tied to OS releases that happe
 
 The following limitations and known issues apply generally to Project Reunion 0.5.
 
-- **Desktop apps (C#/.NET 5 or C++/Win32)**: Project Reunion 0.5 cannot be used in unpackaged desktop apps (C#/.NET 5 or C++/Win32). This release is supported for use only in MSIX-packaged desktop apps.
+- **Desktop apps (C# .NET 5 or C++ desktop)**: Project Reunion 0.5 cannot be used in unpackaged desktop apps (C# .NET 5 or C++ desktop). This release is supported for use only in MSIX-packaged desktop apps.
 - **UWP apps**: Project Reunion 0.5 is not supported for UWP apps that are used in production environments. To use Project Reunion in UWP apps, you must use a preview version of the Project Reunion 0.5 extension that is not supported for production environments. For more information about installing the preview extension, see [Set up your development environment](get-started-with-project-reunion.md#set-up-your-development-environment).
 - The [WinUI 3 developer tool limitations](..\winui\winui3\index.md#developer-tools) also apply to any project that uses Project Reunion 0.5.
 
@@ -66,7 +66,7 @@ The following limitations and known issues apply to specific developer scenarios
 
 #### .NET SDK references
 
-In order to receive all of the fixes from the latest stable release of Project Reunion 0.5 in C#/.NET 5 projects, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project. These lines can be removed from your project file after .NET 5.0.6 is available in May 2021.
+In order to receive all of the fixes from the latest stable release of Project Reunion 0.5 in C# .NET 5 projects, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project. These lines can be removed from your project file after .NET 5.0.6 is available in May 2021.
 
 ```xml
 <ItemGroup>            
@@ -79,13 +79,13 @@ In order to receive all of the fixes from the latest stable release of Project R
 
 If you want to [use the Project Reunion 0.5 NuGet package in existing projects](get-started-with-project-reunion.md#use-project-reunion-in-an-existing-project), be aware of the following limitations:
 
-- The Project Reunion 0.5 NuGet package is supported for use with desktop (C#/.NET 5 and C++/WinRT) projects in production environments. It is available as a developer preview for UWP projects, and is not supported for use with UWP projects in production environments.
+- The Project Reunion 0.5 NuGet package is supported for use with desktop (C# .NET 5 and C++ desktop) projects in production environments. It is available as a developer preview for UWP projects, and is not supported for use with UWP projects in production environments.
 - The Project Reunion 0.5 NuGet package (named **Microsoft.ProjectReunion**) contains other sub-packages (including **Microsoft.ProjectReunion.Foundation** and **Microsoft.ProjectReunion.WinUI**) that contain the implementations for components including WinUI, MRT Core, and DWriteCore. You cannot install these sub-packages individually to reference only certain components in your project. You must install the **Microsoft.ProjectReunion** package, which includes all of the components.  
 - If you install the Project Reunion 0.5 NuGet package to an existing project, you can only use non-WinUI 3 components that are part of Project Reunion in your project. To use WinUI 3, you must create a new project using one of the WinUI 3 project templates as described in the previous section.
 
 #### ASTA to STA threading model
 
-If you're migrating code from an existing UWP app to a new C#/.NET 5 or C++/Win32 WinUI 3 project that uses Project Reunion, be aware that the new project uses the [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments) threading model instead of the [Application STA (ASTA)](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901) threading model used by UWP apps. If your code assumes the non re-entrant behavior of the ASTA threading model, your code may not behave as expected.
+If you're migrating code from an existing UWP app to a new C# .NET 5 or C++ desktop WinUI 3 project that uses Project Reunion, be aware that the new project uses the [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments) threading model instead of the [Application STA (ASTA)](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901) threading model used by UWP apps. If your code assumes the non re-entrant behavior of the ASTA threading model, your code may not behave as expected.
 
 ## Developer roadmap
 
