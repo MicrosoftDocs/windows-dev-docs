@@ -262,8 +262,6 @@
       href: style/acrylic.md
     - name: Reveal focus
       href: style/reveal-focus.md
-    - name: Corner radius
-      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
     - name: Writing style
@@ -274,6 +272,8 @@
       href: controls-and-patterns/xaml-styles.md
     - name: Spacing
       href: style/spacing.md
+    - name: Corner radius
+      href: style/rounded-corner.md
       items:
         - name: XAML Control templates
           href: controls-and-patterns/control-templates.md
