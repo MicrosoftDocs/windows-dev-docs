@@ -50,25 +50,30 @@ Create a sense of depth with acrylic, a brush that creates stunning, translucent
 :::row-end:::
 :::row:::
     :::column:::
-### [Reveal focus](reveal-focus.md)
-Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
     :::column-end:::
     :::column:::
-### [Corner radius](rounded-corner.md)
-Evoke warmth and trust, and make the UI easier for users to visually process, with rounded corners.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
+### [Reveal focus](reveal-focus.md)
+Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
+    :::column-end:::
+    :::column:::
 ![Image depicting sound.](images/header-sound.svg)
 ### [Sound](sound.md)
 Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
 ![Short movie with a blinking cursor and then the words Writing style being typed out.](images/header-writing-style.gif)
 ### [Writing style](writing-style.md)
 Writing style can make a big difference between an awful user experience and a better one.
+    :::column-end:::
+    :::column:::
     :::column-end:::
 :::row-end:::
 
@@ -89,5 +94,7 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 Optimize your Windows application and provide a user experience that is most appropriate for your app's functionality and interaction requirements.
     :::column-end:::
     :::column:::
+### [Corner radius](rounded-corner.md)
+Evoke warmth and trust, and make the UI easier for users to visually process, with rounded corners.
     :::column-end:::
 :::row-end:::
