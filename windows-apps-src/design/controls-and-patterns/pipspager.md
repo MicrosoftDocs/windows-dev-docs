@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # PipsPager
 
-The PipsPager control enables navigation within paginated content beyond the bounds of the viewport (visible area). The PipsPager is independent of the content shown and is intended for experiences where content is paginated but is not explicitly numbered. For example, pages indicated with 'dot' glyphs instead of numbers to encourage discovery of content and reduce unnecessary UI elements on the page.
+The PipsPager control helps users navigate within linearly paginated content using a configurable collection of glyphs, each of which represents a single "page" within a limitless range. The glyphs highlight the current page, and indicate the availability of both preceding and succeeding pages. The control relies on current context and does not support explicit page numbering or a non-linear organization.
 
 **Get the Windows UI Library**
 
@@ -39,7 +39,7 @@ The PipsPager control enables navigation within paginated content beyond the bou
 
 ## Is this the right control?
 
-Use a PipsPager for content that is not explicitly numbered in a layout, or a glyph-based representation of numbered pages is desired.
+Use a PipsPager for content organized in a linear structure, is not explicitly numbered, or where a glyph-based representation of numbered pages is desired.
 
 This UI is commonly used in apps such as photo viewers and app lists, where display space is limited and the number of potential pages is infinite.
 
@@ -125,14 +125,14 @@ By default, a maximum of five pips are visible.
 
 ### Integrate PipsPager with a Collection control
 
+:::image type="content" source="images/pipspager-flipview-example.png" alt-text="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.":::
+
 A PipsPager is often used in conjunction with collection controls.
 
 The following example shows how to bind a PipsPager with a [FlipView](/windows/winui/api/microsoft.ui.xaml.controls.flipview) and provide another way to navigate through content and indicate the current page.
 
 > [!NOTE]
 > To use the PipsPager as a page indicator **only** and disable user interactions, set the control's [IsEnabled](/windows/winui/api/microsoft.ui.xaml.controls.control.isenabled) property to false in the control.
-
-:::image type="content" source="images/pipspager-flipview-example.png" alt-text="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.":::
 
 ```xaml
 <StackPanel>
