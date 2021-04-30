@@ -7,7 +7,7 @@ ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 ---
 # Migrate Your Windows 8.x App to .NET Native
 
-.NET Native provides static compilation of apps in the Microsoft Store or on the developer's computer. This differs from the dynamic compilation performed for Windows 8.x apps (also previously called Microsoft Store apps) by the just-in-time (JIT) compiler or the [Native Image Generator (Ngen.exe)](/dotnet/framework/tools/ngen-exe-native-image-generator) on the device. Despite the differences, .NET Native tries to maintain compatibility with [.NET for Microsoft Store apps](/previous-versions/windows/apps/br230302(v=vs.140)). For the most part, things that work on the .NET for Windows 8.x apps also work with .NET Native.  However, in some cases, you may encounter behavioral changes. This document discusses these differences between the standard .NET for Windows 8.x apps and .NET Native in the following areas:
+.NET Native provides static compilation of apps in the Microsoft Store or on the developer's computer. This differs from the dynamic compilation performed for Windows 8.x apps (also previously called Microsoft Store apps) by the just-in-time (JIT) compiler or the [Native Image Generator (Ngen.exe)](/dotnet/framework/tools/ngen-exe-native-image-generator) on the device. Despite the differences, .NET Native tries to maintain compatibility with [.NET for Windows 8.x apps](/previous-versions/windows/apps/br230302(v=vs.140)). For the most part, things that work on the .NET for Windows 8.x apps also work with .NET Native.  However, in some cases, you may encounter behavioral changes. This document discusses these differences between the standard .NET for Windows 8.x apps and .NET Native in the following areas:
 
 - [General runtime differences](#Runtime)
 
@@ -75,7 +75,7 @@ In .NET Native:
 
 - Private reflection over types and members in the .NET Framework class library is not supported. You can, however, reflect over your own private types and members, as well as types and members in third-party libraries.
 
-- The <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> property correctly returns `false` for a <xref:System.Reflection.ParameterInfo> object that represents a return value. In the .NET for Windows 8.x apps, it returns `true`. Intermediate language (IL) doesn't support this directly, and interpretation is left to the language.
+- The <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> property correctly returns `false` for a <xref:System.Reflection.ParameterInfo> object that represents a return value. In .NET for Windows 8.x apps, it returns `true`. Intermediate language (IL) doesn't support this directly, and interpretation is left to the language.
 
 - Public members on the <xref:System.RuntimeFieldHandle> and <xref:System.RuntimeMethodHandle> structures aren't supported. These types are supported only for LINQ, expression trees, and static array initialization.
 

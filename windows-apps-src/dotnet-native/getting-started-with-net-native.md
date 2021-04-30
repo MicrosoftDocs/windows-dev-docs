@@ -9,7 +9,7 @@ ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 
 Whether you're writing a new UWP app or migrating an existing Windows 8.x app (previously also called a Microsoft Store app), you can follow the same set of procedures. To create a .NET Native app, follow these steps:
 
-1. [Develop a Universal Windows Platform (UWP) app that targets Windows 10](#Step1), and test the debug builds of your app to ensure that it works properly.
+1. [Develop a Universal Windows Platform (UWP) app](#Step1), and test the debug builds of your app to ensure that it works properly.
 
 2. [Handle additional reflection and serialization usage](#Step2).
 
