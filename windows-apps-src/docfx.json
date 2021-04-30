@@ -3,7 +3,7 @@
         "content": [ {
             "files": ["**/*.md", "**/**.yml"],
             "exclude": [
-                "**/obj/**", 
+                "**/obj/**",
                 "whats-new/whats-new-future.md",
                 "**/includes/**"
             ]
@@ -33,7 +33,7 @@
                     "depot_name": "MSDN.windows-uwp",
                     "folder_relative_path_in_docset": "./"
                 }
-            }		  
+            }
         },
         "fileMetadata": {
             "ms.technology": {
@@ -69,6 +69,7 @@
                 "design/windows-template-studio/*.md": "design",
                 "develop/*.md": "develop",
                 "devices-sensors/*.md": "peripherals-sensors-and-power",
+                "dotnet-native/*.md": "platform",
                 "enterprise/*.md": "app-types",
                 "files/*.md": "data-and-files",
                 "gaming/*.md": "games",
@@ -119,9 +120,10 @@
                 "design/shell/tiles-and-notifications/*.md": "hickeys",
                 "design/style/*.md": "hickeys",
                 "design/usability/*.md": "kbridge",
-                "design/windows-template-studio/*.md": "quradic",		 
+                "design/windows-template-studio/*.md": "quradic",
                 "develop/*.md": "jimwalk",
                 "devices-sensors/*.md": "kbridge",
+                "dotnet-native/*.md": "mcleans",
                 "enterprise/*.md": "mcleans",
                 "files/*.md": "alholiu",
                 "gaming/*.md": "stwhi",
@@ -175,6 +177,7 @@
                 "design/windows-template-studio/*.md": "QuinnRadich",
                 "develop/*.md": "jwmsft",
                 "devices-sensors/*.md": "Karl-Bridge-Microsoft",
+                "dotnet-native/*.md": "mcleanbyron",
                 "enterprise/*.md": "mcleanbyron",
                 "files/*.md": "lastnameholiu",
                 "gaming/*.md": "stevewhims",
@@ -194,9 +197,12 @@
                 "winrt-components/*.md": "stevewhims",
                 "xaml-platform/*.md": "jwmsft",
                 "xbox-apps/*.md": "m-stahl"
-            },	 
+            },
+            "ms.topic": {
+                "dotnet-native/*.md": "reference"
+            },
             "feedback_product_url": {
-                "design/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",	
+                "design/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
                 "design/accessibility/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
                 "design/app-settings/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
                 "design/basics/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
@@ -232,7 +238,7 @@
                "exclude": [
                  "apps-for-education/take-a-test-api.md"
                ]
-            }   
+            }
          },
         "markdownEngineName": "markdig"
     }
