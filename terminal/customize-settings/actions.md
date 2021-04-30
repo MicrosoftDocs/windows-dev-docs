@@ -198,14 +198,16 @@ This opens the dropdown menu.
 
 ### Open settings files
 
-This opens either the default or custom settings files. Without the `target` field, this will open the settings.json file.
+This opens either the settings UI, custom settings file (`settings.json`), or default settings file (`defaults.json`), depending on the `target` field.  
+Without the `target` field, the custom settings file will be opened.
 
 **Command name:** `openSettings`
 
 **Default bindings:**
 
 ```json
-{ "command": "openSettings", "keys": "ctrl+," },
+{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+," },
+{ "command": { "action": "openSettings", "target": "settingsFile" }, "keys": "ctrl+shift+," },
 { "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
 ```
 
@@ -214,9 +216,6 @@ This opens either the default or custom settings files. Without the `target` fie
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"settingsUI"`, `"allFiles"` | The settings file to open. |
-
-> [!IMPORTANT]
-> The `"settingsUI"` value for `target` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Toggle full screen
 
