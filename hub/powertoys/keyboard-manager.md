@@ -86,15 +86,15 @@ There are a few rules to follow when remapping shortcuts (these rules only apply
 
 ## Remap a shortcut to a single key
 
-It is possible to remap a shortcut (key combination) to a single key press.
+It is possible to remap a shortcut (key combination) to a single key press. This would be done in **Remap Keys**
 
 For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd>D</kbd> (display / hide Windows desktop apps) with a single key press, <kbd>Alt</kbd>:
 
-- Shortcut: "⊞ Win" (Windows key) + "D"
-- Mapped To: "Alt"
+- Key: <kbd>Alt</kbd>
+- Mapped To: <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd>
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut "Alt" + "Tab", after remapping the "Alt" key as above, would result in "⊞ Win" + "D" + "Tab".
+> This is where things get complex for remapping. Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, typing the shortcut <kbd>Shift</kbd> + <kbd>Alt</kbd>, after overriding the <kbd>Alt</kbd> key as above, would result in <kbd>Shift</kbd> + <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd>.  The order of keypress matters as well as the action happens on keydown, not keyup.  This means <kbd>Alt</kbd> first will execute <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd> where <kbd>Shift</kbd> first will execute <kbd>Shift</kbd> + <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd>.
 
 ## App-specific shortcuts
 
