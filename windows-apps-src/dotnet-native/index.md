@@ -48,4 +48,4 @@ But .NET Native involves more than a compilation to native code. It transforms t
 | Deployed  | Ready-to-run binaries            | Ready-to-run binaries (ASM) |
 | Runtime   | MRT.dll (Minimal CLR Runtime)    | CRT.dll (C Runtime)         |
 
-For Windows apps for Windows 10, you upload .NET Native Code Compilation binaries in app packages (.appx files) to Microsoft Store.
+For UWP apps, you upload .NET Native Code Compilation binaries in app packages (.msix or .appx files) to the Microsoft Store.
