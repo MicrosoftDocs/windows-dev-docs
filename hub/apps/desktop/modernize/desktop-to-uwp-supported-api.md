@@ -65,21 +65,21 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
 | [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
 | [HolographicKeyboardPlacementOverridePreview](/uwp/api/windows.applicationmodel.preview.holographic.holographickeyboardplacementoverridepreview) | None |
-| [InputPane](/uwp/api/windows.ui.viewmanagement.inputpane) | Use the **IInputPaneInterop** COM interface instead (in inputpaneinterop.h). |
+| [InputPane](/uwp/api/windows.ui.viewmanagement.inputpane) | Use the [IInputPaneInterop](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop) COM interface instead (in inputpaneinterop.h). |
 | [KeyboardDeliveryInterceptor](/uwp/api/windows.ui.input.keyboarddeliveryinterceptor) | None |
 | [LockApplicationHost](/uwp/api/windows.applicationmodel.lockscreen.lockapplicationhost) | None |
 | [MouseDevice](/uwp/api/windows.devices.input.mousedevice) | None |
-| [PlayToManager](/uwp/api/windows.media.playto.playtomanager.getforcurrentview) | Use the **IPlayToManagerInterop** COM interface instead (in playtomanagerinterop.h). |
+| [PlayToManager](/uwp/api/windows.media.playto.playtomanager.getforcurrentview) | Use the [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) COM interface instead (in playtomanagerinterop.h). |
 | [PointerVisualizationSettings](/uwp/api/windows.ui.input.pointervisualizationsettings) | None |
 | [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the **IPrinting3DManagerInterop** COM interface instead (in print3dmanagerinterop.h). |
-| [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the **IPrintManagerInterop** COM interface instead (in printmanagerinterop.h). |
+| [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
-| [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the **IRadialControllerConfigurationInterop** COM interface instead (in radialcontrollerinterop.h). |
+| [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
 | [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | None |
 | [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | None |
 | [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
 | [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
-| [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the **ISpatialInteractionManagerInterop** COM interface instead (in spatialinteractionmanagerinterop.h). |
+| [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |
 | [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) | Use the **ISystemMediaTransportControlsInterop** COM interface instead (in systemmediatransportcontrolsinterop.h). |
 | [SystemNavigationManager](/uwp/api/windows.ui.core.systemnavigationmanager) | None |
 | [SystemNavigationManagerPreview](/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview) | None |
