@@ -20,10 +20,10 @@ This article provides instructions for installing the Project Reunion extension 
 
 1. Ensure that your development computer has Windows 10, version 1809 (build 17763), or a later OS version installed.
 
-2. Install [Visual Studio 2019, version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (or later) if you haven't done so already.
+2. Install [Visual Studio 2019, version 16.9](https://visualstudio.microsoft.com/vs/) if you haven't done so already.
 
     > [!NOTE]
-    > Visual Studio 2019, version 16.9 also supports Project Reunion, but does not support all WinUI 3 tooling features. For more information about WinUI 3 tooling support, see [Windows UI Library 3 - Project Reunion 0.5](../winui/winui3/index.md).
+    > Visual Studio 2019, version 16.9 does not currently support all WinUI 3 tooling features. To access the full suite of WinUI 3 tooling features, please use [Visual Studio 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/). For more information about WinUI 3 tooling support, see [Windows UI Library 3 - Project Reunion 0.5](../winui/winui3/index.md#visual-studio-support).
 
     You must include the following components when installing Visual Studio:
     - On the **Workloads** tab of the installation dialog, make sure **Universal Windows Platform development** is selected.
@@ -58,7 +58,7 @@ This article provides instructions for installing the Project Reunion extension 
 
     ![Screenshot of Project Reunion extension being installed](images/reunion-extension-install.png)
 
-6. To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer in Visual Studio 2019 16.10 Preview, you must enable WinUI 3 tooling with Visual Studio Preview Features. For instructions, see [How to Enable UI Tooling for WinUI 3 in VS 16.9 Preview 4](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
+6. To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer in Visual Studio 2019 16.10 Preview, you must enable WinUI 3 tooling with Visual Studio Preview Features. For instructions, see [How to Enable UI Tooling for WinUI 3](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
 ## Create a new project that uses Project Reunion
 
