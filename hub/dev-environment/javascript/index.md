@@ -58,9 +58,9 @@ This guide will help you get started using JavaScript frameworks on Windows, inc
         Nuxt.js is a framework for creating server-rendered JavaScript apps based on Vue.js, Node.js, Webpack and Babel.js. Learn how to install it on the Windows Subsystem for Linux.
     :::column-end:::
     :::column:::
-       [![Gatsby icon](../../images/gatsby-logo.png)](./nextjs-on-wsl.md)<br>
-        **[Install Next.js on WSL](./nextjs-on-wsl.md)**<br>
-        Gatsby.js is a static site generator framework based on React.js. Learn how to install it on the Windows Subsystem for Linux.
+       [![Gatsby icon](../../images/gatsby-logo.png)](./gatsby-on-wsl.md)<br>
+        **[Install Gatsby on WSL](./gatsby-on-wsl.md)**<br>
+        Gatsby is a static site generator framework based on React.js. Learn how to install it on the Windows Subsystem for Linux.
     :::column-end:::
 :::row-end:::
 
