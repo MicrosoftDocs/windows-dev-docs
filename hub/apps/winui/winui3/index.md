@@ -47,13 +47,16 @@ If you're using the Windows Community Toolkit, [download the latest version](htt
 
 ### Visual Studio Support
 
-In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use the latest preview version of Visual Studio and be sure to enable WinUI tooling in Visual Studio Preview Features, as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140). The table below shows the compatibility of Visual Studio 2019 versions with WinUI 3 - Project Reunion 0.5:
+In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use a preview version of Visual Studio 2019 16.10. Please note that Visual Studio preview releases are pre-release products, so you may run into bugs and limitations when using preview versions of Visual Studio to build WinUI 3 apps.  
+
+The table below shows the compatibility of Visual Studio 2019 versions with WinUI 3 - Project Reunion 0.5. 
 
 | VS Version  | WinUI 3 - Project Reunion 0.5  |
 |---|---|
 | 16.8  | No   |
 | 16.9  | Yes, but with no Hot Reload, Live Visual Tree, or Live Property Explorer  |
-| 16.10 Previews  | Yes, with all WinUI 3 tooling   |
+| 16.10 Previews  | Yes, with all WinUI 3 tooling (in preview - see [Known issues](#known-issues) for a limitation with VS 2019 16.10 Preview 2)  |
+
 
 ## Update your existing WinUI 3 app
 
@@ -177,6 +180,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
     Note that once .NET 5.0.6 is available in May, these lines can be removed. 
 
+- When using Visual Studio 2019 16.10 Preview 2, Live Visual Tree may cause a crash. This will be fixed in the upcoming VS 2019 16.10 Preview 3 release. In the meantime, you can revert to VS 2019 16.10 Preview 1, which does not have this issue, by downloading it directly [from this link](https://aka.ms/vs/16/pre/629027471_513181835/vs_Enterprise.exe).
 
 ## WinUI 3 Controls Gallery
 
