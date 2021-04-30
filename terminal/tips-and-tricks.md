@@ -28,10 +28,28 @@ You can right click on a tab and select Color... to color the tab for that termi
 > [!NOTE]
 > While it is possible to [set the tab title from the commandline](./tutorials/tab-title.md) with escape sequences, it currently isn't possible to set the tab color in this way.
 
-## Zoom with the mouse
+## Mouse interaction
 
-You can zoom the text window of Windows Terminal by holding <kbd>ctrl</kbd> and scrolling. The zoom will persist for that terminal session. If you want to change your font size, you can learn more about the font size feature on the [Profile - Appearance page](./customize-settings/profile-appearance.md#text).
+There are several ways to interact with Windows Terminal using a mouse.
 
-## Adjust background opacity with the mouse
+### Zoom with the mouse
+
+You can zoom the text window of Windows Terminal (making the text size larger or smaller) by holding <kbd>ctrl</kbd> and scrolling. The zoom will persist for that terminal session. If you want to change your font size, you can learn more about the font size feature on the [Profile - Appearance page](./customize-settings/profile-appearance.md#text).
+
+### Adjust background opacity with the mouse
 
 You can adjust the opacity of the background by holding <kbd>ctrl+shift</kbd> and scrolling. The opacity will persist for that terminal session. If you want to change your acrylic opacity for a profile, you can learn more about acrylic background effects on the [Profile - Appearance page](./customize-settings/profile-appearance.md#acrylic).
+
+### Open a hyperlink
+
+You can open a hyperlink from inside Windows Terminal with your mouse using <kbd>ctrl</kbd> + click.
+
+### Copy/paste
+
+You can right-click with your mouse to copy and paste text within Windows Terminal using your clipboard storage.
+
+Windows Terminal also includes a **[copyOnSelect](./customize-settings/interaction.md#automatically-copy-selection-to-clipboard)** setting that can be set to `true` in order for any text selected with your mouse to be immediately copied to your clipboard. The right-click on your mouse will always paste in this case. 
+
+### Virtual Terminal and WSL mouse support
+
+Windows Terminal supports mouse input in Windows Subsystem for Linux (WSL) applications as well as Windows applications that use virtual terminal (VT) input. This means applications such as [tmux](https://github.com/tmux/tmux/wiki) and [Midnight Commander](https://www.linuxhelp.com/how-to-install-midnight-commander-in-linux) will recognize when you select items in the Terminal window. If an application is in mouse mode, you can hold down <kbd>shift</kbd> to make a selection instead of sending VT input.
