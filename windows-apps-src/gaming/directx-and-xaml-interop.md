@@ -259,7 +259,7 @@ And here's a deeper dive into those steps, with source code examples.
 [**VirtualSurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) extends [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource), and it's for scenarios where the content is potentially too large to fit on the screen all at once (and/or too large to fit in video memory as a single texture), and so the content must be virtualized in order to render optimally. For example, mapping apps, or large document canvases.
 
 > [!TIP]
-> The [Complex inking sample]/samples/microsoft/windows-universal-samples/complexink/) application demonstrates **VirtualSurfaceImageSource**.
+> The [Complex inking sample](/samples/microsoft/windows-universal-samples/complexink/) application demonstrates **VirtualSurfaceImageSource**.
 
 **VirtualSurfaceImageSource** differs from [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) in that it uses a callback&mdash;[**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded)&mdash;which you implement to update regions of the surface as they become visible on the screen. You don't need to clear regions that are hidden, because the XAML framework takes care of that for you.
 
@@ -533,29 +533,29 @@ And here's a deeper dive into those steps, with source code examples.
 
     ```cppwinrt
     // MainPage.cpp | paste this at the end of MainPage::ClickHandler
-        VirtualSurfaceImageSource virtualSurfaceImageSource(2000, 2000);
+    VirtualSurfaceImageSource virtualSurfaceImageSource(2000, 2000);
 
-        winrt::com_ptr<::ISurfaceImageSourceNativeWithD2D> sisNativeWithD2D{
-            virtualSurfaceImageSource.as<::ISurfaceImageSourceNativeWithD2D>() };
+    winrt::com_ptr<::ISurfaceImageSourceNativeWithD2D> sisNativeWithD2D{
+        virtualSurfaceImageSource.as<::ISurfaceImageSourceNativeWithD2D>() };
 
-        // Associate the Direct2D device with the SurfaceImageSource.
-        sisNativeWithD2D->SetDevice(d2dDevice.get());
+    // Associate the Direct2D device with the SurfaceImageSource.
+    sisNativeWithD2D->SetDevice(d2dDevice.get());
 
-        // To enable multi-threaded access (optional)
-        winrt::com_ptr<::ID3D11Multithread> d3dMultiThread{
-            d3dDevice.as<::ID3D11Multithread>() };
-        d3dMultiThread->SetMultithreadProtected(true);
+    // To enable multi-threaded access (optional)
+    winrt::com_ptr<::ID3D11Multithread> d3dMultiThread{
+        d3dDevice.as<::ID3D11Multithread>() };
+    d3dMultiThread->SetMultithreadProtected(true);
 
-        winrt::com_ptr<::IVirtualSurfaceImageSourceNative> vsisNative{
-            virtualSurfaceImageSource.as<::IVirtualSurfaceImageSourceNative>() };
+    winrt::com_ptr<::IVirtualSurfaceImageSourceNative> vsisNative{
+        virtualSurfaceImageSource.as<::IVirtualSurfaceImageSourceNative>() };
 
-        m_cbi = winrt::make<CallbackImplementation>(sisNativeWithD2D, vsisNative, d2dDeviceContext);
-        vsisNative->RegisterForUpdatesNeeded(m_cbi.as<::IVirtualSurfaceUpdatesCallbackNative>().get());
+    m_cbi = winrt::make<CallbackImplementation>(sisNativeWithD2D, vsisNative, d2dDeviceContext);
+    vsisNative->RegisterForUpdatesNeeded(m_cbi.as<::IVirtualSurfaceUpdatesCallbackNative>().get());
 
-        // The SurfaceImageSource object's underlying 
-        // ISurfaceImageSourceNativeWithD2D object will contain the completed bitmap.
+    // The SurfaceImageSource object's underlying 
+    // ISurfaceImageSourceNativeWithD2D object will contain the completed bitmap.
 
-        theImage().Source(virtualSurfaceImageSource);
+    theImage().Source(virtualSurfaceImageSource);
     ```
 
 6. Finally, add the following **Image** element inside the existing XAML markup in `MainPage.xaml`.
@@ -669,4 +669,3 @@ Here is basic process for creating and updating a [**SwapChainPanel**](/uwp/api/
 * [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
 * [ISwapChainPanelNative](/windows/win32/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
 * [Programming Guide for Direct3D 11](/windows/win32/direct3d11/dx-graphics-overviews)
-
