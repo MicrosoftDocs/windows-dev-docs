@@ -104,6 +104,8 @@
           href: controls-and-patterns/listview-and-gridview.md
         - name: Flip view
           href: controls-and-patterns/flipview.md
+        - name: PipsPager
+          href: controls-and-patterns/pipspager.md
         - name: Tree view
           href: controls-and-patterns/tree-view.md
         - name: ItemsRepeater
