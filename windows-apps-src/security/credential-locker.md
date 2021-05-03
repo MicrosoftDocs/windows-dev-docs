@@ -86,7 +86,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
     {
         credentialList = vault.FindAllByResource(resourceName);
     }
-    catch(Exception) when (ex.Message.EndsWith("Cannot find credential in Vault"))
+    catch(Exception)
     {
         return null;
     }
