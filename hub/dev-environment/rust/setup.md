@@ -22,6 +22,9 @@ On Windows, Rust requires certain C++ build tools.
 
 You can either download the [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/), or (recommended) you might prefer just to install [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
+> [!IMPORTANT]
+> Use of the Microsoft C++ Build Tools requires a valid Visual Studio license (either Community, Pro, or Enterprise).
+
 > [!NOTE]
 > We'll be using Visual Studio Code as our integrated development environment (IDE) for Rust, and not Visual Studio. But you can still install Visual Studio without expense. A Community edition is available&mdash;it's free for students, open-source contributors, and individuals.
 
@@ -121,3 +124,4 @@ Not only can you use Rust *on* Windows, you can also write apps *for* Windows us
 * [rust-analyzer extension](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer)
 * [CodeLLDB extension](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
 * [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
