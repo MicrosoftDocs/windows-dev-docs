@@ -206,8 +206,6 @@
           href: controls-and-patterns/scroll-controls.md
         - name: Semantic zoom
           href: controls-and-patterns/semantic-zoom.md
-    - name: Search
-      href: controls-and-patterns/search.md
     - name: Status and information
       items:
         - name: Progress
