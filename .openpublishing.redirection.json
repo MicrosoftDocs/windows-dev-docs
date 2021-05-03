@@ -937,8 +937,13 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/search.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/search",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/search.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/index",
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/semantic-zoom.md",

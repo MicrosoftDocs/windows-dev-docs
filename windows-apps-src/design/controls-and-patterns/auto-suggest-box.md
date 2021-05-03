@@ -192,7 +192,6 @@ Here's an AutoSuggestBox with a 'find' icon.
 
 - [Text controls](text-controls.md)
 - [Spell checking](text-controls.md)
-- [Search](search.md)
 - [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

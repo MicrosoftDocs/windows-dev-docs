@@ -184,7 +184,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 
 - [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md)
-- [Adding search](search.md)
 - [Guidelines for text input](text-controls.md)
 - [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
