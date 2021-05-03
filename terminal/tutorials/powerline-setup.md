@@ -109,7 +109,7 @@ wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-
 chmod +x /usr/local/bin/oh-my-posh
 ```
 
-The second step is optonal. Oh-my-posh can use the same theme config regardless of the shell or evironment, so if you're already using
+The second step is optional. Oh-my-posh can use the same theme config regardless of the shell or evironment, so if you're already using
 it on Windows Powershell for example, you can reuse that theme configuration rather than download the themes.
 If you plan to use it within Ubuntu WSL only, fetch the [themes](https://ohmyposh.dev/docs/themes) so you can get started right away:
 
