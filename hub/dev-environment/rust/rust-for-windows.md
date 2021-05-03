@@ -19,7 +19,9 @@ ms.date: 03/04/2021
 
 In the [Overview of developing on Windows with Rust](overview.md) topic, we demonstrated a simple app that outputs a *Hello, world!* message. But not only can you use Rust *on* Windows, you can also write apps *for* Windows using Rust.
 
-Rust for Windows (currently in preview form) is the latest language projection for Windows. Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
+Rust for Windows is the latest language projection for Windows. It's currently in preview form, and you can see it develop from version to version in its [change log](https://github.com/microsoft/windows-rs/blob/master/docs/changelog.md).
+
+Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
 
 Whether it's timeless functions such as [CreateEventW](/windows/win32/api/synchapi/nf-synchapi-createeventw) and [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject), powerful graphics engines such as [Direct3D](/windows/win32/direct3d12/directx-12-programming-guide), traditional windowing functions such as [CreateWindowExW](/windows/win32/api/winuser/nf-winuser-createwindowexw) and [DispatchMessageW](/windows/win32/api/winuser/nf-winuser-dispatchmessagew), or more recent user interface (UI) frameworks such as [Composition](/uwp/api/windows.ui.composition) and [Xaml](/uwp/api/windows.ui.xaml), [the *windows* crate](https://crates.io/crates/windows) has you covered.
 
