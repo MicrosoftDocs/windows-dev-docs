@@ -83,7 +83,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">New to development?</h3>
-        <a href="//docs.microsoft.com/learn/browse/%3Fproducts=windows&resource_type=module">Windows on Microsoft Learn</a><br/>
+        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Explore related docs</h3>

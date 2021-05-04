@@ -12,6 +12,8 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This topic is part of the [Create a simple Universal Windows Platform (UWP) game with DirectX](tutorial--create-your-first-uwp-directx-game.md) tutorial series. The topic at that link sets the context for the series.
 
+To download the version of this game that uses XAML for the overlay, see [DirectX and XAML game sample](/samples/microsoft/windows-universal-samples/simple3dgamexaml/). Be sure to read the readme file there for details about building the sample.
+
 At this point we've covered the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view-provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, incorporate sounds, and implement controls. You're on your way to creating a game of your own, but if you need more help and info, check out these resources.
 
 -   [DirectX Graphics and Gaming](/windows/desktop/directx)
@@ -127,6 +129,6 @@ For more info about this process, see [DirectX and XAML interop](directx-and-xam
 
 ## Sample
 
-To download the version of this game that uses XAML for the overlay, go to the [Direct3D shooting sample game (XAML)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml).
+To download the version of this game that uses XAML for the overlay, see [DirectX and XAML game sample](/samples/microsoft/windows-universal-samples/simple3dgamexaml/). Be sure to read the readme file there for details about building the sample.
 
 Unlike the version of the sample game discussed in the rest of these topics, the XAML version defines its framework in the [App.xaml.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp) and [DirectXPage.xaml.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp) files, instead of [App.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp) and [GameInfoOverlay.cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp), respectively.

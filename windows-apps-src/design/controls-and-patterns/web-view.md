@@ -4,16 +4,20 @@ title: Web view
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/30/2021
 ms.topic: article
 keywords: windows 10, uwp
+ms.custom: contperf-fy21q3
 ms.localizationpriority: medium
 ---
 # Web view
 
-A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+A web view control embeds a view into your app that renders web content using the Microsoft Edge Legacy rendering engine. Hyperlinks can also appear and function in a web view control.
 
 > **Important APIs**: [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+
+> [!IMPORTANT]
+> The `WebView2` control uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. `WebView2` is available as part of the [Windows UI Library 3 (WinUI3)](/windows/apps/winui/winui3). For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
 
 ## Is this the right control?
 
@@ -77,7 +81,7 @@ The Source property can be set in code, but rather than doing so, you typically 
 To load web content, use the [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) method with a **Uri** that uses the http or https scheme. 
 
 ```csharp
-webView1.Navigate("http://www.contoso.com");
+webView1.Navigate(new Uri("http://www.contoso.com"));
 ```
 
 To navigate to a URI with a POST request and HTTP headers, use the [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) method. This method supports only [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) and [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get) for the [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method) property value. 
@@ -87,13 +91,13 @@ To load uncompressed and unencrypted content from your app's [LocalFolder](/uwp/
 Each of these first-level subfolders is isolated from the content in other first-level subfolders. For example, you can navigate to ms-appdata:///temp/folder1/file.html, but you can't have a link in this file to ms-appdata:///temp/folder2/file.html. However, you can still link to HTML content in the app package using the **ms-appx-web scheme**, and to web content using the **http** and **https** URI schemes.
 
 ```csharp
-webView1.Navigate("ms-appdata:///local/intro/welcome.html");
+webView1.Navigate(new Uri("ms-appdata:///local/intro/welcome.html"));
 ```
 
 To load content from the your app package, use the **Navigate** method with a **Uri** that uses the [ms-appx-web scheme](/previous-versions/windows/apps/jj655406(v=win.10)). 
 
 ```csharp
-webView1.Navigate("ms-appx-web:///help/about.html");
+webView1.Navigate(new Uri("ms-appx-web:///help/about.html"));
 ```
 
 You can load local content through a custom resolver using the [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri) method. This enables advanced scenarios such as downloading and caching web-based content for offline use, or extracting content from a compressed file.
@@ -287,11 +291,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 For more info, see [WebView.AddWebAllowedObject](/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
 
-In addition, trusted JavaScript content in a web view can be allowed to directly access Windows Runtime APIs. This provides powerful native capabilities for web apps hosted in a web view. To enable this feature, the URI for trusted content must be whitelisted in the ApplicationContentUriRules of the app in Package.appxmanifest, with WindowsRuntimeAccess specifically set to "all". 
+In addition, trusted JavaScript content in a web view can be allowed to directly access Windows Runtime APIs. This provides powerful native capabilities for web apps hosted in a web view. To enable this feature, the URI for trusted content must be allowlisted in the ApplicationContentUriRules of the app in Package.appxmanifest, with WindowsRuntimeAccess specifically set to "all". 
 
 This example shows a section of the app manifest. Here, a local URI is given access to the Windows Runtime. 
 
-```csharp
+```xml
   <Applications>
     <Application Id="App"
       ...
@@ -335,3 +339,6 @@ A web view that hosts content off the UI thread is not compatible with parent co
 ## Related topics
 
 - [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+- [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/)
+- [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui)
+- [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2)

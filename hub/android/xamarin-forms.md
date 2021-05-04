@@ -1,6 +1,6 @@
 ---
-title: Create a simple Android app with Xamarin.Forms
-description: A step-by-step guide on how to to get started using Xamarin.Forms on Windows to create a cross-platform app that will work on Android devices.
+title: Create Android app with Xamarin.Forms 
+description: How to get started writing Android apps with Xamarin.Forms
 author: hickeys 
 ms.author: hickeys 
 manager: jken

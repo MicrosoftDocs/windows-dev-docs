@@ -1,6 +1,6 @@
 ---
-title: Overview of Android development on Windows
-description: Get started developing for Android on Windows, including Native Android development, Cross-platform development and Android game development. 
+title: Android development on Windows
+description: A guide to help you get started developing for Android on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

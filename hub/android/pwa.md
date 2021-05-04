@@ -1,6 +1,6 @@
 ---
-title: PWA approach to Android development on Windows
-description: A step-by-step guide on how to get started creating a hybrid web app or Progressive Web App (PWA) on Windows.
+title: Create a PWA or Hybrid web app for Android
+description: Get started developing Android apps using the PWA approach on Windows.
 author: mattwojo
 ms.author: mattwoj 
 manager: jken

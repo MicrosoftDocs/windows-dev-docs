@@ -117,6 +117,9 @@ appWindow.Closed += delegate
 };
 ```
 
+> [!TIP]
+> You should keep the amount of code in your `Closed` event handler to the minimum amount possible to avoid unexpected issues.
+
 ## Track instances of AppWindow
 
 Depending on how you use multiple windows in your app, you may or may not need to keep track of the instances of AppWindow you create. The `HelloAppWindow` example shows some different ways you might typically use an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow). Here, we'll look at why these windows should be tracked, and how to do it.

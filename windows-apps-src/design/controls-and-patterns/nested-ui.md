@@ -52,7 +52,7 @@ The *primary action* is what the user expects to happen when they press the list
 
 When creating list UI, you first need to make sure you account for all input methods that Windows supports. For more info about different kinds of input, see [Input primer](../input/index.md).
 
-After you have made sure that your app supports all inputs that Windows supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
+After you have made sure that your app supports all inputs that Windows supports, you should decide if your app's secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
 
 You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.
 
@@ -60,9 +60,9 @@ If you decide that putting secondary actions in the main list UI is not necessar
 
 ### Put secondary actions on the detail page
 
-Put the secondary actions on the page that the list item navigates to when it’s pressed. When you use the master/details pattern, the detail page is often a good place to put secondary actions.
+Put the secondary actions on the page that the list item navigates to when it's pressed. When you use the list/details pattern, the detail page is often a good place to put secondary actions.
 
-For more info, see the [Master/detail pattern](master-details.md).
+For more info, see the [list/detail pattern](list-details.md).
 
 ### Put secondary actions in a context menu
 

@@ -64,7 +64,7 @@ The following tables show the system-generated values for the instance U.
 
 Triangle strip instance U has 3 triangle primitives, with the following system-generated values:
 
-|                 |     |     |     |
+|                 | Value 1    | Value 2    | Value 3    |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
@@ -82,7 +82,7 @@ The following tables show the system-generated values for the instance V.
 
 Triangle strip instance V has 3 triangle primitives, with the following system-generated values:
 
-|                 |     |     |     |
+|                 | Value 1    | Value 2    | Value 3    |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |

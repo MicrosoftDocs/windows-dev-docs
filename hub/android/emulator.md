@@ -1,5 +1,5 @@
 ---
-title: Running Android device or emulator from Windows
+title: Test on an Android device or emulator 
 description: Test your app on an Android device or emulator from Windows and enable virtualization with hyper-v and Windows Hypervisor Platform (WHPX).
 author: mattwojo 
 ms.author: mattwoj 

@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 # Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT
 
 > [!NOTE]
-> The C#/WinRT authoring support described in this article is currently in preview as of C#/WinRT version 1.1.2-prerelease.210208.6. As of this release, it is intended to be used only for early feedback and evaluation.
+> The C#/WinRT authoring support described in this article is currently in preview as of C#/WinRT version 1.1.4. As of this release, it is intended to be used only for early feedback and evaluation.
 
-C#/WinRT enables .NET 5 developers to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
+C#/WinRT enables .NET 5+ developers to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
 
-This walkthrough demonstrates how to create a simple Windows Runtime component using C#/WinRT, distribute the component as a NuGet package, and consume the component from a C++/WinRT console application. Sample code for this walkthrough can be found on Github [here](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo).
+This walkthrough demonstrates how to create a simple Windows Runtime component using C#/WinRT, distribute the component as a NuGet package, and consume the component from a C++/WinRT console application. For the full sample that provides the code for this article, see the [C#/WinRT authoring sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo). For more details about authoring, see [Authoring components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
 
 While authoring your runtime component, follow the guidelines and type restrictions outlined in [this article.](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) Internally, the Windows Runtime types in your component can use any .NET functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). Externally, the members of your type can expose only Windows Runtime types for their parameters and return values.
 
@@ -50,7 +50,7 @@ Begin by creating a new project in Visual Studio 2019. Select the **Class Librar
 
     a. In Solution Explorer, right click on the project node and select **Manage NuGet Packages**.
 
-    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.1.2-prerelease.210208.6.
+    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.1.4.
 
 3. Add a new `PropertyGroup` element that sets several C#/WinRT properties.
 
@@ -131,36 +131,9 @@ C#/WinRT authored Windows Runtime components can be consumed from native applica
         
         a. Right click the **CppConsoleApp** project and select **Add** -> **Reference**. Under the **Projects** node, add a reference to the **AuthoringDemo** project. As of this preview, you will also need to add a file reference to **AuthoringDemo.winmd** from the **Browse** node. The generated winmd file can be found in the output directory of the **AuthoringDemo** project.
 
-        b. For this preview, you will also need to add the following property group to **CppConsoleApp.vcxproj**. To edit the native application project file, first right click on the **CppConsoleApp** project node and select **Unload Project**.
+3. To assist with hosting the component, you will need to add a manifest file for activatable class registrations. For more details about managed component hosting, see [Managed component hosting](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
 
-        ```xml
-        <PropertyGroup>
-            <TargetFrameworkVersion>net5.0</TargetFrameworkVersion>
-            <TargetFramework>native</TargetFramework>
-            <TargetRuntime>Native</TargetRuntime>
-        </PropertyGroup>
-        ```
-
-3. To assist with hosting the component, you will need to add a runtimeconfig.json file and a manifest file. For more details on managed component hosting, refer to [these hosting docs](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
-
-    a. To add the runtimeconfig.json file, right click on the project and choose **Add -> New Item**. Search for the **Text File** template and name it **WinRT.Host.runtimeconfig.json**. Paste the following contents:
-
-    ```json
-    {
-        "runtimeOptions": {
-            "tfm": "net5.0",
-            "rollForward": "LatestMinor",
-            "framework": {
-                "name": "Microsoft.NETCore.App",
-                "version": "5.0.0"
-            }
-        }
-    }
-    ```
-
-    Note for the `tfm` entry, a custom self-contained .NET 5 installation can be referenced using the DOTNET_ROOT environment variable.
-
-    b. To add the manifest file, again right click on the project and choose **Add -> New Item**. Search for the **Text File** template and name it **CppConsoleApp.exe.manifest**. Paste the following contents:
+    a. To add the manifest file, again right click on the project and choose **Add -> New Item**. Search for the **Text File** template and name it **CppConsoleApp.exe.manifest**. Paste the following contents:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -177,9 +150,9 @@ C#/WinRT authored Windows Runtime components can be consumed from native applica
 
     The manifest file is required for non-packaged applications. In this file, specify your runtime classes using activatable class registrations entries as shown above.
 
-4. Modify the project to include the runtimeconfig.json and manifest files in the output when deploying the project. For both the **WinRT.Host.runtimeconfig.json** and **CppConsoleApp.exe.manifest** files, click on the file in **Solution Explorer** and set the **Content** property to **True**. Here is an example of what this looks like.
+    b. Modify the project to include the manifest file in the output when deploying the project. Click the **CppConsoleApp.exe.manifest** file in **Solution Explorer** and set the **Content** property to **True**. Here is an example of what this looks like.
 
-    ![Deploy Content](images/deploy-content.png)
+    ![Deploy Content](images/deploy-content.png) 
 
 5. Open **pch.h** under the project's Header Files, and add the following line of code to include your component.
 

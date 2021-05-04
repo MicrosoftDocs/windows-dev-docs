@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: Python on Windows documentation
+title: Get started with Python using Windows 10
 summary: Get started developing with Python using Windows, including set up for your development environment, scripting and automation, building web apps, and faqs.
 
 metadata: 
@@ -76,7 +76,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Frequently Asked Questions
-            url: faqs.md
+            url: faqs.yml
       - linkListType: learn
         links:
           - text: Try Python (without installing anything) in this intro course

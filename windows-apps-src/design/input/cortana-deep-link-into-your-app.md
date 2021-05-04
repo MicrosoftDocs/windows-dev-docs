@@ -225,7 +225,7 @@ Here, we declare the `windows.personalAssistantLaunch` extension for the **Adven
 
 ## Protocol contract
 
-Your app is launched to the foreground through Uniform Resource Identifier (URI) activation using a [**Protocol**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) contract. Your app must override your app's [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application) event and check for an **ActivationKind** of **Protocol**. For more info, see [Handle URI activation](/windows/uwp/launch-resume/handle-uri-activation).
+Your app is launched to the foreground through Uniform Resource Identifier (URI) activation using a [**Protocol**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) contract. Your app must override your app's [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application) event and check for an **ActivationKind** of **Protocol**. For more info, see [Handle URI activation](../../launch-resume/handle-uri-activation.md).
 
 Here, we decode the URI provided by the [**ProtocolActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) to access the launch argument. For this example, the [**Uri**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) is set to "windows.personalassistantlaunch:?LaunchContext=Las Vegas".
 

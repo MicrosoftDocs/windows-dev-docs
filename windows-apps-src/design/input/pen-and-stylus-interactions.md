@@ -202,9 +202,22 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 These images shows how pen input is processed and customized by the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter).
 
-| ![Screenshot that shows the InkCanvas with default black ink strokes.](images/ink-basic-custom-1-small.png) | ![Screenshot of the InkCanvas with user selected red ink strokes.](images/ink-basic-custom-2-small.png) |
-| --- | --- |
-| The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with default black ink strokes. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with user selected red ink strokes. | 
+:::row:::
+   :::column span="":::
+      ![Screenshot that shows the InkCanvas with default black ink strokes.](images/ink-basic-custom-1-small.png)
+   :::column-end:::
+   :::column span="":::
+      The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with default black ink strokes.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![Screenshot of the InkCanvas with user selected red ink strokes.](images/ink-basic-custom-2-small.png)
+   :::column-end:::
+   :::column span="":::
+      The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with user selected red ink strokes.
+   :::column-end:::
+:::row-end:::
 
 To provide functionality beyond inking and erasing, such as stroke selection, your app must identify specific input for the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) to pass through unprocessed for handling by your app.
 

@@ -178,8 +178,8 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
-        - name: Master/details
-          href: controls-and-patterns/master-details.md
+        - name: List/details
+          href: controls-and-patterns/list-details.md
         - name: Navigation view
           href: controls-and-patterns/navigationview.md
         - name: Pivot
@@ -212,8 +212,6 @@
           href: controls-and-patterns/scroll-controls.md
         - name: Semantic zoom
           href: controls-and-patterns/semantic-zoom.md
-    - name: Search
-      href: controls-and-patterns/search.md
     - name: Status and information
       items:
         - name: Progress
@@ -322,16 +320,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Send local toast
           items:
-            - name: UWP apps
+            - name: C# apps
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: Desktop apps
-              items:
-                - name: Overview
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C# apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C++ UWP apps
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL apps
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Other apps
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: Toast content
           items:
             - name: Content

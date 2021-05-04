@@ -134,9 +134,14 @@ Both the PrimaryCommands and SecondaryCommands can be populated only with [AppBa
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the command bar or the overflow menu.
 
-The size of the icons in the overflow menu is 16x16px, which is smaller than the icons in the primary command area (which are 20x20px). If you use SymbolIcon, FontIcon, or PathIcon, the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area. 
+#### Icons
 
-### Button labels
+The size of the icons when shown in the primary command area is 20x20px; in the overflow menu, icons are displayed at 16x16px. If you use [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon), [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), or [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area.
+
+For more information and examples of setting the icon, see the documentation for the [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) class.
+
+#### Labels
+
 The AppBarButton [IsCompact](/uwp/api/windows.ui.xaml.controls.appbarbutton.IsCompact) property determines whether the label is shown. In a CommandBar control, the command bar overwrites the button's IsCompact property automatically as the command bar is opened and closed.
 
 To position app bar button labels, use CommandBar's [DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelposition) property.

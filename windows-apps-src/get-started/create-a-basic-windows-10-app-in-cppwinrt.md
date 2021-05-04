@@ -237,6 +237,7 @@ Add this block of XAML as the first child element of the root **StackPanel** ele
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
     ...
 </StackPanel>
 ```

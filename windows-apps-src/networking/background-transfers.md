@@ -225,7 +225,7 @@ Task<DownloadOperation> startTask = download.StartAsync().AsTask();
 startTask.ContinueWith(ForegroundCompletionHandler);
 
 // Do not enable the CompletionGroup until after all downloads are created.
-downloader.CompletinGroup.Enable();
+downloader.CompletionGroup.Enable();
 ```
 
 3.  The code in the background task extracts the list of operations from the trigger details, and your code can then inspect the details for each operation and perform appropriate post-processing for each operation.

@@ -57,13 +57,13 @@ These methods have the following URIs.
 The GET method to query for ad campaigns supports the following optional query parameters.
 
 | Name        | Type   |  Description      |    
-|-------------|--------|---------------|------|
+|-------------|--------|---------------|
 | skip  |  int   | The number of rows to skip in the query. Use this parameter to page through data sets. For example, fetch=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on.    |       
 | fetch  |  int   | The number of rows of data to return in the request.    |       
 | campaignSetSortColumn  |  string   | Orders the [Campaign](#campaign) objects in the response body by the specified field. The syntax is <em>CampaignSetSortColumn=field</em>, where the <em>field</em> parameter can be one of the following strings:</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>The default is **createdDateTime**.     |     
 | isDescending  |  Boolean   | Sorts the [Campaign](#campaign) objects in the response body in descending or ascending order.   |         
 | storeProductId  |  string   | Use this value to return only the ad campaigns that are associated with the app with the specified [Store ID](in-app-purchases-and-trials.md#store-ids). An example Store ID for a product is 9nblggh42cfd.   |         
-| label  |  string   | Use this value to return only the ad campaigns that include the specified *label* in the [Campaign](#campaign) object.    |       |    
+| label  |  string   | Use this value to return only the ad campaigns that include the specified *label* in the [Campaign](#campaign) object.    |
 
 
 ### Request body
@@ -151,7 +151,7 @@ The request and response bodies for these methods contain the following fields. 
 |  type   | string    |  One of the following values that specifies the campaign type: <ul><li>**Paid**</li><li>**House**</li><li>**Community**</li></ul>      |   Yes    |      |   Yes    |       
 |  objective   |  string   |  One of the following values that specifies the objective of the campaign: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   No    |  DriveInstall    |   Yes    |       
 |  lines   |  array   |   One or more objects that identify the [delivery lines](manage-delivery-lines-for-ad-campaigns.md#line) that are associated with the ad campaign. Each object in this field consists of an *id* and *name* field that specifies the ID and name of the delivery line.     |   No    |      |    No     |       
-|  createdDate   |  string   |  The date and time the ad campaign was created, in ISO 8601 format.     |  Yes     |      |     No    |       |
+|  createdDate   |  string   |  The date and time the ad campaign was created, in ISO 8601 format.     |  Yes     |      |     No    |
 
 
 ## Related topics

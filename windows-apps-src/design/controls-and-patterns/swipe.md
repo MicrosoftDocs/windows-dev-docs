@@ -222,7 +222,7 @@ Here, a _reply_ swipe item is set to close after its invoked.
 
 ## Dos and don'ts
 
-- Don't use swipe in FlipViews, Hubs or Pivots. The combination may be confusing for the user because of conflicting swipe directions.
+- Don't use swipe in FlipViews or Hubs. The combination may be confusing for the user because of conflicting swipe directions.
 - Don't combine horizontal swipe with horizontal navigation, or vertical swipe with vertical navigation.
 - Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped.
 - Do use swipe for the main actions a user will want to perform.

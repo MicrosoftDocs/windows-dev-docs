@@ -451,7 +451,7 @@ From our earlier investigation, we know that this collection of **Scenario** obj
 - Either runtime classes, or
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).
 
-For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing scalar values to IInspectable](./boxing.md)).
+For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing values to IInspectable](./boxing.md)).
 
 For this case study, we didn't make **Scenario** a runtime class. That is still a reasonable option, though. And there'll be cases in your own porting work where a runtime class will definitely be the way to go. For example, if you need to make the element type *observable* (see [XAML controls; bind to a C++/WinRT property](./binding-property.md)), or if the element needs to have methods for any other reason, and it's more than just a set of data members.
 
@@ -773,7 +773,7 @@ Apart from those items, just follow the same guidance that you did previously to
 - Construct C++/WinRT objects on the stack, not on the heap.
 - Replace calls to property get accessors with function-call syntax (`()`).
 
-A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](./faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
+A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](./faq.yml#why-is-the-linker-giving-me-a--lnk2019--unresolved-external-symbol--error-).
 
 If you want to follow along with the walkthrough and port **DisplayToast** yourself, then you can compare your results to the code in the C++/WinRT version in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded.
 
@@ -1094,7 +1094,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 }
 ```
 
-As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing scalar values to IInspectable](./boxing.md).
+As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing values to IInspectable](./boxing.md).
 
 The last two lines repeat porting patterns we've seen before, and they pretty much echo the C# version.
 
@@ -1347,7 +1347,7 @@ if (imageReceived)
 }
 ```
 
-C++/WinRT objects implement **IClosable** primarily for the benefit of languages that lack deterministic finalization. C++/WinRT has deterministic finalization, and so we often don't need to call **IClosable::Close** when we're writing C++/WinRT. But there are times when it's good to call it, and this is one of those times. Here, the *imageStream* identifier is a reference-counted wrapper around an underlying Windows Runtime object (in this case, an object that implements [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype)). Although we can determine that the finalizer of *imageStream* (its destructor) will run at the end of the enclosing scope (the curly brackets), we can't be certain that that finalizer will call **Close**. That's because we passed *imageStream* to other APIs, and they might still be contributing to the reference count of the underlying Windows Runtime object. So this is a case where it's a good idea to call **Close** explicitly. For more info, see [Do I need to call IClosable::Close on runtime classes that I consume?](./faq.md#do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume).
+C++/WinRT objects implement **IClosable** primarily for the benefit of languages that lack deterministic finalization. C++/WinRT has deterministic finalization, and so we often don't need to call **IClosable::Close** when we're writing C++/WinRT. But there are times when it's good to call it, and this is one of those times. Here, the *imageStream* identifier is a reference-counted wrapper around an underlying Windows Runtime object (in this case, an object that implements [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype)). Although we can determine that the finalizer of *imageStream* (its destructor) will run at the end of the enclosing scope (the curly brackets), we can't be certain that that finalizer will call **Close**. That's because we passed *imageStream* to other APIs, and they might still be contributing to the reference count of the underlying Windows Runtime object. So this is a case where it's a good idea to call **Close** explicitly. For more info, see [Do I need to call IClosable::Close on runtime classes that I consume?](./faq.yml#do-i-need-to-call-iclosable--close-on-runtime-classes-that-i-consume-).
 
 Next, consider the C# expression `(uint)(imageDecoder.OrientedPixelWidth * 0.5)`, which you'll find in the **OnDeferredImageRequestedHandler** event handler. That expression multiplies a `uint` by a `double`, resulting in a `double`. It then casts that to a `uint`. In C++/WinRT, we *could* use a similar-looking C-style cast (`(uint32_t)(imageDecoder.OrientedPixelWidth() * 0.5)`), but it's preferable to make it clear exactly what kind of cast we intend, and in this case we would do that with `static_cast<uint32_t>(imageDecoder.OrientedPixelWidth() * 0.5)`.
 
