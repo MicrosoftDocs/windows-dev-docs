@@ -91,7 +91,7 @@
         "android/*.md": "mattwojo",
         "nodejs/*.md": "mattwojo",
         "python/*.md": "mattwojo",
-        "powertoys/*.md": "crutkas",
+        "powertoys/*.md": "mattwojo",
         "package-manager/**.md": "KevinLaMS"
       },
       "ms.author":
@@ -112,7 +112,7 @@
         "android/*.md": "mattwoj",
         "nodejs/*.md": "mattwoj",
         "python/*.md": "mattwoj",
-        "powertoys/*.md": "crutkas",
+        "powertoys/*.md": "mattwoj",
         "package-manager/**.md": "kevinla"
       },
       "titleSuffix":
