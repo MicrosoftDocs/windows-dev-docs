@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 03/04/2021
+ms.date: 05/03/2021
 ---
 
 # RSS reader tutorial (Rust for Windows with VS Code)
@@ -16,7 +16,7 @@ The previous topic introduced [Rust for Windows, and the windows crate](rust-for
 
 Now let's try out Rust for Windows by writing a simple app that downloads the titles of blog posts from a Really Simple Syndication (RSS) feed.
 
-1. Launch a command prompt (the **x64 Native Tools Command Prompt for VS**, or any `cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
+1. Launch a command prompt (`cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
 
 2. Then, via Cargo, create a new Rust project named *rss_reader*, and `cd` into the project's newly-created folder.
 
@@ -80,7 +80,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
     The `windows::build!` macro takes care of resolving any dependencies in the form of `.winmd` files, and generating bindings for selected types directly from metadata. We *could* have asked for an entire namespace (with `Windows::Web::Syndication::*`). But here we're asking for bindings to be generated only for the particular types we specify (such as [**SyndicationClient**](/uwp/api/windows.web.syndication.syndicationclient)). In this way, you can import as little or as much as you need, and avoid waiting for code to be generated and compiled for things that you'll never need.
    
-    As well as the types that we'll be using explicitly, we also specify all of their dependencies. For example, we'll be using a method of **SyndicationClient** that expects a parameter of type [**Uri**](/uwp/api/windows.foundation.uri). So in the *build* macro we also include the definition for **Windows::Foundation::Uri** so that we can call that method. Other types are part of the **windows** crate itself. For example, **windows::Result** (which we'll see in use soon) is defined by the *windows* crate, so it's always available.
+    As well as the types that we'll be using explicitly, we also specify all of their dependencies. For example, we'll be using a method of **SyndicationClient** that expects a parameter of type [**Uri**](/uwp/api/windows.foundation.uri). So in the *build* macro we also include the definition for **Windows::Foundation::Uri** so that we can call that method. Other types are part of the **windows** crate itself. For example, **windows::Result** (which we'll see in use soon) is defined by the *windows* crate, so it's always available. Note the lower-case **windows** in **windows::Result**, as compared to the Pascal-cased namespace and type names for Windows types.
 
 7. Open the `bindings` > `src` > `lib.rs` source code file. To include the bindings generated in the previous step, replace the default code that you'll find in `lib.rs` with the following.
 
@@ -124,14 +124,14 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
     // src\main.rs
     ...
 
-    fn main() -> Result<()> {
+    fn main() -> windows::Result<()> {
         let uri = Uri::CreateUri("https://blogs.windows.com/feed")?;
 
         Ok(())
     }
     ```
 
-    Notice that we're using the **windows::Result** as the return type of the **main** function. This will make things easier, as it's common to deal with errors from operating system (OS) APIs. **windows::Result** helps us with error propagation, and concise error handling.
+    Notice that we're using **windows::Result** as the return type of the **main** function. This will make things easier, as it's common to deal with errors from operating system (OS) APIs. **windows::Result** helps us with error propagation, and concise error handling.
 
     You can see the question-mark operator at the end of the line of code that creates a **Uri**. To save on typing, we do that to make use of Rust's error-propagation and short-circuiting logic. That means we don't have to do a bunch of manual error handling for this simple example. For more info about this feature of Rust, see [The ? operator for easier error handling](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html).
 
