@@ -41,7 +41,7 @@ Next, [install Rust from the Rust website](https://www.rust-lang.org/tools/insta
 > [!TIP]
 > Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. You'll then be all set to write apps *for* Windows using Rust.
 
-When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (the **x64 Native Tools Command Prompt for VS**, or any `cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
+When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (`cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
 
 If you're curious about the use of the `cargo` keyword above, *Cargo* is the name of the tool in the Rust development environment that manages and builds your projects (more properly, *packages*) and their dependencies.
 
@@ -70,7 +70,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 Let's take Rust for a spin with a simple "Hello, world!" app.
 
-1. First, launch a command prompt (the **x64 Native Tools Command Prompt for VS**, or any `cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
+1. First, launch a command prompt (`cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
 
 2. Then ask Cargo to create a new Rust project for you with the following command.
 
