@@ -1,5 +1,5 @@
 ---
-title: Rust for Windows, and the *windows* crate
+title: Rust for Windows, and the windows crate
 description: Using the *windows* crate, and calling Windows APIs.
 author: stevewhims
 ms.author: stwhi 
