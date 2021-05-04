@@ -91,14 +91,14 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
     The `windows::include_bindings!` macro includes the source code that was generated in the previous step by the build script. Now, any time you need access to additional APIs, just list them in the build script (`build.rs`).
 
-8. Let's now implement the main *rss_reader* project. First, open the `Cargo.toml` file at the root of the project, and add the following dependency on the inner *bindings* crate.
+8. Let's now implement the main *rss_reader* project. First, open the `Cargo.toml` file at the root of the project, and add the following dependency on the inner *bindings* crate, along with a dependency on the *windows* crate.
 
     ```toml
     # Cargo.toml
     ...
 
     [dependencies] 
-    bindings = { package = "bindings", path = "bindings" }
+    bindings = { path = "bindings" }
     windows = "0.9.1"
     ```
 
@@ -108,7 +108,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
     // src\main.rs
     use bindings::{ 
         Windows::Foundation::Uri,
-        Windows::Web::Syndication::SyndicationClient
+        Windows::Web::Syndication::SyndicationClient,
     };
 
     fn main() {
@@ -197,8 +197,50 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
 
 That's as simple as it is to program Rust for Windows. Under the hood, however, a lot of love goes into building the tooling so that Rust can both parse `.winmd` files based on [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) (Common Language Infrastructure, or CLI) at compile time, and also faithfully honor the COM-based application binary interface (ABI) at run-time with both safety and efficiency in mind.
 
+## Showing a message box
+
+We did say that Rust for Windows lets you call any Windows API (past, present, and future). So in this section we'll add code to show a Windows message box to the user.
+
+1. Open the `bindings` > `build.rs` source code file, and add to the generated bindings the function shown below.
+
+    ```rust
+    // bindings\build.rs
+    fn main() {
+        windows::build!(
+            ...
+            Windows::Win32::WindowsAndMessaging::MessageBoxA,
+        );
+    }
+    ```
+
+2. Next, open the project's `src` > `main.rs` source code file, and update the `use` declaration with the new namespace, or module. And finally add code to call the [**MessageBoxA**](/windows/win32/api/winuser/nf-winuser-messageboxa) function (also see [**MessageBoxA**](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/Win32/WindowsAndMessaging/fn.MessageBoxA.html) in the [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/), which includes a link to [**MESSAGEBOX_STYLE**](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/Win32/WindowsAndMessaging/struct.MESSAGEBOX_STYLE.html)).
+
+    ```rust
+    // src\main.rs
+    use bindings::{ 
+        Windows::Foundation::Uri,
+        Windows::Web::Syndication::SyndicationClient,
+        Windows::Win32::WindowsAndMessaging::*,
+    };
+
+    fn main() {
+        ...
+
+        unsafe {
+            MessageBoxA(None, "Text", "Caption", MESSAGEBOX_STYLE::MB_OK);
+        }
+
+        Ok(())
+    }
+    ```
+
+    As you can see, we mark these older Win32 APIs as `unsafe` (see [Unsafe blocks](https://doc.rust-lang.org/reference/unsafe-blocks.html)).
+
+This time when you build and run, Rust displays a Windows message box after listing the blog post titles.
+
 ## Related
 
 * [Rust for Windows, and the windows crate](rust-for-windows.md)
 * [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
 * [The ? operator for easier error handling](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html)
+* [Unsafe blocks](https://doc.rust-lang.org/reference/unsafe-blocks.html)
