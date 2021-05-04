@@ -13,7 +13,7 @@ ms.date: 03/04/2021
 # Rust for Windows, and the *windows* crate
 
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/LajquCjHXK4]
+> [!VIDEO https://www.youtube.com/embed/-oZrsCPKsn4]
 
 ## Introducing Rust for Windows
 
