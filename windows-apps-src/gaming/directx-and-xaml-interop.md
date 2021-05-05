@@ -572,7 +572,10 @@ And here's a deeper dive into those steps, with source code examples.
 
 ## SwapChainPanel and gaming
 
-[**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) is the Windows Runtime type designed to support high-performance graphics and gaming, where you manage the swap chain directly. In this case, you create your own DirectX swap chain and manage the presentation of your rendered content.
+[**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) is the Windows Runtime type designed to support high-performance graphics and gaming, where you manage the swap chain directly. In this case, you create your own DirectX swap chain and manage the presentation of your rendered content. Another feature of the **SwapChainPanel** is that you can overlay other XAML elements in front of it.
+
+> [!TIP]
+> The following sample applications demonstrate **SurfaceImageSource**: [Direct2D advanced color image rendering](/samples/microsoft/windows-universal-samples/d2dadvancedcolorimages/), [Direct2D photo adjustment](/samples/microsoft/windows-universal-samples/d2dphotoadjustment/), [Direct2D SVG image rendering](/samples/microsoft/windows-universal-samples/d2dsvgimage/), [Low latency input](/samples/microsoft/windows-universal-samples/lowlatencyinput/), [DirectX and XAML game](/samples/microsoft/windows-universal-samples/simple3dgamexaml/), and [XAML SwapChainPanel DirectX interop (Windows 8.1)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20SwapChainPanel%20DirectX%20interop%20sample).
 
 To ensure good performance, there are certain limitations to the **SwapChainPanel** type.
 
