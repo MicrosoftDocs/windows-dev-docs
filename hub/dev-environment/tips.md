@@ -43,7 +43,7 @@ For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](https
 
 ## Improve performance speed for WSL by not crossing over file systems
 
-If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
+If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTFS (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
 
 ## Improve build speeds by adding Windows Defender exclusions
 
