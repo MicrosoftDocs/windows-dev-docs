@@ -614,6 +614,72 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 };
 ```
 
+### Implement a COM interface that derives from another
+
+Interface derivation is a feature of classic COM (and it happens to be absent, intentionally, from the Windows Runtime). Here's an example of what interface derivation looks like.
+
+```cpp
+IFileSystemBindData2 : public IFileSystemBindData { /* ... */  };
+```
+
+If you're writing a class that needs to implement, for example,  both [**IFileSystemBindData**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ifilesystembinddata) and [**IFileSystemBindData2**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ifilesystembinddata2), then the first step in expressing that is to declare that you implement only the *derived* interface, like this.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <Shobjidl.h>
+...
+
+// main.cpp
+...
+struct MyFileSystemBindData :
+    implements<MyFileSystemBindData,
+    IFileSystemBindData2>
+{
+    // IFileSystemBindData
+    IFACEMETHOD(SetFindData)(const WIN32_FIND_DATAW* pfd) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetFindData)(WIN32_FIND_DATAW* pfd) override { /* ... */ return S_OK; };
+
+    // IFileSystemBindData2
+    IFACEMETHOD(SetFileID)(LARGE_INTEGER liFileID) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetFileID)(LARGE_INTEGER* pliFileID) override { /* ... */ return S_OK; };
+    IFACEMETHOD(SetJunctionCLSID)(REFCLSID clsid) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetJunctionCLSID)(CLSID* pclsid) override { /* ... */ return S_OK; };
+};
+...
+int main()
+...
+```
+
+The next step is to ensure that [**Query­Interface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)) succeeds when it's called (directly or indirectly) for *IID_IFileSystemBindData* (the *base* interface) against an instance of **MyFileSystemBindData**. You do that by providing a specialization for the [**winrt::is_guid_of**](/uwp/cpp-ref-for-winrt/is-guid-of) function template.
+
+**winrt::is_guid_of** is variadic, and so you can provide it a list of interfaces. Here's how you'd provide a specialization so that a check for **IFileSystemBindData2** also includes a test for **IFileSystemBindData**.
+
+```cppwinrt
+// pch.h
+...
+namespace winrt
+{
+    template<>
+    inline bool is_guid_of<IFileSystemBindData2>(guid const& id) noexcept
+    {
+        return is_guid_of<IFileSystemBindData2, IFileSystemBindData>(id);
+    }
+}
+
+// main.cpp
+...
+int main()
+{
+    ...
+    auto mfsbd{ winrt::make<MyFileSystemBindData>() };
+    auto a{ mfsbd.as<IFileSystemBindData2>() }; // Would succeed even without the **is_guid_of** specialization.
+    auto b{ mfsbd.as<IFileSystemBindData>() }; // Needs the **is_guid_of** specialization in order to succeed.
+}
+```
+
+The specialization of **winrt::is_guid_of** must be identical across all files in the project, and visible at the point the interface is used by the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) or [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) template. Typically you'd put it in a common header file.
+
 ## Important APIs
 * [IInspectable interface](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [IUnknown interface](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
