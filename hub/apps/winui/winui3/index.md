@@ -136,9 +136,9 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 - Windowed popups
   - More specifically, the `ShouldConstrainToRootBounds` property always acts as if it's set to `true`, regardless of the property value.
 - Inking support, including:
-  - [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
-  - [HandwritingView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HandwritingView)
-  - [InkPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)
+  - [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
+  - [HandwritingView](/uwp/api/Windows.UI.Xaml.Controls.HandwritingView)
+  - [InkPresenter](/uwp/api/Windows.UI.Input.Inking.InkPresenter)
 - Background acrylic
 - MediaElement and MediaPlayerElement
 - MapControl
@@ -147,7 +147,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.application.suspending?view=winui-3.0-preview&preserve-view=true ) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending?preserve-view=true&view=winui-3.0-preview) for more details. 
 
 - CoreWindow, ApplicationView, CoreApplicationView, CoreDispatcher and their dependencies are not supported in desktop apps (see below)
 

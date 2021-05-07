@@ -62,7 +62,7 @@ While writing a simple React component in a plain text editor is a good introduc
 
 Together, the suite of frameworks that help you create, build, and deploy your app are called a toolchain. An easy toolchain to get started with is [create-react-app](https://create-react-app.dev), which generates a simple one-page app for you. The only setup required to use **create-react-app** is Node.js.
 
-- For Windows development, follow the instructions to [install Node.js on WSL](/windows/dev-environment/javascript/nodejs-on-wsl) or [install Node.js on Windows](/windows/dev-environment/javascript/nodejs-on-windows). For help deciding which to use, check out the article: [Should I install on Windows or Windows Subsystem for Linux?](/windows/dev-environment/javascript/windows-or-wsl).
+- For Windows development, follow the instructions to [install Node.js on WSL](./nodejs-on-wsl.md) or [install Node.js on Windows](./nodejs-on-windows.md). For help deciding which to use, check out the article: [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md).
 
 ### React Native component directory
 
@@ -93,11 +93,11 @@ React is a library, not a framework, so may require additional tools to create a
 
 Here are a few recommended places to learn React and build sample apps:
 
-- Microsoft Learn: The [React Learning Path](https://docs.microsoft.com/learn/paths/react/) contains online course modules to help you get started with the basics.
-- Build a single-page app (SPA) that runs in the browser (like this [sample web app that retrieves calendar info for a user with the Microsoft Graph API](https://docs.microsoft.com/graph/tutorials/react))
+- Microsoft Learn: The [React Learning Path](/learn/paths/react/) contains online course modules to help you get started with the basics.
+- Build a single-page app (SPA) that runs in the browser (like this [sample web app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react))
 - Build a server-rendered app with [Next.js](./nextjs-on-wsl.md) or a static-site-generated app with [Gatsby](./gatsby-on-wsl.md)
-- Create a user interface (UI) for a [native app that runs on Windows, Android, and iOS devices](https://microsoft.github.io/react-native-windows/docs/view-managers) (checkout these [native Windows app samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples) or this [sample native app that retrieves calendar info for a user with the Microsoft Graph API](https://docs.microsoft.com/graph/tutorials/react-native))
-- [Develop an app for Surface Duo dual-screen device](https://docs.microsoft.com/dual-screen/react-native/)
+- Create a user interface (UI) for a [native app that runs on Windows, Android, and iOS devices](https://microsoft.github.io/react-native-windows/docs/view-managers) (checkout these [native Windows app samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples) or this [sample native app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react-native))
+- [Develop an app for Surface Duo dual-screen device](/dual-screen/react-native/)
 - Create a web app or native app using [Fluent UI React components](https://developer.microsoft.com/fluentui#/)
 - Build a [React app with TypeScript](https://create-react-app.dev/docs/adding-typescript/)
 

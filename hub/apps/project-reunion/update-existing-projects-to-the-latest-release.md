@@ -98,7 +98,7 @@ Before starting, make sure you have all the Project Reunion 0.5 prerequisites in
 First, do the following:
 
 - In the .wapproj file, if your **TargetPlatformMinVersion** is older than 10.0.17763.0, change it to 10.0.17763.0.
-- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.application.suspending) for more info.
+- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](/windows/winui/api/microsoft.ui.xaml.application.suspending) for more info.
 - The default project templates for both C++ and C# apps included the following lines. Be sure to remove these lines if they are still present in your code:
 
     ```csharp
@@ -178,7 +178,7 @@ Before starting, make sure you have all the Project Reunion 0.5 prerequisites in
 First, do the following:
 
 - In the .wapproj file, if your TargetPlatformMinVersion is older than 10.0.17763.0, change it to 10.0.17763.0.
-- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.application.suspending?view=winui-3.0-preview&preserve-view=true) for more info.
+- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](/windows/winui/api/microsoft.ui.xaml.application.suspending?preserve-view=true&view=winui-3.0-preview) for more info.
 - The default project templates for both C++ and C# apps included the following lines. Be sure to remove these lines if they are still present in your code:
 
     ```csharp

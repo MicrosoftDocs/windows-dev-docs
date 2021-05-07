@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging.
 
 > [!NOTE]
-> For more info about the C++/WinRT Visual Studio Extension (VSIX), see [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For more info about the C++/WinRT Visual Studio Extension (VSIX), see [Visual Studio support for C++/WinRT, and the VSIX](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Enabling natvis
 
@@ -92,4 +92,4 @@ L"string"
 ```
 
 ## Related topics
-* [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)
+* [Visual Studio support for C++/WinRT, and the VSIX](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)

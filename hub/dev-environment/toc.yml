@@ -1,5 +1,5 @@
 - name: Windows development environment
-  href: overview.md
+  href: ./index.md
   items:
   - name: Overview
     items:
