@@ -93,7 +93,7 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 ### Install Android emulator with Visual Studio
 
-1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
+1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
 
 2. Create a new project. Once you've [set up the Android Emulator](/xamarin/android/get-started/installation/android-emulator/), you can use the [Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements) to create, duplicate, customize, and launch a variety of Android virtual devices. Launch the Android Device Manager from the Tools menu with: **Tools** > **Android** > **Android Device Manager**.
 
