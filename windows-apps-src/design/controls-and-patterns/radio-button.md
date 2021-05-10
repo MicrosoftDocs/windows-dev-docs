@@ -258,7 +258,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 |Focus moves to an unselected item<br> *(If navigating with Ctrl-arrow keys or Xbox gamepad,<br>which indicates selection is not following focus.)* | "_name_, RadioButton, non-selected, _x_ of _N_"  |
 
 > [!NOTE]
-> The _**name**_ that Narrator announces for each item is the value of the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) attached property if it is available for the item; otherwise, it is the value returned by the item's [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0) method.
+> The _**name**_ that Narrator announces for each item is the value of the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) attached property if it is available for the item; otherwise, it is the value returned by the item's [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0&preserve-view=true) method.
 >
 > _**x**_ is the number of the current item. _**N**_ is the total number of items in the group.
 
