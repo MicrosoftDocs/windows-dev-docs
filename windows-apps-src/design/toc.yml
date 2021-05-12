@@ -258,16 +258,10 @@
           href: style/segoe-ui-symbol-font.md
     - name: Acrylic
       href: style/acrylic.md
-    - name: Reveal highlight
-      href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
-    - name: Corner radius
-      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
-    - name: Spacing
-      href: style/spacing.md
     - name: Writing style
       href: style/writing-style.md
     - name: XAML brushes
@@ -281,6 +275,10 @@
           href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
         - name: XAML theme resources
           href: controls-and-patterns/xaml-theme-resources.md
+    - name: Spacing
+      href: style/spacing.md
+    - name: Corner radius
+      href: style/rounded-corner.md
 - name: Motion
   items:
     - name: Overview

@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-acrylic.svg)
 
-Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.
 
 > **Important APIs**: [AcrylicBrush class](/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
 
@@ -101,7 +101,7 @@ In addition, only background acrylic will replace its translucency and texture w
  - When the Windows app is running on phone, Xbox, HoloLens or tablet mode
 
 ### Legibility considerations
-It’s important to ensure that any text your app presents to users [meets contrast ratios](../accessibility/accessible-text-requirements.md). We’ve optimized the acrylic recipe so that high-color black, white or even medium-color gray text meets contrast ratios on top of acrylic. The theme resources provided by the platform default to contrasting tint colors at 80% opacity. When placing high-color body text on acrylic, you can reduce tint opacity while maintaining legibility. In dark mode, tint opacity can be 70%, while light mode acrylic will meet contrast ratios at 50% opacity.
+It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic recipe so that high-color black, white or even medium-color gray text meets contrast ratios on top of acrylic. The theme resources provided by the platform default to contrasting tint colors at 80% opacity. When placing high-color body text on acrylic, you can reduce tint opacity while maintaining legibility. In dark mode, tint opacity can be 70%, while light mode acrylic will meet contrast ratios at 50% opacity.
 
 We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at 15px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level outside of the platform defaults provided by the theme resource, keep the impact on legibility in mind.
 
@@ -316,11 +316,10 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 ![Acrylic recipe](images/AcrylicRecipe_Diagram.jpg)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
-
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
-[**Reveal highlight**](reveal.md)
+[Fluent Design overview](/windows/apps/fluent-design-system)

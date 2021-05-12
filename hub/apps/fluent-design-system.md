@@ -182,16 +182,7 @@ Add light to your UWP app:
         ![Short video depicting reveal highlighting.](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
 	:::column span="2":::
-**Reveal highlight**
 
-[Reveal highlight](/windows/uwp/design/style/reveal) uses light to make interactive elements stand out. Light illuminates the elements the user can interact with, revealing hidden borders. Reveal is automatically enabled on some controls, such as list view and grid view. You can enable it on other controls by applying our predefined Reveal highlight styles.
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Short video depicting reveal focus.](images/fluent/traveling-focus-fullscreen-light-rf.gif)
-    :::column-end:::
-	:::column span="2":::
 **Reveal focus**
 
 [Reveal focus](/windows/uwp/design/style/reveal-focus) uses light to call attention to the element that currently has input focus.
