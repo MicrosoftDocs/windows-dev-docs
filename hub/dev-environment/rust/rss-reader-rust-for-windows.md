@@ -141,7 +141,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
     // src\main.rs
     ...
 
-    fn main() -> Result<()> {
+    fn main() -> windows::Result<()> {
         let uri = Uri::CreateUri("https://blogs.windows.com/feed")?;
         let client = SyndicationClient::new()?;
 
@@ -157,7 +157,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
     // src\main.rs
     ...
 
-    fn main() -> Result<()> {
+    fn main() -> windows::Result<()> {
         let uri = Uri::CreateUri("https://blogs.windows.com/feed")?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(uri)?.get()?;
@@ -174,7 +174,7 @@ Now let's try out Rust for Windows by writing a simple app that downloads the ti
     // src\main.rs
     ...
 
-    fn main() -> Result<()> {
+    fn main() -> windows::Result<()> {
         let uri = Uri::CreateUri("https://blogs.windows.com/feed")?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(uri)?.get()?;
