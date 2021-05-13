@@ -169,16 +169,16 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - You may recieve a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
 
-    - Explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
+  Explicitly set your .NET SDK to the correct version. To determine the correct version for your app, locate the `<TargetFramework>` tag in your project file. Using the Windows SDK build number that your app is targeting in the `<TargetFramework>` tag (such as 18362 or 19041), add the following item to your project file, then save your project: 
 
-      ```xml
-      <ItemGroup>            
-          <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-          <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-      </ItemGroup>
-      ```
+  ```xml
+  <ItemGroup>            
+      <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.{Target Windows SDK Build Number}.16" />
+      <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.{Target Windows SDK Build Number}.16" />
+  </ItemGroup>
+  ```
 
-    Note that once .NET 5.0.6 is available in May, these lines can be removed. 
+  Note this workaround is required for .NET SDK 5.0.203 and earlier, but will not be required for .NET SDK 5.0.204 or 5.0.300.
 
 - When using Visual Studio 2019 16.10 Preview 2, Live Visual Tree may cause a crash. This will be fixed in the upcoming VS 2019 16.10 Preview 3 release. In the meantime, you can revert to VS 2019 16.10 Preview 1, which does not have this issue, by downloading it directly [from this link](https://aka.ms/vs/16/pre/629027471_513181835/vs_Enterprise.exe).
 

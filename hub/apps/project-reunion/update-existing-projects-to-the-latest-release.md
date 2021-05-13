@@ -11,14 +11,14 @@ ms.localizationpriority: medium
 
 # Update existing projects to the latest release of Project Reunion
 
-If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.6).
+If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.7).
 
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
 ## Update from Project Reunion 0.5.0 or above
 
-If you created a project using Project Reunion version 0.5.0 or above, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release). This version includes several important bug fixes.
+If you created a project using Project Reunion version 0.5.0 or above, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release). This version includes several important bug fixes.
 
 > [!NOTE]
 > If you created a project using the Project Reunion 0.5 VSIX, you may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**. 
@@ -29,16 +29,7 @@ First, do the following:
 - In the .wapproj file, if your **TargetPlatformMinVersion** is older than 10.0.17763.0, change it to 10.0.17763.0.
 
 Next, make these changes to your project:
-1. To get all of the changes from the latest stable release, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
-
-    ```xml
-    <ItemGroup>            
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-    </ItemGroup>
-    ```
-
-    Note that once .NET 5.0.6 is available in May, these lines can be removed. 
+1. In order to receive all of the fixes from the latest stable or preview release of Project Reunion in C# .NET 5 projects, you'll need to update your project file to explicitly set the .NET SDK to the latest version. For more information, see [.NET SDK references](index.md#net-sdk-references).
 
 3. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
 
@@ -48,7 +39,7 @@ Next, make these changes to your project:
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.7 -ProjectName {yourProjectName}
     ```
 
 5. Make the following changes in your Application (package).wapproj:
@@ -57,7 +48,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.7]">
                 <IncludeAssets>build</IncludeAssets>
             </PackageReference>
         </ItemGroup>
@@ -91,7 +82,7 @@ Next, make these changes to your project:
 
 ## Update from Project Reunion 0.5 Preview
 
-If you created a project using Project Reunion 0.5 Preview, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release).
+If you created a project using Project Reunion 0.5 Preview, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release).
 
 Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](get-started-with-project-reunion.md#set-up-your-development-environment).
 
@@ -110,16 +101,7 @@ First, do the following:
     ```
 
 Next, make these changes to your project:
-1. To get all of the changes from the latest stable release, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
-
-    ```xml
-    <ItemGroup>            
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-    </ItemGroup>
-    ```
-
-    Note that once .NET 5.0.6 is available in May, these lines can be removed.
+1. In order to receive all of the fixes from the latest stable or preview release of Project Reunion in C# .NET 5 projects, you'll need to update your project file to explicitly set the .NET SDK to the latest version. For more information, see [.NET SDK references](index.md#net-sdk-references).
 
 2. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
 3. Enter the following commands:
@@ -128,7 +110,7 @@ Next, make these changes to your project:
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.7 -ProjectName {yourProjectName}
     ```
 
 4. Make the following changes in your Application (package).wapproj:
@@ -137,7 +119,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.7]">
                 <IncludeAssets>build</IncludeAssets>
             </PackageReference>
         </ItemGroup>
@@ -171,14 +153,14 @@ Next, make these changes to your project:
 
 ## Update from WinUI 3 Preview 4
 
-If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion version 0.5.6 (the latest stable release).
+If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release).
 
 Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](get-started-with-project-reunion.md#set-up-your-development-environment).
 
 First, do the following:
 
 - In the .wapproj file, if your TargetPlatformMinVersion is older than 10.0.17763.0, change it to 10.0.17763.0.
-- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](/windows/winui/api/microsoft.ui.xaml.application.suspending?preserve-view=true&view=winui-3.0-preview) for more info.
+- If your app uses the `Application.Suspending` event, be sure to remove or change that line since `Application.Suspending` is no longer called for desktop apps. See the [API reference documentation](/windows/winui/api/microsoft.ui.xaml.application.suspending?view=winui-3.0-preview&preserve-view=true) for more info.
 - The default project templates for both C++ and C# apps included the following lines. Be sure to remove these lines if they are still present in your code:
 
     ```csharp
@@ -190,22 +172,14 @@ First, do the following:
     ```
 
 Next, make these changes to your project:
-1. To get all of the changes from the latest stable release, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project:
+1. In order to receive all of the fixes from the latest stable or preview release of Project Reunion in C# .NET 5 projects, you'll need to update your project file to explicitly set the .NET SDK to the latest version. For more information, see [.NET SDK references](index.md#net-sdk-references).
 
-    ```xml
-    <ItemGroup>            
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-    </ItemGroup>
-    ```
-
-    Note that once .NET 5.0.6 is available in May, these lines can be removed.
 2. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
 3. Enter the following commands:
 
     ```Console
     uninstall-package Microsoft.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.5.6 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.5.7 -ProjectName {yourProjectName}
     ```
 
 4. Make the following changes in your Application (package).wapproj:
@@ -214,7 +188,7 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.6]">
+          <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.7]">
             <IncludeAssets>build</IncludeAssets>
           </PackageReference>
         </ItemGroup>

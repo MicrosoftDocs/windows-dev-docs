@@ -66,14 +66,18 @@ The following limitations and known issues apply to specific developer scenarios
 
 #### .NET SDK references
 
-In order to receive all of the fixes from the latest stable release of Project Reunion 0.5 in C# .NET 5 projects, you'll need to explicitly set your .NET SDK to the latest version. To do this, add the following item group to your .csproj file, then save your project. These lines can be removed from your project file after .NET 5.0.6 is available in May 2021.
+In order to receive all of the fixes from the latest stable or preview release of Project Reunion in C# .NET 5 projects, you'll need to explicitly set your .NET SDK to the correct version. 
+
+To determine the correct version for your app, locate the `<TargetFramework>` tag in your project file. Using the Windows SDK build number that your app is targeting in the `<TargetFramework>` tag (such as 18362 or 19041), add the following item to your project file, then save your project: 
 
 ```xml
 <ItemGroup>            
-    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.{Target Windows SDK Build Number}.16" />
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.{Target Windows SDK Build Number}.16" />
 </ItemGroup>
 ```
+
+Note this workaround is required for .NET SDK 5.0.203 and earlier, but will not be required for .NET SDK 5.0.204 or 5.0.300
 
 #### Using the Project Reunion NuGet package in existing projects
 
