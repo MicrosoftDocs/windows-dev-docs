@@ -65,4 +65,4 @@ To install the full React toolchain on WSL, we recommend using create-react-app:
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
-- Try the Microsoft Learn online course: [React](https://docs.microsoft.com/learn/paths/react/)
+- Try the Microsoft Learn online course: [React](/learn/paths/react/)
