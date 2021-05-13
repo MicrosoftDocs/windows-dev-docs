@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python on windows for beginners, install python with microsoft store, python with vs code, pygame on windows
 ms.localizationpriority: medium
-ms.date: 07/19/2019
+ms.date: 05/05/2021
 ---
 
 # Get started using Python on Windows for beginners
@@ -26,7 +26,7 @@ To install Python using the Microsoft Store:
 
 1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.9" from the results under Apps. Select **Get**.
+2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select **Get**.
 
 3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has installed on your machine.
 
@@ -42,7 +42,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 2. Once VS Code has been installed, you must also install the Python extension. To install the Python extension, you can select the [VS Code Marketplace link](https://marketplace.visualstudio.com/items?itemName=ms-python.python) or open VS Code and search for **Python** in the extensions menu (Ctrl+Shift+X).
 
-3. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend sticking with Python 3.7 unless you have a specific reason for choosing something different. Once you've installed the Python extension, select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+3. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend using the most recent version of Python unless you have a specific reason for choosing something different. Once you've installed the Python extension, select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
     ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 

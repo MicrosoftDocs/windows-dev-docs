@@ -271,9 +271,9 @@ The default is `TopBottom`.
 
 #### Special values for MinWideModeWidth and MinTallModeHeight
 
-You can use the `MinWideModeWidth` property to prevent the two-pane view from entering Wide mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0).
+You can use the `MinWideModeWidth` property to prevent the two-pane view from entering Wide mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true).
 
-If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0), it prevents the two-pane view from entering Tall mode.
+If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true), it prevents the two-pane view from entering Tall mode.
 
 If you set `MinTallModeHeight` to 0, it prevents the two-pane view from entering `SinglePane` mode.
 

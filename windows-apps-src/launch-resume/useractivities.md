@@ -2,18 +2,17 @@
 title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.date: 04/27/2018
+ms.date: 05/05/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Continue user activity, even across devices
 
 This topic describes how to help users resume what they were doing in your app on their PC, and across devices.
 
 > [!NOTE]
-> Starting in June 2021, users who have activity history synced across their Windows devices
+> Starting in July 2021, users who have activity history synced across their Windows devices
 > through their Microsoft Account (MSA) will no longer have the option to upload new activity
 > in Timeline. They'll still be able to use Timeline and see their activity history (information
 > about recent apps, websites and files) on their local PC. AAD-connected accounts won't be 

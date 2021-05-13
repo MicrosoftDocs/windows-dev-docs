@@ -245,9 +245,9 @@ When there are problems with a XAML file, the most typical result is that some s
 
 XAML is often edited within an IDE such as Visual Studio and one of its XAML design surfaces. Visual Studio can often provide design-time validation and error checking of a XAML source as you edit it. For example it might display "squiggles" in the XAML text editor as soon as you type a bad attribute value, and you won't even have to wait for a XAML compile pass to see that something's wrong with your UI definition.
 
-Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
+Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 > [!NOTE]
-> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
+> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
 For more info on debugging a Windows Runtime app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).

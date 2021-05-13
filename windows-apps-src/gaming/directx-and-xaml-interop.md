@@ -65,7 +65,7 @@ And here's a deeper dive into those steps, with source code examples.
     #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
     ```
 
-3. Add the `using` directive shown below to the top of `MainPage.cpp`, below the ones already there. Also in `MainPage.cpp`, replace the existing implementation of **MainPage::ClickHandler** with the listing shown below. The code creates a Direct 3D device, a Direct 2D device, and a Direct 2D device context. To do that, it calls [**D3D11CreateDevice**](/windows/win32/api/d3d11/nf-d3d11-d3d11createdevice), [**D2D1CreateDevice**](/windows/win32/api/d2d1_1/nf-d2d1_1-d2d1createdevice), and [**ID2D1Device::CreateDeviceContext**](/windows/win32/api/d2d1_1/nf-d2d1_1-id2d1device-createdevicecontext). 
+3. Add the `using` directive shown below to the top of `MainPage.cpp`, below the ones already there. Also in `MainPage.cpp`, replace the existing implementation of **MainPage::ClickHandler** with the listing shown below. The code creates a Direct 3D device, a Direct 2D device, and a Direct 2D device context. To do that, it calls [**D3D11CreateDevice**](/windows/win32/api/d3d11/nf-d3d11-d3d11createdevice), [**D2D1CreateDevice**](/windows/win32/api/d2d1_1/nf-d2d1_1-d2d1createdevice), and [**ID2D1Device::CreateDeviceContext**](/windows/win32/api/d2d1_1/nf-d2d1_1-id2d1device-createdevicecontext).
 
     ```cppwinrt
     // MainPage.cpp | paste this below the existing using directives
@@ -122,6 +122,7 @@ And here's a deeper dive into those steps, with source code examples.
                 d2dDeviceContext.put()
             )
         );
+    }
     ```
 
 4. Next, add code to create a [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource), and set the Direct 2D (or Direct 3D) device on that by calling [**ISurfaceImageSourceNativeWithD2D::SetDevice**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice).
@@ -252,7 +253,7 @@ And here's a deeper dive into those steps, with source code examples.
 
 9. You can now build and run the app. Click the button to see the contents of the **SurfaceImageSource** displayed in the **Image**.
 
-![A thick, dark orange rectanglular outline against a lighter orange background](images/sis.png)
+    ![A thick, dark orange rectanglular outline against a lighter orange background](images/sis.png)
 
 ## VirtualSurfaceImageSource
 
@@ -571,95 +572,257 @@ And here's a deeper dive into those steps, with source code examples.
 
 ## SwapChainPanel and gaming
 
-[**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) is the Windows Runtime type designed to support high-performance graphics and gaming, where you manage the swap chain directly. In this case, you create your own DirectX swap chain and manage the presentation of your rendered content.
+[**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) is the Windows Runtime type designed to support high-performance graphics and gaming, where you manage the swap chain directly. In this case, you create your own DirectX swap chain and manage the presentation of your rendered content. Another feature of the **SwapChainPanel** is that you can overlay other XAML elements in front of it.
 
-To ensure good performance, there are certain limitations to the [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) type:
+> [!TIP]
+> The following sample applications demonstrate **SurfaceImageSource**: [Direct2D advanced color image rendering](/samples/microsoft/windows-universal-samples/d2dadvancedcolorimages/), [Direct2D photo adjustment](/samples/microsoft/windows-universal-samples/d2dphotoadjustment/), [Direct2D SVG image rendering](/samples/microsoft/windows-universal-samples/d2dsvgimage/), [Low latency input](/samples/microsoft/windows-universal-samples/lowlatencyinput/), [DirectX and XAML game](/samples/microsoft/windows-universal-samples/simple3dgamexaml/), and [XAML SwapChainPanel DirectX interop (Windows 8.1)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20SwapChainPanel%20DirectX%20interop%20sample).
 
-* There are no more than 4 [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) instances per app.
-* You should set the DirectX swap chain's height and width (in [**DXGI_SWAP_CHAIN_DESC1**](/windows/win32/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) to the current dimensions of the swap chain element. If you don't, the display content will be scaled (using **DXGI\_SCALING\_STRETCH**) to fit.
+To ensure good performance, there are certain limitations to the **SwapChainPanel** type.
+
+* There should be no more than 4 **SwapChainPanel** instances per app.
+* You should set the DirectX swap chain's height and width (in [**DXGI_SWAP_CHAIN_DESC1**](/windows/win32/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) to the current dimensions of the swap chain element. If you don't, then the display content will be scaled to fit (using **DXGI\_SCALING\_STRETCH**).
 * You must set the DirectX swap chain's scaling mode (in [**DXGI_SWAP_CHAIN_DESC1**](/windows/win32/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) to **DXGI\_SCALING\_STRETCH**.
 * You must create the DirectX swap chain by calling [**IDXGIFactory2::CreateSwapChainForComposition**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition).
 
-You update the [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) based on the needs of your app, and not the updates of the XAML framework. If you need to synchronize the updates of **SwapChainPanel** to those of the XAML framework, register for the [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) event. Otherwise, you must consider any cross-thread issues if you try to update the XAML elements from a different thread than the one updating the **SwapChainPanel**.
+You update the [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) based on the needs of your app, and not sync'd with the updates of the XAML framework. If you need to synchronize the updates of the **SwapChainPanel** to those of the XAML framework, then register for the [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) event. Otherwise, you must consider any cross-thread issues if you try to update the XAML elements from a different thread than the one updating the **SwapChainPanel**.
 
-If you need to receive low-latency pointer input to your **SwapChainPanel**, use [**SwapChainPanel::CreateCoreIndependentInputSource**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource). This method returns a [**CoreIndependentInputSource**](/uwp/api/windows.ui.core.coreindependentinputsource) object that can be used to receive input events at minimal latency on a background thread. Note that once this method is called, normal XAML pointer input events will not be fired for the **SwapChainPanel**, since all input will be redirected to the background thread.
+If you need to receive low-latency pointer input to your **SwapChainPanel**, then use [**SwapChainPanel::CreateCoreIndependentInputSource**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource). That method returns a [**CoreIndependentInputSource**](/uwp/api/windows.ui.core.coreindependentinputsource) object that can be used to receive input events at minimal latency on a background thread. Note that once this method is called, normal XAML pointer input events will not be raised for the **SwapChainPanel**, since all input will be redirected to the background thread.
 
+Here's the process for creating and updating a [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) object.
 
-> **Note**   In general, your DirectX apps should create swap chains in landscape orientation, and equal to the display window size (which is usually the native screen resolution in most Microsoft Store games). This ensures that your app uses the optimal swap chain implementation when it doesn't have any visible XAML overlay. If the app is rotated to portrait mode, your app should call [**IDXGISwapChain1::SetRotation**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) on the existing swap chain, apply a transform to the content if needed, and then call [**SetSwapChain**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) again on the same swap chain. Similarly, your app should call **SetSwapChain** again on the same swap chain whenever the swap chain is resized by calling [**IDXGISwapChain::ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers).
+1. You can follow along with the code shown and described below by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *SCPDemo* (it's important to give the project this name if you'll be copy-pasting in the code listings given below). Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
-Here is basic process for creating and updating a [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) object in the code-behind:
+2. Open `pch.h`, and *add* the following includes below the ones already there.
 
-1.  Get an instance of a swap chain panel for your app. The instances are indicated in your XAML with the `<SwapChainPanel>` tag.
-
-    `Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;`
-
-    Here is an example `<SwapChainPanel>` tag.
-
-    ```xml
-    <SwapChainPanel x:Name="swapChainPanel">
-        <SwapChainPanel.ColumnDefinitions>
-            <ColumnDefinition Width="300*"/>
-            <ColumnDefinition Width="1069*"/>
-        </SwapChainPanel.ColumnDefinitions>
-    …
+    ```cppwinrt
+    // pch.h
+    ...
+    #include <d3d11_4.h>
+    #include <d2d1_1.h>
+    #include <windows.ui.xaml.media.dxinterop.h>
     ```
 
-2.  Get a pointer to [**ISwapChainPanelNative**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative). Cast the [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) object as [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) (or **IUnknown**), and call **QueryInterface** on it to get the underlying **ISwapChainPanelNative** implementation.
+3. In the **MainPage** class, we'll first create a Direct 3D device, a Direct 2D device, and a Direct 2D device context. To do that, we'll call [**D3D11CreateDevice**](/windows/win32/api/d3d11/nf-d3d11-d3d11createdevice), [**D2D1CreateDevice**](/windows/win32/api/d2d1_1/nf-d2d1_1-d2d1createdevice), and [**ID2D1Device::CreateDeviceContext**](/windows/win32/api/d2d1_1/nf-d2d1_1-id2d1device-createdevicecontext).
 
-    ```cpp
-    Microsoft::WRL::ComPtr<ISwapChainPanelNative> m_swapChainNative;
-    // ...
-    IInspectable* panelInspectable = (IInspectable*) reinterpret_cast<IInspectable*>(swapChainPanel);
-    panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
+    Replace the contents of `MainPage.idl`, `MainPage.h`, and `MainPage.cpp` with the contents of the listings below.
+
+    ```cppwinrt
+    // MainPage.idl
+    namespace SCPDemo
+    {
+        [default_interface]
+        runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+        {
+            MainPage();
+        }
+    }
     ```
 
-3.  Create the DXGI device and the swap chain, and set the swap chain to [**ISwapChainPanelNative**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) by passing it to [**SetSwapChain**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain).
+    ```cppwinrt
+    // MainPage.h
+    #pragma once
 
-    ```cpp
-    Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
-    // ...
-    DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
-            swapChainDesc.Width = m_bounds.Width;
-            swapChainDesc.Height = m_bounds.Height;
-            swapChainDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;           // This is the most common swapchain format.
-            swapChainDesc.Stereo = false; 
-            swapChainDesc.SampleDesc.Count = 1;                          // Don't use multi-sampling.
-            swapChainDesc.SampleDesc.Quality = 0;
-            swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-            swapChainDesc.BufferCount = 2;
-            swapChainDesc.Scaling = DXGI_SCALING_STRETCH;
-            swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // We recommend using this swap effect for all. applications
-            swapChainDesc.Flags = 0;
-                    
-    // QI for DXGI device
-    Microsoft::WRL::ComPtr<IDXGIDevice> dxgiDevice;
-    m_d3dDevice.As(&dxgiDevice);
+    #include "MainPage.g.h"
 
+    namespace winrt::SCPDemo::implementation
+    {
+        struct MainPage : MainPageT<MainPage>
+        {
+            MainPage();
+            void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
+        };
+    }
+
+    namespace winrt::SCPDemo::factory_implementation
+    {
+        struct MainPage : MainPageT<MainPage, implementation::MainPage>
+        {
+        };
+    }
+    ```
+
+    ```cppwinrt
+    // MainPage.cpp
+    #include "pch.h"
+    #include "MainPage.h"
+    #include "MainPage.g.cpp"
+
+    using namespace winrt;
+    using namespace Windows::UI::Xaml;
+
+    namespace winrt::SCPDemo::implementation
+    {
+        MainPage::MainPage()
+        {
+            InitializeComponent();
+        }
+
+        void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+        {
+            myButton().Content(box_value(L"Clicked"));
+
+            uint32_t creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
+
+            D3D_FEATURE_LEVEL featureLevels[] =
+            {
+                D3D_FEATURE_LEVEL_11_1,
+                D3D_FEATURE_LEVEL_11_0,
+                D3D_FEATURE_LEVEL_10_1,
+                D3D_FEATURE_LEVEL_10_0,
+                D3D_FEATURE_LEVEL_9_3,
+                D3D_FEATURE_LEVEL_9_2,
+                D3D_FEATURE_LEVEL_9_1
+            };
+
+            // Create the Direct3D device.
+            winrt::com_ptr<::ID3D11Device> d3dDevice;
+            D3D_FEATURE_LEVEL supportedFeatureLevel;
+            winrt::check_hresult(::D3D11CreateDevice(
+                nullptr,
+                D3D_DRIVER_TYPE_HARDWARE,
+                0,
+                creationFlags,
+                featureLevels,
+                ARRAYSIZE(featureLevels),
+                D3D11_SDK_VERSION,
+                d3dDevice.put(),
+                &supportedFeatureLevel,
+                nullptr)
+            );
+
+            // Get the Direct3D device.
+            winrt::com_ptr<::IDXGIDevice> dxgiDevice{
+                d3dDevice.as<::IDXGIDevice>() };
+
+            // Create the Direct2D device and a corresponding context.
+            winrt::com_ptr<::ID2D1Device> d2dDevice;
+            ::D2D1CreateDevice(dxgiDevice.get(), nullptr, d2dDevice.put());
+
+            winrt::com_ptr<::ID2D1DeviceContext> d2dDeviceContext;
+            winrt::check_hresult(
+                d2dDevice->CreateDeviceContext(
+                    D2D1_DEVICE_CONTEXT_OPTIONS_NONE,
+                    d2dDeviceContext.put()
+                )
+            );
+        }
+    }
+    ```
+
+4. Wrap your XAML markup in a **SwapChainPanel** element with an `x:Name`. The wrapped XAML elements will render in front of the **SwapChainPanel**.
+
+    ```xaml
+    <!-- MainPage.xaml -->
+	<SwapChainPanel x:Name="swapChainPanel">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
+		</StackPanel>
+	</SwapChainPanel>
+    ```
+
+    You can then access that **SwapChainPanel** object via the accessor function with the same name, as we'll see.
+
+5. Next, call call [**IDXGIFactory2::CreateSwapChainForComposition**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) to create a swap chain.
+
+    ```cppwinrt
+    // MainPage.cpp | paste this at the end of MainPage::ClickHandler
     // Get the DXGI adapter.
-    Microsoft::WRL::ComPtr<IDXGIAdapter> dxgiAdapter;
-    dxgiDevice->GetAdapter(&dxgiAdapter);
+    winrt::com_ptr< ::IDXGIAdapter > dxgiAdapter;
+    dxgiDevice->GetAdapter(dxgiAdapter.put());
 
     // Get the DXGI factory.
-    Microsoft::WRL::ComPtr<IDXGIFactory2> dxgiFactory;
-    dxgiAdapter->GetParent(__uuidof(IDXGIFactory2), &dxgiFactory);
-    // Create a swap chain by calling CreateSwapChainForComposition.
+    winrt::com_ptr< ::IDXGIFactory2 > dxgiFactory;
+    dxgiFactory.capture(dxgiAdapter, &IDXGIAdapter::GetParent);
+
+    DXGI_SWAP_CHAIN_DESC1 swapChainDesc { 0 };
+    swapChainDesc.Width = 500;
+    swapChainDesc.Height = 500;
+    swapChainDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM; // This is the most common swapchain format.
+    swapChainDesc.Stereo = false;
+    swapChainDesc.SampleDesc.Count = 1; // Don't use multi-sampling.
+    swapChainDesc.SampleDesc.Quality = 0;
+    swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+    swapChainDesc.BufferCount = 2;
+    swapChainDesc.Scaling = DXGI_SCALING_STRETCH;
+    swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // We recommend using this swap effect for all applications.
+    swapChainDesc.Flags = 0;
+
+    // Create a swap chain by calling IDXGIFactory2::CreateSwapChainForComposition.
+    winrt::com_ptr< ::IDXGISwapChain1 > swapChain;
     dxgiFactory->CreateSwapChainForComposition(
-                m_d3dDevice.Get(),
-                &swapChainDesc,
-                nullptr,        // Allow on any display. 
-                &m_swapChain
-                );
-            
-    m_swapChainNative->SetSwapChain(m_swapChain.Get());
+        d3dDevice.get(),
+        &swapChainDesc,
+        nullptr,
+        swapChain.put());
     ```
 
-4.  Draw to the DirectX swap chain, and present it to display the contents.
+6. Get an [**ISwapChainPanelNative**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) from the **SwapChainPanel** that you named *swapChainPanel*. The call [**ISwapChainPanelNative::SetSwapChain**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) to set the swap chain on the **SwapChainPanel**.
 
-    ```cpp
-    HRESULT hr = m_swapChain->Present(1, 0);
+    ```cppwinrt
+    // MainPage.cpp | paste this at the end of MainPage::ClickHandler
+    // Get native interface for SwapChainPanel
+    auto panelNative{ swapChainPanel().as<ISwapChainPanelNative>() };
+
+    winrt::check_hresult(
+        panelNative->SetSwapChain(swapChain.get())
+    );
+    ```
+
+7. Lastly, draw to the DirectX swap chain, and then present it to display the contents.
+
+    ```cppwinrt
+    // Create a Direct2D target bitmap associated with the
+    // swap chain back buffer, and set it as the current target.
+    D2D1_BITMAP_PROPERTIES1 bitmapProperties =
+        D2D1::BitmapProperties1(
+            D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
+            D2D1::PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED),
+            96.f,
+            96.f
+        );
+        
+    winrt::com_ptr<::IDXGISurface> dxgiBackBuffer;
+    swapChain->GetBuffer(0, __uuidof(dxgiBackBuffer), dxgiBackBuffer.put_void());
+
+    winrt::com_ptr< ::ID2D1Bitmap1 > targetBitmap;
+    winrt::check_hresult(
+        d2dDeviceContext->CreateBitmapFromDxgiSurface(
+            dxgiBackBuffer.get(),
+            &bitmapProperties,
+            targetBitmap.put()
+        )
+    );
+
+    d2dDeviceContext->SetTarget(targetBitmap.get());
+
+    // Draw using Direct2D context.
+    d2dDeviceContext->BeginDraw();
+
+    d2dDeviceContext->Clear(D2D1::ColorF(D2D1::ColorF::Orange));
+
+    winrt::com_ptr<::ID2D1SolidColorBrush> brush;
+    winrt::check_hresult(d2dDeviceContext->CreateSolidColorBrush(
+        D2D1::ColorF(D2D1::ColorF::Chocolate),
+        D2D1::BrushProperties(0.8f),
+        brush.put()));
+
+    D2D1_SIZE_F const size{ 500, 500 };
+    D2D1_RECT_F const rect{ 100.0f, 100.0f, size.width - 100.0f, size.height - 100.0f };
+    d2dDeviceContext->DrawRectangle(rect, brush.get(), 100.0f);
+
+    d2dDeviceContext->EndDraw();
+
+    swapChain->Present(1, 0);
     ```
 
     The XAML elements are refreshed when the Windows Runtime layout/render logic signals an update.
+
+8. You can now build and run the app. Click the button to see the contents of the **SwapChainPanel** displayed behind the other XAML elements.
+
+    ![A Direct2D-rendered rectangle behind a XAML button element](images/scp.png)
+
+> [!NOTE]
+> In general, your DirectX app should create swap chains in landscape orientation, and equal to the display window size (which is usually the native screen resolution in most Microsoft Store games). That ensures that your app uses the optimal swap chain implementation when it doesn't have any visible XAML overlay. If the app is rotated to portrait mode, then your app should call [**IDXGISwapChain1::SetRotation**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) on the existing swap chain, apply a transform to the content if needed, and then call [**SetSwapChain**](/windows/win32/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) again on the same swap chain. Similarly, your app should call **SetSwapChain** again on the same swap chain whenever the swap chain is resized by calling [**IDXGISwapChain::ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers).
 
 ## Related topics
 

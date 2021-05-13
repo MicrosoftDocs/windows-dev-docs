@@ -196,7 +196,7 @@ private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
 
 You might also want to have access to the [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) instances from other parts of your app. For example, `MainPage` could have a 'close all' button that closes all the tracked instances of AppWindow.
 
-In this case, you should use the [UIContext](/uwp/api/windows.ui.uicontext) unique identifier to track the window instances in a [Dictionary](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0).
+In this case, you should use the [UIContext](/uwp/api/windows.ui.uicontext) unique identifier to track the window instances in a [Dictionary](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&preserve-view=true).
 
 **MainPage.xaml.cs**
 
