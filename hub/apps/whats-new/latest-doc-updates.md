@@ -39,8 +39,6 @@ Highlights this month include:
 * [Get started with JavaScript](https://docs.microsoft.com/windows/dev-environment/javascript/)
 * [NUMA Support](https://docs.microsoft.com/windows/win32/procthread/numa-support)
 * [Endpoint data loss prevention](https://docs.microsoft.com/windows/win32/lwef/endpointdlp-endpoint-data-loss-prevention)
-* 
-
 
 
 ## Tabs vs. Spaces Show
@@ -75,35 +73,35 @@ The following list of topics have seen significant updates in the past month, as
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/event-element-net-native">Event Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/example-handling-exceptions-when-binding-data">Example: Handling Exceptions When Binding Data</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/example-troubleshooting-dynamic-programming">Example: Troubleshooting Dynamic Programming</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/field-element-net-native"><Field> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/genericparameter-element-net-native"><GenericParameter> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/field-element-net-native">Field Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/genericparameter-element-net-native"> GenericParameter Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/getting-started-with-net-native">Getting Started with .NET Native</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/impliestype-element-net-native"><ImpliesType> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/impliestype-element-net-native"> ImpliesType Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/index">Compiling Apps with .NET Native</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/library-element-net-native"><Library> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/library-element-net-native">Library Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/measuring-startup-improvement-with-net-native">Measuring Startup Improvement with .NET Native</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/method-element-net-native"><Method> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/methodinstantiation-element-net-native"><MethodInstantiation> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/method-element-net-native"> Method Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/methodinstantiation-element-net-native"> MethodInstantiation Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/migrating-your-windows-store-app-to-net-native">Migrating Your Windows 8.x App to .NET Native</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/missinginteropdataexception-class-net-native">MissingInteropDataException Class (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/missingmetadataexception-class-net-native">MissingMetadataException Class (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/missingruntimeartifactexception-class-net-native">MissingRuntimeArtifactException Class (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/namespace-element-net-native"><Namespace> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/namespace-element-net-native">Namespace Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/net-native-and-compilation">.NET Native and Compilation</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/net-native-general-troubleshooting">.NET Native General Troubleshooting</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/net-native-reflection-api-reference">.NET Native Reflection API Reference</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/parameter-element-net-native"><Parameter> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/property-element-net-native"><Property> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/parameter-element-net-native">Parameter Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/property-element-net-native">Property Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/reflection-and-net-native">Reflection and .NET Native</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/runtime-directive-elements">Runtime Directive Elements</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/runtime-directive-policy-settings">Runtime Directive Policy Settings</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/runtime-directives-rd-xml-configuration-file-reference">Runtime Directives (rd.xml) Configuration File Reference</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/runtime-exceptions-in-net-native-apps">Runtime Exceptions in .NET Native Apps</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/serialization-and-metadata">Serialization and Metadata</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/subtypes-element-net-native"><Subtypes> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/type-element-net-native"><Type> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/typeinstantiation-element-net-native"><TypeInstantiation> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/typeparameter-element-net-native"><TypeParameter> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/subtypes-element-net-native">Subtypes Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/type-element-net-native">Type Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/typeinstantiation-element-net-native">TypeInstantiation Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/typeparameter-element-net-native">TypeParameter Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/gaming/complete-code-for-ddstextureloader">Complete code for DDSTextureLoader</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/gaming/directx-add-features">Add features to DirectX games</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/gaming/directx-and-xaml-interop">DirectX and XAML interop</a></li>
