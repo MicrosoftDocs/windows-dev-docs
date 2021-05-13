@@ -68,11 +68,11 @@ The following list of topics have seen significant updates in the past month, as
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-runtime-components-and-optimizing-interop">Optimizing interop for Windows Runtime components</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/style/index">Style for Windows apps</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/apis-that-rely-on-reflection">APIs That Rely on Reflection</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/application-element-net-native"><Application> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/assembly-element-net-native"><Assembly> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/attributeimplies-element-net-native"><AttributeImplies> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/directives-element-net-native"><Directives> Element (.NET Native)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/event-element-net-native"><Event> Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/application-element-net-native">Application Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/assembly-element-net-native">Assembly Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/attributeimplies-element-net-native">AttributeImplies Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/directives-element-net-native">Directives Element (.NET Native)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/event-element-net-native">Event Element (.NET Native)</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/example-handling-exceptions-when-binding-data">Example: Handling Exceptions When Binding Data</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/example-troubleshooting-dynamic-programming">Example: Troubleshooting Dynamic Programming</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/dotnet-native/field-element-net-native"><Field> Element (.NET Native)</a></li>
