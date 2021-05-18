@@ -6,11 +6,6 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-dev_langs:
-  - csharp
-  - vb
-  - cpp
----
 # Attached properties overview
 
 An *attached property* is a XAML concept. Attached properties enable additional property/value pairs to be set on an object, but the properties are not part of the original object definition. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.
@@ -71,21 +66,21 @@ A XAML processor must be able to set attached property values when XAML is parse
 The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
 
 ```csharp
-    Canvas myC = new Canvas();
-    CheckBox myCheckBox = new CheckBox();
-    myCheckBox.Content = "Hello";
-    myC.Children.Add(myCheckBox);
-    myCheckBox.SetValue(Canvas.TopProperty,75);
-    //Canvas.SetTop(myCheckBox, 75);
+Canvas myC = new Canvas();
+CheckBox myCheckBox = new CheckBox();
+myCheckBox.Content = "Hello";
+myC.Children.Add(myCheckBox);
+myCheckBox.SetValue(Canvas.TopProperty,75);
+//Canvas.SetTop(myCheckBox, 75);
 ```
 
 ```vb
-    Dim myC As Canvas = New Canvas()
-    Dim myCheckBox As CheckBox= New CheckBox()
-    myCheckBox.Content = "Hello"
-    myC.Children.Add(myCheckBox)
-    myCheckBox.SetValue(Canvas.TopProperty,75)
-    ' Canvas.SetTop(myCheckBox, 75)
+Dim myC As Canvas = New Canvas()
+Dim myCheckBox As CheckBox= New CheckBox()
+myCheckBox.Content = "Hello"
+myC.Children.Add(myCheckBox)
+myCheckBox.SetValue(Canvas.TopProperty,75)
+' Canvas.SetTop(myCheckBox, 75)
 ```
 
 ```cppwinrt
@@ -98,12 +93,12 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 ```
 
 ```cpp
-    Canvas^ myC = ref new Canvas();
-    CheckBox^ myCheckBox = ref new CheckBox();
-    myCheckBox->Content="Hello";
-    myC->Children->Append(myCheckBox);
-    myCheckBox->SetValue(Canvas::TopProperty,75);
-    // Canvas::SetTop(myCheckBox, 75);
+Canvas^ myC = ref new Canvas();
+CheckBox^ myCheckBox = ref new CheckBox();
+myCheckBox->Content="Hello";
+myC->Children->Append(myCheckBox);
+myCheckBox->SetValue(Canvas::TopProperty,75);
+// Canvas::SetTop(myCheckBox, 75);
 ```
 
 ## Custom attached properties
