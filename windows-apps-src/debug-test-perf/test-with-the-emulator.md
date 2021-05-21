@@ -359,7 +359,7 @@ In **Route** mode, you can select one of the following speed profiles in the dro
 | Speed Limit | Speed limit of the route | Not applicable   | Traverse the route at the posted speed limit. |
 | Walking     | 5 km/h                   | 1.39 m           | Traverse the route at a natural walking pace of 5 km/h. |
 | Biking      | 25 km/h                  | 6.94 m           | Traverse the route at a natural biking pace of 25 km/h. |
-| Fast        |                          |                  |Traverse the route faster than the posted speed limit. | 
+| Fast        |                          |                  |Traverse the route faster than the posted speed limit. |
 
 **Route mode**
 
@@ -655,6 +655,6 @@ To find answers and solve problems as you start working with the Windows 10 tool
 
 ## Related topics
 
-* [Run Windows Phone apps in the emulator](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Run Windows Phone apps in the emulator](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015&preserve-view=true)
 * [Windows and Windows Phone SDK archive](https://developer.microsoft.com/windows/downloads/sdk-archive)
  

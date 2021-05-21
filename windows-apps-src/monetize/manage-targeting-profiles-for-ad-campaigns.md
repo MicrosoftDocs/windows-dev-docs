@@ -143,7 +143,7 @@ The request and response bodies for these methods contain the following fields. 
 |  country   |  array   |  One or more integers that identify the country codes of the users to target. For a complete list of integers, see [Country code values](#country-code-values) in this article.    |  No    |  null   |      No   |       
 |  osVersion   |  array   |   One or more integers that identify the OS versions of the users to target. For a complete list of integers, see [OS version values](#osversion-values) in this article.     |   No    |  null   |     No    |       
 |  deviceType   | array    |  One or more integers that identify the device types of the users to target. For a complete list of integers, see [Device type values](#devicetype-values) in this article.       |   No    |  null    |    No     |       
-|  supplyType   |  array   |  One or more integers that identify the type of inventory where the campaign's ads will be shown. For a complete list of integers, see [Supply type values](#supplytype-values) in this article.      |   No    |  null   |     No    |   |  
+|  supplyType   |  array   |  One or more integers that identify the type of inventory where the campaign's ads will be shown. For a complete list of integers, see [Supply type values](#supplytype-values) in this article.      |   No    |  null   |     No    |
 
 
 <span id="age-values"/>

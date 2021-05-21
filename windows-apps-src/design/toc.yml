@@ -104,6 +104,8 @@
           href: controls-and-patterns/listview-and-gridview.md
         - name: Flip view
           href: controls-and-patterns/flipview.md
+        - name: PipsPager
+          href: controls-and-patterns/pipspager.md
         - name: Tree view
           href: controls-and-patterns/tree-view.md
         - name: ItemsRepeater
@@ -150,6 +152,8 @@
       href: controls-and-patterns/forms.md
     - name: Media, graphics, and shapes
       items:
+        - name: Animated icons
+          href: controls-and-patterns/animated-icon.md
         - name: Images and image brushes
           href: controls-and-patterns/images-imagebrushes.md
         - name: Ink
@@ -174,8 +178,8 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
-        - name: Master/details
-          href: controls-and-patterns/master-details.md
+        - name: List/details
+          href: controls-and-patterns/list-details.md
         - name: Navigation view
           href: controls-and-patterns/navigationview.md
         - name: Pivot
@@ -208,8 +212,6 @@
           href: controls-and-patterns/scroll-controls.md
         - name: Semantic zoom
           href: controls-and-patterns/semantic-zoom.md
-    - name: Search
-      href: controls-and-patterns/search.md
     - name: Status and information
       items:
         - name: Progress
@@ -262,16 +264,10 @@
           href: style/segoe-ui-symbol-font.md
     - name: Acrylic
       href: style/acrylic.md
-    - name: Reveal highlight
-      href: style/reveal.md
     - name: Reveal focus
       href: style/reveal-focus.md
-    - name: Corner radius
-      href: style/rounded-corner.md
     - name: Sound
       href: style/sound.md
-    - name: Spacing
-      href: style/spacing.md
     - name: Writing style
       href: style/writing-style.md
     - name: XAML brushes
@@ -285,6 +281,10 @@
           href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
         - name: XAML theme resources
           href: controls-and-patterns/xaml-theme-resources.md
+    - name: Spacing
+      href: style/spacing.md
+    - name: Corner radius
+      href: style/rounded-corner.md
 - name: Motion
   items:
     - name: Overview
@@ -318,16 +318,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Send local toast
           items:
-            - name: UWP apps
+            - name: C# apps
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: Desktop apps
-              items:
-                - name: Overview
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C# apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C++ UWP apps
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL apps
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Other apps
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: Toast content
           items:
             - name: Content

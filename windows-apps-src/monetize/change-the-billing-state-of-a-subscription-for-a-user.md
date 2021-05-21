@@ -2,7 +2,7 @@
 ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: Use this method in the Microsoft Store purchase API to change the billing state of a subscription for a user.
 title: Change the billing state of a subscription for a user
-ms.date: 08/01/2018
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
@@ -13,6 +13,8 @@ Use this method in the Microsoft Store purchase API to change the billing state 
 
 > [!NOTE]
 > This method can only be used by developer accounts that have been provisioned by Microsoft to be able to create subscription add-ons for Universal Windows Platform (UWP) apps. Subscription add-ons are currently not available to most developer accounts.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the StoreServicesClient.RecurrenceChangeAysnc API.
 
 ## Prerequisites
 
@@ -56,7 +58,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 |----------------|--------|---------------|----------|
 | b2bKey         | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscription you want to change.     | Yes      |
 | changeType     | string |  One of the following strings that identifies the type of change you want to make:<ul><li>**Cancel**: Cancels the subscription.</li><li>**Extend**: Extends the subscription. If you specify this value, you must also include the *extensionTimeInDays* parameter.</li><li>**Refund**: Refunds the subscription to the customer.</li><li>**ToggleAutoRenew**: Disables automatic renewal for the subscription. If automatic renewal is currently disabled for the subscription, this value does nothing.</li></ul>   | Yes      |
-| extensionTimeInDays  | string  | If the *changeType* parameter has the value **Extend**, this parameter specifies the number of days to extend the subscription. |  Yes, if *changeType* has the value **Extend**; otherwise, no.  ||
+| extensionTimeInDays  | string  | If the *changeType* parameter has the value **Extend**, this parameter specifies the number of days to extend the subscription. |  Yes, if *changeType* has the value **Extend**; otherwise, no.  |
 
 
 ### Request example
@@ -130,3 +132,4 @@ The response body contains the following data.
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

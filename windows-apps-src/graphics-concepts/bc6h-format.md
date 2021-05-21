@@ -27,7 +27,8 @@ BC6H is specified by the following DXGI\_FORMAT enumeration values:
 -   **DXGI\_FORMAT\_BC6H\_SF16**. This BC6H format uses a sign bit in the 16-bit floating point color channel values.
 
 **Note**   The 16 bit floating point format for color channels is often referred to as a "half" floating point format. This format has the following bit layout:
-|                       |                                                 |
+
+| Format                      |      Layout                                           |
 |-----------------------|-------------------------------------------------|
 | UF16 (unsigned float) | 5 exponent bits + 11 mantissa bits              |
 | SF16 (signed float)   | 1 sign bit + 5 exponent bits + 10 mantissa bits |

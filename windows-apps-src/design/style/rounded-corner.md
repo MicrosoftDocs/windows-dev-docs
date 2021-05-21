@@ -100,13 +100,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 
 **Controls**
 
-- Selection indicator
-    - AutoSuggestBox
-    - ComboBox
-    - Date picker
-    - ListView
-    - MenuFlyout
-    - NavigationView
+- NavigationView selection indicator
 - ProgressBar
 - ScrollBar
 - Slider

@@ -47,7 +47,7 @@ In general, tabbed UIs come in one of two distinct styles which differ in functi
 - Users will be able to open documents or web pages directly into tabs.
 - Users will be able to drag and drop tabs between windows.
 
-If a TabView is not appropriate for your app, consider using controls such as [Pivot](./pivot.md) or [NavigationView](./navigationview.md).
+If a TabView is not appropriate for your app, consider using a [NavigationView](./navigationview.md) control.
 
 ## Anatomy
 
@@ -332,6 +332,5 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## Related articles
 
-- [MasterDetails](./master-details.md)
+- [List/Details](./list-details.md)
 - [NavigationView](./navigationview.md)
-- [Pivot](./pivot.md)

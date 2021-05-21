@@ -22,7 +22,7 @@ Provides a unique identifier for markup elements. For Universal Windows Platform
 
 | Term | Description |
 |------|-------------|
-| stringID | A string that uniquely identifies a XAML element in an app, and becomes part of the resource path in a resource file. See Remarks.| 
+| stringID | A string that uniquely identifies a XAML element in an app, and becomes part of the resource path in a resource file. See Remarks.|
 
 ## Remarks
 

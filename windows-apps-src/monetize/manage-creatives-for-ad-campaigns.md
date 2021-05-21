@@ -117,7 +117,7 @@ The request and response bodies for these methods contain the following fields. 
 |  landingUrl   |  string   |  If you are using a campaign tracking service such as AppsFlyer, Kochava, Tune, or Vungle to measure install analytics for your app, assign your tracking URL in this field when you call the POST method (if specified, this value must be a valid URI). If you are not using a campaign tracking service, omit this value when you call the POST method (in this case, this URL will be created automatically).   |  No    |     |   Yes    |
 |  format   |  string   |   The ad format. Currently, the only supported value is **Banner**.    |   No    |  Banner   |  No     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   Provides attributes for the creative.     |   No    |      |   Yes    |       
-|  storeProductId   |  string   |   The [Store ID](in-app-purchases-and-trials.md#store-ids) for the app that this ad campaign is associated with. An example Store ID for a product is 9nblggh42cfd.    |   No    |    |  No     |   |  
+|  storeProductId   |  string   |   The [Store ID](in-app-purchases-and-trials.md#store-ids) for the app that this ad campaign is associated with. An example Store ID for a product is 9nblggh42cfd.    |   No    |    |  No     |
 
 
 <span id="image-attributes"/>
@@ -126,7 +126,7 @@ The request and response bodies for these methods contain the following fields. 
 
 | Field        | Type   |  Description      |  Read-only  | Default value  | Required for POST |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   string  |   One of the following values: **PNG** or **JPG**.    |    No   |      |   Yes    |       |
+|  imageExtension   |   string  |   One of the following values: **PNG** or **JPG**.    |    No   |      |   Yes    |
 
 
 ## Related topics

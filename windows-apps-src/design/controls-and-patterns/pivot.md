@@ -11,7 +11,13 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Pivot
+
+> [!Important]
+> The **[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)** control is no longer recommended and could be removed in future releases of the Windows UI Library (WinUI). Note that information and images in this topic might be out of date.
+>
+> Please use the **[NavigationView](navigationview.md)** control with the *Top* navigation style (or display mode) instead.
 
 The [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) control enables touch-swiping between a small set of content sections.
 

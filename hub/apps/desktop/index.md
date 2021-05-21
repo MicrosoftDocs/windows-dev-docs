@@ -40,7 +40,7 @@ For an in-depth comparison of these platforms along with additional resources fo
 <td><a href="/windows/uwp/get-started/">Get started</a><br/><a href="/uwp/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Samples</a></td>
 </tr>
 <tr class="even">
-<td><a href="/windows/win32/">C++/Win32</a></td>
+<td><a href="/windows/win32/">C++ desktop (Win32)</a></td>
 <td><p>The platform of choice for native Windows apps that require direct access to Windows and hardware.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Get started</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API reference</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Samples</a></td>
 </tr>
@@ -61,11 +61,11 @@ For an in-depth comparison of these platforms along with additional resources fo
 
 Looking forward, we are evolving the Windows app development platforms with the Windows UI Library (WinUI) and Project Reunion.
 
-* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
+* **WinUI** is a native user experience (UX) framework for Windows 10 apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3, WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
 
     For more information, see [Windows UI Library (WinUI)](../winui/index.md).
 
-* **Project Reunion** (currently in preview) is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
+* **Project Reunion** is the code name for a broad set of new developer components and tools that represents the next evolution in the Windows app development platform. Project Reunion provides a unified set of APIs and tools that can be used in a consistent way by any app on a broad set of target Windows 10 OS versions. Project Reunion complements existing Windows app platforms and frameworks such as UWP and native Win32, and .NET with a common set of APIs and tools that developers can rely on across these platforms. 
 
     For more information, see [Project Reunion](../project-reunion/index.md).
 
@@ -85,7 +85,7 @@ For more information, see these articles.
 
 | Article | Description |
 |---------|-------------|
-| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
+| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ desktop (Win32) apps. |
 | [Tutorial: Modernize a WPF app](./modernize/modernize-wpf-tutorial.md) | Follow step-by-step instructions to modernize an existing WPF line-of-business sample app by adding UWP Ink and calendar controls to the app and packaging it in an MSIX package.  |
 
 ## Create new desktop apps
@@ -98,7 +98,7 @@ If you are creating a new desktop app for Windows, here are some resources to he
 |---------|-------------|
 | [Choose your app platform](choose-your-platform.md) | Provides an in-depth comparison of the main desktop app platforms and can help you choose the right platform for your needs. This article also provides useful links to docs for each platform. |
 | [Visual Studio project templates for Windows apps](visual-studio-templates.md) | Describes the project and item templates that Visual Studio provides to help you build apps for Windows 10 devices by using C\# or C++. |
-| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ Win32 apps. |
+| [Modernize desktop apps](./modernize/index.md) | Describes the latest Windows 10 and UWP development features you can use in any desktop app, including WPF, Windows Forms, and C++ desktop (Win32) apps. |
 | [Features and technologies](../features-and-technologies.md) | Provides an overview of Windows features that are accessible via each of the main desktop app platforms and links to the related docs. |
 
 ## Related documentation and technologies

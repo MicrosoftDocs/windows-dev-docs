@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Two-pane view
 
-[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a master/detail view.
+[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a list/detail view.
 
 > [!IMPORTANT]
 > This article describes functionality and guidance that is in public preview and may be substantially modified before it's generally available. Microsoft makes no warranties, express or implied, with respect to the information provided here.
@@ -200,7 +200,7 @@ By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its conten
 
 > _Panes with default sizing_
 
-The default values are useful for a typical master/detail layout, where you have a list of items in `Pane1`, and a lot of details in `Pane2`. However, depending on your content, you might prefer to divide the space differently. Here, `Pane1Length` is set to `2*` so it gets twice as much space as `Pane2`.
+The default values are useful for a typical list/detail layout, where you have a list of items in `Pane1`, and a lot of details in `Pane2`. However, depending on your content, you might prefer to divide the space differently. Here, `Pane1Length` is set to `2*` so it gets twice as much space as `Pane2`.
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">
@@ -271,9 +271,9 @@ The default is `TopBottom`.
 
 #### Special values for MinWideModeWidth and MinTallModeHeight
 
-You can use the `MinWideModeWidth` property to prevent the two-pane view from entering Wide mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0).
+You can use the `MinWideModeWidth` property to prevent the two-pane view from entering Wide mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true).
 
-If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0), it prevents the two-pane view from entering Tall mode.
+If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true), it prevents the two-pane view from entering Tall mode.
 
 If you set `MinTallModeHeight` to 0, it prevents the two-pane view from entering `SinglePane` mode.
 

@@ -24,7 +24,9 @@ In both cases, the type that implements your C++/WinRT APIs is called the *imple
 
 ## If you're *not* authoring a runtime class
 
-The simplest scenario is where you're implementing a Windows Runtime interface for local consumption. You don't need a runtime class; just an ordinary C++ class. For example, you might be writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
+The simplest scenario is where your type is implementing a Windows Runtime interface, and you'll be consuming that type within the same app. In that case, your type doesn't need to be a runtime class; just an ordinary C++ class. For example, you might be writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
+
+If your type is referenced by XAML UI, then it *does* need to be a runtime class, *even though it's in the same project* as the XAML. For that case, see the section [If you're authoring a runtime class to be referenced in your XAML UI](#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui).
 
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -121,7 +123,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## If you're authoring a runtime class in a Windows Runtime component
 
-If your type is packaged in a Windows Runtime component for consumption from an application, then it needs to be a runtime class. You declare a runtime class in a Microsoft Interface Definition Language (IDL) (.idl) file (see [Factoring runtime classes into Midl files (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
+If your type is packaged in a Windows Runtime component for consumption from another binary (the other binary is usually an application), then your type needs to be a runtime class. You declare a runtime class in a Microsoft Interface Definition Language (IDL) (.idl) file (see [Factoring runtime classes into Midl files (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
 Each IDL file results in a `.winmd` file, and Visual Studio merges all of those into a single file with the same name as your root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
 

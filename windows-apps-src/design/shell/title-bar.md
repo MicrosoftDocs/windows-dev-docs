@@ -69,7 +69,6 @@ There are a few things to be aware of when setting title bar colors:
 - The button color properties are applied to the system back button when it's used. ([See Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).)
 - Setting a color property to **null** resets it to the default system color.
 - You can't set transparent colors. The color's alpha channel is ignored.
-- The color on screen may differ from your choices, for example, due to settings such as color filters or high contrast mode. Do not rely solely on color to convey important information.
 
 Windows gives a user the option to apply their selected [accent color](../style/color.md#accent-color) to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.
 

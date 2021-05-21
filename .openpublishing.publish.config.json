@@ -45,7 +45,8 @@
       "build_output_subfolder": "windows-apps-src",
       "locale": "en-us",
       "xref_query_tags": [
-        "/uwp/api"
+        "/uwp/api",
+        "/dotnet"
       ],
       "open_to_public_contributors": true,
       "type_mapping": {

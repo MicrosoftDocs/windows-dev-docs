@@ -16,12 +16,36 @@ To get your app [Windows Certified](/windows/win32/win_cert/windows-certificatio
 Prerequisites for testing a Universal Windows app:
 
 - You must install and run Windows 10.
-- You must install the [Windows App Certification Kit](https://developer.microsoft.com/windows/downloads/app-certification-kit/), which is included in the Windows Software Development Kit (SDK) for Windows 10.
+- You must install the [Windows App Certification Kit](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), which is included in the Windows Software Development Kit (SDK) for Windows 10.
 - You must [enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - You must deploy the Windows app that you want to test to your computer.
 
 > [!NOTE]
 > **In-place upgrades:** Installing a more recent [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) will replace any previously installed version of the kit.
+
+## What's new
+
+Tests for Windows [Desktop Bridge Apps](/windows/msix/desktop/source-code-overview) are now supported in the kit. [Windows Desktop Bridge app tests](./windows-desktop-bridge-app-tests.md) can give your app the best chance of being published on Microsoft Store or get certified.
+
+The kit can now be integrated into an automated testing where no interactive user session is available.
+
+The App Prelaunch Validation test is no longer supported.
+
+## Known issues
+
+The following is a list of known issues with the Windows App Certification Kit:
+
+During testing, if an installer terminates but leaves active processes or windows running, the app certification kit may detect that there is still work to be done by the installer. In this case, the kit appears stuck running the "Process Install Trace Files" task and it's not possible to move forward with the UI.
+
+**Resolution:** After your installer is complete, manually close any active processes or windows spawned by the installer.
+
+For ARM UWA, or any UWA app that doesn't target the device family desktop or OneCore, a message may appear in the final report that states "Not all tests were run during validation. This may impact your Store submission.". This message does not apply in cases where the user didn't manually deselect tests.
+
+**Resolution:** n/a
+
+For Desktop Bridge Apps using Windows SDK Version 10.0.15063 please ignore any failures in Application Manifest Resources test that flag your image not confirming to the expected dimensions if those dimensions are only off by one pixel. The test is supposed to have a +/-1 pixel tolerance. E.g. A small tile at 125% would be 88.75x88.75px if rounded up to 89x89px this would fail the size restrictions of 88x88px.
+
+**Resolution:** n/a
 
 ## Validate your Windows app using the Windows App Certification Kit interactively
 
@@ -83,5 +107,7 @@ As low-power computers evolve, their performance characteristics might change ov
 
 ## Related topics
 
+- [Using the Windows App Certification Kit](/windows/win32/win_cert/using-the-windows-app-certification-kit)
+- [Certification requirements for Windows Desktop Apps](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)
 - [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
 - [Microsoft Store Policies](/legal/windows/agreements/store-policies)

@@ -1,6 +1,6 @@
 ---
-title: Scripting and automation with Python on Windows
-description: A step-by-step guide to get started using Python for scripting, automation, and systems administration on Windows. 
+title: Using Python for scripting and automation 
+description: How to get started using Python for scripting, automation, and systems administration on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

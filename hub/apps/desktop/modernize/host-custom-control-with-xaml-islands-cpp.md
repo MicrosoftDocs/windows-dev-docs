@@ -1,6 +1,6 @@
 ---
-description: This article demonstrates how to host a custom WinRT XAML control in a C++ Win32 app by using the XAML Hosting API.
-title: Host a custom WinRT XAML control in a C++ Win32 app using the XAML Hosting API
+description: This article demonstrates how to host a custom WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.
+title: Host a custom WinRT XAML control in a C++ desktop (Win32) app using the XAML Hosting API
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
@@ -10,13 +10,13 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Host a custom WinRT XAML control in a C++ Win32 app
+# Host a custom WinRT XAML control in a C++ desktop (Win32) app
 
-This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a custom UWP XAML control in a new C++ Win32 app. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
+This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a custom UWP XAML control in a new C++ desktop app. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.
 
 To host a custom UWP XAML control, you'll create the following projects and components as part of this walkthrough:
 
-* **Windows Desktop Application project**. This project implements a native C++ Win32 desktop app. You'll add code to this project that uses the UWP XAML hosting API to host a custom UWP XAML control.
+* **Windows Desktop Application project**. This project implements a native C++ desktop app. You'll add code to this project that uses the UWP XAML hosting API to host a custom UWP XAML control.
 
 * **UWP app project (C++/WinRT)**. This project implements a custom UWP XAML control. It also implements a root metadata provider for loading metadata for custom UWP XAML types in the project.
 
@@ -590,12 +590,12 @@ Run the solution and confirm that **MyDesktopWin32App** opens with the following
 
 Many desktop applications that host XAML Islands will need to handle additional scenarios in order to provide a smooth user experience. For example, desktop applications may need to handle keyboard input in XAML Islands, focus navigation between XAML Islands and other UI elements, and layout changes.
 
-For more information about handling these scenarios and pointers to related code samples, see [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md).
+For more information about handling these scenarios and pointers to related code samples, see [Advanced scenarios for XAML Islands in C++ desktop apps](advanced-scenarios-xaml-islands-cpp.md).
 
 ## Related topics
 
 * [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
-* [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a standard WinRT XAML control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
-* [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
+* [Using the UWP XAML hosting API in a desktop Win32 app](using-the-xaml-hosting-api.md)
+* [Host a standard WinRT XAML control in a desktop Win32 app](host-standard-control-with-xaml-islands-cpp.md)
+* [Advanced scenarios for XAML Islands in desktop Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)

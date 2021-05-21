@@ -8,6 +8,9 @@ ms.localizationpriority: medium
 
 # Install PowerToys
 
+> [!WARNING]
+> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, will be removed in v0.37.
+
 We recommend installing PowerToys using the Windows executable button linked below, but alternative install methods are also listed if you prefer using a package manager.
 
 ## Install with Windows executable file
@@ -84,3 +87,7 @@ scoop update powertoys
 ```
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
+
+## Post Install
+
+After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.
