@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-acrylic.svg)
 
-Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.
 
-> **Important APIs**: [AcrylicBrush class](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush?view=winui-2.6-prerelease), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Important APIs**: [AcrylicBrush class](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -75,7 +75,7 @@ Consider the following usage patterns to decide how best to incorporate acrylic 
 
 ### Vertical Panes
 
-For vertical panes or surfaces that help section off content of your app, we recommend you use the mica material. If your vertical panes open on top of content, like in NavigationView's **Compact** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
+For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Compact** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
 
 ### Transient surfaces
 
@@ -83,25 +83,25 @@ For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, 
 
 ![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
-Many XAML controls draw acrylic by default. [MenuFlyout](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dismiss popups all use acrylic while open.
+Many XAML controls draw acrylic by default. [MenuFlyout](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
 
 > [!Note]
-> Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter Battery Saver mode. Users can disable acrylic effects for all apps by toggling the Show transparency setting to Off.
+> Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when a device enters Battery Saver mode. Users can disable acrylic effects for all apps by turning off _Transparency effects_ in Settings > Personalization > Colors.
 
 ## Usability and adaptability
 Acrylic automatically adapts its appearance for a wide variety of devices and contexts.
 
 In High Contrast mode, users continue to see the familiar background color of their choosing in place of acrylic. In addition, both background acrylic and in-app acrylic appear as a solid color:
- - When the user turns off transparency in Settings > Personalization > Color
- - When Battery Saver mode is activated
- - When the app runs on low-end hardware
+ - When the user turns off _Transparency effects_ in Settings > Personalization > Colors.
+ - When Battery Saver mode is activated.
+ - When the app runs on low-end hardware.
 
 In addition, only background acrylic will replace its translucency and texture with a solid color:
- - When an app window on desktop deactivates
- - When the UWP app is running on phone, Xbox, HoloLens or tablet mode
+ - When an app window on desktop deactivates.
+ - When the app is running on Xbox, HoloLens, or in tablet mode.
 
 ### Legibility considerations
-It’s important to ensure that any text your app presents to users [meets contrast ratios](../accessibility/accessible-text-requirements.md). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
+It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
 
 ## Acrylic theme resources
 You can easily apply acrylic to your app’s surfaces using the XAML [AcrylicBrush](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.
@@ -263,4 +263,4 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 
 ## Related articles
 
-TODO: [**Mica**]()
+[Fluent Design overview](/windows/apps/fluent-design-system)
