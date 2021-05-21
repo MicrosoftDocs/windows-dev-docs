@@ -40,7 +40,7 @@ If multiple displays are in use, the editor will detect the available monitors a
 
 ### Space around zones
 
-The **Show space around zones** toggle enables you to determine sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
+The **Show space around zones** toggle enables you to determine what sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between FancyZone windows until they snap together, or before both are highlighted enabling them to merge together.
 
