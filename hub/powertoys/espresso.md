@@ -21,7 +21,7 @@ Espresso can be used directly from PowerToys settings or as a standalone executa
 
 In the PowerToys settings view, you can start Espresso by using the **Enable Espresso** toggle. Once enabled, the application will manage the awakeness state of the computer.
 
-![A screenshot of the Espresso settings](../images/pt-espresso.png)
+![A screenshot of the Espresso settings](../images/powertoys-espresso.png)
 
 The following Espresso states can be selected:
 
@@ -38,7 +38,7 @@ While Espresso can keep the computer awake indefinitely or temporarily, in its d
 
 To manage the execution of the tool from the system tray, right-click on the Espresso icon.
 
-![Espresso settings managed from the system tray on Windows 10](../images/pt-espresso-tray.gif)
+![Espresso settings managed from the system tray on Windows 10](../images/powertoys-espresso-tray.gif)
 
 ### Command Line Interface (CLI)
 
