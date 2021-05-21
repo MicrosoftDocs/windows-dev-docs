@@ -144,6 +144,15 @@ If you handle showing the flyout yourself (for example, on a [RightTapped](/uwp/
 > [!TIP]
 > For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
 
+### Show an always expanded CommandBarFlyout
+When you have primary and secondary commands in a CommandBarFlyout, the "see more [...]" button is displayed, and can be used to expand/collapse the secondary commands. If you'd like to keep your CommandBarFlyout in expanded mode and show the secondary commands at all times, you can use the `CommandBarFlyout.AlwaysExpanded` property. 
+
+When the `AlwaysExpanded` property is set to true, the "see more" button will not appear, and the user will not be able to collapse the CommandBarFlyout. The CommandBarFlyout will still close as usual when a secondary command is clicked or the user clicks outside of the flyout.
+
+This property will only have an effect if the CommandBarFlyout has secondary commands. If there are no secondary commands, the CommandBarFlyout will always be in collapsed mode.
+
+Note that a CommandBarFlyout can still be collapsed/expanded  programmatically by you as the developer even when this property is set to true.
+
 ## Commands and content
 
 The CommandBarFlyout control has 2 properties you can use to add commands and content: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) and [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
@@ -190,6 +199,8 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > - Override the default brushes with [lightweight styling](./xaml-styles.md#lightweight-styling) to make the element's background and border match the app bar buttons.
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
+> 
+> SplitButton is a unique case in that it has extra built-in support for use in CommandBar and CommandBarFlyout. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, the `SplitButtonCommandBarFlyout` style will immediately be applied, allowing your SplitButton to look, act, and feel natural in the CommandBarFlyout.
 
 > [!NOTE]
 > This example shows only the command bar flyout UI, it does not implement any of the commands that are shown. For more info about implementing the commands, see [Buttons](buttons.md) and [Command design basics](../basics/commanding-basics.md).
@@ -211,24 +222,6 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
     <!-- Alignment controls -->
     <AppBarElementContainer>
         <SplitButton ToolTipService.ToolTip="Alignment">
-            <SplitButton.Resources>
-                <!-- Override default brushes to make the SplitButton 
-                     match other command bar elements. -->
-                <Style TargetType="SplitButton">
-                    <Setter Property="Height" Value="38"/>
-                </Style>
-                <SolidColorBrush x:Key="SplitButtonBackground"
-                                 Color="Transparent"/>
-                <SolidColorBrush x:Key="SplitButtonBackgroundPressed"
-                                 Color="{ThemeResource SystemListMediumColor}"/>
-                <SolidColorBrush x:Key="SplitButtonBackgroundPointerOver"
-                                 Color="{ThemeResource SystemListLowColor}"/>
-                <SolidColorBrush x:Key="SplitButtonBorderBrush" Color="Transparent"/>
-                <SolidColorBrush x:Key="SplitButtonBorderBrushPointerOver"
-                                 Color="Transparent"/>
-                <SolidColorBrush x:Key="SplitButtonBorderBrushChecked"
-                                 Color="Transparent"/>
-            </SplitButton.Resources>
             <SplitButton.Content>
                 <Viewbox Width="16" Height="16" Margin="0,2,0,0">
                     <SymbolIcon Symbol="AlignLeft"/>

@@ -130,7 +130,9 @@ You can programmatically move commands between the PrimaryCommands and Secondary
 
 ### App bar buttons
 
-Both the PrimaryCommands and SecondaryCommands can be populated only with [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) command elements. 
+Both the PrimaryCommands and SecondaryCommands can be populated only with types that implement the [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) interface, which includes [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) command elements. 
+
+If you'd like to include a different type of element in your PrimaryCommands or SecondaryCommands, you can use the [AppBarElementContainer](/uwp/api/windows.ui.xaml.controls.appbarelementcontainer) class. This will serve as a wrapper for your element and will enable the element to display in a CommandBar.
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the command bar or the overflow menu.
 
@@ -168,6 +170,39 @@ Button labels should be short, preferably a single word. Longer labels below an 
 When the label wraps at the hinted location, it looks like this.
 
 ![App bar button with wrapping label](images/app-bar-button-label-wrap.png)
+
+#### SplitButton
+You can display a SplitButton in a CommandBar using the built-in `SplitButtonCommandBarStyle` and the [AppBarElementContainer class](uwp/api/windows.ui.xaml.controls.appbarelementcontainer). `SplitButtonCommandBarStyle` provides visuals for a SplitButton to look and feel like an AppBarButton, while `AppBarElementContainer` is a wrapper class that provides the functionality that SplitButton needs to act like an AppBarButton. 
+
+When you wrap a SplitButton in an `AppBarElementContainer` and place it in a CommandBar, the `SplitButtonCommandBarStyle` will automatically be applied. 
+
+If a SplitButton item inside of a CommandBar enters an overflow menu, it will pick up the `SplitButtonCommandBarFlyout` style to stay consistent.
+
+The sample code below creates and displays a SplitButton inside of a CommandBar:
+
+```xml
+<CommandBar>  
+    <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy" Label="Copy"/>
+    <AppBarElementContainer>
+        <SplitButton ToolTipService.ToolTip="Insert">
+            <SplitButton.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Insert</TextBlock>
+                </StackPanel>
+            </SplitButton.Content>
+            <SplitButton.Flyout>
+                <MenuFlyout Placement="RightEdgeAlignedTop">
+                    <MenuFlyoutItem Text="Insert above"/>
+                    <MenuFlyoutItem Text="Insert between"/>
+                    <MenuFlyoutItem  Text="Insert below"/>
+                </MenuFlyout>
+            </SplitButton.Flyout>
+        </SplitButton>
+    </AppBarElementContainer>
+    <AppBarButton Label="Select all"/>
+    <AppBarButton Label="Delete" Icon="Delete"/>
+</CommandBar>
+```
 
 ### Menus and flyouts
 
