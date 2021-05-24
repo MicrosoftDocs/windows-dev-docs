@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -349,8 +349,6 @@ ___
 
 ## Unfocused appearance settings
 
-### Unfocused appearance settings ([Preview](https://aka.ms/terminal-preview))
-
 An object you can add to a profile that applies settings to the profile when it is unfocused. This setting only accepts appearance settings.
 
 **Property name:** `unfocusedAppearance`
@@ -367,9 +365,6 @@ An object you can add to a profile that applies settings to the profile when it 
     "backgroundImageOpacity": 0.3
 },
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

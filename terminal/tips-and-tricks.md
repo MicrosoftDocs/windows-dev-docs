@@ -3,7 +3,7 @@ title: Windows Terminal tips and tricks
 description: In this page, you will find tips and tricks to help improve your Windows Terminal experience.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/21/2020
+ms.date: 05/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -48,8 +48,33 @@ You can open a hyperlink from inside Windows Terminal with your mouse using <kbd
 
 You can right-click with your mouse to copy and paste text within Windows Terminal using your clipboard storage.
 
-Windows Terminal also includes a **[copyOnSelect](./customize-settings/interaction.md#automatically-copy-selection-to-clipboard)** setting that can be set to `true` in order for any text selected with your mouse to be immediately copied to your clipboard. The right-click on your mouse will always paste in this case. 
+Windows Terminal also includes a **[copyOnSelect](./customize-settings/interaction.md#automatically-copy-selection-to-clipboard)** setting that can be set to `true` in order for any text selected with your mouse to be immediately copied to your clipboard. The right-click on your mouse will always paste in this case.
 
 ### Virtual Terminal and WSL mouse support
 
 Windows Terminal supports mouse input in Windows Subsystem for Linux (WSL) applications as well as Windows applications that use virtual terminal (VT) input. This means applications such as [tmux](https://github.com/tmux/tmux/wiki) and [Midnight Commander](https://www.linuxhelp.com/how-to-install-midnight-commander-in-linux) will recognize when you select items in the Terminal window. If an application is in mouse mode, you can hold down <kbd>shift</kbd> to make a selection instead of sending VT input.
+
+## Quake mode
+
+"Quake mode" is the name for the special mode the terminal enters when naming a window `_quake`. When a window is in quake mode:
+
+* The terminal is automatically snapped to the top half of the monitor.
+
+* The window can no longer be resized horizontally or from the top. It can only be resized on the bottom.
+
+* The window automatically enters focus mode (note that you may have multiple tabs in focus mode).
+
+* When [`windowingBehavior`](./customize-settings/startup.md#new-instance-behavior) is set to `"useExisting"` or `"useAnyExisting"`, they will ignore the existence of the `_quake` window.
+
+* The window will be hidden from the taskbar and from <kbd>Alt</kbd>+<kbd>Tab</kbd>.
+
+* Only one window may be the quake mode window at a time.
+
+The quake mode window can be created either by binding the `quakeMode` action, or by manually running the command line:
+
+```
+wt -w _quake
+```
+
+> [!NOTE]
+> If you don't have a [`quakeMode`](./customize-settings/actions.md#global-commands) action bound and minimize the quake window, you'll need to go into Task Manager to be able to exit that terminal window!

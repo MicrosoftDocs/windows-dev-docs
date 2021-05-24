@@ -3,7 +3,7 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -44,9 +44,9 @@ When this is set to `true`, the color and font formatting of the selected text i
 
 ___
 
-## Remove trailing white-spaces when copying text in rectangular selection to clipboard (preview)
+## Remove trailing white-space in rectangular selection ([Preview](https://aka.ms/terminal-preview))
 
-When this is set to `true` and you copy text in a rectangular (block) selection to the clipboard, trailing white-spaces are removed from each line. When it's set to `false`, the white-spaces are preserved, ensuring that all lines have the same length. To copy text in a rectangular (block) selection, hold down the `Alt` key, right-click and drag your mouse over the text area you want to select. This can be useful for selecting text columns, etc.
+When this is set to `true` and you copy text in a rectangular (block) selection to the clipboard, trailing white-spaces are removed from each line. When it's set to `false`, the white-spaces are preserved, ensuring that all lines have the same length. To copy text in a rectangular (block) selection, hold down the <kbd>Alt</kbd> key, right-click, and drag your mouse over the text area you want to select. This can be useful for selecting text columns, etc.
 
 **Property name:** `trimBlockSelection`
 
@@ -167,6 +167,25 @@ When this is set to `true`, the terminal will move focus to the pane on mouse ho
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
+
+<br />
+
+___
+
+## Automatically detect URLs and make them clickable ([Preview](https://aka.ms/terminal-preview))
+
+When this is set to `true`, URLs will be detected by the terminal. This will cause URLs to underline on hover and be clickable by pressing <kbd>Ctrl</kbd>. This is an experimental feature and its continued existence is not guaranteed.
+
+**Property name:** `experimental.detectURLs`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

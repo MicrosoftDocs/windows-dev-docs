@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ---
 
@@ -48,9 +48,6 @@ Below is the full list of supported commands and options for the `wt` command li
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
 
-> [!IMPORTANT]
-> The `-D, --duplicate` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
@@ -59,22 +56,19 @@ Commands may vary slightly depending on which command line you're using.
 
 To start an instance of Windows Terminal and have it execute a command, call `wt.exe` followed by your command.
 
-Here's an example of calling Windows Terminal to pass a [ping](https://docs.microsoft.com/windows-server/administration/windows-commands/ping) command argument to echo an IP address:
+Here's an example of calling Windows Terminal to pass a [ping](/windows-server/administration/windows-commands/ping) command argument to echo an IP address:
 
 ```powershell
 wt ping docs.microsoft.com
 ```
 
-Here's an example of calling Windows Terminal to open a new tab with a PowerShell command line, confirming to call the [Start-Service](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service) command, and opening another new tab with Windows Command Prompt open to the `/k` directory:
+Here's an example of calling Windows Terminal to open a new tab with a PowerShell command line, confirming to call the [Start-Service](/powershell/module/microsoft.powershell.management/start-service) command, and opening another new tab with Windows Command Prompt open to the `/k` directory:
 
 ```cmd
 wt new-tab PowerShell -c Start-Service ; new-tab cmd /k dir
 ```
 
 ### Target a specific window
-
-> [!IMPORTANT]
-> The ability for the `--window,-w` parameter to accept window names is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 Below are examples of how to target specific windows using the `--window,-w` option.
 
@@ -338,7 +332,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Using application title ([Preview](https://aka.ms/terminal-preview))
+### Using application title
 
 To open a new terminal instance allowing applications within it to set the tab title by sending title change messages, use the `--useApplicationTitle` flag. To suppress these messages, use the `--suppressApplicationTitle` flag. If none of these flags are provided, the behavior is inherited from the profile's settings. To open a tab with title `tabname` that will not be overridden by the application, enter:
 
@@ -365,9 +359,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab color
 
@@ -403,7 +394,7 @@ When `--tabColor` is set for a tab, it is associated with the first pane of this
 wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
 ```
 
-### Color scheme ([Preview](https://aka.ms/terminal-preview))
+### Color scheme
 
 To open a new terminal instance with a specific color scheme (instead of the `colorScheme` set in the profile), use the `--colorScheme` argument. This argument overrides the value defined in the profile.
 
@@ -430,9 +421,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab focus
 
