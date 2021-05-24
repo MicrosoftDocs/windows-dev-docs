@@ -48,6 +48,9 @@ Below is the full list of supported commands and options for the `wt` command li
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
 
+> [!IMPORTANT]
+> The `-D, --duplicate` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
@@ -69,6 +72,9 @@ wt new-tab PowerShell -c Start-Service ; new-tab cmd /k dir
 ```
 
 ### Target a specific window
+
+> [!IMPORTANT]
+> The ability for the `--window,-w` parameter to accept window names is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 Below are examples of how to target specific windows using the `--window,-w` option.
 
