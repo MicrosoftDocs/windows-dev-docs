@@ -3,7 +3,7 @@ title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -23,6 +23,25 @@ Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the
 **Accepts:** GUID or profile name as a string
 
 **Default value:** PowerShell's GUID
+
+<br />
+
+___
+
+## Default terminal application ([Preview](https://aka.ms/terminal-preview))
+
+Set the default terminal emulator in Windows for all command line applications to run inside of.
+
+**Property name:** This modifies an OS setting and does not have a property name inside the settings.json file.
+
+**Necessity:** Required
+
+**Accepts:** Any terminal emulator that appears in the dropdown
+
+**Default value:** Windows Console Host
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

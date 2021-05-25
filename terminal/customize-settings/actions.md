@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -111,10 +111,10 @@ ___
 
 ### Modifiers
 
-`ctrl+`, `shift+`, `alt+`
+`ctrl+`, `shift+`, `alt+`, `win+`
 
 > [!NOTE]
-> The `Windows` key is not supported as a modifier.
+> While the `Windows` key is supported as a modifier, the system reserves most `win+<key>` key bindings. If the OS has reserved that key binding, the terminal will never receive that binding.
 
 ### Modifier keys
 
@@ -198,14 +198,16 @@ This opens the dropdown menu.
 
 ### Open settings files
 
-This opens either the default or custom settings files. Without the `target` field, this will open the settings.json file.
+This opens either the settings UI, custom settings file (`settings.json`), or default settings file (`defaults.json`), depending on the `target` field.
+Without the `target` field, the custom settings file will be opened.
 
 **Command name:** `openSettings`
 
 **Default bindings:**
 
 ```json
-{ "command": "openSettings", "keys": "ctrl+," },
+{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+," },
+{ "command": { "action": "openSettings", "target": "settingsFile" }, "keys": "ctrl+shift+," },
 { "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
 ```
 
@@ -214,9 +216,6 @@ This opens either the default or custom settings files. Without the `target` fie
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"settingsUI"`, `"allFiles"` | The settings file to open. |
-
-> [!IMPORTANT]
-> The `"settingsUI"` value for `target` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Toggle full screen
 
@@ -372,10 +371,6 @@ This creates a new tab. Without any arguments, this will open the default profil
 | `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
 
-> [!IMPORTANT]
-> The `"colorScheme"` and `"suppressApplicationTitle"` parameters are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-
 ### Open next tab
 
 This opens the tab to the right of the current one.
@@ -394,9 +389,6 @@ This opens the tab to the right of the current one.
 | ---- | --------- | ------- | ----------- |
 | `tabSwitcherMode` | Optional | `"mru"`, `"inOrder"`, `"disabled"` | Move to the next tab using `"tabSwitcherMode"`. If no mode is provided, use the globally defined one. |
 
-> [!IMPORTANT]
-> The `"tabSwitcherMode"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Open previous tab
 
 This opens the tab to the left of the current one.
@@ -414,9 +406,6 @@ This opens the tab to the left of the current one.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `tabSwitcherMode` | Optional | `"mru"`, `"inOrder"`, `"disabled"` | Move to the previous tab using `"tabSwitcherMode"`. If no mode is provided, use the globally defined one. |
-
-> [!IMPORTANT]
-> The `"tabSwitcherMode"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab search
 
@@ -590,10 +579,7 @@ This creates a new window. Without any arguments, this will open the default pro
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to true `true` suppresses these messages. If not provided, the behavior is inheritted from profile settings. |
 
-> [!IMPORTANT]
-> The `"suppressApplicationTitle"` parameter is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Rename window ([Preview](https://aka.ms/terminal-preview))
+### Rename window
 
 This command can be used to rename a window to a specific string.
 
@@ -617,8 +603,43 @@ _This command is not currently bound in the default settings_.
 | ---- | --------- | ------- | ----------- |
 | `name` | Optional | String | The new name to use for this window. If omitted, this command will revert the window name back to its original value. |
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.7+.
+### Open window rename dialog
+
+This command changes displays a popup window that lets you edit the name for the current window. Clearing the text field will reset the window name.
+
+**Command name:** `openWindowRenamer`
+
+**Default binding:**
+
+```json
+{ "command": "openWindowRenamer" }
+```
+
+### Identify window
+
+This pops up an overlay on the focused window that displays the window's name and index.
+
+**Command name:** `identifyWindow`
+
+**Default binding:**
+
+```json
+{"command": "identifyWindow", "keys": "" },
+```
+
+### Identify windows
+
+This pops up an overlay on all windows that displays each window's name and index.
+
+**Command name:** `identifyWindows`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "identifyWindows" },
+```
 
 ### Open window rename dialog ([Preview](https://aka.ms/terminal-preview))
 
@@ -668,6 +689,7 @@ _This command is not currently bound in the default settings_.
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
+
 ___
 
 ## Pane management commands
@@ -1003,6 +1025,128 @@ Changes the active color scheme.
 ```json
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
+
+<br />
+
+___
+
+## Global commands
+
+### Global summon ([Preview](https://aka.ms/terminal-preview))
+
+This is a special action that works globally in the OS, rather than only in the context of the terminal window. When pressed, this action will summon the terminal window. Which window is summoned, where the window is summoned to, and how the window behaves when summoning it, is controlled by the properties on this action.
+
+**Notes**
+* Any keys bound to `globalSummon` actions in the terminal will not work in other applications while the terminal is running - they will always focus the terminal window.
+
+* If another running application already registered for the given `keys` using the `RegisterHotKey` API, the terminal will be unable to listen for those key strokes.
+
+* Elevated and unelevated instances of the terminal will not be able to both register for the same keys. The same applies to both Preview and Stable versions of the terminal - the first one to be launched will always win.
+
+* These key strokes will only work when an instance of the terminal is already running. To launch the terminal automatically on login, see [`startOnUserLogin`](./startup.md#launch-on-machine-startup).
+
+**Command name:** `globalSummon`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{ "keys": "", "command": { "action": "globalSummon" } }
+```
+
+#### Arguments
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `desktop` | Optional | `any`, `toCurrent`, `onCurrent` | This controls how the terminal should interact with virtual desktops.<ul><li>`"any"`: Leave the window on whichever desktop it's already on - will switch to that desktop as the window is activated.</li><li>`"toCurrent"` (_default_): Move the window to the current virtual desktop.</li><li>`"onCurrent"`: Only summon the window if it's already on the current virtual desktop.</li></ul> |
+| `monitor` | Optional | `any`, `toCurrent`, `toMouse` | This controls the monitor that the window will be summoned from/to.<ul><li>`"any"`: Summon the most recently used window, regardless of which monitor it's currently on.</li><li>`"toCurrent"`: Summon the most recently used window to the monitor with the current foreground window.</li><li>`"toMouse"` (_default_): Summon the most recently used window to the monitor where the mouse cursor is.</li></ul> |
+| `name` | Optional | String | When omitted (_default_), use `monitor` and `desktop` to find the appropriate most-recently-used window to summon. When provided, summon the window whose name or ID matches the given `name` value. If no such window exists, then create a new window with that name. |
+| `dropdownDuration` | Optional | Integer | Defaults to `0`. When provided with a positive number, "slide" the window in from the top of the screen using an animation that lasts `dropdownDuration` milliseconds. `200` is a reasonable value for this setting.  |
+| `toggleVisibility` | Optional | `true`, `false` | Defaults to `true`. When `true`, pressing the assigned keys for this action will dismiss (minimize) the window when the window is currently the foreground window. When `false`, pressing the assigned keys will only ever bring the window to the foreground. |
+
+When `name` is provided _with_ `monitor` or `desktop`, `name` behaves in the following
+ways:
+  * `desktop`
+    - `"any"`: Go to the desktop the given window is already on.
+    - `"toCurrent"`: If the window is on another virtual desktop, then move it to the currently active one.
+    - `"onCurrent"`: If the window is on another virtual desktop, then move it to the currently active one.
+  * `monitor`
+    - `"any"`: Leave the window on the monitor it is already on.
+    - `"toCurrent"`: If the window is on another monitor, then move it to the monitor with the current foreground window.
+    - `"toMouse"`: If the window is on another monitor, then move it to the monitor with the mouse cursor on it.
+
+The `desktop` and `monitor` properties can be combined in the following ways:
+
+|  | `"desktop"` |  |  |
+| -- | --------- | -- | -- |
+| **`"monitor"`** | `"any"`<br />**Leave where it is** | `"toCurrent"`<br />**Move to current desktop** | `"onCurrent"`<br />**On current desktop only** |
+| `"any"`<br />**Summon the MRU window** | Go to the desktop the window is on (leave position alone) | Move the window to this desktop (leave position alone) | If there isn't one on this desktop:<ul><li>Create a new one in the default position</li></ul>Else:<ul><li>Activate the one on this desktop (don't move it)</li></ul> |
+| `"toCurrent"`<br />**Summon the MRU window TO the monitor with the foreground window** | Go to the desktop the window is on, move to the monitor with the foreground window | Move the window to this desktop, move to the monitor with the foreground window | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the foreground window</li></ul> |
+| `"toMouse"`<br />**Summon the MRU window TO the monitor with the mouse** | Go to the desktop the window is on, move to the monitor with the mouse | Move the window to this desktop, move to the monitor with the mouse | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the mouse</li></ul> |
+
+#### Examples
+
+```jsonc
+
+// Summon the most recently used (MRU) window, to the current virtual desktop,
+// to the monitor the mouse cursor is on, without an animation. If the window is
+// already in the foreground, then minimize it.
+{ "keys": "ctrl+1", "command": { "action": "globalSummon" } },
+
+// Summon the MRU window, by going to the virtual desktop the window is
+// currently on. Move the window to the monitor the mouse is on.
+{ "keys": "ctrl+2", "command": { "action": "globalSummon", "desktop": "any" } },
+
+// Summon the MRU window to the current desktop, leaving the position of the window untouched.
+{ "keys": "ctrl+3", "command": { "action": "globalSummon", "monitor": "any" } },
+
+// Summon the MRU window, by going to the virtual desktop the window is
+// currently on, leaving the position of the window untouched.
+{ "keys": "ctrl+4", "command": { "action": "globalSummon", "desktop": "any", "monitor": "any" } },
+
+// Summon the MRU window with a dropdown duration of 200ms.
+{ "keys": "ctrl+5", "command": { "action": "globalSummon", "dropdownDuration": 200 } },
+
+// Summon the MRU window. If the window is already in the foreground, do nothing.
+{ "keys": "ctrl+6", "command": { "action": "globalSummon", "toggleVisibility": false } },
+
+// Summon the window named "_quake". If no window with that name exists, then create a new window.
+{ "keys": "ctrl+7", "command": { "action": "globalSummon", "name": "_quake" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Open the quake mode window ([Preview](https://aka.ms/terminal-preview))
+
+:::row:::
+:::column span="":::
+This action is a special variation of the [`globalSummon`](#global-commands) action. It specifically summons the [quake window](../tips-and-tricks.md#quake-mode). It is a shorthand for the following `globalSummon` action:
+
+```json
+{ "keys": "win+`", "command": { "action": "globalSummon", "name": "_quake", "dropdownDuration": 200, "toggleVisibility": true, "monitor": "toCursor", "desktop": "toCurrent" } }
+```
+
+If you'd like to change the behavior of the `quakeMode` action, we recommended creating a new `globalSummon` entry in `actions` with the settings you prefer.
+
+**Command name:** `quakeMode`
+
+**Default binding:**
+
+```json
+{ "keys": "win+`", "command": { "action": "quakeMode" } }
+```
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal quake mode](./../images/quake-mode.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

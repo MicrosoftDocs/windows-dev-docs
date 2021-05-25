@@ -3,7 +3,7 @@ title: Windows Terminal Powerline Setup
 description: In this tutorial, you learn how to set up Powerline in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 05/25/2021
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up Powerline in my Windows Terminal so that I can have a customized command line experience.
 ---
@@ -44,7 +44,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 ```
 
 > [!TIP]
-> You may need to install NuGet if you don't already have it. Your PowerShell command line will ask if you want to install NuGet if this is the case. Select [Y] Yes. You may also need to approve that you are installing modules from [PSGallery](https://docs.microsoft.com/powershell/scripting/gallery/getting-started), an 'untrusted repository'. Select [Y] Yes.
+> You may need to install NuGet if you don't already have it. Your PowerShell command line will ask if you want to install NuGet if this is the case. Select [Y] Yes. You may also need to approve that you are installing modules from [PSGallery](/powershell/scripting/gallery/getting-started), an 'untrusted repository'. Select [Y] Yes.
 
 [Posh-Git](https://github.com/dahlbyk/posh-git) adds Git status information to your prompt as well as tab-completion for Git commands, parameters, remotes, and branch names. [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) provides theme capabilities for your PowerShell prompt.
 
@@ -54,11 +54,11 @@ If you are using PowerShell Core, install PSReadline:
 Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 ```
 
-[PSReadline](https://docs.microsoft.com/powershell/module/psreadline) lets you customize the command line editing environment in PowerShell.
+[PSReadline](/powershell/module/psreadline) lets you customize the command line editing environment in PowerShell.
 
 ### Customize your PowerShell prompt
 
-Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles).
+Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 In your PowerShell profile, add the following to the end of the file:
 
@@ -72,7 +72,7 @@ Now, each new instance starts by importing Posh-Git and Oh-My-Posh, then setting
 function without the need for additional icons. You can also [create a custom theme](https://ohmyposh.dev/docs/installation#change-the-theme) to match the font of your choice.
 
 > [!IMPORTANT]
-> Script execution policy must be set to either **RemoteSigned** or **Unrestricted** in order for the profile script to run. Run this command to see your current execution policy `Get-ExecutionPolicy`. [Learn more about Execution Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies)
+> Script execution policy must be set to either **RemoteSigned** or **Unrestricted** in order for the profile script to run. Run this command to see your current execution policy `Get-ExecutionPolicy`. [Learn more about Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)
 
 ### Set Cascadia Code PL as your font
 
@@ -109,7 +109,7 @@ wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-
 chmod +x /usr/local/bin/oh-my-posh
 ```
 
-The second step is optonal. Oh-my-posh can use the same theme config regardless of the shell or evironment, so if you're already using
+The second step is optional. Oh-my-posh can use the same theme config regardless of the shell or evironment, so if you're already using
 it on Windows Powershell for example, you can reuse that theme configuration rather than download the themes.
 If you plan to use it within Ubuntu WSL only, fetch the [themes](https://ohmyposh.dev/docs/themes) so you can get started right away:
 

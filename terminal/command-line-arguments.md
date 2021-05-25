@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 05/25/2021
 ms.topic: how-to
 ---
 
@@ -54,6 +54,22 @@ Below is the full list of supported commands and options for the `wt` command li
 ## Command line argument examples
 
 Commands may vary slightly depending on which command line you're using.
+
+### Passing an argument to the default shell
+
+To start an instance of Windows Terminal and have it execute a command, call `wt.exe` followed by your command.
+
+Here's an example of calling Windows Terminal to pass a [ping](/windows-server/administration/windows-commands/ping) command argument to echo an IP address:
+
+```powershell
+wt ping docs.microsoft.com
+```
+
+Here's an example of calling Windows Terminal to open a new tab with a PowerShell command line, confirming to call the [Start-Service](/powershell/module/microsoft.powershell.management/start-service) command, and opening another new tab with Windows Command Prompt open to the `/k` directory:
+
+```cmd
+wt new-tab PowerShell -c Start-Service ; new-tab cmd /k dir
+```
 
 ### Target a specific window
 
@@ -322,7 +338,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Using application title ([Preview](https://aka.ms/terminal-preview))
+### Using application title
 
 To open a new terminal instance allowing applications within it to set the tab title by sending title change messages, use the `--useApplicationTitle` flag. To suppress these messages, use the `--suppressApplicationTitle` flag. If none of these flags are provided, the behavior is inherited from the profile's settings. To open a tab with title `tabname` that will not be overridden by the application, enter:
 
@@ -349,9 +365,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab color
 
@@ -387,7 +400,7 @@ When `--tabColor` is set for a tab, it is associated with the first pane of this
 wt new-tab --tabColor #009999 ; split-pane --tabColor #f59218
 ```
 
-### Color scheme ([Preview](https://aka.ms/terminal-preview))
+### Color scheme
 
 To open a new terminal instance with a specific color scheme (instead of the `colorScheme` set in the profile), use the `--colorScheme` argument. This argument overrides the value defined in the profile.
 
@@ -414,9 +427,6 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 
 ---
 <!-- End tab selectors.  -->
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Tab focus
 

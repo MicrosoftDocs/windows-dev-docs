@@ -21,7 +21,7 @@ You can start an SSH session in your command prompt by executing `ssh user@machi
 ```json
 {
   "name": "user@machine ssh profile",
-  "commandline": "ssh user@machine",
+  "commandline": "ssh user@machine"
 }
 ```
 
