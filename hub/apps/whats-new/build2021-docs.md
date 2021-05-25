@@ -66,3 +66,21 @@ We've gathered together links to documentation that supports the talks given as 
 ## Azure Communication Services
 
 - [Azure Communication Services](https://azure.microsoft.com/services/communication-services/)
+
+## Windows on ARM
+
+- [Snapdragon Developer Kit](https://developer.qualcomm.com/hardware/windows-on-snapdragon/snapdragon-developer-kit)
+- [Windows on ARM](/windows/arm/)
+
+## Surface Duo
+
+- [Surface Duo Blog](https://devblogs.microsoft.com/surface-duo/surface-duo-at-microsoft-build-2021/)
+
+
+## Windows AI Platform
+
+- [Windows AI Platform blog](https://devblogs.microsoft.com/windowsai/)
+
+## Windows Terminal
+
+- [Terminal Preview v1.9 announced](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-9-release)
