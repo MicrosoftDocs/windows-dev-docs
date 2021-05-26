@@ -25,13 +25,11 @@ We have a huge number of choices to make for navigation. We could:
         Require users to go through a series of pages in order.
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
-        
+        ![navigation example 2](images/nav/nav-2.svg) 
         Provide a menu that allows users to jump directly to any page.
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
-        
         Place everything on a single page and provide filtering mechanisms for viewing content.
     :::column-end:::
 :::row-end:::
