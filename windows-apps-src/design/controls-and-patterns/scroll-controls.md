@@ -137,7 +137,6 @@ For cases where a ScrollViewer is explicit in your XAML, as is shown in the exam
 - If you want the user to pan in both directions around a larger area, and possibly to zoom, too, for example, if you want to allow the user to pan and zoom over a full-sized image (rather than an image sized to fit the screen) then place the image inside a scroll viewer.
 - If the user will scroll through a long passage of text, configure the scroll viewer to scroll vertically only.
 - Use a scroll viewer to contain one object only. Note that the one object can be a layout panel, in turn containing any number of objects of its own.
-- Don't place a [Pivot](pivot.md) control inside a scroll viewer to avoid conflicts with pivot's scrolling logic.
 - If you need to handle pointer events for a [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
 

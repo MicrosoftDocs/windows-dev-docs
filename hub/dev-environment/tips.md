@@ -1,6 +1,6 @@
 ---
-title: Tips for improving your development workflow on Windows 10
-description: Tips that will help improving your performance and make your development workflow more efficient and enjoyable on Windows 10.
+title: Workflow and Performance Tips for Windows 10
+description: Tips for improving your development workflow on Windows 10.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -43,7 +43,7 @@ For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](https
 
 ## Improve performance speed for WSL by not crossing over file systems
 
-If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTSF (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
+If you're working with both Windows and Windows Subsystem for Linux, you have two file systems installed: NTFS (Windows) and WSL (your Linux distro). For fast performance, ensure that your project files are stored in the same system as the tools you're using. Learn more about [choosing the correct file system for faster performance](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
 
 ## Improve build speeds by adding Windows Defender exclusions
 
@@ -53,7 +53,7 @@ You can improve your build speed by updating your Windows Defender settings to a
 
 ## Launch all your command lines in Windows Terminal at once
 
-* You can launch multiple command lines, like PowerShell, Ubuntu, and Azure CLI, all into a single window with multiple panes using [Windows Terminal Command Line Arguments](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). After installing [Windows Terminal](/windows/terminal/get-started), [WSL/Ubuntu](/windows/wsl/install-win10), and [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), enter this command in PowerShell to open a new multi-pane window with all three:
+* You can launch multiple command lines, like PowerShell, Ubuntu, and Azure CLI, all into a single window with multiple panes using [Windows Terminal Command Line Arguments](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). After installing [Windows Terminal](/windows/terminal/get-started), [WSL/Ubuntu](/windows/wsl/install-win10), and [Azure CLI](/cli/azure/install-azure-cli), enter this command in PowerShell to open a new multi-pane window with all three:
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

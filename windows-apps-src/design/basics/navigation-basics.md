@@ -26,10 +26,12 @@ We have a huge number of choices to make for navigation. We could:
     :::column-end:::
     :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
+        
         Provide a menu that allows users to jump directly to any page.
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
+        
         Place everything on a single page and provide filtering mechanisms for viewing content.
     :::column-end:::
 :::row-end:::
@@ -145,7 +147,7 @@ You don't have to choose one structure or the other; many well-design apps use b
 
 If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-- At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
+- At level 1, the peer-to-peer navigation element should provide access to pages A, B, and C.
 - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
     :::column-end:::
 :::row-end:::
@@ -218,6 +220,7 @@ Use a breadcrumb when:
 
 :::row:::
     :::column:::
+
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -230,20 +233,19 @@ Displays a vertical list of links to top-level pages. Use when:
 - You don't expect users to switch between pages frequently.
     :::column-end:::
 :::row-end:::
-
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![List details image](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**List/details**](../controls-and-patterns/list-details.md)
 
-Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
-
+Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:
+        
 - You expect users to switch between child items frequently.
 - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 
-Master/details is well suited for email inboxes, contact lists, and data entry.
+List/details is well suited for email inboxes, contact lists, and data entry.
     :::column-end:::
 :::row-end:::
 

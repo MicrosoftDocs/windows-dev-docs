@@ -1,7 +1,7 @@
 ---
 title: Learning track - Construct and configure a form
 description: Learn how to construct and configure a robust form  in a Universal Windows Platform (UWP) app for handling the input of a significant amount of information.
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: get started, uwp, windows 10, learning track, layout, form
 ms.localizationpriority: medium
@@ -61,17 +61,17 @@ With that advice in mind, you should start adding your controls of choice into y
         <TextBox x:Name="CustomerName" Header= "Customer Name" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
-	        <RelativePanel>
-	            <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
-	            <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
-	                <!--List of valid states-->
-	            </ComboBox>
-	        </RelativePanel>
+            <RelativePanel>
+                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
+                <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
+                    <!--List of valid states-->
+                </ComboBox>
+            </RelativePanel>
     </StackPanel>
     <StackPanel x:Name="Associate" Margin="20" RelativePanel.Below="Customer">
         <TextBox x:Name="AssociateName" Header= "Associate" Margin="0,24,0,0" HorizontalAlignment="Left" />
-	    <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
-	    <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
+        <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
+        <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
     <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Associate">
         <Button Content="Save" Margin="24" />
@@ -138,7 +138,7 @@ When you're creating more complex layouts with more visual elements, you'll want
 
 Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back through the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout features, see our [adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md)
 
-Forms also don't have to exist in a vacuum - you could go one step forward and embed yours within a [master/details pattern](../design/controls-and-patterns/master-details.md) or a [pivot control](../design/controls-and-patterns/pivot.md). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
+Forms also don't have to exist in a vacuum - you could go one step further and embed yours within a [list/details pattern](../design/controls-and-patterns/list-details.md) or a [NavigationView](../design/controls-and-patterns/navigationview.md). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
 
 ## Useful APIs and docs
 
@@ -150,7 +150,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 |------|---------------|
 | [Controls useful for forms](../design/controls-and-patterns/forms.md#input-controls) | A list of useful input controls for creating forms, and basic guidance of where to use them. |
 | [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) | A panel for arranging elements in multi-row and multi-column layouts. |
-| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arraging items in relation to other elements and to the panel's boundaries. |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | A panel for arranging items in relation to other elements and to the panel's boundaries. |
 | [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | A panel for arranging elements into a single horizontal or vertical line. |
 | [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | Allows you to set the appearance of UI elements when they're in particular states. |
 
@@ -163,8 +163,8 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 | [Events overview](../xaml-platform/events-and-routed-events-overview.md) | Details on adding and structuring events to handle UI actions. |
 | [Forms](../design/controls-and-patterns/forms.md) | Overall guidance for creating forms. |
 | [Layout panels](../design/layout/layout-panels.md) | Provides an overview of the types of layout panels and where to use them. |
-| [Master/details pattern](../design/controls-and-patterns/master-details.md) | A design pattern that can be implemented around one or multiple forms. |
-| [Pivot control](../design/controls-and-patterns/pivot.md) | A control that can contain one or multiple forms. |
+| [List/details pattern](../design/controls-and-patterns/list-details.md) | A design pattern that can be implemented around one or multiple forms. |
+| [NavigationView](../design/controls-and-patterns/navigationview.md) | A control that can contain one or multiple forms. |
 | [Responsive design](../design/layout/responsive-design.md) | An overview of large-scale responsive design principles. |
 | [Responsive layouts with XAML](../design/layout/layouts-with-xaml.md) | Specific information on visual states and other implementations of responsive design. |
 | [Screen sizes for responsive design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Guidance on which screen sizes to which responsive layouts should be scoped. |

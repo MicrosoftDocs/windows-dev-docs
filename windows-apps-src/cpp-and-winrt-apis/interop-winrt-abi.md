@@ -358,6 +358,16 @@ void GetString(_Out_ HSTRING* value);
 | Copy **HSTRING** to **hstring** | `copy_from_abi(s, h);` | *s* makes a private copy of the string. The string previously owned by *s* is freed. |
 | Copy **hstring** to **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* receives a copy of the string. Any string previously owned by *h* is leaked. |
 
+In addition, the Windows Implementation Libraries (WIL) [string helpers](https://github.com/microsoft/wil/wiki/String-helpers) perform basic string manipulations. To use the WIL string helpers, include [<wil/resource.h>](https://github.com/microsoft/wil/blob/master/include/wil/resource.h), and refer to the table below. Follow the links in the table for full details.
+
+| Operation | WIL string helper for more info |
+|-|-|
+| Provide a raw Unicode or ANSI string pointer and an optional length; obtain a suitably-specialized **unique_any** wrapper | [wil::make_something_string](https://github.com/microsoft/wil/wiki/String-helpers#wilmake_something_string) |
+| Unwrap a smart object until a raw null-terminated Unicode string pointer is found | [wil::str_raw_ptr](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_raw_ptr) |
+| Obtain the string wrapped by a smart pointer object; or the empty string `L""` if the smart pointer is empty | [wil::string_get_not_null](https://github.com/microsoft/wil/wiki/String-helpers#wilstring_get_not_null) |
+| Concatenate any number of strings | [wil::str_concat](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_concat) |
+| Obtain a string from a printf-style format string and a corresponding parameter list | [wil::str_printf](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_printf) |
+
 ## Important APIs
 * [AddRef function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
 * [QueryInterface function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

@@ -17,7 +17,7 @@ Visual Studio makes it easy to author and deploy your own custom Windows Runtime
 Internally, your Windows Runtime types can use any .NET functionality that's allowed in a UWP application.
 
 > [!NOTE]
-> For more info, see [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0).
+> For more info, see [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
 
 Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET WRC project, and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
 
@@ -400,7 +400,7 @@ In addition to returning Windows Runtime types that you created in your componen
 > End Function
 > ```
 
-Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](/dotnet/api/system.collections.generic.dictionary-2), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
+Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&preserve-view=true), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
 
 **Important**  When a managed type implements multiple interfaces, JavaScript uses the interface that appears first in the list. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
@@ -561,9 +561,9 @@ events1Button.addEventListener("click", events1, false);
 ## Exposing asynchronous operations
 
 
-The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](/dotnet/api/system.threading.tasks.task-1) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](/previous-versions/br205802(v=vs.85)), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/previous-versions/br205807(v=vs.85)). (In the Windows Runtime, operations return results, but actions do not.)
+The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](/dotnet/api/system.threading.tasks.task-1?view=dotnet-uwp-10.0&preserve-view=true) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](/previous-versions/br205802(v=vs.85)), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/previous-versions/br205807(v=vs.85)). (In the Windows Runtime, operations return results, but actions do not.)
 
-This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](/dotnet/api/system.runtime.interopservices.windowsruntime) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the GetPrimesInRangeAsync method to the example class:
+This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](/dotnet/api/system.runtime.interopservices.windowsruntime?view=dotnet-uwp-10.0&preserve-view=true) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the GetPrimesInRangeAsync method to the example class:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -658,15 +658,15 @@ This section demonstrates a cancelable asynchronous operation that reports progr
 GetPrimesInRangeAsync is a very simple prime number finder, and that's by design. The focus here is on implementing an asynchronous operation, so simplicity is important, and a slow implementation is an advantage when we're demonstrating cancellation. GetPrimesInRangeAsync finds primes by brute force: It divides a candidate by all the integers that are less than or equal to its square root, rather than using only the prime numbers. Stepping through this code:
 
 -   Before starting an asynchronous operation, perform housekeeping activities such as validating parameters and throwing exceptions for invalid input.
--   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](/dotnet/api/system.runtime.interopservices.windowsruntime)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
+-   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](/dotnet/api/system.runtime.interopservices.windowsruntime?view=dotnet-uwp-10.0&preserve-view=true)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
 
     -   The [WinJS.Promise](/previous-versions/windows/apps/br211867(v=win.10)) object supplies functions to process the returned results, react to cancellation, and handle progress reports.
-    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](/dotnet/api/system.threading.cancellationtoken) token from the cancellation source, and the [IProgress&lt;T&gt;](/dotnet/api/system.iprogress-1) interface.
+    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](/dotnet/api/system.threading.cancellationtoken?view=dotnet-uwp-10.0&preserve-view=true) token from the cancellation source, and the [IProgress&lt;T&gt;](/dotnet/api/system.iprogress-1?view=dotnet-uwp-10.0&preserve-view=true) interface.
 
         > **Note**  If the Promise object doesn't supply a function to react to cancellation, AsyncInfo.Run still passes a cancelable token, and cancellation can still occur. If the Promise object doesn't supply a function to handle progress updates, AsyncInfo.Run still supplies an object that implements IProgress&lt;T&gt;, but its reports are ignored.
 
-    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run__1_System_Func___0__System_Threading_CancellationToken_)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
-    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
+    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run__1_System_Func___0__System_Threading_CancellationToken_?view=dotnet-uwp-10.0&preserve-view=true)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
+    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_?view=dotnet-uwp-10.0&preserve-view=true) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
     -   The IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface is returned to JavaScript.
 
 -   The lambda function that is represented by the started task doesn't take any arguments. Because it's a lambda function, it has access to the token and the IProgress interface. Each time a candidate number is evaluated, the lambda function:
@@ -727,4 +727,4 @@ To run the app, choose the F5 key. To start the asynchronous operation, choose t
 ## Related topics
 
 * [.NET for UWP apps overview](/previous-versions/windows/apps/br230302(v=vs.140))
-* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)

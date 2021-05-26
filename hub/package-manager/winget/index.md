@@ -22,7 +22,7 @@ There are several ways to install the **winget** tool:
 
 * Participate in the [Windows Insider flight ring](https://insider.windows.com).
 
-* Install Windows Desktop App Installer package located in the release folder of the [winget repository](https://github.com/microsoft/winget-cli).
+* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
 
 > [!NOTE]
 > The **winget** tool requires Windows 10, version 1709 (10.0.16299), or a later version of Windows 10.
@@ -41,8 +41,8 @@ After **App Installer** is installed, you can run **winget** by typing 'winget' 
 
 One of the most common usage scenarios is to search for and install a favorite tool.
 
-1. To [search](search.md) for a tool, type `winget search \<appname>`.
-2. After you have confirmed that the tool you want is available, you can [install](install.md) the tool by typing `winget install \<appname>`. The **winget** tool will launch the installer and install the application on your PC.
+1. To [search](search.md) for a tool, type `winget search <appname>`.
+2. After you have confirmed that the tool you want is available, you can [install](install.md) the tool by typing `winget install <appname>`. The **winget** tool will launch the installer and install the application on your PC.
     ![winget commandline](images\install.png)
 
 3. In addition to install and search, **winget** provides a number of other commands that enable you to [show details](show.md) on applications, [change sources](source.md), and [validate packages](validate.md). To get a complete list of commands, type: `winget --help`.
@@ -68,13 +68,13 @@ The current preview of the **winget** tool supports the following options.
 
 | Option | Description |
 |--------------|-------------|
-| **-v,--version** | this option returns the current version of winget. |
-| **--info** |  info provides you with all detailed information on winget including the links to the license and privacy statement. |
-| **-?, --help** |  get additional help winget |
+| **-v,--version** | Returns the current version of winget. |
+| **--info** |  Provides you with all detailed information on winget, including the links to the license and privacy statement. |
+| **-?, --help** |  Shows additional help for winget. |
 
 ## Supported installer formats
 
-The current preview of the **winget** tool supports the following types of installers.
+The current preview of the **winget** tool supports the following types of installers:
 
 * EXE
 * MSIX
@@ -82,7 +82,7 @@ The current preview of the **winget** tool supports the following types of insta
 
 ## Scripting winget
 
-You can author batch scripts and powershell scripts to install multiple applications.
+You can author batch scripts and PowerShell scripts to install multiple applications.
 
 ``` CMD
 @echo off  
@@ -100,7 +100,7 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 
 ## Missing tools
 
-If the [community repository](../package/repository.md) does not include your tool or application. Please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
+If the [community repository](../package/repository.md) does not include your tool or application, please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
 
 ## Customize winget settings
 

@@ -229,7 +229,6 @@ For more info about how to use input scopes, see [Use input scope to change the 
 
 - [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md)
-- [Adding search](search.md)
 - [Guidelines for text input](text-controls.md)
 - [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

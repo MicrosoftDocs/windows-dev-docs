@@ -4,7 +4,7 @@ title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/07/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -124,7 +124,8 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Note**&nbsp;&nbsp;You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+> [!CAUTION]
+> You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
 
 ### Specify the look of the items
 
@@ -140,7 +141,7 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
             <Grid>
                 <Image Width="480" Height="270" Stretch="UniformToFill"
                        Source="{Binding Image}"/>
-                <Border Background="#A5000000" Height="80" VerticalAlignment="Bottom">
+                <Border Background="#75000000" Height="80" VerticalAlignment="Bottom">
                     <TextBlock Text="{Binding Name}" 
                                FontFamily="Segoe UI" FontSize="26.667" 
                                Foreground="#CCFFFFFF" Padding="15,20"/>
@@ -153,7 +154,7 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
 
 Here's what the layout defined by the data template looks like.
 
-Flip view data template.
+![Example of a flip view with a data template](images/flip-view-template.png)
 
 ### Set the orientation of the flip view
 
@@ -194,25 +195,43 @@ Here's what the flip view looks like with a vertical orientation.
 
 ## Adding a context indicator
 
-A context indicator in a flip view provides a useful point of reference. The dots in a standard context indicator aren't interactive. As seen in this example, the best placement is usually centered and below the gallery:
+Use a context indicator (such as a [PipsPager](pipspager.md) or film strip) with a flip view to help provide users with a point of reference within the content.
 
-![Example of a page indicator](images/controls_pageindicator.png)
+The following image shows a PipsPager used with a small photo gallery (we recommend centering the PipsPager below the gallery).
 
-For larger collections (10-25 items), consider using an indicator that provides more context, such as a film strip of thumbnails. Unlike a context indicator that uses simple dots, each thumbnail in the film strip shows a small version of the corresponding image and should be selectable:
+:::image type="content" source="images/pipspager-flipview-example.png" alt-text="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.":::
 
-![Example of context indicator](images/controls_contextindicator.jpg)
+This code snippet shows how to bind a PipsPager with a [FlipView](/windows/winui/api/microsoft.ui.xaml.controls.flipview).
 
-For example code that shows how to add a context indicator to a FlipView, see [XAML FlipView sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)).
+```xaml
+<StackPanel>
+  <FlipView x:Name="Gallery" MaxWidth="400" Height="270" ItemsSource="{x:Bind Pictures}">
+      <FlipView.ItemTemplate>
+          <DataTemplate x:DataType="x:String">
+              <Image Source="{x:Bind Mode=OneWay}"/>
+          </DataTemplate>
+      </FlipView.ItemTemplate>
+  </FlipView>
+
+  <!-- The SelectedPageIndex is bound to the FlipView to keep the two in sync -->
+  <muxc:PipsPager x:Name="FlipViewPipsPager"
+      HorizontalAlignment="Center"
+      Margin="0, 10, 0, 0"
+      NumberOfPages="{x:Bind Pictures.Count}"
+      SelectedPageIndex="{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}" />
+</StackPanel>
+```
+
+For larger collections (10 or more items), we highly recommend using a contextual indicator such as a film strip of thumbnails. Unlike a PipsPager that uses simple dots or glyphs, each thumbnail in the film strip shows a smaller, selectable version of the corresponding image.
+
+:::image type="content" source="images/controls_contextindicator.jpg" alt-text="A film strip of thumbnails underneath a FlipView photo album.":::
+
+For a full example showing how to add a context indicator to a FlipView, see [XAML FlipView sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)).
 
 ## Do's and don'ts
 
--   Flip views work best for collections of up to 25 or so items.
--   Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](lists.md).
--   For context indicators:
-    -   The order of dots (or whichever visual marker you choose) works best when centered and below a horizontally-panning gallery.
-    -   If you want a context indicator in a vertically-panning gallery, it works best centered and to the right of the images.
-    -   The highlighted dot indicates the current item. Usually the highlighted dot is white and the other dots are gray.
-    -   The number of dots can vary, but don't have so many that the user might struggle to find his or her place - 10 dots is usually the maximum number to show.
+- Flip views work best for collections of up to 25 or so items.
+- Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](lists.md).
 
 ## Globalization and localization checklist
 
@@ -230,4 +249,5 @@ For example code that shows how to add a context indicator to a FlipView, see [X
 ## Related articles
 
 - [Guidelines for lists](lists.md)
+- [PipsPager](pipspager.md)
 - [**FlipView class**](/uwp/api/Windows.UI.Xaml.Controls.FlipView)

@@ -112,7 +112,7 @@ Here are some more specific examples of changes to controls.
 | [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | The default value of [**TextBox.TextReadingOrder**](/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) has changed from **Default** to **DetectFromContent**. If that's undesirable, then use **UseFlowDirection**. **Default** is deprecated. |
 | Various | Accent color applies to a Windows Phone Store apps, and to Windows 10 apps, but not to Windows Runtime 8.x apps.  |
 
-For more info on UWP app controls, see [Controls by function](../design/controls-and-patterns/controls-by-function.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
+For more info on UWP app controls, see [Controls by function](../design/controls-and-patterns/index.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
 
 ##  Design language in Windows 10
 

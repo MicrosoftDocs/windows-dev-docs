@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-acrylic.svg)
 
-Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.
 
-> **Important APIs**: [AcrylicBrush class](/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Important APIs**: [AcrylicBrush class](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush), [Background property](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -62,14 +62,14 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 
  ![In-app acrylic](images/AppAcrylic_DarkTheme.png)
 
- Layer multiple acrylic surfaces with caution: multiple layers of background acrylic can create distracting optical illusions.
+ Avoid layering multiple acrylic surfaces: multiple layers of background acrylic can create distracting optical illusions.
 
 ## When to use acrylic
 
 * Use in-app acrylic for supporting UI, such as on surfaces that may overlap content when scrolled or interacted with.
 * Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dismissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
 
-If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow on your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
+If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow in your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly can result in visual noise.
 
 Consider the following usage patterns to decide how best to incorporate acrylic into your app:
 
@@ -79,104 +79,46 @@ For vertical panes or surfaces that help section off content of your app, we rec
 
 ### Transient surfaces
 
-For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic.
+For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic, especially if these surfaces draw outside the frame of the main app window.
 
 ![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
-Many of our controls will use acrylic by default. [MenuFlyouts](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dismiss popups will all use the transient acrylic when they are invoked.
+Many XAML controls draw acrylic by default. [MenuFlyout](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
 
 > [!Note]
-> Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter Battery Saver mode, and users can disable acrylic effects for all apps, if they choose.
+> Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when a device enters Battery Saver mode. Users can disable acrylic effects for all apps by turning off _Transparency effects_ in Settings > Personalization > Colors.
 
 ## Usability and adaptability
 Acrylic automatically adapts its appearance for a wide variety of devices and contexts.
 
 In High Contrast mode, users continue to see the familiar background color of their choosing in place of acrylic. In addition, both background acrylic and in-app acrylic appear as a solid color:
- - When the user turns off transparency in Settings > Personalization > Color
- - When Battery Saver mode is activated
- - When the app runs on low-end hardware
+ - When the user turns off _Transparency effects_ in Settings > Personalization > Colors.
+ - When Battery Saver mode is activated.
+ - When the app runs on low-end hardware.
 
 In addition, only background acrylic will replace its translucency and texture with a solid color:
- - When an app window on desktop deactivates
- - When the Windows app is running on phone, Xbox, HoloLens or tablet mode
+ - When an app window on desktop deactivates.
+ - When the app is running on Xbox, HoloLens, or in tablet mode.
 
 ### Legibility considerations
-It’s important to ensure that any text your app presents to users [meets contrast ratios](../accessibility/accessible-text-requirements.md). We’ve optimized the acrylic recipe so that high-color black, white or even medium-color gray text meets contrast ratios on top of acrylic. The theme resources provided by the platform default to contrasting tint colors at 80% opacity. When placing high-color body text on acrylic, you can reduce tint opacity while maintaining legibility. In dark mode, tint opacity can be 70%, while light mode acrylic will meet contrast ratios at 50% opacity.
 
-We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at 15px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level outside of the platform defaults provided by the theme resource, keep the impact on legibility in mind.
+It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
 
 ## Acrylic theme resources
-You can easily apply acrylic to your app’s surfaces using the new XAML AcrylicBrush or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.
+You can easily apply acrylic to your app’s surfaces using the XAML [AcrylicBrush](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.
 
-We’ve created a collection of brush theme resources for both background and in-app acrylic types that respect the app’s theme and fall back to solid colors as needed. Resources named *AcrylicWindow* represent background acrylic, while *AcrylicElement* refers to in-app acrylic.
+We’ve created a collection of brush theme resources for both background and in-app acrylic types that respect the app’s theme and fall back to solid colors as needed. For WinUI 2, these theme resources are located in the [AcrylicBrush themeresources file, in the microsoft-ui-xaml GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/blob/6aed8d97fdecfe9b19d70c36bd1dacd9c6add7c1/dev/Materials/Acrylic/AcrylicBrush_19h1_themeresources.xaml#L11). Resources that include *Background* in their names represent background acrylic, while *InApp* refers to in-app acrylic.
 
-<table>
-    <tr>
-        <th align="center">Resource key</th>
-        <th align="center">Tint opacity</th>
-        <th align="center"><a href="color.md">Fallback color</a> </th>
-    </tr>
-    <tr>
-        <td> SystemControlAcrylicWindowBrush, SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush, SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush, SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush, SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush, SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush, SystemControlAltLowAcrylicElementBrush </td>
-        <td align="center"> 80% </td>
-        <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
-    </tr>
-    </tr>
-        <td> <b>Recommended usage:</b> These are general-purpose acrylic resources that work well in a wide variety of usages. If your app uses secondary text of AltMedium color with text size smaller than 18px, place an 80% acrylic resource behind the text to <a href="../accessibility/accessible-text-requirements.md">meet contrast ratio requirements</a>. </td>
-    </tr>
-    <tr>
-        <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
-        <td align="center"> 70% </td>
-        <td> ChromeMedium <br/><br/> BaseHigh </td>
-    </tr>
-    <tr>
-        <td> <b>Recommended usage:</b> If your app uses secondary text of AltMedium color with a text size of 18px or larger, you can place these more translucent 70% acrylic resources behind the text. We recommend using these resources in your app's top horizontal navigation and commanding areas.  </td>
-    </tr>
-    <tr>
-        <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
-        <td align="center"> 60% </td>
-        <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
-    </tr>
-    <tr>
-        <td> <b>Recommended usage:</b> When placing only primary text of AltHigh color over acrylic, your app can utilize these 60% resources. We recommend painting your app's <a href="../controls-and-patterns/navigationview.md">vertical navigation pane</a>, i.e. hamburger menu, with 60% acrylic. </td>
-    </tr>
-</table>
-
-In addition to color-neutral acrylic, we've also added resources that tint acrylic using the user-specified accent color. We recommend using colored acrylic sparingly. For the dark1 and dark2 variants provided, place white or light-colored text consistent with dark theme text color over these resources.
-<table>
-    <tr>
-        <th align="center">Resource key</th>
-        <th align="center">Tint opacity</th>
-        <th align="center"><a href="color.md">Tint and Fallback colors</a> </th>
-    </tr>
-    <tr>
-        <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
-        <td align="center"> 70% </td>
-        <td> SystemAccentColor </td>
-    </tr>
-    <tr>
-        <td> SystemControlAccentDark1AcrylicWindowAccentDark1Brush, SystemControlAccentDark1AcrylicElementAccentDark1Brush  </td>
-        <td align="center"> 80% </td>
-        <td> SystemAccentColorDark1 </td>
-    </tr>
-    <tr>
-        <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush, SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
-        <td align="center"> 70% </td>
-        <td> SystemAccentColorDark2 </td>
-    </tr>
-</table>
-
-
-To paint a specific surface, apply one of the above theme resources to element backgrounds just as you would apply any other brush resource.
+To paint a specific surface, apply one of the WinUI 2 theme resources to element backgrounds just as you would apply any other brush resource.
 
 ```xaml
-<Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+<Grid Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
 ```
 
 ## Custom acrylic brush
 You may choose to add a color tint to your app’s acrylic to show branding or provide visual balance with other elements on the page. To show color rather than greyscale, you’ll need to define your own acrylic brushes using the following properties.
- - **TintColor**: the color/tint overlay layer. Consider specifying both the RGB color value and alpha channel opacity.
- - **TintOpacity**: the opacity of the tint layer. We recommend 80% opacity as a starting point, although different colors may look more compelling at other translucencies.
+ - **TintColor**: the color/tint overlay layer.
+ - **TintOpacity**: the opacity of the tint layer.
  - **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
  - **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
  - **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
@@ -302,11 +244,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](../shell/title-bar.md).
 
 ## Do's and don'ts
-* Do use acrylic as the background material of non-primary app surfaces like navigation panes.
+* Do use acrylic on transient surfaces.
 * Do extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app’s surroundings.
-* Don't put desktop acrylic on large background surfaces of your app - this breaks the mental model of acrylic being used primarily for transient surfaces.
-* Don’t place in-app and background acrylics directly adjacent to avoid visual tension at the seams.
-* Don't place multiple acrylic panes with the same tint and opacity next to each other because this results in an undesirable visible seam.
+* Don't put desktop acrylic on large background surfaces of your app.
+* Don't place multiple acrylic panes next to each other because this results in an undesirable visible seam.
 * Don’t place accent-colored text over acrylic surfaces.
 
 ## How we designed acrylic
@@ -316,11 +257,10 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 ![Acrylic recipe](images/AcrylicRecipe_Diagram.jpg)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
-
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
-[**Reveal highlight**](reveal.md)
+[Fluent Design overview](/windows/apps/fluent-design-system)

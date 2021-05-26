@@ -1,7 +1,7 @@
 ---
 description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
 title: Command bar
-label: App bars/command bars
+label: Command bar and app bar
 template: detail.hbs
 op-migration-status: ready
 ms.date: 09/24/2020
@@ -18,9 +18,23 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
-> **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-
 ![Example of a command bar with icons](images/controls_appbar_icons.png)
+
+**Get the Windows UI Library**
+
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **CommandBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
+
+> **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ## Is this the right control?
 
@@ -120,9 +134,14 @@ Both the PrimaryCommands and SecondaryCommands can be populated only with [AppBa
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the command bar or the overflow menu.
 
-The size of the icons in the overflow menu is 16x16px, which is smaller than the icons in the primary command area (which are 20x20px). If you use SymbolIcon, FontIcon, or PathIcon, the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area. 
+#### Icons
 
-### Button labels
+The size of the icons when shown in the primary command area is 20x20px; in the overflow menu, icons are displayed at 16x16px. If you use [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon), [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), or [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area.
+
+For more information and examples of setting the icon, see the documentation for the [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) class.
+
+#### Labels
+
 The AppBarButton [IsCompact](/uwp/api/windows.ui.xaml.controls.appbarbutton.IsCompact) property determines whether the label is shown. In a CommandBar control, the command bar overwrites the button's IsCompact property automatically as the command bar is opened and closed.
 
 To position app bar button labels, use CommandBar's [DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelposition) property.
@@ -150,7 +169,7 @@ When the label wraps at the hinted location, it looks like this.
 
 ![App bar button with wrapping label](images/app-bar-button-label-wrap.png)
 
-### Command bar flyouts
+### Menus and flyouts
 
 Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu. While typically an app bar button activates a single command, an app bar button can be used to show a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) or [Flyout](/uwp/api/windows.ui.xaml.controls.flyout) with custom content.
 
@@ -273,5 +292,8 @@ Command bars can be placed in the following screen regions on single-view screen
 
 ## Related articles
 
-* [Command design basics for Windows apps](../basics/commanding-basics.md)
-* [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [Command design basics for Windows apps](../basics/commanding-basics.md)
+- [Command bar flyout](command-bar-flyout.md)
+- [Menu flyout and menu bar](menus.md)
+- [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

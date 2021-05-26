@@ -553,32 +553,39 @@ IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
 
     co_await 1s;
     double pi_so_far{ 3.1 };
+    progress.set_result(pi_so_far);
     progress(0.2);
 
     co_await 1s;
     pi_so_far += 4.e-2;
+    progress.set_result(pi_so_far);
     progress(0.4);
 
     co_await 1s;
     pi_so_far += 1.e-3;
+    progress.set_result(pi_so_far);
     progress(0.6);
 
     co_await 1s;
     pi_so_far += 5.e-4;
+    progress.set_result(pi_so_far);
     progress(0.8);
 
     co_await 1s;
     pi_so_far += 9.e-5;
+    progress.set_result(pi_so_far);
     progress(1.0);
+
     co_return pi_so_far;
 }
 
 IAsyncAction DoMath()
 {
     auto async_op_with_progress{ CalcPiTo5DPs() };
-    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    async_op_with_progress.Progress([](auto const& sender, double progress)
     {
-        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << L". "
+                   << L"Value so far: " << sender.GetResults() << std::endl;
     });
     double pi{ co_await async_op_with_progress };
     std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
@@ -591,6 +598,13 @@ int main()
     DoMath().get();
 }
 ```
+
+To report progress, invoke the progress token with the progress value as the argument. To set a provisional result, use the `set_result()` method on the progress token.
+
+> [!NOTE]
+> Reporting provisional results requires C++/WinRT version 2.0.210309.3 or later.
+
+The above example chooses to set a provisional result for every progress report. You can choose to report provisional results any time, if at all. It need not be coupled with a progress report.
 
 > [!NOTE]
 > It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail. Either one of the following two kinds of completion handlers is appropriate; not both for the same async object.

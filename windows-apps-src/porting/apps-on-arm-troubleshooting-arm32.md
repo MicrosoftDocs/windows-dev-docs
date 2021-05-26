@@ -27,9 +27,9 @@ Universal Windows Platform (UWP) apps that aren't properly built with Visual Stu
 - Expecting parts of the .NET Framework to be available.
 - Referencing third-party .NET components that aren't compatible with UWP.
 
-These issues can be resolved by: removing the unavailable dependencies and rebuilding the app by using the latest Microsoft Visual Studio and UWP SDK versions; or as a last resort, removing the ARM app from the Microsoft Store, so that the x86 version of the app (if available) is downloaded to users’ PCs.
+These issues can be resolved by: removing the unavailable dependencies and rebuilding the app by using the latest Microsoft Visual Studio and UWP SDK versions; or as a last resort, removing the ARM app from the Microsoft Store, so that the x86 version of the app (if available) is downloaded to users' PCs.
 
-For more info on .NET APIs available for UWP apps, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+For more info on .NET APIs available for UWP apps, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 
 ### Compiling an app with an older version of Visual Studio and SDK
 If you're running into issues, be sure to use the latest versions of Microsoft Visual Studio and the Windows SDK to compile your app. Apps compiled with an earlier version of Visual Studio and the SDK may have issues that have been fixed in later versions.

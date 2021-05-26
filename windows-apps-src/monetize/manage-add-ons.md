@@ -99,7 +99,7 @@ This resource has the following values.
 | productId | string  | The product ID of the add-on. This is the ID that was provided by the developer when the add-on was created. For more information, see [Set your product type and product ID](../publish/set-your-add-on-product-id.md). |
 | productType | string  | The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |
 | lastPublishedInAppProductSubmission       | object | A [submission resource](#submission-object) that provides information about the last published submission for the add-on.         |
-| pendingInAppProductSubmission        | object  |  A [submission resource](#submission-object) that provides information about the current pending submission for the add-on.  |   |
+| pendingInAppProductSubmission        | object  |  A [submission resource](#submission-object) that provides information about the current pending submission for the add-on.  |
 
 <span id="application-object" />
 
