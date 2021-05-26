@@ -22,18 +22,15 @@ We have a huge number of choices to make for navigation. We could:
 :::row:::
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
-
-Require users to go through a series of pages in order.
+        Require users to go through a series of pages in order.
     :::column-end:::
-	:::column:::
+    :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
-
-Provide a menu that allows users to jump directly to any page.
-	:::column-end:::
-	:::column:::
-		![navigation example 3](images/nav/nav-3.svg)
-
-Place everything on a single page and provide filtering mechanisms for viewing content.
+        Provide a menu that allows users to jump directly to any page.
+    :::column-end:::
+    :::column:::
+        ![navigation example 3](images/nav/nav-3.svg)
+        Place everything on a single page and provide filtering mechanisms for viewing content.
     :::column-end:::
 :::row-end:::
 
@@ -53,7 +50,7 @@ Navigation should be consistent with user expectations. Using [standard controls
 
 ![page components image](images/nav/page-components.svg)
 
-> Users expect to find certain UI elements in standard locations.
+> *Users expect to find certain UI elements in standard locations.*
 
 ### Simplicity
 
@@ -63,17 +60,17 @@ Fewer navigation items simplify decision making for users. Providing easy access
     :::column:::
         ![First screenshot of a green bar that has a green check mark and the word Do in it.](images/nav/do.svg)
 
-		![navview good](images/nav/navview-good.svg)
+        ![navview good](images/nav/navview-good.svg)
 
 Present navigation items in a familiar navigation menu.
     :::column-end:::
-	:::column:::
+    :::column:::
         ![don't example](images/nav/dont.svg)
 
-		![navview bad](images/nav/navview-bad.svg)
+        ![navview bad](images/nav/navview-bad.svg)
 
-Overwhelm users with many navigation options.
-	:::column-end:::
+Don't overwhelm users with many navigation options.
+    :::column-end:::
 :::row-end:::
 
 ### Clarity
@@ -82,7 +79,7 @@ Clear paths allow for logical navigation for users. Making navigation options ob
 
 ![Screenshot of a mock-up of an application showing clear paths fo navigation for a user.](images/nav/clarity-image.svg)
 
-> Destinations are clearly labeled so users know where they are.
+> *Destinations are clearly labeled so users know where they are.*
 
 ## General recommendations
 
@@ -90,7 +87,7 @@ Now, let's take our design principles--consistency, simplicity, and clarity--and
 
 1. Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.
 
-2. Avoid deep navigation hierarchies. If you go beyond three levels of navigation, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
+2. Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls-and-patterns/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
 
 3. Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
 
@@ -102,7 +99,7 @@ Now that you're familiar with general navigation principles, how should you stru
     :::column:::
         ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         ### Flat/lateral
 
 In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
@@ -121,7 +118,7 @@ We recommend using a flat structure when:
     :::column:::
         ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         ### Hierarchical
 
 In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -129,11 +126,11 @@ In a hierarchical structure, pages are organized into a tree-like structure. Eac
 Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
 
 We recommend a hierarchical structure when:
-		
+
 - Pages should be traversed in a specific order.
 - There is a clear parent-child relationship between pages.
 - There are more than 7 pages in the group.
-		
+
     :::column-end:::
 :::row-end:::
 
@@ -141,7 +138,7 @@ We recommend a hierarchical structure when:
     :::column:::
         ![an app with a hybrid structure](images/nav/combining-structures.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         ### Combining structures
 
 You don't have to choose one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
@@ -161,101 +158,104 @@ Once you've decided on a page structure, you need to decide how users navigate t
     :::column:::
         ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
+    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Top navigation**](../controls-and-patterns/navigationview.md)
 
 Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation pattern.
-        
+
 Use top navigation when:
 
 - You want to show all navigation options on the screen.
 - You desire more space for your app's content.
 - Icons cannot clearly describe your navigation categories.
-
+    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Tabs**](../controls-and-patterns/tab-view.md)
 
 Displays a horizontal set of tabs and their respective content. The [TabView](../controls-and-patterns/tab-view.md) control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.
-	
+
 Use tabs when:
 
 - You want users to be able to dynamically open, close, or rearrange tabs.
 - You expect that there might be a large number of tabs open at once.
 - You expect users to be able to easily move tabs between windows in your application that use tabs, similar to web browsers like Microsoft Edge.
-
+    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Breadcrumb**](../controls-and-patterns/breadcrumbbar.md)
 
 Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls-and-patterns/breadcrumbbar.md) control implements the top navigation pattern.
-        
+
 Use a breadcrumb when:
 
 - You want to show the path to the current location
 - You have many levels of navigation
 - You expect users to be able to return to any previous level
-
+    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Left navigation**](../controls-and-patterns/navigationview.md)
 
 Displays a vertical list of links to top-level pages. Use when:
-		
+
 - The pages exist at the top level.
 - There are many navigation items (more than 5)
 - You don't expect users to switch between pages frequently.
-
+    :::column-end:::
 :::row-end:::
-		
+
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Master/details**](../controls-and-patterns/master-details.md)
 
 Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
-		
+
 - You expect users to switch between child items frequently.
 - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 
 Master/details is well suited for email inboxes, contact lists, and data entry.
+    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
         ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-	:::column span="2":::
+    :::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
 Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
+    :::column-end:::
 :::row-end:::
 
 ## Next: Add navigation code to your app
