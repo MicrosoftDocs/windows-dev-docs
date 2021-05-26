@@ -127,18 +127,32 @@
               items:
                 - name: Overview
                   href: ../package-manager/winget/index.md
+                - name: export command
+                  href: ../package-manager/winget/export.md
+                - name: features command
+                  href: ../package-manager/winget/features.md
                 - name: hash command
                   href: ../package-manager/winget/hash.md
                 - name: help command
                   href: ../package-manager/winget/help.md
+                - name: import command
+                  href: ../package-manager/winget/import.md
                 - name: install command
                   href: ../package-manager/winget/install.md
+                - name: list command
+                  href: ../package-manager/winget/list.md
                 - name: search command
                   href: ../package-manager/winget/search.md
+                - name: settings command
+                  href: ../package-manager/winget/settings.md
                 - name: show command
                   href: ../package-manager/winget/show.md
                 - name: source command
                   href: ../package-manager/winget/source.md
+                - name: uninstall command
+                  href: ../package-manager/winget/uninstall.md
+                - name: upgrade command
+                  href: ../package-manager/winget/upgrade.md
                 - name: validate command
                   href: ../package-manager/winget/validate.md
             - name: Submit packages
@@ -149,6 +163,16 @@
                   href: ../package-manager/package/manifest.md
                 - name: Submit your manifest to the repository
                   href: ../package-manager/package/repository.md
+                - name: Validation process
+                  href: ../package-manager/package/winget-validation.md
+                - name: Troubleshooting submissions
+                  href: ../package-manager/package/winget-validation-troubleshooter.md
+                - name: Binary validation errors
+                  href: ../package-manager/package/binary-validation-errors.md
+                - name: Repository policies
+                  href: ../package-manager/package/windows-package-manager-policies.md
+                - name: Repository policies change history
+                  href: ../package-manager/package/windows-package-manager-policies-change-history.md
         - name: PowerToys
           items:
             - name: Overview
