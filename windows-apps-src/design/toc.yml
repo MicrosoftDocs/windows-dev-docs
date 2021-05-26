@@ -178,6 +178,8 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
+        - name: Breadcrumb bar
+          href: controls-and-patterns/breadcrumbbar.md
         - name: List/details
           href: controls-and-patterns/list-details.md
         - name: Navigation view
