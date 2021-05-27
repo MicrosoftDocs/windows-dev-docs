@@ -22,7 +22,7 @@ The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user in
 
 WinUI 3 is available as part of [Project Reunion](../project-reunion/index.md). It includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
-For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
+For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/set-up-your-development-environment.md). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 

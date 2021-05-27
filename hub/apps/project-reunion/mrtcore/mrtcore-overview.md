@@ -24,7 +24,7 @@ A PRI file contains actual string resources. Embedded binary and file path resou
 PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
 
 > [!NOTE]
-> Before you can use MRT Core to retrieve strings and images in a WinUI 3 project that uses C#/.NET 5, you must ensure that these resources are configured so that they can be indexed in the resources.pri file. Otherwise, these resources cannot be retrieved by MRT Core.
+> In Project Reunion version 0.5, you must ensure that your string and images resources are configured so that they can be indexed in the resources.pri file. Otherwise, these resources cannot be retrieved by MRT Core. This is not required in Project Reunion 0.8.
 >
 > * Strings: Make sure the **Build Action** property for resources files (.resw) is set to **PRIResource**. This property is set automatically if you add a new **Resources File (.resw)** item to your project.
 > * Images: Make sure the **Build Action** property for image files are set to **Content**. This property is set automatically if you add an existing image to a folder named **Assets** in your project.

@@ -52,7 +52,7 @@
       "ms.technology":
       {
         "apps/**.md": "apps",
-        "apps/project-reunion/*.md": "",
+        "apps/project-reunion/**.md": "",
         "apps/project-reunion/mrtcore/*.md": "mrt-core",
         "apps/project-reunion/dwritecore.md": "dwrite-core",
         "apps/winui/**.md": "winui-conceptual", 
