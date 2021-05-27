@@ -2,7 +2,7 @@
 description: Links to the Windows Developer Docs mentioned during the Build 2021 online event.
 title: Documentation related to topics discussed during Build
 ms.topic: article
-ms.date: 05/20/2021
+ms.date: 05/27/2021
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
@@ -18,7 +18,7 @@ We've gathered together links to documentation that supports the talks given as 
 
 ## Project Reunion
 
-- [Build desktop Windows apps with Project Reunion 0.5](/windows/apps/project-reunion/)
+- [Build desktop Windows apps with Project Reunion](/windows/apps/project-reunion/)
 - [Get started with Project Reunion](/windows/apps/project-reunion/get-started-with-project-reunion)
 - [Update existing projects to the latest release of Project Reunion](/windows/apps/project-reunion/update-existing-projects-to-the-latest-release)
 
