@@ -123,7 +123,7 @@ This sets the percentage height of the cursor starting from the bottom. This wil
 
 **Necessity:** Optional
 
-**Accepts:** Integer from 25-100
+**Accepts:** Integer from 1-100
 
 <br />
 
