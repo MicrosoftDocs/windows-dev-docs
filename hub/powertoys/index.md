@@ -35,6 +35,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Espresso
+
+:::row:::
+    :::column:::
+        [![Espresso screenshot](../images/pt-espresso-menu.png)](espresso.md)
+    :::column-end:::
+    :::column span="2":::
+        [Espresso](espresso.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+    :::column-end:::
+:::row-end:::
+
 ### Fancy Zones
 
 :::row:::
