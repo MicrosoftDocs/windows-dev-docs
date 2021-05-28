@@ -68,7 +68,7 @@ These default activation phrases will force PowerToys run into only targeted plu
   | `=` | Calculator only. Example `=2+2`. |
   | `?` | File searching only. Example `?road` to find `roadmap.txt`. |
   | `.` | Installed programs only. Example `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup. |
-  | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. |
+  | `//` | URLs only. Example `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.  |
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook. |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query. |
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key. |
