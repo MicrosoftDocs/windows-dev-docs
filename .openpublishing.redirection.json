@@ -5021,6 +5021,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/whats-new/build2020-docs.md",
+      "redirect_url": "/windows/apps/whats-new/build2021-docs",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/publish/manage-account-settings-and-profile.md",
       "redirect_url": "https://docs.microsoft.com/partner-center/partner-center-account-setup",
       "redirect_document_id": false

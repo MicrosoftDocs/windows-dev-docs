@@ -51,7 +51,7 @@ If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error
 
 Before trying the following example, review the following topics:
 
-- To use the WinUI 3 for desktop project templates, configure your development computer and [set up your development environment](../../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment).
+- To use the WinUI 3 for desktop project templates, configure your development computer and [set up your development environment](../../project-reunion/set-up-your-development-environment.md).
 - Confirm your dev environment is functioning as expected by creating and running an initial template app as described in [Get started with WinUI 3 for desktop apps](../winui3/get-started-winui3-for-desktop.md).
 
 ### Customized window icon

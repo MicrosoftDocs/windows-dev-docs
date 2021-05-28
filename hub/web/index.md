@@ -11,7 +11,7 @@ ms.date: 01/06/2021
 
 # Web development on Windows 10
 
-Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/overview.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/apis.md). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/overview.md).
+Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/apis.md). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
 
 ## WebView, DevTools, PWAs
 
@@ -235,11 +235,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
 
 :::row:::
     :::column:::
-       [![Set up dev environment icon](../images/dev-environment-icon.png)](../dev-environment/overview.md)<br>
-        **[Set up your development environment on Windows 10](../dev-environment/overview.md)**<br>
+       [![Set up dev environment icon](../images/dev-environment-icon.png)](../dev-environment/index.md)<br>
+        **[Set up your development environment on Windows 10](../dev-environment/index.md)**<br>
         Get help setting up your development environment to work with Python, NodeJS, C#, C, C++, build Android apps, build Windows desktop apps, build Docker containers, run PowerShell scripts, and more.
         <br>
-        [Get started](../dev-environment/overview.md)
+        [Get started](../dev-environment/index.md)
     :::column-end:::
     :::column:::
        [![React Native for Windows icon](../images/reactnative-windows.png)](https://microsoft.github.io/react-native-windows/)<br>

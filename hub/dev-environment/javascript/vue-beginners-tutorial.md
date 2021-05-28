@@ -60,4 +60,4 @@ If you don't already have it, [install VS Code](https://code.visualstudio.com/do
 
 - [Vue.js overview](./vue-overview.md)
 
-- - Microsoft Learn online course: [Take your first steps with Vue.js](https://docs.microsoft.com/learn/paths/vue-first-steps/)
+- - Microsoft Learn online course: [Take your first steps with Vue.js](/learn/paths/vue-first-steps/)

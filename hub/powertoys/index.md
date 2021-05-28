@@ -4,6 +4,7 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows 1
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run]
 ---
 
 # Microsoft PowerToys: Utilities to customize Windows 10

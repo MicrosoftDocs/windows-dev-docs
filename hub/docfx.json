@@ -52,7 +52,7 @@
       "ms.technology":
       {
         "apps/**.md": "apps",
-        "apps/project-reunion/*.md": "",
+        "apps/project-reunion/**.md": "",
         "apps/project-reunion/mrtcore/*.md": "mrt-core",
         "apps/project-reunion/dwritecore.md": "dwrite-core",
         "apps/winui/**.md": "winui-conceptual", 
@@ -61,8 +61,8 @@
         "android/**.md": "windows-android",
         "powertoys/**.md": "powertoys",
         "package-manager/**.md": "package-manager",
-        "javascript/**.md": "windows-javascript",
-        "rust/**.md": "windows-rust"
+        "dev-environment/javascript/**.md": "windows-javascript",
+        "dev-environment/rust/**.md": "windows-rust"
       },	 
       "feedback_product_url": 
       {
@@ -110,10 +110,11 @@
         "apps/speech.md": "kbridge",
         "dev-environment/*.md": "mattwoj",
         "android/*.md": "mattwoj",
-        "nodejs/*.md": "mattwoj",
+        "javascript/**/*.md": "mattwoj",
         "python/*.md": "mattwoj",
         "powertoys/*.md": "mattwoj",
-        "package-manager/**.md": "kevinla"
+        "package-manager/**.md": "kevinla",
+        "rust/*.md": "stwhi"
       },
       "titleSuffix":
       {

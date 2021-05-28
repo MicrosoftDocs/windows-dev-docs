@@ -15,7 +15,7 @@ You can use Extensible Application Markup Language (XAML) together with Microsof
 If your app mainly focuses on 2D rendering, then you might want to use the [Win2D](https://github.com/microsoft/win2d) Windows Runtime library. That library is maintained by Microsoft, and is built on top of the core [Direct2D](/windows/win32/direct2d/direct2d-portal) technology. Win2D greatly simplifies the usage pattern to implement 2D graphics, and includes helpful abstractions for some of the techniques described in this document. See the project page for more details. This document covers guidance for app developers who choose *not* to use Win2D.
 
 > [!NOTE]
-> DirectX APIs are not defined as Windows Runtime types, but you can use [C++/WinRT](../cpp-and-winrt-apis/index.md) to develop XAML UWP apps that interoperate with DirectX. If you factor the code that calls DirectX into its own C++/WinRT [Windows Runtime component](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) (WRC), then you can use that WRC in a UWP app (even a C# one) that then combines XAML and DirectX.
+> DirectX APIs are not defined as Windows Runtime types, but you can use [C++/WinRT](../cpp-and-winrt-apis/index.md) to develop XAML UWP apps that interoperate with DirectX. If you factor the code that calls DirectX into its own C++/WinRT [Windows Runtime component](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) (WRC), then you can use that WRC in a UWP app (even a C# one) that then combines XAML and DirectX.
 
 ## XAML and DirectX
 
