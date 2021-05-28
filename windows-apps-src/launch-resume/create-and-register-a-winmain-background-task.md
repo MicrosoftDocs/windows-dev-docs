@@ -1,30 +1,30 @@
 ---
 title: Create and register a winmain background task
-description: Create a COM background task that can run in your main process or out-of-process when your packaged winmain app may not be running.
+description: Create a COM background task that can run in your main process or out-of-process when your packaged Win32 desktop app may not be running.
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 03/27/2020
 ms.topic: article
-keywords: windows 10, desktop bridge, sparse signed packaged, winmain, background task
+keywords: windows 10, desktop bridge, sparse signed packaged, win32, background task
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 ---
 
-# Create and register a winmain COM background task
+# Create and register a Win32 COM background task
 
 > [!TIP]
 > The BackgroundTaskBuilder.SetTaskEntryPointClsid method is available starting in Windows 10, version 2004.
 
 > [!NOTE]
-> This scenario is only applicable to packaged WinMain apps. UWP applications will encounter errors trying to implement this scenario.
+> This scenario is only applicable to packaged Win32 desktop apps. UWP applications will encounter errors trying to implement this scenario.
 
 **Important APIs**
 
 -   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
-Create a COM background task class and register it to run in your full trust packaged winmain app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
+Create a COM background task class and register it to run in your full trust packaged Win32 app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
 
 ## Create the Background Task class
 
@@ -32,7 +32,7 @@ You can run code in the background by writing classes that implement the [**IBac
 
 The following steps show you how to write a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface and add it to your main process.
 
-1.  [**See these instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
+1.  [**See these instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged Win32 application solution. This is required to use the IBackgroundTask and related APIs.
 2.  In that new class, implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. The [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
 > [!NOTE]
@@ -56,7 +56,7 @@ using System.Collections.Generic; // Queue
 using System.Runtime.InteropServices; // Guid, RegistrationServices
 using Windows.ApplicationModel.Background; // IBackgroundTask
 
-namespace PackagedWinMainBackgroundTaskSample
+namespace PackagedWin32BackgroundTaskSample
 {
     // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
     [ComVisible(true)]
@@ -202,7 +202,7 @@ using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Foundation::Collections;
 using namespace winrt::Windows::ApplicationModel::Background;
 
-namespace PackagedWinMainBackgroundTaskSample {
+namespace PackagedWin32BackgroundTaskSample {
 
     // Note insert unique UUID.
     struct __declspec(uuid("14C5882B-35D3-41BE-86B2-5106269B97E6"))
@@ -529,12 +529,12 @@ The following code samples show the complete code required to run and register y
   IgnorableNamespaces="uap rescap com">
 
   <Identity
-    Name="SamplePackagedWinMainBackgroundApp"
+    Name="SamplePackagedWin32BackgroundApp"
     Publisher="CN=Contoso"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>SamplePackagedWinMainBackgroundApp</DisplayName>
+    <DisplayName>SamplePackagedWin32BackgroundApp</DisplayName>
     <PublisherDisplayName>Contoso</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -598,7 +598,7 @@ using System.Collections.Generic; // Queue
 using System.Runtime.InteropServices; // Guid, RegistrationServices
 using Windows.ApplicationModel.Background; // IBackgroundTask
 
-namespace PackagedWinMainBackgroundTaskSample
+namespace PackagedWin32BackgroundTaskSample
 {
     // Background task implementation.
     // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
@@ -853,7 +853,7 @@ using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Foundation::Collections;
 using namespace winrt::Windows::ApplicationModel::Background;
 
-namespace PackagedWinMainBackgroundTaskSample
+namespace PackagedWin32BackgroundTaskSample
 {
     // Background task implementation.
     // {14C5882B-35D3-41BE-86B2-5106269B97E6} is GUID to register this task with BackgroundTaskBuilder. Generate a random GUID before implementing.
@@ -997,7 +997,7 @@ namespace PackagedWinMainBackgroundTaskSample
 
 }
 
-using namespace PackagedWinMainBackgroundTaskSample;
+using namespace PackagedWin32BackgroundTaskSample;
 
 // Application entry point.
 int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
@@ -1040,7 +1040,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## Remarks
 
-Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
+Unlike UWP apps that can run background tasks in modern standby, Win32 apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
