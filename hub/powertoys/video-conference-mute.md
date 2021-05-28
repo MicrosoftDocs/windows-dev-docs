@@ -1,9 +1,10 @@
 ---
 title: PowerToys Video Conference Mute utility for Windows 10
 description: A utility that allows users to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call with a single keystroke, regardless of what application has focus on the computer.
-ms.date: 05/14/2021
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
 ---
 
 # Video Conference Mute (Preview)

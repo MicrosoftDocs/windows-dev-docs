@@ -1,9 +1,10 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows 10, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: quickstart
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 ---
 
 # Install PowerToys

@@ -1,9 +1,10 @@
 ---
 title: PowerToys FancyZones utility for Windows 10
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 ---
 
 # FancyZones utility
