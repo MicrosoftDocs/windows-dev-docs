@@ -22,4 +22,4 @@ Before Bluetooth LE, devices commonly used this protocol to communicate using Bl
 Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between devices that have an efficient energy usage requirement. For more information including code samples, see the [Bluetooth Low Energy](bluetooth-low-energy-overview.md) topic.
 
 ## See Also
-- [Bluetooth developer FAQ](bluetooth-dev-faq.md)
+- [Bluetooth developer FAQ](bluetooth-dev-faq.yml)
