@@ -14,6 +14,8 @@ ms.custom: RS5
 
 Style is what makes your app stand out. The style guidelines in this section help you create a Fluent Design through color, typography, and new features such as acrylic material and reveal highlight.
 
+Through WinUI, we provide the latest style embodied in our components. Be sure to use the latest WinUI version to keep your apps up-to-date for the current Windows app Fluent styles. [Read more](../controls-and-patterns/xaml-styles.md) about how to do this. 
+
 :::row:::
     :::column:::
 ![Image depicting a color gradient.](images/header-color.svg)

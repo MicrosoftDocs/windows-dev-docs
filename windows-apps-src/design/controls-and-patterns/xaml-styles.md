@@ -19,6 +19,16 @@ ms.localizationpriority: medium
 
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 
+## WinUI and styles
+
+Starting WinUI 2.2, any new visual style update has been mainly delivered through WinUI. If you notice our UI is not updating, be sure to adopt the latest WinUI styles.
+
+Starting with WinUi 2.6, we provide the previous and new styles for most of the systems controls. For WinUI 2.6, previous style is the default. The new style will be the default starting WinUI 2.7. We encourage our app developers to utilize new styles, as they better match the design direction of Windows. However if your scenario cannot support the new styles the previous versions are still available.
+
+The style version can be changed using the **ControlsResourcesVersion** property on **XamlControlsResources** that you include in your Application.Resources when using WinUI version 2. ControlsResourcesVersion is an enum property that defaults to the value Version1 for WinUI 2.6 and Version2 for WinUI 2.7.
+
+Setting this value to Version1 causes XamlControlsResources to load the previous style versions instead of the new styles published in the latest WinUi version. Changing this property at runtime is not supported and VisualStudio’s hot reload functionality will not work, however after rebuilding your application you will see the control styles change.
+
 ## Style basics
 
 Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) and [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
