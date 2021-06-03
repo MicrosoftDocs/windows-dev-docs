@@ -80,4 +80,4 @@ In the example below you will see [**list**](.\list.md) identifies that an updat
 **upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the.
 
 > [!NOTE]
-> Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if their is a newer version of the app, an upgrade will not be possible.
+> Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible.
