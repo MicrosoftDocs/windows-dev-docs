@@ -12,7 +12,7 @@ author: QuinnRadich
 
 > [!IMPORTANT]
 > We recently announced some changes in the prioritization for Windows 10 and Windows 10X.
-> These announcements include changes to the Windows 10X form factor priorities. [Read more here.](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
+> These announcements include changes to the Windows 10X form factor priorities. [Read more here.](https://blogs.windows.com/windowsexperience/2021/05/18/how-to-get-the-windows-10-may-2021-update/)
 
 Windows 10X is a product line in the Windows family optimized for use on dual-screen devices. As a developer, you can reach a wider audience by optimizing your app for Windows 10X, taking advantage of new features specific for a mobile and dual-screen audience while still enjoying the same breadth of Windows 10 functionality and rich desktop support. [We announced Windows 10X in late 2019](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97), and we’re looking forward to releasing it in late 2020.
 
