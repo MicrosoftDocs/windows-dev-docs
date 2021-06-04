@@ -1,9 +1,10 @@
 ---
 title: PowerToys Keyboard Manager utility for Windows 10
 description: A utility that enables users to redefine keys on the keyboard
-ms.date: 05/02/2021
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
 ---
 
 # Keyboard Manager utility

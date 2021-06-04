@@ -8,7 +8,7 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: Set up windows, Dev Environment, Dev tools, development paths, Microsoft, Windows, Developer, Tips, Performance, WSL, terminal, nodejs, python
 ms.localizationpriority: medium
-ms.date: 07/24/2020
+ms.date: 06/01/2021
 ---
 
 # Set up your development environment on Windows 10
@@ -94,10 +94,10 @@ This guide will help you get started with installing and setting up the language
         [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
-       [![PowerToys icon](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
+       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
+        **[Microsoft PowerToys](../powertoys/index.md)**<br>
         Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
-        [Install PowerToys (public preview)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [Install PowerToys](../powertoys/install.md)
     :::column-end:::
 :::row-end:::
 :::row:::

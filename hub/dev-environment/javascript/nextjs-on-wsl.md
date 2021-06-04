@@ -39,7 +39,7 @@ To install Next.js, which includes installing next, react, and react-dom:
 
 2. Create a new project folder: `mkdir NextProjects` and enter that directory: `cd NextProjects`.
 
-3. Install Next.js and create a project (replacing 'my-next-app' with whatever you'd like to call your app): `npx create next-app my-next-app`.
+3. Install Next.js and create a project (replacing 'my-next-app' with whatever you'd like to call your app): `npx create-next-app my-next-app`.
 
 4. Once the package has been installed, change directories into your new app folder, `cd my-next-app`, then use `code .` to open your Next.js project in VS Code. This will allow you to look at the Next.js framework that has been created for your app. Notice that VS Code opened your app in a WSL-Remote environment (as indicated in the green tab on the bottom-left of your VS Code window). This means that while you are using VS Code for editing on the Windows OS, it is still running your app on the Linux OS.
 

@@ -5,7 +5,7 @@ ms.date: 03/19/2021
 ms.topic: article
 ---
 
-# Windows UI Library 3 - Project Reunion 0.5 (March 2021)
+# Overview and release notes: Windows UI Library 3 - Project Reunion 0.5 (March 2021)
 
 Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../project-reunion/index.md).  The Project Reunion 0.5 release provides [Visual Studio project templates](https://aka.ms/projectreunion/vsixdownload) to help you start building apps with a WinUI 3-based user interface.
 
@@ -16,15 +16,12 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for buil
 
 This new version of WinUI 3 is available as part of Project Reunion 0.5. To install, see:
 
-**[Installation instructions for Project Reunion 0.5](../../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment)**
+**[Installation instructions for Project Reunion 0.5](../../project-reunion/set-up-your-development-environment.md)**
 
 Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../project-reunion/deploy-apps-that-use-project-reunion.md). The Project Reunion VSIX includes [WinUI Project Templates](winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 version of the [XAML Controls Gallery](#winui-3-controls-gallery) from GitHub.
-
-> [!NOTE]
-> To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
 Once you've set up your development environment, see [WinUI 3 project templates in Visual Studio](winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates.
 
@@ -55,7 +52,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 |---|---|
 | 16.8  | No   |
 | 16.9  | Yes, but with no Hot Reload, Live Visual Tree, or Live Property Explorer  |
-| 16.10 Previews  | Yes, with all WinUI 3 tooling (in preview - see [Known issues](#known-issues) for a limitation with VS 2019 16.10 Preview 2)  |
+| 16.10 Previews  | Yes, with all WinUI 3 tooling (in preview)  |
 
 
 ## Update your existing WinUI 3 app
@@ -95,10 +92,10 @@ This release provides the stability and support to make WinUI 3 suitable for pro
 
 ### Preview features
 
-As this is a stable release, preview features have been removed from this version of WinUI 3. You can still access these features by using the current [preview version of WinUI 3](release-notes/winui3-project-reunion-0.5-preview.md). Please note the following key features are still in preview, and work to stabilize them is ongoing:
+As this is a stable release, preview features have been removed from this version of WinUI 3. You can still access these features by using the current [preview version of WinUI 3](release-notes/release-notes-08-preview.md). Please note the following key features are still in preview, and work to stabilize them is ongoing:
 
 - UWP support
-  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion 0.5 Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions for setting up your development environment in [Get started with Project Reunion](../../project-reunion/get-started-with-project-reunion.md). See  [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes](release-notes/winui3-project-reunion-0.5-preview.md) for more information.
+  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions for setting up your development environment in [Get started with Project Reunion](../../project-reunion/get-started-with-project-reunion.md). See  [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes/release-notes-08-preview.md) for more information.
 
 - Multi-window support in desktop apps
 
@@ -143,6 +140,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 - MediaElement and MediaPlayerElement
 - MapControl
 - SwapChainPanel does not support transparency
+-	AcrylicBrush and other effects using a CompositionBackdropBrush can’t sample from a SwapChainPanel or WebView2.
 - Global Reveal uses fallback behavior, a solid brush
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
@@ -167,7 +165,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - Previously, to get a CompositionCapabilities instance you would call [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview). However, the capabilities returned from this call were *not* dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) object directly.
 
-- You may recieve a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
+- You may receive a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
 
   Explicitly set your .NET SDK to the correct version. To determine the correct version for your app, locate the `<TargetFramework>` tag in your project file. Using the Windows SDK build number that your app is targeting in the `<TargetFramework>` tag (such as 18362 or 19041), add the following item to your project file, then save your project: 
 
@@ -180,7 +178,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
   Note this workaround is required for .NET SDK 5.0.203 and earlier, but will not be required for .NET SDK 5.0.204 or 5.0.300.
 
-- When using Visual Studio 2019 16.10 Preview 2, Live Visual Tree may cause a crash. This will be fixed in the upcoming VS 2019 16.10 Preview 3 release. In the meantime, you can revert to VS 2019 16.10 Preview 1, which does not have this issue, by downloading it directly [from this link](https://aka.ms/vs/16/pre/629027471_513181835/vs_Enterprise.exe).
+- When using Visual Studio 2019 16.10 Preview 2, Live Visual Tree may cause a crash. To avoid this, update to the latest [Visual Studio 2019 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/).
 
 ## WinUI 3 Controls Gallery
 

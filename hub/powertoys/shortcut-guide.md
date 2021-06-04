@@ -1,9 +1,10 @@
 ---
 title: PowerToys Shortcut Guide utility for Windows 10
 description: A utility to display common keyboard shortcuts that use the Windows ⊞ key
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer]
 ---
 
 # Windows key shortcut guide

@@ -35,8 +35,6 @@ landingContent:
             url: https://youtu.be/OZtVBDeVqCE
           - text: Build 2018 Windows 10 on ARM for developers
             url: https://channel9.msdn.com/Events/Build/2018/BRK2438
-          - text: Windows Community Standup with Kevin Gallo
-            url: https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018
 
   # Card
   - title: Develop for Windows 10 on ARM
@@ -45,14 +43,22 @@ landingContent:
         links:
           - text: Build ARM64 apps with the SDK
             url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
-          - text: UWP apps on ARM
+          - text: Build ARM64 Drivers with the WDK
+            url: /windows-hardware/drivers/develop/building-arm64-drivers
+          - text: Troubleshoot UWP apps on ARM
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
           - text: Debug on ARM
             url: /windows-hardware/drivers/debugger/debugging-arm64
-          - text: Build ARM64 Drivers with the WDK
-            url: /windows-hardware/drivers/develop/building-arm64-drivers
-          - text: Develop x86 apps on ARM
-            url: /windows/uwp/porting/apps-on-arm-troubleshooting-x86
+      - linkListType: reference
+        links:
+          - text: Developer resources at Qualcomm Developer Network
+            url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/developer-resources
+          - text: Windows on ARM documentation at developer.arm.com
+            url: https://developer.arm.com/solutions/os/windows-on-arm
+      - linkListType: whats-new
+        links:
+          - text: Develop apps for ARM with Snapdragon Developer Kit
+            url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/snapdragon-developer-kit        
 
   # Card
   - title: Any feedback?

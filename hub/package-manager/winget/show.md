@@ -8,8 +8,6 @@ ms.localizationpriority: medium
 
 # show command (winget)
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
-
 The **show** command of the [winget](index.md) tool displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
 
 The **show** command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed.
@@ -64,7 +62,7 @@ If a single application is detected, the following data will be displayed.
 | **AppMoniker** | AppMoniker of the application. |
 | **Description** | Description of the application. |
 | **License**  | License of the application. |
-| **LicenseUrl** | The URL to the license file of the applicatio. |
+| **LicenseUrl** | The URL to the license file of the application. |
 | **Homepage**  | Homepage of the application. |
 | **Tags** | The tags provided to assist in searching.  |
 | **Command** | The commands supported by the application. |

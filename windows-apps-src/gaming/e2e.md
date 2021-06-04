@@ -153,7 +153,7 @@ The Xbox Tools and Middleware Program licenses Xbox development kits to professi
     </colgroup>
     <tr>
         <td>Contact the tools and middleware program</td>
-        <td><xboxtlsm@microsoft.com></td>
+        <td><a href="mailto:xboxtlsm@microsoft.com">xboxtlsm@microsoft.com</a></td>
     </tr>
 </table>
 
