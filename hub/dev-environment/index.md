@@ -1,6 +1,6 @@
 ---
 title: Setup a development environment on Windows 10
-description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. Whether you prefer using Python, NodeJS, VS Code, Git, Bash, Linux tools and commands, Android Studio, we've got your covered with great new tools like Windows Terminal and WSL.
+description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
