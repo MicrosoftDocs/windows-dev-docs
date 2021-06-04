@@ -1,5 +1,5 @@
 ---
-title: Windows 10 for Javascript frameworks
+title: Install JavaScript frameworks on Windows
 description: A guide to help you get started with JavaScript frameworks on Windows, including Node.js, React.js, Vue.js, Next.js, Nuxt.js, or Gatsby.
 author: mattwojo 
 ms.author: mattwoj 
@@ -8,14 +8,14 @@ ms.topic: article
 ms.technology: windows-javascript
 keywords: Node.js, NodeJS, next.js, nuxt.js, gatsby, react, vue, windows, install, wsl, Set up windows, Dev Environment
 ms.localizationpriority: medium
-ms.date: 04/19/2021
+ms.date: 06/04/2021
 ---
 
-# Setup Windows 10 for Javascript frameworks
+# Install JavaScript frameworks on Windows
 
 This guide will help you get started using JavaScript frameworks on Windows, including Node.js, React.js, Vue.js, Next.js, Nuxt.js, or Gatsby.
 
-## Choose a javascript framework to install and set up your dev environment
+## Choose a JavaScript framework to install and set up your dev environment
 
 :::row:::
     :::column:::
