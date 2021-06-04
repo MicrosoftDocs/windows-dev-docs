@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 
 # Expander
-Expander provides a standard interaction for showing more content in a container that pushes adjacent content while expanding and collapsing. It is often used when some content is only relevant some of the time (for example to read more information or access additional options for an item).
+Expander provides a standard interaction for showing more content in a container that pushes adjacent content while expanding and collapsing. It is often used when some grouped content is only relevant some of the time (for example to show additional options that are all related to an overall item).
 
 An Expander cannot be light dismissed and is independent of the contents inside it, including controls.
  
@@ -33,7 +33,7 @@ An Expander cannot be light dismissed and is independent of the contents inside 
    :::column-end:::
 :::row-end:::
 ## Is this the right control?
-Use an Expander when some primary content is always relevant and some related secondary content may be relevant some of the time. This UI is commonly used when display space is limited. The Expander can expand upwards or downwards.
+Use an Expander when some primary content is always relevant and some related secondary content may be relevant some of the time. This UI is commonly used when display space is limited and when information and options can be grouped together. An Expander can expand upwards or downwards.
 
 ## Examples
 <table>
@@ -52,7 +52,7 @@ Use an Expander when some primary content is always relevant and some related se
 
 ### Create an Expander
 
-The XAML below describes an Expander with the default styling. By default the Expander will be collapsed and expand downwards. Set the IsExpanded property to default to an expanded Expander. Set the ExpandDirection property to change the direction of expansion. 
+The XAML below describes an Expander with the default styling. By default the Expander will be collapsed and expand downwards. Set the IsExpanded property to default to an expanded Expander. Set the ExpandDirection property to change the direction of expansion.
 
 ```XAML
 <muxc:Expander x:Name="DefaultExpander" 
