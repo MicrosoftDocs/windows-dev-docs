@@ -18,11 +18,11 @@ Creating a visual hierarchy of elements in your UI makes the UI easy to scan and
 
 Z-depth is a term used amongst 3D app creators to denote the distance between two surfaces along the z-axis. It illustrates how close an object is to the viewer. Think of it as a similar concept to x/y coordinates, but in the z direction.
 
-Windows apps use the shadow to express the depth and add visual hierarchy. To achieve this, the z-axis provides easy coding path. However please note the shadows are not displayed in true 3D sense and are emulated. This is so that we can achieve the feeling of depth without sacrificing the performance for your app's UI.
+Windows apps use shadows to express the depth and add visual hierarchy. To achieve this, the z-axis provides an easy coding path. However please note that shadows are not displayed in the true 3D sense and are emulated. This is so that we can achieve the feeling of depth without sacrificing the performance of your app's UI.
 
 ## Why use z-depth?
 
-In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer in z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.
+In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer in the z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.
 
 ## What is shadow?
 
@@ -37,7 +37,7 @@ If you use standard controls, shadows are already incorporated into your UI. How
 The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. As mentioned above, these are emulated shadows:
 
 - Applies shadows to elements based on z-depth value, emulating the depth.
-- Keeps shadows consistent throughout and across applications thanks for built in shadow aesthetics above.
+- Keeps shadows consistent throughout and across applications thanks to built in shadow aesthetics above.
 
 Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a built in shadow at 32px shadow visual at all nested menus.
 
@@ -110,7 +110,7 @@ If the default shadow doesn't look correct on your control's content then you ca
 ### ThemeShadow in other elements
 
 [!NOTE]
-Starting Cobalt, if the app targets the Cobalt SDK or greater, the Receivers collection is ignored. However there will be no errors and continues to function.
+Starting Cobalt, if the app targets the Cobalt SDK or a later version, the Receivers collection is ignored. However there will be no errors and the shadow continues to function.
 
 In general we encourage you to think carefully about your use of shadow and limit its use to cases where it introduces meaningful visual hierarchy. However, we do provide a way to cast a shadow from any UI element in case you have advanced scenarios that necessitate it.
 
@@ -146,7 +146,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow Class](/uwp/api/windows.ui.composition.dropshadow).
 
-[!NOTE] Starting with Cobalt, if the app targets the Cobalt SDK or greater, ThemeShadow will behave like a drop shadow. Thus if you were using DropShadow, you might consider utilizing ThemeShadow instead.
+[!NOTE] Starting with Cobalt, if the app targets the Cobalt SDK or a later version, ThemeShadow will behave like a drop shadow. Thus if you were using DropShadow, you might consider utilizing ThemeShadow instead.
 
 ## Which shadow should I use?
 
