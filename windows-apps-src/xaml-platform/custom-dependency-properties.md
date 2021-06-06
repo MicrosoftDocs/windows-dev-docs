@@ -10,7 +10,7 @@ dev_langs:
   - csharp
   - vb
   - cppwinrt
-  - cpp
+  - cppcx
 ---
 # Custom dependency properties
 
