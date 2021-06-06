@@ -427,7 +427,7 @@ The example demonstrates a recommended way to set up navigation data that will w
 This code assumes that your app contains pages with the following names to navigate to: *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage*, and *SettingsPage*. Code for these pages is not shown.
 
 > [!IMPORTANT]
-> Information about the app's pages is stored in a [ValueTuple](/dotnet/api/system.valuetuple). This struct requires that the minimum version for your app project must be SDK 17763 or greater. If you use the WinUI version of NavigationView to target earlier versions of Windows 10, you can use the [System.ValueTuple NuGet package](https://www.nuget.org/packages/System.ValueTuple/) instead.
+> The C# version of this example uses a [ValueTuple](/dotnet/api/system.valuetuple) to store information about the app's pages. This struct requires that the minimum version for your app project must be SDK 17763 or greater. If you use the WinUI version of NavigationView to target earlier versions of Windows 10, you can use the [System.ValueTuple NuGet package](https://www.nuget.org/packages/System.ValueTuple/) instead.
 
 > [!IMPORTANT]
 > This code shows how to use the [Windows UI Library](/uwp/toolkits/winui/) version of NavigationView. If you use the platform version of NavigationView instead, the minimum version for your app project must be SDK 17763 or greater. To use the platform version, remove all references to `muxc:`.
