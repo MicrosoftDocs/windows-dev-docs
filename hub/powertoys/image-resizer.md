@@ -1,9 +1,10 @@
 ---
 title: PowerToys Image Resizer utility for Windows 10
 description: A Windows shell extension for bulk image-resizing
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 ---
 
 # Image Resizer utility
@@ -35,7 +36,6 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 - **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image
 
 The width and height of the specified size may be swapped to match the orientation (portrait/landscape) of the current image. To always use the width and height as specified, un-check: **Ignore the orientation of pictures**.
-
 
 ### Fallback encoding
 

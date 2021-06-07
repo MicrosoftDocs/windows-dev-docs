@@ -40,4 +40,4 @@ Node.js is primarily used for building fast and scalable web applications. It us
 - [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
-- Microsoft Learn: [Build JavaScript applications with Node.js](https://docs.microsoft.com/learn/paths/build-javascript-applications-nodejs/)
+- Microsoft Learn: [Build JavaScript applications with Node.js](/learn/paths/build-javascript-applications-nodejs/)

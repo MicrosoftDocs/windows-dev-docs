@@ -93,4 +93,4 @@ You can create a Windows desktop app using React Native for Windows by following
 - [React docs](https://reactjs.org/)
 - [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
-- Try the Microsoft Learn online course: [React](https://docs.microsoft.com/learn/paths/react/)
+- Try the Microsoft Learn online course: [React](/learn/paths/react/)

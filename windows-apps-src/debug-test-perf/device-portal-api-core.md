@@ -62,7 +62,8 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
-<hr>
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
 
 ### Install a related set
 
@@ -494,6 +495,7 @@ This API has the following expected status codes.
 * IoT
 
 ---
+
 ### Get a list of paired Bluetooth devices
 
 **Request**

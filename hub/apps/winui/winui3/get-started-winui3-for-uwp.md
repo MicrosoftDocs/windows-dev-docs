@@ -10,19 +10,19 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for UWP apps (Preview)
 
-You can create a Universal Windows Platform (UWP) app with a user interface built entirely on WinUI 3 using project templates included with [WinUI 3 - Project Reunion 0.5 Preview](release-notes/winui3-project-reunion-0.5-preview.md). When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and styles provided by WinUI 3. For a complete list of supported WinUI 3 project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+You can create a Universal Windows Platform (UWP) app with a user interface built entirely on WinUI 3 using project templates included with [WinUI 3 - Project Reunion 0.8 Preview](release-notes/release-notes-08-preview.md). When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and styles provided by WinUI 3. For a complete list of supported WinUI 3 project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
 
-WinUI 3 ships as a part of the Project Reunion package. For more information about Project Reunion, see [Build desktop Windows apps with Project Reunion 0.5](../../project-reunion/index.md).
+WinUI 3 ships as a part of the Project Reunion package. For more information about Project Reunion, see [Build desktop Windows apps with Project Reunion](../../project-reunion/index.md).
 
 > [!NOTE] 
 > WinUI 3 support for building UWP apps is currently in preview, and is not production-ready. You will not be able to ship WinUI 3 UWP apps to the Microsoft Store.
 
 ## Prerequisites
 
-To use the WinUI 3 for UWP Preview project templates, configure your development computer by following the directions found in the [Set up your development environment](../../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment) guide for Project Reunion. 
+To use the WinUI 3 for UWP Preview project templates, configure your development computer by following the directions found in the [Set up your development environment](../../project-reunion/set-up-your-development-environment.md) guide for Project Reunion. 
 
 > [!NOTE]
-> You cannot create WinUI 3 UWP apps with the Project Reunion 0.5 VSIX. You must download the [Project Reunion 0.5 **Preview** VSIX](https://aka.ms/projectreunion/previewdownload) to get the UWP Preview project templates and build UWP apps with WinUI 3. 
+> You must download the [Project Reunion (**Preview**) VSIX](https://aka.ms/projectreunion/previewdownload) to get the UWP Preview project templates and build UWP apps with WinUI 3. 
 
 ## Create a "WinUI 3 app in UWP" for C#
 
@@ -37,7 +37,7 @@ To use the WinUI 3 for UWP Preview project templates, configure your development
 
 2. In the **Create a new project** dialog, select **C#**, **Windows**, and **WinUI**, respectively from the project drop-down filters.
 
-3. Select the **Blank App (WinUI in UWP) - Preview** project type and click **Next**.
+3. Select the **[Experimental] Blank App (WinUI in UWP)** project type and click **Next**.
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-create-new-project-dialog.png" alt-text="Visual Studio 2019 - Create a new project dialog":::
 
@@ -45,7 +45,7 @@ To use the WinUI 3 for UWP Preview project templates, configure your development
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Screenshot of the Configure your new project dialog box with the Location text box and the Create option highlighted.":::
 
-5. In the following dialog box, set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1809 (build 17763) and then click **OK**.
+5. In the following dialog box, set the **Target version** to Windows 10, version 2004 (build 19041) and **Minimum version** to Windows 10, version 1809 (build 17763) and then click **OK**.
 
     :::image type="content" source="images/WinUI-min-target-version.png" alt-text="Target and Min Version dialog":::
 

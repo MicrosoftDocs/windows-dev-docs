@@ -73,4 +73,4 @@ Since React is a JavaScript library that is, in its most basic form, just a coll
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
-- Try the Microsoft Learn online course: [React](https://docs.microsoft.com/learn/paths/react/)
+- Try the Microsoft Learn online course: [React](/learn/paths/react/)

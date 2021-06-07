@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 
 # Windows 10 on ARM
-Originally Windows 10 (as distinguished from Windows 10 Mobile) could run only on PCs that were powered by x86 and x64 processors. Now, Windows 10 desktop can run on machines that are powered by ARM64 processors with the Fall Creators Update or newer. The power-saving nature of the ARM CPU architecture allows these PCs to have all-day battery life and support for mobile data networks. These PCs will provide great application compatibility and allow you to run your existing x86 win32 applications unmodified. For more information or a demo, look at the [Channel 9 video for the Always Connected PC](https://channel9.msdn.com/Events/Build/2017/P4171).
+Windows 10 desktop can run on machines that are powered by ARM64 processors. The power-saving nature of the ARM CPU architecture allows these PCs to have all-day battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing x86 win32 applications unmodified. For more information or a demo, look at the [Build video for Windows 10 on ARM](https://channel9.msdn.com/Events/Build/2018/BRK2438).
 
 We use the term *ARM* here as a shorthand for PCs that run the desktop version of Windows 10 on ARM64 (also commonly called *AArch64*) processors.  We use the term *ARM32* here as a shorthand for the 32-bit ARM architecture (commonly called *ARM* in other documentation).
 
@@ -28,7 +28,7 @@ Windows 10 on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/unive
 > Windows 10 on ARM supports x86, ARM32, and ARM64 UWP apps from Store on ARM64 devices. When a user downloads your UWP app on an ARM64 device, the OS will automatically install the optimal version of your app that is available. If you submit x86, ARM32, and ARM64 versions of your app to the Store, the OS will automatically install the ARM64 version of your app. If you only submit x86 and ARM32 versions of your app, the OS will install the ARM32 version. If you only submit the x86 version of your app, the OS will install that version and run it under emulation. For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
 
 ### Win32 apps
-In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps unmodified, with good performance and a seamless user experience, just like any PC. These x86 Win32 apps don’t have to recompiled for ARM and don’t even realize they are running on an ARM processor.
+In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps unmodified, with good performance and a seamless user experience, just like any PC. These x86 Win32 apps don’t have to be recompiled for ARM and don’t even realize they are running on an ARM processor.
 
 ### x86-64 apps
 Initial support for x86-64 applications was added in build 21277, and is currently being developed further. If an app's x64 Win32 version doesn't work, the vast majority of apps do also have x86 versions available. When given the choice of app architecture, just choose the 32-bit x86 version to run the app's 32-bit version on a Windows 10 on ARM PC.

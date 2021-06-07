@@ -744,7 +744,7 @@ else
 
 ## Asynchronous timeouts made easy
 
-C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::future**.
+C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a [**get**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function, similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -758,7 +758,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the [**wait_for**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -776,7 +776,10 @@ int main()
 > [!NOTE]
 > **wait_for** uses **std::chrono::duration** at the interface, but it is limited to some range smaller than what **std::chrono::duration** provides (roughly 49.7 days).
 
-The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the **get** function to retrieve the result.
+The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the [**GetResults**](/uwp/api/windows.foundation.iasyncoperation-1.getresults) method to retrieve the result.
+
+> [!NOTE]
+> **wait_for** and **get** are mutually exclusive (you can't call both of them). They each count as a *waiter*, and Windows Runtime asynchronous actions/operations support only a single waiter.
 
 ```cppwinrt
 int main()
@@ -785,18 +788,18 @@ int main()
  
     if (async.wait_for(5s) == AsyncStatus::Completed)
     {
-        printf("result %d\n", async.get());
+        printf("result %d\n", async.GetResults());
     }
 }
 ```
 
-Because the async object has completed by then, **get** returns the result immediately, without any further wait. As you can see, **wait_for** returns the state of the async object. So, you can use it for more fine-grained control, like this.
+Because the async object has completed by then, the **GetResults** method returns the result immediately, without any further wait. As you can see, **wait_for** returns the state of the async object. So, you can use it for more fine-grained control, like this.
 
 ```cppwinrt
 switch (async.wait_for(5s))
 {
 case AsyncStatus::Completed:
-    printf("result %d\n", async.get());
+    printf("result %d\n", async.GetResults());
     break;
 case AsyncStatus::Canceled:
     puts("canceled");
@@ -810,10 +813,24 @@ case AsyncStatus::Started:
 }
 ```
 
-- Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **get** function to retrieve any result.
-- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded.
-- **AsyncStatus::Error** means that the async object has failed in some way. You can **get** to rethrow the exception if you wish.
-- **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling **get** to retrieve any result. But it's best just to discard the object at this point.
+- Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **GetResults** method to retrieve any result.
+- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded. You can call the **GetResults** method to rethrow the cancellation exception if you wish.
+- **AsyncStatus::Error** means that the async object has failed in some way. You can call the **GetResults** method to rethrow the exception if you wish.
+- **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling the **GetResults** method to retrieve any result. But it's best just to discard the object at this point.
+
+An alternative pattern is to check only for [**Started**](/uwp/api/windows.foundation.asyncstatus), and let GetResults deal with the other cases.
+
+```cppwinrt
+if (async.wait_for(5s) == AsyncStatus::Started)
+{
+    puts("timed out");
+}
+else
+{
+    // will throw appropriate exception if in cancelled or error state
+    auto results = async.GetResults();
+}
+```
 
 ## Returning an array asynchronously
 

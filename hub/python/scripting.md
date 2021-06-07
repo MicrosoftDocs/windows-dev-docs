@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, python system administration, python file automation, python scripts on windows, set up python on windows, python developer environment on windows, python dev environment on windows, python with powershell, python scripts for file system tasks
 ms.localizationpriority: medium
-ms.date: 07/19/2019
+ms.date: 05/07/2021
 ---
 
 # Get started using Python on Windows for scripting and automation
@@ -29,7 +29,7 @@ To install Python using the Microsoft Store:
 
 1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.7" from the results under Apps. Select **Get**.
+2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select **Get**.
 
 3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has been installed on your machine.
 

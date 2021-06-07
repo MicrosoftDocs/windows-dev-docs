@@ -1,9 +1,10 @@
 ---
 title: PowerToys Run utility for Windows 10
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, WindowWalker]
 ---
 
 # PowerToys Run utility

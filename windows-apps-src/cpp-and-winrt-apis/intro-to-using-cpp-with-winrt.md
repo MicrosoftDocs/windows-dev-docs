@@ -37,7 +37,7 @@ While we recommend that you develop with the latest versions of Visual Studio an
 You'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 - The VSIX extension gives you C++/WinRT project and item templates in Visual Studio, so that you can get started with C++/WinRT development.
-- In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/natvis).
+- In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](./natvis.md).
 
 The Visual Studio project templates for C++/WinRT are described in the sections below. When you create a new C++/WinRT project with the latest version of the VSIX extension installed, the new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). The **Microsoft.Windows.CppWinRT** NuGet package provides C++/WinRT build support (MSBuild properties and targets), making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
 

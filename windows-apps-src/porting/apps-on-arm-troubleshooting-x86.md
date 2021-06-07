@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Troubleshooting x86 desktop apps
 >[!IMPORTANT]
-> The ARM64 SDK is now available as part of Visual Studio 15.8 Preview 1. We recommend that you recompile your app to ARM64 so that your app runs at full native speed. For more info, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post.
+> The ARM64 SDK is now available as part of Visual Studio 2017 15.9 or Visual Studio 2019. We recommend that you recompile your app to ARM64 so that your app runs at full native speed. For more info, see the [Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/) blog post.
 
 If an x86 desktop app doesn't work the way it does on an x86 machine, here's some guidance to help you troubleshoot.
 

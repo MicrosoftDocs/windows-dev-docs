@@ -88,30 +88,70 @@
                     href: desktop/modernize/modernize-wpf-tutorial-5.md
               - name: Grant identity to non-packaged desktop apps
                 href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-  - name: Project Reunion 0.5
+  - name: Project Reunion
     items:
       - name: "Overview"
         href: project-reunion/index.md
-      - name: "Get started with Project Reunion"
-        href: project-reunion/get-started-with-project-reunion.md
-      - name: "Update existing projects to the latest release of Project Reunion"
-        href: project-reunion/update-existing-projects-to-the-latest-release.md
-      - name: "Deploy apps that use Project Reunion"
-        href: project-reunion/deploy-apps-that-use-project-reunion.md
-      - name: "Manage resources with MRT Core"
+      - name: "Releases"
+        items:
+          - name: "Release channels and release notes"
+            href: project-reunion/release-channels.md
+          - name: "Stable release channel"
+            href: project-reunion/stable-channel.md
+          - name: "Preview release channel"
+            href: project-reunion/preview-channel.md
+      - name: "Get started"
+        items:
+          - name: "Set up your development environment"
+            href: project-reunion/set-up-your-development-environment.md
+          - name: "Get started developing apps"
+            href: project-reunion/get-started-with-project-reunion.md
+          - name: "Update existing projects to the latest release"
+            href: project-reunion/update-existing-projects-to-the-latest-release.md
+      - name: "Manage resources"
         href: project-reunion/mrtcore/mrtcore-overview.md
-      - name: "Render text with DWriteCore"
+      - name: "Render text"
         href: project-reunion/dwritecore.md
+      - name: Control app activation
+        items:
+          - name: App instancing
+            href: project-reunion/applifecycle/applifecycle-instancing.md
+          - name: Rich activation
+            href: project-reunion/applifecycle/applifecycle-rich-activation.md
+      - name: "Deploy apps"
+        items:
+          - name: "Overview"
+            href: project-reunion/deploy-apps-that-use-project-reunion.md 
+          - name: "Runtime architecture and deployment scenarios"
+            href: project-reunion/deployment-architecture.md
+          - name: "Deploy packaged apps"
+            href: project-reunion/deploy-packaged-apps.md 
+          - name: "Deploy unpackaged apps"
+            items:
+              - name: "Overview"
+                href: project-reunion/deploy-unpackaged-apps.md
+              - name: "Tutorial: Build and deploy an unpackaged app"
+                href: project-reunion/tutorial-unpackaged-deployment.md
+              - name: "Check for installed versions of the Project Reunion runtime"
+                href: project-reunion/check-project-reunion-versions.md
+              - name: "Remove outdated Project Reunion runtime versions"
+                href: project-reunion/remove-project-reunion-versions.md
   - name: Windows UI Library (WinUI)
     items:
       - name: "Overview"
         href: winui/index.md
       - name: "Comparison of WinUI 3 and WinUI 2"
         href: winui/winui3-winui2-comparison.md
-      - name: "Windows UI Library 3 - Project Reunion 0.5"
+      - name: "Windows UI Library 3"
         items:
-          - name: "Overview and release notes"
-            href: winui/winui3/index.md
+          - name: "Release notes"
+            items:
+            - name: "WinUI 3 - Project Reunion 0.8 Preview"
+              href: winui/winui3/release-notes/release-notes-08-preview.md
+            - name: "WinUI 3 - Project Reunion 0.5"
+              href: winui/winui3/index.md
+            - name: "WinUI 3 - Project Reunion 0.5 Preview"
+              href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
           - name: "Develop"
             items:
               - name: "WinUI project templates in Visual Studio"
@@ -126,11 +166,6 @@
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
               - name: "Templated XAML controls for WinUI 3 apps with C#"
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
-          - name: "Release notes archive (WinUI 3)"
-            href:  winui/winui3/release-notes/index.md
-            items:
-              - name: "Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)"
-                href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
       - name: "Windows UI 2.x Library"
         items: 
           - name: "Overview"
@@ -183,5 +218,5 @@
     href: features-and-technologies.md
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
-  - name: Docs related to Microsoft Build 2020
-    href: whats-new/build2020-docs.md
+  - name: Docs related to Microsoft Build 2021
+    href: whats-new/build2021-docs.md

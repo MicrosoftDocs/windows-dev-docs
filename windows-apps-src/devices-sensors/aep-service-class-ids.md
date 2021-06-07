@@ -25,43 +25,43 @@ Bluetooth services fall under one of two protocols, either the Bluetooth protoco
 - Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
 - Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
-The Bluetooth protocol supports several services, all following the same basic format. The first four digits of the GUID vary based upon the service, but all Bluetooth GUIDs end with **0000-0000-1000-8000-00805F9B34FB**. For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00030000-0000-1000-8000-00805F9B34FB**. The following table lists some common Bluetooth services.
+The Bluetooth protocol supports several services, all following the same basic format. The first group of digits in the GUID vary based upon the service, but all Bluetooth GUIDs end with **-0000-1000-8000-00805F9B34FB**. For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00000003-0000-1000-8000-00805F9B34FB**. The following table lists some common Bluetooth services.
 
 | Service name                         | GUID                                     |
 |--------------------------------------|------------------------------------------|
-| RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
-| GATT - Alert notification service    | **18110000-0000-1000-8000-00805F9B34FB** |
-| GATT - Automation IO                 | **18150000-0000-1000-8000-00805F9B34FB** |
-| GATT - Battery service               | **180F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Blood pressure                | **18100000-0000-1000-8000-00805F9B34FB** |
+| RFCOMM                               | **00000003-0000-1000-8000-00805F9B34FB** |
+| GATT - Alert notification service    | **00001811-0000-1000-8000-00805F9B34FB** |
+| GATT - Automation IO                 | **00001815-0000-1000-8000-00805F9B34FB** |
+| GATT - Battery service               | **0000180F-0000-1000-8000-00805F9B34FB** |
+| GATT - Blood pressure                | **00001810-0000-1000-8000-00805F9B34FB** |
 | GATT - Body composition              | **181B0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Bond management               | **181E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Continuous glucose monitoring | **181F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Current time service          | **18050000-0000-1000-8000-00805F9B34FB** |
-| GATT - Cycling power                 | **18180000-0000-1000-8000-00805F9B34FB** |
-| GATT - Cycling speed and cadence     | **18160000-0000-1000-8000-00805F9B34FB** |
-| GATT - Device information            | **180A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Environmental sensing         | **181A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Generic access                | **18000000-0000-1000-8000-00805F9B34FB** |
-| GATT - Generic attribute             | **18010000-0000-1000-8000-00805F9B34FB** |
-| GATT - Glucose                       | **18080000-0000-1000-8000-00805F9B34FB** |
-| GATT - Health thermometer            | **18090000-0000-1000-8000-00805F9B34FB** |
-| GATT - Heart rate                    | **180D0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Human interface device        | **18120000-0000-1000-8000-00805F9B34FB** |
-| GATT - Immediate alert               | **18020000-0000-1000-8000-00805F9B34FB** |
-| GATT - Indoor positioning            | **18210000-0000-1000-8000-00805F9B34FB** |
-| GATT - Internet protocol support     | **18200000-0000-1000-8000-00805F9B34FB** |
-| GATT - Link loss                     | **18030000-0000-1000-8000-00805F9B34FB** |
-| GATT - Location and navigation       | **18190000-0000-1000-8000-00805F9B34FB** |
-| GATT - Next DST change service       | **18070000-0000-1000-8000-00805F9B34FB** |
-| GATT - Phone alert status service    | **180E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Pulse oximeter                | **18220000-0000-1000-8000-00805F9B34FB** |
-| GATT - Reference time update service | **18060000-0000-1000-8000-00805F9B34FB** |
-| GATT - Running speed and cadence     | **18140000-0000-1000-8000-00805F9B34FB** |
-| GATT - Scan parameters               | **18130000-0000-1000-8000-00805F9B34FB** |
-| GATT - Tx power                      | **18040000-0000-1000-8000-00805F9B34FB** |
-| GATT - User data                     | **181C0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Weight scale                  | **181D0000-0000-1000-8000-00805F9B34FB** |
+| GATT - Bond management               | **0000181E-0000-1000-8000-00805F9B34FB** |
+| GATT - Continuous glucose monitoring | **0000181F-0000-1000-8000-00805F9B34FB** |
+| GATT - Current time service          | **00001805-0000-1000-8000-00805F9B34FB** |
+| GATT - Cycling power                 | **00001818-0000-1000-8000-00805F9B34FB** |
+| GATT - Cycling speed and cadence     | **00001816-0000-1000-8000-00805F9B34FB** |
+| GATT - Device information            | **0000180A-0000-1000-8000-00805F9B34FB** |
+| GATT - Environmental sensing         | **0000181A-0000-1000-8000-00805F9B34FB** |
+| GATT - Generic access                | **00001800-0000-1000-8000-00805F9B34FB** |
+| GATT - Generic attribute             | **00001801-0000-1000-8000-00805F9B34FB** |
+| GATT - Glucose                       | **00001808-0000-1000-8000-00805F9B34FB** |
+| GATT - Health thermometer            | **00001809-0000-1000-8000-00805F9B34FB** |
+| GATT - Heart rate                    | **0000180D-0000-1000-8000-00805F9B34FB** |
+| GATT - Human interface device        | **00001812-0000-1000-8000-00805F9B34FB** |
+| GATT - Immediate alert               | **00001802-0000-1000-8000-00805F9B34FB** |
+| GATT - Indoor positioning            | **00001821-0000-1000-8000-00805F9B34FB** |
+| GATT - Internet protocol support     | **00001820-0000-1000-8000-00805F9B34FB** |
+| GATT - Link loss                     | **00001803-0000-1000-8000-00805F9B34FB** |
+| GATT - Location and navigation       | **00001819-0000-1000-8000-00805F9B34FB** |
+| GATT - Next DST change service       | **00001807-0000-1000-8000-00805F9B34FB** |
+| GATT - Phone alert status service    | **0000180E-0000-1000-8000-00805F9B34FB** |
+| GATT - Pulse oximeter                | **00001822-0000-1000-8000-00805F9B34FB** |
+| GATT - Reference time update service | **00001806-0000-1000-8000-00805F9B34FB** |
+| GATT - Running speed and cadence     | **00001814-0000-1000-8000-00805F9B34FB** |
+| GATT - Scan parameters               | **00001813-0000-1000-8000-00805F9B34FB** |
+| GATT - Tx power                      | **00001804-0000-1000-8000-00805F9B34FB** |
+| GATT - User data                     | **0000181C-0000-1000-8000-00805F9B34FB** |
+| GATT - Weight scale                  | **0000181D-0000-1000-8000-00805F9B34FB** |
 
 For a more complete listing of available Bluetooth services, see the [GATT Services specification](https://www.bluetooth.com/specifications/gatt/services/). You can also use the [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API to get some common GATT services.
 
