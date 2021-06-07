@@ -18,17 +18,17 @@ We've gathered together links to documentation that supports the talks given as 
 
 ## Project Reunion
 
-- [Build desktop Windows apps with Project Reunion](/windows/apps/project-reunion/)
-- [Get started with Project Reunion](/windows/apps/project-reunion/get-started-with-project-reunion)
-- [Update existing projects to the latest release of Project Reunion](/windows/apps/project-reunion/update-existing-projects-to-the-latest-release)
+- [Build desktop Windows apps with Project Reunion](../project-reunion/index.md)
+- [Get started with Project Reunion](../project-reunion/get-started-with-project-reunion.md)
+- [Update existing projects to the latest release of Project Reunion](../project-reunion/update-existing-projects-to-the-latest-release.md)
 
 
 ## WinUI
 
-- [WinUI Introduction](/windows/apps/winui/)
-- [Comparison of WinUI 3 and WinUI 2](/windows/apps/winui/winui3-winui2-comparison)
-- [WinUI 3.0 - Project Reunion 0.5](/windows/apps/winui/winui3/)
-- [Windows UI Library 2.x](/windows/apps/winui/winui2/)
+- [WinUI Introduction](../winui/index.md)
+- [Comparison of WinUI 3 and WinUI 2](../winui/winui3-winui2-comparison.md)
+- [WinUI 3.0 - Project Reunion 0.5](../winui/winui3/index.md)
+- [Windows UI Library 2.x](../winui/winui2/index.md)
 
 
 ## Windows Template Studio
@@ -42,8 +42,8 @@ We've gathered together links to documentation that supports the talks given as 
 
 ## React Native
 
-- [React overview](/windows/dev-environment/javascript/react-overview)
-- [Install React direct on Windows](/windows/dev-environment/javascript/react-on-windows)
+- [React overview](../../dev-environment/javascript/react-overview.md)
+- [Install React direct on Windows](../../dev-environment/javascript/react-on-windows.md)
 
 ## Microsoft Store
 
@@ -51,8 +51,8 @@ We've gathered together links to documentation that supports the talks given as 
 
 ## Windows Package Manager
 
-- [Windows Package Manager (preview)](/windows/package-manager/)
-- [Using the winget tool to install and manage applications](/windows/package-manager/winget/)
+- [Windows Package Manager (preview)](../../package-manager/index.md)
+- [Using the winget tool to install and manage applications](../../package-manager/winget/index.md)
 
 ## Machine Learning
 

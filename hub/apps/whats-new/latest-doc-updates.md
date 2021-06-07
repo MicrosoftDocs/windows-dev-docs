@@ -24,19 +24,19 @@ Highlights this month include:
 
 ### Updated topics
 
-* [Windows Runtime APIs not supported in desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api)
-* [DWriteCore](https://docs.microsoft.com/windows/win32/directwrite/dwritecore-overview)
+* [Windows Runtime APIs not supported in desktop apps](../desktop/modernize/desktop-to-uwp-supported-api.md)
+* [DWriteCore](/windows/win32/directwrite/dwritecore-overview)
 * [XamlListDetail](https://github.com/stevewhims/XamlListDetail)
-* [Direct Machine Learning 1.5](https://docs.microsoft.com/windows/win32/direct3d12/dml-version-history)
-* [BluetoothCacheMode enum](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothcachemode) and [BluetoothLEAdvertisementFilter class](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementfilter)
+* [Direct Machine Learning 1.5](/windows/win32/direct3d12/dml-version-history)
+* [BluetoothCacheMode enum](/uwp/api/windows.devices.bluetooth.bluetoothcachemode) and [BluetoothLEAdvertisementFilter class](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementfilter)
 
 ### New Content
 
-* [Visual Studio native debug visualization (natvis) for C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/natvis)
-* [ winrt::try_get_activation_factory function template](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/try-get-activation-factory)
-* [Get started with JavaScript](https://docs.microsoft.com/windows/dev-environment/javascript/)
-* [NUMA Support](https://docs.microsoft.com/windows/win32/procthread/numa-support)
-* [Endpoint data loss prevention](https://docs.microsoft.com/windows/win32/lwef/endpointdlp-endpoint-data-loss-prevention)
+* [Visual Studio native debug visualization (natvis) for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/natvis)
+* [ winrt::try_get_activation_factory function template](/uwp/cpp-ref-for-winrt/try-get-activation-factory)
+* [Get started with JavaScript](../../dev-environment/javascript/index.md)
+* [NUMA Support](/windows/win32/procthread/numa-support)
+* [Endpoint data loss prevention](/windows/win32/lwef/endpointdlp-endpoint-data-loss-prevention)
 
 ## Tabs vs. Spaces Show
 

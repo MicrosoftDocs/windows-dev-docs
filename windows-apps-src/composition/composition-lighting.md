@@ -16,7 +16,7 @@ The Windows.UI.Composition APIs enable you to create real-time animations and ef
 Composition lighting lets you create interesting UI by allowing:
 
 - Transformation of a light independent of other objects in the scene to enable immersive scenarios like music playback scenes.
-- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](../design/style/reveal.md) highlight.
+- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](../design/style/index.md) highlight.
 - Transformation of the light and entire scene as a group to create materials and depth.
 
 Composition lighting supports three key concepts: **Light**, **Targets**, and **SceneLightingEffect**.

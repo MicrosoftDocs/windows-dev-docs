@@ -28,7 +28,7 @@ The [Parallax effect](../design/motion/parallax.md) adds three-dimensional depth
 
 ![An example of parallax with a list and background image](../design/style/images/_Parallax_v2.gif)
 
-[Reveal](../design/style/reveal.md) highlights important elements of your app. 
+[Reveal](../design/style/index.md) highlights important elements of your app. 
 
 ![Reveal Visual](../design/style/images/Nav_Reveal_Animation.gif)
 
