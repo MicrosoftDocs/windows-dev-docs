@@ -200,7 +200,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
 > 
-> SplitButton is a unique case in that it has extra built-in support for use in CommandBar and CommandBarFlyout. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, the `SplitButtonCommandBarFlyout` style will immediately be applied, allowing your SplitButton to look, act, and feel natural in the CommandBarFlyout.
+> SplitButton is a unique case in that it has extra built-in support for use in CommandBar and CommandBarFlyout. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, the `SplitButtonCommandBarFlyout` style will automatically be applied, allowing your SplitButton to look, act, and feel natural in the CommandBarFlyout.
 
 > [!NOTE]
 > This example shows only the command bar flyout UI, it does not implement any of the commands that are shown. For more info about implementing the commands, see [Buttons](buttons.md) and [Command design basics](../basics/commanding-basics.md).
