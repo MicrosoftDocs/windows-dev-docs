@@ -1277,7 +1277,7 @@
             - name: Advertisements
               href: ../devices-sensors/ble-beacon.md
         - name: Bluetooth developer FAQ
-          href: ../devices-sensors/bluetooth-dev-faq.md
+          href: ../devices-sensors/bluetooth-dev-faq.yml
     - name: Printing and scanning
       href: ../devices-sensors/printing-and-scanning.md
       items:
