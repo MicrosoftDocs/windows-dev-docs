@@ -597,7 +597,7 @@
         - name: Use the Multilingual App Toolkit 4.0
           href: globalizing/use-mat.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
-          href: globalizing/mat-faq-troubleshooting.md
+          href: globalizing/mat-faq-troubleshooting.yml
         - name: Use the UTF-8 code page
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
