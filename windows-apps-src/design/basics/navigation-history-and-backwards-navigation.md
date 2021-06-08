@@ -472,12 +472,12 @@ private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
 {
     // For this event, e.Handled arrives as 'true', so invert the value.
     if (e.CurrentPoint.Properties.IsXButton1Pressed
-        && e.Handled)
+        && !e.Handled)
     {
         e.Handled = !TryGoBack();
     }
     else if (e.CurrentPoint.Properties.IsXButton2Pressed
-            && e.Handled)
+            && !e.Handled)
     {
         e.Handled = !TryGoForward();
     }
@@ -520,12 +520,12 @@ private:
     {
         // For this event, e.Handled arrives as 'true', so invert the value. 
         if (e.CurrentPoint().Properties().IsXButton1Pressed()
-            && e.Handled())
+            && !e.Handled())
         {
             e.Handled(!TryGoBack());
         }
         else if (e.CurrentPoint().Properties().IsXButton2Pressed()
-            && e.Handled())
+            && !e.Handled())
         {
             e.Handled(!TryGoForward());
         }
@@ -630,12 +630,12 @@ private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
 {
     // For this event, e.Handled arrives as 'true', so invert the value.
     if (e.CurrentPoint.Properties.IsXButton1Pressed
-        && e.Handled)
+        && !e.Handled)
     {
         e.Handled = !TryGoBack();
     }
     else if (e.CurrentPoint.Properties.IsXButton2Pressed
-            && e.Handled)
+            && !e.Handled)
     {
         e.Handled = !TryGoForward();
     }
@@ -764,12 +764,12 @@ private:
     {
         // For this event, e.Handled arrives as 'true', so invert the value. 
         if (e.CurrentPoint().Properties().IsXButton1Pressed()
-            && e.Handled())
+            && !e.Handled())
         {
             e.Handled(!TryGoBack());
         }
         else if (e.CurrentPoint().Properties().IsXButton2Pressed()
-            && e.Handled())
+            && !e.Handled())
         {
             e.Handled(!TryGoForward());
         }
