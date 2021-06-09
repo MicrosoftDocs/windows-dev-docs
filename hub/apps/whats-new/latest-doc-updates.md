@@ -44,14 +44,39 @@ Expanded Project Reunion docs for 0.8 Preview release, including:
 
 * [DirectX and XAML intertop](/windows/uwp/gaming/directx-and-xaml-interop)
 * [Windows.Storage.AccessCache](/uwp/api/windows.storage.accesscache?view=winrt-20348)
-* [Get started using Git on WSL](/windows/wsl/tutorials/wsl-git)
-* [Windows Terminal](/windows/terminal/)
 * [Porting Microsoft::WRL::Wrappers](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
 * [Rust for Windows RSS reader tutorial](/windows/dev-environment/rust/rss-reader-rust-for-windows)
 * [MKV file support](/windows/win32/medfound/mkv-support)
 
-* Multiple new and updated topics covering [Windows Package Manager](/windows/package-manager/)
+### Developer tool updates
 
+[Windows Terminal](/windows/terminal/)
+  * [Updated mouse interactions](/windows/terminal/tips-and-tricks#mouse-interaction)
+
+v1.8 features moving out of preview include:
+  * [useApplicationTitle](/windows/terminal/command-line-arguments?tabs=windows#using-application-title) 
+  * [Color scheme](/windows/terminal/command-line-arguments?tabs=windows#color-scheme)
+  * [Ability to target Settings UI](/windows/terminal/customize-settings/actions#open-settings-files)
+  * [tabSwitcherMode](windows/terminal/customize-settings/actions#actions-6)
+  * [Rename window](/windows/terminal/customize-settings/actions#rename-window)
+  * [Open window rename dialog](/windows/terminal/customize-settings/actions#open-window-rename-dialog)
+  * [Unfocused appearance settings](/windows/terminal/customize-settings/profile-appearance#unfocused-appearance-settings)
+
+v1.9 new preview features include:
+  * [Quake mode](/windows/terminal/tips-and-tricks#quake-mode)
+  * [Global commands](/windows/terminal/customize-settings/actions#global-commands)
+  * [Remove trailing whitespace](/windows/terminal/customize-settings/interaction#remove-trailing-white-space-in-rectangular-selection-preview)
+  * [Auto-detect URLs](/windows/utomatically-detect-urls-and-make-them-clickable-preview)
+  * [Set default terminal emulator](/windows/terminal/customize-settings/startup#default-terminal-application-preview)
+
+[Windows Subsystem for Linux (WSL)](/windows/wsl/)
+  * [Get started using Git on WSL](/windows/wsl/tutorials/wsl-git): Update to incorporate Git Credential Manager Core
+
+[Windows Package Manager](/windows/package-manager/)
+  * [Updates to package submission process](/windows/package-manager/package/)
+  * [Updates to package submission validation process](/windows/package-manager/package/)
+  * [Updates to package manifest creation](/windows/package-manager/package/repository)
+  * [Updates to winget commands](/windows/package-manager/winget)
 
 ## Tabs vs. Spaces Show
 
