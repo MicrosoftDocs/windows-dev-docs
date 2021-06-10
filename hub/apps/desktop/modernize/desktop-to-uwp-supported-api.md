@@ -37,7 +37,7 @@ The following WinRT classes are not supported in desktop apps.
 | [CoreApplicationViewTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)  |  Instead of the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) property, use the [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) property provided by WinUI 3 instead. |
 | [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) | Use the [Microsoft.UI.Xaml.Window.DispatcherQueue](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property provided by WinUI 3 instead.<br/><br/>Note that the [Windows.UI.Xaml.Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) and [Windows.UI.Xaml.DependencyObject.Dispatcher](/uwp/api/Windows.UI.Xaml.DependencyObject.Dispatcher) properties return `null` in desktop apps.  |
 | [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [KeyboardInput.GetKeyStateForCurrentThread](/windows/winui/api/microsoft.ui.input.keyboardinput.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/winui/api/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) to access this property. |
-| [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the **IUserActivitySourceHostInterop** COM interface instead (in useractivityinterop.h). |
+| [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [IUserActivitySourceHostInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in useractivityinterop.h). |
 
 ### Classes with GetForCurrentView methods
 
@@ -50,17 +50,17 @@ The following classes are not supported in desktop apps because they have `GetFo
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
-| [AccountsSettingsPane](/uwp/api/windows.ui.applicationsettings.accountssettingspane) | Use the **IAccountsSettingsPaneInterop** COM interface instead (in accountssettingspaneinterop.h). |
+| [AccountsSettingsPane](/uwp/api/windows.ui.applicationsettings.accountssettingspane) | Use the [IAccountsSettingsPaneInterop](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop) COM interface instead (in accountssettingspaneinterop.h). |
 | [AppCapture](/uwp/api/windows.media.capture.appcapture) | None |
 | [BrightnessOverride](/uwp/api/windows.graphics.display.brightnessoverride) | None |
 | [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) | None |
-| [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) | Use the **IDragDropManagerInterop** COM interface instead (in dragdropinterop.h). |
+| [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) | Use the [IDragDropManagerInterop](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop) COM interface instead (in dragdropinterop.h). |
 | [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) | None |
 | [CoreTextServicesManager](/uwp/api/windows.ui.text.core.coretextservicesmanager) | This class is currently supported in desktop apps only in Windows Insider Preview builds. |
 | [CoreWindowResizeManager](/uwp/api/windows.ui.core.corewindowresizemanager) | None |
 | [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) | Use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interface instead (in shobjidl_core.h). |
 | [DisplayEnhancementOverride](/uwp/api/windows.graphics.display.displayenhancementoverride) | None |
-| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | Instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property instead and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>Instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3 instead.  |
+| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | Instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>Instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.  |
 | [EdgeGesture](/uwp/api/windows.ui.input.edgegesture) | None |
 | [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
 | [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
@@ -71,7 +71,7 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [MouseDevice](/uwp/api/windows.devices.input.mousedevice) | None |
 | [PlayToManager](/uwp/api/windows.media.playto.playtomanager.getforcurrentview) | Use the [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) COM interface instead (in playtomanagerinterop.h). |
 | [PointerVisualizationSettings](/uwp/api/windows.ui.input.pointervisualizationsettings) | None |
-| [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the **IPrinting3DManagerInterop** COM interface instead (in print3dmanagerinterop.h). |
+| [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the [IPrinting3DManagerInterop](/windows/win32/api/print3dmanagerinterop/nn-print3dmanagerinterop-iprinting3dmanagerinterop) COM interface instead (in print3dmanagerinterop.h). |
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
 | [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
@@ -80,11 +80,11 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
 | [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
 | [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |
-| [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) | Use the **ISystemMediaTransportControlsInterop** COM interface instead (in systemmediatransportcontrolsinterop.h). |
+| [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) | Use the [ISystemMediaTransportControlsInterop](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop) COM interface instead (in systemmediatransportcontrolsinterop.h). |
 | [SystemNavigationManager](/uwp/api/windows.ui.core.systemnavigationmanager) | None |
 | [SystemNavigationManagerPreview](/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview) | None |
-| [UserActivityRequestManager](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the **IUserActivityRequestManagerInterop** COM interface insead (in useractivityinterop.h). |
-| [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the **IUIViewSettingsInterop** COM interface instead (in uiviewsettingsinterop.h). |
+| [UserActivityRequestManager](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [IUserActivityRequestManagerInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in useractivityinterop.h). |
+| [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
 
 ### Unsupported members
