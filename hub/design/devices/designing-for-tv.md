@@ -145,7 +145,7 @@ bool result =
 
 `result` will inform you whether you successfully opted out.
 
-For more information, including sample code for HTML/JavaScript, see [How to turn off scaling](../../xbox-apps/disable-scaling.md).
+For more information, including sample code for HTML/JavaScript, see [How to turn off scaling](/windows/uwp/xbox-apps/disable-scaling).
 
 Please be sure to calculate the appropriate sizes of UI elements by doubling the *effective* pixel values mentioned in this topic to *actual* pixel values (or multiplying by 1.5 for HTML apps).
 

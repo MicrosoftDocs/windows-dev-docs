@@ -181,7 +181,7 @@ This guidance is also useful for apps such as photo albums or mapping apps that 
 ## Related articles
 
 - [Custom user interactions](../layout/index.md)
-- [Optimize ListView and GridView](../../debug-test-perf/optimize-gridview-and-listview.md)
+- [Optimize ListView and GridView](/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
 - [Keyboard accessibility](../accessibility/keyboard-accessibility.md)
 
 **Samples**

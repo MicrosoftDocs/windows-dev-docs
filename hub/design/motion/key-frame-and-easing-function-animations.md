@@ -192,7 +192,7 @@ When an easing function is applied to a **From**/**To**/**By** animation, it's c
 
 One type of animation deserves special mention because it's the only way you can apply an animated value to properties that aren't of type [**Double**](/dotnet/api/system.double), [**Point**](/uwp/api/Windows.Foundation.Point), or [**Color**](/uwp/api/Windows.UI.Color). This is the key-frame animation [**ObjectAnimationUsingKeyFrames**](/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames). Animating using [**Object**](/dotnet/api/system.object) values is different because there's no possibility of interpolating the values between the frames. When the frame's [**KeyTime**](/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.keytime) is reached, the animated value is immediately set to the value specified in the key frame's **Value**. Because there's no interpolation, there's only one key frame you use in the **ObjectAnimationUsingKeyFrames** key frames collection: [**DiscreteObjectKeyFrame**](/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame).
 
-The [**Value**](/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) of a [**DiscreteObjectKeyFrame**](/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) is often set using property element syntax, because the object value you are trying to set often is not expressible as a string to fill **Value** in attribute syntax. You can still use attribute syntax if you use a reference such as [StaticResource](../../xaml-platform/staticresource-markup-extension.md).
+The [**Value**](/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) of a [**DiscreteObjectKeyFrame**](/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) is often set using property element syntax, because the object value you are trying to set often is not expressible as a string to fill **Value** in attribute syntax. You can still use attribute syntax if you use a reference such as [StaticResource](/windows/uwp/xaml-platform/staticresource-markup-extension).
 
 One place you'll see an [**ObjectAnimationUsingKeyFrames**](/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) used in the default templates is when a template property references a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) resource. These resources are [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) objects, not just a [**Color**](/uwp/api/Windows.UI.Color) value, and they use resources that are defined as system themes ([**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)). They can be assigned directly to a **Brush**-type value such as [**TextBlock.Foreground**](/uwp/api/windows.ui.xaml.controls.textblock.foreground) and don't need to use indirect targeting. But because a **SolidColorBrush** is not [**Double**](/dotnet/api/system.double), [**Point**](/uwp/api/Windows.Foundation.Point), or **Color**, you have to use a **ObjectAnimationUsingKeyFrames** to use the resource.
 
@@ -263,7 +263,7 @@ You can use more than one [**DiscreteObjectKeyFrame**](/uwp/api/Windows.UI.Xaml.
 
  ## Related topics
 
-* [Property-path syntax](../../xaml-platform/property-path-syntax.md)
-* [Dependency properties overview](../../xaml-platform/dependency-properties-overview.md)
+* [Property-path syntax](/windows/uwp/xaml-platform/property-path-syntax)
+* [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview)
 * [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
 * [**Storyboard.TargetProperty**](/uwp/api/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)

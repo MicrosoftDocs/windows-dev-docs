@@ -60,7 +60,7 @@ This XAML example sets the [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill
 
 ### Property element syntax
 
-You can use property element syntax to define a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity). For more info on XAML syntax, including property element syntax, see the [XAML overview](../../xaml-platform/xaml-overview.md) and [XAML syntax guide](../../xaml-platform/xaml-syntax-guide.md).
+You can use property element syntax to define a [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity). For more info on XAML syntax, including property element syntax, see the [XAML overview](/windows/uwp/xaml-platform/xaml-overview) and [XAML syntax guide](/windows/uwp/xaml-platform/xaml-syntax-guide).
 
 In the previous examples, the brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definitions simple for the most common cases. The next example creates a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and explicitly creates the [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) as an element value for a [**Rectangle.Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill) property. The [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) of the **SolidColorBrush** is set to [**Blue**](/uwp/api/windows.ui.colors.blue) and the [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) is set to 0.5.
 
@@ -194,7 +194,7 @@ A [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) is a specia
 
 [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
 
-This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](../../composition/visual-layer.md). 
+This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer). 
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 

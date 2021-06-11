@@ -83,7 +83,7 @@ Detailed information about specific controls and patterns.
 - [Inking controls](inking-controls.md)
 - [List/details](list-details.md) (pattern)
 - [List view](listview-and-gridview.md)
-- [Map control](../../maps-and-location/display-maps.md)
+- [Map control](/windows/uwp/maps-and-location/display-maps)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menu flyout](menus.md)

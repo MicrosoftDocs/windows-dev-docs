@@ -48,7 +48,7 @@ Here is an example of how you can set the [**Canvas.Left**](/dotnet/api/system.w
 </Canvas>
 ```
 
-For more info about attached properties, see [Attached properties overview](../../xaml-platform/attached-properties-overview.md).
+For more info about attached properties, see [Attached properties overview](/windows/uwp/xaml-platform/attached-properties-overview).
 
 ### Panel borders
 
@@ -64,7 +64,7 @@ Here’s an example of how to set border properties on a Grid.
 
 ![A Grid with borders](images/layout-panel-grid-border.png)
 
-Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](../../debug-test-perf/optimize-your-xaml-layout.md).
+Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](/windows/uwp/debug-test-perf/optimize-your-xaml-layout.md).
 
 ## RelativePanel
 

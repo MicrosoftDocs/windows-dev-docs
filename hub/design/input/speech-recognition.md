@@ -24,7 +24,7 @@ Speech recognition is made up of a speech runtime, recognition APIs for programm
 
 To support speech recognition with your app, the user must connect and enable a microphone on their device, and accept the Microsoft Privacy Policy granting permission for your app to use it.
 
-To automatically prompt the user with a system dialog requesting permission to access and use the microphone's audio feed (example from the [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) shown below), just set the **Microphone** [device capability](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) in the [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest). For more detail, see [App capability declarations](../../packaging/app-capability-declarations.md).
+To automatically prompt the user with a system dialog requesting permission to access and use the microphone's audio feed (example from the [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) shown below), just set the **Microphone** [device capability](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) in the [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest). For more detail, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
 
 ![Privacy policy for microphone access](images/speech/privacy.png)
 

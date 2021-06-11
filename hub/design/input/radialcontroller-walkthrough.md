@@ -42,7 +42,7 @@ The Dial supports three basic gestures:
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](/windows/apps/get-started/get-set-up)
-    * [Create a "Hello, world" app (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
+    * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## Set up your devices
 

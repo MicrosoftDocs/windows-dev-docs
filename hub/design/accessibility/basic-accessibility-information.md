@@ -142,7 +142,7 @@ Windows supports many controls that can be used to display values that come from
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
 
 ## Accessible names and localization  
-To make sure that the accessible name is also an element that is localized, you should use correct techniques for storing localizable strings as resources and then referencing the resource connections with [x:Uid directive](../../xaml-platform/x-uid-directive.md) values. If the accessible name is coming from an explicitly set [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) usage, make sure that the string there is also localizable.
+To make sure that the accessible name is also an element that is localized, you should use correct techniques for storing localizable strings as resources and then referencing the resource connections with [x:Uid directive](/windows/uwp/xaml-platform/x-uid-directive) values. If the accessible name is coming from an explicitly set [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) usage, make sure that the string there is also localizable.
 
 Note that attached properties such as the [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) properties use a special qualifying syntax for the resource name, so that the resource references the attached property as applied to a specific element. For example, the resource name for [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) as applied to a UI element named `MediumButton` is: `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
 

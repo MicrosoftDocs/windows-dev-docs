@@ -266,7 +266,7 @@ In addition to defining your own colors in your app, you can also scope our syst
 
 ### How to use ColorPaletteResources
 
-ColorPaletteResources is an API that tells the system what resources are being scoped where. ColorPaletteResources must take an [x:Key](../../xaml-platform/x-key-attribute.md), that can be one of three choices:
+ColorPaletteResources is an API that tells the system what resources are being scoped where. ColorPaletteResources must take an [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md), that can be one of three choices:
 - Default
   * Will show your color changes in both [Light](#light-theme) and [Dark](#dark-theme) theme
 - Light

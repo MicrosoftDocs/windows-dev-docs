@@ -177,7 +177,7 @@ listener.ClearNotifications();
 
 A common way to enable an app to listen to notifications is to set up a background task, so that you can know when a notification was added or dismissed regardless of whether your app is currently running.
 
-Thanks to the [single process model](../../../launch-resume/create-and-register-an-inproc-background-task.md) added in the Anniversary Update, adding background tasks is fairly simple. In your main app's code, after you have obtained the user's access to Notification Listener and obtained access to run background tasks, simply register a new background task, and set the [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) using the [Toast notification kind](/uwp/api/windows.ui.notifications.notificationkinds).
+Thanks to the [single process model](/windows/uwp/launch-resume/create-and-register-an-inproc-background-task) added in the Anniversary Update, adding background tasks is fairly simple. In your main app's code, after you have obtained the user's access to Notification Listener and obtained access to run background tasks, simply register a new background task, and set the [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) using the [Toast notification kind](/uwp/api/windows.ui.notifications.notificationkinds).
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync

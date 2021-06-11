@@ -183,7 +183,7 @@ sections:
           Try these steps.
           
           1. Add translations using one of the methods already described.
-          2. Dump the .pri file (see [MakePri.exe command-line options](../../app-resources/makepri-exe-command-options.md)) to see whether your translations are in the .pri file. Translations will appear with language code and translated value like this.
+          2. Dump the .pri file (see [MakePri.exe command-line options](/windows/uwp/app-resources/makepri-exe-command-options)) to see whether your translations are in the .pri file. Translations will appear with language code and translated value like this.
              ```xml
              <Candidate qualifiers="Language-QPS-PLOC" type="String">
                  <Value>[!!_Ŝéãřćĥ_!!]</Value>
@@ -203,4 +203,4 @@ additionalContent: |
   
   * [Use the Multilingual App Toolkit 4.0](use-mat.md)
   * [Microsoft Translator](https://www.microsofttranslator.com/)
-  * [MakePri.exe command-line options](../../app-resources/makepri-exe-command-options.md)
+  * [MakePri.exe command-line options](/windows/uwp/app-resources/makepri-exe-command-options)

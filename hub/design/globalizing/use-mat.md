@@ -23,7 +23,7 @@ The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2
 
 ### Step 1. Design your app for globalization and localization
 
-Before you can use the MAT effectively, your app needs to be localizable. Specifically, your project should contain one or more Resources Files (.resw) containing your app's strings in the default language. For details, see [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md). Once you've done that, the toolkit makes adding additional languages quick and easy.
+Before you can use the MAT effectively, your app needs to be localizable. Specifically, your project should contain one or more Resources Files (.resw) containing your app's strings in the default language. For details, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). Once you've done that, the toolkit makes adding additional languages quick and easy.
 
 For the value proposition of globalization and localization&mdash;as well as definitions of the terms **globalization**, **localizability**, and **localization**&mdash;see [Globalization and localization](globalizing-portal.md).
 
@@ -155,7 +155,7 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Related topics
 
-* [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
 * [Globalization and localization](globalizing-portal.md)
 * [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Make your app localizable](prepare-your-app-for-localization.md)

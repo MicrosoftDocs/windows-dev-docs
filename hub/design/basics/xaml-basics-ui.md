@@ -232,7 +232,7 @@ You'll notice that the app isn't showing images yet. By default, it shows the `T
 
 Now, you'll create a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) object that tells the `GridView` control how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls-and-patterns/item-containers-templates.md).
 
-For now, you'll add only placeholders to help you create the layout you want. In the [XAML data binding](../../data-binding/xaml-basics-data-binding.md) tutorial, you'll replace these placeholders with real data from the `ImageFileInfo` class. You can open the **ImageFileInfo.cs** file now if you want to see what the data object looks like.
+For now, you'll add only placeholders to help you create the layout you want. In the [XAML data binding](/windows/uwp/data-binding/xaml-basics-data-binding) tutorial, you'll replace these placeholders with real data from the `ImageFileInfo` class. You can open the **ImageFileInfo.cs** file now if you want to see what the data object looks like.
 
 To add a data template to a grid view:
 
@@ -261,7 +261,7 @@ To add a data template to a grid view:
       NavigationCacheMode="Enabled">
     ```
 
-    For more info about XAML namespaces, see [XAML namespaces and namespace mapping](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md).
+    For more info about XAML namespaces, see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
 
 3. In Document Outline, right-click **ImageGridView**. On the shortcut menu, select **Edit Additional Templates** > **Edit Generated Items (ItemTemplate)** > **Create Empty**. The **Create Resource** dialog box opens.
 
@@ -538,7 +538,7 @@ Now, the scroll bar is aligned with the edge of the window. Good job! You've cre
 
 Now that you've created the basic UI, check out these other tutorials. They're also based on the PhotoLab sample.
 
-* Add real images and data in the [XAML data binding tutorial](../../data-binding/xaml-basics-data-binding.md).
+* Add real images and data in the [XAML data binding tutorial](/windows/uwp/data-binding/xaml-basics-data-binding).
 * Make the UI adapt to different screen sizes in the [XAML adaptive layout tutorial](xaml-basics-adaptive-layout.md).
 
 

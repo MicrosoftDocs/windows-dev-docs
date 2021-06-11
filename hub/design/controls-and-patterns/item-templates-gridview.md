@@ -10,7 +10,7 @@ keywords: windows 10, uwp, fluent
 
 This section contains item templates that you can use with a [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
 
-To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](../../data-binding/data-binding-quickstart.md).
+To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!NOTE] 
 > Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibililty overview](../accessibility/accessibility-overview.md).
@@ -151,7 +151,7 @@ Use this template to display a media collection with text overlay.
 
 ## Related articles
 - [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [Data binding overview](../../data-binding/data-binding-quickstart.md)
+- [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
 - [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Thumbnail images](../../files/thumbnails.md)
+- [Thumbnail images](/windows/uwp/files/thumbnails)

@@ -258,11 +258,11 @@ Run the app. When the app loads, try changing the size of the window. When you s
 
 ## Going further
 
-Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md) if you'd like to test a Surface Hub layout.
+Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. For a bigger challenge, try optimizing the layout for larger screen sizes, like Surface Hub. See [Test Surface Hub apps using Visual Studio](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio) if you'd like to test a Surface Hub layout.
 
 If you get stuck, you can find more guidance in [Responsive layouts with XAML](../layout/layouts-with-xaml.md).
 
-Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
+Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](/windows/uwp/data-binding/xaml-basics-data-binding).
 
 ## Get the final version of the PhotoLab sample
 

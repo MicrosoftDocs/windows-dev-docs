@@ -37,7 +37,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](/windows/apps/get-started/get-set-up)
-    * [Create a "Hello, world" app (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
+    * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
 
 > [!NOTE] 

@@ -26,7 +26,7 @@ There are a variety of scenarios that can benefit from multiple views. Here are 
 
 While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the content that can be opened in a new window. Also consider including a [context menu](../controls-and-patterns/menus.md) option to "Open in a new window".
 
-To create separate instances of your app (rather than separate windows for the same instance), see [Create a multi-instance Windows app](../../launch-resume/multi-instance-uwp.md).
+To create separate instances of your app (rather than separate windows for the same instance), see [Create a multi-instance Windows app](/windows/uwp/launch-resume/multi-instance-uwp).
 
 ## Windowing hosts
 

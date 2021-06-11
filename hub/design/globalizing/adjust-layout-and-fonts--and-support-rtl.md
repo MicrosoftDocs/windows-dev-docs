@@ -23,7 +23,7 @@ Dynamic layout is the recommended technique, and you'll be able to use it in the
 <TextBlock x:Uid="TitleText">
 ```
 
-For more info about Resources Files (.resw), property identifiers, and **x:Uid**, see [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md).
+For more info about Resources Files (.resw), property identifiers, and **x:Uid**, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest).
 
 ## Fonts
 Use the [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) font-mapping class for programmatic access to the recommended font family, size, weight, and style for a particular language. The **LanguageFont** class provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.
@@ -39,7 +39,7 @@ If your app has images that must be mirrored (that is, the same image can be fli
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
+If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Handling right-to-left (RTL) languages
 When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
@@ -118,6 +118,6 @@ Instead of a single line of code for all languages, this depends on the translat
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## Related topics
-* [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md)
-* [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
+* [Tailor your resources for language, scale, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)

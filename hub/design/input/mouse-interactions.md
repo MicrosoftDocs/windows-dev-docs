@@ -152,7 +152,7 @@ If you need to customize the mouse cursor:
 
 - [Handle pointer input](handle-pointer-input.md)
 - [Identify input devices](identify-input-devices.md)
-- [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md)
+- [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### Samples
 

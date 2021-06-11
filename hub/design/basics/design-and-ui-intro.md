@@ -170,6 +170,6 @@ If you'd like to learn about the principles behind Fluent Design (Microsoft's de
 
 ## Related articles
 
-- [What's a UWP app?](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design System](/windows/apps/fluent-design-system)
-- [XAML platform overview](../../xaml-platform/index.md)
+- [What's a UWP app?](/windows/uwp/get-started/universal-application-platform-guide)
+- [Fluent Design System](/windows/apps/design)
+- [XAML platform overview](/windows/uwp/xaml-platform/index)

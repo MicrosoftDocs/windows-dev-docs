@@ -88,7 +88,7 @@ Use the contact card when you want to display contact info for a contact. If you
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
-4. Get the [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact. 
+4. Get the [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact. 
 
     ```csharp
                 // Retrieve the contact to display
@@ -168,12 +168,12 @@ private void onUserClickShowContactCard()
 
 ## Retrieving "real" contacts
 
-The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](../../contacts-and-calendar/index.md).
+The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](/windows/uwp/contacts-and-calendar/index).
 
 
 
 
 ## Related articles
-- [Contacts and calendar](../../contacts-and-calendar/index.md)
+- [Contacts and calendar](/windows/uwp/contacts-and-calendar/index)
 - [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [People picture control](/windows/uwp/controls-and-patterns/person-picture/)

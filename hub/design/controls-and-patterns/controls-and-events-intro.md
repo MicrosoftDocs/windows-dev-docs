@@ -47,7 +47,7 @@ You can also drag the control from the Toolbox to the XAML designer.
 
 ## Set the name of a control
 
-To work with a control in code, you set its [x:Name](../../xaml-platform/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.
+To work with a control in code, you set its [x:Name](/windows/uwp/xaml-platform/x-name-attribute) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.
 
 To name a control
 1. Select the element to name.
@@ -105,7 +105,7 @@ Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
 
 ## Create an event handler 
 
-Each control has events that enable you to respond to actions from your user or other changes in your app. For example, a Button control has a Click event that is raised when a user clicks the Button. You create a method, called an event handler, to handle the event. You can associate a control's event with an event handler method in the Properties window, in XAML, or in code. For more info about events, see [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md).
+Each control has events that enable you to respond to actions from your user or other changes in your app. For example, a Button control has a Click event that is raised when a user clicks the Button. You create a method, called an event handler, to handle the event. You can associate a control's event with an event handler method in the Properties window, in XAML, or in code. For more info about events, see [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 To create an event handler, select the control and then click the Events tab at the top of the Properties window. The Properties window lists all of the events available for that control. Here are some of the events for a Button.
 

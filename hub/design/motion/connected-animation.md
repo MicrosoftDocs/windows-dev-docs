@@ -62,7 +62,7 @@ Connected animations are generally used when changing pages, though they can be 
 ## Configure connected animation
 
 > [!IMPORTANT]
-> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
+> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 Starting in Windows 10, version 1809, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.
 

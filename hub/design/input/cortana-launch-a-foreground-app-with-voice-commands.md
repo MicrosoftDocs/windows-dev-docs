@@ -54,8 +54,8 @@ These are the basic steps to add voice-command functionality and integrate Corta
 >
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
-> - [Create your first app](../../get-started/your-first-app.md)
-> - Learn about events with [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md)
+> - [Create your first app](/windows/uwp/get-started/your-first-app)
+> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >
@@ -85,7 +85,7 @@ These are the basic steps to add voice-command functionality and integrate Corta
 
 UWP apps can automatically select the most appropriate images based on specific settings and device capabilities (high contrast, effective pixels, locale, and so on). All you need to do is provide the images and ensure you use the appropriate naming convention and folder organization within the app project for the different resource versions. If you don't provide the recommended resource versions, accessibility, localization, and image quality can suffer, depending on the user's preferences, abilities, device type, and location.
 
-For more detail on image resources for high contrast and scale factors, see [Guidelines for tile and icon assets](../../app-resources/images-tailored-for-scale-theme-contrast.md).
+For more detail on image resources for high contrast and scale factors, see [Guidelines for tile and icon assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).
 
 You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.
 

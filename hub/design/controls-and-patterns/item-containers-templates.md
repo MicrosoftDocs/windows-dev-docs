@@ -178,7 +178,7 @@ You typically want to show a more rich presentation of your data. To specify exa
 Here, you define a DataTemplate that shows a [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](../../xaml-platform/x-bind-markup-extension.md) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 **XAML**
 ```xaml
@@ -279,7 +279,7 @@ When the data is shown in a grid using this data template, it looks like this.
 
 Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. 
 
-An instance of every XAML element in a data template is created for each item in the list view. For example, the grid template in the previous example has 10 XAML elements (1 Grid, 1 Rectangle, 3 Borders, 5 TextBlocks). A GridView that shows 20 items on screen using this data template creates at least 200 elements (20*10=200). Reducing the number of elements in a data template can greatly reduce the total number of elements created for your list view. For more info, see [ListView and GridView UI optimization: Element count reduction per item](../../debug-test-perf/optimize-gridview-and-listview.md).
+An instance of every XAML element in a data template is created for each item in the list view. For example, the grid template in the previous example has 10 XAML elements (1 Grid, 1 Rectangle, 3 Borders, 5 TextBlocks). A GridView that shows 20 items on screen using this data template creates at least 200 elements (20*10=200). Reducing the number of elements in a data template can greatly reduce the total number of elements created for your list view. For more info, see [ListView and GridView UI optimization: Element count reduction per item](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
  Consider this section  of the grid data template. Let's look at a few things that reduce the element count.
 
@@ -346,7 +346,7 @@ Now the list view looks like this with space between the items.
 
 ![List view items with padding applied](images/listview-data-template-1.png)
 
-In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
+In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [TemplateBinding](/windows/uwp/xaml-platform/templatebinding-markup-extension) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
 
 To modify other ListViewItemPresenter properties that aren't template bound to ListViewItems properties, you need to retemplate the ListViewItem with a new ListViewItemPresenter that you can modify properties on. 
 
@@ -467,7 +467,7 @@ If you need to make more modifications than what is allowed by the **ListViewIte
 As mentioned previously, the number of UIElements in an item template has a significant impact on the performance of your list view. Replacing ListViewItemPresenter with the expanded XAML templates greatly increases the element count, and is not recommended when your list view will show a large number of items or when performance is a concern.
 
 > [!NOTE]
-> **ListViewItemPresenter** is supported only when the list view’s [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid), or [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](../../debug-test-perf/optimize-gridview-and-listview.md).
+> **ListViewItemPresenter** is supported only when the list view’s [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid), or [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 To customize an expanded XAML template, you need to make a copy of it in your app, and set the **ItemContainerStyle** property to your copy.
 

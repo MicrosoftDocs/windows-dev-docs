@@ -28,7 +28,7 @@ The following keyboard events can occur for both hardware and touch keyboards.
 
 > [!IMPORTANT]
 > Some XAML controls handle input events internally. In these cases, it might appear that an input event doesn't occur because your event listener doesn't invoke the associated handler. Typically, this subset of keys is processed by the class handler to provide built in support of basic keyboard accessibility. For example, the [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) class overrides the [**OnKeyDown**](/uwp/api/windows.ui.xaml.controls.control.onkeydown) events for both the Space key and the Enter key (as well as [**OnPointerPressed**](/uwp/api/windows.ui.xaml.controls.control.onpointerpressed)) and routes them to the [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event of the control. When a key press is handled by the control class, the [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) events are not raised.  
-> This provides a built-in keyboard equivalent for invoking the button, similar to tapping it with a finger or clicking it with a mouse. Keys other than Space or Enter still fire [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) events. For more info about how class-based handling of events works (specifically, the "Input event handlers in controls" section), see [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md).
+> This provides a built-in keyboard equivalent for invoking the button, similar to tapping it with a finger or clicking it with a mouse. Keys other than Space or Enter still fire [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) events. For more info about how class-based handling of events works (specifically, the "Input event handlers in controls" section), see [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 
 Controls in your UI generate keyboard events only when they have input focus. An individual control gains focus when the user clicks or taps directly on that control in the layout, or uses the Tab key to step into a tab sequence within the content area.
@@ -46,7 +46,7 @@ An input event handler implements a delegate that provides the following informa
 
 -   The sender of the event. The sender reports the object where the event handler is attached.
 -   Event data. For keyboard events, that data will be an instance of [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs). The delegate for handlers is [**KeyEventHandler**](/uwp/api/windows.ui.xaml.input.keyeventhandler). The most relevant properties of **KeyRoutedEventArgs** for most handler scenarios are [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) and possibly [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus).
--   [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Because the keyboard events are routed events, the event data provides **OriginalSource**. If you deliberately allow events to bubble up through an object tree, **OriginalSource** is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use **OriginalSource** rather than sender, see the "Keyboard Routed Events" section of this topic, or [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md).
+-   [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Because the keyboard events are routed events, the event data provides **OriginalSource**. If you deliberately allow events to bubble up through an object tree, **OriginalSource** is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use **OriginalSource** rather than sender, see the "Keyboard Routed Events" section of this topic, or [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 ### Attaching a keyboard event handler
 
@@ -58,7 +58,7 @@ You can attach keyboard event-handler functions for any object that includes the
 </Grid>
 ```
 
-You can also attach an event handler in code. For more info, see [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md).
+You can also attach an event handler in code. For more info, see [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 ### Defining a keyboard event handler
 

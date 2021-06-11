@@ -214,7 +214,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](../../packaging/app-capability-declarations.md) for more information.
+> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](/windows/uwp/packaging/app-capability-declarations) for more information.
 
 You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
@@ -814,7 +814,7 @@ This example shows how to create a tree view that shows the contents and structu
 A custom item template is used to display the data items, which are of type [IStorageItem](/uwp/api/windows.storage.istorageitem).
 
 > [!IMPORTANT]
-> The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](../../files/file-access-permissions.md), [Enumerate and query files and folders](../../files/quickstart-listing-files-and-folders.md), and [Files and folders in the Music, Pictures, and Videos libraries](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+> The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](/windows/uwp/files/file-access-permissions), [Enumerate and query files and folders](/windows/uwp/files/quickstart-listing-files-and-folders), and [Files and folders in the Music, Pictures, and Videos libraries](/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries).
 
 ```xaml
 <Page

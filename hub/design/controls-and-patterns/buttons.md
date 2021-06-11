@@ -20,7 +20,7 @@ A button gives the user a way to trigger an immediate action. Some buttons are s
 
 ![Example of buttons](images/controls/button.png)
 
-The [Extensible Application Markup Language (XAML)](../../xaml-platform/xaml-overview.md) framework provides a standard button control as well as several specialized button controls.
+The [Extensible Application Markup Language (XAML)](/windows/uwp/xaml-platform/xaml-overview) framework provides a standard button control as well as several specialized button controls.
 
 Control | Description
 ------- | -----------
@@ -131,7 +131,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar also raises the **Click** event.
 
-You generally can't handle low-level [PointerPressed](/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more info, see [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md).
+You generally can't handle low-level [PointerPressed](/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more info, see [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 You can change how a button raises the **Click** event by changing the [ClickMode](/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 

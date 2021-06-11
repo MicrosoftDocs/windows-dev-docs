@@ -98,7 +98,7 @@ In this example, the **IsChecked** property of the check box to agree to terms o
 
 #### Using x:Bind
 
-> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding see [Data binding overview](../../data-binding/data-binding-quickstart.md). Specific {x:Bind} info (such as casting) is detailed [here](../../xaml-platform/x-bind-markup-extension.md).
+> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). Specific {x:Bind} info (such as casting) is detailed [here](/windows/uwp/xaml-platform/x-bind-markup-extension).
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">
@@ -117,7 +117,7 @@ If the check box can also be in the **indeterminate** state, we use the binding'
 
 #### Using x:Bind or Binding
 
-> Note&nbsp;&nbsp;We only show the relevant code here using {x:Bind}. In the {Binding} example, we would replace {x:Bind} with {Binding}. For more info about data binding, value converters and differences between the {x:Bind} and {Binding} markup extensions, see [Data binding overview](../../data-binding/data-binding-quickstart.md).
+> Note&nbsp;&nbsp;We only show the relevant code here using {x:Bind}. In the {Binding} example, we would replace {x:Bind} with {Binding}. For more info about data binding, value converters and differences between the {x:Bind} and {Binding} markup extensions, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
 ```xaml
 ...

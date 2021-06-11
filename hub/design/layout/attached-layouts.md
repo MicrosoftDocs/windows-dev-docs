@@ -108,7 +108,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](../../xaml-platform/x-load-attribute.md). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 

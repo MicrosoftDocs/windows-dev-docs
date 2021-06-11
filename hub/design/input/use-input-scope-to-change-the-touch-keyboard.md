@@ -56,7 +56,7 @@ Here, you change the input scope of several text boxes to match the expected dat
 
 **To change the input scope in code**
 
-1.  In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the [x:Name attribute](../../xaml-platform/x-name-attribute.md) so you can reference the control in your code.
+1.  In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the [x:Name attribute](/windows/uwp/xaml-platform/x-name-attribute) so you can reference the control in your code.
 
     ```csharp
     <TextBox Header="Telephone Number" x:Name="phoneNumberTextBox"/>

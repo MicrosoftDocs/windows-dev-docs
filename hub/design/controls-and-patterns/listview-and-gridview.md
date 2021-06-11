@@ -194,7 +194,7 @@ Both of the above options will result in the same ListView, shown below. The Lis
 
  The next section will go into detail on how to visually represent simple and custom class items properly in a ListView or GridView.
 
-For more info about data binding, see [Data binding overview](../../data-binding/data-binding-quickstart.md).
+For more info about data binding, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!NOTE]
 > If you need to show grouped data in your ListView, you must bind to a [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). The CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more info, see [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
@@ -206,7 +206,7 @@ A data template in a ListView or GridView defines how the items/data are visuali
 However, you typically want to show a more rich presentation of your data. To specify exactly how items in the ListView/GridView are displayed, you create a [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. 
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](../../xaml-platform/x-bind-markup-extension.md) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 #### Simple ListView Data Template
 In this example, the data item is a simple string. A DataTemplate is defined inline within the ListView definition to add an image to the left of the string, and show the string in teal. This is the same ListView created from using Method 1 and Option 1 shown above.
@@ -275,7 +275,7 @@ Here's what the data items look like when displayed using this data template in 
 
 Data templates are the primary way you define the look of your ListView. They can also have a significant impact on performance if your list holds a large number of items.  
 
-Your data template can be defined inline within the ListView/GridView definition (shown above), or separately in a Resources section. If defined outside of the ListView/GridView itself, the DataTemplate must be given an [x:Key](../../xaml-platform/x-key-attribute.md) attribute and be assigned to the [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView using that key.
+Your data template can be defined inline within the ListView/GridView definition (shown above), or separately in a Resources section. If defined outside of the ListView/GridView itself, the DataTemplate must be given an [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) attribute and be assigned to the [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView using that key.
 
 For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md). 
 
@@ -293,7 +293,7 @@ When you add items to a ListView or GridView, the control automatically wraps ea
 You can modify the layout of items by adjusting properties on the items panel, or you can replace the default panel with another panel.
 
 > [!NOTE]
-> Be careful to not disable virtualization if you change the ItemsPanel. Both **ItemsStackPanel** and **ItemsWrapGrid** support virtualization, so these are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](../../debug-test-perf/performance-and-xaml-ui.md). 
+> Be careful to not disable virtualization if you change the ItemsPanel. Both **ItemsStackPanel** and **ItemsWrapGrid** support virtualization, so these are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
 
 This example shows how to make a **ListView** lay out its item containers in a horizontal list by changing the [Orientation](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) property of the **ItemsStackPanel**.
 Because the list view scrolls vertically by default, you also need to adjust some properties on the list view’s internal [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) to make it scroll horizontally.

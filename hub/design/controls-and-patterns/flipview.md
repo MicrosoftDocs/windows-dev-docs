@@ -108,7 +108,7 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](../../data-binding/data-binding-quickstart.md).
+You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](/windows/uwp/data-binding/data-binding-quickstart).
 
 Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) named `itemsViewSource`. 
 

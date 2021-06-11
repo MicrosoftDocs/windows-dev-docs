@@ -33,7 +33,7 @@ While common controls come with full high contrast support for free, care needs 
 
 When the `#E6E6E6` color is set inline in the first example, the Grid will retain that background color in all themes. If the user switches to the High Contrast Black theme, they'll expect your app to have a black background. Since `#E6E6E6` is almost white, some users may not be able to interact with your app.
 
-In the second example, the [**{ThemeResource} markup extension**](../../xaml-platform/themeresource-markup-extension.md) is used to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection, a dedicated property of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element. **ThemeDictionaries** allows XAML to automatically swap colors for you based on the user's current theme.
+In the second example, the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) is used to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection, a dedicated property of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element. **ThemeDictionaries** allows XAML to automatically swap colors for you based on the user's current theme.
 
 ## Theme dictionaries
 

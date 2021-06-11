@@ -170,6 +170,6 @@ Reveal Focus is a Fluent Design System component that adds light to your app. To
 - [Designing for Xbox and TV](../devices/designing-for-tv.md)
 - [Gamepad and remote control interactions](../input/gamepad-and-remote-interactions.md)
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-- [Composition Effects](../../composition/composition-effects.md)
+- [Composition Effects](/windows/uwp/composition/composition-effects)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

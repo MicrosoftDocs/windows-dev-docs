@@ -58,8 +58,8 @@ The following basic steps add voice-command functionality and extend **Cortana**
 >
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
-> - [Create your first app](../../get-started/your-first-app.md)
-> - Learn about events with [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md)
+> - [Create your first app](/windows/uwp/get-started/your-first-app)
+> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >
@@ -95,7 +95,7 @@ The resource versions are used to adapt the following changes in the user experi
 - Device type  
 - Location  
 
-For more detail about image resources for high contrast and scale factors, visit the Guidelines for tile and icon assets page located at [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](../../app-resources/images-tailored-for-scale-theme-contrast.md).  
+For more detail about image resources for high contrast and scale factors, visit the Guidelines for tile and icon assets page located at [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).  
 
 You must name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.  
 

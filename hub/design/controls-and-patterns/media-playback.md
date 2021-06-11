@@ -85,13 +85,13 @@ The double-row controls layout (below) is recommended for most usage scenarios, 
 
 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) is automatically integrated with the system media transport controls. The system media transport controls are the controls that pop up when hardware media keys are pressed, such as the media buttons on keyboards. For more info, see [SystemMediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls).
 
-> **Note**&nbsp;&nbsp; [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) does not automatically integrate with the system media transport controls so you must connect them yourself. For more information, see [System Media Transport Controls](../../audio-video-camera/system-media-transport-controls.md).
+> **Note**&nbsp;&nbsp; [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) does not automatically integrate with the system media transport controls so you must connect them yourself. For more information, see [System Media Transport Controls](/windows/uwp/audio-video-camera/system-media-transport-controls).
 
 
 ### Set the media source
 To play files on the network or files embedded with the app, set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to a [MediaSource](/uwp/api/windows.media.core.mediasource) with the path of the file.
 
-**Tip**  To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](../../packaging/app-capability-declarations.md).
+**Tip**  To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
 
 This code attempts to set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property of the [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) defined in XAML to the path of a file entered into a [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox).
 
@@ -161,7 +161,7 @@ private void LoadEmbeddedAppFile()
 ### Open local media files
 To open files on the local system or from OneDrive, you can use the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to get the file and [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to set the media source, or you can programmatically access the user media folders.
 
-If your app needs access without user interaction to the **Music** or **Video** folders, for example, if you are enumerating all the music or video files in the user's collection and displaying them in your app, then you need to declare the **Music Library** and **Video Library** capabilities. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+If your app needs access without user interaction to the **Music** or **Video** folders, for example, if you are enumerating all the music or video files in the user's collection and displaying them in your app, then you need to declare the **Music Library** and **Video Library** capabilities. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries).
 
 The [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) does not require special capabilities to access files on the local file system, such as the user's **Music** or **Video** folders, since the user has complete control over which file is being accessed. From a security and privacy standpoint, it is best to minimize the number of capabilities your app uses.
 
@@ -295,7 +295,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) provides numerous properties, methods, and events for controlling audio and video playback through the [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) property. For a full listing of properties, methods, and events, see the [MediaPlayer](/uwp/api/windows.media.playback.mediaplayer) reference page.
 
 ### Advanced media playback scenarios
-For more complex media playback scenarios like playing a playlist, switching between audio languages or creating custom metadata tracks set the [MediaPlayerElement.Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaPlaybackItem](/uwp/api/windows.media.playback.mediaplaybackitem) or a [MediaPlaybackList](/uwp/api/windows.media.playback.mediaplaybacklist). See the [Media playback](../../audio-video-camera/media-playback-with-mediasource.md) page for more information on how to enable various advanced media functionality.
+For more complex media playback scenarios like playing a playlist, switching between audio languages or creating custom metadata tracks set the [MediaPlayerElement.Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaPlaybackItem](/uwp/api/windows.media.playback.mediaplaybackitem) or a [MediaPlaybackList](/uwp/api/windows.media.playback.mediaplaybacklist). See the [Media playback](/windows/uwp/audio-video-camera/media-playback-with-mediasource) page for more information on how to enable various advanced media functionality.
 
 ### Enable full window video rendering
 

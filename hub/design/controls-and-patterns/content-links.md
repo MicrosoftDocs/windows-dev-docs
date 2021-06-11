@@ -159,7 +159,7 @@ The People picker creates a ContentLinkInfo with a Uri that uses the **ms-people
 - If LinkContentKind is not "People", it opens the **People** app. For example, this can happen if you’ve modified the LinkContentKind in the ContentLinkChanged event handler.
 
 > [!TIP]
-> For more info about opening other apps and websites from your app, see the topics under [Launch an app with a Uri](../../launch-resume/launch-app-with-uri.md).
+> For more info about opening other apps and websites from your app, see the topics under [Launch an app with a Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### Invoked
 

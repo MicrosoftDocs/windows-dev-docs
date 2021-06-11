@@ -160,6 +160,6 @@ If you define an Image or ImageBrush using code, use the default constructors, t
 
 ## Related articles
 
--   [Audio, video, and camera](../../audio-video-camera/index.md)
+-   [Audio, video, and camera](/windows/uwp/audio-video-camera/index)
 -   [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image)
 -   [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)

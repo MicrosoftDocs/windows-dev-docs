@@ -123,7 +123,7 @@ Once your code compiles, each collection item will run through the overridden `S
 
 ## DataTemplateSelector performance considerations
 
-When you use a ListView or GridView with a large data collection, scrolling and panning performance can be a concern. To keep large collections performing well, there are some steps you can take to improve the performance of your data templates. These are described in more detail in [ListView and GridView UI optimization](../../debug-test-perf/optimize-gridview-and-listview.md).
+When you use a ListView or GridView with a large data collection, scrolling and panning performance can be a concern. To keep large collections performing well, there are some steps you can take to improve the performance of your data templates. These are described in more detail in [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 - _Element reduction per item_ - Keep the number of UI elements in a data template to a reasonable minimum.
 - Container-recycling with heterogeneous collections

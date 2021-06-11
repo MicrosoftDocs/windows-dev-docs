@@ -352,4 +352,4 @@ public class ListItemData
 - [Touch interactions](../input/touch-interactions.md)
 - [List view and grid view](listview-and-gridview.md)
 - [Item containers and templates](item-containers-templates.md)
-- [Expression animations](../../composition/composition-animation.md)
+- [Expression animations](/windows/uwp/composition/composition-animation)

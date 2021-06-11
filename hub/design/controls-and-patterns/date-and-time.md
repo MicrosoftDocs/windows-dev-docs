@@ -199,7 +199,7 @@ A related concept is the Calendar class, which influences how dates are interpre
 .NET also supports a type named [DateTime](/dotnet/api/system.datetime), which is implicitly convertible to a [DateTimeOffset](/dotnet/api/system.datetimeoffset). So you might see a "DateTime" type being used in .NET code that's used to set values that are really DateTimeOffset. For more info on the difference between DateTime and DateTimeOffset, see Remarks in the [DateTimeOffset](/dotnet/api/system.datetimeoffset) class.
 
 > [!NOTE]
-> Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
+> Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](/windows/uwp/xaml-platform/binding-markup-extension) expression that can access the date as data.
 
 ## Get the sample code
 

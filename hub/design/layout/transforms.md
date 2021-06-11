@@ -57,7 +57,7 @@ If you animate properties to produce an effect similar to a transform in terms o
 
 To target the transform, there must be an existing [**Transform**](/uwp/api/Windows.UI.Xaml.Media.Transform) as the value for [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform). You typically put an element for the appropriate transform type in the initial XAML, sometimes with no properties set on that transform.
 
-You typically use an indirect targeting technique to apply animations to the properties of a transform. For more info about indirect targeting syntax, see [Storyboarded animations](../motion/storyboarded-animations.md) and [Property-path syntax](../../xaml-platform/property-path-syntax.md).
+You typically use an indirect targeting technique to apply animations to the properties of a transform. For more info about indirect targeting syntax, see [Storyboarded animations](../motion/storyboarded-animations.md) and [Property-path syntax](/windows/uwp/xaml-platform/property-path-syntax).
 
 Default styles for controls sometimes define animations of transforms as part of their visual-state behavior. For example, the visual states for [**ProgressRing**](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) use animated [**RotateTransform**](/uwp/api/Windows.UI.Xaml.Media.RotateTransform) values to "spin" the dots in the ring.
 

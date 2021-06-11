@@ -37,7 +37,7 @@ The list is determined at compile time, but you have two options for controlling
   </Resources>
 ```
 
-Each time Visual Studio produces your built app package manifest file (`AppxManifest.xml`), it expands that single `Resource` element in the source file into a union of all the language qualifiers that it finds in your project (see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)). For example, if you've begun localizing and you have string, image, and/or file resources whose folder or file names include "en-US", "ja-JP", and "fr-FR", then your built `AppxManifest.xml` file will contain the following (the first entry in the list is the default language that you set).
+Each time Visual Studio produces your built app package manifest file (`AppxManifest.xml`), it expands that single `Resource` element in the source file into a union of all the language qualifiers that it finds in your project (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)). For example, if you've begun localizing and you have string, image, and/or file resources whose folder or file names include "en-US", "ja-JP", and "fr-FR", then your built `AppxManifest.xml` file will contain the following (the first entry in the list is the default language that you set).
 
 ```xml
   <Resources>
@@ -51,7 +51,7 @@ The other option is to replace that single "x-generate" `<Resource>` element in 
 
 To begin with, your app manifest language list will only contain one language. Perhaps that's en-US. But eventually&mdash;as you either manually configure your manifest, or as you add translated resources to your project&mdash;that list will grow.
 
-When your app is in the Microsoft Store, the languages in the app manifest language list are the ones that are displayed to customers. For a list of BCP-47 language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
+When your app is in the Microsoft Store, the languages in the app manifest language list are the ones that are displayed to customers. For a list of BCP-47 language tags specifically supported by the Microsoft Store, see [Supported languages](/windows/uwp/publish/supported-languages).
 
 In code you can use the [**ApplicationLanguages.ManifestLanguages**](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages) property to access the app manifest language list as a read-only list of strings, where each string is a single BCP-47 language tag.
 
@@ -87,11 +87,11 @@ The app runtime language list determines the resources that Windows loads for yo
 **Note** If the user profile language and the app manifest language are regional variants of one another, then the user's regional variant is used as the app runtime language. For example, if the user prefers en-GB and the app supports en-US, then the app runtime language is en-GB. This ensures that dates, times, and numbers are formatted more closely to the user's expectations (en-GB), but localized resources are still loaded (due to language matching) in the app's supported language (en-US).
 
 ## Qualify resource files with their language
-Name your resource files, or their folders, with language resource qualifiers. To learn more about resource qualifiers, see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md). A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
+Name your resource files, or their folders, with language resource qualifiers. To learn more about resource qualifiers, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast). A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
 
 **Note** Even resources in your app's default language must specify the language qualifier. For example, if your app's default language is English (United States), then qualify your assets as `\Assets\Images\en-US\logo.png`.
 
-- Windows performs complex matching, including across regional variants such as en-US and en-GB. So include the region sub-tag as appropriate. See [How the Resource Management System matches language tags](../../app-resources/how-rms-matches-lang-tags.md).
+- Windows performs complex matching, including across regional variants such as en-US and en-GB. So include the region sub-tag as appropriate. See [How the Resource Management System matches language tags](/windows/uwp/app-resources/how-rms-matches-lang-tags).
 - Specify a language script sub-tag in the qualifier when there is no Suppress-Script value defined for the language. For example, instead of zh-CN or zh-TW, use zh-Hant, zh-Hant-TW, or zh-Hans (for more detail, see the [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)).
 - For languages that have a single standard dialect, there is no need to include the region qualifier. For example, use ja instead of ja-JP.
 - Some tools and other components such as machine translators might find specific language tags, such as regional dialect info, helpful in understanding the data.
@@ -187,7 +187,7 @@ The following table contains examples of what the user would see in your app's U
 </table>
 
 >[!NOTE]
-> For a list of standard country/region codes used by Microsoft, see the [Official Country/Region List](../../publish/supported-languages.md).
+> For a list of standard country/region codes used by Microsoft, see the [Official Country/Region List](/windows/uwp/publish/supported-languages).
 
 ## Important APIs
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -204,10 +204,10 @@ The following table contains examples of what the user would see in your app's U
 ## Related topics
 * [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Supported languages](../../publish/supported-languages.md)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
+* [Supported languages](/windows/uwp/publish/supported-languages)
 * [Globalize your date/time/number formats](use-global-ready-formats.md)
-* [How the Resource Management System matches language tags](../../app-resources/how-rms-matches-lang-tags.md)
+* [How the Resource Management System matches language tags](/windows/uwp/app-resources/how-rms-matches-lang-tags)
 
 ## Samples
 * [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

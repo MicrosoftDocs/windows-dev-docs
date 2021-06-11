@@ -16,14 +16,14 @@ This article introduces new properties that let you animate a XAML UIElement wit
 Prior to Windows 10, version 1809, you had 2 choices to build animations in your UWP apps:
 
 - use XAML constructs like [Storyboarded animations](storyboarded-animations.md), or the _*ThemeTransition_ and _*ThemeAnimation_ classes in the [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation) namespace.
-- use composition animations as described in [Using the Visual Layer with XAML](../../composition/using-the-visual-layer-with-xaml.md).
+- use composition animations as described in [Using the Visual Layer with XAML](/windows/uwp/composition/using-the-visual-layer-with-xaml).
 
 Using the visual layer provides better performance than using the XAML constructs. But using [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) to get the element's underlying composition [Visual](/uwp/api/windows.ui.composition.visual) object, and then animating the Visual with composition animations, is more complex to use.
 
 Starting in Windows 10, version 1809, you can animate properties on a UIElement directly using composition animations without the requirement to get the underlying composition Visual.
 
 > [!NOTE]
-> To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see [Version adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
+> To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 ## Examples
 
@@ -140,5 +140,5 @@ destinationButton.StartAnimation(animation);
 ## Related topics
 
 - [Storyboarded animations](storyboarded-animations.md)
-- [Using the Visual Layer with XAML](../../composition/using-the-visual-layer-with-xaml.md)
+- [Using the Visual Layer with XAML](/windows/uwp/composition/using-the-visual-layer-with-xaml)
 - [Transforms overview](../layout/transforms.md)

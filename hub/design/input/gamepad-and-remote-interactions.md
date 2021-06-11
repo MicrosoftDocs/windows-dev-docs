@@ -373,7 +373,7 @@ public App()
 }
 ```
 
-For more information, including sample code for HTML/JavaScript, see [How to disable mouse mode](../../xbox-apps/how-to-disable-mouse-mode.md).
+For more information, including sample code for HTML/JavaScript, see [How to disable mouse mode](/windows/uwp/xbox-apps/how-to-disable-mouse-mode).
 
 The following diagram shows the button mappings for gamepad/remote in mouse mode.
 

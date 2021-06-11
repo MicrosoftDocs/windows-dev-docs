@@ -98,7 +98,7 @@ As an illustration of how background tasks that are triggered by raw notificatio
 To use a raw notification to trigger a background task, your app must:
 
 1.  Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
-2.  Implement the background task. For more information, see [Support your app with background tasks](../../../launch-resume/support-your-app-with-background-tasks.md)
+2.  Implement the background task. For more information, see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks)
 
 Your background task is then invoked in response to the [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.
 

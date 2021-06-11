@@ -259,7 +259,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 
 ## ContentDialog in AppWindow or Xaml Islands
 
-> NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](../../../debug-test-perf/version-adaptive-apps.md).
+> NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](/windows/apps/desktop/modernize/xaml-islands), you need to manually set the [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
 

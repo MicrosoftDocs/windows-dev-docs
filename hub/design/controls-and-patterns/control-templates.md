@@ -44,10 +44,10 @@ When you create a [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.Contro
 
 This XAML creates a [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) for a [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) that specifies that the content of the control is below the selection box. The root element is a [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border). The example specifies a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) to create an **X** that indicates that a user selected the **CheckBox**, and an [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) that indicates an indeterminate state. Note that the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) is set to 0 on the **Path** and the **Ellipse** so that by default, neither appear.
 
-A [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See [TemplateBinding markup extension](../../xaml-platform/templatebinding-markup-extension.md) for more info.
+A [TemplateBinding](/windows/uwp/xaml-platform/templatebinding-markup-extension) is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See [TemplateBinding markup extension](/windows/uwp/xaml-platform/templatebinding-markup-extension) for more info.
 
 > [!NOTE]
-> Starting with Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), you can use [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md) markup extensions in places you use [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). See [TemplateBinding markup extension](../../xaml-platform/templatebinding-markup-extension.md) for more info.
+> Starting with Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), you can use [**x:Bind**](/windows/uwp/xaml-platform/x-bind-markup-extension) markup extensions in places you use [TemplateBinding](/windows/uwp/xaml-platform/templatebinding-markup-extension). See [TemplateBinding markup extension](/windows/uwp/xaml-platform/templatebinding-markup-extension) for more info.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -190,7 +190,7 @@ The topics that document the styles and templates for XAML controls show you exc
 
 ## Theme resources in control templates
 
-For some of the attributes in the XAML examples, you may have noticed resource references that use the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md). This is a technique that enables a single control template to use resources that can be different values depending on which theme is currently active. This is particularly important for brushes and colors, because the main purpose of the themes is to enable users to choose whether they want a dark, light, or high contrast theme applied to the system overall. Apps that use the XAML resource system can use a resource set that's appropriate for that theme, so that the theme choices in an app's UI are reflective of the user's systemwide theme choice.
+For some of the attributes in the XAML examples, you may have noticed resource references that use the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension). This is a technique that enables a single control template to use resources that can be different values depending on which theme is currently active. This is particularly important for brushes and colors, because the main purpose of the themes is to enable users to choose whether they want a dark, light, or high contrast theme applied to the system overall. Apps that use the XAML resource system can use a resource set that's appropriate for that theme, so that the theme choices in an app's UI are reflective of the user's systemwide theme choice.
 
 ## Get the sample code
 

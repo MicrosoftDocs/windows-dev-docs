@@ -46,7 +46,7 @@ By default, Visual Studio stores your icon assets in an assets subdirectory. Her
 | Badge logo | Your app's tiles | BadgeLogo.png  |
 | Package logo/Store logo | App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
 
-\* Used unless you choose to [display only uploaded images in the Store](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store). 
+\* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 
 To ensure these icons look sharp on every screen, you can create multiple versions of the same icon for different display scale factors. 
 
@@ -69,13 +69,13 @@ Because app icon assets are bitmaps and bitmaps don't scale well, we recommend p
 
 "How do I specify images for my app's listing in the Microsoft Store?"
 
-By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](../../publish/app-screenshots-and-images.md)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
+By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](/windows/uwp/publish/app-screenshots-and-images)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
 
 ![Specifying Store logos during the app submission process](images/app-icons/storelogodisplay.png)
 
 When you check this box, a new section called **Store display images** appears. Here, you can upload 3 image sizes that the Store will use in place of logo images from your app’s packages: 300 x 300, 150 x 150, and 71 x 71 pixels. Only the 300 x 300 size is required, although we recommend providing all 3 sizes.
 
-For more info, see [Display only uploaded logo images in the Store](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store).
+For more info, see [Display only uploaded logo images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).
 
 <!-- ### Fallback images for the Store
 
@@ -90,7 +90,7 @@ If these images aren't provided, the Store will search all matching images of th
 
 The Store may also use your app's tile and other images that you include in your app's package. 
 
-For more information, see [App screenshots, images, and trailers in the Microsoft Store](../../publish/app-screenshots-and-images.md). -->
+For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
 
 
 ## Managing app icons with the Visual Studio Manifest Designer
@@ -247,7 +247,7 @@ Here are the size recommendations for target-based assets, at 100% scale:
 
 
 ## More about splash screen assets
-For more info about splash screens, see [Windows app splash screens](../../launch-resume/splash-screens.md).
+For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens.md).
 
 ## More about badge logo assets
 
@@ -306,4 +306,4 @@ In this example, margins are too tight:
 
 This article described how to create assets for specific scale factors, but you can also create assets for a wide variety of conditions and combinations of conditions. For example, you can can create icons for high contrast displays or for the light themes and dark themes. You can even create assets for specific languages.
 
-For instructions, see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md).
+For instructions, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast).

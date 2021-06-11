@@ -101,7 +101,7 @@ To create these page patterns, you'll need to use a combination of individual co
 <tr class="odd">
 <td align="left">Maps<br/><br/>
     <img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
-<td align="left"><a href="../../maps-and-location/display-maps.md">MapControl</a></td>
+<td align="left"><a href="/windows/uwp/maps-and-location/display-maps">MapControl</a></td>
 <td align="left">Displays a symbolic or photorealistic map of the Earth.</td>
 </tr>
 <tr class="even">

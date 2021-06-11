@@ -20,13 +20,13 @@ dev_langs:
 
  
 
-You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md) or [ThemeResource markup extension](../../xaml-platform/themeresource-markup-extension.md).
+You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) or [ThemeResource markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension).
 
 The XAML elements you might want to declare most often as XAML resources include [Style](/uwp/api/Windows.UI.Xaml.Style), [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), animation components, and [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) subclasses. Here, we explain how to define a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as [MergedDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) and [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
 
 **Prerequisites**
 
-We assume that you understand XAML markup and have read the [XAML overview](../../xaml-platform/xaml-overview.md).
+We assume that you understand XAML markup and have read the [XAML overview](/windows/uwp/xaml-platform/xaml-overview).
 
 ## Define and use XAML resources
 
@@ -77,11 +77,11 @@ Here, both a brush and a string are declared as resources and used by controls i
 
 All resources need to have a key. Usually that key is a string defined with `x:Key="myString"`. However, there are a few other ways to specify a key:
 
--   [Style](/uwp/api/Windows.UI.Xaml.Style) and [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) require a **TargetType**, and will use the **TargetType** as the key if [x:Key](../../xaml-platform/x-key-attribute.md) is not specified. In this case, the key is the actual Type object, not a string. (See examples below)
--   [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) resources that have a **TargetType** will use the **TargetType** as the key if [x:Key](../../xaml-platform/x-key-attribute.md) is not specified. In this case, the key is the actual Type object, not a string.
--   [x:Name](../../xaml-platform/x-name-attribute.md) can be used instead of [x:Key](../../xaml-platform/x-key-attribute.md). However, x:Name also generates a code behind field for the resource. As a result, x:Name is less efficient than x:Key because that field needs to be initialized when the page is loaded.
+-   [Style](/uwp/api/Windows.UI.Xaml.Style) and [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) require a **TargetType**, and will use the **TargetType** as the key if [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) is not specified. In this case, the key is the actual Type object, not a string. (See examples below)
+-   [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) resources that have a **TargetType** will use the **TargetType** as the key if [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) is not specified. In this case, the key is the actual Type object, not a string.
+-   [x:Name](/windows/uwp/xaml-platform/x-name-attribute) can be used instead of [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md). However, x:Name also generates a code behind field for the resource. As a result, x:Name is less efficient than x:Key because that field needs to be initialized when the page is loaded.
 
-The [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md) can retrieve resources only with a string name ([x:Key](../../xaml-platform/x-key-attribute.md) or [x:Name](../../xaml-platform/x-name-attribute.md)). However, the XAML framework also looks for implicit style resources (those which use **TargetType** rather than x:Key or x:Name) when it decides which style & template to use for a control that hasn't set the [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) and [ContentTemplate](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) or [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) properties.
+The [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) can retrieve resources only with a string name ([x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) or [x:Name](/windows/uwp/xaml-platform/x-name-attribute)). However, the XAML framework also looks for implicit style resources (those which use **TargetType** rather than x:Key or x:Name) when it decides which style & template to use for a control that hasn't set the [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) and [ContentTemplate](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) or [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) properties.
 
 Here, the [Style](/uwp/api/Windows.UI.Xaml.Style) has an implicit key of **typeof(Button)**, and since the [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) at the bottom of the page doesn't specify a [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) property, it looks for a style with key of **typeof(Button)**:
 
@@ -110,7 +110,7 @@ For more info about implicit styles and how they work, see [Styling controls](xa
 You access members of the resource dictionary like any other dictionary.
 
 > [!WARNING]
-> When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren’t found in the first dictionary.
+> When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren’t found in the first dictionary.
 
  
 
@@ -361,7 +361,7 @@ You can use the combination of the lookup sequence and lack of unique key enforc
 
 ## Theme resources and theme dictionaries
 
-A [ThemeResource](../../xaml-platform/themeresource-markup-extension.md) is similar to a [StaticResource](../../xaml-platform/staticresource-markup-extension.md), but the resource lookup is reevaluated when the theme changes.
+A [ThemeResource](/windows/uwp/xaml-platform/themeresource-markup-extension) is similar to a [StaticResource](/windows/uwp/xaml-platform/staticresource-markup-extension), but the resource lookup is reevaluated when the theme changes.
 
 In this example, you set the foreground of a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) to a value from the current theme.
 
@@ -371,7 +371,7 @@ In this example, you set the foreground of a [TextBlock](/uwp/api/Windows.UI.Xam
 
 A theme dictionary is a special type of merged dictionary that holds the resources that vary with the theme a user is currently using on his or her device. For example, the "light" theme might use a white color brush whereas the "dark" theme might use a dark color brush. The brush changes the resource that it resolves to, but otherwise the composition of a control that uses the brush as a resource could be the same. To reproduce the theme-switching behavior in your own templates and styles, instead of using [MergedDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) as the property to merge items into the main dictionaries, use the [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) property.
 
-Each [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element within [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) must have an [x:Key](../../xaml-platform/x-key-attribute.md) value. The value is a string that names the relevant theme—for example, "Default", "Dark", "Light", or "HighContrast". Typically, `Dictionary1` and `Dictionary2` will define resources that have the same names but different values.
+Each [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element within [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) must have an [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) value. The value is a string that names the relevant theme—for example, "Default", "Dark", "Light", or "HighContrast". Typically, `Dictionary1` and `Dictionary2` will define resources that have the same names but different values.
 
 Here, you use red text for the light theme and blue text for the dark theme.
 
@@ -416,7 +416,7 @@ In this example, you set the foreground of a [TextBlock](/uwp/api/Windows.UI.Xam
 </Page>
 ```
 
-For theme dictionaries, the active dictionary to be used for resource lookup changes dynamically, whenever [ThemeResource markup extension](../../xaml-platform/themeresource-markup-extension.md) is used to make the reference and the system detects a theme change. The lookup behavior that is done by the system is based on mapping the active theme to the [x:Key](../../xaml-platform/x-key-attribute.md) of a specific theme dictionary.
+For theme dictionaries, the active dictionary to be used for resource lookup changes dynamically, whenever [ThemeResource markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) is used to make the reference and the system detects a theme change. The lookup behavior that is done by the system is based on mapping the active theme to the [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) of a specific theme dictionary.
 
 It can be useful to examine the way that the theme dictionaries are structured in the default XAML design resources, which parallel the templates that the Windows Runtime uses by default for its controls. Open the XAML files in \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic using a text editor or your IDE. Note how the theme dictionaries are defined first in generic.xaml, and how each theme dictionary defines the same keys. Each such key is then referenced by elements of composition in the various keyed elements that are outside the theme dictionaries and defined later in the XAML. There's also a separate themeresources.xaml file for design that contains only the theme resources and extra templates, not the default control templates. The theme areas are duplicates of what you'd see in generic.xaml.
 
@@ -471,7 +471,7 @@ A [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) and Windows 
 -   [Matrix](/uwp/api/Windows.UI.Xaml.Media.Matrix) and [Matrix3D](/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D)
 -   [Point](/uwp/api/Windows.Foundation.Point) values
 -   Certain other UI-related structures such as [Thickness](/uwp/api/Windows.UI.Xaml.Thickness) and [CornerRadius](/uwp/api/Windows.UI.Xaml.CornerRadius)
--   [XAML intrinsic data types](../../xaml-platform/xaml-intrinsic-data-types.md)
+-   [XAML intrinsic data types](/windows/uwp/xaml-platform/xaml-intrinsic-data-types)
 
 You can also use custom types as a shareable resource if you follow the necessary implementation patterns. You define such classes in your backing code (or in runtime components that you include) and then instantiate those classes in XAML as a resource. Examples are object data sources and [IValueConverter](/uwp/api/Windows.UI.Xaml.Data.IValueConverter) implementations for data binding.
 
@@ -505,22 +505,22 @@ You also can remove items from a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.R
 ## ResourceDictionary and localization
 
 
-A XAML [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) might initially contain strings that are to be localized. If so, store these strings as project resources instead of in a **ResourceDictionary**. Take the strings out of the XAML, and instead give the owning element an [x:Uid directive](../../xaml-platform/x-uid-directive.md) value. Then, define a resource in a resources file. Provide a resource name in the form *XUIDValue*.*PropertyName* and a resource value of the string that should be localized.
+A XAML [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) might initially contain strings that are to be localized. If so, store these strings as project resources instead of in a **ResourceDictionary**. Take the strings out of the XAML, and instead give the owning element an [x:Uid directive](/windows/uwp/xaml-platform/x-uid-directive) value. Then, define a resource in a resources file. Provide a resource name in the form *XUIDValue*.*PropertyName* and a resource value of the string that should be localized.
 
 ## Custom resource lookup
 
-For advanced scenarios, you can implement a class that can have different behavior than the XAML resource reference lookup behavior described in this topic. To do this, you implement the class [CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader), and then you can access that behavior by using the [CustomResource markup extension](../../xaml-platform/customresource-markup-extension.md) for resource references rather than using [StaticResource](../../xaml-platform/staticresource-markup-extension.md) or [ThemeResource](../../xaml-platform/themeresource-markup-extension.md). Most apps won't have scenarios that require this. For more info, see [CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader).
+For advanced scenarios, you can implement a class that can have different behavior than the XAML resource reference lookup behavior described in this topic. To do this, you implement the class [CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader), and then you can access that behavior by using the [CustomResource markup extension](/windows/uwp/xaml-platform/customresource-markup-extension) for resource references rather than using [StaticResource](/windows/uwp/xaml-platform/staticresource-markup-extension) or [ThemeResource](/windows/uwp/xaml-platform/themeresource-markup-extension). Most apps won't have scenarios that require this. For more info, see [CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader).
 
  
 ## Related topics
 
 * [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)
-* [XAML overview](../../xaml-platform/xaml-overview.md)
-* [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md)
-* [ThemeResource markup extension](../../xaml-platform/themeresource-markup-extension.md)
+* [XAML overview](/windows/uwp/xaml-platform/xaml-overview)
+* [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension)
+* [ThemeResource markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension)
 * [XAML theme resources](xaml-theme-resources.md)
 * [Styling controls](xaml-styles.md)
-* [x:Key attribute](../../xaml-platform/x-key-attribute.md)
+* [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute.md)
 
  
 

@@ -677,7 +677,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> For the [C++/WinRT](../../cpp-and-winrt-apis/index.md) version of this code example, begin by creating a new project based on the **Blank App (C++/WinRT)** project template, and then add the code in the listing to the indicated source code files. To use the source code exactly as shown in the listing, name your new project *NavigationViewCppWinRT*
+> For the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version of this code example, begin by creating a new project based on the **Blank App (C++/WinRT)** project template, and then add the code in the listing to the indicated source code files. To use the source code exactly as shown in the listing, name your new project *NavigationViewCppWinRT*
 
 ```cppwinrt
 // MainPage.idl
@@ -1016,7 +1016,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 The C# and C++/WinRT code shown above is designed so that you can use the same XAML markup for both versions. However, there is another way of implementing the C++/WinRT version described in this section, which you may prefer.
 
-Below is an alternative version of the **NavView_ItemInvoked** handler. The technique in this version of the handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in examples above; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing values to IInspectable with C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
+Below is an alternative version of the **NavView_ItemInvoked** handler. The technique in this version of the handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in examples above; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(

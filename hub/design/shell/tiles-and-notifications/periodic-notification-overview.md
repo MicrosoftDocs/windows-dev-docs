@@ -64,7 +64,7 @@ The URI is polled only if the device is online. If the network is available but 
 
 ### Handling app updates
 
-If you release an app update that changes your polling URI, you should add a daily [time trigger background task](../../../launch-resume/run-a-background-task-on-a-timer-.md) which calls StartPeriodicUpdate with the new URI to ensure your tiles are using the new URI. Otherwise, if users receive your app update but don't launch your app, their tiles will still be using the old URI, which may fail to display if the URI is now invalid or if the returned payload references local images that no longer exist.
+If you release an app update that changes your polling URI, you should add a daily [time trigger background task](/windows/uwp/launch-resume/run-a-background-task-on-a-timer-) which calls StartPeriodicUpdate with the new URI to ensure your tiles are using the new URI. Otherwise, if users receive your app update but don't launch your app, their tiles will still be using the old URI, which may fail to display if the URI is now invalid or if the returned payload references local images that no longer exist.
 
 ## Expiration of tile and badge notifications
 

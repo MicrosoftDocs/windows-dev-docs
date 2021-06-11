@@ -37,8 +37,8 @@ Cortana supports a complete turn-by-turn workflow with your app. This workflow i
 >
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
-> - [Create your first app](../../get-started/your-first-app.md)
-> - Learn about events with [Events and routed events overview](../../xaml-platform/events-and-routed-events-overview.md)
+> - [Create your first app](/windows/uwp/get-started/your-first-app)
+> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >

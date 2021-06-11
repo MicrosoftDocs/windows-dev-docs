@@ -58,7 +58,7 @@ The **SpatialAudioMode** property can takes these values:
 - **Off**: Spatial audio is always off, even if sound is on.
 - **On**: Spatial audio will always play.
 
-To learn more about spatial audio and how XAML handles it see [AudioGraph - Spatial Audio](../../audio-video-camera/audio-graphs.md#spatial-audio).
+To learn more about spatial audio and how XAML handles it see [AudioGraph - Spatial Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
 ### Sound for TV and Xbox
 

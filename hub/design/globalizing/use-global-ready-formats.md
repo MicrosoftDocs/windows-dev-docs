@@ -45,7 +45,7 @@ If you need to display dates or times yourself then you can use the [**DateTimeF
 
 You can test the code above on your own PC like this.
 
-- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)).
+- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)).
 - Change your user profile language list in **Settings** > **Time & Language** > **Region & language** > **Languages**. Add German (Germany), make it the default, and run the code again.
 
 ## Format dates and times for the user profile language list
@@ -163,7 +163,7 @@ For scenarios where you wish to provide different functionality based solely on 
 
 * [Calendar, date, and time controls](../controls-and-patterns/date-and-time.md)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
 
 ## Samples
 

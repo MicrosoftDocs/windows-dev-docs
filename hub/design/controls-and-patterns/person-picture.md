@@ -177,7 +177,7 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> To keep the code simple, this example creates a new Contact object. In a real app, you'd let the user select a contact or you'd use a [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) to query for a list of contacts. For info on retrieving and managing contacts, see the [Contacts and calendar articles](../../contacts-and-calendar/index.md).
+> To keep the code simple, this example creates a new Contact object. In a real app, you'd let the user select a contact or you'd use a [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) to query for a list of contacts. For info on retrieving and managing contacts, see the [Contacts and calendar articles](/windows/uwp/contacts-and-calendar/index).
 
 ## Determining which info to display
 
@@ -199,5 +199,5 @@ If there isn't an image, the control displays the contact's name or initials; if
 
 ## Related articles
 
-* [Contacts and calendar](../../contacts-and-calendar/index.md)
+* [Contacts and calendar](/windows/uwp/contacts-and-calendar/index)
 * [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)

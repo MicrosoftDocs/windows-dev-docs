@@ -20,11 +20,11 @@ Theme resources in XAML are a set of resources that apply different values depen
 
 ## Theme resources v. static resources
 
-There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](../../xaml-platform/staticresource-markup-extension.md) and [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md).
+There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) and [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension).
 
-Evaluation of a [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
+Evaluation of a [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
 
-In contrast, a [{StaticResource} markup extension](../../xaml-platform/staticresource-markup-extension.md) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
+In contrast, a [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
 
 ## Theme resources in the resource dictionary structure
 
@@ -38,11 +38,11 @@ Follow these guidelines when you define and consume your own custom theme resour
 
 - Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
 
-- Use the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
+- Use the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) in: Styles, Setters, Control templates, Property setters, and Animations.
 
-- Don't use the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Use [{StaticResource} markup extension](../../xaml-platform/staticresource-markup-extension.md) instead.
+- Don't use the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) in your resource definitions inside your [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Use [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) instead.
 
-    EXCEPTION: You can use the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
+    EXCEPTION: You can use the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) to reference resources that are agnostic to the app theme in your [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
 > [!CAUTION]
 > If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting-theme-resources) section.
@@ -446,9 +446,9 @@ For example, consider this theme dictionary definition:
 </ResourceDictionary>
 ```
 
-Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [FrameworkElement.RequestedTheme](/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
+Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) to make sure that `myBrush` points to the right color for your theme. If your app never has [FrameworkElement.RequestedTheme](/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
 
-The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
+The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
 
 To fix this, replace the "Default" dictionary with separate theme dictionaries for both "Light" and "Dark" themes in addition to "HighContrast":
 
@@ -469,13 +469,13 @@ To fix this, replace the "Default" dictionary with separate theme dictionaries f
 </ResourceDictionary>
 ```
 
-However, problems still occur if any of these resources are referenced in inherited properties like [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
+However, problems still occur if any of these resources are referenced in inherited properties like [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
 
-As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
+As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
 
 At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.
 
-To fix this problem, use the [{StaticResource} markup extension](../../xaml-platform/staticresource-markup-extension.md) instead of [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md). With the guidelines applied, the theme dictionaries look like this:
+To fix this problem, use the [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) instead of [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension). With the guidelines applied, the theme dictionaries look like this:
 
 ```XAML
 <ResourceDictionary>
@@ -493,4 +493,4 @@ To fix this problem, use the [{StaticResource} markup extension](../../xaml-plat
 </ResourceDictionary>
 ```
 
-Notice that the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](../../xaml-platform/staticresource-markup-extension.md). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.
+Notice that the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.

@@ -324,7 +324,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 4. Here, we check if the device is viable in `IsSupportedDevice` and, if so, attempt to enable gaze tracking in `TryEnableGazeTrackingAsync`.
 
-    In `TryEnableGazeTrackingAsync`, we declare the gaze event handlers, and call [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) to get a reference to the input source (this must be called on the UI thread, see [Keep the UI thread responsive](../../debug-test-perf/keep-the-ui-thread-responsive.md)).
+    In `TryEnableGazeTrackingAsync`, we declare the gaze event handlers, and call [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) to get a reference to the input source (this must be called on the UI thread, see [Keep the UI thread responsive](/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)).
 
     > [!NOTE]
     > You should call [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) only when a compatible eye-tracking device is connected and required by your application. Otherwise, the consent dialog is unnecessary.
