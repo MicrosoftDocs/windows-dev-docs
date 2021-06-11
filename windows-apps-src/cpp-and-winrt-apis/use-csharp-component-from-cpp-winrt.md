@@ -207,7 +207,7 @@ In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppT
 ...
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Platform)'='ARM64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Platform)'=='ARM64'" Label="Configuration">
     <UseDotNetNativeToolchain Condition="'$(UseDotNetNativeToolchain)'==''">true</UseDotNetNativeToolchain>
   </PropertyGroup>
 ```

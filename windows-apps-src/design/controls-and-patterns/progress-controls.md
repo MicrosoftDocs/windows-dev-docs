@@ -166,13 +166,13 @@ When it is not known how long the operation will take, use an indeterminate Prog
 
 **ProgressRing - Indeterminate**
 
-![ProgressRing indeterminate example](images/PR_IndeterminateExample.png)
+![ProgressRing indeterminate example](images/progress-ring-indeterminate-example.png)
 
 The indeterminate ProgressRing is used when any further user interaction with the app is halted, or the app is waiting for the user's input to continue. The "signing in…" example above is a perfect scenario for the ProgressRing, the user cannot continue using the app until the sign is has completed.
 
 **ProgressRing - Determinate**
 
-![ProgressRing determinate example](images/progress_ring_determinate_example.png)
+![ProgressRing determinate example](images/progress-ring-determinate-example.png)
 
 When the duration of the operation is known and the ring visual is desired, when installing, downloading, setting up, etc; a determinate ProgressRing is best.
 

@@ -12,11 +12,11 @@ ms.custom: 19H1
 
 # Call Windows Runtime APIs in desktop apps
 
-You can use Universal Windows Platform (UWP) APIs to add modern experiences to your desktop apps that light up for Windows 10 users.
+You can use Windows Runtime (WinRT) APIs to add modern experiences to your desktop apps that light up for Windows 10 users.
 
 First, set up your project with the required references. Then, call Windows Runtime APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
 
-Some Windows Runtime APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available Windows Runtime APIs](desktop-to-uwp-supported-api.md).
+Some Windows Runtime APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
 
 ## Modify a .NET project to use Windows Runtime APIs
 
@@ -138,7 +138,7 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
 4. Save your changes and close the project file.
 
-## Modify a C++ Win32 project to use Windows Runtime APIs
+## Modify a C++ desktop (Win32) project to use Windows Runtime APIs
 
 Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
@@ -147,7 +147,7 @@ To configure your project for C++/WinRT:
 * For new projects, you can install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension.
 * For existing projects, you can install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package in the project.
 
-For more details about these options, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more details about these options, see [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Add Windows 10 experiences
 

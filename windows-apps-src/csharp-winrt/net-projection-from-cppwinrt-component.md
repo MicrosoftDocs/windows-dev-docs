@@ -224,7 +224,7 @@ To consume the projected **SimpleMathComponent**, you can simply add a reference
     </ItemGroup>
     ```
 
-    Note that for this walkthrough, the NuGet restore path for the **SimpleMathComponent** assumes that both solution files are in the same directory. Alternatively, you can [add a local NuGet package feed](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
+    Note that for this walkthrough, the NuGet restore path for the **SimpleMathComponent** assumes that both solution files are in the same directory. Alternatively, you can [add a local NuGet package feed](/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
 
 4. Edit the **Program.cs** file to use the functionality provided by **SimpleMathComponent**.
 

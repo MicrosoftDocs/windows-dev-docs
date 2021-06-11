@@ -22,7 +22,7 @@ The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user in
 
 WinUI 3 is available as part of [Project Reunion](../project-reunion/index.md). It includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
-For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
+For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/set-up-your-development-environment.md). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 
@@ -84,11 +84,11 @@ You can use these project templates to build pieces of a C++ UWP app.
 | DLL (Universal Windows) | A project for creating a dynamic-link library (DLL) in C++/CX that can be used in a UWP app. For more information, see [DLLs (C++/CX)](/cpp/cppcx/dlls-c-cx). |
 | Static Library (Universal Windows) | A project for creating a static library (LIB) in C++/CX that can be used in a UWP app. For more information, see [Static libraries (C++/CX)](/cpp/cppcx/static-libraries-c-cx). |
 
-## C++/Win32 templates
+## C++ desktop (Win32) templates
 
 Visual Studio provides a variety of project templates for building desktop Windows apps with native C++ and direct access to the Win32 API. To use these project templates, you must include the **Desktop development with C++** workload when you install Visual Studio. This workload includes project templates for building desktop apps, console apps, and libraries.
 
-### Project templates for desktop apps
+### Project templates for C++ desktop apps
 
 To access the C++ project templates for classic desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
 
@@ -100,7 +100,7 @@ To access the C++ project templates for classic desktop apps when you create a n
 | Windows Desktop Wizard | Provides a step-by-step wizard you can use to create one of the following types of projects: a classic Windows desktop app, a console app, a dynamic-link library (DLL), or a static library. For more information, see [Windows Desktop Wizard](/cpp/windows/windows-desktop-wizard) and [Walkthrough: Create a traditional Windows Desktop application](/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp).         |
 | Windows Application Packaging Project | Creates a project that you can use to build a desktop app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. For more information, see [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).  |
 
-### Project templates for console apps
+### Project templates for C++ console apps
 
 To access the C++ project templates for console apps, filter the language to **C++**, the platform to **Windows**, and the project type to **Console**.
 
@@ -112,7 +112,7 @@ To access the C++ project templates for console apps, filter the language to **C
 | Console App | Creates a console app without a user interface. For more information, see [Walkthrough: Creating a Standard C++ Program](/cpp/windows/walkthrough-creating-a-standard-cpp-program-cpp). |
 | Empty Project | An empty project for creating an application, library, or DLL. You must add any code or resources required. |
 
-### Project templates for libraries
+### Project templates for C++ libraries
 
 To access the C++ project templates for libraries, filter the language to **C++**, the platform to **Windows**, and the project type to **Library**.
 
@@ -123,7 +123,7 @@ To access the C++ project templates for libraries, filter the language to **C++*
 | Dynamic-Link Library (DLL) | A project for creating a dynamic-link library (DLL). For more information, see [Walkthrough: Creating and using a dynamic link library](/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp). |
 | Static Library | A project for creating a static library (LIB). For more information, see [Walkthrough: Create and use a static library](/cpp/build/walkthrough-creating-and-using-a-static-library-cpp). |
 
-### Item templates for native C++ and Win32
+### Item templates for C++ desktop apps
 
 The C++ project templates for include many item templates that you can use to perform tasks like adding new files and resources to your project. For a comprehensive list, see [Using Visual C++ Add New Item Templates](/cpp/build/reference/using-visual-cpp-add-new-item-templates).
 
@@ -139,8 +139,8 @@ You can use these project templates to create apps using C# and .NET.
 
 | Template | Description |
 |----------|----------|
-| WPF App (.NET Core) | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET Core](/dotnet/core/). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
+| WPF Application | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET 5](/dotnet/core/dotnet-five) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
 | WPF App (.NET Framework) | Creates a [WPF](/dotnet/framework/wpf/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Tutorial: Create your first WPF application](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application). |
-| Windows Forms App (.NET Core) | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET Core](/dotnet/core/).  |
+| Windows Forms App | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET 5](/dotnet/core/dotnet-five) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1).  |
 | Windows Forms App (.NET Framework) | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Create a Windows Forms app in Visual Studio with C#](/visualstudio/ide/create-csharp-winform-visual-studio). |
 | Windows Application Packaging Project | Creates a project that you can use to build a WPF or Windows Forms app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. For more information, see [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). |

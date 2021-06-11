@@ -16,7 +16,7 @@ There are multiple paths for developing an Android device app using the Windows 
 - [Native Android](native-android.md)
 - [Xamarin.Android](xamarin-android.md)
 - [Xamarin.Forms](xamarin-forms.md)
-- [React Native](react-native.md)
+- [React Native](../dev-environment/javascript/react-native-for-android.md)
 - [Cordova, Ionic, or PhoneGap](pwa.md)
 - [C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development)
 
@@ -56,7 +56,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 - Uses common user controls like Button, Label, Entry, ListView, StackLayout, Calendar, TabbedPage, etc. Create a Button and Xamarin Forms will figure out how to call the native button for each platform using the Binding Library to call Java or Swift code from C#.
 - Great for simple apps, like internal or Line Of Business (LOB) apps, prototypes or MVPs. Any app that can look somewhat standard or generic, utilizing a simple user interface.
 
-[React Native](react-native.md)
+[React Native](../dev-environment/javascript/react-native-for-android.md)
 
 - UI code: JavaScript
 - Logic code: JavaScript
@@ -75,16 +75,16 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ## Game development
 
-Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](/cpp/cross-platform/?view=vs-2019), along with the Android [Native Development Kit (NDK)](/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development).
+Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](/cpp/cross-platform/), along with the Android [Native Development Kit (NDK)](/cpp/cross-platform/create-an-android-native-activity-app), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development).
 
-Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
+Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](/visualstudio/cross-platform/visual-studio-tools-for-unity), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
 
 ## Next steps
 
 - [Get started with native Android development on Windows](native-android.md)
 - [Get started developing for Android using Xamarin.Android](xamarin-android.md)
 - [Get started developing for Android using Xamarin.Forms](xamarin-forms.md)
-- [Get started developing for Android using React Native](react-native.md)
+- [Get started developing for Android using React Native](../dev-environment/javascript/react-native-for-android.md)
 - [Get started developing a PWA for Android](pwa.md)
 - [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 - [Add Windows Defender exclusions to improve performance](defender-settings.md)

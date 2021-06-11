@@ -201,6 +201,8 @@ The **Enter** key can perform a variety of common user interactions, depending o
 
 ![enter key](images/keyboard/enter-key.png)
 
+#### Esc key
+
 The Esc key lets a user cancel transient UI (along with any ongoing actions in that UI).
 
 Examples of this experience include:

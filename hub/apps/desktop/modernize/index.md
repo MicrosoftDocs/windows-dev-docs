@@ -23,8 +23,8 @@ The Windows UI Library is a set of NuGet packages that provide controls and othe
 
 You can use WinUI in the following ways in desktop apps:
 
-* You can update existing WPF, Windows Forms, and C++/Win32 apps with [XAML Islands](xaml-islands.md) and host WinUI 2.x controls.
-* Use [WinUI 3](../../winui/winui3/index.md) to create managed [C#/.NET 5 and native C++/Win32 desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
+* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2.x controls.
+* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
 
 See [Windows UI (WinUI) Library](../../winui/index.md).
 
@@ -44,19 +44,19 @@ For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/d
 
 ## Windows Runtime APIs
 
-You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
 
 For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
 
 ## Host WinRT XAML controls (XAML Islands)
 
-Starting with the Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ Win32 app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
+Starting with the Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
 
 For more information, see [WinRT XAML controls in desktop apps](xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
-You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
+You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 
@@ -73,7 +73,7 @@ There are several ways to grant identity to a desktop app:
 
 ## WinRT XAML controls optimized for desktop apps
 
-Whether you're building a UWP app that exclusively targets the desktop device family or you want to use WinRT XAML controls in a WPF, Windows Forms, or C++ Win32 desktop app, the following new and updated WinRT XAML controls are designed to offer desktop-optimized experiences with the [Fluent Design System](/windows/uwp/design/fluent-design-system/index). These controls were introduced in Windows 10, version 1809 (the October 2018 Update, or version 10.0.17763).
+Whether you're building a UWP app that exclusively targets the desktop device family or you want to use WinRT XAML controls in a WPF, Windows Forms, or C++ desktop app, the following new and updated WinRT XAML controls are designed to offer desktop-optimized experiences with the [Fluent Design System](/windows/uwp/design/fluent-design-system/index). These controls were introduced in Windows 10, version 1809 (the October 2018 Update, or version 10.0.17763).
 
 | Control |  Description |
 |------ |--------------|

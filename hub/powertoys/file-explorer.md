@@ -1,9 +1,10 @@
 ---
 title: PowerToys File Explorer utility for Windows 10
 description: A File Explorer add on that enables Markdown and SVG previews
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer]
 ---
 
 # File Explorer add-ons utility

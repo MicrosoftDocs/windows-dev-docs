@@ -634,20 +634,9 @@ namespace MediaPlayer_Win10
                     {
 
                         mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
-
-                        //Rect subtitleTargetRect = new Rect(0, 0, inputBitmap.Bounds.Width, inputBitmap.Bounds.Bottom * .1);
                         Rect subtitleTargetRect = new Rect(0, 0, 100, 100);
 
-                        mediaPlayer.RenderSubtitlesToSurface(inputBitmap);//, subtitleTargetRect);
-
-                        //var gaussianBlurEffect = new GaussianBlurEffect
-                        //{
-                        //    Source = inputBitmap,
-                        //    BlurAmount = 5f,
-                        //    Optimization = EffectOptimization.Speed
-                        //};
-
-                        //ds.DrawImage(gaussianBlurEffect);
+                        mediaPlayer.RenderSubtitlesToSurface(inputBitmap);
 
                         ds.DrawImage(inputBitmap);
                     }

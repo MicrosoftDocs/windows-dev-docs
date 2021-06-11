@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Host WinRT XAML controls in desktop apps (XAML Islands)
 
-Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ Win32 applications with the latest Windows 10 UI features that are only available via WinRT XAML controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ Win32 applications.
+Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ desktop (Win32) applications with the latest Windows 10 UI features that are only available via WinRT XAML controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ desktop applications.
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
 
@@ -97,15 +97,15 @@ To use these controls, install one of these NuGet packages:
 * WPF: [Microsoft.Toolkit.Wpf.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView)
 * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView)
 
-## C++ Win32 applications
+## C++ desktop (Win32) applications
 
-The XAML Island .NET controls are not supported in C++ Win32 applications. These applications must instead use the *UWP XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
+The XAML Island .NET controls are not supported in C++ desktop applications. These applications must instead use the *UWP XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
 
-The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ Win32 application can use to host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). You can host WinRT XAML controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
+The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ desktop application can use to host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). You can host WinRT XAML controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
 
-* [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a standard WinRT XAML control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
-* [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
+* [Using the UWP XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
+* [Host a standard WinRT XAML control in a C++ desktop app](host-standard-control-with-xaml-islands-cpp.md)
+* [Host a custom WinRT XAML control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > The wrapped controls and host controls in the Windows Community Toolkit use the UWP XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the UWP XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the UWP XAML hosting API directly because they abstract away many of the implementation details of using the API.
@@ -128,7 +128,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 
-:heavy_check_mark: To support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ Win32 app, your app must use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+:heavy_check_mark: To support the [Share contract](/windows/uwp/app-to-app/share-data) from a WPF, Windows Forms, or C++ desktop (Win32) app, your app must use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface to get the [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the [ShareSource sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
 
 :heavy_check_mark: Using `x:Bind` with hosted controls in XAML Islands is not supported. You'll have to declare the data model in a .NET Standard library.
 
@@ -176,5 +176,5 @@ For a sample that demonstrates how to use this interface in a WPF app, see the [
 For more background information and tutorials about using XAML Islands, see the following articles and resources:
 
 * [Modernize a WPF app tutorial](modernize-wpf-tutorial.md): This tutorial provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add WinRT XAML controls to an existing WPF line-of-business application. This tutorial includes the complete code for the WPF application as well as detailed instructions for each step in the process.
-* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples): This repo contains Windows Forms, WPF, and C++/Win32 samples that demonstrate how to use XAML Islands.
+* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples): This repo contains Windows Forms, WPF, and C++ desktop (Win32) samples that demonstrate how to use XAML Islands.
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): This blog post discusses many common questions about XAML Islands and provides a detailed development roadmap.

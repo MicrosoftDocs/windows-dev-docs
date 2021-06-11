@@ -1,5 +1,5 @@
 ---
-description: This guide shows you how to get starting creating .NET and C++/Win32 desktop apps with a WinUI 3 UI.
+description: This guide shows you how to get starting creating .NET and C++ desktop (Win32) apps with a WinUI 3 UI.
 title: Get started with WinUI 3 for desktop apps
 ms.date: 03/19/2021
 ms.topic: article
@@ -12,15 +12,15 @@ ms.custom: 19H1
 
 # Get started with WinUI 3 for desktop apps
 
-WinUI 3 - Project Reunion 0.5 includes project templates that enable you to create managed C#/.NET 5 and native C++/Win32 desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+WinUI 3 - Project Reunion 0.5 includes project templates that enable you to create managed C# .NET 5 apps and native C++ desktop (Win32) apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
 
 WinUI 3 ships as a part of the Project Reunion package. For more on Project Reunion, see [Build desktop Windows apps with Project Reunion 0.5 (March 2021)](../../project-reunion/index.md).
 
 ## Prerequisites
 
-To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install the Project Reunion 0.5 Visual Studio extension. For details, see [Set up your development environment](../../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment).
+To use the WinUI 3 for desktop project templates described in this article, configure your development computer and install the Project Reunion 0.5 Visual Studio extension. For details, see [Set up your development environment](../../project-reunion/set-up-your-development-environment.md).
 
-## Create a WinUI 3 desktop app for C# and .NET 5
+## Create a WinUI 3 desktop app with C# and .NET 5
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 
@@ -46,13 +46,15 @@ To use the WinUI 3 for desktop project templates described in this article, conf
 
         ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file.](images/WinUI-csharp-packageproject.png)
 
-7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+7. In order to receive all of the fixes from the latest stable release of Project Reunion 0.5, you'll need to update your app's project file to explicitly set your .NET SDK to the latest version. For more information, see [.NET SDK references](../../project-reunion/release-channels.md#net-sdk-references).
+
+8. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
 
     ![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](images/winui3-addnewitem.png)
 
-8. Build and run your solution to confirm that the app runs without errors.
+9. Build and run your solution to confirm that the app runs without errors.
 
-## Create a WinUI 3 desktop app for C++/Win32
+## Create a WinUI 3 desktop app with C++
 
 1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
 

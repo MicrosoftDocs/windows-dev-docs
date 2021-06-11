@@ -123,7 +123,7 @@ The date properties can't be set as a XAML attribute string, because the Windows
 - [DateTime](/uwp/api/windows.foundation.datetime): Instantiate a [Windows.Globalization.Calendar](/uwp/api/windows.globalization.calendar) object (it is initialized to the current date). Set [Year](/uwp/api/windows.globalization.calendar.year), or call [AddYears](/uwp/api/windows.globalization.calendar.addyears), to adjust the date. Then, call [Calendar.GetDateTime](/uwp/api/windows.globalization.calendar.getdatetime) and use the returned `DateTime` to set the date property.
 - [DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&preserve-view=true): Call the  constructor. For the inner [System.DateTime](/dotnet/api/system.datetime?view=dotnet-uwp-10.0&preserve-view=true), use the  constructor signature. Or, construct a default [DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&preserve-view=true) (it is initialized to the current date) and call [AddYears](/dotnet/api/system.datetimeoffset.addyears?view=dotnet-uwp-10.0&preserve-view=true).
 
-Another possible technique is to define a date that's available as a data object or in the data context, then set the date property as a XAML attribute that references a [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension) that can access the date as data.
+Another possible technique is to define a date that's available as a data object or in the data context, then set the date property as a XAML attribute that references a [{Binding} markup extension](../../xaml-platform/binding-markup-extension.md) that can access the date as data.
 
 > [!NOTE]
 > For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
@@ -156,7 +156,7 @@ public MainPage()
 
 To use the date value in your app, you typically use a data binding to the [SelectedDate](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate) property, or handle the [SelectedDateChanged](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddatechanged) event.
 
-> For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](/windows/uwp/design/controls-and-patterns/date-and-time#use-a-date-picker-and-time-picker-together).
+> For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
 
 Here, you use a `DatePicker` to let a user select their arrival date. You handle the `SelectedDateChanged` event to update a [DateTime](/uwp/api/windows.foundation.datetime) instance named `arrivalDateTime`.
 

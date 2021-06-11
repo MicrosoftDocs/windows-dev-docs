@@ -56,7 +56,7 @@ Using the right elements in a command interface can make the difference between 
 	:::column span="2":::
 <b>Lists</b>
 
-<a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+<a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in an interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
 :::row-end:::
 
 :::row:::

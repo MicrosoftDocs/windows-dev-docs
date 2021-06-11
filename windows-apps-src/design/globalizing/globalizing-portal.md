@@ -61,6 +61,6 @@ Most localization teams use special tools to aid the process. For example, by re
 | [International fonts](loc-international-fonts.md) | This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English. |
 | [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
 | [Use the Multilingual App Toolkit 4.0](use-mat.md) | The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 and later to provide Windows apps with translation support, translation file management, and editor tools. |
-| [Multilingual App Toolkit 4.0 FAQ & troubleshooting](mat-faq-troubleshooting.md) | This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0. |
+| [Multilingual App Toolkit 4.0 FAQ & troubleshooting](mat-faq-troubleshooting.yml) | This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0. |
 | [Use the UTF-8 code page](use-utf8-code-page.md) | UTF-8 is the universal code page for internationalization. |
 | [Prepare your application for the Japanese era change](japanese-era-change.md) | Learn about the May 2019 Japanese era change and how to prepare your application. |

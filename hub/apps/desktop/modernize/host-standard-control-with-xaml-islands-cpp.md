@@ -1,6 +1,6 @@
 ---
-description: This article demonstrates how to host a standard WinRT XAML control in a C++ Win32 app by using the XAML Hosting API.
-title: Host a standard WinRT XAML control in a C++ Win32 app using XAML Islands
+description: This article demonstrates how to host a standard WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.
+title: Host a standard WinRT XAML control in a C++ desktop (Win32) app using XAML Islands
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Host a standard WinRT XAML control in a C++ Win32 app
+# Host a standard WinRT XAML control in a C++ desktop (Win32) app
 
-This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard WinRT XAML control (that is, a control provided by the Windows SDK) in a new C++ Win32 app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ Win32 app project, you can adapt these steps and code examples for your project.
+This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a standard WinRT XAML control (that is, a control provided by the Windows SDK) in a new C++ desktop app. The code is based on the [simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), and this section discusses some of the most important parts of the code. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.
 
 > [!NOTE]
-> The scenario demonstrated in this article doesn't support directly editing XAML markup for WinRT XAML controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted controls via code. For instructions that enable you to directly edit XAML markup when hosting WinRT XAML controls, see [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md).
+> The scenario demonstrated in this article doesn't support directly editing XAML markup for WinRT XAML controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted controls via code. For instructions that enable you to directly edit XAML markup when hosting WinRT XAML controls, see [Host a custom WinRT XAML control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md).
 
 ## Create a desktop application project
 
@@ -29,7 +29,7 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
     2. Select the **Browse** tab, search for the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) package, and install the latest version of this package.
 
     > [!NOTE]
-    > For new projects, you can alternatively install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension. For more details, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+    > For new projects, you can alternatively install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension. For more details, see [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 4. On the **Browse** tab of the **NuGet Package Manager** window, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
 
@@ -270,7 +270,7 @@ The following steps and code examples demonstrate how to do implement the above 
 
 For complete examples that demonstrate using the XAML hosting API to host a WinRT XAML control, see the following code files:
 
-* **C++ Win32:** See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/Contoso/App/XamlBridge.cpp) file in the [XAML Islands code samples repo](https://github.com/microsoft/Xaml-Islands-Samples).
+* **C++ desktop (Win32):** See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/Contoso/App/XamlBridge.cpp) file in the [XAML Islands code samples repo](https://github.com/microsoft/Xaml-Islands-Samples).
 * **WPF:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.  
 * **Windows Forms:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.
 
@@ -285,30 +285,30 @@ The following instructions show you how to package the all the components in the
 
 1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
-2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the C++/Win32 desktop application project in your solution and click **OK**.
+2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the C++ desktop application project in your solution and click **OK**.
 
 3. Build and run the packaging project. Confirm that the app runs and displays the WinRT XAML controls as expected.
 
 ## Next steps
 
-The code examples in this article get you started with the basic scenario of hosting a standard WinRT XAML control in a C++ Win32 app. The following sections introduce additional scenarios that your application may need to support.
+The code examples in this article get you started with the basic scenario of hosting a standard WinRT XAML control in a C++ desktop app. The following sections introduce additional scenarios that your application may need to support.
 
 ### Host a custom WinRT XAML control
 
-For many scenarios, you may need to host a custom UWP XAML control that contains several individual controls that work together. The process for hosting a custom control (either a control you define yourself or a control provided by a 3rd party) in a C++ Win32 app is more complex than hosting a standard control, and requires additional code.
+For many scenarios, you may need to host a custom UWP XAML control that contains several individual controls that work together. The process for hosting a custom control (either a control you define yourself or a control provided by a 3rd party) in a C++ desktop app is more complex than hosting a standard control, and requires additional code.
 
-For a complete walkthrough, see [Host a custom WinRT XAML control in a C++ Win32 app using the XAML Hosting API](host-custom-control-with-xaml-islands-cpp.md).
+For a complete walkthrough, see [Host a custom WinRT XAML control in a C++ desktop app using the XAML Hosting API](host-custom-control-with-xaml-islands-cpp.md).
 
 ### Advanced scenarios
 
 Many desktop applications that host XAML Islands will need to handle additional scenarios in order to provide a smooth user experience. For example, desktop applications may need to handle keyboard input in XAML Islands, focus navigation between XAML Islands and other UI elements, and layout changes.
 
-For more information about handling these scenarios and pointers to related code samples, see [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md).
+For more information about handling these scenarios and pointers to related code samples, see [Advanced scenarios for XAML Islands in C++ desktop apps](advanced-scenarios-xaml-islands-cpp.md).
 
 ## Related topics
 
 * [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
-* [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a custom WinRT XAML control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
-* [Advanced scenarios for XAML Islands in C++ Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
+* [Using the UWP XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
+* [Host a custom WinRT XAML control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md)
+* [Advanced scenarios for XAML Islands in C++ desktop apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)

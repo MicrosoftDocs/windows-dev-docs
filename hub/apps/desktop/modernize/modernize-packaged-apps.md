@@ -19,10 +19,6 @@ If you want to update your desktop app with [modern Windows 10 experiences](inde
 
 If your desktop app has package identity, you can use the following features in your app.
 
-## Use Windows Runtime APIs that require package identity
-
-The following list of Windows Runtime APIs require package identity to be used in a desktop app: [list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
-
 ## Integrate with package extensions
 
 If your application needs to integrate with the system (For example: establish firewall rules), describe those things in the package manifest of your application and the system will do the rest. For most of these tasks, you won't have to write any code at all. With a bit of XML in the manifest, you can do things like start a process when the user logs on, integrate your application into File Explorer, and add your application a list of print targets that appear in other apps.

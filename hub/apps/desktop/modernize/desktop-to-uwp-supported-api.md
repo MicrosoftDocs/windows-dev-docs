@@ -1,7 +1,7 @@
 ---
-description: Packaged desktop apps can use a wide range of Windows Runtime APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
-title: Windows Runtime APIs available to a packaged desktop app (Desktop Bridge)
-ms.date: 04/19/2019
+description: This article describes the WinRT APIs that are not supported for use in desktop apps.
+title: Windows Runtime APIs not supported in desktop apps
+ms.date: 04/23/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
@@ -11,42 +11,104 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Windows Runtime APIs available to desktop apps
+# Windows Runtime APIs not supported in desktop apps
 
-Desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your desktop app can use.
+Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
-Many Windows Runtime APIs require [package identity](modernize-packaged-apps.md) to be used in a desktop app. Most Windows Runtime APIs work well apps that have package identity. However, some feature areas are not yet fully tested or currently functioning as intended.
+* APIs that have dependencies on UI features that were designed for use only in UWP apps.
+* APIs that require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-| Feature area | Details |
-|--------------|---------|
-| Appointments, contacts, and emails | Not all APIs are currently supported. |
-| Authentication and user identity | Not all APIs are currently supported. |
-| Background tasks | While desktop apps can register background tasks, only fully UWP apps can run <i>as</i> a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
-| Bluetooth | Not all APIs are currently supported. |
-| Chat and phone calls | Desktop apps cannot run on mobile until they are fully ported to UWP. |
-| Contract activation | Only full UWP apps can be activated by a contract. |
-| Cryptography | Not all APIs are currently supported. |
-| Geolocation | Not all APIs are currently supported. |
-| File and folder pickers | Apps with identity have full file system access and do not need UWP pickers. |
-| Media | Not all APIs are currently supported. |
-| Point of service | Not all APIs are currently supported. |
-| Smart cards | Not all APIs are currently supported. |
-| PlayReady | Not all APIs are currently supported. |
-| VPN | Not all APIs are currently supported. |
-| Wallet | Desktop apps cannot run on mobile until they are fully ported to UWP. |
-| XAML UI | Windows 10, version 1809, and earlier releases do not support hosting UWP XAML content in desktop apps. Starting in Windows 10, version 1903, you can use [XAML Islands](xaml-islands.md) to host UWP XAML content.  |
+This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via COM interfaces that are available in the Windows SDK.
 
-Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become available in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead.
+This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
-## List of APIs
+## APIs that have dependencies on UWP-only UI features
 
-The following is a full list of Windows Runtime APIs supported in desktop apps. You can view [APIs supported only in apps with package identity](#new) or [APIs supported in all desktop apps](#both).
+Some WinRT APIs were designed specifically for UI scenarios in UWP apps. These APIs do not behave properly in desktop apps due to threading models and other platform differences. These APIs, and other WinRT APIs that have dependencies them, are not supported for use in desktop apps.
 
-For examples on how to use Windows Runtime APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
+### Core unsupported classes
 
-<a id="new"></a>
+The following WinRT classes are not supported in desktop apps.
 
-### APIs supported only in apps with package identity
+|  Class  |  Alternative APIs |
+|---------|-------------------|
+| [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) | None |
+| [CoreApplicationView](/uwp/api/windows.applicationmodel.core.coreapplicationview) | Use the [Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3 instead. |
+| [CoreApplicationViewTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)  |  Instead of the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) property, use the [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) property provided by WinUI 3 instead. |
+| [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) | Use the [Microsoft.UI.Xaml.Window.DispatcherQueue](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property provided by WinUI 3 instead.<br/><br/>Note that the [Windows.UI.Xaml.Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) and [Windows.UI.Xaml.DependencyObject.Dispatcher](/uwp/api/Windows.UI.Xaml.DependencyObject.Dispatcher) properties return `null` in desktop apps.  |
+| [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [KeyboardInput.GetKeyStateForCurrentThread](/windows/winui/api/microsoft.ui.input.keyboardinput.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/winui/api/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) to access this property. |
+| [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [IUserActivitySourceHostInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in useractivityinterop.h). |
+
+### Classes with GetForCurrentView methods
+
+Many WinRT classes have a static `GetForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `GetForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `GetForCurrentView` methods are supported either. Note that some unsupported `GetForCurrentView` methods will not only return **null**, but will also throw exceptions.
+
+> [!NOTE]
+> One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
+
+The following classes are not supported in desktop apps because they have `GetForCurrentView` methods. This list may not be comprehensive.
+
+|  Class  |  Alternative APIs |
+|---------|-------------------|
+| [AccountsSettingsPane](/uwp/api/windows.ui.applicationsettings.accountssettingspane) | Use the [IAccountsSettingsPaneInterop](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop) COM interface instead (in accountssettingspaneinterop.h). |
+| [AppCapture](/uwp/api/windows.media.capture.appcapture) | None |
+| [BrightnessOverride](/uwp/api/windows.graphics.display.brightnessoverride) | None |
+| [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) | None |
+| [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) | Use the [IDragDropManagerInterop](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop) COM interface instead (in dragdropinterop.h). |
+| [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) | None |
+| [CoreTextServicesManager](/uwp/api/windows.ui.text.core.coretextservicesmanager) | This class is currently supported in desktop apps only in Windows Insider Preview builds. |
+| [CoreWindowResizeManager](/uwp/api/windows.ui.core.corewindowresizemanager) | None |
+| [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) | Use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interface instead (in shobjidl_core.h). |
+| [DisplayEnhancementOverride](/uwp/api/windows.graphics.display.displayenhancementoverride) | None |
+| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | Instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>Instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.  |
+| [EdgeGesture](/uwp/api/windows.ui.input.edgegesture) | None |
+| [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
+| [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
+| [HolographicKeyboardPlacementOverridePreview](/uwp/api/windows.applicationmodel.preview.holographic.holographickeyboardplacementoverridepreview) | None |
+| [InputPane](/uwp/api/windows.ui.viewmanagement.inputpane) | Use the [IInputPaneInterop](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop) COM interface instead (in inputpaneinterop.h). |
+| [KeyboardDeliveryInterceptor](/uwp/api/windows.ui.input.keyboarddeliveryinterceptor) | None |
+| [LockApplicationHost](/uwp/api/windows.applicationmodel.lockscreen.lockapplicationhost) | None |
+| [MouseDevice](/uwp/api/windows.devices.input.mousedevice) | None |
+| [PlayToManager](/uwp/api/windows.media.playto.playtomanager.getforcurrentview) | Use the [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) COM interface instead (in playtomanagerinterop.h). |
+| [PointerVisualizationSettings](/uwp/api/windows.ui.input.pointervisualizationsettings) | None |
+| [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the [IPrinting3DManagerInterop](/windows/win32/api/print3dmanagerinterop/nn-print3dmanagerinterop-iprinting3dmanagerinterop) COM interface instead (in print3dmanagerinterop.h). |
+| [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
+| [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
+| [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
+| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | None |
+| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | None |
+| [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
+| [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
+| [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |
+| [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) | Use the [ISystemMediaTransportControlsInterop](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop) COM interface instead (in systemmediatransportcontrolsinterop.h). |
+| [SystemNavigationManager](/uwp/api/windows.ui.core.systemnavigationmanager) | None |
+| [SystemNavigationManagerPreview](/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview) | None |
+| [UserActivityRequestManager](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [IUserActivityRequestManagerInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in useractivityinterop.h). |
+| [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
+| [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
+
+### Unsupported members
+
+This section lists (or describes, where a comprehensive list is not possible) specific members of WinRT classes that are not supported for use in desktop apps. Unless otherwise noted, the rest of the classes apart from these members are supported in desktop apps.
+
+#### Events
+
+The following classes are supported in desktop apps except for the specified events.
+
+|  Class  |  Unsupported events |
+|---------|-------------------|
+| [UISettings](/uwp/api/Windows.UI.ViewManagement.UISettings) | [ColorValuesChanged](/uwp/api/Windows.UI.ViewManagement.UISettings.ColorValuesChanged) |
+| [AccessibilitySettings](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) | [HighContrastChanged](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings.HighContrastChanged) |
+
+#### Methods that use the Request naming pattern
+
+Methods that follow the `Request` naming pattern, such as [AppCapability.RequestAccessAsync](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync) and [StoreContext.RequestPurchaseAsync](/uwp/api/windows.services.store.storecontext.requestpurchaseasync), are not supported in desktop apps. Internally, these methods use the [Windows.UI.Popups](/uwp/api/windows.ui.popups) class. This class requires that the thread have a [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) object, which isn't supported in desktop apps.
+
+The full list of methods that follow the `Request` naming pattern is very long, and this article does not provide a comprehensive list of these methods.
+
+## APIs that require package identity
+
+The following WinRT classes require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -369,13 +431,3 @@ For examples on how to use Windows Runtime APIs, see the [Desktop Bridge Samples
 * [Windows.UI.Notifications.ToastNotificationHistory](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory)
 * [Windows.UI.StartScreen.JumpList](/uwp/api/Windows.UI.StartScreen.JumpList)
 * [Windows.UI.StartScreen.JumpListItem](/uwp/api/Windows.UI.StartScreen.JumpListItem)
-
-<a id="both"></a>
-
-### APIs supported in all desktop applications
-
-APIs that have the [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) are supported in all desktop apps, including those with package identity and those without package identity. To determine whether an API you want to call from your desktop application is supported, find the reference article for the class or member you're interested in the [reference documentation for WinRT namespaces](/uwp/api/). Then, check whether the **Attributes** section in the reference article includes the [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) attribute.
-
-## Next steps
-
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).

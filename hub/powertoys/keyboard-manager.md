@@ -1,9 +1,10 @@
 ---
 title: PowerToys Keyboard Manager utility for Windows 10
 description: A utility that enables users to redefine keys on the keyboard
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
 ---
 
 # Keyboard Manager utility
@@ -24,7 +25,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - `⊞ Win`+`L` and `Ctrl` + `Alt` + `Del` cannot be remapped as they are reserved by the Windows OS.
 > - The `Fn` (function) key cannot be remapped (in most cases). The `F1`-`F12` (and `F13`-`F24`) keys can be mapped.
-> - `Pause` will only send a sngle keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
+> - `Pause` will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
 
 ## Settings
 
@@ -86,15 +87,15 @@ There are a few rules to follow when remapping shortcuts (these rules only apply
 
 ## Remap a shortcut to a single key
 
-It is possible to remap a shortcut (key combination) to a single key press.
+It is possible to remap a shortcut (key combination) to a single key press by selecting the **Remap a Key** button in PowerToys Settings. 
 
-For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd>D</kbd> (display / hide Windows desktop apps) with a single key press, <kbd>Alt</kbd>:
+For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd><</kbd> (left arrow) with a single key press, <kbd>Alt</kbd>:
 
-- Shortcut: "⊞ Win" (Windows key) + "D"
-- Mapped To: "Alt"
+- Key: "Alt"
+- Mapped To: "⊞ Win" (Windows key) + <kbd><</kbd> (left arrow)
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut "Alt" + "Tab", after remapping the "Alt" key as above, would result in "⊞ Win" + "D" + "Tab".
+> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut "Alt" + "Shift", after remapping the "Alt" key as above, would result in "⊞ Win" + <kbd><</kbd> (left arrow) + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd>. Pressing the <kbd>Shift</kbd> key first will execute <kbd>Shift</kbd> + <kbd>⊞ Win</kbd> + <kbd>Left Arrow</kbd>.
 
 ## App-specific shortcuts
 

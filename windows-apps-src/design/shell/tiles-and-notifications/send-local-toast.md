@@ -31,13 +31,13 @@ Our code sample will use this package. This package allows you to create toast n
 [!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
 
 ```csharp
-// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package
+// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
 new ToastContentBuilder()
     .AddArgument("action", "viewConversation")
     .AddArgument("conversationId", 9813)
     .AddText("Andrew sent you a picture")
     .AddText("Check this out, The Enchantments in Washington!")
-    .Show();
+    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 5, your TFM must be net5.0-windows10.0.17763.0 or greater
 ```
 
 Try running this code and you should see the notification appear!

@@ -4,6 +4,7 @@ description: A windows shell extension for bulk renaming of files
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerRename, Pampalona, Windows, File Explorer, regex]
 ---
 
 # PowerRename utility
