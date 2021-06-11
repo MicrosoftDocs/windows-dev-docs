@@ -34,8 +34,8 @@
           topicHref: /windows/apps/trace-processing/overview
         - name: Develop for Windows 10X
           topicHref: /windows/apps/10x/faq
-        - name: Fluent Design System
-          topicHref: /windows/apps/fluent-design-system
+        - name: Design and UI
+          topicHref: /windows/apps/design
         - name: Accessibility
           topicHref: /windows/apps/accessibility
         - name: Speech
