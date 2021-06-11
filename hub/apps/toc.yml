@@ -208,8 +208,8 @@
     items:
       - name: Windows 10X Dev FAQ
         href: 10x/faq.md
-  - name: Fluent Design System
-    href: fluent-design-system.md
+  - name: Design and UI
+    href: design/toc.yml
   - name: Accessibility
     href: accessibility.md
   - name: Speech
