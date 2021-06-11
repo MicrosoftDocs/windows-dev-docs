@@ -21,13 +21,20 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 ## WinUI and styles
 
-Starting WinUI 2.2, any new visual style update has been mainly delivered through WinUI. If you notice our UI is not updating, be sure to adopt the latest WinUI styles.
+Starting with WinUI 2.2, we have used the [Windows UI Library](/windows/apps/winui/) (WinUI) to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
 
-Starting with WinUi 2.6, we provide the previous and new styles for most of the systems controls. For WinUI 2.6, previous style is the default. The new style will be the default starting WinUI 2.7. We encourage our app developers to utilize new styles, as they better match the design direction of Windows. However if your scenario cannot support the new styles the previous versions are still available.
+Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
 
-The style version can be changed using the **ControlsResourcesVersion** property on **XamlControlsResources** that you include in your Application.Resources when using WinUI version 2. ControlsResourcesVersion is an enum property that defaults to the value Version1 for WinUI 2.6 and Version2 for WinUI 2.7.
+You can change the style version by setting the `ControlsResourcesVersion` property on the `XamlControlsResources` that you include in your `Application.Resources` when you use WinUI version 2. `ControlsResourcesVersion` defaults to the enum value `Version2`.
 
-Setting this value to Version1 causes XamlControlsResources to load the previous style versions instead of the new styles published in the latest WinUi version. Changing this property at runtime is not supported and VisualStudio’s hot reload functionality will not work, however after rebuilding your application you will see the control styles change.
+Setting this value to `Version1` causes `XamlControlsResources` to load the previous style versions instead of the new styles used by the latest WinUI version. Changing this property at runtime is not supported and VisualStudio's hot reload functionality will not work; however, after you rebuild your application you will see the control styles change.
+
+```xaml
+<Application.Resources>
+    <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" 
+                           ControlsResourcesVersion="Version1"/>
+</Application.Resources>
+```
 
 ## Style basics
 
