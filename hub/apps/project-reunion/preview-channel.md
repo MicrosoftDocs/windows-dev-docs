@@ -16,19 +16,11 @@ The preview channel provides releases of Project Reunion that include experiment
 The latest release of the preview channel is Project Reunion version 0.8 Preview.
 
 > [!div class="button"]
-> [Download the latest preview release](https://aka.ms/projectreunion/previewdownload)
+> [Download](https://aka.ms/projectreunion/previewdownload)
 
 ## Features in the latest preview release
 
-The latest preview channel release includes the following sets of APIs and components you can explore and experiment with in your apps.
-
-| Component | Description |
-|---------|-------------|
-| [Windows UI Library 3](../winui/winui3/index.md) | Windows UI Library (WinUI) 3 is the next generation of the Windows user experience (UX) platform for Windows apps. This release includes Visual Studio project templates to help get started [building apps with a WinUI-based user interface](..\winui\winui3\winui-project-templates-in-visual-studio.md), and a NuGet package that contains the WinUI libraries.  |
-| [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | MRT Core provides APIs to load and manage resources used by your app. MRT Core is a streamlined version of the modern [Windows Resource Management System](/windows/uwp/app-resources/resource-management-system). |
-| [Render text with DWriteCore](dwritecore.md) | DWriteCore provides access to all current DirectWrite features for text rendering, including a device-independent text layout system, hardware-accelerated text, multi-format text, and wide language support.  |
-| [AppLifecycle](applifecycle/applifecycle-instancing.md) | **Experimental feature**. Apps can use AppLifecycle APIs to manage their lifecycle behavior, such as retrieving activation information and defining your app's instancing model.  |
-| [Deploy unpackaged apps](deploy-unpackaged-apps.md) | **Experimental feature**. Unpackaged apps can dynamically take a dependency on the Project Reunion runtime packages so you can continue using your existing MSI or setup program for app deployment.  |
+This release contains all [preview channel features](release-channels.md#features-by-release-channel) that you can explore and experiment with in your apps.
 
 ## Release notes
 

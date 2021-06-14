@@ -16,9 +16,31 @@ Project Reunion currently provides two release channels: **stable** and **previe
 - [Stable channel](stable-channel.md): This channel is supported for use by apps in production environments.
 - [Preview channel](preview-channel.md): This channel includes experimental features, and is not supported for use in production environments.
 
+The rest of this article provides an overview of requirements, features, known issues, and limitations that apply to both stable channel and preview channel releases of Project Reunion.
+
+## Requirements
+
+Project Reunion has the following core requirements. For more details, see [Set up your development environment](set-up-your-development-environment.md).
+
+- Windows 10, version 1809, or a later OS version (for building and running apps).
+- Visual Studio 2019 version 16.9 or higher (for building apps).
+
+## Features by release channel
+
+Some features and scenarios are not available in all release channels. The following table indicates which features are only supported in certain channels.
+
+| Feature | Description | Stable channel | Preview channel |
+|---------|-------------|----------------|-----------------|
+| [Windows UI Library 3](../winui/winui3/index.md) | The next generation of the Windows user experience (UX) platform for Windows apps.  | :heavy_check_mark: | :heavy_check_mark: |
+| [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | Provides features for loading and managing resources. | :heavy_check_mark: | :heavy_check_mark: |
+| [Render text with DWriteCore](dwritecore.md) | Provides access to features for text rendering, including a device-independent text layout system, hardware-accelerated text,and multi-format text.  |  :heavy_check_mark: | :heavy_check_mark:  |
+| [Control app activation](applifecycle/applifecycle-instancing.md) | **Experimental feature**. Provides features for managing app lifecycle behavior, such as retrieving activation information and defining the app's instancing model.  | :x: | :heavy_check_mark: |
+| [Deploy packaged apps](deploy-packaged-apps.md) | Deploy [MSIX](/windows/msix)-packaged apps that use Project Reunion to other computers. |  :heavy_check_mark: | :heavy_check_mark: |
+| [Deploy unpackaged apps](deploy-unpackaged-apps.md) | **Experimental feature**. Configure unpackaged apps to take a dependency on the Project Reunion runtime packages so they can use MSI or setup programs for deployment.  | :x: | :heavy_check_mark: |
+
 ## Known issues and limitations for all release channels
 
-The following known issues and limitations apply to both stable channel and preview channel releases of Project Reunion.
+The following known issues and limitations apply to both stable channel and preview channel releases of Project Reunion. 
 
 #### .NET SDK references
 

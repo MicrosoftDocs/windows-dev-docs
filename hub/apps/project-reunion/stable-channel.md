@@ -13,26 +13,33 @@ ms.localizationpriority: medium
 
 The stable channel provides releases of Project Reunion that are supported for use by apps in production environments. Apps that use the release channel of Project Reunion can also be published to the Microsoft Store.
 
-The latest release of the stable channel is Project Reunion [version 0.5.7](https://github.com/microsoft/ProjectReunion/discussions/820). 
+The following releases of the stable channel are currently available:
+
+- [Version 0.8 RC (release candidate)](#version-08-rc)
+- [Version 0.5](#version-05)
+
+## Version 0.8 RC
+
+This is a release candidate of the upcoming release of Project Reunion 0.8. This build is available for developers to try out and provide feedback before the final release. 
+
+For more information and download details, see the [GitHub announcement](https://aka.ms/projectreunion/0.8-release-candidate).
+
+## Version 0.5
+
+The latest available servicing release is [0.5.7](https://github.com/microsoft/ProjectReunion/discussions/820).
 
 > [!div class="button"]
-> [Download the latest stable release](https://aka.ms/projectreunion/vsixdownload)
+> [Download](https://aka.ms/projectreunion/vsixdownload)
 
-## Features in the latest stable release
+#### New features and updates
 
-The latest stable channel release includes the following sets of APIs and components you can use in your apps.
+This release supports all [stable channel features](release-channels.md#features-by-release-channel). 
 
-| Component | Description |
-|---------|-------------|
-| [Windows UI Library 3](../winui/winui3/index.md) | Windows UI Library (WinUI) 3 is the next generation of the Windows user experience (UX) platform for Windows apps. This release includes Visual Studio project templates to help get started [building apps with a WinUI-based user interface](..\winui\winui3\winui-project-templates-in-visual-studio.md), and a NuGet package that contains the WinUI libraries.  |
-| [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | MRT Core provides APIs to load and manage resources used by your app. MRT Core is a streamlined version of the modern [Windows Resource Management System](/windows/uwp/app-resources/resource-management-system). |
-| [Render text with DWriteCore](dwritecore.md) | DWriteCore provides access to all current DirectWrite features for text rendering, including a device-independent text layout system, hardware-accelerated text, multi-format text, and wide language support.  |
+#### Known issues and limitations
 
-## Release notes
+This release has the following limitations and known issues:
 
-This section lists limitations and known issues for Project Reunion version 0.5.x.
-
-- **Desktop apps (C# .NET 5 or C++ desktop)**: This release cannot be used in unpackaged desktop apps (C# .NET 5 or C++ desktop). This release is supported for use only in MSIX-packaged desktop apps.
+- **Desktop apps (C# .NET 5 or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use Project Reunion in unpackaged desktop apps, you must use the [preview channel](preview-channel.md).
 - **UWP apps**: This release is not supported for UWP apps that are used in production environments. To use Project Reunion in UWP apps, you must use a release from the [preview release channel](preview-channel.md). For more information about installing the preview extension, see [Set up your development environment](set-up-your-development-environment.md).
 - **WinUI 3**: For a list of WinUI changes in this release, see the [WinUI 3 - Project Reunion 0.5 release notes](../winui/winui3/index.md).
 - The [WinUI 3 developer tool limitations](..\winui\winui3\index.md#developer-tools) also apply to any project that uses this release.
