@@ -11,20 +11,20 @@ ms.localizationpriority: medium
 
 # Update existing projects to the latest release of Project Reunion
 
-If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.7) or the latest preview release (version 0.8 preview).
+If you created a project with an earlier preview or release version of Project Reunion or WinUI 3, you can update the project to use the latest stable release (version 0.5.7), the latest preview release (version 0.8 preview), or the latest release candidate (version 0.8 release candidate).
 
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
 ## Update from Project Reunion 0.5.0 or above
 
-If you created a project using Project Reunion version 0.5.0 or above, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release) or Project Reunion version 0.8 preview (the latest preview release).
+If you created a project using Project Reunion version 0.5.0 or above (including the 0.8 preview), you can follow these instructions to update your project to a newer version.
 
 > [!NOTE]
 > If you created a project using the Project Reunion 0.5 VSIX and want to update to a newer stable version, you may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**. 
 
 > [!IMPORTANT]
-> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview".
+> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview". If you'd like to update to version 0.8 release candidate, replace the version number with "0.8.0-rc".
 
 Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
 
@@ -47,19 +47,9 @@ Next, make these changes to your project:
     install-package Microsoft.ProjectReunion -Version 0.5.7 -ProjectName {yourProjectName}
     ```
 
-4. Make the following changes in your Application (package).wapproj:
-  
-    1. Add this section:
+4. **If you're updating from 0.8 preview**, your app should now be updated. Otherwise, make the following changes in your Application (package).wapproj:
 
-        ```xml
-        <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.7]">
-                <IncludeAssets>build</IncludeAssets>
-            </PackageReference>
-        </ItemGroup>
-        ```
-
-    2. Locate the following line:
+    1. Locate the following line:
 
         ```xml
         <AssetTargetFallback>net5.0-windows$(TargetPlatformVersion);$(AssetTargetFallback)</AssetTargetFallback>
@@ -67,20 +57,7 @@ Next, make these changes to your project:
 
         Move this line and place it on a new line directly beneath the `<TargetPlatformVersion>` tag.
 
-    3. Remove this lines:
-
-        ```xml
-        <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
-        ```
-
-        And these lines:
-
-        ```xml
-        <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
-        <Import Project="$(Microsoft_WinUI_AppX_targets)" />
-        ```
-
-        And this item group (if you're updating from a newer version than 0.5.0, you will see a later version number referenced in this item group):
+    2. Remove this item group (if you're updating from a newer version than 0.5.0, you will see a later version number referenced in this item group):
 
         ```xml
         <ItemGroup>
@@ -95,12 +72,12 @@ Next, make these changes to your project:
 
 ## Update from Project Reunion 0.5 Preview
 
-If you created a project using Project Reunion 0.5 Preview, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release) or Project Reunion version 0.8 preview (the latest preview release).
+If you created a project using a preview version of Project Reunion, you can follow these instructions to update your project to a newer release.
 
 > [!IMPORTANT]
-> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview".
+> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview". If you'd like to update to version 0.8 release candidate, replace the version number with "0.8.0-rc". 
 
-Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Project Reunion prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -174,12 +151,12 @@ Next, make these changes to your project:
 
 ## Update from WinUI 3 Preview 4
 
-If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion version 0.5.7 (the latest stable release) or Project Reunion version 0.8 preview (the latest preview release).
+If you created a project using WinUI 3 Preview 4, you can follow these instructions to update your project to a newer version of Project.
 
 > [!IMPORTANT]
-> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview".
+> The following example shows how to update a project to use Project Reunion version 0.5.7. If you'd like to update your app to version 0.8 preview, replace the "0.5.7" version number with "0.8.0-preview". If you'd like to update to version 0.8 release candidate, replace the version number with "0.8.0-rc".
 
-Before starting, make sure you have all the Project Reunion 0.5 prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Project Reunion prerequisites installed, including the latest Project Reunion VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
 
 First, do the following:
 
