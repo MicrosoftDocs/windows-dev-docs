@@ -23,7 +23,7 @@ The user of motion in the Fluent Design System is evolving, built on the fundame
 * [Directionality and gravity](../design/motion/directionality-and-gravity.md) solidifies the user's mental model of your app.
 * [Timing and easing](../design/motion/timing-and-easing.md) adds realism to the motion in your app.
 
-![Motion in action](../design/motion/images/contextual.gif)
+![Motion in action](images/contextual.gif)
 
 ### Fluent Design Updates
 
@@ -45,7 +45,7 @@ In addition, we've rewritten the following pages with all-new information on the
 * [Icons](../design/style/icons.md) now provides practical recommendations for using icons and making them clickable.
 * [Typography](../design/style/typography.md) consolidates information from similar articles, putting everything in a single place with updated guidance and illustrations.
 
-![Color palette image](../design/style/images/color/accent-color-palette.svg)
+![Color palette image](images/accent-color-palette.svg)
 
 ### App Installer files in Visual Studio
 

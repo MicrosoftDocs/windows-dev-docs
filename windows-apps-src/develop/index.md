@@ -14,14 +14,14 @@ How-to articles and code for creating UWP apps for Windows 10.
 :::row:::
     :::column:::
         <a href="/windows/uwp/get-started/universal-application-platform-guide">
-            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt="UWP overview" />
+            <img src="/media/hubs/windows/win_developer-uwp.svg" alt="UWP overview" />
         </a><br/>
         <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="/windows/uwp/get-started/universal-application-platform-guide">Overview of the Universal Windows Platform</a></h3>
         <p style="margin-top: 0px; margin-bottom: 50px">An explanation of what UWP is, how it works, and the features it provides.</p>
     :::column-end:::
     :::column:::
         <a href="/windows/uwp/porting/index">
-            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Porting guide" />
+            <img src="/media/illustrations/teams-fast-track.svg" alt="Porting guide" />
         </a><br/>
         <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="/windows/uwp/porting/index">Porting guide</a></h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Bring your existing Windows Forms, WPF, Android, or iOS app to UWP.</p>
@@ -206,14 +206,14 @@ How-to articles and code for creating UWP apps for Windows 10.
  :::row:::
     :::column:::
         <a href="https://developer.microsoft.com/windows/samples">
-            <img src="https://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt="Samples" />
+            <img src="/media/illustrations/sql-database-develop.svg" alt="Samples" />
         </a><br/>
         <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="https://developer.microsoft.com/windows/samples">Samples</a></h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Learn how to build great apps for Windows by experimenting with these samples. These samples show you how features work and help you jumpstart your own UWP apps.</p>
     :::column-end:::
     :::column:::
         <a href="https://developer.microsoft.com/windows/downloads">
-            <img src="https://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt="Developer tools" />
+            <img src="/media/illustrations/sql-get-started-download.svg" alt="Developer tools" />
         </a><br/>
         <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="https://developer.microsoft.com/windows/downloads">Developer tools</a></h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Get Visual Studio 2019, the Windows 10 SDK, and other developer tools.</p>
