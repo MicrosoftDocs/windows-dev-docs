@@ -115,7 +115,18 @@ These styles are for text attributes that you want applied to the whole text con
 
 The styles look like this when applied to a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock):
 
-![text block styles](../style/images/type/type-ramp.png)
+![text block styles](../style/images/type/text-block-type-ramp.svg)
+
+| Style      | Weight  | Size |
+|------------|---------|------|
+|Caption     |Regular  |    12|
+|Body        |Regular  |    14|
+|Body Strong |Semibold |    14|
+|Body Large  |Regular  |    18|
+|Subtitle    |Semibold |    20|
+|Title       |Semibold |    28|
+|Title Large |Semibold |    40|
+|Display     |Semibold |    68|
 
 ```XAML
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
