@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: uwp controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 03/23/2020
+ms.date: 06/24/2021
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -90,12 +90,12 @@ Detailed information about specific controls and patterns.
 - [Map control](../../maps-and-location/display-maps.md)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [Menu flyout](menus.md)
-- [Navigation view](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 
     :::column-end:::
     :::column:::
 
+- [Menu flyout](menus.md)
+- [Navigation view](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Number box](number-box.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Parallax view](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Password box](password-box.md)
