@@ -1,5 +1,5 @@
 ---
-description: The Expander control provides a standard interaction for showing more content in a container that pushes adjacent content while expanding and collapsing.
+description: The WinUI Expander control provides a standard interaction for showing more content in a container that pushes adjacent content while expanding and collapsing.
 title: Expander
 template: detail.hbs
 ms.date: 06/24/2021
