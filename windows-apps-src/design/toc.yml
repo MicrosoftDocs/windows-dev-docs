@@ -208,12 +208,16 @@
           href: controls-and-patterns/date-picker.md
         - name: Time picker
           href: controls-and-patterns/time-picker.md
-    - name: Scrolling
+    - name: Scrolling and layout
       items:
+        - name: Expander
+          href: controls-and-patterns/expander.md
         - name: Scrolling and panning controls
           href: controls-and-patterns/scroll-controls.md
         - name: Semantic zoom
           href: controls-and-patterns/semantic-zoom.md
+        - name: Two-pane view
+          href: controls-and-patterns/two-pane-view.md
     - name: Status and information
       items:
         - name: Progress
@@ -246,8 +250,6 @@
           href: controls-and-patterns/content-links.md
         - name: Handwriting view
           href: controls-and-patterns/text-handwriting-view.md
-    - name: Two-pane view
-      href: controls-and-patterns/two-pane-view.md
 - name: Style
   items:
     - name: Overview
