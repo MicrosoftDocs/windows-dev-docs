@@ -470,14 +470,12 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 // Handle mouse back button.
 private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
 {
-    // For this event, e.Handled arrives as 'true', so invert the value.
-    if (e.CurrentPoint.Properties.IsXButton1Pressed
-        && e.Handled)
+    // For this event, e.Handled arrives as 'true'.
+    if (e.CurrentPoint.Properties.IsXButton1Pressed)
     {
         e.Handled = !TryGoBack();
     }
-    else if (e.CurrentPoint.Properties.IsXButton2Pressed
-            && e.Handled)
+    else if (e.CurrentPoint.Properties.IsXButton2Pressed)
     {
         e.Handled = !TryGoForward();
     }
@@ -518,14 +516,12 @@ private:
     // Handle mouse forward and back buttons.
     void CoreWindow_PointerPressed(CoreWindow const& /* sender */, PointerEventArgs const& e)
     {
-        // For this event, e.Handled arrives as 'true', so invert the value. 
-        if (e.CurrentPoint().Properties().IsXButton1Pressed()
-            && e.Handled())
+        // For this event, e.Handled arrives as 'true'. 
+        if (e.CurrentPoint().Properties().IsXButton1Pressed())
         {
             e.Handled(!TryGoBack());
         }
-        else if (e.CurrentPoint().Properties().IsXButton2Pressed()
-            && e.Handled())
+        else if (e.CurrentPoint().Properties().IsXButton2Pressed())
         {
             e.Handled(!TryGoForward());
         }
@@ -628,14 +624,12 @@ private void System_BackRequested(object sender, BackRequestedEventArgs e)
 // Handle mouse back button.
 private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
 {
-    // For this event, e.Handled arrives as 'true', so invert the value.
-    if (e.CurrentPoint.Properties.IsXButton1Pressed
-        && e.Handled)
+    // For this event, e.Handled arrives as 'true'.
+    if (e.CurrentPoint.Properties.IsXButton1Pressed)
     {
         e.Handled = !TryGoBack();
     }
-    else if (e.CurrentPoint.Properties.IsXButton2Pressed
-            && e.Handled)
+    else if (e.CurrentPoint.Properties.IsXButton2Pressed)
     {
         e.Handled = !TryGoForward();
     }
@@ -762,14 +756,12 @@ private:
     // Handle mouse forward and back buttons.
     void CoreWindow_PointerPressed(CoreWindow const& /* sender */, PointerEventArgs const& e)
     {
-        // For this event, e.Handled arrives as 'true', so invert the value. 
-        if (e.CurrentPoint().Properties().IsXButton1Pressed()
-            && e.Handled())
+        // For this event, e.Handled arrives as 'true'. 
+        if (e.CurrentPoint().Properties().IsXButton1Pressed())
         {
             e.Handled(!TryGoBack());
         }
-        else if (e.CurrentPoint().Properties().IsXButton2Pressed()
-            && e.Handled())
+        else if (e.CurrentPoint().Properties().IsXButton2Pressed())
         {
             e.Handled(!TryGoForward());
         }
