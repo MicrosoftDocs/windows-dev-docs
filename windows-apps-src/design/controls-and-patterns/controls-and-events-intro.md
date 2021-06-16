@@ -18,7 +18,7 @@ In Windows app development, a *control* is a UI element that displays content or
 
 > **Important APIs**: [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
 
-A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [master/details](master-details.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [NavigationView](navigationview.md) control to implement the tab pattern.
+A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [list/details](list-details.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [NavigationView](navigationview.md) control to implement the tab pattern.
 
 In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](xaml-styles.md) and [control templates](control-templates.md) to modify a control.
 
@@ -162,7 +162,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 
 ## Related topics
 
-- 	[Index of controls by function](controls-by-function.md)
+- 	[Index of controls by function](./index.md)
 - 	[Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
 - 	[Layout](../layout/index.md)
 - 	[Style](../style/index.md)

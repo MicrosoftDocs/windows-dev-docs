@@ -51,7 +51,7 @@ General instructions and code examples for adding and styling controls in XAML a
 
 ## Alphabetical index
 
-Detailed information about specific controls and patterns. (For a list sorted by function, see [Index of controls by function](controls-by-function.md).)
+Detailed information about specific controls and patterns. 
 
 :::row:::
     :::column:::
@@ -85,9 +85,9 @@ Detailed information about specific controls and patterns. (For a list sorted by
 - [Images and image brushes](images-imagebrushes.md)
 - [Info bar (New)](infobar.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Inking controls](inking-controls.md)
+- [List/details](list-details.md) (pattern)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
-- [Master/details](master-details.md) (pattern)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menu flyout](menus.md)

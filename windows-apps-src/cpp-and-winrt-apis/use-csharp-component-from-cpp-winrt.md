@@ -16,12 +16,12 @@ Visual Studio makes it easy to author and deploy your own custom Windows Runtime
 Internally, your Windows Runtime types can use any .NET functionality that's allowed in a UWP application.
 
 > [!NOTE]
-> For more info, see [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
+> For more info, see [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
 
 Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET WRC project, and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component (WRC),  which Visual Studio includes in your app.
 
 > [!NOTE]
-> .NET automatically maps some commonly used .NET types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> .NET automatically maps some commonly used .NET types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Prerequisites:
 
@@ -119,7 +119,7 @@ You can now build and run the project. Each time you click the button, the numbe
 
 ## Application Minimum Version
 
-The [**Application Minimum**](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows ARM64 processor support. 
+The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows ARM64 processor support. 
 
 > [!TIP]
 > We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or ARM64 support is not necessary.
@@ -207,11 +207,11 @@ In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppT
 ...
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Platform)'='ARM64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Platform)'=='ARM64'" Label="Configuration">
     <UseDotNetNativeToolchain Condition="'$(UseDotNetNativeToolchain)'==''">true</UseDotNetNativeToolchain>
   </PropertyGroup>
 ```
 
 ## Related topics
-* [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Windows Runtime components with C++/WinRT](/windows-apps-src/winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

@@ -1,6 +1,6 @@
 ---
-title: Create a simple Android app with Xamarin.Android
-description: A step-by-step guide on how to  get started using Xamarin.Android on Windows to create a cross-platform app that will work on Android devices.
+title: Create Android app with Xamarin.Android 
+description: How to get started writing Android apps with Xamarin.Android
 author: hickeys 
 ms.author: hickeys 
 manager: jken

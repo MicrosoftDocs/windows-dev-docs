@@ -23,8 +23,6 @@ There are two properties in the Windows Runtime that can use a string representi
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) can also use move and draw commands. You might combine a [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) object that uses move and draw commands with other [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) types in a [**GeometryGroup**](/uwp/api/Windows.UI.Xaml.Media.GeometryGroup) object, which you'd then use as the value for [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data). But that isn't nearly as common as using move and draw commands for attribute-defined data.
-
 ## Using move and draw commands versus using a **PathGeometry**
 
 For Windows Runtime XAML, the move and draw commands produce a [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) with a single [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) object with a [**Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) property value. Each draw command produces a [**PathSegment**](/uwp/api/Windows.UI.Xaml.Media.PathSegment) derived class in that single **PathFigure**'s [**Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) collection, the move command changes the [**StartPoint**](/uwp/api/windows.ui.xaml.media.pathfigure.startpoint), and existence of a close command sets [**IsClosed**](/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) to **true**. You can navigate this structure as an object model if you examine the **Data** values at run time.
@@ -131,7 +129,7 @@ Creates a cubic Bézier curve between the current point and the specified end po
 |------|-------------|
 | *controlPoint1* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The first control point of the curve, which determines the starting tangent of the curve. |
 | *controlPoint2* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The second control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the curve is drawn. | 
+| *endPoint* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> The point to which the curve is drawn. |
 
 **Quadratic Bézier curve command**
 

@@ -9,15 +9,15 @@ ms.localizationpriority: medium
 
 # Get started with C++/WinRT
 
+> [!IMPORTANT]
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
 To get you up to speed with using [C++/WinRT](./intro-to-using-cpp-with-winrt.md), this topic walks through a simple code example based on a new **Windows Console Application (C++/WinRT)** project. This topic also shows how to [add C++/WinRT support to a Windows Desktop application project](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 > [!NOTE]
 > While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Language** > **Command Line** under **Additional Options**, then delete it).
 
 ## A C++/WinRT quick-start
-
-> [!NOTE]
-> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
@@ -124,7 +124,7 @@ You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https:
 
 Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Ensure that **Windows SDK Version** is set to 10.0.17134.0 (Windows 10, version 1803) or greater.
 
-Confirm that you're not affected by [Why won't my new project compile?](./faq.md).
+Confirm that you're not affected by [Why won't my new project compile?](./faq.yml).
 
 Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
 
@@ -178,7 +178,7 @@ Be aware that XAML works best with programming languages that offer reflection. 
 
 ## Sample apps written in C++/WinRT
 
-See [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).
+See [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

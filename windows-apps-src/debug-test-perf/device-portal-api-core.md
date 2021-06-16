@@ -62,7 +62,8 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
-<hr>
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
 
 ### Install a related set
 
@@ -494,6 +495,7 @@ This API has the following expected status codes.
 * IoT
 
 ---
+
 ### Get a list of paired Bluetooth devices
 
 **Request**
@@ -4348,7 +4350,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is renamed
+| 200 | OK. The file is renamed|
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4399,7 +4401,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is deleted |
+| 200 | OK. The file is deleted |
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4447,7 +4449,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is uploaded |
+| 200 | OK. The file is uploaded |
 | 4XX | Error codes |
 | 5XX | Error codes |
 

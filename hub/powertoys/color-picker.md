@@ -1,9 +1,10 @@
 ---
 title: PowerToys Color Picker utility for Windows 10
 description: A system-wide color picking utility for Windows 10 that enables you to pick colors from any currently running application and automatically copies the HEX or RGB values to your clipboard. 
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 ---
 
 # Color Picker utility

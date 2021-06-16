@@ -53,8 +53,8 @@ Text ranges and selections are represented by the [**CoreTextRange**](/uwp/api/W
 
 | Field                  | Data type                                                                 | Description                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The start position of a range is the ACP immediately before the first character. |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The end position of a range is the ACP immediately after the last character.     |
+| **StartCaretPosition** | **Number** \[JavaScript\] \| **System.Int32** \[.NET\] \| **int32** \[C++\] | The start position of a range is the ACP immediately before the first character. |
+| **EndCaretPosition**   | **Number** \[JavaScript\] \| **System.Int32** \[.NET\] \| **int32** \[C++\] | The end position of a range is the ACP immediately after the last character.     |
 
  
 

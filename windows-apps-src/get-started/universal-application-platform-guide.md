@@ -18,7 +18,7 @@ To download the tools you need to start creating UWP apps, see [Get set up](/win
 
 ## Where does UWP fit in the Microsoft development story?
 
-UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
 
 The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
 
@@ -95,7 +95,7 @@ You can choose how you'll monetize your app. There are a number of ways to make 
 There are a variety of ways to keep users engaged with your UWP app:
 
 - Live tiles and lock screen tiles that show contextually relevant and timely info from your app at a glance.
-- Push notifications that bring real-time alerts to your user’s attention.
+- Push notifications that bring real-time alerts to your user's attention.
 - User Activities allow users to pick up where they left off in your app, even across devices.
 - The Action Center organizes notifications from your app.
 - Background execution and triggers bring your app into action when the user needs it.
@@ -149,7 +149,7 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 - Learn how to use [Tiles, badges, and notifications for UWP apps](../design/shell/tiles-and-notifications/index.md).
 - For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)).
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
-- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 - [Compiling apps with .NET Native](/dotnet/framework/net-native/)
 - Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 

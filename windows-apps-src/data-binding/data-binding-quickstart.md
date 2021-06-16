@@ -612,6 +612,10 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ```
 
 ```cppwinrt
+// pch.h
+...
+#include <winrt/Windows.Globalization.h>
+
 // StringFormatter.idl
 namespace Quickstart
 {

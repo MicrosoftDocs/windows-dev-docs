@@ -367,7 +367,7 @@ This element contains data from the app's listing. **ListingInformation** is a r
 |  Element  |  Required  |  Quantity  |  Description   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-listinginformation)  |    Yes   |  1   |    Provides data about the app.         |
-|  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |     |
+|  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -383,7 +383,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **LinkUri**  |    Yes  |  1   |    The URI of the listing page in the store. This can be any valid URI for testing.         |
 |  **CurrentMarket**  |    Yes  |  1   |    The customer's country/region.         |
 |  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in Partner Center when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
-|  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |    |
+|  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |
 
 <span id="marketdata-child-of-app"/>
 
@@ -399,13 +399,13 @@ This element provides info about the app for a given country/region. For each co
 |  **Description**  |    Yes  |  1   |      The description of the app for this country/region.       |
 |  **Price**  |    Yes  |  1   |     The price of the app in this country/region.        |
 |  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
-|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  |
+|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |
 
 **MarketData** has the following attributes.
 
 |  Attribute  |  Required  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -419,7 +419,7 @@ This element describes an add-on for the app. **Product** is an optional child o
 |-------------|------------|----------------|
 |  **ProductId**  |    Yes        |    Contains the string used by the app to identify the add-on.           |
 |  **LicenseDuration**  |    No        |    Indicates the number of days for which the license will be valid after the item has been purchased. The expiration date of the new license created by a product purchase is the purchase date plus the license duration. This attribute is used only if the **ProductType** attribute is **Durable**; this attribute is ignored for consumable add-ons.           |
-|  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |  |
+|  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |
 
 <span id="marketdata-child-of-product"/>
 
@@ -438,13 +438,13 @@ This element provides info about the add-on for a given country/region. For each
 |  **Description**  |    No  |   0 or 1   |      The description of the add-on for this country/region.       |
 |  **Tag**  |    No  |   0 or 1   |      The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) (also called tag) for the add-on.       |
 |  **Keywords**  |    No  |   0 or 1   |      Contains up to 10 **Keyword** elements that contain the [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on.       |
-|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](../publish/create-add-on-store-listings.md#icon) in the add-on's listing.           |  |
+|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](../publish/create-add-on-store-listings.md#icon) in the add-on's listing.           |
 
 **MarketData** has the following attributes.
 
 |  Attribute  |  Required  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |
 
 <span id="licenseinformation"/>
 
@@ -457,7 +457,7 @@ This element describes the licenses available for this app and its durable in-ap
 |  Element  |  Required  |  Quantity  | Description   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-licenseinformation)  |    Yes   |  1   |    Describes the app's license.         |
-|  [Product](#product-child-of-licenseinformation)  |    No  |  0 or more   |      Describes the license status of a durable add-on in the app.         |   |
+|  [Product](#product-child-of-licenseinformation)  |    No  |  0 or more   |      Describes the license status of a durable add-on in the app.         |
 
 The following table shows how to simulate some common conditions by combining values under the **App** and **Product** elements.
 
@@ -466,7 +466,7 @@ The following table shows how to simulate some common conditions by combining va
 |  Fully licensed  |    true   |  false  |    Absent. It actually may be present and specify a future date, but you're advised to omit the element from the XML file. If it is present and specifies a date in the past, then **IsActive** will be ignored and taken to be false.          |
 |  In trial period  |    true  |  true   |      &lt;a datetime in the future&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know how far in the future to set this to get the remaining trial period you want.         |
 |  Expired trial  |    false  |  true   |      &lt;a datetime in the past&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know when "the past" is in UTC.         |
-|  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |  |
+|  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |
 
 <span id="app-child-of-licenseinformation"/>
 
@@ -480,7 +480,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Yes   |  1   |    Describes the current license state of this app. The value **true** indicates the license is valid; **false** indicates an invalid license. Normally this value is **true**, whether the app has a trial mode or not.  Set this value to **false** to test how your app behaves when it has an invalid license.           |
 |  **IsTrial**  |    Yes  |  1   |      Describes the current trial state of this app. The value **true** indicates the app is being used during the trial period; **false** indicates the app is not in a trial, either because the app has been purchased or the trial period has expired.         |
-|  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |  |
+|  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |
 
 <span id="product-child-of-licenseinformation"/>
 

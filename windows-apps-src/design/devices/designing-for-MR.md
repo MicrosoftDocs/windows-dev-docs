@@ -6,7 +6,7 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
-ms.date: 02/05/2018
+ms.date: 02/26/2021
 ms.topic: article
 
 
@@ -122,10 +122,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ## Other points to consider
 
-* Although the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can help bring existing (Win32) desktop apps to Windows 10 and the Microsoft Store, it cannot create apps that run on HoloLens or in Mixed Reality at this time.
-
-
-
+* Although the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can help bring existing (Win32) desktop apps to Windows 10 and the Microsoft Store, it cannot create apps that run on HoloLens at this time. As of Windows 10 version 1903, Win32 Desktop apps can run on Mixed Reality headsets.
 
 ## Runtime support
 

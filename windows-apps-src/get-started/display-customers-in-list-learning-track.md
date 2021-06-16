@@ -1,7 +1,7 @@
 ---
 title: Learning track - Display customers in a list
 description: Learn what you need to do to display a collection of Customer objects in a list.
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: get started, uwp, windows 10, learning track, data binding, list
 ms.localizationpriority: medium
@@ -13,11 +13,11 @@ Displaying and manipulating real data in the UI is crucial to the functionality 
 
 This is not a tutorial. If you want one, see our [data binding tutorial](../data-binding/xaml-basics-data-binding.md), which will provide you with a step-by-step guided experience.
 
-We’ll start with a quick discussion of data binding - what it is and how it works. Then we'll add a **ListView** to the UI, add data binding, and customize the data binding with additional features.
+We'll start with a quick discussion of data binding - what it is and how it works. Then we'll add a **ListView** to the UI, add data binding, and customize the data binding with additional features.
 
 ## What do you need to know?
 
-Data binding is a way to display an app's data in its UI. This allows for *separation of concerns* in your app, keeping your UI separate from your other code. This creates a cleaner conceptual model that’s easier to read and maintain.
+Data binding is a way to display an app's data in its UI. This allows for *separation of concerns* in your app, keeping your UI separate from your other code. This creates a cleaner conceptual model that's easier to read and maintain.
 
 Every data binding has two pieces:
 
@@ -89,16 +89,16 @@ public sealed partial class MainPage : Page
 The [Data Binding overview](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items) walks you through a similar problem, in its section about binding to a collection of items. Our example here shows the following crucial steps:
 
 * In the code-behind of your UI, create a property of type **ObservableCollection<T>** to hold your Customer objects.
-* Bind your ListView’s **ItemSource** to that property.
+* Bind your ListView's **ItemSource** to that property.
 * Provide a basic **ItemTemplate** for the ListView, which will configure how each item in the list is displayed.
 
 Feel free to look back at the [List View](../design/controls-and-patterns/listview-and-gridview.md) docs if you want to customize layout, add item selection, or tweak the **DataTemplate** you just made. But what if you want to edit your Customers?
 
 ## Edit your Customers through the UI
 
-You’ve displayed customers in a list, but data binding lets you do more. What if you could edit your data directly from the UI? To do this, let’s first talk about the three modes of data binding:
+You've displayed customers in a list, but data binding lets you do more. What if you could edit your data directly from the UI? To do this, let's first talk about the three modes of data binding:
 
-* *One-Time*: This data binding is only activated once, and doesn’t react to changes.
+* *One-Time*: This data binding is only activated once, and doesn't react to changes.
 * *One-Way*: This data binding will update the UI with any changes made to the data source.
 * *Two-Way*: This data binding will update the UI with any changes made to the data source, and also update the data with any changes made within the UI.
 
@@ -149,7 +149,7 @@ A quick way to ensure that this works is to add a second ListView with TextBox c
 
 ## Going Further
 
-Now that you’ve created a list of customers with two-way binding, feel free to go back through the docs we’ve linked you to and experiment. You can also check out our [data binding tutorial](../data-binding/xaml-basics-data-binding.md) if you want a step-by-step walkthrough of basic and advanced bindings, or investigate controls like the [master/details pattern](../design/controls-and-patterns/master-details.md) to make a more robust UI.
+Now that you've created a list of customers with two-way binding, feel free to go back through the docs we've linked you to and experiment. You can also check out our [data binding tutorial](../data-binding/xaml-basics-data-binding.md) if you want a step-by-step walkthrough of basic and advanced bindings, or investigate controls like the [list/details pattern](../design/controls-and-patterns/list-details.md) to make a more robust UI.
 
 ## Useful APIs and docs
 

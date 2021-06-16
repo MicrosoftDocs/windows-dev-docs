@@ -8,8 +8,6 @@ ms.localizationpriority: medium
 
 # Use the winget tool to install and manage applications
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
-
 The **winget** command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers. This tool is the client interface to the Windows Package Manager service.
 
 The **winget** tool is currently a preview, so not all planned functionality is available at this time.
@@ -22,16 +20,16 @@ There are several ways to install the **winget** tool:
 
 * Participate in the [Windows Insider flight ring](https://insider.windows.com).
 
-* Install Windows Desktop App Installer package located in the release folder of the [winget repository](https://github.com/microsoft/winget-cli).
+* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
 
 > [!NOTE]
-> The **winget** tool requires Windows 10, version 1709 (10.0.16299), or a later version of Windows 10.
+> The **winget** tool requires Windows 10, version 1809 (10.0.17763), or a later version of Windows 10.
 
 ## Administrator considerations
 
 Installer behavior can be different depending on whether you are running **winget** with administrator privileges.
 
-* When running **winget** without administrator privileges, some applications may [require elevation](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/) to install. When the installer runs, Windows will prompt you to [elevate](https://docs.microsoft.com/windows/security/identity-protection/user-account-control). If you choose not to elevate, the application will fail to install.  
+* When running **winget** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control). If you choose not to elevate, the application will fail to install.  
 
 * When running **winget** in an Administrator Command Prompt, you will not see [elevation prompts](/windows/security/identity-protection/user-account-control/how-user-account-control-works) if the application requires it. Always use caution when running your command prompt as an administrator, and only install applications you trust.
 
@@ -41,8 +39,8 @@ After **App Installer** is installed, you can run **winget** by typing 'winget' 
 
 One of the most common usage scenarios is to search for and install a favorite tool.
 
-1. To [search](search.md) for a tool, type `winget search \<appname>`.
-2. After you have confirmed that the tool you want is available, you can [install](install.md) the tool by typing `winget install \<appname>`. The **winget** tool will launch the installer and install the application on your PC.
+1. To [search](search.md) for a tool, type `winget search <appname>`.
+2. After you have confirmed that the tool you want is available, you can [install](install.md) the tool by typing `winget install <appname>`. The **winget** tool will launch the installer and install the application on your PC.
     ![winget commandline](images\install.png)
 
 3. In addition to install and search, **winget** provides a number of other commands that enable you to [show details](show.md) on applications, [change sources](source.md), and [validate packages](validate.md). To get a complete list of commands, type: `winget --help`.
@@ -54,13 +52,19 @@ The current preview of the **winget** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
+| [export](export.md) | Exports a list of the installed packages. |
+| [features](features.md) | Shows the status of experimental features. |
 | [hash](hash.md) | Generates the SHA256 hash for the installer. |
-| [help](help.md) | Displays help for the **winget** tool commands. |
+| [import](import.md) | Installs all the packages in a file. |
 | [install](install.md) | Installs the specified application. |
+| [list](list.md) | Display installed packages. |
 | [search](search.md) | Searches for an application. |
+| [settings](settings.md) | Open settings. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **winget** tool. |
 | [validate](validate.md) | Validates a manifest file for submission to the Windows Package Manager repository. |
+| [uninstall](uninstall.md) | Uninstalls the given package. |
+| [upgrade](upgrade.md) |  Upgrades the given package. | 
 
 ### Options
 
@@ -68,13 +72,13 @@ The current preview of the **winget** tool supports the following options.
 
 | Option | Description |
 |--------------|-------------|
-| **-v,--version** | this option returns the current version of winget. |
-| **--info** |  info provides you with all detailed information on winget including the links to the license and privacy statement. |
-| **-?, --help** |  get additional help winget |
+| **-v, --version** | Returns the current version of winget. |
+| **--info** |  Provides you with all detailed information on winget, including the links to the license, privacy statement, and configured group policies. |
+| **-?, --help** |  Shows additional help for winget. |
 
 ## Supported installer formats
 
-The current preview of the **winget** tool supports the following types of installers.
+The current preview of the **winget** tool supports the following types of installers:
 
 * EXE
 * MSIX
@@ -82,7 +86,7 @@ The current preview of the **winget** tool supports the following types of insta
 
 ## Scripting winget
 
-You can author batch scripts and powershell scripts to install multiple applications.
+You can author batch scripts and PowerShell scripts to install multiple applications.
 
 ``` CMD
 @echo off  
@@ -100,7 +104,7 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 
 ## Missing tools
 
-If the [community repository](../package/repository.md) does not include your tool or application. Please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
+If the [community repository](../package/repository.md) does not include your tool or application, please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
 
 ## Customize winget settings
 

@@ -148,7 +148,7 @@ The request and response bodies for these methods contain the following fields. 
 |  campaignId   |  integer   |  The ID of the parent ad campaign.      |    No   |      |   No     |  
 |  minMinutesPerImp   |  integer   |  Specifies the minimum time interval (in minutes) between two impressions shown to the same user from this delivery line.      |    No   |  4000    |  No      |  
 |  pacingType   |  string   |  One of the following values that specify the pacing type: <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    No   |  SpendEvenly    |  No      |
-|  currencyId   |  integer   |  The ID of the currency of the campaign.      |    Yes   |  The currency of the developer account (you do not need to specify this field in POST or PUT calls)    |   No     |      |
+|  currencyId   |  integer   |  The ID of the currency of the campaign.      |    Yes   |  The currency of the developer account (you do not need to specify this field in POST or PUT calls)    |   No     |
 
 
 ## Related topics

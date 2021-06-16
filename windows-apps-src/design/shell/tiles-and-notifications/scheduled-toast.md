@@ -37,10 +37,7 @@ Install the [Microsoft.Toolkit.Uwp.Notifications NuGet package](https://www.nuge
 
 ## Step 2: Add namespace declarations
 
-`Windows.UI.Notifications` includes the toast APIs.
-
 ```csharp
-using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
@@ -50,20 +47,12 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 We'll use a simple text-based notification reminding a student about the homework they have due today. Construct the notification and schedule it!
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
-    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
     .AddText("ASTR 170B1")
     .AddText("You have 3 items due today!");
-    .GetToastContent();
-
-    
-// Create the scheduled notification
-var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
-
-
-// Add your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
+    .Schedule(DateTime.Now.AddSeconds(5));
 ```
 
 
@@ -76,8 +65,16 @@ To see more details on replacing/removing already delivered toast notifications,
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
-toast.Tag = "18365";
-toast.Group = "ASTR 170B1";
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .Schedule(DateTime.Now.AddSeconds(5), toast =>
+    {
+        toast.Tag = "18365";
+        toast.Group = "ASTR 170B1";
+    });
 ```
 
 
@@ -89,7 +86,7 @@ Then, find your scheduled toast matching the tag (and optionally group) you spec
 
 ```csharp
 // Create the toast notifier
-ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
 
 // Get the list of scheduled toasts that haven't appeared yet
 IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
@@ -102,6 +99,9 @@ if (toRemove != null)
     notifier.RemoveFromSchedule(toRemove);
 }
 ```
+
+> [!IMPORTANT]
+> Win32 non-MSIX/sparse apps must use the ToastNotificationManagerCompat class as seen above. If you use ToastNotificationManager itself, you will receive an element not found exception. All types of apps can use the Compat class and it will work correctly.
 
 
 ## Activation handling

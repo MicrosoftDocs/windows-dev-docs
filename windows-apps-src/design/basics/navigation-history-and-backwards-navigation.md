@@ -821,7 +821,7 @@ If you choose to provide your own back stack navigation, the experience should b
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Enumerate items</strong>
-<p>The app displays content for an on-screen item, such as the details for the selected item in master/details list.</p></td>
+<p>The app displays content for an on-screen item, such as the details for the selected item in list/details list.</p></td>
 <td style="vertical-align:top;"><strong>No</strong>
 <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>

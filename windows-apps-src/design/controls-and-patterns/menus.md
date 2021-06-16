@@ -1,7 +1,7 @@
 ---
 description: Menus and context menus display a list of commands or options when the user requests them.
-title: Menus and context menus
-label: Menus and context menus
+title: Menu flyout and menu bar
+label: Menu flyout and menu bar
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -14,9 +14,9 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Menus and context menus
+# Menu flyout and menu bar
 
-Menus and context menus display a list of commands or options when the user requests them. Use a menu flyout to show a single, inline menu. Use a menu bar to show a set of menus in a horizontal row, typically at the top of an app window. Each menu can have menu items and sub-menus.
+Menu flyouts are used in menu and context menu scenarios to display a list of commands or options when requested by the user. A menu flyout shows a single, inline, top-level menu that can have menu items and sub-menus. To show a set of multiple top-level menus in a horizontal row, use menu bar (which you typically position at the top of the app window).
 
 ![Example of a typical context menu](images/contextmenu_rs2_icons.png)
 
@@ -40,21 +40,11 @@ Menus and context menus display a list of commands or options when the user requ
 
 ## Is this the right control?
 
-Menus and context menus save space by organizing commands and hiding them until the user needs them. If a particular command will be used frequently and you have the space available, consider placing it directly in its own element, rather than in a menu, so that users don't have to go through a menu to get to it.
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use menu flyout vs. [command bar flyout](command-bar-flyout.md).
 
-Menus and context menus are for organizing commands; to display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](./dialogs-and-flyouts/index.md).
+Menu flyouts can be used as menus and context menus to organize commands. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](./dialogs-and-flyouts/index.md).
 
-### MenuBar vs. MenuFlyout
-
-To show a menu in a flyout attached to an on-canvas UI element, use the MenuFlyout control to host your menu items. You can invoke a menu flyout either as a regular menu or as a context menu. A menu flyout hosts a single top-level menu (and optional sub-menus).
-
-To show a set of multiple top-level menus in a horizontal row, use a menu bar. You typically position the menu bar at the top of the app window.
-
-### MenuBar vs. CommandBar
-
-MenuBar and CommandBar both represent surfaces that you can use to expose commands to your users. The MenuBar provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a CommandBar allows.
-
-You can also use a MenuBar in conjunction with a CommandBar. Use the MenuBar to provide the bulk of the commands, and the CommandBar to highlight the most used commands.
+If a particular command will be used frequently and you have the space available, see [collection commanding](collection-commanding.md) for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it. 
 
 ## Examples
 
@@ -72,69 +62,9 @@ You can also use a MenuBar in conjunction with a CommandBar. Use the MenuBar to 
 </tr>
 </table>
 
-## Menus vs. context menus
+## Create a menu flyout
 
-Menus and context menus are similar in how they look and what they can contain. In fact, you can use the same control, [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), to create them. The difference is how you let the user access it.
-
-When should you use a menu or a context menu?
-
-- If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.
-- If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu.
-
-For example, use a menu on a button to provide filtering and sorting options for a list. In this scenario, the primary purpose of the button control is to provide access to a menu.
-
-![Example of menu in Mail](images/Mail_Menu.png)
-
-If you want to add commands (such as cut, copy, and paste) to a text element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as cut, copy, and paste) are secondary and belong in a context menu.
-
-![Example of context menu in photo gallery](images/ContextMenu_example.png)
-
-### Menus
-
-- Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.
-- Are usually attached to a button or a parent menu item.
-- Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
-- Are associated with an element via its [Flyout](/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
-
-### Context menus
-
-- Are attached to a single element and display secondary commands.
-- Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).
-- Are associated with an element via its [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) property.
-
-## Icons
-
-Consider providing menu item icons for:
-
-- The most commonly used items.
-- Menu items whose icon is standard or well known.
-- Menu items whose icon well illustrates what the command does.
-
-Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.
-
-![Example context menu with icons](images/contextmenu_rs2_icons.png)
-
-````xaml
-<MenuFlyout>
-  <MenuFlyoutItem Text="Share" >
-    <MenuFlyoutItem.Icon>
-      <FontIcon Glyph="&#xE72D;" />
-    </MenuFlyoutItem.Icon>
-  </MenuFlyoutItem>
-  <MenuFlyoutItem Text="Copy" Icon="Copy" />
-  <MenuFlyoutItem Text="Delete" Icon="Delete" />
-  <MenuFlyoutSeparator />
-  <MenuFlyoutItem Text="Rename" />
-  <MenuFlyoutItem Text="Select" />
-</MenuFlyout>
-````
-
-> [!TIP]
-> The size of the icon in a MenuFlyoutItem is 16x16px. If you use SymbolIcon, FontIcon, or PathIcon, the icon automatically scales to the correct size with no loss of fidelity. If you use BitmapIcon, ensure that your asset is 16x16px.  
-
-## Create a menu flyout or a context menu
-
-To create a menu flyout or a context menu, you use the [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
+To create a menu flyout, you use the [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
 
 These objects are for:
 
@@ -212,6 +142,37 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
+## Icons
+
+Consider providing menu item icons for:
+
+- The most commonly used items.
+- Menu items whose icon is standard or well known.
+- Menu items whose icon well illustrates what the command does.
+
+Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.
+
+![Example context menu with icons](images/contextmenu_rs2_icons.png)
+
+````xaml
+<MenuFlyout>
+  <MenuFlyoutItem Text="Share" >
+    <MenuFlyoutItem.Icon>
+      <FontIcon Glyph="&#xE72D;" />
+    </MenuFlyoutItem.Icon>
+  </MenuFlyoutItem>
+  <MenuFlyoutItem Text="Copy" Icon="Copy" />
+  <MenuFlyoutItem Text="Delete" Icon="Delete" />
+  <MenuFlyoutSeparator />
+  <MenuFlyoutItem Text="Rename" />
+  <MenuFlyoutItem Text="Select" />
+</MenuFlyout>
+````
+
+> [!TIP]
+> The size of the icon in a MenuFlyoutItem is 16x16px. If you use SymbolIcon, FontIcon, or PathIcon, the icon automatically scales to the correct size with no loss of fidelity. If you use BitmapIcon, ensure that your asset is 16x16px.  
+
+
 ### Light dismiss
 
 Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
@@ -273,9 +234,12 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
-- [XAML Context menu sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [XAML Context Menu sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## Related articles
 
+- [Command design basics for Windows apps](../basics/commanding-basics.md)
+- [Menus and context menus](menus-and-context-menus.md)
+- [Contextual commanding for collections and lists](collection-commanding.md)
 - [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout)
 - [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar)

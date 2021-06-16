@@ -16,7 +16,7 @@ Receive, process, and manage input data from pointing devices (such as touch, mo
 
 > [!Important]
 > Create custom interactions only if there is a clear, well-defined requirement and the interactions supported by the platform controls don't support your scenario.  
-> If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the [platform controls](../controls-and-patterns/controls-by-function.md). The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. 
+> If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the [platform controls](../controls-and-patterns/index.md). The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. 
 
 ## Important APIs
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)

@@ -89,9 +89,8 @@ A visual behavior specifies the appearance of a control when it is in a certain 
 
 This table lists the possible values of [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), the corresponding states of the [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), and the appearance of the **CheckBox**.
 
-|                     |                    |                         |
-|---------------------|--------------------|-------------------------|
 | **IsChecked** value | **CheckBox** state | **CheckBox** appearance |
+|---------------------|--------------------|-------------------------|
 | **true**            | `Checked`          | Contains an "X".        |
 | **false**           | `Unchecked`        | Empty.                  |
 | **null**            | `Indeterminate`    | Contains a circle.      |

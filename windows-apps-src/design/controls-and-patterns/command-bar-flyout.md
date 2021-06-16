@@ -3,13 +3,13 @@ description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 03/16/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: ksulliv
 dev-contact: llongley
-doc-status: Draft
+doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -43,22 +43,14 @@ The command bar flyout has two display modes: *collapsed* and *expanded*.
 >**Windows UI Library APIs**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
 >**Platform APIs**: [CommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->
-> CommandBarFlyout requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
 
 ## Is this the right control?
 
-Use the CommandBarFlyout control to show a collection of commands to the user, such as buttons and menu items, in the context of an element on the app canvas.
+Use the command bar flyout control to show a collection of commands to the user, such as buttons and menu items, in the context of an element on the app canvas.
 
-The TextCommandBarFlyout displays text commands in TextBox, TextBlock, RichEditBox, RichTextBlock, and PasswordBox controls. The commands are automatically configured appropriately to the current text selection. Use a CommandBarFlyout to replace the default text commands on text controls.
+Command bar flyout is the recommended control for creating [context menus](menus-and-context-menus.md). This allows the common commands (such as Copy, Cut, Paste, Delete, Share or text selection commands) that are most contextually relevant for the context menu's scenario to be added as primary commands so that they will be shown as a single, horizontal row in the command bar flyout. The TextCommandBarFlyout is already configured appropriately to automatically display text commands in TextBox, TextBlock, RichEditBox, RichTextBlock, and PasswordBox controls. A CommandBarFlyout can be used to replace the default text commands on text controls.
 
 To show contextual commands on list items follow the guidance in [Contextual commanding for collections and lists](collection-commanding.md).
-
-### CommandBarFlyout vs MenuFlyout
-
-To show commands in a context menu, you can use CommandBarFlyout or MenuFlyout. We recommend CommandBarFlyout because it provides more functionality than MenuFlyout. You can use CommandBarFlyout with only secondary commands to get the behavior and look of a MenuFlyout, or use the full command bar flyout with both primary and secondary commands.
-
-> For related info, see [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md), [Menus and context menus](menus.md), and [Command bars](app-bars.md).
 
 ## Examples
 
@@ -82,7 +74,7 @@ There are typically two ways to invoke a flyout or menu that's associated with a
 
 In proactive invocation, commands appear automatically when the user interacts with the item that the commands are associated with. For example, text formatting commands might pop up when the user selects text in a text box. In this case, the command bar flyout does not take focus. Instead, it presents relevant commands close to the item the user is interacting with. If the user doesn't interact with the commands, they are dismissed.
 
-In reactive invocation, commands are shown in response to an explicit user action to request the commands; for example, a right-click. This corresponds to the traditional concept of a [context menu](menus.md).
+In reactive invocation, commands are shown in response to an explicit user action to request the commands; for example, a right-click. This corresponds to the traditional concept of a [context menu](menus-and-context-menus.md).
 
 You can use the CommandBarFlyout in either way, or even a mixture of the two.
 
@@ -160,6 +152,8 @@ By default, command bar items are added to the **PrimaryCommands** collection. T
 
 You can also add commands to the **SecondaryCommands** collection. Secondary commands are shown in the menu portion of the control and are visible only in the expanded mode.
 
+If there are **common commands** (such as Copy, Cut, Paste, Delete, Share or text selection commands) that are important to the scenario, it is recommended to add them as primary commands rather than secondary commands.
+
 ### App bar buttons
 
 You can populate the PrimaryCommands and SecondaryCommands directly with [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) controls.
@@ -171,6 +165,16 @@ The app bar button controls are characterized by an icon and text label. These c
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
 - App bar buttons used as secondary commands are shown in the menu, with both the label and icon visible.
+
+## Icons
+
+Consider providing menu item icons for:
+
+- The most commonly used items.
+- Menu items whose icon is standard or well known.
+- Menu items whose icon well illustrates what the command does.
+
+Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.
 
 ### Other content
 
@@ -303,7 +307,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 
 ## Create a context menu with secondary commands only
 
-You can use a CommandBarFlyout with only secondary commands as a [context menu](menus.md), in place of a MenuFlyout.
+You can use a command bar flyout with only secondary commands to create a context menu that achieves the same look and behavior of [menu flyout](menus.md).
 
 ![A command bar flyout with only secondary commands](images/command-bar-flyout-context-menu.png)
 
@@ -412,6 +416,14 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 - To replace the default TextCommandBarFlyout that's shown on text selection, you can create a custom CommandBarFlyout (or other flyout type) and assign it to the **SelectionFlyout** property. If you set SelectionFlyout to **null**, no commands are shown on selection.
 - To replace the default TextCommandBarFlyout that's shown as the context menu, assign a custom CommandBarFlyout (or other flyout type) to the **ContextFlyout** property on a text control. If you set ContextFlyout to **null**, the menu flyout shown in previous versions of the text control is shown instead of the TextCommandBarFlyout.
 
+### Light dismiss
+
+Light dismiss controls–such as menus, context menus, and other flyouts–trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
+
+```xaml
+<CommandBarFlyout LightDismissOverlayMode="Off" /> >
+```
+
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
@@ -420,4 +432,8 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 ## Related articles
 
 - [Command design basics for Windows apps](../basics/commanding-basics.md)
+- [Contextual commanding for collections and lists](collection-commanding.md).
+- [Menus and context menus](menus-and-context-menus.md)
+- [Command bar and app bar](app-bars.md)
 - [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)
