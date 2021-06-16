@@ -19,6 +19,23 @@ ms.localizationpriority: medium
 
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 
+## WinUI and styles
+
+Starting with WinUI 2.2, we have used the [Windows UI Library](/windows/apps/winui/) (WinUI) to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
+
+Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
+
+You can change the style version by setting the `ControlsResourcesVersion` property on the `XamlControlsResources` that you include in your `Application.Resources` when you use WinUI version 2. `ControlsResourcesVersion` defaults to the enum value `Version2`.
+
+Setting this value to `Version1` causes `XamlControlsResources` to load the previous style versions instead of the new styles used by the latest WinUI version. Changing this property at runtime is not supported and VisualStudio's hot reload functionality will not work; however, after you rebuild your application you will see the control styles change.
+
+```xaml
+<Application.Resources>
+    <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" 
+                           ControlsResourcesVersion="Version1"/>
+</Application.Resources>
+```
+
 ## Style basics
 
 Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) and [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
