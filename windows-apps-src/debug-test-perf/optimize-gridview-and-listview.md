@@ -237,7 +237,7 @@ The general strategy for the [**ContainerContentChanging**](/uwp/api/windows.ui.
     }
     ```
 
-4.  If you run the app now and pan/scroll quickly through the grid view then you'll see the same behavior as for as for **x:Phase**.
+4.  If you run the app now and pan/scroll quickly through the grid view then you'll see the same behavior as for **x:Phase**.
 
 ## Container-recycling with heterogeneous collections
 
