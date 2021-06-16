@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: uwp controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 03/23/2020
+ms.date: 06/24/2021
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -42,7 +42,7 @@ General instructions and code examples for adding and styling controls in XAML a
       ![WinUI logo](images/winui-logo-64x64.png)
    :::column-end:::
    :::column span="3":::
-      Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).<br/>Starting with WinUI 2.2, the default style for many controls has been updated to use rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+      Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).
    :::column-end:::
    :::column:::
 
@@ -56,8 +56,10 @@ Detailed information about specific controls and patterns.
 :::row:::
     :::column:::
 
+- [Animated icon (New)](animated-icon.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
+- [Breadcrumb bar (New)](breadcrumbbar.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Button](buttons.md)
 - [Calendar date picker](calendar-date-picker.md)
 - [Calendar view](calendar-view.md)
@@ -73,6 +75,7 @@ Detailed information about specific controls and patterns.
 - [Date picker](date-picker.md)
 - [Dialogs and flyouts](dialogs-and-flyouts/index.md)
 - [Drop down button](buttons.md#create-a-drop-down-button) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Expander (New)](expander.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Flip view](flipview.md)
 - [Flyout](dialogs-and-flyouts/flyouts.md)
 - [Forms](forms.md) (pattern)
@@ -80,23 +83,24 @@ Detailed information about specific controls and patterns.
 - [Hyperlink](hyperlinks.md)
 - [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
 - [Images and image brushes](images-imagebrushes.md)
+- [Info bar (New)](infobar.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Inking controls](inking-controls.md)
 - [List/details](list-details.md) (pattern)
 - [List view](listview-and-gridview.md)
 - [Map control](../../maps-and-location/display-maps.md)
 - [Media playback](media-playback.md)
 - [Menu bar](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [Menu flyout](menus.md)
-- [Navigation view](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 
     :::column-end:::
     :::column:::
 
+- [Menu flyout](menus.md)
+- [Navigation view](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Number box](number-box.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Parallax view](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Password box](password-box.md)
 - [Person picture](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
-- [Pivot](pivot.md)
+- [Pips pager (New)](pipspager.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress bar](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Progress ring](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Radio button](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
