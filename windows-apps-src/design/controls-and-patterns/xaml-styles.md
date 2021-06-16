@@ -213,9 +213,95 @@ In other cases, changing a single control on one page only to look a certain way
 
 This would only effect that one “Special CheckBox” on the page where that control existed.
 
-## Modify the default system styles
+### Custom controls
 
-You should use the styles that come from the Windows Runtime default XAML resources when you can. When you have to define your own styles, try to base your styles on the default ones when possible (using based-on styles as explained earlier, or start by editing a copy of the original default style).
+When you are building your own custom controls that may be visually and/or functionally aligned with our built-in controls, consider using implicit styling and Lightweight styling resources to define your custom content. You can either use the resources directly, or create a new alias for the resource.
+
+#### Using control resources directly
+
+For example, if you are writing a control that looks like a Button, you can have your control reference the button resources directly, like this:
+
+```xaml
+<Style TargetType="local:MyCustomControl">
+  <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+  <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+</Style>
+```
+
+#### Aliasing control resources to new names
+
+Alternatively, if you prefer to make your own resources, you should alias those custom names to our default Lightweight styling resources.
+
+For example, your custom control's style might have special resource definitions:
+
+```xaml
+<Style TargetType="local:MyCustomControl">
+  <Setter Property="Background" Value="{ThemeResource MyCustomControlBackground}" />
+  <Setter Property="BorderBrush" Value="{ThemeResource MyCustomControlBorderBrush}"/>
+</Style>
+```
+
+In your Resource Dictionary or main definition, you would hook up the Lightweight styling resources to your custom ones:
+
+```xaml
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+        <StaticResource x:Key="MyCustomControlBorderBrush" ResourceKey="ButtonBorderBrush" />
+    </ResourceDictionary>        
+    <ResourceDictionary x:Key="Light">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+        <StaticResource x:Key="MyCustomControlBorderBrush" ResourceKey="ButtonBorderBrush" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="HighContrast">
+        <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
+        <StaticResource x:Key="MyCustomControlBorderBrush" ResourceKey="ButtonBorderBrush" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+```
+
+Its required that you use a `ThemeDictionary` that is duplicated three times in order to handle the three different theme changes properly (`Default`, `Light`, `HighContrast`).
+
+> [!CAUTION]
+> If you assign a Lightweight styling resource to a new alias, and also redefine the Lightweight styling resource, your customization might not be applied if the resource lookup is not in the correct order. For example, if you override `ButtonBackground` in a spot that is searched before `MyCustomControlBackground` is found, the override would be missed. 
+
+## Avoid restyling controls
+
+The [Windows UI Library](/windows/apps/winui/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls. 
+
+The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
+
+For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
+
+```xaml
+<Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+    <Setter Property="Foreground" Value="Blue"/>
+</Style>
+```
+
+For WinUI 2 controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
+
+### Derived controls
+
+If you derive a custom control from an existing XAML control, it will not get the WinUI 2 styles by default. To apply the WinUI 2 styles:
+
+- Create a new [Style](/uwp/api/windows.ui.xaml.style) with its [TargetType](/uwp/api/windows.ui.xaml.style.targettype) set to your custom control.
+- Base the Style on the default style of the control you derived from.
+
+One common scenario for this is to derive a new control from [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog). This example shows how to create a new Style that applies `DefaultContentDialogStyle` to your custom dialog. 
+
+```xaml
+<ContentDialog
+    x:Class="ExampleApp.SignInContentDialog"
+    ... >
+
+    <ContentDialog.Resources>
+        <Style TargetType="local:SignInContentDialog" BasedOn="{StaticResource DefaultContentDialogStyle}"/>
+        ...
+    </ContentDialog.Resources> 
+    <!-- CONTENT -->
+</ContentDialog>        
+```
 
 ## The template property
 
