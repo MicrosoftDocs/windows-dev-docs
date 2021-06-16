@@ -350,14 +350,14 @@ This might not always be possible due to differences in functionality across app
 | Find content in a focused control or Window | Ctrl + F |
 | Go to the next search result | F3 |
 | **Other Actions** | |
-| Add favorites | Ctrl + D | 
-| Refresh | F5 or Ctrl + R | 
-| Zoom In | Ctrl + + | 
-| Zoom out | Ctrl + - | 
-| Zoom to default view | Ctrl + 0 | 
-| Save | Ctrl + S | 
-| Close | Ctrl + W | 
-| Print | Ctrl + P | 
+| Add favorites | Ctrl + D |
+| Refresh | F5 or Ctrl + R |
+| Zoom In | Ctrl + + |
+| Zoom out | Ctrl + - |
+| Zoom to default view | Ctrl + 0 |
+| Save | Ctrl + S |
+| Close | Ctrl + W |
+| Print | Ctrl + P |
 
 Notice that some of the combinations are not valid for localized versions of Windows. For example, in the Spanish version of Windows, Ctrl+N is used for bold instead of Ctrl+B. We recommend providing localized keyboard accelerators if the app is localized.
 
@@ -462,7 +462,7 @@ Control the presentation behavior by using the [KeyboardAcceleratorPlacementMode
 </Button>
 ```
 
-In some cases, you might need to present a tooltip relative to another element (typically a container object). For example, a Pivot control that displays the tooltip for a PivotItem with the Pivot header. 
+In some cases, you might need to present a tooltip relative to another element (typically a container object). 
 
 Here, we show how to use the KeyboardAcceleratorPlacementTarget property to display the keyboard accelerator key combination for a Save button with the Grid container instead of the button.
 

@@ -1,12 +1,16 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows 10, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: quickstart
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 ---
 
 # Install PowerToys
+
+> [!WARNING]
+> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, will be removed in v0.37.
 
 We recommend installing PowerToys using the Windows executable button linked below, but alternative install methods are also listed if you prefer using a package manager.
 
@@ -84,3 +88,7 @@ scoop update powertoys
 ```
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
+
+## Post Install
+
+After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.

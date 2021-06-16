@@ -49,95 +49,13 @@ Follow these guidelines when you define and consume your own custom theme resour
 
 ## The XAML color ramp and theme-dependent brushes
 
-The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
+The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a theme to your own XAML elements, it’s important to understand how the color resources are structured.
 
 For additional information about how to apply color in your Windows app, please see [Color in Windows apps](../style/color.md).
 
 ### Light and Dark theme colors
 
-The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
-
-This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
-
-| Key                             | Simple light/dark name | Light      | Dark       |
-|---------------------------------|------------------------|------------|------------|
-| SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
-| SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
-| SystemAltMediumColor            | AltMedium              | \#99FFFFFF | \#99000000 |
-| SystemAltMediumHighColor        | AltMediumHigh          | \#CCFFFFFF | \#CC000000 |
-| SystemAltMediumLowColor         | AltMediumLow           | \#66FFFFFF | \#66000000 |
-| SystemBaseHighColor             | BaseHigh               | \#FF000000 | \#FFFFFFFF |
-| SystemBaseLowColor              | BaseLow                | \#33000000 | \#33FFFFFF |
-| SystemBaseMediumColor           | BaseMedium             | \#99000000 | \#99FFFFFF |
-| SystemBaseMediumHighColor       | BaseMediumHigh         | \#CC000000 | \#CCFFFFFF |
-| SystemBaseMediumLowColor        | BaseMediumLow          | \#66000000 | \#66FFFFFF |
-| SystemChromeAltLowColor         | ChromeAltLow           | \#FF171717 | \#FFF2F2F2 |
-| SystemChromeBlackHighColor      | ChromeBlackHigh        | \#FF000000 | \#FF000000 |
-| SystemChromeBlackLowColor       | ChromeBlackLow         | \#33000000 | \#33000000 |
-| SystemChromeBlackMediumLowColor | ChromeBlackMediumLow   | \#66000000 | \#66000000 |
-| SystemChromeBlackMediumColor    | ChromeBlackMedium      | \#CC000000 | \#CC000000 |
-| SystemChromeDisabledHighColor   | ChromeDisabledHigh     | \#FFCCCCCC | \#FF333333 |
-| SystemChromeDisabledLowColor    | ChromeDisabledLow      | \#FF7A7A7A | \#FF858585 |
-| SystemChromeHighColor           | ChromeHigh             | \#FFCCCCCC | \#FF767676 |
-| SystemChromeLowColor            | ChromeLow              | \#FFF2F2F2 | \#FF171717 |
-| SystemChromeMediumColor         | ChromeMedium           | \#FFE6E6E6 | \#FF1F1F1F |
-| SystemChromeMediumLowColor      | ChromeMediumLow        | \#FFF2F2F2 | \#FF2B2B2B |
-| SystemChromeWhiteColor          | ChromeWhite            | \#FFFFFFFF | \#FFFFFFFF |
-| SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
-| SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
-
-:::row:::
-    :::column:::
-        #### Light theme
-    :::column-end:::
-    :::column:::
-        #### Dark theme
-    :::column-end:::
-:::row-end:::
-
-#### Base
-
-:::row:::
-    :::column:::
-        ![The base light theme](images/themes/light-base.png)
-    :::column-end:::
-    :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
-    :::column-end:::
-:::row-end:::
-
-#### Alt
-
-:::row:::
-    :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
-    :::column-end:::
-    :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
-    :::column-end:::
-:::row-end:::
-
-#### List
-
-:::row:::
-    :::column:::
-        ![The list light theme](images/themes/light-list.png)
-    :::column-end:::
-    :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
-    :::column-end:::
-:::row-end:::
-
-#### Chrome
-
-:::row:::
-    :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
-    :::column-end:::
-    :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
-    :::column-end:::
-:::row-end:::
+The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
 ### Windows system high-contrast colors
 
@@ -156,11 +74,11 @@ This table lists the system-wide colors that XAML provides as resource objects d
 | SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
-Windows provides different high-contrast themes, and enables the user to set the specific colors to for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
+Windows provides different high-contrast themes, and enables the user to set the specific colors for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
 
 ![The Windows high contrast settings UI](images/high-contrast-settings.png)
 
-For more info about supporting high-contrast themes, see [High-contrast themes](../accessibility/high-contrast-themes.md).
+For more information about supporting high-contrast themes, see [High-contrast themes](../accessibility/high-contrast-themes.md).
 
 ### System accent color
 
@@ -171,32 +89,23 @@ In addition to the system high-contrast theme colors, the system accent color is
 
 ### Theme-dependent brushes
 
-The color resources shown in the preceding sections are used to set the [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) property of [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackgroundAltHighBrush`.
+The color resources shown in the preceding sections are used to set the [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) property of [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. 
 
 Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
 
-`<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>`
+`<SolidColorBrush x:Key="TextFillColorPrimaryBrush" Color="{StaticResource TextFillColorPrimary}"/>`
 
 In the "HighContrast" resource dictionary, this brush is defined like this:
 
-`<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>`
+`<SolidColorBrush x:Key="TextFillColorPrimaryBrush" Color="{ThemeResource SystemColorWindowTextColor}"/>`
 
 When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.
 
-| Theme        | Color simple name | Color resource             | Runtime value                                              |
-|--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Background        | SystemColorButtonFaceColor | The color specified in settings for the button background. |
-
-You can use the `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` naming scheme to determine which brush to apply to your own XAML elements.
-
-<!--
-For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
--->
-
-> [!NOTE]
-> Not every combination of \[*Simple HighContrast name*\]\[*Simple light/dark name*\] is provided as a brush resource.
+| Theme        | Color resource             | Runtime value                                              |
+|--------------|----------------------------|------------------------------------------------------------|
+| Light        | TextFillColorPrimary       | \#E4000000                                                 |
+| Dark         | TextFillColorPrimary       | \#FFFFFFFF                                                 |
+| HighContrast | SystemColorWindowTextColor | The color specified in settings for Text. |
 
 ## The XAML type ramp
 
@@ -206,129 +115,30 @@ These styles are for text attributes that you want applied to the whole text con
 
 The styles look like this when applied to a [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock):
 
-![text block styles](../style/images/type/text-block-type-ramp.svg)
+![text block styles](../style/images/type/type-ramp.png)
 
 ```XAML
-<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
-<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
-<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
-<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
-<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
-<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body Strong" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+<TextBlock Text="Body Large" Style="{StaticResource BodyLargeTextBlockStyle}"/>
+<TextBlock Text="Subtitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
+<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
+<TextBlock Text="Title Large" Style="{StaticResource TitleLargeTextBlockStyle}"/>
+<TextBlock Text="Display" Style="{StaticResource DisplayTextBlockStyle}"/>
 ```
 
 For guidance on how to use the Windows type ramp in your app, see [Typography in Windows apps](../style/typography.md).
 
-### BaseTextBlockStyle
-
-**TargetType**: [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
-
-Supplies the common properties for all the other [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) container styles.
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
-    <Setter Property="FontFamily" Value="Segoe UI"/>
-    <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="14"/>
-    <Setter Property="TextTrimming" Value="None"/>
-    <Setter Property="TextWrapping" Value="Wrap"/>
-    <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
-    <Setter Property="TextLineBounds" Value="Full"/>
-</Style>
-```
-
-### HeaderTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="46"/>
-    <Setter Property="FontWeight" Value="Light"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### SubheaderTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="34"/>
-    <Setter Property="FontWeight" Value="Light"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### TitleTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="TitleTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="SemiLight"/>
-    <Setter Property="FontSize" Value="24"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### SubtitleTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="SubtitleTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="20"/>
-    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
-</Style>
-```
-
-### BodyTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="14"/>
-</Style>
-```
-
-### CaptionTextBlockStyle
-
-```XAML
-<!-- Usage -->
-<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
-
-<!-- Style definition -->
-<Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
-       BasedOn="{StaticResource BaseTextBlockStyle}">
-    <Setter Property="FontSize" Value="12"/>
-    <Setter Property="FontWeight" Value="Normal"/>
-</Style>
-```
+For details of the XAML styles, see WinUI on GitHub:
+ - [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L21)
+ - [Body TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L27)
+ - [Body Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L33)
+ <!--- [Body Large TextBlockStyle]()-->
+ - [Subtitle TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L37)
+ - [Title TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L42)
+ - [Title Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L47)
+ - [Display TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L52)
 
 ### BaseRichTextBlockStyle
 
@@ -375,25 +185,6 @@ Supplies the common properties for all the other [RichTextBlock](/uwp/api/Window
 
 There's an additional set of keyed [Style](/uwp/api/Windows.UI.Xaml.Style) definitions you can apply to style a [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) differently than its default implicit style.
 
-### TextBlockButtonStyle
-
-**TargetType**: [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
-
-Apply this style to a [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), the **TextBlockButtonStyle** does not underline the text.
-
-The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
-
-Here's a [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) with the **TextBlockButtonStyle** resource applied to it.
-
-```XAML
-<Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
-        Click="Button_Click"/>
-```
-
-It looks like this:
-
-![A button styled to look like text](images/styles-textblock-button-style.png)
-
 ### NavigationBackButtonNormalStyle
 
 **TargetType**: [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
@@ -437,7 +228,7 @@ For example, consider this theme dictionary definition:
 <ResourceDictionary>
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Default">
-      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemBaseHighColor}"/>
+      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource ControlFillColorDefault}"/>
     </ResourceDictionary>
     <ResourceDictionary x:Key="HighContrast">
       <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
@@ -457,10 +248,10 @@ To fix this, replace the "Default" dictionary with separate theme dictionaries f
 <ResourceDictionary>
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
-      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemBaseHighColor}"/>
+      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource ControlFillColorDefault}"/>
     </ResourceDictionary>
     <ResourceDictionary x:Key="Dark">
-      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemBaseHighColor}"/>
+      <SolidColorBrush x:Key="myBrush" Color="{ThemeResource ControlFillColorDefault}"/>
     </ResourceDictionary>
     <ResourceDictionary x:Key="HighContrast">
       <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>
@@ -481,10 +272,10 @@ To fix this problem, use the [{StaticResource} markup extension](../../xaml-plat
 <ResourceDictionary>
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
-      <SolidColorBrush x:Key="myBrush" Color="{StaticResource SystemBaseHighColor}"/>
+      <SolidColorBrush x:Key="myBrush" Color="{StaticResource ControlFillColorDefault}"/>
     </ResourceDictionary>
     <ResourceDictionary x:Key="Dark">
-      <SolidColorBrush x:Key="myBrush" Color="{StaticResource SystemBaseHighColor}"/>
+      <SolidColorBrush x:Key="myBrush" Color="{StaticResource ControlFillColorDefault}"/>
     </ResourceDictionary>
     <ResourceDictionary x:Key="HighContrast">
       <SolidColorBrush x:Key="myBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>

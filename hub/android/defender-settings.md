@@ -1,6 +1,6 @@
 ---
-title: Improve performance speed by updating Defender settings
-description: A guide to improve overall performance speed and build times by updating Windows Defender settings to exclude checking specified file types.
+title: Windows Defender security settings
+description: Learn how to improve performance speed and build times by updating Windows Defender settings to exclude checking specified file types.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -1,6 +1,6 @@
 ---
-title: Stories from developers who have switched from Mac to Windows
-description: Hear stories from other developers about their experiences switching between a Mac and Windows development environment.
+title: Devs stories switching from Mac to Windows
+description: Stories from developers who have changed from a Mac to a Windows development machine.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken

@@ -4,6 +4,7 @@ description: A windows shell extension for bulk renaming of files
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerRename, Pampalona, Windows, File Explorer, regex]
 ---
 
 # PowerRename utility
@@ -136,7 +137,7 @@ To enable regular expressions, check the "Use Regular Expressions" checkbox.
 
 **Note:** You will likely want to check "Match All Occurrences" while using regular expressions.
 
-To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, check the `Use Boost library` option in the PowerToys settings. It enables extended features, like `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)`, which are not supported by the standard library.
+To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, check the `Use Boost library` option in the PowerToys settings. It enables extended features, like [lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), which are not supported by the standard library.
 
 ### Examples of regular expressions
 

@@ -18,9 +18,9 @@ When you want to create a new desktop application for Windows PCs, the first dec
 * [WPF](#wpf) and [Windows Forms](#windows-forms): These .NET-based platforms provide a common type system, APIs, and application model for managed applications.
 * [Win32](#win32): This is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
 
-Each of these platforms include a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each these platforms also support using the [Windows UI Library (WinUI)](#use-the-windows-ui-library-with-windows-apps) to create their user interfaces.
+Each of these platforms include a complete UI framework and set of UI controls that let you create desktop apps like Word, Excel, and Photoshop that run in the classic Windows desktop and take full advantage of that environment's specific features. On Windows 10, each of these platforms also support using the [Windows UI Library (WinUI)](#use-the-windows-ui-library-with-windows-apps) to create their user interfaces.
 
-Some of these platforms share some traits and are better suited for certain types of applications. For example, both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
+Some of these platforms share certain traits and are better suited for specific application types. For example, both UWP and .NET have deep integration with Visual Studio. This provides many benefits, especially in the areas of developer productivity, sophisticated and customizable UI, and application security. Because these frameworks support visual designers and UI markup for rapidly creating UI, they are particularly well-suited for line-of-business applications.
 
 > [!NOTE]
 > No matter which app platform you choose, you can use many Windows 10 features to deliver a modern experience in your app. For example, even if your desktop app is built using WPF, Windows Forms, or the Win32 API, you can still use MSIX package deployment. For more information about all the ways to modernize your desktop apps, see [Modernize your desktop apps](modernize/index.md).
@@ -42,21 +42,19 @@ For more information about UWP, see the following articles:
 
 ## WPF
 
-WPF is the established platform for managed Windows applications with access to .NET Core or the full .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
+WPF is the established platform for managed Windows applications with access to .NET 5 or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
 
 For more information about WPF, see the following articles:
 
 * [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
 * [Project templates](visual-studio-templates.md#net-templates)
-* [Create your first app (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
-* [Create your first app (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
-* [Migrate WPF apps to .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
+* [Create your first app](/dotnet/desktop/wpf/get-started/create-app-visual-studio)
 * [API reference (.NET)](/dotnet/api/index)
 * [Samples](https://github.com/Microsoft/WPF-Samples)
 
 ## Windows Forms
 
-Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET Core or the full .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
+Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET 5 or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
 
 For more information about Windows Forms, see the following articles:
 
@@ -82,7 +80,7 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 For more information, see the following articles:
 
 * [Get started](/windows/win32/desktop-programming/)
-* [Project templates](visual-studio-templates.md#cwin32-templates)
+* [Project templates](visual-studio-templates.md#c-desktop-win32-templates)
 * [Create your first Win32 and C++ app](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [Technologies and features](/windows/win32/desktop-app-technologies)
 * [API reference](/windows/win32/apiindex/windows-api-list/)
@@ -96,11 +94,11 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 |--------|--------|--------|--------|
 | **Supported versions**      |  Windows 10   |  Windows 7 and later |  Windows 7 and later  |
 | **Languages**      |   C\#, C++/WinRT, C++/CX, VB, JavaScript   |  C\#, C++/CLI (Managed Extensions for C++), F\#, VB |  C\#, C++/CLI (Managed Extensions for C++), F\#, VB   |
-| **UI runtime** |    Native (C++/WinRT and C++/CX) and managed (.NET Native)  |  Managed (.NET Framework and .NET Core 3) |   Managed (.NET Framework and .NET Core 3)   |
-| **Open source** | [Yes (Windows UI Library only)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [Yes (.NET Core only)](https://github.com/dotnet/wpf) | [Yes (.NET Core only)](https://github.com/dotnet/winforms)  |
+| **UI runtime** |    Native (C++/WinRT and C++/CX) and managed (.NET Native)  |  Managed (.NET Framework and .NET 5) |   Managed (.NET Framework and .NET 5)   |
+| **Open source** | [Yes (Windows UI Library only)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [Yes (.NET 5 only)](https://github.com/dotnet/wpf) | [Yes (.NET 5 only)](https://github.com/dotnet/winforms)  |
 | **Supports XAML** |   Yes   |  Yes  |   No   |
 | **Strengths**  |  <ul><li>XAML markup for UI</li><li>Rich and customizable UX</li><li>Your existing code bases are .NET Standard compliant</li><li>High DPI support</li><li>Support for multiple input types across Windows devices (including touch, pen, gamepad, mouse, and keyboard)</li><li>Support for Xbox, HoloLens, IoT or Surface Hub</li><li>Optional dense (compact) UI</li><li>Support for native C++</li><li>Optimized battery life</li><li>Modern accessibility support (such as screen readers)</li><li>Rich text data capabilities (such as built-in spell check)</li><li>Inking support</li><li>Secure execution via application containers (for example, untrusted content is sandboxed)</li></ul>  |  <ul><li>XAML markup for UI</li><li>Rich and customizable UX</li><li>Large collection of controls from Microsoft and partners</li><li>Dense UI</li><li>Support for Windows 7</li><li>Platform support for input validation</li></ul> | <ul><li>Rapid application development</li><li>WYSIWYG editor for building UI</li><li>Large collection of controls from Microsoft and partners</li><li>Dense UI</li><li>Support for Windows 7</li><li>Keyboard and mouse input</li></ul>          |
-| **Scenarios that have limited support** |  <ul><li>Multiple window support<sup>1</sup></li><li>Platform support for input validation<sup>1</sup></li><li>Windows 7 is not supported</li><li>Some Windows Runtime APIs require specific minimum versions of Windows 10</li><li>Full platform support and shell integration (for example, UWP currently doesn't support System Tray integration or full access to all devices)</li><li>Direct access to all files on disk</li><li>ADO.NET</li><li>Existing code-base class libraries that use non-.NET Standard or non-Windows App Certification Kit compliant APIs</li><li>Local network loopback support (that is, if your app needs to communicate with localhost without creating a loopback exemption on the target device)</li><li>Intensive file I/O</li></ul>     |  <ul><li>High DPI support<sup>2</sup></li><li>Touch input<sup>2</sup></li></ul>  |  <ul><li>High DPI support<sup>2</sup></li><li>Touch input<sup>2</sup></li><li>Customizable UI</li><li>Rich graphics and user experiences (such as touch and animations)</li><li>Rich abstraction of views and data models</li></ul>    |   |
+| **Scenarios that have limited support** |  <ul><li>Multiple window support<sup>1</sup></li><li>Platform support for input validation<sup>1</sup></li><li>Windows 7 is not supported</li><li>Some Windows Runtime APIs require specific minimum versions of Windows 10</li><li>Full platform support and shell integration (for example, UWP currently doesn't support System Tray integration or full access to all devices)</li><li>Direct access to all files on disk</li><li>ADO.NET</li><li>Existing code-base class libraries that use non-.NET Standard or non-Windows App Certification Kit compliant APIs</li><li>Local network loopback support (that is, if your app needs to communicate with localhost without creating a loopback exemption on the target device)</li><li>Intensive file I/O</li></ul>     |  <ul><li>High DPI support<sup>2</sup></li><li>Touch input<sup>2</sup></li></ul>  |  <ul><li>High DPI support<sup>2</sup></li><li>Touch input<sup>2</sup></li><li>Customizable UI</li><li>Rich graphics and user experiences (such as touch and animations)</li><li>Rich abstraction of views and data models</li></ul>    |
 
 <sup>1</sup> We have publicly announced features that will address this scenario in a future release of Windows 10.
 
@@ -108,7 +106,7 @@ The following table compares various characteristics of Windows Forms, WPF, and 
 
 ## Use the Windows UI Library with Windows apps
 
-To supplement the main Windows app platforms, you can also use the [Windows UI Library (WinUI)](../winui/index.md) in your apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3 (still in preview), WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
+To supplement the main Windows app platforms, you can also use the [Windows UI Library (WinUI)](../winui/index.md) in your apps. WinUI started as a toolkit that provides new and updated versions of WinRT controls for UWP apps that target down-level versions of Windows 10. As of WinUI 3, WinUI is growing in scope to become the premier native user interface (UI) framework for Windows 10 apps across UWP, .NET, and Win32 app platforms.
 
 You can use WinUI in the following ways in Windows apps.
 
@@ -116,11 +114,8 @@ You can use WinUI in the following ways in Windows apps.
   * UWP apps can use WinUI 2.x controls in place of WinRT controls provided by the Windows SDK. These releases of WinUI include both all-new controls and updated versions of existing controls from the Windows SDK.
   * You can update existing WPF, Windows Forms, and C++/Win32 apps to host WinUI 2.x controls by using [XAML Islands](modernize/xaml-islands.md).
 
-* [WinUI 3 (preview)](../winui/winui3/index.md):
-  * Starting with WinUI 3, you can create [.NET and C++/Win32 apps](../winui/winui3/get-started-winui3-for-desktop.md) and [UWP apps](../winui/winui3/get-started-winui3-for-uwp.md) that use an entirely WinUI-based UI. This release includes Visual Studio project templates that provide everything you need to create these apps.
-
-> [!NOTE]
-> WinUI 3 is still in preview, and should not be used for production apps.
+* [WinUI 3](../winui/winui3/index.md):
+  * Starting with WinUI 3, you can create [.NET and C++ desktop (Win32) apps](../winui/winui3/get-started-winui3-for-desktop.md) and [UWP apps](../winui/winui3/get-started-winui3-for-uwp.md) that use an entirely WinUI-based UI. This release includes Visual Studio project templates that provide everything you need to create these apps.
 
 ## Other app platforms
 

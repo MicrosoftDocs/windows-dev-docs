@@ -81,7 +81,7 @@ You can use either of these receipt examples to test your validation code. For m
 
 ## Validating a receipt
 
-To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```CertificateId``` is the **CertificateId** value in the receipt.
+To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL `https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60`, where `CertificateId` is the **CertificateId** value in the receipt.
 
 Here's an example of that validation process. This code runs in a .NET Framework console application that includes a reference to the **System.Security** assembly.
 
@@ -111,7 +111,7 @@ The root element of this file is the **Receipt** element, which contains informa
 |  **Version**  |    The version number of the receipt.            |
 |  **CertificateId**  |     The certificate thumbprint used to sign the receipt.          |
 |  **ReceiptDate**  |    Date the receipt was signed and downloaded.           |  
-|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
+|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |
 
 <span id="appreceipt" />
 
@@ -126,7 +126,7 @@ This element contains purchase information for the current app.
 |  **Id**  |    Identifies the purchase.           |
 |  **AppId**  |     The Package Family Name value that the OS uses for the app.           |
 |  **LicenseType**  |    **Full**, if the user purchased the full version of the app. **Trial**, if the user downloaded a trial version of the app.           |  
-|  **PurchaseDate**  |    Date when the app was acquired.          |  |
+|  **PurchaseDate**  |    Date when the app was acquired.          |
 
 <span id="productreceipt" />
 
@@ -142,7 +142,7 @@ This element contains information about an in-app purchase for the current app.
 |  **AppId**  |     Identifies the app through which the user made the purchase.           |
 |  **ProductId**  |     Identifies the product purchased.           |
 |  **ProductType**  |    Determines the product type. Currently only supports a value of **Durable**.          |  
-|  **PurchaseDate**  |    Date when the purchase occurred.          |  |
+|  **PurchaseDate**  |    Date when the purchase occurred.          |
 
  
 

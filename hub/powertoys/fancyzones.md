@@ -1,9 +1,10 @@
 ---
 title: PowerToys FancyZones utility for Windows 10
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 12/02/2020
+ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 ---
 
 # FancyZones utility
@@ -22,7 +23,7 @@ To get started using FancyZones, you need to enable the utility in PowerToys set
 
 Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>`</kbd> (note that this shortcut can be changed in the settings dialog).  
 
-![FancyZones Settings UI](../images/pt-fancyzones-settings1.png) 
+![FancyZones Settings UI](../images/pt-fancyzones-settings.png) 
 
 ### Elevated permission admin apps
 
@@ -40,7 +41,7 @@ If multiple displays are in use, the editor will detect the available monitors a
 
 ### Space around zones
 
-The **Show space around zones** toggle enables you to determine sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
+The **Show space around zones** toggle enables you to determine what sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for how wide the border will be.
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between FancyZone windows until they snap together, or before both are highlighted enabling them to merge together.
 
@@ -63,6 +64,14 @@ To merge two zones, select and hold the left mouse button and drag the mouse unt
 The additive **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows.
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
+
+### Quickly changing between layouts
+
+With a custom layout, this layout can be configured to a user-defined hotkey to quickly apply it to the desired desktop. The hotkey can be set by opening the custom layout's edit menu. Once set, the custom layout can be applied by pressing the `Win ⊞ + Ctrl + Alt + [hotkey]` binding. The layout can also be applied by pressing the hotkey when dragging a window.
+
+In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the `Win ⊞ + Ctrl + Alt + [hotkey]` binding to apply the first custom layout and bind a window to it. Finally, we apply the second custom layout while dragging a window and bind the window to it.
+
+![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
 
 ## Snapping a window to two or more zones
 

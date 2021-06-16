@@ -25,7 +25,7 @@ The first step in developing your game is to create a project in Microsoft Visua
 ## Create a new project in Visual Studio
 
 > [!NOTE]
-> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](/windows/uwp/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 First install (or update to) the latest version of the C++/WinRT Visual Studio Extension (VSIX); see the note above. Then, in Visual Studio, create a new project based on the **Core App (C++/WinRT)** project template. Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
@@ -89,11 +89,11 @@ And here's the skeleton of the **App** class (in `App.cpp`), showing the signatu
 struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 {
     ...
-    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const& applicationView) { ... }
     void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
     void Load(winrt::hstring const& entryPoint) { ... }
     void OnActivated(
-        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Core::CoreApplicationView const& applicationView,
         Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
     void Run() { ... }
     void Uninitialize() { ... }
@@ -166,7 +166,7 @@ For more info about the **package.appxmanifest** file and packaging, see [Manife
 
 If you don't select the capabilities that your game uses, such as access to the **Internet** for global high score board, then you won't be able to access the corresponding resources nor features. When you create a new game, make sure that you select any capabilities needed by APIs that your game calls.
 
-Now let's look at the rest of the files that come with the **DirectX 11 App (Universal Windows)** template.
+Now let's look at the rest of the files that come with the **Simple3DGameDX** sample game.
 
 ## Review other important libraries and source code files
 
@@ -184,7 +184,7 @@ Here's a brief survey of some of the files in **Simple3DGameDX** that you'll fin
 |VertexShader.hlsl and VertexShaderFlat.hlsl|Shaders|Contains the high-level shader language (HLSL) code for basic vertex shaders.|
 |PixelShader.hlsl and PixelShaderFlat.hlsl|Shaders|Contains the high-level shader language (HLSL) code for basic pixel shaders.|
 |ConstantBuffers.hlsli|Shaders|Contains data structure definitions for constant buffers and shader structures used to pass model-view-projection (MVP) matrices and per-vertex data to the vertex shader.|
-|pch.h/.cpp|N/A|Contains common C++/WinRT, Windows, and DirectX includes.| 
+|pch.h/.cpp|N/A|Contains common C++/WinRT, Windows, and DirectX includes.|
 
 ### Next steps
 

@@ -35,7 +35,7 @@ For info about porting to C++/WinRT, see these resources.
 - [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
 - [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)
 
-Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).
+Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
 
 ### Topics about C++/WinRT
 
@@ -44,12 +44,12 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwi
 | [Introduction to C++/WinRT](./intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
 | [Get started with C++/WinRT](./get-started.md) | To get you up to speed with using C++/WinRT, this topic walks through a simple code example. |
 | [What's new in C++/WinRT](./news.md) | News and changes to C++/WinRT. |
-| [Frequently-asked questions](./faq.md) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
+| [Frequently-asked questions](./faq.yml) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
 | [Troubleshooting](./troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 | [Photo Editor C++/WinRT sample application](./photo-editor-sample.md) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. | 
 | [String handling](./strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md) | With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types. |
-| [Boxing and unboxing scalar values to IInspectable](./boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
+| [Boxing and unboxing values to IInspectable](./boxing.md) | A scalar or array value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
 | [Consume APIs with C++/WinRT](./consume-apis.md) | This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself. |
 | [Author APIs with C++/WinRT](./author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
 | [Error handling with C++/WinRT](./error-handling.md) | This topic discusses strategies for handling errors when programming with C++/WinRT. |
@@ -77,6 +77,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.md#where-can-i-find-cwi
 | [Extension points for your implementation types](./details-about-destructors.md) | These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. |
 | [A simple C++/WinRT Windows UI Library example](./simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 | [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) | This topic shows how to use C++/WinRT to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language. |
+| [Visual Studio native debug visualization (natvis) for C++/WinRT](./natvis.md) | The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging. |
 
 ### Topics about the C++ language
 

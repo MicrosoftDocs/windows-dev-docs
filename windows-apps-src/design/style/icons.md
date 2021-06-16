@@ -130,9 +130,11 @@ Bitmap images are created at a specific size, so they have to be scaled up or do
 
 ## Make the icon do something
 
-Once you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to do this is to add the icon to a button or a command bar. 
+Once you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to do this is to add the icon to a button or a command bar.
 
 ![Command bar image](images/icons/app-bar-desktop.svg)
+
+You can also animate an icon to draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action associated with the icon in an entertaining and interesting way. See [AnimatedIcon](../controls-and-patterns/animated-icon.md).
 
 ## Create an icon button
 
@@ -159,7 +161,8 @@ Set the button's font family to `Segoe MDL2 Assets` and its content property to 
         <b>Step 2</b><br>
 You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon),
 [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), 
-[PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), or
+[PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), 
+[ImageIcon](/uwp/api/windows.ui.xaml.controls.imageicon), or
 [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
     :::column-end:::
 	:::column:::
@@ -199,8 +202,8 @@ The easiest way is to use the list of predefined icons we provide—simply speci
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
     <AppBarButton Icon="Forward" Label="Forward" Click="AppBarButton_Click"/>
 </CommandBar>
-
 ```
+
 For the complete list of icon names, see the [Symbol enumeration](/uwp/api/windows.ui.xaml.controls.symbol). 
 
 There are other ways to provide icons for a button in a command bar:
@@ -208,11 +211,11 @@ There are other ways to provide icons for a button in a command bar:
 + [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.
 + [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.
 + [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
++ [ImageIcon](/uwp/api/windows.ui.xaml.controls.imageicon) - the icon is based on an image file type supported by the [Image](/uwp/api/windows.ui.xaml.controls.image) class. 
 
 To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md). 
 
-
-
 ## Related articles
 
-* [App icons and logos](app-icons-and-logos.md)
+- [App icons and logos](app-icons-and-logos.md)
+- [AnimatedIcon](../controls-and-patterns/animated-icon.md)

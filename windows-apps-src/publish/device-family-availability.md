@@ -1,7 +1,7 @@
 ---
 description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
-ms.date: 03/21/2019
+ms.date: 02/26/2021
 ms.topic: article
 keywords: windows 10, uwp, packages, upload, device family availability
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Device family availability
 
-After your packages have been successfully uploaded on the **Packages** page, the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 device families.
+After your packages have been [successfully uploaded on the **Packages** page](upload-app-packages.md), the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 device families.
 
 > [!NOTE]
 > If you haven't uploaded packages yet, the **Device family availability** section will show the Windows 10 device families with checkboxes that let you indicate whether or not the submission will be offered to customers on those device families. The table will appear after you upload one or more packages.

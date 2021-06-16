@@ -1,6 +1,6 @@
 ---
-title: PWA approach to Android development on Windows
-description: A step-by-step guide on how to get started creating a hybrid web app or Progressive Web App (PWA) on Windows.
+title: Create a PWA or Hybrid web app for Android
+description: Get started developing Android apps using the PWA approach on Windows.
 author: mattwojo
 ms.author: mattwoj 
 manager: jken
@@ -56,7 +56,7 @@ Support was recently discontinued. For more, see this [blog post from Adobe](htt
 
 To get started building a PWA or hybrid web app with PhoneGap, you should first install the following tools:
 
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../dev-environment/javascript/nodejs-on-wsl.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../dev-environment/javascript/nodejs-on-wsl.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
 
 Install PhoneGap by entering the following in your command line:
 
@@ -77,7 +77,7 @@ To create a new PhoneGap project, follow their steps to [Get started](https://ph
 
 To get started building a PWA or hybrid web app with Ionic, you should first install the following tools:
 
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../dev-environment/javascript/nodejs-on-wsl.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../dev-environment/javascript/nodejs-on-wsl.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
 
 - VS Code for writing your code. [Download VS Code for Windows](https://code.visualstudio.com/). You may also want to install the [WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you prefer to build your app with a Linux command line.
 

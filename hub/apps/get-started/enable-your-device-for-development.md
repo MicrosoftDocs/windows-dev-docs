@@ -5,7 +5,7 @@ description: Learn how to enable your Windows 10 device for development and debu
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.date: 10/13/2020
 ms.topic: article
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ---
 
 # Enable your device for development

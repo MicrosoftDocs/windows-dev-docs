@@ -8,7 +8,6 @@ ms.localizationpriority: medium
 
 # search command (winget)
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
 
 The **search** command of the [winget](index.md) tool queries the sources for available applications that can be installed.  
 

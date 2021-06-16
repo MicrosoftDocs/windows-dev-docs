@@ -38,37 +38,48 @@
       "ms.prod":
       {
         "apps/trace-processing/**.md": "traceprocessor",
+        "apps/project-reunion/**.md": "reunion",
+        "apps/winui/**.md": "reunion",
         "python/**.md": "dev-environment",
         "nodejs/**.md": "dev-environment",
         "android/**.md": "dev-environment",
         "dev-environment/**.md": "dev-environment",
         "package-manager/**.md": "dev-environment",
-        "powertoys/**.md": "dev-environment"
+        "powertoys/**.md": "dev-environment",
+        "javascript/**.md": "dev-environment",
+        "rust/**.md": "dev-environment"
       },
       "ms.technology":
       {
         "apps/**.md": "apps",
-        "apps/winui/*.md": "winui", 
+        "apps/project-reunion/**.md": "",
+        "apps/project-reunion/mrtcore/*.md": "mrt-core",
+        "apps/project-reunion/dwritecore.md": "dwrite-core",
+        "apps/winui/**.md": "winui-conceptual", 
         "apps/trace-processing/**.md": "",
         "python/**.md": "windows-python",
-        "nodejs/**.md": "windows-nodejs",
         "android/**.md": "windows-android",
         "powertoys/**.md": "powertoys",
-        "package-manager/**.md": "package-manager"
+        "package-manager/**.md": "package-manager",
+        "dev-environment/javascript/**.md": "windows-javascript",
+        "dev-environment/rust/**.md": "windows-rust"
       },	 
       "feedback_product_url": 
       {
         "apps/winui/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
         "apps/trace-processing/**.md": "https://github.com/microsoft/eventtracing-processing/issues",
+        "dev-environment/**.md": "https://github.com/Microsoft/windev/issues",
+        "web/**.md": "https://github.com/Microsoft/windev",
         "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues",
         "powertoys/**.md": "https://github.com/microsoft/PowerToys/issues"
       },
       "author":
       {
         "apps/10x/*.md": "QuinnRadich",
-        "apps/desktop/*.md": "mcleanbyron",
+        "apps/desktop/**.md": "mcleanbyron",
         "apps/trace-processing/*.md": "maiak",
         "apps/whats-new/*.md": "QuinnRadich",
+        "apps/project-reunion/**.md": "mcleanbyron",
         "apps/winui/*.md": "Karl-Bridge-Microsoft",
         "apps/winui/winui2/*.md": "Karl-Bridge-Microsoft",
         "apps/winui/winui2/release-notes/*.md": "Karl-Bridge-Microsoft",
@@ -80,15 +91,16 @@
         "android/*.md": "mattwojo",
         "nodejs/*.md": "mattwojo",
         "python/*.md": "mattwojo",
-        "powertoys/*.md": "crutkas",
-        "package-manager/*.md": "KevinLaMS"
+        "powertoys/*.md": "mattwojo",
+        "package-manager/**.md": "KevinLaMS"
       },
       "ms.author":
       {
         "apps/10x/*.md": "quradic",
-        "apps/desktop/*.md": "mcleans",
+        "apps/desktop/**.md": "mcleans",
         "apps/trace-processing/*.md": "maiak",
         "apps/whats-new/*.md": "quradic",
+        "apps/project-reunion/**.md": "mcleans",
         "apps/winui/*.md": "kbridge",
         "apps/winui/winui2/*.md": "kbridge",
         "apps/winui/winui2/release-notes/*.md": "kbridge",
@@ -98,10 +110,11 @@
         "apps/speech.md": "kbridge",
         "dev-environment/*.md": "mattwoj",
         "android/*.md": "mattwoj",
-        "nodejs/*.md": "mattwoj",
+        "javascript/**/*.md": "mattwoj",
         "python/*.md": "mattwoj",
-        "powertoys/*.md": "crutkas",
-        "package-manager/*.md": "kevinla"
+        "powertoys/*.md": "mattwoj",
+        "package-manager/**.md": "kevinla",
+        "rust/*.md": "stwhi"
       },
       "titleSuffix":
       {

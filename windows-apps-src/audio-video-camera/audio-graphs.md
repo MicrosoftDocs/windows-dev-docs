@@ -16,7 +16,7 @@ This article shows how to use the APIs in the [**Windows.Media.Audio**](/uwp/api
 An *audio graph* is a set of interconnected audio nodes through which audio data flows. 
 
 - *Audio input nodes* supply audio data to the graph from audio input devices, audio files, or from custom code. 
-
+lat
 - *Audio output nodes* are the destination for audio processed by the graph. Audio can be routed out of the graph to audio output devices, audio files, or custom code. 
 
 - *Submix nodes* take audio from one or more nodes and combine them into a single output that can be routed to other nodes in the graph. 
@@ -244,7 +244,7 @@ You assign the emitter to an audio node when you create it by using the overload
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateEmitter":::
 
-The [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) that outputs audio from the graph to the user has a listener object, accessed with the [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) property, which represents the location, orientation, and velocity of the user in the 3D space. The positions of all of the emitters in the graph are relative to the position and orientation of the emitter object. By default, the listener is located at the origin (0,0,0) facing forward along the Z axis, but you can set it's position and orientation with the [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) and [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) properties.
+The [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) that outputs audio from the graph to the user has a listener object, accessed with the [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) property, which represents the location, orientation, and velocity of the user in the 3D space. The positions of all of the emitters in the graph are relative to the position and orientation of the listener object. By default, the listener is located at the origin (0,0,0) facing forward along the Z axis, but you can set it's position and orientation with the [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) and [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) properties.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetListener":::
 

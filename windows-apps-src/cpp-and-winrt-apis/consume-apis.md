@@ -11,6 +11,13 @@ ms.localizationpriority: medium
 
 This topic shows how to consume [C++/WinRT](./intro-to-using-cpp-with-winrt.md) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
 
+> [!IMPORTANT]
+> So that the code examples in this topic are short, and easy for you to try out, you can reproduce them by creating a new **Windows Console Application (C++/WinRT)** project, and copy-pasting code. However, you can't consume arbitrary custom (third-party) Windows Runtime types from an unpackaged app like that. You can consume only Windows types that way.
+>
+> To consume custom (third-party) Windows Runtime types from a console app, you'll need to give the app a *package identity* so that it can resolve the consumed custom types' registration. For more info, see [Windows Application Packaging Project](/windows/msix/desktop/source-code-overview).
+>
+> Alternatively, create a new project from the **Blank App (C++/WinRT)**, **Core App (C++/WinRT)**, or **Windows Runtime Component (C++/WinRT)** project templates. Those app types already have a *package identity*.
+
 ## If the API is in a Windows namespace
 This is the most common case in which you'll consume a Windows Runtime API. For every type in a Windows namespace defined in metadata, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace using C++ syntax. For example, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is projected into C++/WinRT as **winrt::Windows::Foundation::Uri**.
 

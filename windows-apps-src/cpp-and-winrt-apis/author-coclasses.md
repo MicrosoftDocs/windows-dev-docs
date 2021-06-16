@@ -16,23 +16,29 @@ ms.custom: RS5
 
 C++/WinRT's [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template is the base from which your runtime classes and activation factories directly or indirectly derive.
 
-By default, **winrt::implements** supports only [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces, and it silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**.
+By default, **winrt::implements** silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**. By default, **winrt::implements** supports only C++/WinRT interfaces.
 
-In a moment you'll see how to overcome that situation, but first here's a code example to illustrate what happens by default.
+* **winrt::IUnknown** is a C++/WinRT interface, so **winrt::implements** supports **winrt::IUnknown**-based interfaces.
+* **winrt::implements** doesn't support [**::IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) itself, by default.
+
+In a moment you'll see how to overcome the cases that aren't supported by default. But first here's a code example to illustrate what happens by default.
 
 ```idl
 // Sample.idl
-runtimeclass Sample
+namespace MyProject 
 {
-    Sample();
-    void DoWork();
+    runtimeclass Sample
+    {
+        Sample();
+        void DoWork();
+    }
 }
 
 // Sample.h
 #include "pch.h"
 #include <shobjidl.h> // Needed only for this file.
 
-namespace winrt::MyProject
+namespace winrt::MyProject::implementation
 {
     struct Sample : implements<Sample, IInitializeWithWindow>
     {
@@ -48,13 +54,42 @@ And here's client code to consume the **Sample** class.
 // Client.cpp
 Sample sample; // Construct a Sample object via its projection.
 
-// This next line crashes, because the QI for IInitializeWithWindow fails.
+// This next line doesn't compile yet.
 sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
 ```
 
-The good news is that all it takes to cause **winrt::implements** to support classic COM interfaces is to include `unknwn.h` before you include any C++/WinRT headers.
+## Enabling classic COM support
+
+The good news is that all it takes to cause **winrt::implements** to support classic COM interfaces is to include the `unknwn.h` header file before you include any C++/WinRT headers.
 
 You could do that explicitly, or indirectly by including some other header file such as `ole2.h`. One recommended method is to include the `wil\cppwinrt.h` header file, which is part of the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil). The `wil\cppwinrt.h` header file not only makes sure that `unknwn.h` is included before `winrt/base.h`, it also sets things up so that C++/WinRT and WIL understand each other's exceptions and error codes.
+
+You can then **as<>** for classic COM interfaces, and the code in the example above will compile.
+
+> [!NOTE]
+> In the example above, even after enabling classic COM support in the client (the code consuming the class), if you haven't also enabled classic COM support in the server (the code implementing the class), then the call to **as<>** in the client will crash because the QI for **IInitializeWithWindow** will fail.
+
+## A local (non-projected) class
+
+A local class is one that is both implemented and consumed in the same compilation unit (app, or other binary); and so there is no projection for it.
+
+Here's an example of a local class that implements *only classic COM interfaces*.
+
+```cppwinrt
+struct LocalObject :
+    winrt::implements<LocalObject, IInitializeWithWindow>
+{
+    ...
+};
+```
+
+If you implement that example, but you don't enable classic COM support, then the following code fails.
+
+```cppwinrt
+winrt::make<LocalObject>(); // error: ‘first_interface’: is not a member of ‘winrt::impl::interface_list<>’
+```
+
+Again, **IInitializeWithWindow** isn't recognized as a COM interface, so C++/WinRT ignores it. In the case of the **LocalObject** example, the result of ignoring COM interfaces means that **LocalObject** has no interfaces at all. But every COM class must implement at least one interface.
 
 ## A simple example of a COM component
 
@@ -115,7 +150,7 @@ The remainder of this topic walks through creating a minimal console application
 
 More background about the toast notification feature area can be found at [Send a local toast notification](../design/shell/tiles-and-notifications/send-local-toast.md). None of the code examples in that section of the documentation use C++/WinRT, though, so we recommend that you prefer the code shown in this topic.
 
-## Create a Windows Console Application project (ToastAndCallback)
+### Create a Windows Console Application project (ToastAndCallback)
 
 Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
 
@@ -157,7 +192,7 @@ int main() { }
 
 The project won't build yet; after we've finished adding code, you'll be prompted to build and run.
 
-## Implement the coclass and class factory
+### Implement the coclass and class factory
 
 In C++/WinRT, you implement coclasses, and class factories, by deriving from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct. Immediately after the three using-directives shown above (and before `main`), paste this code to implement your toast notification COM activator component.
 
@@ -215,19 +250,19 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
 The coclass that we just implemented is known as the *COM activator* for notifications, and it has its class id (CLSID) in the form of the `callback_guid` identifier (of type **GUID**) that you see above. We'll be using that identifier later, in the form of a Start menu shortcut and a Windows Registry entry. The COM activator CLSID, and the path to its associated COM server (which is the path to the executable that we're building here) is the mechanism by which a toast notification knows what class to create an instance of when its callback button is clicked (whether the notification is clicked in Action Center or not).
 
-## Best practices for implementing COM methods
+### Best practices for implementing COM methods
 
 Techniques for error handling and for resource management can go hand-in-hand. It's more convenient and practical to use exceptions than error codes. And if you employ the resource-acquisition-is-initialization (RAII) idiom, then you can avoid explicitly checking for error codes and then explicitly releasing resources. Such explicit checks make your code more convoluted than necessary, and it gives bugs plenty of places to hide. Instead, use RAII, and throw/catch exceptions. That way, your resource allocations are exception-safe, and your code is simple.
 
 However, you mustn't allow exceptions to escape your COM method implementations. You can ensure that by using the `noexcept` specifier on your COM methods. It's ok for exceptions to be thrown anywhere in the call graph of your method, as long as you handle them before your method exits. If you use `noexcept`, but you then allow an exception to escape your method, then your application will terminate.
 
-## Add helper types and functions
+### Add helper types and functions
 
 In this step, we'll add some helper types and functions that the rest of the code makes use of. So, immediately before `main`, add the following.
 
@@ -299,7 +334,7 @@ std::wstring get_shortcut_path()
 }
 ```
 
-## Implement the remaining functions, and the wmain entry point function
+### Implement the remaining functions, and the wmain entry point function
 
 Delete your `main` function, and in its place paste this code listing, which includes code to register your coclass, and then to deliver a toast capable of calling back your application.
 
@@ -460,7 +495,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 }
 ```
 
-## How to test the example application
+### How to test the example application
 
 Build the application, and then run it at least once as an administrator to cause the registration, and other setup, code to run. One way to do that is to run Visual Studio as an administrator, and then run the app from Visual Studio. Right-click Visual Studio in the taskbar to display the jump list, right-click Visual Studio on the jump list, and then click **Run as administrator**. Agree to the prompt, and then open the project. When you run the application, a message is displayed indicating whether or not the application is running as an administrator. If it isn't, then the registration and other setup won't run. That registration and other setup has to run at least once in order for the application to work correctly.
 
@@ -564,7 +599,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 }
 ```
 
-### Support for weak references
+## Support for weak references
 
 Also see [Weak references in C++/WinRT](weak-references.md#weak-references-in-cwinrt).
 
@@ -578,6 +613,72 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
     //  ...
 };
 ```
+
+## Implement a COM interface that derives from another
+
+Interface derivation is a feature of classic COM (and it happens to be absent, intentionally, from the Windows Runtime). Here's an example of what interface derivation looks like.
+
+```cpp
+IFileSystemBindData2 : public IFileSystemBindData { /* ... */  };
+```
+
+If you're writing a class that needs to implement, for example,  both [**IFileSystemBindData**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ifilesystembinddata) and [**IFileSystemBindData2**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ifilesystembinddata2), then the first step in expressing that is to declare that you implement only the *derived* interface, like this.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <Shobjidl.h>
+...
+
+// main.cpp
+...
+struct MyFileSystemBindData :
+    implements<MyFileSystemBindData,
+    IFileSystemBindData2>
+{
+    // IFileSystemBindData
+    IFACEMETHOD(SetFindData)(const WIN32_FIND_DATAW* pfd) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetFindData)(WIN32_FIND_DATAW* pfd) override { /* ... */ return S_OK; };
+
+    // IFileSystemBindData2
+    IFACEMETHOD(SetFileID)(LARGE_INTEGER liFileID) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetFileID)(LARGE_INTEGER* pliFileID) override { /* ... */ return S_OK; };
+    IFACEMETHOD(SetJunctionCLSID)(REFCLSID clsid) override { /* ... */ return S_OK; };
+    IFACEMETHOD(GetJunctionCLSID)(CLSID* pclsid) override { /* ... */ return S_OK; };
+};
+...
+int main()
+...
+```
+
+The next step is to ensure that [**Query­Interface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)) succeeds when it's called (directly or indirectly) for *IID_IFileSystemBindData* (the *base* interface) against an instance of **MyFileSystemBindData**. You do that by providing a specialization for the [**winrt::is_guid_of**](/uwp/cpp-ref-for-winrt/is-guid-of) function template.
+
+**winrt::is_guid_of** is variadic, and so you can provide it a list of interfaces. Here's how you'd provide a specialization so that a check for **IFileSystemBindData2** also includes a test for **IFileSystemBindData**.
+
+```cppwinrt
+// pch.h
+...
+namespace winrt
+{
+    template<>
+    inline bool is_guid_of<IFileSystemBindData2>(guid const& id) noexcept
+    {
+        return is_guid_of<IFileSystemBindData2, IFileSystemBindData>(id);
+    }
+}
+
+// main.cpp
+...
+int main()
+{
+    ...
+    auto mfsbd{ winrt::make<MyFileSystemBindData>() };
+    auto a{ mfsbd.as<IFileSystemBindData2>() }; // Would succeed even without the **is_guid_of** specialization.
+    auto b{ mfsbd.as<IFileSystemBindData>() }; // Needs the **is_guid_of** specialization in order to succeed.
+}
+```
+
+The specialization of **winrt::is_guid_of** must be identical across all files in the project, and visible at the point the interface is used by the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) or [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) template. Typically you'd put it in a common header file.
 
 ## Important APIs
 * [IInspectable interface](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)

@@ -304,7 +304,7 @@ path1.Data = geometryGroup1;
 // When you create a XAML element in code, you have to add
 // it to the XAML visual tree. This example assumes you have
 // a panel named 'layoutRoot' in your XAML file, like this:
-// <Grid x:Name="layoutRoot>
+// <Grid x:Name="layoutRoot">
 layoutRoot.Children.Add(path1);
 ```
 

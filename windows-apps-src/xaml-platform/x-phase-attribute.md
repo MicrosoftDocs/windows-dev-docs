@@ -24,7 +24,7 @@ Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md)
 
 | Term | Description |
 |------|-------------|
-| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. | 
+| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. |
 
 ## Remarks
 

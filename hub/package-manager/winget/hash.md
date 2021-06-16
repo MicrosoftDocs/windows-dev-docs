@@ -8,8 +8,6 @@ ms.localizationpriority: medium
 
 # hash command (winget)
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
-
 The **hash** command of the [winget](index.md) tool generates the SHA256 hash for an installer. This command is used if you need to create a [manifest file](../package/manifest.md) for submitting software to the **Microsoft Community Package Manifest Repository** on GitHub. In addition, the **hash** command also supports generating a SHA256 certificate hash for MSIX files.
 
 ## Usage
