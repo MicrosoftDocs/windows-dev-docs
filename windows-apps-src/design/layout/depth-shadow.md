@@ -18,30 +18,30 @@ Creating a visual hierarchy of elements in your UI makes the UI easy to scan and
 
 Z-depth is a term used amongst 3D app creators to denote the distance between two surfaces along the z-axis. It illustrates how close an object is to the viewer. Think of it as a similar concept to x/y coordinates, but in the z direction.
 
-Windows apps use shadows to express the depth and add visual hierarchy. To achieve this, the z-axis provides an easy coding path. However please note that shadows are not displayed in the true 3D sense and are emulated. This is so that we can achieve the feeling of depth without sacrificing the performance of your app's UI.
+Windows apps use shadows to express depth and add visual hierarchy. To achieve this, the z-axis provides an easy coding path. However, the shadows are emulated; they are not displayed in the true 3D sense. This is so that we can achieve the feeling of depth without sacrificing the performance of your app's UI.
 
 ## Why use z-depth?
 
-In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer in the z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.
+In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer on the z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.
 
 ## What is shadow?
 
-Shadow is one way a user perceives elevation. Light above an elevated object creates a shadow on the surface below. The higher the object, the larger and softer the shadow becomes. Elevated objects in your UI don’t need to have shadows, but they help create the appearance of elevation.
+Shadow is one way a user perceives elevation. Light above an elevated object creates a shadow on the surface below. The higher the object, the larger and softer the shadow becomes. Elevated objects in your UI don't need to have shadows, but they help create the appearance of elevation.
 
 In Windows apps, shadows should be used in a purposeful rather than aesthetic manner. Using too many shadows will decrease or eliminate the ability of the shadow to focus the user.
 
-If you use standard controls, shadows are already incorporated into your UI. However, you can manually include shadows in your UI by using either the ThemeShadow or the DropShadow APIs. 
+If you use standard controls, shadows are already incorporated into your UI. However, you can manually include shadows in your UI by using either the [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) or the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) APIs.
 
 ## ThemeShadow
 
-The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. As mentioned above, these are emulated shadows:
+The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates.
 
-- Applies shadows to elements based on z-depth value, emulating the depth.
-- Keeps shadows consistent throughout and across applications thanks to built in shadow aesthetics above.
+- It applies shadows to elements based on z-depth value, emulating depth.
+- It keeps shadows consistent throughout and across applications thanks to built in shadow aesthetics.
 
-Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a built in shadow at 32px shadow visual at all nested menus.
+Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a built in shadow with a depth of 32px applied to the main menu and all nested menus.
 
-![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus. All shadows are the same value.](images/elevation-shadow/themeshadow-menuflyout.png)
+![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus.](images/elevation-shadow/themeshadow-menuflyout.png)
 
 ### ThemeShadow in common controls
 
@@ -52,7 +52,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
-- [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) 
+- [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md)
 - [Calendar/Date/Time pickers](../controls-and-patterns/date-and-time.md)
 - [Tooltip](../controls-and-patterns/tooltips.md) (16px)
 - [Number Box](../controls-and-patterns/number-box.md)
@@ -61,7 +61,8 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [BreadcrumbBar](../controls-and-patterns/breadcrumbbar.md)
 - [Connected animation](../motion/connected-animation.md)
 
-Note: ThemeShadow was updated in Windows 10 version [TODO] ??? to utilize more performant ninegrid shadow from previously used ProjectedShadow. ThemeShadow was introduced in Windows 10 version 1903 or a more recent SDK.
+> [!NOTE]
+> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to to use ninegrid shadow instead of projected shadow for better performance.
 
 ### ThemeShadow in Popups
 
@@ -109,8 +110,8 @@ If the default shadow doesn't look correct on your control's content then you ca
 
 ### ThemeShadow in other elements
 
-[!NOTE]
-Starting Cobalt, if the app targets the Cobalt SDK or a later version, the Receivers collection is ignored. However there will be no errors and the shadow continues to function.
+> [!NOTE]
+> Starting with Windows 11, if the app targets the Windows 11 SDK or later, the Receivers collection is ignored. However there will be no errors and the shadow continues to function.
 
 In general we encourage you to think carefully about your use of shadow and limit its use to cases where it introduces meaningful visual hierarchy. However, we do provide a way to cast a shadow from any UI element in case you have advanced scenarios that necessitate it.
 
@@ -144,20 +145,20 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## Drop shadow
 
-DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow Class](/uwp/api/windows.ui.composition.dropshadow).
+DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) class.
 
-[!NOTE] Starting with Cobalt, if the app targets the Cobalt SDK or a later version, ThemeShadow will behave like a drop shadow. Thus if you were using DropShadow, you might consider utilizing ThemeShadow instead.
+> [!TIP] 
+> Starting with Windows 11, if the app targets the Windows 11 SDK or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
 
 ## Which shadow should I use?
 
 | Property | ThemeShadow | DropShadow |
 | - | - | - |
-| **Min SDK** | Windows 10 version 1903 | 14393 |
+| **Min SDK** | SDK 18362 | SDK 14393 |
 | **Adaptability** | Yes | No |
 | **Customization** | No | Yes |
 | **Light source** | None | None |
-| **Supported in 3D environments** | Yes* | No |
-*While it works in 3D environment, the shadow are emulated.
+| **Supported in 3D environments** | Yes (_While it works in a 3D environment, the shadows are emulated._) | No |
 
 - Keep in mind that the purpose of shadow is to provide meaningful hierarchy, not as a simple visual treatment.
 - Generally, we recommend using ThemeShadow, which provides consistent shadow values.
