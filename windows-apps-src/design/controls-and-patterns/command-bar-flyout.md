@@ -230,7 +230,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
                 </Viewbox>
             </muxc:SplitButton.Content>
             <muxc:SplitButton.Flyout>
-                <MenuFlyout>
+                <MenuFlyout Placement="BottomEdgeAlignedLeft">
                     <MenuFlyoutItem Icon="AlignLeft" Text="Align left"/>
                     <MenuFlyoutItem Icon="AlignCenter" Text="Center"/>
                     <MenuFlyoutItem Icon="AlignRight" Text="Align right"/>
