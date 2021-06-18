@@ -10,11 +10,11 @@ keywords: windows 10, uwp, corner radius, rounded
 
 Starting with version 2.2 of the [Windows UI Library](/uwp/toolkits/winui/) (WinUI), the default style for many controls has been updated to use rounded corners. These new styles are intended to evoke warmth and trust, and make the UI easier for users to visually process.
 
-Here are two Button controls, the first without rounded corners and the second using the new rounded corner style.
+Here are two Button controls, the first without rounded corners and the second using a rounded corner style.
 
 ![Buttons without and with rounded corners](images/rounded-corner/my-button.png)
 
-When you install the NuGet package for WinUI 2.2 or later, new default styles are installed for both WinUI controls and platform controls. These styles are used automatically when you use WinUI 2.2 in your app; there is no further action you need to take to use the new styles. However, later in this article we show how to customize the rounded corners if you need to do so.
+WinUI provides you with the updated styles for both WinUI and platform controls. See [Customization options](#customization-options), for details on how to customize rounded corners.
 
 > [!IMPORTANT]
 > Some controls are available both in the platform ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) and in WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true)); for example, **TreeView** or **ColorPicker**. When you use WinUI in your app, you should use the WinUI version of the control. Corner rounding might be applied inconsistently in the platform version when used with WinUI.
@@ -28,22 +28,32 @@ There are three areas of the controls where the rounded corner styles are used: 
 ### Corners of rectangle UI elements
 
 - These UI elements include basic controls like buttons that users see on screen at all times.
-- The default radius value we use for these UI elements is **2px**.
+- The default radius value we use for these UI elements is **4px**.
 
 ![Button with rounded corners highlighted](images/rounded-corner/button.png)
 
 **Controls**
 
 - AutoSuggestBox
-- Button
+- Buttons
   - ContentDialog buttons
 - CalendarDatePicker
 - CheckBox
-  - TreeView multi-select check boxes
+  - TreeView, GridView, and ListView multi-select check boxes
+- Color picker
+- CommandBar
 - ComboBox
 - DatePicker
 - DropDownButton
+- Expander
 - FlipView
+- GridView and ListView
+    - AutoSuggestBox, ComboBox, DatePicker, MenuBar, NavigationView, TimePicker, TreeView list
+- InfoBar
+- Inking controls
+- Media playback
+- MenuBar
+- NumberBox
 - PasswordBox
 - RichEditBox
 - SplitButton
@@ -55,7 +65,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 ### Corners of flyout and overlay UI elements
 
 - These can be transient UI elements that appear on screen temporarily, like MenuFlyout, or elements that overlay other UI, like TabView tabs.
-- The default radius value we use for these UI elements is **4px**.
+- The default radius value we use for these UI elements is **8px**.
 
 ![Flyout example](images/rounded-corner/flyout.png)
 
@@ -74,7 +84,9 @@ There are three areas of the controls where the rounded corner styles are used: 
   - ComboBox
   - DatePicker
   - DropDownButton
+  - Inking control
   - MenuBar
+  - NumberBox
   - SplitButton
   - TimePicker
   - ToggleSplitButton
@@ -82,7 +94,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 ### Bar elements
 
 - These UI elements are shaped like bars or lines; for example, ProgressBar.
-- The default radius values we use here are **2px**.
+- The default radius values we use here are **4px**.
 
 ![Progress bar example](images/rounded-corner/bars.png)
 
@@ -90,7 +102,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 
 - NavigationView selection indicator
 - ProgressBar
-- ScrollBar (when `IndicatorMode=TouchIndicator`)
+- ScrollBar
 - Slider
   - ColorPicker color slider
   - MediaTransportControls seek bar slider
@@ -107,51 +119,39 @@ There are instances where the corner of a control should not be rounded, and we 
 
 ![SplitButton](images/rounded-corner/split-button-2.png)
 
-- When a control is housed inside another container, like a ScrollBar's bar and buttons that are part of the ScrollBar container, which is also part of a ScrollViewer.
-
-![Screenshot of a vertical scrollbar without rounded corners.](images/rounded-corner/scrollbar.png)
-
 - When a flyout UI element is connected to a UI that invokes the flyout on one side.
 
 ![Screenshot of an AutoSuggest flyout where some corners aren't rounded.](images/rounded-corner/autosuggest.png)
-
-### Keyboard focus rectangle and shadow
-
-Our default design does not do any special work to round the corners of the keyboard focus rectangle or control shadow. Using a higher corner radius value will not break them functionally; however, it is good to be aware of this to avoid unwanted visual glitches that could be introduced with a larger value.
-
-Here is an example of how a larger corner radius can make the shadow look undesirable:
-
-![ContentDialogShadow](images/rounded-corner/larger-corner-radius.png)
-
-### Rounded corners and performance
-
-Rendering rounded corners naturally uses more drawing power than rendering square corners. When selecting the default corner radius values, we not only considered the design principles but we were also careful to ensure our default controls perform well when you use them in your apps.
-
-When thinking about app performance in this context, you should primarily consider page load time and app launch time. Consider that rounded corners on a larger UI surface have a greater impact on performance. Avoid drawing rounded corners on a full screen app UI. This is less of an issue if the UI is displayed briefly and after the page is loaded, like a ContentDialog.
 
 ### Page or app-wide CornerRadius changes
 
 There are 2 app resources that control the corner radii of all the controls:
 
-- `ControlCornerRadius` - default is 2px.
-- `OverlayCornerRadius` - default is 4px.
+- `ControlCornerRadius` - default is 4px.
+- `OverlayCornerRadius` - default is 8px.
 
 If you override the value of these resources at any scope, it will affect all controls within that scope accordingly.
 
 This means if you want to change the roundness of all controls where roundness could be applied, you can define both resources at the app level with the new CornerRadius values like this:
 
 ```xaml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
-            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-            <ResourceDictionary>
-                <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
-                <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
-            </ResourceDictionary>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
+<Application
+    xmlns=”http://schemas.microsoft.com/winfx/2006/xamlpresentation”
+    xmlns:x=”http://schemas.micosoft.com/winfx/2006/xaml”
+    xmlns:control=”using:Microsoft.UI.Xaml.Controls”>
+    <Application.Resources>
+      <controls:XamlControlsResources>
+        <controls:XamlControlsResources.MergedDictionaries>
+          <ResourceDictionary>
+            <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+            <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+          </ResourceDictionary>
+        </controls:XamlControlsResources.MergedDictionaries>
+      </controls:XamlControlsResources>
+    </Application.Resources>
+</Application>
+
+
 ```
 
 Alternatively, if you want to change all controls' roundness within a particular scope, like at a page or container level, you can follow a similar pattern:
@@ -168,7 +168,7 @@ Alternatively, if you want to change all controls' roundness within a particular
 > [!NOTE]
 > The `OverlayCornerRadius` resource must be defined at the app level in order to take effect.
 >
->This is because popups and flyouts are dynamic and created at the root element in the Visual Tree, so any resources that they use must also be defined there. Otherwise, they're out of scope.
+>This is because popup and flyouts are not in to the page’s visual tree, they are added to the Popup Root. The resource resolution system does not properly traverse the Popup Root visual tree into the Page’s visual tree.
 
 ### Per-control CornerRadius changes
 

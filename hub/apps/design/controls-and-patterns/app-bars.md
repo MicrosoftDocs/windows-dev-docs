@@ -1,10 +1,10 @@
 ---
 description: Learn how to use command bar controls to give users easy access to your app's most common commands and tasks.
 title: Command bar
-label: App bars/command bars
+label: Command bar and app bar
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -18,9 +18,23 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
-> **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-
 ![Example of a command bar with icons](images/controls_appbar_icons.png)
+
+**Get the Windows UI Library**
+
+:::row:::
+   :::column:::
+      ![WinUI logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      The **CommandBar** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
+
+> **Platform APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ## Is this the right control?
 
@@ -51,7 +65,7 @@ An expanded command bar.
 
 ## Anatomy
 
-By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[•••\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
+By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[...\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
 
 ![Screenshot showing a closed command bar.](images/command-bar-compact.png)
 
@@ -65,8 +79,8 @@ Here's the same command bar in its open state. The labels identify the main part
 
 The command bar is divided into 4 main areas:
 - The content area is aligned to the left side of the bar. It is shown if the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property is populated.
-- The primary command area is aligned to the right side of the bar. It is shown if the [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) property is populated.  
-- The "see more" \[•••\] button is shown on the right of the bar. Pressing the "see more" \[•••\] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the [OverflowButtonVisibility](/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility) property.
+- The primary command area is aligned to the right side of the bar. It is shown if the [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) property is populated.
+- The "see more" \[...\] button is shown on the right of the bar. Pressing the "see more" \[...\] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the [OverflowButtonVisibility](/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility) property.
 - The overflow menu is shown only when the command bar is open and the [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) property is populated. When space is limited, primary commands will move into the SecondaryCommands area. To change default behavior, use the [IsDynamicOverflowEnabled](/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled) property.
 
 The layout is reversed when the [FlowDirection](/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) is **RightToLeft**.
@@ -101,9 +115,9 @@ The CommandBar control has 3 properties you can use to add commands and content:
 
 ### Commands
 
-By default, command bar items are added to the **PrimaryCommands** collection. You should add commands in order of their importance so that the most important commands are always visible. When the command bar width changes, such as when users resize their app window, primary commands dynamically move between the command bar and the overflow menu at breakpoints. To change this default behavior, use the [IsDynamicOverflowEnabled](/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled) property. 
+By default, command bar items are added to the **PrimaryCommands** collection. You should add commands in order of their importance so that the most important commands are always visible. When the command bar width changes, such as when users resize their app window, primary commands dynamically move between the command bar and the overflow menu at breakpoints. To change this default behavior, use the [IsDynamicOverflowEnabled](/uwp/api/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled) property.
 
-On the smallest screens (320 epx width), a maximum of 4 primary commands fit in the command bar. 
+On the smallest screens (320 epx width), a maximum of 4 primary commands fit in the command bar.
 
 You can also add commands to the **SecondaryCommands** collection, which are shown in the overflow menu.
 
@@ -116,7 +130,9 @@ You can programmatically move commands between the PrimaryCommands and Secondary
 
 ### App bar buttons
 
-Both the PrimaryCommands and SecondaryCommands can be populated only with [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) command elements. 
+Both the PrimaryCommands and SecondaryCommands can be populated only with types that implement the [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) interface, which includes [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) command elements.
+
+If you'd like to include a different type of element in your PrimaryCommands or SecondaryCommands, you can use the [AppBarElementContainer](/uwp/api/windows.ui.xaml.controls.appbarelementcontainer) class. This will serve as a wrapper for your element and will enable the element to display in a CommandBar.
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the command bar or the overflow menu.
 
@@ -143,7 +159,7 @@ To position app bar button labels, use CommandBar's [DefaultLabelPosition](/uwp/
 
 On larger windows, consider moving labels to the right of app bar button icons to improve legibility. Labels on the bottom require users to open the command bar to reveal labels, while labels on the right are visible even when command bar is closed.
 
-In overflow menus, labels are positioned to the right of icons by default, and **LabelPosition** is ignored. You can adjust the styling by setting the [CommandBarOverflowPresenterStyle](/uwp/api/Windows.UI.Xaml.Controls.CommandBar.CommandBarOverflowPresenterStyle) property to a Style that targets the [CommandBarOverflowPresenter](/uwp/api/windows.ui.xaml.controls.commandbaroverflowpresenter). 
+In overflow menus, labels are positioned to the right of icons by default, and **LabelPosition** is ignored. You can adjust the styling by setting the [CommandBarOverflowPresenterStyle](/uwp/api/Windows.UI.Xaml.Controls.CommandBar.CommandBarOverflowPresenterStyle) property to a Style that targets the [CommandBarOverflowPresenter](/uwp/api/windows.ui.xaml.controls.commandbaroverflowpresenter).
 
 Button labels should be short, preferably a single word. Longer labels below an icon will wrap to multiple lines, increasing the overall height of the opened command bar. You can include a soft-hyphen character (0x00AD) in the text for a label to hint at the character boundary where a word break should occur. In XAML, you express this using an escape sequence, like this:
 
@@ -155,7 +171,44 @@ When the label wraps at the hinted location, it looks like this.
 
 ![App bar button with wrapping label](images/app-bar-button-label-wrap.png)
 
-### Command bar flyouts
+#### SplitButton
+
+You can display a [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton) in a CommandBar using the built-in `SplitButtonCommandBarStyle` and the [AppBarElementContainer](/uwp/api/windows.ui.xaml.controls.appbarelementcontainer) class. `SplitButtonCommandBarStyle` provides visuals for a SplitButton to look and feel like an AppBarButton, while `AppBarElementContainer` is a wrapper class that provides the functionality that SplitButton needs to act like an AppBarButton.
+
+When you wrap a SplitButton in an `AppBarElementContainer` and place it in a CommandBar, the `SplitButtonCommandBarStyle` resource is applied automatically.
+
+If a SplitButton item inside of a CommandBar enters an overflow menu, it picks up the `SplitButtonCommandBarFlyout` resource to stay consistent.
+
+This sample code creates and displays a SplitButton inside of a CommandBar:
+
+```xml
+<CommandBar>
+    <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy" Label="Copy"/>
+    <AppBarElementContainer>
+        <muxc:SplitButton ToolTipService.ToolTip="Insert">
+            <muxc:SplitButton.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Insert</TextBlock>
+                </StackPanel>
+            </muxc:SplitButton.Content>
+            <muxc:SplitButton.Flyout>
+                <MenuFlyout Placement="RightEdgeAlignedTop">
+                    <MenuFlyoutItem Text="Insert above"/>
+                    <MenuFlyoutItem Text="Insert between"/>
+                    <MenuFlyoutItem  Text="Insert below"/>
+                </MenuFlyout>
+            </muxc:SplitButton.Flyout>
+        </muxc:SplitButton>
+    </AppBarElementContainer>
+    <AppBarButton Label="Select all"/>
+    <AppBarButton Label="Delete" Icon="Delete"/>
+</CommandBar>
+```
+
+> [!NOTE]
+> Automatic styling of a SplitButton in a CommandBar requires that you use the SplitButton control from WinUI 2.6 or later.
+
+### Menus and flyouts
 
 Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu. While typically an app bar button activates a single command, an app bar button can be used to show a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) or [Flyout](/uwp/api/windows.ui.xaml.controls.flyout) with custom content.
 
@@ -173,12 +226,12 @@ When the [ClosedDisplayMode](/uwp/api/windows.ui.xaml.controls.appbar.closeddisp
 ## Open and closed states
 
 The command bar can be open or closed. When it's open, it shows primary command buttons with text labels and it opens the overflow menu  (if there are secondary commands).
-The command bar opens the overflow menu upwards (above the primary commands) or downwards (below the primary commands). 
-The default direction is up, but if there's not enough space to open the overflow menu upwards, the command bar opens it downwards. 
+The command bar opens the overflow menu upwards (above the primary commands) or downwards (below the primary commands).
+The default direction is up, but if there's not enough space to open the overflow menu upwards, the command bar opens it downwards.
 
-A user can switch between these states by pressing the "see more" \[•••\] button. You can switch between them programmatically by setting the [IsOpen](/uwp/api/windows.ui.xaml.controls.appbar.isopen) property. 
+A user can switch between these states by pressing the "see more" \[...\] button. You can switch between them programmatically by setting the [IsOpen](/uwp/api/windows.ui.xaml.controls.appbar.isopen) property.
 
-You can use the [Opening](/uwp/api/windows.ui.xaml.controls.appbar.opening), [Opened](/uwp/api/windows.ui.xaml.controls.appbar.opened), [Closing](/uwp/api/windows.ui.xaml.controls.appbar.closing), and [Closed](/uwp/api/windows.ui.xaml.controls.appbar.closed) events to respond to the command bar being opened or closed.  
+You can use the [Opening](/uwp/api/windows.ui.xaml.controls.appbar.opening), [Opened](/uwp/api/windows.ui.xaml.controls.appbar.opened), [Closing](/uwp/api/windows.ui.xaml.controls.appbar.closing), and [Closed](/uwp/api/windows.ui.xaml.controls.appbar.closed) events to respond to the command bar being opened or closed.
 - The Opening and Closing events occur before the transition animation begins.
 - The Opened and Closed events occur after the transition completes.
 
@@ -211,15 +264,15 @@ private void CommandBar_Closing(object sender, object e)
 
 ### IsSticky
 
-If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called *light dismiss*. You can control light dismiss behavior by setting the [IsSticky](/uwp/api/windows.ui.xaml.controls.appbar.issticky) property. When `IsSticky="true"`, the bar remains open until the user presses the "see more" \[•••\] button or selects an item from the overflow menu. 
+If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called *light dismiss*. You can control light dismiss behavior by setting the [IsSticky](/uwp/api/windows.ui.xaml.controls.appbar.issticky) property. When `IsSticky="true"`, the bar remains open until the user presses the "see more" \[...\] button or selects an item from the overflow menu.
 
 We recommend avoiding sticky command bars because they don't conform to users' expectations for [light dismiss and keyboard focus behavior](./menus.md#light-dismiss).
 
 ### Display Mode
 
 You can control how the command bar is shown in its closed state by setting the [ClosedDisplayMode](/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) property. There are 3 closed display modes to choose from:
-- **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[•••\] button.
-- **Minimal**: Shows only a thin bar that acts as the "see more" \[•••\] button. The user can press anywhere on the bar to open it.
+- **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[...\] button.
+- **Minimal**: Shows only a thin bar that acts as the "see more" \[...\] button. The user can press anywhere on the bar to open it.
 - **Hidden**: The command bar is not shown when it's closed. This can be useful for showing contextual commands with an inline command bar. In this case, you must open the command bar programmatically by setting the **IsOpen** property or changing the ClosedDisplayMode to **Minimal** or **Compact**.
 
 Here, a command bar is used to hold simple formatting commands for a [RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). When the edit box doesn't have focus, the formatting commands can be distracting, so they're hidden. When the edit box is being used, the command bar's ClosedDisplayMode is changed to Compact so the formatting commands are visible.
@@ -278,5 +331,8 @@ Command bars can be placed in the following screen regions on single-view screen
 
 ## Related articles
 
-* [Command design basics for Windows apps](../basics/commanding-basics.md)
-* [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [Command design basics for Windows apps](../basics/commanding-basics.md)
+- [Command bar flyout](command-bar-flyout.md)
+- [Menu flyout and menu bar](menus.md)
+- [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
