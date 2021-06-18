@@ -38,7 +38,7 @@ When an animated icon is not required, use [FontIcon](/uwp/api/windows.ui.xaml.c
 
 AnimatedIcon is an [IconElement](/windows/winui/api/microsoft.ui.xaml.controls.iconelement), which can be used anywhere an element or IconElement is required (such as [NavigationViewItem.Icon](/windows/winui/api/microsoft.ui.xaml.controls.navigationviewitem.icon)), and is controlled through a State property.
 
-[AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
+[AnimatedVisualPlayer](/uwp/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
 
 **Get the Windows UI Library**
 
@@ -159,9 +159,9 @@ If `GameSettingsIcon` has a marker defined for "NormalToPointerOver", the icon w
 
 ## Define AnimatedIcon markers
 
-To create the custom `GameSettingsIcon` in the previous example, run a Lottie JSON file (with markers) through the Windows [LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool to generate the animation code as a C# class.
+To create the custom `GameSettingsIcon` in the previous example, run a Lottie JSON file (with markers) through the Windows [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool to generate the animation code as a C# class.
 
-Once you run your Lottie file through LottieGen you can add the CodeGen output class to your project. See the [LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tutorial for more information.
+Once you run your Lottie file through LottieGen you can add the CodeGen output class to your project. See the [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tutorial for more information.
 
 Setting the AnimatedIcon state to a new value also sets a playback position in the Lottie animation for the transition from the old state to the new state. These playback positions are also identified with markers in the Lottie file. Specific markers for the start of the transition or the end of the transition can also be defined.
 
@@ -211,7 +211,7 @@ The following example shows the marker format in a Lottie JSON file. See the [An
 
 The following example is a button that the user clicks to Accept a prompt.
 
-The `MyAcceptAnimation` class is created with the [LottieGen](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool.
+The `MyAcceptAnimation` class is created with the [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool.
 
 The FallbackIconSource will be used rather than the animation when animations can't be played, such as on older versions of Windows that don't support Lottie animations.
 
