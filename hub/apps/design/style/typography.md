@@ -15,9 +15,9 @@ As the visual representation of language, typography’s main task is to communi
 
 ## Font
 
-You should use one font throughout your app's UI, and we recommend sticking with the default font for Windows apps, **Segoe UI**. It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.
+You should use one font throughout your app's UI, and we recommend sticking with the default font for Windows apps, **Segoe UI Variable**. It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.
 
-![Sample text of Segoe UI font.](images/type/segoe-sample.svg)
+![Sample text of Segoe UI Variable font.](images/type/segoe-sample.svg)
 
 To display non-English languages or to select a different font for your app, please see [Languages](#languages) and [Fonts](#fonts) for our recommended fonts for Windows apps.
 
@@ -31,6 +31,10 @@ Pick one font for your UI.
 Don't mix multiple fonts.
     :::column-end:::
 :::row-end:::
+
+## Variable font axes
+
+The **Segoe UI Variable** font contains two axes for finer control of text. This font has a weight axis (`wght`) with weights from Thin (100) to Bold (700). It also has an optical size axis (`opsz`) for optical scaling from 8pt to 36pt. When using XAML common controls, the Segoe UI Variable font will be selected by default for supported [languages](#languages). When this font or another variable font with an optical axis is used, the optical size will automatically match the requested font-size. When using HTML, optical scaling is also automatic, but you will need to specify the Segoe UI Variable font in CSS.
 
 ## Size and scaling
 
@@ -47,7 +51,7 @@ Follow the Windows [type ramp](#type-ramp) sizing.
     :::column-end:::
     :::column:::
 ![don't](images/dont.svg)
-Use a font size smaller than 12 px.
+Don't use a font size smaller than 12 px.
     :::column-end:::
 :::row-end:::
 
@@ -66,45 +70,9 @@ Users rely on visual hierarchy when scanning a page: headers summarize content, 
 
 The Windows type ramp establishes crucial relationships between the type styles on a page, helping users read content easily. All sizes are in effective pixels and are optimized for UWP apps running on all devices.
 
-![The Windows type ramp.](images/type/type-ramp.png)
+![The Windows type ramp.](images/type/text-block-type-ramp.svg)
 
-### Using the type ramp
-
-:::row:::
-    :::column:::
-You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention shown here.
-
-```XAML
-<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
-<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
-<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
-<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
-<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
-<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
-<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
-```
-    :::column-end:::
-    :::column:::
-![Screenshot of Header, Subheader, Title, Subtitle, Base, Body, and Caption text styles.](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
-
-
-
-:::row:::
-    :::column:::
-![Third screenshot of a green bar that has a green check mark and the word Do in it.](images/do.svg)
-Use "Body" for most text.
-
-Use "Base" for titles when space is constrained.
-    :::column-end:::
-    :::column:::
-![don't](images/dont.svg)
-Use "Caption" for primary action or any long strings.
-
-Use "Header" or "Subheader" if text needs to wrap.
-    :::column-end:::
-:::row-end:::
+Check out the guidance on using the [XAML type ramp](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
 
 ## Alignment
 
@@ -125,13 +93,13 @@ Keep to 50–60 letters per line for ease of reading.
     :::column-end:::
     :::column:::
 ![don't](images/dont.svg)
-Less than 20 characters or more than 60 characters per line is difficult to read.
+Don't use fewer than 20 characters or more than 60 characters per line as this is difficult to read.
     :::column-end:::
 :::row-end:::
 
 ## Clipping and ellipses
 
-When the amount of text extends beyond the space available, we recommend clipping text, which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
+When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
 
 ![Shows a device frame with some text clipping.](images/type/clipping.svg)
 
@@ -146,7 +114,7 @@ Clip text, and wrap if multiple lines are enabled.
     :::column-end:::
     :::column:::
 ![don't](images/dont.svg)
-Use ellipses to avoid visual clutter.
+Don't use ellipses to avoid visual clutter.
     :::column-end:::
 :::row-end:::
 
@@ -154,7 +122,7 @@ Use ellipses to avoid visual clutter.
 
 ## Languages 
 
-Segoe UI is our font for English, European languages, Greek, Hebrew, Armenian, Georgian, and Arabic.​ For other languages, see the following recommendations.
+Segoe UI Variable is our font for English, European languages, Greek, and Russian. For other languages, see the following recommendations.
 
 ### Globalizing/localizing fonts
 
@@ -174,17 +142,17 @@ Use the [LanguageFont font-mapping APIs](/uwp/api/Windows.Globalization.Fonts.La
 <tr class="odd">
 <td style="font-family: Embrima;">Ebrima</td>
 <td align="left">Regular, Bold</td>
-<td align="left">User-interface font for African scripts (Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</td>
+<td align="left">User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</td>
 </tr>
 <tr class="even">
 <td style="font-family: Gadugi;">Gadugi</td>
 <td align="left">Regular, Bold</td>
-<td align="left">User-interface font for North American scripts (Canadian Syllabics, Cherokee).</td>
+<td align="left">User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage).</td>
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
 <td align="left">Regular, Semilight, Bold</td>
-<td align="left">User-interface font for Southeast Asian scripts (Buginese, Lao, Khmer, Thai).</td>
+<td align="left">User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai).</td>
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
@@ -209,14 +177,19 @@ Use the [LanguageFont font-mapping APIs](/uwp/api/Windows.Globalization.Fonts.La
 <tr class="even">
 <td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
 <td align="left">Regular, Semilight, Bold</td>
-<td align="left">User-interface font for South Asian scripts (Bangla, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu)</td>
+<td align="left">User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu)</td>
 </tr>
 <tr class="odd">
-<td align="left" style="font-family: SimSun;">SimSun</td>
-<td align="left">Regular</td>
-<td align="left">A legacy Chinese UI font. </td>
+<td align="left" style="font-family: Segoe UI;">Segoe UI</td>
+<td align="left">Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
+<td align="left">User-interface font for Arabic, Armenian, Georgian, and Hebrew.</td>
 </tr>
 <tr class="even">
+<td align="left" style="font-family: SimSun;">SimSun</td>
+<td align="left">Regular</td>
+<td align="left">A legacy Chinese UI font.</td>
+</tr>
+<tr class="odd">
 <td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
 <td align="left">Light, Semilight, Regular, Semibold, Bold</td>
 <td align="left">User-interface font for Japanese.</td>
@@ -312,6 +285,32 @@ Serif fonts are good for presenting large amounts of text.
 </tbody>
 </table>
 
+### Variable fonts
+
+Variable fonts are good for precisely controlling the appearance of text. 
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Font-family</th>
+<th align="left">Axes</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Bahnschrift ;">Bahnschrift</td>
+<td align="left">Weight, Width</td>
+<td align="left">Variable font that supports Latin, Greek, and Cyrillic.</td>
+</tr>
+<tr class="even">
+<td style="font-family: Segoe UI Variable;">Segoe UI Variable</td>
+<td align="left">Weight, Optical Size</td>
+<td align="left">Variable font that supports Latin, Greek, and Cyrillic.</td>
+</tr>
+</tbody>
+</table>
+
 ### Symbols and icons
 
 <table>
@@ -347,3 +346,4 @@ Serif fonts are good for presenting large amounts of text.
 * [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML styles](../controls-and-patterns/xaml-styles.md)
 * [Microsoft Typography](/typography/)
+* [Variable Fonts](/typography/develop/font-variations)

@@ -132,7 +132,7 @@ If a command is constantly needed for users to complete core scenarios, put it o
 
 <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
 
-<p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
+<p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus-and-context-menus.md">menus and context menus</a> overview.</p>
 :::row-end:::
 
 ## Provide command feedback 
@@ -206,4 +206,3 @@ For actions that can be undone, offering a simple undo command is usually enough
 ##  Optimize for specific input types
 
 See the [Interaction primer](../input/index.md) for more detail on optimizing user experiences around a specific input type or device.
-
