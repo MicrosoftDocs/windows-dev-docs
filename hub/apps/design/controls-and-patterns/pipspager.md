@@ -61,8 +61,7 @@ Wrapping between the first and last items is not supported.
 
 :::image type="content" source="images/pipspager-default.png" alt-text="A default PipsPager with five horizontal dots, and the first selected.":::
 
-XAML
-```XAML 
+```xaml
 <muxc:PipsPager x:Name="DefaultPipsPager" />
 ```
 
@@ -161,8 +160,7 @@ If you set visibility through the PreviousButtonStyle or NextButtonStyle propert
 
 :::image type="content" source="images/pipspager-custom-buttons.png" alt-text="A PipsPager with five horizontal dots and custom navigation buttons.":::
 
-
-``` xaml
+```xaml
 <Page.Resources>
     <Style x:Key="NavButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource PipsPagerNavigationButtonBaseStyle}">
         <Setter Property="Width" Value="30" />
