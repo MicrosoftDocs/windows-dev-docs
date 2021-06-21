@@ -121,14 +121,7 @@
       },
       "titleSuffix":
       {
-        "apps/*.md": "Windows applications",
-        "apps/10x/*.md": "Windows applications",
-        "apps/desktop/*.md": "Windows applications",
-        "apps/desktop/**/*.md": "Windows applications",
-        "apps/get-started/*.md": "Windows applications",
-        "apps/whats-new/*.md": "Windows applications",
-        "apps/winui/*.md": "WinUI",
-        "apps/winui/**/*.md": "WinUI"
+        "apps/**/*.md": "Windows apps"
       }
     },
     "template": [],
