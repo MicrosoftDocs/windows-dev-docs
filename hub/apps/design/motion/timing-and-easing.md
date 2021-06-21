@@ -35,28 +35,11 @@ While motion is based in the real world, we are also a digital medium, which com
 
 WinUI provides a set of standard animation durations that are used throughout the platform controls. You can use these named resources when building custom Storyboard animations as well.
 
-<table>
-<thead>
-<tr class="header">
-<th align="left">ThemeResource Name</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">ControlNormalAnimationDuration</td>
-<td align="left">250ms</td>
-</tr>
-<tr class="even">
-<td align="left">ControlFastAnimationDuration</td>
-<td align="left">167ms</td>
-</tr>
-<tr class="odd">
-<td align="left">ControlFasterAnimationDuration</td>
-<td align="left">83ms</td>
-</tr>
-</tbody>
-</table>
+|ThemeResource Name  |Value  |
+|---------|---------|
+|ControlNormalAnimationDuration     |    250ms     |
+|ControlFastAnimationDuration     |    167ms     |
+|ControlFasterAnimationDuration     |    83ms     |
 
 ## Easing in Fluent motion
 
@@ -70,7 +53,7 @@ These easings will help you achieve a more natural feel, and are the baseline we
 
 ### Fast Out, Slow In
 
-```
+```csharp
 cubic-bezier(0, 0, 0, 1)
 ```
 
@@ -91,7 +74,7 @@ Even if it's preceded by a moment of unresponsiveness, the velocity of the incom
 
 ### Slow Out, Fast In
 
-```
+```csharp
 cubic-bezier(1 , 0 , 1 , 1)
 ```
 

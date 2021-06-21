@@ -11,7 +11,7 @@ ms.custom: RS5
 
 ![hero image](images/header-typography.svg)
 
-As the visual representation of language, typography’s main task is to communicate information. Its style should never get in the way of that goal. In this article, we'll discuss how to style typography in your Windows app to help users understand content easily and efficiently.
+As the visual representation of language, typography's main task is to communicate information. Its style should never get in the way of that goal. In this article, we'll discuss how to style typography in your Windows app to help users understand content easily and efficiently.
 
 ## Font
 
@@ -118,9 +118,10 @@ Don't use ellipses to avoid visual clutter.
     :::column-end:::
 :::row-end:::
 
-**Note**: If containers are not well-defined (for example, no differentiating background color), or when there is a link to see more text, then use ellipses.
+> [!NOTE]
+> If containers are not well-defined (for example, no differentiating background color), or when there is a link to see more text, then use ellipses.
 
-## Languages 
+## Languages
 
 Segoe UI Variable is our font for English, European languages, Greek, and Russian. For other languages, see the following recommendations.
 
@@ -130,215 +131,61 @@ Use the [LanguageFont font-mapping APIs](/uwp/api/Windows.Globalization.Fonts.La
 
 ### Fonts for non-Latin languages
 
-<table>
-<thead>
-<tr class="header">
-<th align="left">Font-family</th>
-<th align="left">Styles</th>
-<th align="left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="font-family: Embrima;">Ebrima</td>
-<td align="left">Regular, Bold</td>
-<td align="left">User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</td>
-</tr>
-<tr class="even">
-<td style="font-family: Gadugi;">Gadugi</td>
-<td align="left">Regular, Bold</td>
-<td align="left">User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage).</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
-<td align="left">Regular, Semilight, Bold</td>
-<td align="left">User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai).</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
-<td align="left">Regular</td>
-<td align="left">User-interface font for Korean.</td>
-</tr>
-<tr class="even">
-<td align="left" style="font-family: Microsoft JhengHei UI;">Microsoft JhengHei UI</td>
-<td align="left">Regular, Bold, Light</td>
-<td align="left">User-interface font for Traditional Chinese.</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Microsoft YaHei UI;">Microsoft YaHei UI</td>
-<td align="left">Regular, Bold, Light</td>
-<td align="left">User-interface font for Simplified Chinese.</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Myanmar Text;">Myanmar Text</td>
-<td align="left">Regular</td>
-<td align="left">Fallback font for Myanmar script.</td>
-</tr>
-<tr class="even">
-<td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
-<td align="left">Regular, Semilight, Bold</td>
-<td align="left">User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu)</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Segoe UI;">Segoe UI</td>
-<td align="left">Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
-<td align="left">User-interface font for Arabic, Armenian, Georgian, and Hebrew.</td>
-</tr>
-<tr class="even">
-<td align="left" style="font-family: SimSun;">SimSun</td>
-<td align="left">Regular</td>
-<td align="left">A legacy Chinese UI font.</td>
-</tr>
-<tr class="odd">
-<td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
-<td align="left">Light, Semilight, Regular, Semibold, Bold</td>
-<td align="left">User-interface font for Japanese.</td>
-</tr>
-</tbody>
-</table>
+| Font-family | Styles | Notes |
+|---------|---------|---------|
+| Ebrima | Regular, Bold | User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai). |
+| Gadugi | Regular, Bold | User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage). |
+| Leelawadee UI</p> | Regular, Semilight, Bold | User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai). |
+| Malgun Gothic</p> | Regular | User-interface font for Korean. |
+| Microsoft JhengHei UI</p> | Regular, Bold, Light | User-interface font for Traditional Chinese. |
+| Microsoft YaHei UI</p> | Regular, Bold, Light | User-interface font for Simplified Chinese. |
+| Myanmar Text</p> | Regular | Fallback font for Myanmar script. |
+| Nirmala UI</p> | Regular, Semilight, Bold | User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu). |
+| Segoe UI</p> | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for Arabic, Armenian, Georgian, and Hebrew. |
+| SimSun</p> | Regular | A legacy Chinese UI font. |
+| Yu Gothic UI</p> | Light, Semilight, Regular, Semibold, Bold | User-interface font for Japanese. |
 
 ## Fonts
 
 ### Sans-serif fonts
 
-Sans-serif fonts are a great choice for headings and UI elements. 
+Sans-serif fonts are a great choice for headings and UI elements.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Font-family</th>
-<th align="left">Styles</th>
-<th align="left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left" style="font-family: Arial;">Arial</td>
-<td align="left">Regular, Italic, Bold, Bold Italic, Black</td>
-<td align="left">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew) Black weight supports European scripts only.</td>
-</tr>
-<tr class="even">
-<td align="left" style="font-family: Calibri;">Calibri</td>
-<td align="left">Regular, Italic, Bold, Bold Italic, Light, Light Italic</td>
-<td align="left">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic and Hebrew). Arabic available in the uprights only.</td>
-</tr>
-<td style="font-family: Consolas;">Consolas</td>
-<td>Regular, Italic, Bold, Bold Italic</td>
-<td>Fixed width font that supports European scripts (Latin, Greek and Cyrillic).</td>
-</tr>
-
-<tr>
-<td style="font-family: Segoe UI;">Segoe UI</td>
-<td>Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
-<td>User-interface font for European and Middle East scripts (Arabic, Armenian, Cyrillic, Georgian, Greek, Hebrew, Latin), and also Lisu script.</td>
-</tr>
-
-<tr class="even">
-<td style="font-family: Selawik;">Selawik</td>
-<td align="left">Regular, Semilight, Light, Bold, Semibold</td>
-<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. <a href="https://github.com/Microsoft/Selawik">Get Selawik on GitHub.</a></td>
-</tr>
-
-</tbody>
-</table>
+| Font-family | Styles | Notes |
+|---------|---------|---------|
+| Arial | Regular, Italic, Bold, Bold Italic, Black | Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew). Black weight supports European scripts only. |
+| Calibri | Regular, Italic, Bold, Bold Italic, Light, Light Italic | Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic and Hebrew). Arabic available in the uprights only. |
+| Consolas | Regular, Italic, Bold, Bold Italic | Fixed width font that supports European scripts (Latin, Greek and Cyrillic). |
+| Segoe UI | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for European and Middle East scripts (Arabic, Armenian, Cyrillic, Georgian, Greek, Hebrew, Latin), and also Lisu script. |
+| Selawik | Regular, Semilight, Light, Bold, Semibold | An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don't want to bundle Segoe UI. [Get Selawik on GitHub](https://github.com/Microsoft/Selawik). |
 
 ### Serif fonts
 
-Serif fonts are good for presenting large amounts of text. 
+Serif fonts are good for presenting large amounts of text.
 
-<table>
-<thead>
-<tr class="header">
-<th align="left">Font-family</th>
-<th align="left">Styles</th>
-<th align="left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="font-family: Cambria;">Cambria</td>
-<td align="left">Regular</td>
-<td align="left">Serif font that supports European scripts (Latin, Greek, Cyrillic).</td>
-</tr>
-<tr class="even">
-<td style="font-family: Courier New;">Courier New</td>
-<td align="left">Regular, Italic, Bold, Bold Italic</td>
-<td align="left">Serif fixed width font supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew).</td>
-</tr>
-<tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
-<td align="left">Regular, Italic, Bold, Bold Italic</td>
-<td align="left">Supports European scripts (Latin, Greek and Cyrillic).</td>
-</tr>
-
-<tr class="even">
-<td style="font-family: Times New Roman;">Times New Roman</td>
-<td align="left">Regular, Italic, Bold, Bold Italic</td>
-<td align="left">Legacy font that supports European scripts (Latin, Greek, Cyrillic, Arabic, Armenian, Hebrew).</td>
-</tr>
-
-</tbody>
-</table>
+| Font-family | Styles | Notes |
+|---------|---------|---------|
+| Cambria | Regular | Serif font that supports European scripts (Latin, Greek, Cyrillic). |
+| Courier New | Regular, Italic, Bold, Bold Italic | Serif fixed width font that supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew). |
+| Georgia | Regular, Italic, Bold, Bold Italic | Supports European scripts (Latin, Greek and Cyrillic). |
+| Times New Roman | Regular, Italic, Bold, Bold Italic | Legacy font that supports European scripts (Latin, Greek, Cyrillic, Arabic, Armenian, Hebrew). |
 
 ### Variable fonts
 
-Variable fonts are good for precisely controlling the appearance of text. 
+Variable fonts are good for precisely controlling the appearance of text.
 
-<table>
-<thead>
-<tr class="header">
-<th align="left">Font-family</th>
-<th align="left">Axes</th>
-<th align="left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="font-family: Bahnschrift ;">Bahnschrift</td>
-<td align="left">Weight, Width</td>
-<td align="left">Variable font that supports Latin, Greek, and Cyrillic.</td>
-</tr>
-<tr class="even">
-<td style="font-family: Segoe UI Variable;">Segoe UI Variable</td>
-<td align="left">Weight, Optical Size</td>
-<td align="left">Variable font that supports Latin, Greek, and Cyrillic.</td>
-</tr>
-</tbody>
-</table>
+| Font-family | Axes | Notes |
+|---------|---------|---------|
+| Bahnschrift | Weight, Width | Variable font that supports Latin, Greek, and Cyrillic. |
+| Segoe UI Variable | Weight, Optical Size | Variable font that supports Latin, Greek, and Cyrillic. |
 
 ### Symbols and icons
 
-<table>
-<thead>
-<tr class="header">
-<th align="left">Font-family</th>
-<th align="left">Styles</th>
-<th align="left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Segoe MDL2 Assets</td>
-<td align="left">Regular</td>
-<td align="left">User-interface font for app icons. For more info, see the <a href="segoe-ui-symbol-font.md">Segoe MDL2 assets article</a>.</td>
-</tr>
-<tr class="even">
-<td align="left">Segoe UI Emoji</td>
-<td align="left">Regular</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Segoe UI Symbol</td>
-<td align="left">Regular</td>
-<td align="left">Fallback font for symbols</td>
-</tr>
-</tbody>
-</table>
+| Font-family | Styles | Notes |
+|---------|---------|---------|
+| Segoe MDL2 Assets | Regular | User-interface font for app icons. For more info, see the [Segoe MDL2 assets](segoe-ui-symbol-font.md) article. |
+| Segoe UI Emoji | Regular | User-interface font for Emoji. |
+| Segoe UI Symbol | Regular | Fallback font for symbols. |
 
 ## Related articles
 

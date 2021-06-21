@@ -2,7 +2,7 @@
 description: An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.
 title: AnimatedIcon
 template: detail.hbs
-ms.date: 3/12/2021
+ms.date: 06/21/2021
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: mamatth
@@ -22,7 +22,7 @@ Custom animations can be created with [Adobe AfterEffects](https://www.adobe.com
 
 The following example shows a basic animated search icon that was created in Adobe AfterEffects and rendered through Lottie.
 
-:::image type="content" source="images/animated_search.gif" alt-text="An animated search icon":::
+:::image type="content" source="images/animated-search.gif" alt-text="An animated search icon":::
 
 ## Is this the right control?
 
@@ -144,7 +144,7 @@ For example, the following example shows how to set a custom animation (`GameSet
 </muxc:NavigationView.MenuItems>
 ```
 
-![Animated Settings Gear](images/animated_settings.gif) 
+![Animated Settings Gear](images/animated-settings.gif)
 
 The NavigationViewItem automatically sets the following states on the AnimatedIcon:
 
@@ -190,19 +190,19 @@ The exact algorithm used to map AnimatedIcon State changes to marker playback po
 The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/uwp/design/motion/animatedicons) guidance for more detail.
 
 ```json
-"markers":[{"tm":0,"cm":"NormalToPointerOver_Start","dr":0},{"tm":9,"cm":"NormalToPointerOver_End","dr":0}, 
+"markers":[{"tm":0,"cm":"NormalToPointerOver_Start","dr":0},{"tm":9,"cm":"NormalToPointerOver_End","dr":0},
 
-{"tm":10,"cm":"NormalToPressed_Start","dr":0},{"tm":19,"cm":"NormalToPressed_End","dr":0}, 
+{"tm":10,"cm":"NormalToPressed_Start","dr":0},{"tm":19,"cm":"NormalToPressed_End","dr":0},
 
-{"tm":20,"cm":"PointerOverToNormal_Start","dr":0},{"tm":29,"cm":"PointerOverToNormal_End","dr":0}, 
+{"tm":20,"cm":"PointerOverToNormal_Start","dr":0},{"tm":29,"cm":"PointerOverToNormal_End","dr":0},
 
-{"tm":30,"cm":"PointerOverToPressed_Start","dr":0},{"tm":39,"cm":"PointerOverToPressed_End","dr":0}, 
+{"tm":30,"cm":"PointerOverToPressed_Start","dr":0},{"tm":39,"cm":"PointerOverToPressed_End","dr":0},
 
-{"tm":40,"cm":"PressedToNormal_Start","dr":0},{"tm":49,"cm":"PressedToNormal_End","dr":0}, 
+{"tm":40,"cm":"PressedToNormal_Start","dr":0},{"tm":49,"cm":"PressedToNormal_End","dr":0},
 
-{"tm":50,"cm":"PressedToPointerOver_Start","dr":0},{"tm":69,"cm":"PressedToPointerOver_End","dr":0}, 
+{"tm":50,"cm":"PressedToPointerOver_Start","dr":0},{"tm":69,"cm":"PressedToPointerOver_End","dr":0},
 
-{"tm":90,"cm":"PressedToNormal_Start","dr":0},{"tm":99,"cm":"PressedToNormal_End","dr":0}, 
+{"tm":90,"cm":"PressedToNormal_Start","dr":0},{"tm":99,"cm":"PressedToNormal_End","dr":0},
 
 {"tm":100,"cm":"PressedToPointerOver_Start","dr":0},{"tm":101,"cm":"PressedToPointerOver_End","dr":0}]
 ```

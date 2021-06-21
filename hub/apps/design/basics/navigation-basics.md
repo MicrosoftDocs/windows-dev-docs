@@ -85,11 +85,9 @@ Clear paths allow for logical navigation for users. Making navigation options ob
 
 Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.
 
-1. Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.
-
-2. Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls-and-patterns/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
-
-3. Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
+- Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.
+- Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls-and-patterns/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
+- Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
 
 ## Use the right structure
 
