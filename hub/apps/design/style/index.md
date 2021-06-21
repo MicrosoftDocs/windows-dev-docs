@@ -14,7 +14,7 @@ ms.custom: RS5
 
 Style is what makes your app stand out. The style guidelines in this section help you create a Fluent Design through color, typography, and new features such as acrylic material and reveal highlight.
 
-We use the [Windows UI Library](/windows/apps/winui/) (WinUI) to deliver the latest styles across our UI components. Be sure to use the latest WinUI version to keep your apps up-to-date with the current Windows app Fluent styles. For more info about how to do this, see [XAML styles](../controls-and-patterns/xaml-styles.md).
+We use the [Windows UI Library](/windows/apps/winui/) (WinUI) to deliver the latest styles across our UI components. Be sure to use the latest WinUI version to keep your apps up-to-date with the current Windows app Fluent styles. For more info about how to do this, see [XAML styles](../style/xaml-styles.md).
 
 :::row:::
     :::column:::
@@ -71,7 +71,7 @@ Writing style can make a big difference between an awful user experience and a b
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
     :::column-end:::
     :::column:::
-### [XAML styles](../controls-and-patterns/xaml-styles.md)
+### [XAML styles](../style/xaml-styles.md)
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
     :::column-end:::
 :::row-end:::

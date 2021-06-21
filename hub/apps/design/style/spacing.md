@@ -96,6 +96,6 @@ The following examples show how the the `Compact` style can be applied for the p
 ## Related articles
 
 - [Guidelines for touch targets](../input/guidelines-for-targeting.md)
-- [ResourceDictionary and XAML resource references](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+- [ResourceDictionary and XAML resource references](../style/xaml-resource-dictionary.md)
 - [Resource Dictionary](/uwp/api/windows.ui.xaml.resourcedictionary)
-- [XAML Styles](../controls-and-patterns/xaml-styles.md)
+- [XAML Styles](../style/xaml-styles.md)

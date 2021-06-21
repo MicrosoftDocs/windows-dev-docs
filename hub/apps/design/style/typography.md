@@ -72,7 +72,7 @@ The Windows type ramp establishes crucial relationships between the type styles 
 
 ![The Windows type ramp.](images/type/text-block-type-ramp.svg)
 
-Check out the guidance on using the [XAML type ramp](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
+Check out the guidance on using the [XAML type ramp](../style/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
 
 ## Alignment
 
@@ -190,7 +190,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 ## Related articles
 
 * [Text controls](../controls-and-patterns/text-controls.md)
-* [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
-* [XAML styles](../controls-and-patterns/xaml-styles.md)
+* [XAML theme resources](../style/xaml-theme-resources.md#the-xaml-type-ramp)
+* [XAML styles](../style/xaml-styles.md)
 * [Microsoft Typography](/typography/)
 * [Variable Fonts](/typography/develop/font-variations)

@@ -277,14 +277,14 @@
     - name: XAML brushes
       href: style/brushes.md
     - name: XAML styles
-      href: controls-and-patterns/xaml-styles.md
+      href: style/xaml-styles.md
       items:
         - name: XAML Control templates
-          href: controls-and-patterns/control-templates.md
+          href: style/xaml-control-templates.md
         - name: ResourceDictionary and XAML resource references
-          href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
+          href: style/xaml-resource-dictionary.md
         - name: XAML theme resources
-          href: controls-and-patterns/xaml-theme-resources.md
+          href: style/xaml-theme-resources.md
     - name: Spacing
       href: style/spacing.md
     - name: Corner radius

@@ -86,7 +86,7 @@ Here’s the same TextBox and Grid with Margin and Padding values on the TextBox
 
 
 ## Style resources
-You don't have to set each property value individually on a control. It's typically more efficient to group property values into a [**Style**](/uwp/api/Windows.UI.Xaml.Style) resource and apply the Style to a control. This is especially true when you need to apply the same property values to many controls. For more info about using styles, see [XAML styles](../controls-and-patterns/xaml-styles.md).
+You don't have to set each property value individually on a control. It's typically more efficient to group property values into a [**Style**](/uwp/api/Windows.UI.Xaml.Style) resource and apply the Style to a control. This is especially true when you need to apply the same property values to many controls. For more info about using styles, see [XAML styles](../style/xaml-styles.md).
 
 ## General recommendations
 - Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](responsive-design.md) when the window width changes.
