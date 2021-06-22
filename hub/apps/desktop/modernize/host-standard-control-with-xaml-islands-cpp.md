@@ -19,7 +19,7 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
 
 ## Create a desktop application project
 
-1. In Visual Studio 2019 with the Windows 10, version 1903 SDK (version 10.0.18362) or a later release installed, create a new **Windows Desktop Application** project and name it **MyDesktopWin32App**. This project type is available under the **C++**, **Windows**, and **Desktop** project filters.
+1. In Visual Studio 2019 with the Windows 10, version 1903 SDK (build 10.0.18362) or a later release installed, create a new **Windows Desktop Application** project and name it **MyDesktopWin32App**. This project type is available under the **C++**, **Windows**, and **Desktop** project filters.
 
 2. In **Solution Explorer**, right-click the solution node, click **Retarget solution**, select the **10.0.18362.0** or a later SDK release, and then click **OK**.
 
@@ -33,10 +33,10 @@ This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-h
 
 4. On the **Browse** tab of the **NuGet Package Manager** window, search for the [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet package and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.
 
-5. Set the `maxVersionTested` value in your [application manifest](/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903 or later.
+5. Set the `maxversiontested` value in your [application manifest](/windows/desktop/SbsCs/application-manifests) to specify that your application is compatible with Windows 10, version 1903.
 
     1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
-    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be 10.0.18362 or a later release).
+    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be 10.0.18362.0 or a later release). Note that setting a higher value means older versions of Windows won't run the app properly because every Windows release only knows of versions before it. If you want the app to run on Windows 10, version 1903 (build 10.0.18362), you should either leave the 10.0.18362.0 value as is, or add multiple **maxversiontested** elements for the different values the app supports.
 
         ```xml
         <?xml version="1.0" encoding="UTF-8"?>
