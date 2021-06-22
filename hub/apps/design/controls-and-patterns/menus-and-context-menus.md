@@ -103,4 +103,4 @@ When the user invokes a command element (such as a button) whose primary role is
 - [Contextual commanding for collections and lists](collection-commanding.md)
 - [Menu flyout and menu bar](menus.md)
 - [Command bar flyout](command-bar-flyout.md)
-- [Command bar and app bar](app-bars.md)
+- [Command bar](command-bar.md)

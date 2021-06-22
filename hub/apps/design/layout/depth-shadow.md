@@ -47,7 +47,7 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
 
-- [Context menu](../controls-and-patterns/menus.md), [Command bar](../controls-and-patterns/app-bars.md), [Command bar flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
+- [Context menu](../controls-and-patterns/menus.md), [Command bar](../controls-and-patterns/command-bar.md), [Command bar flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
 - [Dialogs and flyouts](../controls-and-patterns/dialogs-and-flyouts/index.md) (Dialog at 128px)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)

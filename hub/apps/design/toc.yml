@@ -170,8 +170,8 @@
       items:
         - name: Menus and context menus
           href: controls-and-patterns/menus-and-context-menus.md
-        - name: Command bar and app bar
-          href: controls-and-patterns/app-bars.md
+        - name: Command bar
+          href: controls-and-patterns/command-bar.md
         - name: Command bar flyout
           href: controls-and-patterns/command-bar-flyout.md
         - name: Menu flyout and menu bar

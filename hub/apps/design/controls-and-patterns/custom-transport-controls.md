@@ -149,7 +149,7 @@ You can now modify the control style and template to update the look of your cus
 
 You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.
 
-In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](app-bars.md) article.
+In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](command-bar.md) article.
 
 To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template.
 

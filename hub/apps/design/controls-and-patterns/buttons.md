@@ -530,7 +530,7 @@ private void ApplyListStyle(string listStyle)
 
 - Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
 
-- For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
+- For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](command-bar.md).
 
 
 ### Recommended single-button layout

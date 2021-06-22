@@ -49,7 +49,7 @@ Top nav can also act as top-level navigation. While left nav is collapsible, top
 
 ## Command bar
 
-Next, you might want to provide users with easy access to your app's most common tasks. A [command bar](../controls-and-patterns/app-bars.md) can provide access to app-level or page-level commands, and it can be used with any navigation pattern.
+Next, you might want to provide users with easy access to your app's most common tasks. A [command bar](../controls-and-patterns/command-bar.md) can provide access to app-level or page-level commands, and it can be used with any navigation pattern.
 
 ![command bar placement at top ](images/app-bar-desktop.svg)
 

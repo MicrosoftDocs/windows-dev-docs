@@ -712,7 +712,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/app-bars.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/app-bars",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/command-bar",
       "redirect_document_id": true
     },
     {
@@ -5217,7 +5217,7 @@
     },
     {
       "source_path": "windows-apps-src/design/controls-and-patterns/app-bars.md",
-      "redirect_url": "/windows/apps/design/controls-and-patterns/app-bars",
+      "redirect_url": "/windows/apps/design/controls-and-patterns/command-bar",
       "redirect_document_id": false
     },
     {

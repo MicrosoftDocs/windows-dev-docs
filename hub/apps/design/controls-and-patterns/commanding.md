@@ -30,7 +30,7 @@ Commands can be invoked directly through UI interactions like clicking a button 
 
 Commands can operate on a specific context within your app, such as deleting text or undoing an action, or they can be context-free, such as muting audio or adjusting brightness.
 
-The following image shows two command interfaces (a [CommandBar](app-bars.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
+The following image shows two command interfaces (a [CommandBar](command-bar.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
 ![Expanded Command bar](images/control-examples/command-bar-photos.png)<br>*Command bar*
 
@@ -38,7 +38,7 @@ The following image shows two command interfaces (a [CommandBar](app-bars.md) an
 
 ## Command interactions
 
-Due to the variety of devices, input types, and UI surfaces that can affect how a command is invoked, we recommend exposing your commands through as many commanding surfaces as possible. These can include a combination of [Swipe](swipe.md), [MenuBar](menus.md), [CommandBar](app-bars.md), [CommandBarFlyout](command-bar-flyout.md), and traditional [context menu](menus.md).
+Due to the variety of devices, input types, and UI surfaces that can affect how a command is invoked, we recommend exposing your commands through as many commanding surfaces as possible. These can include a combination of [Swipe](swipe.md), [MenuBar](menus.md), [CommandBar](command-bar.md), [CommandBarFlyout](command-bar-flyout.md), and traditional [context menu](menus.md).
 
 **For critical commands, use input-specific accelerators.** Input accelerators let a user perform actions more quickly depending on the input device they're using.
 

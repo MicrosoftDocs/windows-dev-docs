@@ -19,7 +19,7 @@ The command bar flyout lets you provide users with easy access to common tasks b
 
 ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
 
-Like [CommandBar](app-bars.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
+Like [CommandBar](command-bar.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
 
 The command bar flyout has two display modes: *collapsed* and *expanded*.
 
@@ -429,6 +429,6 @@ Light dismiss controls–such as menus, context menus, and other flyouts–trap 
 - [Command design basics for Windows apps](../basics/commanding-basics.md)
 - [Contextual commanding for collections and lists](collection-commanding.md).
 - [Menus and context menus](menus-and-context-menus.md)
-- [Command bar and app bar](app-bars.md)
+- [Command bar](command-bar.md)
 - [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
 - [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)

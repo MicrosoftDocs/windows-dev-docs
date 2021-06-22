@@ -173,7 +173,7 @@ This example uses an Acrylic [list/detail](list-details.md) [list view](lists.md
 ```
 
 ## Two column form example
-This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](app-bars.md) in addition to input controls.
+This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](command-bar.md) in addition to input controls.
 ![Screenshot of form example](images/FormExample.png)
 ```xaml
 <Grid>

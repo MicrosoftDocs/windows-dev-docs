@@ -118,7 +118,7 @@ If a command is constantly needed for users to complete core scenarios, put it o
 	:::column span="2":::
 <b>Command bars and menu bars</b>
 
-<a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+<a href="../controls-and-patterns/command-bar.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
 :::row-end:::
 
 :::row:::
@@ -151,7 +151,7 @@ Here are some ways to provide feedback in your app.
 	:::column span="2":::
 <b>Command bar</b>
 
-The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+The content area of the <a href="../controls-and-patterns/command-bar.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
 :::row-end:::
 
 :::row:::

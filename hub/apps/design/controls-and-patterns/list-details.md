@@ -99,6 +99,6 @@ The following samples implement the list/details pattern with adaptive layouts a
 ## Related articles
 
 - [Lists](lists.md)
-- [App and command bars](app-bars.md)
+- [App and command bars](command-bar.md)
 - [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [SplitView class](/uwp/api/windows.ui.xaml.controls.splitview)

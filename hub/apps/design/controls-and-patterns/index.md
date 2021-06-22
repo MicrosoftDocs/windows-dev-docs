@@ -66,7 +66,7 @@ Detailed information about specific controls and patterns.
 - [Checkbox](checkbox.md)
 - [Color picker](color-picker.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Combo box](combo-box.md)
-- [Command bar](app-bars.md)
+- [Command bar](command-bar.md)
 - [Command bar flyout](command-bar-flyout.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Contact card](contact-card.md)
 - [Content dialog](dialogs-and-flyouts/dialogs.md)

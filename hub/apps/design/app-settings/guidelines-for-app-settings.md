@@ -43,19 +43,19 @@ For a nav pane layout, app settings should be the last item in the list of navig
 
 ![app settings entry point for nav pane](images/appsettings-nav-settings.png)
 
-**App bar**
+**Command bar**
 
-If you're using an [app bar](../controls-and-patterns/app-bars.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the overflow.
+If you're using a [command bar](../controls-and-patterns/command-bar.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the command bar and not within the overflow.
 
-![app settings entry point for app bar](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
+![app settings entry point for command bar](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **Hub**
 
-If you're using a hub layout, the entry point for app settings should be placed inside the "More" overflow menu of an app bar.
+If you're using a hub layout, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
 
 **Tabs/pivots**
 
-For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of an app bar.
+For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
 
 **List-details**
 
