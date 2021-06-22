@@ -280,9 +280,9 @@ The InfoBar will expand to fit the content defined.
 You can modify the default Style and ControlTemplate to give the control a unique appearance. 
 See the [Control Style and Template](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 For more info, see the 
-[Light-weight styling section](./xaml-styles.md#lightweight-styling)
+[Light-weight styling section](../style/xaml-styles.md#lightweight-styling)
 of the 
-[Styling controls](./xaml-styles.md)
+[Styling controls](../style/xaml-styles.md)
 article. 
 
 For example, the following causes the background color for all informational InfoBars on a page to be blue:

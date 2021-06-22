@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
  
 
-**ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); for GridView, it’s [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
+**ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); for GridView, it's [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
 > **Important APIs**: [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ListViewItem class](/uwp/api/windows.ui.xaml.controls.listviewitem), [GridViewItem class](/uwp/api/windows.ui.xaml.controls.gridviewitem), [ItemTemplate property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
@@ -80,7 +80,7 @@ Here's the XAML that creates this item. We explain the templates later.
 ## Prerequisites
 
 - We assume that you know how to use a list view control. For more info, see the [ListView and GridView](listview-and-gridview.md) article.
-- We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](xaml-styles.md) and [Control templates](control-templates.md).
+- We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](../style/xaml-styles.md) and [Control templates](../style/xaml-control-templates.md).
 
 ## The data
 
@@ -88,7 +88,7 @@ Before we look deeper into how to show data items in a list view, we need to und
  
 We then populate a **List** with a `NamedColor` object for each named color in the [Colors](/uwp/api/windows.ui.colors) class. The list is set as the [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) for the list view.
 
-Here’s the code to define the class and populate the `NamedColors` list.
+Here's the code to define the class and populate the `NamedColors` list.
 
 **C#**
 ```csharp
@@ -166,14 +166,14 @@ You can show the string representation of a particular property of the data item
 <ListView x:Name="colorsListView" DisplayMemberPath="Name" />
 ```
 
-The list view now displays items by name, as shown here. It’s more useful, but it’s not very interesting and leaves a lot of information hidden.
+The list view now displays items by name, as shown here. It's more useful, but it's not very interesting and leaves a lot of information hidden.
 
 ![List view showing the string representation of an item property](images/listview-display-member-path.png)
 
 You typically want to show a more rich presentation of your data. To specify exactly how items in the list view are displayed, you create a [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the list control.
 
 > [!IMPORTANT]
-> You can’t use a **ItemTemplate** and **DisplayMemberPath** at the same time. If both properties are set, an exception occurs.
+> You can't use a **ItemTemplate** and **DisplayMemberPath** at the same time. If both properties are set, an exception occurs.
 
 Here, you define a DataTemplate that shows a [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
 
@@ -303,7 +303,7 @@ An instance of every XAML element in a data template is created for each item in
 
 
 ## Control template
-An item’s control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Some of the common default visuals drawn by the ListView control template are shown here.
+An item's control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Some of the common default visuals drawn by the ListView control template are shown here.
 
 - Hover – A light gray rectangle drawn below the data template.  
 - Selection – A light blue rectangle drawn below the data template. 
@@ -467,7 +467,7 @@ If you need to make more modifications than what is allowed by the **ListViewIte
 As mentioned previously, the number of UIElements in an item template has a significant impact on the performance of your list view. Replacing ListViewItemPresenter with the expanded XAML templates greatly increases the element count, and is not recommended when your list view will show a large number of items or when performance is a concern.
 
 > [!NOTE]
-> **ListViewItemPresenter** is supported only when the list view’s [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid), or [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+> **ListViewItemPresenter** is supported only when the list view's [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid), or [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 To customize an expanded XAML template, you need to make a copy of it in your app, and set the **ItemContainerStyle** property to your copy.
 
@@ -478,7 +478,7 @@ To customize an expanded XAML template, you need to make a copy of it in your ap
     <GridView ItemContainerStyle="{StaticResource GridViewItemExpanded}"/>
     ```
 2. In the Visual Studio Properties pane, expand the Miscellaneous section and find the ItemContainerStyle property. (Make sure the ListView or GridView is selected.)
-3. Click the property marker for the ItemContainerStyle property. (It’s the small box next to the TextBox. It’s coloreed green to show that it’s set to a StaticResource.) The property menu opens.
+3. Click the property marker for the ItemContainerStyle property. (It's the small box next to the TextBox. It's coloreed green to show that it's set to a StaticResource.) The property menu opens.
 4. In the property menu, click **Convert to New Resource**. 
     
     ![Visual Studio property menu](images/listview-convert-resource-vs.png)
