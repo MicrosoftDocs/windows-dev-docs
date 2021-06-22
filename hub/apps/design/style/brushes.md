@@ -178,7 +178,7 @@ The next example creates an [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.Imag
 
 *A rendered ImageBrush*
 
-[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) and [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](../controls-and-patterns/images-imagebrushes.md).
+[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) and [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](../controls/images-imagebrushes.md).
 
 ## Brushes and text
 

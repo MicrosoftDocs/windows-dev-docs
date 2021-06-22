@@ -181,7 +181,7 @@ This is not optimal because it gives the app a "boxed-in" effect, with parts of 
 
 ### Drawing UI to the edge
 
-We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [nav panes](../controls-and-patterns/navigationview.md), and [CommandBars](/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
+We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [nav panes](../controls/navigationview.md), and [CommandBars](/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
 
 On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in [UI element sizing](#ui-element-sizing), a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:
 
@@ -351,7 +351,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
     {
         args.Handled = true;
         // Swallow this request and restart it with a request to center the item.  We could instead have chosen
-        // to adjust the TargetRect’s Y and Height values to add a specific amount of padding as it bubbles up, 
+        // to adjust the TargetRect's Y and Height values to add a specific amount of padding as it bubbles up, 
         // but if we just want to center it then this is easier.
 
         // (Optional) Account for sticky headers if they exist
@@ -430,7 +430,7 @@ There are several UI controls that work well across multiple devices, but have c
 
 A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button.
 
-While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in [Programmatic focus navigation](../input/focus-navigation-programmatic.md#split-view-code-sample) document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls-and-patterns/navigationview.md).
+While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in [Programmatic focus navigation](../input/focus-navigation-programmatic.md#split-view-code-sample) document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls/navigationview.md).
 
 ### CommandBar labels
 
@@ -446,7 +446,7 @@ The [Tooltip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) control was introduced 
 
 ### Button styles
 
-While the standard UWP buttons work well on TV, some visual styles of buttons call attention to the UI better, which you may want to consider for all platforms, particularly in the 10-foot experience, which benefits from clearly communicating where the focus is located. To read more about these styles, see [Buttons](../controls-and-patterns/buttons.md).
+While the standard UWP buttons work well on TV, some visual styles of buttons call attention to the UI better, which you may want to consider for all platforms, particularly in the 10-foot experience, which benefits from clearly communicating where the focus is located. To read more about these styles, see [Buttons](../controls/buttons.md).
 
 ### Nested UI elements
 
@@ -454,7 +454,7 @@ Nested UI exposes nested actionable items enclosed inside a container UI element
 
 Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a `ContextFlyout`.
 
-For more information on nested UI, see [Nested UI in list items](../controls-and-patterns/nested-ui.md).
+For more information on nested UI, see [Nested UI in list items](../controls/nested-ui.md).
 
 ### MediaTransportControls
 
@@ -470,7 +470,7 @@ The [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportCon
 </MediaPlayerElement>
 ```  
 
-Visit [Media playback](../controls-and-patterns/media-playback.md) to learn more about adding media to your app.
+Visit [Media playback](../controls/media-playback.md) to learn more about adding media to your app.
 
 > [!NOTE]
 > `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.

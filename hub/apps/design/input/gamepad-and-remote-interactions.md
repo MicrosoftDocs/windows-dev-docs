@@ -140,7 +140,7 @@ private bool BackRequested()
 ```
 
 > [!NOTE]
-> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls-and-patterns/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for Windows apps](../basics/navigation-history-and-backwards-navigation.md).
+> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for Windows apps](../basics/navigation-history-and-backwards-navigation.md).
 
 Windows apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
 
@@ -288,7 +288,7 @@ What if you put the `CommandBar` *above* the list/grid? While a user who scrolle
 
 While you can't stack a `CommandBar`'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.
 
-If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) and is the [context menu](../controls-and-patterns/dialogs-and-flyouts/index.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
+If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) and is the [context menu](../controls/dialogs-and-flyouts/index.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
 
 ### UI layout challenges
 
@@ -472,7 +472,7 @@ You can even opt out of the system-provided focus visuals by drawing your own us
 
 ### Light dismiss overlay
 
-To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls-and-patterns/menus.md).
+To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls/menus.md).
 
 ## Focus engagement
 

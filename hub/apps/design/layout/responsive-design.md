@@ -30,7 +30,7 @@ UWP apps use effective pixels to guarantee that your UI will be legible and usab
 When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
 
 >[!TIP]
-> Many UWP controls automatically implement these responsive behaviors. To create a responsive UI, we recommend checking out the [UWP controls](../controls-and-patterns/index.md).
+> Many UWP controls automatically implement these responsive behaviors. To create a responsive UI, we recommend checking out the [UWP controls](../controls/index.md).
 
 ## Reposition
 
@@ -76,7 +76,7 @@ This technique lets you switch the user interface for a specific breakpoints. In
 
 ![Replacing design elements](images/rsp-design/rspd-replace.gif)
 
-The [NavigationView](../controls-and-patterns/navigationview.md) control supports this responsive technique, by letting users set the pane position to either top or left.
+The [NavigationView](../controls/navigationview.md) control supports this responsive technique, by letting users set the pane position to either top or left.
 
 ## Re-architect
 
@@ -88,4 +88,4 @@ You can collapse or fork the architecture of your app to better target specific 
 
 - [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Responsive layouts with XAML](layouts-with-xaml.md)
-- [UWP controls and patterns](../controls-and-patterns/index.md)
+- [UWP controls and patterns](../controls/index.md)

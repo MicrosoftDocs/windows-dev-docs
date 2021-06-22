@@ -103,18 +103,18 @@ Here, the [Style](/uwp/api/Windows.UI.Xaml.Style) has an implicit key of **typeo
 </Page>
 ```
 
-For more info about implicit styles and how they work, see [Styling controls](xaml-styles.md) and [Control templates](control-templates.md).
+For more info about implicit styles and how they work, see [Styling controls](xaml-styles.md) and [Control templates](xaml-control-templates.md).
 
 ## Look up resources in code
 
 You access members of the resource dictionary like any other dictionary.
 
 > [!WARNING]
-> When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren’t found in the first dictionary.
+> When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren't found in the first dictionary.
 
  
 
-This example shows how to retrieve the `redButtonStyle` resource out of a page’s resource dictionary:
+This example shows how to retrieve the `redButtonStyle` resource out of a page's resource dictionary:
 
 ```XAML
 <Page
@@ -190,7 +190,7 @@ You can also add an application resource in code.
 There are two things to keep in mind when doing this.
 
 -   First, you need to add the resources before any page tries to use the resource.
--   Second, you can’t add resources in the App’s constructor.
+-   Second, you can't add resources in the App's constructor.
 
 You can avoid both problems if you add the resource in the [Application.OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method, like this.
 
@@ -236,9 +236,9 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 
 [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) is a base class that controls inherit from, and it has a [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) property. So, you can add a local resource dictionary to any **FrameworkElement**.
 
-Here, both the [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) and the [Border](/uwp/api/Windows.UI.Xaml.Controls.Border) have resource dictionaries, and they both have a resource called "greeting". The [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) named 'textBlock2' is inside the **Border**, so its resource lookup looks first to the **Border**’s resources, then the **Page**’s resources, and then the [Application](/uwp/api/Windows.UI.Xaml.Application) resources. The **TextBlock** will read "Hola mundo".
+Here, both the [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) and the [Border](/uwp/api/Windows.UI.Xaml.Controls.Border) have resource dictionaries, and they both have a resource called "greeting". The [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) named 'textBlock2' is inside the **Border**, so its resource lookup looks first to the **Border**'s resources, then the **Page**'s resources, and then the [Application](/uwp/api/Windows.UI.Xaml.Application) resources. The **TextBlock** will read "Hola mundo".
 
-To access that element’s resources from code, use that element’s [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) property. Accessing a [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement)’s resources in code, rather than XAML, will look only in that dictionary, not in parent element’s dictionaries.
+To access that element's resources from code, use that element's [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) property. Accessing a [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement)'s resources in code, rather than XAML, will look only in that dictionary, not in parent element's dictionaries.
 
 ```XAML
 <Page
@@ -307,7 +307,7 @@ Here, you define a resource dictionary in a separate XAML file called Dictionary
 
 ```
 
-To use that dictionary, you merge it with your page’s dictionary:
+To use that dictionary, you merge it with your page's dictionary:
 
 ```XAML
 <Page
@@ -329,7 +329,7 @@ To use that dictionary, you merge it with your page’s dictionary:
 </Page>
 ```
 
-Here's what happens in this example. In `<Page.Resources>`, you declare `<ResourceDictionary>`. The XAML framework implicitly creates a resource dictionary for you when you add resources to `<Page.Resources>`; however, in this case, you don’t want just any resource dictionary, you want one that contains merged dictionaries.
+Here's what happens in this example. In `<Page.Resources>`, you declare `<ResourceDictionary>`. The XAML framework implicitly creates a resource dictionary for you when you add resources to `<Page.Resources>`; however, in this case, you don't want just any resource dictionary, you want one that contains merged dictionaries.
 
 So you declare `<ResourceDictionary>`, then add things to its `<ResourceDictionary.MergedDictionaries>` collection. Each of those entries takes the form `<ResourceDictionary Source="Dictionary1.xaml"/>`. To add more than one dictionary, just add a `<ResourceDictionary Source="Dictionary2.xaml"/>` entry after the first entry.
 

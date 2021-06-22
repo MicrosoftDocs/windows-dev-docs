@@ -514,7 +514,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 * [Identify input devices](identify-input-devices.md)
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [NavigationView control keyboarding specifics](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [NavigationView control keyboarding specifics](../controls/navigationview.md#hierarchical-navigation)
 * [Keyboard accessibility](../accessibility/keyboard-accessibility.md)
 
 ## Appendix

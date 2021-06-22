@@ -446,4 +446,4 @@ Page1::Page1()
 
 ## Related articles
 * [Navigation design basics for Windows apps](./navigation-basics.md)
-* [Navigation view](../controls-and-patterns/navigationview.md)
+* [Navigation view](../controls/navigationview.md)

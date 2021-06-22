@@ -45,7 +45,7 @@ In addition to capturing the basic position and movement of the pen as the user 
 
 The ink platform is very flexible. It is designed to support various levels of functionality, depending on your requirements.
 
-For Windows Ink UX guidelines, see [Inking controls](../controls-and-patterns/inking-controls.md).
+For Windows Ink UX guidelines, see [Inking controls](../controls/inking-controls.md).
 
 ## Components of the Windows Ink platform
 

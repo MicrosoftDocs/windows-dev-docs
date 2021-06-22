@@ -62,8 +62,8 @@ For font styles, use the default [Windows type ramp](../style/typography.md). Us
 <table>
 <tr><th>Do</th><th>Don't</th></tr>
 <tr>
-<td><img src="../controls-and-patterns/images/forms-shortform1col.png" alt="form with top labels"></td>
-<td><img src="../controls-and-patterns/images/forms-leftlabel-donot1.png" alt="form with left labels don't"></td>
+<td><img src="../controls/images/forms-shortform1col.png" alt="form with top labels"></td>
+<td><img src="../controls/images/forms-leftlabel-donot1.png" alt="form with left labels don't"></td>
 </tr>
 </table>
 </div>
@@ -80,10 +80,10 @@ Creating columns can reduce unnecessary white space in forms, especially with la
 <table>
 <tr><th>Do</th><th>Don't</th></tr>
 <tr>
-<td><img src="../controls-and-patterns/images/forms-2cols.png" alt="form with 2 columns"></td>
-<td><img src="../controls-and-patterns/images/forms-2cols-bad.png" alt="form with 2 bad columns"></td>
+<td><img src="../controls/images/forms-2cols.png" alt="form with 2 columns"></td>
+<td><img src="../controls/images/forms-2cols-bad.png" alt="form with 2 bad columns"></td>
 </tr>
-<tr><td><img src="../controls-and-patterns/images/forms-3cols.png" alt="form with 3 columns"></td></tr>
+<tr><td><img src="../controls/images/forms-3cols.png" alt="form with 3 columns"></td></tr>
 </table>
 
 </div>
@@ -173,7 +173,7 @@ This example uses an Acrylic [list/detail](list-details.md) [list view](lists.md
 ```
 
 ## Two column form example
-This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](app-bars.md) in addition to input controls.
+This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](command-bar.md) in addition to input controls.
 ![Screenshot of form example](images/FormExample.png)
 ```xaml
 <Grid>

@@ -160,7 +160,7 @@ A fast way to apply styles to your controls is to right-click on a control on th
 
 Overriding the system brushes is generally done at the App or Page level, and in either case the color override will affect all controls that reference that brush – and in XAML many controls can reference the same system brush.
 
-![Screenshot of two buttons: one in its rest state and one with lightweight Styling applied.](images/LightweightStyling_ButtonStatesExample.png)
+![Screenshot of two buttons: one in its rest state and one with lightweight Styling applied.](images/lightweight-styling-button-states-example.png)
 
 ```XAML
 <Page.Resources>
@@ -184,7 +184,7 @@ Placing these brush overrides at the **App.Resources** level, will alter all the
 
 In other cases, changing a single control on one page only to look a certain way, without altering any other versions of that control, is desired:
 
-![Screenshot of three styled buttons arranged stacked one on top of the other.](images/LightweightStyling_CheckboxExample.png)
+![Screenshot of three styled buttons arranged stacked one on top of the other.](images/lightweight-styling-checkbox-example.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>
@@ -211,7 +211,7 @@ In other cases, changing a single control on one page only to look a certain way
 <CheckBox Content="Normal CheckBox" Margin="5"/>
 ```
 
-This would only effect that one “Special CheckBox” on the page where that control existed.
+This would only effect that one "Special CheckBox" on the page where that control existed.
 
 ### Custom controls
 
@@ -305,4 +305,4 @@ One common scenario for this is to derive a new control from [ContentDialog](/uw
 
 ## The template property
 
-A style setter can be used for the [Template](/uwp/api/windows.ui.xaml.controls.control.template) property of a [Control](/uwp/api/Windows.UI.Xaml.Controls.Control), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](control-templates.md).
+A style setter can be used for the [Template](/uwp/api/windows.ui.xaml.controls.control.template) property of a [Control](/uwp/api/Windows.UI.Xaml.Controls.Control), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](xaml-control-templates.md).

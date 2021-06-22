@@ -134,7 +134,7 @@ Once you have an icon, the next step is to make it do something by associating i
 
 ![Command bar image](images/icons/app-bar-desktop.svg)
 
-You can also animate an icon to draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action associated with the icon in an entertaining and interesting way. See [AnimatedIcon](../controls-and-patterns/animated-icon.md).
+You can also animate an icon to draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action associated with the icon in an entertaining and interesting way. See [AnimatedIcon](../controls/animated-icon.md).
 
 ## Create an icon button
 
@@ -183,7 +183,7 @@ You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xa
 
 :::row:::
     :::column span:::
-When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls-and-patterns/app-bars.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
+When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls/command-bar.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
     :::column-end:::
 	:::column:::
         ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
@@ -213,9 +213,9 @@ There are other ways to provide icons for a button in a command bar:
 + [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
 + [ImageIcon](/uwp/api/windows.ui.xaml.controls.imageicon) - the icon is based on an image file type supported by the [Image](/uwp/api/windows.ui.xaml.controls.image) class. 
 
-To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md). 
+To learn more about command bars, see the [command bar article](../controls/command-bar.md). 
 
 ## Related articles
 
 - [App icons and logos](app-icons-and-logos.md)
-- [AnimatedIcon](../controls-and-patterns/animated-icon.md)
+- [AnimatedIcon](../controls/animated-icon.md)

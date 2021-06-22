@@ -230,7 +230,7 @@ You'll notice that the app isn't showing images yet. By default, it shows the `T
 
 ## Part 3: Add a DataTemplate object to display your data
 
-Now, you'll create a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) object that tells the `GridView` control how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls-and-patterns/item-containers-templates.md).
+Now, you'll create a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) object that tells the `GridView` control how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls/item-containers-templates.md).
 
 For now, you'll add only placeholders to help you create the layout you want. In the [XAML data binding](/windows/uwp/data-binding/xaml-basics-data-binding) tutorial, you'll replace these placeholders with real data from the `ImageFileInfo` class. You can open the **ImageFileInfo.cs** file now if you want to see what the data object looks like.
 

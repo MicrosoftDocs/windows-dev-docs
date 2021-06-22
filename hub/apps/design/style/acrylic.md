@@ -83,7 +83,7 @@ For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, 
 
 ![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
-Many XAML controls draw acrylic by default. [MenuFlyout](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
+Many XAML controls draw acrylic by default. [MenuFlyout](../controls/menus.md), [AutoSuggestBox](../controls/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
 
 > [!Note]
 > Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when a device enters Battery Saver mode. Users can disable acrylic effects for all apps by turning off _Transparency effects_ in Settings > Personalization > Colors.
@@ -102,7 +102,7 @@ In addition, only background acrylic will replace its translucency and texture w
 
 ### Legibility considerations
 
-It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls-and-patterns/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
+It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
 
 ## Acrylic theme resources
 You can easily apply acrylic to your app’s surfaces using the XAML [AcrylicBrush](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.

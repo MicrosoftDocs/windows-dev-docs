@@ -30,7 +30,7 @@ General instructions and code examples for adding and styling controls in XAML a
       There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
     :::column-end:::
     :::column:::
-      <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
+      <p><b><a href="../style/xaml-styles.md">Styling controls</a></b> <br/>
       You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
     :::column-end:::
 :::row-end:::
@@ -66,7 +66,7 @@ Detailed information about specific controls and patterns.
 - [Checkbox](checkbox.md)
 - [Color picker](color-picker.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Combo box](combo-box.md)
-- [Command bar](app-bars.md)
+- [Command bar](command-bar.md)
 - [Command bar flyout](command-bar-flyout.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Contact card](contact-card.md)
 - [Content dialog](dialogs-and-flyouts/dialogs.md)

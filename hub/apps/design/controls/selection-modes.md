@@ -55,6 +55,6 @@ Selection mode is confined to the page in which it is active, and can't affect a
 
 The entry point to selection mode should be juxtaposed against the content it affects.
 
-For command bar recommendations, see [guidelines for command bars](app-bars.md).
+For command bar recommendations, see [guidelines for command bars](command-bar.md).
 
 To learn more about selection modes and handling selection events for certain controls, visit the guidance page for that control.

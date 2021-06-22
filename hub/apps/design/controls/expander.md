@@ -243,7 +243,7 @@ private void Expander_Collapsed(muxc.Expander sender,
 
 ### Lightweight styling
 
-You can modify the default `Style` and `ControlTemplate` to give the control a unique appearance. See the Control Style and Template section of the Expander API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) of the [Styling controls](/windows/uwp/design/controls-and-patterns/xaml-styles) article.
+You can modify the default `Style` and `ControlTemplate` to give the control a unique appearance. See the Control Style and Template section of the Expander API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling) of the [Styling controls](../style/xaml-styles.md) article.
 
 ## Recommendations
 

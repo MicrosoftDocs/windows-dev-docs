@@ -41,10 +41,10 @@ Fluent Design guidelines and UI code examples for creating app experiences on Wi
        <p style="margin-top: 0px; margin-bottom: 50px">Responsive tips and APIs for a UI that looks great on every screen size.</p>
     :::column-end:::
     :::column:::
-        <a href="controls-and-patterns/index.md">
+        <a href="controls/index.md">
             <img src="images/controls-1x.png" alt="Controls and patterns" />
         </a><br/>
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="controls-and-patterns/index.md">Controls and patterns</a></h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="controls/index.md">Controls and patterns</a></h3>
         <p style="margin-top: 0px; margin-bottom: 50px">All the UI building blocks you need, from radio buttons to navigation controls.</p> 
     :::column-end:::
 :::row-end:::

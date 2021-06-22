@@ -86,7 +86,7 @@ Clear paths allow for logical navigation for users. Making navigation options ob
 Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.
 
 - Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.
-- Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls-and-patterns/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
+- Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
 - Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
 
 ## Use the right structure
@@ -168,9 +168,9 @@ With few exceptions, any app that has multiple pages uses a frame. Typically, an
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation**](../controls-and-patterns/navigationview.md)
+        [**Top navigation**](../controls/navigationview.md)
 
-Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation pattern.
+Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls/navigationview.md) control implements the top navigation pattern.
 
 Use top navigation when:
 
@@ -185,9 +185,9 @@ Use top navigation when:
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Tabs**](../controls-and-patterns/tab-view.md)
+        [**Tabs**](../controls/tab-view.md)
 
-Displays a horizontal set of tabs and their respective content. The [TabView](../controls-and-patterns/tab-view.md) control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.
+Displays a horizontal set of tabs and their respective content. The [TabView](../controls/tab-view.md) control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.
 
 Use tabs when:
 
@@ -202,9 +202,9 @@ Use tabs when:
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Breadcrumb**](../controls-and-patterns/breadcrumbbar.md)
+        [**Breadcrumb**](../controls/breadcrumbbar.md)
 
-Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls-and-patterns/breadcrumbbar.md) control implements the top navigation pattern.
+Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls/breadcrumbbar.md) control implements the top navigation pattern.
 
 Use a breadcrumb when:
 
@@ -220,7 +220,7 @@ Use a breadcrumb when:
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**Left navigation**](../controls/navigationview.md)
 
 Displays a vertical list of links to top-level pages. Use when:
 
@@ -234,7 +234,7 @@ Displays a vertical list of links to top-level pages. Use when:
         ![List details image](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**List/details**](../controls-and-patterns/list-details.md)
+        [**List/details**](../controls/list-details.md)
 
 Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:
         
@@ -250,7 +250,7 @@ List/details is well suited for email inboxes, contact lists, and data entry.
         ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
+        [**Hyperlinks**](../controls/hyperlinks.md)
 
 Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
     :::column-end:::

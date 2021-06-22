@@ -72,7 +72,7 @@ The Windows type ramp establishes crucial relationships between the type styles 
 
 ![The Windows type ramp.](images/type/text-block-type-ramp.svg)
 
-Check out the guidance on using the [XAML type ramp](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
+Check out the guidance on using the [XAML type ramp](../style/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
 
 ## Alignment
 
@@ -99,7 +99,7 @@ Don't use fewer than 20 characters or more than 60 characters per line as this i
 
 ## Clipping and ellipses
 
-When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
+When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls/text-controls.md).
 
 ![Shows a device frame with some text clipping.](images/type/clipping.svg)
 
@@ -189,8 +189,8 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 ## Related articles
 
-* [Text controls](../controls-and-patterns/text-controls.md)
-* [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
-* [XAML styles](../controls-and-patterns/xaml-styles.md)
+* [Text controls](../controls/text-controls.md)
+* [XAML theme resources](../style/xaml-theme-resources.md#the-xaml-type-ramp)
+* [XAML styles](../style/xaml-styles.md)
 * [Microsoft Typography](/typography/)
 * [Variable Fonts](/typography/develop/font-variations)

@@ -97,7 +97,7 @@ You can change an element's Visibility property in code or in a visual state. Wh
 
 ### Style resources
 
-You don't have to set each property value individually on a control. It's typically more efficient to group property values into a [**Style**](/uwp/api/Windows.UI.Xaml.Style) resource and apply the Style to a control. This is especially true when you need to apply the same property values to many controls. For more info about using styles, see [Styling controls](../controls-and-patterns/xaml-styles.md).
+You don't have to set each property value individually on a control. It's typically more efficient to group property values into a [**Style**](/uwp/api/Windows.UI.Xaml.Style) resource and apply the Style to a control. This is especially true when you need to apply the same property values to many controls. For more info about using styles, see [Styling controls](../style/xaml-styles.md).
 
 ### Layout panels
 
@@ -271,7 +271,7 @@ You can extend the [**StateTrigger**](/uwp/api/Windows.UI.Xaml.StateTrigger) cla
 
 ### Visual states and styles
 
-You can use Style resources in visual states to apply a set of property changes to multiple controls. For more info about using styles, see [Styling controls](../controls-and-patterns/xaml-styles.md).
+You can use Style resources in visual states to apply a set of property changes to multiple controls. For more info about using styles, see [Styling controls](../style/xaml-styles.md).
 
 In this simplified XAML from the State triggers sample, a Style resource is applied to a Button to adjust the size and margins for mouse or touch input. For the complete code and the definition of the custom state trigger, see the [State triggers sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers).
 

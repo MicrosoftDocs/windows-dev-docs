@@ -45,7 +45,7 @@ Consider how the colors you use will be interpreted by people from different cul
 
 ## Themes
 
-Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls-and-patterns/index.md).
+Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls/index.md).
 
 ### Light theme
 
@@ -81,9 +81,9 @@ If you don't request a theme for your app, make sure to test your app in both li
 
 ## Theme brushes
 
-Common controls automatically use [theme brushes](../controls-and-patterns/xaml-theme-resources.md#the-xaml-color-ramp-and-theme-dependent-brushes) to adjust contrast for light and dark themes.
+Common controls automatically use [theme brushes](../style/xaml-theme-resources.md#the-xaml-color-ramp-and-theme-dependent-brushes) to adjust contrast for light and dark themes.
 
-For example, here's an illustration of how the [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) uses theme brushes:
+For example, here's an illustration of how the [AutoSuggestBox](../controls/auto-suggest-box.md) uses theme brushes:
 
 ![theme brushes control example](images/color/theme-brushes.svg)
 
@@ -93,7 +93,7 @@ For example, here's an illustration of how the [AutoSuggestBox](../controls-and-
     :::column:::
 When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
-For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+For example, these [item templates for ListView](../controls/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
     :::column:::
  ![double line list item with icon example](images/color/list-view.svg)
@@ -120,7 +120,7 @@ For example, these [item templates for ListView](../controls-and-patterns/item-t
 </ListView>
 ```
 
-For more information about how to use theme brushes in your app, see [Theme Resources](../controls-and-patterns/xaml-theme-resources.md).
+For more information about how to use theme brushes in your app, see [Theme Resources](../style/xaml-theme-resources.md).
 
 ## Accent color
 
@@ -163,7 +163,7 @@ An accent color algorithm in the Windows shell generates light and dark shades o
 
 ![accent color palette](images/color/accent-color-palette.svg)
 
-These shades can be accessed as [theme resources](../controls-and-patterns/xaml-theme-resources.md):
+These shades can be accessed as [theme resources](../style/xaml-theme-resources.md):
 
 - `SystemAccentColorLight3`
 - `SystemAccentColorLight2`
@@ -201,7 +201,7 @@ The chart below illustrates an example of the various light/dark shades of accen
 
 ![Screenshot of the Color on Color chart that shows a color gradient from light blue on the top changing to a dark blue on the bottom.](images/color/color-on-color.png)
 
-For more information about styling controls, see [XAML styles](../controls-and-patterns/xaml-styles.md).
+For more information about styling controls, see [XAML styles](../style/xaml-styles.md).
 
 ## Color API
 
@@ -281,5 +281,5 @@ Be aware of how colorblindness could affect the usability of your application. F
 
 ## Related articles
 
-- [XAML Styles](../controls-and-patterns/xaml-styles.md)
-- [XAML Theme Resources](../controls-and-patterns/xaml-theme-resources.md)
+- [XAML Styles](../style/xaml-styles.md)
+- [XAML Theme Resources](../style/xaml-theme-resources.md)

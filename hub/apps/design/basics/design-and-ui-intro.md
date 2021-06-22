@@ -96,13 +96,13 @@ UWP's design platform provides a set of common controls that are guaranteed to w
 
 ![UWP controls](../style/images/color/windows-controls.svg)
 
-For a complete list of UWP controls and the patterns you can make from them, see the [controls and patterns section](../controls-and-patterns/index.md).
+For a complete list of UWP controls and the patterns you can make from them, see the [controls and patterns section](../controls/index.md).
 
 ## Style
 
 Common controls automatically reflect the system theme and accent color, work with all input types, and scale to all devices. In that way, they reflect the Fluent Design System - they're adaptive, empathetic, and beautiful. Common controls use light, motion, and depth in their default styles, so by using them, you're incorporating our Fluent Design System in your app.
 
-Common controls are highly customizable, too--you can change the foreground color of a control or completely customize it's appearance. To override the default styles in controls, use [lightweight styling](../controls-and-patterns/xaml-styles.md#lightweight-styling) or create [custom controls](../controls-and-patterns/control-templates.md) in XAML.
+Common controls are highly customizable, too--you can change the foreground color of a control or completely customize it's appearance. To override the default styles in controls, use [lightweight styling](../style/xaml-styles.md#lightweight-styling) or create [custom controls](../style/xaml-control-templates.md) in XAML.
 
 ![Accent color gif](images/intro-style.gif)
 

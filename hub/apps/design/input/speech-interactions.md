@@ -46,7 +46,7 @@ If you are considering supporting speech interactions in your app:
 
 Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../controls/command-bar.md)) can be used to show both availability and state.
 
 Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.
 
@@ -68,7 +68,7 @@ Try to frame your questions such that they elicit as specific a response as poss
 
 Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../controls/command-bar.md)) can be used to show both availability and state.
 
 If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.
 

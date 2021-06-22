@@ -24,7 +24,7 @@ This topic uses the terms "user profile language list", "app manifest language l
 
 ## Format dates and times for the app runtime language list
 
-If you need to allow users to choose a date, or to select a time, then use the standard [calendar, date, and time controls](../controls-and-patterns/date-and-time.md). These automatically use the best date and time format for the app runtime language list.
+If you need to allow users to choose a date, or to select a time, then use the standard [calendar, date, and time controls](../controls/date-and-time.md). These automatically use the best date and time format for the app runtime language list.
 
 If you need to display dates or times yourself then you can use the [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) class. By default, **DateTimeFormatter** automatically uses the best date and time format for the app runtime language list. So, the code below formats a given **DateTime** in the best way for that list. As an example, assume that your app manifest language list includes English (United States), which is also your default, and German (Germany). If the current date is Nov 6 2017 and the user profile language list contains German (Germany) first, then the formatter gives "06.11.2017". If the user profile language list contains English (United States) first (or if it contains neither English nor German), then the formatter gives "11/6/2017" (since "en-US" matches, or is used as the default).
 
@@ -104,7 +104,7 @@ You can test the code above on your own PC by changing the country or region in 
 
 The calendar differs across regions and languages. The Gregorian calendar is not the default for every region. Users in some regions may choose alternate calendars, such as the Japanese era calendar, or Arabic lunar calendars. Dates and times on the calendar are also sensitive to different time zones and daylight-saving time.
 
-To ensure that the preferred calendar format is used, you can use the standard [calendar, date, and time controls](../controls-and-patterns/date-and-time.md). For more complex scenarios, where working directly with operations on calendar dates may be required, **Windows.Globalization** provides a [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
+To ensure that the preferred calendar format is used, you can use the standard [calendar, date, and time controls](../controls/date-and-time.md). For more complex scenarios, where working directly with operations on calendar dates may be required, **Windows.Globalization** provides a [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
 
 ## Format phone numbers appropriately
 
@@ -161,7 +161,7 @@ For scenarios where you wish to provide different functionality based solely on 
 
 ## Related topics
 
-* [Calendar, date, and time controls](../controls-and-patterns/date-and-time.md)
+* [Calendar, date, and time controls](../controls/date-and-time.md)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)
 * [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
 

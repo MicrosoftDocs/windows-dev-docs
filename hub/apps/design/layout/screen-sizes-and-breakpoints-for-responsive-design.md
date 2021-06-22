@@ -72,23 +72,23 @@ UWP apps automatically scale your UI to guarantee that your app will be legible 
 
 ### Small
 - Set left and right window margins to 12px to create a visual separation between the left and right edges of the app window.
-- Dock [app bars](../controls-and-patterns/app-bars.md) to the bottom of the window for improved reachability.
+- Dock [app bars](../controls/command-bar.md) to the bottom of the window for improved reachability.
 - Use one column/region at a time.
 - Use an icon to represent search (don't show a search box).
-- Put the [navigation pane](../controls-and-patterns/navigationview.md) in overlay mode to conserve screen space.
-- If you're using the [list details pattern](../controls-and-patterns/list-details.md), use the stacked presentation mode to save screen space.
+- Put the [navigation pane](../controls/navigationview.md) in overlay mode to conserve screen space.
+- If you're using the [list details pattern](../controls/list-details.md), use the stacked presentation mode to save screen space.
 
 ### Medium
 - Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.
-- Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.
+- Put command elements like [app bars](../controls/command-bar.md) at the top of the app window.
 - Use up to two columns/regions.
 - Show the search box.
-- Put the [navigation pane](../controls-and-patterns/navigationview.md) into sliver mode so a narrow strip of icons always shows.
+- Put the [navigation pane](../controls/navigationview.md) into sliver mode so a narrow strip of icons always shows.
 - Consider further tailoring for [TV experiences](../devices/designing-for-tv.md).
 
 ### Large
 - Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.
-- Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.
+- Put command elements like [app bars](../controls/command-bar.md) at the top of the app window.
 - Use up to three columns/regions.
 - Show the search box.
-- Put the [navigation pane](../controls-and-patterns/navigationview.md) into docked mode so that it always shows.
+- Put the [navigation pane](../controls/navigationview.md) into docked mode so that it always shows.

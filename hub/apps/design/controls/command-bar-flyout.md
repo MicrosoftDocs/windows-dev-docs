@@ -19,7 +19,7 @@ The command bar flyout lets you provide users with easy access to common tasks b
 
 ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
 
-Like [CommandBar](app-bars.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
+Like [CommandBar](command-bar.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
 
 The command bar flyout has two display modes: *collapsed* and *expanded*.
 
@@ -142,7 +142,7 @@ To show commands in a context menu, you typically assign the flyout to the [Cont
 If you handle showing the flyout yourself (for example, on a [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) event), set the flyout's [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) to **Standard** to open the flyout in its expanded mode and give it focus.
 
 > [!TIP]
-> For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
+> For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls/dialogs-and-flyouts/flyouts.md).
 
 ### Show an always expanded CommandBarFlyout
 
@@ -198,7 +198,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > [!TIP]
 > By default, elements designed for the app canvas might not look right in a command bar. When you add an element using AppBarElementContainer, there are some steps you should take to make the element match other command bar elements:
 >
-> - Override the default brushes with [lightweight styling](./xaml-styles.md#lightweight-styling) to make the element's background and border match the app bar buttons.
+> - Override the default brushes with [lightweight styling](../style/xaml-styles.md#lightweight-styling) to make the element's background and border match the app bar buttons.
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
 >
@@ -429,6 +429,6 @@ Light dismiss controls–such as menus, context menus, and other flyouts–trap 
 - [Command design basics for Windows apps](../basics/commanding-basics.md)
 - [Contextual commanding for collections and lists](collection-commanding.md).
 - [Menus and context menus](menus-and-context-menus.md)
-- [Command bar and app bar](app-bars.md)
+- [Command bar](command-bar.md)
 - [CommandBar class](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
 - [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)
