@@ -6494,6 +6494,11 @@
       "source_path": "windows-apps-src/design/windows-template-studio/index.md",
       "redirect_url": "/windows/apps/design/windows-template-studio/index",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/menus-and-context-menus.md",
+      "redirect_url": "/windows/apps/design/controls/menus-and-context-menus",
+      "redirect_document_id": false
     }
   ]
 }
