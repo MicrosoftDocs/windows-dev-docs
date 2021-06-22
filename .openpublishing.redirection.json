@@ -57,7 +57,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/styling-controls.md",
-      "redirect_url": "/windows/apps/design/style/xaml-styles",
+      "redirect_url": "/windows/uwp/controls-and-patterns/xaml-styles",
       "redirect_document_id": false
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/xaml-basics-style.md",
-      "redirect_url": "/windows/apps/design/style/xaml-styles",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-styles",
       "redirect_document_id": false
     },
     {
@@ -712,7 +712,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/app-bars.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/command-bar",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/app-bars",
       "redirect_document_id": true
     },
     {
@@ -752,7 +752,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/control-templates.md",
-      "redirect_url": "/windows/apps/design/style/xaml-control-templates",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/control-templates",
       "redirect_document_id": true
     },
     {
@@ -917,7 +917,7 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md",
-      "redirect_url": "/windows/apps/design/style/xaml-resource-dictionary",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references",
       "redirect_document_id": true
     },
     {
@@ -1127,12 +1127,12 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/xaml-styles.md",
-      "redirect_url": "/windows/apps/design/style/xaml-styles",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-styles",
       "redirect_document_id": true
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/xaml-theme-resources.md",
-      "redirect_url": "/windows/apps/design/style/xaml-theme-resources",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-theme-resources",
       "redirect_document_id": true
     },
     {
