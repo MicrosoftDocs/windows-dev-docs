@@ -132,7 +132,12 @@
     },
     {
       "source_path": "windows-apps-src/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/get-started/get-set-up",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
       "redirect_document_id": false
     },
     {
@@ -5073,6 +5078,116 @@
     {
       "source_path": "hub/android/react-native.md",
       "redirect_url": "/windows/dev-environment/javascript/react-native-for-android",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/index.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/release-channels.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/release-channels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/stable-channel.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/stable-channel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/preview-channel.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/preview-channel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/set-up-your-development-environment.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/get-started.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/get-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/update-existing-projects-to-the-latest-release.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/update-existing-projects-to-the-latest-release",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/mrtcore/mrtcore-overview.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/dwritecore.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/dwritecore",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/applifecycle/applifecycle-instancing.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/applifecycle/applifecycle-rich-activation.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/deploy-apps-that-use-project-reunion.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/deployment-architecture.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/deployment-architecture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/deploy-packaged-apps.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/deploy-packaged-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/deploy-unpackaged-apps.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/deploy-unpackaged-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/tutorial-unpackaged-deployment.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/check-project-reunion-versions.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/check-windows-app-sdk-versions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/project-reunion/remove-project-reunion-versions.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/remove-windows-app-sdk-versions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/get-started-winui3-for-desktop.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/get-started-winui3-for-uwp.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/choose-your-platform.md",
+      "redirect_url": "/windows/apps/desktop#choose-your-app-type",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/10x/faq.md",
+      "redirect_url": "/windows/apps",
       "redirect_document_id": false
     },
     {

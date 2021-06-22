@@ -7,14 +7,11 @@ ms.topic: article
 
 # WinUI 3 project templates in Visual Studio
 
-After installing the Project Reunion VSIX, you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
+After [installing the Windows App SDK VSIX](../../windows-app-sdk/set-up-your-development-environment.md), you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
 
 ![WinUI project templates](images/winui3-csharp-newproject.png)
 
-> [!NOTE] 
-> Please see our most recent [set of release notes](../winui3/index.md) for guidance on setting up your development environment, known issues, and more.
-
-There are two Project Reunion Visual Studio Extensions available: the **Project Reunion VSIX**, and the **Project Reunion Preview VSIX**. The Project Reunion VSIX includes project templates that can be used for building MSIX-packaged desktop production apps. The Project Reunion Preview VSIX includes experimental project templates that can be used for building MSIX-packaged desktop or UWP apps. 
+There are two versions of the Windows App SDK extension available: the [stable channel](../../windows-app-sdk/stable-channel.md) and the [preview channel](../../windows-app-sdk/preview-channel.md). The stable channel includes project templates that can be used for building MSIX-packaged desktop production apps. The preview channel includes experimental project templates that can be used for building MSIX-packaged desktops, non-packaged desktop apps, or UWP apps. 
 
 ## Project templates for WinUI 3
 
@@ -22,8 +19,8 @@ You can use these WinUI project templates to create apps.
 
 | Template | Language | Description |
 |----------|----------|-------------|
-| Blank App, Packaged (WinUI 3 in Desktop) | C# and C++ | Creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Get started with WinUI 3 for desktop apps](get-started-winui3-for-desktop.md).<p></p>The solution also includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more.  |
-| [Experimental] Blank App (WinUI 3 in UWP) | C# and C++ | Creates a UWP app that with a WinUI-based user interface. The generated project includes a basic page that derives from the **Microsoft.UI.Xaml.Controls.Page** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Get started with WinUI 3 for UWP apps](get-started-winui3-for-uwp.md). |
+| Blank App, Packaged (WinUI 3 in Desktop) | C# and C++ | Creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Create your first WinUI 3 app](create-your-first-winui3-app.md).<p></p>The solution also includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more.  |
+| [Experimental] Blank App (WinUI 3 in UWP) | C# and C++ | Creates a UWP app that with a WinUI-based user interface. The generated project includes a basic page that derives from the **Microsoft.UI.Xaml.Controls.Page** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Create your first WinUI 3 app](create-your-first-winui3-app.md). |
 
 You can use these WinUI project templates to build components that can be loaded and used by a WinUI-based app.
 
@@ -41,7 +38,7 @@ The following item templates are available for use in a WinUI project. To access
 ![WinUI item templates](images/winui3-addnewitem.png)
 
 > [!NOTE]
-> If you have the Project Reunion Preview VSIX installed, you may see a second set of Item Templates that have the [Experimental] prefix. We recommend that you use those [Experimental] item templates if you're building a non-production/preview app, and use the stable, non-marked item templates if you're building a production desktop app.
+> If you have the [preview channel](../../windows-app-sdk/preview-channel.md) of the Windows App SDK installed, you may see a second set of Item Templates that have the [Experimental] prefix. We recommend that you use those [Experimental] item templates if you're building a non-production/preview app, and use the stable, non-marked item templates if you're building a production desktop app.
 
 | Template | Language | Description |
 |----------|----------|-------------|

@@ -20,9 +20,9 @@ Visual Studio 2019 provides many project and item templates that help you build 
 
 The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/winui3/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
-WinUI 3 is available as part of [Project Reunion](../project-reunion/index.md). It includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
+WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
-For instructions to install the Project Reunion VSIX package and the WinUI project templates, see [Set up your development environment](../project-reunion/set-up-your-development-environment.md). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
+For instructions to install the Windows App SDK VSIX package and the WinUI project templates, see [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md). For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 
@@ -88,6 +88,8 @@ You can use these project templates to build pieces of a C++ UWP app.
 
 Visual Studio provides a variety of project templates for building desktop Windows apps with native C++ and direct access to the Win32 API. To use these project templates, you must include the **Desktop development with C++** workload when you install Visual Studio. This workload includes project templates for building desktop apps, console apps, and libraries.
 
+The recommended technology is [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). This is a C++ language projection that is implemented entirely in header files, and designed to provide you with first-class access to the modern WinRT API.
+
 ### Project templates for C++ desktop apps
 
 To access the C++ project templates for classic desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
@@ -96,6 +98,7 @@ To access the C++ project templates for classic desktop apps when you create a n
 
 | Template | Description |
 |----------|----------|
+| Windows Desktop Application (C++/WinRT) | Creates a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) client application for Windows desktop. For more information, see [Windows Desktop Application (C++/WinRT)](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#windows-desktop-application-cwinrt). This project template requires the [C++/WinRT VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). |
 | Windows Desktop Application | Creates a classic Windows desktop app with C++. For more information, see [Walkthrough: Create a traditional Windows Desktop application](/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp). |
 | Windows Desktop Wizard | Provides a step-by-step wizard you can use to create one of the following types of projects: a classic Windows desktop app, a console app, a dynamic-link library (DLL), or a static library. For more information, see [Windows Desktop Wizard](/cpp/windows/windows-desktop-wizard) and [Walkthrough: Create a traditional Windows Desktop application](/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp).         |
 | Windows Application Packaging Project | Creates a project that you can use to build a desktop app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more. For more information, see [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).  |

@@ -7,18 +7,20 @@ ms.topic: article
 
 # Overview and release notes: Windows UI Library 3 - Project Reunion 0.5 (March 2021)
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../project-reunion/index.md).  The Project Reunion 0.5 release provides [Visual Studio project templates](https://aka.ms/projectreunion/vsixdownload) to help you start building apps with a WinUI 3-based user interface.
+Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../windows-app-sdk/index.md) (now called the **Windows App SDK**).  The Project Reunion 0.5 release provides [Visual Studio project templates](https://aka.ms/projectreunion/vsixdownload) to help you start building apps with a WinUI 3-based user interface.
 
 **WinUI 3 - Project Reunion 0.5** is the first stable, supported version of WinUI 3 that can be used to create production apps that can be published to the Microsoft Store. This release consists of the stability updates and general improvements that allow WinUI 3 to be forward-compatible and production-ready.
 
+> [!NOTE]
+> **Project Reunion** is the previous code name for the [Windows App SDK](../../windows-app-sdk/index.md). This documentation still uses **Project Reunion** when referring to previous releases that used this code name.
 
 ## Install WinUI 3 - Project Reunion 0.5
 
 This new version of WinUI 3 is available as part of Project Reunion 0.5. To install, see:
 
-**[Installation instructions for Project Reunion 0.5](../../project-reunion/set-up-your-development-environment.md)**
+**[Installation instructions for Project Reunion 0.5](../../windows-app-sdk/set-up-your-development-environment.md)**
 
-Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../project-reunion/deploy-apps-that-use-project-reunion.md). The Project Reunion VSIX includes [WinUI Project Templates](winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
+Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md). The Project Reunion VSIX includes [WinUI Project Templates](winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 version of the [XAML Controls Gallery](#winui-3-controls-gallery) from GitHub.
@@ -57,7 +59,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 
 ## Update your existing WinUI 3 app
 
-If you created an app with an earlier preview or release version of WinUI 3, you can update the project to use the latest release of WinUI 3 - Project Reunion 0.5. For instructions, see [Update existing projects to the latest release of Project Reunion](../../project-reunion/update-existing-projects-to-the-latest-release.md).
+If you created an app with an earlier preview or release version of WinUI 3, you can update the project to use the latest release of WinUI 3 - Project Reunion 0.5. For instructions, see [Update existing projects to the latest release of Project Reunion](../../windows-app-sdk/update-existing-projects-to-the-latest-release.md).
 
 ## Major changes introduced in this release
 
@@ -95,7 +97,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
 As this is a stable release, preview features have been removed from this version of WinUI 3. You can still access these features by using the current [preview version of WinUI 3](release-notes/release-notes-08-preview.md). Please note the following key features are still in preview, and work to stabilize them is ongoing:
 
 - UWP support
-  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions for setting up your development environment in [Get started with Project Reunion](../../project-reunion/get-started-with-project-reunion.md). See  [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes/release-notes-08-preview.md) for more information.
+  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions for setting up your development environment in [Get started with Project Reunion](../../windows-app-sdk/get-started.md). See  [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes/release-notes-08-preview.md) for more information.
 
 - Multi-window support in desktop apps
 
