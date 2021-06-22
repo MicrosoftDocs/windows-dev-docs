@@ -96,7 +96,7 @@ UWP's design platform provides a set of common controls that are guaranteed to w
 
 ![UWP controls](../style/images/color/windows-controls.svg)
 
-For a complete list of UWP controls and the patterns you can make from them, see the [controls and patterns section](../controls-and-patterns/index.md).
+For a complete list of UWP controls and the patterns you can make from them, see the [controls and patterns section](../controls/index.md).
 
 ## Style
 

@@ -47,18 +47,18 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
 
-- [Context menu](../controls-and-patterns/menus.md), [Command bar](../controls-and-patterns/command-bar.md), [Command bar flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Dialogs and flyouts](../controls-and-patterns/dialogs-and-flyouts/index.md) (Dialog at 128px)
-- [NavigationView](../controls-and-patterns/navigationview.md)
-- [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
-- [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
-- [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md)
-- [Calendar/Date/Time pickers](../controls-and-patterns/date-and-time.md)
-- [Tooltip](../controls-and-patterns/tooltips.md) (16px)
-- [Number Box](../controls-and-patterns/number-box.md)
-- [TabView](../controls-and-patterns/tab-view.md)
-- [Media transport control](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
-- [BreadcrumbBar](../controls-and-patterns/breadcrumbbar.md)
+- [Context menu](../controls/menus.md), [Command bar](../controls/command-bar.md), [Command bar flyout](../controls/command-bar-flyout.md), [MenuBar](../controls/menus.md#create-a-menu-bar)
+- [Dialogs and flyouts](../controls/dialogs-and-flyouts/index.md) (Dialog at 128px)
+- [NavigationView](../controls/navigationview.md)
+- [ComboBox](../controls/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls/buttons.md)
+- [TeachingTip](../controls/dialogs-and-flyouts/teaching-tip.md)
+- [AutoSuggestBox](../controls/auto-suggest-box.md)
+- [Calendar/Date/Time pickers](../controls/date-and-time.md)
+- [Tooltip](../controls/tooltips.md) (16px)
+- [Number Box](../controls/number-box.md)
+- [TabView](../controls/tab-view.md)
+- [Media transport control](../controls/media-playback.md#media-transport-controls), [InkToolbar](../controls/inking-controls.md)
+- [BreadcrumbBar](../controls/breadcrumbbar.md)
 - [Connected animation](../motion/connected-animation.md)
 
 > [!NOTE]

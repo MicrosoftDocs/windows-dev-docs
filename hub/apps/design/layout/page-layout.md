@@ -22,7 +22,7 @@ Your app layout begins with the navigation model you choose, which defines how y
 ![top and left navigation patterns](images/top-left-nav.svg)
 
 ### Left nav
-Left nav, or the [nav pane](../controls-and-patterns/navigationview.md) pattern, is generally reserved for app-level navigation and exists at the highest level within the app, meaning that it should always be visible and available. We recommend left nav when there are more than five navigational items, or more than five pages in your app. The nav pane pattern typically contains:
+Left nav, or the [nav pane](../controls/navigationview.md) pattern, is generally reserved for app-level navigation and exists at the highest level within the app, meaning that it should always be visible and available. We recommend left nav when there are more than five navigational items, or more than five pages in your app. The nav pane pattern typically contains:
 - Navigation items
 - Entry point into app settings
 - Entry point into account settings
@@ -43,13 +43,13 @@ When the screen size is smaller than 640 px, the nav pane is fully collapsed.
 
 ### Top nav
 
-Top nav can also act as top-level navigation. While left nav is collapsible, top nav is always visible. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs pattern for UWP.
+Top nav can also act as top-level navigation. While left nav is collapsible, top nav is always visible. The [NavigationView](../controls/navigationview.md) control implements the top navigation and tabs pattern for UWP.
 
-:::image type="content" source="../controls-and-patterns/images/displaymode-top.png" alt-text="top navigation":::
+:::image type="content" source="../controls/images/displaymode-top.png" alt-text="top navigation":::
 
 ## Command bar
 
-Next, you might want to provide users with easy access to your app's most common tasks. A [command bar](../controls-and-patterns/command-bar.md) can provide access to app-level or page-level commands, and it can be used with any navigation pattern.
+Next, you might want to provide users with easy access to your app's most common tasks. A [command bar](../controls/command-bar.md) can provide access to app-level or page-level commands, and it can be used with any navigation pattern.
 
 ![command bar placement at top ](images/app-bar-desktop.svg)
 
@@ -71,18 +71,18 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 
 ![gallery](images/gridview.svg)
 
-Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
+Collections allow users to browse groups of content or data. [Grid view](../controls/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls/item-templates-listview.md) is a good option for text-heavy content or data.
 
 ## List/detail
 
 ![list details](images/master-detail.svg)
 
-The [list/details](../controls-and-patterns/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. When an item in the list view is selected, the content view is correspondingly updated.
+The [list/details](../controls/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. When an item in the list view is selected, the content view is correspondingly updated.
 
 ## Forms
 ![Screenshot of a form that shows an empty text box and a button.](images/form.svg)
 
-A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
+A [form](../controls/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
 ## Sample apps
 To see how these patterns can be implemented, check out our [Windows sample apps](https://developer.microsoft.com/windows/samples):

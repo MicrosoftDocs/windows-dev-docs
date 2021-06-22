@@ -103,7 +103,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ## 2D app design considerations: UI/UX
 
-* XAML controls which implement the [Fluent Design System](/windows/uwp/design/fluent-design-system/) such as the [Navigation view](../controls-and-patterns/navigationview.md), and effects such as [Acrylic](../style/acrylic.md) all work especially well in 2D Mixed Reality apps.
+* XAML controls which implement the [Fluent Design System](/windows/uwp/design/fluent-design-system/) such as the [Navigation view](../controls/navigationview.md), and effects such as [Acrylic](../style/acrylic.md) all work especially well in 2D Mixed Reality apps.
 
 * Test your app's text and windows size in a Mixed Reality device, or at the very least in the Mixed Reality Simulator. Your app will have a default windows size of 853x480 effective pixels. Use larger font sizes (a point size of approximately 32 is recommended), and read [Updating your existing universal app for Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens). The article [Typography](https://developer.microsoft.com/windows/mixed-reality/typography) covers this topic in detail. When working in Visual Studio, there is a XAML design editor setting for a 57" HoloLens 2D App which provides a view with the correct scale and dimensions. 
 

@@ -21,7 +21,7 @@ In this topic, we cover what's involved in creating an attached layout (virtuali
 > **Important APIs**:
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
+> * [ItemsRepeater](../controls/items-repeater.md)
 > * [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -49,7 +49,7 @@ Conceptually, XAML's [Panel](/uwp/api/windows.ui.xaml.controls.panel) fills two 
 
 For this reason, a Panel in XAML has often been synonymous with layout, but technically-speaking, does more than just layout.
 
-The [ItemsRepeater](../controls-and-patterns/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
+The [ItemsRepeater](../controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
 > [!NOTE]
 > The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI package.
@@ -122,7 +122,7 @@ First, decide whether the layout you need to create should support UI virtualiza
 **A few things to keep in mind…**
 
 1. Non-virtualizing layouts are easier to author. If the number of items will always be small then authoring a non-virtualizing layout is recommended.
-2. The platform provides a set of attached layouts that work with the [ItemsRepeater](../controls-and-patterns/items-repeater.md#change-the-layout-of-items) and [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
+2. The platform provides a set of attached layouts that work with the [ItemsRepeater](../controls/items-repeater.md#change-the-layout-of-items) and [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
 3. Virtualizing layouts always have some additional CPU and memory cost/complexity/overhead compared to a non-virtualizing layout.  As a general rule of thumb if the children the layout will need to manage will likely fit in an area that is 3x the size of the viewport, then there may not be much gain from a virtualizing layout. The 3x size is discussed in greater detail later in this doc, but is due to the asynchronous nature of scrolling on Windows and its impact on virtualization.
 
 > [!TIP]
@@ -240,7 +240,7 @@ Scrolling on Windows happens asynchronous to the UI thread. It is not controlled
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
-Since element creation is costly, virtualizing containers (for example, [ItemsRepeater](../controls-and-patterns/items-repeater.md)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
+Since element creation is costly, virtualizing containers (for example, [ItemsRepeater](../controls/items-repeater.md)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
 
 **Re-using Elements (Recycling)**
 

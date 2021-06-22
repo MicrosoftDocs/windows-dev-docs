@@ -99,7 +99,7 @@ Don't use fewer than 20 characters or more than 60 characters per line as this i
 
 ## Clipping and ellipses
 
-When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
+When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls/text-controls.md).
 
 ![Shows a device frame with some text clipping.](images/type/clipping.svg)
 
@@ -189,7 +189,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 ## Related articles
 
-* [Text controls](../controls-and-patterns/text-controls.md)
+* [Text controls](../controls/text-controls.md)
 * [XAML theme resources](../style/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML styles](../style/xaml-styles.md)
 * [Microsoft Typography](/typography/)

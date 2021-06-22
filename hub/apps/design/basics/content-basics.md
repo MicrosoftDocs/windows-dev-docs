@@ -30,14 +30,14 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 
 ![gallery](images/content-basics/gridview.png)
 
-Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
+Collections allow users to browse groups of content or data. [Grid view](../controls/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls/item-templates-listview.md) is a good option for text-heavy content or data.
 
 
 ### List/detail
 
 ![list details](images/content-basics/list-detail.png)
 
-The [list/details](../controls-and-patterns/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the list view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the list view can be added and removed.
+The [list/details](../controls/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the list view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the list view can be added and removed.
 
 ### Details
 
@@ -50,11 +50,11 @@ To adjust for changes in screen size, also consider creating a [responsive desig
 ### Forms
 ![form](images/content-basics/forms.png)
 
-A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
+A [form](../controls/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
 ## Common content elements
 
-To create these page patterns, you'll need to use a combination of individual content elements. Here are some UI elements that are commonly used to display content. (For a complete list of UI elements, see [controls and patterns](../controls-and-patterns/index.md).
+To create these page patterns, you'll need to use a combination of individual content elements. Here are some UI elements that are commonly used to display content. (For a complete list of UI elements, see [controls and patterns](../controls/index.md).
 
 <div class="mx-responsive-img">
 <table>
@@ -74,27 +74,27 @@ To create these page patterns, you'll need to use a combination of individual co
 <tr class="odd">
 <td align="left">Audio and video<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">Media playback and transport controls</a></td>
+<td align="left"><a href="../controls/media-playback.md">Media playback and transport controls</a></td>
 <td align="left">Plays audio and video.</td>
 </tr>
 <tr class="even">
 <td align="left">Image viewers<br/><br/>
     <img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
-<td align="left"><a href="../controls-and-patterns/flipview.md">Flip view</a>, <a href="../controls-and-patterns/images-imagebrushes.md">image</a></td>
+<td align="left"><a href="../controls/flipview.md">Flip view</a>, <a href="../controls/images-imagebrushes.md">image</a></td>
 <td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
 </tr>
 <tr class="odd">
 <td align="left">Collections <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">List view and grid view</a></td>
+<td align="left"><a href="../controls/lists.md">List view and grid view</a></td>
 <td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
 </tr>
 <tr class="even">
 <td align="left">Text and text input <br/><br/>
     <img src="images/content-basics/textbox.png" alt="text box" /></td>
-<td align="left"><p><a href="../controls-and-patterns/text-block.md">Text block</a>, <a href="../controls-and-patterns/text-box.md">text box</a>, <a href="../controls-and-patterns/rich-edit-box.md">rich edit box</a></p>
+<td align="left"><p><a href="../controls/text-block.md">Text block</a>, <a href="../controls/text-box.md">text box</a>, <a href="../controls/rich-edit-box.md">rich edit box</a></p>
 </td>
-<td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls-and-patterns/text-controls.md">Text controls</a>.
+<td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls/text-controls.md">Text controls</a>.
 <p>For guidelines on how to display text, see <a href="../style/typography.md">Typography</a>.</p>
 </td>
 </tr>
@@ -106,7 +106,7 @@ To create these page patterns, you'll need to use a combination of individual co
 </tr>
 <tr class="even">
 <td align="left">WebView</td>
-<td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
+<td align="left"><a href="../controls/web-view.md">WebView</a></td>
 <td align="left">Renders HTML content.</td>
 </tr>
 </tbody>

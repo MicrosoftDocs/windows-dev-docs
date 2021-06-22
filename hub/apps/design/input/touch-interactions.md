@@ -205,7 +205,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## Gesture events
 
 
-For details about individual controls, see [Controls list](../controls-and-patterns/index.md).
+For details about individual controls, see [Controls list](../controls/index.md).
 
 ## Pointer events
 

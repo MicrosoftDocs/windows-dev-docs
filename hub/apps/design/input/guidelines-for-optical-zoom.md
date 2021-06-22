@@ -32,7 +32,7 @@ The following diagrams demonstrate the differences between resizing and optical 
 ![moving the fingers closer together shrinks an object and moving them apart enlarges it](images/objectresize.png)
 
 **Note**  
-Optical zoom shouldn't be confused with [Semantic Zoom](../controls-and-patterns/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
+Optical zoom shouldn't be confused with [Semantic Zoom](../controls/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
 
  
 

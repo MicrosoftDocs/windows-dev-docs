@@ -142,7 +142,7 @@ To show commands in a context menu, you typically assign the flyout to the [Cont
 If you handle showing the flyout yourself (for example, on a [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) event), set the flyout's [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) to **Standard** to open the flyout in its expanded mode and give it focus.
 
 > [!TIP]
-> For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
+> For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls/dialogs-and-flyouts/flyouts.md).
 
 ### Show an always expanded CommandBarFlyout
 

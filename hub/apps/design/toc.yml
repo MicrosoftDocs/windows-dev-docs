@@ -55,7 +55,7 @@
         - name: "Tutorial: Use layout panels"
           href: layout/grid-tutorial.md
         - name: Split view
-          href: controls-and-patterns/split-view.md
+          href: controls/split-view.md
         - name: Custom panels
           href: layout/custom-panels-overview.md
         - name: "Custom panel example: BoxPanel"
@@ -73,183 +73,183 @@
 - name: Controls
   items:
     - name: Overview
-      href: controls-and-patterns/index.md
+      href: controls/index.md
     - name: Intro to controls and events
-      href: controls-and-patterns/controls-and-events-intro.md
+      href: controls/controls-and-events-intro.md
     - name: Intro to commanding
-      href: controls-and-patterns/commanding.md
+      href: controls/commanding.md
     - name: Basic input
       items:
         - name: Buttons
-          href: controls-and-patterns/buttons.md
+          href: controls/buttons.md
         - name: Check boxes
-          href: controls-and-patterns/checkbox.md
+          href: controls/checkbox.md
         - name: Combo boxes and list boxes
-          href: controls-and-patterns/combo-box.md
+          href: controls/combo-box.md
         - name: Hyperlinks
-          href: controls-and-patterns/hyperlinks.md
+          href: controls/hyperlinks.md
         - name: Radio buttons
-          href: controls-and-patterns/radio-button.md
+          href: controls/radio-button.md
         - name: Rating control
-          href: controls-and-patterns/rating.md
+          href: controls/rating.md
         - name: Sliders
-          href: controls-and-patterns/slider.md
+          href: controls/slider.md
         - name: Toggle switches
-          href: controls-and-patterns/toggles.md
+          href: controls/toggles.md
     - name: Collections
       items:
         - name: Overview
-          href: controls-and-patterns/lists.md
+          href: controls/lists.md
         - name: List view and grid view
-          href: controls-and-patterns/listview-and-gridview.md
+          href: controls/listview-and-gridview.md
         - name: Flip view
-          href: controls-and-patterns/flipview.md
+          href: controls/flipview.md
         - name: PipsPager
-          href: controls-and-patterns/pipspager.md
+          href: controls/pipspager.md
         - name: Tree view
-          href: controls-and-patterns/tree-view.md
+          href: controls/tree-view.md
         - name: ItemsRepeater
-          href: controls-and-patterns/items-repeater.md
+          href: controls/items-repeater.md
         - name: Item containers and templates
           items:
             - name: Item containers and templates
-              href: controls-and-patterns/item-containers-templates.md
+              href: controls/item-containers-templates.md
             - name: Data template selection
-              href: controls-and-patterns/data-template-selector.md
+              href: controls/data-template-selector.md
             - name: Item templates for list view
-              href: controls-and-patterns/item-templates-listview.md
+              href: controls/item-templates-listview.md
             - name: Item templates for grid view
-              href: controls-and-patterns/item-templates-gridview.md
+              href: controls/item-templates-gridview.md
         - name: Selection and interaction
           items:
             - name: Collection commanding
-              href: controls-and-patterns/collection-commanding.md
+              href: controls/collection-commanding.md
             - name: Selection mode overview
-              href: controls-and-patterns/selection-modes.md
+              href: controls/selection-modes.md
             - name: Swipe
-              href: controls-and-patterns/swipe.md
+              href: controls/swipe.md
             - name: Pull-to-refresh
-              href: controls-and-patterns/pull-to-refresh.md
+              href: controls/pull-to-refresh.md
             - name: Filtering collections
-              href: controls-and-patterns/listview-filtering.md
+              href: controls/listview-filtering.md
         - name: Additional collection options and customizations
           items:
             - name: Inverted lists
-              href: controls-and-patterns/inverted-lists.md
+              href: controls/inverted-lists.md
             - name: Nested UI
-              href: controls-and-patterns/nested-ui.md
+              href: controls/nested-ui.md
     - name: Dialogs and flyouts
       items:
         - name: Overview
-          href: controls-and-patterns/dialogs-and-flyouts/index.md
+          href: controls/dialogs-and-flyouts/index.md
         - name: Dialogs
-          href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
+          href: controls/dialogs-and-flyouts/dialogs.md
         - name: Flyouts
-          href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+          href: controls/dialogs-and-flyouts/flyouts.md
         - name: Teaching tip
-          href: controls-and-patterns/dialogs-and-flyouts/teaching-tip.md
+          href: controls/dialogs-and-flyouts/teaching-tip.md
     - name: Forms
-      href: controls-and-patterns/forms.md
+      href: controls/forms.md
     - name: Media, graphics, and shapes
       items:
         - name: Animated icons
-          href: controls-and-patterns/animated-icon.md
+          href: controls/animated-icon.md
         - name: Images and image brushes
-          href: controls-and-patterns/images-imagebrushes.md
+          href: controls/images-imagebrushes.md
         - name: Ink
-          href: controls-and-patterns/inking-controls.md
+          href: controls/inking-controls.md
         - name: Media playback
-          href: controls-and-patterns/media-playback.md
+          href: controls/media-playback.md
         - name: Custom transport controls
-          href: controls-and-patterns/custom-transport-controls.md
+          href: controls/custom-transport-controls.md
         - name: Shapes
-          href: controls-and-patterns/shapes.md
+          href: controls/shapes.md
         - name: Web view
-          href: controls-and-patterns/web-view.md
+          href: controls/web-view.md
     - name: Menus and toolbars
       items:
         - name: Menus and context menus
-          href: controls-and-patterns/menus-and-context-menus.md
+          href: controls/menus-and-context-menus.md
         - name: Command bar
-          href: controls-and-patterns/command-bar.md
+          href: controls/command-bar.md
         - name: Command bar flyout
-          href: controls-and-patterns/command-bar-flyout.md
+          href: controls/command-bar-flyout.md
         - name: Menu flyout and menu bar
-          href: controls-and-patterns/menus.md
+          href: controls/menus.md
     - name: Navigation
       items:
         - name: Breadcrumb bar
-          href: controls-and-patterns/breadcrumbbar.md
+          href: controls/breadcrumbbar.md
         - name: List/details
-          href: controls-and-patterns/list-details.md
+          href: controls/list-details.md
         - name: Navigation view
-          href: controls-and-patterns/navigationview.md
+          href: controls/navigationview.md
         - name: Pivot
-          href: controls-and-patterns/pivot.md
+          href: controls/pivot.md
         - name: Tab view
-          href: controls-and-patterns/tab-view.md
+          href: controls/tab-view.md
     - name: People
       items:
         - name: Contact card
-          href: controls-and-patterns/contact-card.md
+          href: controls/contact-card.md
         - name: Person picture
-          href: controls-and-patterns/person-picture.md
+          href: controls/person-picture.md
     - name: Pickers
       items:
         - name: Color picker
-          href: controls-and-patterns/color-picker.md
+          href: controls/color-picker.md
         - name: Date and time controls
-          href: controls-and-patterns/date-and-time.md
+          href: controls/date-and-time.md
         - name: Calendar date picker
-          href: controls-and-patterns/calendar-date-picker.md
+          href: controls/calendar-date-picker.md
         - name: Calendar view
-          href: controls-and-patterns/calendar-view.md
+          href: controls/calendar-view.md
         - name: Date picker
-          href: controls-and-patterns/date-picker.md
+          href: controls/date-picker.md
         - name: Time picker
-          href: controls-and-patterns/time-picker.md
+          href: controls/time-picker.md
     - name: Scrolling and layout
       items:
         - name: Expander
-          href: controls-and-patterns/expander.md
+          href: controls/expander.md
         - name: Scrolling and panning controls
-          href: controls-and-patterns/scroll-controls.md
+          href: controls/scroll-controls.md
         - name: Semantic zoom
-          href: controls-and-patterns/semantic-zoom.md
+          href: controls/semantic-zoom.md
         - name: Two-pane view
-          href: controls-and-patterns/two-pane-view.md
+          href: controls/two-pane-view.md
     - name: Status and information
       items:
         - name: Progress
-          href: controls-and-patterns/progress-controls.md
+          href: controls/progress-controls.md
         - name: Tooltip
-          href: controls-and-patterns/tooltips.md
+          href: controls/tooltips.md
         - name: Info bar
-          href: controls-and-patterns/infobar.md
+          href: controls/infobar.md
     - name: Text
       items:
         - name: Overview
-          href: controls-and-patterns/text-controls.md
+          href: controls/text-controls.md
         - name: Auto-suggest box
-          href: controls-and-patterns/auto-suggest-box.md
+          href: controls/auto-suggest-box.md
         - name: Text block
-          href: controls-and-patterns/text-block.md
+          href: controls/text-block.md
         - name: Rich text block
-          href: controls-and-patterns/rich-text-block.md
+          href: controls/rich-text-block.md
         - name: Text box
-          href: controls-and-patterns/text-box.md
+          href: controls/text-box.md
         - name: Rich edit box
-          href: controls-and-patterns/rich-edit-box.md
+          href: controls/rich-edit-box.md
         - name: Password box
-          href: controls-and-patterns/password-box.md
+          href: controls/password-box.md
         - name: Number box
-          href: controls-and-patterns/number-box.md
+          href: controls/number-box.md
         - name: Labels
-          href: controls-and-patterns/labels.md
+          href: controls/labels.md
         - name: Content links
-          href: controls-and-patterns/content-links.md
+          href: controls/content-links.md
         - name: Handwriting view
-          href: controls-and-patterns/text-handwriting-view.md
+          href: controls/text-handwriting-view.md
 - name: Style
   items:
     - name: Overview

@@ -27,7 +27,7 @@ Here are some common command experiences:
 - Opening, saving, and deleting files
 - Editing or creating content
 
-Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Windows apps](../controls-and-patterns/commanding.md) for more detail).
+Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Windows apps](../controls/commanding.md) for more detail).
 
 
 
@@ -46,7 +46,7 @@ Using the right elements in a command interface can make the difference between 
 	:::column span="2":::
 <b>Buttons</b>
 
-<a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+<a href="../controls/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
 :::row-end:::
 
 :::row:::
@@ -56,7 +56,7 @@ Using the right elements in a command interface can make the difference between 
 	:::column span="2":::
 <b>Lists</b>
 
-<a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in an interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+<a href="../controls/lists.md" style="text-decoration:none">Lists</a> present items in an interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
 :::row-end:::
 
 :::row:::
@@ -66,7 +66,7 @@ Using the right elements in a command interface can make the difference between 
 	:::column span="2":::
 <b>Selection controls</b>
 
-Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls/checkbox.md">check box</a>, <a href="../controls/radio-button.md">radio button</a>, and <a href="../controls/toggles.md">toggle switch</a>.
 :::row-end:::
 
 :::row:::
@@ -76,7 +76,7 @@ Lets users choose from a few options, such as when completing a survey or config
 	:::column span="2":::
 <b>Calendar, date and time pickers</b>
 
-<a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+<a href="../controls/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
 :::row-end:::
 
 :::row:::
@@ -86,10 +86,10 @@ Lets users choose from a few options, such as when completing a survey or config
 	:::column span="2":::
 <b>Predictive text entry</b>
 
-Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls/auto-suggest-box.md">auto-suggest box</a>.<br>
 :::row-end:::
 
-For a complete list, see [Controls and UI elements](../controls-and-patterns/index.md)
+For a complete list, see [Controls and UI elements](../controls/index.md)
 
 ## Place commands on the right surface
 
@@ -118,7 +118,7 @@ If a command is constantly needed for users to complete core scenarios, put it o
 	:::column span="2":::
 <b>Command bars and menu bars</b>
 
-<a href="../controls-and-patterns/command-bar.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+<a href="../controls/command-bar.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
 :::row-end:::
 
 :::row:::
@@ -130,9 +130,9 @@ If a command is constantly needed for users to complete core scenarios, put it o
 
 <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
 
-<p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p>The <a href="../controls/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
 
-<p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus-and-context-menus.md">menus and context menus</a> overview.</p>
+<p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls/menus-and-context-menus.md">menus and context menus</a> overview.</p>
 :::row-end:::
 
 ## Provide command feedback 
@@ -151,7 +151,7 @@ Here are some ways to provide feedback in your app.
 	:::column span="2":::
 <b>Command bar</b>
 
-The content area of the <a href="../controls-and-patterns/command-bar.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+The content area of the <a href="../controls/command-bar.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
 :::row-end:::
 
 :::row:::
@@ -161,7 +161,7 @@ The content area of the <a href="../controls-and-patterns/command-bar.md">comman
 	:::column span="2":::
 <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.
+       <a href="../controls/dialogs-and-flyouts/index.md">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.
 :::row-end:::
 
 :::row:::
@@ -171,7 +171,7 @@ The content area of the <a href="../controls-and-patterns/command-bar.md">comman
 	:::column span="2":::
 <b>Dialog controls</b>
 
-<a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+<a href="../controls/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
     :::column-end:::
 :::row-end:::
 

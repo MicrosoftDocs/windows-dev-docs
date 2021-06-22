@@ -45,7 +45,7 @@ Consider how the colors you use will be interpreted by people from different cul
 
 ## Themes
 
-Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls-and-patterns/index.md).
+Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and [common controls](../controls/index.md).
 
 ### Light theme
 
@@ -83,7 +83,7 @@ If you don't request a theme for your app, make sure to test your app in both li
 
 Common controls automatically use [theme brushes](../style/xaml-theme-resources.md#the-xaml-color-ramp-and-theme-dependent-brushes) to adjust contrast for light and dark themes.
 
-For example, here's an illustration of how the [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) uses theme brushes:
+For example, here's an illustration of how the [AutoSuggestBox](../controls/auto-suggest-box.md) uses theme brushes:
 
 ![theme brushes control example](images/color/theme-brushes.svg)
 
@@ -93,7 +93,7 @@ For example, here's an illustration of how the [AutoSuggestBox](../controls-and-
     :::column:::
 When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
-For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+For example, these [item templates for ListView](../controls/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
     :::column:::
  ![double line list item with icon example](images/color/list-view.svg)

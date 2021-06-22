@@ -19,14 +19,14 @@ The Windows app provides a consistent back navigation system for traversing the 
 
 To implement backwards navigation in your app, place a back button at the top left corner of your app's UI. The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
 
-For most apps that have multiple pages, we recommend that you use the [NavigationView](../controls-and-patterns/navigationview.md) control to provide the navigation framework for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles. If your app uses the `NavigationView` control, then you can use [NavigationView's built-in back button](../controls-and-patterns/navigationview.md#backwards-navigation).
+For most apps that have multiple pages, we recommend that you use the [NavigationView](../controls/navigationview.md) control to provide the navigation framework for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles. If your app uses the `NavigationView` control, then you can use [NavigationView's built-in back button](../controls/navigationview.md#backwards-navigation).
 
 > [!NOTE]
-> The guidelines and examples in this article should be used when you implement navigation without using the `NavigationView` control. If you use `NavigationView`, this information provides useful background knowledge, but you should use the specific guidance and examples in the [NavigationView](../controls-and-patterns/navigationview.md) article
+> The guidelines and examples in this article should be used when you implement navigation without using the `NavigationView` control. If you use `NavigationView`, this information provides useful background knowledge, but you should use the specific guidance and examples in the [NavigationView](../controls/navigationview.md) article
 
 ## Back button
 
-To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
+To create a back button, use the [Button](../controls/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
 
 ![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
 
@@ -47,7 +47,7 @@ To create a back button, use the [Button](../controls-and-patterns/buttons.md) c
 </Page>
 ```
 
-If your app has a top [CommandBar](../controls-and-patterns/command-bar.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
+If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
 
 ![Back button on top command bar](images/back-nav/CommandBar.png)
 
@@ -89,7 +89,7 @@ To optimize your UI:
 - **[Tablet Mode](https://support.microsoft.com/windows/use-your-pc-like-a-tablet-4fbfcca5-f058-814a-4f80-a12e703d7c34)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
 - **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
 
-If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls-and-patterns/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
+If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
 
 We recommend handling the following events (in addition to the back button Click) to support the most common inputs for back navigation.
 

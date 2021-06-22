@@ -74,7 +74,7 @@ Press F5 to compile and run the app. The first screen shows a gallery of images.
 
     ![A unicorn](../basics/images/xaml-basics/unicorn.png)
 
-    > **Read about it:** The [Draw shapes](../controls-and-patterns/shapes.md) article tells you everything you need to know about XAML shapes.
+    > **Read about it:** The [Draw shapes](../controls/shapes.md) article tells you everything you need to know about XAML shapes.
 
     We want to create a triangle-looking widget--something like the shape you'd see on a stereo's volume control.
 

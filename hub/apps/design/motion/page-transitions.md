@@ -66,7 +66,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## Horizontal slide
 
-Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls-and-patterns/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizontal slide with SlideNavigationTransitionInfo.
+Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizontal slide with SlideNavigationTransitionInfo.
 
 The desired feeling is that the user is navigating between pages that are next to each other. 
 
