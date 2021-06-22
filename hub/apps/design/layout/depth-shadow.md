@@ -148,7 +148,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) class.
 
 > [!TIP] 
-> Starting with Windows , if the app targets the Windows App SDK or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
+> Starting with Windows, if the app targets the Windows App SDK or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
 
 ## Which shadow should I use?
 
