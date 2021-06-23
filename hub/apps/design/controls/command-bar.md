@@ -177,20 +177,13 @@ You can display a [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.sp
 
 When you wrap a SplitButton in an `AppBarElementContainer` and place it in a CommandBar, the `SplitButtonCommandBarStyle` resource is applied automatically.
 
-If a SplitButton item inside of a CommandBar enters an overflow menu, it picks up the `SplitButtonCommandBarFlyout` resource to stay consistent.
-
 This sample code creates and displays a SplitButton inside of a CommandBar:
 
 ```xml
 <CommandBar>
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy" Label="Copy"/>
     <AppBarElementContainer>
-        <muxc:SplitButton ToolTipService.ToolTip="Insert">
-            <muxc:SplitButton.Content>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock>Insert</TextBlock>
-                </StackPanel>
-            </muxc:SplitButton.Content>
+        <muxc:SplitButton ToolTipService.ToolTip="Insert" Content="Insert">
             <muxc:SplitButton.Flyout>
                 <MenuFlyout Placement="RightEdgeAlignedTop">
                     <MenuFlyoutItem Text="Insert above"/>
