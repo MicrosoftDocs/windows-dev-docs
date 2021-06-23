@@ -202,7 +202,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
 >
-> SplitButton is a unique case in that it has extra built-in support for use in CommandBar and CommandBarFlyout. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, the `SplitButtonCommandBarFlyout` style is applied automatically, allowing your SplitButton to look, act, and feel natural in the CommandBarFlyout.
+> SplitButton is a unique case in that it has a built-in style to support it when placed in a CommandBarFlyout or CommandBar. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, be sure to apply the `SplitButtonCommandBarFlyout` to ensure that your SplitButton looks, acts, and feels natural in the CommandBarFlyout.
 
 > [!NOTE]
 > This example shows only the command bar flyout UI, it does not implement any of the commands that are shown. For more info about implementing the commands, see [Buttons](buttons.md) and [Command design basics](../basics/commanding-basics.md).
@@ -223,7 +223,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
     <AppBarButton Icon="Paste" ToolTipService.ToolTip="Paste"/>
     <!-- Alignment controls -->
     <AppBarElementContainer>
-        <muxc:SplitButton ToolTipService.ToolTip="Alignment">
+        <muxc:SplitButton ToolTipService.ToolTip="Alignment" Style="{StaticResource SplitButtonCommandBarFlyout}">
             <SplitButton.Content>
                 <Viewbox Width="16" Height="16" Margin="0,2,0,0">
                     <SymbolIcon Symbol="AlignLeft"/>
