@@ -20,7 +20,7 @@ For important background info about ApiInformation and API contracts, see [Versi
 
 ## Conditional namespaces
 
-To use a conditional method in XAML, you must first declare a conditional [XAML namespace](../xaml-platform/xaml-namespaces-and-namespace-mapping.md) at the top of your page. Here's a psuedo-code example of a conditional namespace:
+To use a conditional method in XAML, you must first declare a conditional [XAML namespace](../xaml-platform/xaml-namespaces-and-namespace-mapping.md) at the top of your page. Here's a pseudo-code example of a conditional namespace:
 
 ```xaml
 xmlns:myNamespace="schema?conditionalMethod(parameter)"
