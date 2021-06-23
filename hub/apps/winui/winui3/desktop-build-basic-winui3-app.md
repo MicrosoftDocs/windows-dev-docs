@@ -16,7 +16,7 @@ In this article, we step through how to build basic C# .NET 5 and C++ desktop (W
 
 ## Prerequisites
 
-- [Set up your development environment](../../windows-app-sdk/get-started.md).
+- [Set up your development environment](../../windows-app-sdk/set-up-your-development-environment.md).
 - Test your configuration by [creating your first WinUI 3 project for C# and .NET 5](create-your-first-winui3-app.md).
 
     :::image type="content" source="images/build-basic/template-app.png" alt-text="The initial template app, running.":::<br/>

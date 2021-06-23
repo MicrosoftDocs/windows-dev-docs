@@ -33,6 +33,7 @@ To build a WinUI 3 apps, start with one of the project templates available in th
 
 For more information about WinUI 3 apps, see see the following articles:
 
+* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 * [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
 * [WinUI project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
 * [Build a basic WinUI 3 desktop app](../winui/winui3/desktop-build-basic-winui3-app.md)
@@ -56,6 +57,7 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 
 For more information about C++ Win32 apps, see the following articles:
 
+* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 * [Get started with classic Win32 desktop apps](/windows/win32/desktop-programming/)
 * [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)
 * [Project templates](../desktop/visual-studio-templates.md#c-desktop-win32-templates)
@@ -70,6 +72,7 @@ WPF is the established platform for managed Windows applications with access to 
 
 For more information about WPF apps, see the following articles:
 
+* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 * [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
 * [Project templates](../desktop/visual-studio-templates.md#net-templates)
 * [Create your first app](/dotnet/desktop/wpf/get-started/create-app-visual-studio)
@@ -82,6 +85,7 @@ Windows Forms is the original platform for managed Windows applications with a l
 
 For more information about Windows Forms apps, see the following articles:
 
+* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 * [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Project templates](../desktop/visual-studio-templates.md#net-templates)
 * [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
@@ -97,6 +101,7 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 
 For more information about UWP apps, see the following articles:
 
+* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 * [Get started](/windows/uwp/get-started/)
 * [Project templates](../desktop/visual-studio-templates.md#uwp-templates)
 * [Design and UI](/windows/uwp/design/)
@@ -119,3 +124,7 @@ Here are just a few of the features available to enhance your existing desktop a
 * Use [MSIX](/windows/msix/) to package and deploy your desktop apps. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies and is built to be safe, secure, and reliable.
 
 For more information, see [Modernize desktop apps](../desktop/modernize/index.md).
+
+## Related topics
+
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
