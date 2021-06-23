@@ -201,8 +201,6 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 > - Override the default brushes with [lightweight styling](../style/xaml-styles.md#lightweight-styling) to make the element's background and border match the app bar buttons.
 > - Adjust the size and position of the element.
 > - Wrap icons in a Viewbox with a Width and Height of 16px.
->
-> SplitButton is a unique case in that it has a built-in style to support it when placed in a CommandBarFlyout or CommandBar. When you place a SplitButton inside of an AppBarElementContainer in a CommandBarFlyout, be sure to apply the `SplitButtonCommandBarFlyout` to ensure that your SplitButton looks, acts, and feels natural in the CommandBarFlyout.
 
 > [!NOTE]
 > This example shows only the command bar flyout UI, it does not implement any of the commands that are shown. For more info about implementing the commands, see [Buttons](buttons.md) and [Command design basics](../basics/commanding-basics.md).
@@ -223,14 +221,32 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
     <AppBarButton Icon="Paste" ToolTipService.ToolTip="Paste"/>
     <!-- Alignment controls -->
     <AppBarElementContainer>
-        <muxc:SplitButton ToolTipService.ToolTip="Alignment" Style="{StaticResource SplitButtonCommandBarFlyout}">
-            <SplitButton.Content>
+         <muxc:SplitButton ToolTipService.ToolTip="Alignment">
+            <muxc:SplitButton.Resources>
+                <!-- Override default brushes to make the SplitButton 
+                     match other command bar elements. -->
+                <Style TargetType="SplitButton">
+                    <Setter Property="Height" Value="38"/>
+                </Style>
+                <SolidColorBrush x:Key="SplitButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrush" Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+            </muxc:SplitButton.Resources>
+            <muxc:SplitButton.Content>
                 <Viewbox Width="16" Height="16" Margin="0,2,0,0">
                     <SymbolIcon Symbol="AlignLeft"/>
                 </Viewbox>
             </muxc:SplitButton.Content>
             <muxc:SplitButton.Flyout>
-                <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                <MenuFlyout>
                     <MenuFlyoutItem Icon="AlignLeft" Text="Align left"/>
                     <MenuFlyoutItem Icon="AlignCenter" Text="Center"/>
                     <MenuFlyoutItem Icon="AlignRight" Text="Align right"/>
