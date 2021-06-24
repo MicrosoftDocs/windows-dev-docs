@@ -10,16 +10,16 @@ ms.localizationpriority: medium
 
 # Modernize your desktop apps
 
-Windows 10 and the Universal Windows Platform (UWP) offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which parts of Windows 10 and UWP to adopt.
+Windows 11 and Windows 10 offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which Windows features to adopt.
 
 This article describes the features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this article, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
 
 > [!NOTE]
-> Do you need assistance migrating desktop apps to Windows 10? The [Desktop App Assure](/FastTrack/win-10-desktop-app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
+> Do you need assistance migrating desktop apps to Windows 10 or later? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
 
 ## Windows UI Library
 
-The Windows UI Library is a set of NuGet packages that provide controls and other user interface elements for Windows 10 apps. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and native Win32.
+The Windows UI Library is a set of NuGet packages that provide controls and other user interface elements for Windows apps. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows apps across UWP, .NET, and native Win32.
 
 You can use WinUI in the following ways in desktop apps:
 
@@ -44,7 +44,7 @@ For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/d
 
 ## Windows Runtime APIs
 
-You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
 
 For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
 
@@ -62,7 +62,7 @@ For more information, see [Modernize your desktop app using the Visual layer](vi
 
 ## Additional features available to apps with package identity
 
-Some modern Windows 10 experiences are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
+Some modern Windows experiences are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
 
 There are several ways to grant identity to a desktop app:
 
@@ -94,7 +94,7 @@ Microsoft Graph is a collection of APIs you can use to build apps for organizati
 * Azure Active Directory
 * Microsoft 365 Office apps: SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planner, and Excel
 * Enterprise Mobility and Security services: Identity Manager, Intune, Advanced Threat Analytics, and Advanced Threat Protection.
-* Windows 10 services: activities and devices
+* Windows services: activities and devices
 
 For more information, see the [Microsoft Graph docs](/graph/overview).
 

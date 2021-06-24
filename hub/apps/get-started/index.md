@@ -15,7 +15,7 @@ This article provides the info you need to get started building apps for the Win
 
 ## Create new apps
 
-When you want to create a new app for Windows, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths.
+When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths.
 
 Each app type includes an app model that defines the lifecycle of the app, a default UI framework that lets you create apps like Word and Excel that run in the Windows desktop environment, and access to a comprehensive set of managed and native APIs for using Windows features. Some of these platforms share certain traits and are better suited for specific application types.
 
@@ -95,7 +95,7 @@ For more information about Windows Forms apps, see the following articles:
 
 #### [UWP](#tab/uwp)
 
-The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices that run Windows 10. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform for Xbox, HoloLens, and Surface Hub applications. UWP apps can be native or managed.
+The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices that run Windows 10 and later versions. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform for Xbox, HoloLens, and Surface Hub applications. UWP apps can be native or managed.
 
 UWP is a highly customizable platform that uses XAML markup to separate UI (presentation) from code (business logic). UWP is suitable for desktop apps that require a sophisticated UI, styles customization, and graphics-intensive scenarios. UWP also has built-in support for the [Fluent Design System](/windows/uwp/design/fluent-design-system/) for the default UX experience and provides access to the [Windows Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis).
 

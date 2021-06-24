@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Set up your development environment
 
-Follow these instructions to set up your development environment so you can start creating apps for Windows 10.
+Follow these instructions to set up your development environment so you can start creating apps for Windows 11 and Windows 10.
 
 ## System requirements
 
@@ -23,15 +23,15 @@ Visual Studio is a comprehensive integrated development environment (IDE) that y
 
 See [this page](/visualstudio/releases/2019/system-requirements) for Visual Studio system requirements.
 
-#### [Windows 10 SDK](#tab/windows-sdk)
+#### [Windows SDK](#tab/windows-sdk)
 
-The Windows 10 SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows 10 SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows 10 SDK is installed with Visual Studio 2019 by default.
+The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 by default.
 
 See [this page](https://developer.microsoft.com/windows/downloads/windows-10-sdk/#sysreq) for Windows SDK system requirements.
 
 #### [Windows App SDK](#tab/windows-app-sdk)
 
-The [Windows App SDK](index.md) is a set of developer tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions.
+The [Windows App SDK](index.md) is a set of developer tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
@@ -45,7 +45,7 @@ The Windows App SDK has these system requirements:
   - **.NET Desktop Development** (needed even if you're only building C++ Win32 apps)
   - **Desktop development with C++** (needed even if you're only building .NET apps)
 
-- Windows 10 SDK version 2004 (build 19041). This is installed with Visual Studio 2019 by default.
+- Windows SDK version 2004 (build 19041) or later. This is installed with Visual Studio 2019 by default.
 
 - Building .NET apps also requires:
   - .NET 5 SDK version 5.0.300 or later if you're using Visual Studio 2019 version 16.10
@@ -64,7 +64,7 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 
 ## 1. Install Visual Studio
 
-Use the following link to install Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows 10 SDK will also be installed by default.
+Use the following link to install Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
 
 > [!div class="button"]
 > [Download Visual Studio 2019](https://developer.microsoft.com/windows/downloads)

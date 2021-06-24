@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Windows App SDK
 
-The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions.
+The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
 
 The Windows App SDK does not replace the existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, it complements these existing platforms with a common set of APIs and tools that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
@@ -35,15 +35,15 @@ The Windows App SDK provides a broad set of Windows APIs with implementations th
 
 ### Unified API surface across desktop app platforms
 
-Developers who want to create desktop Windows apps must choose between several app platforms and frameworks. Although each platform provides many features and APIs that can be used by apps that are built using other platforms, some features and APIs can only be used by specific platforms. The Windows App SDK unifies access to Windows APIs for all desktop Windows 10 apps. No matter which app model you choose, you will have access to the same set of Windows APIs that are available in the Windows App SDK.
+Developers who want to create desktop Windows apps must choose between several app platforms and frameworks. Although each platform provides many features and APIs that can be used by apps that are built using other platforms, some features and APIs can only be used by specific platforms. The Windows App SDK unifies access to Windows APIs for desktop Windows 11 and Windows 10 apps. No matter which app model you choose, you will have access to the same set of Windows APIs that are available in the Windows App SDK.
 
 Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. The Windows App SDK will include both WinRT APIs and native C APIs.
 
-### Consistent support across Windows 10 versions
+### Consistent support across Windows versions
 
 As the Windows APIs continue to evolve with new OS versions, developers must use techniques such as [version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code) to account for all the differences in versions to reach their application audience. This can add complexity to the code and the development experience.
 
-Windows App SDK APIs will work on Windows 10, version 1809, and all later versions of Windows 10. This means that as long as your customers are on Windows 10, version 1809, or any later version, you can use new Windows App SDK APIs and features as soon as they are released, and without having to write version adaptive code.
+Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, version 1809. This means that as long as your customers are on Windows 10, version 1809, or any later version of Windows, you can use new Windows App SDK APIs and features as soon as they are released, and without having to write version adaptive code.
 
 ### Faster release cadence
 
