@@ -40,6 +40,8 @@ productDirectory:
         text: Get started developing apps
       - url: ./windows-app-sdk/get-started.md
         text: Build apps with the Windows App SDK 
+      - url: ./get-started/build-apps-for-windows.md
+        text: Build an app for Windows 11 
   - title: Design
     imageSrc: https://docs.microsoft.com/media/common/i_design.svg
     links:
@@ -47,6 +49,8 @@ productDirectory:
         text: Design and code your app UI
       - url: ./design/basics/index.md
         text: Design basics for Windows apps
+      - url: ./design/signature-experiences/design-principles.md
+        text: Windows 11 design principles
       - url: ./design/downloads/index.md
         text: Design toolkits
   - title: Develop
@@ -58,14 +62,18 @@ productDirectory:
         text: Windows App SDK features
       - url: ./winui/index.md
         text: Windows UI Library (WinUI)
+      - url: ./get-started/make-apps-great-for-windows.md
+        text: Make your apps great on Windows 11
   - title: Deploy
     imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
+      - url: ./package-and-deploy/index.md
+        text: Package and deploy apps
       - url: /windows/msix
-        text: Package desktop apps using MSIX
+        text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
         text: Manage your MSIX deployment
-      - url: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
+      - url: ./windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
         text: Deploy apps that use the Windows App SDK
 
 tools:

@@ -37,6 +37,10 @@ landingContent:
             url: ../get-started/index.md
           - text: Build apps with the Windows App SDK
             url: ../windows-app-sdk/get-started.md
+          - text: Build an app for Windows 11
+            url: ../get-started/build-apps-for-windows.md
+          - text: Make your apps great on Windows 11
+            url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference
         links:
           - text: Visual Studio templates for Windows apps
@@ -50,6 +54,8 @@ landingContent:
             url: ../design/index.md
           - text:  Windows UI Library (WinUI)
             url: ../winui/index.md
+          - text: Windows 11 design principles
+            url: ../design/signature-experiences/design-principles.md
       - linkListType: reference
         links:
           - text: WinUI API reference
