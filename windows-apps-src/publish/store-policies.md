@@ -330,6 +330,10 @@ Your privacy statement or terms of use must let users know you will send Persona
 
 If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
 
+### 10.11 Policy removed
+
+### 10.12 Policy removed
+
 ### 10.13 Gaming and Xbox
 
 For products that are primarily gaming experiences or target Xbox consoles, the following requirements apply:
