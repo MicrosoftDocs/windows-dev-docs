@@ -34,7 +34,7 @@ Here's a quick overview of the new articles:
 
 + [**Create user interfaces**](../design/basics/xaml-basics-ui.md) shows how to create the basic photo gallery interface.
 + [**Create data bindings**](../data-binding/xaml-basics-data-binding.md) shows how to add data bindings to the photo gallery, populating it with real image data.
-+ [**Create custom styles**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
++ [**Create custom styles**](/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
 + [**Create adaptive layouts**](../design/basics/xaml-basics-adaptive-layout.md) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
 
 ### Get Started Tutorials

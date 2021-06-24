@@ -20,8 +20,8 @@ To get the most out of this topic, you'll need to be familiar with C++. You'll a
 
 **Time to complete:** 20 minutes.
 
-Instructions
-------------
+## Instructions
+
 ### 1. Defining variables for a textured cube
 
 First, we need to define the **BasicVertex** and **ConstantBuffer** structures for the textured cube. These structures specify the vertex positions, orientations, and textures for the cube and how the cube will be viewed. Otherwise, we declare variables similarly to the previous tutorial, [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md).

@@ -6,15 +6,13 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ---
+
 # Walkthrough sample ports from OpenGL ES 2.0
-
-
 
 This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 
 ## OpenGL ES 2.0 to Direct3D 11 walkthroughs
 
-## 
 <table>
 <colgroup>
 <col width="50%" />
@@ -33,13 +31,3 @@ This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting sce
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

@@ -59,7 +59,7 @@ Refer back to the [maximizing markup and code reuse](wpsl-to-uwp-porting-to-a-uw
 ## More info and design guidelines
 
 -   [Design UWP apps](https://developer.microsoft.com/windows/apps/design)
--   [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
+-   [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts)
 -   [Plan for different form factors](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 
 ## Related topics

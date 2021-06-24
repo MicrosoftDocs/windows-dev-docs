@@ -19,7 +19,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
 
 :::row:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="App submission illustration" />
+        <img src="/media/illustrations/teams-fast-track.svg" alt="App submission illustration" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">App submissions</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Find out what you need to create a submission and get your app certified.</p>
         <br>
@@ -27,11 +27,11 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <a href="msiexe/app-submissions.md">MSI or EXE app submission checklist</a><br/>
         <a href="pwa/overview.md">PWA app submission checklist</a><br/>
         <a href="store-policies.md">Microsoft Store Policies</a><br/>
-        <a href="//docs.microsoft.com/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a><br/>
+        <a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a><br/>
         <a href="distribute-lob-apps-to-enterprises.md">LOB distribution</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" />
+        <img src="/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Pricing and availability</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Customize your app's availability with per-market pricing and scheduling, visibility options, sale pricing, and more.</p>
         <br>
@@ -41,7 +41,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <a href="set-app-pricing-and-availability.md">See all availability options</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-scenarios.svg" alt="Store listing illustration" />
+        <img src="/media/illustrations/biztalk-get-started-scenarios.svg" alt="Store listing illustration" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Store listing options</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Provide text and visual assets that make customers eager to try out your app.</p>
         <br>
@@ -55,7 +55,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
 
 :::row:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
+        <img src="/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Payments and reporting</h3>
         <a href="account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
         <a href="/partner-center/marketplace-get-paid">Getting paid</a><br/>
@@ -63,14 +63,14 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <a href="analytics.md">Analytic reports</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
+        <img src="/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Promote your apps</h3>
         <a href="/windows/uwp/monetize/">Create ad campaigns</a><br/>
         <a href="generate-promotional-codes.md">Generate promotional codes</a><br/>
         <a href="put-apps-and-add-ons-on-sale.md">Offer sale pricing</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/virtualization-hperv-server-community.svg" alt="Multi-connect icon" />
+        <img src="/media/illustrations/virtualization-hperv-server-community.svg" alt="Multi-connect icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Engage with customers</h3>
         <a href="create-customer-groups.md">Create customer groups</a><br/>
         <a href="send-push-notifications-to-your-apps-customers.md">Send push notifications</a><br/>
@@ -82,20 +82,20 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
 
 :::row:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
+        <img src="/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Managing account users</h3>
         <a href="/windows/uwp/publish/associate-azure-ad-with-partner-center">Set up Azure AD</a><br/>
         <a href="add-users-groups-and-azure-ad-applications.md">Add account users</a><br/>
         <a href="set-custom-permissions-for-account-users.md">Roles and permissions</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt="Shopping cart icon" />
+        <img src="/media/illustrations/sql-get-started-download.svg" alt="Shopping cart icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Add-ons (in-app products)</h3>
         <a href="add-on-submissions.md">Add-on submissions</a><br/>
         <a href="../monetize/in-app-purchases-and-trials.md">Enable add-ons in your app's code</a><br/>
     :::column-end:::
     :::column:::
-        <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Test icon" />
+        <img src="/media/illustrations/team-services-dev-ops-test.svg" alt="Test icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Testing strategies</h3>
         <a href="beta-testing-and-targeted-distribution.md">Beta testing and targeted distribution</a></br/>
         <a href="choose-visibility-options.md#audience">Private audience</a><br/>

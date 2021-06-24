@@ -241,7 +241,7 @@ The design language has evolved for Windows 10 and consequently certain system 
 
 In other cases, resource keys are no longer supported. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `ListViewItemTextBlockStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
 
-For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
+For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
 
 This is a full list of the keys that are no longer supported.
 
@@ -454,7 +454,7 @@ In Windows Runtime 8.x apps and Windows Phone Store apps, the default font famil
 
 In Windows Runtime 8.x apps and Windows Phone Store apps, the default language for text is set to the language of the build, or to en-us. In a Windows 10 app, the default language is set to the top app language (font fallback). You can set [**FrameworkElement.Language**](/uwp/api/windows.ui.xaml.frameworkelement.language) explicitly, but you will enjoy better font fallback behavior if you do not set a value for that property.
 
-For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
+For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
 
 ## Theme changes
 
