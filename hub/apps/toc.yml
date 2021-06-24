@@ -229,9 +229,9 @@
                   - name: IWindowNative
                     items:
                       - name: IWindowNative
-                        href:  winui/reference/iwindownative.md
+                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative
                       - name: IWindowNative.WindowHandle
-                        href:  winui/reference/iwindownative-windowhandle.md
+                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle
       - name: .NET API reference
         href: /dotnet/api/
       - name: Schema reference for Windows apps

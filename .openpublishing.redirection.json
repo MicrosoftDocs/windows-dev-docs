@@ -5171,6 +5171,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/reference/iwindownative.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/reference/iwindownative-windowhandle.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/winui3/get-started-winui3-for-desktop.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
