@@ -159,4 +159,4 @@ Distribute your app wherever it makes sense for your business. Windows lets you 
 ## Related articles
 
 - [Windows Dev Center](https://developer.microsoft.com/windows/)
-- [What's cool in Windows 11](/windows/windows-for-developers/)
+- [What's cool in Windows 11](https://developer.microsoft.com/windows/windows-for-developers/)
