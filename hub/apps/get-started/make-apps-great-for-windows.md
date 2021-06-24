@@ -62,13 +62,13 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
 
-[An image of common UI controls](/windows/apps/accessibility)
+[Accessibility in Windows](/windows/apps/accessibility)
 
 ## 4. Use the latest common controls
 
 Windows 11 brings beautiful UI innovations to the Windows operating system that you can leverage in your apps. Common controls are one way that you can utilize these updates immediately. Use the latest common controls whenever possible to get the benefits of compatibility and accessibility for free. And these common controls are more cost effective than building your own custom controls when you factor in maintenance and testing costs.
 
-![sv image](images/great-apps/controls.png)
+![An image of common UI controls](images/great-apps/controls.png)
 
 ### Windows UI Library (WinUI)
 
@@ -158,5 +158,5 @@ Distribute your app wherever it makes sense for your business. Windows lets you 
 
 ## Related articles
 
-- [Welcome to Windows 11](https://developer.microsoft.com/windows/)
-- [What's cool in Windows 11](/windows/windows-10-for-developers/)
+- [Windows Dev Center](https://developer.microsoft.com/windows/)
+- [What's cool in Windows 11](/windows/windows-for-developers/)
