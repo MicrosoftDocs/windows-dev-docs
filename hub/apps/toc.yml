@@ -1,221 +1,247 @@
-- name: Develop for Windows
-  href: index.yml
+- name: Develop desktop apps
+  href: desktop/index.yml
   items:
-  - name: Build desktop apps
+  - name: Set up your development environment
     items:
         - name: Overview
-          href: desktop/index.md
-        - name: Choose your app platform
-          href: desktop/choose-your-platform.md
-        - name: Get set up
-          href: get-started/get-set-up.md
-          items:
-              - name: Enable your device for development
-                href: get-started/enable-your-device-for-development.md
-              - name: Developer mode features and debugging
-                href: get-started/developer-mode-features-and-debugging.md
-              - name: Create a developer account
-                href: get-started/sign-up.md
+          href: windows-app-sdk/set-up-your-development-environment.md
+        - name: Enable your device for development
+          href: get-started/enable-your-device-for-development.md
+        - name: Developer mode features and debugging
+          href: get-started/developer-mode-features-and-debugging.md
+        - name: Create a developer account
+          href: get-started/sign-up.md
+  - name: Get started
+    items:
+        - name: Overview
+          href: get-started/index.md
         - name: Visual Studio templates for Windows apps
           href: desktop/visual-studio-templates.md
-        - name: Modernize your desktop apps
-          items:
-              - name: Overview
-                href: desktop/modernize/index.md
-              - name: Call Windows Runtime APIs
-                items:
-                    - name: Overview
-                      href: desktop/modernize/desktop-to-uwp-enhance.md
-                    - name: APIs not supported in desktop apps
-                      href: desktop/modernize/desktop-to-uwp-supported-api.md
-              - name: Host WinRT XAML controls (XAML Islands)
-                items:
-                    - name: Overview
-                      href: desktop/modernize/xaml-islands.md
-                    - name: XAML Islands in WPF and Windows Forms apps
-                      items:
-                          - name: Host a standard WinRT XAML control
-                            href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                          - name: Host a custom WinRT XAML control
-                            href: desktop/modernize/host-custom-control-with-xaml-islands.md
-                    - name: XAML Islands in C++ desktop apps
-                      items:
-                          - name: Using the WinRT XAML hosting API
-                            href: desktop/modernize/using-the-xaml-hosting-api.md
-                          - name: Host a standard WinRT XAML control
-                            href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                          - name: Host a custom WinRT XAML control
-                            href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
-                          - name: Advanced scenarios
-                            href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
-              - name: Using the Visual layer (Windows.UI.Composition)
-                items:
-                    - name: Overview
-                      href: desktop/modernize/visual-layer-in-desktop-apps.md
-                    - name: WPF
-                      href: desktop/modernize/using-the-visual-layer-with-wpf.md
-                    - name: Windows Forms
-                      href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
-                    - name: C++ desktop (Win32)
-                      href: desktop/modernize/using-the-visual-layer-with-win32.md
-              - name: Features that require package identity
-                items:
-                    - name: Overview
-                      href: desktop/modernize/modernize-packaged-apps.md
-                    - name: Integrate with package extensions
-                      href: desktop/modernize/desktop-to-uwp-extensions.md
-                    - name: Integrate a packaged desktop app with File Explorer
-                      href: desktop/modernize/integrate-packaged-app-with-file-explorer.md
-                    - name: Get activation info for packaged apps
-                      href: desktop/modernize/get-activation-info-for-packaged-apps.md
-                    - name: Extend with UWP components
-                      href: desktop/modernize/desktop-to-uwp-extend.md
-                    - name: Distribute your packaged app
-                      href: desktop/modernize/desktop-to-uwp-distribute.md
-              - name: "Tutorial: Modernize a WPF app"
-                items:
-                  - name: Overview
-                    href: desktop/modernize/modernize-wpf-tutorial.md
-                  - name: "Migrate the Contoso Expenses app to .NET Core 3"
-                    href: desktop/modernize/modernize-wpf-tutorial-1.md
-                  - name: "Add a UWP InkCanvas control using XAML Islands"
-                    href: desktop/modernize/modernize-wpf-tutorial-2.md
-                  - name: "Add a UWP CalendarView control using XAML Islands"
-                    href: desktop/modernize/modernize-wpf-tutorial-3.md
-                  - name: "Add Windows 10 user activities and notifications"
-                    href: desktop/modernize/modernize-wpf-tutorial-4.md
-                  - name: "Package and deploy with MSIX"
-                    href: desktop/modernize/modernize-wpf-tutorial-5.md
-              - name: Grant identity to non-packaged desktop apps
-                href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-  - name: Project Reunion
+        - name: Build an app for Windows 11
+          href: get-started/build-apps-for-windows.md
+        - name: Make your apps great on Windows 11
+          href: get-started/make-apps-great-for-windows.md
+  - name: Design and UI
+    href: design/toc.yml
+  - name: Develop
     items:
-      - name: "Overview"
-        href: project-reunion/index.md
-      - name: "Releases"
-        items:
-          - name: "Release channels and release notes"
-            href: project-reunion/release-channels.md
-          - name: "Stable release channel"
-            href: project-reunion/stable-channel.md
-          - name: "Preview release channel"
-            href: project-reunion/preview-channel.md
-      - name: "Get started"
-        items:
-          - name: "Set up your development environment"
-            href: project-reunion/set-up-your-development-environment.md
-          - name: "Get started developing apps"
-            href: project-reunion/get-started-with-project-reunion.md
-          - name: "Update existing projects to the latest release"
-            href: project-reunion/update-existing-projects-to-the-latest-release.md
-      - name: "Manage resources"
-        href: project-reunion/mrtcore/mrtcore-overview.md
-      - name: "Render text"
-        href: project-reunion/dwritecore.md
-      - name: Control app activation
-        items:
-          - name: App instancing
-            href: project-reunion/applifecycle/applifecycle-instancing.md
-          - name: Rich activation
-            href: project-reunion/applifecycle/applifecycle-rich-activation.md
-      - name: "Deploy apps"
+      - name: Windows App SDK
         items:
           - name: "Overview"
-            href: project-reunion/deploy-apps-that-use-project-reunion.md 
-          - name: "Runtime architecture and deployment scenarios"
-            href: project-reunion/deployment-architecture.md
-          - name: "Deploy packaged apps"
-            href: project-reunion/deploy-packaged-apps.md 
-          - name: "Deploy unpackaged apps"
+            href: windows-app-sdk/index.md
+          - name: "Releases"
             items:
-              - name: "Overview"
-                href: project-reunion/deploy-unpackaged-apps.md
-              - name: "Tutorial: Build and deploy an unpackaged app"
-                href: project-reunion/tutorial-unpackaged-deployment.md
-              - name: "Check for installed versions of the Project Reunion runtime"
-                href: project-reunion/check-project-reunion-versions.md
-              - name: "Remove outdated Project Reunion runtime versions"
-                href: project-reunion/remove-project-reunion-versions.md
-  - name: Windows UI Library (WinUI)
-    items:
-      - name: "Overview"
-        href: winui/index.md
-      - name: "Comparison of WinUI 3 and WinUI 2"
-        href: winui/winui3-winui2-comparison.md
-      - name: "Windows UI Library 3"
+              - name: "Release channels"
+                href: windows-app-sdk/release-channels.md
+              - name: "Stable release channel"
+                href: windows-app-sdk/stable-channel.md
+              - name: "Preview release channel"
+                href: windows-app-sdk/preview-channel.md
+              - name: "Experimental release channel"
+                href: windows-app-sdk/experimental-channel.md
+              - name: "Release notes archive"
+                items:
+                  - name: "WinUI 3 - Project Reunion 0.8 Preview"
+                    href: winui/winui3/release-notes/release-notes-08-preview.md    
+                  - name: "WinUI 3 - Project Reunion 0.5"
+                    href: winui/winui3/index.md   
+                  - name: "WinUI 3 - Project Reunion 0.5 Preview"
+                    href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md     
+          - name: "Get started"
+            items:
+              - name: "Build apps with the Windows App SDK"
+                href: windows-app-sdk/get-started.md
+              - name: "Create your first WinUI 3 app"
+                href: winui/winui3/create-your-first-winui3-app.md
+              - name: "Update existing projects to the latest release"
+                href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
+              - name: "Samples"
+                href: windows-app-sdk/samples.md
+          - name: "Manage resources"
+            href: windows-app-sdk/mrtcore/mrtcore-overview.md
+          - name: "Render text"
+            href: windows-app-sdk/dwritecore.md
+          - name: Control app activation
+            items:
+              - name: App instancing
+                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+              - name: Rich activation
+                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+          - name: "Manage app windows"
+            href: windows-app-sdk/windowing/windowing-overview.md
+      - name: Windows UI Library (WinUI)
         items:
-          - name: "Release notes"
-            items:
-            - name: "WinUI 3 - Project Reunion 0.8 Preview"
-              href: winui/winui3/release-notes/release-notes-08-preview.md
-            - name: "WinUI 3 - Project Reunion 0.5"
-              href: winui/winui3/index.md
-            - name: "WinUI 3 - Project Reunion 0.5 Preview"
-              href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-          - name: "Develop"
+          - name: "Overview"
+            href: winui/index.md
+          - name: "Comparison of WinUI 3 and WinUI 2"
+            href: winui/winui3-winui2-comparison.md
+          - name: "Windows UI Library 3"
             items:
               - name: "WinUI project templates in Visual Studio"
                 href: winui/winui3/winui-project-templates-in-visual-studio.md
-              - name: "Get started with WinUI 3 for desktop apps"
-                href: winui/winui3/get-started-winui3-for-desktop.md
               - name: "Build a basic WinUI 3 desktop app"
                 href: winui/winui3/desktop-build-basic-winui3-app.md
-              - name: "Get started with WinUI 3 for UWP apps (Preview)"
-                href: winui/winui3/get-started-winui3-for-uwp.md
               - name: "Templated XAML controls for WinUI 3 apps with C++/WinRT"
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
               - name: "Templated XAML controls for WinUI 3 apps with C#"
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
-      - name: "Windows UI 2.x Library"
-        items: 
-          - name: "Overview"
-            href: winui/winui2/index.md
-          - name: "Setup"
+          - name: "Windows UI 2.x Library"
             items: 
-              - name: "Get started with WinUI 2.x"
-                href: winui/winui2/getting-started.md
-              - name: "NuGet package list"
-                href: winui/winui2/nuget-packages.md
-          - name: "Release notes archive (WinUI 2)"
-            href:  winui/winui2/release-notes/index.md
-            items: 
-              - name: "WinUI 2.5"
-                href: winui/winui2/release-notes/winui-2.5.md
-              - name: "WinUI 2.4"
-                href: winui/winui2/release-notes/winui-2.4.md
-              - name: "WinUI 2.3"
-                href: winui/winui2/release-notes/winui-2.3.md
-              - name: "WinUI 2.2"
-                href: winui/winui2/release-notes/winui-2.2.md
-              - name: "WinUI 2.1"
-                href: winui/winui2/release-notes/winui-2.1.md
-              - name: "WinUI 2.0"
-                href: winui/winui2/release-notes/winui-2.0.md
-      - name: "WinUI API reference"
-        expanded: true
-        items: 
-          - name: "WinRT API reference"
-            href: /windows/winui/api/
-          - name: "COM API reference"
-            items:
-              - name: "IWindowNative"
-                items:
-                  - name: "IWindowNative"
-                    href:  winui/reference/iwindownative.md
-                  - name: "IWindowNative.WindowHandle"
-                    href:  winui/reference/iwindownative-windowhandle.md
-  - name: Developing for Windows 10X
+              - name: "Overview"
+                href: winui/winui2/index.md
+              - name: "WinUI 2.6 release notes"
+                href: winui/winui2/winui-2.6.md
+              - name: "Setup"
+                items: 
+                  - name: "Get started with WinUI 2.x"
+                    href: winui/winui2/getting-started.md
+                  - name: "NuGet package list"
+                    href: winui/winui2/nuget-packages.md
+              - name: "Release notes archive (WinUI 2)"
+                href:  winui/winui2/release-notes/index.md
+                items: 
+                  - name: "WinUI 2.5"
+                    href: winui/winui2/release-notes/winui-2.5.md
+                  - name: "WinUI 2.4"
+                    href: winui/winui2/release-notes/winui-2.4.md
+                  - name: "WinUI 2.3"
+                    href: winui/winui2/release-notes/winui-2.3.md
+                  - name: "WinUI 2.2"
+                    href: winui/winui2/release-notes/winui-2.2.md
+                  - name: "WinUI 2.1"
+                    href: winui/winui2/release-notes/winui-2.1.md
+                  - name: "WinUI 2.0"
+                    href: winui/winui2/release-notes/winui-2.0.md
+      - name: Features and technologies
+        items:
+          - name: Overview
+            href: features-and-technologies.md
+          - name: Accessibility
+            href: accessibility.md
+          - name: Speech
+            href: speech.md
+      - name: Modernize your desktop apps
+        items:
+            - name: Overview
+              href: desktop/modernize/index.md
+            - name: Call Windows Runtime APIs
+              items:
+                  - name: Overview
+                    href: desktop/modernize/desktop-to-uwp-enhance.md
+                  - name: APIs not supported in desktop apps
+                    href: desktop/modernize/desktop-to-uwp-supported-api.md
+            - name: Host WinRT XAML controls (XAML Islands)
+              items:
+                  - name: Overview
+                    href: desktop/modernize/xaml-islands.md
+                  - name: XAML Islands in WPF and Windows Forms apps
+                    items:
+                        - name: Host a standard WinRT XAML control
+                          href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                        - name: Host a custom WinRT XAML control
+                          href: desktop/modernize/host-custom-control-with-xaml-islands.md
+                  - name: XAML Islands in C++ desktop apps
+                    items:
+                        - name: Using the WinRT XAML hosting API
+                          href: desktop/modernize/using-the-xaml-hosting-api.md
+                        - name: Host a standard WinRT XAML control
+                          href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                        - name: Host a custom WinRT XAML control
+                          href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                        - name: Advanced scenarios
+                          href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+            - name: Using the Visual layer (Windows.UI.Composition)
+              items:
+                  - name: Overview
+                    href: desktop/modernize/visual-layer-in-desktop-apps.md
+                  - name: WPF
+                    href: desktop/modernize/using-the-visual-layer-with-wpf.md
+                  - name: Windows Forms
+                    href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+                  - name: C++ desktop (Win32)
+                    href: desktop/modernize/using-the-visual-layer-with-win32.md
+            - name: Features that require package identity
+              items:
+                  - name: Overview
+                    href: desktop/modernize/modernize-packaged-apps.md
+                  - name: Integrate with package extensions
+                    href: desktop/modernize/desktop-to-uwp-extensions.md
+                  - name: Integrate a packaged desktop app with File Explorer
+                    href: desktop/modernize/integrate-packaged-app-with-file-explorer.md
+                  - name: Get activation info for packaged apps
+                    href: desktop/modernize/get-activation-info-for-packaged-apps.md
+                  - name: Extend with UWP components
+                    href: desktop/modernize/desktop-to-uwp-extend.md
+                  - name: Distribute your packaged app
+                    href: desktop/modernize/desktop-to-uwp-distribute.md
+            - name: "Tutorial: Modernize a WPF app"
+              items:
+                - name: Overview
+                  href: desktop/modernize/modernize-wpf-tutorial.md
+                - name: "Migrate the Contoso Expenses app to .NET Core 3"
+                  href: desktop/modernize/modernize-wpf-tutorial-1.md
+                - name: "Add a UWP InkCanvas control using XAML Islands"
+                  href: desktop/modernize/modernize-wpf-tutorial-2.md
+                - name: "Add a UWP CalendarView control using XAML Islands"
+                  href: desktop/modernize/modernize-wpf-tutorial-3.md
+                - name: "Add Windows 10 user activities and notifications"
+                  href: desktop/modernize/modernize-wpf-tutorial-4.md
+                - name: "Package and deploy with MSIX"
+                  href: desktop/modernize/modernize-wpf-tutorial-5.md
+            - name: Grant identity to non-packaged desktop apps
+              href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+  - name: Package and deploy
     items:
-      - name: Windows 10X Dev FAQ
-        href: 10x/faq.md
-  - name: Fluent Design System
-    href: fluent-design-system.md
-  - name: Accessibility
-    href: accessibility.md
-  - name: Speech
-    href: speech.md
-  - name: Features and technologies
-    href: features-and-technologies.md
+      - name: Overview
+        href: package-and-deploy/index.md
+      - name: Deploy apps that use the Windows App SDK
+        items:
+          - name: "Overview"
+            href: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md 
+          - name: "Runtime architecture and deployment scenarios"
+            href: windows-app-sdk/deployment-architecture.md
+          - name: "Deploy packaged apps"
+            href: windows-app-sdk/deploy-packaged-apps.md 
+          - name: "Deploy unpackaged apps"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/deploy-unpackaged-apps.md
+              - name: "Tutorial: Build and deploy an unpackaged app"
+                href: windows-app-sdk/tutorial-unpackaged-deployment.md
+              - name: "Check for installed versions of the Windows App SDK runtime"
+                href: windows-app-sdk/check-windows-app-sdk-versions.md
+              - name: "Remove outdated Windows App SDK runtime versions"
+                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+  - name: Reference
+    items:
+      - name: Windows SDK API reference
+        items: 
+          - name: WinRT API reference
+            href: /uwp/api/
+          - name: Win32 API reference
+            href: /windows/win32/api/
+      - name: Windows App SDK API reference
+        items: 
+          - name: WinRT API reference
+            href: /windows/windows-app-sdk/api/winrt/microsoft.applicationmodel.resources
+          - name: Win32 API reference
+            href: /windows/windows-app-sdk/api/win32
+          - name: WinUI WinRT API reference
+            items: 
+              - name: WinRT APIs for WinUI
+                href: /windows/winui/api/
+              - name: COM APIs for WinUI
+                items:
+                  - name: IWindowNative
+                    items:
+                      - name: IWindowNative
+                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative
+                      - name: IWindowNative.WindowHandle
+                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle
+      - name: .NET API reference
+        href: /dotnet/api/
+      - name: Schema reference for Windows apps
+        href: /uwp/schemas/
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
   - name: Docs related to Microsoft Build 2021

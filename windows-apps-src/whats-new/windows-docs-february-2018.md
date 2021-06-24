@@ -27,13 +27,13 @@ Extend notifications across your user's devices with [Notification mirroring](..
 
 Group and organize your notifications with [Toast headers](../design/shell/tiles-and-notifications/toast-headers.md) and [Pending update activation](../design/shell/tiles-and-notifications/toast-pending-update.md).
 
-![Pending update activation in action](../design/shell/tiles-and-notifications/images/toast-pendingupdate.gif)
+![Pending update activation in action](images/toast-pendingupdate.gif)
 
 ### Page layouts with XAML
 
 We've updated our [XAML page layout](../design/layout/layouts-with-xaml.md) docs with new information on fluid layouts and visual states. These new features allow for greater control over how the position of elements in your app respond and adapt to the available visual space.
 
-![Margins and padding for XAML page layouts](../design/layout/images/xaml-layout-margins-padding.png)
+![Margins and padding for XAML page layouts](images/xaml-layout-margins-padding.png)
 
 ### Subscription add-ons are now available to all developers
 
@@ -47,7 +47,7 @@ Our [introduction to UWP app design](../design/basics/design-and-ui-intro.md) ha
 
 We've added a showcase of common page patterns to our [Content design basics](../design/basics/content-basics.md), providing a gallery of examples of how your app can display diferent types of content.
 
-![An illustration of the hub page pattern](../design/basics/images/hub.png)
+![An illustration of the hub page pattern](images/hub.png)
 
 ### Writing style
 

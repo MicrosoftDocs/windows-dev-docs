@@ -18,11 +18,12 @@
       href: ../publish/add-users-groups-and-azure-ad-applications.md
     - name: Set roles and custom permissions
       href: ../publish/set-custom-permissions-for-account-users.md
-- name: Create your app by reserving a name
-  href: ../publish/create-your-app-by-reserving-a-name.md
-- name: App submissions
-  href: ../publish/app-submissions.md
+- name: Publish an MSIX app to the Microsoft Store
   items:
+    - name: App submissions
+      href: app-submissions.md
+    - name: Create your app by reserving a name
+      href: ../publish/create-your-app-by-reserving-a-name.md
     - name: Set app pricing and availability
       href: ../publish/set-app-pricing-and-availability.md
       items:
@@ -89,7 +90,35 @@
       href: ../publish/beta-testing-and-targeted-distribution.md
     - name: Distribute LOB apps to enterprises
       href: ../publish/distribute-lob-apps-to-enterprises.md
-- name: Add-on submissions
+- name: Publish an MSI or EXE app to the Microsoft Store
+  href: msiexe/overview.md
+  items: 
+    - name: Create an app submission for your MSI or EXE app
+      href: msiexe/app-submissions.md
+    - name: Create your MSI or EXE app by reserving a new name
+      href: msiexe/create-your-app-by-reserving-a-name.md
+    - name: Set pricing and availability for your MSI or EXE app
+      href: msiexe/set-app-pricing-and-availability.md
+    - name: Specify your MSI or EXE app's properties
+      href: msiexe/enter-app-properties.md
+    - name: Provide package details for your MSI or EXE app
+      href: msiexe/provide-package-details.md
+    - name: Create app Store listings for your MSI or EXE app
+      href: msiexe/create-app-store-listings.md
+    - name: Manage your MSI or EXE app's store listing
+      href: msiexe/manage-submission-options.md
+    - name: The MSI or EXE app certification process
+      href: msiexe/the-app-certification-process.md
+- name: Publish your PWA app to the Microsoft Store
+  href: pwa/overview.md
+  items:
+    - name: Create your PWA by reserving a name
+      href: pwa/create-your-app-by-reserving-a-name.md
+    - name: Turn your website into a high quality PWA
+      href: pwa/turn-your-website-pwa.md
+    - name: Publish your PWA to the Microsoft Store
+      href: app-submissions.md
+- name: Publish an app add-on to the Microsoft Store
   href: ../publish/add-on-submissions.md
   items:
     - name: Set your add-on product type and product ID

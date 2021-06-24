@@ -16,11 +16,11 @@ You'll start with a simplified version of the PhotoLab sample. This starter vers
 
 The PhotoLab sample app has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
-![Screenshot of the Photo lab main page.](../design/basics/images/xaml-basics/mainpage.png)
+![Screenshot of the Photo lab main page.](images/mainpage.png)
 
 The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
-![Screenshot of the Photo lab detail page.](../design/basics/images/xaml-basics/detailpage.png)
+![Screenshot of the Photo lab detail page.](images/detailpage.png)
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
 1. Go to the GitHub page for the sample: [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab).
 2. Next, you'll need to clone or download the sample. Select the **Clone or download** button. A sub-menu appears.
-    ![The Clone or download menu on the PhotoLab sample's GitHub page](../design/basics/images/xaml-basics/clone-repo.png)
+    ![The Clone or download menu on the PhotoLab sample's GitHub page](images/clone-repo.png)
 
     **If you're not familiar with GitHub:**
 
@@ -64,7 +64,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
 2. Make sure your **Solution Platform** is set to x86 or x64, not ARM, and then run the app. This shows the state of the app with UI placeholders, before bindings have been added.
 
-    ![Running app with placeholder images and text](../design/basics/images/xaml-basics/gallery-with-placeholder-templates.png)
+    ![Running app with placeholder images and text](images/gallery-with-placeholder-templates.png)
 
 3. Open MainPage.xaml and search for a `DataTemplate` named **ImageGridView_DefaultItemTemplate**. You'll update this template to use data bindings.
 
@@ -140,7 +140,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
 Run the app to see how it looks so far. No more placeholders! We're off to a good start.
 
-![Running app with real images and text instead of placeholders](../design/basics/images/xaml-basics/gallery-with-populated-templates.png)
+![Running app with real images and text instead of placeholders](images/gallery-with-populated-templates.png)
 
 > [!Note]
 > If you want to experiment further, try adding a new TextBlock to the data template, and use the x:Bind IntelliSense trick to find a property to display.
@@ -271,7 +271,7 @@ Did you notice that these are `Binding` expressions, and not `x:Bind` expression
 
 Run the app and use the slider to change the image-template dimensions. As you can see, the effect is pretty powerful without needing much code.
 
-![Running app with zoom slider showing](../design/basics/images/xaml-basics/gallery-with-zoom-control.png)
+![Running app with zoom slider showing](images/gallery-with-zoom-control.png)
 
 > [!NOTE]
 > For a challenge, try binding other UI properties to the zoom slider `Value` property, or to other sliders that you add after the zoom slider. For example, you could bind the `FontSize` property of the `TitleTextBlock` to a new slider with a default value of **24**. Be sure to set reasonable minimum and maximum values.
@@ -436,7 +436,7 @@ Now that the UI can respond to `ItemSize` changes, you need to actually make som
 
 Run the app and use the zoom slider and **Fit to screen** toggle to change the image-template dimensions. As you can see, the latest changes enable a more refined zoom/resize experience while keeping the code well organized.
 
-![Running app with fit-to-screen enabled](../design/basics/images/xaml-basics/gallery-with-fit-to-screen.png)
+![Running app with fit-to-screen enabled](images/gallery-with-fit-to-screen.png)
 
 > [!NOTE]
 > For a challenge, try adding a `TextBlock` after the `ZoomSlider` and binding the `Text` property to the `ItemSize` property. Because it's not in a data template, you can use `x:Bind` instead of `Binding` like in the previous `ItemSize` bindings.
@@ -537,7 +537,7 @@ Run the app and try the editing controls. As you can see, when you make a change
 
 One last problem remains. When you move the effect sliders, the labels next to them still don't change.
 
-![Effect sliders with default label values](../design/basics/images/xaml-basics/effect-sliders-before-label-fix.png)
+![Effect sliders with default label values](images/effect-sliders-before-label-fix.png)
 
 The final part in this tutorial is to add bindings that format the slider values for display.
 
@@ -584,7 +584,7 @@ The final part in this tutorial is to add bindings that format the slider values
 
 Now when you run the app, everything works, including the slider labels.
 
-![Effect sliders with working labels](../design/basics/images/xaml-basics/effect-sliders-after-label-fix.png)
+![Effect sliders with working labels](images/effect-sliders-after-label-fix.png)
 
 ## Conclusion
 

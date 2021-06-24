@@ -1,7 +1,7 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
-description: Learn how to enable your Windows 10 device for development and debugging by activating Developer Mode in Visual Studio.
+description: Learn how to enable your Windows device for development and debugging by activating Developer Mode in Visual Studio.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.date: 10/13/2020
 ms.topic: article

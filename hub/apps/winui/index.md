@@ -2,7 +2,7 @@
 title: Windows UI Library (WinUI)
 description: WinUI Libraries for Windows app development. 
 ms.topic: article
-ms.date: 03/19/2021
+ms.date: 06/24/2021
 keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
@@ -24,9 +24,9 @@ With support for both desktop and UWP apps, you can build with WinUI from the gr
 WinUI 2.x can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
-> WinUI 2.5 is the latest WinUI 2.x release. See the [WinUI 2.6 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/11) for a list of work planned in the next release.
+> WinUI 2.6 is the latest WinUI 2.x release. See the [WinUI 2.7 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/12) for a list of work planned in the next release.
 
-The WinUI 2.x Library is closely coupled to the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
+The WinUI 2.x Library is closely coupled with the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
 
 By maintaining down-level compatibility with earlier versions of Windows 10, WinUI 2.x controls work even if users don't have the latest OS.
 
@@ -41,18 +41,18 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 - [Source code](https://aka.ms/winui)
 - [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## Windows UI 3 Library (Project Reunion 0.5)
+## Windows UI 3 Library 
 
 WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
 > [!Important]
-> WinUI 3 - Project Reunion 0.5 is the first stable, supported version of WinUI 3. With this version of WinUI 3, you can create production apps and publish them to the Microsoft Store.
+> WinUI 3 - Windows App SDK 0.8 is the latest stable, supported version of WinUI 3. With this version of WinUI 3, you can create production apps and publish them to the Microsoft Store.
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
 By completely decoupling XAML, composition, and input APIs from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), the scope of WinUI 3 includes the full Windows 10 native UI platform.
 
-WinUI 3 is a component of [Project Reunion](../project-reunion/index.md), which provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions. As a component of Project Reunion, WinUI 3 ships as a part of the Project Reunion package - see [Windows UI Library 3 - Project Reunion 0.5](winui3/index.md) for more information.
+WinUI 3 is a component of [the Windows App SDK](../windows-app-sdk/index.md), which provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on a broad set of target Windows 10 OS versions. As a component of the Windows App SDK, WinUI 3 ships as a part of the Windows App SDK package - see [Windows UI Library 3 - Project Reunion 0.5](winui3/index.md) for more information.
 
 WinUI 3 is the path forward for all Windows apps—you can use it as the UI layer on your native UWP or Win32 app, or you can gradually modernize your desktop app, piece by piece, with [XAML Islands](../desktop/modernize/xaml-islands.md).
 
@@ -60,11 +60,14 @@ All new XAML features will eventually ship as part of WinUI. The existing UWP XA
 
 Please note that the Universal Windows Platform contains more than just the XAML framework. Features such as application and security models, media pipeline, Xbox and Windows 10 shell integration, and compatibility with a broad variety of devices will continue to be developed and supported.
 
+> [!NOTE]
+> The Windows App SDK was previously called **Project Reunion**, which was a temporary code name. Some assets such as the VSIX extension and NuGet packages still use the code name, but these files will be renamed in a future release. Most of the documentation now uses the name **Windows App SDK** except when referring to a specific release or asset that still uses the previous code name.
+
 ![WinUI 3 platform support](../images/platforms-winui3.png)
 
 ### Related links for WinUI 3
 
-- [Windows UI Library 3 - Project Reunion 0.5](winui3/index.md)
+- [Stable release channel](../windows-app-sdk/stable-channel.md)
 - [WinUI 3 Controls Gallery sample app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3)
 
 ## WinUI resources

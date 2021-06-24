@@ -8,7 +8,10 @@ ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
 
-# Publish Windows apps and games  
+# Publish Windows apps and games
+
+> [!NOTE]
+> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist)
 
 You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/store/register)
 
@@ -20,8 +23,9 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <h3 style="margin-top: 10px; margin-bottom: 0px">App submissions</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Find out what you need to create a submission and get your app certified.</p>
         <br>
-        <a href="app-submissions.md">App submission checklist</a><br/>
-        <a href="the-app-certification-process.md">The certification process</a><br/>
+        <a href="app-submissions.md">MSIX app submission checklist</a><br/>
+        <a href="msiexe/app-submissions.md">MSI or EXE app submission checklist</a><br/>
+        <a href="pwa/overview.md">PWA app submission checklist</a><br/>
         <a href="store-policies.md">Microsoft Store Policies</a><br/>
         <a href="//docs.microsoft.com/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a><br/>
         <a href="distribute-lob-apps-to-enterprises.md">LOB distribution</a><br/>
