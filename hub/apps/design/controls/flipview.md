@@ -4,7 +4,7 @@ title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 04/07/2021
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -47,11 +47,11 @@ Flip view is best for perusing images in small to medium collections (up to 25 o
 
 Horizontal browsing, starting at the left-most item and flipping right, is the typical layout for a flip view. This layout works well in either portrait or landscape orientation on all devices:
 
-![Example of horizontal flip view layout](images/controls_flipview_horizonal.jpg)
+![Example of horizontal flip view layout](images/controls-flipview-horizonal.jpg)
 
 A flip view can also be browsed vertically:
 
-![Example of vertical flip view](images/controls_flipview_vertical.jpg)
+![Example of vertical flip view](images/controls-flipview-vertical.jpg)
 
 ## Create a flip view
 
@@ -134,17 +134,21 @@ By default, a data item is displayed in the flip view as the string representati
 In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name. 
 
 ```XAML
-<FlipView x:Name="flipView1" Width="480" Height="270" 
-          BorderBrush="Black" BorderThickness="1">
+<FlipView MaxWidth="400" Height="180" BorderBrush="Black" BorderThickness="1"
+          ItemsSource="{x:Bind Items, Mode=OneWay}">
     <FlipView.ItemTemplate>
-        <DataTemplate>
+        <DataTemplate x:DataType="data:ControlInfoDataItem">
             <Grid>
-                <Image Width="480" Height="270" Stretch="UniformToFill"
-                       Source="{Binding Image}"/>
-                <Border Background="#75000000" Height="80" VerticalAlignment="Bottom">
-                    <TextBlock Text="{Binding Name}" 
-                               FontFamily="Segoe UI" FontSize="26.667" 
-                               Foreground="#CCFFFFFF" Padding="15,20"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Width="36" Source="{x:Bind ImagePath}" Stretch="Uniform"
+                       VerticalAlignment="Center" />
+                <Border Background="#A5FFFFFF" Height="60" Grid.Row="1">
+                    <TextBlock x:Name="Control2Text" Text="{x:Bind Title}" Foreground="Black"
+                               Padding="12,12" Style="{StaticResource TitleTextBlockStyle}"
+                               HorizontalAlignment="Center" />
                 </Border>
             </Grid>
         </DataTemplate>
@@ -191,7 +195,7 @@ This example shows how to use a stack panel with a vertical orientation as the I
 
 Here's what the flip view looks like with a vertical orientation.
 
-![Example of vertical flip view](images/controls_flipview_vertical.jpg)
+![Example of flip view in vertical orientation.](images/controls-flipview-vertical.jpg)
 
 ## Adding a context indicator
 
@@ -224,7 +228,7 @@ This code snippet shows how to bind a PipsPager with a [FlipView](/windows/winui
 
 For larger collections (10 or more items), we highly recommend using a contextual indicator such as a film strip of thumbnails. Unlike a PipsPager that uses simple dots or glyphs, each thumbnail in the film strip shows a smaller, selectable version of the corresponding image.
 
-:::image type="content" source="images/controls_contextindicator.jpg" alt-text="A film strip of thumbnails underneath a FlipView photo album.":::
+:::image type="content" source="images/controls-context-indicator.jpg" alt-text="A film strip of thumbnails underneath a FlipView photo album.":::
 
 For a full example showing how to add a context indicator to a FlipView, see [XAML FlipView sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)).
 

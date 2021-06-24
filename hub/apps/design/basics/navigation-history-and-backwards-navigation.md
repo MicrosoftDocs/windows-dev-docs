@@ -28,7 +28,7 @@ For most apps that have multiple pages, we recommend that you use the [Navigatio
 
 To create a back button, use the [Button](../controls/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
 
-![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
+![Back button in the top left of the app's UI](images/back-nav/back-enabled.png)
 
 ```xaml
 <Page>
@@ -49,7 +49,7 @@ To create a back button, use the [Button](../controls/buttons.md) control with t
 
 If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
 
-![Back button on top command bar](images/back-nav/CommandBar.png)
+![Back button on top command bar](images/back-nav/command-bar.png)
 
 ```xaml
 <Page>
@@ -77,7 +77,7 @@ If your app has a top [CommandBar](../controls/command-bar.md), the Button contr
 
 In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (`IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}"`). However, if you expect your app will never have a backstack, you don't need to display the back button at all.
 
-![Back button states](images/back-nav/BackDisabled.png)
+![Back button states](images/back-nav/back-disabled.png)
 
 ## Optimize for different devices and inputs
 

@@ -86,7 +86,7 @@ Text box
 
 Auto suggest box
 
-![Example of the expanded auto-suggest control](images/controls_autosuggest_expanded01.png)
+![Example of the expanded auto-suggest control](images/controls-autosuggest-expanded-01.png)
 
 Password box
 

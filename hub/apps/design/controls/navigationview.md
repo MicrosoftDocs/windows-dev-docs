@@ -2,7 +2,7 @@
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: NavigationView
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -20,7 +20,8 @@ dev_langs:
 
 The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles.
 
-![top navigation](images/nav-view-header.png)<br/>
+:::image type="content" source="images/navigation-view-top-style.png" alt-text="top navigation":::
+:::image type="content" source="images/navigation-view-left-style.png" alt-text="left navigation":::<br/>
 _NavigationView supports both top and left navigation pane or menu_
 
 **Get the Windows UI Library**

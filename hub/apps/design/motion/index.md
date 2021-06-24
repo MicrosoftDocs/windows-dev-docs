@@ -61,7 +61,7 @@ Fluid movement from point to point naturally draws the eye and guides the user.�
 
 Intelligent motion provides feedback to the user in a manner that's aligned with how they manipulated the UI. Interaction is centered around the user.​ The movement feels appropriate to the form-factor and designed around the scenario.​ It should be comfortable for each user.​
 
-![UI example of contextual motion](images/Contextual.gif)
+![UI example of contextual motion](images/contextual.gif)
 > Animation should tie back to the user interaction. A context menu is deployed from a point where the user activated it.
 
 ## Motion articles

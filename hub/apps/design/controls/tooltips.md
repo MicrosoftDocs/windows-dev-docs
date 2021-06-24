@@ -4,7 +4,7 @@ title: Tooltips
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -77,10 +77,6 @@ When should you use a tooltip? To decide, consider these questions:
 </td>
 </tr>
 </table>
-
-A tooltip in the Windows Maps app.
-
-![A tooltip in the Windows Maps app](images/control-examples/tool-tip-maps.png)
 
 ## Create a tooltip
 

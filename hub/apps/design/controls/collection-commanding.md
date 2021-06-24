@@ -19,7 +19,7 @@ Many apps contain collections of content in the form of lists, grids, and trees 
 
 > **Important APIs**: [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged interface](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
-![Use a variety of inputs to perform the Favorite command](images/ContextualCommand_AddFavorites.png)
+![Use a variety of inputs to perform the Favorite command](images/contextual-command-add-favorites.png)
 
 ## Creating commands for all input types
 
@@ -222,7 +222,7 @@ After you have generated some PodcastObjects, you can create a list of podcasts 
 
 Context menus display a list of commands or options when the user requests them. Context menus provide contextual commands related to their attached element, and are generally reserved for secondary actions specific to that item.
 
-![Show a context menu on the item](images/ContextualCommand_RightClick.png)
+![Show a context menu on the item](images/contextual-command-right-click.png)
 
 The user can invoke context menus using these "context actions":
 
@@ -271,7 +271,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 #### Shortcuts and direct key handling
 
-![Press Ctrl and F to perform an action](images/ContextualCommand_Keyboard.png)
+![Press Ctrl and F to perform an action](images/contextual-command-keyboard.png)
 
 Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a tooltip to teach the user about the shortcut command.
 
@@ -298,7 +298,7 @@ protected override void OnKeyDown(KeyRoutedEventArgs e)
 
 ### Mouse accelerators
 
-![Hover the mouse over an item to reveal a button](images/ContextualCommand_HovertoReveal.png)
+![Hover the mouse over an item to reveal a button](images/contextual-command-hover-to-reveal.png)
 
 Users are familiar with right-click context menus, but you may wish to empower users to perform common commands using only a single click of the mouse. To enable this experience, you can include dedicated buttons on your collection item's canvas. To both empower users to act quickly using mouse, and to minimize visual clutter, you can choose to only reveal these buttons when the user has their pointer within a particular list item.
 
@@ -366,7 +366,7 @@ The buttons displayed in the hover state will only be accessible via the pointer
 
 #### Swipe
 
-![Swipe an item to reveal the command](images/ContextualCommand_Swipe.png)
+![Swipe an item to reveal the command](images/contextual-command-swipe.png)
 
 Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](swipe.md) article to learn more.
 

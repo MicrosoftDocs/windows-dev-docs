@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
 
-![Example of a command bar with icons](images/controls_appbar_icons.png)
+![Example of a command bar with icons](images/controls-appbar-icons.png)
 
 **Get the Windows UI Library**
 
@@ -59,10 +59,6 @@ The CommandBar control is a general-purpose, flexible, light-weight control that
 </tr>
 </table>
 
-An expanded command bar.
-
-![Expanded Command bar](images/control-examples/command-bar-photos.png)
-
 ## Anatomy
 
 By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[...\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.
@@ -71,11 +67,11 @@ By default, the command bar shows a row of icon buttons and an optional "see mor
 
 The command bar can also be shown in a closed minimal state that looks like this. See the [Open and closed states](#open-and-closed-states) section for more info.
 
-![Screenshot showing a command bar in a closed minimal state.](images/command-bar-minimal.png)
+![Screenshot showing a command bar in a closed minimal state.](images/command-bar-minimal.gif)
 
 Here's the same command bar in its open state. The labels identify the main parts of the control.
 
-![Screenshot showing a command bar in its open state.](images/commandbar_anatomy_open.png)
+![Screenshot showing a command bar in its open state.](images/commandbar-anatomy-open.png)
 
 The command bar is divided into 4 main areas:
 - The content area is aligned to the left side of the bar. It is shown if the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property is populated.
@@ -150,8 +146,8 @@ To position app bar button labels, use CommandBar's [DefaultLabelPosition](/uwp/
 
 ```xaml
 <CommandBar DefaultLabelPosition="Right">
-    <AppBarToggleButton Icon="Shuffle" Label="Shuffle"/>
-    <AppBarToggleButton Icon="RepeatAll" Label="Repeat"/>
+    <AppBarToggleButton Icon="Edit" Label="Edit"/>
+    <AppBarToggleButton Icon="Share" Label="Share"/>
 </CommandBar>
 ```
 
@@ -205,7 +201,8 @@ This sample code creates and displays a SplitButton inside of a CommandBar:
 
 Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu. While typically an app bar button activates a single command, an app bar button can be used to show a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) or [Flyout](/uwp/api/windows.ui.xaml.controls.flyout) with custom content.
 
-![Example of flyouts on a command bar](images/AppbarGuidelines_Flyouts.png)
+![Example of a MenuFlyout for sorting options](images/menuflyout-sorting.png)
+![Example of flyouts on a command bar](images/appbar-guidelines-flyouts.png)
 
 ### Other content
 
@@ -304,7 +301,7 @@ Changing the ClosedDisplayMode to provide more or less of a hint to the user aff
 ## Placement
 Command bars can be placed at the top of the app window, at the bottom of the app window, and inline, by embedding them in a layout control such as ```Grid.row```.
 
-![Example 1 of app bar placement](images/AppbarGuidelines_Placement1.png)
+![Example 1 of app bar placement](images/appbar-guidelines-placement-1.png)
 
 -   For small handheld devices, we recommend positioning command bars at the bottom of the screen for easy reachability.
 -   For devices with larger screens, placing command bars near the top of the window makes them more noticeable and discoverable.
@@ -313,7 +310,7 @@ Use the [DiagonalSizeInInches](/uwp/api/windows.graphics.display.displayinformat
 
 Command bars can be placed in the following screen regions on single-view screens (left example) and on multi-view screens (right example). Inline command bars can be placed anywhere in the action space.
 
-![Example 2 of app bar placement](images/AppbarGuidelines_Placement2.png)
+![Example 2 of app bar placement](images/appbar-guidelines-placement-2.png)
 
 >**Touch devices**: If the command bar must remain visible to a user when the touch keyboard, or Soft Input Panel (SIP), appears then you can assign the command bar to the [BottomAppBar](/uwp/api/windows.ui.xaml.controls.page.bottomappbar) property of a Page and it will move to remain visible when the SIP is present. Otherwise, you should place the command bar inline and positioned relative to your app content.
 

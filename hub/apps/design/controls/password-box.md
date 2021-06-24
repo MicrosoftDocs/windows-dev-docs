@@ -5,7 +5,7 @@ ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -105,10 +105,10 @@ Here's the result when this code runs and the user enters "Password".
 
 ### Password character
 
-You can change the character used to mask the password by setting the [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) property. Here, the default bullet is replaced with an asterisk.
+You can change the character used to mask the password by setting the [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) property. Here, the default bullet is replaced with a pound sign.
 
 ```xaml
-<PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
+<PasswordBox x:Name="passwordBox" Width="300" PasswordChar="#"/>
 ```
 
 The result looks like this.

@@ -35,7 +35,7 @@ There may be times when the system does not yet provide an exact motion solution
 
 **Transition example**
 
-![functional animation](images/pageRefresh.gif)
+![functional animation](images/page-refresh.gif)
 
 :::row:::
     :::column:::

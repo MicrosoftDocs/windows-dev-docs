@@ -45,7 +45,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 In a UI, you can create a parallax effect by moving different objects at different rates when the UI scrolls or pans. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> To demonstrate, let's look at two layers of content, a list and a background image.  The list is placed on top of the background image which already gives the illusion that the list might be closer to the viewer.  Now, to achieve the parallax effect, we want the object closest to us to travel "faster" than the object that is farther away.  As the user scrolls the interface, the list moves at a faster rate than the background image, which creates the illusion of depth.
 
- ![An example of parallax with a list and background image](images/_Parallax_v2.gif)
+ ![An example of parallax with a list and background image](images/parallax-v2.gif)
 
  
 ## Using the ParallaxView control to create a parallax effect

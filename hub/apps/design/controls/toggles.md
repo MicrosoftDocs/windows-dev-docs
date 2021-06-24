@@ -4,7 +4,7 @@ title: Guidelines for toggle switch controls
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -25,7 +25,9 @@ To create a toggle switch control, you use the  [ToggleSwitch class](/uwp/api/wi
 
 Use a toggle switch for binary operations that take effect right after the user flips the toggle switch.
 
-![WiFi toggle switch, on and off](images/toggleswitches01.png)
+![Toggle switch, on](images/toggle-switch-on.png)
+
+![Toggle switch off](images/toggle-switch-off.png)
 
 Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 
@@ -60,16 +62,6 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 - Use check boxes for optional ("nice to have") items.
 - Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
 - Use check boxes when the user can select multiple items that are related to a single setting or feature.
-
-## Toggle switches in the Windows UI
-
-These images show how the Windows UI uses toggle switches. Here's how the Smart Storage Settings screen uses toggle switches:
-
-![Toggle switches in Smart Storage](images/SmartStorageToggle.png)
-
-This example is from the Night Light Settings page:
-
-![Toggle switches in the start menu settings in Windows](images/NightLightToggle.png)
 
 ## Create a toggle switch
 

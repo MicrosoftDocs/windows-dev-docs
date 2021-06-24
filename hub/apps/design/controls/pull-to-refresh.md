@@ -19,7 +19,7 @@ Pull-to-refresh lets a user pull down on a list of data using touch in order to 
 
 > **Important APIs**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
-![pull-to-refresh gif](images/Pull-To-Refresh.gif)
+![pull-to-refresh gif](images/pull-to-refresh.gif)
 
 ## Is this the right control?
 

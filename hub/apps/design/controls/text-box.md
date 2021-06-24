@@ -4,7 +4,7 @@ description: The TextBox control lets a user enter text into an app.
 title: Text box
 label: Text box
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -76,7 +76,7 @@ Here's the XAML for a simple text box with a header and placeholder text.
 
 ```csharp
 TextBox textBox = new TextBox();
-textBox.Width = 500;
+textBox.Width = 300;
 textBox.Header = "Notes";
 textBox.PlaceholderText = "Type your notes here";
 // Add the TextBox to the visual tree.
@@ -292,7 +292,7 @@ For more info and examples, see [Use input scope to change the touch keyboard](.
 
     The following example shows a single-line text box to capture an answer to a security question. The answer is expected to be short, and so a single-line text box is appropriate here.
 
-    ![Basic data input](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
+    ![Basic data input](images/single-line-text-input-type-text.png)
 
 - Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
 
@@ -309,7 +309,7 @@ For more info and examples, see [Use input scope to change the touch keyboard](.
 - Make the height of the text control tall enough to accommodate typical entries.
 - When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.
 
-    ![A long span of text](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
+    ![A long span of text](images/multi-line-text-input-text-limits.png)
 
 - Don't let your text input controls grow in height while users type.
 - Don't use a multi-line text box when users only need a single line.

@@ -2,7 +2,7 @@
 description: Numberbox is a control that can be used to display and edit numbers.
 title: Number box
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published

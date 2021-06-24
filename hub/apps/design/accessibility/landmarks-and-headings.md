@@ -22,7 +22,7 @@ For example, when using a tab panel, consider this a navigational landmark. When
 
 Consider the **Ease of Access** page in the Windows Settings app.
 
-![Ease of Access page in the Windows settings app](images/EaseOfAccessSettings.png)  
+![Ease of Access page in the Windows settings app](images/ease-of-access-settings.png)  
 
 There is a search edit box which is wrapped within a search landmark. The navigational elements on the left are wrapped within a navigational landmark and the main content on the right is wrapped within a main content landmark. Taking this further, within the navigational landmark there is a main group heading called **Ease of Access** which is a heading level 1. Under that are the sub options **Vison**, **Hearing**, and so on. These have a heading level 2. Setting headings is continued within the main content again setting the main subject, **Display**, as heading level 1 and sub groups such as **Make everything bigger** as heading level 2.
 

@@ -4,7 +4,7 @@ title: Time picker
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-ms.date: 04/02/2021
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -59,7 +59,7 @@ For more info about choosing the right control, see the [Date and time controls]
 
 The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
-![Example of the time picker expanding](images/controls_timepicker_expand.png)
+![Example of the time picker expanding](images/controls-timepicker-expand.gif)
 
 ## Create a time picker
 
@@ -83,11 +83,10 @@ The resulting time picker looks like this:
 By default, the time picker shows a 12-hour clock with an AM/PM selector. You can set the [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) property to "24HourClock" to show a 24-hour clock instead.
 
 ```xaml
-<TimePicker Header="12HourClock" SelectedTime="14:30"/>
-<TimePicker Header="24HourClock" SelectedTime="14:30" ClockIdentifier="24HourClock"/>
+<TimePicker Header="24HourClock" SelectedTime="18:21" ClockIdentifier="24HourClock"/>
 ```
 
-:::image type="content" source="images/date-time/time-picker-clocks.png" alt-text="A time picker showing a 12 hour clock, and a picker showing a 24 hour clock.":::
+:::image type="content" source="images/date-time/time-picker-clocks.png" alt-text="A time picker 24 hour clock.":::
 
 You can set the [MinuteIncrement](/uwp/api/windows.ui.xaml.controls.timepicker.minuteincrement) property to indicate the time increments shown in the minute picker. For example, 15 specifies that the `TimePicker` minute control displays only the choices 00, 15, 30, 45.
 

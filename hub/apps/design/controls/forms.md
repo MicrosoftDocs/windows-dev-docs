@@ -11,7 +11,7 @@ A form is a group of controls that collect and submit data from users. Forms are
 
 This article discusses design guidelines for creating XAML layouts for forms.
 
-![Example of form](images/PivotHeader.png)
+![Example of form](images/pivot-header.png)
 
 ## When should you use a form?
 A form is a dedicated page for collecting data inputs that are clearly related to each other. You should use a form when you need to explicitly collect data from a user. You might create a form for a user to:
@@ -148,7 +148,7 @@ For more complex and custom UI controls, look at resources available from compan
 
 ## One column form example
 This example uses an Acrylic [list/detail](list-details.md) [list view](lists.md) and [NavigationView](navigationview.md) control.
-![Screenshot of another form example](images/FormExample2.png)
+![Screenshot of another form example](images/form-example-2.png)
 ```xaml
 <StackPanel>
     <TextBlock Text="New Customer" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -174,7 +174,7 @@ This example uses an Acrylic [list/detail](list-details.md) [list view](lists.md
 
 ## Two column form example
 This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](command-bar.md) in addition to input controls.
-![Screenshot of form example](images/FormExample.png)
+![Screenshot of form example](images/form-example.png)
 ```xaml
 <Grid>
     <Pivot Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" >
@@ -229,7 +229,7 @@ This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) 
 ```
 
 ## Customer Orders Database Sample
-![customer orders database screenshot](images/customerorderform.png)
+![customer orders database screenshot](images/customer-order-form.png)
 To learn how to connect form input to an **Azure** database and see a fully implemented form, see the [Customers Orders Database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) app sample.
 
 ## Related topics

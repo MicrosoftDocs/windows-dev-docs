@@ -3,7 +3,7 @@ description: Selection mode lets users select and take action on a single item o
 title: Selection mode
 label: Selection mode
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish

@@ -286,6 +286,8 @@
           href: style/segoe-ui-symbol-font.md
     - name: Acrylic
       href: style/acrylic.md
+    - name: Mica
+      href: style/mica.md
     - name: Reveal focus
       href: style/reveal-focus.md
     - name: Sound

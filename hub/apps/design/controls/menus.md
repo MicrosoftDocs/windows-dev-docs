@@ -3,7 +3,7 @@ description: Menus and context menus display a list of commands or options when 
 title: Menu flyout and menu bar
 label: Menu flyout and menu bar
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 ms.custom: RS5, 19H1
 keywords: windows 10, uwp

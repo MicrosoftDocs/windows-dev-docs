@@ -4,7 +4,7 @@ title: Calendar date picker
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -64,17 +64,17 @@ The entry point displays placeholder text if a date has not been set; otherwise,
 ## Create a date picker
 
 ```xaml
-<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
+<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Calendar"/>
 ```
 
 ```csharp
 CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
-arrivalCalendarDatePicker.Header = "Arrival date";
+arrivalCalendarDatePicker.Header = "Calendar";
 ```
 
 The resulting calendar date picker looks like this:
 
-![Screenshot of a populated Calendar Date Picker with a label that says Arrival date.](images/calendar-date-picker-closed.png)
+![Screenshot of a populated Calendar Date Picker with a label that says Calendar.](images/calendar-date-picker-closed.png)
 
 The calendar date picker has an internal [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) for picking a date. A subset of CalendarView properties, like [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) and [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it. 
 

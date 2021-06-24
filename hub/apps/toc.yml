@@ -17,6 +17,10 @@
           href: get-started/index.md
         - name: Visual Studio templates for Windows apps
           href: desktop/visual-studio-templates.md
+        - name: Build an app for Windows 11
+          href: get-started/build-apps-for-windows.md
+        - name: Make your apps great on Windows 11
+          href: get-started/make-apps-great-for-windows.md
   - name: Design and UI
     href: design/toc.yml
   - name: Develop

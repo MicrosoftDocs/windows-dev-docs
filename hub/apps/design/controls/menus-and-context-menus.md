@@ -3,7 +3,7 @@ description: Menus and context menus organize commands and save space by hiding 
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
-ms.date: 03/15/2021
+ms.date: 06/24/2021
 ms.topic: article
 ms.custom: RS5, 19H1
 keywords: windows 10, uwp
@@ -50,13 +50,9 @@ If a particular command will be used frequently and you have the space available
 - If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.
 - If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu.
 
-For example, use a menu on a button to provide filtering and sorting options for a list. In this scenario, the primary purpose of the button control is to provide access to a menu.
-
-![Example of menu in Mail](images/Mail_Menu.png)
-
 If you want to add commands (such as Cut, Copy, and Paste) to a text or image element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as Cut, Copy, and Paste) are secondary and belong in a context menu.
 
-![Example of context menu in photo gallery](images/ContextMenu_example.png)
+![Example of context menu in photo gallery](images/context-menu-example.png)
 
 ## Context menus
 

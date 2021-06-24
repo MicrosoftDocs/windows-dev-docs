@@ -4,7 +4,7 @@ description: Learn how to implement a Windows UI Library slider control that let
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -76,9 +76,9 @@ Use a slider if:
 </tr>
 </table>
 
-A slider to change text size in Windows display settings.
+A slider with tick marks at 10 point intervals from 0 to 100.
 
-![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)
+![A slider with tick marks](images/slider-ticks.png)
 
 ## Create a slider
 

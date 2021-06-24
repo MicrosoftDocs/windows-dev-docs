@@ -3,7 +3,7 @@ description: Dialogs display transient UI elements that appear when the user req
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8

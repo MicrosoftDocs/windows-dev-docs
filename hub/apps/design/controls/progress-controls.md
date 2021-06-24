@@ -4,7 +4,7 @@ title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -69,7 +69,7 @@ Additionally, a progress control is read only and not interactive. Meaning that 
 | Indeterminate ProgressBar | ![ProgressBar indeterminate](images/progressbar-indeterminate.gif) |
 | Determinate ProgressBar | ![ProgressBar determinate](images/progressbar-determinate.png)|
 | Indeterminate ProgressRing | ![Indeterminate ProgressRing state](images/progressring-indeterminate.gif)|
-| Determinate ProgressRing | ![Determinate ProgressRing state](images/progress_ring.jpg)|
+| Determinate ProgressRing | ![Determinate ProgressRing state](images/progress-ring.jpg)|
 
 
 ## Examples
@@ -166,7 +166,7 @@ When it is not known how long the operation will take, use an indeterminate Prog
 
 **ProgressRing - Indeterminate**
 
-![ProgressRing indeterminate example](images/progress-ring-indeterminate-example.png)
+![ProgressRing indeterminate example](images/progress-ring-indeterminate-example.gif)
 
 The indeterminate ProgressRing is used when any further user interaction with the app is halted, or the app is waiting for the user's input to continue. The "signing in…" example above is a perfect scenario for the ProgressRing, the user cannot continue using the app until the sign is has completed.
 

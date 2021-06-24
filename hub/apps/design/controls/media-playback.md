@@ -5,7 +5,7 @@ ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media playback controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -43,10 +43,6 @@ Use a media player when you want to play audio or video in your app. To display 
 </td>
 </tr>
 </table>
-
-A media player in the Windows 10 Get Started app.
-
-![A media element in the Windows 10 Get Started app](images/control-examples/mtc_getstarted_example.png)
 
 ## Create a media player
 Add media to your app by creating a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) object in XAML and set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaSource](/uwp/api/windows.media.core.mediasource) that points to an audio or video file.
@@ -325,7 +321,7 @@ Use the [Stretch](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.stretch) 
 -   [UniformToFill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space while preserving the aspect ratio. This can result in some of the image being cropped. This is similar to full-screen modes.
 -   [Fill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space, but does not preserve the aspect ratio. None of image is cropped, but stretching may occur. This is similar to stretch modes.
 
-![Stretch enumeration values](images/Image_Stretch.jpg)
+![Stretch enumeration values](images/image-stretch.jpg)
 
 Here, an [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) is used to cycle through the [Stretch](/uwp/api/Windows.UI.Xaml.Media.Stretch) options. A **switch** statement checks the current state of the [Stretch](/uwp/api/windows.ui.xaml.controls.mediaelement.stretch) property and sets it to the next value in the **Stretch** enumeration. This lets the user cycle through the different stretch states.
 

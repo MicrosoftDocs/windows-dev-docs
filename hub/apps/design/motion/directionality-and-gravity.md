@@ -41,7 +41,7 @@ Direction of movement corresponds to physical motion. Just like in nature, objec
 When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
     :::column-end:::
     :::column:::
-        ![Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis.](images/Direction.gif)
+        ![Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis.](images/direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ There are 4 discreet directions of navigation to consider​.
 Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
     :::column-end:::
     :::column:::
-        ![direction forward in](images/forwardIN.gif)
+        ![direction forward in](images/forward-in.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -82,7 +82,7 @@ Celebrate content entering the scene in a manner that does not collide with outg
 Content exits quickly. Objects accelerate off screen.
     :::column-end:::
     :::column:::
-        ![direction forward out](images/forwardOUT.gif)
+        ![direction forward out](images/forward-out.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -91,7 +91,7 @@ Content exits quickly. Objects accelerate off screen.
 Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
-        ![Short video showing a circle entering from the right of the frame and stopping in the middle of the frame.](images/backwardIN.gif)
+        ![Short video showing a circle entering from the right of the frame and stopping in the middle of the frame.](images/backward-in.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -100,7 +100,7 @@ Same as Forward-In, but reversed.
 Same as Forward-Out, but reversed.
     :::column-end:::
     :::column:::
-        ![direction backward out](images/backwardOUT.gif)
+        ![direction backward out](images/backward-out.gif)
     :::column-end:::
 :::row-end:::
 

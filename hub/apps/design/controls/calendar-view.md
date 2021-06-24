@@ -4,7 +4,7 @@ title: Calendar view
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -72,7 +72,7 @@ This example shows how to create a simple calendar view.
 
 The resulting calendar view looks like this:
 
-![Example of calendar view](images/controls_calendar_monthview.png)
+![Example of calendar view](images/controls-calendar-monthview.png)
 
 ### Selecting dates
 

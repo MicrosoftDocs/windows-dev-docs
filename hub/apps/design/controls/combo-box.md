@@ -3,7 +3,7 @@ description: Learn how to use list boxes and combo boxes, also called drop-down 
 title: Combo box and list box
 label: Combo box and list box
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
@@ -17,7 +17,7 @@ Use a combo box (also known as a drop-down list) to present a list of items that
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
-![Short video that shows a drop-down list in its compact state and its expanded state.](images/combo-box-expand.gif)
+![An image of a drop-down list in its compact state.](images/combo-box-no-selection.png)
 
 > _A combo box in its compact state with a header._
 
@@ -62,15 +62,15 @@ When the combo box is closed, it either displays the current selection or is emp
 
 A combo box in its compact state can show a header.
 
-![Screenshot showing a drop-down list in its compact state.](images/combo_box_collapsed.png)
+![Screenshot showing a drop-down list in its compact state.](images/combo-box-no-selection.png)
 
 Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
 
-![Example of a drop-down list with long text string](images/combo_box_listitemstate.png)
+![Example of a drop-down list with long text string](images/combo-box-list-item-state.png)
 
 If the collection in a combo box is long enough, a scroll bar will appear to accommodate it. Group items logically in the list.
 
-![Example of a scroll bar in a drop-down list](images/combo_box_scroll.png)
+![Example of a scroll bar in a drop-down list](images/combo-box-scroll.png)
 
 ## Create a combo box
 

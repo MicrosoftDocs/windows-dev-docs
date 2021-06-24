@@ -48,7 +48,7 @@ This example shows how to create an image by using the [Image](/uwp/api/Windows.
 
 Here's the rendered Image object.
 
-![Example of an image element](images/Image_Licorice.jpg)
+![Example of an image element](images/image-licorice.jpg)
 
 In this example, the [Source](/uwp/api/windows.ui.xaml.controls.image.source) property specifies the location of the image that you want to display. You can set the Source by specifying an absolute URL (for example, http://contoso.com/myPicture.jpg) or by specifying a URL that is relative to your app packaging structure. For our example, we put the "licorice.jpg" image file in the root folder of our project and declare project settings that include the image file as content.
 
@@ -68,7 +68,7 @@ The next example shows how to use an ImageBrush to paint an Ellipse.
 
 Here's the Ellipse painted by the ImageBrush.
 
-![An Ellipse painted by an ImageBrush.](images/Image_ImageBrush_Ellipse.jpg)
+![An Ellipse painted by an ImageBrush.](images/image-image-brush-ellipse.jpg)
 
 ### Stretch an image
 
@@ -79,7 +79,7 @@ If you don't set the [Width](/uwp/api/windows.ui.xaml.frameworkelement.width) or
 -   **UniformToFill**: The image is scaled so that it completely fills the output area but preserves its original aspect ratio.
 -   **Fill**: The image is scaled to fit the output dimensions. Because the content's height and width are scaled independently, the original aspect ratio of the image might not be preserved. That is, the image might be distorted to completely fill the output area.
 
-![An example of stretch settings.](images/Image_Stretch.jpg)
+![An example of stretch settings.](images/image-stretch.jpg)
 
 ### Crop an image
 
@@ -97,7 +97,7 @@ The next example shows how to use a [RectangleGeometry](/uwp/api/Windows.UI.Xaml
 
 Here's the clipped image on a black background.
 
-![An Image object cropped by a RectangleGeometry.](images/Image_Cropped.jpg)
+![An Image object cropped by a RectangleGeometry.](images/image-cropped.jpg)
 
 ### Apply an opacity
 
@@ -109,7 +109,7 @@ You can apply an [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) to an ima
 
 Here's the rendered image with an opacity of 0.5 and a black background showing through the partial opacity.
 
-![An Image object with an opacity of .5.](images/Image_Opacity.jpg)
+![An Image object with an opacity of .5.](images/image-opacity.jpg)
 
 ### Image file formats
 

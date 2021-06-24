@@ -4,7 +4,7 @@ title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.date: 06/10/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -52,7 +52,7 @@ Use radio buttons when users need to see all options before they make a selectio
 
 Unless all options deserve equal attention, consider using other controls. For example, to recommend a single best option for most users and in most situations, use a [combo box](combo-box.md) to display that best option as the default option.
 
-:::image type="content" source="images/combo_box_collapsed.png" alt-text="A combo box, displaying a default option":::
+:::image type="content" source="images/combo-box-collapsed.png" alt-text="A combo box, displaying a default option":::
 
 If there are only two possible options that can be expressed clearly as a single binary choice, such as on/off or yes/no, combine them into a single [check box](checkbox.md) or [toggle switch](toggles.md) control. For example, use a single check box for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
 
@@ -74,7 +74,7 @@ When users' options lie within a range of values (for example, *10, 20, 30, ... 
 
 If there are more than eight options, use a [combo box](combo-box.md).
 
-:::image type="content" source="images/combo_box_scroll.png" alt-text="A list box, displaying multiple options":::
+:::image type="content" source="images/combo-box-scroll.png" alt-text="A list box, displaying multiple options":::
 
 If the available options are based on an app's current context, or they can otherwise vary dynamically, use a list control.
 
@@ -331,7 +331,7 @@ However, you can populate the `RadioButtons` control with any object. Typically,
 Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are used to populate the control.
 
 ```xaml
-<muxc:RadioButtons Header="Choose the icon without an arrow">
+<muxc:RadioButtons Header="Select an icon option:">
     <SymbolIcon Symbol="Back"/>
     <SymbolIcon Symbol="Attach"/>
     <SymbolIcon Symbol="HangUp"/>
@@ -428,7 +428,7 @@ The [RadioButton.GroupName](/uwp/api/windows.ui.xaml.controls.radiobutton.groupn
 By default, the `RadioButtons` control arranges its radio buttons vertically in a single column. You can set the [MaxColumns](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.maxcolumns) property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)
 
 ```xaml
-<muxc:RadioButtons Header="Options" MaxColumns="3">
+<muxc:RadioButtons Header="RadioButtons in columns" MaxColumns="3">
     <x:String>Item 1</x:String>
     <x:String>Item 2</x:String>
     <x:String>Item 3</x:String>
@@ -463,7 +463,6 @@ In this example, the first group of radio buttons is implicitly grouped by being
         <StackPanel Orientation="Horizontal">
             <RadioButton Content="Green" Tag="green" Checked="BGRadioButton_Checked"/>
             <RadioButton Content="Yellow" Tag="yellow" Checked="BGRadioButton_Checked"/>
-            <RadioButton Content="Blue" Tag="blue" Checked="BGRadioButton_Checked"/>
             <RadioButton Content="White" Tag="white" Checked="BGRadioButton_Checked"
                          IsChecked="True"/>
         </StackPanel>
@@ -478,10 +477,6 @@ In this example, the first group of radio buttons is implicitly grouped by being
                              Checked="BorderRadioButton_Checked"/>
                 <RadioButton Content="Yellow" Tag="yellow" GroupName="BorderBrush"
                              Checked="BorderRadioButton_Checked" IsChecked="True"/>
-            </StackPanel>
-            <StackPanel>
-                <RadioButton Content="Blue" Tag="blue" GroupName="BorderBrush"
-                             Checked="BorderRadioButton_Checked"/>
                 <RadioButton Content="White" Tag="white"  GroupName="BorderBrush"
                              Checked="BorderRadioButton_Checked"/>
             </StackPanel>
@@ -509,9 +504,6 @@ private void BGRadioButton_Checked(object sender, RoutedEventArgs e)
             case "green":
                 ExampleBorder.Background = new SolidColorBrush(Colors.Green);
                 break;
-            case "blue":
-                ExampleBorder.Background = new SolidColorBrush(Colors.Blue);
-                break;
             case "white":
                 ExampleBorder.Background = new SolidColorBrush(Colors.White);
                 break;
@@ -533,9 +525,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
                 break;
             case "green":
                 ExampleBorder.BorderBrush = new SolidColorBrush(Colors.DarkGreen);
-                break;
-            case "blue":
-                ExampleBorder.BorderBrush = new SolidColorBrush(Colors.DarkBlue);
                 break;
             case "white":
                 ExampleBorder.BorderBrush = new SolidColorBrush(Colors.White);

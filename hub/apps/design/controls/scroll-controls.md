@@ -4,7 +4,7 @@ title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
@@ -21,13 +21,15 @@ When there is more UI content to show than you can fit in an area, use the scrol
 
 > **Important APIs**: [ScrollViewer class](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
-Scroll viewers enable content to extend beyond the bounds of the viewport (visible area). Users reach this content by manipulating the scroll viewer surface through touch, mousewheel, keyboard, or a gamepad, or by using the mouse or pen cursor to interact with the scroll viewer's scrollbar. This image shows several examples of scroll viewer controls.
+Scroll viewers enable content to extend beyond the bounds of the viewport (visible area). Users reach this content by manipulating the scroll viewer surface through touch, mousewheel, keyboard, or a gamepad, or by using the mouse or pen cursor to interact with the scroll viewer's scrollbar.
 
-![A screenshot that illustrates the standard scrollbar control](images/ScrollBar_Standard.jpg)
+![A screenshot that illustrates a panning scrollbar control](images/scrollbar-panning-1.png)
+![A screenshot that illustrates the standard scrollbar control](images/scrollBar-standard-1.png)
 
 Depending on the situation, the scroll viewer's scrollbar uses two different visualizations, shown in the following illustration: the panning indicator (left) and the traditional scrollbar (right).
 
-![A sample of what standard scrollbar and panning indicator controls look like](images/SCROLLBAR.png)
+![A sample of what panning indicator look like on a scrollbar](images/scrollbar-panning.png)
+![A sample of what a standard scrollbar looks like](images/scrollbar-traditional.png)
 
 The scroll viewer is conscious of the user's input method and uses it to determine which visualization to display.
 

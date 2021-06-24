@@ -22,11 +22,11 @@ Acrylic is a type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) that creates 
 :::row:::
     :::column:::
 Acrylic in light theme
-![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
+![Acrylic in light theme](images/acrylic-light-theme-base.png)
     :::column-end:::
     :::column:::
 Acrylic in dark theme
-![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
+![Acrylic in dark theme](images/acrylic-dark-theme-base.png)
     :::column-end:::
 :::row-end:::
 
@@ -42,7 +42,7 @@ Acrylic in dark theme
 
 :::row:::
     :::column span:::
-![Some image](images/XAML-controls-gallery-app-icon.png)
+![Some image](images/xaml-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
 **XAML Controls Gallery**<br>
@@ -58,9 +58,9 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
  - **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
  - **In-app acrylic** adds a sense of depth within the app frame, providing both focus and hierarchy.
 
- ![Background acrylic](images/BackgroundAcrylic_DarkTheme.png)
+ ![Background acrylic](images/background-acrylic-dark-theme.png)
 
- ![In-app acrylic](images/AppAcrylic_DarkTheme.png)
+ ![In-app acrylic](images/app-acrylic-dark-theme.png)
 
  Avoid layering multiple acrylic surfaces: multiple layers of background acrylic can create distracting optical illusions.
 
@@ -81,7 +81,7 @@ For vertical panes or surfaces that help section off content of your app, we rec
 
 For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic, especially if these surfaces draw outside the frame of the main app window.
 
-![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
+![Mail app pattern using an informational flyout](images/mail-transient-context-menu.png)
 
 Many XAML controls draw acrylic by default. [MenuFlyout](../controls/menus.md), [AutoSuggestBox](../controls/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
 
@@ -123,11 +123,11 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
  - **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
  - **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
 
-![Light theme acrylic swatches](images/CustomAcrylic_Swatches_LightTheme.png)
+![Light theme acrylic swatches](images/custom-acrylic-swatches-light-theme.png)
 
-![Dark theme acrylic swatches](images/CustomAcrylic_Swatches_DarkTheme.png)
+![Dark theme acrylic swatches](images/custom-acrylic-swatches-dark-theme.png)
 
-![Luminosity opactity compared to tint opacity](images/LuminosityVersusTint.png)
+![Luminosity opacity compared to tint opacity](images/luminosity-vs-tint.png)
 
 To add an acrylic brush, define the three resources for dark, light and high contrast themes. Note that in high contrast, we recommend using a SolidColorBrush with the same x:Key as the dark/light AcrylicBrush.
 
@@ -254,7 +254,7 @@ In addition, you'll need to draw your app's title, which normally appears automa
 
 We fine-tuned acrylic’s key components to arrive at its unique appearance and properties. We started with translucency, blur and noise to add visual depth and dimension to flat surfaces. We added an exclusion blend mode layer to ensure contrast and legibility of UI placed on an acrylic background. Finally, we added color tint for personalization opportunities. In concert these layers add up to a fresh, usable material.
 
-![Acrylic recipe](images/AcrylicRecipe_Diagram.jpg)
+![Acrylic recipe](images/acrylic-recipe-diagram.jpg)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
 ## Get the sample code

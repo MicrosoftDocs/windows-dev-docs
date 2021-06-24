@@ -320,7 +320,7 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 
 You can use a command bar flyout with only secondary commands to create a context menu that achieves the same look and behavior of [menu flyout](menus.md).
 
-![A command bar flyout with only secondary commands](images/command-bar-flyout-context-menu.png)
+![A command bar flyout with only secondary commands](images/context-menu-example.png)
 
 > _Command bar flyout as a context menu_
 

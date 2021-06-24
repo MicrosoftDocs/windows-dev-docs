@@ -3,7 +3,7 @@ description: Learn about the InkCanvas and InkToolbar controls that facilitate
 title: Inking Controls
 label: Inking Controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
@@ -87,6 +87,7 @@ The InkToolbar control must be used in conjunction with an InkCanvas. Incorporat
  ```
 
 This displays the following InkToolbar:
+
 <img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
 
 ### Built-in buttons
@@ -137,11 +138,14 @@ Although the InkToolbar can be a top level item, it is typically exposed through
 
 ## InkToolbar Interaction
 
-All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" ![InkToolbar glyph](images/ink-tools-glyph.png) is displayed on the button to indicate the existence of the flyout.
+All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" is displayed on the button to indicate the existence of the flyout.
+
+![InkToolbar glyph](images/ink-tools-glyph.png)
 
 The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.
 
-The eraser also has a flyout that provides the **Erase All Ink** command.  
+The eraser also has a flyout that provides the **Erase All Ink** command.
+
 ![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
 
  For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).

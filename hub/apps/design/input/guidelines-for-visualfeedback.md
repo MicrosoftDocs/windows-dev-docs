@@ -46,7 +46,7 @@ If customizing feedback UI, ensure you provide feedback that supports, and is su
 
 Here are some examples of built-in contact visualizations in Windows.
 
-| ![Touch Feedback](images/TouchFeedback.png) | ![Mouse Feedback](images/MouseFeedback.png) | ![Pen Feedback](images/PenFeedback.png) | ![Keyboard Feedback](images/KeyboardFeedback.png) |
+| ![Touch Feedback](images/touch-feedback.png) | ![Mouse Feedback](images/mouse-feedback.png) | ![Pen Feedback](images/pen-feedback.png) | ![Keyboard Feedback](images/keyboard-feedback.png) |
 | --- | --- | --- | --- |
 | Touch visualization | Mouse/touchpad visualization | Pen visualization | Keyboard visualization |
 
@@ -61,22 +61,22 @@ For the **10-foot experience** typical of Xbox and TV usage, Windows supports **
 ### Border Properties
 
 There are two parts to the high visibility focus visuals: the primary border and the secondary border. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border.
-![High visibility focus visual redlines](images/FocusRectRedlines.png)
+![High visibility focus visual redlines](images/focus-rect-redlines.png)
 
 To change the thickness of either border type (primary or secondary) use the **FocusVisualPrimaryThickness** or **FocusVisualSecondaryThickness**, respectively:
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
-![High visibility focus visual margin thicknesses](images/FocusMargin.png)
+![High visibility focus visual margin thicknesses](images/focus-margin.png)
 
 The margin is a property of type [**Thickness**](/dotnet/api/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
-![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
+![High visibility focus visual margin thickness bottom only](images/focus-thickness-side.png)
 
 The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
-![High visibility focus visual margin differences](images/FocusPlusMinusMargin.png)
+![High visibility focus visual margin differences](images/focus-plus-minus-margin.png)
 
 *A negative margin will push the border away from the center of the control, and a positive margin will move the border closer to the center of the control.*
 
@@ -96,7 +96,7 @@ To brand focus visuals app-wide, override the system brushes:
 <SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush" Color="DarkRed"/>
 <SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="Pink"/>
 ```
-![High visibility focus visual color changes](images/FocusRectColorChanges.png)
+![High visibility focus visual color changes](images/focus-rect-color-changes.png)
 
 To change the colors on a per-control basis, just edit the focus visual properties on the desired control:
 ```XAML

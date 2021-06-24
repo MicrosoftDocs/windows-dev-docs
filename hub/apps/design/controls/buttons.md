@@ -3,7 +3,7 @@ title: Buttons
 description: Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.
 label: Buttons
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
@@ -18,7 +18,7 @@ ms.custom: RS5
 
 A button gives the user a way to trigger an immediate action. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
 
-![Example of buttons](images/controls/button.png)
+![Example of buttons](images/button.png)
 
 The [Extensible Application Markup Language (XAML)](/windows/uwp/xaml-platform/xaml-overview) framework provides a standard button control as well as several specialized button controls.
 
@@ -83,9 +83,9 @@ Use a **ToggleButton** control when you want the user to be able to immediately 
 </tr>
 </table>
 
-This example uses two buttons, **Allow** and **Block**, in a dialog that requests location access.
+This example uses three buttons, **Save**, **Don't Save**, and **Cancel**, in a dialog that asks users if they want to save their work.
 
-![Example of buttons, used in a dialog](images/dialogs/dialog_RS2_two_button.png)
+![Example of buttons, used in a dialog](images/button-dialog-example.png)
 
 ## Create a button
 
@@ -172,13 +172,10 @@ You can also customize visuals that make up the button's appearance. For example
 Here, a **StackPanel** that contains an image and text is set as the content of a button.
 
 ```xaml
-<Button Click="Button_Click"
-        Background="LightGray"
-        Height="100" Width="80">
+<Button x:Name="Button2" Click="Button_Click" Width="80" Height="90">
     <StackPanel>
-        <Image Source="Assets/Photo.png" Height="62"/>
-        <TextBlock Text="Photos" Foreground="Black"
-                   HorizontalAlignment="Center"/>
+        <Image Source="/Assets/Slices.png" Height="52"/>
+        <TextBlock Text="Slices" Foreground="Black" HorizontalAlignment="Center"/> 
     </StackPanel>
 </Button>
 ```

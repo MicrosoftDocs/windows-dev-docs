@@ -266,9 +266,6 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**Custom media transport controls with a "Like" button added**
-![Custom media transport control with additional like button](images/controls/mtc_double_custom_inprod.png)
-
 ### Modifying the slider
 
 The "seek" control of the MediaTransportControls is provided by a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) element. One way you can customize it is to change the granularity of the seek behavior.

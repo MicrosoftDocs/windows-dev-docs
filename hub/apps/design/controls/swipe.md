@@ -20,7 +20,7 @@ Swipe commanding is an accelerator for context menus that lets users easily acce
 >
 > **Platform APIs**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
-![Execute and Reveal light theme](images/LightThemeSwipe.png)
+![Execute and Reveal light theme](images/light-theme-swipe.png)
 
 ## Is this the right control?
 
@@ -61,7 +61,7 @@ UWP swipe commanding has two modes: [Reveal](/uwp/api/windows.ui.xaml.controls.s
 
 In Reveal mode, the user swipes an item to open a menu of one or more commands and must explicitly tap a command to execute it. When the user swipes and releases an item, the menu remains open until either a command is selected, or the menu is closed again through swiping back, tapping off, or scrolling the opened swipe item off the screen.
 
-![Swipe to Reveal](images/SwipeCommand-Reveal_v2.gif)
+![Swipe to Reveal](images/swipe-command-reveal-v2.gif)
 
 Reveal mode is a safer, more versatile swipe mode, and can be used for most types of menu actions, even potentially destructive actions, such as deletion.
 
@@ -71,7 +71,7 @@ When the user selects one of the menu options shown in the reveal's open and res
 
 In Execute mode, the user swipes an item open to reveal and execute a single command with that one swipe. If the user releases the item being swiped before they swipe past a threshold, the menu closes and the command is not executed. If the user swipes past the threshold and then releases the item, the command is executed immediately.
 
-![Swipe to Execute](images/SwipeCommand_Delete_v2.gif)
+![Swipe to Execute](images/swipe-command-delete-v2.gif)
 
 If the user does not release their finger after the threshold is reached, and pulls the swipe item closed again, the command is not executed  and no action is performed on the item.
 

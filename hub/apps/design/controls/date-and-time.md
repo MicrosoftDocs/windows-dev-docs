@@ -4,7 +4,7 @@ title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.date: 04/02/2021
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -41,7 +41,7 @@ There are four date and time controls to choose from; the control you use depend
 
 | Control | Example | Description |
 | ------- | :-----: | ----------- |
-| Calendar view | ![Example of calendar view](images/controls_calendar_monthview_small.png) | Use to pick a single date or a range of dates from an always visible calendar. |
+| Calendar view | ![Example of calendar view](images/controls-calendar-monthview.png) | Use to pick a single date or a range of dates from an always visible calendar. |
 | Calendar date picker | ![Screenshot of a calendar date picker.](images/calendar-date-picker-closed.png) | Use to pick a single date from a contextual calendar. |
 | Date picker | ![Example of date picker](images/date-picker-closed.png) | Use to pick a single known date when contextual info isn't important. |
 | Time picker | ![Example of time picker](images/time-picker-closed.png) | Use to pick a single time value. |
@@ -75,7 +75,7 @@ The **DatePicker** control provides a standardized way to choose a specific date
 
 The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![Example of the date picker expanding](images/controls-datepicker-expand.gif)
 
 - Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
@@ -85,7 +85,7 @@ The **TimePicker** is used to select a single time value for things like appoint
 
 The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
-![Example of the time picker expanding](images/controls_timepicker_expand.png)
+![Example of the time picker expanding](images/controls-timepicker-expand.gif)
 
 - Use a time picker to let a user pick a single time value.
 

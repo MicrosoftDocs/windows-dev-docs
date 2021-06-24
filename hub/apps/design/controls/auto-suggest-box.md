@@ -5,7 +5,7 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 
-![An auto suggest box](images/controls_autosuggest_expanded01.png)
+![An auto suggest box](images/controls-autosuggest-expanded-01.png)
 
 **Get the Windows UI Library**
 
@@ -58,18 +58,14 @@ For more info about choosing the right text control, see the [Text controls](tex
 </tr>
 </table>
 
-An auto suggest box in the Groove Music app.
-
-![An auto suggest box in the Groove Music app](images/control-examples/auto-suggest-box-groove.png)
-
 ## Anatomy
 The entry point for the auto-suggest box consists of an optional header and a text box with optional hint text:
 
-![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
+![Example of the entry point for auto-suggest control](images/controls-autosuggest-entrypoint.png)
 
 The auto-suggest results list populates automatically once the user starts to enter text. The results list can appear above or below the text entry box. A "clear all" button appears:
 
-![Example of the expanded auto-suggest control](images/controls_autosuggest_expanded01.png)
+![Example of the expanded auto-suggest control](images/controls-autosuggest-expanded-01.png)
 
 ## Create an auto-suggest box
 
@@ -160,13 +156,13 @@ By default, the text entry box doesn't have a query button shown. You can set th
 
 Here's an AutoSuggestBox with a 'find' icon.
 
-![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
+![Example of auto-suggest control with a find icon.](images/controls-autosuggest-entrypoint.png)
 
 ## Do's and don'ts
 
 -   When using the auto-suggest box to perform searches and no search results exist for the entered text, display a single-line "No results" message as the result so that users know their search request executed:
 
-    ![Example of an auto suggest box with no search results](images/controls_autosuggest_noresults.png)
+    ![Example of an auto suggest box with no search results](images/controls-autosuggest-no-results.png)
 
 <!--
 <div class="microsoft-internal-note">

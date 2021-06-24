@@ -4,7 +4,7 @@ title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
@@ -145,7 +145,7 @@ Use a grid view to:
 
 This example shows a typical grid view layout, in this case for browsing apps. Metadata for grid view items is usually restricted to a few lines of text and an item rating.
 
-![Example of a grid view layout](images/controls_gridview_example02.png)
+![Example of a grid view layout](images/controls-gridview-example-02.png)
 
 A grid view is an ideal solution for a content library, which is often used to present media such as pictures and videos. In a content library, users expect to be able to tap an item to invoke an action.
 
@@ -201,9 +201,9 @@ Use a flip view to:
 
 The following two examples show a FlipView that flips horizontally and vertically, respectively.
 
-![Horizontal flip view](images/controls_flipview_horizonal.jpg)
+![Horizontal flip view](images/controls-flipview-horizonal.jpg)
 
-![Vertical Flip view](images/controls_flipview_vertical.jpg)
+![Vertical Flip view](images/controls-flipview-vertical.jpg)
 
 ### Related articles
 <table>

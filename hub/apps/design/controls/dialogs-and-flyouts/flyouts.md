@@ -16,8 +16,6 @@ ms.localizationpriority: medium
 
 A flyout is a light dismiss container that can show arbitrary UI as its content. Flyouts can contain other flyouts or context menus to create a nested experience.
 
-![Context menu nested inside a flyout](../images/flyout-nested.png)
-
 **Get the Windows UI Library**
 
 :::row:::

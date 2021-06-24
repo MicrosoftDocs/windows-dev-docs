@@ -63,7 +63,7 @@ This example shows how to use a Hyperlink text element inside of a [TextBlock](/
 ```
 The hyperlink appears inline and flows with the surrounding text:
 
-![Example of a hyperlink as a text element](images/controls_hyperlink-element.png) 
+![Example of a hyperlink as a text element](images/controls-hyperlink-element.png) 
 
 > **Tip**&nbsp;&nbsp;When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
 
@@ -87,7 +87,7 @@ Here's how to use a HyperlinkButton, both with text and with an image.
 
 The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:
 
-![Example of a hyperlink as a button control](images/controls_hyperlink-button-image.png)
+![Example of a hyperlink as a button control](images/controls-hyperlink-button-image.png)
 
 This example shows how to create a HyperlinkButton in code.
 

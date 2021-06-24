@@ -3,7 +3,7 @@ description: You can create an expandable tree view by binding the ItemsSource t
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid

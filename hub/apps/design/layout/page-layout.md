@@ -1,7 +1,7 @@
 ---
 title: Page layout for Windows apps
 description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In Windows apps, each page generally has navigation, command, and content elements.
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
@@ -71,7 +71,8 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 
 ![gallery](images/gridview.svg)
 
-Collections allow users to browse groups of content or data. [Grid view](../controls/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls/item-templates-listview.md) is a good option for text-heavy content or data.
+Collections allow users to browse groups of content or data. [Grid view](../controls/item-templates-gridview.md) is a good option for photos or media-centric content, [list view](../controls/item-templates-listview.md) is a good option for text-heavy content or data, and [Expander](../controls/expander.md) is good when secondary content is relevant some of the time.
+
 
 ## List/detail
 

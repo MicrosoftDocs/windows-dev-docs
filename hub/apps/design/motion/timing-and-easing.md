@@ -67,7 +67,7 @@ The resulting feel is that the object traveled from a long distance away and ent
 Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.​
     :::column-end:::
     :::column:::
-        ![decelerate easing](images/decelEase.gif)
+        ![decelerate easing](images/decel-ease.gif)
     :::column-end:::
 :::row-end:::
 
@@ -86,7 +86,7 @@ Objects become powered and gain momentum until they reach escape velocity.​
 The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.​
     :::column-end:::
     :::column:::
-        ![accelerate easing](images/accelEase.gif)
+        ![accelerate easing](images/accel-ease.gif)
     :::column-end:::
 :::row-end:::
 

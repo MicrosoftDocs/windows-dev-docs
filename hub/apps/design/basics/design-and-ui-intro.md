@@ -10,7 +10,7 @@ ms.custom: RS5
 ---
 # Introduction to Windows app design
 
-![sample lighting app](images/introUWP-header.jpg)
+![sample lighting app](images/intro-uwp-header.jpg)
 
 The Windows app design guidance is a resource to help you design and build beautiful, polished apps.
 

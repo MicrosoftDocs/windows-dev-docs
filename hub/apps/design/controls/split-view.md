@@ -21,7 +21,7 @@ A split view control has an expandable/collapsible pane and a content area.
 
 Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
-![Microsoft Edge split view example](images/split_view_Edge.png)
+![Microsoft Edge split view example](images/split-view-edge.png)
 
 
  A split view's content area is always visible. The pane can expand and collapse or remain in an open state, and can present itself from either the left side or right side of an app window. The pane has four modes:

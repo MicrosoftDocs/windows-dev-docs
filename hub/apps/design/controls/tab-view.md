@@ -2,7 +2,7 @@
 description: TabView is a flexible way to organize multiple documents in dynamic tabs
 title: Tab View
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
@@ -118,17 +118,17 @@ For more information, see [Title bar customization](../shell/title-bar.md)
             <muxc:SymbolIconSource Symbol="Home" />
         </muxc:TabViewItem.IconSource>
     </muxc:TabViewItem>
+    <muxc:TabViewItem Header="Document 0">
+        <muxc:TabViewItem.IconSource>
+            <muxc:SymbolIconSource Symbol="Document" />
+        </muxc:TabViewItem.IconSource>
+    </muxc:TabViewItem>
     <muxc:TabViewItem Header="Document 1">
         <muxc:TabViewItem.IconSource>
             <muxc:SymbolIconSource Symbol="Document" />
         </muxc:TabViewItem.IconSource>
     </muxc:TabViewItem>
     <muxc:TabViewItem Header="Document 2">
-        <muxc:TabViewItem.IconSource>
-            <muxc:SymbolIconSource Symbol="Document" />
-        </muxc:TabViewItem.IconSource>
-    </muxc:TabViewItem>
-    <muxc:TabViewItem Header="Document 3">
         <muxc:TabViewItem.IconSource>
             <muxc:SymbolIconSource Symbol="Document" />
         </muxc:TabViewItem.IconSource>

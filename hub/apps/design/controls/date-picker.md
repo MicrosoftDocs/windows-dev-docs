@@ -5,7 +5,7 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.date: 04/02/2021
+ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -62,19 +62,19 @@ For more info about choosing the right date control, see the [Date and time cont
 
 The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![Example of the date picker expanding](images/controls-datepicker-expand.gif)
 
 ## Create a date picker
 
 This example shows how to create a simple date picker with a header.
 
 ```xaml
-<DatePicker x:Name="birthDatePicker" Header="Date of birth"/>
+<DatePicker x:Name="exampleDatePicker" Header="Pick a date"/>
 ```
 
 ```csharp
-DatePicker birthDatePicker = new DatePicker();
-birthDatePicker.Header = "Date of birth";
+DatePicker exampleDatePicker = new DatePicker();
+exampleDatePicker.Header = "Pick a date";
 ```
 
 The resulting date picker looks like this:
