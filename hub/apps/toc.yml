@@ -89,6 +89,8 @@
             items: 
               - name: "Overview"
                 href: winui/winui2/index.md
+              - name: "WinUI 2.6 release notes"
+                href: winui/winui2/winui-2.6.md
               - name: "Setup"
                 items: 
                   - name: "Get started with WinUI 2.x"

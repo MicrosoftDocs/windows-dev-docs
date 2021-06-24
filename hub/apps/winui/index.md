@@ -2,7 +2,7 @@
 title: Windows UI Library (WinUI)
 description: WinUI Libraries for Windows app development. 
 ms.topic: article
-ms.date: 03/19/2021
+ms.date: 06/24/2021
 keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
@@ -24,9 +24,9 @@ With support for both desktop and UWP apps, you can build with WinUI from the gr
 WinUI 2.x can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
-> WinUI 2.5 is the latest WinUI 2.x release. See the [WinUI 2.6 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/11) for a list of work planned in the next release.
+> WinUI 2.6 is the latest WinUI 2.x release. See the [WinUI 2.7 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/12) for a list of work planned in the next release.
 
-The WinUI 2.x Library is closely coupled to the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
+The WinUI 2.x Library is closely coupled with the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
 
 By maintaining down-level compatibility with earlier versions of Windows 10, WinUI 2.x controls work even if users don't have the latest OS.
 
