@@ -1,5 +1,23 @@
 - name: Overview
   href: index.md
+- name: Design in Windows 11
+  items:
+    - name: Windows 11 design principles
+      href: signature-experiences/design-principles.md
+    - name: Windows 11 signature experiences
+      href: signature-experiences/signature-experiences.md
+    - name: Geometry
+      href: signature-experiences/geometry.md
+    - name: Color
+      href: signature-experiences/color.md
+    - name: Layering and elevation
+      href: signature-experiences/layering.md
+    - name: Materials
+      href: signature-experiences/materials.md
+    - name: Iconography
+      href: signature-experiences/iconography.md
+    - name: Typography
+      href: signature-experiences/typography.md
 - name: Design basics
   items:
     - name: Overview

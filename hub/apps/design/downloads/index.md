@@ -2,7 +2,7 @@
 description: Get the latest downloads and tools for Windows apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
-ms.date: 09/24/2020
+ms.date: 06/24/2021
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
@@ -23,40 +23,29 @@ These toolkits provide controls and layout templates for designing Windows apps.
 
 :::row:::
     :::column:::
-:::image type="icon" source="images/figma.png":::
-<b>Figma toolkit</b><br>
-WinUI 2.4, May 2020<br>
-<a href="https://aka.ms/figmatoolkit">Download</a>
+        ![Figma Toolkit icon](images/figma.png)
     :::column-end:::
-    :::column:::
-:::image type="icon" source="images/sketch.png":::
-<b>Sketch toolkit</b><br>
-v1810, October 2018<br>
-<a href="https://aka.ms/sketchtoolkit">Download</a>
-    :::column-end:::    
-    :::column:::
-:::image type="icon" source="images/adobe-xd.png":::
-<b>Adobe XD toolkit</b><br>
-v1901, January 2019<br>
-<a href="https://aka.ms/adobexdtoolkit">Download</a>
+    :::column span="2":::
+        **Figma Toolkit**<br>
+        WinUI 2.6, June 2021<br>
+        [Download](https://aka.ms/figmatoolkit)
     :::column-end:::
 :::row-end:::
-
 
 ## Developer toolkits and libraries
 
 :::row:::
     :::column:::
-![WinUI library thumbnail](images/WinUI-library.png)
-<b>Windows UI Library</b><br>
-Controls and other UI elements for Windows apps.<br/>
-<a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for Windows apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-![Windows community thumbnail](images/Windows-community-toolkit.png)
-<b>Windows Community Toolkit</b><br>
-Helper functions, custom controls, and app services.<br />
-<a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
         ![Windows Template Studio thumbnail](images/Windows-template-studio.png)
@@ -68,8 +57,10 @@ Helper functions, custom controls, and app services.<br />
 
 ## Fonts
 
-* <a href="https://aka.ms/SegoeFonts">Segoe UI and MDL2 icon fonts (Mac only)</a>
-* <a href="https://aka.ms/hololensiconfont">Hololens icon font (Windows only)</a>
+- [Segoe UI Variable](https://aka.ms/SegoeUIVariable)
+- [Segoe Fluent Icon](https://aka.ms/SegoeFluentIcon)
+- [Segoe UI and MDL2 fonts](https://aka.ms/SegoeFonts)
+- [Hololens icon font (Windows only)](https://aka.ms/hololensiconfont)
 
 ## Tools
 
