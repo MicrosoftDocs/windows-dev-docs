@@ -24,6 +24,17 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
+### Awake
+
+:::row:::
+    :::column:::
+        [![Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+    :::column-end:::
+    :::column span="2":::
+        [Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+    :::column-end:::
+:::row-end:::
+
 ### Color Picker
 
 :::row:::
@@ -32,17 +43,6 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a configurable format. Color Picker also contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
-    :::column-end:::
-:::row-end:::
-
-### Espresso
-
-:::row:::
-    :::column:::
-        [![Espresso screenshot](../images/pt-espresso-menu.png)](espresso.md)
-    :::column-end:::
-    :::column span="2":::
-        [Espresso](espresso.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
     :::column-end:::
 :::row-end:::
 

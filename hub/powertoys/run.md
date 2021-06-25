@@ -74,6 +74,8 @@ These default activation phrases will force PowerToys run into only targeted plu
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key. |
   | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped. |
   | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in their paths. This plugin is off by default.
+  | `%%` | Unit converter only. Example `%% 10 ft in m` to calculate the the number of meters in 10 feet.
+  | `$` | Windows settings only. Example `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs.
 
 ## System commands
 
