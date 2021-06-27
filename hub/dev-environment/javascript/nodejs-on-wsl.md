@@ -1,5 +1,5 @@
 ---
-title: Set up NodeJS on WSL 2
+title: Set up Node.js on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
 author: mattwojo 
 ms.author: mattwoj 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
 
-# Install NodeJS on Windows Subsystem for Linux (WSL2)
+# Install Node.js on Windows Subsystem for Linux (WSL2)
 
 If you are using Node.js professionally, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
 
@@ -125,4 +125,4 @@ A few additional extensions you may want to consider include:
 
 ## Set up Git (optional)
 
-To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.
+To set up Git for a Node.js project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.
