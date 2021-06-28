@@ -1384,7 +1384,7 @@
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
         - name: Package MacOS app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-    - name: Windows 10 on ARM
+    - name: Windows on ARM
       href: ../porting/apps-on-arm.md
       items:
         - name: ARM64EC for Windows 11 apps on ARM
