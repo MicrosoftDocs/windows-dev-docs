@@ -1387,6 +1387,8 @@
     - name: Windows 10 on ARM
       href: ../porting/apps-on-arm.md
       items:
+        - name: ARM64EC for Windows 11 apps on ARM
+          href: ../porting/arm64ec.md
         - name: How x86 emulation works on ARM
           href: ../porting/apps-on-arm-x86-emulation.md
         - name: Troubleshooting desktop x86 apps
