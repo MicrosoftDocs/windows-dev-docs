@@ -21,11 +21,11 @@ Open the shortcut guide with the shortcut key combination: `⊞ Win + ?` *(this 
 
 ![Screenshot of shortcut overlay](../images/pt-shortcut-guide-large.png)
 
-Windows key keyboard shortcuts can be used while the guide is being shown and the result of those shortcuts (active window moved, arrow shortcut behavior changes, etc) will be displayed in the guide.
+Keyboard shortcuts using the Windows key (`⊞ Win`) can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes, etc) will be displayed in the guide.
 
-pressing the shortcut key combination again will make the overlay dismiss.
+Pressing the shortcut key combination again will dismiss the overlay.
 
-Tapping the Windows ⊞ key will display the Windows Start menu.
+Tapping the Windows key (`⊞ Win`) will display the Windows Start menu.
 
 > [!IMPORTANT]
 > The PowerToys app must be running and Shortcut Guide must be enabled in the PowerToys settings for this feature to be used.
