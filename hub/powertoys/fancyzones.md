@@ -31,7 +31,7 @@ If you have applications that are elevated, run in administrator mode, read [Pow
 
 ## Choose your layout (Layout Editor)
 
-When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Choosing a layout shows a preview of that layout on the monitor. The selected layout is applied automatically.  
+When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Choosing a layout shows a preview of that layout on the monitor. The selected layout is applied automatically. Double-clicking the layout will apply it and automatically dismiss the editor.
 
 ![FancyZones Picker screenshot](../images/pt-fancyzones-picker.png)
 
@@ -62,6 +62,8 @@ To merge two zones, select and hold the left mouse button and drag the mouse unt
 ![FancyZones Table Editor Mode](../images/pt-fancyzones-grideditor.png)
 
 The additive **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows.
+
+Canvas layout also has keyboard support for zone editing. Use the `Arrows` keys to move a zone by 10 pixels, or `Ctrl + Arrows` to move a zone by 1 pixel. Use the `Shift + Arrows` keys to resize a zone by 10 pixels (5 per edge), or `Ctrl + Shift + Arrows` to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press the `Ctrl + Tab` keys.
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 

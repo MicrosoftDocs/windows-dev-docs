@@ -68,12 +68,14 @@ These default activation phrases will force PowerToys run into only targeted plu
   | `=` | Calculator only. Example `=2+2`. |
   | `?` | File searching only. Example `?road` to find `roadmap.txt`. |
   | `.` | Installed programs only. Example `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup. |
-  | `//` | URLs only. Example `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. |
+  | `//` | URLs only. Example `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.  |
   | `<` | Running processes only. Example `<outlook` to find all processes that contain outlook. |
   | `>` | Shell command only. Example `>ping localhost` to do a ping query. |
   | `:` | Registry keys only. Example `:hkcu` to search for the HKEY_CURRENT_USER registry key. |
   | `!` | Windows services only. Example `!alg` to search for the Application Layer Gateway service to be started or stopped. |
   | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. Example `{powertoys` to search for workspaces that contain 'powertoys' in their paths. This plugin is off by default.
+  | `%%` | Unit converter only. Example `%% 10 ft in m` to calculate the number of meters in 10 feet.
+  | `$` | Windows settings only. Example `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. Ex: `$ Device:` to view all available Device settings.
 
 ## System commands
 
