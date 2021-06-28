@@ -1,5 +1,5 @@
 ---
-title: PowerToys Awake utility for Windows 10
+title: PowerToys Awake utility for Windows
 description: A tool for a Windows computer to stay awake.
 ms.date: 06/28/2021
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Awake utility
 
-Awake is a utility tool for Windows 10 designed to keep a computer awake without having to manage its [power & sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+Awake is a utility tool for Windows designed to keep a computer awake without having to manage its [power & sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
 
 ## Get started
 
@@ -40,7 +40,7 @@ While Awake can keep the computer awake indefinitely or temporarily, in its defa
 
 To manage the execution of the tool from the system tray, right-click on the Awake icon.
 
-![Awake settings managed from the system tray on Windows 10](../images/pt-awake-tray.gif)
+![Awake settings managed from the system tray on Windows](../images/pt-awake-tray.gif)
 
 ## Command Line Interface (CLI)
 
