@@ -12,6 +12,7 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Scroll viewer controls
 

@@ -7,6 +7,7 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # ItemsRepeater
 

@@ -7,6 +7,7 @@ keywords: windows win32, desktop development
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Create a simple Windows 11 app

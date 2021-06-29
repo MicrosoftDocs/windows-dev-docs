@@ -8,6 +8,7 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, color, light mode, dark mode
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Color in Windows 11

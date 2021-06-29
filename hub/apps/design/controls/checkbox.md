@@ -12,6 +12,7 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Check boxes
 

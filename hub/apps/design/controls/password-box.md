@@ -12,6 +12,7 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Password box
 

@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Number box

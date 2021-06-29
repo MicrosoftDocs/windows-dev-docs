@@ -4,6 +4,7 @@ description: How to use the XamlUICommand and StandardUICommand classes (along w
 ms.service: #Required; service per approved list.
 ms.topic: overview
 ms.date: 06/24/2021
+ms.collection: windows11
 ---
 
 # Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand

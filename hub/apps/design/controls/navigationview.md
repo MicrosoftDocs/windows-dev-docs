@@ -14,6 +14,7 @@ ms.custom: RS5
 dev_langs: 
 - csharp
 - cppwinrt
+ms.collection: windows11
 ---
 
 # NavigationView

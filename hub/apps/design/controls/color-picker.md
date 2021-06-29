@@ -11,6 +11,7 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Color picker
 

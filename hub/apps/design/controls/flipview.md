@@ -11,6 +11,7 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Flip view
 

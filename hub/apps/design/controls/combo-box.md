@@ -10,6 +10,7 @@ pm-contact: stmoy
 design-contact:
 doc-status: Draft
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Combo box and list box
 

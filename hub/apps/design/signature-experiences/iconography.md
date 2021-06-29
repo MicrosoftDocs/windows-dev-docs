@@ -8,6 +8,7 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, icons, app icons, system icons, segoe fluent icons, segoe
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Iconography in Windows 11

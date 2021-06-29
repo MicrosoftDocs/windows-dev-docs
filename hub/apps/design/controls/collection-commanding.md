@@ -12,6 +12,7 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 # Contextual commanding for collections and lists
 

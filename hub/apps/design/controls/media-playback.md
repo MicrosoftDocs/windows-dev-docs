@@ -9,6 +9,7 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Media players
