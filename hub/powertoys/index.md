@@ -24,6 +24,17 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
+### Awake
+
+:::row:::
+    :::column:::
+        [![Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+    :::column-end:::
+    :::column span="2":::
+        [Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+    :::column-end:::
+:::row-end:::
+
 ### Color Picker
 
 :::row:::

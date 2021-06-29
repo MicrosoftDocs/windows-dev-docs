@@ -45,7 +45,7 @@
                     href: ./javascript/nextjs-on-wsl.md
                   - name: Install Gatsby
                     href: ./javascript/gatsby-on-wsl.md
-                  - name: Tuturial for beginners
+                  - name: Tutorial for beginners
                     href: ./javascript/react-beginners-tutorial.md
               - name: Get started with Vue
                 items:
@@ -183,6 +183,8 @@
                   href: ../powertoys/install.md
                 - name: Run in admin mode
                   href: ../powertoys/administrator.md
+            - name: Awake
+              href: ../powertoys/awake.md
             - name: Color Picker
               href: ../powertoys/color-picker.md
             - name: FancyZones

@@ -92,3 +92,9 @@ If you have issues when installing/updating, file an issue in the [Scoop repo on
 ## Post Install
 
 After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.
+
+## Updates
+
+PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings menu under the General tab.
+
+![PowerToys Update](../images/powertoys-updates.png)
