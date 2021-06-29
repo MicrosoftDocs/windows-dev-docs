@@ -49,7 +49,7 @@ If you have the XAML Controls Gallery app installed, click <a href="xamlcontrols
 
 Mica is a material that appears on the backdrop of your application — behind all other content. It is an opaque material that incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
 
-We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation) and [App layering with Mica](#app-layering-with-mica).
+We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
 
 ## Usability and adaptability
 
