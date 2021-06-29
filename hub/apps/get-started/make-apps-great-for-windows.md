@@ -16,7 +16,7 @@ This release of Windows marks a visual evolution of the operating system. As Win
 - _App fundamentals_ - good performance on low-cost, highly mobile device form factors, and hassle-free app lifecycle and state rehydration/roaming.
 - _User experience_ - the ability to work naturally with a complete range of inputs, design and interaction patterns that look and feel at home on current and future devices, and support for modern windowing workflows and shell integration points.
 
-With entirely new visuals signaling change, [signature experiences](/windows/apps/design/signature-experiences/windows-11-signature-experiences) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
+With entirely new visuals signaling change, [signature experiences](/windows/apps/design/signature-experiences/signature-experiences) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
 
 Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](/windows/apps/winui), [MSIX](/windows/msix), and the [Windows App SDK](/windows/apps/windows-app-sdk) (Project Reunion) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
