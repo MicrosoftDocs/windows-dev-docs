@@ -58,8 +58,9 @@ Helper functions, custom controls, and app services.<br />
 ## Fonts
 
 - [Segoe UI Variable](https://aka.ms/SegoeUIVariable)
-- [Segoe Fluent Icons](https://aka.ms/SegoeFluentIcon)
-- [Segoe UI and MDL2 fonts](https://aka.ms/SegoeFonts)
+- [Segoe Fluent Icons](https://aka.ms/SegoeFluentIcons)
+- [Segoe UI](https://aka.ms/segoeuifont)
+- [Segoe MDL2](https://aka.ms/segoemdl2)
 - [Hololens icon font (Windows only)](https://aka.ms/hololensiconfont)
 
 ## Tools
