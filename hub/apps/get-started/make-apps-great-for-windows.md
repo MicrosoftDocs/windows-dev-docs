@@ -7,6 +7,7 @@ keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
+ms.collection: windows11
 ---
 
 # Top 10 things you can do to make your app great on Windows 11
