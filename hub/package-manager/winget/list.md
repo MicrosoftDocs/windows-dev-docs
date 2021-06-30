@@ -78,4 +78,6 @@ In the image below, you will notice the preview version of Terminal has an updat
 
 The **list** command will show not only the update version available, but the source that the update is available from.
 
+If there are no updates available, **list** will only show you the currently installed version and the update column will not be displayed.
+
 * [Use the winget tool to list and manage applications](index.md)
