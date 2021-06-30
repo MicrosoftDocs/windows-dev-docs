@@ -35,7 +35,7 @@ The TabView control is a collection of tabs that each represents a new page or d
 
 #### Documentation
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
+/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### NavigationView Updates
 
@@ -57,7 +57,7 @@ App developers can now reclaim all pixels within their app window when they use 
 
 ##### Documentation
 
-https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview#top-whitespace
+/windows/uwp/design/controls-and-patterns/navigationview#top-whitespace
 
 #### Visual Style Updates
 

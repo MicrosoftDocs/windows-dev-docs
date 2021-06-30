@@ -7,9 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, games, depth, effects, primitives, directx
 ms.localizationpriority: medium
 ---
+
 # Use depth and effects on primitives
-
-
 
 Here, we show you how to use depth, perspective, color, and other effects on primitives.
 
@@ -17,15 +16,14 @@ Here, we show you how to use depth, perspective, color, and other effects on pri
 
 ## Prerequisites
 
-
 We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
 We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).
 
 **Time to complete:** 20 minutes.
 
-Instructions
-------------
+## Instructions
+
 ### 1. Defining cube variables
 
 First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) and [**ID3D11Buffer**](/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) with [**ComPtr**](/cpp/windows/comptr-class) and declare an instance of **ConstantBuffer**.

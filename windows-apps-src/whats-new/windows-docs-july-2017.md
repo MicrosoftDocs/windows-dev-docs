@@ -22,15 +22,15 @@ Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Bui
 
 [Acrylic material](../design/style/acrylic.md) is a type of brush that creates transparent textures. 
 
-![Acrylic in light theme](../design/style/images/Acrylic_DarkTheme_Base.png)
+![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
 
 The [Parallax effect](../design/motion/parallax.md) adds three-dimensional depth and perspective to your app.
 
-![An example of parallax with a list and background image](../design/style/images/_Parallax_v2.gif)
+![An example of parallax with a list and background image](images/_Parallax_v2.gif)
 
 [Reveal](../design/style/index.md) highlights important elements of your app. 
 
-![Reveal Visual](../design/style/images/Nav_Reveal_Animation.gif)
+![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
 ### UI Controls
 
@@ -38,19 +38,19 @@ Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Bui
 
 The [color picker control](../design/controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
 
-![A default color picker](../design/controls-and-patterns/images/color-picker-default.png)
+![A default color picker](images/color-picker-default.png)
 
 The [navigation view control](../design/controls-and-patterns/navigationview.md) makes it easy to add top-level navigation to your app.
 
-![NavigationView sections](../design/controls-and-patterns/images/navview_sections.png)
+![NavigationView sections](images/navview_sections.png)
 
 The [person picture control](../design/controls-and-patterns/person-picture.md) displays the avatar image for a person.
 
-![The person picture control](../design/controls-and-patterns/images/person-picture/person-picture_hero.png)
+![The person picture control](images/person-picture_hero.png)
 
 The [rating control](../design/controls-and-patterns/rating.md) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
 
-![Example of Ratings Control](../design/controls-and-patterns/images/rating_rs2_doc_ratings_intro.png)
+![Example of Ratings Control](images/rating_rs2_doc_ratings_intro.png)
 
 ### Design Toolkits
 

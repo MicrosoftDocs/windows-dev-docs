@@ -10,17 +10,17 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Build a basic WinUI 3 - Project Reunion 0.5 desktop app
+# Build a basic WinUI 3 desktop app
 
-In this article, we step through how to build basic C# .NET 5 and C++ desktop (Win32) applications with user interfaces composed entirely of WinUI 3 - Project Reunion 0.5 controls and features.
+In this article, we step through how to build basic C# .NET 5 and C++ desktop (Win32) applications with user interfaces composed entirely of WinUI 3 controls and features.
 
 ## Prerequisites
 
-1. Set up your development environment. See [Get started with Project Reunion](../../project-reunion/get-started-with-project-reunion.md).
-1. Test your configuration by creating your first WinUI 3 desktop app for C# and .NET 5 project. See [Get started with WinUI 3 for desktop apps](get-started-winui3-for-desktop.md).
+- [Set up your development environment](../../windows-app-sdk/set-up-your-development-environment.md).
+- Test your configuration by [creating your first WinUI 3 project for C# and .NET 5](create-your-first-winui3-app.md).
 
-:::image type="content" source="images/build-basic/template-app.png" alt-text="The initial template app, running.":::<br/>
-*The initial template app, running.*
+    :::image type="content" source="images/build-basic/template-app.png" alt-text="The initial template app, running.":::<br/>
+    *The initial template app, running.*
 
 ## Initial template app
 
@@ -29,9 +29,6 @@ We're going to start building from the initial template application, but before 
 ### The application solution
 
 By default, the solution contains two projects: The application itself and another for creating an [MSIX](/windows/msix) app package.
-
-> [!NOTE]
-> The MSIX app package is currently required to deploy apps that use Project Reunion 0.5 to other computers. However, future releases of Project Reunion will support deploying unpackaged apps.
 
 :::image type="content" source="images/build-basic/template-app-solution-explorer.png" alt-text="Solution Explorer showing the file structure of the initial template app.":::<br/>
 *Solution Explorer showing the file structure of the initial template app.*
@@ -43,7 +40,7 @@ Now, double-click the application project file (or right click and select "Edit 
 The following is the project file from the initial template app, which includes two items of note:
 
 - The `TargetFramework` is [.NET 5](/dotnet/core/dotnet-five), the primary implementation of .NET going forward.
-- The NuGet `PackageReference` elements for the various Project Reunion features, including WinUI.
+- The NuGet `PackageReference` elements for the various Windows App SDK features, including WinUI.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -134,7 +131,7 @@ For this first example, let's use the [ShowWindow](/windows/win32/api/winuser/nf
 
 WinUI 3 provides the ability for applications to run with "full trust permission", outside of the security sandbox of an [AppContainer](/windows/win32/secauthz/appcontainer-for-legacy-applications-).
 
-WinUI 3 - Project Reunion 0.5 desktop applications can call .NET 5 APIs without restriction. In the following example (derived from the initial template app used in the previous example) we show how you can query the current process and get a list of all loaded modules (not possible with UWP apps).
+WinUI 3 desktop applications can call .NET 5 APIs without restriction. In the following example (derived from the initial template app used in the previous example) we show how you can query the current process and get a list of all loaded modules (not possible with UWP apps).
 
 1. In the MainWindow.xaml file, add a [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) element.
 
@@ -184,5 +181,5 @@ We also covered how you can use the .NET 5 APIs with WinUI 3 as your UI Framewor
 ## See also
 
 - [Windows UI Library 3 - Project Reunion 0.5 (March 2021)](index.md)
-- [Get started with Project Reunion](../../project-reunion/get-started-with-project-reunion.md)
+- [Get started with the Windiows App SDK](../../windows-app-sdk/get-started.md)
 - [Get started with WinUI 3 for desktop apps](get-started-winui3-for-desktop.md)

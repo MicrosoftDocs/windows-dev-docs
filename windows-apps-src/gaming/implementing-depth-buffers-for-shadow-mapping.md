@@ -9,10 +9,8 @@ ms.localizationpriority: medium
 ---
 # Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
 
-
-
 This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
-## 
+
 <table>
 <colgroup>
 <col width="50%" />

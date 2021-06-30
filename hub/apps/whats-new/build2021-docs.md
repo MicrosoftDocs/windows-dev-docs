@@ -8,19 +8,17 @@ ms.author: jken
 author: grantmestrength
 ---
 
-
-
 # Microsoft Build - the Windows Documentation
 
 ![Build hero image](../images/build-banner.jpeg)
 
 We've gathered together links to documentation that supports the talks given as part of [Microsoft Build 2021](https://mybuild.microsoft.com). We will update this page as the event continues, so check back to see what's new!
 
-## Project Reunion
+## Windows App SDK (previously called Project Reunion)
 
-- [Build desktop Windows apps with Project Reunion](../project-reunion/index.md)
-- [Get started with Project Reunion](../project-reunion/get-started-with-project-reunion.md)
-- [Update existing projects to the latest release of Project Reunion](../project-reunion/update-existing-projects-to-the-latest-release.md)
+- [Build desktop Windows apps with the Windows App SDK](../windows-app-sdk/index.md)
+- [Get started with the Windows App SDK](../windows-app-sdk/get-started.md)
+- [Update existing projects to the latest release of the Windows App SDK](../windows-app-sdk/update-existing-projects-to-the-latest-release.md)
 
 
 ## WinUI
