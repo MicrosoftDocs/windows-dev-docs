@@ -10,7 +10,6 @@ design-contact: kimsea
 dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # InfoBar

@@ -5,7 +5,6 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.collection: windows11
 ---
 # Item templates for list view
 

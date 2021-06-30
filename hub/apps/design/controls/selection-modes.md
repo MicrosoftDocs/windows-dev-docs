@@ -11,7 +11,6 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 # Selection mode overview
 

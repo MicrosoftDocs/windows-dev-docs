@@ -12,7 +12,6 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 # Calendar, date, and time controls
 

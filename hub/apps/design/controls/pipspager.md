@@ -10,7 +10,6 @@ design-contact: jknudsen
 dev-contact: ranjeshj
 ms.custom: 21H1
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # PipsPager

@@ -79,6 +79,11 @@
         "package-manager/**.md": "package-manager",
         "powertoys/**.md": "powertoys",
         "python/**.md": "windows-python"
+      },
+      "ms.collection":
+      {
+        "apps/design/controls/**.md": "windows11",
+        "apps/design/signature-experiences/**.md": "windows11"
       },	 
       "feedback_product_url": 
       {

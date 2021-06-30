@@ -8,7 +8,6 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, design principles, effortless, calm, personal, familiar, complete, coherent
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # Windows 11 design principles

@@ -13,7 +13,6 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.collection: windows11
 ---
 # Buttons
 

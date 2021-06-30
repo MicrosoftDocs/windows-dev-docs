@@ -8,7 +8,6 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, typography, segoe, segoe ui variable
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # Typography in Windows 11

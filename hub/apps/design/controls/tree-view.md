@@ -14,7 +14,6 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.collection: windows11
 ---
 
 # TreeView

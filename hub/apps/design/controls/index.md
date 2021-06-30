@@ -8,7 +8,6 @@ ms.date: 06/24/2021
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # Controls for Windows apps

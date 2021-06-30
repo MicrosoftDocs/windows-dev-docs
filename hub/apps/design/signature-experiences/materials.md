@@ -8,7 +8,6 @@ ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, materials, acrylic, mica, smoke
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 
 # Materials in Windows 11

@@ -12,7 +12,6 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.collection: windows11
 ---
 # Command bar flyout
 

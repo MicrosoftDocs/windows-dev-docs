@@ -12,7 +12,6 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.collection: windows11
 ---
 # Progress controls
 
