@@ -2,7 +2,7 @@
 description: Get the latest downloads and tools for Windows apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
-ms.date: 06/24/2021
+ms.date: 06/30/2021
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
@@ -99,7 +99,7 @@ A Windows app sample that schedules lunches with your friends and coworkers. You
 
 ![Xaml controls gallery](images/xaml-controls-gallery.png)
 **XAML Controls Gallery**<br>
-This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
+This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project.<br/><a href="https://github.com/microsoft/Xaml-Controls-Gallery/archive/refs/heads/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
 
 ## Want more code?
 

@@ -2,7 +2,7 @@
 description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Introduction to Windows app design (Windows apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.date: 09/24/2020
+ms.date: 06/30/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.custom: RS5
 
 The Windows app design guidance is a resource to help you design and build beautiful, polished apps.
 
-It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving [Fluent Design System](/windows/apps/fluent-design-system) as well as the needs of our app-building community.
+It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving [Fluent Design System](/windows/apps/design/index) as well as the needs of our app-building community.
 
 This introduction provides an overview of the universal design features that are included in every UWP app, helping you build user interfaces (UI) that scale beautifully across a range of devices.
 
@@ -92,7 +92,7 @@ You can also use the [Windows Template Studio](https://github.com/Microsoft/Wind
 
 ## Controls
 
-UWP's design platform provides a set of common controls that are guaranteed to work well on all Windows-powered devices, and they adhere to our [Fluent Design System](/windows/apps/fluent-design-system) principles. These controls include everything from simple controls, like buttons and text elements, to sophisticated controls that can generate lists from a set of data and a template.
+UWP's design platform provides a set of common controls that are guaranteed to work well on all Windows-powered devices, and they adhere to our [Fluent Design System](/windows/apps/design/index) principles. These controls include everything from simple controls, like buttons and text elements, to sophisticated controls that can generate lists from a set of data and a template.
 
 ![UWP controls](../style/images/color/windows-controls.svg)
 
@@ -166,7 +166,7 @@ We provide a variety of tools to help your design process:
 
 ## Next: Fluent Design System
 
-If you'd like to learn about the principles behind Fluent Design (Microsoft's design system) and see more features you can incorporate into your UWP app, continue on to [Fluent Design System](/windows/apps/fluent-design-system).
+If you'd like to learn about the principles behind Fluent Design (Microsoft's design system) and see more features you can incorporate into your UWP app, continue on to [Fluent Design System](/windows/apps/design/index).
 
 ## Related articles
 
