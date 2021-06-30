@@ -99,4 +99,4 @@ In this example, the `NextMove_Click` handler returns at the **await** in order 
 
 ## Related topics
 
-* [Custom user interactions](../design/layout/index.md)
+* [Custom user interactions](/windows/apps/design/layout/index)

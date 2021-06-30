@@ -15,7 +15,7 @@ The previous topic ([How the Resource Management System matches and chooses reso
 
 ## Introduction
 
-Resources with language tag qualifiers are compared and scored based on the app runtime language list. For definitions of the different language lists, see [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md). Matching for the first language in a list occurs before matching of the second language in a list, even for other regional variants. For example, a resource for en-GB is chosen over an fr-CA resource if the app runtime language is en-US. Only if there are no resources for a form of en is a resource for fr-CA chosen (note that the app's default language could not be set to any form of en in that case).
+Resources with language tag qualifiers are compared and scored based on the app runtime language list. For definitions of the different language lists, see [Understand user profile languages and app manifest languages](/windows/apps/design/globalizing/manage-language-and-region). Matching for the first language in a list occurs before matching of the second language in a list, even for other regional variants. For example, a resource for en-GB is chosen over an fr-CA resource if the app runtime language is en-US. Only if there are no resources for a form of en is a resource for fr-CA chosen (note that the app's default language could not be set to any form of en in that case).
 
 The scoring mechanism uses data that is included in the [BCP-47](https://tools.ietf.org/html/bcp47) subtag registry, and other data sources. It allows for a scoring gradient with different qualities of match and, when multiple candidates are available, it selects the candidate with the best-matching score.
 
@@ -34,7 +34,7 @@ Additional subtag elements may be present, but they will have a negligible effec
 
 ## Matching two languages
 
-Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
+Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Understand user profile languages and app manifest languages](/windows/apps/design/globalizing/manage-language-and-region)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
 
 When two language tags are compared, the comparison is assigned a score based on the nearness of the match.
 
@@ -186,5 +186,5 @@ English needs special consideration. If an app adds localization for two English
 
 * [How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
-* [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)
+* [Understand user profile languages and app manifest languages](/windows/apps/design/globalizing/manage-language-and-region)
 * [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

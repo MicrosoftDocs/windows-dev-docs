@@ -29,7 +29,7 @@ Because the number and variety of controls supported by each kind of input devic
 
 Navigation devices must support all navigation commands in the _required set_; these are the directional (up, down, left, and right), view, menu, accept, and cancel commands.
 
-The directional commands are intended for primary [XY-focus navigation](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
+The directional commands are intended for primary [XY-focus navigation](/windows/apps/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
 
 The following table summarizes these commands and their intended uses, with examples.
 | Command | Intended use

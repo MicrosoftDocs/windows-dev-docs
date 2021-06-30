@@ -118,7 +118,7 @@ Query parameters are ignored during retrieval of resources. The normalized form 
 
 ## ms-appdata
 
-Use the `ms-appdata` URI scheme to refer to files that come from the app's local, roaming, and temporary data folders. For more info about these app data folders, see [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md).
+Use the `ms-appdata` URI scheme to refer to files that come from the app's local, roaming, and temporary data folders. For more info about these app data folders, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 The `ms-appdata` URI scheme does not perform the runtime content negotiation that [ms-appx and ms-appx-web](#ms-appx-and-ms-appx-web) do. But you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) and load the appropriate assets from app data using their full physical file name in the URI.
 
@@ -245,7 +245,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 The path identifies the hierarchical location of the [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) subtree (see [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10))) and the [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) within it. Typically, this corresponds to the filename (excluding extension) of a Resources Files (.resw) and the identifier of a string resource within it.
 
-For examples and more info, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md) and [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
+For examples and more info, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md) and [Tile and toast notification support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast).
 
 The path component of `ms-resource` is, like generic URIs, case sensitive. However, the underlying retrieval does a [CompareStringOrdinal](/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) with *ignoreCase* set to `true`.
 
@@ -266,7 +266,7 @@ Developers of particular components layered above this URI parsing may choose to
 * [Uniform Resource Identifier (URI): Generic Syntax](https://www.ietf.org/rfc/rfc3986.txt)
 * [Packaging apps](../packaging/index.md)
 * [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md)
+* [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
 * [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10))
-* [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Tile and toast notification support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)

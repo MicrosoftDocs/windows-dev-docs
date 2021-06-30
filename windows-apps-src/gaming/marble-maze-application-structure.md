@@ -404,7 +404,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze doesn't distinguish between cold starting—that is, starting for the first time without a prior suspend event—and resuming from a suspended state. This is recommended design for all UWP apps.
 
-For more info about application data, see [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md).
+For more info about application data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 ##  Next steps
 

@@ -93,7 +93,7 @@ Among other things, the [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices
 
 ### Push notifications (WNS)
 
-The [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.PushNotifications) API enables you to use the Windows Notification Service (WNS) to receive push notifications over the network. For more information about using this API, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
+The [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.PushNotifications) API enables you to use the Windows Notification Service (WNS) to receive push notifications over the network. For more information about using this API, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 
 ### Near field communications
 
