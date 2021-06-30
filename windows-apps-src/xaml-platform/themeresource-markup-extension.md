@@ -31,7 +31,7 @@ When the app first starts, any resource reference made by a **ThemeResource** re
 
 **ThemeResource** takes one argument, which specifies the key for the requested resource. A resource key is always a string in Windows Runtime XAML. For more info on how the resource key is initially specified, see [x:Key attribute](x-key-attribute.md).
 
-For more info on how to define resources and properly use a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), including sample code, see [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
+For more info on how to define resources and properly use a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), including sample code, see [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary).
 
 **Important**
 As with **StaticResource**, a **ThemeResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. Attempting to do so is not supported. Even if the forward reference doesn't fail, trying to make one carries a performance penalty. For best results, adjust the composition of your resource dictionaries so that forward references are avoided.
@@ -56,7 +56,7 @@ In general you should place resources in theme dictionaries and make references 
 -   Complete templates for a limited number of controls that are usually system-styled and used for dynamic presentation, like [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) and [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem).
 -   Text display styles (usually to change font color, background, and possibly size).
 
-The Windows Runtime provides a set of resources that are specifically intended to be referenced by **ThemeResource**. These are all listed as part of the XAML file themeresources.xaml, which is available in the include/winrt/xaml/design folder as part of the Windows Software Development Kit (SDK). For documentation on the theme brushes and additional styles that are defined in themeresources.xaml, see [XAML theme resources](../design/controls-and-patterns/xaml-theme-resources.md). The brushes are documented in a table that tells you what color value each brush has for each of the three possible active themes.
+The Windows Runtime provides a set of resources that are specifically intended to be referenced by **ThemeResource**. These are all listed as part of the XAML file themeresources.xaml, which is available in the include/winrt/xaml/design folder as part of the Windows Software Development Kit (SDK). For documentation on the theme brushes and additional styles that are defined in themeresources.xaml, see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources). The brushes are documented in a table that tells you what color value each brush has for each of the three possible active themes.
 
 The XAML definitions of visual states in a control template should use **ThemeResource** references whenever there's an underlying resource that might change because of a theme change. A system theme change won't typically also cause a visual state change. The resources need to use **ThemeResource** references in this case so that values can be re-evaluated for the still-active visual state. For example, if you have a visual state that changes a brush color of a particular UI part and one of its properties, and that brush color is different per-theme, you should use a **ThemeResource** reference for providing that property's value in the default template and also any visual state modification to that default template.
 
@@ -137,14 +137,14 @@ Windows 8 did not support the **ThemeResource** markup extension, it is availab
 
 ## Design-time tools support for the **{ThemeResource}** markup extension
 
-Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{ThemeResource}** markup extension in a XAML page. For example, as soon as you type "{ThemeResource", any of the resource keys from the [XAML theme resources](../design/controls-and-patterns/xaml-theme-resources.md) are displayed.
+Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{ThemeResource}** markup extension in a XAML page. For example, as soon as you type "{ThemeResource", any of the resource keys from the [XAML theme resources](/windows/apps/design/style/xaml-theme-resources) are displayed.
 
 Once a resource key exists as part of any **{ThemeResource}** usage, the **Go To Definition** (F12) feature can resolve that resource and show you the generic.xaml for design time, where the theme resource is defined. Because theme resources are defined more than once (per-theme) **Go To Definition** takes you to the first definition found in the file, which is the definition for **Default**. If you want the other definitions you can search for the key name within the file and find the other themes' definitions.
 
 ## Related topics
 
-* [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
-* [XAML theme resources](../design/controls-and-patterns/xaml-theme-resources.md)
+* [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary)
+* [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)
 * [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 * [x:Key attribute](x-key-attribute.md)
  

@@ -23,7 +23,7 @@ There are three steps you must take to enable your application as a My People sh
 
 1. [Declare support for the shareTarget activation contract in your application manifest.](#declaring-support-for-the-share-contract)
 2. [Annotate the contacts that the users can share to using your app.](#annotating-contacts)
-3. Support multiple instances of the application running at the same time.  Users must be able to interact with a full version of your application while also using it to share with others. They may use it in multiple share windows at once. To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](../design/layout/show-multiple-views.md).
+3. Support multiple instances of the application running at the same time.  Users must be able to interact with a full version of your application while also using it to share with others. They may use it in multiple share windows at once. To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](/windows/apps/design/layout/show-multiple-views).
 
 When you’ve done this, your application will appear as a share target in the My People share window, which can be launched in two ways:
 1. A contact is chosen via the share charm.

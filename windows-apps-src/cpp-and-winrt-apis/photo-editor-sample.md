@@ -22,6 +22,6 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample applic
 - [Event handling](handle-events.md), including the use of auto-revoking event tokens.
 - Use of the external Win2D NuGet package, and [Windows::UI::Composition](/uwp/api/windows.ui.composition), for image effects.
 - XAML data binding, including the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md).
-- XAML styling and UI customization, including [connected animations](../design/motion/connected-animation.md).
+- XAML styling and UI customization, including [connected animations](/windows/apps/design/motion/connected-animation).
 
 Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).

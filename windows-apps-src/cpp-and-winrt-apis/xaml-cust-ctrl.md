@@ -13,7 +13,7 @@ ms.custom: RS5
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
-One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](../xaml-platform/custom-dependency-properties.md) and [attached properties](../xaml-platform/custom-attached-properties.md), and [control templates](../design/controls-and-patterns/control-templates.md), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
+One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](../xaml-platform/custom-dependency-properties.md) and [attached properties](../xaml-platform/custom-attached-properties.md), and [control templates](/windows/apps/design/style/xaml-control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -212,5 +212,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [UIElement class](/uwp/api/windows.ui.xaml.uielement)
 
 ## Related topics
-* [Control templates](../design/controls-and-patterns/control-templates.md)
+* [Control templates](/windows/apps/design/style/xaml-control-templates)
 * [Custom dependency properties](../xaml-platform/custom-dependency-properties.md)

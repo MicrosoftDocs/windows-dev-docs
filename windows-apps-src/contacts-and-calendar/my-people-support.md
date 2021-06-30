@@ -26,7 +26,7 @@ There are three things you need to do to enable your application to use the My P
 
 1. [Declare support for the shareTarget activation contract in your application manifest.](./my-people-sharing.md#declaring-support-for-the-share-contract)
 2. [Annotate the contacts that the users can share to using your app.](./my-people-sharing.md#annotating-contacts)
-3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](../design/layout/show-multiple-views.md).
+3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](/windows/apps/design/layout/show-multiple-views).
 
 When you’ve done this, your application will appear in the contact panel for annotated contacts.
 
@@ -176,7 +176,7 @@ The ContactPanel object also allows you to set the background color of the conta
 
 ## Supporting notification badging
 
-If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) and expressive [My People notifications](./my-people-notifications.md).
+If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and expressive [My People notifications](./my-people-notifications.md).
 
 ![People notification badging](images/my-people-badging.png)
 

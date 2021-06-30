@@ -83,7 +83,7 @@ The **WNS/MPNS** section provides options to help you create and send notificati
 
 Depending on your app's package type and its specific requirements, you can also use one of the following options: 
 
--   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview).
 
 -   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](/azure/app-service-mobile/).
 

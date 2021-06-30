@@ -224,6 +224,6 @@ Choose from several types of campaigns that can help increase your gamer base.
 * [Getting paid](/partner-center/marketplace-get-paid)
 * [Account types, locations, and fees](../publish/account-types-locations-and-fees.md)
 * [Analytics](../publish/analytics.md)
-* [Globalization and localization](../design/globalizing/globalizing-portal.md)
+* [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
 * [Implement a trial version of your app](../monetize/implement-a-trial-version-of-your-app.md)
 * [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md)
