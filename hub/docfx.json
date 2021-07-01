@@ -108,8 +108,7 @@
         "apps/design/shell/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
         "apps/design/shell/tiles-and-notifications/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
         "apps/design/style/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
-        "apps/design/usability/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
-        "apps/design/windows-template-studio/*.md": "https://github.com/microsoft/WindowsTemplateStudio/issues/new/choose"
+        "apps/design/usability/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose"
       },
       "author":
       {
@@ -133,7 +132,6 @@
         "apps/design/signature-experiences/*.md": "hickeys",
         "apps/design/style/*.md": "hickeys",
         "apps/design/usability/*.md": "Karl-Bridge-Microsoft",
-        "apps/design/windows-template-studio/*.md": "QuinnRadich",
         "apps/desktop/**.md": "mcleanbyron",
         "apps/features-and-technologies.md": "mcleanbyron",
         "apps/project-reunion/**.md": "mcleanbyron",
@@ -173,7 +171,6 @@
         "apps/design/signature-experiences/*.md": "hickeys",
         "apps/design/style/*.md": "hickeys",
         "apps/design/usability/*.md": "kbridge",
-        "apps/design/windows-template-studio/*.md": "quradic",
         "apps/desktop/**.md": "mcleans",
         "apps/project-reunion/**.md": "mcleans",
         "apps/trace-processing/*.md": "maiak",
