@@ -91,7 +91,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 ### Limitations
 
-- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com/en-us/). A fix is expected in an upcoming servicing release.
+- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com/en-us/).
 
 - Desktop apps (C# .NET 5 or C++ desktop): This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the preview channel.
 
