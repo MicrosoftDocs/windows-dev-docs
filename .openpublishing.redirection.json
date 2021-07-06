@@ -5106,6 +5106,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/project-reunion/get-started-with-project-reunion.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/get-started",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/get-started.md",
       "redirect_url": "/windows/apps/windows-app-sdk/get-started",
       "redirect_document_id": false
