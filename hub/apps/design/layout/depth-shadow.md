@@ -62,7 +62,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [Connected animation](../motion/connected-animation.md)
 
 > [!NOTE]
-> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows to to use ninegrid shadow instead of projected shadow for better performance.
+> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to to use ninegrid shadow instead of projected shadow for better performance.
 
 ### ThemeShadow in Popups
 
@@ -111,7 +111,7 @@ If the default shadow doesn't look correct on your control's content then you ca
 ### ThemeShadow in other elements
 
 > [!NOTE]
-> Starting with Windows, if the app targets the Windows App SDK or later, the Receivers collection is ignored. However there will be no errors and the shadow continues to function.
+> Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, the `Receivers` collection is ignored. However there will be no errors and the shadow continues to function.
 
 In general we encourage you to think carefully about your use of shadow and limit its use to cases where it introduces meaningful visual hierarchy. However, we do provide a way to cast a shadow from any UI element in case you have advanced scenarios that necessitate it.
 
@@ -148,7 +148,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) class.
 
 > [!TIP] 
-> Starting with Windows, if the app targets the Windows App SDK or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
+> Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
 
 ## Which shadow should I use?
 
