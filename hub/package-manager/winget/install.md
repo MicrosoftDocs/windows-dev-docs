@@ -31,20 +31,23 @@ The following arguments are available.
 
 The options allow you to customize the install experience to meet your needs.
 
-| Option      | Description |
+| <div style="width:100px">Option</div>  | Description |
 |-------------|-------------|  
-| **-m, --manifest** |   Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a [local YAML file](#local-install). |
+| **-m, --manifest** |  Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a [local YAML file](#local-install). |
 | **--id**    |  Limits the install to the ID of the application.   |  
 | **--name**   |  Limits the search to the name of the application. |  
 | **--moniker**   | Limits the search to the moniker listed for the application. |  
 | **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
+| **--scope**   |  Allows you to specify if the installer should target user or machine scope. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
 | **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
+| **--locale** | Specifies which locale to use (BCP47 format). |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
+| **--force** | Overrides the installer hash check. Not recommended. |
 
 ### Example queries
 
