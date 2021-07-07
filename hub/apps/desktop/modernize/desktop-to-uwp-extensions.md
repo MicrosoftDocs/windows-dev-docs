@@ -1,6 +1,6 @@
 ---
-description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
-title: Modernize existing desktop apps using Desktop Bridge
+description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
+title: Integrate your desktop app with Windows using packaging extensions
 ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
@@ -10,9 +10,9 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
-# Integrate your desktop app with Windows 10 and UWP
+# Integrate your desktop app with Windows using packaging extensions
 
-If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
+If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 and later releases by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
 
 For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
