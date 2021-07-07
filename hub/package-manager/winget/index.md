@@ -29,7 +29,7 @@ There are several ways to install the **winget** tool:
 
 Installer behavior can be different depending on whether you are running **winget** with administrator privileges.
 
-* When running **winget** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control). If you choose not to elevate, the application will fail to install.  
+* When running **winget** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/user-account-control-overview) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control/how-user-account-control-works). If you choose not to elevate, the application will fail to install.  
 
 * When running **winget** in an Administrator Command Prompt, you will not see [elevation prompts](/windows/security/identity-protection/user-account-control/how-user-account-control-works) if the application requires it. Always use caution when running your command prompt as an administrator, and only install applications you trust.
 
