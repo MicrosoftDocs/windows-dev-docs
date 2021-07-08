@@ -2,7 +2,7 @@
 description: Learn how to get started building new apps for Windows 11.
 title: Build an app for Windows 11
 ms.topic: article
-ms.date: 06/24/2021
+ms.date: 07/08/2021
 keywords: windows win32, desktop development
 ms.author: drewbat
 author: drewbatgit
@@ -37,8 +37,8 @@ To take advantage of the new look and feel of Windows 11, you will need to use t
 
 1. In **Solution Explorer** right click the project for your app and select **Manage NuGet Packages...**.
 1. Select the **Browse** tab and type "WinUI" in the search box.
-1. From the package list, select Microsoft.UI.Xaml.
-1. In the details pane, confirm that the selected version is "2.6.0" and click **Install**.
+1. From the package list, select **Microsoft.UI.Xaml**.
+1. In the details pane, confirm that the selected version is "2.6.1" or later and click **Install**.
 
 ## Update your app code
 
