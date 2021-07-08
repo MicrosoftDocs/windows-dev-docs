@@ -14,6 +14,10 @@ When you [add users to your Partner Center account](add-users-groups-and-azure-a
 > [!NOTE] 
 > The same roles and permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
 
+> [!NOTE] 
+> This section is not applicable for the Microsoft Edge program. Microsoft Edge program does not support assigning roles to users. 
+
+
 When determining what role or permissions to apply, keep in mind: 
 -   Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
