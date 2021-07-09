@@ -286,9 +286,15 @@ ___
 
 ### Close tab
 
-This closes the current tab.
+This closes the tab at a given index. If no index is provided, use the focused tab's index.
 
 **Command name:** `closeTab`
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Optional | Integer | Position of the tab to close. |
 
 ### Close all other tabs
 
@@ -683,6 +689,23 @@ _This command is not currently bound in the default settings_.
 
 ```json
 {"command": "identifyWindows" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Minimize To Tray ([Preview](https://aka.ms/terminal-preview))
+
+This will hide the currently focused window from the Taskbar and instead will be accessible from the system tray icon. This action will only be useable when the tray icon is visible through one of the two global settings `minimizeToTray` or `alwaysShowTrayIcon`.
+
+**Command name:** `minimizeToTray`
+
+**Default binding:**
+
+_This command is not currently bound in the default settings_.
+
+```json
+{"command": "minimizeToTray" },
 ```
 
 > [!IMPORTANT]
@@ -1125,7 +1148,17 @@ The `desktop` and `monitor` properties can be combined in the following ways:
 This action is a special variation of the [`globalSummon`](#global-commands) action. It specifically summons the [quake window](../tips-and-tricks.md#quake-mode). It is a shorthand for the following `globalSummon` action:
 
 ```json
-{ "keys": "win+`", "command": { "action": "globalSummon", "name": "_quake", "dropdownDuration": 200, "toggleVisibility": true, "monitor": "toCursor", "desktop": "toCurrent" } }
+{
+    "keys": "win+`",
+    "command": {
+        "action": "globalSummon",
+        "name": "_quake",
+        "dropdownDuration": 200,
+        "toggleVisibility": true,
+        "monitor": "toMouse",
+        "desktop": "toCurrent"
+    }
+}
 ```
 
 If you'd like to change the behavior of the `quakeMode` action, we recommended creating a new `globalSummon` entry in `actions` with the settings you prefer.

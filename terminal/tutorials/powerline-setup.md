@@ -40,11 +40,11 @@ Using PowerShell, install Posh-Git and Oh-My-Posh:
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser -RequiredVersion 2.0.412
 ```
 
 > [!TIP]
-> You may need to install NuGet if you don't already have it. Your PowerShell command line will ask if you want to install NuGet if this is the case. Select [Y] Yes. You may also need to approve that you are installing modules from [PSGallery](/powershell/scripting/gallery/getting-started), an 'untrusted repository'. Select [Y] Yes.
+> You may need to install NuGet if you don't already have it. You may also need to approve that you are installing modules from [PSGallery](/powershell/scripting/gallery/getting-started), an 'untrusted repository'.
 
 [Posh-Git](https://github.com/dahlbyk/posh-git) adds Git status information to your prompt as well as tab-completion for Git commands, parameters, remotes, and branch names. [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) provides theme capabilities for your PowerShell prompt.
 
@@ -76,7 +76,7 @@ function without the need for additional icons. You can also [create a custom th
 
 ### Set Cascadia Code PL as your font
 
-To set the Cascadia Code PL font for use with PowerLine (after downloading, unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. This can also be done using the settings UI if you have it enabled.
+To set the Cascadia Code PL font for use with PowerLine (after [downloading the Cascadia Code font](https://github.com/microsoft/cascadia-code/releases), unzipping, and installing on your system), you will need to open your [profile settings](../customize-settings/profile-appearance.md) in your settings.json file by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. This can also be done using the settings UI if you have it enabled.
 
 Once your settings.json file opens, find the Windows PowerShell profile and add: `"fontFace": "Cascadia Code PL"` to designate Cascadia Code PL as the font. This will provide those nice Cascadia Code Powerline glyphs. You should notice the change in your terminal as soon as you select **Save** in your editor.
 
