@@ -37,11 +37,19 @@ This is the name of the color scheme used in the profile. Color schemes are defi
 
 **Default value:** `"Campbell"`
 
-### Font face
+### Font
+
+This is the structure within which the other font settings must be defined. An example of what this could look like in the JSON file is shown below.
+
+**Property name:** `font`
+
+**Necessity:** Optional
+
+### Font Face
 
 This is the name of the font face used in the profile. The terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
 
-**Property name:** `fontFace`
+**Property name:** `face` (defined within the `font` object)
 
 **Necessity:** Optional
 
@@ -53,7 +61,7 @@ This is the name of the font face used in the profile. The terminal will try to 
 
 This sets the profile's font size in points.
 
-**Property name:** `fontSize`
+**Property name:** `size` (defined within the `font` object)
 
 **Necessity:** Optional
 
@@ -65,13 +73,23 @@ This sets the profile's font size in points.
 
 This sets the weight (lightness or heaviness of the strokes) for the profile's font.
 
-**Property name:** `fontWeight`
+**Property name:** `weight` (defined within the `font` object)
 
 **Necessity:** Optional
 
 **Accepts:** `"normal"`, `"thin"`, `"extra-light"`, `"light"`, `"semi-light"`, `"medium"`, `"semi-bold"`, `"bold"`, `"extra-bold"`, `"black"`, `"extra-black"`, or an integer corresponding to the numeric representation of the OpenType font weight
 
 **Default value:** `"normal"`
+
+### Font example
+
+```json
+"font": {
+    "face": "Cascadia Mono",
+    "size": 12,
+    "weight": "normal"
+}
+```
 
 ## Retro terminal effects
 
