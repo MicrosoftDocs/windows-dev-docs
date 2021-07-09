@@ -101,11 +101,12 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 * A 2D app is automatically given an [app bar](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box)  to allow the user to move and scale them in the virtual environment. The views can be resized vertically, or resized maintaining the same aspect ratio.
 
 
+
 ## 2D app design considerations: UI/UX
 
 * XAML controls which implement the [Fluent Design System](/windows/uwp/design/fluent-design-system/) such as the [Navigation view](../controls/navigationview.md), and effects such as [Acrylic](../style/acrylic.md) all work especially well in 2D Mixed Reality apps.
 
-* Test your app's text and windows size in a Mixed Reality device, or at the very least in the Mixed Reality Simulator. Your app will have a default windows size of 853x480 effective pixels. Use larger font sizes (a point size of approximately 32 is recommended), and read [Updating your existing universal app for Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens). The article [Typography](https://developer.microsoft.com/windows/mixed-reality/typography) covers this topic in detail. When working in Visual Studio, there is a XAML design editor setting for a 57" HoloLens 2D App which provides a view with the correct scale and dimensions. 
+* Test your app's text and windows size in a Mixed Reality device, or at the very least in the Mixed Reality Simulator. Your app will have a default windows size of 853x480 effective pixels. Use larger font sizes (a point size of approximately 32 is recommended), and read [Updating 2D UWP apps for Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/develop/porting-apps/building-2d-apps). The article [Typography](https://developer.microsoft.com/windows/mixed-reality/typography) covers this topic in detail. When working in Visual Studio, there is a XAML design editor setting for a 57" HoloLens 2D App which provides a view with the correct scale and dimensions.
 
 ![Text displayed in Mixed Reality apps should be large.](images/MR-text.png)
 
@@ -113,7 +114,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * When a user gazes towards something or points with a motion controller, a **touch hover** event will occur. This consists of a **PointerPoint** where **PointerType** is **Touch**, but **IsInContact** is **false**. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads "Select"), a **touch press** occurs, with the **PointerPoint** having **IsInContact** become **true**. See [Touch interactions](../input/touch-interactions.md) for more information on these input events.
 
-* Remember, gaze is not as accurate as mouse pointing. Smaller mouse targets or buttons may cause frustration for your users, so resize controls accordingly. If they are designed for touch, they will work in Mixed Reality, but you may decide to enlarge some buttons at runtime. See [Updating your existing universal app for Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
+* Remember, gaze is not as accurate as mouse pointing. Smaller mouse targets or buttons may cause frustration for your users, so resize controls accordingly. If they are designed for touch, they will work in Mixed Reality, but you may decide to enlarge some buttons at runtime. See [Updating 2D UWP apps for Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/develop/porting-apps/building-2d-apps).
 
 * The HoloLens defines the color black as the absence of light. It's simply not rendered, allowing the "real world" so show through. Your application should not use black if this is would cause confusion. In a Mixed Reality headset, black is black.
 
