@@ -97,7 +97,7 @@ The following list of topics have seen significant updates in the past month, as
 
 <ul>
 <li><a href="/windows/uwp/cpp-and-winrt-apis/author-events">Author events in C++/WinRT</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/concurrency-2">More advanced concurrency and asynchrony with C++/WinRT</a></li>
+<li><a href="/windows/uwp/cpp-and-winrt-apis/concurrency-2">Advanced concurrency and asynchrony with C++/WinRT</a></li>
 <li><a href="/windows/uwp/devices-sensors/aep-service-class-ids">AEP service class IDs</a></li>
 </ul>
 

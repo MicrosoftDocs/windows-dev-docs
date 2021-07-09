@@ -777,8 +777,10 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrency and asynchronous operations
           href: ../cpp-and-winrt-apis/concurrency.md
-        - name: More advanced concurrency and asynchrony
+        - name: Advanced concurrency and asynchrony
           href: ../cpp-and-winrt-apis/concurrency-2.md
+        - name: A completion source sample
+          href: ../cpp-and-winrt-apis/concurrency-3.md
         - name: XAML controls; bind to a property
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML items controls; bind to a collection
