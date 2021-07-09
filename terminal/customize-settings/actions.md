@@ -1125,7 +1125,17 @@ The `desktop` and `monitor` properties can be combined in the following ways:
 This action is a special variation of the [`globalSummon`](#global-commands) action. It specifically summons the [quake window](../tips-and-tricks.md#quake-mode). It is a shorthand for the following `globalSummon` action:
 
 ```json
-{ "keys": "win+`", "command": { "action": "globalSummon", "name": "_quake", "dropdownDuration": 200, "toggleVisibility": true, "monitor": "toCursor", "desktop": "toCurrent" } }
+{
+    "keys": "win+`",
+    "command": {
+        "action": "globalSummon",
+        "name": "_quake",
+        "dropdownDuration": 200,
+        "toggleVisibility": true,
+        "monitor": "toMouse",
+        "desktop": "toCurrent"
+    }
+}
 ```
 
 If you'd like to change the behavior of the `quakeMode` action, we recommended creating a new `globalSummon` entry in `actions` with the settings you prefer.
