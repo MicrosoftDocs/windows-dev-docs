@@ -138,3 +138,22 @@ Starting in Windows Terminal 1.5, the Terminal will display a warning if the "To
 5. Hit "Ok", and restart the PC.
 
 After restarting the machine, the service should auto-start, and the dialog should no longer appear.
+
+## Why do I see blinking or flashing when using a git bash command line?
+
+You may notice a blinking or flashing when using a git bash command line inside Windows Terminal. This behavior is actually by design. The Terminal is obeying what git bash is telling it to do (setting bell-style to visible, causing a flash to associate with the bell response), BUT we understand this may be distracting. To fix this, open the `.inputrc` file for your Git bash with a text editor. This file will likely be located in the path `C:\Program Files\Git\etc`. To open with the Nano text editor: `nano ~/.inputrc`
+
+Change the default:
+
+```bash
+# none, visible or audible
+set bell-style visible
+```
+
+Set the bell-style to either `none` or `audible` to remove the visible flash:
+
+```bash
+set bell-style none
+```
+
+Press Ctrl + O and Ctrl + X to Save and Exit.
