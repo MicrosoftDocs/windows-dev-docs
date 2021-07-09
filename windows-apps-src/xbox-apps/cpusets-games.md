@@ -186,5 +186,5 @@ The CPUSets API available for UWP development provides a considerable amount of 
 
 ## Additional resources
 - [CPU Sets (MSDN)](/windows/desktop/ProcThread/cpu-sets)
-- [CPUSets sample provided by ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [CPUSets sample provided by ATG](https://github.com/microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/CPUSets)
 - [UWP on Xbox One](index.md)
