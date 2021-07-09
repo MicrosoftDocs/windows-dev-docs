@@ -471,12 +471,12 @@
           href: input/access-keys.md
         - name: Keyboard Accelerators
           href: input/keyboard-accelerators.md
+        - name: Keyboard events
+          href: input/keyboard-events.md
         - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
           href: input/focus-navigation.md
         - name: Programmatic focus navigation
           href: input/focus-navigation-programmatic.md
-        - name: Keyboard events
-          href: input/keyboard-events.md
         - name: Respond to the presence of the touch keyboard
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: Use input scope to change the touch keyboard

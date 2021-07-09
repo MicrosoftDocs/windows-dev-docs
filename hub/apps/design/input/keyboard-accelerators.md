@@ -4,25 +4,26 @@ title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 09/24/2020
+ms.date: 07/09/2021
 ms.topic: article
-
-
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ---
+
 # Keyboard accelerators
 
 ![Hero image of the Surface keyboard](images/accelerators/accelerators_hero2.png)
 
 Accelerator keys (or keyboard accelerators) are keyboard shortcuts that improve the usability and accessibility of your Windows applications by providing an intuitive way for users to invoke common actions or commands without navigating the app UI.
 
-See the [Access keys](access-keys.md) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
-
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
+
+See the [Access keys](access-keys.md) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
+
+To create your own custom keyboard shortcuts, see the [Keyboard events](keyboard-events.md) topic.
 
 ## Overview
 
@@ -31,7 +32,7 @@ Accelerators are composed of two types of keys: modifiers and non-modifiers. Mod
 > [!NOTE]
 > Accelerators typically include the function keys F1 through F12 or some combination of a standard key paired with one or more modifier keys (CTRL, Shift). For example, if a user presses Ctrl+Shift+M, the framework checks the modifiers (Ctrl and Shift) and fires the accelerator, if it exists.
 
-UWP platform controls have built-in keyboard accelerators. For example, ListView supports Ctrl+A for selecting all the items in the list, and RichEditBox supports Ctrl+Tab for inserting a Tab in the text box. These built-in keyboard accelerators are referred to as **control accelerators** and are executed only if the focus is on the element or one of its children. Accelerators defined by you using the keyboard accelerator APIs discussed here are referred to as **app accelerators**.
+Many XAML controls have built-in keyboard accelerators. For example, ListView supports Ctrl+A for selecting all the items in the list, and RichEditBox supports Ctrl+Tab for inserting a Tab in the text box. These built-in keyboard accelerators are referred to as **control accelerators** and are executed only if the focus is on the element or one of its children. Accelerators defined by you using the keyboard accelerator APIs discussed here are referred to as **app accelerators**.
 
 Keyboard accelerators are not available for every action but are often associated with commands exposed in menus (and should be specified with the menu item content). Accelerators can also be associated with actions that do not have equivalent menu items. However, because users rely on an application's menus to discover and learn the available command set, you should try to make discovery of accelerators as easy as possible (using labels or established patterns can help with this).
 
@@ -54,7 +55,7 @@ We recommend that you specify keyboard accelerators wherever appropriate in your
 
 ## Specify a keyboard accelerator
 
-Use the [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) APIs to create keyboard accelerators in UWP apps. With these APIs, you don't have to handle multiple KeyDown events to detect the key combination pressed, and you can localize accelerators in the app resources.
+Use the [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) APIs to create keyboard accelerators in Windows apps. With these APIs, you don't have to handle multiple KeyDown events to detect the key combination pressed, and you can localize accelerators in the app resources.
 
 We recommend that you set keyboard accelerators for the most common actions in your app and document them using the menu item label or tooltip. In this example, we declare keyboard accelerators only for the Rename and Copy commands.
 
@@ -572,10 +573,10 @@ protected override void OnProcessKeyboardAccelerators(
 
 ### Localize the accelerators
 
-We recommend localizing all keyboard accelerators. You can do this with the standard UWP resources (.resw) file and the x:Uid attribute in your XAML declarations. In this example, the Windows Runtime automatically loads the resources.
+We recommend localizing all keyboard accelerators. You can do this with the standard resources (.resw) file and the x:Uid attribute in your XAML declarations. In this example, the Windows Runtime automatically loads the resources.
 
-![Diagram of keyboard accelerator localization with UWP resources file](images/accelerators/accelerators_localization.png)
-***Keyboard accelerator localization with UWP resources file***
+![Diagram of keyboard accelerator localization with the resources file](images/accelerators/accelerators_localization.png)
+***Keyboard accelerator localization with the resources file***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

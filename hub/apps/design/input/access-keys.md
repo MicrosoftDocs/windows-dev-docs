@@ -4,10 +4,8 @@ title: Access keys design guidelines
 label: Access keys design guidelines
 keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/09/2021
 ms.topic: article
-
-
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
@@ -18,12 +16,14 @@ ms.localizationpriority: medium
 
 Access keys are keyboard shortcuts that improve the usability and the accessibility of your Windows applications by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 
-See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
+The Windows app provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
 
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-The Windows app provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
+See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
+
+To create your own custom keyboard shortcuts, see the [Keyboard events](keyboard-events.md) topic.
 
 ## Overview
 
