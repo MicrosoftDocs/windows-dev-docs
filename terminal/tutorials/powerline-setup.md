@@ -40,11 +40,11 @@ Using PowerShell, install Posh-Git and Oh-My-Posh:
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser -RequiredVersion 2.0.412
 ```
 
 > [!TIP]
-> You may need to install NuGet if you don't already have it. Your PowerShell command line will ask if you want to install NuGet if this is the case. Select [Y] Yes. You may also need to approve that you are installing modules from [PSGallery](/powershell/scripting/gallery/getting-started), an 'untrusted repository'. Select [Y] Yes.
+> You may need to install NuGet if you don't already have it. You may also need to approve that you are installing modules from [PSGallery](/powershell/scripting/gallery/getting-started), an 'untrusted repository'.
 
 [Posh-Git](https://github.com/dahlbyk/posh-git) adds Git status information to your prompt as well as tab-completion for Git commands, parameters, remotes, and branch names. [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) provides theme capabilities for your PowerShell prompt.
 
