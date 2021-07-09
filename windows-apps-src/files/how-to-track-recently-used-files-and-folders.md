@@ -90,4 +90,4 @@ As well as an MRU, your app also has a future-access list. By picking files and 
 When a user picks an item, consider adding it to your future-access list as well as your MRU.
 
 -   The [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) can hold up to 1000 items. Remember: it can hold folders as well as files, so that's a lot of folders.
--   The platform never removes items from the [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) for you. When you reach the 1000-item limit, you can't add another until you make room with the [**Remove**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.remove) method.
+-   The platform never removes items from the [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) for you. When you reach the 1000-item limit, you can't add another until you make room with the [**Remove**](/uwp/api/windows.storage.accesscache.storageitemaccesslist.remove) method.
