@@ -286,9 +286,15 @@ ___
 
 ### Close tab
 
-This closes the current tab.
+This closes the tab at a given index. If no index is provided, use the focused tab's index.
 
 **Command name:** `closeTab`
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Optional | Integer | Position of the tab to close. |
 
 ### Close all other tabs
 
