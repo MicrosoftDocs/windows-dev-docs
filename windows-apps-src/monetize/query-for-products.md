@@ -73,7 +73,7 @@ The ProductSkuId object contains the following parameters.
 | Parameter | Type   | Description          | Required |
 |-----------|--------|----------------------|----------|
 | productId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
-| skuID     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
+| skuId     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
 
 
 ### Request example
