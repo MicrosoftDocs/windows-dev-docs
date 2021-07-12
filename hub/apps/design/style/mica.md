@@ -450,4 +450,4 @@ private void NavigationViewControl_DisplayModeChanged(Microsoft.UI.Xaml.Controls
 
 ## Related articles
 
-[BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial), [NavigationView](../controls/navigationview.md), [Materials](/windows/apps/design/signature-experiences/materials), [Layering and Elevation](../signature-experiences/layering.md)
+[BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial), [NavigationView](../controls/navigationview.md), [Materials](../signature-experiences/materials.md), [Layering and Elevation](../signature-experiences/layering.md)

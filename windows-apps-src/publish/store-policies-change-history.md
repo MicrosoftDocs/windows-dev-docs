@@ -44,7 +44,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <p>Update to 10.8.6 requirements regarding usage of Microsoft recurring billing API for subscriptions of digital goods and services.</p>
 <p>Update to 10.9 requirements for notifications.</p>
 <p>Removed 10.11 mobile voice plan policy.</p>
-<p>Remove 10.12 Edge extensions policy.  Microsoft Edge Add-ons policies can be found <a href="https://aka.ms/edgedeveloperpolicies">here</a>.</p>
+<p>Remove 10.12 Edge extensions policy.  Microsoft Edge Add-ons policies can be found <a href="/microsoft-edge/extensions-chromium/store-policies/developer-policies">here</a>.</p>
 <p>Update to 11.3.2, relocating the product safety testing and other product safety requirements to 10.2.</p>
 </td>
 </tr>

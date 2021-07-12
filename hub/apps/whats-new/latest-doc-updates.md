@@ -28,9 +28,9 @@ Highlights this month include:
 Expanded Project Reunion docs for 0.8 Preview release, including:
 
 
-* [New release channels articles ](/windows/apps/project-reunion/release-channels)
-* [New unpackaged deployment section with four new articles](/windows/apps/project-reunion/deploy-unpackaged-apps)
-* [New app lifecycle articles ](/windows/apps/project-reunion/applifecycle/applifecycle-instancing)
+* [New release channels articles ](../windows-app-sdk/release-channels.md)
+* [New unpackaged deployment section with four new articles](../windows-app-sdk/deploy-unpackaged-apps.md)
+* [New app lifecycle articles ](../windows-app-sdk/applifecycle/applifecycle-instancing.md)
 
 
 ### New content
@@ -45,7 +45,7 @@ Expanded Project Reunion docs for 0.8 Preview release, including:
 * [DirectX and XAML intertop](/windows/uwp/gaming/directx-and-xaml-interop)
 * [Windows.Storage.AccessCache](/uwp/api/windows.storage.accesscache)
 * [Porting Microsoft::WRL::Wrappers](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
-* [Rust for Windows RSS reader tutorial](/windows/dev-environment/rust/rss-reader-rust-for-windows)
+* [Rust for Windows RSS reader tutorial](../../dev-environment/rust/rss-reader-rust-for-windows.md)
 * [MKV file support](/windows/win32/medfound/mkv-support)
 
 ### Developer tool updates
@@ -72,11 +72,11 @@ v1.9 new preview features include:
 [Windows Subsystem for Linux (WSL)](/windows/wsl/)
   * [Get started using Git on WSL](/windows/wsl/tutorials/wsl-git): Update to incorporate Git Credential Manager Core
 
-[Windows Package Manager](/windows/package-manager/)
-  * [Updates to package submission process](/windows/package-manager/package/)
-  * [Updates to package submission validation process](/windows/package-manager/package/)
-  * [Updates to package manifest creation](/windows/package-manager/package/repository)
-  * [Updates to winget commands](/windows/package-manager/winget)
+[Windows Package Manager](../../package-manager/index.md)
+  * [Updates to package submission process](../../package-manager/package/index.md)
+  * [Updates to package submission validation process](../../package-manager/package/index.md)
+  * [Updates to package manifest creation](../../package-manager/package/repository.md)
+  * [Updates to winget commands](../../package-manager/winget/index.md)
 
 ## Tabs vs. Spaces Show
 

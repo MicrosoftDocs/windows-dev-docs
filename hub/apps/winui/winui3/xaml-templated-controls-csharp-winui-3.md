@@ -14,7 +14,7 @@ ms.custom: 19H1
 
 This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./get-started-winui3-for-desktop.md).
+Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -120,5 +120,3 @@ Open `MainPage.xaml`, which contains the XAML markup for our main UI page. Immed
 Build and run the app and you will see the templated control, with the background color and label we specified.
 
 ![Templated control result](images/winui-templated-control-result.png)
-
-

@@ -26,7 +26,7 @@ Mica is a new material that incorporates theme and desktop wallpaper to paint th
 
 :::image type="content" source="../../design/style/images/materials/mica-light-theme.png" alt-text="Mica in light theme":::
 
-[Usage guidelines](/windows/apps/design/style/mica)
+[Usage guidelines](../../design/style/mica.md)
 
 [API reference](/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
 
@@ -44,7 +44,7 @@ You can use complex, interactive UI in the content area of the Expander, includi
 
 :::image type="content" source="../../design/controls/images/expander-nested.png" alt-text="Expander with complex, interactive UI in the content area.":::
 
-[Usage guidelines](/windows/apps/design/controls/expander)
+[Usage guidelines](../../design/controls/expander.md)
 
 [API reference](/uwp/api/microsoft.ui.xaml.controls.expander)
 
@@ -60,7 +60,7 @@ If the app is resized so that there is not enough space to show all levels in th
 
 :::image type="content" source="../../design/controls/images/breadcrumb-bar-flyout.png" alt-text="BreadcrumbBar condensed with flyout menu.":::
 
-[Usage guidelines](/windows/apps/design/controls/breadcrumbbar)
+[Usage guidelines](../../design/controls/breadcrumbbar.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
 
@@ -89,7 +89,7 @@ This animated example shows an AnimatedIcon added to a NavigationViewItem contro
 
 Defining an animation requires that you create, or obtain, a Lottie file for the icon you want to add (custom animations can be created with [Adobe AfterEffects](https://www.adobe.com/products/aftereffects.html) and rendered with the [Lottie-Windows](/windows/communitytoolkit/animations/lottie) library) and run that file through [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen). LottieGen generates code for a C++/WinRT class that you can then instantiate and use with an AnimatedIcon.
 
-[Usage guidelines](/windows/apps/design/controls/animated-icon)
+[Usage guidelines](../../design/controls/animated-icon.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
 
@@ -107,7 +107,7 @@ This animated example shows a PipsPager with horizontally scrolling pips for a l
 
 :::image type="content" source="../../design/controls/images/pipspager-max-visible-pips.gif" alt-text="PipsPager with horizontally scrolling pips for a large item collection.":::
 
-[Usage guidelines](/windows/apps/design/controls/pipspager)
+[Usage guidelines](../../design/controls/pipspager.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.pipspager)
 
@@ -117,7 +117,7 @@ Most WinUI controls now support the latest Windows 11 styles.
 
 A new versioning system has also been introduced that lets you revert to the previous control styles. However, we strongly encourage using the new styles, if possible, as they align with the current design direction of Windows.
 
-[XAML styles](/windows/apps/design/style/xaml-styles)
+[XAML styles](../../design/style/xaml-styles.md)
 
 ## SplitButton styles for CommandBar
 
