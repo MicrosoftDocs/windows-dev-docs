@@ -56,7 +56,7 @@ Additional exclusions you may want to consider include:
 - Visual Studio build process: `msbuild.exe`
 - JetBrains directory: `%LOCALAPPDATA%\JetBrains\<Transient directory (folder)>`
 
-For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the [Antivirus Impact](https://developer.android.com/studio/intro/studio-config#antivirus-impact) section of the Android Studio documentation.
+For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the Antivirus Impact section of the [Android Studio documentation](https://developer.android.com/studio/intro/studio-config#antivirus-impact).
 
 > [!Note]
 > Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Windows Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).
