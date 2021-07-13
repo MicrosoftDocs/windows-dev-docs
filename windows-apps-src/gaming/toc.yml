@@ -562,7 +562,7 @@
     - name: Known issues
       href: ../xbox-apps/known-issues.md
     - name: FAQ
-      href: ../xbox-apps/frequently-asked-questions.md
+      href: ../xbox-apps/frequently-asked-questions.yml
     - name: Tools
       href: ../xbox-apps/introduction-to-xbox-tools.md
       items:

@@ -77,6 +77,6 @@ For more detailed information, see [Set up your UWP on Xbox development environm
 ![Hello World](images/getting-started-hello-world.png)
 
 ## See also  
-- [Frequently asked questions](frequently-asked-questions.md)  
+- [Frequently asked questions](frequently-asked-questions.yml)  
 - [Known issues with UWP on Xbox Developer Program](known-issues.md)
 - [UWP on Xbox One](index.md) 
