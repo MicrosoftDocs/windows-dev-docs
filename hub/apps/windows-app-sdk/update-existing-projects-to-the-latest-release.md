@@ -17,9 +17,9 @@ If you created a project with an earlier version of the Windows App SDK (previou
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
-## Update from 0.8 Preview to 0.8 Stable
+## Update from 0.8 Preview to 0.8 Stable or between stable 0.8 versions
 
-If you created a project using version 0.8 Preview, you can follow these instructions to update your project to version 0.8 Stable.
+If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (i.e. 0.8.0) and want to update your project to a newer stable version (i.e. 0.8.1).
 
 > [!NOTE]
 > You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
@@ -40,12 +40,12 @@ Next, make these changes to your project:
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
-    install-package Microsoft.ProjectReunion -Version 0.8.0 -ProjectName {yourProjectName}
+    install-package Microsoft.ProjectReunion -Version 0.8.1 -ProjectName {yourProjectName}
     ```
 
 3. Make the following changes in your Application (package).wapproj:
   
-    1. Remove this item group:
+    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see a that corresponding version number referenced in this item group):
 
         ```xml
         <ItemGroup>
@@ -62,10 +62,10 @@ Next, make these changes to your project:
 
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.0]">
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.1]">
             <IncludeAssets>build</IncludeAssets>
             </PackageReference>
-            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.0]">
+            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.1]">
             <IncludeAssets>build</IncludeAssets>
             </PackageReference>
         </ItemGroup>
@@ -73,7 +73,7 @@ Next, make these changes to your project:
 
 4. Make the following changes to your project (.csproj or .vcproj) file:
 
-    1. Remove this item group:
+    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see a that corresponding version number referenced in this item group):
         ```xml
         <ItemGroup>
             <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />
@@ -85,9 +85,9 @@ Next, make these changes to your project:
     2. Add this item group to replace it:
         ```xml
         <ItemGroup>
-            <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
-            <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0" />
-            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0" />
+            <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.1" />
+            <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.1" />
+            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.1" />
             <Manifest Include="$(ApplicationManifest)" />
         </ItemGroup>
         ```
