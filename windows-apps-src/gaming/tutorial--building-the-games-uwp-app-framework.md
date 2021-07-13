@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This topic is part of the [Create a simple Universal Windows Platform (UWP) game with DirectX](tutorial--create-your-first-uwp-directx-game.md) tutorial series. The topic at that link sets the context for the series.
 
-The first step in coding a Universal Windows Platform (UWP) game is building the framework that lets the app object interact with Windows, including Windows Runtime features such as suspend-resume event handling, changes in window focus, and snapping.
+The first step in coding a Universal Windows Platform (UWP) game is building the framework that lets the app object interact with Windows, including Windows Runtime features such as suspend-resume event handling, changes in window visibility, and snapping.
 
 ## Objectives
 
@@ -197,7 +197,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
     }
 
     // Since Game loading is an async task, the app visual state
-    // may be too small or not have focus. Put the state machine
+    // may be too small or not be activated. Put the state machine
     // into the correct state to reflect these cases.
 
     if (m_deviceResources->GetLogicalSize().Width < GameUIConstants::MinPlayableWidth)
@@ -274,11 +274,13 @@ The code here is also concerned with two of the states in the game engine state 
 - **UpdateEngineState::Deactivated**. This specifies that the game window is deactivated (has lost focus) or is snapped. 
 - **UpdateEngineState::TooSmall**. This specifies that the client area is too small to render the game in.
 
-In either of these states, the game suspends event processing, and waits for the window to focus, to unsnap, or to be resized.
+In either of these states, the game suspends event processing, and waits for the window to be activated, to unsnap, or to be resized.
 
-When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which can make your game feel unresponsive, or result in touch behaviors that feel sluggish.
+While your game window is visible ([Window.Visible](/uwp/api/windows.ui.xaml.window.visible) is `true`), you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which can make your game feel unresponsive, or result in touch behaviors that feel sluggish.
 
-When the game is not visible, suspended, nor snapped, you don't want it to consume any resources cycling to dispatch messages that will never arrive. In this case, your game must use the **ProcessOneAndAllPending** option. That option blocks until it gets an event, and then processes that event (as well as any others that arrive in the process queue during the processing of the first). **CoreWindowDispatch.ProcessEvents** then immediately returns after the queue has been processed.
+When the game is *not* visible ([Window.Visible](/uwp/api/windows.ui.xaml.window.visible) is `false`), or when it's suspended, or when it's too small (it's snapped), you don't want it to consume any resources cycling to dispatch messages that will never arrive. In this case, your game must use the **ProcessOneAndAllPending** option. That option blocks until it gets an event, and then processes that event (as well as any others that arrive in the process queue during the processing of the first). **CoreWindowDispatch.ProcessEvents** then immediately returns after the queue has been processed.
+
+In the example code shown below, the *m_visible* data member represents the window's visibility. When the game is suspended, its window is not visible. When the window *is* visible, the value of *m_updateState* (an **UpdateEngineState** enum) determines further whether or not the window is deactivated (lost focus), too small (snapped), or the right size.
 
 ```cppwinrt
 void GameMain::Run()
