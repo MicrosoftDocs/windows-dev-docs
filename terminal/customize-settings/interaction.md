@@ -3,7 +3,7 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/25/2021
+ms.date: 07/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -44,7 +44,7 @@ When this is set to `true`, the color and font formatting of the selected text i
 
 ___
 
-## Remove trailing white-space in rectangular selection ([Preview](https://aka.ms/terminal-preview))
+## Remove trailing white-space in rectangular selection
 
 When this is set to `true` and you copy text in a rectangular (block) selection to the clipboard, trailing white-spaces are removed from each line. When it's set to `false`, the white-spaces are preserved, ensuring that all lines have the same length. To copy text in a rectangular (block) selection, hold down the <kbd>Alt</kbd> key, right-click, and drag your mouse over the text area you want to select. This can be useful for selecting text columns, etc.
 
@@ -55,9 +55,6 @@ When this is set to `true` and you copy text in a rectangular (block) selection 
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -108,7 +105,7 @@ When this is set to `true`, the window will snap to the nearest character bounda
 
 ___
 
-## Minimize To Tray ([Preview](https://aka.ms/terminal-preview))
+## Minimize to tray ([Preview](https://aka.ms/terminal-preview))
 
 When this is set to `true`, minimizing a window will hide it from the taskbar, making it inaccessible from that area. It will instead be accessible from Terminal's system tray icon. If either this global setting or the `minimizeToTray` global setting is set to true, Terminal will place an icon in the system tray. The user will also be able to utilize the `minimizeToTray` _action_.
 
@@ -127,7 +124,7 @@ When this is set to `true`, minimizing a window will hide it from the taskbar, m
 
 ___
 
-## Always Show Tray Icon ([Preview](https://aka.ms/terminal-preview))
+## Always show tray icon ([Preview](https://aka.ms/terminal-preview))
 
 When this is set to `true`, the Terminal will place its icon in the system tray. If either this global setting or the `minimizeToTray` global setting is set to true, Terminal will place an icon in the system tray. The user will also be able to utilize the `minimizeToTray` _action_.
 
@@ -210,7 +207,7 @@ When this is set to `true`, the terminal will move focus to the pane on mouse ho
 
 ___
 
-## Automatically detect URLs and make them clickable ([Preview](https://aka.ms/terminal-preview))
+## Automatically detect URLs and make them clickable
 
 When this is set to `true`, URLs will be detected by the terminal. This will cause URLs to underline on hover and be clickable by pressing <kbd>Ctrl</kbd>. This is an experimental feature and its continued existence is not guaranteed.
 
@@ -221,9 +218,6 @@ When this is set to `true`, URLs will be detected by the terminal. This will cau
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

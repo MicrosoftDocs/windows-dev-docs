@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 07/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -11,6 +11,21 @@ ms.localizationpriority: high
 # Appearance settings in Windows Terminal
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
+
+## Language ([Preview](https://aka.ms/terminal-preview))
+
+This sets an override for the application's preferred language.
+
+**Property name:** `language`
+
+**Necessity:** Optional
+
+**Accepts:** A BCP-47 language tag like `"en-US"`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
 
 ## Theme
 
