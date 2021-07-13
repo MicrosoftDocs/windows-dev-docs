@@ -130,6 +130,8 @@
                     href: desktop/modernize/desktop-to-uwp-enhance.md
                   - name: APIs not supported in desktop apps
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
+                  - name: Call WinRT COM interop interfaces from .NET 5+ apps
+                    href: desktop/modernize/winrt-com-interop-csharp.md
             - name: Host WinRT XAML controls (XAML Islands)
               items:
                   - name: Overview
