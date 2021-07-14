@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/25/2021
+ms.date: 07/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -45,7 +45,7 @@ This is the structure within which the other font settings must be defined. An e
 
 **Necessity:** Optional
 
-### Font Face
+### Font face
 
 This is the name of the font face used in the profile. The terminal will try to fallback to Consolas if this can't be found or is invalid. To learn about the other variants of the default font, Cascadia Mono, visit the [Cascadia Code page](./../cascadia-code.md).
 

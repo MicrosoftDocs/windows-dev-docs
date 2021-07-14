@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/25/2021
+ms.date: 07/14/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -295,6 +295,9 @@ This closes the tab at a given index. If no index is provided, use the focused t
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `index` | Optional | Integer | Position of the tab to close. |
+
+> [!IMPORTANT]
+> This `index` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Close all other tabs
 
@@ -694,7 +697,7 @@ _This command is not currently bound in the default settings_.
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
-### Minimize To Tray ([Preview](https://aka.ms/terminal-preview))
+### Minimize to tray ([Preview](https://aka.ms/terminal-preview))
 
 This will hide the currently focused window from the Taskbar and instead will be accessible from the system tray icon. This action will only be useable when the tray icon is visible through one of the two global settings `minimizeToTray` or `alwaysShowTrayIcon`.
 
@@ -1055,7 +1058,7 @@ ___
 
 ## Global commands
 
-### Global summon ([Preview](https://aka.ms/terminal-preview))
+### Global summon
 
 This is a special action that works globally in the OS, rather than only in the context of the terminal window. When pressed, this action will summon the terminal window. Which window is summoned, where the window is summoned to, and how the window behaves when summoning it, is controlled by the properties on this action.
 
@@ -1138,10 +1141,7 @@ The `desktop` and `monitor` properties can be combined in the following ways:
 { "keys": "ctrl+7", "command": { "action": "globalSummon", "name": "_quake" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Open the quake mode window ([Preview](https://aka.ms/terminal-preview))
+### Open the quake mode window
 
 :::row:::
 :::column span="":::
@@ -1177,9 +1177,6 @@ If you'd like to change the behavior of the `quakeMode` action, we recommended c
 
 :::column-end:::
 :::row-end:::
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
