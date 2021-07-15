@@ -19,7 +19,7 @@ If you created a project with an earlier version of the Windows App SDK (previou
 
 ## Update from 0.8 Preview to 0.8 Stable or between stable 0.8 versions
 
-If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (i.e. 0.8.0) and want to update your project to a newer stable version (i.e. 0.8.1).
+If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (for example, 0.8.0) and want to update your project to a newer stable version (for example, 0.8.1).
 
 > [!NOTE]
 > You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
