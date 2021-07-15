@@ -1,6 +1,6 @@
 ---
-description: The top 10 things you can do to make your app great on Windows 11.
-title: Top 10 things you can do to make your app great on Windows 11
+description: The top 11 things you can do to make your app great on Windows 11.
+title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
 ms.date: 06/24/2021
 keywords: windows win32, desktop development
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Top 10 things you can do to make your app great on Windows 11
+# Top 11 things you can do to make your app great on Windows 11
 
 This release of Windows marks a visual evolution of the operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: _app fundamentals_ and _user experience_.
 
@@ -121,7 +121,39 @@ We support Light and Dark themes, which is a great way to let the user express t
 - The color palette of WinUI is being updated to feel lighter (use WinUI 2.6 or greater). If your apps have hardcoded custom colors, you may need to make updates to match the overall color theory, regardless of technology.
 - If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults.
 
-## 8. Use beautiful Iconography & Typography
+## 8. Optimize your app's context menu extensions and Share targets
+
+Windows 11 refines the behavior of the contextual file operations in the right-click context menu of File Explorer and the Share dialog. If your app creates context menus or defines share targets, you may need to make some changes to ensure that these work well with Windows 11.
+
+#### Context menus
+
+For Windows 11, we improved the behavior of the context menu in File Explorer in several ways:
+
+- Common commands, such as **Cut**, **Copy**, **Paste**, and **Delete**, have been moved to the top of the menu.
+- **Open** and **Open with** are now grouped together.
+- App extensions are grouped together below Shell verbs. Apps with more than one verb are grouped into a flyout with app attribution.
+- [Cloud files provider apps](/windows/win32/cfapi/build-a-cloud-file-sync-engine) are placed next to the Shell commands to hydrate or dehydrate files.
+- The older context menu from Windows 10 (along with lesser-used commands from the older context menu) is still available via the **Show more options** item at the bottom of the menu. **Shift** + **F10** or the keyboard menu key will also load the Windows 10 context menu.
+
+![An image of the context menu in Windows 11](images/great-apps/context-menu.png)
+
+If your app defines a context menu extension, the following requirements must be met for the extension to appear in the new Windows 11 context menu. Otherwise, your app's context menu extension will appear in the older context menu available via the **Show more options** item.
+
+- Your context menu extension must be implemented by using the [IExplorerCommand](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [IContextMenu](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
+- Your app must have [package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). To achieve this, you can package your app in an [MSIX package](/windows/msix/), or you can create a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) that grants identity to your app.
+
+#### Share dialog
+
+For Windows 11, we improved the behavior of the Share dialog in several ways.  
+
+- Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
+- All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
+  - Unpackaged desktop apps can participate as targets in the Share dialog by using a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). For a sample that demonstrates how to do this, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample.
+  - PWAs can participate in the Share dialog if they implement the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
+
+![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
+
+## 9. Use beautiful Iconography & Typography
 
 We have updated icons and a new UI font called "Segoe UI Variable". We recommend all apps switch to using these new icons and font to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
 
@@ -136,14 +168,14 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 > [!NOTE]
 > When an app that uses the new font runs in Windows 10 or down-level, it will fallback to use the old font and degrade gracefully.
 
-## 9. Make use of the innovative features available in Windows
+## 10. Make use of the innovative features available in Windows
 
 People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also ARM-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).
 
-## 10. Utilize the power of MSIX and Windows Store to package and distribute your application
+## 11. Utilize the power of MSIX and Windows Store to package and distribute your application
 
 Distribute your app wherever it makes sense for your business. Windows lets you distribute from your existing website, app management system, or the Windows Store.
 
