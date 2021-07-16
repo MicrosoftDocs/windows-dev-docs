@@ -38,12 +38,12 @@ Instancing behavior in the Windows App SDK is based on UWP's model, class, but w
 
 ### AppInstance class
 
-- **UWP**: The [AppInstance](/windows/uwp/api/windows.applicationmodel.appinstance) class is focused purely on instance redirection scenarios.
+- **UWP**: The [AppInstance](/uwp/api/windows.applicationmodel.appinstance) class is focused purely on instance redirection scenarios.
 - **Windows App SDK**: The `AppInstance` class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.
 
 ### List of Instances
 
-- **UWP**: [GetInstances](/windows/uwp/api/windows.applicationmodel.appinstance.getinstances) returns only the instances that the app explicitly registered for potential redirection.
+- **UWP**: [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances) returns only the instances that the app explicitly registered for potential redirection.
 - **Windows App SDK**: `GetInstances` returns all running instances of the app, including the current instance. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.
 
 ### Registering Keys
@@ -54,14 +54,14 @@ An instance of an app can set its key at any time, but only one key is allowed f
 
 An instance of an app cannot set its key to the same value that another instance has already registered. Attempting to register an existing key will result in `FindOrRegisterForKey` returning the app instance that has already registered that key.
 
-- **UWP**: An instance must register a key in order to be included in the list returned from [GetInstances](/windows/uwp/api/windows.applicationmodel.appinstance.getinstances).
+- **UWP**: An instance must register a key in order to be included in the list returned from [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances).
 - **Windows App SDK**: Registering a key is decoupled from the list of instances. An instance does not need to register a key in order to be included in the list.
 
 ### Unregistering keys
 
 An instance of an app can unregister its key.
 
-- **UWP**: When an instance unregisters its key, it is no longer available for activation redirection and is not included in the list of instances returned from [GetInstances](/windows/uwp/api/windows.applicationmodel.appinstance.getinstances).
+- **UWP**: When an instance unregisters its key, it is no longer available for activation redirection and is not included in the list of instances returned from [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances).
 - **Windows App SDK**: An instance that has unregistered its key is still available for activation redirection and is still included in the list of instances returned from `GetInstances`.
 
 ### Instance Redirection Targets
@@ -83,7 +83,7 @@ An activation request can be redirected multiple times. Instance A could redirec
 
 In order to handle reactivation, the app can register for an Activated event.
 
-- **UWP**: The event passes an [IActivatedEventArgs](/windows/uwp/api/windows.applicationmodel.activation.iactivatedeventargs) to the app.
+- **UWP**: The event passes an [IActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs) to the app.
 - **Windows App SDK**: The event passes a `Microsoft.Windows.AppLifecycle.AppActivationArguments` instance to the app, which contains one of the `-ActivatedEventArgs` instances.
 
 ## Examples
