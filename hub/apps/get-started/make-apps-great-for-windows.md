@@ -107,7 +107,7 @@ We rounded the corners of window borders and your app will get this automaticall
 
 - Most apps will automatically receive rounded corners, but in some cases you might need to do a little work to get them:
   - Allow the system to draw your border and shadow.
-  - Call our rounding API to opt in if you need to draw your own border and shadow.
+  - Call our rounding API to opt in if you need to draw your own border and shadow.<br/>(See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/apply-rounded-corners.md).)
 - You will get rounded corners automatically if you use UWP or you adopt Windows App SDK windowing to:
   - Configure the style of your window using the pre-defined templates.
   - Customize the TitleBar of your windows.
