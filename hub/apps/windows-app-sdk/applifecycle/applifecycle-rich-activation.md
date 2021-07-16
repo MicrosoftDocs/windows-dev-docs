@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > AppLifecycle is an experimental feature that is currently supported only in the [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
 
-In the Windows App SDK, AppLifecycle brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's [44 activation kinds](/windows/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
+In the Windows App SDK, AppLifecycle brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's [44 activation kinds](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
 
 Supporting rich activations requires two steps:
 
