@@ -26,7 +26,7 @@ We've gathered together links to documentation that supports the talks given as 
 - [WinUI Introduction](../winui/index.md)
 - [Comparison of WinUI 3 and WinUI 2](../winui/winui3-winui2-comparison.md)
 - [WinUI 3.0 - Project Reunion 0.5](../winui/winui3/index.md)
-- [Windows UI Library 2.x](../winui/winui2/index.md)
+- [Windows UI Library 2](../winui/winui2/index.md)
 
 
 ## Windows Template Studio

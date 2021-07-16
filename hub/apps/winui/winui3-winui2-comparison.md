@@ -34,6 +34,6 @@ Both are under active development with updates released on a regular basis.
 
 - [Windows UI Library (WinUI)](index.md)
 
-- [Windows UI Library 2.x](winui2/index.md)
+- [Windows UI Library 2](winui2/index.md)
 
 - [Windows UI Library 3 - Project Reunion 0.5 (March 2021)](winui3/index.md)

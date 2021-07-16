@@ -40,7 +40,7 @@ For more information about getting started with building a WinUI 3 app, see the 
 - [Build a basic WinUI 3 app for desktop](../desktop-build-basic-winui3-app.md)
 - [Build a basic WinUI 3 app for UWP](../get-started-winui3-for-uwp.md)
 
-Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
+Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 

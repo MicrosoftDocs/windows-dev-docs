@@ -511,14 +511,14 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 9. Save the file.
 10. Build the solution and confirm that it builds successfully.
 
-## Add a control from the WinUI 2.x library to the custom control
+## Add a control from the WinUI 2 library to the custom control
 
 Traditionally, WinRT XAML controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a WinRT XAML control from the WinUI 2.x library to your user control.
+This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.
 
 > [!NOTE]
-> Currently, XAML Islands only supports hosting controls from the WinUI 2.x library. Support for hosting controls from the WinUI 3 library is coming in a later release.
+> Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.
 
 1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 

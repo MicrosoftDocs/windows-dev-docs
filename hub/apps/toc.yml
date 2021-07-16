@@ -85,7 +85,7 @@
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
               - name: "Templated XAML controls for WinUI 3 apps with C#"
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
-          - name: "Windows UI 2.x Library"
+          - name: "Windows UI Library 2"
             items: 
               - name: "Overview"
                 href: winui/winui2/index.md
@@ -93,7 +93,7 @@
                 href: winui/winui2/winui-2.6.md
               - name: "Setup"
                 items: 
-                  - name: "Get started with WinUI 2.x"
+                  - name: "Get started with WinUI 2"
                     href: winui/winui2/getting-started.md
                   - name: "NuGet package list"
                     href: winui/winui2/nuget-packages.md
@@ -225,7 +225,7 @@
       - name: Windows App SDK API reference
         items: 
           - name: WinRT API reference
-            href: /windows/windows-app-sdk/api/winrt/microsoft.applicationmodel.resources
+            href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
           - name: WinUI WinRT API reference

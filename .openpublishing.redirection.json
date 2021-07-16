@@ -5186,6 +5186,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/release-notes/index.md",
+      "redirect_url": "/windows/apps/winui/winui3/release-notes/release-notes-08-preview",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/winui3/get-started-winui3-for-desktop.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false

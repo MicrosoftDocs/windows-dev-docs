@@ -6,7 +6,7 @@ ms.date: 06/24/2021
 keywords: windows 10, uwp, toolkit sdk
 ---
 
-# Getting started with the Windows UI 2.x Library
+# Getting started with the Windows UI 2 Library
 
 [Windows UI Library 2.6](winui-2.6.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
