@@ -37,3 +37,117 @@ To prevent a dynamic profile from being generated, you can add the profile gener
 ```json
 "disabledProfileSources": ["Windows.Terminal.Wsl", "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore"]
 ```
+
+## Add a third party profile
+
+If a 3rd party command line tool does not have a profile auto-generated into your settings.json file, you can add it manually. Below are profiles for a few common 3rd party tools for your reference.
+
+### Anaconda
+
+Assuming that you've installed Anaconda into `%USERPROFILE%\Anaconda3`:
+
+```json
+{
+    "commandline": "cmd.exe /k \"%USERPROFILE%\\Anaconda3\\Scripts\\activate.bat %USERPROFILE%\\Anaconda3\"",
+    "icon": "%USERPROFILE%\\Anaconda3\\Menu\\anaconda-navigator.ico",
+    "name": "Anaconda3",
+    "startingDirectory": "%USERPROFILE%"
+}
+```
+
+### cmder
+
+Assuming that you've installed cmder into `%CMDER_ROOT%`:
+
+```json
+{
+    "commandline": "cmd.exe /k \"%CMDER_ROOT%\\vendor\\init.bat\"",
+    "name": "cmder",
+    "icon": "%CMDER_ROOT%\\icons\\cmder.ico",
+    "startingDirectory": "%USERPROFILE%"
+}
+```
+
+### Cygwin
+
+Assuming that you've installed Cygwin into `C:\Cygwin`:
+
+```json
+{
+    "name": "Cygwin",
+    "commandline": "C:\\Cygwin\\bin\\bash --login -i",
+    "icon": "C:\\Cygwin\\Cygwin.ico",
+    "startingDirectory": "C:\\Cygwin\\bin"
+}
+```
+
+> ![NOTE]
+> The starting directory of Cygwin is set in order for the path
+to work. The default directory opened when starting Cygwin will be `$HOME` because
+of the `--login` flag.
+
+### Far Manager
+
+Assuming that you've installed Far into `c:\Program Files\Far Manager`:
+
+```json
+{
+    "name": "Far",
+    "commandline": "\"c:\\program files\\far manager\\far.exe\"",
+    "startingDirectory": "%USERPROFILE%",
+    "useAcrylic": false
+},
+```
+
+### Git Bash
+
+Assuming that you've installed Git Bash into `C:\\Program Files\\Git`:
+
+```json
+{
+    "name": "Git Bash",
+    "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -li",
+    "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+    "startingDirectory": "%USERPROFILE%"
+}
+````
+
+### Git Bash (WOW64)
+
+Assuming that you've installed Git Bash into `C:\\Program Files (x86)\\Git`:
+
+```json
+{
+    "name": "Git Bash",
+    "commandline": "%ProgramFiles(x86)%\\Git\\bin\\bash.exe -li",
+    "icon": "%ProgramFiles(x86)%\\Git\\mingw32\\share\\git\\git-for-windows.ico",
+    "startingDirectory": "%USERPROFILE%"
+}
+```
+
+### MSYS2
+
+Assuming that you've installed MSYS2 into `C:\\msys64`:
+
+```json
+{
+    "name": "MSYS2",
+    "commandline": "C:\\msys64\\msys2_shell.cmd -defterm -no-start -mingw64",
+    "icon": "C:\\msys64\\msys2.ico",
+    "startingDirectory": "C:\\msys64\\home\\user"
+}
+```
+
+For more details, see the Terminals section of the [MSYS2 documentation](https://www.msys2.org/docs/terminals/#windows-terminal).
+
+### Developer Command Prompt for Visual Studio
+
+Assuming that you've installed [Visual Studio 2019 Professional](https://visualstudio.microsoft.com/downloads/):
+
+```json
+{
+    "name": "Developer Command Prompt for VS 2019",
+    "commandline": "cmd.exe /k \"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/Tools/VsDevCmd.bat\"",
+    "startingDirectory": "%USERPROFILE%"
+}
+```
