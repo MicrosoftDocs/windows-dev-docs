@@ -56,6 +56,9 @@ If your app is not rounded by policy, you can optionally call our new API to all
 
 The following examples show how you can pass these values to [**DwmSetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) or [**DwmGetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute) to control your app's rounding experience.
 
+> [!NOTE]
+> DwmSetWindowAttribute is a native API. If your app is based on .NET, you'll need to use [P/Invoke](https://docs.microsoft.com/dotnet/standard/native-interop/pinvoke) to call it so you can round your app's corners.
+
 ### Example 1 – Rounding the corners of a menu
 
 By default, menus are pop-up windows, which do not get rounded. If your app creates a custom menu and you want it to follow the rounding policy of other standard menus, you can call the API to let the system know that this window should be rounded, even though it doesn't appear to match the default rounding policy.
