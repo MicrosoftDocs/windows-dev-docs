@@ -5,19 +5,19 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, user interaction, input
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
-# Store and retrieve Windows Ink stroke data
 
+# Store and retrieve Windows Ink stroke data
 
 Windows apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 
 > [!NOTE]
 > ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
+>
+> The Ink Serialized Format (ISF) Specification can be downloaded from the [Microsoft Download Center](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 > **Important APIs**: [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
 
@@ -27,9 +27,9 @@ Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](/uwp/ap
 
 **Download this sample from [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
-1.  First, we set up the UI.
+1. First, we set up the UI.
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+   The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
