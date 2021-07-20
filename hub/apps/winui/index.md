@@ -13,12 +13,12 @@ keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 ![WinUI logo](../images/logo-winui.png)
 
     :::column-end:::
-    :::column span="3":::
+    :::column span="2":::
 
 The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications.
 
 > [!Important]
-> Currently, two generations of WinUI are under development and on distinct ship schedules. Depending on your requirements, you can choose from:
+> Two generations of WinUI are under development and on individual ship schedules. Depending on your requirements, you can choose from:
 >
 > - **[WinUI 3](#windows-ui-3-library)**, which ships with the [Windows App SDK](../windows-app-sdk/index.md) (decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)).
 > - **[WinUI 2](#windows-ui-2-library)**, the 2nd generation of the native UX stack in Windows, ships as a standalone [NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/), and is tightly integrated with the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
