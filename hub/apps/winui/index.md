@@ -10,7 +10,7 @@ keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 
 :::row:::
     :::column:::
-![WinUI logo](../images/logo-winui-height-150.png)
+![WinUI logo](../images/logo-winui.png)
         
     :::column-end:::
     :::column span="3":::
