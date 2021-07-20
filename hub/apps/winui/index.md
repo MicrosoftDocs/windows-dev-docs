@@ -2,7 +2,7 @@
 title: Windows UI Library (WinUI)
 description: WinUI Libraries for Windows app development. 
 ms.topic: article
-ms.date: 06/24/2021
+ms.date: 07/20/2021
 keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
