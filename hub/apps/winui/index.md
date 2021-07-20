@@ -17,33 +17,11 @@ By incorporating the [Fluent Design System](https://www.microsoft.com/design/flu
 With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and Javascript (via [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
 > [!Important]
-> There are two versions of WinUI: **WinUI 2** and **WinUI 3**.
-
-## Windows UI 2 Library
-
-WinUI 2 can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
-
-> [!NOTE]
-> WinUI 2.6 is the latest release. For details on the work planned for the next release, see the [WinUI 2.7 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/12).
-
-The WinUI 2 Library is closely coupled with the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
-
-By maintaining down-level compatibility with earlier versions of Windows 10, WinUI 2 controls work even if users don't have the latest OS.
-
-![WinUI 2 platform support](../images/platforms-winui2.png)
-
-**For installation instructions see [Getting started with the Windows UI Library](winui2/getting-started.md).**
-
-### Related links for WinUI 2
-
-- [WinUI 2 Library overview](winui2/index.md)
-- [API docs](/windows/winui/api/)
-- [Source code](https://aka.ms/winui)
-- [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
+> There are two versions of WinUI: **WinUI 3** and **WinUI 2**.
 
 ## Windows UI 3 Library
 
-WinUI 3 is the next version of WinUI, a native Windows 10 UI platform completely decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
+WinUI 3 is the latest version of WinUI, a native Windows 10 UI platform completely decoupled from the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
 > [!Important]
 > WinUI 3 - Windows App SDK 0.8 is the latest stable, supported version of WinUI 3. With this version of WinUI 3, you can create production apps and publish them to the Microsoft Store.
@@ -69,6 +47,28 @@ Please note that the Universal Windows Platform contains more than just the XAML
 
 - [Stable release channel](../windows-app-sdk/stable-channel.md)
 - [WinUI 3 Controls Gallery sample app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3)
+
+## Windows UI 2 Library
+
+WinUI 2 can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
+
+> [!NOTE]
+> WinUI 2.6 is the latest release. For details on the work planned for the next release, see the [WinUI 2.7 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/12).
+
+The WinUI 2 Library is closely coupled with the [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other UI elements for UWP apps.
+
+By maintaining down-level compatibility with earlier versions of Windows 10, WinUI 2 controls work even if users don't have the latest OS.
+
+![WinUI 2 platform support](../images/platforms-winui2.png)
+
+**For installation instructions see [Getting started with the Windows UI Library](winui2/getting-started.md).**
+
+### Related links for WinUI 2
+
+- [WinUI 2 Library overview](winui2/index.md)
+- [API docs](/windows/winui/api/)
+- [Source code](https://aka.ms/winui)
+- [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
 ## WinUI resources
 

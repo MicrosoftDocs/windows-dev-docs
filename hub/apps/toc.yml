@@ -42,11 +42,11 @@
               - name: "Release notes archive"
                 items:
                   - name: "WinUI 3 - Project Reunion 0.8 Preview"
-                    href: winui/winui3/release-notes/release-notes-08-preview.md    
+                    href: winui/winui3/release-notes/release-notes-08-preview.md
                   - name: "WinUI 3 - Project Reunion 0.5"
-                    href: winui/winui3/index.md   
+                    href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
                   - name: "WinUI 3 - Project Reunion 0.5 Preview"
-                    href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md     
+                    href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
           - name: "Get started"
             items:
               - name: "Build apps with the Windows App SDK"
