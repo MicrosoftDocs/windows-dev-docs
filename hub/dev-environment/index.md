@@ -1,6 +1,6 @@
 ---
 title: Setup a development environment on Windows
-description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. 
+description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -8,7 +8,7 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: Set up windows, windows 11, windows 10, Dev Environment, Dev tools, development paths, Microsoft Developer, Tips, Performance, WSL, terminal, nodejs, python
 ms.localizationpriority: medium
-ms.date: 06/28/2021
+ms.date: 07/21/2021
 ---
 
 # Set up your development environment on Windows
@@ -68,6 +68,11 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
         **[Get started with Rust](./rust/index.yml)**<br>
         Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
+    :::column-end:::
+    :::column:::
+       [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
+        **[Get started with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**<br>
+        Get started with Blazor, a client-side UI framework within ASP.NET Core. Use HTML, CSS, and C# (rather than JavaScript) to create UI components and single page applications for the web.
     :::column-end:::
 :::row-end:::
 
