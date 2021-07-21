@@ -3,7 +3,7 @@ description: Build .NET and C++ desktop (Win32) apps with a WinUI 3 UI.
 title: Build a basic WinUI 3 app for desktop
 ms.date: 03/19/2021
 ms.topic: article
-keywords: windows 10, uwp, windows forms, wpf, xaml islands
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ms.localizationpriority: high
@@ -174,7 +174,7 @@ WinUI 3 desktop applications can call .NET 5 APIs without restriction. In the fo
 
 ## Summary
 
-In this topic we covered accessing the underlying window implementation, in this case Win32 and HWNDs, and use Win32 APIs in your app along with the WinRT APIs of Windows 10. This lets you use much of your existing desktop application code when creating new WinUI 3 desktop apps.
+In this topic we covered accessing the underlying window implementation, in this case Win32 and HWNDs, and use Win32 APIs in your app along with the WinRT APIs of Windows 10 and later. This lets you use much of your existing desktop application code when creating new WinUI 3 desktop apps.
 
 We also covered how you can use the .NET 5 APIs with WinUI 3 as your UI Framework.
 

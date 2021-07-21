@@ -3,7 +3,7 @@ title: Windows UI library
 description: Provides info for WinUI 2 and Windows app development. 
 ms.topic: article
 ms.date: 06/24/2021
-keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.custom: RS5
 ---
 
