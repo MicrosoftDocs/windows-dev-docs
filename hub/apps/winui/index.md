@@ -64,9 +64,6 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 
 ![WinUI 2 platform support](../images/platforms-winui2.png)
 
-> [!Important]
-> The Universal Windows Platform contains more than just the XAML framework. Features such as application and security models, media pipeline, Xbox and Windows 10 and later shell integration, and compatibility with a broad variety of devices will continue to be developed and supported.
-
 ### Related links for WinUI 2
 
 - [WinUI 2 Library overview](winui2/index.md)
