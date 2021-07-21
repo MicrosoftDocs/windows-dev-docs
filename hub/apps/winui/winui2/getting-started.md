@@ -3,7 +3,7 @@ title: Getting started with the Windows UI library
 description: How to install and use the Windows UI Library. 
 ms.topic: article
 ms.date: 06/24/2021
-keywords: windows 10, uwp, toolkit sdk
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
 # Getting started with the Windows UI 2 Library
