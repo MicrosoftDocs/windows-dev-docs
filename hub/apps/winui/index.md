@@ -39,8 +39,6 @@ WinUI 3 is the native UI platform component that ships with the [Windows App SDK
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
-Please note that the Universal Windows Platform contains more than just the XAML framework. Features such as application and security models, media pipeline, Xbox and Windows 10 and later shell integration, and compatibility with a broad variety of devices will continue to be developed and supported.
-
 > [!NOTE]
 > The Windows App SDK was previously called **Project Reunion**, which was a temporary code name. Some assets such as the VSIX extension and NuGet packages still use the code name, but these files will be renamed in a future release. Most of the documentation now uses the name **Windows App SDK** except when referring to a specific release or asset that still uses the previous code name.
 
@@ -53,7 +51,7 @@ Please note that the Universal Windows Platform contains more than just the XAML
 
 ## Windows UI 2 Library
 
-WinUI 2 can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md).
+WinUI 2 can be used in UWP applications and incorporated into new or existing desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md) (for installation instructions, see [Getting started with the WinUI 2 Library](winui2/getting-started.md)).
 
 > [!NOTE]
 > WinUI 2.6 is the latest release. For details, see the [overview and release notes](winui2/index.md)
@@ -66,7 +64,8 @@ By maintaining down-level compatibility with earlier versions of Windows 10, Win
 
 ![WinUI 2 platform support](../images/platforms-winui2.png)
 
-**For installation instructions see [Getting started with the Windows UI Library](winui2/getting-started.md).**
+> [!Important]
+> The Universal Windows Platform contains more than just the XAML framework. Features such as application and security models, media pipeline, Xbox and Windows 10 and later shell integration, and compatibility with a broad variety of devices will continue to be developed and supported.
 
 ### Related links for WinUI 2
 
