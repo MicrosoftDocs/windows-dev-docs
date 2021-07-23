@@ -485,7 +485,7 @@ User Generated Content (UGC) is content that users contribute to an app or produ
 
 ## Certification Appeal Process
 
-All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to reportapp@microsoft.com.
+All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
 ### Microsoft Store appeal statistics for FY2021
 
@@ -494,7 +494,7 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 | Main Complaint Type 1: Certification Results |      145 |
 | Main Complaint Type 2: Account Terminations  |       74 |
 | Main Complaint Type 3: Enforcement Appeal    |       66 |
-| Other Complaint Types                        |      144 |
+| Other Types Of Complaints                    |      144 |
 | Total Complaints                             |      429 |
 | Overturned Complaints                        |       46 |
 | Average Processing Time                      | 2.9 days |
