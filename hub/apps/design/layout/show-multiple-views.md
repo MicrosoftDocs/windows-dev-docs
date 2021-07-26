@@ -53,7 +53,7 @@ There are different ways that Windows content can be hosted inside an app.
 
      UWP XAML content in a Win32 app (using HWND), also known as XAML Islands, is hosted in a DesktopWindowXamlSource.
 
-    For more info about XAML Islands, see [Using the UWP XAML hosting API in a desktop application](/windows/apps/desktop/modernize/using-the-xaml-hosting-api)
+    For more info about XAML Islands, see [Using the UWP XAML hosting API in a desktop application](../../desktop/modernize/using-the-xaml-hosting-api.md)
 
 ### Make code portable across windowing hosts
 

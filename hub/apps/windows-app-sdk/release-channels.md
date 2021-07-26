@@ -30,7 +30,7 @@ The following table shows which features are currently available in each release
 |--|--|--|--|
 | [MSIX desktop app support](deploy-packaged-apps.md) | :heavy_check_mark: Available | N/A  |  :heavy_check_mark: Available |
 | [Unpackaged desktop app support](deploy-unpackaged-apps.md) | :x: Not available |  N/A  |  :heavy_check_mark: Available |
-| [UWP app support](../winui/winui3/get-started-winui3-for-uwp.md) | :x: Not available |  N/A  |  :heavy_check_mark: Available |
+| [UWP app support](../winui/winui3/create-your-first-winui3-app.md) | :x: Not available |  N/A  |  :heavy_check_mark: Available |
 | [WinUI 3](../winui/winui3/index.md) |  :heavy_check_mark: Available for MSIX desktop<br>❌ Not available for UWP and unpackaged desktop | N/A  | :heavy_check_mark: Available for MSIX desktop and UWP<br>❌ Not available for unpackaged desktop |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| N/A  | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | N/A  | :heavy_check_mark: Available |

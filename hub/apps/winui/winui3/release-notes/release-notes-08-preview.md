@@ -37,9 +37,9 @@ Once you've set up your development environment, see [WinUI 3 project templates 
 
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../get-started-winui3-for-desktop.md)
+- [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
 - [Build a basic WinUI 3 app for desktop](../desktop-build-basic-winui3-app.md)
-- [Build a basic WinUI 3 app for UWP](../get-started-winui3-for-uwp.md)
+- [Build a basic WinUI 3 app for UWP](../create-your-first-winui3-app.md)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
@@ -67,7 +67,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 
 ## Updating your existing WinUI 3 app
 
-If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../project-reunion/update-existing-projects-to-the-latest-release.md).
+If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../windows-app-sdk/update-existing-projects-to-the-latest-release.md).
 
 
 ## Major changes introduced in this release

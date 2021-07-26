@@ -17,9 +17,9 @@ This release of Windows marks a visual evolution of the operating system. As Win
 - _App fundamentals_ - good performance on low-cost, highly mobile device form factors, and hassle-free app lifecycle and state rehydration/roaming.
 - _User experience_ - the ability to work naturally with a complete range of inputs, design and interaction patterns that look and feel at home on current and future devices, and support for modern windowing workflows and shell integration points.
 
-With entirely new visuals signaling change, [signature experiences](/windows/apps/design/signature-experiences/signature-experiences) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
+With entirely new visuals signaling change, [signature experiences](../design/signature-experiences/signature-experiences.md) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
 
-Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](/windows/apps/winui), [MSIX](/windows/msix), and the [Windows App SDK](/windows/apps/windows-app-sdk) (Project Reunion) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
+Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) (Project Reunion) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
 Here are the top 10 things you can do to make your app shine on Windows 11.
 
@@ -63,7 +63,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
 
-[Accessibility in Windows](/windows/apps/accessibility)
+[Accessibility in Windows](../accessibility.md)
 
 ## 4. Use the latest common controls
 
@@ -73,8 +73,8 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### Windows UI Library (WinUI)
 
-- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](/windows/apps/winui/winui2/) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
-- See the documentation for a [list of supported controls](/windows/apps/design/controls#alphabetical-index).
+- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
+- See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
 - Use the [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) to evaluate the controls.
 
 ### Desktop apps (Win32)
@@ -95,9 +95,9 @@ We are introducing a new material called _Mica_ that lets the user's desktop bac
 - Some controls, like NavigationView, already come built with the default behavior.
 - When an app that uses Mica runs in Windows 10 or down-level, it will degrade gracefully (Mica will fallback to a solid color).
 - Mica is to be used on long-lived surfaces, unlike Acrylic, which is to be used on transient surfaces.
-- If you are using Acrylic material, follow the existing [Acrylic guidance](/windows/apps/design/style/acrylic) as we have updated the colors to be more vibrant.
+- If you are using Acrylic material, follow the existing [Acrylic guidance](../design/style/acrylic.md) as we have updated the colors to be more vibrant.
 
-[Mica guidance](/windows/apps/design/style/mica), [Acrylic guidance](/windows/apps/design/style/acrylic)
+[Mica guidance](../design/style/mica.md), [Acrylic guidance](../design/style/acrylic.md)
 
 ## 6. Make sure your Window corners are rounded
 
@@ -161,8 +161,8 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 
 - New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI 2.6 and greater use the new icons and typography automatically.
 - File type icons are updated. If your app is using icons in `imageres.dll` or `shell32.dll`, then icons will be updated automatically. Otherwise, a manual style update might be needed.
-- App icons - Follow the latest [design guidance for app icons](/windows/apps/design/style/icons) used in places like launchers on Start and TaskBar.
-- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](/windows/apps/design/controls/animated-icon) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
+- App icons - Follow the latest [design guidance for app icons](../design/style/icons.md) used in places like launchers on Start and TaskBar.
+- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../design/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
 - Custom experiences written in XAML that specify `Segoe UI` in code, should instead specify `Segoe UI Variable`.
 
 > [!NOTE]

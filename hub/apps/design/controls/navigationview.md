@@ -1764,4 +1764,4 @@ This theme resource modifies the margin around [NavigationView.Header](/uwp/api/
 - [NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
 - [List/details](list-details.md)
 - [Navigation basics](../basics/navigation-basics.md)
-- [Fluent Design overview](/windows/apps/fluent-design-system)
+- [Fluent Design overview](../index.md)

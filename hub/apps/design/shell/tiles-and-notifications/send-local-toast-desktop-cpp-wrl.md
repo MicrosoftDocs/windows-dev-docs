@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Send a local toast notification from Win32 C++ WRL apps
 
-Win32 apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for Win32 apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
+Win32 apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) to obtain package identity, and classic non-packaged Win32 apps) can send interactive toast notifications just like Windows apps. However, there are a few special steps for Win32 apps due to the different activation schemes and the potential lack of package identity if you're not using MSIX or a sparse package.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](./send-local-toast.md).
@@ -88,7 +88,7 @@ Then, you must register with the notification platform. There are different step
 
 ### MSIX/sparse package
 
-If you're using [MSIX](/windows/msix/desktop/source-code-overview) or a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (or if you support both), in your **Package.appxmanifest**, add:
+If you're using [MSIX](/windows/msix/desktop/source-code-overview) or a [sparse package](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) (or if you support both), in your **Package.appxmanifest**, add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**

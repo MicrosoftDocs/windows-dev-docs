@@ -182,4 +182,4 @@ We also covered how you can use the .NET 5 APIs with WinUI 3 as your UI Framewor
 
 - [Windows UI Library 3 - Project Reunion 0.5 (March 2021)](index.md)
 - [Get started with the Windiows App SDK](../../windows-app-sdk/get-started.md)
-- [Get started with WinUI 3 for desktop apps](get-started-winui3-for-desktop.md)
+- [Get started with WinUI 3 for desktop apps](./create-your-first-winui3-app.md)
