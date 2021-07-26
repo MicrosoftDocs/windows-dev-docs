@@ -146,7 +146,7 @@ The type parameters for those two delegate types have to cross the ABI, so the t
 
 Below is an example in the form of code listings. Begin with the **ThermometerWRC** and **ThermometerCoreApp** projects that you created earlier in this topic, and edit the code in those projects to look like the code in these listings.
 
-This first listing is for the **ThermometerWRC** project. After editing `ThermometerWRC.idl` as shown below, build the project, and then copy `MyEventArgs.h` and `.cpp` into the project (from the `Generated Files` folder) just like you did earlier with `Thermometer.h` and `.cpp`.
+This first listing is for the **ThermometerWRC** project. After editing `ThermometerWRC.idl` as shown below, build the project, and then copy `MyEventArgs.h` and `.cpp` into the project (from the `Generated Files` folder) just like you did earlier with `Thermometer.h` and `.cpp`. Remember to delete the `static_assert` from both files.
 
 ```cppwinrt
 // ThermometerWRC.idl

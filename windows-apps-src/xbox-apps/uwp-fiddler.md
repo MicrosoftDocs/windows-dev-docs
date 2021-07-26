@@ -70,7 +70,7 @@ To stop using Fiddler as a proxy to the Internet (and stop Fiddler from tracing 
 
 ## See also
 - [Fiddler settings API reference](wdp-fiddler-api.md)
-- [Frequently asked questions](frequently-asked-questions.md)
+- [Frequently asked questions](frequently-asked-questions.yml)
 - [UWP on Xbox One](index.md)
 
 

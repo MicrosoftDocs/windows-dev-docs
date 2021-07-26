@@ -50,4 +50,4 @@ Resource candidates are chosen based on a particular [ResourceContext](/windows/
 
 ## Sample
 
-For a sample that demonstrates how to use the MRT Core API, see the [MRT Core sample](https://github.com/microsoft/Project-Reunion-Samples/tree/main/MrtCore).
+For a sample that demonstrates how to use the MRT Core API, see the [MRT Core sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement).

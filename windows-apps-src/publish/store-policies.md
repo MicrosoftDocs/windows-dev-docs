@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 06/28/2021
+ms.date: 07/23/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -482,6 +482,22 @@ User Generated Content (UGC) is content that users contribute to an app or produ
 
 ---
 <sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, the Xbox Store, Microsoft Store for Business, and Microsoft Store for Education.
+
+## Certification Appeal Process
+
+All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
+
+### Microsoft Store appeal statistics for FY2021
+
+|                                              | Count    |
+|----------------------------------------------|----------|
+| Main Complaint Type 1: Certification Results |      145 |
+| Main Complaint Type 2: Account Terminations  |       74 |
+| Main Complaint Type 3: Enforcement Appeal    |       66 |
+| Other Types Of Complaints                    |      144 |
+| Total Complaints                             |      429 |
+| Overturned Complaints                        |       46 |
+| Average Processing Time                      | 2.9 days |
 
 ### See also
 

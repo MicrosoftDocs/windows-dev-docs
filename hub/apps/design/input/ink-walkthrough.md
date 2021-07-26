@@ -3,7 +3,7 @@ ms.assetid:
 title: Support ink in your Windows app
 description: Learn how to support writing and drawing with Windows Ink in a basic Universal Windows Platform (UWP) app by following this step by step tutorial.
 keywords: ink, inking, tutorial
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 ms.topic: article
 
 
@@ -390,9 +390,12 @@ Here's the same flowchart after shape recognition.
 
 ## Step 7: Save and load ink
 
-So, you're done doodling and you like what you see, but think you might like to tweak a couple of things later? You can save your ink strokes to an Ink Serialized Format (ISF) file and load them for editing whenever the inspiration strikes. 
+So, you're done doodling and you like what you see, but think you might like to tweak a couple of things later? You can save your ink strokes to an Ink Serialized Format (ISF) file and load them for editing whenever the inspiration strikes.
 
 The ISF file is a basic GIF image that includes additional metadata describing ink-stroke properties and behaviors. Apps that are not ink enabled can ignore the extra metadata and still load the basic GIF image (including alpha-channel background transparency).
+
+> [!NOTE]
+> The Ink Serialized Format (ISF) Specification can be downloaded from the [Microsoft Download Center](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 In this step, we hook up the **Save** and **Load** buttons located beside the ink toolbar.
 

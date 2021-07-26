@@ -19,7 +19,7 @@ The following list highlights some known issues that you may encounter, but this
 
 **We want to get your feedback**, so please report any issues that you find on the [Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) forum. 
 
-If you get stuck, read the information in this topic, see [Frequently asked questions](frequently-asked-questions.md), and use the forums to ask for help.
+If you get stuck, read the information in this topic, see [Frequently asked questions](frequently-asked-questions.yml), and use the forums to ask for help.
 
  
 ## Deploying from VS fails with Parental Controls turned on
@@ -117,5 +117,5 @@ namespace TestDNLA {
 ```
 
 ## See also
-- [Frequently asked questions](frequently-asked-questions.md)
+- [Frequently asked questions](frequently-asked-questions.yml)
 - [UWP on Xbox One](index.md)

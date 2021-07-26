@@ -31,7 +31,7 @@ As a Rust developer, you'll use Cargo (Rust's package management tool)&mdash;alo
 
 Similar to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/), [Rust for Windows](https://github.com/microsoft/windows-rs) is an open source language projection developed on GitHub. Use the [Rust for Windows](https://github.com/microsoft/windows-rs) repo if you have questions about Rust for Windows, or if you wish to report issues with it.
 
-The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-rs/tree/master/examples) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
+The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-samples-rs) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
 
 ## Contribute to Rust for Windows
 

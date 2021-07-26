@@ -25,16 +25,31 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 0.8
 
-This is the latest release of the stable channel.
+The latest available release of the stable channel is the servicing release 0.8.1.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
-### New features and updates
+
+### Version 0.8.1
+This is a servicing release of the Windows App SDK that includes a few critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+- Windows App SDK cannot run on latest Insider build
+- Crash in EditableComboBox when entering a value that does not appear in dropdown
+- WebView2 doesn't allow user to tab out once focused has been received
+- Fully qualify Windows.Foundation.Metadata.DefaultOverload namespace in WinUI generated code to avoid namespace ambiguity 
+    - This fixes bug [#5108](https://github.com/microsoft/microsoft-ui-xaml/issues/5108).
+- Security fix – see [CVE-2021-34489](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34489) for more details.
+
+The limitations and known issues for v0.8 also apply to v0.8.1, unless marked otherwise in the [section below](#limitations).
+
+### Version 0.8.0
+#### New features and updates
 
 This release supports all [stable channel features](release-channels.md#features-available-by-release-channel).
 
-#### WinUI 3
+**WinUI 3**
 
 This release includes many bug fixes and improved stabilization across WinUI 3. These are all of the new changes in WinUI 3 since the release of WinUI 3 - Project Reunion 0.5:
 
@@ -70,7 +85,7 @@ To get started developing with WinUI, check out the following articles:
 - [Build a basic WinUI 3 app for desktop](../winui/winui3/desktop-build-basic-winui3-app.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
-#### DWriteCore
+**DWriteCore**
 
 This release of DWriteCore includes the following new and updated features. DWriteCore is introduced and described in the [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
 
@@ -85,19 +100,19 @@ This release of DWriteCore includes the following new and updated features. DWri
 
 For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/windows/windows-app-sdk/api/win32/_dwritecore/) and [DirectWrite API Reference](/windows/win32/directwrite/reference).
 
-### MRTCore
+**MRTCore**
 
 - The **Build Action** for resources is automatically set when you add the resource to your project, reducing the need for manual project configuration.
 
-### Limitations
+#### Limitations
 
-- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com/en-us/).
+- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com/en-us/). **This is fixed in v0.8.1**.
 
 - Desktop apps (C# .NET 5 or C++ desktop): This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the preview channel.
 
 - UWP apps: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the preview release channel. For more information about installing the preview extension, see Set up your development environment.
 
-### Known Issues
+#### Known Issues 
 
 - WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload are currently not supported for the 0.8 release. You can expect to see support for these features in Visual Studio 2019 16.11 Preview 3.
 

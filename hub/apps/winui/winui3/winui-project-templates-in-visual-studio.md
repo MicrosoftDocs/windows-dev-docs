@@ -1,6 +1,7 @@
 ---
 title: Create WinUI 3 Projects
 description: Summary of the WinUI 3 project and item templates available in Visual Studio. 
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 03/19/2021
 ms.topic: article
 ---
@@ -19,7 +20,7 @@ You can use these WinUI project templates to create apps.
 
 | Template | Language | Description |
 |----------|----------|-------------|
-| Blank App, Packaged (WinUI 3 in Desktop) | C# and C++ | Creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Create your first WinUI 3 app](create-your-first-winui3-app.md).<p></p>The solution also includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 features via package extensions, and much more.  |
+| Blank App, Packaged (WinUI 3 in Desktop) | C# and C++ | Creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Create your first WinUI 3 app](create-your-first-winui3-app.md).<p></p>The solution also includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 and later features via package extensions, and much more.  |
 | [Experimental] Blank App (WinUI 3 in UWP) | C# and C++ | Creates a UWP app that with a WinUI-based user interface. The generated project includes a basic page that derives from the **Microsoft.UI.Xaml.Controls.Page** class in the WinUI library that you can use to start building your UI. For more information about this project type, see [Create your first WinUI 3 app](create-your-first-winui3-app.md). |
 
 You can use these WinUI project templates to build components that can be loaded and used by a WinUI-based app.

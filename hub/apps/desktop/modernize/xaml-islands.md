@@ -16,10 +16,10 @@ Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UW
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
 
-* Any first-party WinRT XAML control provided by the Windows SDK or the WinUI 2.x library.
+* Any first-party WinRT XAML control provided by the Windows SDK or the WinUI 2 library.
 * Any custom WinRT XAML control (for example, a user control that consists of several WinRT XAML controls that work together). You must have the source code for the custom control so you can compile it with your application.
 
-Fundamentally, XAML Islands are created by using the *UWP XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) that use the UWP XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
+Fundamentally, XAML Islands are created by using the *WinRT XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) that use the WinRT XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
 
 The way you use XAML Islands depends on your application type and the types of WinRT XAML controls you want to host.
 
@@ -99,20 +99,20 @@ To use these controls, install one of these NuGet packages:
 
 ## C++ desktop (Win32) applications
 
-The XAML Island .NET controls are not supported in C++ desktop applications. These applications must instead use the *UWP XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
+The XAML Island .NET controls are not supported in C++ desktop applications. These applications must instead use the *WinRT XAML hosting API* provided by the Windows 10 SDK (version 1903 and later).
 
-The UWP XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ desktop application can use to host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). You can host WinRT XAML controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
+The WinRT XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ desktop application can use to host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). You can host WinRT XAML controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.
 
-* [Using the UWP XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
+* [Using the WinRT XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
 * [Host a standard WinRT XAML control in a C++ desktop app](host-standard-control-with-xaml-islands-cpp.md)
 * [Host a custom WinRT XAML control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
-> The wrapped controls and host controls in the Windows Community Toolkit use the UWP XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the UWP XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the UWP XAML hosting API directly because they abstract away many of the implementation details of using the API.
+> The wrapped controls and host controls in the Windows Community Toolkit use the WinRT XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the WinRT XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the WinRT XAML hosting API directly because they abstract away many of the implementation details of using the API.
 
 ## Architecture of XAML Islands
 
-Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the UWP XAML hosting API.
+Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the WinRT XAML hosting API.
 
 ![Host control Architecture](images/xaml-islands/host-controls.png)
 
@@ -124,7 +124,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI 2.x Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 

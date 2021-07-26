@@ -1,6 +1,7 @@
 ---
 title: WinUI 2.6 Release Notes
 description: Release notes for WinUI 2.6, including new features and bug fixes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 06/24/2021
 ms.topic: article
 ---
@@ -12,11 +13,11 @@ WinUI 2.6 is the latest stable release of the Windows UI Library (WinUI) for UWP
 > [!NOTE]
 > For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../winui3/index.md).
 
-WinUI is hosted on GitHub in our [Windows UI Library repo](https://github.com/microsoft/microsoft-ui-xaml). As an open source project, you can file your WinUI 2.x bug reports, feature requests, and community code contributions there.
+WinUI is hosted on GitHub in our [Windows UI Library repo](https://github.com/microsoft/microsoft-ui-xaml). As an open source project, you can file your WinUI 2 bug reports, feature requests, and community code contributions there.
 
 All stable releases (and prereleases) are available for download from our [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/tags) or from our [NuGet page](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
-WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with the Windows UI 2.x Library](getting-started.md).
+WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with the Windows UI 2 Library](getting-started.md).
 
 New or updated features for WinUI 2.6 include:
 
