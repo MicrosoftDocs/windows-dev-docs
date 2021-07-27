@@ -41,7 +41,7 @@ To use the Windows App SDK in an existing project that meets the above requireme
 1. Open an existing desktop project (either C#/.NET 5 or C++/WinRT) or UWP project (if using experimental) in Visual Studio 2019.
 
     > [!NOTE]
-    > If you have a C#/.NET 5 desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific .NET 5 moniker, such as **net5.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [this section](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/ProjectReunion/issues/921).
+    > If you have a C#/.NET 5 desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific .NET 5 moniker, such as **net5.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/ProjectReunion/issues/921).
 
 2. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 

@@ -3,7 +3,9 @@
   items:
   - name: Set up your development environment
     items:
-        - name: Overview
+        - name: System requirements
+          href: windows-app-sdk/system-requirements.md
+        - name: Install developer tools
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: Enable your device for development
           href: get-started/enable-your-device-for-development.md

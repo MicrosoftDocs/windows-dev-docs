@@ -64,13 +64,13 @@ After the installation is complete, you can run your unpackaged app. For an exam
 
 To test deployment of your unpackaged app to end users, you can launch the .exe installer from your setup program or MSI by using [ShellExecute](/windows/win32/shell/launch). This is very similar to other runtime installers you may have used, like .NET, Visual C++, or DirectX.
 
-For a code example that demonstrates how to run the Windows App SDK Installer from your setup program, see the **RunInstaller** function in [this example](https://aka.ms/testruninstaller).
+For a code example that demonstrates how to run the Windows App SDK Installer from your setup program, see the **RunInstaller** function in the [installer functional test](https://aka.ms/testruninstaller) for the Windows App SDK.
 
 ## Directly deploy the MSIX packages from your setup program
 
 As an alternative to using the Windows App SDK installer for deployment to end users, you can manually deploy the MSIX packages through your app's program or MSI. This option can be best for developers who want more control or need offline installations.
 
-For an example that demonstrates how your setup program can install the MSIX packages, see [this example](https://aka.ms/testinstallpackages).
+For an example that demonstrates how your setup program can install the MSIX packages, see [install.cpp](https://aka.ms/testinstallpackages) in the Windows App SDK installer code.
 
 ## Using the Windows App SDK features at run time
 
