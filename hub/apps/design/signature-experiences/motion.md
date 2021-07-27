@@ -66,7 +66,7 @@ Avoid custom animations where possible. Use animation resources like [WinUI](../
 
 _Example:_ [Page transitions](../motion/page-transitions.md), [connected animations](../motion/connected-animation.md), and [animated icons](../controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
 
-:::image type="content" source="images/motion-resourceful.gif" alt-text="An animated image that shows examples of page  transitions, connected animations, and animated icons in the Windows UI.":::
+:::image type="content" source="images/motion-resourceful.png" lightbox="images/motion-resourceful.gif" alt-text="An animated image that shows examples of page  transitions, connected animations, and animated icons in the Windows UI.":::
 
 _Click the image to see it animated._
 
