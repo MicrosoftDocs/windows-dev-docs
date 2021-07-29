@@ -67,7 +67,7 @@ This is the directory the shell starts in when it is loaded.
 
 **Example:** Start the PowerShell profile in the *GitHubRepos* folder of your *Documents* directory by finding the powershell.exe profile and adding `"startingDirectory": "%USERPROFILE%/Documents/GitHubRepos",`
 
-**Example with WSL:** When setting the starting directory for a [Linux distribution installed via WSL](https://docs.microsoft.com/windows/wsl/install-win10), use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`.
+**Example with WSL:** When setting the starting directory for a [Linux distribution installed via WSL](https://docs.microsoft.com/windows/wsl/install-win10), use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`. If you are using the Windows Terminal Settings UI, rather than the settings.json file, to declare this path, you can use the **Browse...** button to select your starting directory or enter the WSL path as: `//wsl.localhost/DISTRO NAME/home/USERNAME`. For example, `//wsl.localhost/Ubuntu-20.04/home/user1`. 
 
 **Default behavior:** When the startingDirectory value is not specified, you will get different results depending on where you launch Terminal:
 - If you run Windows Terminal from the Start menu: C:\windows\system32
