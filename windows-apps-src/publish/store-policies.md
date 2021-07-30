@@ -115,12 +115,10 @@ Your product must not contain or enable malware as defined by the Microsoft crit
 
 **10.2.4**
 
-Your product may contain fully integrated middleware (such as third-party cross-platform engines and third-party analytics services), but must not deliver or install non-integrated third-party owned or branded products or modules unless they are fully contained in your package.
-
 Your product may depend on non-integrated software (such as another product, module, or service) to deliver its primary functionality, subject to the following requirements:
 
-- You disclose the dependency at the beginning of the description metadata
-- The dependent software is available in the Store
+- You disclose the dependency at the beginning of the description metadata.
+- Dependency on non-Microsoft provided driver(s) or NT service(s) is not allowed. If your product has a dependency on non-Microsoft provided driver(s) or NT service(s), you must disclose that dependency to Microsoft in the certification notes in Microsoft Partner Center to be considered for an exception to this policy.
 
 **10.2.5**
 
@@ -405,7 +403,7 @@ The following privacy requirements apply to Xbox Live user data:
 
 ### 10.14 Account Type
 
-If a reasonable consumer would interpret your publisher account name to be that of a business entity, you must publish from a company account type, not an individual account type.
+If a reasonable consumer would interpret your application or publisher name to be that of a business entity, you must publish from a company account type, not an individual account type.
 
 ## Content Policies
 
