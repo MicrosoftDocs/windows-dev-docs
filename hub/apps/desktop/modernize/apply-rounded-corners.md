@@ -44,10 +44,10 @@ If your app's main window doesn't receive automatic rounding, it's because you'v
 
 ## How to opt in to rounded corners
 
-If your app is not rounded by policy, you can optionally call our new API to allow your app to opt in to rounded corners. This API is expressed as enumeration values to be passed to the [**DwmSetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) API, as shown in the new **DWM_WINDOW_CORNER_PREFERENCE** enumeration. This enumeration is defined in the [dwmapi.h header](https://docs.microsoft.com/windows/win32/api/dwmapi/) and is available in the latest [Insider Preview SDK](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
+If your app is not rounded by policy, you can optionally call our new API to allow your app to opt in to rounded corners. This API is expressed as enumeration values to be passed to the [**DwmSetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) API, as shown in the new **DWM_WINDOW_CORNER_PREFERENCE** enumeration. This enumeration is defined in the [dwmapi.h header](/windows/win32/api/dwmapi/) and is available in the latest [Insider Preview SDK](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
 
 > [!NOTE]
-> DwmSetWindowAttribute is a native API. If your app is based on .NET, you'll need to use [P/Invoke](https://docs.microsoft.com/dotnet/standard/native-interop/pinvoke) to import dwmapi.dll so you can call it.
+> DwmSetWindowAttribute is a native API. If your app is based on .NET, you'll need to use [P/Invoke](/dotnet/standard/native-interop/pinvoke) to import dwmapi.dll so you can call it.
 
 | Enum value | Description |
 | --- | --- |
