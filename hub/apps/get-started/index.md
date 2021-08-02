@@ -29,7 +29,7 @@ For more information about the app types you can choose from, see the following 
 
 The Windows UI Library (WinUI) 3 is the premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
 
-To build a WinUI 3 apps, start with one of the project templates available in the [Windows App SDK](../windows-app-sdk/index.md). The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
+To build a WinUI 3 app, start with one of the project templates available in the [Windows App SDK](../windows-app-sdk/index.md). The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
 For more information about WinUI 3 apps, see see the following articles:
 
