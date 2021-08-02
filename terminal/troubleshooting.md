@@ -157,3 +157,7 @@ set bell-style none
 ```
 
 Press Ctrl + O and Ctrl + X to Save and Exit.
+
+## How do I reset my settings in Windows Terminal back to the default settings?
+
+To reset your settings back to the original default settings, delete your settings.json file. This will cause Windows Terminal to regenerate a settings.json file with the original default settings.

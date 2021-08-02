@@ -12,7 +12,7 @@ ms.localizationpriority: high
 
 Windows Terminal is a modern terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcuts.
 
-![Windows Terminal screenshot](./images/overview.png)
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWHAdS]
 
 > [!NOTE]
 > [What's the difference between a console, a terminal, and a shell?](https://www.hanselman.com/blog/WhatsTheDifferenceBetweenAConsoleATerminalAndAShell.aspx) Read Scott Hanselman's explanation.
