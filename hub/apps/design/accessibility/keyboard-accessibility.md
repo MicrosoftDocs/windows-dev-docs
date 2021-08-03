@@ -52,21 +52,44 @@ Any elements that can have focus are usually in the tab order by default. The ex
 
 Whether you adjust [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) values or use the default order, these rules apply:
 
-* UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) equal to 0 are added to the tab order based on declaration order in XAML or child collections.
-* UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) greater than 0 are added to the tab order based on the **TabIndex** value.
-* UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) less than 0 are added to the tab order and appear before any zero value. This potentially differs from HTML's handling of its **tabindex** attribute (and negative **tabindex** was not supported in older HTML specifications).
+- If [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) is not set on an element, the default value used is [Int32.MaxValue](/dotnet/api/system.int32.maxvalue) and the tab order is based on declaration order in the XAML or child collections.
+- If [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) is set on an element:
+  - UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) equal to 0 are added to the tab order based on declaration order in XAML or child collections.
+  - UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) greater than 0 are added to the tab order based on the **TabIndex** value.
+  - UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) less than 0 are added to the tab order and appear before any zero value. This potentially differs from HTML's handling of its **tabindex** attribute (and negative **tabindex** was not supported in older HTML specifications).
 
-<span id="keyboard_navigation_within_a_UI_element"/>
-<span id="keyboard_navigation_within_a_ui_element"/>
-<span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
+For example, the following snippet shows a collection of elements with varying TabIndex settings (B is assigned the value of [Int32.MaxValue](/dotnet/api/system.int32.maxvalue), or 2,147,483,647).
 
-## Keyboard navigation within a UI element  
+```xaml
+<StackPanel Background="#333">
+  <StackPanel Background="#FF33FF">
+    <Button>A</Button>
+    <Button TabIndex="2147483647">B</Button>
+    <Button>C</Button>
+  </StackPanel>
+  <StackPanel Background="#33FFFF">
+    <Button TabIndex="1">D</Button>
+    <Button TabIndex="1">E</Button>
+    <Button TabIndex="0">F</Button>
+  </StackPanel>
+</StackPanel>
+```
+
+This results in the following tab order:
+
+1. F
+1. D
+1. E
+1. A
+1. B
+1. C
+
+## Keyboard navigation within a UI element
+
 For composite elements, it is important to ensure proper inner navigation among the contained elements. A composite element can manage its current active child to reduce the overhead of having all child elements able to have focus. Such a composite element is included in the tab order, and it handles keyboard navigation events itself. Many of the composite controls already have some inner navigation logic built into the into control's event handling. For example, arrow-key traversal of items is enabled by default on the [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView), [**GridView**](/uwp/api/windows.ui.xaml.controls.gridview), [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) and [**FlipView**](/uwp/api/Windows.UI.Xaml.Controls.FlipView) controls.
 
-<span id="keyboard_activation"/>
-<span id="KEYBOARD_ACTIVATION"/>
+## Keyboard alternatives to pointer actions and events for specific control elements
 
-## Keyboard alternatives to pointer actions and events for specific control elements  
 Ensure that UI elements that can be clicked can also be invoked by using the keyboard. To use the keyboard with a UI element, the element must have focus. Only classes that derive from [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) support focus and tab navigation.
 
 For UI elements that can be invoked, implement keyboard event handlers for the Spacebar and Enter keys. This makes the basic keyboard accessibility support complete and enables users to accomplish basic app scenarios by using only the keyboard; that is, users can reach all interactive UI elements and activate the default functionality.
