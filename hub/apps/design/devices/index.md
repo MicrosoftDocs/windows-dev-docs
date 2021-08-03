@@ -27,7 +27,7 @@ Getting to know the devices that support Windows apps will help you offer the be
 Windows PCs and laptops include a wide array of devices and screen sizes. In general, PCs and laptops can display more info than phone or tablets.
 
 Screen sizes
--   13” and greater
+-   13" and greater
 
 ![a pc](images/device-primer/device-primer-desktop.png)
 
@@ -37,7 +37,7 @@ Typical usage
 UI considerations
 -   Apps can have a windowed view, the size of which is determined by the user. Depending on window size, there can be between one and three frames. On larger monitors, the app can have more than three frames.
 
--   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app’s content. Consider including commands and features such as "Save As", "Recent files", and so on.
+-   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app's content. Consider including commands and features such as "Save As", "Recent files", and so on.
 
 -   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
 
@@ -54,18 +54,18 @@ Typical device capabilities
 ## Tablets and 2-in-1s
 
 
-Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7” to 13.3”. 2-in-1 devices can act like either a tablet or a laptop with a keyboard and mouse, depending on the configuration (usually involving folding the screen back or tilting it upright).
+Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7" to 13.3". 2-in-1 devices can act like either a tablet or a laptop with a keyboard and mouse, depending on the configuration (usually involving folding the screen back or tilting it upright).
 
 Screen sizes
-- 7” to 13.3” for tablet
+- 7" to 13.3" for tablet
 - 13.3" and greater for 2-in-1
 
 ![a tablet device](images/device-primer/device-primer-tablet.png)
 
 Typical usage
 -   About 80% of tablet use is by the owner, with the other 20% being shared use.
--   It’s most commonly used at home as a companion device while watching TV.
--   It’s used for longer periods than phones and phablets.
+-   It's most commonly used at home as a companion device while watching TV.
+-   It's used for longer periods than phones and phablets.
 -   Text is entered in short bursts.
 
 UI considerations
@@ -127,8 +127,6 @@ Typical device capabilities
 
 The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
 
-With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](/windows-hardware/design/device-experiences/continuum-phone).)
-
 Screen sizes
 -   4'' to 5'' for phone
 -   5.5'' to 7'' for phablet
@@ -168,7 +166,7 @@ Typical device capabilities
 Microsoft Surface Hub is a large-screen team collaboration device designed for simultaneous use by multiple users.
 
 Screen sizes
--   55” and 84''
+-   55" and 84''
 
 ![a surface hub](images/device-primer/device-primer-surfacehub3.png)
 
@@ -198,7 +196,7 @@ Typical device capabilities
 ## Windows IoT devices
 
 
-Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as “headless” devices) or are connected to a small screen (known as “headed” devices) with a screen size usually 3.5” or smaller.
+Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as "headless" devices) or are connected to a small screen (known as "headed" devices) with a screen size usually 3.5" or smaller.
 
 Screen sizes
 -   3.5'' or smaller
@@ -209,12 +207,12 @@ Screen sizes
 Typical usage
 -   Usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it.
 -   These devices can only run one application at a time unlike phones or other larger devices.
--   It isn’t something that is interacted with all the time, but instead is available when you need it, out of the way when you don’t.
--   App doesn’t have a dedicated back affordance, that is the developers responsibility.
+-   It isn't something that is interacted with all the time, but instead is available when you need it, out of the way when you don't.
+-   App doesn't have a dedicated back affordance, that is the developers responsibility.
 
 UI considerations
 -   "headless" devices have no screen.
--   Display for “headed” devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
+-   Display for "headed" devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
 -   Orientation is most times locked, so your app only needs to consider one display direction.
 
 Inputs
