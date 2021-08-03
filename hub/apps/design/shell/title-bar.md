@@ -74,7 +74,7 @@ Windows gives a user the option to apply their selected [accent color](../style/
 
 ## Full customization
 
-When you opt-in to full title bar customization, your app’s client area is extended to cover the entire window, including the title bar area. You are responsible for drawing and input-handling for the entire window except the caption buttons, which are overlaid on top of the app’s canvas.
+When you opt-in to full title bar customization, your app's client area is extended to cover the entire window, including the title bar area. You are responsible for drawing and input-handling for the entire window except the caption buttons, which are overlaid on top of the app's canvas.
 
 To hide the default title bar and extend your content into the title bar area, set the [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) property to **true**.
 
@@ -93,7 +93,7 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 ### Draggable regions
 
-The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
+The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app's canvas). You specify the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
 
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 
@@ -140,7 +140,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 }
 ```
 
-The UIElement (`AppTitleBar`) is part of the XAML for your app. You can either declare and set the title bar in a root page that doesn’t change, or declare and set a title bar region in each page that your app can navigate to. If you set it in each page, you should make sure the draggable region stays consistent as a user navigates around your app.
+The UIElement (`AppTitleBar`) is part of the XAML for your app. You can either declare and set the title bar in a root page that doesn't change, or declare and set a title bar region in each page that your app can navigate to. If you set it in each page, you should make sure the draggable region stays consistent as a user navigates around your app.
 
 You can call SetTitleBar to switch to a new title bar element while your app is running. You can also pass **null** as the parameter to SetTitleBar to revert to the default dragging behavior. (See "Default draggable region" for more info.)
 
@@ -155,7 +155,7 @@ You can call SetTitleBar to switch to a new title bar element while your app is 
 
 #### Default draggable region
 
-If you don’t specify a draggable region, a rectangle that is the width of the window, the height of the caption buttons, and positioned along the top edge of the window is set as the default draggable region.
+If you don't specify a draggable region, a rectangle that is the width of the window, the height of the caption buttons, and positioned along the top edge of the window is set as the default draggable region.
 
 If you do define a draggable region, the system shrinks the default draggable region down to a small area the size of a caption button, positioned to the left of the caption buttons (or to the right if the captions buttons are on the left side of the window). This ensures that there is always a consistent area the user can drag.
 
@@ -193,8 +193,8 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 ### Interactive content
 
 You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, there are a few rules you must follow to ensure that your interactive elements receive user input.
-- You must call SetTitleBar to define an area as the draggable title bar region. If you don’t, the system sets the default draggable region at the top of the page. The system will then handle all user input to this area, and prevent input from reaching your controls.
-- Place your interactive controls over the top of the draggable region defined by the call to SetTitleBar (with a higher z-order). Don’t make your interactive controls children of the UIElement passed to SetTitleBar. After you pass an element to SetTitleBar, the system treats it like the system title bar and handles all pointer input to that element.
+- You must call SetTitleBar to define an area as the draggable title bar region. If you don't, the system sets the default draggable region at the top of the page. The system will then handle all user input to this area, and prevent input from reaching your controls.
+- Place your interactive controls over the top of the draggable region defined by the call to SetTitleBar (with a higher z-order). Don't make your interactive controls children of the UIElement passed to SetTitleBar. After you pass an element to SetTitleBar, the system treats it like the system title bar and handles all pointer input to that element.
 
 Here, the `TitleBarButton` element has a higher z-order than `AppTitleBar`, so it receives user input.
 
@@ -247,7 +247,7 @@ All other color properties will continue to ignore the alpha channel. If ExtendV
 
 ### Full screen and tablet mode
 
-When your app runs in _full screen_ or _tablet mode_, the system hides the title bar and caption control buttons. However, the user can invoke the title bar to have it shown as an overlay on top of the app’s UI.
+When your app runs in _full screen_ or [_tablet mode_ (Windows 10 only)](/windows-hardware/design/device-experiences/continuum), the system hides the title bar and caption control buttons. However, the user can invoke the title bar to have it shown as an overlay on top of the app's UI.
 You can handle the [CoreApplicationViewTitleBar.IsVisibleChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) event to be notified when the title bar is hidden or invoked, and show or hide your custom title bar content as needed.
 
 This example shows how to handle IsVisibleChanged to show and hide the `AppTitleBar` element shown previously.
@@ -278,7 +278,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) for more info. [_Tablet mode_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
+>_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) for more info. [_Tablet mode_ (Windows 10 only)](/windows-hardware/design/device-experiences/continuum) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
 
 ## Full customization example
 
@@ -380,7 +380,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 - Do make it obvious when your window is active or inactive. At a minimum, change the color of the text, icons, and buttons in your title bar.
 - Do define a draggable region along the top edge of the app canvas. Matching the placement of system title bars makes it easier for users to find.
-- Do define a draggable region that matches the visual title bar (if any) on the app’s canvas.
+- Do define a draggable region that matches the visual title bar (if any) on the app's canvas.
 
 ## Related articles
 
