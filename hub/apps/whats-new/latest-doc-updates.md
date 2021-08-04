@@ -41,15 +41,24 @@ Project Reunion is now called the Windows App SDK.
 * [Build a basic WinUI 3 desktop app](/windows/apps/winui/winui3/desktop-build-basic-winui3-app)
 * [Package and deploy](/windows/apps/package-and-deploy/)
 * [A series of daily Bite-sized C++ topics](https://github.com/MicrosoftDocs/windows-devdocs-team/tree/main/bite-sized-cpp)
+* [Developing with Rust on Windows](/windows/rust/rust-on-windows/)
 
 ### Developer tool updates
 
-[Windows Terminal](/windows/terminal/)
-  * [Updated mouse interactions](/windows/terminal/tips-and-tricks#mouse-interaction)
+* [Windows Terminal](/windows/terminal/)
+* [Updated mouse interactions](/windows/terminal/tips-and-tricks#mouse-interaction)
+* [Windows Subsystem for Linux (WSL)](/windows/wsl/)
+* [Get started using Git on WSL](/windows/wsl/tutorials/wsl-git): Update to incorporate Git Credential Manager Core
 
 
-[Windows Subsystem for Linux (WSL)](/windows/wsl/)
-  * [Get started using Git on WSL](/windows/wsl/tutorials/wsl-git): Update to incorporate Git Credential Manager Core
+### Set up your development environment on Windows
+
+* [Getting started with Blazor](/windows/blazor/blazor-getting-started)
+* [Best practices for setting up a WSL development environment](/windows/wsl/best-practices-for-setting-up-a-wsl-development-environment)
+
+### Code samples
+
+* [Completion source sample](/windows/uwp/cpp-and-winrt-apis/concurrency-3)
 
 ### Windows on ARM
 
@@ -144,7 +153,7 @@ The following list of topics have seen significant updates in the past month, as
 <li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL </a></li>
 </ul>
 
-### UWP API reference
+##ed# UWP API reference
 
 <ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinfo">Windows.ApplicationModel.AppInfo</a></li>
