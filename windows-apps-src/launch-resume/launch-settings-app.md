@@ -322,7 +322,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Phone | ms-settings:phone-defaultapps |
 | Projecting to this PC | ms-settings:project |
 | Shared experiences | ms-settings:crossdevice |
-| Tablet mode | ms-settings:tabletmode |
+| Tablet mode | ms-settings:tabletmode (**Removed in Windows 11**) |
 | Taskbar | ms-settings:taskbar |
 | Notifications & actions | ms-settings:notifications |
 | Remote Desktop | ms-settings:remotedesktop |
