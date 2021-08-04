@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Apply rounded corners in desktop apps for Windows 11
 
-Rounded corners are the most immediately noticeable feature of [Windows 11 Geometry](../../design/signature-experiences/geometry.md). On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps, but some Win32 apps might not be rounded. This topic describes how to round your app's main window corners if the system does not round them automatically.
+Rounded corners are the most immediately noticeable feature of [Windows 11 Geometry](../../design/signature-experiences/geometry.md). On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps. However, some Win32 apps might not be rounded. This topic describes how to round your Win32 app's main window corners if the system does not round them automatically.
 
 > [!NOTE]
 > By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), or running on a Windows Virtual Desktop (WVD).
@@ -23,8 +23,8 @@ If your app's main window doesn't receive automatic rounding, it's because you'v
 
 1. Apps that are rounded by default.
 
-    This includes apps that want a complete system-provided frame and caption-controls, like Notepad. It also includes apps that provide enough information to the system so it can properly round them, such as setting the WS_THICKFRAME and WS_CAPTION window styles or providing a 1-pixel non-client area border that the system can use to round the corners.
-1. Apps that are not rounded by policy, but can be rounded.
+    This includes apps that want a complete system-provided frame and caption-controls (min/max/close buttons), like Notepad. It also includes apps that provide enough information to the system so it can properly round them, such as setting the WS_THICKFRAME and WS_CAPTION window styles or providing a 1-pixel non-client area border that the system can use to round the corners.
+1. Apps that are not rounded by policy, but *can* be rounded.
 
     Apps in this category generally want to customize the majority of the window frame but still want the system-drawn border and shadow, such as Microsoft Office. If your app is not rounded by policy, it could be caused by one of the following things:
 
@@ -32,7 +32,7 @@ If your app's main window doesn't receive automatic rounding, it's because you'v
     - Empty non-client area
     - Other customizations, such as extra non-child windows used for custom shadows
 
-    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then the system can round you.
+    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then its possible for the system to round you. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.
 1. Apps that cannot ever be rounded, even if they call the opt-in API.
 
     These apps have no frame or borders, and typically have heavily customized UI. If your app does one of the following, it cannot be rounded:
@@ -55,13 +55,15 @@ If your app is not rounded by policy, you can optionally call our new API to all
 | **DWMWCP_ROUND** | Round the corners if appropriate. |
 | **DWMWCP_ROUNDSMALL** | Round the corners if appropriate, with a small radius. |
 
+A pointer to the appropriate value from this enum is passed to the third parameter of DwmSetWindowAttribute. For the second parameter, which specifies which attribute you are setting, pass the new **DWMWA_WINDOW_CORNER_PREFERENCE** value defined in the [**DWMWINDOWATTRIBUTE**](/windows/win32/api/dwmapi/ne-dwmapi-dwmwindowattribute) enumeration.
+
 ### For C# apps
 
-DwmSetWindowAttribute is a native C++ API. If your app is based on .NET and uses C#, you'll need to use [P/Invoke](/dotnet/standard/native-interop/pinvoke) to import dwmapi.dll and the DwmSetWindowAttribute function signature. All WinForms and WPF apps are rounded automatically like any other app, but if you customize your window frame or use a third party framework, you might need to opt-in to rounded corners if doing so results in losing the default rounding. See the Examples section for further details.
+DwmSetWindowAttribute is a native C++ API. If your app is based on .NET and uses C#, you'll need to use [P/Invoke](/dotnet/standard/native-interop/pinvoke) to import dwmapi.dll and the DwmSetWindowAttribute function signature. All standard WinForms and WPF apps are rounded automatically like any other app, but if you customize your window frame or use a third party framework, you might need to opt-in to rounded corners if doing so results in losing the default rounding. See the Examples section for further details.
 
 ## Examples
 
-The following examples show how you can pass these values to [**DwmSetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) or [**DwmGetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute) to control your app's rounding experience.
+The following examples show how you can call [**DwmSetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) or [**DwmGetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute) to control your app's rounding experience if your app is not rounded by policy.
 
 > [!Note]
 > Error handling has been left out of these examples for brevity and clarity.
@@ -105,7 +107,7 @@ public partial class MainWindow : Window
 }
 ```
 
-Next, in your MainWindow constructor, after the call to InitalizeComponent, create a new instance of the [WindowInteropHelper](https://docs.microsoft.com/dotnet/api/system.windows.interop.windowinterophelper?view=net-5.0) class to acquire a pointer to the underlying HWND. Make sure to use the [EnsureHandle](https://docs.microsoft.com/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle?view=net-5.0#System_Windows_Interop_WindowInteropHelper_EnsureHandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
+Next, in your MainWindow constructor, after the call to InitalizeComponent, create a new instance of the [WindowInteropHelper](https://docs.microsoft.com/dotnet/api/system.windows.interop.windowinterophelper?view=net-5.0) class to acquire a pointer to the underlying HWND (window handle). Make sure to use the [EnsureHandle](https://docs.microsoft.com/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle?view=net-5.0#System_Windows_Interop_WindowInteropHelper_EnsureHandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
 
 ```CSharp
 public MainWindow()
