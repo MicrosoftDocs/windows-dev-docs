@@ -32,7 +32,7 @@ If your app's main window doesn't receive automatic rounding, it's because you'v
     - Empty non-client area
     - Other customizations, such as extra non-child windows used for custom shadows
 
-    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then its possible for the system to round you. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.
+    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then it's possible for the system to round you. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.
 1. Apps that cannot ever be rounded, even if they call the opt-in API.
 
     These apps have no frame or borders, and typically have heavily customized UI. If your app does one of the following, it cannot be rounded:
