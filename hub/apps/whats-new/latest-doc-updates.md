@@ -153,7 +153,7 @@ The following list of topics have seen significant updates in the past month, as
 <li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL </a></li>
 </ul>
 
-##ed# UWP API reference
+### UWP API reference
 
 <ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinfo">Windows.ApplicationModel.AppInfo</a></li>
