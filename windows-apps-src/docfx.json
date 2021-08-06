@@ -13,6 +13,7 @@
             "exclude": ["**/obj/**"]
         } ],
         "globalMetadata": {
+            "recommendations": true,
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "uwp",
             "ms.technology": "uwp-conceptual-docs",

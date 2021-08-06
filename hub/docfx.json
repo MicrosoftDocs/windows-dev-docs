@@ -16,6 +16,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "recommendations": true,
       "ROBOTS": "INDEX, FOLLOW",
       "author": "GrantMeStrength",
       "ms.author": "jken",
@@ -32,7 +33,7 @@
           "depot_name": "MSDN.hub",
           "folder_relative_path_in_docset": "./"
           }
-        }		  
+        }        	  
       },
     "fileMetadata": {
       "ms.prod":
