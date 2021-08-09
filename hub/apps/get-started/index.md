@@ -94,12 +94,12 @@ For more information about Windows Forms apps, see the following articles:
 * [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
 #### [React Native for Windows](#tab/rnw)
-React Native is a development platfrom from Facebook which allows building cross-platform apps.
-React Native for Windows brings [React Native](https://reactnative.dev) support for the Windows 10 SDK. With this, you can use JavaScript to build native Windows apps for all devices supported by Windows 10 including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
+[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+React Native for Windows brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you touse JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
 
-With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML. If you need to call a system API that is not yet available to JavaScript, you can easily write a native module to expose it.
+With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or a module does not yet exist, you can easily write a native module to expose it.
 
-Some reasons to choose React Native for Windows:
+Here are some reasons to choose React Native for Windows:
 - you want to share code across platforms as much as possible, or you have web properties that you want to share code with.
 - improved developer productivity and inner loop, thanks to fast refresh.
 - your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
