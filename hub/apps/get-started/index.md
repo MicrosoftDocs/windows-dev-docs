@@ -102,7 +102,7 @@ With React Native for Windows, you write most or all of your app code in JavaScr
 Here are some reasons to choose React Native for Windows:
 - You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
 - Improved developer productivity and inner loop, thanks to fast refresh.
-- your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
+- Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
 - you already have experience with JavaScript or TypeScript and feel comfortable
 - you can leverage all of the JS-only libraries on [npmjs.com](https://www.npmjs.com/), and many native libraries too.
 - On Windows, you get an app that "fits" with the platform, and has a standard and well designed way to allow you to call platform APIs, and write your own view managers or native modules.
