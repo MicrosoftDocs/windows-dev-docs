@@ -97,7 +97,7 @@ For more information about Windows Forms apps, see the following articles:
 [React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
 [React Native for Windows](https://aka.ms/reactnative) brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
 
-With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or a module does not yet exist, you can easily write a native module to expose it.
+With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
 
 Here are some reasons to choose React Native for Windows:
 - You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
