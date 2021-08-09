@@ -104,7 +104,7 @@ Here are some reasons to choose React Native for Windows:
 - Improved developer productivity and inner loop, thanks to fast refresh.
 - Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
 - You have experience with and a preference for JavaScript or TypeScript
-- you can leverage all of the JS-only libraries on [npmjs.com](https://www.npmjs.com/), and many native libraries too.
+- You would like to leverage JavaScript-only libraries on [npmjs.com](https://www.npmjs.com/), and many native libraries too.
 - On Windows, you get an app that "fits" with the platform, and has a standard and well designed way to allow you to call platform APIs, and write your own view managers or native modules.
 - Large and growing community momentum, with lots of community modules.
 
