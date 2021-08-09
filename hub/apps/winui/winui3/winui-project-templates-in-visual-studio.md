@@ -8,11 +8,11 @@ ms.topic: article
 
 # WinUI 3 project templates in Visual Studio
 
-After [installing the Windows App SDK VSIX](../../windows-app-sdk/set-up-your-development-environment.md), you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
+After installing the Windows App SDK VSIX [and setting up your dev environment](../../windows-app-sdk/set-up-your-development-environment.md), you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
 
 ![WinUI project templates](images/winui3-csharp-newproject.png)
 
-There are two versions of the Windows App SDK extension available: the [stable channel](../../windows-app-sdk/stable-channel.md) and the [preview channel](../../windows-app-sdk/preview-channel.md). The stable channel includes project templates that can be used for building MSIX-packaged desktop production apps. The preview channel includes experimental project templates that can be used for building MSIX-packaged desktops, non-packaged desktop apps, or UWP apps. 
+Note that there are two versions of the Windows App SDK Visual Studio Extension available: the [stable VSIX](https://aka.ms/windowsappsdk/stable-vsix) and the [experimental VSIX](https://aka.ms/windowsappsdk/experimental-vsix). The stable VSIX includes project templates that can be used for building MSIX-packaged desktop production apps. The experimental VSIX includes project templates that enable experimental features and can be used for building MSIX-packaged desktop apps, non-packaged desktop apps, or UWP apps. 
 
 ## Project templates for WinUI 3
 
@@ -39,7 +39,7 @@ The following item templates are available for use in a WinUI project. To access
 ![WinUI item templates](images/winui3-addnewitem.png)
 
 > [!NOTE]
-> If you have the [preview channel](../../windows-app-sdk/preview-channel.md) of the Windows App SDK installed, you may see a second set of Item Templates that have the [Experimental] prefix. We recommend that you use those [Experimental] item templates if you're building a non-production/preview app, and use the stable, non-marked item templates if you're building a production desktop app.
+> If you have the [experimental channel](../../windows-app-sdk/experimental-channel.md) or an older preview release of the Windows App SDK installed, you may see a second set of Item Templates that have the [Experimental] prefix. We recommend that you use those [Experimental] item templates if you're building a non-production/preview app, and use the stable, non-marked item templates if you're building a production desktop app.
 
 | Template | Language | Description |
 |----------|----------|-------------|

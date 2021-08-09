@@ -2,7 +2,7 @@
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
 title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
-ms.date: 04/07/2021
+ms.date: 8/10/2021
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
@@ -12,10 +12,86 @@ ms.localizationpriority: medium
 # Update existing projects to the latest release of the Windows App SDK
 
 If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI 3, you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
-. 
 
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
+
+## Update from 0.8 Stable or Preview to 1.0 Experimental
+
+If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Experimental release.
+
+> [!NOTE]
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+
+First, do the following:
+
+- In the .wapproj file, if your **TargetPlatformMinVersion** is older than 10.0.17763.0, change it to 10.0.17763.0.
+
+Next, make these changes to your project:
+
+1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+
+2. Enter the following commands:
+
+    ```Console
+    uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
+    uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
+    uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
+    install-package Microsoft.WindowsAppSDK -Version 1.0.0-experimental1 -ProjectName {yourProjectName}
+    ```
+
+3. Make the following changes in your Application (package).wapproj:
+  
+    1. Remove this item group (if you're updating from a different version than 0.8.0, you will see that corresponding version number referenced in this item group):
+
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.0]">
+            <IncludeAssets>build</IncludeAssets>
+            </PackageReference>
+            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.0]">
+            <IncludeAssets>build</IncludeAssets>
+            </PackageReference>
+        </ItemGroup>
+        ```
+
+    2. Add this item group to replace it:
+
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.WindowsAppSDK" Version="[1.0.0-experimental1]">
+            <IncludeAssets>build</IncludeAssets>
+            </PackageReference>
+            <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="[1.0.0-experimental1]">
+            <IncludeAssets>build</IncludeAssets>
+            </PackageReference>
+        </ItemGroup>
+        ```
+
+4. Make the following changes to your project (.csproj or .vcproj) file:
+
+    1. Remove this item group (if you're updating from a different version than 0.8.0, you will see that corresponding version number referenced in this item group):
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
+            <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0" />
+            <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0" />
+            <Manifest Include="$(ApplicationManifest)" />
+        </ItemGroup>
+        ```
+    2. Add this item group to replace it:
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
+            <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
+            <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
+            <Manifest Include="$(ApplicationManifest)" />
+        </ItemGroup>
+        ```
+5. If your solution fails to build, clean the build output, restart Visual Studio, and try re-running the app. 
+
 
 ## Update from 0.8 Preview to 0.8 Stable or between stable 0.8 versions
 
@@ -45,7 +121,7 @@ Next, make these changes to your project:
 
 3. Make the following changes in your Application (package).wapproj:
   
-    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see a that corresponding version number referenced in this item group):
+    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see that corresponding version number referenced in this item group):
 
         ```xml
         <ItemGroup>
@@ -73,7 +149,7 @@ Next, make these changes to your project:
 
 4. Make the following changes to your project (.csproj or .vcproj) file:
 
-    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see a that corresponding version number referenced in this item group):
+    1. Remove this item group (if you're updating from a different version than 0.8 Preview, you will see that corresponding version number referenced in this item group):
         ```xml
         <ItemGroup>
             <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />

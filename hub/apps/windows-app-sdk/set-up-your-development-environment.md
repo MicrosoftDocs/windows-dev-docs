@@ -44,34 +44,34 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
  1. In Visual Studio, select **Tools** -> **NuGet Package Manager** -> **Package Manager Settings** to open the **Options** dialog.
  2. In the left pane of the **Options** dialog, select the **Package Sources** tab, and make sure there is a package source for **nuget.org** that points to `https://api.nuget.org/v3/index.json` as the source URL. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-## 4. Install the Windows App SDK Extension for Visual Studio
+## 4. Install the Windows App SDK extension for Visual Studio
 
-There are currently two [release channels](release-channels.md) of the the Windows App SDK you can choose from: the stable channel and experimental channel.
+The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from two versions of the extension: stable and experimental.
 
 > [!NOTE]
 > If you previously installed the [WinUI 3 Preview extension for Visual Studio](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates), uninstall the extension. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
 ### Install the stable release
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production environments, install the latest extension from the [stable release channel](stable-channel.md). Choose one of these options to install:
+To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production environments, install the latest [stable](stable-channel.md) extension. Choose one of these options to install:
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
+- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Windows App SDK**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/projectreunion/vsixdownload)
+    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
     ![Screenshot of the Windows App SDK extension being installed](images/reunion-extension-install.png)
 
 ### Install the experimental release
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps or UWP apps that use the latest experimental features, install the latest extension from the [experimental release channel](experimental-channel.md). This version of the Windows App SDK cannot be used by apps in production environments. Choose one of these options to install:
+To develop desktop (C#/.NET 5 or C++/WinRT) apps or UWP apps that use the latest experimental features, install the latest [experimental](experimental-channel.md) extension. This version of the Windows App SDK cannot be used by apps in production environments. Choose one of these options to install:
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Project Reunion (Preview)**, and install the latest extension.
+- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
-    > [Download latest experimental release](https://aka.ms/projectreunion/previewdownload)
+    > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix)
 
 ## 5. Enable your device for development
 

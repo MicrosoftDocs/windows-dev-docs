@@ -39,7 +39,7 @@ Developers who want to create desktop Windows apps must choose between several a
 
 Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. The Windows App SDK will include both WinRT APIs and native C APIs.
 
-### Consistent support across Windows versions
+### Consistent experience across Windows versions
 
 As the Windows APIs continue to evolve with new OS versions, developers must use techniques such as [version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code) to account for all the differences in versions to reach their application audience. This can add complexity to the code and the development experience.
 

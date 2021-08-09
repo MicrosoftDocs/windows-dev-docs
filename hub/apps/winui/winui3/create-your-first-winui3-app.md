@@ -148,7 +148,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 > [!NOTE]
 > WinUI 3 support for building UWP apps is currently in preview, and is not production-ready. You will not be able to ship WinUI 3 UWP apps to the Microsoft Store.
 >
-> You must download the [Windows App SDK Preview Extension for Visual Studio](https://aka.ms/projectreunion/previewdownload) to get the UWP Preview project templates and build UWP apps with WinUI 3.
+> You must download the [Windows App SDK Experimental Extension for Visual Studio](https://aka.ms/projectreunion/previewdownload) to get the UWP Experimental project templates and build UWP apps with WinUI 3.
 
 To create a "WinUI 3 app in UWP" for C#:
 

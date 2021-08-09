@@ -17,18 +17,36 @@ This article describes the features that you can use in your desktop apps today.
 > [!NOTE]
 > Do you need assistance migrating desktop apps to Windows 10 or later? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
 
+## Rounded corners in desktop apps for Windows 11
+
+Rounded corners are the most immediately noticeable feature of Windows 11 Geometry. On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps, but some Win32 apps might not be rounded. This topic describes how to round your app's main window corners if the system does not round them automatically.
+
+For more information, see [Apply rounded corners in desktop apps for Windows 11](apply-rounded-corners.md).
+
+## Windows App SDK
+
+The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI 3-based UI, or you can use the Windows App SDK in existing desktop apps.
+
+For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
+
 ## Windows UI Library
 
-The Windows UI Library is a set of NuGet packages that provide controls and other user interface elements for Windows apps. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows apps across UWP, .NET, and native Win32.
+The Windows UI Library (WinUI) is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 
 You can use WinUI in the following ways in desktop apps:
 
+* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
 * You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
-* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
 
-See [Windows UI (WinUI) Library](../../winui/index.md).
+For more information, see [Windows UI (WinUI) Library](../../winui/index.md).
 
-## MSIX packages
+## Windows Runtime APIs
+
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+
+For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
+
+## MSIX deployment
 
 MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies to provide a modern and reliable packaging experience.
 
@@ -36,17 +54,17 @@ Packaging your desktop Windows apps in MSIX packages gets you access to a robust
 
 For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
 
-## .NET Core 3
+## Use MSIX framework packages dynamically at run time
 
-.NET Core 3 is the latest major release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. WinRT XAML controls that are hosted in [XAML Islands](xaml-islands.md) can also be used in Windows Forms and WPF apps that target .NET Core 3.
+The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 OS enables your apps to reference MSIX framework packages at run time. This feature is intended to be used primarily by unpackaged desktop apps (that is, apps that do not use MSIX for their deployment technology) to call APIs that are provided by MSIX framework packages.
 
-For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
+For more information, see [Use MSIX framework packages dynamically from your desktop app](framework-packages/index.md).
 
-## Windows Runtime APIs
+## .NET 5
 
-You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+.NET 5 is the latest major release of .NET Core. This release supports Windows desktop apps, including [WinUI 3 apps created with the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) as well as Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET 5 and enjoy all the benefits that .NET Core has to offer. 
 
-For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
+For more information, see [What's new in .NET 5](/dotnet/core/dotnet-five).
 
 ## Host WinRT XAML controls (XAML Islands)
 
@@ -56,7 +74,7 @@ For more information, see [WinRT XAML controls in desktop apps](xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
-You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
+You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows 10 (and later) UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 

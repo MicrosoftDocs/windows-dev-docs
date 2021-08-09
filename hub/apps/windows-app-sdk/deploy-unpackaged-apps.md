@@ -26,7 +26,7 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 ## Prerequisites
 
-- [Download the Windows App SDK runtime Installer or MSIX packages](https://aka.ms/projectreunion/0.8preview) to your development computer.
+- [Download the Windows App SDK runtime Installer or MSIX packages](https://aka.ms/windowsappsdk/1.0-experimental) to your development computer.
 - If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
 
     > [!NOTE]
@@ -74,10 +74,15 @@ For an example that demonstrates how your setup program can install the MSIX pac
 
 ## Using the Windows App SDK features at run time
 
-Unpackaged apps must use the [dynamic dependencies API](https://github.com/microsoft/ProjectReunion/blob/main/specs/dynamicdependencies/DynamicDependencies.md) to use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore. This feature enables unpackaged apps to dynamically take a dependency on the Windows App SDK framework package and any other MSIX framework packages. For more information, see [Additional requirements for unpackaged apps](deployment-architecture.md#additional-requirements-for-unpackaged-apps).
+Unpackaged apps must use the *bootstrapper API* before they can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore. This feature enables unpackaged apps to dynamically take a dependency on the Windows App SDK framework package at run time.
 
-For more information about using the dynamic dependencies API in your unpackaged app, see [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+For more information, see [Reference the Windows App SDK framework package at run time](reference-framework-package-run-time.md) and [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
+## Using features in other framework packages at run time
+
+In addition to the bootstrapper API, the Windows App SDK also provides a broader set of C/C++ functions and WinRT classes that implement the *dynamic dependency API*. This API is designed to be used to reference any framework package dynamically at run time. You only need to use the dynamic dependency API if you want to dynamically reference framework packages other than the Windows App SDK framework package.
+
+For more information, see the [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/index.md).
 
 ## Related topics
 

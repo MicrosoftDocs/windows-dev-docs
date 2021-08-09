@@ -51,12 +51,13 @@ The Windows App SDK has these system requirements:
 
 ### Visual Studio support for WinUI 3 tools
 
-You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
+You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. You can also use Visual Studio 2022 17.0 Preview 2 and above to build apps with Windows App SDK 1.0 Experimental.  However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
 
-|   | Visual Studio 2019 16.9  |Visual Studio 2019 16.10  |  Visual Studio 2019 16.11 Previews |
-|---|---|---|---|
-| **Windows App SDK 0.5** | Tools unavailable | Tools available   |  Tools unavailable   |
-| **Windows App SDK 0.8** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3  |
+|   | Visual Studio 2019 16.9  |Visual Studio 2019 16.10  |  Visual Studio 2019 16.11 Previews | Visual Studio 2022 17.0 Previews |
+|---|---|---|---|---|
+| **Windows App SDK 0.5** | Tools unavailable | Tools available   |  Tools unavailable   | Tools unavailable   |
+| **Windows App SDK 0.8** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3  | Tools unavailable   |
+| **Windows App SDK 1.0 Experimental** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3   | Tools available starting with Visual Studio 2022 17.0 Preview 2   |
 
 ## Related topics
 

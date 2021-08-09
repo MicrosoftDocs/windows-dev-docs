@@ -28,7 +28,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
     > Although we encourage you to install the Windows App SDK extension for Visual Studio, you do not need to install the extension to perform this tutorial. In this tutorial, you will install the Windows App SDK NuGet package directly in an existing project.
 - Ensure all [dependencies for unpackaged apps](deployment-architecture.md#additional-requirements-for-unpackaged-apps) are installed. The simplest solution is to run the Windows App SDK runtime installer:
 
-  1. Download [ReunionRuntimeInstaller.exe from GitHub](https://aka.ms/projectreunion/0.8preview).
+  1. Download [ReunionRuntimeInstaller.exe from GitHub](https://aka.ms/windowsappsdk/1.0-experimental).
   2. From a command prompt, run `ReunionRuntimeInstaller.exe` to install all the dependencies.
 
 ## Instructions
@@ -49,7 +49,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**.
     2. Search for **Project Reunion**, and install the latest preview version of the **Microsoft.ProjectReunion** package.
 
-3. You are now ready to use the [dynamic dependencies API](https://github.com/microsoft/ProjectReunion/blob/main/specs/dynamicdependencies/DynamicDependencies.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
+3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
     1. Add the following include files to the top of your **DynamicDependenciesTest.cpp** file.
 
@@ -155,7 +155,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
     2. Search for **Project Reunion**, and install the latest preview version of the **Microsoft.ProjectReunion** package.
 
-5. You are now ready to use the [dynamic dependencies API](https://github.com/microsoft/ProjectReunion/blob/main/specs/dynamicdependencies/DynamicDependencies.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
+5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
     1. Add a new code file named **MddBootstrap.cs** to your project and add the following code to it.
 

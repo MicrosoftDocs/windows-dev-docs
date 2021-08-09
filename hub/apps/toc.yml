@@ -71,6 +71,14 @@
                 href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
           - name: "Manage app windows"
             href: windows-app-sdk/windowing/windowing-overview.md
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push/troubleshooting.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
@@ -136,6 +144,14 @@
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
                   - name: Call WinRT COM interop interfaces from .NET 5+ apps
                     href: desktop/modernize/winrt-com-interop-csharp.md
+            - name: Use MSIX framework packages from your desktop app
+              items:
+                  - name: Overview
+                    href: desktop/modernize/framework-packages/index.md
+                  - name: MSIX framework packages and dynamic dependencies
+                    href: desktop/modernize/framework-packages/framework-packages-overview.md
+                  - name: Reference framework packages at run time
+                    href: desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
             - name: Host WinRT XAML controls (XAML Islands)
               items:
                   - name: Overview
@@ -204,7 +220,7 @@
         items:
           - name: "Overview"
             href: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md 
-          - name: "Runtime architecture and deployment scenarios"
+          - name: "Run time architecture and deployment scenarios"
             href: windows-app-sdk/deployment-architecture.md
           - name: "Deploy packaged apps"
             href: windows-app-sdk/deploy-packaged-apps.md 
@@ -212,6 +228,8 @@
             items:
               - name: "Overview"
                 href: windows-app-sdk/deploy-unpackaged-apps.md
+              - name: Reference the Windows App SDK framework package at run time
+                href: windows-app-sdk/reference-framework-package-run-time.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
@@ -232,7 +250,7 @@
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
-          - name: WinUI WinRT API reference
+          - name: WinUI API reference
             items: 
               - name: WinRT APIs for WinUI
                 href: /windows/winui/api/
