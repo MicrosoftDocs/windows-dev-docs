@@ -100,7 +100,7 @@ React Native for Windows brings React Native support for the Windows 10 and Wind
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or a module does not yet exist, you can easily write a native module to expose it.
 
 Here are some reasons to choose React Native for Windows:
-- you want to share code across platforms as much as possible, or you have web properties that you want to share code with.
+- You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
 - improved developer productivity and inner loop, thanks to fast refresh.
 - your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
 - you already have experience with JavaScript or TypeScript and feel comfortable
