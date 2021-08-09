@@ -2,7 +2,7 @@
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: NavigationView
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 08/09/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -113,7 +113,7 @@ We recommend _left_ navigation when:
 :::row:::
     :::column:::
     ### LeftCompact
-    The pane shows only icons until opened and is positioned to the left of the content.</br>
+    The pane shows only icons until opened and is positioned to the left of the content. When opened, the pane overlays the content.</br>
     `PaneDisplayMode="LeftCompact"`
     :::column-end:::
     :::column span="2":::
@@ -124,7 +124,7 @@ We recommend _left_ navigation when:
 :::row:::
     :::column:::
     ### LeftMinimal
-    Only the menu button is shown until the pane is opened. When opened, it's positioned to the left of the content.</br>
+    Only the menu button is shown until the pane is opened. When opened, the pane overlays the left side of the content.</br>
     `PaneDisplayMode="LeftMinimal"`
     :::column-end:::
     :::column span="2":::
