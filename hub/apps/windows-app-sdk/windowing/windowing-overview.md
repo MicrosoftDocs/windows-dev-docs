@@ -191,7 +191,7 @@ namespace SampleApp
         private static extern int GetWindowHandleFromWindowId(WindowId windowId, out IntPtr result);
 
         [DllImport("Microsoft.UI.Windowing.Core.dll", CharSet = CharSet.Unicode)]
-        private static extern int GetWindowIdFromWindowHandle(IntPtr `hwnd`, out WindowId result);
+        private static extern int GetWindowIdFromWindowHandle(IntPtr hwnd, out WindowId result);
 
         private AppWindow m_appWindow;
 
@@ -204,14 +204,14 @@ namespace SampleApp
             {
                 // You now have an AppWindow object and can call its methods to manipulate the window.
                 // Just to do something here, let's change the title of the window...
-                m_apppWindow.Title = "WinUI ❤️ AppWindow";
+                m_appWindow.Title = "WinUI ❤️ AppWindow";
             }
         }
 
         private AppWindow GetAppWindowForCurrentWindow()
         {
-            IntPtr `hWnd` = this.As<IWindowNative>().WindowHandle;
-            _ = GetWindowIdFromWindowHandle(`hWnd`, out WindowId myWndId);
+            IntPtr hWnd = this.As<IWindowNative>().WindowHandle;
+            _ = GetWindowIdFromWindowHandle(hWnd, out WindowId myWndId);
             return AppWindow.GetFromWindowId(myWndId);
         }
    }
