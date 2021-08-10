@@ -18,13 +18,13 @@ As a replacement, starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releas
 
 ## Available interop classes
 
-The following is a list of available C# interop classes and the mappings to the underlying COM interfaces. All classes listed below implement the methods of the associated COM interface and provide type-safe wrappers for parameters and return values. For example, `DragDropManagerInterop.GetForWindow` requires an `IntPtr` window handle parameter and returns a [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the WinRT COM interop classes below and associated methods are static.
+The following is a list of available C# interop classes and the mappings to the underlying COM interfaces. All classes listed below implement the methods of the associated COM interface and provide type-safe wrappers for parameters and return values. For example, **DragDropManagerInterop.GetForWindow** requires an **IntPtr** window handle parameter and returns a [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the WinRT COM interop classes below and associated methods are static.
 
 | Class | COM interface |
 | -------------------------|-------|
 | WinRT.Interop.WindowNative | [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) |
 | WinRT.Interop.InitializeWithWindow | [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) |
-| [Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop | [IDragDropManagerInterop](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop) |
+| Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop | [IDragDropManagerInterop](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop) |
 | Windows.Graphics.Printing.PrintManagerInterop | [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) |
 | Windows.Media.SystemMediaTransportControlsInterop | [ISystemMediaTransportControlsInterop](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop) |
 | Windows.Media.PlayTo.PlayToManagerInterop | [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) |
@@ -40,9 +40,9 @@ The following is a list of available C# interop classes and the mappings to the 
 
 ## Configure a .NET 5+ desktop project to use the C# interop classes
 
-To configure your desktop project to access the C# interop classes, you can follow these steps:
+To configure your desktop project to access the C# interop classes, follow these steps:
 
-1. Open the project file for your C# project. In the *csproj* file, modify the `TargetFramework` element to target a specific Windows SDK version. For example, the following element is for a project that targets Windows 10, version 2004.
+1. Open the project file for your C# project. In the .csproj file, modify the `TargetFramework` element to target a specific Windows SDK version. For example, the following element is for a project that targets Windows 10, version 2004.
 
     ```xml
     <PropertyGroup>
@@ -50,9 +50,9 @@ To configure your desktop project to access the C# interop classes, you can foll
     </PropertyGroup>
     ```
 
-    For more information including a list of other supported values, see [this article](desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option).
+    For more information including a list of other supported values, see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option).
 
-2. The following example demonstrates how to use the `WinRT.Interop.WindowNative` interop class in a [WinUI 3-based application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, the `this` object is an instance of the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3. Note that the `WinRT.Interop.WindowNative` class implements the [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) interface provided by WinUI 3, and this interface is implemented by the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class.
+2. The following example demonstrates how to use the **WinRT.Interop.WindowNative** interop class in a [WinUI 3-based application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, the `this` object is an instance of the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3. Note that the **WinRT.Interop.WindowNative** class implements the [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) interface provided by WinUI 3, and this interface is implemented by the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class.
 
     ```csharp
     private async void myButton_Click(object sender, RoutedEventArgs e)
@@ -68,10 +68,10 @@ To configure your desktop project to access the C# interop classes, you can foll
     }
     ```
 
-## Known issues
+## Troubleshooting and known issues
 
-The APIs listed in this article are new and developers may encounter issues. The following are known issues with the COM interop APIs provided by the .NET 5 Windows-specific Target Framework Monikers (TFMs).
+This section lists known issues and solutions for using the WinRT COM interop APIs. To provide feedback or to report other issues, add your feedback to an existing issue or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
 
-- WinRT.Interop.WindowNative.GetWindowHandle does not marshal HWND correctly when running on x86
+- **WinRT.Interop.WindowNative.GetWindowHandle does not marshal window handles (HWNDs) correctly when running on x86 platforms.** To resolve this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.303, or 5.0.400.
 
-To provide feedback or to report other issues, please contribute to an existing issue or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
+
