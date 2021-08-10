@@ -114,13 +114,13 @@ namespace winrt::SampleApp::implementation
         winrt::AppWindow appWindow = nullptr;
         
         //Get the `HWND` for the XAML Window
-        `HWND` `hWnd`;
+        HWND hWnd;
         Window window = this->try_as<Window>();
-        window.as<IWindowNative>()->get_WindowHandle(&`hWnd`);
+        window.as<IWindowNative>()->get_WindowHandle(&hWnd);
 
         // Get the WindowId for the `HWND`
         winrt::WindowId windowId;
-        if(SUCCEEDED(GetWindowIdFromWindowHandle(`hWnd`, &windowId))
+        if(SUCCEEDED(GetWindowIdFromWindowHandle(hWnd, &windowId))
         {
             // Get the AppWindow for the WindowId
             appWindow = winrt::AppWindow::GetFromWindowId(windowId);
