@@ -86,7 +86,7 @@ Below are sample code for how to retrieve an `AppWindow` from a WinUI3 Window. F
 #include "microsoft.ui.windowing.core.interop.h"
 // For access to WindowId
 #include <Microsoft.UI.h>
-// For access to `hwnd` interop methods
+// For access to hwnd interop methods
 #include <Microsoft.UI.Interop.h>
 // For the WinRT windowing APIs
 #include <Microsoft.UI.Windowing.h>
@@ -113,14 +113,14 @@ namespace winrt::SampleApp::implementation
     {
         winrt::AppWindow appWindow = nullptr;
         
-        //Get the `HWND` for the XAML Window
-        `HWND` `hWnd`;
+        //Get the HWND for the XAML Window
+        HWND hWnd;
         Window window = this->try_as<Window>();
-        window.as<IWindowNative>()->get_WindowHandle(&`hWnd`);
+        window.as<IWindowNative>()->get_WindowHandle(&hWnd);
 
-        // Get the WindowId for the `HWND`
+        // Get the WindowId for the HWND
         winrt::WindowId windowId;
-        if(SUCCEEDED(GetWindowIdFromWindowHandle(`hWnd`, &windowId))
+        if(SUCCEEDED(GetWindowIdFromWindowHandle(hWnd, &windowId))
         {
             // Get the AppWindow for the WindowId
             appWindow = winrt::AppWindow::GetFromWindowId(windowId);
@@ -165,8 +165,8 @@ using WinRT;
 using Microsoft.UI;
 // Needed for AppWindow
 using Microsoft.UI.Windowing;
-// Needed for XAML Window Native window interop
-using System.Runtime.InteropServices;
+// Needed for XAML hwnd interop
+using WinRT.Interop;
 
 namespace SampleApp
 {
@@ -179,19 +179,11 @@ namespace SampleApp
         // the methods in the MainWindow class here. It is recommended that you
         // break this out into a support class that you use wherever needed instead.
         // See the Windows App SDK windowing sample for more details.
-        [ComImport]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        [Guid("EECDBF0E-BAE9-4CB6-A68E-9598E1CB57BB")]
-        internal interface IWindowNative
-        {
-            IntPtr WindowHandle { get; }
-        }
-
         [DllImport("Microsoft.UI.Windowing.Core.dll", CharSet = CharSet.Unicode)]
         private static extern int GetWindowHandleFromWindowId(WindowId windowId, out IntPtr result);
 
         [DllImport("Microsoft.UI.Windowing.Core.dll", CharSet = CharSet.Unicode)]
-        private static extern int GetWindowIdFromWindowHandle(IntPtr `hwnd`, out WindowId result);
+        private static extern int GetWindowIdFromWindowHandle(IntPtr hwnd, out WindowId result);
 
         private AppWindow m_appWindow;
 
@@ -210,8 +202,8 @@ namespace SampleApp
 
         private AppWindow GetAppWindowForCurrentWindow()
         {
-            IntPtr `hWnd` = this.As<IWindowNative>().WindowHandle;
-            _ = GetWindowIdFromWindowHandle(`hWnd`, out WindowId myWndId);
+            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+            GetWindowIdFromWindowHandle(hWnd, out WindowId myWndId);
             return AppWindow.GetFromWindowId(myWndId);
         }
    }
