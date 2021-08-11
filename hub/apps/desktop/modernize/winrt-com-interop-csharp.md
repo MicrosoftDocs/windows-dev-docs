@@ -61,7 +61,8 @@ To configure your desktop project to access the C# interop classes, follow these
         var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
         var folderPicker = new Windows.Storage.Pickers.FolderPicker();
         WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
-
+        folderPicker.FileTypeFilter.Add("*");
+        
         // Now you can call methods on folderPicker
         var folder = await folderPicker.PickSingleFolderAsync();
         // ...
