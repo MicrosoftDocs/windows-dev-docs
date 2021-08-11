@@ -84,86 +84,86 @@ The following list of topics have seen significant updates in the past month, as
 ### WinRT conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/port-the-glsl">Port the GLSL</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/port-the-shader-config">Port the shader objects</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/plan-your-app">Building a complex Universal Windows Platform (UWP) app</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/apps-on-arm">Windows on ARM</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/arm64ec">ARM64EC for Windows 11 apps on ARM</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/index">Publish Windows apps</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/msiexe/app-submissions">Create an app submission for your MSI or EXE app</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/msiexe/overview">Submit your MSI or EXE app to the Microsoft Store</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/pwa/overview">Submit your PWA to the Microsoft Store</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store Policies</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/tailoring-for-xbox">Xbox best practices</a></li>
+<li><a href="/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="/windows/uwp/gaming/port-the-glsl">Port the GLSL</a></li>
+<li><a href="/windows/uwp/gaming/port-the-shader-config">Port the shader objects</a></li>
+<li><a href="/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li>
+<li><a href="/windows/uwp/get-started/plan-your-app">Building a complex Universal Windows Platform (UWP) app</a></li>
+<li><a href="/windows/uwp/porting/apps-on-arm">Windows on ARM</a></li>
+<li><a href="/windows/uwp/porting/arm64ec">ARM64EC for Windows 11 apps on ARM</a></li>
+<li><a href="/windows/uwp/publish/index">Publish Windows apps</a></li>
+<li><a href="/windows/uwp/publish/msiexe/app-submissions">Create an app submission for your MSI or EXE app</a></li>
+<li><a href="/windows/uwp/publish/msiexe/overview">Submit your MSI or EXE app to the Microsoft Store</a></li>
+<li><a href="/windows/uwp/publish/pwa/overview">Submit your PWA to the Microsoft Store</a></li>
+<li><a href="/windows/uwp/publish/store-policies">Microsoft Store Policies</a></li>
+<li><a href="/windows/uwp/xbox-apps/tailoring-for-xbox">Xbox best practices</a></li>
 </ul>
 
 
 ### Win32 conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/exfat-specification">exFAT file system specification</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/IpHlp/ip-helper-enumerations">IP Helper enumerations</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Midl/odl-language-features-in-midl">ODL Language Features in MIDL</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ProcThread/quality-of-service">Quality of Service</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinHttp/winhttp-constants">WinHTTP Constants</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinHttp/winhttp-functions">WinHTTP Functions</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinHttp/winhttp-structures">WinHTTP structures</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/uploading-resources">Uploading different types of resources</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/volume-tiled-resources">Volume tiled resources (Direct3D 12)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/wavereadlaneat">WaveReadLaneAt function</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/directcomp/transforms">Transforms (DirectComposition)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/gdi/alpha-blending">Alpha Blending (Windows GDI)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/gdi/wm-setredraw">WM_SETREDRAW message (Winuser.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/inputdev/about-keyboard-input">About Keyboard Input</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN message</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/lwef/be-efficient-and-natural">Be Efficient and Natural</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/lwef/clarify-and-limit-choices">Clarify and Limit Choices</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/lwef/provide-good-error-recovery">Provide Good Error Recovery</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/lwef/use-the-active-voice">Use the Active Voice</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/audioresampler">Audio Resampler DSP (Wmcodecdsp.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/keyword">keyword element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/mfdetours">mfdetours element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/provider">provider element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/providers">providers element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/shell/manage">Managing the File System</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/alternate-element">Alternate Element (Wingdi.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/alternatelist-element">AlternateList Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/background-element">Background Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/baseline-element">Baseline Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/bitmap-element">Bitmap Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/canreclassify-element">CanReClassify Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/confidence-element">Confidence Element</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/inkedit-control-reference">InkEdit Control Reference</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/windowsribbon/windowsribbon-sample1">SimpleRibbon Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-and-directinput">XInput and DirectInput</a></li>
+<li><a href="/windows/desktop/FileIO/exfat-specification">exFAT file system specification</a></li>
+<li><a href="/windows/desktop/IpHlp/ip-helper-enumerations">IP Helper enumerations</a></li>
+<li><a href="/windows/desktop/Midl/odl-language-features-in-midl">ODL Language Features in MIDL</a></li>
+<li><a href="/windows/desktop/ProcThread/quality-of-service">Quality of Service</a></li>
+<li><a href="/windows/desktop/WinHttp/winhttp-constants">WinHTTP Constants</a></li>
+<li><a href="/windows/desktop/WinHttp/winhttp-functions">WinHTTP Functions</a></li>
+<li><a href="/windows/desktop/WinHttp/winhttp-structures">WinHTTP structures</a></li>
+<li><a href="/windows/desktop/direct3d12/uploading-resources">Uploading different types of resources</a></li>
+<li><a href="/windows/desktop/direct3d12/volume-tiled-resources">Volume tiled resources (Direct3D 12)</a></li>
+<li><a href="/windows/desktop/direct3dhlsl/wavereadlaneat">WaveReadLaneAt function</a></li>
+<li><a href="/windows/desktop/directcomp/transforms">Transforms (DirectComposition)</a></li>
+<li><a href="/windows/desktop/gdi/alpha-blending">Alpha Blending (Windows GDI)</a></li>
+<li><a href="/windows/desktop/gdi/wm-setredraw">WM_SETREDRAW message (Winuser.h)</a></li>
+<li><a href="/windows/desktop/inputdev/about-keyboard-input">About Keyboard Input</a></li>
+<li><a href="/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN message</a></li>
+<li><a href="/windows/desktop/lwef/be-efficient-and-natural">Be Efficient and Natural</a></li>
+<li><a href="/windows/desktop/lwef/clarify-and-limit-choices">Clarify and Limit Choices</a></li>
+<li><a href="/windows/desktop/lwef/provide-good-error-recovery">Provide Good Error Recovery</a></li>
+<li><a href="/windows/desktop/lwef/use-the-active-voice">Use the Active Voice</a></li>
+<li><a href="/windows/desktop/medfound/audioresampler">Audio Resampler DSP (Wmcodecdsp.h)</a></li>
+<li><a href="/windows/desktop/medfound/keyword">keyword element</a></li>
+<li><a href="/windows/desktop/medfound/mfdetours">mfdetours element</a></li>
+<li><a href="/windows/desktop/medfound/provider">provider element</a></li>
+<li><a href="/windows/desktop/medfound/providers">providers element</a></li>
+<li><a href="/windows/desktop/shell/manage">Managing the File System</a></li>
+<li><a href="/windows/desktop/tablet/alternate-element">Alternate Element (Wingdi.h)</a></li>
+<li><a href="/windows/desktop/tablet/alternatelist-element">AlternateList Element</a></li>
+<li><a href="/windows/desktop/tablet/background-element">Background Element</a></li>
+<li><a href="/windows/desktop/tablet/baseline-element">Baseline Element</a></li>
+<li><a href="/windows/desktop/tablet/bitmap-element">Bitmap Element</a></li>
+<li><a href="/windows/desktop/tablet/canreclassify-element">CanReClassify Element</a></li>
+<li><a href="/windows/desktop/tablet/confidence-element">Confidence Element</a></li>
+<li><a href="/windows/desktop/tablet/inkedit-control-reference">InkEdit Control Reference</a></li>
+<li><a href="/windows/desktop/windowsribbon/windowsribbon-sample1">SimpleRibbon Sample</a></li>
+<li><a href="/windows/desktop/xinput/xinput-and-directinput">XInput and DirectInput</a></li>
 </ul>
 
 ### Win32 API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddeml/ns-ddeml-convinfo">CONVINFO (ddeml.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/fdi/nf-fdi-fnfdinotify">FNFDINOTIFY macro (fdi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mftenum">MFTEnum function (mfapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfsystemid">IMFSystemId (mfidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ras/nf-ras-rasenumdevicesa">RasEnumDevicesA function (ras.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ras/nf-ras-rasenumdevicesw">RasEnumDevicesW function (ras.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/udpmib/ns-udpmib-mib_udprow">MIB_UDPROW (udpmib.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL </a></li>
+<li><a href="/windows/win32/api/ddeml/ns-ddeml-convinfo">CONVINFO (ddeml.h) </a></li>
+<li><a href="/windows/win32/api/fdi/nf-fdi-fnfdinotify">FNFDINOTIFY macro (fdi.h) </a></li>
+<li><a href="/windows/win32/api/mfapi/nf-mfapi-mftenum">MFTEnum function (mfapi.h) </a></li>
+<li><a href="/windows/win32/api/mfidl/nn-mfidl-imfsystemid">IMFSystemId (mfidl.h) </a></li>
+<li><a href="/windows/win32/api/ras/nf-ras-rasenumdevicesa">RasEnumDevicesA function (ras.h) </a></li>
+<li><a href="/windows/win32/api/ras/nf-ras-rasenumdevicesw">RasEnumDevicesW function (ras.h) </a></li>
+<li><a href="/windows/win32/api/udpmib/ns-udpmib-mib_udprow">MIB_UDPROW (udpmib.h) </a></li>
+<li><a href="/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">LPWSPIOCTL </a></li>
 </ul>
 
 ### UWP API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinfo">Windows.ApplicationModel.AppInfo</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.iiterable">Windows.Foundation.Collections.IIterable`1</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.iiterator">Windows.Foundation.Collections.IIterator`1</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.imap">Windows.Foundation.Collections.IMap`2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.imapview">Windows.Foundation.Collections.IMapView`2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.iobservablemap">Windows.Foundation.Collections.IObservableMap`2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.ivector">Windows.Foundation.Collections.IVector`1</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.ivector.1.size">Windows.Foundation.Collections.IVector`1.Size</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.collections.ivectorview">Windows.Foundation.Collections.IVectorView`1</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">Windows.UI.Xaml.Controls.GridView</a></li>
+<li><a href="/uwp/api/windows.applicationmodel.appinfo">Windows.ApplicationModel.AppInfo</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.iiterable">Windows.Foundation.Collections.IIterable`1</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.iiterator">Windows.Foundation.Collections.IIterator`1</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.imap">Windows.Foundation.Collections.IMap`2</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.imapview">Windows.Foundation.Collections.IMapView`2</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.iobservablemap">Windows.Foundation.Collections.IObservableMap`2</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.ivector">Windows.Foundation.Collections.IVector`1</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.ivector.1.size">Windows.Foundation.Collections.IVector`1.Size</a></li>
+<li><a href="/uwp/api/windows.foundation.collections.ivectorview">Windows.Foundation.Collections.IVectorView`1</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.gridview">Windows.UI.Xaml.Controls.GridView</a></li>
 </ul>
