@@ -41,7 +41,7 @@ Project Reunion is now called the Windows App SDK.
 * [Build a basic WinUI 3 desktop app](/windows/apps/winui/winui3/desktop-build-basic-winui3-app)
 * [Package and deploy](/windows/apps/package-and-deploy/)
 * [A series of daily Bite-sized C++ topics](https://github.com/MicrosoftDocs/windows-devdocs-team/tree/main/bite-sized-cpp)
-* [Developing with Rust on Windows](/windows/rust/rust-on-windows/)
+* [Developing with Rust on Windows](/windows/dev-environment/rust/)
 
 ### Developer tool updates
 
