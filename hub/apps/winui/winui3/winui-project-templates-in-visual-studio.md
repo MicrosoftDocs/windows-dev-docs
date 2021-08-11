@@ -49,3 +49,9 @@ The following item templates are available for use in a WinUI project. To access
 | Resource Dictionary (WinUI 3) | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references). |
 | Resources File (WinUI 3) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
 | User Control (WinUI 3) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+
+## See also
+
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

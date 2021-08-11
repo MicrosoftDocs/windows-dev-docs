@@ -220,3 +220,9 @@ After saving the new .idl file, the next step is to generate the Windows Runtime
 Copy the stub files BgLabelControl.h and BgLabelControl.cpp from \BgLabelControlApp\BgLabelControlApp\Generated Files\sources\ into the project folder. In **Solution Explorer**, make sure Show All Files is toggled on. Right-click the stub files that you copied, and click **Include In Project**.
 
 The compiler places a static_assert line at the top of BgLabelControl.h and BgLabelControl.cpp to prevent the generated files from being compiled. When implementing your control, you should remove these lines from the files you have placed in your project directory. For this walkthrough, you can just overwrite the entire contents of the files with the code provided above.
+
+## See also
+
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

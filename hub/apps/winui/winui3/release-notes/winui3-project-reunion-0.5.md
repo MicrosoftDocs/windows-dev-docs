@@ -201,3 +201,9 @@ After cloning, ensure that you switch to the **winui3** branch in your local Git
 ```dos
 git checkout winui3
 ```
+
+## See also
+
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

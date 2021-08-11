@@ -242,3 +242,9 @@ After cloning, ensure that you switch to the **winui3preview** branch in your lo
 ```
 git checkout winui3preview
 ```
+
+## See also
+
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

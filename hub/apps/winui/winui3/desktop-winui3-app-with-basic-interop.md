@@ -111,8 +111,11 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 In this topic we covered accessing the underlying window implementation (in this case Win32 and HWNDs) and using Win32 APIs along with the WinRT APIs. This demonstrates how you can use existing desktop application code when creating new WinUI 3 desktop apps.
 
+For a more extensive sample, see the [AppWindow gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing) in the [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples) GitHub repo.
+
 ## See also
 
+- [Windows App SDK](../../windows-app-sdk/index.md)
 - [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
-- [Get started with the Windows App SDK](../../windows-app-sdk/get-started.md)
-- [Get started with WinUI 3 for desktop apps](get-started-winui3-for-desktop.md)
+- [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

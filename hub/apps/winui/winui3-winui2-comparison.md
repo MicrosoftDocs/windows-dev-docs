@@ -30,10 +30,6 @@ Both are under active development with updates released on a regular basis.
 
 ## See also
 
-- [Build desktop Windows apps with the Windows App SDK](../windows-app-sdk/index.md)
-
-- [Windows UI Library (WinUI)](index.md)
-
-- [Windows UI Library 2](winui2/index.md)
-
-- [Windows UI Library 3 - Project Reunion 0.5 (March 2021)](winui3/index.md)
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

@@ -46,8 +46,9 @@ WinUI 3 is the native UI platform component that ships with the [Windows App SDK
 
 ### Related links for WinUI 3
 
-- [Stable release channel](../windows-app-sdk/stable-channel.md)
-- [WinUI 3 Controls Gallery sample app](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3)
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
 
 ## Windows UI 2 Library
 

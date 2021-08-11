@@ -120,3 +120,9 @@ Open `MainPage.xaml`, which contains the XAML markup for our main UI page. Immed
 Build and run the app and you will see the templated control, with the background color and label we specified.
 
 ![Templated control result](images/winui-templated-control-result.png)
+
+## See also
+
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
