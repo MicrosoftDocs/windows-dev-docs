@@ -11,7 +11,8 @@ ms.date: 01/06/2021
 
 # Web development on Windows 10
 
-Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/apis.md). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
+Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
+
 
 ## WebView, DevTools, PWAs
 
