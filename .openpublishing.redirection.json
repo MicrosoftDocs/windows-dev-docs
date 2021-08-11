@@ -5176,6 +5176,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/desktop-build-basic-winui3-app.md",
+      "redirect_url": "/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/reference/iwindownative.md",
       "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
       "redirect_document_id": false

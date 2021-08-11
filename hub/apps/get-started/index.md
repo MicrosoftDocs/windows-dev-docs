@@ -33,12 +33,12 @@ To build a WinUI 3 app, start with one of the project templates available in the
 
 For more information about WinUI 3 apps, see see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-* [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
-* [WinUI project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-* [Build a basic WinUI 3 desktop app](../winui/winui3/desktop-build-basic-winui3-app.md)
-* [API reference](/windows/winui/api)
-* [Samples](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+- [WinUI project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
+- [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
+- [API reference](/windows/winui/api)
+- [Samples](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 #### [Native Win32](#tab/cpp-win32)
 
@@ -48,23 +48,23 @@ Using the Win32 API with C++ makes it possible to achieve the highest levels of 
 
 Here are a few highlights of what the Win32 API and C++ offers to enable you to build high-performance applications.
 
-* Hardware-level optimizations, including tight control over resource allocation, object lifetimes, data layout, alignment, byte packing, and more.
-* Access to performance-oriented instruction sets like SSE and AVX through intrinsic functions.
-* Efficient, type-safe generic programming by using templates.
-* Efficient and safe containers and algorithms.
-* DirectX, in particular Direct3D and DirectCompute (note that UWP also offers DirectX interop).
-* Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to create modern desktop Win32 apps with first-class access to Windows Runtime (WinRT) APIs.
+- Hardware-level optimizations, including tight control over resource allocation, object lifetimes, data layout, alignment, byte packing, and more.
+- Access to performance-oriented instruction sets like SSE and AVX through intrinsic functions.
+- Efficient, type-safe generic programming by using templates.
+- Efficient and safe containers and algorithms.
+- DirectX, in particular Direct3D and DirectCompute (note that UWP also offers DirectX interop).
+- Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to create modern desktop Win32 apps with first-class access to Windows Runtime (WinRT) APIs.
 
 For more information about C++ Win32 apps, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-* [Get started with classic Win32 desktop apps](/windows/win32/desktop-programming/)
-* [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)
-* [Project templates](../desktop/visual-studio-templates.md#c-desktop-win32-templates)
-* [Create your first Win32 and C++ app](/windows/win32/learnwin32/learn-to-program-for-windows/)
-* [Technologies and features provided by the Win32 API](/windows/win32/desktop-app-technologies)
-* [Win32 API reference](/windows/win32/apiindex/windows-api-list/)
-* [Samples](https://github.com/Microsoft/Windows-classic-samples)
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Get started with classic Win32 desktop apps](/windows/win32/desktop-programming/)
+- [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)
+- [Project templates](../desktop/visual-studio-templates.md#c-desktop-win32-templates)
+- [Create your first Win32 and C++ app](/windows/win32/learnwin32/learn-to-program-for-windows/)
+- [Technologies and features provided by the Win32 API](/windows/win32/desktop-app-technologies)
+- [Win32 API reference](/windows/win32/apiindex/windows-api-list/)
+- [Samples](https://github.com/Microsoft/Windows-classic-samples)
 
 #### [WPF](#tab/wpf)
 
@@ -72,12 +72,12 @@ WPF is the established platform for managed Windows applications with access to 
 
 For more information about WPF apps, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-* [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
-* [Project templates](../desktop/visual-studio-templates.md#net-templates)
-* [Create your first app](/dotnet/desktop/wpf/get-started/create-app-visual-studio)
-* [API reference (.NET)](/dotnet/api/index)
-* [Samples](https://github.com/Microsoft/WPF-Samples)
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
+- [Project templates](../desktop/visual-studio-templates.md#net-templates)
+- [Create your first app](/dotnet/desktop/wpf/get-started/create-app-visual-studio)
+- [API reference (.NET)](/dotnet/api/index)
+- [Samples](https://github.com/Microsoft/WPF-Samples)
 
 #### [Windows Forms](#tab/windows-forms)
 
@@ -85,13 +85,13 @@ Windows Forms is the original platform for managed Windows applications with a l
 
 For more information about Windows Forms apps, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-* [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
-* [Project templates](../desktop/visual-studio-templates.md#net-templates)
-* [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
-* [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
-* [API reference (.NET)](/dotnet/api/index)
-* [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
+- [Project templates](../desktop/visual-studio-templates.md#net-templates)
+- [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
+- [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
+- [API reference (.NET)](/dotnet/api/index)
+- [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
 #### [UWP](#tab/uwp)
 
@@ -101,13 +101,13 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 
 For more information about UWP apps, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-* [Get started](/windows/uwp/get-started/)
-* [Project templates](../desktop/visual-studio-templates.md#uwp-templates)
-* [Design and UI](/windows/uwp/design/)
-* [Technologies and features](/windows/uwp/develop/)
-* [API reference](/uwp/)
-* [Samples](https://github.com/Microsoft/Windows-universal-samples)
+- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Get started](/windows/uwp/get-started/)
+- [Project templates](../desktop/visual-studio-templates.md#uwp-templates)
+- [Design and UI](/windows/uwp/design/)
+- [Technologies and features](/windows/uwp/develop/)
+- [API reference](/uwp/)
+- [Samples](https://github.com/Microsoft/Windows-universal-samples)
 
 ---
 
@@ -117,11 +117,11 @@ If you have an existing WPF, Windows Forms, or native Win32 desktop app, the Win
 
 Here are just a few of the features available to enhance your existing desktop apps:
 
-* [Install the Windows App SDK NuGet package](/windows-app-sdk/get-started.md#use-the-windows-app-sdk-in-an-existing-project) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
-* [Call Windows Runtime (WinRT) APIs](../desktop/modernize/desktop-to-uwp-enhance.md) to enhance your desktop app with the latest Windows features.
-* Use [package extensions](../desktop/modernize/desktop-to-uwp-extensions.md) to integrate your desktop app with modern Windows experiences. For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
-* Use [XAML Islands](../desktop/modernize/xaml-islands.md) to host WinRT XAML controls in your desktop app. Many of the latest Windows UI features are only available to WinRT XAML controls.
-* Use [MSIX](/windows/msix/) to package and deploy your desktop apps. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies and is built to be safe, secure, and reliable.
+- [Install the Windows App SDK NuGet package](/windows-app-sdk/get-started.md#use-the-windows-app-sdk-in-an-existing-project) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
+- [Call Windows Runtime (WinRT) APIs](../desktop/modernize/desktop-to-uwp-enhance.md) to enhance your desktop app with the latest Windows features.
+- Use [package extensions](../desktop/modernize/desktop-to-uwp-extensions.md) to integrate your desktop app with modern Windows experiences. For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
+- Use [XAML Islands](../desktop/modernize/xaml-islands.md) to host WinRT XAML controls in your desktop app. Many of the latest Windows UI features are only available to WinRT XAML controls.
+- Use [MSIX](/windows/msix/) to package and deploy your desktop apps. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies and is built to be safe, secure, and reliable.
 
 For more information, see [Modernize desktop apps](../desktop/modernize/index.md).
 

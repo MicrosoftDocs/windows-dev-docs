@@ -81,8 +81,8 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/create-your-first-winui3-app.md)
-- [Build a basic WinUI 3 app for desktop](../winui/winui3/desktop-build-basic-winui3-app.md)
+- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
 **DWriteCore**
@@ -165,7 +165,7 @@ This release has the following limitations and known issues:
 
 - **Desktop apps (C# .NET 5 or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [preview channel](preview-channel.md).
 - **UWP apps**: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the [preview release channel](preview-channel.md). For more information about installing the preview extension, see [Set up your development environment](set-up-your-development-environment.md).
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's <TargetPlatformVersion> must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
+- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `TargetPlatformVersion` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
 
 ## Related topics
 
