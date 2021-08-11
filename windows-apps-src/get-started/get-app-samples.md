@@ -22,15 +22,16 @@ To make finding specific samples a little bit easier, you can browse and search 
 
 Here's a list of mini-app samples created specifically to support Windows developer documentation. Unless noted, the following samples are all Universal Windows Platform (UWP) apps that have been updated to use the latest [WinUI 2.4](/windows/apps/winui/winui2/release-notes/winui-2.4) controls.
 
-- [Rss Reader](https://github.com/Microsoft/Windows-appsample-rssreader) - Retrieve RSS feeds and view articles
-- [Family Notes](https://github.com/Microsoft/Windows-appsample-familynotes) - Explore different input modalities and scenarios of user awareness
-- [Customer Orders](https://github.com/Microsoft/Windows-appsample-customers-orders-database) - Features useful to enterprise developers, like Azure Active Directory (AAD) authentication, UI controls (including a data grid), Sqlite and SQL Azure database integration, Entity Framework, and cloud API services
-- [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler) - Schedule lunches with your friends and coworkers
-- [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook) - Windows Ink (including the Windows Ink Toolbar) and radial controller (for Wheel devices such as the Surface Dial) features
-- [Network Helper (Quiz Game)](https://github.com/Microsoft/Windows-appsample-networkhelper) - Network discovery and communication
-- [HUE Lights Controller](https://github.com/Microsoft/Windows-appsample-huelightcontroller) - Intelligent home automation with Cortana and Bluetooth Low Energy (Bluetooth LE)
-- [Marble Maze](https://github.com/Microsoft/Windows-appsample-marble-maze) - Basic 3D game using DirectX
-- [PhotoLab](https://github.com/Microsoft/Windows-appsample-photo-lab) - View and edit image files
+- [Rss Reader](/samples/microsoft/windows-appsample-rssreader/rssreader-sample/)&mdash;Retrieve RSS feeds and view articles.
+- [Family Notes](/samples/microsoft/windows-appsample-familynotes/familynotes-sample/)&mdash;Explore different input modalities and scenarios of user awareness.
+- [Customer Orders](/samples/microsoft/windows-appsample-customers-orders-database/customers-orders-database-sample/)&mdash;Features useful to enterprise developers, such as Azure Active Directory (AAD) authentication, UI controls (including a data grid), Sqlite and SQL Azure database integration, Entity Framework, and cloud API services.
+- [Lunch Scheduler](/samples/microsoft/windows-appsample-lunch-scheduler/lunch-scheduler-app/)&mdash;Schedule lunches with your friends and coworkers.
+- [Coloring Book](/samples/microsoft/windows-appsample-coloringbook/coloring-book-sample-updated-to-winui-24---may-2020/)&mdash;Windows Ink (including the Windows Ink Toolbar) and radial controller (for Wheel devices such as the Surface Dial) features.
+- [Network Helper (Quiz Game)](/samples/microsoft/windows-appsample-networkhelper/networkhelper-sample-library/)&mdash;Network discovery and communication.
+- [HUE Lights Controller](/samples/microsoft/windows-appsample-huelightcontroller/hue-lights-sample/)&mdash;Intelligent home automation with Cortana and Bluetooth Low Energy (Bluetooth LE).
+- [Marble Maze](/samples/microsoft/windows-appsample-marble-maze/directx-marble-maze-game-sample/)&mdash;Basic 3D game using DirectX.
+- [PhotoLab](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/)&mdash;View and edit image files.
+- [Photo Editor](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/)&mdash;View and edit image files (a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) version of **PhotoLab**).
 
 ## Download the code
 
