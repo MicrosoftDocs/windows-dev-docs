@@ -134,8 +134,12 @@
         items:
             - name: Overview
               href: desktop/modernize/index.md
-            - name: Apply rounded corners in Windows 11
-              href: desktop/modernize/apply-rounded-corners.md
+            - name: Apply Windows 11 features
+              items:
+                  - name: Apply rounded corners in Windows 11
+                    href: desktop/modernize/apply-rounded-corners.md
+                  - name: Apply the Snap Layout Menu
+                    href: desktop/modernize/apply-snap-layout-menu.md
             - name: Call Windows Runtime APIs
               items:
                   - name: Overview
