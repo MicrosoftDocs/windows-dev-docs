@@ -131,15 +131,6 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
         ```
 
-    3. Add the following **ItemGroup** element to explicitly set your .NET SDK to the correct version. Make sure that the **RuntimeFrameworkVersion** and **TargetingPackVersion** attributes are set to the same Windows 10 version numbers as the **TargetFramework** element you modified in the preview step. This is a temporary step that will no longer be needed in a future release of .NET 5. For more details, see the [WinUI 3 release notes](../winui/winui3/release-notes/release-notes-08-preview.md#known-issues).
-
-        ```xml
-        <ItemGroup>
-            <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.0" />
-            <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.0" />
-        </ItemGroup>
-        ```
-
     4. Save and close the project file.
 
 3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.

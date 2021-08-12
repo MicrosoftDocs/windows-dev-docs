@@ -20,9 +20,6 @@ If you created a project with an earlier version of the Windows App SDK (previou
 
 If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Experimental release.
 
-> [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
-
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
 
 First, do the following:
