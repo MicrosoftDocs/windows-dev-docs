@@ -28,8 +28,8 @@ Before completing this tutorial, we recommend that you review [Runtime architect
     > Although we encourage you to install the Windows App SDK extension for Visual Studio, you do not need to install the extension to perform this tutorial. In this tutorial, you will install the Windows App SDK NuGet package directly in an existing project.
 - Ensure all [dependencies for unpackaged apps](deployment-architecture.md#additional-requirements-for-unpackaged-apps) are installed. The simplest solution is to run the Windows App SDK runtime installer:
 
-  1. Download [ReunionRuntimeInstaller.exe from GitHub](https://aka.ms/windowsappsdk/1.0-experimental).
-  2. From a command prompt, run `ReunionRuntimeInstaller.exe` to install all the dependencies.
+  1. Download [WindowsAppSDKInstall.exe from GitHub](https://aka.ms/windowsappsdk/1.0-experimental).
+  2. From a command prompt, run `WindowsAppSDKInstall.exe` to install all the dependencies.
 
 ## Instructions
 
