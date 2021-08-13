@@ -25,26 +25,44 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 0.8
 
-The latest available release of the stable channel is the servicing release 0.8.1.
+The latest available release of the stable channel is the servicing release 0.8.2.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
+### Version 0.8.2
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+- Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and above.
+- For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.`
+- Writing using the HandWriting Panel inside a textbox causes a crash
+- Icons/images always load at their 100% scale value rather than based on the monitor scale value
+- Garbage collection of **EventSource\<T\>** causes subsequent failure to unsubscribe handlers (see [GitHub issue](https://github.com/microsoft/CsWinRT/issues/842) for more details)
+- Security fix – see [CVE-2021-34533](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34533) for more details.
+- [SwapChainPanel.CompositionScaleChanged](/windows/winui/api/microsoft.ui.xaml.controls.swapchainpanel.compositionscalechanged) sometimes returning incorrect CompositionScale values after changing display scale
+
+The limitations and known issues for version 0.8 also apply to version 0.8.2, unless marked otherwise in the [section below](#limitations).
 
 ### Version 0.8.1
+
 This is a servicing release of the Windows App SDK that includes a few critical bug fixes for the 0.8.0 release. 
 
 #### Bug fixes
-- Windows App SDK cannot run on latest Insider build
+
+- Windows App SDK cannot run on the latest Windows Insider build
 - Crash in EditableComboBox when entering a value that does not appear in dropdown
 - WebView2 doesn't allow user to tab out once focused has been received
 - Fully qualify Windows.Foundation.Metadata.DefaultOverload namespace in WinUI generated code to avoid namespace ambiguity 
     - This fixes bug [#5108](https://github.com/microsoft/microsoft-ui-xaml/issues/5108).
 - Security fix – see [CVE-2021-34489](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34489) for more details.
 
-The limitations and known issues for v0.8 also apply to v0.8.1, unless marked otherwise in the [section below](#limitations).
+The limitations and known issues for version 0.8 also apply to version 0.8.1, unless marked otherwise in the [section below](#limitations).
 
 ### Version 0.8.0
+
 #### New features and updates
 
 This release supports all [stable channel features](release-channels.md#features-available-by-release-channel).
@@ -77,7 +95,7 @@ This release includes many bug fixes and improved stabilization across WinUI 3. 
 
 For more information on WinUI, see [Windows UI 3 Library (WinUI)](../winui/index.md).
 
-To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
+To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
@@ -106,25 +124,23 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 #### Limitations
 
-- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com/en-us/). **This is fixed in v0.8.1**.
+- This release is not currently supported on the Dev Channel of the [Windows Insider Program](https://insider.windows.com). **This is fixed in version 0.8.1**.
 
-- Desktop apps (C# .NET 5 or C++ desktop): This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the preview channel.
+- Desktop apps (C# .NET 5 or C++ desktop): This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
 
-- UWP apps: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the preview release channel. For more information about installing the preview extension, see Set up your development environment.
+- UWP apps: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use the [experimental release channel](experimental-channel.md).
 
-#### Known Issues 
+#### Known issues 
 
-- WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload are currently not supported for the 0.8 release. You can expect to see support for these features in Visual Studio 2019 16.11 Preview 3.
+- WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload in version 0.8 and later requires Visual Studio 2019 16.11 Preview 3 or later.
 
 - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 
-- .NET apps must target build 18362 or higher: Your TFM must be set to net5.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/ProjectReunion/issues/921).
+- .NET apps must target build 18362 or higher: Your TFM must be set to net5.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
-- You may see the following exception when running your app: NullReferenceException in ABI.Microsoft.UI.Xaml.Data.ICustomProperty. For more details, see [GitHub issue #4926](https://github.com/microsoft/microsoft-ui-xaml/issues/4926).
+- You may encounter a crash when switching frequently between light and dark mode.
 
-- You may encounter a crash when switching frequently between light and dark mode. This is expected to be fixed in an upcoming version of C#/WinRT.
-
-- For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.` This is expected to be fixed in an upcoming version of C#/WinRT.
+- For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.` **This is fixed in version 0.8.2**.
 	
 - For .NET apps, there is currently no way  to opt out of an image getting indexed as an app resource using the Visual Studio UI. To work around this, add a Directory.Build.targets (see [Customize your build - Visual Studio](/visualstudio/msbuild/customize-your-build) for instructions) to the project and remove the image(s) as follows:
  
@@ -150,7 +166,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 ## Version 0.5
 
-The latest available servicing release is [0.5.7](https://github.com/microsoft/ProjectReunion/discussions/820).
+The latest available servicing release is [0.5.7](https://github.com/microsoft/WindowsAppSDK/discussions/820).
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
@@ -163,9 +179,9 @@ This release supports all [stable channel features](release-channels.md#features
 
 This release has the following limitations and known issues:
 
-- **Desktop apps (C# .NET 5 or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [preview channel](preview-channel.md).
-- **UWP apps**: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the [preview release channel](preview-channel.md). For more information about installing the preview extension, see [Set up your development environment](set-up-your-development-environment.md).
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `TargetPlatformVersion` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
+- **Desktop apps (C# .NET 5 or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C# with .NET 5) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
+- **UWP apps**: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the [experimental release channel](experimental-channel.md).
+- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 ## Related topics
 
