@@ -211,7 +211,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     return MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion);
                 }
         
-                [DllImport("Microsoft.ProjectReunion.Bootstrap.dll", CharSet = CharSet.Unicode)]
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll", CharSet = CharSet.Unicode)]
                 private static extern int MddBootstrapInitialize(uint majorMinorVersion, string versionTag, PackageVersion packageVersion);
         
                 public static void Shutdown()
@@ -219,7 +219,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     MddBootstrapShutdown();
                 }
         
-                [DllImport("Microsoft.ProjectReunion.Bootstrap.dll")]
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll")]
                 private static extern void MddBootstrapShutdown();
             }
         }
