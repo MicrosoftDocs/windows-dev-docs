@@ -196,7 +196,7 @@ namespace SampleApp
             {
                 // You now have an AppWindow object and can call its methods to manipulate the window.
                 // Just to do something here, let's change the title of the window...
-                m_apppWindow.Title = "WinUI ❤️ AppWindow";
+                m_appWindow.Title = "WinUI ❤️ AppWindow";
             }
         }
 
