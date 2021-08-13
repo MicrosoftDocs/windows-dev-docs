@@ -23,7 +23,7 @@ _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md
 If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [Actions page](./customize-settings/actions.md).
 
 ```json
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+=" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
 { "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+d" }
 ```
