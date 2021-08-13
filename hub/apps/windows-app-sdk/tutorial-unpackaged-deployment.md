@@ -47,7 +47,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 2. Next, install the Windows App SDK NuGet package in your project.
 
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**.
-    2. Search for **Project Reunion**, and install the latest preview version of the **Microsoft.ProjectReunion** package.
+    2. Search for **WindowsAppSDK**, and install the latest preview version of the **Microsoft.WindowsAppSDK** package.
 
 3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -95,8 +95,8 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         int main() 
         { 
             // Take a dependency on Windows App SDK preview 
-            const UINT32 majorMinorVersion{ 0x00000008 }; 
-            PCWSTR versionTag{ L"preview" }; 
+            const UINT32 majorMinorVersion{ 0x00010000 }; 
+            PCWSTR versionTag{ L"experimental1" }; 
             const PACKAGE_VERSION minVersion{};
 
             const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -144,7 +144,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 4. Install the Windows App SDK NuGet package in your project.
 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
-    2. Search for **Project Reunion**, and install the latest preview version of the **Microsoft.ProjectReunion** package.
+    2. Search for **WindowsAppSDK**, and install the latest preview version of the **Microsoft.WindowsAppSDK** package.
 
 5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -238,7 +238,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                 static void Main(string[] args)
                 {
                     // Take a dependency on the Windows App SDK v0.8 preview.
-                    MddBootstrap.Initialize(8, "preview");
+                    MddBootstrap.Initialize(0x00010000, "experimental1");
         
                     Console.WriteLine("Hello World!");
         
