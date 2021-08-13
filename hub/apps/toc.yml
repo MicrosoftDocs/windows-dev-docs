@@ -57,6 +57,8 @@
                 href: winui/winui3/create-your-first-winui3-app.md
               - name: "Update existing projects to the latest release"
                 href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
+              - name: "Package your app using single-project MSIX"
+                href: windows-app-sdk/single-project-msix.md
               - name: "Samples"
                 href: windows-app-sdk/samples.md
           - name: "Manage resources"

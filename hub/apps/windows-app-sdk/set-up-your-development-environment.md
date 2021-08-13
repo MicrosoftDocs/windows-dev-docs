@@ -83,6 +83,7 @@ You can start developing apps now, but you need a developer account to submit yo
 
 ## Other tools and downloads
 
+- To enhance the developer experience for MSIX-packaged desktop applications, you can optionally install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged desktop application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
 - If you want to customize your device and install other features or packages, check out the [developer setup scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts).
 - For more tools and downloads, see [Downloads and tools for Windows development](https://developer.microsoft.com/windows/downloads).
 

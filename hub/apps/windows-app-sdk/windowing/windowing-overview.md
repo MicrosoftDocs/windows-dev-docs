@@ -54,7 +54,7 @@ The following Presenters are provided in the current release and they are availa
 
 ## UI framework and HWND interop
 
-The `AppWindow` class is available for any top-level `HWND` in your app. This means that when you are working with a UI framework you can continue to use that framework's entry point for creating a window and attaching its content, and once you have created a window you can use the windowing interop methods provided in the Windows App SDK to access the corresponding `AppWindow` and its methods, properties, and events. For examples on how to do this for a WinUI3 window, see the [samples](#samples) section in this article.
+The `AppWindow` class is available for any top-level `HWND` in your app. This means that when you are working with a UI framework you can continue to use that framework's entry point for creating a window and attaching its content, and once you have created a window you can use the windowing interop methods provided in the Windows App SDK to access the corresponding `AppWindow` and its methods, properties, and events. For examples on how to do this for a WinUI 3 window, see the [samples](#samples) section in this article.
 
 Some of the benefits of using the `AppWindow` even when working with a UI framework are:
 
@@ -70,7 +70,7 @@ Some of the benefits of using the `AppWindow` even when working with a UI framew
 
 ## Samples
 
-Below are sample code for how to retrieve an `AppWindow` from a WinUI3 Window. For more details on how to work with `AppWindow`, see the [windowing samples](https://github.com/microsoft/WindowsAppSDK-Samples).
+The following code examples demonstrate how to retrieve an `AppWindow` from a WinUI 3 Window. For more details on how to work with `AppWindow`, see the [windowing samples](https://github.com/microsoft/WindowsAppSDK-Samples).
 
 ### C++ Sample for getting an AppWindow for a WinUI 3 window
 
@@ -78,7 +78,7 @@ Below are sample code for how to retrieve an `AppWindow` from a WinUI3 Window. F
 #using namespace winrt;
 #using namespace Microsoft::UI::Xaml;
 
-// The include- and using-statements below are in addition to the ones you need for WinUI3
+// The include- and using-statements below are in addition to the ones you need for WinUI 3
 // You can add these to your pch.cpp file in order to not have to include them in each xaml.cpp file
 // wghere you need to access windowing APIs.
 #include <winrt/Microsoft.UI.h>
