@@ -26,37 +26,30 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 ## Prerequisites
 
-- [Download the Windows App SDK runtime Installer or MSIX packages](https://aka.ms/windowsappsdk/1.0-experimental) to your development computer.
-- If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
+1. Download the Windows App SDK runtime Installer or MSIX packages to your development computer. Choose [version 1.0 Experimental](https://aka.ms/windowsappsdk/1.0-experimental) or [version 0.8 Stable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0). 
+
+2. If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
 
     > [!NOTE]
-    > The Windows App SDK runtime for the version 0.8 Preview requires that sideloading is enabled to install.
+    > Experimental and Preview versions of the Windows App SDK require that sideloading is enabled to install the runtime.  
 
-To confirm whether sideloading is enabled on Windows 10 version 1909 and earlier versions:
+    To confirm whether sideloading is enabled on Windows 10 version 1909 and earlier versions:
 
-1. Open **Settings**.
-2. Click **Update & Security** > **For developers**.
-3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
+    1. Open **Settings**.
+    2. Click **Update & Security** > **For developers**.
+    3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
 
-    > [!NOTE]
-    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**. 
+        > [!NOTE]
+        > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**. 
 
 ## Run the Windows App SDK installer in your development environment
 
-You can test deployment in your development environment by running the Windows App SDK Installer with this command.
+You can test deployment in your development environment by running the Windows App SDK Installer: 
 
-```console
-ProjectReunionInstall.exe
-```
+- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental or later
+- **ProjectReunionInstall.exe** if you are using version 0.8 Stable or earlier 
 
-You can also run the installer with no user interaction and suppress all text output.
-
-```console
-ProjectReunionInstall.exe --quiet
-```
-
-> [!NOTE]
-> The installer still uses the **Project Reunion** code name, but the installer will be renamed to use the official **Windows App SDK** product name in a future release.
+You can also run the installer with no user interaction and suppress all text output with `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`. 
 
 After the installation is complete, you can run your unpackaged app. For an example of how to build and run an unpackaged app that uses the Windows App SDK, see [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
