@@ -86,6 +86,16 @@ The following diagram illustrates the hierarchy of objects in a XAML Island that
 > [!NOTE]
 > When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) APIs won't provide the correct information for XAML Islands. For more information, see [this section](xaml-islands.md#window-host-context-for-xaml-islands).
 
+## Best practices
+
+When using the WinRT XAML hosting API, follow these best practices for each thread that hosts WinRT XAML controls:
+
+* Create a dedicated [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) for the thread.
+* For each WinRT XAML control you want to host, create a [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource).
+* Destroy each [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) after it is no longer needed.
+* Before exiting the thread, destroy the dedicated [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) for the thread. Note that destruction of this [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) is asynchronous, and requires draining the Windows message queue before exiting the thread. For examples of how to do this, see the [XAML Islands samples](https://github.com/microsoft/Xaml-Islands-Samples).  
+* After destroying the [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) for a given thread, creating a new [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) on the same thread is not supported and will result in unpredictable behavior.
+
 ## Troubleshooting
 
 ### Error using WinRT XAML hosting API in a UWP app
