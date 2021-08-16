@@ -15,11 +15,14 @@ To develop apps for Windows 11 and Windows 10, you'll need Visual Studio, the Wi
 
 For instructions to install and set up these tools, see [Set up your development environment](set-up-your-development-environment.md).
 
-## Visual Studio 2019
+## Visual Studio
 
 Visual Studio is a comprehensive integrated development environment (IDE) that you can use to edit, debug, and build code, and then publish your app.
 
-For the minimum system requirements, see [Visual Studio 2019 system requirements](/visualstudio/releases/2019/system-requirements#visual-studio-2019-system-requirements).
+For the minimum system requirements, see:
+
+- [Visual Studio 2022 system requirements](/visualstudio/releases/2022/system-requirements#visual-studio-2022-system-requirements)
+- [Visual Studio 2019 system requirements](/visualstudio/releases/2019/system-requirements#visual-studio-2019-system-requirements)
 
 ## Windows SDK
 

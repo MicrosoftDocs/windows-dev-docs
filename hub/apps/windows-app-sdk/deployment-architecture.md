@@ -24,7 +24,7 @@ This article explains the basic building blocks and high-level architecture of W
 | **Framework package** | Contains binaries used at run time by apps. The framework includes a bootstrapper component that enables apps to automatically install the latest version of the Windows App SDK, which will be updated on a regular release cadence. |
 | **Main package** | Contains the background tasks, services, app extensions, and other components not included in the Framework package. These are generally out-of-process services that are brokered between apps, such as push notifications and the Clipboard. |
 | **Dynamic Dependency Lifetime Manager (DDLM)** | A main package that prevents the OS from performing servicing updates to the MSIX packages while an unpackaged app is in use. |
-| **Bootstrapper** | An app-local binary used by unpackaged apps to locate and load the best Windows App SDK version match as needed by the app. The bootstrapper is delivered through a redistributable named Microsoft.ProjectReunion.Bootstrap.dll. |
+| **Bootstrapper** | An app-local binary used by unpackaged apps to locate and load the best Windows App SDK version match as needed by the app.  |
 | **Provisioning** | The process of installing and registering packages (including files and registry keys) system-wide to eliminate the need for repeated installation by the other users. It can be done either as part of the OS or done during installation of an app. |
 | **Installer** | An installation technology for installing an app, such an MSI, App Installer, or .exe setup. |
 | **MSIX** | Modern installer technology that enables users to safely install an app per user, directly from the Microsoft Store or a web site. On Enterprise or shared PCs, apps can be installed for all users via PowerShell and MDM. |
@@ -59,7 +59,12 @@ The bootstrapper is a library that must be included with your unpackaged app. It
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK Framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the bootstrapper must be called in your unpackaged app's startup code so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the bootstrapper API must be called in your unpackaged app's startup code so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+
+The bootstrapper library has different names depending on the Windows App SDK release:
+
+- Windows App SDK 1.0 Experimental and later releases: **Microsoft.WindowsAppSDK.Bootstrap.dll**.
+- Windows App SDK 0.8 Preview: **Microsoft.ProjectReunion.Bootstrap.dll**.
 
 ### Dynamic Dependency Lifetime Manager (DDLM)
 

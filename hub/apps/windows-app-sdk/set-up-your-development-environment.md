@@ -19,10 +19,13 @@ To develop apps, you'll need Visual Studio, the Windows SDK, and the Windows App
 
 ## 2. Install Visual Studio
 
-Use the following link to install Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
+Use the following links to install Visual Studio 2019 or Visual Studio 2022 (Preview). You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
 
 > [!div class="button"]
-> [Download Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
+> [Download Visual Studio 2019](/visualstudio/releases/2019/release-notes)
+
+> [!div class="button"]
+> [Download Visual Studio 2022 (Preview)](/visualstudio/releases/2022/release-notes-preview)
 
 ### Required workloads and components
 
@@ -39,7 +42,7 @@ Make sure these workloads and components are installed with Visual Studio. These
 
 ## 3. Enable NuGet Package source
 
-Make sure your system has a NuGet package source enabled for the official NuGet service index at `https://api.nuget.org/v3/index.json`. 
+Make sure your system has a NuGet package source enabled for the official NuGet service index at `https://api.nuget.org/v3/index.json`.
 
  1. In Visual Studio, select **Tools** -> **NuGet Package Manager** -> **Package Manager Settings** to open the **Options** dialog.
  2. In the left pane of the **Options** dialog, select the **Package Sources** tab, and make sure there is a package source for **nuget.org** that points to `https://api.nuget.org/v3/index.json` as the source URL. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
@@ -55,7 +58,10 @@ The [Windows App SDK](index.md) provides a unified set of APIs, project template
 
 To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production environments, install the latest [stable](stable-channel.md) extension. Choose one of these options to install:
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Windows App SDK**, and install the latest extension.
+- In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
+    > [!NOTE]
+    > In the latest available stable release (0.8.2), the Windows App SDK extension for Visual Studio is named **Project Reunion**. In later releases, it has been renamed to **Windows App SDK**.
+
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
@@ -67,7 +73,7 @@ To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production 
 
 To develop desktop (C#/.NET 5 or C++/WinRT) apps or UWP apps that use the latest experimental features, install the latest [experimental](experimental-channel.md) extension. This version of the Windows App SDK cannot be used by apps in production environments. Choose one of these options to install:
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
+- In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
