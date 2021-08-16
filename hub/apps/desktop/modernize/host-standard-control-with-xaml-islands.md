@@ -21,7 +21,7 @@ This article demonstrates two ways to use [XAML Islands](xaml-islands.md) to hos
 Although this article demonstrates how to host WinRT XAML controls in a WPF app, the process is similar for a Windows Forms app.
 
 > [!NOTE]
-> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that any version of the .NET Framework.
+> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that target any version of the .NET Framework.
 
 ## Required components
 
