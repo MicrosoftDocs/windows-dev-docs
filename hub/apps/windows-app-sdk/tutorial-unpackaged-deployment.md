@@ -57,7 +57,8 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
         ```cpp
 
-        // If using version 0.8 Preview, replace with majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }
+        // The following code is for 1.0 Experimental. If using version 0.8 Preview, replace with 
+        // majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }
         const UINT32 majorMinorVersion{ 0x00010000 }; 
         PCWSTR versionTag{ L"experimental1" }; 
         const PACKAGE_VERSION minVersion{};
@@ -92,7 +93,8 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         int main() 
         { 
 
-            // Take a dependency on Windows App SDK. If using version 0.8 Preview, replace with majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }             
+            // Take a dependency on Windows App SDK 1.0 Experimental. If using version 0.8 Preview, replace with 
+            // majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }             
             const UINT32 majorMinorVersion{ 0x00010000 }; 
             PCWSTR versionTag{ L"experimental1" }; 
             const PACKAGE_VERSION minVersion{};
@@ -209,7 +211,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     return MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion);
                 }
         
-                [DllImport("Microsoft.ProjectReunion.Bootstrap.dll", CharSet = CharSet.Unicode)]
+                // Import the bootstrapper library for Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                // replace with Microsoft.ProjectReunion.Bootstrap.dll.
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll", CharSet = CharSet.Unicode)]
                 private static extern int MddBootstrapInitialize(uint majorMinorVersion, string versionTag, PackageVersion packageVersion);
         
                 public static void Shutdown()
@@ -217,7 +221,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     MddBootstrapShutdown();
                 }
         
-                [DllImport("Microsoft.ProjectReunion.Bootstrap.dll")]
+                // Import the bootstrapper library for Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                // replace with Microsoft.ProjectReunion.Bootstrap.dll.
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll")]
                 private static extern void MddBootstrapShutdown();
             }
         }
