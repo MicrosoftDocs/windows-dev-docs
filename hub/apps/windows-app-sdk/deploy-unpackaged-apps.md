@@ -26,7 +26,7 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 ## Prerequisites
 
-1. Download the Windows App SDK runtime Installer or MSIX packages to your development computer. Choose [version 1.0 Experimental](https://aka.ms/windowsappsdk/1.0-experimental) or [version 0.8 Stable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0). 
+1. Download the Windows App SDK runtime Installer or MSIX packages to your development computer. Choose [version 1.0 Experimental](https://aka.ms/windowsappsdk/1.0-experimental) or [version 0.8 Preview](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8-preview). 
 
 2. If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
 
@@ -47,7 +47,7 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 You can test deployment in your development environment by running the Windows App SDK Installer: 
 
 - **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental or later
-- **ProjectReunionInstall.exe** if you are using version 0.8 Stable or earlier 
+- **ProjectReunionInstall.exe** if you are using version 0.8 Preview 
 
 You can also run the installer with no user interaction and suppress all text output with `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`. 
 
