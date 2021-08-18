@@ -25,6 +25,10 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 1. [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
+3. C# projects using the [1.0 Experimental version of the Windows App SDK](experimental-channel.md#version-10-experimental-100-experimental1) must also use one of the following .NET SDKs: 
+	- .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
+	- .NET 5 SDK version 5.0.302 or later if you're using Visual Studio 2019 version 16.10
+	- .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
 
 ## Instructions
 
@@ -242,7 +246,8 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                 static void Main(string[] args)
                 {
                 
-                    // Take a dependency on the Windows App SDK. If using version 0.8 Preview, replace with MddBootstrap.Initialize(8, "preview").
+                    // Take a dependency on Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                    // replace with MddBootstrap.Initialize(8, "preview").
                     MddBootstrap.Initialize(0x00010000, "experimental1");
         
                     Console.WriteLine("Hello World!");
