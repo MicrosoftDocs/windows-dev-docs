@@ -93,6 +93,30 @@ For more information about Windows Forms apps, see the following articles:
 - [API reference (.NET)](/dotnet/api/index)
 - [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
+#### [React Native for Windows](#tab/rnw)
+[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+[React Native for Windows](https://aka.ms/reactnative) brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
+
+With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
+
+Here are some reasons to choose React Native for Windows:
+- You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
+- Improved developer productivity and inner loop, thanks to fast refresh.
+- Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
+- You have experience with and a preference for JavaScript or TypeScript
+- You would like to leverage JavaScript-only libraries on [npmjs.com](https://www.npmjs.com/), and many native libraries too.
+- Your app will use the native controls, visual appearance, animations and colors, and therefore will feel integrated into the design language used in Windows. In addition, React Native for Windows apps do not have to compromise on the set of APIs they can call, as the framework allows you to call platform APIs as well as write your own view managers and native modules.
+- Large and growing community momentum, with lots of [community modules](https://reactnative.directory).
+
+For more information about React Native for Windows, see the following links:
+* [React Native for Windows repo on GitHub](https://github.com/microsoft/react-native-windows)
+* [Getting started with React Native for Windows](https://aka.ms/ReactNativeGuideWindows)
+* [Native modules in React Native for Windows](https://aka.ms/RNW-NativeModules)
+* [API reference](https://microsoft.github.io/react-native-windows/docs/Native-API-Reference)
+* [Community modules directory](https://reactnative.directory)
+* [More resources](https://microsoft.github.io/react-native-windows/resources)
+
+
 #### [UWP](#tab/uwp)
 
 The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices that run Windows 10 and later versions. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform for Xbox, HoloLens, and Surface Hub applications. UWP apps can be native or managed.
