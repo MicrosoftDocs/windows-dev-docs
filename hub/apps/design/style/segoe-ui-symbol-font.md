@@ -5,7 +5,7 @@ title: Segoe MDL2 Assets icons
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 Assets icons
 template: detail.hbs
-ms.date: 12/05/2020
+ms.date: 08/18/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
