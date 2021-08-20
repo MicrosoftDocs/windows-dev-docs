@@ -15,19 +15,14 @@ ms.localizationpriority: medium
 
 When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process usually takes 24 hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 24 hours for customers to see the app’s listing.
 
+Your app package will be downloaded from the package URL you specified, and any instructions in the certification notes will be followed. We'll display a message if we detect any errors during preprocessing. During this phase, several tests are conducted to validate your app submission. You’ll be notified in case your submission fails any of these tests.
 You'll be notified when your submission is published, and the app's status in the dashboard will be **In the Store**.
 
-## Preprocessing
-
-Your app package will be downloaded from the package URL you specified, and any instructions in the certification notes will be followed. We'll display a message if we detect any errors during preprocessing.
-
-## Certification
-
-During this phase, several tests are conducted to validate your app submission. You’ll be notified in case your submission fails any of these tests.
+There are two categories of tests that apps are subject to security tests and content compliance
 
 ## Security tests
 
-Your app submission will be subject to a series of checks such as the below:
+Your app submission will be subject to a series of checks such as the below 
 
 ### Package URL
 
@@ -39,11 +34,17 @@ Your app submission will be subject to a series of checks such as the below:
 
 ### Malware test
 
-- This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
+- This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system. 
+- It is highly recommended that you scan your app with Microsoft Defender or other consumer antivirus software compatible with Windows to ensure it is free from  malware and unwanted apps
 
 ### Silent install
 
-- This test checks if your app can install silently without any user interfaces visible to the user. Any installer parameters you provide will be used when installing your package.
+  This test checks typically checks for the following behavior in your app
+- Can install silently without any user interfaces visible to the user. Any installer parameters you provide will be used when installing your package.
+- Can be successfully installed when logged in with a standard user account
+- Is able to make an entry in the Windows Start menu and Programs list, so users are able to discover it. If your app does not need to do this, you should mention this in the      'Notes for Certification' section of your submission
+- Your app's installer is configured appropriately for Windows to query information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package.  See [setting installer properties](https://docs.microsoft.com/windows/win32/msi/property-reference#product-information-properties) with for more details on how to set properties for your Windows installer
+- Can uninstall cleanly without leaving remnants of files, folder, registry entries
 
 ### Standalone/offline installer
 
@@ -51,11 +52,14 @@ Your app submission will be subject to a series of checks such as the below:
 
 ### Bundleware check
 
-- This test checks if your app is attempting to install any additional apps that may not be related to the core purpose of your app.
+- This test checks if your app is attempting to install any additional third party apps that may not be related to the core purpose of your app.
 
 ### Dependency on non-Microsoft drivers/ NT services
 
 - This test will check to see if your app has a dependency on any type of non-Microsoft drivers or NT services. You are required to disclose such dependency in Partner Center during app submission.
+
+### Privacy policy
+- Include a valid privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information)
 
 ### Additional tests
 
@@ -67,11 +71,9 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - Do not promote third-party apps during or after installation.
 - Submit your app only when it's finished. You're welcome to use your app's description to mention upcoming features, but make sure that your app does not contain incomplete sections, links to web pages that are under construction, or anything else that would give a customer the impression that your app is incomplete.
-- Scan your app with Microsoft Defender or any consumer antivirus software compatible with Windows to ensure it is free from any malware.
-- Test your app on several different configurations to ensure that it's as stable as possible.
+-- Test your app on several different configurations to ensure that it's as stable as possible.
 - Ensure that your app does not crash without network connectivity. Even if a connection is required to use your app, it needs to perform appropriately when no connection is present.
 - Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
-- Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information)..
 - Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../write-a-great-app-description.md).
 - Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.
 - Review the [Microsoft Store Policies](/legal/windows/agreements/store-policies) to ensure your app meets all the requirements listed there.
@@ -80,14 +82,14 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 The amount of time this test takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the notes for certification section.
 
-After the certification process is complete, you'll get a certification report through email telling you whether your app passed certification. If it did not pass, the report will indicate which test failed or which policy was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+After the certification process is complete and if it did not pass, you will receive an email with a report that will indicate which test failed or which policy was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+
+>[!IMPORTANT] 
+> Your app's content should comply with the Microsoft Store [Content Policies](https://docs.microsoft.com/windows/uwp/publish/store-policies#content-policies) and will be tested in accordance to this. It is highly recommended that you understand these policies prior to submitting your app
+
 
 ## Publishing
 
 Your app will be published once it has been certified. Once this phase has begun, you can no longer cancel your submission.
-
-## In the Store
-
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download.
 
 We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all the  [Microsoft Store Policies](/legal/windows/agreements/store-policies). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Microsoft Store.
