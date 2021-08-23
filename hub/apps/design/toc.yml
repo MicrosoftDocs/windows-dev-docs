@@ -286,6 +286,8 @@
           href: style/app-icons-and-logos.md
         - name: Segoe MDL2 icons
           href: style/segoe-ui-symbol-font.md
+        - name: Segoe Fluent Icons
+          href: style/segoe-fluent-icons-font.md
     - name: Acrylic
       href: style/acrylic.md
     - name: Mica
