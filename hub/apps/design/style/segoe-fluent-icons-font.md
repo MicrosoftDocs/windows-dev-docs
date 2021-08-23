@@ -22,7 +22,7 @@ This article provides developer guidelines for using the Segoe Fluent Icons font
 > [!TIP]
 > With the release of Windows 11, the Segoe Fluent Icons font will replace Segoe MDL2 Assets as the recommended symbol icon font. **Segoe MDL2 Assets** will still be available, but we recommend updating your app to use the new **Segoe Fluent Icons**.
 
-Most of the icons included in the **Segoe Fluent Icons** font are mapped to the Private Use Area of Unicode (PUA). The PUA range is a non-standardized range of Unicode that allows font developers to define their own characters. This is useful when creating a symbol font, but it creates an interoperability problem when **Segoe Fluent Icons** is not available. Only use these icons when **Segoe Fluent Icons** is available on the system.
+Most of the icons included in the **Segoe Fluent Icons** font are mapped to the Private Use Area of Unicode (PUA). The PUA range is a non-standardized range of Unicode that allows font developers to define their own characters. This is useful when creating a symbol font, but it creates an interoperability problem when **Segoe Fluent Icons** is not available.
 
 Icons in the **Segoe Fluent Icons** font are not intended for use in-line with text. This means that some older "tricks" like the progressive disclosure arrows no longer apply. Likewise, since all of the new icons are sized and positioned the same, they do not have to be made with zero width; we have made sure they work as a set.
 
