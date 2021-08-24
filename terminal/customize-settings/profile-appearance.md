@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 # Appearance profile settings in Windows Terminal
 
-The settings listed below are specific to each unique profile. If you'd like a setting to apply to all of your profiles, you can add it to the `defaults` section above the list of profiles in your settings.json file.
+The settings listed below affect the visual settings of each profile separately. If you'd like a setting to apply to all of your profiles, you can add it to the `defaults` section above the list of profiles in your [settings.json file](../get-started.md#settings-json-file).
 
 ```json
 "defaults":

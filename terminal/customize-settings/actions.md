@@ -11,7 +11,7 @@ ms.localizationpriority: high
 # Custom actions in Windows Terminal
 
 > [!IMPORTANT]
-> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your settings.json file.
+> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your [settings.json file](../get-started.md#settings-json-file).
 
 You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
@@ -198,7 +198,7 @@ This opens the dropdown menu.
 
 ### Open settings files
 
-This opens either the settings UI, custom settings file (`settings.json`), or default settings file (`defaults.json`), depending on the `target` field.
+This opens either the settings UI, custom settings file ([`settings.json`](../get-started.md#settings-json-file)), or default settings file (`defaults.json`), depending on the `target` field.
 Without the `target` field, the custom settings file will be opened.
 
 **Command name:** `openSettings`
@@ -378,7 +378,7 @@ This creates a new tab. Without any arguments, this will open the default profil
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
-| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. In order to enter a new tab title and have that title persist, this must be set to true. |
 
 ### Open next tab
 
@@ -1104,12 +1104,12 @@ ways:
 
 The `desktop` and `monitor` properties can be combined in the following ways:
 
-|  | `"desktop"` |  |  |
-| -- | --------- | -- | -- |
-| **`"monitor"`** | `"any"`<br />**Leave where it is** | `"toCurrent"`<br />**Move to current desktop** | `"onCurrent"`<br />**On current desktop only** |
-| `"any"`<br />**Summon the MRU window** | Go to the desktop the window is on (leave position alone) | Move the window to this desktop (leave position alone) | If there isn't one on this desktop:<ul><li>Create a new one in the default position</li></ul>Else:<ul><li>Activate the one on this desktop (don't move it)</li></ul> |
-| `"toCurrent"`<br />**Summon the MRU window TO the monitor with the foreground window** | Go to the desktop the window is on, move to the monitor with the foreground window | Move the window to this desktop, move to the monitor with the foreground window | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the foreground window</li></ul> |
-| `"toMouse"`<br />**Summon the MRU window TO the monitor with the mouse** | Go to the desktop the window is on, move to the monitor with the mouse | Move the window to this desktop, move to the monitor with the mouse | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the mouse</li></ul> |
+| Combinations | **`"desktop": "any"`** | **`"desktop": "toCurrent"`**| **`"desktop": "onCurrent"`**| Not included |
+| ------------ | ---------------------- | --------------------------- | --------------------------- | ------------ |
+| **`"monitor": "any"`**| Go to the desktop the window is on (leave position alone) | Move the window to this desktop (leave position alone) | If there isn't one on this desktop:<ul><li>Create a new one in the default position</li></ul>Else:<ul><li>Activate the one on this desktop (don't move it)</li></ul> | Summon the MRU window |
+| **`"monitor": "toCurrent"`**| Go to the desktop the window is on, move to the monitor with the foreground window | Move the window to this desktop, move to the monitor with the foreground window | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the foreground window</li></ul> | Summon the MRU window TO the monitor with the foreground window |
+| **`"monitor": "toMouse"`**| Go to the desktop the window is on, move to the monitor with the mouse | Move the window to this desktop, move to the monitor with the mouse | If there isn't one on this desktop:<ul><li>Create a new one</li></ul>Else:<ul><li>Activate the one on this desktop, move to the monitor with the mouse</li></ul> | Summon the MRU window TO the monitor with the mouse |
+| **Not included** | Leave where it is | Move to current desktop | On current desktop only | N/A |
 
 #### Examples
 

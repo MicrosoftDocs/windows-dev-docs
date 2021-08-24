@@ -15,7 +15,7 @@ Panes give you the ability to run multiple command-line applications next to eac
 
 ### Using the keyboard
 
-You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can press the <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> key combination. For a horizontal pane of your default profile, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>.
+You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. To create a new vertical pane of your default profile, you can press the <kbd>Alt</kbd>+<kbd>Shift</kbd>+plus key combination. For a horizontal pane of your default profile, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
@@ -23,7 +23,7 @@ _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md
 If you would like to change these key bindings, you can create new ones using the `splitPane` action and `vertical`, `horizontal`, or `auto` values for the `split` property in your profiles.json file. The `auto` method will choose the direction that gives you the squarest panes. To learn more about key bindings, visit the [Actions page](./customize-settings/actions.md).
 
 ```json
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+=" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
 { "command": { "action": "splitPane", "split": "auto" }, "keys": "alt+shift+d" }
 ```
@@ -114,4 +114,20 @@ You can toggle read-only mode on a pane with the `toggleReadOnlyMode` command.
 { "command": "toggleReadOnlyMode" },
 ```
 
-[!INCLUDE [new-terminal-arguments](./new-terminal-arguments.md)]
+### New terminal arguments
+
+When opening a new pane or tab with a key binding, you can specify which profile is used by including the profile's name, guid, or index. If none are specified, the default profile is used. This can be done by adding `profile` or `index` as an argument to a `splitPane` or `newTab` key binding. Note that indexing starts at 0.
+
+```json
+{ "command": { "action": "splitPane", "split": "vertical", "profile": "profile1" }, "keys": "ctrl+a" },
+{ "command": { "action": "splitPane", "split": "vertical", "profile": "{00000000-0000-0000-0000-000000000000}" }, "keys": "ctrl+b" },
+{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+c" }
+```
+
+Additionally, you can override certain aspects of the profile such as the profile's command line executable, starting directory, or tab title. This can be accomplished by adding `commandline`, `startingDirectory`, and/or `tabTitle` to a `splitPane` or `newTab` key binding.
+
+```json
+{ "command": { "action": "splitPane", "split": "auto", "profile": "profile1", "commandline": "foo.exe" }, "keys": "ctrl+a" },
+{ "command": { "action": "newTab", "profile": "{00000000-0000-0000-0000-000000000000}", "startingDirectory": "C:\\foo" }, "keys": "ctrl+b" },
+{ "command": { "action": "newTab", "index": 0, "tabTitle": "bar", "startingDirectory": "C:\\foo", "commandline": "foo.exe" }, "keys": "ctrl+c" }
+```

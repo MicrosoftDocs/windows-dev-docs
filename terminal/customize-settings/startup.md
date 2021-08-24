@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 # Startup settings in Windows Terminal
 
-The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your settings.json file.
+The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your [settings.json file](../get-started.md#settings-json-file).
 
 ## Default profile
 
@@ -32,7 +32,7 @@ ___
 
 Set the default terminal emulator in Windows for all command line applications to run inside of.
 
-**Property name:** This modifies an OS setting and does not have a property name inside the settings.json file.
+**Property name:** This modifies an OS setting and does not have a property name inside the [settings.json file](../get-started.md#settings-json-file).
 
 **Necessity:** Required
 

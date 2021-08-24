@@ -73,9 +73,20 @@ You can run multiple shells side-by-side using panes. To open a pane, you can us
 
 To customize the settings of your Windows Terminal, select **Settings** in the dropdown menu. This will open the settings UI to configure your settings. You can learn how to open the settings UI with keyboard shortcuts on the [Actions page](./customize-settings/actions.md#application-level-commands).
 
-> [!TIP]
-> If you prefer to configure your settings by editing a JSON file, select **Settings** in the dropdown menu while holding <kbd>Shift</kbd>. This will open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
-> The terminal supports customization of global properties that affect the whole application, [profile properties](./customize-settings/profile-general.md) that affect the settings of each profile, and [actions](./customize-settings/actions.md) that allow you to interact with the terminal using your keyboard or the command palette.
+### Settings JSON file
+
+If you prefer to configure your Windows Terminal settings using code, rather than the graphic user interface, you can edit the settings.json file.
+
+Select **Settings** in the Windows Terminal dropdown menu while holding <kbd>Shift</kbd> to open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
+
+The path for your Windows Terminal settings.json file may be found in one of the following directories:
+
+- Terminal (stable / general release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+- Terminal (preview release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
+- Terminal (unpackaged: Scoop, Chocolately, etc): `%LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json`
+
+> [!Tip]
+> You can access the default settings for Windows Terminal by selecting  **Settings** in the dropdown menu while holding <kbd>Alt</kbd> to open the `defaults.json` file in your default text editor. This file is auto-generated and any changes to it will be ignored.
 
 ## Command line arguments
 
