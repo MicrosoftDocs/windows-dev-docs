@@ -25,7 +25,7 @@ Regardless of whether a new shell is installed before or after your terminal ins
 To hide a profile from your terminal dropdown menu, add the `hidden` property to the profile object in your [settings.json file](./get-started.md#settings-json-file) and set it to `true`.
 
 ```json
-"hidden": true[]
+"hidden": true
 ```
 
 If you delete a dynamically-created profile, the terminal will automatically regenerate the profile and replace it in your [settings.json file](./get-started.md#settings-json-file).
