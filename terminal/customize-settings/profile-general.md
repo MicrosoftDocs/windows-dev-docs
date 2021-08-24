@@ -67,7 +67,7 @@ This is the directory the shell starts in when it is loaded.
 
 **Example:** Start the PowerShell profile in the *GitHubRepos* folder of your *Documents* directory by finding the powershell.exe profile and adding `"startingDirectory": "%USERPROFILE%/Documents/GitHubRepos",`
 
-**Example with WSL:** When setting the starting directory for a [Linux distribution installed via WSL](https://docs.microsoft.com/windows/wsl/install-win10), use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`. If you are using the Windows Terminal Settings UI, rather than the [settings.json file](./get-started.md#settings-json-file), to declare this path, you can use the **Browse...** button to select your starting directory or enter the WSL path as: `//wsl.localhost/DISTRO NAME/home/USERNAME`. For example, `//wsl.localhost/Ubuntu-20.04/home/user1`. 
+**Example with WSL:** When setting the starting directory for a [Linux distribution installed via WSL](/windows/wsl/install-win10), use the format: `"startingDirectory": "\\\\wsl$\\DISTRO NAME\\home\\USERNAME"`, replacing with the placeholders with the proper names of your distribution. For example, `"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\user1"`. If you are using the Windows Terminal Settings UI, rather than the [settings.json file](../get-started.md#settings-json-file), to declare this path, you can use the **Browse...** button to select your starting directory or enter the WSL path as: `//wsl.localhost/DISTRO NAME/home/USERNAME`. For example, `//wsl.localhost/Ubuntu-20.04/home/user1`. 
 
 **Default behavior:** When the startingDirectory value is not specified, you will get different results depending on where you launch Terminal:
 - If you run Windows Terminal from the Start menu: C:\windows\system32
@@ -90,7 +90,7 @@ This sets the icon that displays within the tab, dropdown menu, jumplist, and ta
 
 **Accepts:** File location as a string, or an emoji
 
-**Example:** By placing the icon image `ubuntu.ico` in the folder located at `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`, you can display the icon by adding this line to the profile in your [settings.json](./get-started.md#settings-json-file): `"icon": "ms-appdata:///roaming/ubuntu.ico"`.
+**Example:** By placing the icon image `ubuntu.ico` in the folder located at `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`, you can display the icon by adding this line to the profile in your [settings.json](../get-started.md#settings-json-file): `"icon": "ms-appdata:///roaming/ubuntu.ico"`.
 
 <br>
 ___

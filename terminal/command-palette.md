@@ -34,7 +34,7 @@ You can add a custom key binding for invoking the command palette in the command
 
 ## Adding an icon to a command
 
-You can optionally add an icon to a command defined in your [settings.json](./get-started.md#settings-json-file) that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
+You can optionally add an icon to a command defined in your [settings.json](./get-started.md#settings-json-file) that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
 
 ```json
 { "icon": "C:\\Images\\my-icon.png", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" },

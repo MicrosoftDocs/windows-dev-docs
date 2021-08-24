@@ -32,7 +32,7 @@ ___
 
 Set the default terminal emulator in Windows for all command line applications to run inside of.
 
-**Property name:** This modifies an OS setting and does not have a property name inside the [settings.json file](./get-started.md#settings-json-file).
+**Property name:** This modifies an OS setting and does not have a property name inside the [settings.json file](../get-started.md#settings-json-file).
 
 **Necessity:** Required
 

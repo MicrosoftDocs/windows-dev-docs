@@ -39,7 +39,7 @@ Notice the extra comma in the **hidden** line. Once you save this file, Windows 
 
 The "Tango Light" scheme is included as a default option, but you can create your own scheme from scratch or by copying an existing scheme.
 
-Color schemes can be defined in the `schemes` array of your [settings.json file](./get-started.md#settings-json-file). They are written in the following format:
+Color schemes can be defined in the `schemes` array of your [settings.json file](../get-started.md#settings-json-file). They are written in the following format:
 
 ```json
 {
