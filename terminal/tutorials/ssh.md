@@ -16,7 +16,7 @@ In this tutorial, you'll learn how to set up a profile in Windows Terminal that 
 
 ## Create a profile
 
-You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your settings.json file inside the `list` of profile objects.
+You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your [settings.json file](./get-started.md#settings-json-file) inside the `list` of profile objects.
 
 ```json
 {

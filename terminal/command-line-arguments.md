@@ -45,7 +45,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
 | `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Accepts one of `up`, `down`, `left`, `right`. |
 
-If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./actions.md#actions-6) option by setting it to `true`.
+If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/actions.md#actions-6) option by setting it to `true`.
 
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.

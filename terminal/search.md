@@ -38,7 +38,7 @@ The search dialog works with [panes](./panes.md) as well. When focused on a pane
 
 ## Customize the search key binding
 
-You can open the search dialog with any key binding (shortcut key combination) that you prefer. To change the search key binding, open your settings.json file and search for the `find` command. By default, this command is set to `ctrl+shift+f`.
+You can open the search dialog with any key binding (shortcut key combination) that you prefer. To change the search key binding, open your [settings.json file](./get-started.md#settings-json-file) and search for the `find` command. By default, this command is set to `ctrl+shift+f`.
 
 ```json
 // Press ctrl+shift+f to open the search box
