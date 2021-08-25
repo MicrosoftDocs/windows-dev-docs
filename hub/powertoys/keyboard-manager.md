@@ -19,8 +19,6 @@ You can also exchange shortcut key combinations. For example, the shortcut key, 
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
-![PowerToys Keyboard Manger remap Shortcuts screenshot](../images/powertoys-keyboard-shortcuts.png)
-
 > [!NOTE]
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - `⊞ Win`+`L` and `Ctrl` + `Alt` + `Del` cannot be remapped as they are reserved by the Windows OS.
