@@ -15,7 +15,7 @@ Image Resizer is a Windows shell extension for bulk image-resizing. After instal
 
 ## Drag and Drop
 
-Image Resizer also allows you to resize images by dragging and dropping your selected files **with the right mouse button**. This allows you to quickly save your resized pictures in another folder.
+Image Resizer also allows you to resize images by dragging and dropping your selected files **with the right mouse button**. This allows you to quickly save your resized pictures in a different folder.
 
 ![Image Resizer Drag And Drop Demo](../images/powertoys-resize-drag-drop.gif)
 
@@ -33,13 +33,13 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 
 - **Fill:** Fills the entire specified size with the image. Scales the image proportionally. Crops the image as needed.
 - **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
-- **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image
+- **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
 The width and height of the specified size may be swapped to match the orientation (portrait/landscape) of the current image. To always use the width and height as specified, un-check: **Ignore the orientation of pictures**.
 
 ### Fallback encoding
 
-The fallback encoder is used when the file cannot be saved in it's original format. For example, the Windows Metafile (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in it's original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. *This is not a file type conversion tool, but only works as a fallback for unsupported file formats.*
+The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Metafile (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. *This is not a file type conversion tool, but only works as a fallback for unsupported file formats.*
 
 ### File
 
