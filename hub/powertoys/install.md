@@ -33,7 +33,7 @@ To install PowerToys using a Windows executable file:
 - [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
 - x64 architecture currently supported. ARM and x86 support to become available at a later date.
 
-To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the **⊞ Win** *(Windows key)* + **R**, then type **winver**, select **OK**. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Settings** menu.
+To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting the <kbd>⊞ Win</kbd> + <kbd>R</kbd>, then type `winver`, select <kbd>OK</kbd>. (Or enter the `ver` command in Windows Command Prompt). You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings** menu.
 
 ## Alternative Install Methods
 
@@ -95,6 +95,6 @@ After successfully installing PowerToys, an overview window will display with in
 
 ## Updates
 
-PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings menu under the General tab.
+PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings menu under the General page.
 
 ![PowerToys Update](../images/powertoys-updates.png)
