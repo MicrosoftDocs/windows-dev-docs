@@ -24,7 +24,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > [!NOTE]
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - <kbd>⊞ Win</kbd> + <kbd>L</kbd> and <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
-> - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd>-<kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
+> - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
 > - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
 
 ## Settings
@@ -38,7 +38,7 @@ To create mappings with Keyboard Manager, you will need to open the PowerToys Se
 
 To remap a key, changing it to a new value, launch the Remap Keyboard settings window with the <kbd>Remap a Key</kbd> button. When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
-Once a new remap row appears, select the input key whose output you want to ***change*** in the “Key” column. Select the new key value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input key whose output you want to *change* in the “Key” column. Select the new key value to assign in the “Mapped To” column.
 
 For example, if you want to press <kbd>A</kbd> and have "B" appear:
 
@@ -70,7 +70,7 @@ To remap a shortcut key combination, like <kbd>Ctrl</kbd> + <kbd>V</kbd>, select
 
 When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
-Once a new remap row appears, select the input keys whose output you want to ***change*** in the “Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input keys whose output you want to *change* in the “Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
 
 For example, the shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd> copies your selected text. To remap that shortcuts to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
@@ -95,7 +95,7 @@ For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd>←</kbd> (le
 - Mapped To: "⊞ Win" (Windows key) + "←" (left arrow)
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> after remapping the "Alt" key as above, would result in "⊞ Win" + "←" (left arrow) + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute <kbd>⊞ Win</kbd> + <kbd>←</kbd>. Pressing the <kbd>Shift</kbd> key first will execute "Shift" + "⊞ Win" + "left arrow".
+> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> after remapping the "Alt" key as above, would result in "⊞ Win" + "left arrow" + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute <kbd>⊞ Win</kbd> + <kbd>←</kbd>. Pressing the <kbd>Shift</kbd> key first will execute "Shift" + "⊞ Win" + "left arrow".
 
 ## App-specific shortcuts
 
@@ -125,7 +125,7 @@ There are certain shortcut keys that are not allowed for remapping. These includ
 
 - <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd> (interrupt command)
 - <kbd>⊞ Win</kbd> + <kbd>L</kbd> (locking your computer)
-- The function key, <kbd>Fn</kbd>, cannot be remapped (in most cases) but <kbd>F1</kbd> - <kbd>F12</kbd> can be mapped.
+- The function key <kbd>Fn</kbd> cannot be remapped (in most cases) but <kbd>F1</kbd> - <kbd>F12</kbd> can be mapped.
 
 ## How to select a key
 
@@ -134,7 +134,7 @@ To select a key or shortcut to remap, you can:
 - Use the <kbd>Type Key</kbd> button.
 - Use the drop-down menu.
 
-Once you select the <kbd>Type Key / Shortcut</kbd> button, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold the <kbd>Esc</kbd> button.
+Once you select the <kbd>Type Key</kbd> or <kbd>Type Shortcut</kbd> button, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold the <kbd>Esc</kbd> button.
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
 
@@ -158,7 +158,7 @@ For key remapping to work, PowerToys must be running in the background and Keybo
 
 No, Keyboard Manager is only available when PowerToys is running and doesn’t work on any password screen, including while Run As Admin.
 
-### Do I have to turn off my computer for the remapping to take effect?
+### Do I have to restart my computer or PowerToys for the remapping to take effect?
 
 No, remapping should occur immediately upon pressing <kbd>Apply</kbd>.
 
@@ -172,7 +172,7 @@ It depends on how the game accesses your keys. Certain keyboard APIs do not work
 
 ### Will remapping work if I change my input language?
 
-Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in <kbd>B</kbd>, this is consistent with how Windows handles multilingual input.
+Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in "B", this is consistent with how Windows handles multilingual input.
 
 ## Troubleshooting
 
