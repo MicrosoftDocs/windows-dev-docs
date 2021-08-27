@@ -29,7 +29,7 @@ To install PowerToys using a Windows executable file:
 
 ## Requirements
 
-- Windows 10 1803 (build 17134) or later.
+- PowerToys (v0.37.0 and newer) requires Windows 10 v1903 (18362) or newer.
 - [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
 - x64 architecture currently supported. ARM and x86 support to become available at a later date.
 
