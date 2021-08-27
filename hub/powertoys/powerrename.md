@@ -79,11 +79,11 @@ Appends a numeric suffix to file names that were modified in the operation. For 
 
 ### Options - Item Name Only
 
-Only the file name portion (not the file extension) is modified by the operation. For example: `txt.txt` ->  `NewName.txt`
+Only the file name portion (not the file extension) is modified by the operation. For example: `txt.txt` →  `NewName.txt`
 
 ### Options - Item Extension Only
 
-Only the file extension portion (not the file name) is modified by the operation. For example: `txt.txt` -> `txt.NewExtension`
+Only the file extension portion (not the file name) is modified by the operation. For example: `txt.txt` → `txt.NewExtension`
 
 ## Replace using file creation date and time
 
@@ -163,7 +163,7 @@ To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/
 | `(.*).png`   | `foo_$1.png`   | Prepends "foo\_" to the existing file name |
 | `(.*).png`   | `$1_foo.png`   | Appends "\_foo" to the existing file name  |
 | `(.*)`       | `$1.txt`        | Appends ".txt" extension to existing file |
-| `(^\w+\.$)|(^\w+$)` | `$2.txt` | Appends ".txt" extension to existing file name only if it does not have an extension |
+| `(^\w+\.$)¦(^\w+$)` | `$2.txt` | Appends ".txt" extension to existing file name only if it does not have an extension |
 | `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | Move numbers in the filename: "29-03-2020" becomes "2020-03-29" |
 
 ### Additional resources for learning regular expressions
