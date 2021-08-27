@@ -44,7 +44,7 @@ To manage the execution of the tool from the system tray, right-click on the Awa
 
 ## Command Line Interface (CLI)
 
-Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running `PowerToys.Awake.exe` from the terminal:
+Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running `PowerToys.Awake.exe` from the terminal or via a `.lnk` shortcut file:
 
 | Argument          | Description |
 |:------------------|:------------|
