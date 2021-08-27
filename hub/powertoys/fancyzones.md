@@ -21,7 +21,7 @@ To get started using FancyZones, you need to enable the utility in PowerToys set
 
 ### Launch zones editor
 
-Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd> + <kbd>`</kbd> (note that this shortcut can be changed in the settings dialog).  
+Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd> + <kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).  
 
 ![FancyZones Settings UI](../images/pt-fancyzones-settings.png) 
 
@@ -69,7 +69,7 @@ Canvas layout also has keyboard support for zone editing. Use the <kbd>arrow</kb
 
 With a custom layout, this layout can be configured to a user-defined hotkey to quickly apply it to the desired desktop. The hotkey can be set by opening the custom layout's edit menu. Once set, the custom layout can be applied by pressing the <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>[number]</kbd> binding. The layout can also be applied by pressing the hotkey when dragging a window.
 
-In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>[number]</kbd> binding to apply the first custom layout and bind a window to it. Finally, we apply the second custom layout while dragging a window and bind the window to it.
+In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>[number]</kbd> binding to apply the first custom layout and snap a window to it. Finally, we apply the second custom layout while dragging a window and snap the window to it.
 
 ![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
 
@@ -79,7 +79,7 @@ If two zones are adjacent, a window can be snapped to the sum of their area (rou
 
 It's also possible to snap to any number of zones: first drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
-To snap a window to multiple zone using only the keyboard, first turn on the two options **Override Windows Snap hotkeys (Win+Arrow) to move between zones** and **Move windows based on their position**. After snapping a window to one zone, use <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>arrows</kbd> to expand the window to multiple zones.
+To snap a window to multiple zone using only the keyboard, first check the two options **Override Windows Snap hotkeys (Win+Arrow) to move between zones** and **Move windows based on their position**. After snapping a window to one zone, use <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>[arrows]</kbd> to expand the window to multiple zones.
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
@@ -96,12 +96,12 @@ FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd> + <kbd>Shift</kbd>
 
 | Setting | Description |
 | --------- | ------------- |
-| Configure the zone editor hotkey | To change the default hotkey, click on the textbox will(it's not necessary to select or delete the text) and then press the desired key combination on your keyboard |
-| Hold <kbd>Shift</kbd> key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the shift key during a drag enables snapping |
+| Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard (it's not necessary to select or delete the text) |
+| Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the shift key during a drag enables snapping |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
-| Override Windows Snap hotkeys (<kbd>⊞ Win</kbd> + <kbd>arrow</kbd>) to move between zones | When this option is checked and FancyZones is running, it overrides two Windows Snap keys: <kbd>⊞ Win</kbd> + <kbd>left</kbd> and <kbd>⊞ Win</kbd> + <kbd>right</kbd> |
-| Move windows based on their position | Allows to use <kbd>⊞ Win</kbd> + <kbd>arrows</kbd> to snap a window based on its position relatively to the zone layout |
-| Move windows between zones across all monitors | When this option is unchecked, snapping with <kbd>⊞ Win</kbd> + <kbd>arrow</kbd> cycles the window through the zones on the current monitor. When is checked, it cycles the window through all the zones on all monitors |
+| Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides two Windows Snap keys: <kbd>⊞ Win</kbd> + <kbd>left</kbd> and <kbd>⊞ Win</kbd> + <kbd>right</kbd> |
+| Move windows based on their position | Allows to use <kbd>⊞ Win</kbd> + <kbd>[arrows]</kbd> to snap a window based on its position relatively to the zone layout |
+| Move windows between zones across all monitors | Unchecked: snapping with <kbd>⊞ Win</kbd> + <kbd>arrow</kbd> cycles the window through the zones on the current monitor.<br/>Checked: it cycles the window through all the zones on all monitors |
 | Keep windows in their zones when the screen resolution changes | FancyZones will resize and reposition windows into the zones they were previously in after a screen resolution change |
 | During zone layout changes, windows assigned to a zone will match new size/positions | FancyZones will resize and position windows into the new zone layout by maintaining the previous zone number location of each window |
 | Move newly created windows to the last known zone | Automatically move a newly opened window into the last zone location that application was in |
@@ -109,10 +109,10 @@ FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd> + <kbd>Shift</kbd>
 | Restore the original size of windows when unsnapping | Unsnapping a window will restore its size as before it was snapped |
 | Follow mouse cursor instead of focus when launching editor in a multi-monitor environment | When checked, the editor will launch on the monitor where the mouse cursor is. When unchecked, the editor will launch on the monitor where the current active window is |
 | Show zones on all monitors while dragging a window | By default, FancyZones shows only the zones available on the current monitor. (This feature may have a performance impact when chekced) |
-| Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor |
-| Make dragged window transparent | When the zones are activated, the dragged window is made transparent to improve the zones visibility |
-| Zone highlight color (default: #008CFF) | The color that a zone becomes when it is the active drop target during a window drag |
-| Zone Inactive color (default: #F5FCFF) | The color that zones become when they are not an active drop during a window drag |
+| Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor (there might be unexpected effects when using monitors in different orientations) |
+| Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility |
+| Zone highlight color (default: #008CFF) | The color of a zone when it is the active drop target during a window drag |
+| Zone Inactive color (default: #F5FCFF) | The color of zones when they are not an active drop during a window drag |
 | Zone border color (default: #FFFFFF) | The color of the border of active and inactive zones |
 | Zone opacity (%) (default: 50%) | The percentage of opacity of active and inactive zones |
 | Exclude applications from snapping to zones | Add the application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
