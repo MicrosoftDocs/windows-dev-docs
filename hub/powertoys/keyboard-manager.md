@@ -45,7 +45,7 @@ For example, if you want to press <kbd>A</kbd> and have "B" appear:
 - Key: "A"
 - Mapped To: "B"
 
-To swap key positions between the "A" and "B" keys, add another remapping with:
+To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add another remapping with:
 
 - Key: "B"
 - Mapped To: "A"
@@ -95,13 +95,13 @@ For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd>←</kbd> (le
 - Mapped To: "⊞ Win" (Windows key) + "←" (left arrow)
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> after remapping the "Alt" key as above, would result in "⊞ Win" + "left arrow" + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute <kbd>⊞ Win</kbd> + <kbd>←</kbd>. Pressing the <kbd>Shift</kbd> key first will execute "Shift" + "⊞ Win" + "left arrow".
+> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> after remapping the <kbd>Alt</kbd> key as above, would result in "⊞ Win" + "left arrow" + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute "⊞ Win" + "←". Pressing the <kbd>Shift</kbd> key first will execute "Shift" + "⊞ Win" + "left arrow".
 
 ## App-specific shortcuts
 
 Keyboard Manager enables you to remap shortcuts for only specific apps (rather than globally across Windows).
 
-For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd> + <kbd>E</kbd> is set by default to search for an email. If you prefer instead to set <kbd>Ctrl</kbd> + <kbd>F</kbd> to search your email (rather than forward an email as set by default), you can remap the shortcut with "Outlook" set as your "Target app."
+For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd> + <kbd>E</kbd> is set by default to search for an email. If you prefer instead to set <kbd>Ctrl</kbd> + <kbd>F</kbd> to search your email (rather than forward an email as set by default), you can remap the shortcut with "Outlook" set as your "Target app".
 
 Keyboard Manager uses the process-names (not application names) to target apps. For example, Microsoft Edge is set as "msedge" (process name), not "Microsoft Edge" (application name). To find an application's process name, open PowerShell and enter the command `get-process` or open Command Prompt and enter the command `tasklist`. This will result in a list of process names for all applications you currently have open. Below is a list of a few popular application process names.
 
@@ -131,7 +131,7 @@ There are certain shortcut keys that are not allowed for remapping. These includ
 
 To select a key or shortcut to remap, you can:
 
-- Use the <kbd>Type Key</kbd> button.
+- Use the <kbd>Type Key</kbd> or <kbd>Type Shortcut</kbd> button.
 - Use the drop-down menu.
 
 Once you select the <kbd>Type Key</kbd> or <kbd>Type Shortcut</kbd> button, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold the <kbd>Esc</kbd> button.
