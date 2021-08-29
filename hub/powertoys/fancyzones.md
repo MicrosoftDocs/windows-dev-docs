@@ -97,8 +97,11 @@ FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd> + <kbd>Shift</kbd>
 | Setting | Description |
 | --------- | ------------- |
 | Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard (it's not necessary to select or delete the text) |
+| Follow mouse cursor instead of focus when launching editor in a multi-monitor environment | When checked, the editor will launch on the monitor where the mouse cursor is. When unchecked, the editor will launch on the monitor where the current active window is |
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the shift key during a drag enables snapping |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
+| Show zones on all monitors while dragging a window | By default, FancyZones shows only the zones available on the current monitor. (This feature may have a performance impact when chekced) |
+| Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor (there might be unexpected effects when using monitors in different orientations) |
 | Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides two Windows Snap keys: <kbd>⊞ Win</kbd> + <kbd>left</kbd> and <kbd>⊞ Win</kbd> + <kbd>right</kbd> |
 | Move windows based on their position | Allows to use <kbd>⊞ Win</kbd> + <kbd>[arrows]</kbd> to snap a window based on its position relatively to the zone layout |
 | Move windows between zones across all monitors | Unchecked: snapping with <kbd>⊞ Win</kbd> + <kbd>arrow</kbd> cycles the window through the zones on the current monitor.<br/>Checked: it cycles the window through all the zones on all monitors |
@@ -107,14 +110,13 @@ FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd> + <kbd>Shift</kbd>
 | Move newly created windows to the last known zone | Automatically move a newly opened window into the last zone location that application was in |
 | Move newly created windows to the current active monitor [EXPERIMENTAL] | When this option is checked, and **Move newly created windows to the last known zone** is unchecked or the application doesn't have a last known zone, it keeps the application on the current active monitor |
 | Restore the original size of windows when unsnapping | Unsnapping a window will restore its size as before it was snapped |
-| Follow mouse cursor instead of focus when launching editor in a multi-monitor environment | When checked, the editor will launch on the monitor where the mouse cursor is. When unchecked, the editor will launch on the monitor where the current active window is |
-| Show zones on all monitors while dragging a window | By default, FancyZones shows only the zones available on the current monitor. (This feature may have a performance impact when chekced) |
-| Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor (there might be unexpected effects when using monitors in different orientations) |
 | Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility |
-| Zone highlight color (default: #008CFF) | The color of a zone when it is the active drop target during a window drag |
-| Zone Inactive color (default: #F5FCFF) | The color of zones when they are not an active drop during a window drag |
-| Zone border color (default: #FFFFFF) | The color of the border of active and inactive zones |
-| Zone opacity (%) (default: 50%) | The percentage of opacity of active and inactive zones |
+| Enable quick layout switch | Enables hotkeys to quickly changes layouts - see individual layout settings |
+| Flash zones when switching layout | The zones will flash when a layout is selected via the shortcut |
+| Zone highlight color | The color of a zone when it is the active drop target during a window drag (default: #008CFF) |
+| Zone Inactive color | The color of zones when they are not an active drop during a window drag (default: #F5FCFF) |
+| Zone border color | The color of the border of active and inactive zones (default: #FFFFFF) |
+| Zone opacity (%) | The percentage of opacity of active and inactive zones (default: 50%) |
 | Exclude applications from snapping to zones | Add the application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
