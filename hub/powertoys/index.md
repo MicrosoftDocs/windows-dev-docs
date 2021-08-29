@@ -24,7 +24,7 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
-### Awake
+### PowerToys Awake
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Fancy Zones
+### FancyZones
 
 :::row:::
     :::column:::
@@ -123,19 +123,11 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-## PowerToys video walk-through
-
-In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
-
 ## Future PowerToy utilities
-
-### Experimental PowerToys
 
 Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
 
-#### Video Conference Mute (Experimental)
+### Video Conference Mute (Experimental)
 
 :::row:::
     :::column:::
@@ -145,6 +137,18 @@ Install the pre-release experimental version of PowerToys to try the latest expe
         [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd> + <kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
+
+## Languages
+
+Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Brazillian, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Russian, Spanish, Turkish.
+
+*Note that new elements of the app will often not yet be translated in the first version release.*
+
+## PowerToys video walk-through
+
+In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
