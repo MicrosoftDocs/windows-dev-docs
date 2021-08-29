@@ -147,7 +147,7 @@ Often you can determine what is not working by using the operational logs. There
 
 ### Fiddler
 
-The Fiddler web debugger can be used with apps.
+The Fiddler web debugger can be used with apps. For more information, see [Fiddler documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)
 
 1.  Since the AuthHost runs in its own app container, to give it the private network capability you must set a registry key: Windows Registry Editor Version 5.00
 
