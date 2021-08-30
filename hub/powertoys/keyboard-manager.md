@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
 
 The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
 
-For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>D</kbd> on your keyboard. When you select the <kbd>A</kbd> key, a "D" will display.
+For example, you can exchange the letter <kbd>C</kbd> for the letter <kbd>D</kbd> on your keyboard. When you select the <kbd>C</kbd> key, a "D" will display.
 
 ![PowerToys Keyboard Manger remap keys screenshot](../images/powertoys-keyboard-remap.png)
 
@@ -31,7 +31,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 To create mappings with Keyboard Manager, you will need to open the PowerToys Settings. Inside PowerToys Settings, on the Keyboard Manager tab, you will see options to:
 
-- Launch the Remap Keyboard settings window by selecting <kbd>Remap a Key</kbd>
+- Launch the Remap Keys settings window by selecting <kbd>Remap a key</kbd>
 - Launch the Remap Shortcuts settings window by selecting <kbd>Remap a shortcut</kbd>
 
 ## Remap Keys
@@ -56,13 +56,13 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 
 To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "Mapped To" column.
 
-For example, if you want to select the <kbd>C</kbd> key and have it result in "Ctrl + V":
+For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in "⊞ Win" + "←" (left arrow):
 
 - Key: "Ctrl"
 - Mapped To: "⊞ Win" + "←" (left arrow)
 
 > [!NOTE]
-> Key remapping will be maintained even if the remapped key is used inside another shortcut. For example, pressing <kbd>Ctrl</kbd> + <kbd>C</kbd> would result as "⊞ Win" + "left arrow" + "C". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Ctrl</kbd> key will first execute "⊞ Win" + "left arrow". Pressing the <kbd>C</kbd> key first will execute "C" + "⊞ Win" + "left arrow".
+> Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd> + <kbd>C</kbd> would result as "⊞ Win" + "left arrow" + "C". Pressing the <kbd>Ctrl</kbd> key will first execute "⊞ Win" + "left arrow". Pressing the <kbd>C</kbd> key first will execute "C" + "⊞ Win" + "left arrow".
 
 ## Remap Shortcuts
 
