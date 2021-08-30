@@ -698,23 +698,6 @@ _This command is not currently bound in the default settings_.
 > [!IMPORTANT]
 > This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
-### Minimize to tray ([Preview](https://aka.ms/terminal-preview))
-
-This will hide the currently focused window from the Taskbar and instead will be accessible from the system tray icon. This action will only be useable when the tray icon is visible through one of the two global settings `minimizeToTray` or `alwaysShowTrayIcon`.
-
-**Command name:** `minimizeToTray`
-
-**Default binding:**
-
-_This command is not currently bound in the default settings_.
-
-```json
-{"command": "minimizeToTray" },
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
