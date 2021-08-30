@@ -75,9 +75,6 @@ wt new-tab PowerShell -c Start-Service ; new-tab cmd /k dir
 
 ### Target a specific window
 
-> [!IMPORTANT]
-> The ability for the `--window,-w` parameter to accept window names is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 Below are examples of how to target specific windows using the `--window,-w` option.
 
 <!-- Start tab selectors. -->
