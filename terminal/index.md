@@ -15,7 +15,7 @@ Windows Terminal is a modern terminal application for users of command-line tool
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWHAdS]
 
 > [!NOTE]
-> [What's the difference between a console, a terminal, and a shell?](https://www.hanselman.com/blog/WhatsTheDifferenceBetweenAConsoleATerminalAndAShell.aspx) Read Scott Hanselman's explanation.
+> For more general info, check out Scott Hanselman's article: [What's the difference between a console, a terminal, and a shell?](https://www.hanselman.com/blog/WhatsTheDifferenceBetweenAConsoleATerminalAndAShell.aspx) or Rich Turner's video [What is a command-line shell?](https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-a-command-line-shell--One-Dev-Question).
 
 ## Multiple profiles supporting a variety of command line applications
 
