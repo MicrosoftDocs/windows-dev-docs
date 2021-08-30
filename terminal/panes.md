@@ -40,13 +40,58 @@ The terminal allows you to navigate between panes by using the keyboard. If you 
 
 ![Windows Terminal switch panes](./images/navigate-panes.gif)
 
-You can customize this by adding key bindings for the `moveFocus` command and setting the `direction` to either `down`, `left`, `right` or `up`.
+You can customize this by adding key bindings for the `moveFocus` command and setting the `direction` to either `down`, `left`, `right`, or `up`. Additionally, `direction` can be `previous` for the last used pane, or `previousInOrder` or `nextInOrder` for navigation by tree order.
 
 ```json
 { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
 { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
 { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" }
+{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
+{ "command": { "action": "moveFocus", "direction": "previous" } },
+{ "command": { "action": "moveFocus", "direction": "previousInOrder" } },
+{ "command": { "action": "moveFocus", "direction": "nextInOrder" } }
+```
+
+## Swapping panes
+
+Once two panes have been created you can swap their positions in the terminal.
+
+The `swapPane` command can be customized using the same navigation `direction`s as `moveFocus`. These commands will swap the positions of the currently focused pane and its neighbor according to `direction`.
+
+```json
+{ "command": { "action": "swapPane", "direction": "down" } },
+{ "command": { "action": "swapPane", "direction": "left" } },
+{ "command": { "action": "swapPane", "direction": "right" } },
+{ "command": { "action": "swapPane", "direction": "up" } },
+{ "command": { "action": "swapPane", "direction": "previous" } },
+{ "command": { "action": "swapPane", "direction": "previousInOrder" } },
+{ "command": { "action": "swapPane", "direction": "nextInOrder" } }
+```
+
+## Moving panes
+
+Panes can also be moved between tabs, creating a new tab if one with the target index does not exist.
+
+The key bindings for the `movePane` command can be customized for moving panes to (zero-indexed) tabs according to their order.
+
+```json
+{ "command": { "action": "movePane", "index": 0 } },
+{ "command": { "action": "movePane", "index": 1 } },
+{ "command": { "action": "movePane", "index": 2 } },
+{ "command": { "action": "movePane", "index": 3 } },
+{ "command": { "action": "movePane", "index": 4 } },
+{ "command": { "action": "movePane", "index": 5 } },
+{ "command": { "action": "movePane", "index": 6 } },
+{ "command": { "action": "movePane", "index": 7 } },
+{ "command": { "action": "movePane", "index": 8 } }
+```
+
+## Changing Split Orientation
+
+After two panes on a tab have been created, the split orientation of those panes can be switched between `vertical` and `horizontal` with the `toggleSplitOrientation` command.
+
+```json
+{ "command": "toggleSplitOrientation" }
 ```
 
 ## Resizing a pane
