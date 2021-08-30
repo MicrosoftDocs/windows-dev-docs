@@ -58,15 +58,15 @@ To remap a key to a shortcut (combination of keys), enter the shortcut key combi
 
 For example, if you want to select the <kbd>C</kbd> key and have it result in "Ctrl + V":
 
-- Key: "C"
-- Mapped To: "Ctrl + V"
+- Key: "Ctrl"
+- Mapped To: "⊞ Win" + "←" (left arrow)
 
 > [!NOTE]
-> Key remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>C</kbd> would result as "Alt + Ctrl + V", since the C key has been remapped to "Ctrl + V".
+> Key remapping will be maintained even if the remapped key is used inside another shortcut. For example, pressing <kbd>Ctrl</kbd> + <kbd>C</kbd> would result as "⊞ Win" + "left arrow" + "C". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Ctrl</kbd> key will first execute "⊞ Win" + "left arrow". Pressing the <kbd>C</kbd> key first will execute "C" + "⊞ Win" + "left arrow".
 
 ## Remap Shortcuts
 
-To remap a shortcut key combination, like <kbd>Ctrl</kbd> + <kbd>V</kbd>, select <kbd>Remap a shortcut</kbd> to launch the Remap Shortcuts settings window.
+To remap a shortcut key combination, like <kbd>Ctrl</kbd> + <kbd>C</kbd>, select <kbd>Remap a shortcut</kbd> to launch the Remap Shortcuts settings window.
 
 When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
@@ -87,15 +87,15 @@ There are a few rules to follow when remapping shortcuts (these rules only apply
 
 ## Remap a shortcut to a single key
 
-It is possible to remap a shortcut (key combination) to a single key press by selecting the <kbd>Remap a Key</kbd> button in PowerToys Settings. 
+It is possible to remap a shortcut (key combination) to a single key press by selecting the <kbd>Remap a shortcut</kbd> button in PowerToys Settings. 
 
-For example, to replace the shortcut key <kbd>⊞ Win</kbd> + <kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
+For example, to replace the shortcut <kbd>⊞ Win</kbd> + <kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
 
-- Key: "Alt"
-- Mapped To: "⊞ Win" (Windows key) + "←" (left arrow)
+- Shortcut: "⊞ Win" + "←"
+- Mapped To: "Alt"
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used in another shortcut. For example, entering the shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> after remapping the <kbd>Alt</kbd> key as above, would result in "⊞ Win" + "left arrow" + "Shift". The order of keypress matters in this scenario as the action is executed during keydown, not keyup. Pressing the <kbd>Alt</kbd> key will first execute "⊞ Win" + "←". Pressing the <kbd>Shift</kbd> key first will execute "Shift" + "⊞ Win" + "left arrow".
+> Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd> + <kbd>←</kbd> + <kbd>Shift</kbd> would result in "Alt" + "Shift".
 
 ## App-specific shortcuts
 
