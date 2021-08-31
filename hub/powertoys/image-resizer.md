@@ -35,7 +35,9 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 - **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
 - **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
-The width and height of the specified size may be swapped to match the orientation (portrait/landscape) of the current image. To always use the width and height as specified, un-check: **Ignore the orientation of pictures**.
+> [!NOTE]
+> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations (like vacation photos) will still be the same size.
+
 
 ### Fallback encoding
 
