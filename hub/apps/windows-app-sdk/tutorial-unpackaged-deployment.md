@@ -129,7 +129,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 2. Next, configure your project.
 
     1. In **Solution Explorer**, right-click your project and choose **Edit Project File**.
-    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
+    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
         <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>

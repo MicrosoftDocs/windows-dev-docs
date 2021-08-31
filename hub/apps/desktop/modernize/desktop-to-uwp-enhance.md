@@ -26,18 +26,17 @@ There are several options for .NET projects:
 * For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
 * If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
-### .NET 5: Use the Target Framework Moniker option
+### .NET 5 and later: Use the Target Framework Moniker option
 
 This option is only supported in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
     ```xml
-    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <Project Sdk="Microsoft.NET.Sdk">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <UseWindowsForms>true</UseWindowsForms>
       </PropertyGroup>
     </Project>
     ```
@@ -53,8 +52,28 @@ This option is only supported in projects that use .NET 5 (or a later release) a
     ```xml
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     ```
+    
+    In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
 
 3. Save your changes and close the project file.
+
+#### Supporting multiple Windows OS versions 
+
+The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property does not need to be explicitly defined in the project file, since it is automatically set by the **TargetFramework** OS version.
+
+The **TargetPlatformMinVersion** can be overridden to be less than the **TargetPlatformVersion** (determined by the version in the **TargetFramework** property). This permits an app to run on earlier OS versions. For example, you can set the following in your project file to support your app downlevel to Windows 10, version 1809. 
+
+ ```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+  </PropertyGroup>
+</Project>
+```
+
+Note that setting the **TargetPlatformMinVersion** to a version below the **TargetPlatformVersion** creates the potential for calling unavailable APIs. When calling Windows Runtime APIs that are not available on all supported OS versions, we recommend guarding these calls with **ApiInformation** checks. For more information, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 ### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
 
