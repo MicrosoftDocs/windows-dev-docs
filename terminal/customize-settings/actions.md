@@ -125,6 +125,7 @@ ___
 | Arrow keys | `down`, `left`, `right`, `up`, `pagedown`, `pageup`, `pgdn`, `pgup`, `end`, `home` |
 | Action keys | `tab`, `enter`, `esc`, `escape`, `space`, `backspace`, `delete`, `insert`, `app`, `menu`  |
 | Numpad keys | `numpad_0-numpad_9`, `numpad0-numpad9`, `numpad_add`, `numpad_plus`, `numpad_decimal`, `numpad_period`, `numpad_divide`, `numpad_minus`, `numpad_subtract`, `numpad_multiply` |
+| Browser keys | `browser_back`, `browser_forward`, `browser_refresh`, `browser_stop`, `browser_search`, `browser_favorites`, `browser_home` |
 
 **Note:** `=` and `plus` are equivalents. The latter must not be confused with `numpad_plus`.
 
@@ -295,9 +296,6 @@ This closes the tab at a given index. If no index is provided, use the focused t
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `index` | Optional | Integer | Position of the tab to close. |
-
-> [!IMPORTANT]
-> This `index` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Close all other tabs
 
@@ -650,70 +648,6 @@ _This command is not currently bound in the default settings_.
 {"command": "identifyWindows" },
 ```
 
-### Open window rename dialog ([Preview](https://aka.ms/terminal-preview))
-
-This command changes displays a popup window that lets you edit the name for the current window. Clearing the text field will reset the window name.
-
-**Command name:** `openWindowRenamer`
-
-**Default binding:**
-
-```json
-{ "command": "openWindowRenamer" }
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Identify window ([Preview](https://aka.ms/terminal-preview))
-
-This pops up an overlay on the focused window that displays the window's name and index.
-
-**Command name:** `identifyWindow`
-
-**Default binding:**
-
-```json
-{"command": "identifyWindow", "keys": "" },
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Identify windows ([Preview](https://aka.ms/terminal-preview))
-
-This pops up an overlay on all windows that displays each window's name and index.
-
-**Command name:** `identifyWindows`
-
-**Default binding:**
-
-_This command is not currently bound in the default settings_.
-
-```json
-{"command": "identifyWindows" },
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Minimize to tray ([Preview](https://aka.ms/terminal-preview))
-
-This will hide the currently focused window from the Taskbar and instead will be accessible from the system tray icon. This action will only be useable when the tray icon is visible through one of the two global settings `minimizeToTray` or `alwaysShowTrayIcon`.
-
-**Command name:** `minimizeToTray`
-
-**Default binding:**
-
-_This command is not currently bound in the default settings_.
-
-```json
-{"command": "minimizeToTray" },
-```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
@@ -839,9 +773,6 @@ This halves the size of the active pane and opens another. Without any arguments
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
-
-> [!IMPORTANT]
-> The `"colorScheme"` and `"suppressApplicationTitle"` parameters are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/14/2021
+ms.date: 08/30/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -12,7 +12,7 @@ ms.localizationpriority: high
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your [settings.json file](../get-started.md#settings-json-file).
 
-## Language ([Preview](https://aka.ms/terminal-preview))
+## Language
 
 This sets an override for the application's preferred language.
 
@@ -21,9 +21,6 @@ This sets an override for the application's preferred language.
 **Necessity:** Optional
 
 **Accepts:** A BCP-47 language tag like `"en-US"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -102,6 +99,34 @@ When this is set to `true`, the tabs are moved into the title bar and the title 
 
 :::column-end:::
 :::row-end:::
+
+<br />
+
+___
+
+## Show acrylic in tab row ([Preview](https://aka.ms/terminal-preview))
+
+:::row:::
+:::column span="":::
+When this is set to `true`, the tab row is given an acrylic background at 50% opacity. When it's set to `false`, the tab row will be opaque. Note that changing this setting will require starting a new terminal instance.
+
+**Property name:** `useAcrylicInTabRow`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal acrylic in tab row](./../images/acrylic-tab-row.png)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
