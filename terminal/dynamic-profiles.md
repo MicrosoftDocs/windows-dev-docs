@@ -3,7 +3,7 @@ title: Windows Terminal Dynamic Profiles
 description: Learn about dynamic profiles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/30/2021
 ms.topic: concept
 ---
 
@@ -27,8 +27,6 @@ To hide a profile from your terminal dropdown menu, add the `hidden` property to
 ```json
 "hidden": true
 ```
-
-If you delete a dynamically-created profile, the terminal will automatically regenerate the profile and replace it in your [settings.json file](./get-started.md#settings-json-file).
 
 ## Prevent a profile from being generated
 

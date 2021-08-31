@@ -3,7 +3,7 @@ title: Windows Terminal tips and tricks
 description: In this page, you will find tips and tricks to help improve your Windows Terminal experience.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/25/2021
+ms.date: 08/30/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -43,6 +43,15 @@ You can adjust the opacity of the background by holding <kbd>ctrl+shift</kbd> an
 ### Open a hyperlink
 
 You can open a hyperlink from inside Windows Terminal with your mouse using <kbd>ctrl</kbd> + click.
+
+### Drag and drop file/folder to open ([Preview](https://aka.ms/terminal-preview))
+
+You can drag and drop a file or folder over the New Tab button to open your default profile with that given file or folder. By default, this will open a new tab. You can hold <kbd>Alt</kbd> to open a new pane in your current tab or hold <kbd>Shift</kbd> to open a new window.
+
+![Windows Terminal drag and drop](./images/drag-and-drop.gif)
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Copy/paste
 

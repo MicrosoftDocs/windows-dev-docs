@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/25/2021
+ms.date: 08/30/2021
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -35,6 +35,9 @@ For example, the following setting will launch the "Ubuntu-18.04" distribution i
 }
 ```
 
+> [!IMPORTANT]
+> On newer versions of Windows, `startingDirectory` can accept Linux-style paths in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Setting the tab title
 
 To have the shell automatically set your tab title, [visit the set the tab title tutorial](./tutorials/tab-title.md). If you want to set your own tab title, open the [settings.json file](./get-started.md#settings-json-file) and follow these steps:
@@ -60,14 +63,6 @@ If your settings are correct, you may be running a startup script that sets the 
 Alternatively, if you are running a script using the `commandline` profile setting, it may be that you are setting the location there. Similar to PowerShell profiles, your commands there take precedence over the `startingDirectory` profile setting.
 
 The purpose of `startingDirectory` is to launch a new Windows Terminal instance in the given directory. If the terminal runs any code that changes its directory, that may be a good place to take a look.
-
-## Deleting a profile
-
-By default, Windows Terminal ships with a built-in PowerShell and a Command Prompt profile. The terminal will also autodetect if other command line applications are installed, such as PowerShell Core, WSL distributions (Ubuntu, Debian, etc), and Azure Cloud Shell. We call these types of automatically generated profiles "Dynamic profiles".
-
-For both built-in and dynamic profiles, deleting the profile from your [settings.json file](./get-started.md#settings-json-file) will not remove it from your profiles. Built-in profiles are defined in `defaults.json`, so they're always available. Dynamic profiles will attempt to create a JSON stub for their profile in your `settings.json` file whenever a profile is not already present in the file.
-
-The only way to truly remove these profiles from the list is by "hiding" them. To hide a profile, add the property `"hidden": true` to the profile.
 
 ## Ctrl+= does not increase the font size
 

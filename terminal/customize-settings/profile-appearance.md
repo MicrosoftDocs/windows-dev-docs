@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/14/2021
+ms.date: 08/30/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -99,9 +99,57 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 > "fontWeight": "normal"
 > ```
 
-### Intense Text Formatting
+### Font features ([Preview](https://aka.ms/terminal-preview))
 
-This controls how "intense" text is formatted in the Terminal. "Intense" text is text formatted with the escape sequence `\x1b[1m`.
+This sets the [OpenType font features](/typography/opentype/spec/featurelist) for the given font.
+
+**Property name:** `features` (defined within the `font` object)
+
+**Necessity:** Optional
+
+**Accepts:** Feature properties in the format of: `"string": integer`
+
+**Example:**
+
+```jsonc
+// Enables ss01 and disables ligatures
+"font": {
+    "face": "Cascadia Code",
+    "features": {
+        "ss01": 1,
+        "liga": 0
+    }
+}
+```
+
+> [!IMPORTANT]
+> This feature only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Font axes ([Preview](https://aka.ms/terminal-preview))
+
+This sets the [OpenType font axes](/typography/opentype/spec/dvaraxisreg) for the given font.
+
+**Property name:** `axes` (defined within the `font` object)
+
+**Necessity:** Optional
+
+**Accepts:** Axis properties in the format of: `"string": integer`
+
+**Example:**
+
+```jsonc
+// Sets the font to italic
+"font": {
+    "face": "Cascadia Code",
+    "axes": {
+        "ital": 1
+    }
+}
+```
+
+### Intense text formatting
+
+This controls how "intense" text is formatted in the terminal. "Intense" text is text formatted with the escape sequence `\x1b[1m`.
 
 **Property name:** `intenseTextStyle`
 
@@ -112,7 +160,7 @@ This controls how "intense" text is formatted in the Terminal. "Intense" text is
 * `"all"`: render intense text as both **bold** and bright
 * `"bold"`: render intense text as **bold**, but not bright
 * `"bright"`: render intense text bright, but not bold
-* `"none"`: the Terminal won't do anything special for intense text
+* `"none"`: the terminal won't do anything special for intense text
 
 **Default value:** `"all"`
 
