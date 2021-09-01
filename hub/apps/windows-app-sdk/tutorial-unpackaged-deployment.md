@@ -34,6 +34,8 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
 
+Visual Studio should not be launched elevated. See https://github.com/microsoft/WindowsAppSDK/issues/567
+
 ### [C++](#tab/cpp)
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
@@ -279,7 +281,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+        // var manager = new ResourceManager("DynamicDependenciesTest.pri");
+	// fix ambiguous reference
+	var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
