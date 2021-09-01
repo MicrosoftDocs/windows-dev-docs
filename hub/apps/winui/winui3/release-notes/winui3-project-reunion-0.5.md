@@ -98,7 +98,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
 As this is a stable release of WinUI 3, preview features have been removed. You can still access preview features by using the latest preview version of WinUI 3 (see [Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes-08-preview.md)). Please note the following key features are still in preview, and work to stabilize them is ongoing:
 
 - UWP support
-  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions for setting up your development environment in [Build apps with the Windows App SDK](../../../windows-app-sdk/get-started.md). See [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes-08-preview.md) for more information.
+  - This means you cannot build or run a UWP app using the WinUI 3 - Project Reunion 0.5 VSIX. You'll need to use the [WinUI 3 - Project Reunion Preview VSIX](https://aka.ms/projectreunion/previewdownload), and follow the rest of the instructions in [Create a new project that uses the Windows App SDK](../create-your-first-winui3-app.md). See [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview](release-notes-08-preview.md) for more information.
 
 - Multi-window support in desktop apps
 

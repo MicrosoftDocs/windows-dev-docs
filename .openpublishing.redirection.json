@@ -5081,6 +5081,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/features-and-technologies",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/speech.md",
+      "redirect_url": "/windows/apps/develop/speech",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/accessibility.md",
+      "redirect_url": "/windows/apps/develop/accessibility",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -5107,12 +5122,17 @@
     },
     {
       "source_path": "hub/apps/project-reunion/get-started-with-project-reunion.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/get-started",
+      "redirect_url": "/windows/apps/windows-app-sdk",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/project-reunion/get-started.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/get-started",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-apps-sdk/get-started.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
       "redirect_document_id": false
     },
     {
@@ -5208,6 +5228,11 @@
     {
       "source_path": "hub/apps/winui/winui3/get-started-winui3-for-uwp.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/winui-2.6.md",
+      "redirect_url": "/windows/apps/winui/winui2/release-notes/winui-2.6",
       "redirect_document_id": false
     },
     {

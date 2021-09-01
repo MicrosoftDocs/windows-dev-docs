@@ -1,6 +1,6 @@
 ---
 description: Build a C# .NET 5 and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-title: WinUI 3 desktop apps and Win32-interop
+title: Build a C# .NET 5 app with WinUI 3 and Win32 interop
 ms.date: 08/02/2021
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
@@ -10,7 +10,7 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# WinUI 3 desktop apps and basic Win32 interop
+# Build a C# .NET 5 app with WinUI 3 and Win32 interop
 
 In this article, we step through how to build a basic **C# .NET 5** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 

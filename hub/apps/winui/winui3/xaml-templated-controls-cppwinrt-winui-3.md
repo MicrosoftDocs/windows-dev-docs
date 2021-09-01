@@ -1,6 +1,6 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.
-title: Templated XAML controls for WinUI 3 apps with C++/WinRT
+title: Build XAML controls with C++/WinRT
 ms.date: 07/09/2020
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
@@ -10,7 +10,7 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Templated XAML controls for WinUI 3 apps with C++/WinRT
+# Build XAML controls with C++/WinRT
 
 This article walks you through creating a templated XAML control for WinUI 3 with C++/WinRT. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates. This article describes the same scenario as the article [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) but has been adapted to use WinUI 3.
 

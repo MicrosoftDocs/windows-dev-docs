@@ -46,16 +46,15 @@
                 - name: WinUI 2
                   tocHref: /windows/apps/winui/winui2/
                   topicHref: /windows/apps/winui/winui2
-            - name: Features and technologies
-              # Topic in different folder
-              topicHref: /windows/apps/features-and-technologies
-              items:
-                - name: Accessibility
-                  # Topic in different folder
-                  topicHref: /windows/apps/accessibility
-                - name: Speech
-                  # Topic in different folder
-                  topicHref: /windows/apps/speech
+            - name: Develop
+              topicHref: /windows/apps/develop
+              # items:
+              #   - name: Accessibility
+              #     # Topic in different folder
+              #     topicHref: /windows/apps/accessibility
+              #   - name: Speech
+              #     # Topic in different folder
+              #     topicHref: /windows/apps/speech
             - name: Modernize desktop apps
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize

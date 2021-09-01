@@ -98,5 +98,6 @@ You can start developing apps now, but you need a developer account to submit yo
 - [System requirements for Windows app development](system-requirements.md)
 - [Get started developing apps for Windows desktop](../get-started/index.md)
 - [Visual Studio project and item templates for Windows apps](../desktop/visual-studio-templates.md)
-- [Build apps with the Windows App SDK](get-started.md)
+- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Enable your device for development](../get-started/enable-your-device-for-development.md)

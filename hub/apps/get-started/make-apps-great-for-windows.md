@@ -12,7 +12,7 @@ ms.collection: windows11
 
 # Top 11 things you can do to make your app great on Windows 11
 
-This release of Windows marks a visual evolution of the operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: _app fundamentals_ and _user experience_.
+Windows 11 marks a visual evolution of the Windows operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: _app fundamentals_ and _user experience_.
 
 - _App fundamentals_ - good performance on low-cost, highly mobile device form factors, and hassle-free app lifecycle and state rehydration/roaming.
 - _User experience_ - the ability to work naturally with a complete range of inputs, design and interaction patterns that look and feel at home on current and future devices, and support for modern windowing workflows and shell integration points.

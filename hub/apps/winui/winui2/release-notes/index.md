@@ -43,6 +43,7 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 | Microsoft.UI.Xaml NuGet Version | Type | Release date | Release notes | Highlights |
 | --- | --- | --- | --- | --- |
+| [2.6](winui-2.6.md) | stable | June 2021 | [Release Notes](winui-2.6.md) | [Mica](winui-2.6.md#mica), [Expander](winui-2.6.md#expander), [BreadcrumbBar](winui-2.6.md#breadcrumbbar), [ImageIcon](winui-2.6.md#imageicon), [AnimatedIcon](winui-2.6.md#animatedicon), [PipsPager](winui-2.6.md#pipspager) |
 | [2.5](winui-2.5.md) | stable | December 2020 | [Release Notes](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar), [Determinate ProgressRing](winui-2.5.md#determinate-progressring), [NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
 | [2.4](winui-2.4.md) | stable | May 2020 | [Release Notes](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush), [ProgressRing](winui-2.4.md#progressring), [TabView updates](winui-2.4.md#tabview-updates), [Dark theme updates to TextBox family of controls](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [Hierarchical navigation](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | stable | November 2019 | [Release Notes](winui-2.3.md) | [Progress Bar Visual Refresh](winui-2.3.md#progress-bar-visual-refresh), [NumberBox](winui-2.3.md#numberbox), [RadioButtons](winui-2.3.md#radiobuttons) |

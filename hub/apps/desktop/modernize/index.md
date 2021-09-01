@@ -17,11 +17,11 @@ This article describes the features that you can use in your desktop apps today.
 > [!NOTE]
 > Do you need assistance migrating desktop apps to Windows 10 or later? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
 
-## Rounded corners in desktop apps for Windows 11
+## Apply Windows 11 features
 
-Rounded corners are the most immediately noticeable feature of Windows 11 Geometry. On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps, but some Win32 apps might not be rounded. This topic describes how to round your app's main window corners if the system does not round them automatically.
+Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, the Snap Layout Menu, and the updated context menu in File Explorer.
 
-For more information, see [Apply rounded corners in desktop apps for Windows 11](apply-rounded-corners.md).
+For more information, see [Top 11 things you can do to make your app great on Windows 11](../../get-started/make-apps-great-for-windows.md).
 
 ## Windows App SDK
 

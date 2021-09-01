@@ -10,7 +10,7 @@ author: Karl-Bridge-Microsoft
 
 # Speech, voice, and conversation in Windows 10
 
-![Speech hero image](images/hero-speech-composite-small.png)
+![Speech hero image](../images/hero-speech-composite-small.png)
 
 Speech can be an effective, natural, and enjoyable way for people to interact with your Windows applications, complementing, or even replacing, traditional interaction experiences based on mouse, keyboard, touch, controller, or gestures.
 
@@ -22,7 +22,7 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+      ![Universal Windows Platform (UWP)](../images/platform-uwp.png)
 
       **Universal Windows Platform (UWP)**
 
@@ -42,7 +42,7 @@ This page provides information on how the various Windows development frameworks
       (not supported in Windows 10 May 2020 Update and newer)
    :::column-end:::
    :::column:::
-      ![Win32 platform apps](images/platform-win32.png)
+      ![Win32 platform apps](../images/platform-win32.png)
 
       **Win32 platform**
 
@@ -55,7 +55,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![.NET](images/platform-dotnet.png)
+      ![.NET](../images/platform-dotnet.png)
 
       **.NET Framework**
 
@@ -64,7 +64,7 @@ This page provides information on how the various Windows development frameworks
       [System.Speech Programming Guide for .NET Framework](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
-      ![Azure speech services](images/platform-azure-speech.png)
+      ![Azure speech services](../images/platform-azure-speech.png)
 
       **Azure speech services**
 
@@ -76,7 +76,7 @@ This page provides information on how the various Windows development frameworks
       
       [Speech translation](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
-      [Speaker Recognition](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
+      [Speaker Recognition](https://azure.microsoft.com/services/cognitive-services/speaker-recognition/)
 
       [Voice-first virtual assistants](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::

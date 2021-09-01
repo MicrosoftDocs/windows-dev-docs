@@ -25,5 +25,6 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 - [Stable channel](stable-channel.md)
 - [Experimental channel](experimental-channel.md)
 - [Set up your development environment](set-up-your-development-environment.md)
-- [Get started developing apps with the Windows App SDK](get-started.md)
+- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)

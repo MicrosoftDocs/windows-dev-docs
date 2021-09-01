@@ -1,6 +1,6 @@
 ---
-description: This guide shows you how to get starting creating .NET and C++ apps with a WinUI 3 UI.
-title: Create your first WinUI 3 app 
+description: This guide shows you how to use the Windows App SDK to get starting creating .NET and C++ apps with a WinUI 3 UI.
+title: Create a new project that uses the Windows App SDK 
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
@@ -10,11 +10,9 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Create your first WinUI 3 app
+# Create a new project that uses the Windows App SDK
 
-The Windows App SDK includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
-
-WinUI 3 ships as a part of the Windows App SDK. For more information, see [Build desktop Windows apps with the Windows App SDK](../../windows-app-sdk/index.md).
+The [Windows App SDK](../../windows-app-sdk/index.md) includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
 
 ## Prerequisites
 
@@ -213,6 +211,12 @@ To create a "WinUI 3 app in UWP" for C#:
     1. Press F5, click the **Build** button, or select **Debug -> Start Debugging** to build and run your solution and confirm the app runs without errors.
 
         :::image type="content" source="images/WinUI-and-UWP/vs2019-project-running.png" alt-text="Screenshot of the app running showing the Click Me button.":::
+
+---
+
+## ASTA to STA threading model
+
+If you're migrating code from an existing UWP app to a new WinUI 3 project that uses the Windows App SDK, be aware that the new project uses the [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments) threading model instead of the [Application STA (ASTA)](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901) threading model used by UWP apps. If your code assumes the non re-entrant behavior of the ASTA threading model, your code may not behave as expected.
 
 ## See also
 

@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
-title: Develop desktop apps for Windows
+title: Build desktop apps for Windows
 summary: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
 
 metadata:
-  title: Develop desktop apps for Windows | Microsoft Docs
+  title: Build desktop apps for Windows | Microsoft Docs
   description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
   ms.topic: landing-page
   ms.collection: collection
@@ -29,14 +29,14 @@ landingContent:
           - text: Create a developer account
             url: ../get-started/sign-up.md
 
-  - title: Start developing apps
+  - title: Start building apps
     linkLists:
       - linkListType: overview
         links:
           - text: Get started with desktop apps
             url: ../get-started/index.md
           - text: Build apps with the Windows App SDK
-            url: ../windows-app-sdk/get-started.md
+            url: ../windows-app-sdk/index.md
           - text: Build an app for Windows 11
             url: ../get-started/build-apps-for-windows.md
           - text: Make your apps great on Windows 11
@@ -66,7 +66,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Features and technologies for Windows apps
-            url: ../features-and-technologies.md
+            url: ../develop/index.md
           - text: Windows App SDK
             url: ../windows-app-sdk/index.md
           - text: Modernize your desktop apps

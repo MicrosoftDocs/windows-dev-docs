@@ -38,7 +38,7 @@ productDirectory:
         text: Set up your development environment
       - url: ./get-started/index.md
         text: Get started developing apps
-      - url: ./windows-app-sdk/get-started.md
+      - url: ./windows-app-sdk/index.md
         text: Build apps with the Windows App SDK 
       - url: ./get-started/build-apps-for-windows.md
         text: Build an app for Windows 11 

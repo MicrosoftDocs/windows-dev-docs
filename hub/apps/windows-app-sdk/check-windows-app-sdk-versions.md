@@ -123,4 +123,5 @@ Status            : Ok
 - [Runtime architecture and deployment scenarios](deployment-architecture.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
 - [Set up your development environment](set-up-your-development-environment.md)
-- [Get started developing apps with the Windows App SDK](get-started.md)
+- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

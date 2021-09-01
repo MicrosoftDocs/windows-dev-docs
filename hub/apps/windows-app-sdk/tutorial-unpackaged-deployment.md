@@ -293,4 +293,3 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
 - [Deploy unpackaged apps that use the Windows App SDK](deploy-unpackaged-apps.md)
 - [Runtime architecture and deployment scenarios](deployment-architecture.md)
-- [Get started with the Windows App SDK](get-started.md)

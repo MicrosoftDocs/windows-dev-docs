@@ -10,7 +10,7 @@ author: Karl-Bridge-Microsoft
 
 # Accessibility in Windows 10
 
-![Accessibility hero image](images/hero-accessibility-bar-smaller.png)
+![Accessibility hero image](../images/hero-accessibility-bar-smaller.png)
 
 ## Build accessibility into your applications to empower people of all abilities
 
@@ -26,7 +26,7 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+      ![Universal Windows Platform (UWP)](../images/platform-uwp.png)
 
       **Universal Windows Platform (UWP)**
 
@@ -41,7 +41,7 @@ This page provides information on how the various Windows development frameworks
       [Accessibility in the Store](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
-      ![Win32 platform apps](images/platform-win32.png)
+      ![Win32 platform apps](../images/platform-win32.png)
 
       **Win32 platform**
 
@@ -66,7 +66,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![WPF platform](images/platform-wpf2-small.png)
+      ![WPF platform](../images/platform-wpf2-small.png)
 
       **Windows Presentation Foundation (WPF)**
 
@@ -89,7 +89,7 @@ This page provides information on how the various Windows development frameworks
       [UI Automation Specification and Community Promise](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
-      ![Windows Forms platform apps](images/platform-winforms.png)
+      ![Windows Forms platform apps](../images/platform-winforms.png)
 
       **Windows Forms (WinForms)**
 

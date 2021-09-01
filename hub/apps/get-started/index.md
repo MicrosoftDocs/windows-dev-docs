@@ -1,6 +1,6 @@
 ---
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
-title: Get started developing apps for Windows desktop
+title: Overview of app development options
 ms.topic: article
 ms.date: 06/24/2021
 keywords: windows win32, desktop development
@@ -9,7 +9,7 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
-# Get started developing apps for Windows desktop
+# Overview of app development options
 
 This article provides the info you need to get started building apps for the Windows desktop environment or updating existing apps to adopt the latest experiences in the Windows OS.
 
@@ -94,12 +94,14 @@ For more information about Windows Forms apps, see the following articles:
 - [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/)
 
 #### [React Native for Windows](#tab/rnw)
+
 [React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
 [React Native for Windows](https://aka.ms/reactnative) brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
 
 Here are some reasons to choose React Native for Windows:
+
 - You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
 - Improved developer productivity and inner loop, thanks to fast refresh.
 - Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
@@ -109,13 +111,13 @@ Here are some reasons to choose React Native for Windows:
 - Large and growing community momentum, with lots of [community modules](https://reactnative.directory).
 
 For more information about React Native for Windows, see the following links:
-* [React Native for Windows repo on GitHub](https://github.com/microsoft/react-native-windows)
-* [Getting started with React Native for Windows](https://aka.ms/ReactNativeGuideWindows)
-* [Native modules in React Native for Windows](https://aka.ms/RNW-NativeModules)
-* [API reference](https://microsoft.github.io/react-native-windows/docs/Native-API-Reference)
-* [Community modules directory](https://reactnative.directory)
-* [More resources](https://microsoft.github.io/react-native-windows/resources)
 
+- [React Native for Windows repo on GitHub](https://github.com/microsoft/react-native-windows)
+- [Getting started with React Native for Windows](https://aka.ms/ReactNativeGuideWindows)
+- [Native modules in React Native for Windows](https://aka.ms/RNW-NativeModules)
+- [API reference](https://microsoft.github.io/react-native-windows/docs/Native-API-Reference)
+- [Community modules directory](https://reactnative.directory)
+- [More resources](https://microsoft.github.io/react-native-windows/resources)
 
 #### [UWP](#tab/uwp)
 

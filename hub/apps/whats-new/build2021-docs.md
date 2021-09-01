@@ -17,7 +17,8 @@ We've gathered together links to documentation that supports the talks given as 
 ## Windows App SDK (previously called Project Reunion)
 
 - [Build desktop Windows apps with the Windows App SDK](../windows-app-sdk/index.md)
-- [Get started with the Windows App SDK](../windows-app-sdk/get-started.md)
+- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - [Update existing projects to the latest release of the Windows App SDK](../windows-app-sdk/update-existing-projects-to-the-latest-release.md)
 
 

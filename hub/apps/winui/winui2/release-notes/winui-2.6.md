@@ -8,16 +8,16 @@ ms.topic: article
 
 # Windows UI Library 2.6
 
-WinUI 2.6 is the latest stable release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+WinUI 2.6 is the latest stable release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../winui3/index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../../winui3/index.md).
 
 WinUI is hosted on GitHub in our [Windows UI Library repo](https://github.com/microsoft/microsoft-ui-xaml). As an open source project, you can file your WinUI 2 bug reports, feature requests, and community code contributions there.
 
 All stable releases (and prereleases) are available for download from our [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/tags) or from our [NuGet page](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
-WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with the Windows UI 2 Library](getting-started.md).
+WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with the Windows UI 2 Library](../getting-started.md).
 
 New or updated features for WinUI 2.6 include:
 
@@ -25,9 +25,9 @@ New or updated features for WinUI 2.6 include:
 
 Mica is a new material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization.
 
-:::image type="content" source="../../design/style/images/materials/mica-light-theme.png" alt-text="Mica in light theme":::
+:::image type="content" source="../../../design/style/images/materials/mica-light-theme.png" alt-text="Mica in light theme":::
 
-[Usage guidelines](../../design/style/mica.md)
+[Usage guidelines](../../../design/style/mica.md)
 
 [API reference](/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
 
@@ -39,13 +39,13 @@ As the user expands or collapses the content area, adjacent UI elements are shif
 
 This animated example shows an Expander in the default state with just basic text in the content area.
 
-:::image type="content" source="../../design/controls/images/expander-default.gif" alt-text="Expander in the default state with basic text in the content area.":::
+:::image type="content" source="../../../design/controls/images/expander-default.gif" alt-text="Expander in the default state with basic text in the content area.":::
 
 You can use complex, interactive UI in the content area of the Expander, including nested Expander controls as shown here.
 
-:::image type="content" source="../../design/controls/images/expander-nested.png" alt-text="Expander with complex, interactive UI in the content area.":::
+:::image type="content" source="../../../design/controls/images/expander-nested.png" alt-text="Expander with complex, interactive UI in the content area.":::
 
-[Usage guidelines](../../design/controls/expander.md)
+[Usage guidelines](../../../design/controls/expander.md)
 
 [API reference](/uwp/api/microsoft.ui.xaml.controls.expander)
 
@@ -55,13 +55,13 @@ A BreadcrumbBar is a hierarchical navigation element that provides a direct path
 
 This animated example shows a BreadcrumbBar in the default state with eight levels of navigation depth.
 
-:::image type="content" source="../../design/controls/images/breadcrumbbar-default.gif" alt-text="BreadcrumbBar in default state with eight levels of navigation depth.":::
+:::image type="content" source="../../../design/controls/images/breadcrumbbar-default.gif" alt-text="BreadcrumbBar in default state with eight levels of navigation depth.":::
 
 If the app is resized so that there is not enough space to show all levels in the BreadcrumbBar, the control automatically collapses, substituting an ellipsis for the leftmost nodes. Clicking the ellipsis opens a flyout menu that displays the collapsed nodes in hierarchical order, as shown here.
 
-:::image type="content" source="../../design/controls/images/breadcrumb-bar-flyout.png" alt-text="BreadcrumbBar condensed with flyout menu.":::
+:::image type="content" source="../../../design/controls/images/breadcrumb-bar-flyout.png" alt-text="BreadcrumbBar condensed with flyout menu.":::
 
-[Usage guidelines](../../design/controls/breadcrumbbar.md)
+[Usage guidelines](../../../design/controls/breadcrumbbar.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
 
@@ -86,11 +86,11 @@ An AnimatedIcon control plays animated images in response to user intera
 
 This animated example shows an AnimatedIcon added to a NavigationViewItem control.
 
-:::image type="content" source="../../design/controls/images/animated-settings.gif" alt-text="AnimatedIcon added to a NavigationViewItem control.":::
+:::image type="content" source="../../../design/controls/images/animated-settings.gif" alt-text="AnimatedIcon added to a NavigationViewItem control.":::
 
 Defining an animation requires that you create, or obtain, a Lottie file for the icon you want to add (custom animations can be created with [Adobe AfterEffects](https://www.adobe.com/products/aftereffects.html) and rendered with the [Lottie-Windows](/windows/communitytoolkit/animations/lottie) library) and run that file through [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen). LottieGen generates code for a C++/WinRT class that you can then instantiate and use with an AnimatedIcon.
 
-[Usage guidelines](../../design/controls/animated-icon.md)
+[Usage guidelines](../../../design/controls/animated-icon.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
 
@@ -100,15 +100,15 @@ The PipsPager control helps users navigate within linearly paginated content usi
 
 This example shows a PipsPager in the default state with five visible pips, oriented horizontally, with the first pip selected.
 
-:::image type="content" source="../../design/controls/images/pipspager-default.png" alt-text="A default PipsPager with five horizontal dots, and the first selected.":::
+:::image type="content" source="../../../design/controls/images/pipspager-default.png" alt-text="A default PipsPager with five horizontal dots, and the first selected.":::
 
 If the content consists of a large number of pages, you can set the number of visible, interactive pips. If the number of pages exceeds the number of visible pips, the pips automatically scroll in order to center the selected page in the control.
 
 This animated example shows a PipsPager with horizontally scrolling pips for a large item collection.
 
-:::image type="content" source="../../design/controls/images/pipspager-max-visible-pips.gif" alt-text="PipsPager with horizontally scrolling pips for a large item collection.":::
+:::image type="content" source="../../../design/controls/images/pipspager-max-visible-pips.gif" alt-text="PipsPager with horizontally scrolling pips for a large item collection.":::
 
-[Usage guidelines](../../design/controls/pipspager.md)
+[Usage guidelines](../../../design/controls/pipspager.md)
 
 [API reference](/windows/winui/api/microsoft.ui.xaml.controls.pipspager)
 
@@ -118,7 +118,7 @@ Most WinUI controls now support the latest Windows 11 styles.
 
 A new versioning system has also been introduced that lets you revert to the previous control styles. However, we strongly encourage using the new styles, if possible, as they align with the current design direction of Windows.
 
-[XAML styles](../../design/style/xaml-styles.md)
+[XAML styles](../../../design/style/xaml-styles.md)
 
 ## SplitButton styles for CommandBar
 
