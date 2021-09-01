@@ -89,8 +89,6 @@
         items:
           - name: "Overview"
             href: winui/index.md
-          - name: "Comparison of WinUI 3 and WinUI 2"
-            href: winui/winui3-winui2-comparison.md
           - name: "Windows UI Library 3"
             items:
               - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
