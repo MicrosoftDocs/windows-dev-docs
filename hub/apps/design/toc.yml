@@ -384,6 +384,16 @@
                   href: shell/tiles-and-notifications/notification-mirroring.md
                 - name: Universal Dismiss
                   href: shell/tiles-and-notifications/universal-dismiss.md
+        - name: WNS Toast notifications
+          items:
+            - name: Quickstart - sending a toast notification from the desktop
+              href: shell/tiles-and-notifications/quickstart-send-toast-notification.md
+            - name:  How to request, create, and save a notification channel
+              href: shell/tiles-and-notifications/request-create-save-notification-channel.md
+            - name: Push notification service request and response headers
+              href: shell/tiles-and-notifications/push-request-response-headers.md
+            - name: Troubleshooting tile, toast, and badge notifications
+              href: shell/tiles-and-notifications/troubleshooting-notifications.md
     - name: Badge notifications
       href: shell/tiles-and-notifications/badges.md
     - name: Push notifications
