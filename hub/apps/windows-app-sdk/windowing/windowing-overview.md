@@ -202,7 +202,7 @@ namespace SampleApp
 
         private AppWindow GetAppWindowForCurrentWindow()
         {
-            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
             GetWindowIdFromWindowHandle(hWnd, out WindowId myWndId);
             return AppWindow.GetFromWindowId(myWndId);
         }
