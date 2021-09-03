@@ -50,15 +50,15 @@ var newSession = new ExtendedExecutionForegroundSession();
 newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
 newSession.Description = "Long Running Processing";
 newSession.Revoked += SessionRevoked;
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+ExtendedExecutionForegroundResult result = await newSession.RequestExtensionAsync();
 switch (result)
 {
-    case ExtendedExecutionResult.Allowed:
+    case ExtendedExecutionForegroundResult.Allowed:
         DoLongRunningWork();
         break;
 
     default:
-    case ExtendedExecutionResult.Denied:
+    case ExtendedExecutionForegroundResult.Denied:
         DoShortRunningWork();
         break;
 }
