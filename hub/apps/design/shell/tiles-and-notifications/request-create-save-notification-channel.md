@@ -1,20 +1,16 @@
 ﻿---
-Title: How to request, create, and save a notification channel (XAML) (Windows)
-TOCTitle: How to request, create, and save a notification channel (XAML)
+Title: How to request, create, and save a notification channel 
+TOCTitle: How to request, create, and save a notification channel
 ms:assetid: 6C35026D-B162-45a6-8CCB-C2D999E95CEE
 ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Hh868221(v=Win.10)
 ms:contentKeyID: 45725025
-ms.date: 08/31/2015
+ms.date: 09/1/2021
 mtps_version: v=Win.10
 dev_langs:
 - csharp
 ---
 
-# How to request, create, and save a notification channel (XAML)
-
-**Note**  Not using C\#/VB/C++? See [How to request, create, and save a notification channel (HTML)](https://msdn.microsoft.com/en-us/library/Hh465412).
-
- 
+# How to request, create, and save a notification channel 
 
 You can open a channel Uniform Resource Identifier (URI) over which your app can receive push notifications. You can then send the channel to your server which uses it to send push notifications, and close it when you no longer need it. A channel is a unique address that represents a single user on a single device, for a specific app or secondary tile.
 
@@ -32,8 +28,7 @@ You should request a new channel each time that your app is launched, and update
 
 ### Prerequisites
 
-  - A working knowledge of tile and notification terms and concepts, as well as XML. This topic also assumes that you know how to create a basic Windows Store app with JavaScript using Windows Runtime APIs.
-  - Familiarity with push notification and Windows Push Notification Services (WNS) concepts, requirements, and operation. These are discussed in the [Windows Push Notification Services (WNS) overview](hh913756\(v=win.10\).md).
+  - Familiarity with push notification and Windows Push Notification Services (WNS) concepts, requirements, and operation. These are discussed in the [Windows Push Notification Services (WNS) overview](.\windows-push-notification-services--wns--overview.md).
 
 ## Instructions
 
@@ -126,18 +121,3 @@ Your app can immediately stop the delivery of notifications on all channels by c
 
 1.  Stop all tile updates by calling the [**PushNotificationChannel.Close**](https://msdn.microsoft.com/en-us/library/BR241289) method on any of your notification channels that are delivering tile, toast, badge or raw notifications to a user. Calling the **Close** method ensures that no further notifications for that user can be delivered to the client.
 2.  Clear the contents of the tile by calling the [**TileUpdater.Clear**](https://msdn.microsoft.com/en-us/library/BR208629) method to remove the previous user's data from the tile.
-
-## Related topics
-
-[Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?linkid=231476)
-
-[Windows Push Notification Services (WNS) overview](hh913756\(v=win.10\).md)
-
-[Quickstart: Sending a push notification](hh868252\(v=win.10\).md)
-
-[How to authenticate with the Windows Push Notification Service (WNS)](hh868206\(v=win.10\).md)
-
-[Guidelines and checklist for push notifications](https://msdn.microsoft.com/en-us/library/Hh761462)
-
-[Push notification service request and response headers](hh868245\(v=win.10\).md)
-

@@ -12,7 +12,7 @@ mtps_version: v=Win.10
 
 This topic describes the service-to-service web APIs and protocols required to send a push notification.
 
-See the [Windows Push Notification Services (WNS) overview](hh913756\(v=win.10\).md) for a conceptual discussion of push notification and WNS concepts, requirements, and operation.
+See the [Windows Push Notification Services (WNS) overview](.\windows-push-notification-services--wns--overview.md) for a conceptual discussion of push notification and WNS concepts, requirements, and operation.
 
 ## Requesting and receiving an access token
 
@@ -138,7 +138,8 @@ The following shows an example of a successful authentication response:
  
  {
      "access_token":"EgAcAQMAAAAALYAAY/c+Huwi3Fv4Ck10UrKNmtxRO6Njk2MgA=", 
-     "token_type":"bearer"
+     "token_type":"bearer",
+     "expires_in": 86400
  }
 ```
 
@@ -207,22 +208,6 @@ In addition, the custom request headers listed here can be used in the notificat
 <td>Optional</td>
 <td>Integer value, expressed in seconds, that specifies the time to live (TTL).</td>
 </tr>
-<tr class="odd">
-<td>X-WNS-SuppressPopup</td>
-<td>Optional</td>
-<td><strong>Windows Phone only</strong>: Delivers a toast notification directly to the action center without raising the toast itself.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-Group</td>
-<td>Optional</td>
-<td><strong>Windows Phone only</strong>: Used with the X-WNS-Tag header to group notifications in the action center.</td>
-</tr>
-<tr class="odd">
-<td>X-WNS-Match</td>
-<td>Situationally required</td>
-<td><strong>Windows Phone only</strong>: Required to identify the target or targets when you remove a toast notification from the action center through the HTTP DELETE method.</td>
-</tr>
-</tbody>
 </table>
 
  
@@ -512,6 +497,12 @@ After WNS processes the notification request, it sends an HTTP message in respon
 <td>Optional</td>
 <td>Indicates whether WNS successfully received and processed the notification. When reporting a problem, this information should be logged to help in troubleshooting.</td>
 </tr>
+<tr class="odd">
+<td>MS-CV</td>
+<td>Optional</td>
+<td>Debugging information that should be logged to help troubleshoot issues when reporting a problem.</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -519,7 +510,7 @@ After WNS processes the notification request, it sends an HTTP message in respon
 
 ### X-WNS-Debug-Trace
 
-This header returns useful debugging information as a string. We recommended that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header, is required when reporting an issue to WNS.
+This header returns useful debugging information as a string. We recommended that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
 
     X-WNS-Debug-Trace: <string value>
 
@@ -596,7 +587,7 @@ This header provides a human-readable error string that should be logged to help
 
 ### X-WNS-Msg-ID
 
-This header is used to provide the caller with an identifier for the notification. We recommended that this header be logged to help debug issues. This header, together with the X-WNS-Debug-Trace header, is required when reporting an issue to WNS.
+This header is used to provide the caller with an identifier for the notification. We recommended that this header be logged to help debug issues. This header, together with the X-WNS-Debug-Trace and MS-CV, are required when reporting an issue to WNS.
 
     X-WNS-Msg-ID: <string value>
 
@@ -656,7 +647,14 @@ This header describes how WNS handled the notification request. This can be used
 </tbody>
 </table>
 
- 
+### MS-CV
+This header provides a Correlation Vector related to the request which is primarily used for debugging.  This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
+
+    MS-CV: jUGi5vPefkufD4S7UyFaLQ.0
+
+| Value | Description|
+|-------|------------|
+|string value | Follows the [Correlation Vector standard](https://github.com/microsoft/CorrelationVector/blob/master/cV%20-%202.1.md)|
 
 ### Response codes
 
@@ -740,18 +738,4 @@ The WNS Web Interface supports HTTP 1.1 but does not support the following featu
   - Chunking
   - Pipelining (POST is not idempotent)
   - Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.
-
-## Related topics
-
-[Quickstart: Sending a push notification](hh868252\(v=win.10\).md)
-
-[Guidelines and checklist for push notifications](https://msdn.microsoft.com/en-us/library/Hh761462)
-
-[How to authenticate with the Windows Push Notification Service (WNS)](hh868206\(v=win.10\).md)
-
-[How to request, create, and save a notification channel](hh868221\(v=win.10\).md)
-
-[Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?linkid=231476)
-
-[WNS overview](hh913756\(v=win.10\).md)
 
