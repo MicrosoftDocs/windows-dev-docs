@@ -23,7 +23,7 @@ For a code example that demonstrates how to use the bootstrapper API to initiali
 
 ### MddBootstrapInitialize
 
-This function initializes the calling process to use version of the Windows App SDK framework package that best matches the criteria that you pass to the function parameters. Typically, this results in referencing the version of the framework package that matches the Windows App SDK NuGet package installed. If multiple packages meet the criteria, the best candidate is selected. This function must be one of the first calls in the app's startup to ensure the bootstrapper component can properly initialize the Windows App SDK and add the run-time reference to the framework package.
+This function initializes the calling process to use the version of the Windows App SDK framework package that best matches the criteria that you pass to the function parameters. Typically, this results in referencing the version of the framework package that matches the Windows App SDK NuGet package that is installed. If multiple packages meet the criteria, the best candidate is selected. This function must be one of the first calls in the app's startup to ensure the bootstrapper component can properly initialize the Windows App SDK and add the run-time reference to the framework package.
 
 This function also initializes the [Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm). This component provides infrastructure to prevent the OS from servicing the Windows App SDK framework package while it is being used by an unpackaged app.
 
