@@ -5131,7 +5131,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/windows-apps-sdk/get-started.md",
+      "source_path": "hub/apps/windows-app-sdk/get-started.md",
       "redirect_url": "/windows/apps/windows-app-sdk",
       "redirect_document_id": false
     },
