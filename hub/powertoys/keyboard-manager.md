@@ -40,15 +40,15 @@ Once a new remap row appears, select the input key whose output you want to *cha
 
 For example, if you want to press <kbd>A</kbd> and have `B` appear:
 
-Key: | Mapped To:
---- | ---
-`A` | `B`
+| Key: | Mapped To: |
+| :--- | :--- |
+| `A` | `B` |
 
 To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add another remapping with:
 
-Key: | Mapped To:
---- | ---
-`B` | `A`
+| Key: | Mapped To: |
+| :--- | :--- |
+| `B` | `A` |
 
 ![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
 
@@ -58,9 +58,9 @@ To remap a key to a shortcut (combination of keys), enter the shortcut key combi
 
 For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + `←` (left arrow):
 
-Key: | Mapped To:
---- | ---
-`Ctrl` | `⊞ Win` + `←`
+| Key: | Mapped To: |
+| :--- | :--- |
+| `Ctrl` | `⊞ Win` + `←` |
 
 
 > [!NOTE]
@@ -76,9 +76,9 @@ Once a new remap row appears, select the input keys whose output you want to *ch
 
 For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies your selected text. To remap that shortcuts to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
-Shortcut: | Mapped To:
---- | ---
-`Alt` + `C` | `Ctrl` + `C`
+| Shortcut: | Mapped To: |
+| :--- | :--- |
+| `Alt` + `C` | `Ctrl` + `C` |
 
 
 ![Keyboard Remap Shortcut screenshot](../images/powertoys-keyboard-remap-shortcut.png)
@@ -95,9 +95,9 @@ It is possible to remap a shortcut (key combination) to a single key press by se
 
 For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
 
-Shortcut: | Mapped To:
---- | ---
-`⊞ Win` + `←` | `Alt`
+| Shortcut: | Mapped To: |
+| :--- | :--- |
+| `⊞ Win` + `←` | `Alt` |
 
 > [!NOTE]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
@@ -110,19 +110,19 @@ For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd>+<kbd>E</kbd> 
 
 Keyboard Manager uses the process-names (not application names) to target apps. For example, Microsoft Edge is set as "msedge" (process name), not "Microsoft Edge" (application name). To find an application's process name, open PowerShell and enter the command `get-process` or open Command Prompt and enter the command `tasklist`. This will result in a list of process names for all applications you currently have open. Below is a list of a few popular application process names.
 
-  | **Application**   | **Process name**|
-  | ------------------| --------------|
-  | Microsoft Edge    |  msedge.exe   |
-  | OneNote           |  onenote.exe  |
-  | Outlook           |  outlook.exe  |
-  | Teams             |  Teams.exe    |
-  | Adobe Photoshop   |  Photoshop.exe|
-  | File Explorer     |  explorer.exe |
-  | Spotify Music     |  spotify.exe  |
-  | Google Chrome     |  chrome.exe   |
-  | Excel             |  excel.exe    |
-  | Word              |  winword.exe  |
-  | Powerpoint        |  powerpnt.exe |
+| Application     | Process name  |
+| :---            | :---          |
+| Microsoft Edge  |  msedge.exe   |
+| OneNote         |  onenote.exe  |
+| Outlook         |  outlook.exe  |
+| Teams           |  Teams.exe    |
+| Adobe Photoshop |  Photoshop.exe|
+| File Explorer   |  explorer.exe |
+| Spotify Music   |  spotify.exe  |
+| Google Chrome   |  chrome.exe   |
+| Excel           |  excel.exe    |
+| Word            |  winword.exe  |
+| Powerpoint      |  powerpnt.exe |
 
 ### Keys that cannot be remapped
 
