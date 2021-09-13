@@ -24,7 +24,7 @@ The default settings to use Video Conference Mute are:
 
 ![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
 
-When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether the your Microphone and Camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
+When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your Microphone and Camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
 
 > [!NOTE]
 > Remember that you must have the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) installed and running, with the Video Conference Mute feature enabled in PowerToys settings in order to use this utility.
