@@ -19,7 +19,7 @@ PowerRename is a bulk renaming tool that enables you to:
 
 ## Demo
 
-In this demo, all instances of the file name "Pampalona" are replaced with "Pamplona". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the change.
+In this demo, all instances of the file name "Pampalona" are replaced with "Pamplona". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the last change.
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
@@ -178,11 +178,11 @@ There are great examples/cheatsheets available online to help you
 
 Filters can be used in PowerRename to narrow the results of the rename. Use the *Preview* window to check expected results. Select the column headers to switch between filters.
 
-- **Original**, the first column in the *Preview* window cycles between:
-  - Checked: The file is selected be renamed.
+- **Original**, the first column in the *Preview* window switches between:
+  - Checked: The file is selected to be renamed.
   - Unchecked: The file is not selected to be renamed (even though it fits the value entered in the search criteria).
 
-- **Renamed**, the second column in the *Preview* windows can be toggled.
+- **Renamed**, the second column in the *Preview* window can be toggled.
   - The default preview will show all selected files, with only files matching the *Search for* criteria displaying the updated rename value.
   - Selecting the *Renamed* header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 

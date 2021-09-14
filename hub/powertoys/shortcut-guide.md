@@ -34,7 +34,10 @@ Tapping the Windows key will display the Windows Start menu.
 
 These configurations can be edited from the PowerToys Settings:
 
-- **Open Shortcut Guide**: The shortcut used to launch the shortcut guide.
-- **Opacity of background**: This slider bar controls the opacity of the Shortcut Guide overlay.
+| Setting | Description |
+| :--- | :--- |
+| Open Shortcut Guide | The shortcut used to launch the shortcut guide. |
+| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay. |
+| Exclude apps | Ignores Shortcut Guide when these apps are in focus. |
 
 ![Image of the Options](../images/pt-shortcut-guide-settings.png)

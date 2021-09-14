@@ -43,11 +43,11 @@ The editor lets you see the history of picked colors (up to 20) and copy their r
 
 The editor also allows you to fine tune any picked color or get a new similar color. Editor previews different shades of currently selected color: 2 lighter and 2 darker ones.
 
-Clicking on any of those alternative color shades will add the selection to the history of picked colors (it will appear at the top of the colors history list). The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine tuning configuration control will appear, where you can change HUE or RGB values of the current color. Pressing <kbd>OK</kbd> will add newly configured color into the colors history.
+Clicking on any of those alternative color shades will add the selection to the history of picked colors (it will appear at the top of the colors history list). The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine tuning configuration control will appear, where you can change HUE or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
 
 ![ColorPicker Editor](../images/pt-colorpicker-editor.gif)
 
-To remove any color from the colors history, right click a desired color and select **Remove**.
+To remove any color from the colors history, right click a color and select **Remove**.
 
 ## Settings
 
