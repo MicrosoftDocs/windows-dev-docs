@@ -132,6 +132,8 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 :heavy_check_mark: Using `x:Bind` with hosted controls in XAML Islands is not supported. You'll have to declare the data model in a .NET Standard library.
 
+:heavy_check_mark: To support Narrator announcing text via [AutomationPeer.RaiseNotificationEvent](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.raisenotificationevent) in a Win32 app, your XamlRoot's [Content](/uwp/api/windows.ui.xaml.xamlroot.content) must be able to create an automation peer or you need to set its [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.landmarktypeproperty) to [UIA_MainLandmarkTypeId](/windows/win32/winauto/landmark-type-identifiers). Also if your window is created using the `WS_POPUP` style you'll have to handle the [WM_GETOBJECT](/windows/win32/winauto/wm-getobject) message ([example](/win32/winauto/uiauto-howto-expose-serverside-uiautomation-provider)) and implement the [Window Control Pattern](/windows/win32/winauto/uiauto-implementingwindow).
+
 ### Not supported
 
 :no_entry_sign: Using XAML Islands in WPF and Windows Forms apps that target the .NET Framework. XAML Islands are supported only in apps that target .NET Core 3.x.
