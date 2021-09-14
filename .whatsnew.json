@@ -6,6 +6,9 @@
       "linkFormat": "relative",
       "relativeLinkPrefix": "/windows/"
   },
+  "inclusionCriteria": {
+    "minAdditionsToFile": 1
+  },
   "areas": [
       {
           "names": ["app-resources"],
