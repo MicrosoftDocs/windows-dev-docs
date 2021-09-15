@@ -1,7 +1,7 @@
 ---
 description: This article demonstrates how to host a custom UWP control in a WPF app by using XAML Islands.
 title: Host a custom UWP control in a WPF app using XAML Islands
-ms.date: 08/20/2019
+ms.date: 09/15/2021
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, custom controls, user controls, host controls
 ms.author: mcleans
@@ -313,6 +313,24 @@ The following instructions show you how to package the all the components in the
     5. Right-click the WPF project node and choose **Reload Project**.
 
 6. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+
+    > [!NOTE]
+    > If the custom control cannot be loaded in the packaged app with above steps when hosts `WinUI library control`, and debugging shows this error:
+    > 
+    > ![Failed to host WinUI library control](images/xaml-islands/host-custom-control-error.png)
+    >
+    > Please copy the `App.xbf` file from the WPFApp output bin folder to the Packaged App output folder APPX\WPFApp to solve this problem.
+    >
+    > For example, the WPF project name is WPFXamlIslandsApp, and targets x86 platform, then you can copy `App.xbf`
+    >
+    > from 
+    >
+    > `\WPFXamlIslandsApp\bin\x86\Release\netcoreapp3.1`
+    >
+    > to
+    >
+    > `\WPFXamlIslandsApp.Pack\bin\x86\Release\AppX\WPFXamlIslandsAPP`
+    
 
 ## Related topics
 
