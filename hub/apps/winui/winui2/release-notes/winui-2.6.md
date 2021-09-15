@@ -8,7 +8,7 @@ ms.topic: article
 
 # Windows UI Library 2.6
 
-WinUI 2.6 is the latest stable release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
+WinUI 2.6 is the June 2021 release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
 
 > [!NOTE]
 > For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../../winui3/index.md).

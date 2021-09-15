@@ -2,7 +2,7 @@
 description: Learn how to get started building new apps for Windows 11.
 title: Build an app for Windows 11
 ms.topic: article
-ms.date: 07/08/2021
+ms.date: 09/14/2021
 keywords: windows win32, desktop development
 ms.author: drewbat
 author: drewbatgit
@@ -31,9 +31,9 @@ The example in this walkthrough will create a C# Universal Windows (UWP) app, bu
 1. Fill in the name and location for your app and click **Create**.
 1. For the target version, specify Windows Insider Preview (Build 22000) or higher.
 
-## Add the WinUI 2.6 NuGet package to your app
+## Add the WinUI 2.7 NuGet package to your app
 
-To take advantage of the new look and feel of Windows 11, you will need to use the controls in the WinUI 2.6 library. (Note that WinUI 3.0 does not currently support the new visual styles.)
+To take advantage of the new look and feel of Windows 11, you will need to use the controls in the WinUI 2.7 library. (Note that WinUI 3.0 does not currently support the new visual styles.)
 
 1. In **Solution Explorer** right click the project for your app and select **Manage NuGet Packages...**.
 1. Select the **Browse** tab and type "WinUI" in the search box.
@@ -44,7 +44,7 @@ To take advantage of the new look and feel of Windows 11, you will need to use t
 
 In the next steps, we'll modify the app source code to use the updated Windows 11 controls.
 
-1. Open App.xaml and add the **Application.Resources** element as a child of the **Application** element the as shown. This gives you app access to the WinUI 2.6 theme resources.
+1. Open App.xaml and add the **Application.Resources** element as a child of the **Application** element the as shown. This gives you app access to the WinUI 2.7 theme resources.
 
     ```xaml
     <Application

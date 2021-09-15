@@ -109,6 +109,8 @@
                 items: 
                   - name: "Overview"
                     href:  winui/winui2/release-notes/index.md
+                  - name: "WinUI 2.7"
+                    href: winui/winui2/release-notes/winui-2.7.md
                   - name: "WinUI 2.6"
                     href: winui/winui2/release-notes/winui-2.6.md
                   - name: "WinUI 2.5"

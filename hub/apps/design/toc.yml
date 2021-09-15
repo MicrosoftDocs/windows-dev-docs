@@ -246,6 +246,8 @@
           href: controls/tooltips.md
         - name: Info bar
           href: controls/infobar.md
+        - name: Info badge
+          href: controls/info-badge.md
     - name: Text
       items:
         - name: Overview
