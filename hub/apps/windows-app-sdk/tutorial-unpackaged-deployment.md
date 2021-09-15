@@ -61,10 +61,10 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
         ```cpp
 
-        // The following code is for 1.0 Experimental. If using version 0.8 Preview, replace with 
+        // The following code is for 1.0 Preview1. If using version 0.8 Preview, replace with 
         // majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }
         const UINT32 majorMinorVersion{ 0x00010000 }; 
-        PCWSTR versionTag{ L"experimental1" }; 
+        PCWSTR versionTag{ L"preview1" }; 
         const PACKAGE_VERSION minVersion{};
 
         const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -100,7 +100,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
             // Take a dependency on Windows App SDK 1.0 Experimental. If using version 0.8 Preview, replace with 
             // majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }             
             const UINT32 majorMinorVersion{ 0x00010000 }; 
-            PCWSTR versionTag{ L"experimental1" }; 
+            PCWSTR versionTag{ L"preview1" }; 
             const PACKAGE_VERSION minVersion{};
 
             const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
