@@ -148,7 +148,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 4. Install the Windows App SDK NuGet package in your project.
 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
-    2. Search for **WindowsAppSDK**, and install version 1.0 Experimental or later of the **Microsoft.WindowsAppSDK** package. For older versions, search for **Project Reunion**, and install the **Microsoft.ProjectReunion** package.  
+    2. Search for **WindowsAppSDK**, and install version 1.0 Preview1 or later of the **Microsoft.WindowsAppSDK** package. For older versions, search for **Project Reunion**, and install the **Microsoft.ProjectReunion** package.  
 
 5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -215,9 +215,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     return MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion);
                 }
         
-                // Import the bootstrapper library for Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                // Import the bootstrapper library for Windows App SDK 1.0 Preview1. If using version 0.8 Preview, 
                 // replace with Microsoft.ProjectReunion.Bootstrap.dll.
-                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll", CharSet = CharSet.Unicode)]
+                [DllImport("Microsoft.WindowsAppRuntime.Bootstrap.dll", CharSet = CharSet.Unicode)]
                 private static extern int MddBootstrapInitialize(uint majorMinorVersion, string versionTag, PackageVersion packageVersion);
         
                 public static void Shutdown()
@@ -225,9 +225,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                     MddBootstrapShutdown();
                 }
         
-                // Import the bootstrapper library for Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                // Import the bootstrapper library for Windows App SDK 1.0 Preview1. If using version 0.8 Preview, 
                 // replace with Microsoft.ProjectReunion.Bootstrap.dll.
-                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll")]
+                [DllImport("Microsoft.WindowsAppRuntime.Bootstrap.dll")]
                 private static extern void MddBootstrapShutdown();
             }
         }
@@ -246,9 +246,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
                 static void Main(string[] args)
                 {
                 
-                    // Take a dependency on Windows App SDK 1.0 Experimental. If using version 0.8 Preview, 
+                    // Take a dependency on Windows App SDK 1.0 Preview. If using version 0.8 Preview, 
                     // replace with MddBootstrap.Initialize(8, "preview").
-                    MddBootstrap.Initialize(0x00010000, "experimental1");
+                    MddBootstrap.Initialize(0x00010000, "preview1");
         
                     Console.WriteLine("Hello World!");
         
