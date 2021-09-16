@@ -38,7 +38,9 @@ Make sure these workloads and components are installed with Visual Studio. These
 
 - On the **Individual components** tab of the installation dialog, **Windows 10 SDK (10.0.19041.0)** is required in the **SDKs, libraries, and frameworks** section.
 
-- In the **Installation details** pane of the installation dialog, **C++ (v142) Universal Windows Platform tools** is required in the **Universal Windows Platform development** section.
+- In the **Installation details** pane of the installation dialog, make sure the following items are selected in the **Universal Windows Platform development** section:
+  - For Visual Studio 2019: **C++ (v142) Universal Windows Platform tools**
+  - For Visual Studio 2022 (Preview): **C++ (v143) Universal Windows Platform tools**
 
 ## 3. Enable NuGet Package source
 
