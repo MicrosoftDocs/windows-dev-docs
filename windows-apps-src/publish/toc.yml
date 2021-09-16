@@ -101,6 +101,8 @@
       href: msiexe/set-app-pricing-and-availability.md
     - name: Specify your MSI or EXE app's properties
       href: msiexe/enter-app-properties.md
+    - name: Age ratings
+      href: msiexe/age-ratings.md
     - name: Provide package details for your MSI or EXE app
       href: msiexe/provide-package-details.md
     - name: Create app Store listings for your MSI or EXE app
