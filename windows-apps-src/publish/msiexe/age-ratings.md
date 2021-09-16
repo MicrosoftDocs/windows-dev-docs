@@ -1,13 +1,13 @@
 ---
 description: The Age ratings page of the MSI or EXE app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
-title: Age ratings for your MSI or EXE app
+title: Age ratings for MSI and EXE apps
 ms.assetid: 
-ms.date: 14/09/2021
+ms.date: 09/16/2021
 ms.topic: article
 keywords: windows 11, win32, age rating, iarc, rating, questionnaire, ratings board, content rating
 ms.localizationpriority: medium
 ---
-# Age ratings
+# Age ratings for MSI and EXE apps
 
 The **Age ratings** page of the [app submission process](app-submissions.md) lets you provide information about your app so it can receive the appropriate age and content ratings administered by the [International Age Ratings Coalition (IARC)](https://www.globalratings.com/) rating system. These ratings are about the suitability of the content in the app, rather than the age of the target audience for your app.
 
