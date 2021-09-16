@@ -3450,7 +3450,7 @@ The WER reports in the following format.
                 "Name": string, (not base64 encoded)
                 "Type": string ("Queue" or "Archive")
             },
-    },...
+    ]},...
 ]}
 ```
 
