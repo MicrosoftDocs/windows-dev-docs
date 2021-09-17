@@ -27,6 +27,8 @@
               href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
             - name: "Package your app using single-project MSIX"
               href: windows-app-sdk/single-project-msix.md
+            - name: "Downloads"
+              href: windows-app-sdk/downloads.md
             - name: "Samples"
               href: windows-app-sdk/samples.md
             - name: "Releases"
@@ -75,6 +77,8 @@
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md
               - name: Rich activation
                 href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
           - name: "Manage app windows"
             href: windows-app-sdk/windowing/windowing-overview.md
           - name: "Push notifications"
@@ -277,5 +281,3 @@
         href: /uwp/schemas/
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
-  - name: Docs related to Microsoft Build 2021
-    href: whats-new/build2021-docs.md

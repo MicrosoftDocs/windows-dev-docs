@@ -25,15 +25,18 @@ To use the WinUI 3 project templates described in this article, configure your d
 
 Choose from one of the following sets of instructions.
 
-### [Desktop - C#/.NET](#tab/desktop-csharp)
+### [Desktop C#/.NET](#tab/desktop-csharp)
 
 To create a WinUI 3 desktop app with C# and .NET 5:
 
-1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
+1. In Visual Studio, select **File** -> **New** -> **Project**.
 
 2. In the project drop-down filters, select **C#**, **Windows**, and **WinUI**, respectively.
 
-3. Select the **Blank App, Packaged (WinUI 3 in Desktop)** project type and click **Next**.
+3. Select one of the following project types depending on the [version of the Windows App SDK extension](../../windows-app-sdk/downloads.md) you have installed and click **Next**.
+
+    - For version 1.0 Preview 1: select **Blank App, Packaged with WAP (WinUI 3 in Desktop)**.
+    - For version 1.0 Experimental and earlier: select **Blank App, Packaged (WinUI 3 in Desktop)**.
 
     ![Screenshot of Create a new project wizard with the Blank App Packaged (Win UI in Desktop) option highlighted.](images/WinUI3-csharp-newproject.png)
 
@@ -49,12 +52,12 @@ To create a WinUI 3 desktop app with C# and .NET 5:
 
         ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file.](images/WinUI-csharp-appproject.png)
 
-    - **_Project name_ (Package)**: This is a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows 10 and later features via package extensions, and much more. This project contains the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
+    - **_Project name_ (Package)**: This is a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This project contains the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
 
         ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file.](images/WinUI-csharp-packageproject.png)
 
         > [!NOTE]
-        > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md). 
+        > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md).
 
 7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
 
@@ -62,7 +65,7 @@ To create a WinUI 3 desktop app with C# and .NET 5:
 
 8. Build and run your solution to confirm that the app runs without errors.
 
-### Localize your WinUI desktop app
+#### Localize your WinUI desktop C# app
 
 To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see [App resources and the Resource Management System](/windows/uwp/app-resources/)) and declare each supported language in the **package.appxmanifest** file of your project. When you build the project, the specified languages are added to the generated app manifest (**AppxManifest.xml**) and the corresponding resources are used.
 
@@ -83,15 +86,18 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
     </Resources>
     ```
 
-### [Desktop - C++](#tab/desktop-cpp)
+### [Desktop C++](#tab/desktop-cpp)
 
 To create a WinUI 3 desktop app with C++:
 
-1. In Visual Studio 2019, select **File** -> **New** -> **Project**.
+1. In Visual Studio, select **File** -> **New** -> **Project**.
 
 2. In the project drop-down filters, select **C++**, **Windows**, and **WinUI**.
 
-3. Select the **Blank App, Packaged (WinUI 3 in Desktop)** project type and click **Next**.
+3. Select one of the following project types depending on the [version of the Windows App SDK extension](../../windows-app-sdk/downloads.md) you have installed and click **Next**.
+
+    - For version 1.0 Preview 1: select **Blank App, Packaged with WAP (WinUI 3 in Desktop)**.
+    - For version 1.0 Experimental and earlier: select **Blank App, Packaged (WinUI 3 in Desktop)**.
 
     ![Another screenshot of Create a new project wizard with the Blank App Packaged (Win U I in Desktop) option highlighted.](images/WinUI3-newproject-cpp.png)
 
@@ -112,18 +118,24 @@ To create a WinUI 3 desktop app with C++:
         ![Another screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file.](images/WinUI-cpp-packageproject.png)
 
         > [!NOTE]
-        > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md). 
+        > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md).
 
-7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+7. **For version 1.0 Preview 1 only:** In the app project, open the **pch.h** file, remove the following `#include` statement, and save the file. If you do not remove this statement, when you try to build the project you will encounter the following error: `fatal error C1083: Cannot open include file: 'winrt/microsoft.ui.dispatching.co_await.h': No such file or directory`. This issue only exists in version 1.0 Preview 1, and it will be fixed in the next release.
+
+    ```cpp
+    #include <winrt/microsoft.ui.dispatching.co_await.h>
+    ```
+
+8. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
 
     ![New Item](images/winui3-addnewitem-cpp.png)
 
-8. Build and run your solution to confirm that the app runs without errors.
+9. Build and run your solution to confirm that the app runs without errors.
 
    > [!NOTE]
    > Only the packaged project will launch, so make sure that one is set as the Startup Project.
 
-### Localize your WinUI desktop app
+#### Localize your WinUI desktop C++ app
 
 To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see [App resources and the Resource Management System](/windows/uwp/app-resources/)) and declare each supported language in the **package.appxmanifest** file of your project. When you build the project, the specified languages are added to the generated app manifest (**AppxManifest.xml**) and the corresponding resources are used.
 
@@ -144,7 +156,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
     </Resources>
     ```
 
-### [UWP - C#/.NET](#tab/uwp)
+### [UWP with C#/.NET](#tab/uwp)
 
 > [!NOTE]
 > WinUI 3 support for building UWP apps is currently in preview, and is not production-ready. You will not be able to ship WinUI 3 UWP apps to the Microsoft Store.
@@ -153,7 +165,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 
 To create a "WinUI 3 app in UWP" for C#:
 
-1. Using Visual Studio 2019, create a new project.
+1. Using Visual Studio, create a new project.
    - If Visual Studio is running already, select **File** -> **New** -> **Project**.
 
        :::image type="content" source="images/WinUI-and-UWP/vs2019-menu-file-new-project.png" alt-text="Visual Studio 2019 - File -> New -> Project menu":::

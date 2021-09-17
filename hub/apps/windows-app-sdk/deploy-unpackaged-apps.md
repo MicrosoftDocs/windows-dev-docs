@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
 > [!IMPORTANT]
-> Unpackaged app deployment is an experimental feature that is currently supported only in the [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
+> Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
 
 ## Overview
 
@@ -26,7 +26,7 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 ## Prerequisites
 
-1. Download the Windows App SDK runtime Installer or MSIX packages to your development computer. Choose [version 1.0 Experimental](https://aka.ms/windowsappsdk/1.0-experimental) or [version 0.8 Preview](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8-preview). 
+1. Download the 1.0 Preview 1 Windows App SDK [Installer and MSIX packages](https://aka.ms/windowsappsdk/1.0-preview1/msix-installer) to your development computer. For older versions, see [Downloads](downloads.md). 
 
 2. If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
 
@@ -46,10 +46,11 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 You can test deployment in your development environment by running the Windows App SDK Installer: 
 
-- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental or later
+- **WindowsAppRuntimeInstall.exe** if you are using version 1.0 Preview 1 
+- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental 
 - **ProjectReunionInstall.exe** if you are using version 0.8 Preview 
 
-You can also run the installer with no user interaction and suppress all text output with `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`. 
+You can also run the installer with no user interaction and suppress all text output with `WindowsAppRuntimeInstall.exe --quiet` or `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`, depending on the Windows App SDK version. 
 
 After the installation is complete, you can run your unpackaged app. For an example of how to build and run an unpackaged app that uses the Windows App SDK, see [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 

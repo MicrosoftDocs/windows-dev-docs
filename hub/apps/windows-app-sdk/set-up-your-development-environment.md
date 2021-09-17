@@ -51,35 +51,66 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
 
 ## 4. Install the Windows App SDK extension for Visual Studio
 
-The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from two versions of the extension: stable and experimental.
+The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
-> If you previously installed the [WinUI 3 Preview extension for Visual Studio](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates), uninstall the extension. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+> If you have already installed any [previous version](downloads.md) of the Windows App SDK extension for Visual Studio, uninstall the previous extension before installing a new version. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-### Install the stable release
+For installation instructions, see the following tabs.
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production environments, install the latest [stable](stable-channel.md) extension. Choose one of these options to install:
+### [Stable release](#tab/stable)
+
+To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about the stable channel and the features available in it, see [Stable release channel](stable-channel.md).
+
+Choose one of these options to install the latest stable release (0.8.2):
 
 - In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
     > [!NOTE]
-    > In the latest available stable release (0.8.2), the Windows App SDK extension for Visual Studio is named **Project Reunion**. In later releases, it has been renamed to **Windows App SDK**.
+    > In the latest available stable release, the Windows App SDK extension for Visual Studio is named **Project Reunion**. In later releases, it has been renamed to **Windows App SDK**.
 
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
     > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
-    ![Screenshot of the Windows App SDK extension being installed](images/reunion-extension-install.png)
+### [Preview release](#tab/preview)
 
-### Install the experimental release
+To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](stable-channel.md). This release channel cannot be used by apps in production environments.
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps or UWP apps that use the latest experimental features, install the latest [experimental](experimental-channel.md) extension. This version of the Windows App SDK cannot be used by apps in production environments. Choose one of these options to install:
+Choose one or more of the following extensions for the latest preview release (1.0 Preview 1), based on the version of Visual Studio you have installed and the programming language you want to use.
+
+- **Visual Studio 2019**:
+
+   > [!div class="button"]
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/cpp)
+
+    > [!div class="button"]
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/csharp)
+
+- **Visual Studio 2022**:
+
+    > [!div class="button"]
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/cpp)
+
+    > [!div class="button"]
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/csharp)
+
+> [!NOTE]
+> The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace and the **Manage Extensions** dialog box in Visual Studio.
+
+### [Experimental release](#tab/experimental)
+
+To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about the latest release and the features available in it, see [latest experimental extension](experimental-channel.md). This release channel cannot be used by apps in production environments.
+
+Choose one of these options to install the latest experimental release (1.0 Experimental):
 
 - In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
     > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix)
+
+---
 
 ## 5. Enable your device for development
 

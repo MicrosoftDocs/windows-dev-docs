@@ -17,7 +17,7 @@ For background information about framework packages, see [MSIX framework package
 
 ## Using the bootrapper API
 
-The bootstrapper API API consists of two C/C++ functions that are declared in the **mddbootstrap.h** header file in the Windows App SDK: **MddBootstrapInitialize** and **MddBootstrapShutdown**. These functions are provided by the [bootstrapper](deployment-architecture.md#bootstrapper) library in the Windows App SDK. This library is a small DLL that must be distributed with your app; it is not part of the framework package itself.
+The bootstrapper API consists of two C/C++ functions that are declared in the [mddbootstrap.h](/windows/windows-app-sdk/api/win32/mddbootstrap) header file in the Windows App SDK: [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown). These functions are provided by the [bootstrapper](deployment-architecture.md#bootstrapper) library in the Windows App SDK. This library is a small DLL that must be distributed with your app; it is not part of the framework package itself.
 
 For a code example that demonstrates how to use the bootstrapper API to initialize the Windows App SDK runtime, see [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md). For additional details, see the [dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) on GitHub.
 
@@ -29,9 +29,20 @@ This function also initializes the [Dynamic Dependency Lifetime Manager (DDLM)](
 
 ### MddBootstrapShutdown
 
-The function removes changes to the current process made by **MddBootstrapInitialize**. After this function is called, your app can no longer call Windows App SDK APIs, including the dynamic dependencies API.
+The function removes changes to the current process made by [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). After this function is called, your app can no longer call Windows App SDK APIs, including the dynamic dependencies API.
 
 This function also shuts down the [Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm) so that Windows can service the framework package as necessary.
+
+<!--
+### .NET wrapper library
+
+Although you can call the C/C++ bootstrapper API directly from .NET apps, this requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. For an example that demonstrates how to do this, see the C# instructions in [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md?tabs=csharp-dotnet#instructions).
+
+In Windows App SDK 1.0 Preview 1 and later releases, you can simplify this process by using the .NET wrapper for the bootstrapper API available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll library. This library provides a `Bootstrap` helper class with static `Initialize`, `TryInitialize`, and `Shutdown` functions that wrap calls to the unmanaged [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For more information, see these resources:
+
+- [Section 6.1.4](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md#614-microsoftwindowsapplicationmodeldynamicdependency-c) of the dynamic dependencies specification.
+- [Bootstrap.cs](https://github.com/microsoft/WindowsAppSDK/blob/main/dev/Bootstrap/CS/Microsoft.WindowsAppRuntime.Bootstrap.Net/Bootstrap.cs): The open source implementation of the .NET wrapper for the bootstrapper API.
+-->
 
 ## Related topics
 

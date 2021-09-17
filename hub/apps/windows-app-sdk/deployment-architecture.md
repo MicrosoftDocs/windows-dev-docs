@@ -23,6 +23,7 @@ This article explains the basic building blocks and high-level architecture of W
 | **Windows App SDK runtime** | All the MSIX packages required by an app to be able to use the Windows App SDK. These packages include: Framework, Main, and DDLM. |
 | **Framework package** | Contains binaries used at run time by apps. The framework includes a bootstrapper component that enables apps to automatically install the latest version of the Windows App SDK, which will be updated on a regular release cadence. |
 | **Main package** | Contains the background tasks, services, app extensions, and other components not included in the Framework package. These are generally out-of-process services that are brokered between apps, such as push notifications and the Clipboard. |
+| **Singleton package** | Contains services and other components not included in the Framework package. This is generally a single long-running process that is brokered between apps, such as push notifications. |
 | **Dynamic Dependency Lifetime Manager (DDLM)** | A main package that prevents the OS from performing servicing updates to the MSIX packages while an unpackaged app is in use. |
 | **Bootstrapper** | An app-local binary used by unpackaged apps to locate and load the best Windows App SDK version match as needed by the app.  |
 | **Provisioning** | The process of installing and registering packages (including files and registry keys) system-wide to eliminate the need for repeated installation by the other users. It can be done either as part of the OS or done during installation of an app. |
@@ -74,7 +75,11 @@ There is one DDLM for each version and architecture of the Windows App SDK Frame
 
 ### Main package
 
-The Main package contains a short-lived server process that keeps track of dynamic dependencies that have been added. This is not used if an app's only dependency is on the Windows App SDK.
+The Main package contains a short-lived server process that keeps track of dynamic dependencies that have been added, and it enables the Store to update the framework package.
+
+### Singleton package
+
+The Singleton package ensures that a single long-running process can handle services that are used across multiple apps, which may be running on different versions of the Windows App SDK. 
 
 ## Deployment scenarios
 

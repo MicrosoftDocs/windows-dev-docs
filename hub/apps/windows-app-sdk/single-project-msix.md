@@ -16,15 +16,19 @@ Single-project MSIX is a new feature that enables you to build desktop MSIX-pack
 
 ![Comparing packaging project to single project](images/single-project-overview.png)
 
-## Benefits
+## Overview
+
+This section introduces some important details about the single-project MSIX feature.
+
+### Benefits
 
 Before the introduction of the single-project MSIX feature, you needed two projects in your solution to build an MSIX-packaged desktop app: your app project and a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). The single-project MSIX feature enables you to develop and build your app using just your app project. This provides a cleaner project structure and more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.
 
-## Supported project types
+### Supported project types
 
 The current release of the single-project MSIX feature supports [WinUI 3 in Desktop projects](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3) (C# and C++) in the Windows App SDK.
 
-## Limitations
+### Limitations
 
 Single-project MSIX only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must continue using a Windows Application Packaging Project in your solution.
 

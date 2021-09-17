@@ -11,15 +11,22 @@ ms.localizationpriority: medium
 
 # Rich activation in AppLifecycle
 
-> [!IMPORTANT]
-> AppLifecycle is an experimental feature that is currently supported only in the [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
-
 In the Windows App SDK, AppLifecycle brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's [44 activation kinds](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
 
 Supporting rich activations requires two steps:
 
 - Tell the system that your app supports one or more rich activation kinds.
 - Receive and process the rich activation payloads your app receives when it is activated.
+
+## Prerequisites
+
+> [!IMPORTANT]
+> AppLifecycle APIs are currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
+
+To use the AppLifecycle APIs in the Windows App SDK:
+
+1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install developer tools](../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+2. Follow the instructions to [create a new project that uses the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Activation details for unpackaged apps
 
@@ -38,7 +45,7 @@ Each type of unpackaged app retrieves its command line arguments in different wa
 
 Packaged apps that use the Windows App SDK support all 44 of UWP's [activation kinds](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind). Each activation kind has its own corresponding implementation of [IActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs) which contain properties relevant to that specific kind of activation.
 
-Packaged apps will always receive activation event arguments in their `Activation` event handler, and also have the option of calling `AppInstance.GetActivatedEventArgs`.
+Packaged apps will always receive activation event arguments in their [AppInstance.Activated](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated) event handler, and also have the option of calling [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
 
 ### Activation registration
 
@@ -127,7 +134,7 @@ void RegisterForActivation()
 Once activated, an app must retrieve its activation event arguments. In this example, an unpackaged app calls an AppLifecycle API to get the event args for the activation event.
 
 > [!NOTE]
-> Win32 apps typically get command-line arguments very early their WinMain method. Similarly, these apps should `AppInstance::GetActivatedEventArgs` in the same place where they previously would have used the supplied lpCmdLine parameter or GetCommandLineW.
+> Win32 apps typically get command-line arguments very early their `WinMain` method. Similarly, these apps should call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) in the same place where they previously would have used the supplied the `lpCmdLine` parameter or called `GetCommandLineW`.
 
 ```c++
 void RespondToActivation()

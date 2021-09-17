@@ -23,6 +23,13 @@ The Windows App SDK runtime includes the [Framework](deployment-architecture.md#
 First, run the `get-appxpackage` command to list all versions of the Windows App SDK runtime packages that are installed on your computer (including the Framework, Main, and DDLM packages). The list includes details about each runtime package, including the **PackageFullName** value. For an example of the output of this command, see [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md).
 
 ```Powershell
+# For 1.0 Preview 1
+get-appxpackage *appruntime*
+
+# For 1.0 Experimental
+get-appxpackage *WindowsAppSDK* 
+
+# For 0.8 versions and older 
 get-appxpackage *reunion*
 ```
 

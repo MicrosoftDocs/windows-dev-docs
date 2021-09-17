@@ -11,12 +11,19 @@ ms.localizationpriority: medium
 
 # App instancing in AppLifecycle
 
-> [!IMPORTANT]
-> AppLifecycle is an experimental feature that is currently supported only in the [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
-
 An app's instancing model determines whether multiple instances of your app's process can run at the same time.
 
-### Single-instance apps
+## Prerequisites
+
+> [!IMPORTANT]
+> AppLifecycle APIs are currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
+
+To use the AppLifecycle APIs in the Windows App SDK:
+
+1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install developer tools](../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+2. Follow the instructions to [create a new project that uses the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+
+## Single-instance apps
 
 Apps are single-instanced if there can be only one main process running at a time. Attempting to launch a second instance of a single-instanced app typically results in the first instance's main window being activated instead. Note that this only applies to the main process. Single-instanced apps can create multiple background processes and still be considered single instanced.
 
@@ -24,7 +31,7 @@ UWP apps are single-instanced by default. but have the ability to become multi-i
 
 The Windows 10 Mail app is a good example of a single instanced app. When you launch Mail for the first time, a new window will be created. If you attempt to launch Mail again, the existing Mail window will be activated instead.
 
-### Multi-instanced apps
+## Multi-instanced apps
 
 Apps are multi-instanced if the main process can be run multiple times simultaneously. Attempting to launch a second instance of a multi-instanced app creates a new process and main window.
 
@@ -38,17 +45,17 @@ Instancing behavior in the Windows App SDK is based on UWP's model, class, but w
 
 ### AppInstance class
 
-- **UWP**: The [AppInstance](/uwp/api/windows.applicationmodel.appinstance) class is focused purely on instance redirection scenarios.
-- **Windows App SDK**: The `AppInstance` class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.
+- **UWP**: The [Windows.ApplicationModel.AppInstance](/uwp/api/windows.applicationmodel.appinstance) class is focused purely on instance redirection scenarios.
+- **Windows App SDK**: The [Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.
 
-### List of Instances
+### List of instances
 
 - **UWP**: [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances) returns only the instances that the app explicitly registered for potential redirection.
-- **Windows App SDK**: `GetInstances` returns all running instances of the app, including the current instance. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.
+- **Windows App SDK**: [GetInstances](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances) returns all running instances of the app, including the current instance. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.
 
-### Registering Keys
+### Registering keys
 
-Each instance of a multi-instanced app can register an arbitrary key via the `FindOrRegisterForKey` API. Keys have no inherent meaning; apps can use keys in whatever form or way they wish.
+Each instance of a multi-instanced app can register an arbitrary key via the `FindOrRegisterForKey` method. Keys have no inherent meaning; apps can use keys in whatever form or way they wish.
 
 An instance of an app can set its key at any time, but only one key is allowed for each instance; setting a new value overwrites the previous value.
 
@@ -62,16 +69,16 @@ An instance of an app cannot set its key to the same value that another instance
 An instance of an app can unregister its key.
 
 - **UWP**: When an instance unregisters its key, it is no longer available for activation redirection and is not included in the list of instances returned from [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances).
-- **Windows App SDK**: An instance that has unregistered its key is still available for activation redirection and is still included in the list of instances returned from `GetInstances`.
+- **Windows App SDK**: An instance that has unregistered its key is still available for activation redirection and is still included in the list of instances returned from [GetInstances](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances).
 
-### Instance Redirection Targets
+### Instance redirection targets
 
 Multiple instances of an app can activate each other, a process called "activation redirection". For example, an app might implement single instancing by only initializing itself if no other instances of the app are found at startup, and instead redirect and exit if another instance exists. Multi-instanced apps can redirect activations when appropriate according to that app's business logic. When an activation is redirected to another instance, it uses that instance's `Activated` callback, the same callback that's used in all other activation scenarios.
 
 - **UWP**: Only instances that have registered a key can be a target for redirection.
 - **Windows App SDK**: Any instance can be a redirection target, whether or not it has a registered key.
 
-### Post-Redirection Behavior
+### Post-redirection behavior
 
 - **UWP**: Redirection is a terminal operation; the app is terminated after redirecting the activation, even if the redirect failed.
 
@@ -79,12 +86,12 @@ Multiple instances of an app can activate each other, a process called "activati
 
 An activation request can be redirected multiple times. Instance A could redirect to instance B, which could in turn redirect to instance C. Windows App SDK apps taking advantage of this functionality must guard against circular redirection - if C redirects to A in the example above, there is a potential infinite activation loop. It is up to the app to determine how to handle circular redirection depending on what makes sense for the workflows that app supports.
 
-### Activation Events
+### Activation events
 
 In order to handle reactivation, the app can register for an Activated event.
 
 - **UWP**: The event passes an [IActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs) to the app.
-- **Windows App SDK**: The event passes a `Microsoft.Windows.AppLifecycle.AppActivationArguments` instance to the app, which contains one of the `-ActivatedEventArgs` instances.
+- **Windows App SDK**: The event passes a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) instance to the app, which contains one of the `-ActivatedEventArgs` instances.
 
 ## Examples
 
@@ -137,7 +144,7 @@ void OnActivated(AppActivationArguments const& args)
 
 ### Redirection logic based on activation kind
 
-In this example, the app registers a handler for the `Activated` event, but then immediately checks for the activation event args in the `wWinMain` method instead of waiting for an `Activated` callback. This allows the app to implement a single-instance model for certain scenarios.
+In this example, the app registers a handler for the [Activated](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated) event, but then immediately checks for the activation event args in the `wWinMain` method instead of waiting for an `Activated` callback. This allows the app to implement a single-instance model for certain scenarios.
 
 For most types of activations, the app continues with its regular initialization process. However, if the activation was caused by an associated file type being opened, and if another instance of this app already has the file opened, the current instance will redirect the activation to the existing instance and exit.
 
@@ -284,7 +291,7 @@ void OnActivated(AppActivationArguments const& args)
 }
 ```
 
-Unlike the UWP version of RedirectActivationTo, the Windows App SDK's version requires explicitly passing event arguments when redirecting activations. This is necessary because whereas UWP tightly controls activations and can ensure the correct activation arguments are passed to the correct instances, the Windows App SDK's version supports many platforms, and cannot rely on UWP-specific features. One benefit of this model is that apps that use the Windows App SDK have the chance to modify or replace the arguments that will be passed to the target instance.
+Unlike the UWP version of `RedirectActivationTo`, the Windows App SDK's implementation of [RedirectActivationToAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) requires explicitly passing event arguments when redirecting activations. This is necessary because whereas UWP tightly controls activations and can ensure the correct activation arguments are passed to the correct instances, the Windows App SDK's version supports many platforms, and cannot rely on UWP-specific features. One benefit of this model is that apps that use the Windows App SDK have the chance to modify or replace the arguments that will be passed to the target instance.
 
 ### Unregister for redirection
 
@@ -298,11 +305,11 @@ void CALLBACK OnFileClosed(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 ```
 
 > [!Warning]
-> Although keys are automatically unregistered when their process terminates, race conditions are possible where another instance may have initiated a redirection to the terminated instance before the terminated instance was unregistered. To mitigate this possibility, an app can use `UnregisterKey` to manually unregister its key before it is terminated, giving the app a chance to redirect activations to another app that is not in the process of exiting.
+> Although keys are automatically unregistered when their process terminates, race conditions are possible where another instance may have initiated a redirection to the terminated instance before the terminated instance was unregistered. To mitigate this possibility, an app can use [UnregisterKey](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.unregisterkey) to manually unregister its key before it is terminated, giving the app a chance to redirect activations to another app that is not in the process of exiting.
 
 ### Instance information
 
-The `AppInstance` class represents a single instance of an app. In this preview, `AppInstance` only includes the methods and properties necessary to support activation redirection. In later releases, `AppInstance` will expand to include other methods and properties relevant to an app instance.
+The [Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class represents a single instance of an app. In the current preview, `AppInstance` only includes the methods and properties necessary to support activation redirection. In later releases, `AppInstance` will expand to include other methods and properties relevant to an app instance.
 
 ```cpp
 void DumpExistingInstances()
