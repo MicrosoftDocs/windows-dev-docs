@@ -31,51 +31,69 @@ The following example demonstrates how to subscribe and respond to [PowerManager
 > Apps can register and unregister for these events at any time, but most apps will want to set callbacks in WinMain that persist as long as the app continues to run.
 
 ```cpp
-int APIENTRY wWinMain(
-    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
-    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
+BOOL bWorkInProgress;
+winrt::event_token batteryToken;
+winrt::event_token powerToken;
+winrt::event_token powerSourceToken;
+winrt::event_token chargeToken;
+winrt::event_token dischargeToken;
+
+void RegisterPowerManagerCallbacks()
 {
-    // Initialize COM.
-    winrt::init_apartment();
+    batteryToken = PowerManager::BatteryStatusChanged([&](
+        const auto&, winrt::Windows::Foundation::IInspectable obj) { OnBatteryStatusChanged(); });
+    powerToken = PowerManager::PowerSupplyStatusChanged([&](
+        const auto&, winrt::Windows::Foundation::IInspectable obj) { OnPowerSupplyStatusChanged(); });
+    powerSourceToken = PowerManager::PowerSourceKindChanged([&](
+        const auto&, winrt::Windows::Foundation::IInspectable obj) { OnPowerSourceKindChanged(); });
+    chargeToken = PowerManager::RemainingChargePercentChanged([&](
+        const auto&, winrt::Windows::Foundation::IInspectable obj) { OnRemainingChargePercentChanged(); });
+    dischargeToken = PowerManager::RemainingDischargeTimeChanged([&](
+        const auto&, winrt::Windows::Foundation::IInspectable obj) { OnRemainingDischargeTimeChanged(); });
 
-    // Optionally, register callbacks for power/battery state changes.
-    PowerManager::BatteryStatusChanged([](auto&&...)
-        { OnBatteryStatusChanged(); });
-
-    ///////////////////////////////////////////////////////////////////////////
-    // Standard Win32 window configuration/creation and message pump:
-    // i.e., the app performs normal function
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_CLASSIC, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
-    if (!InitInstance(hInstance, nCmdShow))
+    if (batteryToken && powerToken && powerSourceToken && chargeToken && dischargeToken)
     {
-        return FALSE;
+        OutputMessage(L"Successfully registered for state notifications");
     }
-    MSG msg;
-    while (GetMessage(&msg, nullptr, 0, 0))
+    else
     {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
+        OutputMessage(L"Failed to register for state notifications");
     }
-    return (int)msg.wParam;
 }
 
 void OnBatteryStatusChanged()
 {
+    const size_t statusSize = 16;
+    WCHAR szStatus[statusSize];
+    wmemset(&(szStatus[0]), 0, statusSize);
+
     BatteryStatus batteryStatus = PowerManager::BatteryStatus();
     int remainingCharge = PowerManager::RemainingChargePercent();
+    switch (batteryStatus)
+    {
+    case BatteryStatus::Charging:
+        wcscpy_s(szStatus, L"Charging");
+        break;
+    case BatteryStatus::Discharging:
+        wcscpy_s(szStatus, L"Discharging");
+        break;
+    case BatteryStatus::Idle:
+        wcscpy_s(szStatus, L"Idle");
+        break;
+    case BatteryStatus::NotPresent:
+        wcscpy_s(szStatus, L"NotPresent");
+        break;
+    }
 
-    if (batteryStatus == BatteryStatus::Discharging && remainingCharge < 25)
-    {
-        // In non-ideal battery state; non-critical work paused.
-        PauseNonCriticalWork();
-    }
-    else if (batteryStatus == BatteryStatus::Charging && remainingCharge > 75)
-    {
-        // Battery in good shape; intensive work can be performed.
-        StartPowerIntensiveWork();
-    }
+    OutputFormattedMessage(
+        L"Battery status changed: %s, %d%% remaining", 
+        szStatus, remainingCharge);
+    DetermineWorkloads();
+}
+
+void OnPowerSupplyStatusChanged()
+{
+//...etc
 }
 ```
 
@@ -84,26 +102,28 @@ void OnBatteryStatusChanged()
 [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) events are relatively low-level, and in some scenarios, a single event handler being called might not provide enough information for the app to decide how to behave. In this example, the [PowerSupplyStatusChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.powersupplystatuschanged) event could be called when the device is disconnected from power. In that case, the app must check the current battery status before deciding how to proceed.
 
 ```cpp
-void OnPowerSupplyStatusChanged()
+void DetermineWorkloads()
 {
-    PowerSupplyStatus powerStatus = PowerManager::PowerSupplyStatus();
     BatteryStatus batteryStatus = PowerManager::BatteryStatus();
     int remainingCharge = PowerManager::RemainingChargePercent();
+    PowerSupplyStatus powerStatus = PowerManager::PowerSupplyStatus();
+    PowerSourceKind powerSource = PowerManager::PowerSourceKind();
 
-    // Note if the BatteryStatus is BatteryStatus::NotPresent,
-    // then RemainingChargePercent is 100.
-
-    if (batteryStatus == BatteryStatus::Discharging
-        && remainingCharge < 25
-        && powerStatus != PowerSupplyStatus::Adequate)
+    if ((powerSource == PowerSourceKind::DC 
+        && batteryStatus == BatteryStatus::Discharging 
+        && remainingCharge < 25)
+        || (powerSource == PowerSourceKind::AC
+        && powerStatus == PowerSupplyStatus::Inadequate))
     {
-        // Power/battery not in ideal state; non-critical work paused.
+        // The device is not in a good battery/power state, 
+        // so we should pause any non-critical work.
         PauseNonCriticalWork();
     }
-    else if (powerStatus == PowerSupplyStatus::Adequate ||
-        (batteryStatus == BatteryStatus::Charging && remainingCharge > 75))
+    else if ((batteryStatus != BatteryStatus::Discharging && remainingCharge > 75)
+        && powerStatus != PowerSupplyStatus::Inadequate)
     {
-        // Power/battery is in great shape; intensive work can be performed.
+        // The device is in good battery/power state,
+        // so let's kick of some high-power work.
         StartPowerIntensiveWork();
     }
 }
@@ -114,17 +134,36 @@ void OnPowerSupplyStatusChanged()
 The [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) class offers information about other device states relevant to an app's power usage. For example, apps can disable graphics processing when the device's display is turned off.
 
 ```cpp
-void OnDisplayStatusChanged([](auto&&...)
+void OnDisplayStatusChanged()
 {
+    const size_t statusSize = 16;
+    WCHAR szStatus[statusSize];
+    wmemset(&(szStatus[0]), 0, statusSize);
+
     DisplayStatus displayStatus = PowerManager::DisplayStatus();
+    switch (displayStatus)
+    {
+    case DisplayStatus::Dimmed:
+        wcscpy_s(szStatus, L"Dimmed");
+        break;
+    case DisplayStatus::Off:
+        wcscpy_s(szStatus, L"Off");
+        break;
+    case DisplayStatus::On:
+        wcscpy_s(szStatus, L"On");
+        break;
+    }
+
+    OutputFormattedMessage(
+        L"Display status changed: %s", szStatus);
     if (displayStatus == DisplayStatus::Off)
     {
-        // The screen is off, foreground graphics rendering paused,
-        // and background work can now begin.
-        StopRenderingGraphics();
+        // The screen is off, let's stop rendering foreground graphics,
+        // and instead kick off some background work now.
+        StopUpdatingGraphics();
         StartDoingBackgroundWork();
     }
-});
+}
 ```
 
 ## Unsubscribe from events
@@ -132,21 +171,14 @@ void OnDisplayStatusChanged([](auto&&...)
 Apps can register and deregister for notifications during their lifecycle. Use your language's preferred event registration management system if your app doesn't need to receive power status notifications during its entire lifecycle.
 
 ```cpp
-winrt::event_token s_batteryToken;
-winrt::event_token s_powerToken;
-
-void MyRegisterPowerManagerCallbacks()
+void UnregisterPowerManagerCallbacks()
 {
-    s_batteryToken = PowerManager::BatteryStatusChanged([](IInspectable sender, auto args)
-        { OnBatteryStatusChanged(sender, args); });
-    s_powerToken = PowerManager::PowerSupplyStatusChanged([](IInspectable sender, auto args)
-        { OnPowerSupplyStatusChanged(sender, args); });
-}
-
-void MyUnregisterPowerManagerCallbacks()
-{
-    PowerManager::BatteryStatusChanged(s_batteryToken);
-    PowerManager::PowerSupplyStatusChanged(s_powerToken);
+    OutputMessage(L"Unregistering state notifications");
+    PowerManager::BatteryStatusChanged(batteryToken);
+    PowerManager::PowerSupplyStatusChanged(powerToken);
+    PowerManager::PowerSourceKindChanged(powerSourceToken);
+    PowerManager::RemainingChargePercentChanged(chargeToken);
+    PowerManager::RemainingDischargeTimeChanged(dischargeToken);
 }
 ```
 

@@ -104,47 +104,76 @@ int APIENTRY wWinMain(
     _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
-    // Initialize COM.
-    winrt::init_apartment();
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // First, hook up the Activated event, to allow for this instance of the app
+    // Initialize the Windows App SDK framework package for unpackaged apps.
+    HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) };
+    if (FAILED(hr))
+    {
+        OutputFormattedDebugString(
+            L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
+            hr, majorMinorVersion, versionTag, 
+            minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision);
+        return hr;
+    }
+
+    if (DecideRedirection())
+    {
+        return 1;
+    }
+
+    // Connect the Activated event, to allow for this instance of the app
     // getting reactivated as a result of multi-instance redirection.
-    Microsoft::ProjectReunion::AppInstance::GetCurrent().Activated([](
-        AppActivationArguments const& args)
-        { OnActivated(args); });
+    AppInstance thisInstance = AppInstance::GetCurrent();
+    auto activationToken = thisInstance.Activated(
+        auto_revoke, [&thisInstance](
+            const auto& sender, const AppActivationArguments& args)
+        { OnActivated(sender, args); }
+    );
 
-    //...etc - the rest of WinMain as normal.
+    // Carry on with regular Windows initialization.
+    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadStringW(hInstance, IDC_CLASSNAME, szWindowClass, MAX_LOADSTRING);
+    RegisterWindowClass(hInstance);
+    if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
+    MSG msg;
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    MddBootstrapShutdown();
+    return (int)msg.wParam;
 }
 
-void OnActivated(AppActivationArguments const& args)
+void OnActivated(const IInspectable&, const AppActivationArguments& args)
 {
-    ExtendedActivationKind kind = args.Kind;
+    int const arraysize = 4096;
+    WCHAR szTmp[arraysize];
+    size_t cbTmp = arraysize * sizeof(WCHAR);
+    StringCbPrintf(szTmp, cbTmp, L"OnActivated (%d)", activationCount++);
+
+    ExtendedActivationKind kind = args.Kind();
     if (kind == ExtendedActivationKind::Launch)
     {
-        auto launchArgs = args.Data().as<LaunchActivatedEventArgs>();
-        DoSomethingWithLaunchArgs(launchArgs.Arguments());
+        ReportLaunchArgs(szTmp, args);
     }
     else if (kind == ExtendedActivationKind::File)
     {
-        auto fileArgs = args.Data().as<FileActivatedEventArgs>();
-        DoSomethingWithFileArgs(fileArgs.Files());
-    }
-    else if (kind == ExtendedActivationKind::Protocol)
-    {
-        auto protocolArgs = args.Data().as<ProtocolActivatedEventArgs>();
-        DoSomethingWithProtocolArgs(protocolArgs.Uri());
-    }
-    else if (kind == ExtendedActivationKind::StartupTask)
-    {
-        auto startupArgs = args.Data().as<StartupTaskActivatedEventArgs>();
-        DoSomethingWithStartupArgs(startupArgs.TaskId());
+        ReportFileArgs(szTmp, args);
     }
 }
 ```
 
 ### Redirection logic based on activation kind
 
-In this example, the app registers a handler for the [Activated](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated) event, but then immediately checks for the activation event args in the `wWinMain` method instead of waiting for an `Activated` callback. This allows the app to implement a single-instance model for certain scenarios.
+In this example, the app registers a handler for the [Activated](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated) event, and also checks for the activation event args to decide whether to redirect activation to another instance.
 
 For most types of activations, the app continues with its regular initialization process. However, if the activation was caused by an associated file type being opened, and if another instance of this app already has the file opened, the current instance will redirect the activation to the existing instance and exit.
 
@@ -153,46 +182,59 @@ This app uses key registration to determine which files are open in which instan
 Note that, though key registration itself is part of the Windows App SDK's AppLifecycle API, the contents of the key are specified only within the app itself. An app does not need to register a file name, or any other meaningful data. This app, however, has decided to track open files via keys based on its particular needs and supported workflows.
 
 ```cpp
-int APIENTRY wWinMain(
-    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
-    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
+bool DecideRedirection()
 {
-    // Initialize COM.
-    winrt::init_apartment();
+    // Get the current executable filesystem path, so we can
+    // use it later in registering for activation kinds.
+    GetModuleFileName(NULL, szExePath, MAX_PATH);
+    wcscpy_s(szExePathAndIconIndex, szExePath);
+    wcscat_s(szExePathAndIconIndex, L",1");
 
-    // First, we'll get our rich activation event args.
-    AppActivationArguments activationArgs =
-        AppInstance::GetCurrent().GetActivatedEventArgs();
-
-    // An app might want to set itself up for possible redirection in
-    // the case where it opens files - for example, to prevent multiple
-    // instances from working on the same file.
-    ExtendedActivationKind kind = activationArgs.Kind;
-    if (kind == ExtendedActivationKind::File)
+    // Find out what kind of activation this is.
+    AppActivationArguments args = AppInstance::GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind();
+    if (kind == ExtendedActivationKind::Launch)
     {
-        auto fileArgs = activationArgs.Data.as<FileActivatedEventArgs>();
-        IStorageItem file = fileArgs.Files().GetAt(0);
+        ReportLaunchArgs(L"WinMain", args);
+    }
+    else if (kind == ExtendedActivationKind::File)
+    {
+        ReportFileArgs(L"WinMain", args);
 
-        // Let's try to register this instance for this file.
-        AppInstance instance =
-            AppInstance::FindOrRegisterForKey(file.Name());
-        if (instance.IsCurrent)
+        try
         {
-            // If we successfully registered this instance, we can now just
-            // go ahead and do normal initialization.
-            RegisterClassAndStartMessagePump(hInstance, nCmdShow);
+            // This is a file activation: here we'll get the file information,
+            // and register the file name as our instance key.
+            IFileActivatedEventArgs fileArgs = args.Data().as<IFileActivatedEventArgs>();
+            if (fileArgs != NULL)
+            {
+                IStorageItem file = fileArgs.Files().GetAt(0);
+                AppInstance keyInstance = AppInstance::FindOrRegisterForKey(file.Name());
+                OutputFormattedMessage(
+                    L"Registered key = %ls", keyInstance.Key().c_str());
+
+                // If we successfully registered the file name, we must be the
+                // only instance running that was activated for this file.
+                if (keyInstance.IsCurrent())
+                {
+                    // Report successful file name key registration.
+                    OutputFormattedMessage(
+                        L"IsCurrent=true; registered this instance for %ls",
+                        file.Name().c_str());
+                }
+                else
+                {
+                    keyInstance.RedirectActivationToAsync(args).get();
+                    return true;
+                }
+            }
         }
-        else
+        catch (...)
         {
-            // Some other instance has already registered for this file,
-            // so we'll redirect this activation to that instance instead.
-            // This is an async operation: to ensure the target can get
-            // the payload before this instance terminates, we should
-            // wait for the call to complete.
-            instance.RedirectActivationToAsync(activationArgs).get();
+            OutputErrorString(L"Error getting instance information");
         }
     }
-    return 1;
+    return false;
 }
 ```
 
@@ -213,7 +255,7 @@ int APIENTRY wWinMain(
     AppActivationArguments activationArgs =
         AppInstance::GetCurrent().GetActivatedEventArgs();
 
-    // As above, check for any specific activation kind we care about.
+    // Check for any specific activation kind we care about.
     ExtendedActivationKind kind = activationArgs.Kind;
     if (kind == ExtendedActivationKind::File)
     {
@@ -260,7 +302,7 @@ int APIENTRY wWinMain(
 This example again adds more sophisticated redirection behavior. Here, an app instance can register itself as the instance that handles all activations of a specific kind. When an instance of an app receives a `Protocol` activation, it first checks for an instance that has already registered to handle `Protocol` activations. If it finds one, it redirects the activation to that instance. If not, the current instance registers itself for `Protocol` activations, and then applies additional logic (not shown) which may redirect the activation for some other reason.
 
 ```cpp
-void OnActivated(AppActivationArguments const& args)
+void OnActivated(const IInspectable&, const AppActivationArguments& args)
 {
     const ExtendedActivationKind kind = args.Kind;
 

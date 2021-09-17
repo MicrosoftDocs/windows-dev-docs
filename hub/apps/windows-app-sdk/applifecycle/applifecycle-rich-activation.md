@@ -51,7 +51,7 @@ Packaged apps will always receive activation event arguments in their [AppInstan
 
 All apps support the Launch activation kind by default. Unlike UWP, the Windows App SDK Launch activation kind includes command line launches. Apps can register for additional activation kinds in several ways.
 
-- All apps that use the Windows App SDK can register (and unregister) for additional activation kinds via APIs in the Windows App SDK version of AppLifecycle.
+- Unpackaged apps that use the Windows App SDK can register (and unregister) for additional activation kinds via APIs in the Windows App SDK version of AppLifecycle.
 - Unpackaged apps can continue to register for additional activation kinds using the traditional method of writing registry keys.
 - Packaged apps can register for additional activation kinds via entries in their application manifest.
 
@@ -63,69 +63,103 @@ Activation registrations are per-user. If your app is installed for multiple use
 
 Though apps can call the registration APIs at any time, the most common scenario is checking registrations on app startup.
 
-This example shows how an unpackaged app can use the registration APIs to register for several activation kinds when the app is launched.
+This example shows how an unpackaged app can use the registration APIs to register for several activation kinds when the app is launched. Note that an unpackaged app must use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function to initialize the Windows App SDK framework package. For more information, see [Reference the Windows App SDK framework package at run time](../reference-framework-package-run-time.md).
 
 > [!NOTE]
 > This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.
 
 ```c++
+const UINT32 majorMinorVersion{ 0x00010000 };
+PCWSTR versionTag{ L"preview1" };
+const PACKAGE_VERSION minVersion{};
+WCHAR szExePath[MAX_PATH];
+WCHAR szExePathAndIconIndex[MAX_PATH + 8];
+
 int APIENTRY wWinMain(
-    _In_ HINSTANCE hInstance,
-    _In_opt_ HINSTANCE,
-    _In_ LPWSTR,
-    _In_ int nCmdShow)
+    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
-    // Initialize COM.
-    winrt::init_apartment();
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // Registering for rich activation kinds can be done in the
-    // app's installer or in the app itself.
-    RegisterForActivation();
+    // Initialize Windows App SDK framework package for unpackaged apps.
+    HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) };
+    if (FAILED(hr))
+    {
+        wprintf(L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
+            hr, majorMinorVersion, versionTag, minVersion.Major, 
+            minVersion.Minor, minVersion.Build, minVersion.Revision);
+        return hr;
+    }
 
-    // When the app starts, it can get its activated eventargs, and perform
-    // any required operations based on the activation kind and payload.
-    RespondToActivation();
+    // Get the current executable filesystem path, so we can
+    // use it later in registering for activation kinds.
+    GetModuleFileName(NULL, szExePath, MAX_PATH);
+    wcscpy_s(szExePathAndIconIndex, szExePath);
+    wcscat_s(szExePathAndIconIndex, L",1");
 
-    ///////////////////////////////////////////////////////////////////////////
-    // Standard Win32 window configuration/creation and message pump:
-    // ie, whatever the app would normally do - nothing new here.
-    RegisterClassAndStartMessagePump(hInstance, nCmdShow);
-    return 1;
+    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadStringW(hInstance, IDC_CLASSNAME, szWindowClass, MAX_LOADSTRING);
+    RegisterWindowClass(hInstance);
+    if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
+    MSG msg;
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    // Uninitialize Windows App SDK.
+    MddBootstrapShutdown();
+    return (int)msg.wParam;
 }
 
 void RegisterForActivation()
 {
-    // Register one or more supported image filetypes,
+    OutputMessage(L"Registering for rich activation");
+
+    // Register one or more supported filetypes, specifying 
     // an icon (specified by binary file path plus resource index),
     // a display name to use in Shell and Settings,
     // zero or more verbs for the File Explorer context menu,
     // and the path to the EXE to register for activation.
-    // Note that localizable resource strings are not supported in v1.
-    std::wstring imageFileTypes[3] = { L".jpg", L".png", L".bmp" };
-    std::wstring verbs[2] = { L"view", L"edit" };
+    hstring myFileTypes[3] = { L".foo", L".foo2", L".foo3" };
+    hstring verbs[2] = { L"view", L"edit" };
     ActivationRegistrationManager::RegisterForFileTypeActivation(
-        imageFileTypes,
-        L"C:\\Program Files\\Contoso\\MyResources.dll, -123",
+        myFileTypes,
+        szExePathAndIconIndex,
         L"Contoso File Types",
         verbs,
-        L"C:\\Program Files\\Contoso\\MyApp.exe");
+        szExePath
+    );
 
-    // Register some URI schemes for protocol activation,
+    // Register a URI scheme for protocol activation,
     // specifying the scheme name, icon, display name and EXE path.
     ActivationRegistrationManager::RegisterForProtocolActivation(
         L"foo",
-        L"C:\\Program Files\\Contoso\\MyResources.dll, -45",
+        szExePathAndIconIndex,
         L"Contoso Foo Protocol",
-        L"C:\\Program Files\\Contoso\\MyApp.exe");
+        szExePath
+    );
 
     // Register for startup activation.
+    // As we're registering for startup activation multiple times,
+    // and this is a multi-instance app, we'll get multiple instances
+    // activated at startup.
     ActivationRegistrationManager::RegisterForStartupActivation(
-        L"MyTaskId",
-        L"C:\\Program Files\\Contoso\\MyApp.exe");
+        L"ContosoStartupId",
+        szExePath
+    );
 
+    // If we don't specify the EXE, it will default to this EXE.
     ActivationRegistrationManager::RegisterForStartupActivation(
-        L"AnotherTaskId",
-        L"");
+        L"ContosoStartupId2",
+        L""
+    );
 }
 ```
 
@@ -137,29 +171,56 @@ Once activated, an app must retrieve its activation event arguments. In this exa
 > Win32 apps typically get command-line arguments very early their `WinMain` method. Similarly, these apps should call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) in the same place where they previously would have used the supplied the `lpCmdLine` parameter or called `GetCommandLineW`.
 
 ```c++
-void RespondToActivation()
+void GetActivationInfo()
 {
     AppActivationArguments args = AppInstance::GetCurrent().GetActivatedEventArgs();
     ExtendedActivationKind kind = args.Kind();
     if (kind == ExtendedActivationKind::Launch)
     {
-        auto launchArgs = args.Data().as<LaunchActivatedEventArgs>();
-        DoSomethingWithLaunchArgs(launchArgs.Arguments());
+        ILaunchActivatedEventArgs launchArgs = 
+            args.Data().as<ILaunchActivatedEventArgs>();
+        if (launchArgs != NULL)
+        {
+            winrt::hstring argString = launchArgs.Arguments().c_str();
+            std::vector<std::wstring> argStrings = split_strings(argString);
+            OutputMessage(L"Launch activation");
+            for (std::wstring s : argStrings)
+            {
+                OutputMessage(s.c_str());
+            }
+        }
     }
     else if (kind == ExtendedActivationKind::File)
     {
-        auto fileArgs = args.Data().as<FileActivatedEventArgs>();
-        DoSomethingWithFileArgs(fileArgs.Files());
+        IFileActivatedEventArgs fileArgs = 
+            args.Data().as<IFileActivatedEventArgs>();
+        if (fileArgs != NULL)
+        {
+            IStorageItem file = fileArgs.Files().GetAt(0);
+            OutputFormattedMessage(
+                L"File activation: %s", file.Name().c_str());
+        }
     }
     else if (kind == ExtendedActivationKind::Protocol)
     {
-        auto protocolArgs = args.Data().as<ProtocolActivatedEventArgs>();
-        DoSomethingWithProtocolArgs(protocolArgs.Uri());
+        IProtocolActivatedEventArgs protocolArgs = 
+            args.Data().as<IProtocolActivatedEventArgs>();
+        if (protocolArgs != NULL)
+        {
+            Uri uri = protocolArgs.Uri();
+            OutputFormattedMessage(
+                L"Protocol activation: %s", uri.RawUri().c_str());
+        }
     }
     else if (kind == ExtendedActivationKind::StartupTask)
     {
-        auto startupArgs = args.Data().as<StartupTaskActivatedEventArgs>();
-        DoSomethingWithStartupArgs(startupArgs.TaskId());
+        IStartupTaskActivatedEventArgs startupArgs = 
+            args.Data().as<IStartupTaskActivatedEventArgs>();
+        if (startupArgs != NULL)
+        {
+            OutputFormattedMessage(
+                L"Startup activation: %s", startupArgs.TaskId().c_str());
+        }
     }
 }
 ```
@@ -174,11 +235,21 @@ This example demonstrates how an unpackaged app can unregister for specific acti
 ```c++
 void UnregisterForActivation()
 {
+    OutputMessage(L"Unregistering for rich activation");
+    
     // Unregister one or more registered filetypes.
-    std::wstring imageFileTypes[3] = { L".jpg", L".png", L".bmp" };
-    ActivationRegistrationManager::UnregisterForFileTypeActivation(
-        imageFileTypes,
-        L"C:\\Program Files\\Contoso\\MyApp.exe");
+    try
+    {
+        hstring myFileTypes[3] = { L".foo", L".foo2", L".foo3" };
+        ActivationRegistrationManager::UnregisterForFileTypeActivation(
+            myFileTypes,
+            szExePath
+        );
+    }
+    catch (...)
+    {
+        OutputMessage(L"Error unregistering file types");
+    }
 
     // Unregister a protocol scheme.
     ActivationRegistrationManager::UnregisterForProtocolActivation(
@@ -187,7 +258,8 @@ void UnregisterForActivation()
 
     // Unregister for startup activation.
     ActivationRegistrationManager::UnregisterForStartupActivation(
-        L"AnotherTaskId",
-        L"");
+        L"ContosoStartupId");
+    ActivationRegistrationManager::UnregisterForStartupActivation(
+        L"ContosoStartupId2");
 }
 ```
