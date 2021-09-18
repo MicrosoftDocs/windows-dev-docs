@@ -6684,6 +6684,11 @@
       "source_path": "hub/apps/design/windows-template-studio/index.md",
       "redirect_url": "/windows/apps/design/downloads/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/build2021-docs.md",
+      "redirect_url": "/windows/apps",
+      "redirect_document_id": false
     }
   ]
 }
